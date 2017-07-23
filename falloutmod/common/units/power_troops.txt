@@ -1,0 +1,50 @@
+sub_units = {
+	
+	power_armor_aux = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		active = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_all_infantry
+			category_army
+		}
+
+		combat_width = 0.0
+	
+		#Size Definitions
+		max_strength = 10
+		max_organisation = 20
+		default_morale = 0.5
+		manpower = 50
+		training_time = 150
+
+		#Misc Abilities
+		weight = 0.4
+		supply_consumption = 0.03
+		
+		can_be_parachuted = yes
+
+		#transport = horse_equipment
+
+		essential = {
+			power_armor
+			infantry_equipment
+		}
+
+		need = {
+			power_armor = 50
+			infantry_equipment = 50
+		}
+	}
+}

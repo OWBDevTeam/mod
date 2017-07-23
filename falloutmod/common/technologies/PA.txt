@@ -1,0 +1,157 @@
+technologies = {
+	
+	@1918 = 0
+	@1936 = 2
+	@1938 = 4
+	@1939 = 6
+	@1940 = 8
+	@1941 = 10
+	@1942 = 12
+	@1943 = 14
+	@1944 = 16
+	@1945 = 18
+	@1946 = 20
+	
+	tech_power_armor = {
+
+		enable_equipments = {
+			power_armor_0
+		}
+		
+		enable_subunits = {
+			power_armor_aux
+		}
+
+		path = {
+			leads_to_tech = tech_power_armor2
+			research_cost_coeff = 1
+		}
+		
+		dependencies = {
+			being_civilized = 1
+		}
+
+		research_cost = 2
+		start_year = 1936
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = @1939 }
+		}
+		
+		categories = {
+			infantry_tech
+			power_armor_category
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tech_power_armor2 = {
+
+		enable_equipments = {
+			power_armor_1
+		}
+
+		path = {
+			leads_to_tech = tech_power_armor3
+			research_cost_coeff = 1
+		}
+		
+		dependencies = {
+			being_advanced = 1
+		}
+
+		research_cost = 2
+		start_year = 1936
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = @1942 }
+		}
+		
+		categories = {
+			infantry_tech
+			power_armor_category
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tech_power_armor3 = {
+
+		enable_equipments = {
+			power_armor_2
+		}
+
+		path = {
+			leads_to_tech = tech_power_armor4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 1936
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = 16 }
+		}
+		
+		categories = {
+			infantry_tech
+			power_armor_category
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tech_power_armor4 = {
+
+		enable_equipments = {
+			power_armor_3
+		}
+
+		path = {
+			leads_to_tech = tech_power_armor5
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 1936
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = 20 }
+		}
+		
+		categories = {
+			infantry_tech
+			power_armor_category
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tech_power_armor5 = {
+
+		enable_equipments = {
+			power_armor_4
+		}
+
+		research_cost = 3
+		start_year = 1936
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = 24 }
+		}
+		
+		categories = {
+			infantry_tech
+			power_armor_category
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

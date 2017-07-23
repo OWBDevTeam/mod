@@ -1,0 +1,70 @@
+equipments = {
+
+	power_armor = {
+		is_archetype = yes
+		is_buildable = no
+		type = {
+			infantry
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		reliability = 0.8
+		#Space taken in convoy
+		lend_lease_cost = 3
+		
+		#Defensive Abilities
+		breakthrough = 5
+		hardness = 0.5
+		armor_value = 8
+
+		build_cost_ic = 10
+		resources = {
+			aluminium = 2
+			steel = 2
+			tungsten = 2
+		}
+	}
+	
+	power_armor_0 = {
+		archetype = power_armor
+		priority = 20	
+	}
+	power_armor_1 = {
+		archetype = power_armor
+		parent = power_armor_0
+		priority = 30
+		breakthrough = 7
+		hardness = 0.6
+		armor_value = 10
+		build_cost_ic = 15
+	}
+	power_armor_2 = {
+		archetype = power_armor
+		parent = power_armor_1
+		priority = 40
+		breakthrough = 9
+		hardness = 0.7
+		armor_value = 12
+		build_cost_ic = 20
+	}
+	power_armor_3 = {
+		archetype = power_armor
+		parent = power_armor_2
+		priority = 50
+		breakthrough = 11
+		hardness = 0.8
+		armor_value = 14
+		build_cost_ic = 25
+	}
+	power_armor_4 = {
+		archetype = power_armor
+		parent = power_armor_3
+		priority = 60
+		breakthrough = 13
+		hardness = 0.9
+		armor_value = 16
+		build_cost_ic = 30
+	}
+}

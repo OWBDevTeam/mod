@@ -1,0 +1,51 @@
+equipments = {
+
+	wardogs = {
+		is_archetype = yes
+		is_buildable = no
+		type = {
+			infantry
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		reliability = 0.7
+		lend_lease_cost = 3
+		soft_attack = 2
+		breakthrough = 5
+
+		build_cost_ic = 1
+		resources = {
+			steel = 2
+		}
+	}
+	
+	dogs_equipment_0 = {
+		archetype = wardogs
+		priority = 10	
+	}
+
+	dogs_equipment_1 = {
+		archetype = wardogs
+		soft_attack = 3
+		breakthrough = 5
+		priority = 20	
+	}
+
+	dogs_equipment_2 = {
+		archetype = wardogs
+		soft_attack = 5
+		breakthrough = 5
+		priority = 30	
+	}
+
+	cyberdogs_equipment = {
+		archetype = wardogs
+		reliability = 0.9
+		soft_attack = 7
+		breakthrough = 10
+		build_cost_ic = 7
+		priority = 40	
+	}
+}

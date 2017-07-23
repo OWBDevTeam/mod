@@ -1,0 +1,45 @@
+equipments = {
+
+	bikes_equipment = {
+		is_archetype = yes
+		is_buildable = no
+		type = {
+			infantry
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		maximum_speed = 15
+		reliability = 0.6
+		breakthrough = 1
+
+		#Space taken in convoy
+		lend_lease_cost = 5
+
+		build_cost_ic = 0.7
+		resources = {
+			oil = 1
+			rubber = 1
+			steel = 1
+		}
+	}
+
+	bikes_equipment_1 = {
+		archetype = bikes_equipment
+		priority = 20			
+	}
+	bikes_equipment_2 = {
+		archetype = bikes_equipment
+		priority = 30
+		maximum_speed = 20
+		reliability = 0.8
+		breakthrough = 1.2
+		build_cost_ic = 1
+		resources = {
+			oil = 2
+			rubber = 1
+			steel = 1
+		}		
+	}
+}

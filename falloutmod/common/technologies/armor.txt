@@ -1,0 +1,311 @@
+technologies = {
+	robot_programming = { 
+		enable_subunits = {
+			light_robots
+			medium_robots
+			heavy_robots
+			super_heavy_robots
+		}
+		folder = {
+			name = robotics_folder
+			position = { x = 0 y = 0 }
+		}
+		path = {
+			leads_to_tech = handy
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = protectron
+			research_cost_coeff = 1
+		}
+	}
+	protectron = {
+		enable_equipments = {
+			protectron_equipment
+		}
+	
+		path = {
+			leads_to_tech = sentrybot
+			research_cost_coeff = 1
+		}
+	
+		path = {
+			leads_to_tech = securitron
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = gutsy
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		folder = {
+			name = robotics_folder
+			position = { x = -3 y = 2 }
+		}
+		
+		sub_technologies = {
+			protectron_builder
+			protectron_guard
+			protectron_medic
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			robotics_tech
+			military_robots
+			cat_light_robots
+		}
+	}	
+
+	sentrybot = {
+		enable_equipments = {
+			sentrybot_equipment
+		}	
+		research_cost = 2
+		folder = {
+			name = robotics_folder
+			position = { x = -6 y = 4 }
+		}
+		path = {
+			leads_to_tech = super_heavy_robots
+			research_cost_coeff = 1
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			robotics_tech
+			military_robots
+			cat_heavy_robots
+		}
+	}
+
+	super_heavy_robots = {
+		enable_equipments = {
+			super_heavy_robot_equipment
+		}
+		research_cost = 4
+		folder = {
+			name = robotics_folder
+			position = { x = -6 y = 10 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			robotics_tech
+			military_robots
+			cat_super_heavy_robots
+		}
+	}
+	
+	protectron_medic = {
+		field_hospital = {
+			casualty_trickleback = 0.05
+			experience_loss_factor = -0.05
+		}
+		
+		research_cost = 0.5
+		start_year = 1934
+		
+		categories = {
+			robotics_tech
+			civillian_robots
+		}
+	}
+	
+	protectron_builder = {
+		production_speed_infrastructure_factor = 0.2
+		
+		research_cost = 0.5
+		start_year = 1934
+		
+		categories = {
+			robotics_tech
+			civillian_robots
+		}
+	}
+	
+	protectron_guard = {
+		enemy_partisan_effect = -0.2
+		
+		research_cost = 0.5
+		
+		categories = {
+			robotics_tech
+			civillian_robots
+		}
+	}
+
+	securitron = {
+
+		enable_equipments = {
+			securitron_equipment
+		}
+		
+		research_cost = 2
+		
+		folder = {
+			name = robotics_folder
+			position = { x = -3 y = 4 }
+		}
+		
+		sub_technologies = {
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			robotics_tech
+			military_robots
+			cat_medium_robots
+		}
+	}
+	
+	gutsy = {
+		enable_equipments = {
+			gutsy_equipment
+		}
+	
+		research_cost = 2
+		
+		folder = {
+			name = robotics_folder
+			position = { x = 0 y = 4 }
+		}
+		path = {
+			leads_to_tech = eyebot
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = assaultron
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = cyberdogs
+			research_cost_coeff = 1
+		}
+		categories = {
+			robotics_tech
+			military_robots
+			cat_light_robots
+		}
+	}
+	assaultron = {
+		enable_equipments = {
+			assaultron_equipment
+		}
+	
+		research_cost = 2
+		
+		folder = {
+			name = robotics_folder
+			position = { x = -2 y = 6 }
+		}
+		
+		categories = {
+			robotics_tech
+			military_robots
+			cat_medium_robots
+		}
+	}
+	cyberdogs = {
+		enable_equipments = {
+			cyberdogs_equipment
+		}
+		enable_subunits = {
+			dog_support
+		}
+		research_cost = 2
+		folder = {
+			name = robotics_folder
+			position = { x = 2 y = 6 }
+		}
+		path = {
+			leads_to_tech = robobrain
+			research_cost_coeff = 1
+		}
+		categories = {
+			robotics_tech
+			military_robots
+			cat_light_robots
+		}
+	}
+	handy = {
+		production_speed_buildings_factor = 0.10
+		research_cost = 2
+		folder = {
+			name = robotics_folder
+			position = { x = 6 y = 4 }
+		}
+		path = {
+			leads_to_tech = eyebot
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = robobrain
+			research_cost_coeff = 1
+		}
+		categories = {
+			robotics_tech
+			civillian_robots
+		}
+	}
+	eyebot = {
+		recon = { 
+			recon = 2
+		} 
+		research_cost = 2
+		folder = {
+			name = robotics_folder
+			position = { x = 3 y = 4 }
+		}
+		categories = {
+			robotics_tech
+			military_robots
+			cat_light_robots
+		}
+	}
+	robobrain = {
+		field_hospital = {
+			experience_loss_factor = -0.1
+		}
+		research_cost = 3
+		folder = {
+			name = robotics_folder
+			position = { x = 6 y = 8 }
+		}
+		path = {
+			leads_to_tech = ai_mainframe
+			research_cost_coeff = 1
+		}
+		categories = {
+			robotics_tech
+			civillian_robots
+			ai_robotics
+		}
+	}
+	ai_mainframe = {
+		planning_speed = 0.2
+		research_time_factor = -0.1
+		research_cost = 3
+		folder = {
+			name = robotics_folder
+			position = { x = 6 y = 10 }
+		}
+		categories = {
+			robotics_tech
+			civillian_robots
+			ai_robotics
+		}
+	}
+}

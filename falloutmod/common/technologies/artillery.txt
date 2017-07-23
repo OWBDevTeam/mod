@@ -1,0 +1,376 @@
+technologies = {
+
+	explosives = {
+		category_all_infantry = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			fort = {
+				attack = 0.10
+			}
+		}
+		path = {
+			leads_to_tech = grenades
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = artillery_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		categories = {
+			artillery
+		}
+	}
+
+	grenades = {
+		category_all_infantry = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			urban = {
+				attack = 0.10
+			}
+		}
+
+		path = {
+			leads_to_tech = siege_art
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = field_support_art
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		folder = {
+			name = artillery_folder
+			position = { x = 0 y = 2 }
+		}
+		
+		categories = {
+			artillery
+		}
+	}
+
+	siege_art = {
+		path = {
+			leads_to_tech = siege_art2
+			research_cost_coeff = 1
+		}
+		enable_subunits = {
+			artillery
+		}
+		enable_equipments = {
+			artillery_equipment_1
+		}
+
+		research_cost = 1.5
+		
+		folder = {
+			name = artillery_folder
+			position = { x = 1 y = 6 }
+		}
+		
+		categories = {
+			artillery
+		}
+	}
+
+	siege_art2 = {
+		enable_subunits = {
+			artillery
+		}
+		enable_equipments = {
+			artillery_equipment_2
+		}
+
+		research_cost = 1.5
+		
+		folder = {
+			name = artillery_folder
+			position = { x = 1 y = 14 }
+		}
+		
+		categories = {
+			artillery
+		}
+	}
+
+	field_support_art = {
+		path = {
+			leads_to_tech = field_support_art2
+			research_cost_coeff = 1
+		}
+		enable_subunits = {
+			explosive_supp
+		}
+		enable_equipments = {
+			explosive_equipment_1
+		}
+		research_cost = 1.5
+		
+		folder = {
+			name = artillery_folder
+			position = { x = -1 y = 6 }
+		}
+		
+		categories = {
+			artillery
+		}
+	}
+
+	field_support_art2 = {
+		enable_equipments = {
+			explosive_equipment_2
+		}
+		research_cost = 1.5
+		
+		folder = {
+			name = artillery_folder
+			position = { x = -1 y = 14 }
+		}
+		
+		categories = {
+			artillery
+		}
+	}
+
+	bikes = {
+		path = {
+			leads_to_tech = bikes2
+			research_cost_coeff = 1
+		}
+		enable_subunits = {
+			bikers_support
+			bikers
+		}
+		enable_equipments = {
+			bikes_equipment_1
+		}
+		research_cost = 1.5
+		
+		folder = {
+			name = artillery_folder
+			position = { x = 0 y = 1 }
+		}
+		
+		categories = {
+			artillery
+		}
+	}
+
+	bikes2 = {
+		enable_equipments = {
+			bikes_equipment_2
+		}
+		research_cost = 1.5
+		
+		folder = {
+			name = artillery_folder
+			position = { x = 0 y = 6 }
+		}
+		
+		categories = {
+			artillery
+		}
+	}
+
+	motorised_infantry = {
+
+		enable_subunits = {
+			motorized_support
+		}
+
+		enable_equipments = {
+			motorized_equipment_1
+		}
+
+		path = {
+			leads_to_tech = apc
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = motorised_infantry2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 1936
+		folder = {
+			name = artillery_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		folder = {
+			name = support_folder
+			position = { x = 7 y = 9 }
+		}
+		
+		categories = {
+			motorized_equipment
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	motorised_infantry2 = {
+
+		enable_equipments = {
+			motorized_equipment_2
+		}
+
+		research_cost = 2
+		start_year = 1936
+		folder = {
+			name = artillery_folder
+			position = { x = 0 y = 4 }
+		}
+		
+		categories = {
+			motorized_equipment
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+		
+	apc = {
+
+		enable_equipments = {
+			mechanized_equipment_1
+		}
+		
+		path = {
+			leads_to_tech = apc2
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = tanks
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			being_civilized = 1
+		}
+
+		research_cost = 2
+		start_year = 1941
+		folder = {
+			name = artillery_folder
+			position = { x = 2 y = 4 }
+		}
+		
+		categories = {
+			motorized_equipment
+			infantry_tech
+			cat_mechanized_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	apc2 = {
+
+		enable_equipments = {
+			mechanized_equipment_2
+		}
+		
+		dependencies = {
+			being_advanced = 1
+		}
+
+		research_cost = 2
+		start_year = 1943
+		folder = {
+			name = artillery_folder
+			position = { x = 2 y = 8 }
+		}
+		
+		categories = {
+			motorized_equipment
+			infantry_tech
+			cat_mechanized_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	tanks = {
+
+		enable_equipments = {
+			tank_equipment_1
+		}
+		
+		path = {
+			leads_to_tech = tanks2
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = tanks
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			being_advanced = 1
+		}
+
+		research_cost = 2
+		start_year = 1941
+		folder = {
+			name = artillery_folder
+			position = { x = 4 y = 4 }
+		}
+		
+		categories = {
+			motorized_equipment
+			infantry_tech
+			cat_mechanized_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	tanks2 = {
+
+		enable_equipments = {
+			tank_equipment_2
+		}
+		
+		dependencies = {
+			being_advanced = 1
+		}
+
+		research_cost = 2
+		start_year = 1941
+		folder = {
+			name = artillery_folder
+			position = { x = 4 y = 8 }
+		}
+		
+		categories = {
+			motorized_equipment
+			infantry_tech
+			cat_mechanized_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
