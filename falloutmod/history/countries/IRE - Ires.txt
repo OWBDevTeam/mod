@@ -7,7 +7,7 @@ infantry_weapons = 1
 set_politics = {
 parties = {
 people = {
- popularity = 0 
+ popularity = 100 
 }
 elites = {
  popularity = 0 
@@ -16,21 +16,40 @@ intellectuals = {
  popularity = 0 
 }
 ruler = {
- popularity = 100 
+ popularity = 0
 }
 }
-		ruling_party = ruler
+		ruling_party = people
 		elections_allowed = yes
 }
 add_ideas = {
 }
 create_country_leader  = {
-name = "Eddie"
-desc = "Eddie_DESC"
-picture = "Portrait_Eddie.dds"
+name = "Father Patrick"
+desc = "IRE_Leader_DESC"
+picture = "Portrait_IRE_Leader.dds"
 expire = "3000.1.1"
-ideology =militarist_oligarchy
+ideology = commune
 traits = {
+}
+}
+
+create_field_marshal = {
+name = "Pastor Michaels"
+portrait_path = "gfx/leaders/IRE/Portrait_IRE_General_1.dds"
+skill =3
+traits = {
+defensive_doctrine
+}
+}
+
+create_corps_commander = {
+name = "Pastor Glynn"
+portrait_path = "gfx/leaders/IRE/Portrait_IRE_General_2.dds"
+skill =4
+traits = {
+commando
+invader
 }
 }
 
