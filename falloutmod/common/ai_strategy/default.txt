@@ -29,6 +29,21 @@ DEFAULT_template_design = {
 	}
 }
 
+default_stockpile_management = {
+	enable = {
+		num_divisions > 150
+	}
+
+	abort = {
+		num_divisions < 130
+	}
+
+	ai_strategy = {
+		type = equipment_stockpile
+		value = 35 # double base stockpile #from 25 to 35
+	}
+}
+
 default_area_priority = {
 	enable = {
 		always = yes
@@ -82,4 +97,25 @@ default_area_priority = {
 		value = 80
 	}
 
+}
+
+save_admiral_pp_for_later = {
+	enable = {
+		has_war = no
+		threat < 0.3
+		has_political_power < 200		
+	}
+	abort = {
+		OR = {
+			has_war = yes	
+			threat > 0.3
+			has_political_power > 200
+		}
+	}
+
+	ai_strategy = { # dont burn PP on admirals (can still get free ones)
+		type = pp_spend_priority
+		id = admiral
+		value = -100
+	}
 }
