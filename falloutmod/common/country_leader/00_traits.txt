@@ -31,5 +31,160 @@ leader_traits = {
 			factor = 1
 		}
 	}
+	
+	warmonger = {
+		random = no
+		ai_focus_aggressive_factor = 0.6
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	stout_defender = { # This particular trait will make the AI heavily prioritize defensive warfare, rarely, if ever, attacking out of fortified locations
+		random = no
+		ai_focus_defense_factor = 0.5
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+		popular_figurehead = {
+		sprite = 13
+		unity_factor = 0.15 
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#####################################
+	# RELATIONS STRATEGY TRAITS /Mechano#
+	#####################################
+	
+	dislikes_legion = {
+		random = no
+		ai_strategy = {
+			type = antagonize
+			id = "CES"			
+			value = 200
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#########################
+	# RANDOM TRAITS /Mechano#
+	#########################
+	
+	political_workhorse = {
+		random = yes
+		sprite = 13
+		political_power_factor = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	cruel_tyrant = {
+		sprite = 13
+		enemy_partisan_effect = -0.25
+		foreign_subversive_activites = -0.3
+		non_core_manpower = 0.02
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	well_liked_leader = {
+		random = yes
+		sprite = 13
+		opinion_gain_monthly_factor = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	backstabber = {
+		sprite = 13
+		political_power_factor = 0.05
+		drift_defence_factor = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	expert_negotiator = {
+		random = yes
+		sprite = 13
+		trade_opinion_factor = 0.20
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ideological_crusader = {
+		random = yes
+		sprite = 13
+		opinion_gain_monthly_same_ideology_factor = 1.0
+		
+		ai_will_do = {
+			factor = 0.2
+		}
+	}
+	
+	fortifications_expert = {
+		sprite = 10
+		random = yes
+		production_speed_bunker_factor = 0.2
+		production_speed_coastal_bunker_factor = 0.2
+		production_speed_anti_air_building_factor = 0.2
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	war_industrialist = {
+		sprite = 10
+		random = yes
+		production_speed_arms_factory_factor = 0.1
+		production_speed_dockyard_factor = 0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	captain_of_industry = {
+		sprite = 10
+		random = yes
+		production_speed_industrial_complex_factor = 0.1
+		production_speed_infrastructure_factor = 0.1
+		production_speed_synthetic_refinery_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	armaments_organizer = {
+		sprite = 10
+		random = yes
+		conversion_cost_civ_to_mil_factor= -0.2
+		# civ_to_mil_industry_conversion_rate = -1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }
 	
