@@ -96,6 +96,31 @@ default_area_priority = {
 
 }
 
+default_garrison_production = {
+	enable = {
+		#NOT = { 
+		#	original_tag = GER 
+		#	original_tag = SOV
+		#	original_tag = USA
+		#	original_tag = CHI
+		#	original_tag = FRA
+		#	original_tag = JAP
+		#}
+		ai_wants_divisions >  12 #Massively decreasing the amount of paratroopers the AI wants
+		is_major = yes
+	}
+	abort = {
+		ai_wants_divisions > 5 #Massively decreasing the amount of paratroopers the AI wants
+		is_major = no
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 7
+	}
+}
+
 save_admiral_pp_for_later = {
 	enable = {
 		has_war = no
