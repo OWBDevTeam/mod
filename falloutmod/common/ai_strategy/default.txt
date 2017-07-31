@@ -1,7 +1,42 @@
-﻿default_unit_production = {
-	#enable = {
-	#	always = yes
-	#}
+# Scripted by Mechano
+
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+# contain
+# area_priority
+
+ai_army_building_minimum_puppet = { #Minimum Army Size Enforced
+	enable = {
+		has_army_size = { size < 10 }
+		has_war = no
+		is_subject = yes
+	}
+	abort = {
+		OR = {
+			NOT = {has_army_size = { size < 10 } }
+			has_war = yes
+		}
+	}
+	ai_strategy = {
+		type = build_army 
+		id = infantry
+		value = 10		
+	}
+}
+
+default_unit_production = {
+	enable = {
+		always = yes
+	}
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
@@ -11,7 +46,13 @@
 	ai_strategy = {
 		type = role_ratio
 		id = auxilliary
-		value = 5
+		value = 7
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = convoy
+		value = 15
 	}
 
 	ai_strategy = {
@@ -22,14 +63,18 @@
 }
 
 DEFAULT_template_design = {
-	#enable = {
-	#	always = yes		
-	#}
-	
+	enable = {
+		always = yes		
+	}
 	ai_strategy = {
 		type = template_prio
 		id = infantry
 		value = 60
+	}
+	ai_strategy = {
+		type = template_prio
+		id = auxilliary
+		value = 15
 	}
 }
 
@@ -49,14 +94,8 @@ default_stockpile_management = {
 }
 
 default_area_priority = {
-	#enable = {
-	#	always = yes
-	#}
-
-	ai_strategy = {
-		type = area_priority
-		id = europe
-		value = 100
+	enable = {
+		always = yes
 	}
 	
 	ai_strategy = {
@@ -64,44 +103,250 @@ default_area_priority = {
 		id = north_america
 		value = 100
 	}
-	
-	ai_strategy = {
-		type = area_priority
-		id = south_america
-		value = 50
-	}
-	
-	ai_strategy = {
-		type = area_priority
-		id = asia
-		value = 75
-	}
-	
-	ai_strategy = {
-		type = area_priority
-		id = middle_east
-		value = 50
-	}
-	
-	ai_strategy = {
-		type = area_priority
-		id = africa
-		value = -90
-	}
-	
-	ai_strategy = {
-		type = area_priority
-		id = pacific
-		value = 300
-	}
-	
-	ai_strategy = {
-		type = area_priority
-		id = oceania
-		value = 80
-	}
 
 }
+
+##########################
+# AI Diplomatic Strategy #
+##########################
+
+resist_legion_imperialism = {
+	enable = {
+		has_war = no
+		is_subject = no
+		country_exists = CES
+		any_country = { # if anyone who is not a major has a war with Caesar's Legion
+			AND = {
+				OR = {
+					NOT = {
+						is_major = yes
+					}
+					NOT = {
+					country_exists = NCR # if the NCR doesn't exist majors will also intervene
+					}
+				}
+				has_war_with = CES
+			}
+		}
+		AND = { 
+			NOT = { # allies of Caesar will not antagonize them
+				any_allied_country = {
+					tag = CES
+				}
+			}
+			OR = { # must be able to support them
+				AND = {
+					any_owned_state = {
+						is_coastal = yes
+					}
+					OR = {
+						is_in_faction = yes
+						is_faction_leader = yes
+						any_allied_country = {
+							is_faction_leader = yes
+						}
+					}
+				}
+				any_neighbor_country = { # if they neighbour Caesar or his allies
+						OR = {
+							tag = CES
+							any_allied_country = {
+								tag = CES
+							}
+						}
+					}
+				}
+			}
+		}
+	abort = {
+		NOT = { country_exists = CES } # Caesar must exist
+		has_war = yes
+		is_subject = yes
+		NOT = { # if they no longer meet the conditions
+			AND = { 
+				NOT = { # allies of Caesar will not antagonize them
+					any_allied_country = {
+						tag = CES
+					}
+				}
+				OR = { # must be able to support them
+					AND = {
+						any_owned_state = {
+							is_coastal = yes
+						}
+						OR = {
+							is_in_faction = yes
+							is_faction_leader = yes
+							any_allied_country = {
+								is_faction_leader = yes
+							}
+						}
+					}
+					any_neighbor_country = { # if they neighbour Caesar or his allies
+							OR = {
+								tag = CES
+								any_allied_country = {
+									tag = CES
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		ai_strategy = { # AI will hate Caesar's Legion
+			type = contain
+			id = "CES"
+			value = 100
+		}
+		ai_strategy = {
+			type = antagonize
+			id = "CES"
+			value = 100
+		}
+		ai_strategy = {
+			type = conquer
+			id = "CES"
+			value = 100
+		}
+}
+
+resist_NCR_imperialism = {
+	enable = {
+		has_war = no
+		is_subject = no
+		country_exists = NCR
+		any_country = { # if anyone who is not a major has a war with Caesar's Legion
+			AND = {
+				OR = {
+					NOT = {
+						is_major = yes
+					}
+					NOT = {
+					country_exists = CES # if the New California Republic doesn't exist majors will also intervene
+					}
+				}
+				has_war_with = NCR
+			}
+		}
+		AND = { 
+			NOT = { # allies of Caesar will not antagonize them
+				any_allied_country = {
+					tag = NCR
+				}
+			}
+			OR = { # must be able to support them
+				AND = {
+					any_owned_state = {
+						is_coastal = yes
+					}
+					OR = {
+						is_in_faction = yes
+						is_faction_leader = yes
+						any_allied_country = {
+							is_faction_leader = yes
+						}
+					}
+				}
+				any_neighbor_country = { # if they neighbour the NCR or their allies
+						OR = {
+							tag = NCR
+							any_allied_country = {
+								tag = NCR
+							}
+						}
+					}
+				}
+			}
+	}
+	abort = {
+		NOT = { country_exists = NCR } # NCR must exist
+		has_war = yes
+		is_subject = yes
+		NOT = { # if they no longer meet the conditions
+			AND = { 
+				NOT = { # allies of the NCR will not antagonize them
+					any_allied_country = {
+						tag = NCR
+					}
+				}
+				OR = { # must be able to support them
+					AND = {
+						any_owned_state = {
+							is_coastal = yes
+						}
+						OR = {
+							is_in_faction = yes
+							is_faction_leader = yes
+							any_allied_country = {
+								is_faction_leader = yes
+							}
+						}
+					}
+					any_neighbor_country = { # if they neighbour the NCR or their allies
+							OR = {
+								tag = NCR
+								any_allied_country = {
+									tag = NCR
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		ai_strategy = { # AI will hate the NCR
+			type = contain
+			id = "NCR"
+			value = 100
+		}
+		ai_strategy = { 
+			type = antagonize
+			id = "NCR"
+			value = 100
+		}
+		ai_strategy = {
+			type = conquer
+			id = "NCR"
+			value = 100
+		}
+}
+
+washington_brotherhood_conquer_issaquah = {
+	enable = {
+		country_exists = WBH
+		country_exists = ISN
+		original_tag = WBH
+		WBH = {
+				has_war = no
+				is_subject = no
+			}
+		ISN = {
+			is_subject = no
+		}
+	}
+	abort = {
+		NOT = { country_exists = WBH }
+		NOT = { country_exists = ISN }
+		NOT = {
+			AND = {
+				WBH = {
+					has_war = no
+					is_subject = no
+				}
+				ISN = {
+					is_subject = no
+				}
+			}
+		}
+	}
+	ai_strategy = {
+	type = conquer
+	id = "ISN"
+	value = 600
+	}
+}
+
 
 default_garrison_production = {
 	enable = {
@@ -127,7 +372,6 @@ default_garrison_production = {
 		value = 7
 	}
 }
-
 save_admiral_pp_for_later = {
 	enable = {
 		has_war = no
