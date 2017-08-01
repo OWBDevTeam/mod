@@ -1,7 +1,9 @@
 NDefines.NGame.START_DATE = "2265.1.1.12"
 NDefines.NGame.END_DATE = "2400.1.1.1"
-NDefines.NAI.GENERATE_WARGOAL_THREAT_BASELINE = 0.6
+NDefines.NDiplomacy.VOLUNTEERS_DIVISIONS_REQUIRED = 8 		-- Vanilla is 30
+NDefines.NAI.GENERATE_WARGOAL_THREAT_BASELINE = 0.0
 NDefines.NAI.DIPLOMACY_SEND_MAX_FACTION = 0.5
+NDefines.NDiplomacy.TENSION_TIME_SCALE_START_DATE = "2265.1.1.12"	-- Starting at this date, the tension values will be scaled down (will be equal to 1 before that)
 NDefines.NAI.FALLBACK_LOSING_FACTOR = 0.0 					                    -- The lower this number  the longer the AI will hold the line before sending them to the fallback line
 NDefines.NAI.PLAN_FACTION_STRONG_TO_EXECUTE = 0.65 --0.80	0.60		        -- % or more of units in an order to consider ececuting the plan
 NDefines.NAI.ORG_UNIT_STRONG = 2 --0.5	 --0.75		0.9				            -- Organization % for unit to be considered strong
@@ -50,5 +52,13 @@ NDefines.NAI.DIPLOMACY_IMPROVE_RELATION_COST_FACTOR = 7.0                       
 
 --NDefines.NAI.DIPLOMACY_SEND_EXPEDITIONARY_INDUSTRY_FACTOR = 100               -- Weight when counting industry (will be added to military strength)
 --NDefines.NAI.DIPLOMACY_SEND_EXPEDITIONARY_BASE = 200 --7                      -- Multiplied with relative strength factor to get result (if other is twice as "strong" the result with 25 would be 50)
-NDefines.NAI.GENERATE_WARGOAL_THREAT_BASELINE = 0.0 -- 0.6
-NDefines.NAI.DIPLOMACY_SEND_MAX_FACTION = 0.5
+NDefines.NAI.FORCE_FACTOR_AGAINST_EXTRA_MINOR = 0.4			-- AI considers generating wargoals against minors below this % of force compared to themselves to get at a bigger enemy.
+NDefines.NAI.MAX_EXTRA_WARGOAL_GENERATION = 2				-- AI may want to generate wargoals against weak minors to get at larger enemy, but never more that this at any given time.
+NDefines.NAI.WARGOAL_GENERATION_STRENGTH_FACTOR = 1.00	-- Desire to generate wargoal effected negatevely if actor strength is less than this factor of target strength
+NDefines.NAI.DECLARE_WAR_RELATIVE_FORCE_FACTOR = 0.2	-- Weight of relative force between nations that consider going to war
+NDefines.NAI.DECLARE_WAR_NOT_NEIGHBOR_FACTOR = 0.25		-- Multiplier applied before force factor if country is not neighbor with the one it is considering going to war
+NDefines.NAI.FASCISTS_ANTAGONIZE_FASCISTS = 100
+NDefines.NAI.FASCISTS_ANTAGONIZE_DEMOCRACIES = 170
+NDefines.NAI.FASCISTS_ANTAGONIZE_COMMUNISTS = 170
+NDefines.NAI.MIN_ANTAGONIZE_FOR_WARGOAL_JUSTIFICATION = -1000	-- AI countries will not fabricate claims against countries with an antagonization value lower than this.
+NDefines.NDiplomacy.TENSION_TIME_SCALE_MONTHLY_FACTOR = 100	-- Timed tension scale will be modified by this amount starting with TENSION_TIME_SCALE_START_DATE
