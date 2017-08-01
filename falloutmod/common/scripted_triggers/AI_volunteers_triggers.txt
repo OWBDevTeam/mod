@@ -1,0 +1,27 @@
+elgible_volunteers_sender = {
+	NOT = {
+	surrender_progress > 0.1
+	}
+	has_war = no
+}
+
+eligible_volunteers_receiver = {
+	NOT = {
+	has_war_with = ROOT
+	}
+	has_war = yes
+	AND = {
+		OR = {
+		has_war_with = CES
+		has_war_with = NCR
+		}
+		OR = { #why should it send volunteers?
+			ROOT = { has_opinion = { target = PREV value > -20 } } # do not hate each other
+			is_in_faction_with = ROOT #faction members
+
+			AND = { has_government = intellectuals ROOT = { has_government = intellectuals } } #shared ideology
+			AND = { has_government = elites ROOT = { has_government = elites } }
+			AND = { has_government = people ROOT = { has_government = people } }
+		}
+	}
+}

@@ -1,0 +1,8 @@
+
+lend_lease_TWO = {
+	enable = { elgible_volunteers_sender = yes TWO = { eligible_volunteers_receiver = yes } }
+	abort = { OR = { NOT = { elgible_volunteers_sender = yes } TWO = { NOT = {  eligible_volunteers_receiver = yes } } } }
+	ai_strategy = { type = send_volunteers_desire id = "TWO" value = 200 }
+	ai_strategy = { type = support id = "TWO" value = 200 }
+	ai_strategy = { type = protect id = "TWO" value = 200 }
+}

@@ -62,3 +62,4 @@ NDefines.NAI.FASCISTS_ANTAGONIZE_DEMOCRACIES = 170
 NDefines.NAI.FASCISTS_ANTAGONIZE_COMMUNISTS = 170
 NDefines.NAI.MIN_ANTAGONIZE_FOR_WARGOAL_JUSTIFICATION = -1000	-- AI countries will not fabricate claims against countries with an antagonization value lower than this.
 NDefines.NDiplomacy.TENSION_TIME_SCALE_MONTHLY_FACTOR = 100	-- Timed tension scale will be modified by this amount starting with TENSION_TIME_SCALE_START_DATE
+NDefines.NDiplomacy.DIPLOMACY_ACCEPT_VOLUNTEERS_BASE = 400	-- Base value of volunteer acceptance (help is welcome)
