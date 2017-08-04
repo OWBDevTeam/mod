@@ -1,0 +1,59 @@
+﻿#######################
+# War Creation Events #
+#######################
+add_namespace = war_creation
+country_event = {
+	id = war_creation.1
+	title = war_creation_1.t
+	desc = war_creation.1.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	trigger = {
+	elgible_wargoal_sender = yes
+	}
+	option = {
+		name = war_creation.1.a
+		random_neighbor_country = {
+			limit = {
+			elgible_wargoal_receiver = yes
+			}
+			country_event = {days = 10 id = war_creation.2}
+		}
+	}
+	mean_time_to_happen = {
+	days = 1000
+	}
+}
+
+country_event = {
+	id = war_creation.2
+	title = war_creation_2.t
+	desc = war_creation.2.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	#trigger = {
+	#elgible_wargoal_receiver = yes
+	#}
+	option = {
+		name = war_creation.2.a
+		FROM = { country_event = {days = 2 id = war_creation.3}}
+	}
+	#mean_time_to_happen = {
+	#days = 1000
+	#}
+}
+
+country_event = {
+	id = war_creation.3
+	title = war_creation_3.t
+	desc = war_creation.3.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	option = {
+		name = war_creation.3.a
+		FROM = { create_wargoal = { type = annex_everything target = FROM}}
+	}
+	#mean_time_to_happen = {
+	#days = 1000
+	#}
+}
