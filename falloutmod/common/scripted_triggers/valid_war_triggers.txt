@@ -55,8 +55,6 @@ elgible_wargoal_receiver = {
 	}
 	is_protected_lore_faction = no
 	exists = yes
-	ROOT = {has_opinion = { target = PREV value < 30 }}
-	#has_army_manpower > 400
-	#is_in_faction = no
-	#has_capitulated = no
+	has_capitulated = no
+	ROOT = {has_opinion = { target = PREV value < 30 }} # will not start wars with countries they like
 }
