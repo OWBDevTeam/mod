@@ -36,7 +36,7 @@ NDefines.NAI.TRADEABLE_FACTORIES_FRACTION = 1
 --NDefines.NAI.PRODUCTION_MAX_PROGRESS_TTO_SWITCH_NAVAL = 1
 --NDefines.NAI.SHIPS_PRODUCTION_BASE_COST = 100000
 
-NDefines.NAI.DEPLOY_MIN_TRAINING_PEACE_FACTOR = 0.9		                        -- Required percentage of training (1.0 = 100%) for AI to deploy unit in peacetime
+NDefines.NAI.DEPLOY_MIN_TRAINING_PEACE_FACTOR = 1.0		                        -- Required percentage of training (1.0 = 100%) for AI to deploy unit in peacetime
 NDefines.NAI.DEPLOY_MIN_TRAINING_WAR_FACTOR = 0.25		                        -- Required percentage of training (1.0 = 100%) for AI to deploy unit in wartime
 --NDefines.NAI.DEPLOY_MIN_EQUIPMENT_PEACE_FACTOR = 1	                        -- Required percentage of equipment (1.0 = 100%) for AI to deploy unit in peacetime
 --NDefines.NAI.DEPLOY_MIN_EQUIPMENT_WAR_FACTOR = 1		                        -- Required percentage of equipment (1.0 = 100%) for AI to deploy unit in wartime
@@ -55,7 +55,7 @@ NDefines.NAI.DIPLOMACY_IMPROVE_RELATION_COST_FACTOR = 7.0                       
 NDefines.NAI.FORCE_FACTOR_AGAINST_EXTRA_MINOR = 0.4			-- AI considers generating wargoals against minors below this % of force compared to themselves to get at a bigger enemy.
 NDefines.NAI.MAX_EXTRA_WARGOAL_GENERATION = 2				-- AI may want to generate wargoals against weak minors to get at larger enemy, but never more that this at any given time.
 NDefines.NAI.WARGOAL_GENERATION_STRENGTH_FACTOR = 1.5	-- Desire to generate wargoal effected negatevely if actor strength is less than this factor of target strength
-NDefines.NAI.DECLARE_WAR_RELATIVE_FORCE_FACTOR = 0.2	-- Weight of relative force between nations that consider going to war
+NDefines.NAI.DECLARE_WAR_RELATIVE_FORCE_FACTOR = 0.4	-- Weight of relative force between nations that consider going to war
 NDefines.NAI.DECLARE_WAR_NOT_NEIGHBOR_FACTOR = 0.25		-- Multiplier applied before force factor if country is not neighbor with the one it is considering going to war
 NDefines.NAI.FASCISTS_ANTAGONIZE_FASCISTS = 100
 NDefines.NAI.FASCISTS_ANTAGONIZE_DEMOCRACIES = 170

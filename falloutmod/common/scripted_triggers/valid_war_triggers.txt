@@ -1,50 +1,61 @@
 # Scripted by Mechano for use in determining valid targets for sporradic conflicts in events/Warcreation
 is_protected_lore_faction = {
 	OR = {
-	tag = CES
-	tag = NCR
-	tag = BOS
-	tag = VEG
-	tag = DES
-	tag = NEW
-	tag = KHA
-	tag = WHT
-	tag = SOR
-	tag = DEA
-	tag = FIE
-	tag = VIP
-	tag = DAM
-	tag = MOJ
-	tag = ASH
-	tag = HOP
-	tag = NCN
-	has_country_flag = random_war_protected
+		tag = CES
+		tag = NCR
+		tag = BOS
+		tag = VEG
+		tag = DES
+		tag = NEW
+		tag = KHA
+		tag = WHT
+		tag = SOR
+		tag = DEA
+		tag = FIE
+		tag = VIP
+		tag = DAM
+		tag = MOJ
+		tag = ASH
+		tag = HOP
+		tag = NCN
+		has_country_flag = random_war_protected
 	}
 }
 
 elgible_wargoal_sender = {
 	NOT = {
-	surrender_progress > 0.1
+		surrender_progress > 0.1
 	}
 	is_ai = yes
 	has_war = no
 	is_protected_lore_faction = no
 	is_in_faction = no
 	has_capitulated = no
-	NOT = {
-		every_neighbor_country = {
-			any_owned_state = {
-				is_claimed_by = ROOT
-			}
-		}
-	}
+	exists = yes
 }
 elgible_wargoal_receiver = {
-	NOT = {
-	surrender_progress > 0.1
+	OR = {
+		has_war = no
+		AND = {
+				is_ai = no # is meaner to players, so if they are fighting an offensive war and and winning they can still get a claim put on them
+				has_defensive_war = no
+				NOT = {
+					surrender_progress > 0.1
+				}
+		}
 	}
-	has_war = no
+	OR = {
+		NOT = { # people ideology will not start wars with each other unless they strongly hate them
+			AND = {
+				has_government = people
+				ROOT = { has_government = people }
+			}
+		}
+		ROOT = {has_opinion = { target = PREV value < 120 }}
+	}
 	is_protected_lore_faction = no
+	exists = yes
+	ROOT = {has_opinion = { target = PREV value < 30 }}
 	#has_army_manpower > 400
 	#is_in_faction = no
 	#has_capitulated = no
