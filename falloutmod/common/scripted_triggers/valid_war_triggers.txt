@@ -1,18 +1,47 @@
+# Scripted by Mechano for use in determining valid targets for sporradic conflicts in events/Warcreation
+is_protected_lore_faction = {
+	OR = {
+	tag = CES
+	tag = NCR
+	tag = BOS
+	tag = VEG
+	tag = DES
+	tag = NEW
+	tag = KHA
+	tag = WHT
+	tag = SOR
+	tag = DEA
+	tag = FIE
+	tag = VIP
+	tag = DAM
+	tag = MOJ
+	has_country_flag = random_war_protected
+	}
+}
+
 elgible_wargoal_sender = {
 	NOT = {
 	surrender_progress > 0.1
 	}
 	is_ai = yes
 	has_war = no
-	#has_army_manpower > 400
+	is_protected_lore_faction = no
 	is_in_faction = no
 	has_capitulated = no
+	NOT = {
+		every_neighbor_country = {
+			any_owned_state = {
+				is_claimed_by = ROOT
+			}
+		}
+	}
 }
 elgible_wargoal_receiver = {
 	NOT = {
 	surrender_progress > 0.1
 	}
 	has_war = no
+	is_protected_lore_faction = no
 	#has_army_manpower > 400
 	#is_in_faction = no
 	#has_capitulated = no

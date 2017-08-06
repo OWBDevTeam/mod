@@ -1,27 +1,32 @@
-﻿#######################
+#######################
 # War Creation Events #
 #######################
+# Scripted by Mechano
+#
+# These events exist for AI reasons, AI with claims will actually justify war and create conflict.
 add_namespace = war_creation
 country_event = {
 	id = war_creation.1
 	title = war_creation_1.t
 	desc = war_creation.1.d
 	picture = GFX_report_event_fascist_speech
-	is_triggered_only = yes
+	is_triggered_only = no
+	fire_only_once = no
 	trigger = {
-	elgible_wargoal_sender = yes
+		#date > 2265.1.6.12
+		elgible_wargoal_sender = yes
 	}
 	option = {
 		name = war_creation.1.a
 		random_neighbor_country = {
 			limit = {
-			elgible_wargoal_receiver = yes
+					elgible_wargoal_receiver = yes
 			}
-			country_event = {days = 10 id = war_creation.2}
+			country_event = {days = 1 id = war_creation.2}
 		}
 	}
 	mean_time_to_happen = {
-	days = 1000
+	days = 6500
 	}
 }
 
@@ -31,16 +36,10 @@ country_event = {
 	desc = war_creation.2.d
 	picture = GFX_report_event_fascist_speech
 	is_triggered_only = yes
-	#trigger = {
-	#elgible_wargoal_receiver = yes
-	#}
 	option = {
 		name = war_creation.2.a
 		FROM = { country_event = {days = 2 id = war_creation.3}}
 	}
-	#mean_time_to_happen = {
-	#days = 1000
-	#}
 }
 
 country_event = {
@@ -51,9 +50,28 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = war_creation.3.a
-		FROM = { create_wargoal = { type = annex_everything target = FROM}}
+		FROM = { country_event = {days = 2 id = war_creation.4}}
+		FROM = {
+			random_owned_state = {
+				limit = {
+					any_neighbor_state = {
+						is_owned_by = ROOT
+					}
+				}
+			add_claim_by = ROOT
+			}
+		}
 	}
-	#mean_time_to_happen = {
-	#days = 1000
-	#}
+}
+
+country_event = {
+	id = war_creation.4
+	title = war_creation_4.t
+	desc = war_creation.4.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	option = {
+		name = war_creation.4.a
+		#FROM = { create_wargoal = { type = take_claimed_state target = FROM}}
+	}
 }
