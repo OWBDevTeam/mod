@@ -1,0 +1,548 @@
+technologies = {
+	
+	@TribalColumn1 = 0
+	@TribalColumn2 = 4
+	@CivilizedColumn1 = 8
+	@CivilizedColumn2 = 12
+	@AdvancedColumn1 = 16
+	@AdvancedColumn2 = 20
+    @SpecialColumn1 = 24
+    @SpecialColumn2 = 28
+     
+    #-------------------------
+    # Infantry Training
+    #-------------------------
+    militia_training = {
+        infantry = {
+            soft_attack = 0.1
+        }
+		
+		path = {
+			leads_to_tech = warrior_training
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @TribalColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    warrior_training = {
+        infantry = {
+            soft_attack = 0.1
+        }
+		
+		path = {
+			leads_to_tech = infantry_training
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @TribalColumn2 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    infantry_training = {
+        infantry = {
+            soft_attack = 0.1
+        }
+		
+		path = {
+			leads_to_tech = advanced_infantry_training
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 1.5
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    advanced_infantry_training = {
+        infantry = {
+            soft_attack = 0.1
+        }
+		
+		research_cost = 1.5
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    #-------------------------
+    # Ranged Weaponry
+    #-------------------------
+    basic_weaponry = {  
+        infantry = {
+            soft_attack = 0.1
+        }
+        
+        path = {
+			leads_to_tech = basic_laser_weaponry
+			research_cost_coeff = 1
+		}
+        path = {
+			leads_to_tech = basic_ballistic_weaponry
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 1 y = @TribalColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    # Laser sub-route
+    basic_laser_weaponry = {
+        enable_equipments = {
+            laser_equipment_0
+        }
+        
+		path = {
+			leads_to_tech = improved_laser_weaponry
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @TribalColumn2 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    improved_laser_weaponry = {
+        enable_equipments = {
+            laser_equipment_1
+        }
+        
+		path = {
+			leads_to_tech = advanced_laser_weaponry
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    advanced_laser_weaponry = {
+        enable_equipments = {
+            laser_equipment_2
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @AdvancedColumn1  }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    # Ballistic sub-route
+    basic_ballistic_weaponry = {
+        enable_equipments = {
+            ballistic_equipment_0
+        }
+        
+		path = {
+			leads_to_tech = improved_ballistic_weaponry
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 2 y = @TribalColumn2 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    improved_ballistic_weaponry = {
+        enable_equipments = {
+            ballistic_equipment_1
+        }
+        
+		path = {
+			leads_to_tech = advanced_ballistic_weaponry
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 2 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    advanced_ballistic_weaponry = {
+        enable_equipments = {
+            ballistic_equipment_2
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 2 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    #-------------------------
+    # Melee Weaponry
+    #-------------------------
+    blunt_weaponry = {  
+        enable_equipments = {
+            melee_equipment_0
+        }
+        
+        path = {
+			leads_to_tech = slashing_weaponry
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @TribalColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    slashing_weaponry = {  
+        enable_equipments = {
+            melee_equipment_1
+        }
+        
+        path = {
+			leads_to_tech = powered_weaponry
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @TribalColumn2 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    powered_weaponry = {  
+        enable_equipments = {
+            melee_equipment_2
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    #-------------------------
+    # Power Armour
+    #-------------------------
+    power_armour = {  
+        enable_equipments = {
+            power_armor_0
+        }
+        
+        path = {
+			leads_to_tech = power_armour_t45d
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    power_armour_t45d = {  
+        enable_equipments = {
+            power_armor_1
+        }
+        
+        path = {
+			leads_to_tech = power_armour_t51b
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    power_armour_t51b = {  
+        enable_equipments = {
+            power_armor_2
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @AdvancedColumn2 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    #-------------------------
+    # Body Armour
+    #-------------------------
+    leather_armour = {
+        infantry = {
+            max_strength = 0.25
+        }
+		
+		path = {
+			leads_to_tech = metal_armour
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @TribalColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    metal_armour = {
+        infantry = {
+            max_strength = 0.25
+        }
+		
+		path = {
+			leads_to_tech = combat_armour
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @TribalColumn2 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    combat_armour = {
+        infantry = {
+            max_strength = 0.25
+        }
+		
+		path = {
+			leads_to_tech = advanced_combat_armour
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    advanced_combat_armour = {
+        infantry = {
+            max_strength = 0.25
+        }
+
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
