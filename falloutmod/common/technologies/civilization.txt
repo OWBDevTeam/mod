@@ -11,7 +11,11 @@ technologies = {
     @SpecialColumn2 = 32
     @SpecialColumn3 = 36
     
+    #---------------------------
+    # Civilization Status
+    #---------------------------
     tribal_civilization = {
+        
 		path = {
 			leads_to_tech = settled_civilization
 			research_cost_coeff = 1
@@ -34,6 +38,8 @@ technologies = {
 	}
     
     settled_civilization = {
+        unity_weekly = 0.05
+        
 		path = {
 			leads_to_tech = scientific_civilization
 			research_cost_coeff = 1
@@ -56,6 +62,8 @@ technologies = {
 	}
     
     scientific_civilization = {
+        unity_weekly = 0.05
+        
 		research_cost = 1.0
 		start_year = 2300
 		folder = {
@@ -72,4 +80,126 @@ technologies = {
 		}
 	}
     
+    #---------------------------
+    # Politics
+    #---------------------------
+    political_furor1 = {
+        political_power_factor = 0.05
+        
+		path = {
+			leads_to_tech = political_furor2
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_civilization_folder
+			position = { x = 0 y = @TribalColumn1 }
+		}
+		
+		categories = {
+			civilization_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    political_furor2 = {
+        political_power_factor = 0.05
+        
+		path = {
+			leads_to_tech = political_furor3
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_civilization_folder
+			position = { x = 0 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			civilization_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    political_furor3 = {
+        political_power_factor = 0.05
+        
+		path = {
+			leads_to_tech = political_furor4
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_civilization_folder
+			position = { x = 0 y = @CivilizedColumn2 }
+		}
+		
+		categories = {
+			civilization_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    political_furor4 = {
+        political_power_factor = 0.05
+        
+		path = {
+			leads_to_tech = political_furor5
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_civilization_folder
+			position = { x = 0 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			civilization_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    political_furor5 = {
+        political_power_factor = 0.05
+        
+		path = {
+			leads_to_tech = political_furor5
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_civilization_folder
+			position = { x = 0 y = @AdvancedColumn2 }
+		}
+		
+		categories = {
+			civilization_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }
