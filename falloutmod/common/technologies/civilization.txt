@@ -1,0 +1,75 @@
+technologies = {
+	
+	@TribalColumn1 = 0
+	@TribalColumn2 = 4
+	@CivilizedColumn1 = 8
+	@CivilizedColumn2 = 12
+	@AdvancedColumn1 = 16
+	@AdvancedColumn2 = 20
+    @AdvancedColumn3 = 24
+    @SpecialColumn1 = 28
+    @SpecialColumn2 = 32
+    @SpecialColumn3 = 36
+    
+    tribal_civilization = {
+		path = {
+			leads_to_tech = settled_civilization
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @TribalColumn1 }
+		}
+		
+		categories = {
+			civilization_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    settled_civilization = {
+		path = {
+			leads_to_tech = scientific_civilization
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 1.0
+		start_year = 2280
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			civilization_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    scientific_civilization = {
+		research_cost = 1.0
+		start_year = 2300
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			civilization_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+}

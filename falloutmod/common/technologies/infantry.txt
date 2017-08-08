@@ -6,15 +6,17 @@ technologies = {
 	@CivilizedColumn2 = 12
 	@AdvancedColumn1 = 16
 	@AdvancedColumn2 = 20
-    @SpecialColumn1 = 24
-    @SpecialColumn2 = 28
-     
+    @AdvancedColumn3 = 24
+    @SpecialColumn1 = 28
+    @SpecialColumn2 = 32
+    @SpecialColumn3 = 36
+    
     #-------------------------
     # Infantry Training
     #-------------------------
     militia_training = {
         infantry = {
-            soft_attack = 0.1
+            soft_attack = 0.05
         }
 		
 		path = {
@@ -40,7 +42,7 @@ technologies = {
     
     warrior_training = {
         infantry = {
-            soft_attack = 0.1
+            soft_attack = 0.05
         }
 		
 		path = {
@@ -66,7 +68,7 @@ technologies = {
     
     infantry_training = {
         infantry = {
-            soft_attack = 0.1
+            soft_attack = 0.05
         }
 		
 		path = {
@@ -92,7 +94,7 @@ technologies = {
     
     advanced_infantry_training = {
         infantry = {
-            soft_attack = 0.1
+            soft_attack = 0.05
         }
 		
 		research_cost = 1.5
@@ -318,6 +320,11 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+            
+            modifier = {
+                factor = 2
+                tag = CES
+            }
 		}
 	}
     
@@ -344,6 +351,11 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+            
+            modifier = {
+                factor = 2
+                tag = CES
+            }
 		}
 	}
     
@@ -365,6 +377,11 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+            
+            modifier = {
+                factor = 2
+                tag = CES
+            }
 		}
 	}
     
@@ -449,7 +466,7 @@ technologies = {
     #-------------------------
     leather_armour = {
         infantry = {
-            max_strength = 0.25
+            defense = 0.05
         }
 		
 		path = {
@@ -475,7 +492,7 @@ technologies = {
     
     metal_armour = {
         infantry = {
-            max_strength = 0.25
+            defense = 0.05
         }
 		
 		path = {
@@ -501,7 +518,7 @@ technologies = {
     
     combat_armour = {
         infantry = {
-            max_strength = 0.25
+            defense = 0.05
         }
 		
 		path = {
@@ -527,7 +544,7 @@ technologies = {
     
     advanced_combat_armour = {
         infantry = {
-            max_strength = 0.25
+            defense = 0.05
         }
 
 		research_cost = 1.0
@@ -535,6 +552,399 @@ technologies = {
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = 0 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    #-------------------------
+    # Special Forces
+    #-------------------------
+    # Currently the game isn't recognizing the spec_ops terrain modifiers correctly
+    
+    special_forces = {
+        enable_subunits = {
+			spec_ops
+		}
+		
+		path = {
+			leads_to_tech = hills_training
+			research_cost_coeff = 1
+		}	
+        path = {
+			leads_to_tech = plains_training
+			research_cost_coeff = 1
+		}
+        path = {
+			leads_to_tech = urban_training
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 3 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    # Hills sub-route
+    hills_training = {
+        spec_ops = {
+            hills = {
+                attack = 0.5
+                defence = 0.5
+                
+            }
+        }
+        
+		path = {
+			leads_to_tech = mountain_training
+			research_cost_coeff = 1
+		}	
+
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    mountain_training = {
+        spec_ops = {
+            mountain = {
+                attack = 0.5
+                defence = 0.5
+                
+            }
+        }
+        
+		path = {
+			leads_to_tech = cold_weather_training
+			research_cost_coeff = 1
+		}	
+
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @AdvancedColumn2 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    cold_weather_training = {
+
+
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @AdvancedColumn3 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    # Plains sub-route
+    plains_training = {
+        spec_ops = {
+            plains = {
+                attack = 0.5
+                defence = 0.5
+                
+            }
+        }
+        
+		path = {
+			leads_to_tech = desert_training
+			research_cost_coeff = 1
+		}	
+
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 2 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    desert_training = {
+        spec_ops = {
+            desert = {
+                attack = 0.5
+                defence = 0.5
+                
+            }
+        }
+        
+		path = {
+			leads_to_tech = hot_weather_training
+			research_cost_coeff = 1
+		}	
+
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 2 y = @AdvancedColumn2 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    hot_weather_training = {
+
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 2 y = @AdvancedColumn3 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    # Urban sub-route
+    urban_training = {
+        spec_ops = {
+            urban = {
+                attack = 0.5
+                defence = 0.5
+                
+            }
+        }
+        
+		path = {
+			leads_to_tech = marsh_training
+			research_cost_coeff = 1
+		}	
+
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 4 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    marsh_training = {
+        spec_ops = {
+            marsh = {
+                attack = 0.5
+                defence = 0.5
+                
+            }
+        }
+        
+		path = {
+			leads_to_tech = river_training
+			research_cost_coeff = 1
+		}	
+
+		
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 4 y = @AdvancedColumn2 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    river_training = {
+        spec_ops = {
+            river = {
+                attack = 0.5
+                defence = 0.5
+                
+            }
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 4 y = @AdvancedColumn3 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    #-------------------------
+    # Special
+    #-------------------------
+    gauss_weaponry = {
+        #allow_branch = {
+        #    is_advanced_nation = yes
+        #}
+        
+        enable_equipments = {
+            gauss_equipment
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @SpecialColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    tesla_weaponry = {
+        #allow_branch = {
+        #    is_advanced_nation = yes
+        #}
+        
+        enable_equipments = {
+            tesla_equipment
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @SpecialColumn2 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    plasma_weaponry = {
+        #allow_branch = {
+        #    is_advanced_nation = yes
+        #}
+        
+        enable_equipments = {
+            plasma_equipment
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @SpecialColumn3 }
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    super_mutant_melee_weapons = {
+        #allow_branch = {
+        #    
+        #}
+        
+        enable_equipments = {
+            super_mutant_melee_equipment
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @SpecialColumn1 }
 		}
 		
 		categories = {
