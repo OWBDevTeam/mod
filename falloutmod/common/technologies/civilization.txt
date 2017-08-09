@@ -12,6 +12,28 @@ technologies = {
     @SpecialColumn3 = 36
     
     #---------------------------
+    # Special 
+    #---------------------------
+    super_mutant_civilization = {
+		research_cost = 1.0
+		start_year = 2265
+		
+        # Applied via history only
+        allow = {
+			always = no
+		}
+		
+		categories = {
+			civilization_tech
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    
+    #---------------------------
     # Civilization Status
     #---------------------------
     tribal_civilization = {
@@ -25,7 +47,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_civilization_folder
-			position = { x = 0 y = @TribalColumn1 }
+			position = { x = 0 y = 0 }
 		}
 		
 		categories = {
@@ -49,7 +71,7 @@ technologies = {
 		start_year = 2280
 		folder = {
 			name = fallout_civilization_folder
-			position = { x = 0 y = @CivilizedColumn1 }
+			position = { x = 0 y = 4 }
 		}
 		
 		categories = {
@@ -68,7 +90,7 @@ technologies = {
 		start_year = 2300
 		folder = {
 			name = fallout_civilization_folder
-			position = { x = 0 y = @AdvancedColumn1 }
+			position = { x = 0 y = 12 }
 		}
 		
 		categories = {
@@ -77,27 +99,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-		}
-	}
-    
-    super_mutant_civilization = {
-        allow_branch = {
-            has_country_flag = super_mutant_nation
-        }
-        
-		research_cost = 1.0
-		start_year = 2265
-		folder = {
-			name = fallout_civilization_folder
-			position = { x = 0 y = @SpecialColumn1 }
-		}
-		
-		categories = {
-			civilization_tech
-		}
-		
-		ai_will_do = {
-			factor = 0
 		}
 	}
     
@@ -116,7 +117,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_civilization_folder
-			position = { x = 0 y = @TribalColumn1 }
+			position = { x = 0 y = 0 }
 		}
 		
 		categories = {
@@ -144,7 +145,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_civilization_folder
-			position = { x = 0 y = @CivilizedColumn1 }
+			position = { x = 0 y = 4 }
 		}
 		
 		categories = {
@@ -172,7 +173,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_civilization_folder
-			position = { x = 0 y = @CivilizedColumn2 }
+			position = { x = 0 y = 8 }
 		}
 		
 		categories = {
@@ -200,7 +201,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_civilization_folder
-			position = { x = 0 y = @AdvancedColumn1 }
+			position = { x = 0 y = 12 }
 		}
 		
 		categories = {
@@ -228,7 +229,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_civilization_folder
-			position = { x = 0 y = @AdvancedColumn2 }
+			position = { x = 0 y = 16 }
 		}
 		
 		categories = {

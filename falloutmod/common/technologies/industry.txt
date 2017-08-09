@@ -876,4 +876,760 @@ technologies = {
 			factor = 1
 		}
 	}
+    
+    #-------------------------
+    # Water
+    #-------------------------
+    basic_well_pump = {
+        path = {
+			leads_to_tech = advanced_well_pump
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 14 y = @TribalColumn1 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    advanced_well_pump = {
+        path = {
+			leads_to_tech = basic_aquifer
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 14 y = @TribalColumn2 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    basic_aquifer = {
+        path = {
+			leads_to_tech = advanced_aquifer
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 14 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    advanced_aquifer = {
+        path = {
+			leads_to_tech = purified_aquifer
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 14 y = @CivilizedColumn2 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    purified_aquifer = {
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 14 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    #-------------------------
+    # Electricity
+    #-------------------------
+    basic_generator = {
+        path = {
+			leads_to_tech = advanced_generator
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 16 y = @TribalColumn1 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    advanced_generator = {
+        path = {
+			leads_to_tech = basic_power_plant
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 16 y = @TribalColumn2 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    basic_power_plant = {
+        path = {
+			leads_to_tech = advanced_power_plant
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 16 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    advanced_power_plant = {
+        path = {
+			leads_to_tech = nuclear_reactor
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 16 y = @CivilizedColumn2 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    nuclear_reactor = {
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 16 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    #-------------------------
+    # Metal
+    #-------------------------
+    basic_smeltery = {
+        path = {
+			leads_to_tech = advanced_smeltery
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 18 y = @TribalColumn1 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    advanced_smeltery = {
+        path = {
+			leads_to_tech = basic_foundry
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 18 y = @TribalColumn2 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    basic_foundry = {
+        path = {
+			leads_to_tech = advanced_foundry
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 18 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    advanced_foundry = {
+        path = {
+			leads_to_tech = autonomous_foundry
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 18 y = @CivilizedColumn2 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    autonomous_foundry = {
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 18 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    #-------------------------
+    # Fuel
+    #-------------------------
+    basic_oil_well = {
+        path = {
+			leads_to_tech = advanced_oil_well
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 20 y = @TribalColumn1 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    advanced_oil_well = {
+        path = {
+			leads_to_tech = basic_oil_refinery
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 20 y = @TribalColumn2 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    basic_oil_refinery = {
+        path = {
+			leads_to_tech = advanced_oil_refinery
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 20 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    advanced_oil_refinery = {
+        path = {
+			leads_to_tech = autonomous_refinery
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 20 y = @CivilizedColumn2 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    autonomous_refinery = {
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 20 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    #-------------------------
+    # Electronics
+    #-------------------------
+    basic_laboratory = {
+        path = {
+			leads_to_tech = advanced_laboratory
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 22 y = @TribalColumn1 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    advanced_laboratory = {
+        path = {
+			leads_to_tech = basic_fabrication_centre
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 22 y = @TribalColumn2 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    basic_fabrication_centre = {
+        path = {
+			leads_to_tech = advanced_fabrication_centre
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 22 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    advanced_fabrication_centre = {
+        path = {
+			leads_to_tech = autonomous_fabrication_centre
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 22 y = @CivilizedColumn2 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    autonomous_fabrication_centre = {
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 22 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    #-------------------------
+    # Food
+    #-------------------------
+    basic_farmstead = {
+        path = {
+			leads_to_tech = advanced_farmstead
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 24 y = @TribalColumn1 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    advanced_farmstead = {
+        path = {
+			leads_to_tech = basic_hydroponics
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 24 y = @TribalColumn2 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    basic_hydroponics = {
+        path = {
+			leads_to_tech = advanced_hydroponics
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 24 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    advanced_hydroponics = {
+        path = {
+			leads_to_tech = autonomous_hydroponics
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 24 y = @CivilizedColumn2 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    autonomous_hydroponics = {
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 24 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			industry
+            building_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }
