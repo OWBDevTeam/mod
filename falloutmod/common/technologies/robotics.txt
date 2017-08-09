@@ -1,0 +1,209 @@
+technologies = {
+	
+	@CivilizedColumn1 = 0
+	@CivilizedColumn2 = 4
+    @CivilizedColumn3 = 8
+	@AdvancedColumn1 = 12
+	@AdvancedColumn2 = 16
+    @AdvancedColumn3 = 18
+    @UniqueColumn1 = 22
+    @UniqueColumn2 = 26
+    @UniqueColumn3 = 30
+
+    #-------------------------------
+    # Robotics
+    #-------------------------------
+    robotic_programming = {
+		path = {
+			leads_to_tech = protectron
+			research_cost_coeff = 1
+		}
+        path = {
+			leads_to_tech = mr_handy
+			research_cost_coeff = 1
+		}
+		
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_robotics_folder
+			position = { x = 0 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			robotics_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    cyberdog = {
+
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_robotics_folder
+			position = { x = 4 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			robotics_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    protectron = {
+		path = {
+			leads_to_tech = mr_gutsy
+			research_cost_coeff = 1
+		}
+        path = {
+			leads_to_tech = sentry_bot
+			research_cost_coeff = 1
+		}
+        path = {
+			leads_to_tech = securitron
+			research_cost_coeff = 1
+		}
+		
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_robotics_folder
+			position = { x = 0 y = @CivilizedColumn2 }
+		}
+		
+		categories = {
+			robotics_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    mr_gutsy = {
+    
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_robotics_folder
+			position = { x = 0 y = @CivilizedColumn3 }
+		}
+		
+		categories = {
+			robotics_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    mr_handy = {
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_robotics_folder
+			position = { x = 2 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			robotics_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    securitron = {
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_robotics_folder
+			position = { x = 6 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			robotics_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    sentry_bot = {
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_robotics_folder
+			position = { x = 8 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			robotics_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    robo_brain = {
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+
+        folder = {
+			name = fallout_robotics_folder
+			position = { x = 4 y = @AdvancedColumn1 }
+		}
+        
+		categories = {
+			robotics_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

@@ -1,0 +1,162 @@
+technologies = {
+	
+	@TribalColumn1 = 0
+	@TribalColumn2 = 4
+	@CivilizedColumn1 = 8
+	@CivilizedColumn2 = 12
+	@AdvancedColumn1 = 16
+	@AdvancedColumn2 = 20
+    
+    #-------------------------
+    # Agarian Industry
+    #-------------------------
+    organizaed_tato_farming = {
+
+        xor = { basic_forges }
+        
+		path = {
+			leads_to_tech = brahmin_milking
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 0 y = @TribalColumn1 }
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    brahmin_milking = {
+
+		path = {
+			leads_to_tech = sharecropper_farms
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 0 y = @TribalColumn2 }
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    sharecropper_farms = {
+
+		path = {
+			leads_to_tech = brahmin_herding_equipment
+			research_cost_coeff = 1
+		}
+
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 0 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    brahmin_herding_equipment = {
+
+		path = {
+			leads_to_tech = mechanized_agriculture
+			research_cost_coeff = 1
+		}
+
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 0 y = @CivilizedColumn2 }
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    mechanized_agriculture = {
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_industry_folder
+			position = { x = 0 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    #-------------------------
+    # Manufactories
+    #-------------------------
+    
+    #-------------------------
+    # Organisation
+    #-------------------------
+    
+    #-------------------------
+    # Extraction
+    #-------------------------
+    
+    #-------------------------
+    # Construction
+    #-------------------------
+    
+    #-------------------------
+    # Habitation
+    #-------------------------
+    
+    #-------------------------
+    # Fortification
+    #-------------------------
+    
+    
+}
