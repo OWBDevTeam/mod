@@ -7,9 +7,9 @@ technologies = {
 	@AdvancedColumn1 = 16
 	@AdvancedColumn2 = 20
     @AdvancedColumn3 = 24
-    @SpecialColumn1 = 28
-    @SpecialColumn2 = 32
-    @SpecialColumn3 = 36
+    @AdvancedColumn4 = 28
+    @AdvancedColumn5 = 32
+    @AdvancedColumn6 = 36
     
     #-------------------------
     # Infantry Training
@@ -124,9 +124,9 @@ technologies = {
     #-------------------------
     # Ranged Weaponry
     #-------------------------
-    basic_weaponry = {  
-        infantry = {
-            soft_attack = 0.1
+    standard_weaponry = {  
+        enable_equipments = {
+            infantry_equipment_1
         }
         
         path = {
@@ -174,6 +174,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            laser_weaponry_tech
 		}
 		
 		ai_will_do = {
@@ -204,6 +205,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            laser_weaponry_tech
 		}
 		
 		ai_will_do = {
@@ -229,6 +231,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            laser_weaponry_tech
 		}
 		
 		ai_will_do = {
@@ -256,6 +259,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            ballistic_weaponry_tech
 		}
 		
 		ai_will_do = {
@@ -286,6 +290,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            ballistic_weaponry_tech
 		}
 		
 		ai_will_do = {
@@ -311,6 +316,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            ballistic_weaponry_tech
 		}
 		
 		ai_will_do = {
@@ -340,6 +346,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            melee_weaponry_tech
 		}
 		
 		ai_will_do = {
@@ -371,6 +378,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            melee_weaponry_tech
 		}
 		
 		ai_will_do = {
@@ -401,6 +409,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            melee_weaponry_tech
 		}
 		
 		ai_will_do = {
@@ -417,9 +426,25 @@ technologies = {
     # Power Armour
     #-------------------------
     power_armour = {  
-        enable_equipments = {
-            power_armor_0
+        enable_subunits = {
+            power_armor
         }
+        
+        enable_equipments = {
+			power_armor_equipment_1
+		}
+        
+        on_research_complete = {
+			limit = {
+				NOT = {
+					has_template_containing_unit = power_armor
+				}
+			}
+			hidden_effect = {
+				load_oob = "unlock_power_armor"
+			}			
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
         
         path = {
 			leads_to_tech = power_armour_t45d
@@ -439,6 +464,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            power_armor_tech
 		}
 		
 		ai_will_do = {
@@ -448,13 +474,22 @@ technologies = {
     
     power_armour_t45d = {  
         enable_equipments = {
-            power_armor_1
-        }
+			power_armor_equipment_2
+		}
         
         path = {
-			leads_to_tech = power_armour_t51b
+			leads_to_tech = hardened_variant
 			research_cost_coeff = 1
 		}
+        
+        path = {
+			leads_to_tech = servo_motors
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            scientific_civilization = 1
+        }
         
 		research_cost = 1.0
 		start_year = 2265
@@ -465,6 +500,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            power_armor_tech
 		}
 		
 		ai_will_do = {
@@ -472,9 +508,20 @@ technologies = {
 		}
 	}
     
-    power_armour_t51b = {  
-        enable_equipments = {
-            power_armor_2
+    hardened_variant = {  
+        power_armor = {
+            hardness = 0.5
+        }
+        
+        xor = { servo_motors }
+        
+        path = {
+			leads_to_tech = power_armour_t51b
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            scientific_civilization = 1
         }
         
 		research_cost = 1.0
@@ -486,6 +533,132 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    servo_motors = {  
+        power_armor = {
+            supply_consumption = -0.05
+        }
+        
+        xor = { hardened_variant }
+        
+        path = {
+			leads_to_tech = power_armour_t51b
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 2 y = @AdvancedColumn2 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    power_armour_t51b = {  
+        enable_equipments = {
+            power_armor_equipment_3
+        }
+        
+        path = {
+			leads_to_tech = hardened_variant2
+			research_cost_coeff = 1
+		}
+        
+        path = {
+			leads_to_tech = servo_motors2
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @AdvancedColumn3 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    hardened_variant2 = {  
+        power_armor = {
+            hardness = 0.5
+        }
+        
+        xor = { servo_motors2 }
+        
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 0 y = @AdvancedColumn4 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    servo_motors2 = {  
+        power_armor = {
+            supply_consumption = -0.05
+        }
+        
+        xor = { hardened_variant2 }
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 2 y = @AdvancedColumn4 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
 		}
 		
 		ai_will_do = {
@@ -606,8 +779,6 @@ technologies = {
     #-------------------------
     # Special Forces
     #-------------------------
-    # Currently the game isn't recognizing the spec_ops terrain modifiers correctly
-    
     special_forces = {
         enable_subunits = {
 			spec_ops
@@ -639,6 +810,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            specops_tech
 		}
 		
 		ai_will_do = {
@@ -649,10 +821,10 @@ technologies = {
     # Hills sub-route
     hills_training = {
         spec_ops = {
+            entrenchment = 2
             hills = {
                 attack = 0.5
                 defence = 0.5
-                
             }
         }
         
@@ -674,6 +846,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            specops_tech
 		}
 		
 		ai_will_do = {
@@ -683,6 +856,7 @@ technologies = {
     
     mountain_training = {
         spec_ops = {
+            entrenchment = 2
             mountain = {
                 attack = 0.5
                 defence = 0.5
@@ -708,6 +882,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            specops_tech
 		}
 		
 		ai_will_do = {
@@ -716,7 +891,8 @@ technologies = {
 	}
     
     cold_weather_training = {
-
+        
+        
         dependencies = {
             scientific_civilization = 1
         }
@@ -730,6 +906,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            specops_tech
 		}
 		
 		ai_will_do = {
@@ -740,6 +917,7 @@ technologies = {
     # Plains sub-route
     plains_training = {
         spec_ops = {
+            entrenchment = 2
             plains = {
                 attack = 0.5
                 defence = 0.5
@@ -765,6 +943,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            specops_tech
 		}
 		
 		ai_will_do = {
@@ -774,6 +953,7 @@ technologies = {
     
     desert_training = {
         spec_ops = {
+            entrenchment = 2
             desert = {
                 attack = 0.5
                 defence = 0.5
@@ -799,6 +979,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            specops_tech
 		}
 		
 		ai_will_do = {
@@ -821,6 +1002,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            specops_tech
 		}
 		
 		ai_will_do = {
@@ -831,6 +1013,7 @@ technologies = {
     # Urban sub-route
     urban_training = {
         spec_ops = {
+            entrenchment = 2
             urban = {
                 attack = 0.5
                 defence = 0.5
@@ -856,6 +1039,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            specops_tech
 		}
 		
 		ai_will_do = {
@@ -865,6 +1049,7 @@ technologies = {
     
     marsh_training = {
         spec_ops = {
+            entrenchment = 2
             marsh = {
                 attack = 0.5
                 defence = 0.5
@@ -890,6 +1075,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            specops_tech
 		}
 		
 		ai_will_do = {
@@ -899,6 +1085,7 @@ technologies = {
     
     river_training = {
         spec_ops = {
+            entrenchment = 2
             river = {
                 attack = 0.5
                 defence = 0.5
@@ -919,6 +1106,7 @@ technologies = {
 		
 		categories = {
 			infantry_tech
+            specops_tech
 		}
 		
 		ai_will_do = {
@@ -946,11 +1134,12 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @SpecialColumn1 }
+			position = { x = 0 y = @TribalColumn1 }
 		}
 		
 		categories = {
 			infantry_tech
+            gauss_weaponry_tech
 		}
 		
 		ai_will_do = {
@@ -975,11 +1164,12 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @SpecialColumn2 }
+			position = { x = 0 y = @TribalColumn2 }
 		}
 		
 		categories = {
 			infantry_tech
+            tesla_weaponry_tech
 		}
 		
 		ai_will_do = {
@@ -1004,11 +1194,12 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @SpecialColumn3 }
+			position = { x = 0 y = @CivilizedColumn1 }
 		}
 		
 		categories = {
 			infantry_tech
+            plasma_weaponry_tech
 		}
 		
 		ai_will_do = {
@@ -1029,11 +1220,12 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @SpecialColumn1 }
+			position = { x = 0 y = @CivilizedColumn2 }
 		}
 		
 		categories = {
 			infantry_tech
+            melee_weaponry_tech
 		}
 		
 		ai_will_do = {
