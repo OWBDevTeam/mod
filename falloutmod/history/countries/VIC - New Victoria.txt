@@ -1,37 +1,36 @@
 ﻿capital = 420
 oob = "VIC_2265"
+
 set_technology = {
-basic_weaponry = 1
+    basic_weaponry = 1
+    tribal_civilization = 1
+    settled_civilization = 1
 }
+
 set_politics = {
-parties = {
-people = {
- popularity = 100 
+    parties = {
+        people = { popularity = 0 }
+        elites = { popularity = 0 }
+        intellectuals = { popularity = 0 }
+        ruler = { popularity = 100 }
+    }
+    ruling_party = ruler
+    elections_allowed = yes
 }
-elites = {
- popularity = 0 
-}
-intellectuals = {
- popularity = 0 
-}
-ruler = {
- popularity = 0 
-}
-}
-		ruling_party = people
-		elections_allowed = no
-}
+
 add_ideas = {
+
 }
+
 create_country_leader  = {
-name = "Queen Victoria VI"
-desc = "Queen Victoria VI_DESC"
-picture = "Portrait_Queen_Victoria_VI.dds"
-expire = "3000.1.1"
-ideology =constitutional_monarchy
-traits = {
-war_industrialist
-fortifications_expert
-}
+    name = "Queen Victoria VI"
+    desc = "Queen Victoria VI_DESC"
+    picture = "Portrait_Queen_Victoria_VI.dds"
+    expire = "3000.1.1"
+    ideology = constitutional_monarchy
+    traits = {
+        war_industrialist
+        fortifications_expert
+    }
 }
 

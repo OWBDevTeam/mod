@@ -1,35 +1,34 @@
 ﻿oob = "DRE_2265"
+
 set_technology = {
-basic_weaponry = 1
+    basic_weaponry = 1
+    tribal_civilization = 1
+    settled_civilization = 1
 }
+
 set_politics = {
-parties = {
-people = {
- popularity = 100 
+    parties = {
+        people = { popularity = 100 }
+        elites = { popularity = 0 }
+        intellectuals = { popularity = 0 }
+        ruler = { popularity = 0 }
+    }
+    ruling_party = people
+    elections_allowed = yes
 }
-elites = {
- popularity = 0 
-}
-intellectuals = {
- popularity = 0 
-}
-ruler = {
- popularity = 0 
-}
-}
-		ruling_party = people
-		elections_allowed = yes
-}
+
 add_ideas = {
+
 }
+
 create_country_leader  = {
-name = "Old Pete"
-desc = "Old Pete_DESC"
-picture = "Portrait_DRE_Leader.dds"
-expire = "3000.1.1"
-ideology =town_hall_democracy
-traits = {
-well_liked_leader
-}
+    name = "Old Pete"
+    desc = "Old Pete_DESC"
+    picture = "Portrait_DRE_Leader.dds"
+    expire = "3000.1.1"
+    ideology = town_hall_democracy
+    traits = {
+        well_liked_leader
+    }
 }
 

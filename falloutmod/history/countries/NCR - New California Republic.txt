@@ -1,80 +1,78 @@
 ﻿capital = 149
 oob = "NCR_2265"
+
 set_technology = {
-basic_weaponry = 1
+    basic_weaponry = 1
+    tribal_civilization = 1
+    settled_civilization = 1
+    scientific_civilization = 1
 }
+
 set_politics = {
-parties = {
-people = {
- popularity = 95 
+    parties = {
+        people = { popularity = 5 }
+        elites = { popularity = 80 }
+        intellectuals = { popularity = 5 }
+        ruler = { popularity = 10 }
+    }
+    ruling_party = elites
+    elections_allowed = yes
 }
-elites = {
- popularity = 5 
-}
-intellectuals = {
- popularity = 0 
-}
-ruler = {
- popularity = 0 
-}
-}
-		ruling_party = people
-		elections_allowed = yes
-}
+
 add_ideas = {
-}
-create_country_leader  = {
-name = "Aaron Kimball"
-desc = "Aaron Kimball_DESC"
-picture = "Portrait_Kimball.dds"
-expire = "3000.1.1"
-ideology =constitutional_republic
-traits = {
-dislikes_legion
-}
+
 }
 
 create_country_leader  = {
-name = "Lee Oliver"
-desc = "Lee Oliver_DESC"
-picture = "Portrait_Oliver.dds"
-expire = "3000.1.1"
-ideology =militarist_oligarchy
-traits = {
-dislikes_legion
-}
-}
-
-create_corps_commander = {
-name = "Chief Hanlon"
-portrait_path = "gfx/leaders/NCR/Portrait_Hanlon.dds"
-skill =4
-traits = {
-}
+    name = "Aaron Kimball"
+    desc = "Aaron Kimball_DESC"
+    picture = "Portrait_Kimball.dds"
+    expire = "3000.1.1"
+    ideology = constitutional_republic
+    
+    traits = {
+        dislikes_legion
+    }
 }
 
 create_corps_commander = {
-name = "Lt. Gorobets"
-portrait_path = "gfx/leaders/NCR/Portrait_Gorobets.dds"
-skill =3
-traits = {
-}
-}
-
-create_corps_commander = {
-name = "Col. Cassandra Moore"
-portrait_path = "gfx/leaders/NCR/Portrait_Moore.dds"
-skill =2
-traits = {
-}
+    name = "General Lee Oliver"
+    portrait_path = "gfx/leaders/NCR/Portrait_Oliver.dds"
+    skill = 6
+    traits = {
+    }
 }
 
 create_corps_commander = {
-name = "Col. James Hsu"
-portrait_path = "gfx/leaders/NCR/Portrait_Hsu.dds"
-skill =2
-traits = {
+    name = "Chief Hanlon"
+    portrait_path = "gfx/leaders/NCR/Portrait_Hanlon.dds"
+    skill = 4
+    traits = {
+    }
 }
+
+create_corps_commander = {
+    name = "Lt. Gorobets"
+    portrait_path = "gfx/leaders/NCR/Portrait_Gorobets.dds"
+    skill = 3
+    traits = {
+    }
+}
+
+create_corps_commander = {
+    name = "Col. Cassandra Moore"
+    portrait_path = "gfx/leaders/NCR/Portrait_Moore.dds"
+    skill = 2
+    traits = {
+    }
+}
+
+create_corps_commander = {
+    name = "Col. James Hsu"
+    portrait_path = "gfx/leaders/NCR/Portrait_Hsu.dds"
+    skill = 2
+    traits = {
+    }
 }
 
 create_faction = NCR

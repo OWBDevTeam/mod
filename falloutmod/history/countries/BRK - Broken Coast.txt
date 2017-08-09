@@ -1,38 +1,36 @@
 ﻿capital = 561
 oob = "BRK_2265"
+
 set_technology = {
-basic_weaponry = 1
+    basic_weaponry = 1
+    tribal_civilization = 1
 }
+
 set_politics = {
-parties = {
-people = {
- popularity = 0 
+    parties = {
+        people = { popularity = 0 }
+        elites = { popularity = 0 }
+        intellectuals = { popularity = 0 }
+        ruler = { popularity = 100 }
+    }
+    ruling_party = ruler
+    elections_allowed = yes
 }
-elites = {
- popularity = 0 
-}
-intellectuals = {
- popularity = 0 
-}
-ruler = {
- popularity = 100 
-}
-}
-		ruling_party = ruler
-		elections_allowed = yes
-}
+
 add_ideas = {
+
 }
-create_country_leader  = {
-name = "Graven"
-desc = "Graven_DESC"
-picture = "Portrait_BRK_Leader.dds"
-expire = "3000.1.1"
-ideology =warlordship
-traits = {
-warmonger
-cruel_tyrant
-}
+
+create_country_leader = {
+    name = "Graven"
+    desc = "Graven_DESC"
+    picture = "Portrait_BRK_Leader.dds"
+    expire = "3000.1.1"
+    ideology =warlordship
+    traits = {
+        warmonger
+        cruel_tyrant
+    }
 }
 
 create_field_marshal = {

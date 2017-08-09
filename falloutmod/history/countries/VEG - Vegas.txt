@@ -1,69 +1,59 @@
 ﻿oob = "VEG_2265"
 set_technology = {
-basic_weaponry = 1
+    basic_weaponry = 1
+    tribal_civilization = 1
+    settled_civilization = 1
+    scientific_civilization = 1
 }
+
 set_politics = {
-parties = {
-people = {
- popularity = 20 
+    parties = {
+        people = { popularity = 0 }
+        elites = { popularity = 0 }
+        intellectuals = { popularity = 0 }
+        ruler = { popularity = 100 }
+    }
+    ruling_party = ruler
+    elections_allowed = yes
 }
-elites = {
- popularity = 20 
-}
-intellectuals = {
- popularity = 20 
-}
-ruler = {
- popularity = 40 
-}
-}
-		ruling_party = ruler
-		elections_allowed = no
-}
+
 add_ideas = {
-}
-create_country_leader  = {
-name = "Mr House"
-desc = "Mr House_DESC"
-picture = "Portrait_House.dds"
-expire = "3000.1.1"
-ideology =indifferent_despotism
-traits = {
-dislikes_legion
-}
+
 }
 
 create_country_leader  = {
-name = "Nero"
-desc = "Nero_DESC"
-picture = "Portrait_Nero.dds"
-expire = "3000.1.1"
-ideology =conspiratory_oligarchy
-traits = {
-dislikes_legion
-}
-}
-
-create_country_leader  = {
-name = "Benny"
-desc = "Benny_DESC"
-picture = "Portrait_Benny.dds"
-expire = "3000.1.1"
-ideology =warlordship
-traits = {
-dislikes_legion
-}
+    name = "Mr House"
+    desc = "Mr House_DESC"
+    picture = "Portrait_House.dds"
+    expire = "3000.1.1"
+    ideology = indifferent_despotism
+    traits = {
+        dislikes_legion
+    }
 }
 
-create_country_leader  = {
-name = "Ambassador Crocker"
-desc = "Ambassador Crocker_DESC"
-picture = "Portrait_Crocker.dds"
-expire = "3000.1.1"
-ideology =unlimited_democracy
-traits = {
-dislikes_legion
+create_corps_commander = {
+    name = "Nero"
+    portrait_path = "gfx/leaders/VEG/Portrait_House.dds"
+    skill = 3
+    traits = {
+    }
 }
+
+create_corps_commander = {
+    name = "Benny"
+    portrait_path = "gfx/leaders/VEG/Portrait_Benny.dds"
+    skill = 4
+    traits = {
+    }
+}
+
+create_corps_commander = {
+    name = "Ambassador Crocker"
+    portrait_path = "gfx/leaders/VEG/Portrait_Crocker.dds"
+    skill = 2
+    traits = {
+    }
 }
 
 create_faction = NewVegas

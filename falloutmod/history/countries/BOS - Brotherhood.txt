@@ -1,54 +1,53 @@
 ﻿oob = "BOS_2265"
 set_technology = {
-basic_weaponry = 1
+    basic_weaponry = 1
+    tribal_civilization = 1
+    settled_civilization = 1
+    scientific_civilization = 1
 }
+
 set_politics = {
-parties = {
-people = {
- popularity = 0 
+    parties = {
+        people = { popularity = 0 }
+        elites = { popularity = 0 }
+        intellectuals = { popularity = 100 }
+        ruler = { popularity = 0 }
+    }
+    ruling_party = intellectuals
+    elections_allowed = no
 }
-elites = {
- popularity = 0 
-}
-intellectuals = {
- popularity = 100 
-}
-ruler = {
- popularity = 0 
-}
-}
-		ruling_party = intellectuals
-		elections_allowed = no
-}
+
 add_ideas = {
+
 }
+
 create_country_leader  = {
-name = "Mari Törni"
-desc = "MARI_TORNI_DESC"
-picture = "Portrait_Mari.dds"
-expire = "3000.1.1"
-ideology =technocracy
-traits = {
-stout_defender
-fortifications_expert
-ideological_crusader
-}
-}
-
-create_corps_commander = {
-name = "Head Paladin"
-portrait_path = "gfx/leaders/BOS/Portrait_Generic.dds"
-skill =4
-traits = {
-}
+    name = "Mari Törni"
+    desc = "MARI_TORNI_DESC"
+    picture = "Portrait_Mari.dds"
+    expire = "3000.1.1"
+    ideology = technocracy
+    traits = {
+        stout_defender
+        fortifications_expert
+        ideological_crusader
+    }
 }
 
 create_corps_commander = {
-name = "Paladin"
-portrait_path = "gfx/leaders/BOS/Portrait_Generic.dds"
-skill =3
-traits = {
+    name = "Head Paladin"
+    portrait_path = "gfx/leaders/BOS/Portrait_Generic.dds"
+    skill =4
+    traits = {
+    }
 }
+
+create_corps_commander = {
+    name = "Paladin"
+    portrait_path = "gfx/leaders/BOS/Portrait_Generic.dds"
+    skill =3
+    traits = {
+    }
 }
 
 create_faction = BrotherhoodOfSteel

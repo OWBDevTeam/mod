@@ -80,6 +80,27 @@ technologies = {
 		}
 	}
     
+    super_mutant_civilization = {
+        allow_branch = {
+            has_country_flag = super_mutant_nation
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_civilization_folder
+			position = { x = 0 y = @SpecialColumn1 }
+		}
+		
+		categories = {
+			civilization_tech
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
     #---------------------------
     # Politics
     #---------------------------
@@ -115,6 +136,10 @@ technologies = {
 			research_cost_coeff = 1
 		}	
 		
+        dependencies = {
+            settled_civilization = 1
+        }
+    
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
@@ -139,6 +164,10 @@ technologies = {
 			research_cost_coeff = 1
 		}	
 		
+        dependencies = {
+            settled_civilization = 1
+        }
+        
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
@@ -163,6 +192,10 @@ technologies = {
 			research_cost_coeff = 1
 		}	
 		
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
@@ -187,6 +220,10 @@ technologies = {
 			research_cost_coeff = 1
 		}	
 		
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
