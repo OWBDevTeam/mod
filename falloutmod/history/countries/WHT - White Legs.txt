@@ -8,11 +8,11 @@ set_technology = {
 set_politics = {
     parties = {
         people = { popularity = 0 }
-        elites = { popularity = 0 }
+        elites = { popularity = 100 }
         intellectuals = { popularity = 0 }
-        ruler = { popularity = 100 }
+        ruler = { popularity = 0 }
     }
-    ruling_party = ruler
+    ruling_party = elites
     elections_allowed = yes
 }
 
@@ -20,7 +20,7 @@ add_ideas = {
 
 }
 
-create_country_leader  = {
+create_country_leader = {
     name = "Salt-Upon-Wounds"
     desc = "Salt-Upon-Wounds_DESC"
     picture = "Portrait_Salt.dds"
