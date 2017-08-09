@@ -7,7 +7,7 @@
 add_namespace = war_creation
 country_event = {
 	id = war_creation.1
-	title = war_creation_1.t
+	title = war_creation.1.t
 	desc = war_creation.1.d
 	picture = GFX_report_event_fascist_speech
 	is_triggered_only = no
@@ -44,25 +44,26 @@ country_event = {
 
 country_event = {
 	id = war_creation.2
-	title = war_creation_2.t
+	title = war_creation.2.t
 	desc = war_creation.2.d
 	picture = GFX_report_event_fascist_speech
 	is_triggered_only = yes
 	option = {
 		name = war_creation.2.a
+		custom_effect_tooltip = war_creation.2.a.tt
 		FROM = { country_event = {days = 2 id = war_creation.3}}
 	}
 }
 
 country_event = {
 	id = war_creation.3
-	title = war_creation_3.t
+	title = war_creation.3.t
 	desc = war_creation.3.d
 	picture = GFX_report_event_fascist_speech
 	is_triggered_only = yes
 	option = {
 		name = war_creation.3.a
-		FROM = { country_event = {days = 2 id = war_creation.4}}
+		#FROM = { country_event = {days = 2 id = war_creation.4}}
 		FROM = {
 			random_owned_state = {
 				limit = {
@@ -78,7 +79,7 @@ country_event = {
 
 country_event = {
 	id = war_creation.4
-	title = war_creation_4.t
+	title = war_creation.4.t
 	desc = war_creation.4.d
 	picture = GFX_report_event_fascist_speech
 	is_triggered_only = yes
