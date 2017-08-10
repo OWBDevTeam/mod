@@ -3,13 +3,13 @@ technologies = {
 	@TribalColumn1 = 0
 	@TribalColumn2 = 4
 	@CivilizedColumn1 = 8
-	@CivilizedColumn2 = 12
-	@AdvancedColumn1 = 16
-	@AdvancedColumn2 = 20
-    @AdvancedColumn3 = 24
-    @AdvancedColumn4 = 28
-    @AdvancedColumn5 = 32
-    @AdvancedColumn6 = 36
+	@AdvancedColumn1 = 12
+	@AdvancedColumn2 = 16
+	@AdvancedColumn3 = 20
+    @AdvancedColumn4 = 24
+    @AdvancedColumn5 = 28
+    @AdvancedColumn6 = 32
+    @AdvancedColumn7 = 36
     
     #-------------------------
     # Infantry Training
@@ -142,7 +142,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 1 y = @TribalColumn1 }
+			position = { x = 2 y = @TribalColumn1 }
 		}
 		
 		categories = {
@@ -169,7 +169,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @TribalColumn2 }
+			position = { x = 2 y = @TribalColumn2 }
 		}
 		
 		categories = {
@@ -200,7 +200,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @CivilizedColumn1 }
+			position = { x = 2 y = @CivilizedColumn1 }
 		}
 		
 		categories = {
@@ -226,7 +226,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @AdvancedColumn1  }
+			position = { x = 2 y = @AdvancedColumn1  }
 		}
 		
 		categories = {
@@ -254,7 +254,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 2 y = @TribalColumn2 }
+			position = { x = 4 y = @TribalColumn2 }
 		}
 		
 		categories = {
@@ -285,7 +285,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 2 y = @CivilizedColumn1 }
+			position = { x = 4 y = @CivilizedColumn1 }
 		}
 		
 		categories = {
@@ -311,7 +311,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 2 y = @AdvancedColumn1 }
+			position = { x = 4 y = @AdvancedColumn1 }
 		}
 		
 		categories = {
@@ -341,7 +341,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @TribalColumn1 }
+			position = { x = 6 y = @TribalColumn1 }
 		}
 		
 		categories = {
@@ -373,7 +373,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @TribalColumn2 }
+			position = { x = 6 y = @TribalColumn2 }
 		}
 		
 		categories = {
@@ -404,7 +404,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @CivilizedColumn1 }
+			position = { x = 6 y = @CivilizedColumn1 }
 		}
 		
 		categories = {
@@ -459,7 +459,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @CivilizedColumn1 }
+			position = { x = 8 y = @CivilizedColumn1 }
 		}
 		
 		categories = {
@@ -487,6 +487,11 @@ technologies = {
 			research_cost_coeff = 1
 		}
         
+        path = {
+			leads_to_tech = power_armour_t51b
+			research_cost_coeff = 1
+		}
+        
         dependencies = {
             scientific_civilization = 1
         }
@@ -495,7 +500,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @AdvancedColumn1 }
+			position = { x = 8 y = @AdvancedColumn1 }
 		}
 		
 		categories = {
@@ -512,14 +517,7 @@ technologies = {
         power_armor = {
             hardness = 0.5
         }
-        
-        xor = { servo_motors }
-        
-        path = {
-			leads_to_tech = power_armour_t51b
-			research_cost_coeff = 1
-		}
-        
+
         dependencies = {
             scientific_civilization = 1
         }
@@ -528,7 +526,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @AdvancedColumn2 }
+			position = { x = 10 y = @AdvancedColumn1 }
 		}
 		
 		categories = {
@@ -545,14 +543,7 @@ technologies = {
         power_armor = {
             supply_consumption = -0.05
         }
-        
-        xor = { hardened_variant }
-        
-        path = {
-			leads_to_tech = power_armour_t51b
-			research_cost_coeff = 1
-		}
-        
+
         dependencies = {
             scientific_civilization = 1
         }
@@ -561,7 +552,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 2 y = @AdvancedColumn2 }
+			position = { x = 12 y = @AdvancedColumn1 }
 		}
 		
 		categories = {
@@ -597,7 +588,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @AdvancedColumn3 }
+			position = { x = 8 y = @AdvancedColumn2 }
 		}
 		
 		categories = {
@@ -614,9 +605,7 @@ technologies = {
         power_armor = {
             hardness = 0.5
         }
-        
-        xor = { servo_motors2 }
-        
+
         dependencies = {
             scientific_civilization = 1
         }
@@ -625,7 +614,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @AdvancedColumn4 }
+			position = { x = 10 y = @AdvancedColumn2 }
 		}
 		
 		categories = {
@@ -643,8 +632,6 @@ technologies = {
             supply_consumption = -0.05
         }
         
-        xor = { hardened_variant2 }
-
         dependencies = {
             scientific_civilization = 1
         }
@@ -653,7 +640,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 2 y = @AdvancedColumn4 }
+			position = { x = 12 y = @AdvancedColumn2 }
 		}
 		
 		categories = {
@@ -683,7 +670,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @TribalColumn1 }
+			position = { x = 14 y = @TribalColumn1 }
 		}
 		
 		categories = {
@@ -709,7 +696,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @TribalColumn2 }
+			position = { x = 14 y = @TribalColumn2 }
 		}
 		
 		categories = {
@@ -739,7 +726,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @CivilizedColumn1 }
+			position = { x = 14 y = @CivilizedColumn1 }
 		}
 		
 		categories = {
@@ -764,7 +751,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @AdvancedColumn1 }
+			position = { x = 14 y = @AdvancedColumn1 }
 		}
 		
 		categories = {
@@ -805,7 +792,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 3 y = @CivilizedColumn1 }
+			position = { x = 16 y = @CivilizedColumn1 }
 		}
 		
 		categories = {
@@ -841,7 +828,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @AdvancedColumn1 }
+			position = { x = 16 y = @AdvancedColumn1 }
 		}
 		
 		categories = {
@@ -877,7 +864,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @AdvancedColumn2 }
+			position = { x = 16 y = @AdvancedColumn2 }
 		}
 		
 		categories = {
@@ -901,7 +888,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = @AdvancedColumn3 }
+			position = { x = 16 y = @AdvancedColumn3 }
 		}
 		
 		categories = {
@@ -938,7 +925,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 2 y = @AdvancedColumn1 }
+			position = { x = 18 y = @AdvancedColumn1 }
 		}
 		
 		categories = {
@@ -974,7 +961,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 2 y = @AdvancedColumn2 }
+			position = { x = 18 y = @AdvancedColumn2 }
 		}
 		
 		categories = {
@@ -997,7 +984,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 2 y = @AdvancedColumn3 }
+			position = { x = 18 y = @AdvancedColumn3 }
 		}
 		
 		categories = {
@@ -1034,7 +1021,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 4 y = @AdvancedColumn1 }
+			position = { x = 20 y = @AdvancedColumn1 }
 		}
 		
 		categories = {
@@ -1070,7 +1057,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 4 y = @AdvancedColumn2 }
+			position = { x = 20 y = @AdvancedColumn2 }
 		}
 		
 		categories = {
@@ -1101,7 +1088,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 4 y = @AdvancedColumn3 }
+			position = { x = 20 y = @AdvancedColumn3 }
 		}
 		
 		categories = {
@@ -1134,7 +1121,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = 34 }
+			position = { x = 0 y = 30 }
 		}
 		
 		categories = {
@@ -1164,7 +1151,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = 34 }
+			position = { x = 2 y = 30 }
 		}
 		
 		categories = {
@@ -1194,7 +1181,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = 34 }
+			position = { x = 4 y = 30 }
 		}
 		
 		categories = {
@@ -1220,7 +1207,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 0 y = 34 }
+			position = { x = 6 y = 30 }
 		}
 		
 		categories = {
