@@ -51,9 +51,13 @@ country_event = {
 			is_ai = yes
 			is_major = no
 			NOT = {
+				OR = {
 				has_idea = coring_state
+				has_idea = core_state
+				}
 			}
 			any_owned_state = {
+				is_controlled_by = ROOT
 				NOT = {
 					is_core_of = ROOT
 				}
@@ -62,5 +66,13 @@ country_event = {
 	option = {
 		add_ideas = core_state
 		add_ideas = coring_state
+		random_owned_controlled_state = {
+			limit = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+			set_state_flag = coring_state
+		}
 	}
 }
