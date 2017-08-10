@@ -1334,19 +1334,17 @@ technologies = {
     
     # Enclave Mk2
     power_armour_enclave2 = {  
-        
-        path = {
-			leads_to_tech = enclave_tesla_variant2
-			research_cost_coeff = 1
-		}
-        
-        path = {
-			leads_to_tech = enclave_servo_motors2
-			research_cost_coeff = 1
-		}
-        
+        enable_equipments = {
+            power_armor_enclave_mk2
+        }
+
         dependencies = {
             scientific_civilization = 1
+        }
+        
+        sub_technologies = {
+            enclave_tesla_variant2
+            enclave_servo_motors2
         }
         
 		research_cost = 1.0
@@ -1367,18 +1365,17 @@ technologies = {
 	}
     
     enclave_tesla_variant2 = {  
-
+        enable_equipments = {
+            power_armor_enclave_mk2_tesla
+        }
+        
         dependencies = {
             scientific_civilization = 1
         }
         
 		research_cost = 1.0
 		start_year = 2265
-		folder = {
-			name = fallout_infantry_folder
-			position = { x = 10 y = 34 }
-		}
-		
+
 		categories = {
 			infantry_tech
             power_armor_tech
@@ -1390,18 +1387,17 @@ technologies = {
 	}
     
     enclave_servo_motors2 = {  
-
+        enable_equipments = {
+            power_armor_enclave_mk2_servo
+        }
+        
         dependencies = {
             scientific_civilization = 1
         }
         
 		research_cost = 1.0
 		start_year = 2265
-		folder = {
-			name = fallout_infantry_folder
-			position = { x = 12 y = 34 }
-		}
-		
+
 		categories = {
 			infantry_tech
             power_armor_tech
