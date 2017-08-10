@@ -1,5 +1,6 @@
-ideas = {
+# Coring ideas scripted by Mechano
 
+ideas = {
 	country = {
 		coring_state = {
 			modifier = {
@@ -13,7 +14,7 @@ ideas = {
 		core_state = {
 		
 		#picture = generic_production_bonus
-		removal_cost = -1
+		
 		available = {
 			is_major = no
 			NOT = {
@@ -37,8 +38,11 @@ ideas = {
 			}
 		}
 		ai_will_do = {
-			factor = 10
+			factor = 10000
 		}
+		level = 1
+		cost = 0
+		removal_cost = -1
 	}
 		stop_coring_state = {
 			#law = yes
@@ -54,7 +58,9 @@ ideas = {
 					clr_state_flag = coring_state
 				}
 			}
+			ai_will_do = {
+				factor = 0
+			}
 		}
-	#removal_cost = 0
 	}
 }
