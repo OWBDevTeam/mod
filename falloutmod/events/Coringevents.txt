@@ -1,0 +1,37 @@
+# Scripted by Mechano for use with coring laws
+add_namespace = coring_event
+country_event = {
+	id = coring_event.1
+	fire_only_once = no
+	mean_time_to_happen = { days = 1 }
+	hidden = no
+	
+	title = coring_event.1.t
+	desc = coring_event.1.d
+	
+	trigger = {
+		any_owned_state = {
+			has_state_flag = {
+				flag = coring_state
+				days > 10
+			}
+		}
+	}
+	option = {
+		name = coring_event.1.a
+		every_owned_state = {
+			limit = {
+				has_state_flag = {
+					flag = coring_state
+					days > 10
+				}
+			}
+			add_core_of = FROM
+			hidden_effect = {
+				add_state_modifier = { modifier = { local_non_core_manpower = -0.18 } }
+			}
+			clr_state_flag = coring_state
+		}
+		remove_ideas = coring_state
+	}
+}
