@@ -451,6 +451,15 @@ technologies = {
 			research_cost_coeff = 1
 		}
         
+        path = {
+			leads_to_tech = hardened_variant
+			research_cost_coeff = 1
+		}
+        
+        path = {
+			leads_to_tech = servo_motors
+			research_cost_coeff = 1
+		}
         dependencies = {
             scientific_civilization = 1
         }
@@ -471,6 +480,58 @@ technologies = {
 			factor = 1
 		}
 	}
+
+    hardened_variant = {  
+        power_armor = {
+            hardness = 0.5
+        }
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 10 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    servo_motors = {  
+        power_armor = {
+            supply_consumption = -0.05
+        }
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 12 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
     
     power_armour_t45d = {  
         enable_equipments = {
@@ -478,12 +539,12 @@ technologies = {
 		}
         
         path = {
-			leads_to_tech = hardened_variant
+			leads_to_tech = hardened_variant2
 			research_cost_coeff = 1
 		}
         
         path = {
-			leads_to_tech = servo_motors
+			leads_to_tech = servo_motors2
 			research_cost_coeff = 1
 		}
         
@@ -513,7 +574,7 @@ technologies = {
 		}
 	}
     
-    hardened_variant = {  
+    hardened_variant2 = {  
         power_armor = {
             hardness = 0.5
         }
@@ -539,7 +600,7 @@ technologies = {
 		}
 	}
     
-    servo_motors = {  
+    servo_motors2 = {  
         power_armor = {
             supply_consumption = -0.05
         }
@@ -571,12 +632,12 @@ technologies = {
         }
         
         path = {
-			leads_to_tech = hardened_variant2
+			leads_to_tech = hardened_variant3
 			research_cost_coeff = 1
 		}
         
         path = {
-			leads_to_tech = servo_motors2
+			leads_to_tech = servo_motors3
 			research_cost_coeff = 1
 		}
         
@@ -601,7 +662,7 @@ technologies = {
 		}
 	}
     
-    hardened_variant2 = {  
+    hardened_variant3 = {  
         power_armor = {
             hardness = 0.5
         }
@@ -627,7 +688,7 @@ technologies = {
 		}
 	}
     
-    servo_motors2 = {  
+    servo_motors3 = {  
         power_armor = {
             supply_consumption = -0.05
         }
@@ -1165,10 +1226,6 @@ technologies = {
 	}
     
     plasma_weaponry = {
-        #allow_branch = {
-        #    is_advanced_nation = yes
-        #}
-        
         enable_equipments = {
             plasma_equipment
         }
@@ -1219,4 +1276,413 @@ technologies = {
 			factor = 1
 		}
 	}
+    
+    #-------------------------
+    # Special Power Armour
+    #-------------------------
+    # Enclave Mk1
+    power_armour_enclave1 = {  
+        
+        path = {
+			leads_to_tech = enclave_tesla_variant1
+			research_cost_coeff = 1
+		}
+        
+        path = {
+			leads_to_tech = enclave_servo_motors1
+			research_cost_coeff = 1
+		}
+        
+        path = {
+			leads_to_tech = power_armour_enclave2
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 8 y = 30 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    enclave_tesla_variant1 = {  
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 10 y = 30 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    enclave_servo_motors1 = {  
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 12 y = 30 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    # Enclave Mk2
+    power_armour_enclave2 = {  
+        
+        path = {
+			leads_to_tech = enclave_tesla_variant2
+			research_cost_coeff = 1
+		}
+        
+        path = {
+			leads_to_tech = enclave_servo_motors2
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 8 y = 34 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    enclave_tesla_variant2 = {  
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 10 y = 34 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    enclave_servo_motors2 = {  
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 12 y = 34 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    # Washington BOS
+    power_armour_bos = {  
+        
+        path = {
+			leads_to_tech = bos_hardened_variant
+			research_cost_coeff = 1
+		}
+        
+        path = {
+			leads_to_tech = bos_servo_motors
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 14 y = 30 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    bos_hardened_variant = {  
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 16 y = 30 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    bos_servo_motors = {  
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 18 y = 30 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    # Legion
+    power_armour_legion = {  
+        
+        path = {
+			leads_to_tech = legion_siege_shield
+			research_cost_coeff = 1
+		}
+        
+        path = {
+			leads_to_tech = legion_servo_motors
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 14 y = 34 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    legion_siege_shield = {  
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 16 y = 34 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    legion_servo_motors = {  
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 18 y = 34 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    # Raider
+    power_armour_raider = {  
+        
+        path = {
+			leads_to_tech = raider_welded_variant
+			research_cost_coeff = 1
+		}
+        
+        path = {
+			leads_to_tech = raider_servo_motors
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 20 y = 30 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    raider_welded_variant = {  
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 22 y = 30 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    raider_servo_motors = {  
+
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = 24 y = 30 }
+		}
+		
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
 }
