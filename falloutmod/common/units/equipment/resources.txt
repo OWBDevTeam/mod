@@ -1,0 +1,30 @@
+equipments = {
+	water_rations_base = {
+		is_archetype = yes
+		is_buildable = no
+        
+		type = {
+			infantry
+		}
+        
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		reliability = 1.0
+
+		#Space taken in convoy
+		lend_lease_cost = 1
+
+		build_cost_ic = 0.25
+        
+		resources = {
+			water = 1
+		}
+	}
+    
+    water_rations = {
+		archetype = water_rations_base
+		priority = 20	
+	}
+}

@@ -126,7 +126,12 @@ technologies = {
     #-------------------------
     standard_weaponry = {  
         enable_equipments = {
-            infantry_equipment_1
+            firearm_equipment_0
+            water_rations
+        }
+        
+        enable_subunits = {
+            firearms_militia
         }
         
         path = {
@@ -157,7 +162,7 @@ technologies = {
     # Laser sub-route
     basic_laser_weaponry = {
         enable_equipments = {
-            laser_equipment_0
+            energy_equipment_0
         }
         
 		path = {
@@ -184,7 +189,7 @@ technologies = {
     
     improved_laser_weaponry = {
         enable_equipments = {
-            laser_equipment_1
+            energy_equipment_1
         }
         
 		path = {
@@ -215,7 +220,7 @@ technologies = {
     
     advanced_laser_weaponry = {
         enable_equipments = {
-            laser_equipment_2
+            energy_equipment_2
         }
         
         dependencies = {
@@ -242,7 +247,7 @@ technologies = {
     # Ballistic sub-route
     basic_ballistic_weaponry = {
         enable_equipments = {
-            ballistic_equipment_0
+            firearm_equipment_1
         }
         
 		path = {
@@ -269,7 +274,11 @@ technologies = {
     
     improved_ballistic_weaponry = {
         enable_equipments = {
-            ballistic_equipment_1
+            firearm_equipment_2
+        }
+        
+        enable_subunits = {
+            wasteland_infantry
         }
         
 		path = {
@@ -300,7 +309,7 @@ technologies = {
     
     advanced_ballistic_weaponry = {
         enable_equipments = {
-            ballistic_equipment_2
+            firearm_equipment_3
         }
         
         dependencies = {
@@ -330,6 +339,10 @@ technologies = {
     blunt_weaponry = {  
         enable_equipments = {
             melee_equipment_0
+        }
+        
+        enable_subunits = {
+            melee_militia
         }
         
         path = {
@@ -395,6 +408,10 @@ technologies = {
         enable_equipments = {
             melee_equipment_2
         }
+
+        enable_subunits = {
+            wasteland_melee_infantry
+        }
         
         dependencies = {
             settled_civilization = 1
@@ -427,17 +444,17 @@ technologies = {
     #-------------------------
     power_armour = {  
         enable_subunits = {
-            power_armor
+            power_armour_support_company
         }
         
         enable_equipments = {
-			power_armor_equipment_1
+			power_armor_equipment_0
 		}
         
         on_research_complete = {
 			limit = {
 				NOT = {
-					has_template_containing_unit = power_armor
+					has_template_containing_unit = power_armour_support_company
 				}
 			}
 			hidden_effect = {
@@ -451,15 +468,11 @@ technologies = {
 			research_cost_coeff = 1
 		}
         
-        path = {
-			leads_to_tech = hardened_variant
-			research_cost_coeff = 1
-		}
+        sub_technologies = {
+            hardened_variant
+            servo_motors
+        }
         
-        path = {
-			leads_to_tech = servo_motors
-			research_cost_coeff = 1
-		}
         dependencies = {
             scientific_civilization = 1
         }
@@ -482,9 +495,9 @@ technologies = {
 	}
 
     hardened_variant = {  
-        power_armor = {
-            hardness = 0.5
-        }
+        enable_equipments = {
+			power_armor_equipment_0_hardened
+		}
 
         dependencies = {
             scientific_civilization = 1
@@ -492,11 +505,7 @@ technologies = {
         
 		research_cost = 1.0
 		start_year = 2265
-		folder = {
-			name = fallout_infantry_folder
-			position = { x = 10 y = @CivilizedColumn1 }
-		}
-		
+
 		categories = {
 			infantry_tech
             power_armor_tech
@@ -508,9 +517,9 @@ technologies = {
 	}
     
     servo_motors = {  
-        power_armor = {
-            supply_consumption = -0.05
-        }
+        enable_equipments = {
+			power_armor_equipment_0_servo
+		}
 
         dependencies = {
             scientific_civilization = 1
@@ -518,10 +527,6 @@ technologies = {
         
 		research_cost = 1.0
 		start_year = 2265
-		folder = {
-			name = fallout_infantry_folder
-			position = { x = 12 y = @CivilizedColumn1 }
-		}
 		
 		categories = {
 			infantry_tech
@@ -535,23 +540,18 @@ technologies = {
     
     power_armour_t45d = {  
         enable_equipments = {
-			power_armor_equipment_2
+			power_armor_equipment_1
 		}
-        
-        path = {
-			leads_to_tech = hardened_variant2
-			research_cost_coeff = 1
-		}
-        
-        path = {
-			leads_to_tech = servo_motors2
-			research_cost_coeff = 1
-		}
-        
+
         path = {
 			leads_to_tech = power_armour_t51b
 			research_cost_coeff = 1
 		}
+        
+        sub_technologies = {
+            hardened_variant2
+            servo_motors2
+        }
         
         dependencies = {
             scientific_civilization = 1
@@ -575,9 +575,9 @@ technologies = {
 	}
     
     hardened_variant2 = {  
-        power_armor = {
-            hardness = 0.5
-        }
+        enable_equipments = {
+			power_armor_equipment_1_hardened
+		}
 
         dependencies = {
             scientific_civilization = 1
@@ -585,11 +585,7 @@ technologies = {
         
 		research_cost = 1.0
 		start_year = 2265
-		folder = {
-			name = fallout_infantry_folder
-			position = { x = 10 y = @AdvancedColumn1 }
-		}
-		
+
 		categories = {
 			infantry_tech
             power_armor_tech
@@ -601,9 +597,9 @@ technologies = {
 	}
     
     servo_motors2 = {  
-        power_armor = {
-            supply_consumption = -0.05
-        }
+        enable_equipments = {
+			power_armor_equipment_1_servo
+		}
 
         dependencies = {
             scientific_civilization = 1
@@ -611,11 +607,7 @@ technologies = {
         
 		research_cost = 1.0
 		start_year = 2265
-		folder = {
-			name = fallout_infantry_folder
-			position = { x = 12 y = @AdvancedColumn1 }
-		}
-		
+
 		categories = {
 			infantry_tech
             power_armor_tech
@@ -628,18 +620,13 @@ technologies = {
     
     power_armour_t51b = {  
         enable_equipments = {
-            power_armor_equipment_3
+            power_armor_equipment_2
         }
         
-        path = {
-			leads_to_tech = hardened_variant3
-			research_cost_coeff = 1
-		}
-        
-        path = {
-			leads_to_tech = servo_motors3
-			research_cost_coeff = 1
-		}
+        sub_technologies = {
+            hardened_variant3
+            servo_motors3
+        }
         
         dependencies = {
             scientific_civilization = 1
@@ -663,8 +650,8 @@ technologies = {
 	}
     
     hardened_variant3 = {  
-        power_armor = {
-            hardness = 0.5
+        enable_equipments = {
+            power_armor_equipment_2_hardened
         }
 
         dependencies = {
@@ -673,11 +660,7 @@ technologies = {
         
 		research_cost = 1.0
 		start_year = 2265
-		folder = {
-			name = fallout_infantry_folder
-			position = { x = 10 y = @AdvancedColumn2 }
-		}
-		
+
 		categories = {
 			infantry_tech
             power_armor_tech
@@ -689,8 +672,8 @@ technologies = {
 	}
     
     servo_motors3 = {  
-        power_armor = {
-            supply_consumption = -0.05
+        enable_equipments = {
+            power_armor_equipment_2_servo
         }
         
         dependencies = {
@@ -699,11 +682,7 @@ technologies = {
         
 		research_cost = 1.0
 		start_year = 2265
-		folder = {
-			name = fallout_infantry_folder
-			position = { x = 12 y = @AdvancedColumn2 }
-		}
-		
+
 		categories = {
 			infantry_tech
             power_armor_tech
@@ -1166,12 +1145,8 @@ technologies = {
     # Special
     #-------------------------
     gauss_weaponry = {
-        #allow_branch = {
-        #    is_advanced_nation = yes
-        #}
-        
         enable_equipments = {
-            gauss_equipment
+            gauss_equipment_0
         }
         
         dependencies = {
@@ -1196,12 +1171,8 @@ technologies = {
 	}
     
     tesla_weaponry = {
-        #allow_branch = {
-        #    is_advanced_nation = yes
-        #}
-        
         enable_equipments = {
-            tesla_equipment
+            tesla_equipment_0
         }
         
         dependencies = {
@@ -1227,7 +1198,7 @@ technologies = {
     
     plasma_weaponry = {
         enable_equipments = {
-            plasma_equipment
+            plasma_equipment_0
         }
         
         dependencies = {
@@ -1253,7 +1224,7 @@ technologies = {
     
     super_mutant_melee_weapons = {
         enable_equipments = {
-            super_mutant_melee_equipment
+            super_mutant_melee_equipment_0
         }
         
         dependencies = {
@@ -1282,17 +1253,10 @@ technologies = {
     #-------------------------
     # Enclave Mk1
     power_armour_enclave1 = {  
-        
-        path = {
-			leads_to_tech = enclave_tesla_variant1
-			research_cost_coeff = 1
-		}
-        
-        path = {
-			leads_to_tech = enclave_servo_motors1
-			research_cost_coeff = 1
-		}
-        
+        enable_equipments = {
+            power_armor_enclave_mk1
+        }
+
         path = {
 			leads_to_tech = power_armour_enclave2
 			research_cost_coeff = 1
@@ -1302,6 +1266,11 @@ technologies = {
             scientific_civilization = 1
         }
         
+        sub_technologies = {
+            enclave_tesla_variant1
+            enclave_servo_motors1
+        }
+    
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
@@ -1320,17 +1289,16 @@ technologies = {
 	}
     
     enclave_tesla_variant1 = {  
-
+        enable_equipments = {
+            power_armor_enclave_mk1_tesla
+        }
+        
         dependencies = {
             scientific_civilization = 1
         }
         
 		research_cost = 1.0
 		start_year = 2265
-		folder = {
-			name = fallout_infantry_folder
-			position = { x = 10 y = 30 }
-		}
 		
 		categories = {
 			infantry_tech
@@ -1343,17 +1311,16 @@ technologies = {
 	}
     
     enclave_servo_motors1 = {  
-
+        enable_equipments = {
+            power_armor_enclave_mk1_servo
+        }
+        
         dependencies = {
             scientific_civilization = 1
         }
         
 		research_cost = 1.0
 		start_year = 2265
-		folder = {
-			name = fallout_infantry_folder
-			position = { x = 12 y = 30 }
-		}
 		
 		categories = {
 			infantry_tech

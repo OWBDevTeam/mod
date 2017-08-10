@@ -3,7 +3,6 @@
 # For sea units: ship,transport,uboat
 
 sub_units = {
-
 	infantry = {
 		sprite = infantry
 		map_icon_category = infantry
@@ -28,11 +27,11 @@ sub_units = {
 		
 		#Size Definitions
 		max_strength = 25
-		max_organisation = 60
+		max_organisation = 50
 		default_morale = 0.3
 		manpower = 25
 
-		#Misc Abilities
+		# Misc Abilities
 		training_time = 90
 		suppression = 1
 		weight = 0.5
@@ -40,10 +39,281 @@ sub_units = {
 		supply_consumption = 0.07
 	
 		need = {
-			infantry_equipment = 25
+			firearm_equipment = 25
 		}
 	}
+	
+    firearms_militia = {
+		sprite = infantry
+		map_icon_category = infantry
 		
+		priority = 400
+		active = no
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 2
+		
+		# Size Definitions
+		max_strength = 20
+		max_organisation = 50
+		default_morale = 0.3
+		manpower = 25
+
+		# Misc Abilities
+		training_time = 90
+		suppression = 1
+		weight = 0.5
+		
+		supply_consumption = 0.07
+	
+		need = {
+			firearm_equipment = 25
+            water_rations = 25
+		}
+	}
+    
+    wasteland_infantry = {
+		sprite = infantry
+		map_icon_category = infantry
+		
+		priority = 400
+		active = no
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 2
+		
+		# Size Definitions
+		max_strength = 25
+		max_organisation = 60
+		default_morale = 0.4
+		manpower = 25
+
+		# Misc Abilities
+		training_time = 120
+		suppression = 1.5
+		weight = 0.5
+		
+		supply_consumption = 0.08
+	
+		need = {
+			firearm_equipment = 35
+            water_rations = 35
+		}
+	}
+    
+    melee_militia = {
+		sprite = infantry
+		map_icon_category = infantry
+		
+		priority = 400
+		active = no
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 2
+		
+		# Size Definitions
+		max_strength = 20
+		max_organisation = 50
+		default_morale = 0.3
+		manpower = 40
+
+		# Misc Abilities
+		training_time = 60
+		suppression = 1.5
+		weight = 0.5
+		
+		supply_consumption = 0.05
+	
+		need = {
+			melee_equipment = 35
+            water_rations = 35
+		}
+	}
+    
+    wasteland_melee_infantry = {
+		sprite = infantry
+		map_icon_category = infantry
+		
+		priority = 400
+		active = no
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 2
+		
+		# Size Definitions
+		max_strength = 25
+		max_organisation = 60
+		default_morale = 0.3
+		manpower = 40
+
+		# Misc Abilities
+		training_time = 90
+		suppression = 2.0
+		weight = 0.5
+		
+		supply_consumption = 0.1
+	
+		need = {
+			melee_equipment = 35
+            water_rations = 35
+		}
+	}
+    
+    power_armour_support_company = {
+		sprite = infantry
+		map_icon_category = infantry
+		
+		priority = 400
+		active = no
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 2
+		
+		# Size Definitions
+		max_strength = 30
+		max_organisation = 60
+		default_morale = 0.5
+		manpower = 25
+
+		# Misc Abilities
+		training_time = 150
+		suppression = 5.0
+		weight = 0.5
+		
+		supply_consumption = 0.5
+	
+		need = {
+			firearm_equipment = 35
+            water_rations = 35
+            power_armor_equipment = 25
+		}
+	}
+    
+    power_armour_infantry_battalion = {
+		sprite = infantry
+		map_icon_category = infantry
+		
+		priority = 400
+		active = no
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 2
+		
+		# Size Definitions
+		max_strength = 20
+		max_organisation = 60
+		default_morale = 0.5
+		manpower = 25
+
+		# Misc Abilities
+		training_time = 150
+		suppression = 2.0
+		weight = 0.8
+		
+		supply_consumption = 0.5
+	
+        can_be_parachuted = yes
+        
+		need = {
+			firearm_equipment = 35
+            water_rations = 35
+            power_armor_equipment = 25
+		}
+        
+        mountain = {
+            movement = -0.05
+        }
+        marsh = {
+            movement = -0.05
+        }
+        jungle = {
+            movement = -0.05
+        }
+        urban = {
+            attack = 0.05
+            defence = 0.05
+        }
+        fort = {
+            attack = 0.05
+            defence = 0.05
+        }
+	}
+    
+    #----------------------------
+    # Old
+    #----------------------------
 	militia = {
 		sprite = infantry
 		map_icon_category = infantry
@@ -80,7 +350,7 @@ sub_units = {
 		supply_consumption = 0.04
 	
 		need = {
-			infantry_equipment = 20
+			firearm_equipment = 20
 		}
 		
 		urban = {
@@ -125,7 +395,7 @@ sub_units = {
 		transport = motorized_equipment
 	
 		need = {
-			infantry_equipment = 25
+			firearm_equipment = 25
 			motorized_equipment = 8
 		}
 
@@ -260,7 +530,7 @@ sub_units = {
 		
 		# needed since we give so much bonus to infantry even with no mech equipment
 		essential = {
-			infantry_equipment
+			firearm_equipment
 			mechanized_equipment
 		}
 
@@ -269,7 +539,7 @@ sub_units = {
 
 		need = {
 			mechanized_equipment = 8
-			infantry_equipment = 100
+			firearm_equipment = 100
 		}
 
 		forest = {
@@ -336,7 +606,7 @@ sub_units = {
 		breakthrough = 0.3
 	
 		need = {
-			infantry_equipment = 150
+			firearm_equipment = 150
 		}
 
 		can_be_parachuted = yes
