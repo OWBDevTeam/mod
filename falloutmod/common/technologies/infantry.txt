@@ -1431,26 +1431,24 @@ technologies = {
     
     # Washington BOS
     power_armour_bos = {  
-        
-        path = {
-			leads_to_tech = bos_hardened_variant
-			research_cost_coeff = 1
-		}
-        
-        path = {
-			leads_to_tech = bos_servo_motors
-			research_cost_coeff = 1
-		}
-        
+        enable_equipments = {
+            power_armour_bos_0
+        }
+
         dependencies = {
             scientific_civilization = 1
+        }
+        
+        sub_technologies = {
+            bos_hardened_variant
+            bos_servo_motors
         }
         
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 14 y = 30 }
+			position = { x = 10 y = 30 }
 		}
 		
 		categories = {
@@ -1464,17 +1462,16 @@ technologies = {
 	}
     
     bos_hardened_variant = {  
-
+        enable_equipments = {
+            power_armour_bos_0_hardened
+        }
+        
         dependencies = {
             scientific_civilization = 1
         }
         
 		research_cost = 1.0
 		start_year = 2265
-		folder = {
-			name = fallout_infantry_folder
-			position = { x = 16 y = 30 }
-		}
 		
 		categories = {
 			infantry_tech
@@ -1487,17 +1484,16 @@ technologies = {
 	}
     
     bos_servo_motors = {  
-
+        enable_equipments = {
+            power_armour_bos_0_servo
+        }
+        
         dependencies = {
             scientific_civilization = 1
         }
         
 		research_cost = 1.0
 		start_year = 2265
-		folder = {
-			name = fallout_infantry_folder
-			position = { x = 18 y = 30 }
-		}
 		
 		categories = {
 			infantry_tech
@@ -1511,16 +1507,14 @@ technologies = {
     
     # Legion
     power_armour_legion = {  
+        enable_equipments = {
+            power_armour_legion_0
+        }
         
-        path = {
-			leads_to_tech = legion_siege_shield
-			research_cost_coeff = 1
-		}
-        
-        path = {
-			leads_to_tech = legion_servo_motors
-			research_cost_coeff = 1
-		}
+        sub_technologies = {
+            legion_siege_shield
+            legion_servo_motors
+        }
         
         dependencies = {
             scientific_civilization = 1
@@ -1530,7 +1524,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 14 y = 34 }
+			position = { x = 10 y = 34 }
 		}
 		
 		categories = {
@@ -1544,7 +1538,10 @@ technologies = {
 	}
     
     legion_siege_shield = {  
-
+        enable_equipments = {
+            power_armour_legion_0_siege
+        }
+        
         dependencies = {
             scientific_civilization = 1
         }
@@ -1567,7 +1564,10 @@ technologies = {
 	}
     
     legion_servo_motors = {  
-
+        enable_equipments = {
+            power_armour_legion_0_servo
+        }
+        
         dependencies = {
             scientific_civilization = 1
         }
@@ -1591,26 +1591,24 @@ technologies = {
     
     # Raider
     power_armour_raider = {  
-        
-        path = {
-			leads_to_tech = raider_welded_variant
-			research_cost_coeff = 1
-		}
-        
-        path = {
-			leads_to_tech = raider_servo_motors
-			research_cost_coeff = 1
-		}
+        enable_equipments = {
+            power_armour_raider_0
+        }
         
         dependencies = {
             scientific_civilization = 1
+        }
+        
+        sub_technologies = {
+            raider_welded_variant
+            raider_servo_motors
         }
         
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = 20 y = 30 }
+			position = { x = 12 y = 30 }
 		}
 		
 		categories = {
@@ -1624,18 +1622,17 @@ technologies = {
 	}
     
     raider_welded_variant = {  
-
+        enable_equipments = {
+            power_armour_raider_0_welded
+        }
+        
         dependencies = {
             scientific_civilization = 1
         }
         
 		research_cost = 1.0
 		start_year = 2265
-		folder = {
-			name = fallout_infantry_folder
-			position = { x = 22 y = 30 }
-		}
-		
+
 		categories = {
 			infantry_tech
             power_armor_tech
@@ -1647,18 +1644,13 @@ technologies = {
 	}
     
     raider_servo_motors = {  
-
-        dependencies = {
-            scientific_civilization = 1
+        enable_equipments = {
+            power_armour_raider_0_servo
         }
-        
+
 		research_cost = 1.0
 		start_year = 2265
-		folder = {
-			name = fallout_infantry_folder
-			position = { x = 24 y = 30 }
-		}
-		
+
 		categories = {
 			infantry_tech
             power_armor_tech
