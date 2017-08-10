@@ -40,11 +40,11 @@ lend_lease_BEL = {
 	ai_strategy = { type = support id = "BEL" value = 200 }
 }
 
-lend_lease_BLA = {
-	enable = { elgible_volunteers_sender = yes BLA = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } BLA = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "BLA" value = 200 }
-	ai_strategy = { type = support id = "BLA" value = 200 }
+lend_lease_BLK = {
+	enable = { elgible_volunteers_sender = yes BLK = { eligible_volunteers_receiver = yes } }
+	abort = { OR = { NOT = { elgible_volunteers_sender = yes } BLK = { NOT = {  eligible_volunteers_receiver = yes } } } }
+	ai_strategy = { type = send_volunteers_desire id = "BLK" value = 200 }
+	ai_strategy = { type = support id = "BLK" value = 200 }
 }
 
 lend_lease_BLP = {
