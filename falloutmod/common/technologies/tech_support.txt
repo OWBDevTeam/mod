@@ -998,7 +998,12 @@ technologies = {
 	}
     
     tracking_dogs = {
-        
+        dog_support = {
+            breakthrough = 0.1
+            forest = {
+                movement = 0.1
+            }
+        }
         path = {
 			leads_to_tech = war_dogs
 			research_cost_coeff = 1
@@ -1051,7 +1056,10 @@ technologies = {
 	}
     
     strange_meat = {
-
+        dog_support = {
+            soft_attack = 0.2
+        }
+        
         path = {
 			leads_to_tech = cyber_dogs
 			research_cost_coeff = 1
@@ -1109,7 +1117,9 @@ technologies = {
 	}
     
     brain_matrix = {
-
+        dog_support = {
+            initiative = 0.05
+        }
         dependencies = {
             scientific_civilization = 1
             # Circuitry
@@ -1169,8 +1179,8 @@ technologies = {
     
     # Healing
     healing_powder = {
-        enable_equipments = {
-            healing_powder_equipment
+        enable_subunits = {
+            medical_chem_company
         }
         
         path = {
@@ -1199,7 +1209,9 @@ technologies = {
 	}
     
     refined_mixture = {
-
+        medical_chem_company = {
+            casualty_trickleback = 0.05
+        }
         path = {
 			leads_to_tech = stimpack
 			research_cost_coeff = 1
@@ -1226,8 +1238,9 @@ technologies = {
 	}
     
     stimpack = {
-        enable_equipments = {
-            stimpack_equipment
+        medical_chem_company = {
+            casualty_trickleback = 0.1
+            experience_loss_factor = -0.1
         }
         
         path = {
@@ -1257,7 +1270,10 @@ technologies = {
 	}
     
     quick_acting_agents = {
-
+        medical_chem_company = {
+            experience_loss_factor = -0.1
+        }
+        
         path = {
 			leads_to_tech = miss_nanny
 			research_cost_coeff = 1
@@ -1285,8 +1301,9 @@ technologies = {
 	}
     
     miss_nanny = {
-        enable_equipments = {
-            miss_nanny_equipment
+        medical_chem_company = {
+            casualty_trickleback = 0.1
+            experience_loss_factor = -0.1
         }
         
         path = {
@@ -1297,7 +1314,7 @@ technologies = {
         dependencies = {
             chem_studies = 1
             scientific_civilization = 1
-            mr_handy = 1
+            robotic_programming = 1
         }
         
 		research_cost = 1.0
@@ -1309,6 +1326,7 @@ technologies = {
 		
 		categories = {
 			support_tech
+            robotics_tech
 		}
 		
 		ai_will_do = {
@@ -1317,11 +1335,14 @@ technologies = {
 	}
     
     auto_injectors = {
-
+        medical_chem_company = {
+           supply_consumption = -0.05
+        }
+        
         dependencies = {
             chem_studies = 1
             scientific_civilization = 1
-            # Circuitry
+            robotic_programming = 1
         }
         
 		research_cost = 1.0
@@ -1333,6 +1354,7 @@ technologies = {
 		
 		categories = {
 			support_tech
+            robotics_tech
 		}
 		
 		ai_will_do = {
@@ -1342,8 +1364,8 @@ technologies = {
     
     # Protection
     voodoo = {
-        enable_equipments = {
-            voodoo_mixture_equipment
+        enable_subunits = {
+            defensive_chem_company
         }
         
         path = {
@@ -1372,7 +1394,7 @@ technologies = {
 	}
     
     dead_mans_dose = {
-
+        
         path = {
 			leads_to_tech = med_x
 			research_cost_coeff = 1
@@ -1399,10 +1421,7 @@ technologies = {
 	}
     
     med_x = {
-        enable_equipments = {
-            med_x_equipment
-        }
-        
+
         path = {
 			leads_to_tech = laced_water
 			research_cost_coeff = 1
@@ -1431,6 +1450,7 @@ technologies = {
     
     laced_water = {
 
+        
         path = {
 			leads_to_tech = agricola_mining_robot
 			research_cost_coeff = 1
@@ -1458,10 +1478,7 @@ technologies = {
 	}
     
     agricola_mining_robot = {
-        enable_equipments = {
-            agricola_equipment
-        }
-        
+
         path = {
 			leads_to_tech = industrial_entrenchment
 			research_cost_coeff = 1
@@ -1470,7 +1487,7 @@ technologies = {
         dependencies = {
             chem_studies = 1
             scientific_civilization = 1
-            # Circuitry
+            robotic_programming = 1
         }
         
 		research_cost = 1.0
@@ -1482,6 +1499,7 @@ technologies = {
 		
 		categories = {
 			support_tech
+            robotics_tech
 		}
 		
 		ai_will_do = {
@@ -1490,11 +1508,11 @@ technologies = {
 	}
     
     industrial_entrenchment = {
-
+        
         dependencies = {
             chem_studies = 1
             scientific_civilization = 1
-            # Circuitry
+            robotic_programming = 1
         }
         
 		research_cost = 1.0
@@ -1506,6 +1524,7 @@ technologies = {
 		
 		categories = {
 			support_tech
+            robotics_tech
 		}
 		
 		ai_will_do = {
@@ -1515,10 +1534,7 @@ technologies = {
     
     # Aggression
     binding_mixture = {
-        enable_equipments = {
-            binding_mixture_equipment
-        }
-        
+
         path = {
 			leads_to_tech = self_preservation_blockers
 			research_cost_coeff = 1
@@ -1572,9 +1588,6 @@ technologies = {
 	}
     
     psycho = {
-        enable_equipments = {
-            psycho_equipment
-        }
         
         path = {
 			leads_to_tech = raider_juice
@@ -1631,10 +1644,7 @@ technologies = {
 	}
     
     crb_s = {
-        enable_equipments = {
-            cerberus_equipment
-        }
-        
+
         path = {
 			leads_to_tech = cerberus_patrols
 			research_cost_coeff = 1
@@ -1643,7 +1653,7 @@ technologies = {
         dependencies = {
             chem_studies = 1
             scientific_civilization = 1
-            # Circuitry
+            robotic_programming = 1
         }
         
 		research_cost = 1.0
@@ -1655,6 +1665,7 @@ technologies = {
 		
 		categories = {
 			support_tech
+            robotics_tech
 		}
 		
 		ai_will_do = {
@@ -1667,7 +1678,7 @@ technologies = {
         dependencies = {
             chem_studies = 1
             scientific_civilization = 1
-            # Circuitry
+            robotic_programming = 1
         }
         
 		research_cost = 1.0
@@ -1679,6 +1690,7 @@ technologies = {
 		
 		categories = {
 			support_tech
+            robotics_tech
 		}
 		
 		ai_will_do = {
