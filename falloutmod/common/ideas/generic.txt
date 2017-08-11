@@ -1,43 +1,62 @@
 ideas = {
-
 	country = {
-		
-		science_bonus = {
-			
+		research_bonus = {
+            picture = generic_research_bonus
 			removal_cost = -1
-			
-			allowed = {
-				always = no 
-			}
+            
+			allowed = { always = no }
 
-			allowed_civil_war = {
-				always = yes
-			}
-			
-			picture = generic_research_bonus
-			
 			modifier = {
-				research_time_factor = -0.05 #Is this too much?
+				research_time_factor = -0.05
 			}
 		}
-		
-		advanced_army = {
-		
-			removal_cost = -1
-			
-			allowed = {
-				always = no 
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-			
+        
+        # Iron Wall
+        iron_wall = {
 			picture = generic_infantry_bonus
-			
+            removal_cost = -1
+            
+			allowed = { always = no }
+
 			modifier = {
-				army_org_Factor = 0.05
-				planning_speed = 0.25
+				army_defence_factor = 0.05
+			}
+		}
+        
+        # Powered Assault
+        powered_assault = {
+			picture = generic_infantry_bonus
+            removal_cost = -1
+            
+			allowed = { always = no }
+
+			modifier = {
+				army_attack_factor = 0.05
+			}
+		}
+        
+        # Hidden Strikes
+        hidden_strikes = {
+			picture = generic_infantry_bonus
+            removal_cost = -1
+            
+			allowed = { always = no }
+
+			modifier = {
+				army_core_defence_factor = 0.2
+			}
+		}
+        
+        
+        # Lethal Blows
+        lethal_blows = {
+			picture = generic_infantry_bonus
+            removal_cost = -1
+            
+			allowed = { always = no }
+
+			modifier = {
+				army_core_attack_factor = 0.2
 			}
 		}
 	}

@@ -1,11 +1,11 @@
 sub_units = {
 
-	bikers = {
+	motorbike = {
 		sprite = motorized
 		map_icon_category = infantry
 		
 		priority = 600
-		active = no
+		active = yes
 
 		type = {
 			motorized
@@ -35,15 +35,15 @@ sub_units = {
 		
 		supply_consumption = 0.8
 	
-		transport = bikes_equipment
+		transport = motorbike_equipment
 
 		need = {
-			bikes_equipment = 100
-			firearm_equipment = 100
+			motorbike_equipment = 100
+			infantry_equipment = 100
 		}
 	}
 
-	bikers_support = {
+	motorbike_support = {
 		sprite = motorized
 		map_icon_category = infantry
 
@@ -76,7 +76,7 @@ sub_units = {
 		recon = 1
 
 		need = {
-			bikes_equipment = 30
+			motorbike_equipment = 30
 		}
 	}
 }

@@ -1,0 +1,35 @@
+equipments = {
+    # Anti-tank
+    anti_tank_equipment = {
+		is_archetype = yes
+		is_buildable = no
+		type = infantry
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		reliability = 0.9
+
+		#Space taken in convoy
+		lend_lease_cost = 1
+
+		build_cost_ic = 1
+        
+		resources = {
+			metal = 1
+		}
+	}
+
+    # Large Calibre Rifles
+	anti_tank_equipment_1 = {
+		archetype = anti_tank_equipment
+		priority = 20	
+	}
+    
+    # Anti-tank Rifles
+    anti_tank_equipment_2 = {
+		archetype = anti_tank_equipment
+        parent = anti_tank_equipment_1
+		priority = 20	
+	}
+}

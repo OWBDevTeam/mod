@@ -1,0 +1,78 @@
+equipments = {
+	apc_equipment = {
+		is_archetype = yes
+		picture = archetype_motorized_equipment		
+		is_buildable = no
+		type = {
+			#infantry #Removing inf type 
+			mechanized
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		#Misc Abilities
+		maximum_speed = 8
+		reliability = 0.8
+		
+		#Defensive Abilities
+		defense = 26
+		breakthrough = 4
+		hardness = 0.5
+		armor_value = 10
+
+		#Offensive Abilities
+		ap_attack = 11
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 5
+		
+		build_cost_ic = 12 
+		resources = {
+			metal = 2
+			fuel = 1
+			electronics = 1
+		}
+	}
+
+	# Wasteland APCs
+	apc_equipment_1 = {
+		archetype = apc_equipment
+		priority = 40
+		visual_level = 0
+	}
+
+    # Pre-war APCs
+	apc_equipment_2 = {
+		archetype = apc_equipment
+		parent = apc_equipment_1
+		priority = 40
+		visual_level = 1
+
+		maximum_speed = 10
+
+		#Defensive Abilities
+		defense = 30
+		breakthrough = 5
+		hardness = 0.6
+		armor_value = 15
+
+		#Offensive Abilities
+		ap_attack = 16
+		
+		build_cost_ic = 13
+		resources = {
+			metal = 3
+			electronics = 1
+			fuel = 1
+		}
+	}
+
+    testudo_apc_equipment = {
+		archetype = apc_equipment
+		priority = 40
+		visual_level = 0
+	}
+    
+}
