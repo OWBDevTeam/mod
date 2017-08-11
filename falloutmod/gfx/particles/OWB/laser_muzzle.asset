@@ -1,20 +1,20 @@
 entity = {
-	name = "laser_muzzle_effect_entity"
+	name = "laser_beam_effect_entity"
 	
 	default_state = "attack"
 	get_state_from_parent = no
 	state = {
 		name = "attack" looping = no state_time = 0.8
-		event = { time = 0.0 use_parent_nodes = yes node = windup_1 particle = "laser_beam_effect" keep_particle = yes }
-		event = { time = 0.0 use_parent_nodes = yes node = windup_7 particle = "laser_muzzle_effect" keep_particle = yes }
-		event = { time = 0.2 use_parent_nodes = yes node = windup_6 particle = "laser_muzzle_effect" keep_particle = yes }
-		event = { time = 0.2 use_parent_nodes = yes node = windup_5 particle = "laser_muzzle_effect" keep_particle = yes }
-		event = { time = 0.4 use_parent_nodes = yes node = windup_4 particle = "laser_muzzle_effect" keep_particle = yes }
-		event = { time = 0.4 use_parent_nodes = yes node = windup_3 particle = "laser_muzzle_effect" keep_particle = yes }
-		event = { time = 0.6 use_parent_nodes = yes node = windup_2 particle = "laser_muzzle_effect" keep_particle = yes }
-		event = { time = 0.6 use_parent_nodes = yes node = windup_1 particle = "laser_muzzle_effect" keep_particle = yes }
+		event = { time = 0.0 use_parent_nodes = yes node = windup_8 particle = "laser_beam_effect" keep_particle = yes }
+		event = { time = 0.0 use_parent_nodes = yes node = windup_7 particle = "laser_beam_effect" keep_particle = yes }
+		event = { time = 0.2 use_parent_nodes = yes node = windup_6 particle = "laser_beam_effect" keep_particle = yes }
+		event = { time = 0.2 use_parent_nodes = yes node = windup_5 particle = "laser_beam_effect" keep_particle = yes }
+		event = { time = 0.4 use_parent_nodes = yes node = windup_4 particle = "laser_beam_effect" keep_particle = yes }
+		event = { time = 0.4 use_parent_nodes = yes node = windup_3 particle = "laser_beam_effect" keep_particle = yes }
+		event = { time = 0.6 use_parent_nodes = yes node = windup_2 particle = "laser_beam_effect" keep_particle = yes }
+		event = { time = 0.6 use_parent_nodes = yes node = windup_1 particle = "laser_beam_effect" keep_particle = yes }
 		
-		event = { time = 0.0 use_parent_nodes = yes node = muzzle particle = "laser_muzzle_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0.0 use_parent_nodes = yes node = muzzle particle = "laser_beam_effect" trigger_once = yes keep_particle = yes }
 	}
 }
 
@@ -159,7 +159,7 @@ particle = {
 	}
 }
 particle = {
-	name = "laser_muzzle_effect"
+	name = "laser_beam_effect"
 	
 
 
