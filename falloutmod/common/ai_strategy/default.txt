@@ -621,6 +621,30 @@ default_garrison_production = {
 		value = 8
 	}
 }
+research_basic_tech_melee = {
+	enable = {
+		NOT = {
+			has_tech = blunt_weaponry
+		}
+	}
+	ai_strategy = {
+		type = research_tech
+		id = blunt_weaponry
+		value = 50
+	}
+}
+research_basic_tech_firearms = {
+	enable = {
+		NOT = {
+			has_tech = standard_weaponry
+		}
+	}
+	ai_strategy = {
+		type = research_tech
+		id = standard_weaponry
+		value = 50
+	}
+}
 save_admiral_pp_for_later = {
 	enable = {
 		has_war = no
