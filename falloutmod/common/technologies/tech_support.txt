@@ -1394,7 +1394,17 @@ technologies = {
 	}
     
     dead_mans_dose = {
-        
+        defensive_chem_company = {
+            forest = {
+                defence = 0.1
+            }
+            mountain = {
+                defence = 0.1
+            }
+            plains = {
+                defence = 0.1
+            }
+        }
         path = {
 			leads_to_tech = med_x
 			research_cost_coeff = 1
@@ -1421,7 +1431,15 @@ technologies = {
 	}
     
     med_x = {
-
+        defensive_chem_company = {
+            entrenchment = 2
+            urban = {
+                defence = 0.1
+            }
+            fort = {
+                defence = 0.1
+            }
+        }
         path = {
 			leads_to_tech = laced_water
 			research_cost_coeff = 1
@@ -1449,7 +1467,9 @@ technologies = {
 	}
     
     laced_water = {
-
+        defensive_chem_company = {
+            supply_consumption = -0.1
+        }
         
         path = {
 			leads_to_tech = agricola_mining_robot
@@ -1478,7 +1498,10 @@ technologies = {
 	}
     
     agricola_mining_robot = {
-
+        defensive_chem_company = {
+            entrenchment = 5
+            supply_consumption = -0.25
+        }
         path = {
 			leads_to_tech = industrial_entrenchment
 			research_cost_coeff = 1
@@ -1508,7 +1531,15 @@ technologies = {
 	}
     
     industrial_entrenchment = {
-        
+        defensive_chem_company = {
+            entrenchment = 5
+            urban = {
+                defence = 0.1
+            }
+            fort = {
+                defence = 0.1
+            }
+        }
         dependencies = {
             chem_studies = 1
             scientific_civilization = 1
