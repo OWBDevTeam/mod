@@ -1,0 +1,43 @@
+sub_units = {
+	fighter = {
+		sprite = light_plane
+		priority = 1
+		active = yes
+		type = { fighter }
+		need = { fm_fighter_equipment = 1 }
+		categories = { category_fighter }
+	}
+
+	cas = {
+		sprite = light_plane
+		priority = 1
+		active = yes
+		type = { cas }
+		need = { fm_cas_equipment = 1 }
+		categories = { category_cas }
+	}
+
+	tac_bomber = {
+		sprite = medium_plane
+		priority = 1
+		active = yes
+		type = { tactical_bomber }
+		need = { fm_tactical_bomber_equipment = 1 }
+	}
+
+	strat_bomber = {
+		sprite = heavy_plane
+		priority = 1
+		active = yes
+		type = { strategic_bomber }
+		need = { fm_strategic_bomber_equipment = 1 }
+	}
+
+	transport_plane = {
+		sprite = heavy_plane
+		priority = 1
+		active = yes
+		type = { air_transport }
+		need = { fm_transport_plane_equipment = 1 }
+	}
+}

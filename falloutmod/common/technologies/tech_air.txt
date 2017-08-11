@@ -1,0 +1,476 @@
+technologies = {
+	
+	@CivilizedColumn1 = 0
+	@CivilizedColumn2 = 4
+	@AdvancedColumn1 = 8
+	@AdvancedColumn2 = 12
+    @AdvancedColumn3 = 16
+    @UniqueColumn1 = 20
+    @UniqueColumn2 = 24
+    @UniqueColumn3 = 28
+    
+    #-------------------------------
+    # Fighter
+    #-------------------------------
+    scrap_fighter = {
+        enable_equipments = {
+            fm_fighter_equipment_1
+        }
+        
+		path = {
+			leads_to_tech = salvaged_fighter
+			research_cost_coeff = 1
+		}
+		
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_air_folder
+			position = { x = 0 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			light_air
+			light_fighter
+			air_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    salvaged_fighter = {
+        enable_equipments = {
+            fm_fighter_equipment_2
+        }
+        
+		path = {
+			leads_to_tech = nuclear_salvaged_fighter
+			research_cost_coeff = 1
+		}
+		
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_air_folder
+			position = { x = 0 y = @CivilizedColumn2 }
+		}
+		
+		categories = {
+			light_air
+			light_fighter
+			air_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    nuclear_salvaged_fighter = {
+        enable_equipments = {
+            fm_fighter_equipment_3
+        }
+        
+		path = {
+			leads_to_tech = p80_nuclear
+			research_cost_coeff = 1
+		}
+		
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_air_folder
+			position = { x = 0 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			light_air
+			light_fighter
+			air_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    p80_nuclear = {
+        enable_equipments = {
+            fm_fighter_equipment_4
+        }
+        
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_air_folder
+			position = { x = 0 y = @AdvancedColumn2 }
+		}
+		
+		categories = {
+			light_air
+			light_fighter
+			air_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    # ADD TACTICAL BOMBER
+    
+    #-------------------------------
+    # Strategic Bomber
+    #-------------------------------
+    scrap_bomber = {
+        enable_equipments = {
+            fm_strategic_bomber_equipment_1
+        }
+        
+		path = {
+			leads_to_tech = salvaged_superfortress
+			research_cost_coeff = 1
+		}
+		
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_air_folder
+			position = { x = 2 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			heavy_air
+            air_equipment
+            cat_strategic_bomber
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    salvaged_superfortress = {
+        enable_equipments = {
+            fm_strategic_bomber_equipment_2
+        }
+        
+		path = {
+			leads_to_tech = zeppelin_superfortress
+			research_cost_coeff = 1
+		}
+		
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_air_folder
+			position = { x = 2 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			heavy_air
+            air_equipment
+            cat_strategic_bomber
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    zeppelin_superfortress = {
+        enable_equipments = {
+            fm_strategic_bomber_equipment_3
+        }
+        
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_air_folder
+			position = { x = 2 y = @AdvancedColumn2 }
+		}
+		
+		categories = {
+			heavy_air
+            air_equipment
+            cat_strategic_bomber
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    #-------------------------------
+    # Air Support
+    #-------------------------------
+    scrap_divebomber = {
+        enable_equipments = {
+            fm_cas_equipment_1
+        }
+        
+		path = {
+			leads_to_tech = salvaged_divebomber
+			research_cost_coeff = 1
+		}
+		
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_air_folder
+			position = { x = 4 y = @CivilizedColumn1 }
+		}
+		
+		categories = {
+			light_air
+            cas_bomber
+            air_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    salvaged_divebomber = {
+        enable_equipments = {
+            fm_cas_equipment_2
+        }
+        
+		path = {
+			leads_to_tech = armoured_zeppelin
+			research_cost_coeff = 1
+		}
+		
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_air_folder
+			position = { x = 4 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			light_air
+            cas_bomber
+            air_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    armoured_zeppelin = {
+        enable_equipments = {
+            fm_cas_equipment_3
+        }
+        
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_air_folder
+			position = { x = 4 y = @AdvancedColumn2 }
+		}
+		
+		categories = {
+			medium_air
+            cas_bomber
+            air_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    #-------------------------------
+    # Transport
+    #-------------------------------
+    salvaged_transport = {
+        enable_equipments = {
+            fm_transport_plane_equipment_1
+        }
+        
+		path = {
+			leads_to_tech = cargo_zeppelin
+			research_cost_coeff = 1
+		}
+		
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_air_folder
+			position = { x = 6 y = @CivilizedColumn2 }
+		}
+		
+		categories = {
+			medium_air
+            air_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    cargo_zeppelin = {
+        enable_equipments = {
+            fm_transport_plane_equipment_2
+        }
+        
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_air_folder
+			position = { x = 6 y = @AdvancedColumn1 }
+		}
+		
+		categories = {
+			medium_air
+            air_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    #-------------------------------
+    # Uniques
+    #-------------------------------
+    xian_85_fighter = {
+        enable_equipments = {
+            xian_85_fighter_equipment
+        }
+        
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_air_folder
+			position = { x = 0 y = @UniqueColumn1 }
+		}
+		
+		categories = {
+			light_air
+			light_fighter
+			air_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+    vertiberd_gunship = {
+        enable_equipments = {
+            vb_gunship_equipment
+        }
+        
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_air_folder
+			position = { x = 2 y = @UniqueColumn1 }
+		}
+		
+		categories = {
+			medium_air
+            cas_bomber
+            air_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    # VB Transport
+    vertiberd_transport1 = {
+        enable_equipments = {
+            vb_transport_plane_equipment
+        }
+        
+        path = {
+			leads_to_tech = vertiberd_transport2
+			research_cost_coeff = 1
+		}
+        
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+		folder = {
+			name = fallout_air_folder
+			position = { x = 4 y = @UniqueColumn1 }
+		}
+		
+		categories = {
+			medium_air
+            air_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
