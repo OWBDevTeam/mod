@@ -1,9 +1,9 @@
 sub_units = {
-	flamer_support = {
+	anti_personnel_company = {
 		sprite = infantry
 		map_icon_category = infantry
 		priority = 0
-		active = no
+		active = yes
 
 		type = {
 			infantry
@@ -31,12 +31,15 @@ sub_units = {
 		weight = 0.1
 		supply_consumption = 0.02
 
+        suppression_factor = 0.25
+        
 		essential = {
-			flamer_equipment
+			support_equipment
+            anti_personnel_equipment
 		}
 
 		need = {
-			flamer_equipment = 30
+            anti_personnel_equipment = 30
 			support_equipment = 10
 		}
 

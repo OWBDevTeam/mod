@@ -1,0 +1,73 @@
+equipments = {
+
+	car_equipment = {
+		is_archetype = yes
+		picture = archetype_car_equipment		
+		is_buildable = no
+		type = {
+			motorized
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		maximum_speed = 12
+		reliability = 0.8
+		hardness = 0.1
+
+		#Space taken in convoy
+		lend_lease_cost = 5
+
+		build_cost_ic = 2.5
+		resources = {
+			fuel = 1
+			electronics = 1
+			metal = 1
+		}
+	}
+
+    # Scrap Car
+	car_equipment_1 = {
+		archetype = car_equipment
+		priority = 30			
+	}
+
+    # Salvaged Car
+	car_equipment_2 = {
+		archetype = car_equipment
+        parent = car_equipment_1
+		priority = 40	
+        
+        upgrades = {
+			car_anti_air_turret_upgrade
+            car_road_ram_upgrade
+		}
+        
+		maximum_speed = 16
+		reliability = 0.9
+		build_cost_ic = 4
+        
+		resources = {
+			fuel = 2
+			electronics = 1
+			metal = 2
+		}	
+	}
+    
+    # Wasteland Car
+    car_equipment_3 = {
+		archetype = car_equipment
+        parent = car_equipment_2
+		priority = 50	
+        
+		maximum_speed = 16
+		reliability = 0.9
+		build_cost_ic = 4
+        
+		resources = {
+			fuel = 2
+			electronics = 1
+			metal = 2
+		}	
+	}
+}

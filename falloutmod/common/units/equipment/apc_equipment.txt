@@ -36,14 +36,14 @@ equipments = {
 		}
 	}
 
-	# Wasteland APCs
+	# Salvaged APC
 	apc_equipment_1 = {
 		archetype = apc_equipment
 		priority = 40
 		visual_level = 0
 	}
 
-    # Pre-war APCs
+    # Wasteland APC
 	apc_equipment_2 = {
 		archetype = apc_equipment
 		parent = apc_equipment_1
@@ -68,9 +68,36 @@ equipments = {
 			fuel = 1
 		}
 	}
+    
+    # Great War APC
+    apc_equipment_3 = {
+		archetype = apc_equipment
+		parent = apc_equipment_2
+		priority = 40
+		visual_level = 1
+
+		maximum_speed = 10
+
+		#Defensive Abilities
+		defense = 30
+		breakthrough = 5
+		hardness = 0.6
+		armor_value = 15
+
+		#Offensive Abilities
+		ap_attack = 16
+		
+		build_cost_ic = 13
+		resources = {
+			metal = 3
+			electronics = 1
+			fuel = 1
+		}
+	}
 
     testudo_apc_equipment = {
 		archetype = apc_equipment
+        parent = apc_equipment_3
 		priority = 40
 		visual_level = 0
 	}
