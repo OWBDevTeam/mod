@@ -42,13 +42,16 @@ country_event = {
 	id = coring_event.2
 	fire_only_once = no
 	mean_time_to_happen = { days = 1 }
-	hidden = no
+	hidden = yes
 	
 	title = coring_event.2.t
 	desc = coring_event.2.d
 	
 	trigger = {
-			is_ai = yes
+			OR = {
+				is_ai = yes
+				has_idea = enable_autocoring
+			}
 			is_major = no
 			NOT = {
 				OR = {
@@ -63,16 +66,19 @@ country_event = {
 				}
 			}
 	}
-	option = {
+	immediate = {
 		add_ideas = core_state
-		add_ideas = coring_state
-		random_owned_controlled_state = {
-			limit = {
-				NOT = {
-					is_core_of = ROOT
+			add_ideas = coring_state
+			random_owned_controlled_state = {
+				limit = {
+					NOT = {
+						is_core_of = ROOT
+					}
 				}
+				set_state_flag = coring_state
 			}
-			set_state_flag = coring_state
-		}
+	}
+	option = {
+		name =coring_event.2.a
 	}
 }
