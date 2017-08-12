@@ -1,0 +1,158 @@
+add_namespace = FALLOUT_MUSIC
+
+country_event = {
+	id = FALLOUT_MUSIC.1
+	title = FALLOUT_MUSIC.1.title
+	desc = FALLOUT_MUSIC.1.desc
+	picture = SUN_OVER_CANYON_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = FALLOUT_MUSIC.1.option.a
+		
+		trigger = {
+			has_country_flag = play_enclave_music
+		}
+		
+		clr_country_flag = play_enclave_music
+		remove_ideas = music_event_idea
+	}
+
+	option = {
+		name = FALLOUT_MUSIC.1.option.b
+		
+		trigger = {
+			NOT = { has_country_flag = play_enclave_music }
+		}
+		
+		set_country_flag = play_enclave_music
+		remove_ideas = music_event_idea
+	}
+	
+	option = {
+		name = FALLOUT_MUSIC.1.option.c
+		
+		trigger = {
+			has_country_flag = play_fo3_music
+		}
+		
+		clr_country_flag = play_fo3_music
+		remove_ideas = music_event_idea
+	}
+	
+	option = {
+		name = FALLOUT_MUSIC.1.option.d
+		
+		trigger = {
+			NOT = { has_country_flag = play_fo3_music }
+		}
+		
+		set_country_flag = play_fo3_music
+		remove_ideas = music_event_idea
+	}
+	
+	option = {
+		name = FALLOUT_MUSIC.1.option.e
+		
+		trigger = {
+			has_country_flag = play_nv_music
+		}
+		
+		clr_country_flag = play_nv_music
+		remove_ideas = music_event_idea
+	}
+	
+	option = {
+		name = FALLOUT_MUSIC.1.option.f
+		
+		trigger = {
+			NOT = { has_country_flag = play_nv_music }
+		}
+		
+		set_country_flag = play_nv_music
+		remove_ideas = music_event_idea
+	}
+    
+    option = {
+		name = FALLOUT_MUSIC.1.option.g
+		
+		trigger = {
+			has_country_flag = play_fo4_music
+		}
+		
+		clr_country_flag = play_fo4_music
+		remove_ideas = music_event_idea
+	}
+	
+	option = {
+		name = FALLOUT_MUSIC.1.option.h
+		
+		trigger = {
+			NOT = { has_country_flag = play_fo4_music }
+		}
+		
+		set_country_flag = play_fo4_music
+		remove_ideas = music_event_idea
+	}
+	
+	# Disable All
+	option = {
+		name = FALLOUT_MUSIC.1.option.i
+		
+		trigger = {
+			OR = {
+				has_country_flag = play_enclave_music
+				has_country_flag = play_fo3_music
+				has_country_flag = play_nv_music
+			}
+		}
+		
+		clr_country_flag = play_enclave_music
+		clr_country_flag = play_fo3_music
+		clr_country_flag = play_nv_music
+		clr_country_flag = play_fo4_music
+		remove_ideas = music_event_idea
+		remove_ideas = music_event_idea
+	}
+	
+	# Enable All
+	option = {
+		name = FALLOUT_MUSIC.1.option.j
+		
+		set_country_flag = play_enclave_music
+		set_country_flag = play_fo3_music
+		set_country_flag = play_nv_music
+        set_country_flag = play_fo4_music
+		remove_ideas = music_event_idea
+	}
+	
+	option = {
+		name = FALLOUT_MUSIC.1.option.x
+		remove_ideas = music_event_idea
+	}
+}
+
+country_event = {
+	id = FALLOUT_MUSIC.2
+	title = FALLOUT_MUSIC.2.title
+	desc = FALLOUT_MUSIC.2.desc
+	picture = SUN_OVER_CANYON_eventPicture
+	
+	fire_only_once = yes
+    hidden = yes
+    
+    trigger = {
+        ai = no
+    }
+    
+	option = {
+		name = FALLOUT_MUSIC.2.option.a
+		
+		set_country_flag = play_enclave_music
+		set_country_flag = play_fo3_music
+		set_country_flag = play_nv_music
+        set_country_flag = play_fo4_music
+		remove_ideas = music_event_idea
+	}
+}
