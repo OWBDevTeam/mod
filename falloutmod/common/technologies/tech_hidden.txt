@@ -1,0 +1,61 @@
+technologies = {
+    super_mutant_civilization = {
+		research_cost = 1.0
+		start_year = 2265
+		
+        # Applied via history only
+        allow = {
+			always = no
+		}
+		
+		categories = {
+			civilization_tech
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+    tribal_civilization = {
+		path = {
+			leads_to_tech = settled_civilization
+			research_cost_coeff = 1
+		}	
+		
+		categories = {
+			civilization_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    settled_civilization = {
+        
+		path = {
+			leads_to_tech = scientific_civilization
+			research_cost_coeff = 1
+		}	
+		
+		categories = {
+			civilization_tech
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+    
+    scientific_civilization = {
+        
+		categories = {
+			civilization_tech
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

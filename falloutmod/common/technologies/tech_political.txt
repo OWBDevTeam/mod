@@ -31,109 +31,7 @@ technologies = {
     @Row_17 = 32
     @Row_18 = 34
     @Row_19 = 36
-    
-	@TribalColumn1 = 0
-	@TribalColumn2 = 4
-	@CivilizedColumn1 = 8
-	@CivilizedColumn2 = 12
-	@AdvancedColumn1 = 16
-	@AdvancedColumn2 = 20
-    @AdvancedColumn3 = 24
-    @SpecialColumn1 = 28
-    @SpecialColumn2 = 32
-    @SpecialColumn3 = 36
-    
-    #---------------------------
-    # Special 
-    #---------------------------
-    super_mutant_civilization = {
-		research_cost = 1.0
-		start_year = 2265
-		
-        # Applied via history only
-        allow = {
-			always = no
-		}
-		
-		categories = {
-			civilization_tech
-		}
-		
-		ai_will_do = {
-			factor = 0
-		}
-	}
-    
-    
-    #---------------------------
-    # Civilization Status
-    #---------------------------
-    tribal_civilization = {
-        
-		path = {
-			leads_to_tech = settled_civilization
-			research_cost_coeff = 1
-		}	
-		
-		research_cost = 1.0
-		start_year = 2265
-		folder = {
-			name = fallout_civilization_folder
-			position = { x = 0 y = 0 }
-		}
-		
-		categories = {
-			civilization_tech
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-    
-    settled_civilization = {
-        unity_weekly = 0.05
-        
-		path = {
-			leads_to_tech = scientific_civilization
-			research_cost_coeff = 1
-		}	
-		
-		research_cost = 1.0
-		start_year = 2280
-		folder = {
-			name = fallout_civilization_folder
-			position = { x = 0 y = 4 }
-		}
-		
-		categories = {
-			civilization_tech
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-    
-    scientific_civilization = {
-        unity_weekly = 0.05
-        
-		research_cost = 1.0
-		start_year = 2300
-		folder = {
-			name = fallout_civilization_folder
-			position = { x = 0 y = 12 }
-		}
-		
-		categories = {
-			civilization_tech
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-    
+
     #---------------------------
     # Politics
     #---------------------------
@@ -148,12 +46,12 @@ technologies = {
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
-			name = fallout_civilization_folder
-			position = { x = 0 y = 0 }
+			name = fallout_political_folder
+			position = { x = @Row_1 y = @Col_1 }
 		}
 		
 		categories = {
-			civilization_tech
+			political_tech
 		}
 		
 		ai_will_do = {
@@ -176,12 +74,12 @@ technologies = {
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
-			name = fallout_civilization_folder
-			position = { x = 0 y = 4 }
+			name = fallout_political_folder
+			position = { x = @Row_1 y = @Col_2 }
 		}
 		
 		categories = {
-			civilization_tech
+			political_tech
 		}
 		
 		ai_will_do = {
@@ -204,12 +102,12 @@ technologies = {
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
-			name = fallout_civilization_folder
-			position = { x = 0 y = 8 }
+			name = fallout_political_folder
+			position = { x = @Row_1 y = @Col_3 }
 		}
 		
 		categories = {
-			civilization_tech
+			political_tech
 		}
 		
 		ai_will_do = {
@@ -232,12 +130,12 @@ technologies = {
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
-			name = fallout_civilization_folder
-			position = { x = 0 y = 12 }
+			name = fallout_political_folder
+			position = { x = @Row_1 y = @Col_4 }
 		}
 		
 		categories = {
-			civilization_tech
+			political_tech
 		}
 		
 		ai_will_do = {
@@ -260,12 +158,12 @@ technologies = {
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
-			name = fallout_civilization_folder
-			position = { x = 0 y = 16 }
+			name = fallout_political_folder
+			position = { x = @Row_1 y = @Col_5 }
 		}
 		
 		categories = {
-			civilization_tech
+			political_tech
 		}
 		
 		ai_will_do = {
