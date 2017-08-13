@@ -1128,7 +1128,10 @@ technologies = {
     
     servo_motors = {  
         power_armour = {
-            maximum_speed = 0.25
+            maximum_speed = 0.1
+        }
+        power_armour_support = {
+            maximum_speed = 0.1
         }
         
         dependencies = {
@@ -1150,6 +1153,9 @@ technologies = {
     
     mounted_cooler = {  
         power_armour = {
+            reliability = 0.1
+        }
+        power_armour_support = {
             reliability = 0.1
         }
         
@@ -1195,6 +1201,61 @@ technologies = {
 			infantry_tech
             power_armor_tech
 		}
+        
+        sub_technologies = {
+            reinforced_plating
+            sensor_array
+        }
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    reinforced_plating = {  
+        power_armour = {
+            defense = 0.1
+        }
+        power_armour_support = {
+            defense = 0.1
+        }
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    sensor_array = {  
+        power_armour = {
+            initiative = 0.1
+        }
+        power_armour_support = {
+            initiative = 0.1
+        }
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
 		
 		ai_will_do = {
 			factor = 1
@@ -1222,12 +1283,65 @@ technologies = {
             power_armor_tech
 		}
 		
+        sub_technologies = {
+            recon_sensors
+            tesla_coils
+        }
+        
 		ai_will_do = {
 			factor = 1
 		}
 	}
 
+    recon_sensors = {  
+        power_armour = {
+            recon = 1
+        }
+        power_armour_support = {
+            recon = 1
+        }
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
     
+    tesla_coils = {  
+        power_armour = {
+            soft_attack = 0.1
+        }
+        power_armour_support = {
+            soft_attack = 0.1
+        }
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+
+		categories = {
+			infantry_tech
+            power_armor_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
     
     #-------------------------
     # Special Forces
@@ -1589,6 +1703,55 @@ technologies = {
             gauss_weaponry_tech
 		}
 		
+        sub_technologies = {
+            recoil_compensating_grip
+            gauss_agitator
+        }
+        
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    recoil_compensating_grip = {  
+        category_all_infantry = {
+            ap_attack = 0.1
+        }
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+
+		categories = {
+			infantry_tech
+            gauss_weaponry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    gauss_agitator = {  
+        category_all_infantry = {
+            soft_attack = 0.1
+        }
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+
+		categories = {
+			infantry_tech
+            gauss_weaponry_tech
+		}
+		
 		ai_will_do = {
 			factor = 1
 		}
@@ -1610,6 +1773,55 @@ technologies = {
 			position = { x = @Row_1 y = @Col_11 }
 		}
 		
+		categories = {
+			infantry_tech
+            tesla_weaponry_tech
+		}
+		
+        sub_technologies = {
+            maximized_capacitor
+            tesla_exciter
+        }
+        
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    maximized_capacitor = {  
+        category_all_infantry = {
+            ap_attack = 0.1
+        }
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+
+		categories = {
+			infantry_tech
+            tesla_weaponry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    tesla_exciter = {  
+        category_all_infantry = {
+            hard_attack = 0.1
+        }
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+
 		categories = {
 			infantry_tech
             tesla_weaponry_tech
@@ -1639,6 +1851,55 @@ technologies = {
 		categories = {
 			infantry_tech
             plasma_weaponry_tech
+		}
+		
+        sub_technologies = {
+            beta_wave_tuner
+            photon_agitator
+        }
+        
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    beta_wave_tuner = {  
+        category_all_infantry = {
+            soft_attack = 0.1
+        }
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+
+		categories = {
+			infantry_tech
+            tesla_weaponry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+    
+    photon_agitator = {  
+        category_all_infantry = {
+            soft_attack = 0.1
+        }
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 1.0
+		start_year = 2265
+
+		categories = {
+			infantry_tech
+            tesla_weaponry_tech
 		}
 		
 		ai_will_do = {
