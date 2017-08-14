@@ -22,8 +22,8 @@ equipments = {
 		build_cost_ic = 2.5
 		resources = {
 			fuel = 1
-			electronics = 1
 			metal = 1
+			electronics = 1
 		}
 	}
 
@@ -45,8 +45,8 @@ equipments = {
         
 		resources = {
 			fuel = 2
+			metal = 1
 			electronics = 1
-			metal = 2
 		}	
 	}
     
@@ -62,8 +62,8 @@ equipments = {
         
 		resources = {
 			fuel = 2
-			electronics = 2
 			metal = 2
+			electronics = 2
 		}	
 	}
     
@@ -71,18 +71,50 @@ equipments = {
     eighties_warbikes = {
 		archetype = motorbike_equipment
         parent = motorbike_equipment_3
-		priority = 100			
+		priority = 100	
+
+        maximum_speed = 18
+		reliability = 0.95
+		build_cost_ic = 6
+        
+		resources = {
+			fuel = 2
+			metal = 2
+			electronics = 2
+		}
 	}
     
     legion_motor_chariots = {
 		archetype = motorbike_equipment
         parent = motorbike_equipment_3
-		priority = 100			
+		priority = 100		
+
+        maximum_speed = 16
+		reliability = 0.95
+		build_cost_ic = 6
+        
+        soft_attack = 0.1
+        
+        resources = {
+			fuel = 2
+			metal = 2
+			electronics = 2
+		}
 	}
     
     ranger_harley_davisons = {
 		archetype = motorbike_equipment
         parent = motorbike_equipment_3
 		priority = 100			
+        
+        maximum_speed = 16
+		reliability = 0.98
+		build_cost_ic = 6
+        
+        resources = {
+			fuel = 2
+			metal = 2
+			electronics = 2
+		}
 	}
 }

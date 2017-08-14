@@ -1,5 +1,5 @@
 equipments = {
-	fm_transport_plane_equipment = {
+	transport_plane_equipment = {
 		is_archetype = yes
 		picture = archetype_strat_bomber_equipment			
 		type = air_transport
@@ -31,8 +31,8 @@ equipments = {
 	}
 
     # Salvaged Transport
-	fm_transport_plane_equipment_1 = {
-		archetype = fm_transport_plane_equipment
+	transport_plane_equipment_1 = {
+		archetype = transport_plane_equipment
 		priority = 130
 		
 		air_range = 1000
@@ -42,25 +42,25 @@ equipments = {
 	}
     
     # Cargo Zeppelin
-    fm_transport_plane_equipment_2 = {
-		archetype = fm_transport_plane_equipment
-        parent = fm_transport_plane_equipment_1
+    transport_plane_equipment_2 = {
+		archetype = transport_plane_equipment
+        parent = transport_plane_equipment_1
+		priority = 130
+		
+		air_range = 1250
+		maximum_speed = 300
+		air_agility = 15
+		air_defence = 30
+	}
+    
+    # VB-0
+    vb_transport_plane_equipment = {
+		archetype = transport_plane_equipment
 		priority = 130
 		
 		air_range = 1500
 		maximum_speed = 300
-		air_agility = 10
-		air_defence = 20
-	}
-    
-    # VB-0
-    vb_fm_transport_plane_equipment = {
-		archetype = fm_transport_plane_equipment
-		priority = 130
-		
-		air_range = 2000
-		maximum_speed = 300
-		air_agility = 10
-		air_defence = 20
+		air_agility = 20
+		air_defence = 40
 	}
 }

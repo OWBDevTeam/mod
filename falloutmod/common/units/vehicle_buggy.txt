@@ -1,10 +1,12 @@
 sub_units = {
 
+    # Buggy
 	buggy = {
 		sprite = motorized
 		map_icon_category = infantry
-		
 		priority = 600
+        ai_priority = 200
+        
 		active = yes
 
 		type = {
@@ -26,21 +28,42 @@ sub_units = {
 		#Size Definitions
 		max_strength = 20
 		max_organisation = 60
-		default_morale = 0.3
-		manpower = 100
+		default_morale = 0.25
+		manpower = 75 # 750
 
 		#Misc Abilities
-		training_time = 110
-		suppression = 2
-		weight = 0.8
-		
-		supply_consumption = 0.8
+		training_time = 90
+		suppression = 1
+		weight = 0.5
+		supply_consumption = 0.075
+        
+        transport = buggy_equipment
 	
-		transport = buggy_equipment
-
 		need = {
-			buggy_equipment = 8
-			infantry_equipment = 50
+			infantry_equipment = 100
+			buggy_equipment = 50
+		}
+        
+        forest = {
+			attack = -0.1
+		}
+		mountain = {
+			attack = -0.05
+		}
+		jungle = {
+			attack = -0.2
+		}
+		marsh = {
+			attack = -0.1
+		}
+		urban = {
+			attack = -0.1
+		}
+		river = {
+			attack = -0.1
+		}
+		amphibious = {
+			attack = -0.2
 		}
 	}
 
@@ -64,20 +87,24 @@ sub_units = {
 			category_army
 		}
 		
-		#Size Definitions
+        combat_width = 0
+        
+        manpower = 30 # 300
+		training_time = 90
 		max_organisation = 0
 		default_morale = 0.1
 		max_strength = 0.2
-		manpower = 30
 
-		#Misc Abilities
-		training_time = 60
-		weight = 0.4
-		supply_consumption = 0.4
-		recon = 1
+        supply_consumption = 0.15
+        
+		# Support nerfs to combat abilities
+		defense = -0.5
+		breakthrough = -0.5
+		soft_attack = -0.4
+		hard_attack = -0.5
 
 		need = {
-			buggy_equipment = 4
+			buggy_equipment = 25
 		}
 	}
 }
