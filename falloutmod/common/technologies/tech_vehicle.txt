@@ -32,27 +32,8 @@ technologies = {
     @Row_18 = 34
     @Row_19 = 36
 
+    # Engineering tech
     vehicle_restoration = {
-        modifier = {
-            army_speed_factor = 0.1
-        }
-    
-		path = {
-			leads_to_tech = bike_tech_1
-			research_cost_coeff = 1
-		}	
-		path = {
-			leads_to_tech = buggy_tech_1
-			research_cost_coeff = 1
-		}
-        path = {
-			leads_to_tech = truck_tech_1
-			research_cost_coeff = 1
-		}
-        path = {
-			leads_to_tech = car_tech_1
-			research_cost_coeff = 1
-		}
         
         dependencies = {
             settled_civilization = 1
@@ -67,6 +48,7 @@ technologies = {
 		
 		categories = {
             vehicle_tech
+            engineering_tech
 		}
 		
 		ai_will_do = {
@@ -86,6 +68,7 @@ technologies = {
         
         dependencies = {
             settled_civilization = 1
+            vehicle_restoration = 1
         }
         
         on_research_complete = {
@@ -104,7 +87,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_1 y = @Col_2 }
+			position = { x = @Row_2 y = @Col_1 }
 		}
 		
 		categories = {
@@ -128,13 +111,14 @@ technologies = {
 		
         dependencies = {
             settled_civilization = 1
+            vehicle_restoration = 1
         }
         
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_1 y = @Col_3 }
+			position = { x = @Row_2 y = @Col_2 }
 		}
 		
 		categories = {
@@ -154,13 +138,14 @@ technologies = {
         
         dependencies = {
             settled_civilization = 1
+            vehicle_restoration = 1
         }
         
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_1 y = @Col_4 }
+			position = { x = @Row_2 y = @Col_3 }
 		}
 		
 		categories = {
@@ -180,6 +165,7 @@ technologies = {
         
         dependencies = {
             settled_civilization = 1
+            vehicle_restoration = 1
         }
         
 		path = {
@@ -207,7 +193,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_2 y = @Col_2 }
+			position = { x = @Row_3 y = @Col_1 }
 		}
 		
 		categories = {
@@ -227,6 +213,7 @@ technologies = {
         
         dependencies = {
             settled_civilization = 1
+            vehicle_restoration = 1
         }
         
 		path = {
@@ -242,7 +229,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_2 y = @Col_3 }
+			position = { x = @Row_3 y = @Col_2 }
 		}
 		
 		categories = {
@@ -260,10 +247,6 @@ technologies = {
             buggy_equipment_3
         }
         
-        dependencies = {
-            settled_civilization = 1
-        }
-        
 		path = {
 			leads_to_tech = buggy_tech_2
 			research_cost_coeff = 1
@@ -271,13 +254,14 @@ technologies = {
 		
         dependencies = {
             settled_civilization = 1
+            vehicle_restoration = 1
         }
         
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_2 y = @Col_4 }
+			position = { x = @Row_3 y = @Col_3 }
 		}
 		
 		categories = {
@@ -294,11 +278,7 @@ technologies = {
         enable_equipments = {
             car_equipment_1
         }
-        
-        dependencies = {
-            settled_civilization = 1
-        }
-        
+
 		path = {
 			leads_to_tech = car_tech_2
 			research_cost_coeff = 1
@@ -306,6 +286,7 @@ technologies = {
 		
         dependencies = {
             settled_civilization = 1
+            vehicle_restoration = 1
         }
         
         on_research_complete = {
@@ -324,7 +305,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_4 y = @Col_2 }
+			position = { x = @Row_5 y = @Col_1 }
 		}
 		
 		categories = {
@@ -342,10 +323,6 @@ technologies = {
             car_equipment_2
         }
         
-        dependencies = {
-            settled_civilization = 1
-        }
-
 		path = {
 			leads_to_tech = car_tech_3
 			research_cost_coeff = 1
@@ -361,13 +338,14 @@ technologies = {
 		
         dependencies = {
             settled_civilization = 1
+            vehicle_restoration = 1
         }
         
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_4 y = @Col_4 }
+			position = { x = @Row_5 y = @Col_3 }
 		}
 		
 		categories = {
@@ -384,20 +362,17 @@ technologies = {
         enable_equipments = {
             car_equipment_3
         }
-        
+
         dependencies = {
             settled_civilization = 1
-        }
-        
-        dependencies = {
-            settled_civilization = 1
+            vehicle_restoration = 1
         }
         
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_4 y = @Col_5 }
+			position = { x = @Row_5 y = @Col_4 }
 		}
 		
 		categories = {
@@ -415,16 +390,13 @@ technologies = {
             bus_equipment_1
         }
         
-        dependencies = {
-            settled_civilization = 1
-        }
-        
         path = {
 			leads_to_tech = bus_tech_2
 			research_cost_coeff = 1
 		}
         dependencies = {
             settled_civilization = 1
+            vehicle_restoration = 1
         }
         
         on_research_complete = {
@@ -443,7 +415,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_3 y = @Col_4 }
+			position = { x = @Row_4 y = @Col_3 }
 		}
 		
 		categories = {
@@ -461,23 +433,20 @@ technologies = {
             bus_equipment_2
         }
         
-        dependencies = {
-            settled_civilization = 1
-        }
-        
         path = {
 			leads_to_tech = bus_tech_3
 			research_cost_coeff = 1
 		}
         dependencies = {
             settled_civilization = 1
+            vehicle_restoration = 1
         }
         
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_3 y = @Col_5 }
+			position = { x = @Row_4 y = @Col_4 }
 		}
 		
 		categories = {
@@ -492,7 +461,7 @@ technologies = {
     # Scrap Tank
     tank_tech_1 = {
         enable_equipments = {
-            light_tank_fm_equipment_1
+            light_tank_equipment_1
         }
         
         path = {
@@ -501,6 +470,7 @@ technologies = {
 		}
         dependencies = {
             settled_civilization = 1
+            vehicle_restoration = 1
         }
         
         on_research_complete = {
@@ -519,7 +489,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_5 y = @Col_4 }
+			position = { x = @Row_6 y = @Col_3 }
 		}
 		
 		categories = {
@@ -534,11 +504,12 @@ technologies = {
     # Wasteland Tank
     tank_tech_2 = {
         enable_equipments = {
-            medium_tank_fm_equipment_1
+            medium_tank_equipment_1
         }
         
         dependencies = {
             settled_civilization = 1
+            vehicle_restoration = 1
         }
         
         path = {
@@ -562,7 +533,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_5 y = @Col_5 }
+			position = { x = @Row_6 y = @Col_4 }
 		}
 		
 		categories = {
@@ -577,11 +548,12 @@ technologies = {
     # Great War Tank
     tank_tech_3 = {
         enable_equipments = {
-            heavy_tank_fm_equipment_1
+            heavy_tank_equipment_1
         }
         
         dependencies = {
             scientific_civilization = 1
+            vehicle_restoration = 1
         }
         
         on_research_complete = {
@@ -600,7 +572,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_5 y = @Col_6 }
+			position = { x = @Row_6 y = @Col_5 }
 		}
 		
 		categories = {
@@ -620,6 +592,7 @@ technologies = {
         
         dependencies = {
             settled_civilization = 1
+            vehicle_restoration = 1
         }
         
         path = {
@@ -643,7 +616,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_7 y = @Col_2 }
+			position = { x = @Row_8 y = @Col_1 }
 		}
 		
 		categories = {
@@ -663,6 +636,7 @@ technologies = {
         
         dependencies = {
             settled_civilization = 1
+            vehicle_restoration = 1
         }
         
         path = {
@@ -679,7 +653,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_7 y = @Col_3 }
+			position = { x = @Row_8 y = @Col_2 }
 		}
 		
 		categories = {
@@ -699,6 +673,7 @@ technologies = {
         
         dependencies = {
             settled_civilization = 1
+            vehicle_restoration = 1
         }
         
         path = {
@@ -714,7 +689,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_7 y = @Col_4 }
+			position = { x = @Row_8 y = @Col_3 }
 		}
 		
 		categories = {
@@ -734,13 +709,14 @@ technologies = {
         
         dependencies = {
             scientific_civilization = 1
+            vehicle_restoration = 1
         }
         
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_7 y = @Col_6 }
+			position = { x = @Row_8 y = @Col_5 }
 		}
 		
 		categories = {
@@ -760,6 +736,7 @@ technologies = {
         
         dependencies = {
             settled_civilization = 1
+            vehicle_restoration = 1
         }
         
         on_research_complete = {
@@ -783,7 +760,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_6 y = @Col_4 }
+			position = { x = @Row_7 y = @Col_3 }
 		}
 		
 		categories = {
@@ -803,6 +780,7 @@ technologies = {
         
         dependencies = {
             settled_civilization = 1
+            vehicle_restoration = 1
         }
         
         path = {
@@ -819,7 +797,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_6 y = @Col_5 }
+			position = { x = @Row_7 y = @Col_4 }
 		}
 		
 		categories = {
@@ -839,6 +817,7 @@ technologies = {
         
         dependencies = {
             scientific_civilization = 1
+            vehicle_restoration = 1
         }
         
         path = {
@@ -850,7 +829,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_6 y = @Col_6 }
+			position = { x = @Row_7 y = @Col_5 }
 		}
 		
 		categories = {
@@ -874,11 +853,15 @@ technologies = {
             tag = EHT # Eighties
         }
         
+        dependencies = {
+            vehicle_restoration = 1
+        }
+        
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_1 y = @Col_7 }
+			position = { x = @Row_1 y = @Col_6 }
 		}
 		
 		categories = {
@@ -900,11 +883,15 @@ technologies = {
             tag = CES # Caesar's Legion
         }
         
+        dependencies = {
+            vehicle_restoration = 1
+        }
+        
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_1 y = @Col_8 }
+			position = { x = @Row_1 y = @Col_7 }
 		}
 		
 		categories = {
@@ -926,11 +913,15 @@ technologies = {
             tag = DES # Desert Rangers
         }
         
+        dependencies = {
+            vehicle_restoration = 1
+        }
+        
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_1 y = @Col_9 }
+			position = { x = @Row_2 y = @Col_7 }
 		}
 		
 		categories = {
@@ -952,11 +943,15 @@ technologies = {
             tag = YKZ # Yakuza (not sure what what nation the document wants this vehicle for, change if wrong)
         }
         
+        dependencies = {
+            vehicle_restoration = 1
+        }
+        
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_2 y = @Col_7 }
+			position = { x = @Row_2 y = @Col_6 }
 		}
 		
 		categories = {
@@ -978,11 +973,15 @@ technologies = {
             tag = TRL # Troll Warrens
         }
         
+        dependencies = {
+            vehicle_restoration = 1
+        }
+        
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_3 y = @Col_7 }
+			position = { x = @Row_3 y = @Col_6 }
 		}
 		
 		categories = {
@@ -1018,7 +1017,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_3 y = @Col_8 }
+			position = { x = @Row_3 y = @Col_7 }
 		}
 		
 		categories = {

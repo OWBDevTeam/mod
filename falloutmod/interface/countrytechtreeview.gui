@@ -204,7 +204,7 @@ guiTypes = {
             containerWindowType = {
 				name = "tribal_tiled_research_bg"
 				position = { x = 460 y=0 }
-				size = { width = 835 height = 2000 }
+				size = { width = 835 height = 1700 }
 				clipping = no
 			
 				background = {
@@ -216,7 +216,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "civilized_tiled_research_bg"
 				position = { x = 1295 y=0 }
-				size = { width = 835 height = 2000 }
+				size = { width = 835 height = 1700 }
 				clipping = no
 			
 				background = {
@@ -228,7 +228,7 @@ guiTypes = {
             containerWindowType = {
 				name = "advanced_tiled_research_bg"
 				position = { x = 2130 y=0 }
-				size = { width = 835 height = 2000 }
+				size = { width = 835 height = 1700 }
 				clipping = no
 			
 				background = {
@@ -240,7 +240,7 @@ guiTypes = {
             containerWindowType = {
 				name = "unique_tiled_research_bg"
 				position = { x = 2965 y=0 }
-				size = { width = 850 height = 2000 }
+				size = { width = 850 height = 1700 }
 				clipping = no
 			
 				background = {
@@ -471,7 +471,7 @@ guiTypes = {
             containerWindowType = {
 				name = "tribal_tiled_research_bg"
 				position = { x = 460 y=0 }
-				size = { width = 835 height = 2100 }
+				size = { width = 835 height = 2000 }
 				clipping = no
 			
 				background = {
@@ -483,7 +483,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "civilized_tiled_research_bg"
 				position = { x = 1295 y=0 }
-				size = { width = 835 height = 2100 }
+				size = { width = 835 height = 2000 }
 				clipping = no
 			
 				background = {
@@ -495,7 +495,7 @@ guiTypes = {
             containerWindowType = {
 				name = "advanced_tiled_research_bg"
 				position = { x = 2130 y=0 }
-				size = { width = 835 height = 2100 }
+				size = { width = 835 height = 2000 }
 				clipping = no
 			
 				background = {
@@ -541,7 +541,7 @@ guiTypes = {
 				name = "techtree_stripes"
 				position = { x= 0 y= 0 }
 				size = { 
-					width = 3000 height = 2000
+					width = 2000 height = 1200
 					min = { width = 100%% height = 100%% }
 				}
 				clipping = no
@@ -554,9 +554,22 @@ guiTypes = {
 				}
 				
                 # Row Headers
+                instantTextBoxType = {
+					name = "requirements_header"
+					position = { x = 50 y = 130 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "HEADER_REQUISITES"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+                
 				instantTextBoxType = {
 					name = "motorcycles_header"
-					position = { x = 50 y = 130 }
+					position = { x = 50 y = 260 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
@@ -569,7 +582,7 @@ guiTypes = {
                 
                 instantTextBoxType = {
 					name = "buggies_header"
-					position = { x = 50 y = 260 }
+					position = { x = 50 y = 550 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
@@ -582,7 +595,7 @@ guiTypes = {
                 
                 instantTextBoxType = {
 					name = "cars_header"
-					position = { x = 50 y = 550 }
+					position = { x = 50 y = 420 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
@@ -595,7 +608,7 @@ guiTypes = {
                 
                 instantTextBoxType = {
 					name = "buses_header"
-					position = { x = 50 y = 420 }
+					position = { x = 50 y = 700 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
@@ -608,7 +621,7 @@ guiTypes = {
                 
                 instantTextBoxType = {
 					name = "tanks_header"
-					position = { x = 50 y = 700 }
+					position = { x = 50 y = 850 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
@@ -621,7 +634,7 @@ guiTypes = {
                 
                 instantTextBoxType = {
 					name = "apcs_header"
-					position = { x = 50 y = 850 }
+					position = { x = 50 y = 980 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
@@ -634,7 +647,7 @@ guiTypes = {
                 
                 instantTextBoxType = {
 					name = "trucks_header"
-					position = { x = 50 y = 980 }
+					position = { x = 50 y = 1110 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
@@ -660,7 +673,7 @@ guiTypes = {
 
                 instantTextBoxType = {
 					name = "advanced_column_header"
-					position = { x = 1875 y = 20 }
+					position = { x = 1600 y = 20 }
 					font = "hoi_33"
 					borderSize = { x = 0 y = 0}
 					text = "ADVANCED_HEADER"
@@ -672,7 +685,7 @@ guiTypes = {
                 
                 instantTextBoxType = {
 					name = "unique_column_header"
-					position = { x = 2160 y = 20 }
+					position = { x = 1885 y = 20 }
 					font = "hoi_33"
 					borderSize = { x = 0 y = 0}
 					text = "SPECIAL_HEADER"
@@ -688,7 +701,7 @@ guiTypes = {
             containerWindowType = {
 				name = "civilized_tiled_research_bg"
 				position = { x = 460 y=0 }
-				size = { width = 1385 height = 2100 }
+				size = { width = 1110 height = 1260 }
 				clipping = no
 			
 				background = {
@@ -699,8 +712,8 @@ guiTypes = {
 				
 			containerWindowType = {
 				name = "advanced_tiled_research_bg"
-				position = { x = 1845 y=0 }
-				size = { width = 285 height = 2100 }
+				position = { x = 1570 y=0 }
+				size = { width = 285 height = 1260 }
 				clipping = no
 			
 				background = {
@@ -711,8 +724,8 @@ guiTypes = {
             
             containerWindowType = {
 				name = "unique_tiled_research_bg"
-				position = { x = 2130 y=0 }
-				size = { width = 850 height = 2100 }
+				position = { x = 1855 y=0 }
+				size = { width = 600 height = 1260 }
 				clipping = no
 			
 				background = {
@@ -724,6 +737,55 @@ guiTypes = {
             # Trees
 			gridboxtype = {
 				name = "vehicle_restoration_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+            
+            gridboxtype = {
+				name = "bike_tech_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+            
+            gridboxtype = {
+				name = "buggy_tech_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+            
+            gridboxtype = {
+				name = "car_tech_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+            
+            gridboxtype = {
+				name = "bus_tech_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+            
+            gridboxtype = {
+				name = "tank_tech_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+            
+            gridboxtype = {
+				name = "truck_tech_1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+            
+            gridboxtype = {
+				name = "apc_tech_1_tree"
 				position = { x = 0 y = 150 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
@@ -952,7 +1014,7 @@ guiTypes = {
                 
                 instantTextBoxType = {
 					name = "header_advanced_tech"
-					position = { x = 30 y = 1670 }
+					position = { x = 50 y = 1670 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
@@ -1062,8 +1124,7 @@ guiTypes = {
 				name = "techtree_stripes"
 				position = { x= 0 y= 0 }
 				size = { 
-					width = 2400 height = 2000
-					#width = 1400 height = 1275
+					width = 2400 height = 1000
 					min = { width = 100%% height = 100%% }
 				}
 				clipping = no
@@ -1077,12 +1138,12 @@ guiTypes = {
                 
                 # Row Headers
 				instantTextBoxType = {
-					name = "header_farming"
-					position = { x = 50 y = 130 }   # 150
+					name = "requirements_header"
+					position = { x = 50 y = 130 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
-					text = "HEADER_FARMING"
+					text = "HEADER_REQUISITES"
 					maxWidth = 600
 					maxHeight = 62
 					format = left
@@ -1090,12 +1151,12 @@ guiTypes = {
 				}
                 
                 instantTextBoxType = {
-					name = "header_production"
+					name = "header_transports"
 					position = { x = 50 y = 270 }   # 300
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
-					text = "HEADER_PRODUCTION"
+					text = "HEADER_TRANSPORT"
 					maxWidth = 600
 					maxHeight = 62
 					format = left
@@ -1103,12 +1164,12 @@ guiTypes = {
 				}
 				
                 instantTextBoxType = {
-					name = "header_organisation"
+					name = "header_fighters"
 					position = { x = 50 y = 410 }   # 450
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
-					text = "HEADER_ORGANISATION"
+					text = "HEADER_FIGHTER"
 					maxWidth = 600
 					maxHeight = 62
 					format = left
@@ -1116,12 +1177,12 @@ guiTypes = {
 				}
                 
                 instantTextBoxType = {
-					name = "header_extraction"
+					name = "header_air_support"
 					position = { x = 50 y = 555 }   # 600
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
-					text = "HEADER_EXTRACTION"
+					text = "HEADER_AIR_SUPPORT"
 					maxWidth = 600
 					maxHeight = 62
 					format = left
@@ -1129,12 +1190,12 @@ guiTypes = {
 				}
                 
                 instantTextBoxType = {
-					name = "header_construction"
+					name = "header_bombers"
 					position = { x = 50 y = 690 }   # 750
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
-					text = "HEADER_CONSTRUCTION"
+					text = "HEADER_BOMBER"
 					maxWidth = 600
 					maxHeight = 62
 					format = left
@@ -1142,111 +1203,21 @@ guiTypes = {
 				}
                 
                 instantTextBoxType = {
-					name = "header_habitation"
+					name = "header_battleships"
 					position = { x = 50 y = 830 }   # 900
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
-					text = "HEADER_HABITATION"
-					maxWidth = 600
-					maxHeight = 62
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-
-                instantTextBoxType = {
-					name = "header_water"
-					position = { x = 50 y = 970 }  # 1200
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 0}
-					text = "HEADER_WATER"
+					text = "HEADER_BATTLESHIPS"
 					maxWidth = 600
 					maxHeight = 62
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
                 
-                instantTextBoxType = {
-					name = "header_electricity"
-					position = { x = 50 y = 1110 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 0}
-					text = "HEADER_ELECTRICITY"
-					maxWidth = 600
-					maxHeight = 62
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-                
-                instantTextBoxType = {
-					name = "header_metal"
-					position = { x = 50 y = 1250 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 0}
-					text = "HEADER_METAL"
-					maxWidth = 600
-					maxHeight = 62
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-                
-                instantTextBoxType = {
-					name = "header_fuel"
-					position = { x = 50 y = 1390 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 0}
-					text = "HEADER_FUEL"
-					maxWidth = 600
-					maxHeight = 62
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-                
-                instantTextBoxType = {
-					name = "header_electronics"
-					position = { x = 50 y = 1530 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 0}
-					text = "HEADER_ELECTRONICS"
-					maxWidth = 600
-					maxHeight = 62
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-                
-                instantTextBoxType = {
-					name = "header_advanced_tech"
-					position = { x = 30 y = 1670 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 0}
-					text = "HEADER_ADVANCED_TECHNOLOGY"
-					maxWidth = 600
-					maxHeight = 62
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-                # Column Headers
-				instantTextBoxType = {
-					name = "tribal_column_header"
-					position = { x = 490 y = 20 }
-					font = "hoi_33"
-					borderSize = { x = 0 y = 0}
-					text = "TRIBAL_HEADER"
-					maxWidth = 200
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}			
-
                 instantTextBoxType = {
 					name = "civilized_column_header"
-					position = { x = 1040 y = 20 }
+					position = { x = 490 y = 20 }
 					font = "hoi_33"
 					borderSize = { x = 0 y = 0}
 					text = "CIVILIZED_HEADER"
@@ -1267,26 +1238,26 @@ guiTypes = {
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
+                
+                instantTextBoxType = {
+					name = "special_column_header"
+					position = { x = 2150 y = 20 }
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "SPECIAL_HEADER"
+					maxWidth = 200
+					maxHeight = 32
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
 			}
 			
             # Containers
             # Each 'column' is 275
-            containerWindowType = {
-				name = "tribal_tiled_research_bg"
-				position = { x = 460 y=0 }
-				size = { width = 550 height = 2100 }
-				clipping = no
-			
-				background = {
-					name = "Background"
-					quadTextureSprite ="GFX_orange_tiled_research_bg"
-				}			
-			}
-				
 			containerWindowType = {
 				name = "civilized_tiled_research_bg"
-				position = { x = 1010 y=0 }
-				size = { width = 550 height = 2100 }
+				position = { x = 460 y=0 }
+				size = { width = 1100 height = 1000 }
 				clipping = no
 			
 				background = {
@@ -1298,7 +1269,7 @@ guiTypes = {
             containerWindowType = {
 				name = "advanced_tiled_research_bg"
 				position = { x = 1560 y=0 }
-				size = { width = 550 height = 2100 }
+				size = { width = 560 height = 1000 }
 				clipping = no
 			
 				background = {
@@ -1307,7 +1278,60 @@ guiTypes = {
 				}			
 			}
             
+            containerWindowType = {
+				name = "unique_tiled_research_bg"
+				position = { x = 2120 y=0 }
+				size = { width = 300 height = 1000 }
+				clipping = no
+			
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_purple_tiled_research_bg"
+				}			
+			}
+            
             # Trees
+            gridboxtype = {
+				name = "pilot_training_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+            
+            gridboxtype = {
+				name = "vehicle_restoration_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+            
+            gridboxtype = {
+				name = "scrap_fighter_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+            
+            gridboxtype = {
+				name = "xian_85_fighter_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+            
+            gridboxtype = {
+				name = "vertiberd_gunship_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+            
+            gridboxtype = {
+				name = "vertiberd_transport1_tree"
+				position = { x = 0 y = 150 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
 		}
 
         #------------------------------------------
@@ -1764,7 +1788,6 @@ guiTypes = {
 				position = { x= 0 y= 0 }
 				size = { 
 					width = 2400 height = 2000
-					#width = 1400 height = 1275
 					min = { width = 100%% height = 100%% }
 				}
 				clipping = no
@@ -1975,7 +1998,7 @@ guiTypes = {
             containerWindowType = {
 				name = "tribal_tiled_research_bg"
 				position = { x = 460 y=0 }
-				size = { width = 550 height = 2100 }
+				size = { width = 550 height = 1850 }
 				clipping = no
 			
 				background = {
@@ -1987,7 +2010,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "civilized_tiled_research_bg"
 				position = { x = 1010 y=0 }
-				size = { width = 550 height = 2100 }
+				size = { width = 550 height = 1850 }
 				clipping = no
 			
 				background = {
@@ -1999,7 +2022,7 @@ guiTypes = {
             containerWindowType = {
 				name = "advanced_tiled_research_bg"
 				position = { x = 1560 y=0 }
-				size = { width = 550 height = 2100 }
+				size = { width = 550 height = 1850 }
 				clipping = no
 			
 				background = {
