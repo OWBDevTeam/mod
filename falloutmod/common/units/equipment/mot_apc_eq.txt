@@ -39,7 +39,7 @@ equipments = {
 	# Salvaged APC
 	apc_equipment_1 = {
 		archetype = apc_equipment
-		priority = 40
+		priority = 10
 		visual_level = 0
 	}
 
@@ -47,7 +47,7 @@ equipments = {
 	apc_equipment_2 = {
 		archetype = apc_equipment
 		parent = apc_equipment_1
-		priority = 50
+		priority = 20
 		visual_level = 1
 
 		maximum_speed = 10
@@ -73,7 +73,7 @@ equipments = {
     apc_equipment_3 = {
 		archetype = apc_equipment
 		parent = apc_equipment_2
-		priority = 60
+		priority = 30
 		visual_level = 1
 
 		maximum_speed = 10
@@ -98,8 +98,27 @@ equipments = {
     testudo_apc_equipment = {
 		archetype = apc_equipment
         parent = apc_equipment_3
-		priority = 40
+		priority = 100
 		visual_level = 0
+        
+        maximum_speed = 10
+
+		#Defensive Abilities
+		defense = 30
+		breakthrough = 5
+		hardness = 0.6
+		armor_value = 20
+
+		#Offensive Abilities
+		ap_attack = 20
+		
+		build_cost_ic = 15
+        
+		resources = {
+			metal = 3
+			electronics = 3
+			fuel = 1
+		}
 	}
     
 }

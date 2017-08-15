@@ -29,14 +29,14 @@ equipments = {
     # Scrap Trucks
 	truck_equipment_1 = {
 		archetype = truck_equipment
-		priority = 30			
+		priority = 10
 	}
 
     # Salvaged Trucks
 	truck_equipment_2 = {
 		archetype = truck_equipment
         parent = truck_equipment_1
-		priority = 40	
+		priority = 20	
 
 		maximum_speed = 16
 		reliability = 0.9
@@ -52,7 +52,7 @@ equipments = {
     truck_equipment_3 = {
 		archetype = truck_equipment
         parent = truck_equipment_2
-		priority = 50	
+		priority = 30	
 		maximum_speed = 16
 		reliability = 0.9
 		build_cost_ic = 4
@@ -67,7 +67,7 @@ equipments = {
     truck_equipment_4 = {
 		archetype = truck_equipment
         parent = truck_equipment_3
-		priority = 60	
+		priority = 40	
 		maximum_speed = 16
 		reliability = 0.9
 		build_cost_ic = 4
@@ -83,9 +83,13 @@ equipments = {
 		archetype = truck_equipment
 		priority = 100	
 
+		maximum_speed = 16
+		reliability = 0.9
+		build_cost_ic = 4
 		resources = {
-			fuel = 2
-			metal = 3
+			fuel = 3
+			metal = 2
+			electronics = 2
 		}
 	}
 }
