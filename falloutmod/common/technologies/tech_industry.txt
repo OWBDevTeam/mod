@@ -32,18 +32,15 @@ technologies = {
     @Row_18 = 34
     @Row_19 = 36
     
-	@TribalColumn1 = 0
-	@TribalColumn2 = 4
-	@CivilizedColumn1 = 8
-	@CivilizedColumn2 = 12
-	@AdvancedColumn1 = 16
-	@AdvancedColumn2 = 20
-    
     #-------------------------
     # Agarian Industry
     #-------------------------
     organised_tato_farming = {
-
+        industrial_capacity_factory = 0.1
+        global_building_slots_factor = 0.5
+        conscription_factor = 0.05
+        equipment_conversion_speed = 0.05
+        
         xor = { basic_forges }
         
 		path = {
@@ -55,7 +52,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 0 y = @TribalColumn1 }
+			position = { x = @Row_1 y = @Col_1 }
 		}
 		
 		categories = {
@@ -68,7 +65,11 @@ technologies = {
 	}
     
     brahmin_milking = {
-
+        industrial_capacity_factory = 0.1
+        global_building_slots_factor = 0.5
+        conscription_factor = 0.05
+        equipment_conversion_speed = 0.05
+        
 		path = {
 			leads_to_tech = sharecropper_farms
 			research_cost_coeff = 1
@@ -78,7 +79,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 0 y = @TribalColumn2 }
+			position = { x = @Row_1 y = @Col_2 }
 		}
 		
 		categories = {
@@ -91,7 +92,11 @@ technologies = {
 	}
     
     sharecropper_farms = {
-
+        industrial_capacity_factory = 0.15
+        global_building_slots_factor = 0.1
+        conscription_factor = 0.05
+        equipment_conversion_speed = 0.05
+        
 		path = {
 			leads_to_tech = brahmin_herding_equipment
 			research_cost_coeff = 1
@@ -105,7 +110,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 0 y = @CivilizedColumn1 }
+			position = { x = @Row_1 y = @Col_3 }
 		}
 		
 		categories = {
@@ -118,7 +123,11 @@ technologies = {
 	}
     
     brahmin_herding_equipment = {
-
+        industrial_capacity_factory = 0.15
+        global_building_slots_factor = 0.15
+        conscription_factor = 0.05
+        equipment_conversion_speed = 0.05
+        
 		path = {
 			leads_to_tech = mechanized_agriculture
 			research_cost_coeff = 1
@@ -132,7 +141,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 0 y = @CivilizedColumn2 }
+			position = { x = @Row_1 y = @Col_4 }
 		}
 		
 		categories = {
@@ -145,7 +154,11 @@ technologies = {
 	}
     
     mechanized_agriculture = {
-
+        industrial_capacity_factory = 0.2
+        global_building_slots_factor = 0.15
+        conscription_factor = 0.05
+        equipment_conversion_speed = 0.05
+        
         dependencies = {
             scientific_civilization = 1
         }
@@ -154,7 +167,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 0 y = @AdvancedColumn1 }
+			position = { x = @Row_1 y = @Col_5 }
 		}
 		
 		categories = {
@@ -170,7 +183,10 @@ technologies = {
     # Manufactories
     #-------------------------
     basic_forges = {
-
+        industrial_capacity_factory = 0.2
+        global_building_slots_factor = 0.2
+        equipment_conversion_speed = 0.1
+        
         xor = { organised_tato_farming }
         
 		path = {
@@ -182,7 +198,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 2 y = @TribalColumn1 }
+			position = { x = @Row_2 y = @Col_1 }
 		}
 		
 		categories = {
@@ -195,7 +211,10 @@ technologies = {
 	}
     
     primitive_workshops = {
-
+        industrial_capacity_factory = 0.2
+        global_building_slots_factor = 0.2
+        equipment_conversion_speed = 0.1
+        
 		path = {
 			leads_to_tech = wasteland_workshops
 			research_cost_coeff = 1
@@ -205,7 +224,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 2 y = @TribalColumn2 }
+			position = { x = @Row_2 y = @Col_2 }
 		}
 		
 		categories = {
@@ -218,7 +237,10 @@ technologies = {
 	}
     
     wasteland_workshops = {
-
+        industrial_capacity_factory = 0.25
+        global_building_slots_factor = 0.25
+        equipment_conversion_speed = 0.1
+        
 		path = {
 			leads_to_tech = private_manufacturers
 			research_cost_coeff = 1
@@ -232,7 +254,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 2 y = @CivilizedColumn1 }
+			position = { x = @Row_2 y = @Col_3 }
 		}
 		
 		categories = {
@@ -245,7 +267,10 @@ technologies = {
 	}
     
     private_manufacturers = {
-
+        industrial_capacity_factory = 0.25
+        global_building_slots_factor = 0.25
+        equipment_conversion_speed = 0.1
+        
 		path = {
 			leads_to_tech = automated_production
 			research_cost_coeff = 1
@@ -259,7 +284,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 2 y = @CivilizedColumn2 }
+			position = { x = @Row_2 y = @Col_4 }
 		}
 		
 		categories = {
@@ -272,7 +297,10 @@ technologies = {
 	}
     
     automated_production = {
-
+        industrial_capacity_factory = 0.3
+        global_building_slots_factor = 0.3
+        equipment_conversion_speed = 0.1
+        
         dependencies = {
             scientific_civilization = 1
         }
@@ -281,7 +309,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 2 y = @AdvancedColumn1 }
+			position = { x = @Row_2 y = @Col_5 }
 		}
 		
 		categories = {
@@ -297,7 +325,9 @@ technologies = {
     # Organisation
     #-------------------------
     oral_instruction = {
-
+        production_factory_max_efficiency_factor = 0.1
+        production_factory_efficiency_gain_factor = 0.1
+        
 		path = {
 			leads_to_tech = traditional_instruction
 			research_cost_coeff = 1
@@ -307,7 +337,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 4 y = @TribalColumn1 }
+			position = { x = @Row_3 y = @Col_1 }
 		}
 		
 		categories = {
@@ -320,7 +350,9 @@ technologies = {
 	}
     
     traditional_instruction = {
-
+        production_factory_max_efficiency_factor = 0.1
+        production_factory_efficiency_gain_factor = 0.1
+        
 		path = {
 			leads_to_tech = physical_blueprints
 			research_cost_coeff = 1
@@ -330,7 +362,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 4 y = @TribalColumn2 }
+			position = { x = @Row_3 y = @Col_2 }
 		}
 		
 		categories = {
@@ -343,6 +375,9 @@ technologies = {
 	}
     
     physical_blueprints = {
+        production_factory_max_efficiency_factor = 0.1
+        production_factory_efficiency_gain_factor = 0.1
+   
 		path = {
 			leads_to_tech = electronic_blueprints
 			research_cost_coeff = 1
@@ -356,7 +391,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 4 y = @CivilizedColumn1 }
+			position = { x = @Row_3 y = @Col_3 }
 		}
 		
 		categories = {
@@ -369,6 +404,9 @@ technologies = {
 	}
     
     electronic_blueprints = {
+        production_factory_max_efficiency_factor = 0.1
+        production_factory_efficiency_gain_factor = 0.1
+        
 		path = {
 			leads_to_tech = robotic_helpers
 			research_cost_coeff = 1
@@ -382,7 +420,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 4 y = @CivilizedColumn2 }
+			position = { x = @Row_3 y = @Col_4 }
 		}
 		
 		categories = {
@@ -395,7 +433,9 @@ technologies = {
 	}
     
     robotic_helpers = {
-
+        production_factory_max_efficiency_factor = 0.1
+        production_factory_efficiency_gain_factor = 0.1
+        
         dependencies = {
             scientific_civilization = 1
         }
@@ -404,7 +444,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 4 y = @AdvancedColumn1 }
+			position = { x = @Row_3 y = @Col_5 }
 		}
 		
 		categories = {
@@ -420,12 +460,13 @@ technologies = {
     # Extraction
     #-------------------------
     logging_camps = {
-
+        local_resources_factor = 0.1
+        
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 6 y = @TribalColumn1 }
+			position = { x = @Row_4 y = @Col_1 }
 		}
 		
 		categories = {
@@ -438,12 +479,13 @@ technologies = {
 	}
     
     quarry_picks = {
-
+        local_resources_factor = 0.1
+        
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 6 y = @TribalColumn2 }
+			position = { x = @Row_4 y = @Col_2 }
 		}
 		
 		categories = {
@@ -456,7 +498,8 @@ technologies = {
 	}
     
     mining_equipment = {
-
+        local_resources_factor = 0.1
+        
         dependencies = {
             settled_civilization = 1
         }
@@ -465,7 +508,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 6 y = @CivilizedColumn1 }
+			position = { x = @Row_4 y = @Col_3 }
 		}
 		
 		categories = {
@@ -478,7 +521,8 @@ technologies = {
 	}
     
     industrial_machinery = {
-
+        local_resources_factor = 0.1
+        
         dependencies = {
             settled_civilization = 1
         }
@@ -487,7 +531,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 6 y = @CivilizedColumn2 }
+			position = { x = @Row_4 y = @Col_4 }
 		}
 		
 		categories = {
@@ -500,7 +544,8 @@ technologies = {
 	}
     
     autonomous_industrial_machinery = {
-
+        local_resources_factor = 0.1
+        
         dependencies = {
             scientific_civilization = 1
         }
@@ -509,7 +554,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 6 y = @AdvancedColumn1 }
+			position = { x = @Row_4 y = @Col_5 }
 		}
 		
 		categories = {
@@ -525,6 +570,10 @@ technologies = {
     # Construction
     #-------------------------
     woodworking = {
+        production_speed_buildings_factor = 0.1
+        industry_repair_factor = 0.1
+        industry_air_damage_factor = -0.1
+        
         path = {
 			leads_to_tech = logging_camps
 			research_cost_coeff = 1
@@ -542,7 +591,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 8 y = @TribalColumn1 }
+			position = { x = @Row_5 y = @Col_1 }
 		}
 		
 		categories = {
@@ -555,6 +604,10 @@ technologies = {
 	}
     
     clay_working = {
+        production_speed_buildings_factor = 0.1
+        industry_repair_factor = 0.1
+        industry_air_damage_factor = -0.1
+        
         path = {
 			leads_to_tech = quarry_picks
 			research_cost_coeff = 1
@@ -572,7 +625,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 8 y = @TribalColumn2 }
+			position = { x = @Row_5 y = @Col_2 }
 		}
 		
 		categories = {
@@ -585,6 +638,10 @@ technologies = {
 	}
     
     metal_working = {
+        production_speed_buildings_factor = 0.1
+        industry_repair_factor = 0.1
+        industry_air_damage_factor = -0.1
+        
         path = {
 			leads_to_tech = mining_equipment
 			research_cost_coeff = 1
@@ -606,7 +663,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 8 y = @CivilizedColumn1 }
+			position = { x = @Row_5 y = @Col_3 }
 		}
 		
 		categories = {
@@ -619,6 +676,10 @@ technologies = {
 	}
     
     cement_pouring = {
+        production_speed_buildings_factor = 0.1
+        industry_repair_factor = 0.1
+        industry_air_damage_factor = -0.1
+        
         path = {
 			leads_to_tech = industrial_machinery
 			research_cost_coeff = 1
@@ -640,7 +701,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 8 y = @CivilizedColumn2 }
+			position = { x = @Row_5 y = @Col_4 }
 		}
 		
 		categories = {
@@ -653,6 +714,10 @@ technologies = {
 	}
     
     old_world_design = {
+        production_speed_buildings_factor = 0.1
+        industry_repair_factor = 0.1
+        industry_air_damage_factor = -0.1
+        
         path = {
 			leads_to_tech = autonomous_industrial_machinery
 			research_cost_coeff = 1
@@ -670,7 +735,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 8 y = @AdvancedColumn1 }
+			position = { x = @Row_5 y = @Col_5 }
 		}
 		
 		categories = {
@@ -686,12 +751,14 @@ technologies = {
     # Habitation
     #-------------------------
     tribal_huts = {
-        
+        MONTHLY_POPULATION = 0.03
+        conversion_cost_mil_to_civ_factor = -0.1
+
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 10 y = @TribalColumn1 }
+			position = { x = @Row_6 y = @Col_1 }
 		}
 		
 		categories = {
@@ -704,12 +771,14 @@ technologies = {
 	}
     
     adobe_housing = {
+        MONTHLY_POPULATION = 0.03
+        conversion_cost_mil_to_civ_factor = -0.1
         
 		research_cost = 1.0
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 10 y = @TribalColumn2 }
+			position = { x = @Row_6 y = @Col_2 }
 		}
 		
 		categories = {
@@ -722,6 +791,8 @@ technologies = {
 	}
     
     metal_shacks = {
+        MONTHLY_POPULATION = 0.03
+        conversion_cost_mil_to_civ_factor = -0.1
         
         dependencies = {
             settled_civilization = 1
@@ -731,7 +802,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 10 y = @CivilizedColumn1 }
+			position = { x = @Row_6 y = @Col_3 }
 		}
 		
 		categories = {
@@ -744,6 +815,8 @@ technologies = {
 	}
     
     brick_housing = {
+        MONTHLY_POPULATION = 0.03
+        conversion_cost_mil_to_civ_factor = -0.1
         
         dependencies = {
             settled_civilization = 1
@@ -753,7 +826,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 10 y = @CivilizedColumn2 }
+			position = { x = @Row_6 y = @Col_4 }
 		}
 		
 		categories = {
@@ -766,6 +839,8 @@ technologies = {
 	}
     
     pre_war_housing = {
+        MONTHLY_POPULATION = 0.03
+        conversion_cost_mil_to_civ_factor = -0.1
         
         dependencies = {
             scientific_civilization = 1
@@ -775,7 +850,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 10 y = @AdvancedColumn1 }
+			position = { x = @Row_6 y = @Col_5 }
 		}
 		
 		categories = {
@@ -786,133 +861,16 @@ technologies = {
 			factor = 1
 		}
 	}
-    
-    #-------------------------
-    # Fortification
-    #-------------------------
-    
-    scrap_walls = {
-        path = {
-			leads_to_tech = reinforced_walls
-			research_cost_coeff = 1
-		}
-        
-		research_cost = 1.0
-		start_year = 2265
-		folder = {
-			name = fallout_industry_folder
-			position = { x = 12 y = @TribalColumn1 }
-		}
-		
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-    
-    reinforced_walls = {
-        path = {
-			leads_to_tech = fortified_walls
-			research_cost_coeff = 1
-		}
-        
-		research_cost = 1.0
-		start_year = 2265
-		folder = {
-			name = fallout_industry_folder
-			position = { x = 12 y = @TribalColumn2 }
-		}
-		
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-    
-    fortified_walls = {
-        path = {
-			leads_to_tech = sentry_systems
-			research_cost_coeff = 1
-		}
-        
-        dependencies = {
-            settled_civilization = 1
-        }
-        
-		research_cost = 1.0
-		start_year = 2265
-		folder = {
-			name = fallout_industry_folder
-			position = { x = 12 y = @CivilizedColumn1 }
-		}
-		
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-    
-    sentry_systems = {
-        path = {
-			leads_to_tech = great_war_preventation_systems
-			research_cost_coeff = 1
-		}
-        
-        dependencies = {
-            settled_civilization = 1
-        }
-        
-		research_cost = 1.0
-		start_year = 2265
-		folder = {
-			name = fallout_industry_folder
-			position = { x = 12 y = @CivilizedColumn2 }
-		}
-		
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-    
-    great_war_preventation_systems = {
-        
-        dependencies = {
-            scientific_civilization = 1
-        }
-        
-		research_cost = 1.0
-		start_year = 2265
-		folder = {
-			name = fallout_industry_folder
-			position = { x = 12 y = @AdvancedColumn1 }
-		}
-		
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-    
+
     #-------------------------
     # Water
     #-------------------------
     basic_well_pump = {
+        enable_building = {
+            building = water_generator
+            level = 1
+        }
+        
         path = {
 			leads_to_tech = advanced_well_pump
 			research_cost_coeff = 1
@@ -922,7 +880,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 14 y = @TribalColumn1 }
+			position = { x = @Row_7 y = @Col_1 }
 		}
 		
 		categories = {
@@ -936,6 +894,11 @@ technologies = {
 	}
     
     advanced_well_pump = {
+        enable_building = {
+            building = water_generator
+            level = 2
+        }
+        
         path = {
 			leads_to_tech = basic_aquifer
 			research_cost_coeff = 1
@@ -945,7 +908,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 14 y = @TribalColumn2 }
+			position = { x = @Row_7 y = @Col_2 }
 		}
 		
 		categories = {
@@ -959,6 +922,11 @@ technologies = {
 	}
     
     basic_aquifer = {
+        enable_building = {
+            building = water_generator
+            level = 3
+        }
+        
         path = {
 			leads_to_tech = advanced_aquifer
 			research_cost_coeff = 1
@@ -972,7 +940,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 14 y = @CivilizedColumn1 }
+			position = { x = @Row_7 y = @Col_3 }
 		}
 		
 		categories = {
@@ -986,6 +954,11 @@ technologies = {
 	}
     
     advanced_aquifer = {
+        enable_building = {
+            building = water_generator
+            level = 4
+        }
+        
         path = {
 			leads_to_tech = purified_aquifer
 			research_cost_coeff = 1
@@ -999,7 +972,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 14 y = @CivilizedColumn2 }
+			position = { x = @Row_7 y = @Col_4 }
 		}
 		
 		categories = {
@@ -1013,7 +986,11 @@ technologies = {
 	}
     
     purified_aquifer = {
-
+        enable_building = {
+            building = water_generator
+            level = 5
+        }
+        
         dependencies = {
             scientific_civilization = 1
         }
@@ -1022,7 +999,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 14 y = @AdvancedColumn1 }
+			position = { x = @Row_7 y = @Col_5 }
 		}
 		
 		categories = {
@@ -1039,6 +1016,11 @@ technologies = {
     # Electricity
     #-------------------------
     basic_generator = {
+        enable_building = {
+            building = electricity_generator
+            level = 1
+        }
+        
         path = {
 			leads_to_tech = advanced_generator
 			research_cost_coeff = 1
@@ -1048,7 +1030,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 16 y = @TribalColumn1 }
+			position = { x = @Row_8 y = @Col_1 }
 		}
 		
 		categories = {
@@ -1062,6 +1044,11 @@ technologies = {
 	}
     
     advanced_generator = {
+        enable_building = {
+            building = electricity_generator
+            level = 2
+        }
+        
         path = {
 			leads_to_tech = basic_power_plant
 			research_cost_coeff = 1
@@ -1071,7 +1058,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 16 y = @TribalColumn2 }
+			position = { x = @Row_8 y = @Col_2 }
 		}
 		
 		categories = {
@@ -1085,6 +1072,11 @@ technologies = {
 	}
     
     basic_power_plant = {
+        enable_building = {
+            building = electricity_generator
+            level = 3
+        }
+        
         path = {
 			leads_to_tech = advanced_power_plant
 			research_cost_coeff = 1
@@ -1098,7 +1090,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 16 y = @CivilizedColumn1 }
+			position = { x = @Row_8 y = @Col_3 }
 		}
 		
 		categories = {
@@ -1112,6 +1104,11 @@ technologies = {
 	}
     
     advanced_power_plant = {
+        enable_building = {
+            building = electricity_generator
+            level = 4
+        }
+        
         path = {
 			leads_to_tech = nuclear_reactor
 			research_cost_coeff = 1
@@ -1125,7 +1122,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 16 y = @CivilizedColumn2 }
+			position = { x = @Row_8 y = @Col_4 }
 		}
 		
 		categories = {
@@ -1139,7 +1136,11 @@ technologies = {
 	}
     
     nuclear_reactor = {
-
+        enable_building = {
+            building = electricity_generator
+            level = 5
+        }
+        
         dependencies = {
             scientific_civilization = 1
         }
@@ -1148,7 +1149,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 16 y = @AdvancedColumn1 }
+			position = { x = @Row_8 y = @Col_5 }
 		}
 		
 		categories = {
@@ -1165,6 +1166,11 @@ technologies = {
     # Metal
     #-------------------------
     basic_smeltery = {
+        enable_building = {
+            building = metal_generator
+            level = 1
+        }
+        
         path = {
 			leads_to_tech = advanced_smeltery
 			research_cost_coeff = 1
@@ -1174,7 +1180,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 18 y = @TribalColumn1 }
+			position = { x = @Row_9 y = @Col_1 }
 		}
 		
 		categories = {
@@ -1188,6 +1194,11 @@ technologies = {
 	}
     
     advanced_smeltery = {
+        enable_building = {
+            building = metal_generator
+            level = 2
+        }
+        
         path = {
 			leads_to_tech = basic_foundry
 			research_cost_coeff = 1
@@ -1197,7 +1208,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 18 y = @TribalColumn2 }
+			position = { x = @Row_9 y = @Col_2 }
 		}
 		
 		categories = {
@@ -1211,6 +1222,11 @@ technologies = {
 	}
     
     basic_foundry = {
+        enable_building = {
+            building = metal_generator
+            level = 3
+        }
+        
         path = {
 			leads_to_tech = advanced_foundry
 			research_cost_coeff = 1
@@ -1224,7 +1240,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 18 y = @CivilizedColumn1 }
+			position = { x = @Row_9 y = @Col_3 }
 		}
 		
 		categories = {
@@ -1238,6 +1254,11 @@ technologies = {
 	}
     
     advanced_foundry = {
+        enable_building = {
+            building = metal_generator
+            level = 4
+        }
+        
         path = {
 			leads_to_tech = autonomous_foundry
 			research_cost_coeff = 1
@@ -1251,7 +1272,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 18 y = @CivilizedColumn2 }
+			position = { x = @Row_9 y = @Col_4 }
 		}
 		
 		categories = {
@@ -1265,7 +1286,11 @@ technologies = {
 	}
     
     autonomous_foundry = {
-
+        enable_building = {
+            building = metal_generator
+            level = 5
+        }
+        
         dependencies = {
             scientific_civilization = 1
         }
@@ -1274,7 +1299,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 18 y = @AdvancedColumn1 }
+			position = { x = @Row_9 y = @Col_5 }
 		}
 		
 		categories = {
@@ -1291,6 +1316,11 @@ technologies = {
     # Fuel
     #-------------------------
     basic_oil_well = {
+        enable_building = {
+            building = fuel_generator
+            level = 1
+        }
+        
         path = {
 			leads_to_tech = advanced_oil_well
 			research_cost_coeff = 1
@@ -1300,7 +1330,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 20 y = @TribalColumn1 }
+			position = { x = @Row_10 y = @Col_1 }
 		}
 		
 		categories = {
@@ -1314,6 +1344,11 @@ technologies = {
 	}
     
     advanced_oil_well = {
+        enable_building = {
+            building = fuel_generator
+            level = 2
+        }
+        
         path = {
 			leads_to_tech = basic_oil_refinery
 			research_cost_coeff = 1
@@ -1323,7 +1358,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 20 y = @TribalColumn2 }
+			position = { x = @Row_10 y = @Col_2 }
 		}
 		
 		categories = {
@@ -1337,6 +1372,11 @@ technologies = {
 	}
     
     basic_oil_refinery = {
+        enable_building = {
+            building = fuel_generator
+            level = 3
+        }
+        
         path = {
 			leads_to_tech = advanced_oil_refinery
 			research_cost_coeff = 1
@@ -1350,7 +1390,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 20 y = @CivilizedColumn1 }
+			position = { x = @Row_10 y = @Col_3 }
 		}
 		
 		categories = {
@@ -1364,6 +1404,11 @@ technologies = {
 	}
     
     advanced_oil_refinery = {
+        enable_building = {
+            building = fuel_generator
+            level = 4
+        }
+        
         path = {
 			leads_to_tech = autonomous_refinery
 			research_cost_coeff = 1
@@ -1377,7 +1422,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 20 y = @CivilizedColumn2 }
+			position = { x = @Row_10 y = @Col_4 }
 		}
 		
 		categories = {
@@ -1391,7 +1436,11 @@ technologies = {
 	}
     
     autonomous_refinery = {
-
+        enable_building = {
+            building = fuel_generator
+            level = 5
+        }
+        
         dependencies = {
             scientific_civilization = 1
         }
@@ -1400,7 +1449,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 20 y = @AdvancedColumn1 }
+			position = { x = @Row_10 y = @Col_5 }
 		}
 		
 		categories = {
@@ -1417,6 +1466,11 @@ technologies = {
     # Electronics
     #-------------------------
     basic_laboratory = {
+        enable_building = {
+            building = electronics_generator
+            level = 1
+        }
+        
         path = {
 			leads_to_tech = advanced_laboratory
 			research_cost_coeff = 1
@@ -1426,7 +1480,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 22 y = @TribalColumn1 }
+			position = { x = @Row_11 y = @Col_1 }
 		}
 		
 		categories = {
@@ -1440,6 +1494,11 @@ technologies = {
 	}
     
     advanced_laboratory = {
+        enable_building = {
+            building = electronics_generator
+            level = 2
+        }
+        
         path = {
 			leads_to_tech = basic_fabrication_centre
 			research_cost_coeff = 1
@@ -1449,7 +1508,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 22 y = @TribalColumn2 }
+			position = { x = @Row_11 y = @Col_2 }
 		}
 		
 		categories = {
@@ -1463,6 +1522,11 @@ technologies = {
 	}
     
     basic_fabrication_centre = {
+        enable_building = {
+            building = electronics_generator
+            level = 3
+        }
+        
         path = {
 			leads_to_tech = advanced_fabrication_centre
 			research_cost_coeff = 1
@@ -1476,7 +1540,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 22 y = @CivilizedColumn1 }
+			position = { x = @Row_11 y = @Col_3 }
 		}
 		
 		categories = {
@@ -1490,6 +1554,11 @@ technologies = {
 	}
     
     advanced_fabrication_centre = {
+        enable_building = {
+            building = electronics_generator
+            level = 4
+        }
+        
         path = {
 			leads_to_tech = autonomous_fabrication_centre
 			research_cost_coeff = 1
@@ -1503,7 +1572,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 22 y = @CivilizedColumn2 }
+			position = { x = @Row_11 y = @Col_4 }
 		}
 		
 		categories = {
@@ -1517,7 +1586,11 @@ technologies = {
 	}
     
     autonomous_fabrication_centre = {
-
+        enable_building = {
+            building = electronics_generator
+            level = 5
+        }
+        
         dependencies = {
             scientific_civilization = 1
         }
@@ -1526,7 +1599,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 22 y = @AdvancedColumn1 }
+			position = { x = @Row_11 y = @Col_5 }
 		}
 		
 		categories = {
@@ -1540,11 +1613,16 @@ technologies = {
 	}
     
     #-------------------------
-    # Food
+    # Advanced Technology
     #-------------------------
-    basic_farmstead = {
+    basic_research_laboratory = {
+        enable_building = {
+            building = advanced_technology_generator
+            level = 1
+        }
+        
         path = {
-			leads_to_tech = advanced_farmstead
+			leads_to_tech = advanced_research_laboratory
 			research_cost_coeff = 1
 		}
         
@@ -1552,7 +1630,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 24 y = @TribalColumn1 }
+			position = { x = @Row_12 y = @Col_1 }
 		}
 		
 		categories = {
@@ -1565,9 +1643,14 @@ technologies = {
 		}
 	}
     
-    advanced_farmstead = {
+    advanced_research_laboratory = {
+        enable_building = {
+            building = advanced_technology_generator
+            level = 2
+        }
+        
         path = {
-			leads_to_tech = basic_hydroponics
+			leads_to_tech = basic_research_facility
 			research_cost_coeff = 1
 		}
         
@@ -1575,7 +1658,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 24 y = @TribalColumn2 }
+			position = { x = @Row_12 y = @Col_2 }
 		}
 		
 		categories = {
@@ -1588,9 +1671,14 @@ technologies = {
 		}
 	}
     
-    basic_hydroponics = {
+    basic_research_facility = {
+        enable_building = {
+            building = advanced_technology_generator
+            level = 3
+        }
+        
         path = {
-			leads_to_tech = advanced_hydroponics
+			leads_to_tech = advanced_research_facility
 			research_cost_coeff = 1
 		}
         
@@ -1602,7 +1690,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 24 y = @CivilizedColumn1 }
+			position = { x = @Row_12 y = @Col_3 }
 		}
 		
 		categories = {
@@ -1615,9 +1703,14 @@ technologies = {
 		}
 	}
     
-    advanced_hydroponics = {
+    advanced_research_facility = {
+        enable_building = {
+            building = advanced_technology_generator
+            level = 4
+        }
+        
         path = {
-			leads_to_tech = autonomous_hydroponics
+			leads_to_tech = autonomous_research_facility
 			research_cost_coeff = 1
 		}
         
@@ -1629,7 +1722,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 24 y = @CivilizedColumn2 }
+			position = { x = @Row_12 y = @Col_4 }
 		}
 		
 		categories = {
@@ -1642,7 +1735,11 @@ technologies = {
 		}
 	}
     
-    autonomous_hydroponics = {
+    autonomous_research_facility = {
+        enable_building = {
+            building = advanced_technology_generator
+            level = 5
+        }
 
         dependencies = {
             scientific_civilization = 1
@@ -1652,7 +1749,7 @@ technologies = {
 		start_year = 2265
 		folder = {
 			name = fallout_industry_folder
-			position = { x = 24 y = @AdvancedColumn1 }
+			position = { x = @Row_12 y = @Col_5 }
 		}
 		
 		categories = {
