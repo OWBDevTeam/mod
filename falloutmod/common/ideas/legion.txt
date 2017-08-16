@@ -16,13 +16,14 @@ ideas = {
 				army_attack_factor = 0.1
 				non_core_manpower = 0.1
 				army_speed_factor = 0.05
-				army_attrition_factor = -0.1
+				attrition = -0.1
 			}
-			
-			category_melee = {
-				attack_factor = 0.05
-			}
-		
+            
+            equipment_bonus = {
+                category_melee = {
+                    soft_attack = 0.05
+                }
+            }
 		}
 		
 		paxperbellum = {
@@ -50,17 +51,13 @@ ideas = {
 			removal_cost = -1
 		
 			equipment_bonus = {
-				base_laser_equipment = {
-					build_cost_ic = 0.5 instant = yes
+				energy_equipment = {
+					build_cost_ic = 0.5 
+                    instant = yes
 				}
-				light_robot_equipment = {
-					build_cost_ic = 2.5 instant = yes
-				}
-				medium_robot_equipment = {
-					build_cost_ic = 2.5 instant = yes
-				}
-				heavy_robot_equipment = = {
-					build_cost_ic = 2.5 instant = yes
+				robot_equipment = {
+					build_cost_ic = 2.5 
+                    instant = yes
 				}
 			}
 		}
@@ -70,7 +67,6 @@ ideas = {
 			removal_cost = -1
 			
 			allowed = {
-				always = no 
 			}
 
 			allowed_civil_war = {
@@ -95,8 +91,21 @@ ideas = {
 			removal_cost = -1
 		
 			equipment_bonus = {
-				motorized_equipment = {
-					build_cost_ic = -0.10 instant = yes
+				motorbike_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+                car_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+                bus_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+                truck_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
 				}
 			}
 		}
@@ -111,7 +120,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				MONTHLY_POPULATION = 0.05
+				monthly_population = 0.05
 			}	
 		}
 		
@@ -125,7 +134,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				MONTHLY_POPULATION = 0.05
+				monthly_population = 0.05
 			}	
 		}
 		
@@ -139,7 +148,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				MONTHLY_POPULATION = 0.05
+				monthly_population = 0.05
 			}	
 		}
 		
@@ -153,7 +162,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				MONTHLY_POPULATION = 0.05
+				monthly_population = 0.05
 			}	
 		
 		}
@@ -169,7 +178,8 @@ ideas = {
 		
 			equipment_bonus = {
 				infantry_equipment = {
-					build_cost_ic = -0.10 instant = yes
+					build_cost_ic = -0.10 
+                    instant = yes
 				}
 			}
 		}
@@ -201,7 +211,7 @@ ideas = {
 	
 			modifier = {
 				winter_attrition_factor = -0.1
-				mountain_attrition_factor = -0.1
+				heat_attrition_factor = -0.1
 				recon_factor = 0.05
 			}	
 		}
@@ -302,8 +312,9 @@ ideas = {
 			
 			
 			equipment_bonus = {
-				power_armor = {
-					build_cost_ic = -0.2 instant = yes
+				power_armor_equipment = {
+					build_cost_ic = -0.2 
+                    instant = yes
 				}
 			}
 		}
@@ -427,7 +438,7 @@ ideas = {
 			modifier = {
 				army_core_attack_factor = 0.1
 				army_core_defence_factor = 0.1
-				MONTHLY_POPULATION = 0.3
+				monthly_population = 0.3
 			}
 
 		}
@@ -454,7 +465,6 @@ ideas = {
 			removal_cost = -1
 			
 			allowed = {
-				always = no 
 			}
 			
 			picture = triumphant_will
@@ -559,7 +569,7 @@ ideas = {
 			picture = generic_infantry_bonus
 	
 			modifier = {
-				army_org_Factor = 0.05
+				army_org_factor = 0.05
 			}	
 		}
 		
@@ -573,17 +583,25 @@ ideas = {
 			removal_cost = -1
 		
 			equipment_bonus = {
-				light_robot_equipment = {
-					build_cost_ic = -0.15 instant = yes
+				robot_equipment = {
+					build_cost_ic = -0.15 
+                    instant = yes
 				}
-				medium_robot_equipment = {
-					build_cost_ic = -0.15 instant = yes
+				motorbike_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
 				}
-				heavy_robot_equipment = = {
-					build_cost_ic = -0.15 instant = yes
+                car_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
 				}
-				motorized_equipment = {
-					build_cost_ic = -0.15 instant = yes
+                bus_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+                truck_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
 				}
 			}
 		}
@@ -592,18 +610,18 @@ ideas = {
 		
 	}
 	
-		hidden_ideas = {
+    hidden_ideas = {
 			
-			childsoldiersidea = {
+        childsoldiersidea = {
 			
-				allowed = {
-				}
+            allowed = {
+            }
 
-				removal_cost = -1
+            removal_cost = -1
 				
-				modifier = {
-					conscription_factor = 0.02
-				}
-			}
-		}
+            modifier = {
+                conscription_factor = 0.02
+            }
+        }
+    }
 }

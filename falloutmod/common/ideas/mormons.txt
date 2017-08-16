@@ -14,7 +14,7 @@ ideas = {
 			modifier = {
 				army_attack_factor = -0.05
 				army_defence_factor = -0.1
-				army_org_Factor = 0.1
+				army_org_factor = 0.1
 				max_dig_in_factor = 0.1
 			}
 		
@@ -30,8 +30,21 @@ ideas = {
 			removal_cost = -1
 		
 			equipment_bonus = {
-				motorized_equipment = {
-					build_cost_ic = -0.10 instant = yes
+                motorbike_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+                car_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+                bus_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+                truck_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
 				}
 			}
 		
@@ -79,7 +92,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				MONTHLY_POPULATION = -0.1
+				monthly_population = -0.1
 				conscription = 0.03
 			}	
 		}
@@ -174,9 +187,10 @@ ideas = {
 		
 			equipment_bonus = {
 				infantry_equipment = {
-					build_cost_ic = -0.10 instant = yes
+					build_cost_ic = -0.10
 					breakthrough = 0.05
 					reliability = -0.05
+                    instant = yes
 				}
 			}
 		}
@@ -225,7 +239,7 @@ ideas = {
 			picture = generic_production_bonus
 
 			modifier = {
-				conversion_cost_civ_to_mil_factor= -0.25
+				conversion_cost_civ_to_mil_factor = -0.25
 			}
 		}
 		
@@ -312,7 +326,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				MONTHLY_POPULATION = 0.25
+				monthly_population = 0.25
 			}	
 		}
 		
@@ -327,9 +341,10 @@ ideas = {
 		
 			equipment_bonus = {
 				infantry_equipment = {
-					build_cost_ic = 0.10 instant = yes
+					build_cost_ic = 0.10
 					soft_attack = 0.05
 					reliability = 0.05
+                    instant = yes
 				}
 			}
 		}
@@ -394,40 +409,38 @@ ideas = {
 	}
 	
 	political_advisor = {
-	
-	daniel = {
+        
+        daniel = {
+            allowed = {
+                original_tag = NCN
+            }
+            available = {
+                has_completed_focus = lds_sorrows
+            }
+                
+            traits = { smooth_talking_charmer }
 
-			allowed = {
-				original_tag = NCN
-			}
-			available = {
-				has_completed_focus = lds_sorrows
-			}
-			
-			traits = { smooth_talking_charmer }
-
-			ai_will_do = {
-				factor = 0.5
-			}
-		}
-	}
-	
-	army_chief = {
-		
-		burnedman = {
-
-			allowed = {
-				original_tag = NCN
-			}
-			available = {
-				has_completed_focus = lds_return
-			}
-	
-			traits = { army_chief_offensive_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-	}
+            ai_will_do = {
+                factor = 0.5
+            }
+        }
+    }
+    
+    army_chief = {
+                
+        burnedman = {
+            allowed = {
+                original_tag = NCN
+            }
+            available = {
+                has_completed_focus = lds_return
+            }
+            
+            traits = { army_chief_offensive_2 }
+                    
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
 }

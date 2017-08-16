@@ -119,10 +119,10 @@ focus_tree = {
 			focus = lds_lonetree
 		}
 		available = { 
-			has_state = 611
-			has_state = 324
-			has_state = 472
-			has_state = 403
+			owns_state = 611
+			owns_state = 324
+			owns_state = 472
+			owns_state = 403
 		}
 		x = 0
 		y = 7
@@ -160,10 +160,10 @@ focus_tree = {
 			focus = lds_ires
 		}
 		available = { 
-			has_state = 384
-			has_state = 484
-			has_state = 576
-			has_state = 354
+			owns_state = 384
+			owns_state = 484
+			owns_state = 576
+			owns_state = 354
 		}
 		x = 4
 		y = 7
@@ -840,14 +840,14 @@ focus_tree = {
 			focus = lds_faithful
 			focus = lds_pilgrims
 		}
+        bypass = {
+            CES = {
+                has_completed_focus = ces_triumph
+            }
+        }
 		available = {
 			CES = {
 				has_completed_focus = ces_burnedman
-			}
-			bypass = {
-				CES = {
-					has_completed_focus = ces_triumph
-				}
 			}
 		}
 		x = 17
@@ -949,7 +949,7 @@ focus_tree = {
 		y = 9
 		completion_reward = {
 			custom_effect_tooltip = mormonweapons_tt
-			hidden_effect = { set_technology = { advanced_infantry_weapons = 1 }}
+			hidden_effect = { set_technology = { advanced_ballistic_weaponry = 1 }}
 		}
 
 	}
@@ -964,7 +964,7 @@ focus_tree = {
 		y = 9
 		completion_reward = {
 			custom_effect_tooltip = mormonmedicine_tt
-			hidden_effect = { set_technology = { mormonmedicine = 1 }}
+			hidden_effect = { set_technology = { healing_powder = 1 } }
 		}
 
 	}
