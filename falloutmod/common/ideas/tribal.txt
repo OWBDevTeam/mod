@@ -1,0 +1,45 @@
+ideas = {
+	country = {
+        
+        # Tribal National Focuses
+        warrior_cults = {
+            picture = generic_war_preparation
+            
+            allowed = {
+                is_tribal_nation = yes
+            }
+            removal_cost = -1
+            
+            modifier = {
+                conscription_factor = 0.03
+            }
+        }
+        
+        borne_of_the_wilds = {
+             picture = generic_morale_bonus
+            
+            allowed = {
+                is_tribal_nation = yes
+            }
+            removal_cost = -1
+            
+            modifier = {
+                army_speed_factor = 0.1
+            }
+        }
+
+        primitive_people = {
+             picture = generic_production_bonus
+            
+            allowed = {
+                is_tribal_nation = yes
+            }
+            removal_cost = -1
+            
+            modifier = {
+                production_speed_buildings_factor = -0.25 
+                equipment_conversion_speed = -0.5
+            }
+        }
+	}
+}

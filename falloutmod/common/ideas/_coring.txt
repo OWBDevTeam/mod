@@ -4,7 +4,7 @@ ideas = {
 	country = {
 		coring_state = {
 			modifier = {
-			political_power_factor = -0.25
+                political_power_factor = -0.25
 			}
 		}
 	}
@@ -23,41 +23,42 @@ ideas = {
 	}
 	core_state_laws = {
 		law = yes
+        
 		core_state = {
-		
-		#picture = generic_production_bonus
-		
-		available = {
-			is_major = no
-			NOT = {
-				has_idea = coring_state
-			}
-			any_owned_state = {
-				AND = {
-					is_controlled_by = ROOT
-					NOT = {
-						is_core_of = ROOT
-					}
-				}
-			}
-		}
-		on_add = {
-			add_ideas = coring_state
-			random_owned_controlled_state = {
-				limit = {
-					NOT = {
-						is_core_of = ROOT
-					}
-				}
-				set_state_flag = coring_state
-			}
-		}
-		ai_will_do = {
-			factor = 10000
-		}
-		level = 1
-		cost = 0
-		removal_cost = -1
+            
+            #picture = generic_production_bonus
+            
+            available = {
+                is_major = no
+                NOT = {
+                    has_idea = coring_state
+                }
+                any_owned_state = {
+                    AND = {
+                        is_controlled_by = ROOT
+                        NOT = {
+                            is_core_of = ROOT
+                        }
+                    }
+                }
+            }
+            on_add = {
+                add_ideas = coring_state
+                random_owned_controlled_state = {
+                    limit = {
+                        NOT = {
+                            is_core_of = ROOT
+                        }
+                    }
+                    set_state_flag = coring_state
+                }
+            }
+            ai_will_do = {
+                factor = 10000
+            }
+            level = 1
+            cost = 0
+            removal_cost = -1
 		}
 		
 		stop_coring_state = {

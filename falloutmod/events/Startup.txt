@@ -1,0 +1,25 @@
+﻿add_namespace = startup
+
+country_event = {
+	id = startup.1
+	title = startup.1.title
+	desc = startup.1.desc
+    
+    #hidden = yes
+    is_triggered_only = yes
+    
+    trigger = {
+        NOT = { has_country_flag = setup_country_ideas }
+        
+    }
+	
+    immediate = {
+        set_country_flag = setup_country_ideas
+    }
+    
+	option = {
+		name = startup.1.option.a
+		
+        
+	}
+}
