@@ -1,39 +1,38 @@
-﻿capital = 352
+﻿capital = 551
 oob = "NCN_2265"
 set_technology = {
-    standard_weaponry_tech = 1
-	blunt_weaponry = 1
-    tribal_civilization = 1
+standard_weaponry = 1
 }
-
 set_politics = {
-    parties = {
-        people = { popularity = 100 }
-        elites = { popularity = 0 }
-        intellectuals = { popularity = 0 }
-        ruler = { popularity = 0 }
-    }
-    ruling_party = people
-    elections_allowed = yes
+parties = {
+people = {
+ popularity = 100 
 }
-
-add_ideas = { }
-
+elites = {
+ popularity = 0 
+}
+intellectuals = {
+ popularity = 0 
+}
+ruler = {
+ popularity = 0 
+}
+}
+		ruling_party = people
+		elections_allowed = no
+}
+add_ideas = {
+	wastelandmilitias
+}
 create_country_leader  = {
-    name = "Daniel"
-    desc = "Daniel_DESC"
-    picture = "Portrait_NCN_Leader.dds"
-    expire = "3000.1.1"
-    ideology = commune
-    traits = {
-    }
+name = "Jeremiah Rigdon"
+desc = "Rigdon_DESC"
+picture = "Portrait_NCN_Leader.dds"
+expire = "3000.1.1"
+ideology =commune
+traits = {
+}
 }
 
-create_corps_commander = {
-    name = "Joshua Graham"
-    portrait_path = "gfx/leaders/NCN/Portrait_Burned_Man.dds"
-    skill = 4
-    traits = {
-    }
-}
+
 

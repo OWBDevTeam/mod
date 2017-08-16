@@ -1,0 +1,975 @@
+focus_tree = {
+	id = gentribal
+	country = {
+	
+		factor = 0
+		modifier = {
+			tag = SOR
+			add = 10
+		}
+	}
+	default = no
+	focus = {
+		id = gentribal_gods
+		icon = GFX_goal_generic_demand_territory
+		cost = 1
+		x = 8
+		y = 0
+		completion_reward = {
+			country_event = { id = generic.1 }
+		}
+
+	}
+	focus = {
+		id = gentribal_legend
+		icon = GFX_goal_generic_demand_territory
+		cost = 1
+		prerequisite = {
+			focus = gentribal_gods
+		}
+		x = 8
+		y = 1
+		completion_reward = {
+			country_event = { id = generic.2 }
+		}
+
+	}
+	focus = {
+		id = gentribal_era
+		icon = GFX_goal_generic_demand_territory
+		cost = 1
+		prerequisite = {
+			focus = gentribal_legend
+		}
+		x = 8
+		y = 2
+		completion_reward = {
+			country_event = { id = generic.3 }
+		}
+
+	}
+	focus = {
+		id = gentribal_defense
+		icon = GFX_goal_generic_military_sphere
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_era
+		}
+		x = 1
+		y = 3
+		completion_reward = {
+			add_ideas = tribal_defence
+		}
+
+	}
+	focus = {
+		id = gentribal_cult
+		icon = GFX_goal_generic_secret_weapon
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_defense
+		}
+		x = 0
+		y = 4
+		completion_reward = {
+			custom_effect_tooltip = gentribal_cult_tt
+			hidden_effect = { set_technology = { warriorcult = 1 } }
+		}
+
+	}
+	focus = {
+		id = gentribal_tradition
+		icon = GFX_goal_generic_army_artillery
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_defense
+		}
+		x = 2
+		y = 4
+		completion_reward = {
+			add_ideas = tribal_tradition
+		}
+
+	}
+	focus = {
+		id = gentribal_tribe
+		icon = GFX_goal_generic_demand_territory
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_era
+		}
+		x = 8
+		y = 3
+		completion_reward = {
+			add_political_power = 100
+		}
+
+	}
+	focus = {
+		id = gentribal_war
+		icon = GFX_goal_support_fascism
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_tribe
+		}
+		mutually_exclusive = {
+			focus = gentribal_shaman
+			focus = gentribal_highchief
+			focus = gentribal_elder
+		}
+		x = 5
+		y = 4
+		completion_reward = {
+			add_ideas = war_chief1
+			add_political_power = 60
+		}
+
+	}
+	focus = {
+		id = gentribal_shaman
+		icon = GFX_goal_support_communism
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_tribe
+		}
+		mutually_exclusive = {
+			focus = gentribal_elder
+			focus = gentribal_war
+			focus = gentribal_highchief
+		}
+		x = 7
+		y = 4
+		completion_reward = {
+			add_ideas = high_shaman
+			add_political_power = 60
+		}
+
+	}
+	focus = {
+		id = gentribal_elder
+		icon = GFX_goal_support_democracy
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_tribe
+		}
+		mutually_exclusive = {
+			focus = gentribal_highchief
+			focus = gentribal_shaman
+			focus = gentribal_war
+		}
+		x = 9
+		y = 4
+		completion_reward = {
+			add_ideas = elder1
+			add_political_power = 60
+		}
+
+	}
+	focus = {
+		id = gentribal_council
+		icon = GFX_goal_generic_demand_territory
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_elder
+		}
+		x = 9
+		y = 5
+		completion_reward = {
+			add_ideas = elder2
+		}
+	}
+	focus = {
+		id = gentribal_migrate
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_council
+		}
+		x = 9
+		y = 6
+		completion_reward = {
+			add_manpower = 10000
+			army_experience = 25
+		}
+
+	}
+	focus = {
+		id = gentribal_highchief
+		icon = GFX_goal_tripartite_pact
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_tribe
+		}
+		mutually_exclusive = {
+			focus = gentribal_elder
+			focus = gentribal_shaman
+			focus = gentribal_war
+		}
+		x = 11
+		y = 4
+		completion_reward = {
+			add_ideas = highchief1
+			add_political_power = 60
+		}
+	}
+	focus = {
+		id = gentribal_chief
+		icon = GFX_goal_generic_propaganda
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_highchief
+		}
+		x = 11
+		y = 5
+		completion_reward = {
+			hidden_effect = { remove_ideas = highchief1 }
+			add_ideas = highchief2
+		}
+
+	}
+	focus = {
+		id = gentribal_duty
+		icon = GFX_goal_demand_sudetenland
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_chief
+		}
+		x = 11
+		y = 6
+		completion_reward = {
+			hidden_effect = { remove_ideas = highchief2 }
+			add_ideas = highchief3
+		}
+
+	}
+	focus = {
+		id = gentribal_village
+		icon = GFX_goal_generic_construct_civilian
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_era
+		}
+		x = 16
+		y = 3
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = gentribal_elders
+		icon = GFX_goal_generic_demand_territory
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_village
+		}
+		x = 15
+		y = 4
+		completion_reward = {
+			add_ideas = elders
+		}
+
+	}
+	focus = {
+		id = gentribal_unity
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_elders
+		}
+		x = 14
+		y = 5
+		completion_reward = {
+			add_ideas = tribalunity
+		}
+
+	}
+	focus = {
+		id = gentribal_city
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_unity
+		}
+		x = 13
+		y = 6
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = gentribal_factions
+		icon = GFX_goal_generic_improve_relations
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_city
+		}
+		x = 12
+		y = 7
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+		}
+
+	}
+	focus = {
+		id = gentribal_deathpowder
+		icon = GFX_focus_wonderweapons
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_factions
+		}
+		x = 11
+		y = 8
+		completion_reward = {
+			set_technology = { grenades = 1 }
+		}
+
+	}
+	focus = {
+		id = gentribal_trade
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_factions
+		}
+		x = 13
+		y = 8
+		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 600 }
+		}
+	}
+	focus = {
+		id = gentribal_agreement
+		icon = GFX_goal_generic_consumer_goods
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_city
+		}
+		x = 15
+		y = 7
+		completion_reward = {
+			add_ideas = outsideragreement
+		}
+
+	}
+	focus = {
+		id = gentribal_tradepost
+		icon = GFX_goal_generic_radar
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_agreement
+		}
+		x = 15
+		y = 8
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = gentribal_volunteers
+		icon = GFX_goal_generic_small_arms
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_tradepost
+		}
+		x = 15
+		y = 9
+		completion_reward = {	
+			add_ideas = tribal_volunteers
+			set_rule = { can_send_volunteers = yes }
+		}
+	}
+	focus = {
+		id = gentribal_mercs
+		icon = GFX_goal_rhineland
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_volunteers
+		}
+		x = 15
+		y = 10
+		completion_reward = {	
+			hidden_effect = { remove_ideas = tribal_volunteers }
+			add_ideas = tribal_mercenaries
+		}
+
+	}
+	focus = {
+		id = gentribal_pathfinders
+		icon = GFX_goal_generic_more_territorial_claims
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_cult
+		}
+		x = 0
+		y = 5
+		completion_reward = {
+			custom_effect_tooltip = gentribal_pathfinders_tt
+			hidden_effect = { set_technology = { pathfinders = 1 }}
+		}
+
+	}
+	focus = {
+		id = gentribal_youth
+		icon = GFX_goal_generic_propaganda
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_pathfinders
+		}
+		x = 0
+		y = 6
+		completion_reward = {
+			add_ideas = tribalyouth
+		}
+
+	}
+	focus = {
+		id = gentribal_martialarts
+		icon = GFX_goal_generic_army_doctrines
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_tradition
+		}
+		x = 2
+		y = 5
+		completion_reward = {
+			custom_effect_tooltip = gentribal_martialarts_tt
+			hidden_effect = { set_technology = { clanfightingstyles = 1 }}
+		}
+	}
+	focus = {
+		id = gentribal_champions
+		icon = GFX_goal_generic_CAS
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_martialarts
+		}
+		x = 2
+		y = 6
+		completion_reward = {
+			add_ideas = tribalchamps
+		}
+
+	}
+	focus = {
+		id = gentribal_healing
+		icon = GFX_goal_generic_scientific_exchange
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_champions
+		}
+		x = 1
+		y = 7
+		completion_reward = {
+			add_ideas = healingpowder
+		}
+
+	}
+	focus = {
+		id = gentribal_secrets
+		icon = GFX_focus_research
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_healing
+		}
+		x = 1
+		y = 8
+		completion_reward = {
+			add_ideas = tribalsecrets
+		}
+
+	}
+	focus = {
+		id = gentribal_muster
+		icon = GFX_goal_generic_propaganda
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_champions
+		}
+		x = 3
+		y = 7
+		completion_reward = {
+			add_ideas = tribalmuster
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = gentribal_nomads
+		icon = GFX_goal_generic_cavalry
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_muster
+		}
+		x = 3
+		y = 8
+		completion_reward = {
+			custom_effect_tooltip = gentribal_nomads_tt
+			hidden_effect = { set_technology = { nomadsoul = 1 }}
+		}
+
+	}
+	focus = {
+		id = gentribal_houndmasters
+		icon = GFX_goal_generic_air_doctrine
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_nomads
+		}
+		x = 1
+		y = 9
+		completion_reward = {
+			add_ideas = tribalhoundmasters
+		}
+	}
+	focus = {
+		id = gentribal_dogs
+		icon = GFX_goal_generic_wolf_pack
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_houndmasters
+		}
+		x = 1
+		y = 10
+		completion_reward = {
+			custom_effect_tooltip = gentribal_dogs_tt
+			hidden_effect = { set_technology = { mansbestfriend = 1 }}
+		}
+
+	}
+	focus = {
+		id = gentribal_skirmish
+		icon = GFX_goal_generic_position_armies
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_nomads
+		}
+		x = 3
+		y = 9
+		completion_reward = {
+			add_ideas = tribalskirmish
+		}
+	}
+	focus = {
+		id = gentribal_noct
+		icon = GFX_goal_generic_army_artillery
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_nomads
+		}
+		x = 5
+		y = 9
+		completion_reward = {
+			custom_effect_tooltip = gentribal_noct_tt
+			hidden_effect = { set_technology = { noctwarriors = 1 }}
+		}
+	}
+	focus = {
+		id = gentribal_bodyguards
+		icon = GFX_goal_generic_attack_allies
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_skirmish
+		}
+		x = 3
+		y = 10
+		completion_reward = {
+			custom_effect_tooltip = gentribal_bodyguards_tt
+			hidden_effect = { load_oob = tribalbodyguards }
+		}
+
+	}
+	focus = {
+		id = gentribal_rise
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_war
+		}
+		x = 5
+		y = 5
+		completion_reward = {
+			army_experience = 50
+		}
+
+	}
+	focus = {
+		id = gentribal_holywar
+		icon = GFX_goal_generic_war_with_comintern
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_shaman
+		}
+		x = 7
+		y = 5
+		completion_reward = {
+			add_ideas = tribalfervor
+		}
+
+	}
+	focus = {
+		id = gentribal_holyorg
+		icon = GFX_goal_generic_position_armies
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_holywar
+		}
+		x = 7
+		y = 6
+		completion_reward = {
+			custom_effect_tooltip = gentribal_holyorg_tt
+			hidden_effect = { set_technology = { tribalholyorg = 1 }}
+		}
+
+	}
+	focus = {
+		id = gentribal_realm
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_rise
+		}
+		x = 5
+		y = 6
+		completion_reward = {
+			add_ideas = war_chief2
+		}
+
+	}
+	focus = {
+		id = gentribal_outsiders
+		icon = GFX_goal_generic_build_tank
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_trade
+		}
+		x = 13
+		y = 9
+		completion_reward = {
+			custom_effect_tooltip = gentribal_outsiders_tt
+			hidden_effect = { set_technology = { outsiderways = 1 }}
+		}
+
+	}
+	focus = {
+		id = gentribal_fragprod
+		icon = GFX_goal_generic_construction
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_deathpowder
+		}
+		x = 11
+		y = 9
+		completion_reward = {
+			add_ideas = tribalfragprod
+		}
+
+	}
+	focus = {
+		id = gentribal_spirits
+		icon = GFX_focus_research
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_gifts
+		}
+		x = 17
+		y = 6
+		completion_reward = {
+			add_ideas = spirits
+		}
+
+	}
+	focus = {
+		id = gentribal_lands
+		icon = GFX_goal_generic_build_tank
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_village
+		}
+		x = 17
+		y = 4
+		completion_reward = {
+			add_ideas = sacredlands
+		}
+
+	}
+	focus = {
+		id = gentribal_gifts
+		icon = GFX_goal_generic_consumer_goods
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_lands
+		}
+		x = 17
+		y = 5
+		completion_reward = {
+			custom_effect_tooltip = gentribal_gifts_tt
+			hidden_effect = { set_technology = { sacredgifts = 1 }}
+		}
+
+	}
+	focus = {
+		id = gentribal_warpaint
+		icon = GFX_goal_generic_secret_weapon
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_spirits
+		}
+		x = 17
+		y = 7
+		completion_reward = {
+			custom_effect_tooltip = gentribal_warpaint_tt
+			hidden_effect = { set_technology = { tribalwarpaint = 1 }}
+		}
+
+	}
+	focus = {
+		id = gentribal_numbers
+		icon = GFX_goal_generic_position_armies
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_warpaint
+		}
+		x = 17
+		y = 8
+		completion_reward = {
+			custom_effect_tooltip = gentribal_numbers_tt
+			hidden_effect = {set_technology = { tribalnumbers = 1 }}
+		}
+		
+	}
+	focus = {
+		id = gentribal_wasteland
+		icon = GFX_goal_generic_CAS
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_numbers
+		}
+		x = 17
+		y = 9
+		completion_reward = {
+			add_ideas = tribalwasteland
+		}
+
+	}
+	focus = {
+		id = gentribal_immortals
+		icon = GFX_goal_generic_military_sphere
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_mercs
+		}
+		x = 16
+		y = 11
+		completion_reward = {
+			custom_effect_tooltip = gentribal_immortals_tt
+			hidden_effect = { set_technology = { tribalimmortals = yes }}
+		}
+
+	}
+	focus = {
+		id = gentribal_wardrums
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_wasteland
+		}
+		x = 17
+		y = 10
+		completion_reward = {
+			add_ideas = tribaldrums
+		}
+
+	}
+	focus = {
+		id = gentribal_slipperyenemies
+		icon = GFX_goal_generic_propaganda
+		cost = 8.6
+		prerequisite = {
+			focus = gentribal_mercs
+		}
+		x = 14
+		y = 11
+		completion_reward = {
+			add_ideas = slipperyenemies
+		}
+
+	}
+}

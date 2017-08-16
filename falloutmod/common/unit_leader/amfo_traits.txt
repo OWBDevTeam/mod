@@ -1,0 +1,57 @@
+leader_traits = {
+	
+	conqueror = { 
+		
+		type = corps_commander
+		gain_xp = {
+			OR = {
+				is_attacker = yes
+				has_combat_modifier = lack_of_supply
+			}
+		}
+		cost = 1000
+		modifier = {
+			army_infantry_attack_factor = 0.1
+			supply_consumption_factor = -0.2
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	loyalty = {
+		
+		type = corps_commander
+		gain_xp = {
+			is_defender = yes
+		}
+		cost = 1000
+		modifier = {
+			dig_in_speed_factor = 0.25
+			max_dig_in_factor = 0.25
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	
+	}
+	
+	slavemaster = {
+		
+		type = corps_commander
+			gain_xp = {
+				dig_in < 10
+			}
+			cost = 1000
+			modifier = {
+				army_speed_factor = 0.1
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}			
+	}
+	
+}
