@@ -15,7 +15,7 @@ focus_tree = {
 		x = 18
 		y = 0
 		completion_reward = {
-			country_event = { id = legion.1 } #Expedition To Blackfoot
+			country_event = { id = nf_legion.7 } # Expedition To Blackfoot
 		}
 
 	}
@@ -29,7 +29,7 @@ focus_tree = {
 		x = 18
 		y = 1
 		completion_reward = {
-			country_event = { id = legion.2 } #Death In The Canyons
+			country_event = { id = nf_legion.8 } # Death In The Canyons
 		}
 
 	}
@@ -43,7 +43,7 @@ focus_tree = {
 		x = 18
 		y = 2
 		completion_reward = {
-			country_event = { id = legion.3 } #The Malpais Legate
+			country_event = { id = nf_legion.9 } # The Malpais Legate
 		}
 
 	}
@@ -57,7 +57,7 @@ focus_tree = {
 		x = 18
 		y = 3
 		completion_reward = {
-			country_event = { id = legion.4 } #Caesar, Son Of Mars
+			country_event = { id = nf_legion.10 } # Caesar, Son Of Mars
 		}
 
 	}
@@ -1104,11 +1104,11 @@ focus_tree = {
                     }
                     is_coastal = yes
                 }       
-            }
-			add_building_construction = {
-                type = dockyard
-                level = 2
-                instant_build = yes
+                add_building_construction = {
+                    type = dockyard
+                    level = 2
+                    instant_build = yes
+                }
             }
 		}
 
@@ -1167,6 +1167,7 @@ focus_tree = {
 			NCR = {
 				add_political_power = -60
 			}
+            custom_effect_tooltip = legion_nf_caesar_illness_tt
 			country_event = { id = nf_legion.5 } # Caesar's Illness
 		}
 
@@ -1427,16 +1428,24 @@ focus_tree = {
 		x = 5
 		y = 15
 		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = VEG
-			}
-			#add_state_core = PLACEHOLDER
+			if = {
+                limit = { country_exists = VEG }
+                create_wargoal = {
+                    type = annex_everything
+                    target = VEG
+                }
+                VEG = {
+                    every_owned_state = { 
+                        limit = { is_new_vegas_state = yes }
+                        add_core_of = ROOT
+                    }
+                }	
+            }
 		}
 
 	}
     focus = {
-		id = ces_eternal
+		id = ces_the_eternal_city
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 8.6
 		prerequisite = {
@@ -1445,63 +1454,114 @@ focus_tree = {
 		x = 4
 		y = 16
 		completion_reward = {
-			#PLACEHOLDER = {
-			#	add_extra_state_shared_building_slots = 3
-			#	add_building_construction = {
-			#		type = industrial_complex
-			#		level = 3
-			#		instant_build = yes
-			#	}
+            if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_new_vegas_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_vegas_territory 
+            }
+            
+			every_owned_state = {
+                limit = {
+                    is_new_vegas_state = yes
+                }
+                add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+                }
+            }
 		}
 
 	}
 	focus = {
-		id = ces_palace
+		id = ces_caesers_palace
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 8.6
 		prerequisite = {
-			focus = ces_eternal
+			focus = ces_the_eternal_city
 		}
 		x = 4
 		y = 17
 		completion_reward = {
-			#PLACEHOLDER = {
-			#	add_extra_state_shared_building_slots = 3
-			#	add_building_construction = {
-			#		type = arms_factory
-			#		level = 3
-			#		instant_build = yes
-			#	}
-			# add_building_construction = {
-			#		type = bunker
-			#		province = PLACEHOLDER
-			#		level = 2
-			#		instant_build = yes
-			# }
+            if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_new_vegas_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_vegas_territory 
+            }
+            
+			every_owned_state = {
+                limit = {
+                    is_new_vegas_state = yes
+                }
+                add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+                add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+                    province = {
+                        all_provinces = yes
+                    }
+				}
+            }
 		}
 
 	}
 	focus = {
-		id = ces_open
+		id = ces_open_the_lucky_38
 		icon = GFX_goal_anti_comintern_pact
 		cost = 8.6
 		prerequisite = {
-			focus = ces_palace
+			focus = ces_caesers_palace
 		}
 		x = 4
 		y = 18
 		completion_reward = {
-			# add_building_construction = {
-			#		type = bunker
-			#		province = PLACEHOLDER
-			#		level = 2
-			#		instant_build = yes
-			# }
+            add_national_unity = 0.05
+            
+			if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_new_vegas_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_vegas_territory 
+            }
+            
+			every_owned_state = {
+                limit = {
+                    is_new_vegas_state = yes
+                }
+                add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+                    province = {
+                        all_provinces = yes
+                    }
+				}
+            }
 		}
 
 	}
 	focus = {
-		id = ces_vegasinf
+		id = ces_expand_the_via_militaris
 		icon = GFX_goal_generic_construct_infrastructure
 		cost = 8.6
 		prerequisite = {
@@ -1510,42 +1570,75 @@ focus_tree = {
 		x = 6
 		y = 16
 		completion_reward = {
-			# PLACEHOLDER = {
-			#		add_building_construction = {
-			#			type = infrastructure
-			#			level = 10
-			#			instant_build = yes
-			#		}
-			# }
+            if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_new_vegas_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_vegas_territory 
+            }
+            
+			every_owned_state = {
+                limit = {
+                    is_new_vegas_state = yes
+                }
+                add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+                    province = {
+                        all_provinces = yes
+                    }
+				}
+            }
 		}
-
 	}
 	focus = {
-		id = ces_mccarran
+		id = ces_mccarran_airstrip
 		icon = GFX_goal_generic_air_fighter
 		cost = 8.6
 		prerequisite = {
-			focus = ces_vegasinf
+			focus = ces_expand_the_via_militaris
 		}
 		x = 6
 		y = 17
 		completion_reward = {
-		#	PLACEHOLDER = {
-		#		add_building_construction = {
-		#			type = air_base
-		#			level = 2
-		#			instant_build = yes
-		#		}
-		#	}
+            if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_new_vegas_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_vegas_territory 
+            }
+            
+			every_owned_state = {
+                limit = {
+                    is_new_vegas_state = yes
+                }
+                add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+                    province = {
+                        all_provinces = yes
+                    }
+				}
+            }
 		}
 
 	}
 	focus = {
-		id = ces_strip
+		id = ces_scouring_the_strip
 		icon = GFX_goal_generic_political_pressure
 		cost = 8.6
 		prerequisite = {
-			focus = ces_mccarran
+			focus = ces_mccarran_airstrip
 		}
 		x = 6
 		y = 18
@@ -1556,19 +1649,23 @@ focus_tree = {
 	}
     
     focus = {
-		id = ces_novaroma
+		id = ces_nova_roma
 		icon = GFX_goal_support_fascism
 		cost = 8.6
 		prerequisite = {
-			focus = ces_strip
+			focus = ces_scouring_the_strip
 		}
 		prerequisite = {
-			focus = ces_open
+			focus = ces_open_the_lucky_38
 		}
 		x = 5
 		y = 19
 		completion_reward = {
-			#set_capital = PLACEHOLDER
+            if = {
+                limit = { owns_state = 211 }
+                set_capital = 211
+            }
+            
 			add_ideas = legion_nf_nova_roma
 		}
 
@@ -1576,7 +1673,7 @@ focus_tree = {
     
     # Worthy
     focus = {
-		id = ces_worthy
+		id = ces_a_worthy_foe
 		icon = GFX_goal_generic_major_war
 		cost = 8.6
 		prerequisite = {
@@ -1592,41 +1689,79 @@ focus_tree = {
 	}
     
     focus = {
-		id = ces_divide
+		id = ces_divide_et_impera
 		icon = GFX_goal_generic_attack_allies
 		cost = 8.6
 		prerequisite = {
-			focus = ces_worthy
+			focus = ces_a_worthy_foe
 		}
+        bypass = {
+            NOT = { country_exists = NCR }
+        }
 		x = 8
 		y = 16
 		completion_reward = {
-			NCR = {
-				add_ideas = legion_nf_overextension
-			}
+            if = {
+                limit = { 
+                    country_exists = NCR
+                }
+                NCR = {
+                    add_timed_idea = {
+                        idea = legion_nf_overextension
+                        days = 720
+                    }
+                }
+            }
 		}
 	}
 	focus = {
-		id = ces_render
+		id = ces_render_unto_caesar
 		icon = GFX_goal_generic_war_with_comintern
 		cost = 8.6
 		prerequisite = {
-			focus = ces_worthy
+			focus = ces_a_worthy_foe
 		}
 		x = 10
 		y = 16
 		completion_reward = {
-			BVC = {	add_opinion_modifier = { target = CES modifier = renderuntocaesar }}
-			BLP = {	add_opinion_modifier = { target = CES modifier = renderuntocaesar }}
-			KHA = {	add_opinion_modifier = { target = CES modifier = renderuntocaesar }}
+            every_country = {
+                limit = {
+                    OR = {
+                        AND = {
+                            NOT = { has_tech = scientific_civilization }
+                            NOT = { tag = NCR }
+                            NOT = { is_subject_of = NCR }
+                            NOT = { is_in_faction_with = NCR }
+                            is_neighbor_of = CES
+                            NOT = {
+                                has_opinion = {                         
+                                    value = 0
+                                    tag = NCR
+                                }
+                            }
+                        }
+                        tag = KHA
+                        tag = BVC
+                        tag = BLP
+                    }
+                }
+                add_opinion_modifier = { 
+                    target = CES 
+                    modifier = renderuntocaesar 
+                }
+                reverse_add_opinion_modifier = { 
+                    target = CES 
+                    modifier = renderuntocaesar 
+                }
+            }
 		}
 	}
 	focus = {
-		id = ces_khans
+		id = ces_the_great_khans
 		icon = GFX_goal_generic_military_deal
 		cost = 8.6
 		prerequisite = {
-			focus = ces_render
+			focus = ces_render_unto_caesar
 		}
 		bypass = {
 			NOT = {
@@ -1641,11 +1776,11 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_baja
+		id = ces_the_baja_raiders
 		icon = GFX_goal_generic_military_deal
 		cost = 8.6
 		prerequisite = {
-			focus = ces_khans
+			focus = ces_the_great_khans
 		}
 		bypass = {
 			NOT = {
@@ -1662,11 +1797,11 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_searchlight
+		id = ces_camp_searchlight
 		icon = GFX_goal_generic_CAS
 		cost = 8.6
 		prerequisite = {
-			focus = ces_divide
+			focus = ces_divide_et_impera
 		}
 		x = 8
 		y = 17
@@ -1676,31 +1811,32 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_nelson
+		id = ces_battle_of_nelson
 		icon = GFX_goal_generic_build_navy
 		cost = 8.6
 		prerequisite = {
-			focus = ces_searchlight
+			focus = ces_camp_searchlight
 		}
+        bypass = {
+            owns_state = 137
+        }
 		x = 8
 		y = 18
 		completion_reward = {
 			add_manpower = -200
-			NCR = {
-				transfer_state = 137
-			}
+			transfer_state = 137
 		}
 
 	}
 	focus = {
-		id = ces_ncrwar
+		id = ces_in_hoc_signo_taurus_vinces
 		icon = GFX_goal_generic_alliance
 		cost = 8.6
 		prerequisite = {
-			focus = ces_nelson
+			focus = ces_battle_of_nelson
 		}
 		prerequisite = {
-			focus = ces_baja
+			focus = ces_the_baja_raiders
 		}
 		x = 9
 		y = 19
@@ -1721,10 +1857,13 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_poking_the_bear
 		}
+        bypass = {
+            has_country_flag = caesar_survived
+        }
 		x = 15
 		y = 15
 		completion_reward = {
-			news_event = { id = news.1 hours = 1 } #Crowning A New Augustus
+			country_event = { id = nf_legion.6 } # Crowning a New Augustus
 		}
 
 	}
@@ -1736,8 +1875,8 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_augustus
 		}
-		available = {
-			has_country_leader = { id = 996 } #Caesar
+        available = {
+			has_country_flag = sided_with_lucius
 		}
 		mutually_exclusive = {
 			focus = ces_brotherhood
@@ -1747,7 +1886,7 @@ focus_tree = {
 		x = 16
 		y = 16
 		completion_reward = {
-			#add_state_core = PLACEHOLDER
+			add_state_core = 253
 			add_ideas = legion_nf_new_thesis
 		}
 
@@ -1759,8 +1898,8 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_augustus
 		}
-		available = {
-			has_country_leader = { id = 997 } #Praetorian Dude
+        available = {
+			has_country_flag = caesar_survived
 		}
 		mutually_exclusive = {
 			focus = ces_thesis
@@ -1783,7 +1922,7 @@ focus_tree = {
 			focus = ces_augustus
 		}
 		available = {
-			has_country_leader = { id = 998 } #Lanius
+			has_country_flag = sided_with_lanius
 		}
 		mutually_exclusive = {
 			focus = ces_brotherhood
@@ -1805,7 +1944,7 @@ focus_tree = {
 			focus = ces_augustus
 		}
 		available = {
-			has_country_leader = { id = 999 } #Vulpes
+			has_country_flag = sided_with_vulpus
 		}
 		mutually_exclusive = {
 			focus = ces_brotherhood
