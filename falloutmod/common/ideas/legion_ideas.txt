@@ -1,0 +1,895 @@
+ideas = {
+	
+	country = {
+        # National Spirits
+		national_spirit_cult_of_mars = {	
+			picture = triumphant_will 
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = 0.04
+				army_attack_factor = 0.1
+				non_core_manpower = 0.1
+				army_speed_factor = 0.05
+				attrition = -0.1
+			}
+            
+            equipment_bonus = {
+                category_melee = {
+                    soft_attack = 0.05
+                }
+            }
+		}
+
+		national_spirit_rejection_of_automation = {
+			picture = great_depression
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+		
+			equipment_bonus = {
+				energy_equipment = {
+					build_cost_ic = 2
+                    instant = yes
+				}
+				robot_equipment = {
+					build_cost_ic = 2
+                    instant = yes
+				}
+			}
+		}
+
+        national_spirit_slavers = {	
+			picture = generic_manpower_bonus 
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				monthly_population = 0.05
+			}
+		}
+        
+        # National Focus
+        legion_nf_shottol_god_of_dogs = {
+			
+			removal_cost = -1
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_infantry_bonus
+			
+			equipment_bonus = {
+				dog_company = {
+                    soft_attack = 0.1
+                }
+			}
+		}
+        
+        legion_nf_goddess_diana = {
+			
+			removal_cost = -1
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_infantry_bonus
+			
+			modifier = {
+				land_reinforce_rate = 0.05
+			}
+		}
+        
+        legion_nf_caesar_the_godslayer = {
+			
+			removal_cost = -1
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_infantry_bonus
+			
+			modifier = {
+				land_reinforce_rate = 0.05
+			}
+		}
+        
+        legion_nf_cult_of_nas = {
+			
+			removal_cost = -1
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_infantry_bonus
+			
+			equipment_bonus = {
+				category_vehicles = {
+                    soft_attack = 0.05
+                    breakthrough = 0.1
+                }
+			}
+		}
+        
+        legion_nf_cult_of_nas_minor = {
+			
+			removal_cost = -1
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_infantry_bonus
+			
+			equipment_bonus = {
+				category_vehicles = {
+                    breakthrough = 0.05
+                }
+			}
+		}
+        
+        legion_nf_wyatt_the_demon = {
+			
+			removal_cost = -1
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_infantry_bonus
+			
+			modifier = {
+				army_speed_factor = 0.1
+			}
+			
+		}
+        
+        legion_nf_legion_outlaws = {
+			
+			removal_cost = -1
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_infantry_bonus
+			
+			modifier = {
+				army_speed_factor = 0.05
+			}
+			
+		}
+        
+		legion_nf_the_twin_temples = {
+			
+			removal_cost = -1
+			
+			allowed = {
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_research_bonus
+			
+			modifier = {
+				research_time_factor = -0.08
+			}
+			
+		}
+		
+		legion_nf_nas_scriptures = {
+		
+			picture = generic_infantry_bonus
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+		
+			equipment_bonus = {
+				motorbike_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+                car_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+                bus_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+                truck_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+			}
+		}
+		
+		legion_nf_enslaved_dogs = {
+			
+			picture = generic_manpower_bonus
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				monthly_population = 0.05
+			}	
+		}
+		
+		legion_nf_flagstaff_slaves = {
+			
+			picture = generic_manpower_bonus
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				monthly_population = 0.05
+			}	
+		}
+		
+		legion_nf_phoenix_slaves = {
+			
+			picture = generic_manpower_bonus
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				monthly_population = 0.05
+			}	
+		}
+		
+		legion_nf_two_sun_slaves = {
+		
+			picture = generic_manpower_bonus
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				monthly_population = 0.05
+			}	
+		
+		}
+		
+		legion_nf_warcamp_slaves = {
+			
+			picture = generic_infantry_bonus
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+		
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+			}
+		}
+		
+        legion_nf_homestead_slaves = {
+		
+			picture = generic_manpower_bonus
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+			}	
+		
+		}
+        
+		legion_nf_numeri = {
+		
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_infantry_bonus
+	
+			modifier = {
+				training_time_army_factor = -0.2
+			}	
+		}
+		
+        legion_nf_centurions = {
+		
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_infantry_bonus
+	
+			equipment_bonus = {
+                category_all_infantry = {
+                    max_organisation = 5
+                }
+            }	
+		}
+        
+		legion_nf_lay_of_the_land = {
+		
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_infantry_bonus
+	
+			modifier = {
+				winter_attrition_factor = -0.1
+				heat_attrition_factor = -0.1
+				recon_factor = 0.05
+			}	
+		}
+		
+        legion_nf_legionary_grit = {
+		
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_infantry_bonus
+	
+			modifier = {
+				no_supply_grace = 48
+			}	
+		}
+        
+		legion_nf_praetorian = {
+		
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_infantry_bonus
+	
+			modifier = {
+				max_planning = 0.25
+				planning_speed = 0.2
+			}	
+		}
+		
+        legion_nf_vexillarius = {
+		
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_infantry_bonus
+	
+			equipment_bonus = {
+                category_all_infantry = {
+                    initiative = 0.07
+                }
+            }	
+		}
+        
+		legion_nf_meritocracy = {
+			
+			picture = generic_manpower_bonus
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_leader_start_level = 1
+			}
+		}
+		
+		legion_nf_legionary_blacksmiths = {
+			
+			picture = free_trade
+			
+			removal_cost = -1
+
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		
+		legion_nf_enslaved_scribes = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no 
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_research_bonus
+			
+			modifier = {
+				research_time_factor = -0.03
+			}
+		}
+		
+		legion_nf_gladiator = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no 
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = triumphant_will
+			
+			modifier = {
+				unity_factor = 0.05
+				attrition = -0.05
+			}
+		}
+		
+		legion_nf_deconstructing_perfection = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no 
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = free_trade
+			
+			
+			equipment_bonus = {
+				power_armor_equipment = {
+					build_cost_ic = -0.2 
+                    instant = yes
+				}
+			}
+		}
+		
+		legion_nf_burned_man_rumours = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no 
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_morale_bonus
+			
+			modifier = {
+				unity_weekly = -0.001
+			}
+		}
+		
+		legion_nf_the_bulls_wounds = {
+		
+			picture = generic_manpower_bonus
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = 0.02
+			}	
+		
+		}
+		
+		legion_nf_worthy_foe = {
+		
+			picture = generic_manpower_bonus
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = 0.02
+			}	
+		
+		}
+		
+		legion_nf_nova_roma = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no 
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = triumphant_will
+			
+			modifier = {
+				unity_factor = 0.1
+				consumer_goods_factor = -0.1
+			}
+		}
+		
+		legion_nf_vegas_strip = {
+		
+			allowed = {
+				always = no
+			}
+
+			picture = free_trade
+			
+			removal_cost = -1
+
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+			}
+			
+		}
+		
+		legion_nf_overextension = {
+		
+			allowed = {
+				always = no
+				original_tag = NCR
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = ENG_the_war_to_end_all_wars
+			
+			removal_cost = -1
+
+			modifier = {
+				max_planning = -0.1
+			}
+		}
+		
+		legion_nf_new_thesis = {
+
+			removal_cost = -1
+			
+			allowed = {
+				always = no 
+			}
+			
+			picture = triumphant_will
+			
+			modifier = {
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+				monthly_population = 0.3
+			}
+
+		}
+		
+		legion_nf_immortal_empire = {
+
+			removal_cost = -1
+			
+			allowed = {
+				always = no 
+			}
+			
+			picture = triumphant_will
+			
+			modifier = {
+				foreign_subversive_activites = -0.2
+				non_core_manpower = 0.4
+			}
+
+		}
+		
+		legion_nf_spqr = {
+
+			removal_cost = -1
+			
+			allowed = {
+			}
+			
+			picture = triumphant_will
+			
+			modifier = {
+				unity_factor = 0.15
+				consumer_goods_factor = -0.1
+			}
+
+		}
+		
+        legion_nf_pax_romana = {
+            picture = free_trade
+
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+			
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+			}
+        }
+        
+		legion_nf_fort_focus = {
+
+			picture = generic_fortify_the_borders
+
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+			
+			modifier = {
+				production_speed_bunker_factor = 0.1
+				production_speed_coastal_bunker_factor = 0.1
+			}
+		}
+		
+		legion_nf_factory_focus = {
+
+			picture = free_trade
+
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+			}
+		}
+		
+		legion_nf_follower_slaves = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no 
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_research_bonus
+			
+			modifier = {
+				research_time_factor = -0.025
+			}
+			
+		}
+		
+		legion_nf_servus = {
+			
+			picture = generic_manpower_bonus
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = 0.05
+				consumer_goods_factor = 0.1
+			}
+		}
+		
+		legion_nf_slave_collars = {
+			
+			picture = generic_manpower_bonus
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				non_core_manpower = 0.05
+			}
+		
+		}
+		
+		legion_nf_freemen = {
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_infantry_bonus
+	
+			modifier = {
+				army_org_factor = 0.05
+			}	
+		}
+		
+		legion_nf_foundries_of_mars = {
+		
+			picture = free_trade
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+		
+			equipment_bonus = {
+				robot_equipment = {
+					build_cost_ic = -0.15 
+                    instant = yes
+				}
+				motorbike_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+                car_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+                bus_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+                truck_equipment = {
+					build_cost_ic = -0.10 
+                    instant = yes
+				}
+			}
+		}
+		
+		legion_nf_pax_per_bellum = {
+			
+			picture = triumphant_will 
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				justify_war_goal_time = -0.15
+			}
+		
+		}
+		
+        legion_nf_child_soldiers = {
+			
+			picture = generic_manpower_bonus 
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = 0.02
+                army_attack_factor = -0.1
+			}
+		
+		}
+        
+        legion_nf_warriors_of_mars = {
+			
+			picture = generic_manpower_bonus 
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+                category_power_armor = {
+                    soft_attack = 0.1
+                    breakthrough = 0.25
+                }
+            }
+		}
+        
+        legion_nf_hoover_dam = {
+			
+			picture = generic_manpower_bonus 
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+                industrial_capacity_factory = 0.25
+                industrial_capacity_dockyard = 0.25
+            }
+		}
+        
+        legion_nf_rubicon_crossed = {
+            picture = generic_manpower_bonus 
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+                training_time_army_factor = -0.1
+                minimum_training_level = -0.05
+            }
+        }
+	}
+}
