@@ -4,17 +4,17 @@ entity = {
 	default_state = "attack"
 	get_state_from_parent = no
 	state = {
-		name = "attack" looping = no state_time = 0.8
-		event = { time = 0.0 use_parent_nodes = yes node = windup_ particle = "laser_beam_effect" keep_particle = yes }
-		event = { time = 0.0 use_parent_nodes = yes node = windup_7 particle = "laser_beam_effect" keep_particle = yes }
-		event = { time = 0.2 use_parent_nodes = yes node = windup_6 particle = "laser_beam_effect" keep_particle = yes }
-		event = { time = 0.2 use_parent_nodes = yes node = windup_5 particle = "laser_beam_effect" keep_particle = yes }
-		event = { time = 0.4 use_parent_nodes = yes node = windup_4 particle = "laser_beam_effect" keep_particle = yes }
-		event = { time = 0.4 use_parent_nodes = yes node = windup_3 particle = "laser_beam_effect" keep_particle = yes }
-		event = { time = 0.6 use_parent_nodes = yes node = windup_2 particle = "laser_beam_effect" keep_particle = yes }
-		event = { time = 0.6 use_parent_nodes = yes node = windup_1 particle = "laser_beam_effect" keep_particle = yes }
+		name = "attack" looping = no state_time = 0.3
+		event = { time = 0.0 use_parent_nodes = yes node = windup_8 particle = "laser_beam_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0.0 use_parent_nodes = yes node = windup_7 particle = "laser_beam_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0.0 use_parent_nodes = yes node = windup_6 particle = "laser_beam_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0.0 use_parent_nodes = yes node = windup_5 particle = "laser_beam_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0.0 use_parent_nodes = yes node = windup_4 particle = "laser_beam_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0.0 use_parent_nodes = yes node = windup_3 particle = "laser_beam_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0.0 use_parent_nodes = yes node = windup_2 particle = "laser_beam_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0.0 use_parent_nodes = yes node = windup_1 particle = "laser_beam_effect" trigger_once = yes keep_particle = yes }
 		
-		event = { time = 0.0 use_parent_nodes = yes node = muzzle particle = "laser_muzzle_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0.0 use_parent_nodes = yes node = muzzle particle = "laser_beam_effect" trigger_once = yes keep_particle = yes }
 	}
 }
 
@@ -41,9 +41,9 @@ particle = {
 			#y = 2	
 		}
 		
-		position = { 	x =	0	y = 0	z = 0	}
-		emitter_yaw 	= { 0 0 }  
-		emitter_pitch 	= { 0 0 }
+		position = { x =	0	y = 0	z = 0	}
+		emitter_yaw = { 0 0 }  
+		emitter_pitch = { 0 0 }
 		
 		emitter_type = "point" #"box" #"point" #"sphere"
 		#sphere_emitter_radius = { 0.05 0 }
@@ -51,20 +51,20 @@ particle = {
 		#sphere_emitter_yaw = { 90 0 }
 
 		start = 0				
-		duration = 0.1
-		emission = { 100 }
+		duration = 1
+		emission = { 100 0 }
 	
 		velocity = { 0 0 }
 		velocity_pitch = { 0 0 }
 		velocity_yaw =  { 0 0 }
 		
 		particle_yaw=90.000
-		particle_pitch=90.000
+		particle_pitch=0
 		
 		rotation = { 0 0 }
 		rotation_speed_roll = { 0 0 }
 		
-		life = { 1.5 0 }
+		life = { 1 0 }
 		size = { 1.0 0 }
 	
 		# values that can be curves or values, with or without variation
@@ -88,16 +88,17 @@ particle = {
 		time = "life"
 		name = "alpha_fade"
 		start = 0
-		duration = 1
+		duration = 0.3
 		#repeat = yes
 		op = "MUL" # "MUL"/"ADD"/"ABS"
 		minValue = 0
 		maxValue = 1
 		curve = { 
 			0 	0
-			0.2	1
-			0.7	1
-			1 	0 
+			0.25	1
+			0.5	0.9
+			0.75 0.25
+			1 0 
 		}
 	}
 	
@@ -118,103 +119,10 @@ particle = {
 		}
 	}
 	
-	animation = {
-		time = "life"
-		name = "shrink"
-		start = 0
-		duration = 1
-		#repeat = yes
-		op = "MUL" # "MUL"/"ADD"/"ABS"
-		minValue = 0
-		maxValue = 1
-		curve = { 
-			0 	1
-			1 	0.2 
-		}
-	}
-	
-# FORCES
-	
-	force = {
-		type = "friction"
-		name = "drag2"
-		amount = 2.0 #,delayed_force
-		
-	}
-	
-	force = {
-		type = "point"
-		name = "point"
-		position = { 0 0 -0.7 }
-		amount = -30
-	}
-	
-	force = {
-		type = "turbulence"
-		name = "chaos"
-		amount = 6.0
-	}
+
 }
 particle = {
 	name = "laser_muzzle_effect"
-	
-
-
-	
-# Laser base
-	subsystem = {
-    
-		# values that can be curves or values, with or without variation
-		# always local time
-		
-		# fixed values, cannot be curves, cannot add variation
-		max_amount = 1
-		local_space = yes
-		sort = "depth" 
-		#invert = yes
-		texture = {
-			shader = "ParticleAdditive"   #ParticleAdditive   #ParticleAlphaBlend 
-			file = "gfx/particles/flare.dds"   
-			#x = 2	
-			#y = 2	
-		}
-		
-		position = { 	x =	-0.02	y = 0	z = 0	}
-		emitter_yaw 	= { 0 0 }  
-		emitter_pitch 	= { 0 0 }
-		
-		emitter_type = "point" #"box" #"point" #"sphere"
-		#sphere_emitter_radius = { 0.05 0 }
-		#sphere_emitter_pitch = { 0 180 }
-		#sphere_emitter_yaw = { 90 0 }
-
-		start = 0				
-		duration = 0.1
-		emission = { 100 }
-	
-		velocity = { 0 0 }
-		velocity_pitch = { 0 5 }
-		velocity_yaw =  { 0 5 }
-		
-		rotation = { 0 180 }
-		rotation_speed_roll = { 0 0 }
-		
-		life = { 1.5 0 }
-		size = { 5,grow 0 }
-	
-		# values that can be curves or values, with or without variation
-		# 'spawn'/'system'/'particle' time is valid
-    
-		color = { 
-			r = { 240 }
-			g = { 0 }
-			b = { 0 }
-			alpha = { 180 }
-		}
-		
-		#Forces
-		#force = point,chaos
-	}
 	
 # Laser base wide
 	subsystem = {
