@@ -5,7 +5,7 @@ country_event = {
 	title = FALLOUT_MUSIC.1.title
 	desc = FALLOUT_MUSIC.1.desc
 	picture = SUN_OVER_CANYON_eventPicture
-	
+	fire_only_once = no
 	is_triggered_only = yes
 	
 	option = {
@@ -154,5 +154,91 @@ country_event = {
 		set_country_flag = play_nv_music
         set_country_flag = play_fo4_music
 		remove_ideas = music_event_idea
+	}
+}
+
+country_event = {
+	id = FALLOUT_MUSIC.3
+	title = FALLOUT_MUSIC.3.title
+	desc = FALLOUT_MUSIC.3.desc
+	picture = SUN_OVER_CANYON_eventPicture
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	option = {
+
+		name = FALLOUT_MUSIC.3.option.a
+		
+		trigger = {
+			NOT = { has_country_flag = disable_ambient_music }
+		}
+		
+		set_country_flag = disable_ambient_music
+		remove_ideas = music_event_idea_2
+	}
+
+	option = {
+		name = FALLOUT_MUSIC.3.option.b
+		
+		trigger = {
+			has_country_flag = disable_ambient_music
+		}
+		
+		clr_country_flag = disable_ambient_music
+		remove_ideas = music_event_idea_2
+	}
+	
+	option = {
+		name = FALLOUT_MUSIC.3.option.c
+		
+		trigger = {
+			has_country_flag = play_extra_music
+		}
+		
+		clr_country_flag = play_extra_music
+		remove_ideas = music_event_idea_2
+	}
+	
+	option = {
+		name = FALLOUT_MUSIC.3.option.d
+		
+		trigger = {
+			NOT = { has_country_flag = play_extra_music }
+		}
+		
+		set_country_flag = play_extra_music
+		remove_ideas = music_event_idea_2
+	}
+	
+	
+	# Disable All
+	option = {
+		name = FALLOUT_MUSIC.3.option.e
+		trigger = {
+			OR = {
+				NOT = { has_country_flag = disable_ambient_music }
+				has_country_flag = play_extra_music
+			}
+		}
+		
+		set_country_flag = disable_ambient_music
+		clr_country_flag = play_extra_music
+	}
+	
+	# Enable All
+	option = {
+		name = FALLOUT_MUSIC.3.option.f
+		OR = {
+				has_country_flag = disable_ambient_music
+				NOT = { has_country_flag = play_extra_music }
+			}
+		clr_country_flag = disable_ambient_music
+		set_country_flag = play_extra_music
+		remove_ideas = music_event_idea_2
+	}
+	
+	option = {
+		name = FALLOUT_MUSIC.3.option.x
+		remove_ideas = music_event_idea_2
 	}
 }
