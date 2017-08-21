@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.77.0 commit date:2016-04-05, commit time:18:12, hash:abf6f08</authoring_tool>
     </contributor>
-    <created>2017-08-21T13:46:18</created>
-    <modified>2017-08-21T13:46:18</modified>
+    <created>2017-08-21T15:17:31</created>
+    <modified>2017-08-21T15:17:31</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -94,17 +94,17 @@
       <skin source="#Cube_002-mesh">
         <bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
         <source id="Armature_laser_rifle-skin-joints">
-          <Name_array id="Armature_laser_rifle-skin-joints-array" count="1">attach</Name_array>
+          <Name_array id="Armature_laser_rifle-skin-joints-array" count="3">attach attach_2 muzzle</Name_array>
           <technique_common>
-            <accessor source="#Armature_laser_rifle-skin-joints-array" count="1" stride="1">
+            <accessor source="#Armature_laser_rifle-skin-joints-array" count="3" stride="1">
               <param name="JOINT" type="name"/>
             </accessor>
           </technique_common>
         </source>
         <source id="Armature_laser_rifle-skin-bind_poses">
-          <float_array id="Armature_laser_rifle-skin-bind_poses-array" count="16">1 0 0 0 0 0 1 0.286844 0 -1 0 0.1741553 0 0 0 1</float_array>
+          <float_array id="Armature_laser_rifle-skin-bind_poses-array" count="48">1 0 0 0 0 0 1 0.286844 0 -1 0 0.1741553 0 0 0 1 1 0 0 0 0 0.9995152 -0.03112941 -3.022949 0 0.03112936 0.9995154 0.5010717 0 0 0 1 1 0 0 0 0 0.9995153 -0.03112936 -4.676893 0 0.03112924 0.9995153 -0.8910602 0 0 0 1</float_array>
           <technique_common>
-            <accessor source="#Armature_laser_rifle-skin-bind_poses-array" count="1" stride="16">
+            <accessor source="#Armature_laser_rifle-skin-bind_poses-array" count="3" stride="16">
               <param name="TRANSFORM" type="float4x4"/>
             </accessor>
           </technique_common>
@@ -136,12 +136,12 @@
         <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
         <node id="attach" name="attach" sid="attach" type="JOINT">
           <matrix sid="transform">1 0 0 0 0 0 -1 0.1741553 0 1 0 -0.286844 0 0 0 1</matrix>
-        </node>
-        <node id="attach_2" name="attach_2" sid="attach_2" type="JOINT">
-          <matrix sid="transform">1 7.44697e-9 1.15937e-10 -3.72349e-9 -7.44697e-9 0.9995154 0.03112924 3.005887 1.15937e-10 -0.03112924 0.9995154 -0.5949314 0 0 0 1</matrix>
-        </node>
-        <node id="muzzle" name="muzzle" sid="muzzle" type="JOINT">
-          <matrix sid="transform">1 7.44697e-9 1.15937e-10 -3.72348e-9 -7.44697e-9 0.9995154 0.03112924 4.702364 1.15937e-10 -0.03112924 0.9995154 0.7450401 0 0 0 1</matrix>
+          <node id="attach_2" name="attach_2" sid="attach_2" type="JOINT">
+            <matrix sid="transform">1 7.44697e-9 1.15938e-10 -3.72349e-9 1.15937e-10 -0.03112936 0.9995154 -0.3080873 7.44697e-9 -0.9995154 -0.03112948 -2.831731 0 0 0 1</matrix>
+          </node>
+          <node id="muzzle" name="muzzle" sid="muzzle" type="JOINT">
+            <matrix sid="transform">1 7.44697e-9 1.15937e-10 -3.72348e-9 1.15937e-10 -0.03112924 0.9995154 1.031884 7.44697e-9 -0.9995154 -0.03112936 -4.528209 0 0 0 1</matrix>
+          </node>
         </node>
       </node>
       <node id="laser_rifle" name="laser_rifle" type="NODE">
@@ -152,14 +152,15 @@
         <scale sid="scale">1 1 1</scale>
         <instance_controller url="#Armature_laser_rifle-skin">
           <skeleton>#attach</skeleton>
-          <skeleton>#attach_2</skeleton>
-          <skeleton>#muzzle</skeleton>
           <bind_material>
             <technique_common>
               <instance_material symbol="Material_001-material" target="#Material_001-material"/>
             </technique_common>
           </bind_material>
         </instance_controller>
+        <node id="muzzle" name="muzzle" type="NODE">
+          <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0.07785773 0 0 0 1</matrix>
+        </node>
       </node>
     </visual_scene>
   </library_visual_scenes>
