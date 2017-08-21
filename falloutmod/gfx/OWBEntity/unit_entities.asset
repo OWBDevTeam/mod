@@ -61,24 +61,15 @@ entity = {
 entity = {
 	name = "laser_rifle_entity"
 	pdxmesh = "laser_rile_mesh"
-	
-	locator = { name = muzzle position = { 0 0 -4 } }
-	locator = { name = windup_1 position = { 0 0 -5.5 } }
-	locator = { name = windup_2 position = { 0 0 -7 } }
-	locator = { name = windup_3 position = { 0 0 -8.5 } }
-	locator = { name = windup_4 position = { 0 0 -10 } }
-	locator = { name = windup_5 position = { 0 0 -11.5 } }
-	locator = { name = windup_6 position = { 0 0 -13 } }
-	locator = { name = windup_7 position = { 0 0 -14.5 } }
-	locator = { name = windup_8 position = { 0 0 -16 } }
-	
+	locator = { name = muzzle position = { 0 0 -2.5 } }
+
 	get_state_from_parent = yes
 	default_state = "idle"
 	state = { name = "idle" }
 	state = { name = "move"	}
 	
 	state = { name = "attack"
-		event = { time = 0 node="muzzle" entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_mg_attack } life = 1 } 
+		event = { time = 0 node = "muzzle"  entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_mg_attack } life = 1 } 
 	}
 }
 ##### ANIMATION
