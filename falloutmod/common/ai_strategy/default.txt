@@ -651,6 +651,23 @@ research_basic_tech_firearms = {
 		value = 50
 	}
 }
+
+default_stockpile_management = {
+	enable = {
+		num_divisions > 150
+	}
+
+	abort = {
+		num_divisions < 130
+	}
+
+	ai_strategy = {
+		type = equipment_stockpile
+		value = 35 # double base stockpile #from 25 to 35
+	}
+}
+
+
 save_admiral_pp_for_later = {
 	enable = {
 		has_war = no
@@ -669,5 +686,31 @@ save_admiral_pp_for_later = {
 		type = pp_spend_priority
 		id = admiral
 		value = -100
+	}
+}
+
+do_not_waste_pp_if_saving_for_manpower_laws = {
+
+	enable = {
+		manpower_per_military_factory < 20
+		has_war = yes
+	}
+	abort = {
+		OR = {
+			manpower_per_military_factory > 20
+			has_war = no
+		}
+	}
+
+	ai_strategy = {
+		type = pp_spend_priority
+		id = relation
+		value = -9999
+	}
+
+	ai_strategy = {
+		type = pp_spend_priority
+		id = guarantee
+		value = -9999
 	}
 }
