@@ -264,15 +264,21 @@ ai_army_building_150 = { #150 Units
 
 ai_army_building_300 = { # Please Stop Building Units
 	enable = {
-		NOT = {ai_wants_divisions < 300}
-		NOT = {has_army_size = { size < 300 }}
-		has_war = no
-		num_of_factories > 99
+		OR = {
+			AND = {
+				NOT = {ai_wants_divisions < 300}
+				NOT = {has_army_size = { size < 300 }}
+				has_war = no
+				num_of_factories > 99
+			}
+			NOT = { has_manpower > 100 }
+		}
 	}	
 	abort = { 
 		OR = {
 			has_army_size = { size < 300 }
 			NOT = {num_of_factories > 99}
+			has_manpower > 100
 		}
 	}
 	ai_strategy = { 
