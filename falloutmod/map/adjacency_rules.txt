@@ -8,4 +8,42 @@
 
 #Name is how you refer to the rule in adjecencies.csv
 
-#Suez Canal
+# Port Maw
+adjacency_rule
+{
+	name = "PORT_MAW"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = no
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	
+	required_provinces = { 7083 7082 }
+	
+	icon = 7083
+	offset = { 0 1 0 }
+}
