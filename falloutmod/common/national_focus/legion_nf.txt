@@ -1589,9 +1589,6 @@ focus_tree = {
 					type = infrastructure
 					level = 3
 					instant_build = yes
-                    province = {
-                        all_provinces = yes
-                    }
 				}
             }
 		}
@@ -1625,9 +1622,6 @@ focus_tree = {
 					type = air_base
 					level = 2
 					instant_build = yes
-                    province = {
-                        all_provinces = yes
-                    }
 				}
             }
 		}
@@ -1994,54 +1988,61 @@ focus_tree = {
 	}
     
 	focus = {
-		id = ces_denver
+		id = ces_tame_dog_city
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 8.6
 		prerequisite = {
 			focus = ces_denarius
 		}
 		available = {
-			#has_state = PLACEHOLDER
+			owns_state = 525
 		}
 		x = 20
 		y = 5
 		completion_reward = {
-			#PLACEHOLDER = {
-			#	add_extra_state_shared_building_slots = 2
-			#	add_building_construction = {
-			#		type = industrial_complex
-			#		level = 2
-			#		instant_build = yes
-			#	}
-		}
-
+			525 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
+        }
 	}
 	focus = {
-		id = ces_salvage
+		id = ces_legion_salvagers
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 8.6
 		prerequisite = {
-			focus = ces_denver
+			focus = ces_tame_dog_city
+		}
+        available = {
+			owns_state = 525
 		}
 		x = 20
 		y = 6
 		completion_reward = {
-			#PLACEHOLDER = {
-			#	add_extra_state_shared_building_slots = 2
-			#	add_building_construction = {
-			#		type = arms_factory
-			#		level = 2
-			#		instant_build = yes
-			#	}
+			525 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                }
+            }
 		}
 
 	}
 	focus = {
-		id = ces_enslavedogs
+		id = ces_enslave_hangdogs
 		icon = GFX_goal_generic_construction2
 		cost = 8.6
 		prerequisite = {
-			focus = ces_salvage
+			focus = ces_legion_salvagers
+		}
+        available = {
+			owns_state = 525
 		}
 		x = 20
 		y = 7
@@ -2051,51 +2052,62 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_capital
+		id = ces_the_capital
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 8.6
 		prerequisite = {
 			focus = ces_denarius
 		}
+        available = {
+			owns_state = 520
+		}
 		x = 22
 		y = 5
 		completion_reward = {
-			#PLACEHOLDER = {
-			#	add_extra_state_shared_building_slots = 2
-			#	add_building_construction = {
-			#		type = industrial_complex
-			#		level = 2
-			#		instant_build = yes
-			#	}
+			520 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
 		}
 
 	}
 	focus = {
-		id = ces_flagstaff
+		id = ces_flagstaff_fort
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 8.6
 		prerequisite = {
-			focus = ces_capital
+			focus = ces_the_capital
+		}
+        available = {
+			owns_state = 520
 		}
 		x = 22
 		y = 6
 		completion_reward = {
-			#PLACEHOLDER = {
-			#	add_extra_state_shared_building_slots = 2
-			#	add_building_construction = {
-			#		type = arms_factory
-			#		level = 2
-			#		instant_build = yes
-			#	}
+			520 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                }
+            }
 		}
 
 	}
 	focus = {
-		id = ces_capitalslaves
+		id = ces_slaves_to_flagstaff
 		icon = GFX_goal_generic_construction2
 		cost = 8.6
 		prerequisite = {
-			focus = ces_flagstaff
+			focus = ces_flagstaff_fort
+		}
+        available = {
+			owns_state = 520
 		}
 		x = 22
 		y = 7
@@ -2105,51 +2117,62 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_settlers
+		id = ces_settlers_in_phoenix
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 8.6
 		prerequisite = {
 			focus = ces_denarius
 		}
+        available = {
+			owns_state = 518
+		}
 		x = 24
 		y = 5
 		completion_reward = {
-			#PLACEHOLDER = {
-			#	add_extra_state_shared_building_slots = 2
-			#	add_building_construction = {
-			#		type = industrial_complex
-			#		level = 2
-			#		instant_build = yes
-			#	}
+            518 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
 		}
 
 	}
 	focus = {
-		id = ces_outpost
+		id = ces_phoenix_outpost
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 8.6
 		prerequisite = {
-			focus = ces_settlers
+			focus = ces_settlers_in_phoenix
+		}
+        available = {
+			owns_state = 518
 		}
 		x = 24
 		y = 6
 		completion_reward = {
-			#PLACEHOLDER = {
-			#	add_extra_state_shared_building_slots = 2
-			#	add_building_construction = {
-			#		type = arms_factory
-			#		level = 2
-			#		instant_build = yes
-			#	}
+			518 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
 		}
 
 	}
 	focus = {
-		id = ces_phoenixslaves
+		id = ces_slaves_in_phoenix
 		icon = GFX_goal_generic_construction2
 		cost = 8.6
 		prerequisite = {
-			focus = ces_outpost
+			focus = ces_phoenix_outpost
+		}
+        available = {
+			owns_state = 518
 		}
 		x = 24
 		y = 7
@@ -2159,54 +2182,62 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_tribute
+		id = ces_two_sun_tribute
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 8.6
 		prerequisite = {
 			focus = ces_denarius
 		}
-		available = {
-			#has_state = PLACEHOLDER
+        available = {
+			owns_state = 516
 		}
 		x = 26
 		y = 5
 		completion_reward = {
-			#PLACEHOLDER = {
-			#	add_extra_state_shared_building_slots = 2
-			#	add_building_construction = {
-			#		type = industrial_complex
-			#		level = 2
-			#		instant_build = yes
-			#	}
+			516 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
 		}
 
 	}
 	focus = {
-		id = ces_warcamp
+		id = ces_two_sun_warcamp
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 8.6
 		prerequisite = {
-			focus = ces_tribute
+			focus = ces_two_sun_tribute
+		}
+        available = {
+			owns_state = 516
 		}
 		x = 26
 		y = 6
 		completion_reward = {
-			#PLACEHOLDER = {
-			#	add_extra_state_shared_building_slots = 2
-			#	add_building_construction = {
-			#		type = arms_factory
-			#		level = 2
-			#		instant_build = yes
-			#	}
+			516 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
 		}
 
 	}
 	focus = {
-		id = ces_tribalslaves
+		id = ces_enslave_tribals
 		icon = GFX_goal_generic_construction2
 		cost = 8.6
 		prerequisite = {
-			focus = ces_warcamp
+			focus = ces_two_sun_warcamp
+		}
+        available = {
+			owns_state = 516
 		}
 		x = 26
 		y = 7
@@ -2216,16 +2247,16 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_prudentia
+		id = ces_honestas_industria_prudentia
 		icon = GFX_goal_generic_construction2
 		cost = 8.6
 		prerequisite = {
-			focus = ces_phoenixslaves
-			focus = ces_enslavedogs
-			focus = ces_tribalslaves
+			focus = ces_slaves_in_phoenix
+			focus = ces_enslave_hangdogs
+			focus = ces_enslave_tribals
 		}
 		prerequisite = {
-			focus = ces_capitalslaves
+			focus = ces_slaves_to_flagstaff
 		}
 		x = 21
 		y = 8
@@ -2235,14 +2266,14 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_warcampslaves
+		id = ces_warcamp_slaves
 		icon = GFX_goal_generic_production
 		cost = 8.6
 		prerequisite = {
-			focus = ces_prudentia
+			focus = ces_honestas_industria_prudentia
 		}
 		mutually_exclusive = {
-			focus = ces_homestead
+			focus = ces_homestead_slaves
 		}
 		x = 20
 		y = 9
@@ -2252,14 +2283,14 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_homestead
+		id = ces_homestead_slaves
 		icon = GFX_goal_generic_production2
 		cost = 8.6
 		prerequisite = {
-			focus = ces_prudentia
+			focus = ces_honestas_industria_prudentia
 		}
 		mutually_exclusive = {
-			focus = ces_warcampslaves
+			focus = ces_warcamp_slaves
 		}
 		x = 22
 		y = 9
@@ -2269,81 +2300,123 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_via
+		id = ces_via_militaris
 		icon = GFX_goal_generic_construction
 		cost = 8.6
 		prerequisite = {
-			focus = ces_phoenixslaves
-			focus = ces_tribalslaves
-			focus = ces_enslavedogs
+			focus = ces_slaves_in_phoenix
+			focus = ces_enslave_tribals
+			focus = ces_enslave_hangdogs
 		}
 		prerequisite = {
-			focus = ces_capitalslaves
+			focus = ces_slaves_to_flagstaff
 		}
 		prerequisite = {
-			focus = ces_phoenixslaves
+			focus = ces_slaves_in_phoenix
 		}
 		x = 25
 		y = 8
-		completion_reward = {	
-			#PLACEHOLDER = {
-			#	add_building_construction = {
-			#		type = infrastructure
-			#		level = 8
-			#		instant_build = yes
-			#	}				
+		completion_reward = {	    
+            if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_arizona_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_arizona_territory 
+            }
+			every_owned_state = {
+                limit = { is_arizona_state = yes }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }			
 		}
 
 	}
 	focus = {
-		id = ces_newmexico
+		id = ces_new_mexico_highways
 		icon = GFX_goal_generic_construct_infrastructure
 		cost = 8.6
 		prerequisite = {
-			focus = ces_via
+			focus = ces_via_militaris
 		}
 		x = 24
 		y = 9
 		completion_reward = {
-			#PLACEHOLDER = {
-			#	add_building_construction = {
-			#		type = infrastructure
-			#		level = 8
-			#		instant_build = yes
-			#	}
+            if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_new_mexico_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_new_mexico_territory 
+            }
+			every_owned_state = {
+                limit = { is_new_mexico_state = yes }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }
 		}
 
 	}
 	focus = {
-		id = ces_eastroad
+		id = ces_the_road_eastwards
 		icon = GFX_goal_generic_construct_infrastructure
 		cost = 8.6
 		prerequisite = {
-			focus = ces_via
+			focus = ces_via_militaris
 		}
 		x = 26
 		y = 9
 		completion_reward = {
-			#PLACEHOLDER = {
-			#	add_building_construction = {
-			#		type = infrastructure
-			#		level = 8
-			#		instant_build = yes
-			#	}
+            if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_colorado_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_colorado_territory 
+            }
+			every_owned_state = {
+                limit = { is_colorado_state = yes }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }
 		}
 
 	}
     
     focus = {
-		id = ces_pax
+		id = ces_pax_romana
 		icon = GFX_goal_generic_propaganda
 		cost = 8.6
 		prerequisite = {
-			focus = ces_newmexico
+			focus = ces_new_mexico_highways
 		}
 		prerequisite = {
-			focus = ces_eastroad
+			focus = ces_the_road_eastwards
 		}
+        available = {
+            has_manpower = 1000
+        }
 		x = 25
 		y = 10
 		completion_reward = {
@@ -2353,11 +2426,11 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_forts
+		id = ces_fort_construction
 		icon = GFX_goal_generic_construct_military
 		cost = 8.6
 		prerequisite = {
-			focus = ces_warcampslaves
+			focus = ces_warcamp_slaves
 		}
 		x = 20
 		y = 10
@@ -2367,11 +2440,11 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_factories
+		id = ces_blacksmith_recruitment
 		icon = GFX_goal_generic_construct_civilian
 		cost = 8.6
 		prerequisite = {
-			focus = ces_homestead
+			focus = ces_homestead_slaves
 		}
 		x = 22
 		y = 10
@@ -2381,35 +2454,38 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_bouldercity
+		id = ces_boulder_city_salvage
 		icon = GFX_goal_generic_oil_refinery
 		cost = 8.6
 		prerequisite = {
-			focus = ces_pax
-			focus = ces_factories
-			focus = ces_forts
+			focus = ces_pax_romana
+			focus = ces_blacksmith_recruitment
+			focus = ces_fort_construction
 		}
 		prerequisite = {
-			focus = ces_pax
+			focus = ces_pax_romana
 		}
+        available = {
+            owns_state = 613
+        }
 		x = 23
 		y = 11
 		completion_reward = {
-			#PLACEHOLDER = {
-			# add_resource = {
-			#		type = scrap
-			#		amount = 6
-			#	}
-			#}
+            613 = {
+                add_resource = {
+                    type = metal
+                    amount = 6
+                }
+            }
 		}
 
 	}
 	focus = {
-		id = ces_oldworld
+		id = ces_old_world_discoveries
 		icon = GFX_focus_wonderweapons
 		cost = 8.6
 		prerequisite = {
-			focus = ces_bouldercity
+			focus = ces_boulder_city_salvage
 		}
 		x = 23
 		y = 12
@@ -2419,79 +2495,90 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_dogcity
+		id = ces_dog_city_salvage
 		icon = GFX_goal_generic_oil_refinery
 		cost = 8.6
 		prerequisite = {
-			focus = ces_bouldercity
+			focus = ces_boulder_city_salvage
 		}
+        available = {
+            owns_state = 525
+        }
 		x = 21
 		y = 12
 		completion_reward = {
-			#PLACEHOLDER = {
-			# add_resource = {
-			#		type = scrap
-			#		amount = 6
-			#	}
-			#}
+			525 = {
+                add_resource = {
+                    type = metal
+                    amount = 6
+                }
+            }
 		}
 
 	}
 	focus = {
-		id = ces_phoenix
+		id = ces_phoenix_salvage
 		icon = GFX_goal_generic_oil_refinery
 		cost = 8.6
 		prerequisite = {
-			focus = ces_bouldercity
+			focus = ces_boulder_city_salvage
 		}
+        available = {
+            owns_state = 518
+        }
 		x = 25
 		y = 12
 		completion_reward = {
-			#PLACEHOLDER = {
-			# add_resource = {
-			#		type = scrap
-			#		amount = 6
-			#	}
-			#}
+			518 = {
+                add_resource = {
+                    type = metal
+                    amount = 6
+                }
+            }
 		}
 
 	}
 	focus = {
-		id = ces_vault
+		id = ces_the_vault_beneath_fortification_hill
 		icon = GFX_goal_generic_fortify_city
 		cost = 8.6
 		prerequisite = {
-			focus = ces_oldworld
+			focus = ces_old_world_discoveries
 		}
+        available = {
+            owns_state = 359
+        }
 		x = 23
 		y = 13
 		completion_reward = {
-			#PLACEHOLDER = {
-			# add_building_construction = {
-			#		type = bunker
-			#		level = 2
-			#		province = PLACEHOLDER
-			#		instant_build = yes
-			#	}
-			#}
+            359 = {
+                add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+                    province = {
+                        all_provinces = yes
+                    }
+				}
+            }
 		}
 
 	}
 	focus = {
-		id = ces_brotherhoodslaves
+		id = ces_brotherhood_slaves
 		icon = GFX_focus_rocketry
 		cost = 8.6
 		prerequisite = {
-			focus = ces_vault
+			focus = ces_the_vault_beneath_fortification_hill
 		}
 		mutually_exclusive = {
-			focus = ces_followers
+			focus = ces_follower_slaves
 		}
 		x = 24
 		y = 14
 		completion_reward = {
 			add_tech_bonus = {
-				name = pwrarmourbonus
+				name = power_armour_bonus
 				bonus = 0.5
 				uses = 2
 				category = power_armor_tech
@@ -2500,11 +2587,11 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_followers
+		id = ces_follower_slaves
 		icon = GFX_focus_research
 		cost = 8.6
 		prerequisite = {
-			focus = ces_vault
+			focus = ces_the_vault_beneath_fortification_hill
 		}
 		mutually_exclusive = {
 			focus = ces_brotherhood
@@ -2521,7 +2608,7 @@ focus_tree = {
     # Old World Lessons sub-tree
     #---------------------------
 	focus = {
-		id = ces_oldworldlessons
+		id = ces_lessons_of_the_old_world
 		icon = GFX_goal_generic_air_doctrine
 		cost = 8.6
 		prerequisite = {
@@ -2545,11 +2632,11 @@ focus_tree = {
 		icon = GFX_goal_generic_special_forces
 		cost = 8.6
 		prerequisite = {
-			focus = ces_oldworldlessons
+			focus = ces_lessons_of_the_old_world
 		}
 		mutually_exclusive = {
-			focus = ces_praetorian
-			focus = ces_publicus
+			focus = ces_praetorian_guard
+			focus = ces_servus_publicus
 		}
 		x = 29
 		y = 5
@@ -2559,7 +2646,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ces_centurions
+		id = ces_assimilated_centurions
 		icon = GFX_goal_generic_propaganda
 		cost = 8.6
 		prerequisite = {
@@ -2572,11 +2659,11 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ces_land
+		id = ces_lay_of_the_land
 		icon = GFX_goal_generic_occupy_states_ongoing_war
 		cost = 8.6
 		prerequisite = {
-			focus = ces_centurions
+			focus = ces_assimilated_centurions
 		}
 		x = 29
 		y = 7
@@ -2586,11 +2673,11 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_grit
+		id = ces_legionary_grit
 		icon = GFX_goal_generic_secret_weapon
 		cost = 8.6
 		prerequisite = {
-			focus = ces_land
+			focus = ces_lay_of_the_land
 		}
 		x = 29
 		y = 8
@@ -2599,11 +2686,11 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ces_gaius
+		id = ces_general_gaius_magnus
 		icon = GFX_goal_generic_CAS
 		cost = 8.6
 		prerequisite = {
-			focus = ces_grit
+			focus = ces_legionary_grit
 		}
 		x = 29
 		y = 9
@@ -2619,14 +2706,14 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ces_praetorian
+		id = ces_praetorian_guard
 		icon = GFX_goal_anti_comintern_pact
 		cost = 8.6
 		prerequisite = {
-			focus = ces_oldworldlessons
+			focus = ces_lessons_of_the_old_world
 		}
 		mutually_exclusive = {
-			focus = ces_publicus
+			focus = ces_servus_publicus
 			focus = ces_numeri
 		}
 		x = 31
@@ -2637,11 +2724,11 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_merit
+		id = ces_meritorcracy
 		icon = GFX_goal_generic_cavalry
 		cost = 8.6
 		prerequisite = {
-			focus = ces_praetorian
+			focus = ces_praetorian_guard
 		}
 		x = 31
 		y = 6
@@ -2651,11 +2738,11 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_vex
+		id = ces_vexillarius
 		icon = GFX_goal_generic_military_sphere
 		cost = 8.6
 		prerequisite = {
-			focus = ces_merit
+			focus = ces_meritorcracy
 		}
 		x = 31
 		y = 7
@@ -2665,11 +2752,11 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_blacksmiths
+		id = ces_legion_blacksmiths
 		icon = GFX_goal_generic_construction
 		cost = 8.6
 		prerequisite = {
-			focus = ces_vex
+			focus = ces_vexillarius
 		}
 		x = 31
 		y = 8
@@ -2679,11 +2766,11 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_silus
+		id = ces_general_silus
 		icon = GFX_goal_generic_CAS
 		cost = 8.6
 		prerequisite = {
-			focus = ces_blacksmiths
+			focus = ces_legion_blacksmiths
 		}
 		x = 31
 		y = 9
@@ -2701,14 +2788,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = ces_publicus
+		id = ces_servus_publicus
 		icon = GFX_goal_generic_army_artillery
 		cost = 8.5
 		prerequisite = {
-			focus = ces_oldworldlessons
+			focus = ces_lessons_of_the_old_world
 		}
 		mutually_exclusive = {
-			focus = ces_praetorian
+			focus = ces_praetorian_guard
 			focus = ces_numeri
 		}
 		x = 33
@@ -2718,11 +2805,11 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ces_children
+		id = ces_child_soldiers
 		icon = GFX_goal_generic_secret_weapon
 		cost = 8.6
 		prerequisite = {
-			focus = ces_publicus
+			focus = ces_servus_publicus
 		}
 		x = 33
 		y = 6
@@ -2732,11 +2819,11 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_collars
+		id = ces_slave_collars
 		icon = GFX_goal_generic_propaganda
 		cost = 8.6
 		prerequisite = {
-			focus = ces_children
+			focus = ces_child_soldiers
 		}
 		x = 33
 		y = 7
@@ -2746,11 +2833,11 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_freedmen
+		id = ces_promote_freedmen
 		icon = GFX_goal_generic_small_arms
 		cost = 8.6
 		prerequisite = {
-			focus = ces_collars
+			focus = ces_slave_collars
 		}
 		x = 33
 		y = 8
@@ -2760,11 +2847,11 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_aurelius
+		id = ces_general_aurelius_of_phoenix
 		icon = GFX_goal_generic_CAS
 		cost = 8.6
 		prerequisite = {
-			focus = ces_freedmen
+			focus = ces_promote_freedmen
 		}
 		x = 33
 		y = 9
@@ -2781,16 +2868,16 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_modern
+		id = ces_modern_military
 		icon = GFX_goal_generic_production2
 		cost = 8.6
 		prerequisite = {
-			focus = ces_gaius
-			focus = ces_silus
-			focus = ces_aurelius
+			focus = ces_general_gaius_magnus
+			focus = ces_general_silus
+			focus = ces_general_aurelius_of_phoenix
 		}
-		available = {
-			has_country_leader = { id = 997 } #Praetorian Dude
+        prerequisite = {
+			focus = ces_brotherhood
 		}
 		x = 31
 		y = 10
@@ -2799,11 +2886,11 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ces_foundries
+		id = ces_foundries_of_mars
 		icon = GFX_goal_generic_production
 		cost = 8.6
 		prerequisite = {
-			focus = ces_modern
+			focus = ces_modern_military
 		}
 		x = 32
 		y = 11
@@ -2813,11 +2900,11 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_tanks
+		id = ces_hammer_of_mars
 		icon = GFX_goal_generic_army_tanks
 		cost = 8.6
 		prerequisite = {
-			focus = ces_foundries
+			focus = ces_foundries_of_mars
 		}
 		x = 32
 		y = 12
@@ -2827,11 +2914,11 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_reborn
+		id = ces_legion_reborn
 		icon = GFX_goal_generic_attack_allies
 		cost = 8.6
 		prerequisite = {
-			focus = ces_modern
+			focus = ces_modern_military
 		}
 		x = 30
 		y = 11
@@ -2841,11 +2928,11 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ces_warriors
+		id = ces_warriors_of_mars
 		icon = GFX_goal_generic_territory_or_war
 		cost = 8.6
 		prerequisite = {
-			focus = ces_reborn
+			focus = ces_legion_reborn
 		}
 		x = 30
 		y = 12
