@@ -59,11 +59,31 @@ wargoal_types = {
 		# ROOT = goal owner country
 
 		allowed = {
-			always = yes
+			NOT = {
+				AND = {
+					PREV = { original_tag = DAM }
+					OR = {
+						ROOT = { original_tag = CES }
+						ROOT = { original_tag = NCR }
+						ROOT = { original_tag = MOJ }
+						ROOT = { original_tag = VEG }
+					}
+				}
+			}
 		}
 		
 		available = {
-		
+			NOT = {
+				AND = {
+					PREV = { original_tag = DAM }
+					OR = {
+						ROOT = { original_tag = CES }
+						ROOT = { original_tag = NCR }
+						ROOT = { original_tag = MOJ }
+						ROOT = { original_tag = VEG }
+					}
+				}
+			}
 		}
 		
 		take_states = {
