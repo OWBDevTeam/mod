@@ -165,19 +165,34 @@ auxilliary_generic = {
 			weight = 0.9
 			match_value = 3000.0
 			
-			#support = { 
-			#	military_police = 1
-			#
-			#}
+			support = { 
+				anti_personnel_company = 1
+			
+			}
 			
 			regiments = {
-				militia = 4
-                militia = 3
+				militia = 5
 			}
 		}
 		
 		allowed_types = {
 			militia
+			medical_chem_company 
+			defensive_chem_company
+			explosive_company
+			anti_personnel_company
+			flamer_company
+			laser_company
+			truck_support
+			signal_company
+			motorbike_support
+			apc_support
+			buggy_support 
+			bus_support
+			car_support
+			motorbike_support
+			dog_company
+			anti_tank_company
 		}
 	}
 }
@@ -254,8 +269,13 @@ infantry_generic = {
 			weight = 0.9
 			match_value = 3000.0
 			
-			#support = {
-			#}
+			support = {
+				medical_chem_company = 1
+				defensive_chem_company = 1
+				explosive_company = 1
+				truck_support = 1
+				dog_company = 1
+			}
 			
 			regiments = {
 				infantry = 5
@@ -265,6 +285,22 @@ infantry_generic = {
 		allowed_types = {
 			infantry
 			militia
+			medical_chem_company 
+			defensive_chem_company
+			explosive_company
+			anti_personnel_company
+			flamer_company
+			laser_company
+			truck_support
+			signal_company
+			motorbike_support
+			apc_support
+			buggy_support 
+			bus_support
+			car_support
+			motorbike_support
+			dog_company
+			anti_tank_company
 		}
 		replace_at_match = 0.4
 		replace_with = wasteland_infantry_default
@@ -330,7 +366,181 @@ infantry_generic = {
         allowed_types = {
             infantry		
             militia
+			medical_chem_company 
+			defensive_chem_company
+			explosive_company
+			anti_personnel_company
+			flamer_company
+			laser_company
+			truck_support
+			signal_company
+			motorbike_support
+			apc_support
+			buggy_support 
+			bus_support
+			car_support
+			motorbike_support
+			dog_company
+			anti_tank_company
+		}
+	}
+}
+armor_generic = {
+
+	blocked_for = {
+		TRL
+	}
+
+	roles = {
+		mobile
+	}
+	
+	upgrade_prio = {
+		factor = 2.17
+
+		modifier = {
+			factor = 7
+			OR = {
+				has_tech = truck_tech_1
+			}
+		}
+		
+		modifier = {
+			factor = 2
+			has_tech = apc_tech_1
 		}
 	}
 	
+	match_to_count = 0.5
+
+	mobile_division_default = {
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		production_prio = {
+			factor = 1
+
+			modifier = {
+				factor = 1
+			}
+		}
+		
+		#can_upgrade_in_field = {
+		#	has_equipment = { light_tank_equipment < 500 } 
+		#}
+		
+		target_width = 20.0
+		width_weight = 1.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			1.10 #-- defense
+			1.10 #-- breakthrough
+			0.60 #-- hardness
+			1.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.10 #-- recon
+			0.01 #-- entrenchment
+			0.10 #-- initiative
+			0.01 #-- casualty_trickleback
+			-0.05 #-- supply_consumption_factor
+			-0.01 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.01 #-- experience_loss_factor
+			#-- Air Values
+			0.02 #-- air_attack
+			#-- Common Values
+			30.00 #-- max_organisation
+			0.80 #-- max_strength
+			0.00 #-- build_cost_ic
+			2.0 #-- maximum_speed
+			0.20 #-- armor_value
+			0.05 #-- ap_attack
+			0.10 #-- reliability
+			0.10 #-- reliability_factor
+			0.00 #-- weight
+		}
+		
+		target_template = {
+			weight = 0.9
+			match_value = 4000.0
+			
+			support = {
+				signal_company = 1
+				anti_tank_company = 1
+			}
+			
+			regiments = {
+				light_armor = 1
+				truck = 5
+				apc = 5
+				car = 5
+				bus = 5
+				motorbike = 5
+			}
+		}
+		
+		allowed_types = {
+			truck
+			apc
+			buggy
+			bus
+			car
+			motorbike
+			light_tank
+			medium_tank
+			heavy_tank
+			truck_support
+			apc_support
+			buggy_support 
+			motorbike_support
+			signal_company
+			bus_support
+			car_support
+			motorbike_support
+			anti_tank_company
+		}
+		
+		replace_at_match = 0.4
+		replace_with = medium_armor_default
+		target_min_match = 0.5
+	}
+
 }
+# REGIMENTS
+			# infantry
+			# militia
+			# spec_ops
+			# truck
+			# apc
+			# buggy
+			# bus
+			# car
+			# motorbike
+			# light_tank
+			# medium_tank
+			# heavy_tank
+# SUPPORT
+			#medical_chem_company 
+			#defensive_chem_company
+			#explosive_company
+			#anti_personnel_company
+			#flamer_company
+			#laser_company
+			#truck_support
+			#signal_company
+			#motorbike_support
+			#apc_support
+			#buggy_support 
+			#bus_support
+			#car_support
+			#motorbike_support
+			#dog_company
+			#anti_tank_company
