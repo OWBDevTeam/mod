@@ -2,33 +2,21 @@ ideas = {
 	country = {
         
         # Raider National Focuses
-        disorganized_mess = {
-            picture = generic_pp_unity_bonus
+		raider_nation = {
             
-            allowed = {
-                is_raider_nation = yes
-            }
+			picture = generic_morale_bonus
+            
+            
             removal_cost = -1
             
             modifier = {
                 unity_factor = -0.2
                 training_time_factor = 0.15
+				production_speed_buildings_factor = -0.1
             }
+			
         }
         
-        work_shy = {
-             picture = generic_production_bonus
-            
-            allowed = {
-                is_raider_nation = yes
-            }
-            removal_cost = -1
-            
-            modifier = {
-                production_speed_buildings_factor = -0.1
-            }
-        }
-
         reckless_aggression = {
              picture = generic_infantry_bonus
             
@@ -38,13 +26,7 @@ ideas = {
             removal_cost = -1
             
             equipment_bonus = {
-                infantry = {
-                    soft_attack = 0.1
-                    defense = -0.1
-                    breakthrough = 0.05
-                    instant = yes
-                }
-                militia = {
+                category_all_infantry = {
                     soft_attack = 0.1
                     defense = -0.1
                     breakthrough = 0.05
