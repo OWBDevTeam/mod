@@ -999,7 +999,6 @@ focus_tree = {
 		}
         available = {
             owns_state = 252
-            has_country_flag = hoover_dam_won
         }
 		mutually_exclusive = {
 			focus = ces_the_burned_man
@@ -1167,7 +1166,6 @@ focus_tree = {
 			NCR = {
 				add_political_power = -60
 			}
-            custom_effect_tooltip = legion_nf_caesar_illness_tt
 			country_event = { id = nf_legion.5 } # Caesar's Illness
 		}
 
@@ -1843,7 +1841,6 @@ focus_tree = {
 
 	}
     
-    # Augustus
 	focus = {
 		id = ces_augustus
 		icon = GFX_goal_generic_demand_territory
@@ -1870,7 +1867,7 @@ focus_tree = {
 			focus = ces_augustus
 		}
         available = {
-			has_country_flag = sided_with_lucius
+			has_country_leader = { id = 994 }
 		}
 		mutually_exclusive = {
 			focus = ces_brotherhood
@@ -1893,7 +1890,7 @@ focus_tree = {
 			focus = ces_augustus
 		}
         available = {
-			has_country_flag = caesar_survived
+			has_country_leader = { id = 995 }
 		}
 		mutually_exclusive = {
 			focus = ces_thesis
@@ -1916,7 +1913,7 @@ focus_tree = {
 			focus = ces_augustus
 		}
 		available = {
-			has_country_flag = sided_with_lanius
+			has_country_leader = { id = 996 }
 		}
 		mutually_exclusive = {
 			focus = ces_brotherhood
@@ -1938,7 +1935,7 @@ focus_tree = {
 			focus = ces_augustus
 		}
 		available = {
-			has_country_flag = sided_with_vulpus
+			has_country_leader = { id = 997 }
 		}
 		mutually_exclusive = {
 			focus = ces_brotherhood
@@ -2876,8 +2873,8 @@ focus_tree = {
 			focus = ces_general_silus
 			focus = ces_general_aurelius_of_phoenix
 		}
-        prerequisite = {
-			focus = ces_brotherhood
+        available = {
+			has_country_leader = { id = 995 }
 		}
 		x = 31
 		y = 10

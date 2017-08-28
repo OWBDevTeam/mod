@@ -14,14 +14,53 @@ set_politics = {
         intellectuals = { popularity = 0 }
         ruler = { popularity = 50 }
     }
-    ruling_party = elites
-    elections_allowed = yes
+    ruling_party = ruler
+    elections_allowed = no
 }
 
 add_ideas = {
 	national_spirit_cult_of_mars
 	national_spirit_rejection_of_automation
-    national_spirit_slavers
+}
+
+create_country_leader  = {
+    name = "Vulpes Inculta"
+    desc = "Inculta_DESC"
+    picture = "Portrait_Inculta.dds"
+    expire = "3000.1.1"
+    ideology = feudalism
+    id = 997
+	
+    traits = {
+        cruel_tyrant
+    }
+}
+
+
+create_country_leader  = {
+    name = "Lucius"
+    desc = "Lucius_DESC"
+    picture = "Portrait_Lucius.dds"
+    expire = "3000.1.1"
+    ideology = technocracy
+	id = 995
+    
+    traits = {
+    }
+}
+
+create_country_leader  = {
+	name = "Lanius"
+	desc = "Lanius_DESC"
+	picture = "Portrait_Lanius.dds"
+	expire = "3000.1.1"
+	ideology = warlordship
+	id = 996
+	
+	traits = {
+		cruel_tyrant
+		warmonger
+	}
 }
 
 create_country_leader  = {
@@ -29,7 +68,8 @@ create_country_leader  = {
     desc = "Caesar_DESC"
     picture = "Portrait_Caesar.dds"
     expire = "3000.1.1"
-    ideology = feudalism
+    ideology = benevolent_dictatorship
+	id = 994
     
     traits = {
         cruel_tyrant
@@ -40,27 +80,21 @@ create_country_leader  = {
 create_corps_commander = {
     name = "Vulpes Inculta"
     portrait_path = "gfx/leaders/CES/Portrait_Inculta.dds"
-    skill = 5
+    skill = 4
     traits = {
         
     }
 }
 
 create_corps_commander = {
-    name = "Aurelius of Phoenix"
-    portrait_path = "gfx/leaders/CES/Portrait_Phoenix.dds"
-    skill = 3
+    name = "Legate Lanius"
+    portrait_path = "gfx/leaders/CES/Portrait_Lanius.dds"
+    skill = 4
     traits = {
+        
     }
 }
 
-create_corps_commander = {
-    name = "Gaius Magnus"
-    portrait_path = "gfx/leaders/CES/Portrait_Magnus.dds"
-    skill = 3
-    traits = {
-    }
-}
 
 create_corps_commander = {
     name = "Antonius Magnus"

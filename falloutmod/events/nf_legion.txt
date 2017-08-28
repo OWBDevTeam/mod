@@ -17,7 +17,7 @@ country_event = {
             desc = "Caesar_DESC"
             picture = "Portrait_Caesar.dds"
             expire = "3000.1.1"
-            ideology = feudalism
+            ideology = benevolent_dictatorship
             
             traits = {
                 cruel_tyrant
@@ -140,38 +140,46 @@ country_event = {
 
     is_triggered_only = yes
     
-    # Accept fate
 	option = {
 		name = nf_legion.5.option.a
         
-        retire_country_leader = yes
+        kill_country_leader = yes
+		
+		start_civil_war = {
+			ruling_party = ruler
+			ideology = elites
+			size = 0.5
+		}
         
-        create_country_leader  = {
-            name = "Transitional Council"
-            desc = "LANIUS_DESC"
-            picture = "Silus.dds"
-            ideology = feudalism   
-            traits = {
-            }
-        }
 	}
-    
-    # Seek help
-    option = {
+	
+	option = {
 		name = nf_legion.5.option.b
         
+        kill_country_leader = yes
+        		
+		start_civil_war = {
+			ruling_party = elites
+			ideology = ruler
+			size = 0.5
+		}
+        
+	}
+    
+    option = {
+		name = nf_legion.5.option.c
+        
         trigger = {
-            has_tech = ces_goddess_diana
-            has_tech = ces_the_twin_temples
+            has_completed_focus = ces_goddess_diana
+			has_completed_focus = ces_the_twin_temples
         }
         
-        add_political_power = -200
+        add_national_unity = -0.1
+		country_event = { id = nf_legion.6 }
         
-        set_country_flag = caesar_survived
 	}
 }
 
-# Crowning a New Augustus
 country_event = {
 	id = nf_legion.6
 	title = nf_legion.6.title
@@ -180,42 +188,24 @@ country_event = {
 
     is_triggered_only = yes
     
-    # Lanius
 	option = {
 		name = nf_legion.6.option.a
         
-        create_country_leader  = {
-            name = "Lanius"
-            desc = "LANIUS_DESC"
-            picture = "Portrait_Lanius.dds"
-            ideology = feudalism
-            
-            traits = {
-                ideological_crusader
-                warmonger
-            }
-        }
-
-        set_country_flag = sided_with_lanius
+        add_political_power = 100
 	}
     
-    # Vulpus
     option = {
 		name = nf_legion.6.option.b
         
-        create_country_leader  = {
-            name = "Vulpes"
-            desc = "VULPES_DESC"
-            picture = "Portrait_Inculta.dds"
-            ideology = feudalism
-            
-            traits = {
-                prince_of_terror
-                silent_workhorse
-            }
-        }
-        
-        set_country_flag = sided_with_vulpus
+		start_civil_war = {
+			ruling_party = intellectuals
+			ideology = ruler
+			size = 0.8
+		}
+		
+		set_capital = 359	
+
+		
 	}
 }
 
@@ -288,9 +278,9 @@ country_event = {
 		name = nf_legion.9.option.a
         
         create_corps_commander = {
-            name = "The Malpais Legate"
-            portrait_path = "gfx/leaders/NCN/Portrait_Burned_Man.dds"
-            skill = 4
+            name = "Malpais Legate"
+            portrait_path = "gfx/leaders/CES/Malpais.dds"
+            skill = 5
             traits = {
                 urban_assault_specialist
             }
@@ -304,9 +294,9 @@ country_event = {
 		name = nf_legion.9.option.b
         
         create_corps_commander = {
-            name = "The Malpais Legate"
-            portrait_path = "gfx/leaders/NCN/Portrait_Burned_Man.dds"
-            skill = 4
+            name = "Malpais Legate"
+            portrait_path = "gfx/leaders/CES/Malpais.dds"
+            skill = 5
             traits = {
                 desert_fox
                 trickster
@@ -321,15 +311,16 @@ country_event = {
 		name = nf_legion.9.option.c
         
         create_corps_commander = {
-            name = "The Malpais Legate"
-            portrait_path = "gfx/leaders/NCN/Portrait_Burned_Man.dds"
-            skill = 4
+            name = "Malpais Legate"
+            portrait_path = "gfx/leaders/CES/Malpais.dds"
+            skill = 5
             traits = {
                 desert_fox
             }
         }
         
-        set_country_flag = legion_chariots
+		custom_effect_tooltip = legion_chariots_tt
+        hidden_effect = { load_oob = "legion_chariots" }
 	}
 }
 
