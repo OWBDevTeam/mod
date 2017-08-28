@@ -1,0 +1,2940 @@
+focus_tree = {
+	id = legion
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = CES
+		}
+	}
+	default = no
+	focus = {
+		id = ces_expedition_to_blackfoot
+		icon = GFX_goal_generic_demand_territory
+		cost = 1
+		x = 18
+		y = 0
+		completion_reward = {
+			country_event = { id = nf_legion.7 } # Expedition To Blackfoot
+		}
+
+	}
+	focus = {
+		id = ces_death_in_the_canyons
+		icon = GFX_goal_generic_demand_territory
+		cost = 1
+		prerequisite = {
+			focus = ces_expedition_to_blackfoot
+		}
+		x = 18
+		y = 1
+		completion_reward = {
+			country_event = { id = nf_legion.8 } # Death In The Canyons
+		}
+
+	}
+	focus = {
+		id = ces_the_malpais_legate
+		icon = GFX_goal_generic_demand_territory
+		cost = 1
+		prerequisite = {
+			focus = ces_death_in_the_canyons
+		}
+		x = 18
+		y = 2
+		completion_reward = {
+			country_event = { id = nf_legion.9 } # The Malpais Legate
+		}
+
+	}
+	focus = {
+		id = ces_caesar_son_of_mars
+		icon = GFX_goal_generic_demand_territory
+		cost = 1
+		prerequisite = {
+			focus = ces_the_malpais_legate
+		}
+		x = 18
+		y = 3
+		completion_reward = {
+			country_event = { id = nf_legion.10 } # Caesar, Son Of Mars
+		}
+
+	}
+	focus = {
+		id = ces_alea_iacta_est
+		icon = GFX_goal_generic_military_sphere
+		cost = 8.6
+		prerequisite = {
+			focus = ces_caesar_son_of_mars
+		}
+		x = 9
+		y = 4
+		completion_reward = {
+			add_political_power = 120 
+		}
+
+	}
+    
+    #---------------------------
+    # Alea Iacta Est Sub-tree
+    #---------------------------
+	focus = {
+		id = ces_the_hangdogs
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = ces_alea_iacta_est
+		}
+		x = 3
+		y = 5
+		completion_reward = {
+			# Normal
+            if = {
+                limit = { country_exists = HAN }
+                create_wargoal = {
+                    type = annex_everything
+                    target = HAN
+                }
+                HAN = {
+                    every_owned_state = { 
+                        add_core_of = ROOT
+                    }
+                }	
+            }
+            # Safety
+            if = {
+                limit = { NOT = { country_exists = HAN } }
+                add_political_power = 100
+            }
+		}
+
+	}
+	focus = {
+		id = ces_shottol_god_of_dogs
+		icon = GFX_goal_generic_CAS
+		cost = 8.6
+		prerequisite = {
+			focus = ces_the_hangdogs
+		}
+		mutually_exclusive = {
+			focus = ces_legion_mongrels
+		}
+		x = 2
+		y = 6
+		completion_reward = {
+			add_national_unity = -0.1
+            add_ideas = legion_nf_shottol_god_of_dogs
+		}
+
+	}
+	focus = {
+		id = ces_legion_mongrels
+		icon = GFX_goal_generic_wolf_pack
+		cost = 8.6
+		prerequisite = {
+			focus = ces_the_hangdogs
+		}
+		mutually_exclusive = {
+			focus = ces_shottol_god_of_dogs
+		}
+		x = 4
+		y = 6
+		completion_reward = {
+			custom_effect_tooltip = legion_mongrels_tt
+			hidden_effect = { load_oob = legion_mongrels }
+		}
+
+	}
+	focus = {
+		id = ces_the_twin_mothers
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = ces_alea_iacta_est
+		}
+		x = 7
+		y = 5
+		completion_reward = {
+            # Normal
+            if = {
+                limit = { country_exists = TTM }
+                create_wargoal = {
+                    type = annex_everything
+                    target = TTM
+                }
+                TTM = {
+                    every_owned_state = { 
+                        add_core_of = ROOT
+                    }
+                }	
+            }
+            # Safety
+            if = {
+                limit = { NOT = { country_exists = TTM } }
+                add_political_power = 100
+            }
+		}
+
+	}
+	focus = {
+		id = ces_goddess_diana
+		icon = GFX_goal_generic_production
+		cost = 8.6
+		prerequisite = {
+			focus = ces_the_twin_mothers
+		}
+		mutually_exclusive = {
+			focus = ces_caesar_the_godslayer
+		}
+		x = 6
+		y = 6
+		completion_reward = {
+			add_national_unity = -0.1
+            add_ideas = legion_nf_goddess_diana
+			hidden_effect = {
+				set_country_flag = caesarlives
+			}
+		}
+
+	}
+	focus = {
+		id = ces_caesar_the_godslayer
+		icon = GFX_goal_generic_secret_weapon
+		cost = 8.6
+		prerequisite = {
+			focus = ces_the_twin_mothers
+		}
+		mutually_exclusive = {
+			focus = ces_goddess_diana
+		}
+		x = 8
+		y = 6
+		completion_reward = {
+			add_national_unity = 0.1
+            add_ideas = legion_nf_caesar_the_godslayer
+		}
+	}
+	focus = {
+		id = ces_two_sun
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = ces_alea_iacta_est
+		}
+		x = 11
+		y = 5
+		completion_reward = {
+            # Normal
+            if = {
+                limit = { country_exists = TWO }
+                create_wargoal = {
+                    type = annex_everything
+                    target = TWO
+                }
+                TWO = {
+                    every_owned_state = { 
+                        add_core_of = ROOT
+                    }
+                }	
+            }
+            # Safety
+            if = {
+                limit = { NOT = { country_exists = TWO } }
+                add_political_power = 100
+            }
+		}
+	}
+	focus = {
+		id = ces_the_cult_of_nas
+		icon = GFX_goal_generic_army_motorized
+		cost = 8.6
+		prerequisite = {
+			focus = ces_two_sun
+		}
+		mutually_exclusive = {
+			focus = ces_taming_the_city
+		}
+		x = 12
+		y = 6
+		completion_reward = {
+			add_national_unity = -0.1
+            add_ideas = legion_nf_cult_of_nas
+            custom_effect_tooltip = cult_of_nas_tt
+			hidden_effect = {
+				load_oob = cult_of_nas
+			}
+		}
+
+	}
+	focus = {
+		id = ces_taming_the_city
+		icon = GFX_goal_generic_fortify_city
+		cost = 8.6
+		prerequisite = {
+			focus = ces_two_sun
+		}
+		mutually_exclusive = {
+			focus = ces_the_cult_of_nas
+		}
+		x = 10
+		y = 6
+		completion_reward = {
+            add_ideas = legion_nf_cult_of_nas_minor
+            custom_effect_tooltip = cult_of_nas_tt
+			hidden_effect = {
+				load_oob = cult_of_nas
+			}
+		}
+
+	}
+	focus = {
+		id = ces_cochise_county_cowboys
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = ces_alea_iacta_est
+		}
+		x = 15
+		y = 5
+		completion_reward = {
+            # Normal
+            if = {
+                limit = { country_exists = COW }
+                create_wargoal = {
+                    type = annex_everything
+                    target = COW
+                }
+                COW = {
+                    every_owned_state = { 
+                        add_core_of = ROOT
+                    }
+                }	
+            }
+            # Safety
+            if = {
+                limit = { NOT = { country_exists = COW } }
+                add_political_power = 100
+            }
+		}	
+	}
+	focus = {
+		id = ces_wyatt_the_demon
+		icon = GFX_goal_generic_air_doctrine
+		cost = 8.6
+		prerequisite = {
+			focus = ces_cochise_county_cowboys
+		}
+		mutually_exclusive = {
+			focus = ces_legion_outlaws
+		}
+		x = 16
+		y = 6
+		completion_reward = {
+			add_national_unity = -0.1
+			add_ideas = legion_nf_wyatt_the_demon
+		}
+	}
+	focus = {
+		id = ces_legion_outlaws
+		icon = GFX_goal_generic_army_doctrines
+		cost = 8.6
+		prerequisite = {
+			focus = ces_cochise_county_cowboys
+		}
+		mutually_exclusive = {
+			focus = ces_wyatt_the_demon
+		}
+		x = 14
+		y = 6
+		completion_reward = {
+			add_ideas = legion_nf_legion_outlaws
+		}
+	}
+	focus = {
+		id = ces_temple_of_shottol
+		icon = GFX_goal_generic_construction
+		cost = 8.6
+		prerequisite = {
+			focus = ces_shottol_god_of_dogs
+		}
+		x = 2
+		y = 7
+		completion_reward = {
+            if = {
+                limit = {
+                    NOT = { any_owned_state = { is_core_of = HAN } }
+                }
+                custom_effect_tooltip = legion_must_own_hangdog_territory
+            }
+        
+            every_owned_state = {
+                limit = {
+                    is_core_of = HAN
+                }
+                add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+                add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+                add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+                    province = {
+                        all_provinces = yes
+                    }
+				}
+            }
+		}
+	}
+	focus = {
+		id = ces_the_twin_temples
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8.6
+		prerequisite = {
+			focus = ces_goddess_diana
+		}
+		x = 6
+		y = 7
+		completion_reward = {
+			if = {
+                limit = {
+                    NOT = { any_owned_state = { is_core_of = TTM } }
+                }
+                custom_effect_tooltip = legion_must_own_twin_mothers_territory
+            }
+        
+            every_owned_state = {
+                limit = {
+                    is_core_of = TTM
+                }
+                add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+            }
+            add_ideas = legion_nf_the_twin_temples
+		}
+
+	}
+	focus = {
+		id = ces_nas_scriptures
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 8.6
+		prerequisite = {
+			focus = ces_the_cult_of_nas
+		}
+		x = 12
+		y = 7
+		completion_reward = {
+            if = {
+                limit = {
+                    NOT = { any_owned_state = { is_core_of = TWO } }
+                }
+                custom_effect_tooltip = legion_must_own_two_sun_territory
+            }
+            
+			every_owned_state = {
+                limit = {
+                    is_core_of = TWO
+                }
+                add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+            }
+			add_ideas = legion_nf_nas_scriptures
+		}
+
+	}
+	focus = {
+		id = ces_demon_servants
+		icon = GFX_goal_generic_special_forces
+		cost = 8.6
+		prerequisite = {
+			focus = ces_wyatt_the_demon
+		}
+		x = 16
+		y = 7
+		completion_reward = {
+            custom_effect_tooltip = demon_servants_tt
+			hidden_effect = {
+				load_oob = demon_servants
+			}
+		}
+
+	}
+    
+    #---------------------------
+    # Conqueror of the 86 Sub-tree
+    #---------------------------
+    focus = {
+		id = ces_conqueror_of_the_86
+		icon = GFX_goal_anschluss
+		cost = 8.6
+		prerequisite = {
+			focus = ces_the_twin_mothers
+		}
+		prerequisite = {
+			focus = ces_two_sun
+		}
+		prerequisite = {
+			focus = ces_cochise_county_cowboys
+		}
+		prerequisite = {
+			focus = ces_the_hangdogs
+		}
+		x = 9
+		y = 7
+		completion_reward = {
+			army_experience = 25
+		}
+
+	}
+    #---------------------------
+    # Brotherhood sub-tree
+    #---------------------------
+	focus = {
+		id = ces_the_brotherhood_of_steel
+		icon = GFX_goal_generic_position_armies
+		cost = 8.6
+		prerequisite = {
+			focus = ces_conqueror_of_the_86
+		}
+		x = 1
+		y = 8
+		completion_reward = {
+			add_political_power = 60
+		}
+	}
+    focus = {
+		id = ces_smoke_out_the_rats
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = ces_the_brotherhood_of_steel
+		}
+		x = 1
+		y = 9
+		completion_reward = {
+			if = {
+                limit = { country_exists = MOJ }
+                create_wargoal = {
+                    type = annex_everything
+                    target = MOJ
+                }	
+            }
+		}
+	}
+	focus = {
+		id = ces_annex_hidden_valley
+		icon = GFX_goal_generic_fortify_city
+		cost = 8.6
+		prerequisite = {
+			focus = ces_smoke_out_the_rats
+		}
+		x = 1
+		y = 10
+		completion_reward = {
+			if = {
+                limit = { country_exists = MOJ }
+                MOJ = {
+                    every_owned_state = { 
+                        add_core_of = ROOT
+                    }
+                }	
+            }
+		}
+	}
+	focus = {
+		id = ces_broken_steel
+		icon = GFX_goal_generic_CAS
+		cost = 8.6
+		prerequisite = {
+			focus = ces_annex_hidden_valley
+		}
+		x = 0
+		y = 11
+		completion_reward = {
+			army_experience = 10
+			add_political_power = 40
+		}
+
+	}
+	focus = {
+		id = ces_enslaving_the_scribes
+		icon = GFX_focus_research
+		cost = 8.6
+		prerequisite = {
+			focus = ces_annex_hidden_valley
+		}
+		x = 2
+		y = 11
+		completion_reward = {
+			add_ideas = legion_nf_enslaved_scribes
+			add_tech_bonus = {
+				name = energy_weapon_bonus
+				bonus = 0.5
+				uses = 1
+				category = energy_weaponry_tech
+			}
+		}
+
+	}
+	focus = {
+		id = ces_the_last_knight
+		icon = GFX_goal_generic_attack_allies
+		cost = 8.6
+		prerequisite = {
+			focus = ces_broken_steel
+		}
+		x = 0
+		y = 12
+		completion_reward = {
+			add_ideas = legion_nf_gladiator
+		}
+
+	}
+    focus = {
+		id = ces_deconstructing_perfection
+		icon = GFX_focus_wonderweapons
+		cost = 8.6
+		prerequisite = {
+			focus = ces_enslaving_the_scribes
+		}
+		x = 2
+		y = 12
+		completion_reward = {
+			add_ideas = legion_nf_deconstructing_perfection
+		}
+
+	}
+    
+	focus = {
+		id = ces_honour_the_steelbreakers
+		icon = GFX_goal_generic_special_forces
+		cost = 8.6
+		prerequisite = {
+			focus = ces_deconstructing_perfection
+			focus = ces_the_last_knight
+		}
+		x = 1
+		y = 13
+		completion_reward = {
+			custom_effect_tooltip = steelbreakers_tt
+			hidden_effect = {
+				load_oob = steelbreakers
+			}
+		}
+
+	}
+    #---------------------------
+    # Tribals sub-tree
+    #---------------------------
+	focus = {
+		id = ces_new_judea
+		icon = GFX_goal_generic_position_armies
+		cost = 8.6
+		prerequisite = {
+			focus = ces_conqueror_of_the_86
+		}
+		x = 5
+		y = 8
+		completion_reward = {
+			add_political_power = 60
+		}
+
+	}
+    
+    focus = {
+		id = ces_the_white_leg_petition
+		icon = GFX_goal_generic_improve_relations
+		cost = 8.6
+		prerequisite = {
+			focus = ces_new_judea
+		}
+        available = {
+            country_exists = WHT
+        }
+		x = 5
+		y = 9
+		completion_reward = {
+            if = {
+                limit = {
+                    country_exists = WHT
+                }
+                WHT = { 
+                    country_event = { id = nf_legion.1 } # Petition To White Legs
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_white_legs_accept
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 8.6
+		prerequisite = {
+			focus = ces_the_white_leg_petition
+		}
+        
+        available = {
+            country_exists = WHT
+            WHT = {
+                has_country_flag = accepted_petition
+            }
+        }
+		mutually_exclusive = {
+			focus = ces_white_legs_refuse
+		}
+		x = 4
+		y = 10
+		completion_reward = {
+			add_opinion_modifier = { 
+                target = WHT 
+                modifier = loyal_tribe
+            }
+            reverse_add_opinion_modifier = { 
+                target = WHT
+                modifier = loyal_tribe
+            }
+		}
+	}
+	focus = {
+		id = ces_white_legs_refuse
+		icon = GFX_goal_generic_improve_relations
+		cost = 8.6
+		prerequisite = {
+			focus = ces_the_white_leg_petition
+		}
+        available = {
+            country_exists = WHT
+            WHT = {
+                has_country_flag = refused_petition
+            }
+        }
+		mutually_exclusive = {
+			focus = ces_white_legs_accept
+		}
+		x = 6
+		y = 10
+		completion_reward = {
+            add_opinion_modifier = { 
+                target = WHT 
+                modifier = disloyal_tribe
+            }   
+            reverse_add_opinion_modifier = { 
+                target = WHT
+                modifier = disloyal_tribe
+            }
+            
+			EHT = { 
+				country_event = { id = nf_legion.2 }
+			}
+		}
+
+	}
+	focus = {
+		id = ces_weapons_of_war
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 8.6
+		prerequisite = {
+			focus = ces_white_legs_refuse
+			focus = ces_white_legs_accept
+		}
+        available = {
+            EHT = { 
+                OR = {
+                    has_country_flag = accepted_petition
+                    has_country_flag = refused_petition
+                }
+            }
+        }
+		x = 5
+		y = 11
+		completion_reward = {
+            # White Legs allied
+			if = {
+				limit = {
+					WHT = { has_opinion_modifier = loyal_tribe }
+				}
+				WHT = {
+					random_owned_controlled_state = {
+						limit = {
+							is_valid_state_for_arms_factory = yes
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+			}
+            # Eighties allied
+			if = {
+				limit = {
+					EHT = { has_opinion_modifier = loyal_tribe }
+				}
+				EHT = {
+					random_owned_controlled_state = {
+						limit = {
+							is_valid_state_for_arms_factory = yes
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+			}
+			random_owned_controlled_state = {
+                limit = {
+                    is_valid_state_for_arms_factory = yes
+                }
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+		}
+	}
+	focus = {
+		id = ces_graham_execution
+		icon = GFX_goal_generic_CAS
+		cost = 8.6
+		prerequisite = {
+			focus = ces_weapons_of_war
+		}
+		available = {
+            NOT = { country_exists = NCN }
+		}
+		x = 5
+		y = 12
+		completion_reward = {
+            if = {
+                limit = {
+                    has_idea = legion_nf_burned_man_rumours
+                }
+                remove_ideas = legion_nf_burned_man_rumours
+            }
+            add_political_power = 50
+        }
+	}
+	
+	focus = {
+		id = ces_new_auxilliary
+		icon = GFX_goal_generic_national_unity
+		cost = 8.6
+		prerequisite = {
+			focus = ces_graham_execution
+		}
+		mutually_exclusive = {
+			focus = ces_new_cohort
+			focus = ces_legionary_utah
+		}
+		available = {
+			EHT = { has_opinion_modifier = loyal_tribe } 
+		}
+		x = 6
+		y = 13
+		completion_reward = {
+			add_to_faction = EHT
+		}
+
+	}
+	focus = {
+		id = ces_new_cohort
+		icon = GFX_goal_generic_national_unity
+		cost = 8.6
+		prerequisite = {
+			focus = ces_graham_execution
+		}
+		mutually_exclusive = {
+			focus = ces_legionary_utah
+			focus = ces_new_auxilliary
+		}
+		available = {
+			WHT = { has_opinion_modifier = loyal_tribe } 
+		}
+		x = 4
+		y = 13
+		completion_reward = {
+			add_to_faction = WHT
+		}
+
+	}
+    
+    focus = {
+		id = ces_legionary_utah
+		icon = GFX_goal_support_fascism
+		cost = 8.6
+		prerequisite = {
+			focus = ces_graham_execution
+		}
+		mutually_exclusive = {
+			focus = ces_new_cohort
+			focus = ces_new_auxilliary
+		}
+		x = 5
+		y = 14
+		completion_reward = {
+			every_state = {
+                limit = {
+                    is_utah_state = yes
+                }
+                add_core_of = CES
+            }
+		}
+
+	}
+    
+    #---------------------------
+    # NCR sub-tree
+    #---------------------------
+	focus = {
+		id = ces_crossing_the_rubicon
+		icon = GFX_goal_generic_position_armies
+		cost = 8.6
+		prerequisite = {
+			focus = ces_conqueror_of_the_86
+		}
+		x = 9
+		y = 8
+		completion_reward = {
+			add_political_power = 60
+            # Normal
+            if = {
+                limit = { country_exists = DAM }
+                create_wargoal = {
+                    type = annex_everything
+                    target = DAM
+                }
+                DAM = {
+                    every_owned_state = { 
+                        add_core_of = ROOT
+                    }
+                }	
+            }
+		}
+
+	}
+    
+    focus = {
+		id = ces_war_for_hoover_dam
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = ces_crossing_the_rubicon
+		}
+		available = {
+			NCR = { owns_state = 252 }
+		}
+		bypass = {
+            NOT = { country_exists = NCR }
+		}
+		x = 9
+		y = 9
+		completion_reward = {
+            if = {
+                limit = { country_exists = DAM }
+                create_wargoal = {
+                    type = take_state_focus
+                    target = NCR
+                    generator = {
+                        252
+                    }
+                }
+                # Add cores on all Vegas owned land
+                NCR = {
+                    every_owned_state = { 
+                        limit = { is_new_vegas_state = yes }
+                        add_core_of = ROOT
+                    }
+                }	
+            }
+            set_country_flag = battle_for_hoover_dam
+		}
+	}
+    
+	focus = {
+		id = ces_the_burned_man
+		icon = GFX_goal_generic_attack_allies
+		cost = 8.6
+		prerequisite = {
+			focus = ces_war_for_hoover_dam
+		}
+		mutually_exclusive = {
+			focus = ces_triumph_at_the_dam
+		}
+        available = {
+            has_country_flag = hoover_dam_lost
+        }
+		x = 8
+		y = 10
+		completion_reward = {
+			add_ideas = legion_nf_burned_man_rumours
+		}
+
+	}
+	focus = {
+		id = ces_triumph_at_the_dam
+		icon = GFX_goal_support_fascism
+		cost = 8.6
+		prerequisite = {
+			focus = ces_war_for_hoover_dam
+		}
+        available = {
+            owns_state = 252
+        }
+		mutually_exclusive = {
+			focus = ces_the_burned_man
+		}
+		x = 10
+		y = 10
+		completion_reward = {
+			add_ideas = legion_nf_hoover_dam
+		}
+
+	}
+	focus = {
+		id = ces_lick_the_bulls_wounds
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 8.6
+		prerequisite = {
+			focus = ces_the_burned_man
+		}
+		x = 8
+		y = 11
+		completion_reward = {
+			add_ideas = legion_nf_the_bulls_wounds
+		}
+
+	}
+	focus = {
+		id = ces_fortify_the_dam
+		icon = GFX_goal_generic_fortify_city
+		cost = 8.6
+		prerequisite = {
+			focus = ces_triumph_at_the_dam
+		}
+        available = {
+            owns_state = 252
+        }
+		x = 10
+		y = 11
+		completion_reward = {
+			252 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+                add_building_construction = {
+					type = bunker
+					level = 2
+					province = {
+                        all_provinces = yes
+                    }
+                    instant_build = yes
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_fortification_hill
+		icon = GFX_goal_generic_construct_military
+		cost = 8.6
+		prerequisite = {
+			focus = ces_lick_the_bulls_wounds
+		}
+		x = 8
+		y = 12
+		completion_reward = {
+			359 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+                add_building_construction = {
+					type = bunker
+					level = 2
+					province = {
+                        all_provinces = yes
+                    }
+                    instant_build = yes
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_crossing_the_colorado
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 8.6
+		prerequisite = {
+			focus = ces_fortification_hill
+		}
+		x = 8
+		y = 13
+		completion_reward = {   
+            random_owned_state = {
+                limit = {
+                    OR = {
+                        is_new_vegas_state = yes
+                        region = 29 # West Arizona
+                    }
+                    is_coastal = yes
+                }       
+                add_building_construction = {
+                    type = dockyard
+                    level = 2
+                    instant_build = yes
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_the_rubicon_is_crossed
+		icon = GFX_goal_generic_secret_weapon
+		cost = 8.6
+		prerequisite = {
+			focus = ces_fortify_the_dam
+		}
+		x = 10
+		y = 12
+		completion_reward = {
+			add_ideas = legion_nf_rubicon_crossed
+		}
+
+	}
+	focus = {
+		id = ces_to_the_victor_go_the_spoils
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 8.6
+		prerequisite = {
+			focus = ces_the_rubicon_is_crossed
+		}
+		x = 10
+		y = 13
+		completion_reward = {
+			capital_scope = {
+                add_resource = {
+                    type = electricity
+                    amount = 20
+                }
+            }
+		}
+	}
+    
+    focus = {
+		id = ces_poking_the_bear
+		icon = GFX_goal_generic_demand_territory
+		cost = 8.6
+		prerequisite = {
+			focus = ces_crossing_the_colorado
+			focus = ces_to_the_victor_go_the_spoils
+		}
+        available = {
+            country_exists = NCR
+        }
+        bypass = {
+            NOT = { country_exists = NCR }
+        }
+		x = 9
+		y = 14
+		completion_reward = {
+			add_political_power = 60
+			NCR = {
+				add_political_power = -60
+			}
+			country_event = { id = nf_legion.5 } # Caesar's Illness
+		}
+
+	}
+    #---------------------------
+    # Mexico sub-tree
+    #---------------------------
+	focus = {
+		id = ces_mexico_expansion
+		icon = GFX_goal_generic_position_armies
+		cost = 8.6
+		prerequisite = {
+			focus = ces_conqueror_of_the_86
+		}
+		x = 15
+		y = 8
+		completion_reward = {
+			add_political_power = 60
+		}
+
+	}
+    
+    focus = {
+		id = ces_baudelio_ranchers
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = ces_mexico_expansion
+		}
+		x = 13
+		y = 9
+		completion_reward = {
+            if = {
+                limit = { country_exists = RBD }
+                create_wargoal = {
+                    type = annex_everything
+                    target = RBD
+                }
+            }
+		}
+
+	}
+    
+    focus = {
+		id = ces_enslave_the_ranchers
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8.6
+		prerequisite = {
+			focus = ces_baudelio_ranchers
+		}
+		x = 12
+		y = 10
+		completion_reward = {
+            add_political_power = -50
+            
+            if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_baudelio_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_baudelio_territory 
+            }
+            
+            every_owned_state = {
+                limit = {
+                    is_baudelio_state = yes
+                }
+                add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_baudelio_wells
+		icon = GFX_goal_generic_oil_refinery
+		cost = 8.6
+		prerequisite = {
+			focus = ces_baudelio_ranchers
+		}
+		x = 14
+		y = 10
+		completion_reward = {
+            if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_baudelio_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_baudelio_territory 
+            }
+            
+            random_owned_state = {
+                limit = {
+                    is_baudelio_state = yes
+                }
+                add_resource = {
+                    type = water
+                    amount = 6
+                }
+            }
+		}
+
+	}
+    
+    focus = {
+		id = ces_reorganise_the_ranches
+		icon = GFX_goal_generic_more_territorial_claims
+		cost = 8.6
+		prerequisite = {
+			focus = ces_baudelio_wells
+		}
+		prerequisite = {
+			focus = ces_enslave_the_ranchers
+		}
+		x = 13
+		y = 11
+		completion_reward = {
+            every_state = { 
+                limit = { is_baudelio_state = yes }
+                add_core_of = ROOT
+            }	
+		}
+	}
+    
+	focus = {
+		id = ces_pecos_colonists
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = ces_mexico_expansion
+		}
+		x = 17
+		y = 9
+		completion_reward = {
+			if = {
+                limit = { country_exists = PEC }
+                create_wargoal = {
+                    type = annex_everything
+                    target = PEC
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_enslaving_the_colonists
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8.6
+		prerequisite = {
+			focus = ces_pecos_colonists
+		}
+		x = 16
+		y = 10
+		completion_reward = {
+			add_political_power = -50
+            
+            if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_pecos_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_pecos_territory 
+            }
+            
+            every_owned_state = {
+                limit = {
+                    is_pecos_state = yes
+                }
+                add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_purpose_for_pecos
+		icon = GFX_goal_generic_oil_refinery
+		cost = 8.6
+		prerequisite = {
+			focus = ces_pecos_colonists
+		}
+		x = 18
+		y = 10
+		completion_reward = {
+			if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_pecos_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_pecos_territory 
+            }
+            
+            random_owned_state = {
+                limit = {
+                    is_pecos_state = yes
+                }
+                add_resource = {
+                    type = fuel
+                    amount = 6
+                }
+            }
+		}
+
+	}
+	
+	focus = {
+		id = ces_assimilate_the_people
+		icon = GFX_goal_generic_more_territorial_claims
+		cost = 8.6
+		prerequisite = {
+			focus = ces_enslaving_the_colonists
+		}
+		prerequisite = {
+			focus = ces_purpose_for_pecos
+		}
+		x = 17
+		y = 11
+		completion_reward = {
+			every_state = { 
+                limit = { is_pecos_state = yes }
+                add_core_of = ROOT
+            }	
+		}
+
+	}
+    
+    #---------------------------
+    # Post-NCR sub-tree
+    #---------------------------
+    # Vegas
+    focus = {
+		id = ces_the_lights_of_vegas
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = ces_poking_the_bear
+		}
+		x = 5
+		y = 15
+		completion_reward = {
+			if = {
+                limit = { country_exists = VEG }
+                create_wargoal = {
+                    type = annex_everything
+                    target = VEG
+                }
+                VEG = {
+                    every_owned_state = { 
+                        limit = { is_new_vegas_state = yes }
+                        add_core_of = ROOT
+                    }
+                }	
+            }
+		}
+
+	}
+    focus = {
+		id = ces_the_eternal_city
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8.6
+		prerequisite = {
+			focus = ces_the_lights_of_vegas
+		}
+		x = 4
+		y = 16
+		completion_reward = {
+            if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_new_vegas_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_vegas_territory 
+            }
+            
+			every_owned_state = {
+                limit = {
+                    is_new_vegas_state = yes
+                }
+                add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_caesers_palace
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8.6
+		prerequisite = {
+			focus = ces_the_eternal_city
+		}
+		x = 4
+		y = 17
+		completion_reward = {
+            if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_new_vegas_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_vegas_territory 
+            }
+            
+			every_owned_state = {
+                limit = {
+                    is_new_vegas_state = yes
+                }
+                add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+                add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+                    province = {
+                        all_provinces = yes
+                    }
+				}
+            }
+		}
+
+	}
+	focus = {
+		id = ces_open_the_lucky_38
+		icon = GFX_goal_anti_comintern_pact
+		cost = 8.6
+		prerequisite = {
+			focus = ces_caesers_palace
+		}
+		x = 4
+		y = 18
+		completion_reward = {
+            add_national_unity = 0.05
+            
+			if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_new_vegas_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_vegas_territory 
+            }
+            
+			every_owned_state = {
+                limit = {
+                    is_new_vegas_state = yes
+                }
+                add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+                    province = {
+                        all_provinces = yes
+                    }
+				}
+            }
+		}
+
+	}
+	focus = {
+		id = ces_expand_the_via_militaris
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 8.6
+		prerequisite = {
+			focus = ces_the_lights_of_vegas
+		}
+		x = 6
+		y = 16
+		completion_reward = {
+            if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_new_vegas_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_vegas_territory 
+            }
+            
+			every_owned_state = {
+                limit = {
+                    is_new_vegas_state = yes
+                }
+                add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+            }
+		}
+	}
+	focus = {
+		id = ces_mccarran_airstrip
+		icon = GFX_goal_generic_air_fighter
+		cost = 8.6
+		prerequisite = {
+			focus = ces_expand_the_via_militaris
+		}
+		x = 6
+		y = 17
+		completion_reward = {
+            if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_new_vegas_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_vegas_territory 
+            }
+            
+			every_owned_state = {
+                limit = {
+                    is_new_vegas_state = yes
+                }
+                add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+            }
+		}
+
+	}
+	focus = {
+		id = ces_scouring_the_strip
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		prerequisite = {
+			focus = ces_mccarran_airstrip
+		}
+		x = 6
+		y = 18
+		completion_reward = {
+			add_ideas = legion_nf_vegas_strip
+		}
+
+	}
+    
+    focus = {
+		id = ces_nova_roma
+		icon = GFX_goal_support_fascism
+		cost = 8.6
+		prerequisite = {
+			focus = ces_scouring_the_strip
+		}
+		prerequisite = {
+			focus = ces_open_the_lucky_38
+		}
+		x = 5
+		y = 19
+		completion_reward = {
+            if = {
+                limit = { owns_state = 211 }
+                set_capital = 211
+            }
+            
+			add_ideas = legion_nf_nova_roma
+		}
+
+	}
+    
+    # Worthy
+    focus = {
+		id = ces_a_worthy_foe
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = ces_poking_the_bear
+		}
+		x = 9
+		y = 15
+		completion_reward = {
+			army_experience = 30
+			add_ideas = legion_nf_worthy_foe
+		}
+
+	}
+    
+    focus = {
+		id = ces_divide_et_impera
+		icon = GFX_goal_generic_attack_allies
+		cost = 8.6
+		prerequisite = {
+			focus = ces_a_worthy_foe
+		}
+        bypass = {
+            NOT = { country_exists = NCR }
+        }
+		x = 8
+		y = 16
+		completion_reward = {
+            if = {
+                limit = { 
+                    country_exists = NCR
+                }
+                NCR = {
+                    add_timed_idea = {
+                        idea = legion_nf_overextension
+                        days = 720
+                    }
+                }
+            }
+		}
+	}
+	focus = {
+		id = ces_render_unto_caesar
+		icon = GFX_goal_generic_war_with_comintern
+		cost = 8.6
+		prerequisite = {
+			focus = ces_a_worthy_foe
+		}
+		x = 10
+		y = 16
+		completion_reward = {
+            every_country = {
+                limit = {
+                    OR = {
+                        AND = {
+                            NOT = { has_tech = scientific_civilization }
+                            NOT = { tag = NCR }
+                            NOT = { is_subject_of = NCR }
+                            NOT = { is_in_faction_with = NCR }
+                            is_neighbor_of = CES
+                            NOT = {
+                                has_opinion = {                         
+                                    value = 0
+                                    tag = NCR
+                                }
+                            }
+                        }
+                        tag = KHA
+                        tag = BVC
+                        tag = BLP
+                    }
+                }
+                add_opinion_modifier = { 
+                    target = CES 
+                    modifier = renderuntocaesar 
+                }
+                reverse_add_opinion_modifier = { 
+                    target = CES 
+                    modifier = renderuntocaesar 
+                }
+            }
+		}
+	}
+	focus = {
+		id = ces_the_great_khans
+		icon = GFX_goal_generic_military_deal
+		cost = 8.6
+		prerequisite = {
+			focus = ces_render_unto_caesar
+		}
+		bypass = {
+			NOT = {
+				country_exists = KHA
+			}
+		}
+		x = 10
+		y = 17
+		completion_reward = {
+			add_to_faction = KHA
+		}
+
+	}
+	focus = {
+		id = ces_the_baja_raiders
+		icon = GFX_goal_generic_military_deal
+		cost = 8.6
+		prerequisite = {
+			focus = ces_the_great_khans
+		}
+		bypass = {
+			NOT = {
+				country_exists = BVC
+				country_exists = BLP
+			}
+		}
+		x = 10
+		y = 18
+		completion_reward = {
+			add_to_faction = BVC
+			add_to_faction = BLP
+		}
+
+	}
+	focus = {
+		id = ces_camp_searchlight
+		icon = GFX_goal_generic_CAS
+		cost = 8.6
+		prerequisite = {
+			focus = ces_divide_et_impera
+		}
+		x = 8
+		y = 17
+		completion_reward = {
+			NCR = { add_national_unity = -0.05 }
+		}
+
+	}
+	focus = {
+		id = ces_battle_of_nelson
+		icon = GFX_goal_generic_build_navy
+		cost = 8.6
+		prerequisite = {
+			focus = ces_camp_searchlight
+		}
+        bypass = {
+            owns_state = 137
+        }
+		x = 8
+		y = 18
+		completion_reward = {
+			add_manpower = -200
+			transfer_state = 137
+		}
+
+	}
+	focus = {
+		id = ces_in_hoc_signo_taurus_vinces
+		icon = GFX_goal_generic_alliance
+		cost = 8.6
+		prerequisite = {
+			focus = ces_battle_of_nelson
+		}
+		prerequisite = {
+			focus = ces_the_baja_raiders
+		}
+		x = 9
+		y = 19
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = NCR
+			}
+		}
+
+	}
+    
+	focus = {
+		id = ces_augustus
+		icon = GFX_goal_generic_demand_territory
+		cost = 8.6
+		prerequisite = {
+			focus = ces_poking_the_bear
+		}
+        bypass = {
+            has_country_flag = caesar_survived
+        }
+		x = 15
+		y = 15
+		completion_reward = {
+			country_event = { id = nf_legion.6 } # Crowning a New Augustus
+		}
+
+	}
+	
+    focus = {
+		id = ces_thesis
+		icon = GFX_goal_tripartite_pact
+		cost = 8.6
+		prerequisite = {
+			focus = ces_augustus
+		}
+        available = {
+			has_country_leader = { id = 994 }
+		}
+		mutually_exclusive = {
+			focus = ces_brotherhood
+			focus = ces_spqr
+			focus = ces_lanius
+		}
+		x = 16
+		y = 16
+		completion_reward = {
+			add_state_core = 253
+			add_ideas = legion_nf_new_thesis
+		}
+
+	}
+	focus = {
+		id = ces_brotherhood
+		icon = GFX_goal_support_communism
+		cost = 8.6
+		prerequisite = {
+			focus = ces_augustus
+		}
+        available = {
+			has_country_leader = { id = 995 }
+		}
+		mutually_exclusive = {
+			focus = ces_thesis
+			focus = ces_lanius
+			focus = ces_spqr
+		}
+		x = 18
+		y = 16
+		completion_reward = {
+			add_research_slot = 1
+			remove_ideas = national_spirit_rejection_of_automation
+		}
+
+	}
+	focus = {
+		id = ces_lanius
+		icon = GFX_goal_support_fascism
+		cost = 8.6
+		prerequisite = {
+			focus = ces_augustus
+		}
+		available = {
+			has_country_leader = { id = 996 }
+		}
+		mutually_exclusive = {
+			focus = ces_brotherhood
+			focus = ces_spqr
+			focus = ces_thesis
+		}
+		x = 14
+		y = 16
+		completion_reward = {
+			add_ideas = legion_nf_immortal_empire
+		}
+
+	}
+	focus = {
+		id = ces_spqr
+		icon = GFX_goal_support_democracy
+		cost = 8.6
+		prerequisite = {
+			focus = ces_augustus
+		}
+		available = {
+			has_country_leader = { id = 997 }
+		}
+		mutually_exclusive = {
+			focus = ces_brotherhood
+			focus = ces_lanius
+			focus = ces_thesis
+		}
+		x = 12
+		y = 16
+        completion_reward = {
+            add_ideas = legion_nf_spqr
+        }
+	}
+	focus = {
+		id = ces_peace
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		prerequisite = {
+			focus = ces_spqr
+			focus = ces_lanius
+			focus = ces_thesis
+			focus = ces_brotherhood
+		}
+		x = 15
+		y = 17
+		completion_reward = {
+			add_ideas = legion_nf_pax_per_bellum
+		}
+
+	}
+
+    #---------------------------
+    # Production sub-tree
+    #---------------------------
+	focus = {
+		id = ces_denarius
+		icon = GFX_goal_generic_consumer_goods
+		cost = 8.6
+		prerequisite = {
+			focus = ces_caesar_son_of_mars
+		}
+		x = 23
+		y = 4
+		completion_reward = {
+			add_political_power = 60
+		}
+
+	}
+    
+	focus = {
+		id = ces_tame_dog_city
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8.6
+		prerequisite = {
+			focus = ces_denarius
+		}
+		available = {
+			owns_state = 525
+		}
+		x = 20
+		y = 5
+		completion_reward = {
+			525 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
+        }
+	}
+	focus = {
+		id = ces_legion_salvagers
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8.6
+		prerequisite = {
+			focus = ces_tame_dog_city
+		}
+        available = {
+			owns_state = 525
+		}
+		x = 20
+		y = 6
+		completion_reward = {
+			525 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_enslave_hangdogs
+		icon = GFX_goal_generic_construction2
+		cost = 8.6
+		prerequisite = {
+			focus = ces_legion_salvagers
+		}
+        available = {
+			owns_state = 525
+		}
+		x = 20
+		y = 7
+		completion_reward = {
+			add_ideas = legion_nf_enslaved_dogs
+		}
+
+	}
+	focus = {
+		id = ces_the_capital
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8.6
+		prerequisite = {
+			focus = ces_denarius
+		}
+        available = {
+			owns_state = 520
+		}
+		x = 22
+		y = 5
+		completion_reward = {
+			520 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_flagstaff_fort
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8.6
+		prerequisite = {
+			focus = ces_the_capital
+		}
+        available = {
+			owns_state = 520
+		}
+		x = 22
+		y = 6
+		completion_reward = {
+			520 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_slaves_to_flagstaff
+		icon = GFX_goal_generic_construction2
+		cost = 8.6
+		prerequisite = {
+			focus = ces_flagstaff_fort
+		}
+        available = {
+			owns_state = 520
+		}
+		x = 22
+		y = 7
+		completion_reward = {
+			add_ideas = legion_nf_flagstaff_slaves
+		}
+
+	}
+	focus = {
+		id = ces_settlers_in_phoenix
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8.6
+		prerequisite = {
+			focus = ces_denarius
+		}
+        available = {
+			owns_state = 518
+		}
+		x = 24
+		y = 5
+		completion_reward = {
+            518 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_phoenix_outpost
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8.6
+		prerequisite = {
+			focus = ces_settlers_in_phoenix
+		}
+        available = {
+			owns_state = 518
+		}
+		x = 24
+		y = 6
+		completion_reward = {
+			518 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_slaves_in_phoenix
+		icon = GFX_goal_generic_construction2
+		cost = 8.6
+		prerequisite = {
+			focus = ces_phoenix_outpost
+		}
+        available = {
+			owns_state = 518
+		}
+		x = 24
+		y = 7
+		completion_reward = {
+			add_ideas = legion_nf_phoenix_slaves
+		}
+
+	}
+	focus = {
+		id = ces_two_sun_tribute
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8.6
+		prerequisite = {
+			focus = ces_denarius
+		}
+        available = {
+			owns_state = 516
+		}
+		x = 26
+		y = 5
+		completion_reward = {
+			516 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_two_sun_warcamp
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8.6
+		prerequisite = {
+			focus = ces_two_sun_tribute
+		}
+        available = {
+			owns_state = 516
+		}
+		x = 26
+		y = 6
+		completion_reward = {
+			516 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_enslave_tribals
+		icon = GFX_goal_generic_construction2
+		cost = 8.6
+		prerequisite = {
+			focus = ces_two_sun_warcamp
+		}
+        available = {
+			owns_state = 516
+		}
+		x = 26
+		y = 7
+		completion_reward = {
+			add_ideas = legion_nf_two_sun_slaves
+		}
+
+	}
+	focus = {
+		id = ces_honestas_industria_prudentia
+		icon = GFX_goal_generic_construction2
+		cost = 8.6
+		prerequisite = {
+			focus = ces_slaves_in_phoenix
+			focus = ces_enslave_hangdogs
+			focus = ces_enslave_tribals
+		}
+		prerequisite = {
+			focus = ces_slaves_to_flagstaff
+		}
+		x = 21
+		y = 8
+		completion_reward = {
+			add_political_power = 60
+		}
+
+	}
+	focus = {
+		id = ces_warcamp_slaves
+		icon = GFX_goal_generic_production
+		cost = 8.6
+		prerequisite = {
+			focus = ces_honestas_industria_prudentia
+		}
+		mutually_exclusive = {
+			focus = ces_homestead_slaves
+		}
+		x = 20
+		y = 9
+		completion_reward = {
+			add_ideas = legion_nf_warcamp_slaves
+		}
+
+	}
+	focus = {
+		id = ces_homestead_slaves
+		icon = GFX_goal_generic_production2
+		cost = 8.6
+		prerequisite = {
+			focus = ces_honestas_industria_prudentia
+		}
+		mutually_exclusive = {
+			focus = ces_warcamp_slaves
+		}
+		x = 22
+		y = 9
+		completion_reward = {
+			add_ideas = legion_nf_homestead_slaves
+		}
+
+	}
+	focus = {
+		id = ces_via_militaris
+		icon = GFX_goal_generic_construction
+		cost = 8.6
+		prerequisite = {
+			focus = ces_slaves_in_phoenix
+			focus = ces_enslave_tribals
+			focus = ces_enslave_hangdogs
+		}
+		prerequisite = {
+			focus = ces_slaves_to_flagstaff
+		}
+		prerequisite = {
+			focus = ces_slaves_in_phoenix
+		}
+		x = 25
+		y = 8
+		completion_reward = {	    
+            if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_arizona_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_arizona_territory 
+            }
+			every_owned_state = {
+                limit = { is_arizona_state = yes }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }			
+		}
+
+	}
+	focus = {
+		id = ces_new_mexico_highways
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 8.6
+		prerequisite = {
+			focus = ces_via_militaris
+		}
+		x = 24
+		y = 9
+		completion_reward = {
+            if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_new_mexico_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_new_mexico_territory 
+            }
+			every_owned_state = {
+                limit = { is_new_mexico_state = yes }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_the_road_eastwards
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 8.6
+		prerequisite = {
+			focus = ces_via_militaris
+		}
+		x = 26
+		y = 9
+		completion_reward = {
+            if = {
+                limit = {
+                    NOT = {
+                        any_owned_state = {
+                            is_colorado_state = yes
+                        }
+                    }
+                }
+                custom_effect_tooltip = legion_must_own_colorado_territory 
+            }
+			every_owned_state = {
+                limit = { is_colorado_state = yes }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }
+		}
+
+	}
+    
+    focus = {
+		id = ces_pax_romana
+		icon = GFX_goal_generic_propaganda
+		cost = 8.6
+		prerequisite = {
+			focus = ces_new_mexico_highways
+		}
+		prerequisite = {
+			focus = ces_the_road_eastwards
+		}
+        available = {
+            has_manpower = 1000
+        }
+		x = 25
+		y = 10
+		completion_reward = {
+            add_manpower = -1000
+			add_ideas = legion_nf_pax_romana
+		}
+
+	}
+	focus = {
+		id = ces_fort_construction
+		icon = GFX_goal_generic_construct_military
+		cost = 8.6
+		prerequisite = {
+			focus = ces_warcamp_slaves
+		}
+		x = 20
+		y = 10
+		completion_reward = {
+			add_ideas = legion_nf_fort_focus
+		}
+
+	}
+	focus = {
+		id = ces_blacksmith_recruitment
+		icon = GFX_goal_generic_construct_civilian
+		cost = 8.6
+		prerequisite = {
+			focus = ces_homestead_slaves
+		}
+		x = 22
+		y = 10
+		completion_reward = {
+			add_ideas = legion_nf_factory_focus
+		}
+
+	}
+	focus = {
+		id = ces_boulder_city_salvage
+		icon = GFX_goal_generic_oil_refinery
+		cost = 8.6
+		prerequisite = {
+			focus = ces_pax_romana
+			focus = ces_blacksmith_recruitment
+			focus = ces_fort_construction
+		}
+		prerequisite = {
+			focus = ces_pax_romana
+		}
+        available = {
+            owns_state = 613
+        }
+		x = 23
+		y = 11
+		completion_reward = {
+            613 = {
+                add_resource = {
+                    type = metal
+                    amount = 6
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_old_world_discoveries
+		icon = GFX_focus_wonderweapons
+		cost = 8.6
+		prerequisite = {
+			focus = ces_boulder_city_salvage
+		}
+		x = 23
+		y = 12
+		completion_reward = {
+			add_research_slot = 1
+		}
+
+	}
+	focus = {
+		id = ces_dog_city_salvage
+		icon = GFX_goal_generic_oil_refinery
+		cost = 8.6
+		prerequisite = {
+			focus = ces_boulder_city_salvage
+		}
+        available = {
+            owns_state = 525
+        }
+		x = 21
+		y = 12
+		completion_reward = {
+			525 = {
+                add_resource = {
+                    type = metal
+                    amount = 6
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_phoenix_salvage
+		icon = GFX_goal_generic_oil_refinery
+		cost = 8.6
+		prerequisite = {
+			focus = ces_boulder_city_salvage
+		}
+        available = {
+            owns_state = 518
+        }
+		x = 25
+		y = 12
+		completion_reward = {
+			518 = {
+                add_resource = {
+                    type = metal
+                    amount = 6
+                }
+            }
+		}
+
+	}
+	focus = {
+		id = ces_the_vault_beneath_fortification_hill
+		icon = GFX_goal_generic_fortify_city
+		cost = 8.6
+		prerequisite = {
+			focus = ces_old_world_discoveries
+		}
+        available = {
+            owns_state = 359
+        }
+		x = 23
+		y = 13
+		completion_reward = {
+            359 = {
+                add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+                    province = {
+                        all_provinces = yes
+                    }
+				}
+            }
+		}
+
+	}
+	focus = {
+		id = ces_brotherhood_slaves
+		icon = GFX_focus_rocketry
+		cost = 8.6
+		prerequisite = {
+			focus = ces_the_vault_beneath_fortification_hill
+		}
+		mutually_exclusive = {
+			focus = ces_follower_slaves
+		}
+		x = 24
+		y = 14
+		completion_reward = {
+			add_tech_bonus = {
+				name = power_armour_bonus
+				bonus = 0.5
+				uses = 2
+				category = power_armor_tech
+			}
+		}
+
+	}
+	focus = {
+		id = ces_follower_slaves
+		icon = GFX_focus_research
+		cost = 8.6
+		prerequisite = {
+			focus = ces_the_vault_beneath_fortification_hill
+		}
+		mutually_exclusive = {
+			focus = ces_brotherhood
+		}
+		x = 22
+		y = 14
+		completion_reward = {
+			add_ideas = legion_nf_follower_slaves
+		}
+
+	}
+    
+    #---------------------------
+    # Old World Lessons sub-tree
+    #---------------------------
+	focus = {
+		id = ces_lessons_of_the_old_world
+		icon = GFX_goal_generic_air_doctrine
+		cost = 8.6
+		prerequisite = {
+			focus = ces_caesar_son_of_mars
+		}
+		x = 31
+		y = 4
+		completion_reward = {
+			army_experience = 50
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = ces_numeri
+		icon = GFX_goal_generic_special_forces
+		cost = 8.6
+		prerequisite = {
+			focus = ces_lessons_of_the_old_world
+		}
+		mutually_exclusive = {
+			focus = ces_praetorian_guard
+			focus = ces_servus_publicus
+		}
+		x = 29
+		y = 5
+		completion_reward = {
+			add_national_unity = -0.05
+			add_ideas = legion_nf_numeri 
+		}
+	}
+	focus = {
+		id = ces_assimilated_centurions
+		icon = GFX_goal_generic_propaganda
+		cost = 8.6
+		prerequisite = {
+			focus = ces_numeri
+		}
+		x = 29
+		y = 6
+		completion_reward = {
+			add_ideas = legion_nf_centurions 
+		}
+	}
+	focus = {
+		id = ces_lay_of_the_land
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 8.6
+		prerequisite = {
+			focus = ces_assimilated_centurions
+		}
+		x = 29
+		y = 7
+		completion_reward = {
+			add_ideas = legion_nf_lay_of_the_land
+		}
+
+	}
+	focus = {
+		id = ces_legionary_grit
+		icon = GFX_goal_generic_secret_weapon
+		cost = 8.6
+		prerequisite = {
+			focus = ces_lay_of_the_land
+		}
+		x = 29
+		y = 8
+		completion_reward = {
+			add_ideas = legion_nf_legionary_grit
+		}
+	}
+	focus = {
+		id = ces_general_gaius_magnus
+		icon = GFX_goal_generic_CAS
+		cost = 8.6
+		prerequisite = {
+			focus = ces_legionary_grit
+		}
+		x = 29
+		y = 9
+		completion_reward = {
+			create_corps_commander = {
+				name = "Gaius Magnus"
+				portrait_path = "gfx/leaders/CES/Portrait_Magnus.dds"
+				skill = 3
+				traits = {
+					conqueror
+				}
+			}
+		}
+	}
+	focus = {
+		id = ces_praetorian_guard
+		icon = GFX_goal_anti_comintern_pact
+		cost = 8.6
+		prerequisite = {
+			focus = ces_lessons_of_the_old_world
+		}
+		mutually_exclusive = {
+			focus = ces_servus_publicus
+			focus = ces_numeri
+		}
+		x = 31
+		y = 5
+		completion_reward = {
+			add_ideas = legion_nf_praetorian
+		}
+
+	}
+	focus = {
+		id = ces_meritorcracy
+		icon = GFX_goal_generic_cavalry
+		cost = 8.6
+		prerequisite = {
+			focus = ces_praetorian_guard
+		}
+		x = 31
+		y = 6
+		completion_reward = {
+			add_ideas = legion_nf_meritocracy
+		}
+
+	}
+	focus = {
+		id = ces_vexillarius
+		icon = GFX_goal_generic_military_sphere
+		cost = 8.6
+		prerequisite = {
+			focus = ces_meritorcracy
+		}
+		x = 31
+		y = 7
+		completion_reward = {
+			add_ideas = legion_nf_vexillarius
+		}
+
+	}
+	focus = {
+		id = ces_legion_blacksmiths
+		icon = GFX_goal_generic_construction
+		cost = 8.6
+		prerequisite = {
+			focus = ces_vexillarius
+		}
+		x = 31
+		y = 8
+		completion_reward = {
+			add_ideas = legion_nf_legionary_blacksmiths
+		}
+
+	}
+	focus = {
+		id = ces_general_silus
+		icon = GFX_goal_generic_CAS
+		cost = 8.6
+		prerequisite = {
+			focus = ces_legion_blacksmiths
+		}
+		x = 31
+		y = 9
+		completion_reward = {
+			create_corps_commander = {
+				name = "Silus"
+				portrait_path = "gfx/leaders/CES/Portrait_Silus.dds"
+				skill = 3
+				traits = {
+					loyalty
+				}
+			}
+		}
+
+	}
+	
+	focus = {
+		id = ces_servus_publicus
+		icon = GFX_goal_generic_army_artillery
+		cost = 8.5
+		prerequisite = {
+			focus = ces_lessons_of_the_old_world
+		}
+		mutually_exclusive = {
+			focus = ces_praetorian_guard
+			focus = ces_numeri
+		}
+		x = 33
+		y = 5
+		completion_reward = {
+			add_ideas = legion_nf_servus
+		}
+	}
+	focus = {
+		id = ces_child_soldiers
+		icon = GFX_goal_generic_secret_weapon
+		cost = 8.6
+		prerequisite = {
+			focus = ces_servus_publicus
+		}
+		x = 33
+		y = 6
+		completion_reward = {
+			add_ideas = legion_nf_child_soldiers
+		}
+
+	}
+	focus = {
+		id = ces_slave_collars
+		icon = GFX_goal_generic_propaganda
+		cost = 8.6
+		prerequisite = {
+			focus = ces_child_soldiers
+		}
+		x = 33
+		y = 7
+		completion_reward = {
+			add_ideas = legion_nf_slave_collars
+		}
+
+	}
+	focus = {
+		id = ces_promote_freedmen
+		icon = GFX_goal_generic_small_arms
+		cost = 8.6
+		prerequisite = {
+			focus = ces_slave_collars
+		}
+		x = 33
+		y = 8
+		completion_reward = {
+			add_ideas = legion_nf_freemen
+		}
+
+	}
+	focus = {
+		id = ces_general_aurelius_of_phoenix
+		icon = GFX_goal_generic_CAS
+		cost = 8.6
+		prerequisite = {
+			focus = ces_promote_freedmen
+		}
+		x = 33
+		y = 9
+		completion_reward = {
+			create_corps_commander = {
+				name = "Aurelius Of Phoenix"
+				portrait_path = "gfx/leaders/CES/Portrait_Phoenix.dds"
+				skill = 3
+				traits = {
+					slavemaster
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = ces_modern_military
+		icon = GFX_goal_generic_production2
+		cost = 8.6
+		prerequisite = {
+			focus = ces_general_gaius_magnus
+			focus = ces_general_silus
+			focus = ces_general_aurelius_of_phoenix
+		}
+        available = {
+			has_country_leader = { id = 995 }
+		}
+		x = 31
+		y = 10
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	focus = {
+		id = ces_foundries_of_mars
+		icon = GFX_goal_generic_production
+		cost = 8.6
+		prerequisite = {
+			focus = ces_modern_military
+		}
+		x = 32
+		y = 11
+		completion_reward = {
+			add_ideas = legion_nf_foundries_of_mars
+		}
+
+	}
+	focus = {
+		id = ces_hammer_of_mars
+		icon = GFX_goal_generic_army_tanks
+		cost = 8.6
+		prerequisite = {
+			focus = ces_foundries_of_mars
+		}
+		x = 32
+		y = 12
+		completion_reward = {
+			set_technology = { tank_tech_3 = 1 }
+		}
+
+	}
+	focus = {
+		id = ces_legion_reborn
+		icon = GFX_goal_generic_attack_allies
+		cost = 8.6
+		prerequisite = {
+			focus = ces_modern_military
+		}
+		x = 30
+		y = 11
+		completion_reward = {
+			set_technology = { power_armour_legion = 1 }
+		}
+
+	}
+	focus = {
+		id = ces_warriors_of_mars
+		icon = GFX_goal_generic_territory_or_war
+		cost = 8.6
+		prerequisite = {
+			focus = ces_legion_reborn
+		}
+		x = 30
+		y = 12
+		completion_reward = {
+			add_ideas = legion_nf_warriors_of_mars
+		}
+	}
+}

@@ -1,0 +1,35 @@
+﻿division_template = {
+	name = "Legion Siege Division"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+	}
+    support = {
+        explosive_company = { x = 0 y = 0 }
+		explosive_company = { x = 0 y = 1 }
+    }
+	
+}
+
+units = {
+
+	division {
+		name = "Legion Siege Troopers"
+		location = 520
+		division_template = "Legion Siege Division"
+		start_experience_factor = 1.2
+		start_equipment_factor = 1.0
+	}
+	
+	division {
+		name = "Legion Siege Troopers"
+		location = 520
+		division_template = "Legion Siege Division"
+		start_experience_factor = 1.2
+		start_equipment_factor = 1.0
+	}
+}
