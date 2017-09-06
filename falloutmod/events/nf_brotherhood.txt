@@ -1,0 +1,792 @@
+﻿add_namespace = nf_brotherhood
+
+country_event = {
+	id = nf_brotherhood.1
+	title = nf_brotherhood.1.t
+	desc = nf_brotherhood.1.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.1.a
+		
+		add_ideas = scribecouncil
+		
+		set_country_flag = enclave_science_pil1
+        
+	}
+	
+	option = {
+		name = nf_brotherhood.1.b
+		
+		add_ideas = paladincouncil
+		
+	}
+}
+
+country_event = {
+	id = nf_brotherhood.2
+	title = nf_brotherhood.2.t
+	desc = nf_brotherhood.2.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.2.a
+		
+		add_ideas = discoveryknights
+		
+		set_country_flag = enclave_science_pil2
+        
+	}
+	
+	option = {
+		name = nf_brotherhood.2.b
+		
+		add_ideas = certaintyknights
+		
+	}
+}
+
+country_event = {
+	id = nf_brotherhood.3
+	title = nf_brotherhood.3.t
+	desc = nf_brotherhood.3.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.3.a
+		
+		add_ideas = bosspineless
+        
+	}
+	
+	option = {
+		name = nf_brotherhood.3.b
+		
+		add_ideas = bosvengeful
+        
+	}
+
+}
+
+country_event = {
+	id = nf_brotherhood.4
+	title = nf_brotherhood.4.t
+	desc = nf_brotherhood.4.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.4.a
+		
+		add_ideas = steelconquerors
+        
+	}
+	
+	option = {
+		name = nf_brotherhood.4.b
+		
+		add_ideas = maxsonsbulwark
+        
+	}
+
+}
+
+country_event = {
+	id = nf_brotherhood.5 #Umbra Expansion
+	title = nf_brotherhood.5.t
+	desc = nf_brotherhood.5.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.5.a
+		trigger = {
+			UMB = { is_ai = yes } #Ai will always say yes
+		}
+		
+		annex_country = { target = UMB transfer_troops = yes }
+        
+	}
+	
+	option = {
+		name = nf_brotherhood.5.b
+		trigger = {
+			UMB = { is_player = yes } #Player gets to say no
+		}
+	
+		UMB = {
+			country_event = { id = nf_brotherhood.28 }
+		}
+		
+	}
+	
+}
+
+country_event = {
+	id = nf_brotherhood.6 #Arroyo Invitation
+	title = nf_brotherhood.6.t
+	desc = nf_brotherhood.6.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.6.a
+		
+		BOS = {
+			add_to_faction = ARR
+		}
+        
+	}
+	
+	option = {
+		name = nf_brotherhood.6.b
+		
+	
+	}
+	
+}
+
+country_event = {
+	id = nf_brotherhood.7 #Shi Tensions
+	title = nf_brotherhood.7.t
+	desc = nf_brotherhood.7.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.7.a
+		
+        
+	}
+	
+	
+}
+
+country_event = {
+	id = nf_brotherhood.8
+	title = nf_brotherhood.8.t
+	desc = nf_brotherhood.8.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.8.a
+		
+		add_ideas = siliconvalley
+        
+	}
+	
+	option = {
+		name = nf_brotherhood.8.b
+		
+		104 = {
+			add_resource = {
+				type = metal
+				amount = 16
+			}
+		}
+	}
+	
+}
+
+country_event = {
+	id = nf_brotherhood.9
+	title = nf_brotherhood.9.t
+	desc = nf_brotherhood.9.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.9.a
+		
+		load_oob = sanfranmobsters
+		add_national_unity = -0.05
+        
+	}
+	
+	option = {
+		name = nf_brotherhood.9.b
+		
+		104 = {
+			add_resource = {
+				type = metal
+				amount = 16
+			}
+		}
+		
+		add_national_unity = 0.05
+        
+	}
+	
+}
+
+country_event = {
+	id = nf_brotherhood.10 #Shi Invitation
+	title = nf_brotherhood.10.t
+	desc = nf_brotherhood.10.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.10.a
+		
+		BOS = {
+			add_to_faction = SHI
+		}
+        
+	}
+	
+	option = {
+		name = nf_brotherhood.10.b
+		
+	
+	}
+	
+}
+
+country_event = {
+	
+	id = nf_brotherhood.13 
+	title = nf_brotherhood.13.t
+	desc = nf_brotherhood.13.desc
+	picture = GFX_report_event_fascist_speech
+	
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.13.a
+		
+		add_ideas = brotherhoodtacticslexicon
+		
+		country_event = { id = nf_brotherhood.14 }
+	}
+	
+	option = {
+		name = nf_brotherhood.13.b
+		
+		country_event = { id = nf_brotherhood.15 }
+	}
+	
+}
+
+country_event = {
+
+	id = nf_brotherhood.14
+	title = nf_brotherhood.14.t
+	desc = nf_brotherhood.14.desc
+	picture = GFX_report_event_fascist_speech
+
+	
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.14.a
+			
+		add_ideas = bosprewarindustry
+	}
+
+}
+
+country_event = {
+
+	id = nf_brotherhood.15
+	title = nf_brotherhood.15.t
+	desc = nf_brotherhood.15.desc
+	picture = GFX_report_event_fascist_speech
+
+	
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.15.a
+			
+		add_ideas = bossalvagedindustry
+	}
+
+}
+
+country_event = {
+
+	id = nf_brotherhood.16
+	title = nf_brotherhood.16.t
+	desc = nf_brotherhood.16.desc
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.16.a
+		
+		64 = {
+			add_resource =  {
+				type = advanced_technology
+				amount = 16
+			}
+			add_resource =  {
+				type = electronics
+				amount = 8
+			}
+		}
+	}
+	
+	option = {
+		name = nf_brotherhood.16.b
+		
+		64 = {
+			add_resource =  {
+				type = fuel
+				amount = 16
+			}
+			add_resource =  {
+				type = metal
+				amount = 24
+			}
+		}
+	}
+	
+	option = {
+		name = nf_brotherhood.16.c
+		
+		64 = {
+			add_timed_idea = { 
+				idea = vandenbergidea
+				days = 365
+			}
+			add_building_construction = {
+				type = anti_air_building
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = radar_station
+				level = 5
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = {
+					all_provinces = yes
+				}
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	
+}
+
+country_event = {
+
+	id = nf_brotherhood.17
+	title = nf_brotherhood.17.t
+	desc = nf_brotherhood.17.desc
+	picture = GFX_report_event_fascist_speech
+
+	
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.17.a
+		
+		add_manpower = -1600
+		
+		country_event = { id = nf_brotherhood.18 }
+	}
+	
+	option = {
+		name = nf_brotherhood.17.b
+		
+	
+		BOS = {
+			country_event = { id = nf_brotherhood.19 }
+		}
+	}
+
+}
+	
+country_event = {
+
+	id = nf_brotherhood.18
+	title = nf_brotherhood.18.t
+	desc = nf_brotherhood.18.desc
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.18.a
+		
+		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 2000 producer = BOS }
+		
+		BOS = {
+			country_event = { id = nf_brotherhood.20 }
+		}
+	}
+	
+}
+
+country_event = {
+
+	id = nf_brotherhood.19
+	title = nf_brotherhood.19.t
+	desc = nf_brotherhood.19.desc
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_brotherhood.19.a
+		
+	}
+	
+}
+
+country_event = {
+
+	id = nf_brotherhood.20 
+	title = nf_brotherhood.20.t
+	desc = nf_brotherhood.20.desc
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.20.a
+		
+		load_oob = sponsoredarms
+	}
+	
+}
+
+country_event = { #Demand The Bay
+
+	id = nf_brotherhood.22
+	title = nf_brotherhood.22.t
+	desc = nf_brotherhood.22.desc
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.22.a
+		
+		SHI = { country_event = { id = nf_brotherhood.23 }}
+	}
+	
+}
+
+country_event = {
+
+	id = nf_brotherhood.23
+	title = nf_brotherhood.23.t
+	desc = nf_brotherhood.23.desc
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.23.a #Give the BOS the bay
+		
+		BOS = {
+			annex_country = {
+				target = SHI
+			}
+		}
+	}
+	
+	option = {
+		name = nf_brotherhood.23.b #Refuse
+	
+		BOS = { country_event = { id = nf_brotherhood.24 }}
+	}
+	
+}
+
+country_event = {
+
+	id = nf_brotherhood.24
+	title = nf_brotherhood.24.t
+	desc = nf_brotherhood.24.desc
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.24.a #Declare war for the Bay
+
+		declare_war_on = {
+			target = SHI
+			type = annex_everything
+		}
+	}
+	
+	option = {
+		name = nf_brotherhood.24.b #Back down
+	
+	}
+	
+}
+
+country_event = { #Victory or Death
+
+	id = nf_brotherhood.26
+	title = nf_brotherhood.26.t
+	desc = nf_brotherhood.26.desc
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_brotherhood.26.a
+		
+		add_ideas = bosdigin
+	}
+	
+	option = {
+		name  = nf_brotherhood.26.b
+		
+		set_country_flag = unearthingmonsters
+	}
+
+}
+
+country_event = {
+	id = nf_brotherhood.27
+	title = nf_brotherhood.27.t
+	desc = nf_brotherhood.27.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.27.a
+		trigger = {
+			TON = { is_ai = yes }
+		}
+		
+		annex_country = { target = TON transfer_troops = yes }
+		
+		if = {
+			limit = {
+				is_in_faction_with = DES #Rangers get some of their historic territory back (otherwise they'd war for it later)
+			}
+			DES = { 
+				transfer_state = 517
+			}
+		}
+        
+	}
+	
+	option = {
+		name = nf_brotherhood.27.a
+		trigger = {
+			TON = { is_player = yes }
+		}
+		
+		TON = { country_event = { id = nf_brotherhood.29 }}
+        
+	}
+	
+	
+}
+
+country_event = { #Player Umbra choice
+
+	id = nf_brotherhood.28
+	title = nf_brotherhood.28.t
+	desc = nf_brotherhood.28.desc
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_brotherhood.28.a
+		
+		BOS = {	#Players get to join the faction so they dont game over
+			add_to_faction = UMB 
+		}
+		
+	}
+	
+	option = {
+		name  = nf_brotherhood.28.b
+		
+		#No thx
+	}
+
+}
+
+country_event = { #Player Tohono choice
+
+	id = nf_brotherhood.29
+	title = nf_brotherhood.29.t
+	desc = nf_brotherhood.29.desc
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_brotherhood.29.a
+		
+		BOS = {	
+			add_to_faction = TON
+		}
+		
+	}
+	
+	option = {
+		name  = nf_brotherhood.29.b
+		
+		#No 
+	}
+
+}
+
+country_event = { #Player Mojave Choice
+
+	id = nf_brotherhood.30
+	title = nf_brotherhood.30.t
+	desc = nf_brotherhood.30.desc
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_brotherhood.30.a
+		
+		BOS = {	
+			add_to_faction = MOJ
+		}
+		
+	}
+	
+	option = {
+		name  = nf_brotherhood.30.b
+		
+		#No 
+	}
+
+}
+
+country_event = { 
+
+	id = nf_brotherhood.31
+	title = nf_brotherhood.31.t
+	desc = nf_brotherhood.31.desc
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_brotherhood.31.a
+		
+		add_ideas = repconnencryption
+		
+		country_event = { days = 7 id = nf_brotherhood.32 }
+	}
+	
+	option = {
+		name = nf_brotherhood.31.b
+		
+		add_resource = {
+			type = metal
+			amount = 8
+		}
+		
+		country_event = { days = 7 id = nf_brotherhood.32  }
+	}
+	
+	
+}
+
+country_event = { 
+
+	id = nf_brotherhood.32
+	title = nf_brotherhood.32.t
+	desc = nf_brotherhood.32.desc
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_brotherhood.32.a
+		
+		add_ideas = robcoprototypes
+		
+		country_event = { days = 7 id = nf_brotherhood.33 }
+	}
+	
+	option = {
+		name = nf_brotherhood.32.b
+		
+		add_resource = {
+			type = advanced_technology
+			amount = 8
+		}
+		
+		country_event = { days = 7 id = nf_brotherhood.33 }
+	}
+	
+	
+}
+
+country_event = { 
+
+	id = nf_brotherhood.33
+	title = nf_brotherhood.33.t
+	desc = nf_brotherhood.33.desc
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_brotherhood.33.a
+		
+		add_ideas = robcorockets
+		
+		if = {
+			limit = {
+				has_idea = {
+					repconnencryption
+					robcoprototypes
+				}
+			}
+			
+			add_ideas = robcodesign
+			
+			add_ideas = plasmatrials
+			
+		}
+		else = {
+			add_ideas = robotsalvage
+		}
+		
+	}
+	
+	option = {
+		name = nf_brotherhood.32.b
+		
+		add_resource = {
+			type = fuel
+			amount = 8
+		}
+		
+		add_ideas = robotsalvage
+		
+	}
+	
+	
+}

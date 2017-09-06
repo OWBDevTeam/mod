@@ -1,9 +1,13 @@
-﻿name="Fallout Mod"
+﻿name="Old World Blues"
 path="mod/falloutmod/"
 tags={
 	"Alternative History"
+	"Map"
+	"National Focuses"
+	"Events"	
 }
 supported_version="1.4.*"
+picture="thumb.png"
 replace_path = "map/strategicregions"
 replace_path = "common/ideas"
 replace_path = "common/countries"

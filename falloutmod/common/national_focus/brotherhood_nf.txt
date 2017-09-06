@@ -1,0 +1,2837 @@
+focus_tree = {
+	id = nf_brotherhood
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = BOS
+		}
+	}
+	default = no
+	focus = {
+		id = bos_justice
+		icon = GFX_goal_generic_demand_territory
+		cost = 1
+		x = 17
+		y = 0
+		completion_reward = {
+			country_event = { id = nf_brotherhood.1 }
+		}
+
+	}
+	focus = {
+		id = bos_glow
+		icon = GFX_goal_generic_demand_territory
+		cost = 1
+		prerequisite = {
+			focus = bos_justice
+		}
+		x = 17
+		y = 1
+		completion_reward = {
+			country_event = { id = nf_brotherhood.2 }
+		}
+
+	}
+	focus = {
+		id = bos_vipers
+		icon = GFX_goal_generic_demand_territory
+		cost = 1
+		prerequisite = {
+			focus = bos_glow
+		}
+		x = 17
+		y = 2
+		completion_reward = {
+			country_event = { id = nf_brotherhood.3 }
+		}
+
+	}
+	focus = {
+		id = bos_oldamerica
+		icon = GFX_goal_generic_demand_territory
+		cost = 1
+		prerequisite = {
+			focus = bos_vipers
+		}
+		x = 17
+		y = 3
+		completion_reward = {
+			country_event = { id = nf_brotherhood.4 }
+		}
+
+	}
+	focus = {
+		id = bos_hangars
+		icon = GFX_goal_generic_build_airforce
+		cost = 8.6
+		prerequisite = {
+			focus = bos_oldamerica
+		}
+		x = 1
+		y = 4
+		completion_reward = {
+			157 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			548 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			473 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_harbours
+		icon = GFX_goal_generic_build_navy
+		cost = 8.6
+		prerequisite = {
+			focus = bos_oldamerica
+		}
+		x = 5
+		y = 4
+		completion_reward = {
+			104 = {	
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			474 = {	
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			473 = {	
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_expansion
+		icon = GFX_goal_generic_soviet_construction
+		cost = 8.6
+		prerequisite = {
+			focus = bos_oldamerica
+		}
+		x = 8
+		y = 4
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+
+	}
+	focus = {
+		id = bos_optics
+		icon = GFX_goal_generic_special_forces
+		cost = 8.6
+		prerequisite = {
+			focus = bos_expansion
+		}
+		x = 10
+		y = 5
+		completion_reward = {
+			custom_effect_tooltip = bos_optics_tt
+			hidden_effect = { set_technology = { bosoptics = 1 }}
+		}
+
+	}
+	focus = {
+		id = bos_restructure
+		icon = GFX_goal_generic_position_armies
+		cost = 8.6
+		prerequisite = {
+			focus = bos_oldamerica
+		}
+		x = 13
+		y = 4
+		completion_reward = {
+			remove_ideas = oldguard
+		}
+
+	}
+	focus = {
+		id = bos_outsiders
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 8.6
+		prerequisite = {
+			focus = bos_restructure
+		}
+		x = 12
+		y = 5
+		completion_reward = {
+			add_ideas = outsider_recruitment
+		}
+
+	}
+	focus = {
+		id = bos_techreallocation
+		icon = GFX_goal_generic_oil_refinery
+		cost = 8.6
+		prerequisite = {
+			focus = bos_restructure
+		}
+		x = 14
+		y = 5
+		completion_reward = {
+			245 = {
+				add_resource = {
+					type = advanced_technology
+					amount = 8
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_commonground
+		icon = GFX_goal_generic_demand_territory
+		cost = 8.6
+		prerequisite = {
+			focus = bos_oldamerica
+		}
+		x = 17
+		y = 4
+		completion_reward = {
+			country_event = { id = nf_brotherhood.5 }
+		}
+
+	}
+	focus = {
+		id = bos_union
+		icon = GFX_goal_generic_improve_relations
+		cost = 8.6
+		prerequisite = {
+			focus = bos_commonground
+		}
+		mutually_exclusive = {
+			focus = bos_seize
+		}
+		x = 16
+		y = 5
+		completion_reward = {
+			if = {
+				limit = {
+					ARR = { is_ai = yes }
+				}
+				add_to_faction = ARR
+			}
+			
+			if = {
+				limit = {
+					ARR = { is_ai = no }
+				}
+				ARR = {
+					country_event = { id = nf_brotherhood.6 }
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_seize
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = bos_commonground
+		}
+		mutually_exclusive = {
+			focus = bos_union
+		}
+		x = 18
+		y = 5
+		completion_reward = {
+			add_state_claim = 32
+			add_state_claim = 337
+			add_state_claim = 96
+		}
+
+	}
+	focus = {
+		id = bos_homefront
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		prerequisite = {
+			focus = bos_union
+			focus = bos_seize
+		}
+		x = 17
+		y = 6
+		completion_reward = {
+			country_event = { id = nf_brotherhood.7 }
+		}
+
+	}
+	focus = {
+		id = bos_exploresilicon
+		icon = GFX_goal_generic_more_territorial_claims
+		cost = 8.6
+		prerequisite = {
+			focus = bos_homefront
+		}
+		mutually_exclusive = {
+			focus = bos_scrapsilicon
+		}
+		x = 18
+		y = 7
+		completion_reward = {
+			country_event = { id = nf_brotherhood.8 }
+		}
+
+	}
+	focus = {
+		id = bos_scrapsilicon
+		icon = GFX_goal_generic_oil_refinery
+		cost = 8.6
+		prerequisite = {
+			focus = bos_homefront
+		}
+		mutually_exclusive = {
+			focus = bos_exploresilicon
+		}
+		x = 16
+		y = 7
+		completion_reward = {
+			104 = {
+				add_resource = {
+					type = metal
+					amount = 16
+				}
+			}
+		}
+	}
+	focus = {
+		id = bos_slums
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 8.6
+		prerequisite = {
+			focus = bos_exploresilicon
+			focus = bos_scrapsilicon
+		}
+		x = 18
+		y = 8
+		completion_reward = {
+			104 = {
+				add_resource = {
+					type = water
+					amount = 8
+				}
+			}
+			add_ideas = bosdevelopedslums
+		}
+
+	}
+	focus = {
+		id = bos_strip
+		icon = GFX_goal_generic_construction2
+		cost = 8.6
+		prerequisite = {
+			focus = bos_scrapsilicon
+			focus = bos_exploresilicon
+		}
+		x = 16
+		y = 8
+		completion_reward = {
+			104 = {
+				add_resource = {
+					type = metal
+					amount = 8
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_civillians
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8.6
+		prerequisite = {
+			focus = bos_slums
+			focus = bos_strip
+		}
+		mutually_exclusive = {
+			focus = bos_destroy
+		}
+		x = 18
+		y = 9
+		completion_reward = {
+			104 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1 
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_destroy
+		icon = GFX_goal_generic_oil_refinery
+		cost = 8.6
+		prerequisite = {
+			focus = bos_slums
+			focus = bos_strip
+		}
+		mutually_exclusive = {
+			focus = bos_civillians
+		}
+		x = 16
+		y = 9
+		completion_reward = {
+			add_national_unity = 0.05
+			104 = {
+				add_resource = {
+					type = electronics
+					amount = 8
+				}
+			}
+			104 = {
+				add_resource = {
+					type = advanced_technology
+					amount = 8
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_expand
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8.6
+		prerequisite = {
+			focus = bos_civillians
+			focus = bos_destroy
+		}
+		mutually_exclusive = {
+			focus = bos_curbstomp
+		}
+		x = 18
+		y = 10
+		completion_reward = {
+			104 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1 
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_curbstomp
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		prerequisite = {
+			focus = bos_destroy
+			focus = bos_civillians
+		}
+		mutually_exclusive = {
+			focus = bos_expand
+		}
+		x = 16
+		y = 10
+		completion_reward = {
+			country_event = { id = nf_brotherhood.9 }
+		}
+
+	}
+	focus = {
+		id = bos_shichapter
+		icon = GFX_goal_generic_improve_relations
+		cost = 8.6
+		prerequisite = {
+			focus = bos_expand
+			focus = bos_curbstomp
+		}
+		mutually_exclusive = {
+			focus = bos_steelrain
+		}
+		x = 18
+		y = 11
+		completion_reward = {
+			if = {
+				limit = {
+					SHI = { is_ai = yes }
+				}
+				add_to_faction = SHI
+				SHI = {
+					set_politics = {
+						ruling_party = intellectuals
+						elections_allowed = no
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					SHI = { is_ai = no }
+				}
+				SHI = {
+					country_event = { id = nf_brotherhood.10 }
+				}
+			}
+			
+		}
+
+	}
+	focus = {
+		id = bos_gauss
+		icon = GFX_goal_generic_army_artillery2
+		cost = 8.6
+		prerequisite = {
+			focus = bos_emperor
+		}
+		x = 18
+		y = 13
+		completion_reward = {
+			set_technology = {
+				gauss_weaponry = 1
+			}
+		}
+
+	}
+	focus = {
+		id = bos_emperor
+		icon = GFX_goal_generic_air_fighter
+		cost = 8.6
+		prerequisite = {
+			focus = bos_shichapter
+		}
+		x = 18
+		y = 12
+		completion_reward = {
+			set_technology = {
+				xian_85_fighter = 1 
+			}
+		}
+	}
+	focus = {
+		id = bos_vertibirds
+		icon = GFX_goal_generic_air_bomber
+		cost = 8.6
+		prerequisite = {
+			focus = bos_emperor
+		}
+		x = 20
+		y = 13
+		completion_reward = {
+			set_technology = {
+				vertiberd_transport1 = 1 
+			}
+			set_technology = {
+				vertiberd_gunship = 1 
+			}
+		}
+
+	}
+	focus = {
+		id = bos_mojavevets
+		icon = GFX_goal_generic_special_forces
+		cost = 8.6
+		prerequisite = {
+			focus = bos_oldamerica
+		}
+		x = 22
+		y = 4
+		completion_reward = {
+			load_oob = mojavevets
+		}
+
+	}
+	focus = {
+		id = bos_mojavesignal
+		icon = GFX_goal_generic_radar
+		cost = 8.6
+		prerequisite = {
+			focus = bos_mojavevets
+		}
+		x = 22
+		y = 5
+		completion_reward = {
+			if = {
+				limit = {
+					MOJ = {
+						has_country_leader = { id = 981 }
+					}
+				}
+				country_event = { id = nf_brotherhood.11 }
+			}
+			if = {
+				limit = {
+					MOJ = {
+						has_country_leader = { id = 982 }
+					}
+				}
+				country_event = { id = nf_brotherhood.12 }
+			}
+		}
+	}
+	focus = {
+		id = bos_genius
+		icon = GFX_focus_research
+		cost = 8.6
+		prerequisite = {
+			focus = bos_mojavesignal
+		}
+		mutually_exclusive = {
+			focus = bos_hardin
+		}
+		x = 21
+		y = 6
+		available = {
+			MOJ = {
+				has_country_leader = { id = 981 }
+			}
+		}
+		completion_reward = {
+			add_ideas = elijahgenius
+		}
+	}
+	focus = {
+		id = bos_hardin
+		icon = GFX_goal_generic_army_doctrines
+		cost = 8.6
+		prerequisite = {
+			focus = bos_mojavesignal
+		}
+		mutually_exclusive = {
+			focus = bos_genius
+		}
+		x = 23
+		y = 6
+		available = {
+			MOJ = {
+				has_country_leader = { id = 982 }
+			}
+		}
+		completion_reward = {
+			add_ideas = hardintactics
+		}
+	}
+	focus = {
+		id = bos_drills
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		prerequisite = {
+			focus = bos_hardin
+		}
+		x = 23
+		y = 7
+		completion_reward = {
+			add_ideas = bosdrills
+		}
+	}
+	focus = {
+		id = bos_mojaveequip
+		icon = GFX_goal_rhineland
+		cost = 8.6
+		prerequisite = {
+			focus = bos_drills
+		}
+		x = 23
+		y = 8
+		completion_reward = {
+			add_ideas = bosmojaveequip
+		}
+
+	}
+	focus = {
+		id = bos_logisticaltech
+		icon = GFX_goal_generic_position_armies
+		cost = 8.6
+		prerequisite = {
+			focus = bos_mojaveequip
+		}
+		x = 23
+		y = 9
+		completion_reward = {
+			add_ideas = boslogistictech
+		}
+
+	}
+	focus = {
+		id = bos_foundry
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8.6
+		prerequisite = {
+			focus = bos_logisticaltech
+		}
+		x = 23
+		y = 10
+		completion_reward = {
+			157 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_militia
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 8.6
+		prerequisite = {
+			focus = bos_foundry
+		}
+		x = 23
+		y = 11
+		completion_reward = {
+			load_oob = bosmilitia
+		}
+
+	}
+	focus = {
+		id = bos_blueprints
+		icon = GFX_focus_research
+		cost = 8.6
+		prerequisite = {
+			focus = bos_oldamerica
+		}
+		x = 29
+		y = 4
+		completion_reward = {
+			add_ideas = losthillsdatabase
+		}
+
+	}
+	focus = {
+		id = bos_microfusion
+		icon = GFX_goal_poland_goal
+		cost = 8.6
+		prerequisite = {
+			focus = bos_blueprints
+		}
+		x = 27
+		y = 5
+		completion_reward = {
+			add_ideas = microfusion
+		}
+
+	}
+	focus = {
+		id = bos_focusedlens
+		icon = GFX_goal_generic_army_artillery
+		cost = 8.6
+		prerequisite = {
+			focus = bos_microfusion
+		}
+		x = 27
+		y = 6
+		completion_reward = {
+			add_ideas = focuslens
+		}
+
+	}
+	focus = {
+		id = bos_reactionchambers
+		icon = GFX_goal_generic_occupy_start_war
+		cost = 8.6
+		prerequisite = {
+			focus = bos_focusedlens
+		}
+		x = 27
+		y = 7
+		completion_reward = {
+			add_ideas = reactionchambers
+		}
+
+	}
+	focus = {
+		id = bos_simplified
+		icon = GFX_goal_generic_army_artillery
+		cost = 8.6
+		prerequisite = {
+			focus = bos_reactionchambers
+		}
+		mutually_exclusive = {
+			focus = bos_oldworld
+		}
+		x = 25
+		y = 8
+		completion_reward = {
+			add_ideas = bossimpledesigns
+		}
+
+	}
+	focus = {
+		id = bos_oldworld
+		icon = GFX_focus_wonderweapons
+		cost = 8.6
+		prerequisite = {
+			focus = bos_reactionchambers
+		}
+		mutually_exclusive = {
+			focus = bos_simplified
+		}
+		x = 27
+		y = 8
+		completion_reward = {
+			add_ideas = bosoldworldfocuses
+		}
+
+	}
+	focus = {
+		id = bos_allinone
+		icon = GFX_goal_generic_production2
+		cost = 8.6
+		prerequisite = {
+			focus = bos_simplified
+		}
+		x = 25
+		y = 9
+		completion_reward = {
+			add_ideas = cellsinone
+		}
+
+	}
+	focus = {
+		id = bos_powermanage
+		icon = GFX_goal_generic_production
+		cost = 8.6
+		prerequisite = {
+			focus = bos_oldworld
+			focus = bos_allinone
+		}
+		x = 27
+		y = 10
+		completion_reward = {
+			add_ideas = powermanagement
+		}
+
+	}
+	focus = {
+		id = bos_viperlogs
+		icon = GFX_goal_generic_air_doctrine
+		cost = 8.6
+		prerequisite = {
+			focus = bos_blueprints
+		}
+		x = 29
+		y = 5
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = bos_mutantramblings
+		icon = GFX_goal_generic_cavalry
+		cost = 8.6
+		prerequisite = {
+			focus = bos_viperlogs
+		}
+		x = 29
+		y = 6
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = bos_navarrotacticaldata
+		icon = GFX_goal_generic_army_doctrines
+		cost = 8.6
+		prerequisite = {
+			focus = bos_mutantramblings
+		}
+		x = 29
+		y = 7
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 4
+				category = land_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = bos_scribemaintenance
+		icon = GFX_goal_generic_military_sphere
+		cost = 8.6
+		prerequisite = {
+			focus = bos_blueprints
+		}
+		x = 31
+		y = 5
+		completion_reward = {
+			add_ideas = maintenanceroutines
+		}
+
+	}
+	focus = {
+		id = bos_servos
+		icon = GFX_goal_generic_production2
+		cost = 8.6
+		prerequisite = {
+			focus = bos_scribemaintenance
+		}
+		x = 31
+		y = 6
+		completion_reward = {
+			add_ideas = servoupkeep
+		}
+
+	}
+	focus = {
+		id = bos_alloys
+		icon = GFX_goal_generic_construction
+		cost = 8.6
+		prerequisite = {
+			focus = bos_servos
+		}
+		x = 31
+		y = 7
+		completion_reward = {
+			add_ideas = alloyfoundries
+		}
+
+	}
+	focus = {
+		id = bos_superioralloys
+		icon = GFX_goal_generic_build_tank
+		cost = 8.6
+		prerequisite = {
+			focus = bos_alloys
+		}
+		mutually_exclusive = {
+			focus = bos_scraprefinement
+		}
+		x = 31
+		y = 8
+		completion_reward = {
+			add_ideas = superioralloys
+		}
+
+	}
+	focus = {
+		id = bos_surge
+		icon = GFX_focus_wonderweapons
+		cost = 8.6
+		prerequisite = {
+			focus = bos_oldworld
+		}
+		prerequisite = {
+			focus = bos_superioralloys
+		}
+		x = 29
+		y = 9
+		completion_reward = {
+			set_technology = { tesla_weaponry = 1 }
+		}
+
+	}
+	focus = {
+		id = bos_secureequipment
+		icon = GFX_goal_generic_consumer_goods
+		cost = 8.6
+		prerequisite = {
+			focus = bos_oldamerica
+		}
+		x = 41
+		y = 4
+		completion_reward = {
+			NCR = { 
+				country_event = {
+					id = nf_brotherhood.13
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_developmaxson
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 8.6
+		prerequisite = {
+			focus = bos_secureequipment
+		}
+		x = 35
+		y = 5
+		completion_reward = {
+			245 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = {
+						all_provinces = yes
+					}
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = water_generator
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_armmaxson
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 8.6
+		prerequisite = {
+			focus = bos_scribemaintenance
+			focus = bos_developmaxson
+		}
+		x = 33
+		y = 6
+		completion_reward = {
+			add_ideas = armingmaxson
+		}
+
+	}
+	focus = {
+		id = bos_maxsonoutpost
+		icon = GFX_goal_generic_construct_military
+		cost = 8.6
+		prerequisite = {
+			focus = bos_developmaxson
+		}
+		x = 35
+		y = 6
+		completion_reward = {
+			245 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = {
+						all_provinces = yes
+					}
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = bos_maxsonrecruitment
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 8.6
+		prerequisite = {
+			focus = bos_maxsonoutpost
+		}
+		x = 35
+		y = 7
+		completion_reward = {
+			add_ideas = maxsonrecruitmentdrive
+		}
+
+	}
+	focus = {
+		id = bos_dockyards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 8.6
+		prerequisite = {
+			focus = bos_maxsonrecruitment
+		}
+		x = 35
+		y = 8
+		completion_reward = {
+			245 = {
+				add_building_construction = {
+					type = naval_base
+					level = 5
+					instant = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+					level = 1
+					instant_build = yes
+				}
+			}
+			64 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+					level = 1
+					instant_build = yes
+				}
+			}
+			258 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+					level = 1
+					instant_build = yes
+				}
+			}
+
+		}
+	}
+	focus = {
+		id = bos_vandenberg
+		icon = GFX_goal_generic_position_armies
+		cost = 8.6
+		prerequisite = {
+			focus = bos_dockyards
+		}
+		x = 35
+		y = 9
+		completion_reward = {
+			country_event = { id = nf_brotherhood.16 }
+		}
+
+	}
+	focus = {
+		id = bos_navarrooutpost
+		icon = GFX_goal_generic_construct_military
+		cost = 8.6
+		prerequisite = {
+			focus = bos_secureequipment
+		}
+		x = 37
+		y = 5
+		completion_reward = {
+			216 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+					instant_build = yes
+				}
+			}
+			474 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					any_owned_state = { is_core_of = UMB }
+				}
+				every_owned_state = {
+					limit = {
+						is_core_of = UMB
+					}
+					
+					add_building_construction = {
+						type = bunker
+						level = 1
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = bos_navarrodefense
+		icon = GFX_goal_generic_construct_civilian
+		cost = 8.6
+		prerequisite = {
+			focus = bos_navarrooutpost
+		}
+		x = 37
+		y = 6
+		completion_reward = {
+			548 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					province = {
+						all_provinces = yes
+					}
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_navarrohangars
+		icon = GFX_goal_generic_build_airforce
+		cost = 8.6
+		prerequisite = {
+			focus = bos_navarrodefense
+		}
+		x = 37
+		y = 7
+		completion_reward = {
+			548 = {
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_controlcentre
+		icon = GFX_goal_generic_radar
+		cost = 8.6
+		prerequisite = {
+			focus = bos_navarrohangars
+		}
+		x = 37
+		y = 8
+		completion_reward = {
+			548 = {
+				add_building_construction = {
+					type = radar_station
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_research
+		icon = GFX_focus_research
+		cost = 8.6
+		prerequisite = {
+			focus = bos_controlcentre
+		}
+		x = 37
+		y = 9
+		completion_reward = {
+			add_ideas = navarroscribes
+		}
+	}
+	focus = {
+		id = bos_secrets
+		icon = GFX_goal_generic_air_bomber
+		cost = 8.6
+		prerequisite = {
+			focus = bos_research
+		}
+		x = 37
+		y = 10
+		completion_reward = {
+			add_ideas = navarrosecrets
+		}
+
+	}
+	focus = {
+		id = bos_vertibirdrepairs
+		icon = GFX_goal_generic_air_fighter
+		cost = 8.6
+		prerequisite = {
+			focus = bos_secrets
+		}
+		x = 37
+		y = 11
+		completion_reward = {
+			add_ideas = vertibirdrepairs
+		}
+
+	}
+	focus = {
+		id = bos_vertibirdequipment
+		icon = GFX_goal_generic_air_production
+		cost = 8.6
+		prerequisite = {
+			focus = bos_vertibirdrepairs
+		}
+		x = 37
+		y = 12
+		completion_reward = {
+			add_ideas = vertibirdequip
+		}
+
+	}
+	focus = {
+		id = bos_powerarmourdevelop
+		icon = GFX_goal_generic_build_tank
+		cost = 8.6
+		prerequisite = {
+			focus = bos_vertibirdequipment
+		}
+		x = 37
+		y = 13
+		completion_reward = {
+			add_ideas = powerarmourdevelopment
+		}
+
+	}
+	focus = {
+		id = bos_zeppelinfoundry
+		icon = GFX_goal_generic_air_naval_bomber
+		cost = 8.6
+		prerequisite = {
+			focus = bos_powerarmourdevelop
+		}
+		x = 37
+		y = 14
+		completion_reward = {
+			add_ideas = zeppelinfoundry
+		}
+
+	}
+	focus = {
+		id = bos_forbiddensecrets
+		icon = GFX_goal_generic_secret_weapon
+		cost = 8.6
+		allow_branch = { 
+			has_completed_focus = bos_zeppelinfoundry
+			has_country_flag = enclave_science_pil1
+			has_country_flag = enclave_science_pil2
+		}
+		prerequisite = {
+			focus = bos_zeppelinfoundry
+		}
+		x = 37
+		y = 15
+		completion_reward = {
+			add_ideas = forbiddensecrets
+		
+		}
+
+	}
+	focus = {
+		id = bos_generatordesign
+		icon = GFX_goal_generic_oil_refinery
+		cost = 8.6
+		prerequisite = {
+			focus = bos_navarrodefense
+		}
+		x = 39
+		y = 7
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = electricity_generator
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_navarrofacilities
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8.6
+		prerequisite = {
+			focus = bos_generatordesign
+		}
+		x = 39
+		y = 8
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_maxsongifts
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		prerequisite = {
+			focus = bos_powerarmourdevelop
+		}
+		x = 39
+		y = 14
+		completion_reward = {
+			add_ideas = armyknowledge
+		}
+
+	}
+	focus = {
+		id = bos_welcomingcommittee
+		icon = GFX_goal_generic_special_forces
+		cost = 8.6
+		prerequisite = {
+			focus = bos_secureequipment
+		}
+		x = 41
+		y = 5
+		completion_reward = {
+			DES = {
+				load_oob = welcomingcommittee
+			}
+		}
+
+	}
+	focus = {
+		id = bos_rangerpaladins
+		icon = GFX_goal_generic_production2
+		cost = 8.6
+		prerequisite = {
+			focus = bos_welcomingcommittee
+		}
+		x = 41
+		y = 6
+		completion_reward = {
+			DES = {
+				set_technology = {
+					power_armour_t45d = 1 
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_brotherhoodarms
+		icon = GFX_goal_generic_military_sphere
+		cost = 8.6
+		prerequisite = {
+			focus = bos_rangerpaladins
+		}
+		x = 41
+		y = 7
+		completion_reward = {
+			DES = {
+				country_event = {
+					id = nf_brotherhood.17
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_scribelexicon
+		icon = GFX_goal_generic_army_artillery
+		cost = 8.6
+		prerequisite = {
+			focus = bos_brotherhoodarms
+		}
+		x = 41
+		y = 8
+		completion_reward = {
+			DES = {
+				set_technology = { improved_laser_weaponry = 1 }
+			}
+		}
+	}
+	focus = {
+		id = bos_hammer
+		icon = GFX_goal_generic_production
+		cost = 8.6
+		prerequisite = {
+			focus = bos_scribelexicon
+		}
+		x = 41
+		y = 9
+		completion_reward = {
+			DES = {
+				add_ideas = bosdrillsergeants
+			}
+		}
+
+	}
+	focus = {
+		id = bos_anvil
+		icon = GFX_goal_generic_fortify_city
+		cost = 8.6
+		prerequisite = {
+			focus = bos_hammer
+		}
+		x = 41
+		y = 10
+		completion_reward = {
+			DES = {
+				add_ideas = navarroscoutcamp
+			}
+		}
+	}
+	focus = {
+		id = bos_steel
+		icon = GFX_goal_generic_production2
+		cost = 8.6
+		prerequisite = {
+			focus = bos_anvil
+		}
+		x = 41
+		y = 11
+		completion_reward = {
+			DES = {
+				add_ideas = scribecontractors
+			}
+		}
+	}
+	focus = {
+		id = bos_bayarea
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 8.6
+		prerequisite = {
+			focus = bos_secureequipment
+		}
+		x = 43
+		y = 5
+		completion_reward = {
+			if = {
+				limit = {
+					has_state = 163
+				}
+				163 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+			
+			474 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			104 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			132 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			473 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			
+		}
+
+	}
+	focus = {
+		id = bos_recreatemilits
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8.6
+		prerequisite = {
+			focus = bos_bayarea
+		}
+		x = 43
+		y = 6
+		completion_reward = {
+			if = {
+				limit = {
+					has_state = 163
+				}
+				163 = {
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			
+			474 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			104 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			132 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			473 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+		}
+
+	}
+	focus = {
+		id = bos_heartland
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8.6
+		prerequisite = {
+			focus = bos_recreatemilits
+		}
+		x = 43
+		y = 7
+		completion_reward = {
+			if = {
+				limit = {
+					has_state = 163
+				}
+				163 = {
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			
+			474 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			104 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			132 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			473 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+		}
+
+	}
+	focus = {
+		id = bos_renovatearms
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8.6
+		prerequisite = {
+			focus = bos_heartland
+		}
+		x = 43
+		y = 8
+		completion_reward = {
+			if = {
+				limit = {
+					has_state = 163
+				}
+				163 = {
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			
+			474 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			104 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			132 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			473 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+		}
+
+	}
+	focus = {
+		id = bos_westforge
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8.6
+		prerequisite = {
+			focus = bos_renovatearms
+		}
+		x = 43
+		y = 9
+		completion_reward = {
+			if = {
+				limit = {
+					has_state = 163
+				}
+				163 = {
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			
+			474 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			104 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			132 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			473 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+		}
+
+	}
+	focus = {
+		id = bos_armedbay
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 8.6
+		prerequisite = {
+			focus = bos_westforge
+		}
+		x = 43
+		y = 10
+		completion_reward = {
+			if = {
+				limit = {
+					has_state = 163
+				}
+				163 = {
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			
+			474 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			104 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			132 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			473 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+		}
+
+	}
+	focus = {
+		id = bos_fighters
+		icon = GFX_goal_generic_air_fighter
+		cost = 8.6
+		prerequisite = {
+			focus = bos_hangars
+		}
+		x = 1
+		y = 5
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 1
+				category = light_fighter
+			}
+		}
+
+	}
+	focus = {
+		id = bos_support
+		icon = GFX_goal_generic_air_bomber
+		cost = 8.6
+		prerequisite = {
+			focus = bos_fighters
+		}
+		x = 1
+		y = 6
+		completion_reward = {
+			add_tech_bonus = {
+				name = support_bonus
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+			}
+		}
+
+	}
+	focus = {
+		id = bos_airlexicon
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 8.6
+		prerequisite = {
+			focus = bos_support
+		}
+		x = 1
+		y = 7
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_doctrine_bonus
+				bonus = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+
+	}
+	focus = {
+		id = bos_behemoths
+		icon = GFX_goal_generic_navy_anti_submarine
+		cost = 8.6
+		prerequisite = {
+			focus = bos_airlexicon
+		}
+		mutually_exclusive = {
+			focus = bos_bombers
+		}
+		x = 0
+		y = 8
+		completion_reward = {
+			add_tech_bonus = {
+				name = zeppelin_bonus
+				bonus = 0.5
+				uses = 1
+				category =	heavy_air
+			}
+		}
+
+	}
+	focus = {
+		id = bos_bombers
+		icon = GFX_goal_generic_air_bomber
+		cost = 8.6
+		prerequisite = {
+			focus = bos_airlexicon
+		}
+		mutually_exclusive = {
+			focus = bos_behemoths
+		}
+		x = 2
+		y = 8
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 1
+				category =	cat_strategic_bomber
+			}
+		}
+
+	}
+	focus = {
+		id = bos_scourge
+		icon = GFX_goal_generic_air_fighter2
+		cost = 8.6
+		prerequisite = {
+			focus = bos_behemoths
+		}
+		x = 0
+		y = 9
+		completion_reward = {
+			country_event = { id = nf_brotherhood.21 }
+		}
+
+	}
+	focus = {
+		id = bos_seatrials
+		icon = GFX_goal_generic_navy_submarine
+		cost = 8.6
+		prerequisite = {
+			focus = bos_harbours
+		}
+		x = 5
+		y = 5
+		completion_reward = {
+			add_tech_bonus = {
+				name = raiding_boats_bonus
+				bonus = 0.5
+				uses = 2
+				category =	ship_destroyer_tech
+			}
+		}
+
+	}
+	focus = {
+		id = bos_navallexicon
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 8.6
+		prerequisite = {
+			focus = bos_seatrials
+		}
+		x = 5
+		y = 6
+		completion_reward = {
+			add_tech_bonus = {
+				name = naval_doctrine_bonus
+				bonus = 0.5
+				uses = 2
+				category =	naval_doctrine
+			}
+		}
+	}
+	focus = {
+		id = bos_screening
+		icon = GFX_goal_generic_navy_battleship
+		cost = 8.6
+		prerequisite = {
+			focus = bos_navallexicon
+		}
+		x = 5
+		y = 7
+		completion_reward = {
+			add_tech_bonus = {
+				name = war_barge_bonus
+				bonus = 0.5
+				uses = 2
+				category =	cruiser_tech
+			}
+		}
+
+	}
+	focus = {
+		id = bos_seabehemoths
+		icon = GFX_goal_generic_navy_anti_submarine
+		cost = 8.6
+		prerequisite = {
+			focus = bos_screening
+		}
+		mutually_exclusive = {
+			focus = bos_aircatapults
+		}
+		x = 4
+		y = 8
+		completion_reward = {
+			add_tech_bonus = {
+				name = siege_ship_bonus
+				bonus = 0.5
+				uses = 1
+				category =	ship_battleship_tech
+			}
+		}
+
+	}
+	focus = {
+		id = bos_aircatapults
+		icon = GFX_goal_generic_navy_carrier
+		cost = 8.6
+		prerequisite = {
+			focus = bos_screening
+		}
+		mutually_exclusive = {
+			focus = bos_seabehemoths
+		}
+		x = 6
+		y = 8
+		completion_reward = {
+			add_tech_bonus = {
+				name =	carrier_bonus
+				bonus = 0.5
+				uses = 1
+				category =	ship_carrier_tech
+			}
+		}
+
+	}
+	focus = {
+		id = bos_steelcage
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 8.6
+		prerequisite = {
+			focus = bos_aircatapults
+		}
+		x = 6
+		y = 9
+		completion_reward = {
+			country_event = { id = nf_brotherhood.26 }
+		}
+
+	}
+	focus = {
+		id = bos_sword
+		icon = GFX_goal_generic_small_arms
+		cost = 8.6
+		prerequisite = {
+			focus = bos_expansion
+		}
+		x = 8
+		y = 6
+		completion_reward = {
+			add_ideas = drawnsword
+		}
+
+	}
+	focus = {
+		id = bos_navarro
+		icon = GFX_goal_generic_war_with_comintern
+		cost = 8.6
+		prerequisite = {
+			focus = bos_sword
+		}
+		x = 8
+		y = 7
+		completion_reward = {
+			add_ideas = navarroornothing
+		}
+
+	}
+	focus = {
+		id = bos_citadel
+		icon = GFX_goal_generic_production2
+		cost = 8.6
+		prerequisite = {
+			focus = bos_navarro
+		}
+		x = 8
+		y = 8
+		completion_reward = {
+			add_ideas = steelcitadel
+		}
+
+	}
+	focus = {
+		id = bos_newsteel
+		icon = GFX_goal_generic_production
+		cost = 8.6
+		prerequisite = {
+			focus = bos_citadel
+		}
+		x = 8
+		y = 9
+		completion_reward = {
+			add_ideas = newsteel
+		}
+
+	}
+	focus = {
+		id = bos_ghouls
+		icon = GFX_goal_generic_secret_weapon
+		cost = 8.6
+		prerequisite = {
+			focus = bos_newsteel
+		}
+		x = 6
+		y = 10
+		completion_reward = {
+			add_ideas = ghoulrecruitment
+			
+			#no ghouls yet :(
+		}
+
+	}
+	focus = {
+		id = bos_victoryforge
+		icon = GFX_goal_generic_construct_civilian
+		cost = 8.6
+		prerequisite = {
+			focus = bos_newsteel
+		}
+		x = 8
+		y = 10
+		completion_reward = {
+			245 = {	
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_victoryordeath
+		icon = GFX_goal_generic_CAS
+		cost = 8.6
+		prerequisite = {
+			focus = bos_victoryforge
+		}
+		x = 8
+		y = 11
+		completion_reward = {
+			country_event = { id = nf_brotherhood.26 }
+		}
+	}
+	focus = {
+		id = bos_cathedral
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8.6
+		allow_branch = { 
+			has_completed_focus = bos_victoryordeath
+			has_country_flag = unearthingmonsters
+		}
+		prerequisite = {
+			focus = bos_victoryordeath
+		}
+		x = 8
+		y = 12
+		completion_reward = {
+			132 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					province = {
+						all_provinces = yes
+					}
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_steelgiants
+		icon = GFX_goal_generic_secret_weapon
+		cost = 8.6
+		prerequisite = {
+			focus = bos_cathedral
+		}
+		x = 8
+		y = 13
+		completion_reward = {
+			load_oob = steelgiants
+		}
+
+	}
+	focus = {
+		id = bos_tactics
+		icon = GFX_goal_generic_special_forces
+		cost = 8.6
+		prerequisite = {
+			focus = bos_steelgiants
+		}
+		x = 8
+		y = 14
+		completion_reward = {
+			add_ideas = newtactics
+		}
+
+	}
+	focus = {
+		id = bos_tohonopact
+		icon = GFX_goal_generic_military_deal
+		cost = 8.6
+		prerequisite = {
+			focus = bos_optics
+		}
+		x = 10
+		y = 7
+		completion_reward = {
+			country_event = { id = nf_brotherhood.27 }
+		}
+
+	}
+	focus = {
+		id = bos_arizonanweapons
+		icon = GFX_goal_generic_special_forces
+		cost = 8.6
+		prerequisite = {
+			focus = bos_tohonopact
+		}
+		x = 10
+		y = 8
+		completion_reward = {
+			add_ideas = arizonanweapons
+		}
+
+	}
+	focus = {
+		id = bos_robots
+		icon = GFX_goal_generic_build_tank
+		cost = 8.6
+		prerequisite = {
+			focus = bos_arizonanweapons
+		}
+		x = 10
+		y = 9
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = mr_gutsy_equipment 
+				amount = 360 
+				producer = BOS
+			}
+			add_equipment_to_stockpile = {
+				type = sentrybot_equipment 
+				amount = 180 
+				producer = BOS
+			}
+		}
+
+	}
+	focus = {
+		id = bos_steelcrusade
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = bos_robots
+		}
+		
+		x = 10
+		y = 10
+		completion_reward = {
+			add_state_claim = 
+		}
+
+	}
+	focus = {
+		id = bos_oldbonds
+		icon = GFX_goal_support_democracy
+		cost = 8.6
+		prerequisite = {
+			focus = bos_surfacetensions
+		}
+		prerequisite = {
+			focus = bos_robots
+		}
+		available = {
+			NCR = {
+				has_war_with = CES
+			}
+		}
+		x = 12
+		y = 10
+		completion_reward = {
+			add_to_war = {
+				targeted_alliance = NCR
+				enemy = CES
+			}
+		}
+
+	}
+	focus = {
+		id = bos_recruitment
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 8.6
+		prerequisite = {
+			focus = bos_oldbonds
+		}
+		x = 14
+		y = 11
+		completion_reward = {
+			add_ideas = bosncrdrive
+		}
+
+	}
+	focus = {
+		id = bos_logistics
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 8.6
+		prerequisite = {
+			focus = bos_oldbonds
+		}
+		x = 12
+		y = 11
+		completion_reward = {
+			NCR = {
+				add_ideas = brotherhoodlogistics
+			}
+		}
+	}
+	focus = {
+		id = bos_ncrforge
+		icon = GFX_goal_generic_construct_civilian
+		cost = 8.6
+		prerequisite = {
+			focus = bos_logistics
+		}
+		x = 12
+		y = 12
+		completion_reward = {
+			253 = {
+				add_building_construction = {
+					type = metal_generator
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_advancedcommunication
+		icon = GFX_goal_generic_radar
+		cost = 8.6
+		prerequisite = {
+			focus = bos_techreallocation
+		}
+		x = 14
+		y = 6
+		completion_reward = {
+			add_ideas = advancedcommunications
+		}
+
+	}
+	focus = {
+		id = bos_wastelandconscripts
+		icon = GFX_goal_generic_secret_weapon
+		cost = 8.6
+		prerequisite = {
+			focus = bos_outsiders
+		}
+		x = 12
+		y = 6
+		completion_reward = {
+			add_ideas = wasteland_conscripts
+		}
+
+	}
+	focus = {
+		id = bos_surfacetensions
+		icon = GFX_goal_generic_territory_or_war
+		cost = 8.6
+		prerequisite = {
+			focus = bos_outsiders
+		}
+		prerequisite = {
+			focus = bos_advancedcommunication
+		}
+		x = 13
+		y = 7
+		completion_reward = {
+			set_rule = { can_send_volunteers = yes }
+		}
+
+	}
+	focus = {
+		id = bos_steelrain
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = bos_expand
+			focus = bos_curbstomp
+		}
+		mutually_exclusive = {
+			focus = bos_shichapter
+		}
+		x = 16
+		y = 11
+		completion_reward = {
+			SHI = {
+				every_owned_state = { 
+					add_core_of = BOS
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_shisecrets
+		icon = GFX_goal_generic_production
+		cost = 8.6
+		prerequisite = {
+			focus = bos_demand
+		}
+		x = 14
+		y = 13
+		completion_reward = {
+			add_ideas = shisecrets
+			
+			set_technology = {
+				gauss_weaponry = 1 
+			}
+		}
+
+	}
+	focus = {
+		id = bos_demand
+		icon = GFX_goal_generic_military_deal
+		cost = 8.6
+		prerequisite = {
+			focus = bos_steelrain
+		}
+		x = 16
+		y = 12
+		completion_reward = {
+			country_event = { id = nf_brotherhood.22 }
+		}
+
+	}
+	focus = {
+		id = bos_shiseize
+		icon = GFX_goal_generic_special_forces
+		cost = 8.6
+		prerequisite = {
+			focus = bos_demand
+		}
+		x = 16
+		y = 13
+		completion_reward = {
+			load_oob = shimilitary
+		}
+
+	}
+	focus = {
+		id = bos_foodforservice
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 8.6
+		prerequisite = {
+			focus = bos_genius
+		}
+		x = 21
+		y = 7
+		completion_reward = {
+			add_ideas = foodforservice
+		}
+	}
+	focus = {
+		id = bos_software
+		icon = GFX_goal_generic_production2
+		cost = 8.6
+		prerequisite = {
+			focus = bos_foodforservice
+		}
+		x = 21
+		y = 8
+		completion_reward = {
+			add_ideas = securitronsoftware
+		}
+
+	}
+	focus = {
+		id = bos_hardware
+		icon = GFX_goal_generic_production
+		cost = 8.6
+		prerequisite = {
+			focus = bos_software
+		}
+		x = 21
+		y = 9
+		completion_reward = {
+			add_ideas = securitronhardware
+		}
+	}
+	focus = {
+		id = bos_plantations
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8.6
+		prerequisite = {
+			focus = bos_hardware
+		}
+		x = 21
+		y = 10
+		completion_reward = {
+			157 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_plant
+		icon = GFX_goal_generic_build_tank
+		cost = 8.6
+		prerequisite = {
+			focus = bos_plantations
+		}
+		x = 21
+		y = 11
+		completion_reward = {
+			load_oob = sunsetsarsparilla
+		}
+
+	}
+	focus = {
+		id = bos_recallelder
+		icon = GFX_goal_generic_military_deal
+		cost = 8.6
+		prerequisite = {
+			focus = bos_plant
+			focus = bos_militia
+		}
+		x = 22
+		y = 12
+		completion_reward = {
+			if = {
+				limit = {
+					MOJ = {
+						is_ai = yes
+					}
+				}
+				
+				BOS = {
+					add_to_faction = MOJ
+				}
+			}
+			
+			if = {
+				limit = {
+					MOJ = {
+						is_ai = no
+					}
+				}
+				
+				MOJ = {
+					country_event = { id = nf_brotherhood.30 }
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_repconn
+		icon = GFX_goal_generic_more_territorial_claims
+		cost = 30
+		prerequisite = {
+			focus = bos_recallelder
+		}
+		x = 22
+		y = 13
+		completion_reward = {
+			country_event = { id = nf_brotherhood.31 }
+		}
+
+	}
+	focus = {
+		id = bos_scraprefinement
+		icon = GFX_goal_anti_comintern_pact
+		cost = 8.6
+		prerequisite = {
+			focus = bos_alloys
+		}
+		mutually_exclusive = {
+			focus = bos_superioralloys
+		}
+		x = 33
+		y = 8
+		completion_reward = {
+			add_ideas = scraprefinement
+		}
+
+	}
+	focus = {
+		id = bos_industrialservos
+		icon = GFX_goal_generic_production2
+		cost = 8.6
+		prerequisite = {
+			focus = bos_scraprefinement
+		}
+		x = 33
+		y = 9
+		completion_reward = {
+			add_ideas = industrialservos
+		}
+
+	}
+	focus = {
+		id = bos_alloyconstruction
+		icon = GFX_goal_generic_construction
+		cost = 8.6
+		prerequisite = {
+			focus = bos_superioralloys
+			focus = bos_industrialservos
+		}
+		x = 31
+		y = 10
+		completion_reward = {
+			add_ideas = alloyconstruct
+		}
+
+	}
+	focus = {
+		id = bos_supplymaxson
+		icon = GFX_goal_rhineland
+		cost = 8.6
+		prerequisite = {
+			focus = bos_armmaxson
+		}
+		x = 33
+		y = 7
+		completion_reward = {
+			add_ideas = supplyingmaxson
+		}
+
+	}
+	focus = {
+		id = bos_forbiddenweapons
+		icon = GFX_goal_generic_CAS
+		cost = 8.6
+		prerequisite = {
+			focus = bos_forbiddensecrets
+		}
+		x = 37
+		y = 16
+		completion_reward = {
+			add_ideas = forbiddenweapons
+		}
+
+	}
+	focus = {
+		id = bos_refurbishment
+		icon = GFX_goal_generic_construction2
+		cost = 8.6
+		prerequisite = {
+			focus = bos_secureequipment
+		}
+		x = 45
+		y = 5
+		completion_reward = {
+			add_timed_idea = {
+				idea = losthillsrefurb
+				days = 365
+			}
+		}
+		
+
+	}
+	focus = {
+		id = bos_industrialcore
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 8.6
+		prerequisite = {
+			focus = bos_refurbishment
+		}
+		x = 45
+		y = 6
+		completion_reward = {
+			157 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_defense
+		icon = GFX_goal_generic_construct_military
+		cost = 8.6
+		prerequisite = {
+			focus = bos_industrialcore
+		}
+		x = 45
+		y = 7
+		completion_reward = {
+			157 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = {
+						all_provinces = yes
+					}
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_losthillsexpansion
+		icon = GFX_goal_generic_construction2
+		cost = 8.6
+		prerequisite = {
+			focus = bos_defense
+		}
+		x = 45
+		y = 8
+		completion_reward = {
+			remove_ideas = bunkerblues
+			add_ideas = bunkerblues2
+			add_ideas = roomtogrow
+		}
+
+	}
+	focus = {
+		id = bos_hangarconstruction
+		icon = GFX_goal_generic_air_fighter
+		cost = 8.6
+		prerequisite = {
+			focus = bos_losthillsexpansion
+		}
+		x = 45
+		y = 9
+		completion_reward = {
+			157 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = bos_steelfortress
+		icon = GFX_goal_generic_fortify_city
+		cost = 8.6
+		prerequisite = {
+			focus = bos_hangarconstruction
+		}
+		x = 45
+		y = 10
+		completion_reward = {
+			157 = {
+				add_building_construction = {
+					type = fort
+					level = 2
+					province = {
+						all_provinces = yes
+					}
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = radar_station
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+}
