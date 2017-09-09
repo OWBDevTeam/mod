@@ -55,6 +55,16 @@ elgible_wargoal_receiver = {
 		}
 		ROOT = {has_opinion = { target = PREV value < -120 }}
 	}
+	# considers strength ratios, invading someone who has more troops is generally a bad idea
+	OR = {
+		AND = {
+			has_war = yes
+			any_enemy_country = {
+				strength_ratio = { tag = PREV ratio > 1.0 }
+			}
+		}
+		ROOT = { strength_ratio = { tag = PREV ratio > 1.0}}
+	}
 	is_protected_lore_faction = no
 	exists = yes
 	has_capitulated = no
