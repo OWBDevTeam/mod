@@ -120,6 +120,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = ces_legion_mongrels
 		}
+		available = {
+			NOT = { country_exists = HAN }
+		}
 		x = 2
 		y = 6
 		completion_reward = {
@@ -137,6 +140,9 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = ces_shottol_god_of_dogs
+		}
+		available = {
+			NOT = { country_exists = HAN }
 		}
 		x = 4
 		y = 6
@@ -187,6 +193,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = ces_caesar_the_godslayer
 		}
+		available = {
+			NOT = { country_exists = TTM }
+		}
 		x = 6
 		y = 6
 		completion_reward = {
@@ -207,6 +216,9 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = ces_goddess_diana
+		}
+		available = {
+			NOT = { country_exists = TTM }
 		}
 		x = 8
 		y = 6
@@ -255,6 +267,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = ces_taming_the_city
 		}
+		available = {
+			NOT = { country_exists = TWO }
+		}
 		x = 12
 		y = 6
 		completion_reward = {
@@ -276,6 +291,9 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = ces_the_cult_of_nas
+		}
+		available = {
+			NOT = { country_exists = TWO }
 		}
 		x = 10
 		y = 6
@@ -328,6 +346,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = ces_legion_outlaws
 		}
+		available = {
+			NOT = { country_exists = COW }
+		}
 		x = 16
 		y = 6
 		completion_reward = {
@@ -339,6 +360,9 @@ focus_tree = {
 		id = ces_legion_outlaws
 		icon = GFX_goal_generic_army_doctrines
 		cost = 8.6
+		available = {
+			NOT = { country_exists = COW }
+		}
 		prerequisite = {
 			focus = ces_cochise_county_cowboys
 		}
@@ -987,6 +1011,34 @@ focus_tree = {
 		y = 10
 		completion_reward = {
 			add_ideas = legion_nf_burned_man_rumours
+			
+			create_corps_commander = {
+				name = "Legate Lanius"
+				portrait_path = "gfx/leaders/CES/Portrait_Lanius.dds"
+				skill = 5
+				traits = {
+					
+				}
+			}
+			
+			hidden_effect = {
+			
+				create_country_leader  = {
+					name = "Lanius"
+					desc = "Lanius_DESC"
+					picture = "Portrait_Lanius.dds"
+					expire = "3000.1.1"
+					ideology = warlordship
+					id = 996
+					
+					traits = {
+						cruel_tyrant
+						warmonger
+					}
+				}
+			}
+			
+			
 		}
 
 	}
@@ -1007,6 +1059,24 @@ focus_tree = {
 		y = 10
 		completion_reward = {
 			add_ideas = legion_nf_hoover_dam
+		
+			hidden_effect = {
+		
+				create_country_leader  = {
+					name = "Malpais Legate"
+					desc = "Graham_DESC"
+					picture = "Portrait_Malpais.dds"
+					expire = "3000.1.1"
+					ideology = benevolent_dictatorship
+					id = 996
+					
+					traits = {
+						warmonger
+					}
+				}
+
+			}
+		
 		}
 
 	}
