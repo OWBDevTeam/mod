@@ -44,24 +44,42 @@ default_unit_production = {
 	}
 	ai_strategy = {
 		type = role_ratio
-		id = mobile
-		value = 3
-	}
-	ai_strategy = {
-		type = role_ratio
 		id = auxilliary
 		value = 7
 	}
-	#ai_strategy = {
-	#	type = unit_ratio
-	#	id = convoy
-	#	value = 15
-	#}
-
+	ai_strategy = {
+		type = role_ratio
+		id = mechanized
+		value = 500
+	}
+	# Naval
 	ai_strategy = {
 		type = equipment_production_factor
 		id = infantry
 		value = 40
+	}
+		ai_strategy = {
+		type = unit_ratio
+		id = capital_ship
+		value = 20
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = submarine
+		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = screen_ship
+		value = 30
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = convoy
+		value = 15
 	}
 }
 
@@ -72,7 +90,7 @@ DEFAULT_template_design = {
 	ai_strategy = {
 		type = template_prio
 		id = infantry
-		value = 60
+		value = 80
 	}
 	ai_strategy = {
 		type = template_prio
@@ -111,7 +129,6 @@ default_area_priority = {
 		id = north_america
 		value = 100
 	}
-
 }
 
 
