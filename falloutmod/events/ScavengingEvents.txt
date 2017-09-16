@@ -1,0 +1,93 @@
+add_namespace = scavenging
+
+country_event = {
+	id = scavenging.1
+	fire_only_once = no
+	mean_time_to_happen = { days = 60 }
+	hidden = no
+	
+	title = scavenging.1.t
+	desc = scavenging.1.d
+	
+	trigger = {
+		has_idea = scavenging
+	}
+	option = {
+		name = scavenging.1.a
+		
+		if = { 
+			limit = { 
+				FROM = { 
+					has_tech = standard_weaponry_tech #Prioritises the most advanced weaponry tech, energy weapons are prioritized over ballistic.
+					NOT = { has_tech = basic_ballistic_weaponry }
+					NOT = { has_tech = basic_laser_weaponry }
+				} 
+			}
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 100 producer = FROM } 
+		}
+		
+		if = {
+			limit = { 
+				FROM = { 
+					has_tech = basic_ballistic_weaponry
+					NOT = { has_tech = improved_ballistic_weaponry }
+					NOT = { has_tech = basic_laser_weaponry }
+				} 
+			}
+			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 100 producer = FROM } 
+		}
+		
+		if = {
+			limit = { 
+				FROM = { 
+					has_tech = improved_ballistic_weaponry
+					NOT = { has_tech = advanced_ballistic_weaponry }
+					NOT = { has_tech = improved_laser_weaponry }
+				} 
+			}
+			add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 100 producer = FROM } 
+		}
+		
+		if = {
+			limit = { 
+				FROM = { 
+					has_tech = advanced_ballistic_weaponry
+					NOT = { has_tech = advanced_laser_weaponry }
+				} 
+			}
+			add_equipment_to_stockpile = { type = ballistic_equipment_3 amount = 100 producer = FROM } 
+		}
+		
+		if = { 
+			limit = { 
+				FROM = { 
+					has_tech = basic_laser_weaponry 
+					NOT = { has_tech = improved_ballistic_weaponry }
+					NOT = { has_tech = improved_laser_weaponry }
+				} 
+			}
+			add_equipment_to_stockpile = { type = energy_equipment_1 amount = 100 producer = FROM } 
+		}
+		
+		if = { 
+			limit = { 
+				FROM = { 
+					has_tech = improved_laser_weaponry 
+					NOT = { has_tech = advanced_ballistic_weaponry }
+					NOT = { has_tech = advanced_laser_weaponry }
+				} 
+			}
+			add_equipment_to_stockpile = { type = energy_equipment_2 amount = 100 producer = FROM } 
+		}
+		
+		if = { 
+			limit = { 
+				FROM = { 
+					has_tech = advanced_laser_weaponry 
+				} 
+			}
+			add_equipment_to_stockpile = { type = energy_equipment_3 amount = 100 producer = FROM } 
+		}
+		
+	}
+}
