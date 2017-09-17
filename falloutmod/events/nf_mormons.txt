@@ -1,0 +1,108 @@
+﻿add_namespace = nf_mormon
+
+country_event = {
+	id = nf_mormon.1
+	title = nf_mormon.1.title
+	desc = nf_mormon.1.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_mormon.1.option.a
+        
+		add_ideas = mormons_all
+		
+		add_national_unity = -0.1
+		
+		551 = {
+			add_resource = {
+				type = water
+				amount = 9
+			}
+			add_resource = {
+				type = metal
+				amount = 6
+			}
+		}
+	}
+	
+	option = {
+		name = nf_mormon.1.option.b
+        
+		add_ideas = mormons_outside
+		
+		add_national_unity = -0.05
+		
+		551 = {
+			add_resource = {
+				type = water
+				amount = 6
+			}
+			add_resource = {
+				type = metal
+				amount = 4
+			}
+		}
+		
+	}
+	
+	option = {
+		name = nf_mormon.1.option.c
+        
+		add_ideas = mormons_converts
+		
+		add_national_unity = 0.1
+		
+		551 = {
+			add_resource = {
+				type = water
+				amount = 3
+			}
+			add_resource = {
+				type = metal
+				amount = 2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nf_mormon.2
+	title = nf_mormon.2.title
+	desc = nf_mormon.2.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_mormon.2.option.a
+        
+		custom_effect_tooltip = godlyautomatons_tt
+		hidden_effect = {
+			load_oob = godlyautomatons
+		}
+	}
+	
+	option = {
+		name = nf_mormon.2.option.b
+        
+		custom_effect_tooltip = holyclergy_tt
+		hidden_effect = {
+			load_oob = holyclergy
+		}
+		
+	}
+	
+	option = {
+		name = nf_mormon.2.option.c
+        
+		custom_effect_tooltip = noblesavages_tt
+		hidden_effect = {
+			load_oob = noblesavages
+		}
+		
+	}
+	
+	
+}
