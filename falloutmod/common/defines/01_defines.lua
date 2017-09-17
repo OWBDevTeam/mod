@@ -53,3 +53,4 @@ NDefines.NAI.MIN_ANTAGONIZE_FOR_WARGOAL_JUSTIFICATION = -1000	-- AI countries wi
 --NDefines.NDiplomacy.TENSION_TIME_SCALE_MONTHLY_FACTOR = 100	-- Timed tension scale will be modified by this amount starting with TENSION_TIME_SCALE_START_DATE
 NDefines.NDiplomacy.DIPLOMACY_ACCEPT_VOLUNTEERS_BASE = 400	-- Base value of volunteer acceptance (help is welcome)
 NDefines.NMilitary.EXPERIENCE_LOSS_FACTOR = 4.0  
+NDefines.NMilitary.FIELD_EXPERIENCE_SCALE = 0.008
