@@ -52,12 +52,19 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 5
+			factor = 2
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_tech = settled_civilization }
 		}
 	}
     
     # Scrap Motorcycles
     bike_tech_1 = {
+	dependencies = {
+		vehicle_restoration = 1
+	}
         enable_equipments = {
             motorbike_equipment_1
         }
