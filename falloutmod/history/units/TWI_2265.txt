@@ -9,16 +9,110 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Tribal Infantry"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
 	}
 }
+units = {
 
+	division {
+		name = "1st Chief's Guard"
+		location = 958
+		division_template = "Tribal Infantry"
+		start_experience_factor = 2.0
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "2nd Chief's Guard"
+		location = 5171
+		division_template = "Tribal Infantry"
+		start_experience_factor = 2.0
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "3rd Chief's Guard"
+		location = 968
+		division_template = "Tribal Infantry"
+		start_experience_factor = 2.0
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "1st Tribal"
+		location = 1541
+		division_template = "Tribal Infantry"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "2nd Tribal"
+		location = 5173
+		division_template = "Tribal Infantry"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "3rd Tribal"
+		location = 1863
+		division_template = "Tribal Infantry"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "4th Tribal"
+		location = 1864
+		division_template = "Tribal Infantry"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "5th Tribal"
+		location = 1865
+		division_template = "Tribal Infantry"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "6th Tribal"
+		location = 5649
+		division_template = "Tribal Infantry"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "7th Tribal"
+		location = 1871
+		division_template = "Tribal Infantry"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "10th Tribal"
+		location = 5643
+		division_template = "Tribal Infantry"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "8th Tribal"
+		location = 2903
+		division_template = "Tribal Infantry"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "9th Tribal"
+		location = 1678
+		division_template = "Tribal Infantry"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+}
 
 ##### Starting Production #####
 instant_effect = {
@@ -27,8 +121,8 @@ instant_effect = {
 			type = infantry_equipment_1
 			creator = "TWI"
 		}
-		requested_factories = 1
-		progress = 0.75
+		requested_factories = 2
+		progress = 1.0
 		efficiency = 100
 	}
 }
