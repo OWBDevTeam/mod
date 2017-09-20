@@ -54,3 +54,14 @@ NDefines.NAI.MIN_ANTAGONIZE_FOR_WARGOAL_JUSTIFICATION = -1000	-- AI countries wi
 NDefines.NDiplomacy.DIPLOMACY_ACCEPT_VOLUNTEERS_BASE = 400	-- Base value of volunteer acceptance (help is welcome)
 NDefines.NMilitary.EXPERIENCE_LOSS_FACTOR = 4.0  
 NDefines.NMilitary.FIELD_EXPERIENCE_SCALE = 0.008
+-- research
+NDefines.NAI.RESEARCH_DAYS_BETWEEN_WEIGHT_UPDATE = 7 	-- Refreshes need scores based on country situation.
+NDefines.NAI.RESEARCH_LAND_DOCTRINE_NEED_GAIN_FACTOR = 0.15 -- Multiplies value based on relative military industry size / country size.
+NDefines.NAI.RESEARCH_NAVAL_DOCTRINE_NEED_GAIN_FACTOR = 0.05 -- Multiplies value based on relative naval industry size / country size.
+NDefines.NAI.RESEARCH_AIR_DOCTRINE_NEED_GAIN_FACTOR = 0.07 -- Multiplies value based on relative number of air base / country size.
+NDefines.NAI.RESEARCH_NEW_WEIGHT_FACTOR = 10 			-- Impact of previously unexplored tech weights. Higher means more random exploration.
+NDefines.NAI.RESEARCH_AHEAD_BONUS_FACTOR = 0.0          -- To which extent AI should care about ahead of time bonuses to research
+NDefines.NAI.RESEARCH_BONUS_FACTOR = 0.9 				-- To which extent AI should care about bonuses to research
+NDefines.NAI.MAX_AHEAD_RESEARCH_PENALTY = 20             -- max ahead of tiem penalty ai will pick ever
+NDefines.NAI.RESEARCH_AHEAD_OF_TIME_FACTOR = 0.0 		-- To which extent AI should care about ahead of time penalties to research
+NDefines.NAI.RESEARCH_BASE_DAYS = 60					-- AI adds a base number of days when weighting completion time for techs to ensure it doesn't only research quick techs
