@@ -23,7 +23,7 @@ NDefines.NAI.PLAN_ACTIVATION_PLAYER_WEIGHT_FACTOR = 0.0 		                -- AI 
 NDefines.NAI.PLAN_MIN_SIZE_FOR_FALLBACK = 500					                -- A country with less provinces than this will not draw fallback plans  but rather station their troops along the front
 
 NDefines.NAI.MIN_FIELD_STRENGTH_TO_BUILD_UNITS = 0.8			                -- Cancel unit production if below this to get resources out to units in the field
-NDefines.NAI.MIN_MANPOWER_TO_BUILD_UNITS = 0.8					                -- Cancel unit production if below this to get resources out to units in the field
+NDefines.NAI.MIN_MANPOWER_TO_BUILD_UNITS = 0.25					                -- Cancel unit production if below this to get resources out to units in the field
 
 NDefines.NAI.PRODUCTION_EQUIPMENT_SURPLUS_FACTOR = 1.5
 
@@ -31,11 +31,10 @@ NDefines.NAI.TRADEABLE_FACTORIES_FRACTION = 1
 
 NDefines.NAI.DEPLOY_MIN_TRAINING_PEACE_FACTOR = 1.0		                        -- Required percentage of training (1.0 = 100%) for AI to deploy unit in peacetime
 NDefines.NAI.DEPLOY_MIN_TRAINING_WAR_FACTOR = 0.25		                        -- Required percentage of training (1.0 = 100%) for AI to deploy unit in wartime
-NDefines.NAI.MANPOWER_FREE_USAGE_THRESHOLD = 5000			-- If AI has this much manpower he doesn't care about the percentage
-NDefines.NAI.MANPOWER_RESERVED_THRESHOLD = 1.00					-- The AI will not deploy more units if he goes below this percentage
-NDefines.NAI.START_TRAINING_EQUIPMENT_LEVEL = 0.7               -- ai will not start to train if equipment drops below this level
+NDefines.NAI.MANPOWER_FREE_USAGE_THRESHOLD = 1500			-- If AI has this much manpower he doesn't care about the percentage
+NDefines.NAI.MANPOWER_RESERVED_THRESHOLD = 0.2					-- The AI will not deploy more units if he goes below this percentage
+NDefines.NAI.START_TRAINING_EQUIPMENT_LEVEL = 0.25              -- ai will not start to train if equipment drops below this level
 
-NDefines.NAI.START_TRAINING_EQUIPMENT_LEVEL = 1.0                               -- ai will not start to train if equipment drops below this level
 NDefines.NAI.STOP_TRAINING_EQUIPMENT_LEVEL = 0.6                                -- ai will not train if equipment drops below this level
 
 NDefines.NAI.NEW_LEADER_EXTRA_PP_FACTOR = 5.0

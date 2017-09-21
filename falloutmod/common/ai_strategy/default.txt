@@ -35,7 +35,13 @@ ai_army_building_minimum_puppet = { #Minimum Army Size Enforced
 
 default_unit_production = {
 	enable = {
-		always = yes
+		NOT = {
+			OR = {
+				tag = BOS
+				tag = WBH
+				tag = MOJ
+			}
+		}
 	}
 	ai_strategy = {
 		type = role_ratio
@@ -97,7 +103,12 @@ DEFAULT_template_design = {
 	}
 	ai_strategy = {
 		type = template_prio
-		id = auxilliary
+		id = power_armour
+		value = 10
+	}
+	ai_strategy = {
+		type = template_prio
+		id = garrison
 		value = 15
 	}
 	ai_strategy = {
@@ -107,7 +118,7 @@ DEFAULT_template_design = {
 	}
 	ai_strategy = {
 		type = template_prio
-		id = mobile
+		id = mechanized
 		value = 10
 	}
 }

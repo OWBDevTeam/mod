@@ -18,7 +18,7 @@ garrison_generic = {
 		factor = 10
 
 		modifier = {
-			factor = 0
+			factor = 1
 			ai_has_role_template = garrison
 		}
 	}
@@ -213,7 +213,13 @@ infantry_generic = {
 			factor = 5
 		}
 	}
+	production_prio = {
+			factor = 2
 
+			modifier = {
+				factor = 1
+			}
+		}
 	match_to_count = 0.10
 	
 	infantry_default = {
@@ -300,13 +306,118 @@ infantry_generic = {
 		#target_min_match = 0.5
 	}
 }
+power_armour_generic = {
+	roles = {
+		power_armour
+	}
+	
+	upgrade_prio = {
+		factor = 5
+
+		modifier = {
+			has_tech = power_armour
+			factor = 3
+		}
+	}
+	production_prio = {
+			factor = 40
+
+			modifier = {
+				factor = 1
+			}
+		}
+	match_to_count = 0.10
+	
+	power_armour_default = {
+        reinforce_prio = 2
+        custom_icon = 3
+		
+		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		target_width = 20.0
+		width_weight = 1.0
+		column_swap_factor = 0.5
+		
+		stat_weights = {
+			0.00 #-- default_morale
+			0.00 #-- defense
+			1.00 #-- breakthrough
+			0.00 #-- hardness
+			4.00 #-- soft_attack
+			0.00 #-- hard_attack
+			0.00 #-- recon
+			1.00 #-- entrenchment
+			0.00 #-- initiative
+			0.00 #-- casualty_trickleback
+			0.00 #-- supply_consumption_factor
+			0.00 #-- supply_consumption
+			0.00 #-- suppression
+			0.00 #-- suppression_factor
+			0.00 #-- experience_loss_factor
+			#-- Air Values
+			0.00 #-- air_attack
+			#-- Common Values
+			0.60 #-- max_organisation
+			0.40 #-- max_strength
+			0.00 #-- build_cost_ic
+			0.00 #-- maximum_speed
+			0.00 #-- armor_value
+			0.20 #-- ap_attack
+			0.00 #-- reliability
+			0.00 #-- reliability_factor
+			0.00 #-- weight
+		}
+		
+		target_template = {
+			weight = 0.9
+			match_value = 3000.0
+			
+			support = {
+				medical_chem_company = 1
+				defensive_chem_company = 1
+				explosive_company = 1
+				truck_support = 1
+				dog_company = 1
+			}
+			
+			regiments = {
+				power_armour = 7
+				anti_tank_company = 2
+			}
+		}
+		
+		allowed_types = {
+			power_armour
+			medical_chem_company 
+			defensive_chem_company
+			explosive_company
+			anti_personnel_company
+			flamer_company
+			laser_company
+			truck_support
+			signal_company
+			motorbike_support
+			dog_company
+			anti_tank_company
+			anti_personnel_brigade
+		}
+		#replace_at_match = 0.4
+		#replace_with = wasteland_infantry_default
+		#target_min_match = 0.5
+	}
+}
 mechanized_generic = {
 	
 		roles = {
 			mechanized
 		}
 		upgrade_prio = {
-			factor = 2
+			factor = 4
 
 			modifier = {
 				factor = 1
@@ -316,7 +427,13 @@ mechanized_generic = {
 		target_width = 30.0
 		width_weight = 2.0
 		column_swap_factor = 0.1
-		
+		production_prio = {
+			factor = 3
+
+			modifier = {
+				factor = 1
+			}
+		}
 		stat_weights = {
 			0.01 #-- default_morale
 			1.10 #-- defense
@@ -397,7 +514,13 @@ mobile_generic = {
 			}
 		}
 	}
-	
+	production_prio = {
+			factor = 3
+
+			modifier = {
+				factor = 1
+			}
+		}
 	match_to_count = 0.5
 
 	mobile_division_default = {

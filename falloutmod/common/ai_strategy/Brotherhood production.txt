@@ -1,0 +1,51 @@
+default_unit_production = {
+	enable = {
+		OR = {
+			tag = BOS
+			tag = WBH
+			tag = MOJ
+		}
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = power_armour
+		value = 80
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = mechanized
+		value = 50
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = mobile
+		value = 10
+	}
+		ai_strategy = {
+		type = unit_ratio
+		id = capital_ship
+		value = 20
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = submarine
+		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = screen_ship
+		value = 30
+	}
+	ai_strategy = {
+		type = unit_ratio
+		id = convoy
+		value = 15
+	}
+	ai_strategy = {
+		type = template_prio
+		id = power_armour
+		value = 100
+	}
+}
