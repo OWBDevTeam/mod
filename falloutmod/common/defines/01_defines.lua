@@ -31,15 +31,20 @@ NDefines.NAI.TRADEABLE_FACTORIES_FRACTION = 1
 
 NDefines.NAI.DEPLOY_MIN_TRAINING_PEACE_FACTOR = 1.0		                        -- Required percentage of training (1.0 = 100%) for AI to deploy unit in peacetime
 NDefines.NAI.DEPLOY_MIN_TRAINING_WAR_FACTOR = 0.25		                        -- Required percentage of training (1.0 = 100%) for AI to deploy unit in wartime
+NDefines.NAI.MANPOWER_FREE_USAGE_THRESHOLD = 5000			-- If AI has this much manpower he doesn't care about the percentage
+NDefines.NAI.MANPOWER_RESERVED_THRESHOLD = 1.00					-- The AI will not deploy more units if he goes below this percentage
+NDefines.NAI.START_TRAINING_EQUIPMENT_LEVEL = 0.7               -- ai will not start to train if equipment drops below this level
 
-NDefines.NAI.START_TRAINING_EQUIPMENT_LEVEL = 0.9                               -- ai will not start to train if equipment drops below this level
-NDefines.NAI.STOP_TRAINING_EQUIPMENT_LEVEL = 0.8                                -- ai will not train if equipment drops below this level
+NDefines.NAI.START_TRAINING_EQUIPMENT_LEVEL = 1.0                               -- ai will not start to train if equipment drops below this level
+NDefines.NAI.STOP_TRAINING_EQUIPMENT_LEVEL = 0.6                                -- ai will not train if equipment drops below this level
 
 NDefines.NAI.NEW_LEADER_EXTRA_PP_FACTOR = 5.0
 
 NDefines.NAI.DIPLOMACY_IMPROVE_RELATION_COST_FACTOR = 7.0                       -- Desire to boost relations subtracts the cost multiplied by this
 
 ----------------------
+NDefines.NAI.COMBINED_ARMS_LEVEL = 2							-- 0 = Never, 1 = Infantry/Artillery, 2 = Go wild
+NDefines.NAI.MICRO_POCKET_SIZE = 10						-- Pockets with a size equal to or lower than this will be mocroed by the AI, for efficiency.
 
 NDefines.NAI.FORCE_FACTOR_AGAINST_EXTRA_MINOR = 0.4			-- AI considers generating wargoals against minors below this % of force compared to themselves to get at a bigger enemy.
 NDefines.NAI.MAX_EXTRA_WARGOAL_GENERATION = 2				-- AI may want to generate wargoals against weak minors to get at larger enemy, but never more that this at any given time.
