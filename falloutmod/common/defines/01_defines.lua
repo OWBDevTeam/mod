@@ -4,6 +4,8 @@ NDefines.NDiplomacy.VOLUNTEERS_DIVISIONS_REQUIRED = 8 		-- Vanilla is 30
 NDefines.NAI.GENERATE_WARGOAL_THREAT_BASELINE = 0.0
 NDefines.NAI.DIPLOMACY_SEND_MAX_FACTION = 0.5
 NDefines.NDiplomacy.TENSION_TIME_SCALE_START_DATE = "2265.1.1.12"	-- Starting at this date, the tension values will be scaled down (will be equal to 1 before that)
+
+-- AI battleplans
 NDefines.NAI.FALLBACK_LOSING_FACTOR = 0.0 					                    -- The lower this number  the longer the AI will hold the line before sending them to the fallback line
 NDefines.NAI.PLAN_FACTION_STRONG_TO_EXECUTE = 0.65 --0.80	0.60		        -- % or more of units in an order to consider ececuting the plan
 NDefines.NAI.ORG_UNIT_STRONG = 2 --0.5	 --0.75		0.9				            -- Organization % for unit to be considered strong
@@ -24,7 +26,6 @@ NDefines.NAI.PLAN_MIN_SIZE_FOR_FALLBACK = 500					                -- A country w
 
 NDefines.NAI.MIN_FIELD_STRENGTH_TO_BUILD_UNITS = 0.8			                -- Cancel unit production if below this to get resources out to units in the field
 NDefines.NAI.MIN_MANPOWER_TO_BUILD_UNITS = 0.25					                -- Cancel unit production if below this to get resources out to units in the field
-
 NDefines.NAI.PRODUCTION_EQUIPMENT_SURPLUS_FACTOR = 1.5
 
 NDefines.NAI.TRADEABLE_FACTORIES_FRACTION = 1
@@ -45,6 +46,7 @@ NDefines.NAI.DIPLOMACY_IMPROVE_RELATION_COST_FACTOR = 7.0                       
 NDefines.NAI.COMBINED_ARMS_LEVEL = 2							-- 0 = Never, 1 = Infantry/Artillery, 2 = Go wild
 NDefines.NAI.MICRO_POCKET_SIZE = 10						-- Pockets with a size equal to or lower than this will be mocroed by the AI, for efficiency.
 
+-- AI Diplomacy
 NDefines.NAI.FORCE_FACTOR_AGAINST_EXTRA_MINOR = 0.4			-- AI considers generating wargoals against minors below this % of force compared to themselves to get at a bigger enemy.
 NDefines.NAI.MAX_EXTRA_WARGOAL_GENERATION = 2				-- AI may want to generate wargoals against weak minors to get at larger enemy, but never more that this at any given time.
 NDefines.NAI.WARGOAL_GENERATION_STRENGTH_FACTOR = 1.5	-- Desire to generate wargoal effected negatevely if actor strength is less than this factor of target strength
@@ -54,7 +56,6 @@ NDefines.NAI.FASCISTS_ANTAGONIZE_FASCISTS = 100
 NDefines.NAI.FASCISTS_ANTAGONIZE_DEMOCRACIES = 170
 NDefines.NAI.FASCISTS_ANTAGONIZE_COMMUNISTS = 170
 NDefines.NAI.MIN_ANTAGONIZE_FOR_WARGOAL_JUSTIFICATION = -1000	-- AI countries will not fabricate claims against countries with an antagonization value lower than this.
---NDefines.NDiplomacy.TENSION_TIME_SCALE_MONTHLY_FACTOR = 100	-- Timed tension scale will be modified by this amount starting with TENSION_TIME_SCALE_START_DATE
 NDefines.NDiplomacy.DIPLOMACY_ACCEPT_VOLUNTEERS_BASE = 400	-- Base value of volunteer acceptance (help is welcome)
 NDefines.NMilitary.EXPERIENCE_LOSS_FACTOR = 4.0  
 NDefines.NMilitary.FIELD_EXPERIENCE_SCALE = 0.008
