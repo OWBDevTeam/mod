@@ -213,13 +213,7 @@ infantry_generic = {
 			factor = 5
 		}
 	}
-	production_prio = {
-			factor = 2
-
-			modifier = {
-				factor = 1
-			}
-		}
+	
 	match_to_count = 0.10
 	
 	infantry_default = {
@@ -227,6 +221,13 @@ infantry_generic = {
         custom_icon = 3
 		
 		upgrade_prio = {
+			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		production_prio = {
 			factor = 2
 
 			modifier = {
@@ -275,7 +276,7 @@ infantry_generic = {
 				medical_chem_company = 1
 				defensive_chem_company = 1
 				explosive_company = 1
-				truck_support = 1
+				anti_tank_company = 1
 				dog_company = 1
 			}
 			
@@ -319,13 +320,7 @@ power_armour_generic = {
 			factor = 3
 		}
 	}
-	production_prio = {
-			factor = 40
-
-			modifier = {
-				factor = 1
-			}
-		}
+	
 	match_to_count = 0.10
 	
 	power_armour_default = {
@@ -334,6 +329,13 @@ power_armour_generic = {
 		
 		upgrade_prio = {
 			factor = 2
+
+			modifier = {
+				factor = 1
+			}
+		}
+		production_prio = {
+			factor = 40
 
 			modifier = {
 				factor = 1
@@ -424,6 +426,7 @@ mechanized_generic = {
 			}
 		}
 	mechanized_default = {
+		reinforce_prio = 2
 		target_width = 30.0
 		width_weight = 2.0
 		column_swap_factor = 0.1
@@ -514,13 +517,6 @@ mobile_generic = {
 			}
 		}
 	}
-	production_prio = {
-			factor = 3
-
-			modifier = {
-				factor = 1
-			}
-		}
 	match_to_count = 0.5
 
 	mobile_division_default = {

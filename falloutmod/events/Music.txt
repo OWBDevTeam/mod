@@ -228,10 +228,12 @@ country_event = {
 	# Enable All
 	option = {
 		name = FALLOUT_MUSIC.3.option.f
-		OR = {
+		trigger = {
+			OR = {
 				has_country_flag = disable_ambient_music
 				NOT = { has_country_flag = play_extra_music }
 			}
+		}
 		clr_country_flag = disable_ambient_music
 		set_country_flag = play_extra_music
 		remove_ideas = music_event_idea_2
