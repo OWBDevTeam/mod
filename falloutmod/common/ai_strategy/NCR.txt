@@ -1,15 +1,11 @@
-Brotherhood_production = {
+NCR_production = {
 	enable = {
-		OR = {
-			tag = BOS
-			tag = WBH
-			tag = MOJ
-		}
+		tag = NCR
 	}
 	ai_strategy = {
 		type = role_ratio
 		id = power_armour
-		value = 80
+		value = 20
 	}
 	ai_strategy = {
 		type = role_ratio
@@ -19,12 +15,12 @@ Brotherhood_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
-		value = 0
+		value = 60
 	}
 	ai_strategy = {
 		type = role_ratio
 		id = mobile
-		value = 10
+		value = 45
 	}
 		ai_strategy = {
 		type = unit_ratio
@@ -51,6 +47,21 @@ Brotherhood_production = {
 	ai_strategy = {
 		type = template_prio
 		id = power_armour
-		value = 100
+		value = 10
+	}
+	ai_strategy = {
+		type = template_prio
+		id = mobile
+		value = 50
+	}
+	ai_strategy = {
+		type = unit_ratio
+		id = fighter
+		value = 70
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 20
 	}
 }
