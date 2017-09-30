@@ -24,7 +24,7 @@ NDefines.NAI.PLAN_ACTIVATION_MAJOR_WEIGHT_FACTOR = 0.0 		                    -- 
 NDefines.NAI.PLAN_ACTIVATION_PLAYER_WEIGHT_FACTOR = 0.0 		                -- AI countries will hold on activating plans if player controlled countries have plans in the same location. Majors count extra (value of 1 will negate this)
 NDefines.NAI.PLAN_MIN_SIZE_FOR_FALLBACK = 500					                -- A country with less provinces than this will not draw fallback plans  but rather station their troops along the front
 
-NDefines.NAI.MIN_FIELD_STRENGTH_TO_BUILD_UNITS = 0.5			                -- Cancel unit production if below this to get resources out to units in the field
+NDefines.NAI.MIN_FIELD_STRENGTH_TO_BUILD_UNITS = 0.8			                -- Cancel unit production if below this to get resources out to units in the field
 NDefines.NAI.MIN_MANPOWER_TO_BUILD_UNITS = 0.0					                -- Cancel unit production if below this to get resources out to units in the field (producing too many units will cause problems)
 NDefines.NAI.PRODUCTION_EQUIPMENT_SURPLUS_FACTOR = 1.5 -- Base value for how much of currently used equipment the AI will at least strive to have in stock
 

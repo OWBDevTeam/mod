@@ -32,7 +32,7 @@ sub_units = {
 		manpower = 25 # 1000
 
 		# Misc Abilities
-		training_time = 90
+		training_time = 120
 		suppression = 1
 		weight = 0.5
 		
@@ -47,7 +47,7 @@ sub_units = {
 		sprite = infantry
 		map_icon_category = infantry
 		
-		priority = 600
+		priority = 500
 		active = no
 
 		type = {
@@ -69,12 +69,12 @@ sub_units = {
 		max_strength = 25
 		max_organisation = 40
 		default_morale = 0.25
-		manpower = 20 # 500
-
+		manpower = 25 # 500
+		breakthrough = -0.1
 		# Misc Abilities
-		training_time = 90
-		suppression = 1
-		weight = 0.45
+		training_time = 80
+		suppression = 2
+		weight = 0.4
 		
 		supply_consumption = 0.06
 	
@@ -84,6 +84,13 @@ sub_units = {
 		urban = {
 			defence = 0.1
 			movement = 0.2
+		}
+		fort = {
+			attack = -0.2
+		}
+		amphibious = {
+			defence = 0.15
+			attack = -0.1
 		}
 	}
 
