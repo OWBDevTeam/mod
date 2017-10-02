@@ -965,22 +965,8 @@ focus_tree = {
 		}
 		x = 9
 		y = 8
-		will_lead_to_war_with = DAM
 		completion_reward = {
 			add_political_power = 60
-            # Normal
-            if = {
-                limit = { country_exists = DAM }
-                create_wargoal = {
-                    type = annex_everything
-                    target = DAM
-                }
-                DAM = {
-                    every_owned_state = { 
-                        add_core_of = ROOT
-                    }
-                }	
-            }
 		}
 
 	}
@@ -994,9 +980,6 @@ focus_tree = {
 		}
 		available = {
 			NCR = { owns_state = 252 }
-		}
-		bypass = {
-            CES = { owns_state = 252 }
 		}
 		will_lead_to_war_with = NCR
 		x = 9

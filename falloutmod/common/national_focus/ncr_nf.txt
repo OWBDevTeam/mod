@@ -22,10 +22,13 @@ focus_tree = {
 	focus = {
 		id = ncr_baja
 		icon = GFX_goal_generic_alliance
-		cost = 8.6
+		cost = 1
 		available = {
 			date > 2266.5.5
 			has_completed_focus = ncr_councilhill
+		}
+		ai_will_do = {
+			factor = 10
 		}
 		x = 2
 		y = 4
@@ -37,10 +40,13 @@ focus_tree = {
 	focus = {
 		id = ncr_emergency
 		icon = GFX_goal_generic_demand_territory
-		cost = 8.6
+		cost = 1
 		available = {
 			date > 2268.3.30
 			has_ideas = baronswar
+		}
+		ai_will_do = {
+			factor = 10
 		}
 		x = 2
 		y = 8
@@ -52,10 +58,13 @@ focus_tree = {
 	focus = {
 		id = ncr_petersonswar
 		icon = GFX_goal_anschluss
-		cost = 8.6
+		cost = 1
 		available = {
 			date > 2265.4.1
 			has_completed_focus = ncr_councilhill
+		}
+		ai_will_do = {
+			factor = 10
 		}
 		x = 9
 		y = 4
@@ -71,6 +80,9 @@ focus_tree = {
 		cost = 8.6
 		x = 16
 		y = 10
+		available = {
+			has_completed_focus = ncr_councilhill
+		}	
 		completion_reward = {
 			add_political_power = 50
 		}
@@ -82,6 +94,9 @@ focus_tree = {
 		cost = 8.6
 		x = 24
 		y = 4
+		available = {
+			has_completed_focus = ncr_councilhill
+		}	
 		completion_reward = {
 			add_tech_bonus = {
 				name = industrial_bonus
@@ -98,6 +113,9 @@ focus_tree = {
 		cost = 8.6
 		x = 24
 		y = 10
+		available = {
+			has_completed_focus = ncr_councilhill
+		}	
 		completion_reward = {
 			add_timed_idea = {
 				idea = ncrbarons
@@ -123,7 +141,7 @@ focus_tree = {
 	focus = {
 		id = ncr_rangerdeploy
 		icon = GFX_goal_generic_more_territorial_claims
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_baja
 		}
@@ -150,7 +168,7 @@ focus_tree = {
 	focus = {
 		id = ncr_ultimatum
 		icon = GFX_goal_generic_demand_territory
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_rangerdeploy
 		}
@@ -170,7 +188,7 @@ focus_tree = {
 	focus = {
 		id = ncr_retake
 		icon = GFX_goal_generic_major_war
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_ultimatum
 		}
@@ -193,7 +211,7 @@ focus_tree = {
 	focus = {
 		id = ncr_buyout
 		icon = GFX_goal_generic_positive_trade_relations
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_emergency
 		}
@@ -220,7 +238,7 @@ focus_tree = {
 	focus = {
 		id = ncr_baronofbarons
 		icon = GFX_goal_generic_construct_infrastructure
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_buyout
 		}
@@ -234,7 +252,7 @@ focus_tree = {
 	focus = {
 		id = ncr_pokersiege
 		icon = GFX_goal_generic_fortify_city
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_baronofbarons
 		}
@@ -249,7 +267,7 @@ focus_tree = {
 	focus = {
 		id = ncr_newnorth
 		icon = GFX_goal_generic_construction2
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_pokersiege
 		}
@@ -280,13 +298,16 @@ focus_tree = {
 	focus = {
 		id = ncr_sympathies
 		icon = GFX_goal_generic_positive_trade_relations
-		cost = 10
+		cost = 1
 		prerequisite = {
 			focus = ncr_baja
 		}
 		mutually_exclusive = {
 			focus = ncr_rangerdeploy
 			focus = ncr_politicobandito
+		}
+		available = {
+			has_country_flag = bajahector
 		}
 		x = 2
 		y = 5
@@ -301,7 +322,7 @@ focus_tree = {
 	focus = {
 		id = ncr_repaid
 		icon = GFX_goal_generic_consumer_goods
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_sympathies
 		}
@@ -334,7 +355,7 @@ focus_tree = {
 	focus = {
 		id = ncr_bajastate
 		icon = GFX_goal_generic_improve_relations
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_repaid
 		}
@@ -360,7 +381,7 @@ focus_tree = {
 	focus = {
 		id = ncr_diplomatic
 		icon = GFX_goal_generic_intelligence_exchange
-		cost = 10
+		cost = 1
 		prerequisite = {
 			focus = ncr_emergency
 		}
@@ -381,7 +402,7 @@ focus_tree = {
 	focus = {
 		id = ncr_steeldeal
 		icon = GFX_goal_generic_production2
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_diplomatic
 		}
@@ -410,7 +431,7 @@ focus_tree = {
 	focus = {
 		id = ncr_patrol
 		icon = GFX_goal_generic_national_unity
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_steeldeal
 		}
@@ -425,7 +446,7 @@ focus_tree = {
 	focus = {
 		id = ncr_allisgood
 		icon = GFX_goal_generic_improve_relations
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_patrol
 		}
@@ -454,13 +475,16 @@ focus_tree = {
 	focus = {
 		id = ncr_politicobandito
 		icon = GFX_goal_generic_forceful_treaty
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_baja
 		}
 		mutually_exclusive = {
 			focus = ncr_sympathies
 			focus = ncr_rangerdeploy
+		}
+		available = {
+			has_country_flag = bajahayes
 		}
 		x = 4
 		y = 5
@@ -476,7 +500,7 @@ focus_tree = {
 	focus = {
 		id = ncr_payments
 		icon = GFX_goal_generic_intelligence_exchange
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_politicobandito
 		}
@@ -507,7 +531,7 @@ focus_tree = {
 	focus = {
 		id = ncr_integration
 		icon = GFX_goal_generic_national_unity
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_payments
 		}
@@ -527,7 +551,7 @@ focus_tree = {
 	focus = {
 		id = ncr_exodus
 		icon = GFX_goal_generic_trade
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_emergency
 		}
@@ -558,7 +582,7 @@ focus_tree = {
 	focus = {
 		id = ncr_milcentres
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_exodus
 		}
@@ -584,7 +608,7 @@ focus_tree = {
 	focus = {
 		id = ncr_brahminbill
 		icon = GFX_focus_renounce_the_treaty_of_triannon
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_milcentres
 		}
@@ -600,7 +624,7 @@ focus_tree = {
 	focus = {
 		id = ncr_rationing
 		icon = GFX_goal_generic_position_armies
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_brahminbill
 		}
@@ -622,7 +646,7 @@ focus_tree = {
 	focus = {
 		id = ncr_drummund
 		icon = GFX_goal_generic_axis_build_infantry
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_petersonswar
 		}
@@ -644,7 +668,7 @@ focus_tree = {
 	focus = {
 		id = ncr_oldworldmilitary
 		icon = GFX_focus_generic_little_entente
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_drummund
 		}
@@ -658,7 +682,7 @@ focus_tree = {
 	focus = {
 		id = ncr_drummundreturn
 		icon = GFX_goal_rhineland
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_oldworldmilitary
 		}
@@ -676,13 +700,16 @@ focus_tree = {
 	focus = {
 		id = ncr_baron
 		icon = GFX_goal_generic_construct_military
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_petersonswar
 		}
 		mutually_exclusive = {
 			focus = ncr_drummund
 			focus = ncr_rangergeneral
+		}
+		available = {
+			has_country_flag = baronschoice
 		}
 		x = 9
 		y = 5
@@ -695,7 +722,7 @@ focus_tree = {
 	focus = {
 		id = ncr_industrialcomplex
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_baron
 		}
@@ -709,7 +736,7 @@ focus_tree = {
 	focus = {
 		id = ncr_bigjim
 		icon = GFX_goal_rhineland
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_industrialcomplex
 		}
@@ -727,13 +754,16 @@ focus_tree = {
 	focus = {
 		id = ncr_rangergeneral
 		icon = GFX_goal_generic_special_forces
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_petersonswar
 		}
 		mutually_exclusive = {
 			focus = ncr_baron
 			focus = ncr_drummund
+		}
+		available = {
+			has_country_flag = rangergeneral
 		}
 		x = 11
 		y = 5
@@ -746,7 +776,7 @@ focus_tree = {
 	focus = {
 		id = ncr_standards
 		icon = GFX_goal_generic_forceful_treaty
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_rangergeneral
 		}
@@ -759,7 +789,7 @@ focus_tree = {
 	focus = {
 		id = ncr_mossman
 		icon = GFX_goal_rhineland
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_standards
 		}
@@ -853,10 +883,11 @@ focus_tree = {
 				limit = {
 					is_core_of = RAP
 				}
-				add_core_of = NCR
-				NCR = {
-					transfer_state = PREV
-				}
+				add_core_of = NCR	
+			}
+			
+			NCR = {
+				annex_country = { target = RAP }
 			}
 			
 			CES = {
@@ -1635,6 +1666,12 @@ focus_tree = {
 		}
 		x = 7
 		y = 10
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = MRA
+			}
+		}
 
 	}
 	focus = {
@@ -1644,8 +1681,17 @@ focus_tree = {
 		prerequisite = {
 			focus = ncr_mojave
 		}
+		ai_will_do = {
+			factor = 1000
+		}
 		x = 7
 		y = 11
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = DAM
+			}
+		}
 
 	}
 	focus = {
