@@ -1,0 +1,1118 @@
+﻿add_namespace = nf_ncr
+
+
+country_event = {
+	id = nf_ncr.1
+	title = nf_ncr.1.t
+	desc = nf_ncr.1.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_ncr.1.a
+		
+		add_ideas = aradesh
+	}
+    
+    option = {
+		name = nf_ncr.1.b
+
+		add_ideas = seth
+		
+	}
+	
+	option = {
+		name = nf_ncr.1.c
+		
+		
+		add_ideas = tandi
+	}
+}
+
+country_event = {
+	id = nf_ncr.2
+	title = nf_ncr.2.t
+	desc = nf_ncr.2.d
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+    
+	option = {
+		name = nf_ncr.2.a
+		
+		set_country_flag = bajaharlon
+		
+	}
+	
+	option = {
+		name = nf_ncr.2.a
+		
+		set_country_flag = bajahector
+		
+	}
+	
+	option = {
+		name = nf_ncr.2.a
+		
+		set_country_flag = bajahayes
+	
+	}
+    
+}
+
+country_event = {
+	id = nf_ncr.3
+	title = nf_ncr.3.t
+	desc = nf_ncr.3.d
+	picture = GFX_report_event_fascist_speech
+	
+	trigger = {
+		tag = NCR
+		date > 2268.3.10
+	}
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = { days = 14 }
+	
+	
+	option = {
+		name = nf_ncr.3.a
+		
+		add_ideas = baronswar
+		
+		every_state = {
+			limit = {
+				is_baron_state = yes
+			}
+			remove_core_of = NCR
+		}
+		
+	}
+	
+}
+
+country_event = {
+	id = nf_ncr.4
+	title = nf_ncr.4.t
+	desc = nf_ncr.4.d
+	picture = GFX_report_event_fascist_speech
+		
+	is_triggered_only = yes 
+	
+	option = {
+		name = nf_ncr.4.a
+		
+		set_country_flag = buyout
+	}
+	
+	option = {
+		name = nf_ncr.4.b
+		
+		set_country_flag = diplomission
+	}
+	
+	option = {
+		name = nf_ncr.4.c
+		
+		set_country_flag = exodus
+		
+		hidden_effect = {
+			KLA = {
+				country_event = { id = nf_ncr.5 }
+			}
+			ARR = {
+				country_event = { id = nf_ncr.5 }
+			}
+			NEW = {
+				country_event = { id = nf_ncr.5 }
+			}
+		}	
+	}
+	
+}
+
+country_event = {
+	id = nf_ncr.5
+	title = nf_ncr.5.t
+	desc = nf_ncr.5.d
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_ncr.5.a
+		
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		
+		add_manpower = 100
+	}
+}
+
+country_event = {
+	id = nf_ncr.6
+	title = nf_ncr.6.t
+	desc = nf_ncr.6.d
+	picture = GFX_report_event_fascist_speech
+		
+	is_triggered_only = yes 
+	
+	option = {
+		name = nf_ncr.6.a
+		
+		set_country_flag = drummund
+	}
+	
+	option = {
+		name = nf_ncr.6.b
+		
+		set_country_flag = baronschoice
+	}
+	
+	option = {
+		name = nf_ncr.6.c
+		
+		set_country_flag = rangergeneral
+	}
+}
+
+country_event = {
+	id = nf_ncr.7
+	title = nf_ncr.7.t
+	desc = nf_ncr.7.d
+	picture = GFX_report_event_fascist_speech
+		
+	is_triggered_only = yes 
+	
+	option = {
+		name = nf_ncr.7.a #Rally La Militia
+		
+		if = {
+			limit = {
+				tag = BVC
+			}
+			load_oob = vallebandits
+		}
+		
+		if = {
+			limit = {
+				tag = BLP
+			}
+			load_oob = pazbandits
+		}
+	}
+	
+}
+
+country_event = {
+	id = nf_ncr.8
+	title = nf_ncr.8.t
+	desc = nf_ncr.8.d
+	picture = GFX_report_event_fascist_speech
+		
+	is_triggered_only = yes 
+	
+	option = {
+		name = nf_ncr.8.a 
+		
+		add_national_unity = 0.05
+		
+		every_state = {
+			limit = {
+				is_baja_california_state = yes
+			}
+			BJS = {
+				transfer_state = PREV
+			}
+			add_core_of = BJS
+		}
+			
+		NCR = {
+			puppet = BJS
+		}
+		
+	}
+	
+	option = {
+		name = nf_ncr.8.b
+		
+		every_state = {
+			limit = {
+				is_baja_california_state = yes
+			}
+			add_core_of = NCR
+		}
+		
+		create_wargoal = {
+			type = annex_everything
+			target = BVC
+		}
+		
+		create_wargoal = {
+			type = annex_everything
+			target = BLP
+		}
+		
+	}
+	
+}
+
+country_event = {
+	id = nf_ncr.9
+	title = nf_ncr.9.t
+	desc = nf_ncr.9.d
+	picture = GFX_report_event_fascist_speech
+		
+	is_triggered_only = yes 
+	
+	option = {
+		name = nf_ncr.9.a 
+		
+		add_manpower = 3000
+		hidden_effect = {
+			load_oob = rapidstolegion
+		}
+		381 = {
+			add_building_construction = {
+				type = dockyard
+				level = 3
+				instant_build = yes
+			}
+		}
+		
+	}
+	
+}
+
+country_event = {
+	id = nf_ncr.10
+	title = nf_ncr.10.t
+	desc = nf_ncr.10.d
+	picture = GFX_report_event_fascist_speech
+		
+	is_triggered_only = yes 
+	
+	option = {
+		name = nf_ncr.10.a
+		
+		add_opinion_modifier = { target = NEW modifier = nevadaagreements }
+		add_opinion_modifier = { target = VLT modifier = nevadaagreements }
+		add_opinion_modifier = { target = DES modifier = nevadaagreements }
+		add_opinion_modifier = { target = VEG modifier = nevadaagreements }
+		
+		
+		add_ideas = nevtradeagreements
+		
+	}
+	
+	option = {
+		name = nf_ncr.10.b
+		
+		add_ideas = monopoly
+		
+	}
+	
+	option = {
+		name = nf_ncr.10.c
+		
+		add_ideas = ncrdraft
+		
+	}
+	
+}
+
+country_event = {
+	id = nf_ncr.11
+	title = nf_ncr.11.t
+	desc = nf_ncr.11.d
+	picture = GFX_report_event_fascist_speech
+		
+	is_triggered_only = yes 
+
+	option = {
+		name = nf_ncr.11.a
+		
+		every_state = {
+			limit = {
+				is_ncr_founder_state = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		
+	}
+	
+	option = {
+		name = nf_ncr.11.b
+		
+		every_state = {
+			limit = {
+				is_ncr_founder_state = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		
+	}
+	
+	option = {
+		name = nf_ncr.11.c
+		
+		every_state = {
+			limit = {
+				is_ncr_founder_state = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+		}
+		
+	}
+	
+}
+
+country_event = {
+	id = nf_ncr.12
+	title = nf_ncr.12.t
+	desc = nf_ncr.12.d
+	picture = GFX_report_event_fascist_speech
+		
+	is_triggered_only = yes 
+
+	option = {
+		name = nf_ncr.12.a
+		
+		add_manpower = -1000
+		
+		custom_effect_tooltip = bosgetvertibirds_tt
+		
+		add_equipment_to_stockpile = {
+			type = vb_gunship_equipment 
+			amount = 5
+			producer = NCR
+		}
+		add_equipment_to_stockpile = {
+			type = vb_transport_plane_equipment
+			amount = 5
+			producer = NCR
+		}
+		
+		BOS = {
+			add_equipment_to_stockpile = {
+				type = vb_gunship_equipment 
+				amount = 15
+				producer = BOS
+			}
+			add_equipment_to_stockpile = {
+				type = vb_transport_plane_equipment
+				amount = 15
+				producer = BOS
+			}
+		}
+		
+		add_opinion_modifier = { target = BOS modifier = brotherhoodassault  }
+		
+	}
+	
+	option = {
+		name = nf_ncr.12.b
+		
+		add_manpower = -2000
+		
+		custom_effect_tooltip = weallgetvertibirds_tt
+		
+		add_equipment_to_stockpile = {
+			type = vb_gunship_equipment 
+			amount = 10
+			producer = NCR
+		}
+		add_equipment_to_stockpile = {
+			type = vb_transport_plane_equipment
+			amount = 10
+			producer = NCR
+		}
+		
+		BOS = {
+			add_equipment_to_stockpile = {
+				type = vb_gunship_equipment 
+				amount = 10
+				producer = BOS
+			}
+			add_equipment_to_stockpile = {
+				type = vb_transport_plane_equipment
+				amount = 10
+				producer = BOS
+			}
+		}
+		
+		add_opinion_modifier = { target = BOS modifier = equalassault  }
+		
+	}
+	
+	option = {
+		name = nf_ncr.12.c
+		
+		add_manpower = -4000
+		
+		custom_effect_tooltip = ncrgetvertibirds_tt
+		
+		add_equipment_to_stockpile = {
+			type = vb_gunship_equipment 
+			amount = 15
+			producer = NCR
+		}
+		add_equipment_to_stockpile = {
+			type = vb_transport_plane_equipment
+			amount = 15
+			producer = NCR
+		}
+		
+		BOS = {
+			add_equipment_to_stockpile = {
+				type = vb_gunship_equipment 
+				amount = 5
+				producer = BOS
+			}
+			add_equipment_to_stockpile = {
+				type = vb_transport_plane_equipment
+				amount = 5
+				producer = BOS
+			}
+		}
+		
+		add_opinion_modifier = { target = BOS modifier = ncrassault  }
+		
+	}
+	
+}
+
+
+country_event = { #Civil War
+	id = nf_ncr.13
+	title = nf_ncr.13.t
+	desc = nf_ncr.13.d
+	picture = GFX_report_event_fascist_speech
+	
+	trigger = {
+		tag = NCR
+		date > 2271.3.8
+	}
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = { days = 7 }
+	
+	option = {
+		name = nf_ncr.13.a #Anton Flynn and the Baron's Union
+		trigger = {
+			has_completed_focus = ncr_newnorth
+			has_completed_focus = ncr_bigjim
+			has_completed_focus = ncr_retake
+			NOT = {
+				has_completed_focus = ncr_mojavehero 
+			}
+		}
+		
+		create_country_leader = {
+			name = "Anton Flynn"
+			desc = "Anton_Flynn_DESC"
+			picture = "Portrait_Flynn.dds"
+			expire = "3000.1.1"
+			ideology = constitutional_republic
+			
+			traits = {
+				
+			}
+		}
+	}
+	
+	option = {
+		name = nf_ncr.13.b #Allgood Murphy
+		trigger = {
+			has_completed_focus = ncr_allisgood
+			has_completed_focus = ncr_bajastate
+			has_completed_focus = ncr_drummundreturn
+			NOT = {
+				has_completed_focus = ncr_mojavehero 
+			}
+		}
+		
+		create_country_leader = {
+			name = "Allgood Murphy"
+			desc = "Allgood_DESC"
+			picture = "Portrait_Allgood.dds"
+			expire = "3000.1.1"
+			ideology = constitutional_republic
+			
+			traits = {
+				
+			}
+		}
+	}
+	
+	option = {
+		name = nf_ncr.13.c #Enclave :D
+		trigger = {
+			has_completed_focus = ncr_integration
+			has_completed_focus = ncr_mossman
+			has_completed_focus = ncr_rationing 
+			NOT = {
+				has_completed_focus = ncr_mojavehero 
+			}
+		}
+		
+		ENC = {
+			create_country_leader = {
+				name = "Grant C. Hayes"
+				desc = "Hayes_DESC"
+				picture = "Portrait_Hayes.dds"
+				expire = "3000.1.1"
+				ideology = ideocracy
+				
+				traits = {
+					
+				}
+			}
+			
+			declare_war_on = {
+				target = NCR
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = BAR
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = BON
+				type = annex_everything
+			}
+			
+			transfer_state = 591
+			transfer_state = 292
+			transfer_state = 205
+			transfer_state = 63
+			transfer_state = 583
+			transfer_state = 80
+			transfer_state = 4
+			
+			hidden_effect = {
+				set_technology = {
+					power_armour_enclave1 = 1
+					tesla_weaponry = 1
+					vertiberd_gunship = 1 
+					vertiberd_transport1 = 1 
+				}
+				load_oob = enclavecivilwar
+			}
+			
+			if = {
+				limit = {
+					BJS = {
+						exists = no
+					}
+				}
+				every_state = {
+					limit = {
+						is_baja_california_state = yes
+					}
+					
+					transfer_state = PREV
+				}
+				
+			}
+			
+			every_state = {
+				limit = {
+					is_core_of = NCR
+				}
+				
+				add_core_of = ENC
+			}
+			
+			if = {
+				limit = {
+					has_completed_focus = ncr_integration
+					BJS = {
+						exists = yes
+					}
+				}
+				
+				NCR = {
+					release_puppet = BJS
+				}
+				
+				ENC = {
+					puppet = BJS
+				}
+			}
+			
+			#if = {
+			#	limit = {
+			#		NEW = {
+			#			Enclave Reno
+			#		}
+			#	}
+			#	
+			#	puppet = NEW
+			#	
+			#}
+			
+			
+			
+			set_politics = {
+				parties = {
+					people = { popularity = 0 }
+					elites = { popularity = 80 }
+					intellectuals = { popularity = 20 }
+					ruler = { popularity = 0 }
+				}
+				ruling_party = intellectuals
+				elections_allowed = no
+			}
+			
+			set_capital = 63
+			
+			change_tag_from = NCR
+		}
+		
+		NCR = {
+			create_country_leader = {
+				name = "General Drummund"
+				desc = "Drummund_DESC"
+				picture = "Portrait_Drummund.dds"
+				expire = "3000.1.1"
+				ideology = peoples_militia
+				
+				traits = {
+					
+				}
+			}
+		}
+		
+		hidden_effect = {
+		
+			BON = {
+				
+				create_country_leader = {
+					name = "Allgood Murphy"
+					desc = "Allgood_DESC"
+					picture = "Portrait_Allgood.dds"
+					expire = "3000.1.1"
+					ideology = constitutional_republic
+					
+					traits = {
+						
+					}
+				}
+				
+				transfer_state = 19
+				transfer_state = 1
+				transfer_state = 180
+				transfer_state = 396
+				transfer_state = 350
+				
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = BAR
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = ENC
+					type = annex_everything
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = NCR
+					}
+					
+					add_core_of = BON
+				}
+				
+			}
+			
+			BAR = {
+				
+				create_country_leader = {
+					name = "Anton Flynn"
+					desc = "Anton_Flynn_DESC"
+					picture = "Portrait_Flynn.dds"
+					expire = "3000.1.1"
+					ideology = constitutional_republic
+					
+					traits = {
+						
+					}
+				}
+				
+				every_state = {
+					limit = {
+						is_baron_state = yes
+					}
+					BAR = {
+						transfer_state = PREV
+					}
+				}
+				
+				transfer_state = 141
+				transfer_state = 135
+				transfer_state = 605
+				transfer_state = 603
+				transfer_state = 190
+				transfer_state = 529
+				
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = BON
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = ENC
+					type = annex_everything
+				}
+				
+				
+				every_state = {
+					limit = {
+						is_core_of = NCR
+					}
+					
+					add_core_of = BON
+				}
+				
+			}
+			
+			BOS = {
+				
+				transfer_state = 511
+				transfer_state = 441
+				transfer_state = 56
+				transfer_state = 182
+				transfer_state = 312
+				transfer_state = 433
+				transfer_state = 558
+				transfer_state = 606
+				
+			}
+		
+		}
+		
+	}
+	
+	option = {
+		name = nf_ncr.13.e #General Drummund coup
+		
+		trigger = {
+			has_completed_focus = ncr_drummundreturn
+			has_completed_focus = ncr_retake
+			has_completed_focus = ncr_rationing 
+			NOT = {
+				has_completed_focus = ncr_mojavehero 
+			}
+		}
+		
+		create_country_leader = {
+			name = "General Drummund"
+			desc = "Drummund_DESC"
+			picture = "Portrait_Drummund.dds"
+			expire = "3000.1.1"
+			ideology = peoples_militia
+			
+			traits = {
+				
+			}
+		}		
+		
+	}
+	
+	option = {
+		name = nf_ncr.13.f #Kimball
+		
+		trigger = {
+			has_completed_focus = ncr_mojavehero
+			has_completed_focus = ncr_protege
+		}
+		NOT = {
+			AND = {
+				has_completed_focus = ncr_integration
+				has_completed_focus = ncr_mossman
+			}
+			AND = {
+				has_completed_focus = ncr_newnorth
+				has_completed_focus = ncr_bigjim	
+			}
+			AND = {
+				has_completed_focus = ncr_allisgood
+				has_completed_focus = ncr_bajastate 
+			}
+		}
+		
+		create_country_leader = {
+			name = "Aaron Kimball"
+			desc = "Kimball_DESC"
+			picture = "Portrait_Kimball.dds"
+			expire = "3000.1.1"
+			ideology = constitutional_republic
+			
+			traits = {
+				
+			}
+		}	
+		
+	}
+
+	option = {
+		name = nf_ncr.13.g #You dun goofed	
+		
+		hidden_effect = {
+		
+			ENC = {
+				create_country_leader = {
+					name = "Grant C. Hayes"
+					desc = "Hayes_DESC"
+					picture = "Portrait_Hayes.dds"
+					expire = "3000.1.1"
+					ideology = ideocracy
+					
+					traits = {
+						
+					}
+				}
+				
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = BAR
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = BON
+					type = annex_everything
+				}
+				
+				transfer_state = 591
+				transfer_state = 292
+				transfer_state = 205
+				transfer_state = 63
+				transfer_state = 583
+				transfer_state = 80
+				transfer_state = 4
+				
+				hidden_effect = {
+					set_technology = {
+						power_armour_enclave1 = 1
+						tesla_weaponry = 1
+						vertiberd_gunship = 1 
+						vertiberd_transport1 = 1 
+					}
+					load_oob = enclavecivilwar
+				}
+				
+				if = {
+					limit = {
+						BJS = {
+							exists = no
+						}
+					}
+					every_state = {
+						limit = {
+							is_baja_california_state = yes
+						}
+						
+						transfer_state = PREV
+					}
+					
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = NCR
+					}
+					
+					add_core_of = ENC
+				}
+				
+				if = {
+					limit = {
+						has_completed_focus = ncr_integration
+						BJS = {
+							exists = yes
+						}
+					}
+					
+					NCR = {
+						release_puppet = BJS
+					}
+					
+					ENC = {
+						puppet = BJS
+					}
+				}
+				
+				#if = {
+				#	limit = {
+				#		NEW = {
+				#			Enclave Reno
+				#		}
+				#	}
+				#	
+				#	puppet = NEW
+				#	
+				#}
+				
+				
+				
+				set_politics = {
+					parties = {
+						people = { popularity = 0 }
+						elites = { popularity = 80 }
+						intellectuals = { popularity = 20 }
+						ruler = { popularity = 0 }
+					}
+					ruling_party = intellectuals
+					elections_allowed = no
+				}
+				
+				set_capital = 63
+				
+			}
+		
+			BON = {
+				
+				create_country_leader = {
+					name = "Allgood Murphy"
+					desc = "Allgood_DESC"
+					picture = "Portrait_Allgood.dds"
+					expire = "3000.1.1"
+					ideology = constitutional_republic
+					
+					traits = {
+						
+					}
+				}
+				
+				transfer_state = 19
+				transfer_state = 1
+				transfer_state = 180
+				transfer_state = 396
+				transfer_state = 350
+				
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = BAR
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = ENC
+					type = annex_everything
+				}
+				
+				every_state = {
+					limit = {
+						is_core_of = NCR
+					}
+					
+					add_core_of = BON
+				}
+				
+			}
+			
+			BAR = {
+				
+				create_country_leader = {
+					name = "Anton Flynn"
+					desc = "Anton_Flynn_DESC"
+					picture = "Portrait_Flynn.dds"
+					expire = "3000.1.1"
+					ideology = constitutional_republic
+					
+					traits = {
+						
+					}
+				}
+				
+				every_state = {
+					limit = {
+						is_baron_state = yes
+					}
+					BAR = {
+						transfer_state = PREV
+					}
+				}
+				
+				transfer_state = 141
+				transfer_state = 135
+				transfer_state = 605
+				transfer_state = 603
+				transfer_state = 190
+				transfer_state = 529
+				
+				declare_war_on = {
+					target = NCR
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = BON
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = ENC
+					type = annex_everything
+				}
+				
+				
+				every_state = {
+					limit = {
+						is_core_of = NCR
+					}
+					
+					add_core_of = BON
+				}
+				
+			}
+			
+			BOS = {
+				
+				transfer_state = 511
+				transfer_state = 441
+				transfer_state = 56
+				transfer_state = 182
+				transfer_state = 312
+				transfer_state = 433
+				transfer_state = 558
+				transfer_state = 606
+				
+			}
+		
+		}
+		
+		
+		
+}

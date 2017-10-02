@@ -1109,48 +1109,13 @@ focus_tree = {
 		x = 17
 		y = 11
 		completion_reward = {
-			hidden_effect = {
-				add_state_core = 222
-				add_state_core = 513
-				add_state_core = 495
-				add_state_core = 535
-				add_state_core = 569 
-				add_state_core = 368
-				add_state_core = 58
-				add_state_core = 574
-				add_state_core = 3
-				add_state_core = 102
-				add_state_core = 428 
-				add_state_core = 361
-				add_state_core = 404
-				add_state_core = 224
-				add_state_core = 542 
-				add_state_core = 526
-				add_state_core = 76 
-				add_state_core = 246
-				add_state_core = 499
-				add_state_core = 547
-				add_state_core = 470
-				add_state_core = 26
-				add_state_core = 279
-				add_state_core = 320 
-				add_state_core = 133
-				add_state_core = 348
-				add_state_core = 497
-				add_state_core = 364
-				add_state_core = 197
-				add_state_core = 98
-				add_state_core = 391
-				add_state_core = 378
-				add_state_core = 138 
-				add_state_core = 10
-				add_state_core = 457
-				add_state_core = 496
-				add_state_core = 306
-				add_state_core = 257 
-			}
 			
-			custom_effect_tooltip = kingdomofgod_tt 
+			every_state = {
+                limit = {
+                    is_utah_state = yes
+                }
+                add_core_of = NCN
+            }
 			
 		}
 
@@ -1169,8 +1134,8 @@ focus_tree = {
 		y = 12
 		completion_reward = {
 			create_wargoal = {
-					type = annex_everything
-					target = CES
+				type = annex_everything
+				target = CES
 			}
 		}
 

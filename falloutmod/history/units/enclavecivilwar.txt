@@ -1,0 +1,81 @@
+﻿division_template = {
+	name = "PA Division"
+
+	regiments = {
+		power_armour = { x = 0 y = 0 }
+		power_armour = { x = 0 y = 1 }
+		power_armour = { x = 0 y = 2 }
+		power_armour = { x = 1 y = 0 }
+		power_armour = { x = 1 y = 1 }
+		power_armour = { x = 1 y = 2 }
+		power_armour = { x = 2 y = 0 }
+		power_armour = { x = 2 y = 1 }
+		power_armour = { x = 2 y = 2 }
+		power_armour = { x = 3 y = 0 }
+		power_armour = { x = 3 y = 1 }
+	}
+}
+units = {
+
+	division {
+		name = "Enclave Remnants"
+		location = 2649
+		division_template = "PA Division"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	
+	division {
+		name = "Enclave Remnants"
+		location = 2397
+		division_template = "PA Division"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	
+	division {
+		name = "Enclave Remnants"
+		location = 2310
+		division_template = "PA Division"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	
+	division {
+		name = "Enclave Remnants"
+		location = 4967
+		division_template = "PA Division"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = enclave_power_armour_equipment_1
+			creator = "ENC"
+		}
+		requested_factories = 1
+		progress = 0.25
+		efficiency = 50
+	}
+	add_equipment_production = {
+		equipment = {
+			type = tesla_equipment_1
+			creator = "ENC"
+		}
+		requested_factories = 1
+		progress = 0.25
+		efficiency = 50
+	}
+	add_equipment_production = {
+		equipment = {
+			type = vb_gunship_equipment
+			creator = "ENC"
+		}
+		requested_factories = 1
+		progress = 0.25
+		efficiency = 50
+	}
+}

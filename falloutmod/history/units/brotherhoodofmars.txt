@@ -1,0 +1,81 @@
+﻿division_template = {
+	name = "PA Division"
+
+	regiments = {
+		power_armour = { x = 0 y = 0 }
+		power_armour = { x = 0 y = 1 }
+		power_armour = { x = 0 y = 2 }
+		power_armour = { x = 1 y = 0 }
+		power_armour = { x = 1 y = 1 }
+		power_armour = { x = 1 y = 2 }
+		power_armour = { x = 2 y = 0 }
+		power_armour = { x = 2 y = 1 }
+		power_armour = { x = 2 y = 2 }
+	}
+}
+
+units = {
+
+	division {
+		name = "Praetorian Guard"
+		location = 1623
+		division_template = "Praetorian Guard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+
+	division {
+		name = "Brotherhood of Mars"
+		location = 1623
+		division_template = "PA Division"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	
+	division {
+		name = "Brotherhood of Mars"
+		location = 1623
+		division_template = "PA Division"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	
+	division {
+		name = "Brotherhood of Mars"
+		location = 1623
+		division_template = "Securitron Division"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = energy_equipment_2
+			creator = "BOM"
+		}
+		requested_factories = 1
+		progress = 0.25
+		efficiency = 75
+	}
+	add_equipment_production = {
+		equipment = {
+			type = power_armor_equipment_1
+			creator = "BOM"
+		}
+		requested_factories = 1
+		progress = 0.25
+		efficiency = 50
+	}
+	add_equipment_production = {
+		equipment = {
+			type = securitron_equipment
+			creator = "BOM"
+		}
+		requested_factories = 1
+		progress = 0.25
+		efficiency = 50
+	}
+}

@@ -1,176 +1,370 @@
 ideas = {
 
 	country = {
-		ncr_bureacracy = {
+	
+		ncrguns = {
+			
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				equipment_conversion_speed = -0.2
+			}
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = 0.25
+					instant = yes
+				}
+			}
+		
+		
+		}
+		
+		ncrtechlimits = {
 		
 			picture = generic_morale_bonus
 			
 			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				has_government = people
 			}
 
 			removal_cost = -1
-			
-			modifier = {
-				political_power_cost = 1
-				consumer_goods_factor = 0.3
-				conscription_factor = -0.15
-				join_faction_tension = 0.20
+		
+			equipment_bonus = {
+				energy_equipment = {
+					build_cost_ic = 0.5
+                    instant = yes
+				}
+				robot_equipment = {
+					build_cost_ic = 0.5
+                    instant = yes
+				}
 			}
+			
 		}
-		revalued_ncr = {
-			
-			picture = generic_goods_red_bonus
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				has_government = people
-			}
-
-			removal_cost = -1
-			
-			modifier = {
-				consumer_goods_factor = -0.15
-			}
-		}	
 		
-		ncrbank = {
+		aradesh = {
 			
-			picture = generic_goods_red_bonus
+			picture = generic_morale_bonus
 			
 			allowed = {
-				always = no
 			}
-
-			allowed_civil_war = {
-				has_government = people
-			}
-
+			
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = -0.3
-			}
-		}	
-		
-		ncrcentral = {
-			
-			picture = generic_pp_unity_bonus
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				has_government = people
-			}
-
-			removal_cost = -1
-			
-			modifier = {
-				unity_factor = 0.1
-				political_power_cost = -0.5
+				unity_factor = 0.15
 			}
 		}
 		
-		kimballdeath = {
+		seth = {
 			
-			picture = GFX_idea_ENG_the_war_to_end_all_wars
+			picture = generic_morale_bonus
 			
 			allowed = {
-				always = no
 			}
-
-			allowed_civil_war = {
-				has_government = people
-			}
-
+			
 			removal_cost = -1
 			
 			modifier = {
-				unity_factor = -0.3
+				unity_factor = 0.05
+			}
+			equipment_bonus = {
+				spec_ops = {
+					soft_attack = 0.05
+					hard_attack = 0.05
+					defense = 0.05
+				}
 			}
 		}
 		
-		ncrjustice = {
+		tandi = {
 			
-			picture = neutrality_idea
+			picture = generic_morale_bonus
 			
 			allowed = {
-				always = no
 			}
-
-			allowed_civil_war = {
-				has_government = people
-			}
-
+			
 			removal_cost = -1
 			
 			modifier = {
-				drift_defence_factor = 0.1
-				enemy_justify_war_goal_time = 0.1
+				political_power_gain = 0.25
+				unity_factor = 0.05
 			}
 		}
 		
-		ncrmotroops = {
+		baronswar = {
 			
-			picture = sour_loser
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				has_government = people
-			}
-
-			removal_cost = -1
-			
-			modifier = {
-				conscription_factor = 0.25
-			}
-		}
-		ncr_draft = {
-			
-			picture = sour_loser
+			picture = generic_morale_bonus
 			
 			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				has_government = people
-			}
-
-			removal_cost = -1
-			
-			modifier = {
-				conscription_factor = 0.1
-			}
-		}
-		hooverdamvictor = {
-			
-			picture = generic_victors_of_ww1
-			
-			allowed = {
-				always = no
 			}
 			
 			removal_cost = -1
 			
 			modifier = {
-				political_power_gain = 1
-				drift_defence_factor = 0.5
-				unity_factor = 0.1
+				unity_factor = -0.05
+				consumer_goods_factor = 0.2
+				monthly_population = -0.10
 			}
 		}
+		
+		baronswarbuyout = {
+			
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				unity_factor = -0.05
+				consumer_goods_factor = 0.23
+				monthly_population = -0.10
+			}
+		}
+		
+		ncrbarons = {
+			
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				monthly_population = 0.10
+			}
+			
+		}
+		
+		baronofbarons = {
+			
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				unity_factor = -0.05
+				production_speed_buildings_factor = 0.05
+			}
+			
+		}
+		
+		rattletailrepaid = {
+			
+			picture = great_depression
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+		}
+		
+		banditopayments = {
+			
+			picture = great_depression
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+			}
+		}
+		
+		brahminbill = {
+			
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				unity_factor = 0.05
+			}
+		
+		}
+		
+		rationing = {
+			
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				monthly_population = 0.10
+			}
+			
+		}
+		
+		oldworldmilitary = {
+		
+			picture = generic_infantry_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				max_planning = 0.15
+				planning_speed = 0.15
+			}
+			
+		}
+		
+		militindustrial = {
+		
+			picture = generic_production_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_industrial_complex_factor = -0.1
+				production_speed_arms_factory_factor = 0.1
+			}
+			
+		}
+		
+		draftstandards = {
+			
+			picture = generic_infantry_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = -0.05
+				army_org_factor = 0.1
+			}
+		}
+		
+		riverpatrols = {
+		
+			picture = generic_naval_manufacturer_3 
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				destroyer_equipment = {
+					build_cost_ic = -0.05
+				}
+				convoy_equipment = {
+					build_cost_ic = -0.05
+				}
+			}
+		}
+		
+		nevtradeagreements = {
+			
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+			
+		}
+		
+		monopoly = {
+		
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				monthly_population = 0.1
+				unity_factor = -0.05
+			}
+		
+		}
+		
+		ncrdraft = {
+		
+			picture = generic_manpower_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.02
+				unity_factor = -0.1
+			}
+		
+		}
+		
+		reorgranger = {
+			
+			picture = generic_infantry_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				spec_ops = {
+					soft_attack = 0.05
+					hard_attack = 0.05
+					defense = 0.05
+				}
+			}
+		}
+		
+		ncrrangerprop = {
+		
+			picture = generic_manpower_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.01
+			}
+		
+		}
+		
+		
 	}
 	
 	theorist = {	

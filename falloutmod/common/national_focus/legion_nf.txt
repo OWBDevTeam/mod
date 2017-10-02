@@ -680,6 +680,9 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_conqueror_of_the_86
 		}
+		available = {
+			has_completed_focus = ces_the_burned_man
+		}
 		x = 5
 		y = 8
 		completion_reward = {
@@ -887,6 +890,13 @@ focus_tree = {
 		y = 13
 		completion_reward = {
 			add_to_faction = EHT
+			
+			every_state = {
+                limit = {
+                    is_utah_state = yes
+                }
+                add_core_of = EHT
+            }
 		}
 
 	}
@@ -908,6 +918,13 @@ focus_tree = {
 		y = 13
 		completion_reward = {
 			add_to_faction = WHT
+			
+			every_state = {
+                limit = {
+                    is_utah_state = yes
+                }
+                add_core_of = WHT
+            }
 		}
 
 	}
@@ -1033,24 +1050,6 @@ focus_tree = {
 				}
 			}
 			
-			hidden_effect = {
-			
-				create_country_leader  = {
-					name = "Lanius"
-					desc = "Lanius_DESC"
-					picture = "Portrait_Lanius.dds"
-					expire = "3000.1.1"
-					ideology = warlordship
-					id = 996
-					
-					traits = {
-						cruel_tyrant
-						warmonger
-					}
-				}
-			}
-			
-			
 		}
 
 	}
@@ -1071,23 +1070,6 @@ focus_tree = {
 		y = 10
 		completion_reward = {
 			add_ideas = legion_nf_hoover_dam
-		
-			hidden_effect = {
-		
-				create_country_leader  = {
-					name = "Malpais Legate"
-					desc = "Graham_DESC"
-					picture = "Portrait_Malpais.dds"
-					expire = "3000.1.1"
-					ideology = benevolent_dictatorship
-					id = 996
-					
-					traits = {
-						warmonger
-					}
-				}
-
-			}
 		
 		}
 
@@ -1934,16 +1916,13 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_poking_the_bear
 		}
-		allow_branch = { 
-			has_completed_focus = ces_poking_the_bear
-		}
         bypass = {
             has_country_flag = caesar_survived
         }
 		x = 15
 		y = 15
 		completion_reward = {
-			country_event = { id = nf_legion.6 } # Crowning a New Augustus
+			add_political_power = 100
 		}
 
 	}
@@ -1989,7 +1968,6 @@ focus_tree = {
 		x = 18
 		y = 16
 		completion_reward = {
-			add_research_slot = 1
 			remove_ideas = national_spirit_rejection_of_automation
 		}
 

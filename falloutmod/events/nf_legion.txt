@@ -41,6 +41,20 @@ country_event = {
 		name = nf_legion.1.option.a
         
         set_country_flag = accepted_petition
+		
+		add_opinion_modifier = { 
+            target = CES 
+            modifier = loyal_tribe
+        }   
+        reverse_add_opinion_modifier = { 
+            target = CES
+            modifier = loyal_tribe
+        }
+		
+		declare_war_on = {
+			target = NCN
+			type = annex_everything
+		}
 	}
     
     # Refuse
@@ -74,6 +88,11 @@ country_event = {
             target = CES
             modifier = loyal_tribe
         }
+		
+		declare_war_on = {
+			target = NCN
+			type = annex_everything
+		}
 	}
     
     # Refuse
@@ -145,11 +164,86 @@ country_event = {
         
         kill_country_leader = yes
 		
-		start_civil_war = {
-			ruling_party = ruler
-			ideology = elites
-			size = 0.5
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = ces_the_burned_man
+				}
+			}
+			
+			create_country_leader  = {
+				name = "Malpais Legate"
+				desc = "Graham_DESC"
+				picture = "Portrait_Malpais.dds"
+				expire = "3000.1.1"
+				ideology = benevolent_dictatorship
+				id = 996
+				
+				traits = {
+					warmonger
+				}
+			}
+				
 		}
+		
+		if = {
+			limit = {
+				has_completed_focus = ces_the_burned_man
+			}
+					
+			create_country_leader  = {
+				name = "Lanius"
+				desc = "Lanius_DESC"
+				picture = "Portrait_Lanius.dds"
+				expire = "3000.1.1"
+				ideology = warlordship
+				id = 996
+				
+				traits = {
+					cruel_tyrant
+					warmonger
+				}
+			}
+			
+			declare_war_on = {
+			target = CSI
+			type = annex_everything
+		}
+			
+			CSI = {
+			
+				set_politics = {
+					ruling_party = elites
+				}
+			
+				create_country_leader  = {
+					name = "Vulpes Inculta"
+					desc = "Inculta_DESC"
+					picture = "Portrait_Inculta.dds"
+					expire = "3000.1.1"
+					ideology = feudalism
+					id = 997
+					
+					traits = {
+						cruel_tyrant
+					}
+				}
+		
+				every_state = {
+					limit = {
+						is_arizona_state = yes
+						is_owned_by = CES
+						
+					}
+					CSI = {
+						transfer_state = PREV
+					}
+				}
+			
+			}
+			
+		}
+		
         
 	}
 	
@@ -158,10 +252,92 @@ country_event = {
         
         kill_country_leader = yes
         		
-		start_civil_war = {
+		create_country_leader  = {
+			name = "Vulpes Inculta"
+			desc = "Inculta_DESC"
+			picture = "Portrait_Inculta.dds"
+			expire = "3000.1.1"
+			ideology = feudalism
+			id = 997
+			
+			traits = {
+				cruel_tyrant
+			}
+		}
+		
+		set_politics = {
 			ruling_party = elites
-			ideology = ruler
-			size = 0.5
+		}
+		
+		declare_war_on = {
+			target = CSI
+			type = annex_everything
+		}
+		
+		CSI = {
+			
+			if = {
+				limit = {
+					NOT = {
+						CES = {
+							has_completed_focus = ces_the_burned_man
+						}
+					}
+				}
+				
+				create_country_leader  = {
+					name = "Malpais Legate"
+					desc = "Graham_DESC"
+					picture = "Portrait_Malpais.dds"
+					expire = "3000.1.1"
+					ideology = benevolent_dictatorship
+					id = 996
+					
+					traits = {
+						warmonger
+					}
+				}
+					
+			}
+			
+			if = {
+				limit = {
+					CES = {
+						has_completed_focus = ces_the_burned_man
+					}
+				}
+						
+				create_country_leader  = {
+					name = "Lanius"
+					desc = "Lanius_DESC"
+					picture = "Portrait_Lanius.dds"
+					expire = "3000.1.1"
+					ideology = warlordship
+					id = 996
+					
+					traits = {
+						cruel_tyrant
+						warmonger
+					}
+				}
+				
+				every_state = {
+					limit = {
+						OR = {
+							is_new_mexico_state = yes
+							is_colorado_state = yes
+						}
+						is_owned_by = CES
+					}
+					CSI = {
+						transfer_state = PREV
+					}
+				}
+				
+			}
+			
+			
+			
 		}
         
 	}
@@ -199,14 +375,70 @@ country_event = {
     option = {
 		name = nf_legion.6.option.b
         
-		start_civil_war = {
-			ruling_party = intellectuals
-			ideology = ruler
-			size = 0.8
+		CSI = {
+			annex_country = { target = CES transfer_troops = yes }
 		}
+		CES = {
 		
-		set_capital = 359	
-
+			create_country_leader  = {
+				name = "Lucius"
+				desc = "Lucius_DESC"
+				picture = "Portrait_Lucius.dds"
+				expire = "3000.1.1"
+				ideology = benevolent_dictatorship
+				id = 995
+				
+				traits = {
+				}
+			}
+			
+			set_research_slots = 4
+			set_politics = {
+				parties = {
+					people = { popularity = 0 }
+					elites = { popularity = 20 }
+					intellectuals = { popularity = 30 }
+					ruler = { popularity = 50 }
+				}
+				ruling_party = ruler
+				elections_allowed = no
+			}
+			
+			set_cosmetic_tag = BOM
+			
+			set_capital = 359	
+			
+			transfer_state = 359
+			transfer_state = 553
+			transfer_state = 49
+			
+			if = {
+				limit = {
+					252 = {
+						is_owned_by = CES
+					}
+				}
+				
+				transfer_state = 252
+			}
+			
+			
+			declare_war_on = {
+				target = CSI
+				type = annex_everything
+			}
+			
+			hidden_effect = {
+				set_technology = {
+					powered_weaponry = 1
+					scientific_civilization = 1
+					improved_laser_weaponry = 1
+					power_armour = 1
+					securitron_tech = 1
+				}
+				load_oob = brotherhoodofmars
+			}
+		}
 		
 	}
 }
@@ -354,5 +586,129 @@ country_event = {
 	}
 }
 
+country_event = {	#Legion lost
+	id = nf_legion.11
+	title = nf_legion.11.t
+	desc = nf_legion.11.d
+	picture = GFX_report_event_fascist_speech
 
+	fire_only_once = yes
 
+	trigger = {
+		tag = NCR
+		has_war_with = CES
+		CES = {
+			surrender_progress > 0.9
+		}
+	}
+	
+	option = {
+		name = nf_legion.11.a #Puppet states
+		
+		every_state = {
+			limit = {
+				is_colorado_state = yes
+				is_core_of = CES
+			}
+			COL = {
+				transfer_state = PREV
+			}
+			add_core_of = COL
+		}
+		
+		every_state = {
+			limit = {
+				is_arizona_state = yes
+				is_core_of = CES
+			}
+			ARZ = {
+				transfer_state = PREV
+			}
+			add_core_of = ARZ
+		}
+		
+		every_state = {
+			limit = {
+				is_new_mexico_state = yes
+				is_core_of = CES
+			}
+			NMS = {
+				transfer_state = PREV
+			}
+			add_core_of = NMS
+		}
+		
+		NCR = {
+			puppet = COL
+			puppet = ARZ
+			puppet = NMS
+		}
+		
+	
+	}
+	
+	option = {
+		name = nf_legion.11.b #Return to Tribes/ Balkanize
+		
+		
+		every_state = {
+			limit = {
+				is_core_of = TWI
+			}
+			TWI = {
+				transfer_state = PREV
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = HAN
+			}
+			HAN = {
+				transfer_state = PREV
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = TWO
+			}
+			TWO = {
+				transfer_state = PREV
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = TTM
+			}
+			TTM = {
+				transfer_state = PREV
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = COW
+			}
+			COW = {
+				transfer_state = PREV
+			}
+		}
+		
+	}
+	
+	option = {
+		name = nf_legion.11.c #Take it all for yourself
+		
+		every_state = {
+			limit = {
+				is_core_of = CES
+			}
+			NCR = {
+				transfer_state = PREV
+			}
+		}
+		
+		add_national_unity = -0.2
+		
+	}	
+	
+
+}

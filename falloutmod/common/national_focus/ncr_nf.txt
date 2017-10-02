@@ -11,71 +11,119 @@ focus_tree = {
 	focus = {
 		id = ncr_founders
 		icon = GFX_goal_generic_demand_territory
-		cost = 10.00
+		cost = 1
 		x = 16
 		y = 0
+		completion_reward = {
+			country_event = { id = nf_ncr.1 } 
+		}
 
 	}
 	focus = {
 		id = ncr_baja
 		icon = GFX_goal_generic_alliance
-		cost = 10.00
+		cost = 8.6
+		available = {
+			date > 2266.5.5
+			has_completed_focus = ncr_councilhill
+		}
 		x = 2
 		y = 4
+		completion_reward = {
+			country_event = { id = nf_ncr.2 } 
+		}
 
 	}
 	focus = {
 		id = ncr_emergency
 		icon = GFX_goal_generic_demand_territory
-		cost = 10.00
+		cost = 8.6
+		available = {
+			date > 2268.3.30
+			has_ideas = baronswar
+		}
 		x = 2
 		y = 8
+		completion_reward = {
+			country_event = { id = nf_ncr.4 } 
+		}
 
 	}
 	focus = {
 		id = ncr_petersonswar
 		icon = GFX_goal_anschluss
-		cost = 10.00
+		cost = 8.6
+		available = {
+			date > 2265.4.1
+			has_completed_focus = ncr_councilhill
+		}
 		x = 9
 		y = 4
+		completion_reward = {
+			country_event = { id = nf_ncr.6 } 
+		}
+		
 
 	}
 	focus = {
 		id = ncr_mayorvictory
 		icon = GFX_goal_generic_demand_territory
-		cost = 10.00
+		cost = 8.6
 		x = 16
 		y = 10
+		completion_reward = {
+			add_political_power = 50
+		}
 
 	}
 	focus = {
 		id = ncr_boneyard
 		icon = GFX_goal_generic_construction
-		cost = 10.00
+		cost = 8.6
 		x = 24
 		y = 4
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}			
+		}
 
 	}
 	focus = {
 		id = ncr_barons
 		icon = GFX_goal_tripartite_pact
-		cost = 10.00
+		cost = 8.6
 		x = 24
 		y = 10
+		completion_reward = {
+			add_timed_idea = {
+				idea = ncrbarons
+				days = 180
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_bearsroar
 		icon = GFX_goal_generic_build_tank
-		cost = 10.00
+		cost = 8.6
+		available = {
+			has_completed_focus = ncr_militacademy
+		}
 		x = 33
 		y = 4
+		completion_reward = {
+			army_experience = 10
+		}
 
 	}
 	focus = {
 		id = ncr_rangerdeploy
 		icon = GFX_goal_generic_more_territorial_claims
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_baja
 		}
@@ -83,38 +131,74 @@ focus_tree = {
 			focus = ncr_sympathies
 			focus = ncr_politicobandito
 		}
+		available = {
+			has_country_flag = bajaharlon
+		}
 		x = 0
 		y = 5
+		completion_reward = {
+			add_political_power = 25
+			add_opinion_modifier = { target = BVC modifier = deployedrangers }
+			add_opinion_modifier = { target = BLP modifier = deployedrangers }
+			custom_effect_tooltip = rangerdeploy_tt
+			hidden_effect = {
+				load_oob = bajarangers
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_ultimatum
 		icon = GFX_goal_generic_demand_territory
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_rangerdeploy
 		}
 		x = 0
 		y = 6
+		completion_reward = {
+			add_political_power = 25
+			BVC = {
+				country_event = { id = nf_ncr.7 }
+			}
+			BLP = {
+				country_event = { id = nf_ncr.7 }
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_retake
 		icon = GFX_goal_generic_major_war
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_ultimatum
 		}
 		x = 0
 		y = 7
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = BVC
+			}
+			
+			BVC = {
+				create_faction = fantasma_cartel
+				add_to_faction = BLP
+			}
+			
+		}
 
 	}
 	focus = {
 		id = ncr_buyout
 		icon = GFX_goal_generic_positive_trade_relations
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_emergency
+		}
+		available = {
+			has_country_flag = buyout
 		}
 		mutually_exclusive = {
 			focus = ncr_diplomatic
@@ -122,45 +206,81 @@ focus_tree = {
 		}
 		x = 0
 		y = 9
+		completion_reward = {
+			add_political_power = -25
+			add_ideas = baronswarbuyout
+			custom_effect_tooltip = buyout_tt
+			hidden_effect = {
+				remove_ideas = baronswar
+				load_oob = thebuyout
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_baronofbarons
 		icon = GFX_goal_generic_construct_infrastructure
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_buyout
 		}
 		x = 0
 		y = 10
+		completion_reward = {
+			add_ideas = baronofbarons
+		}
 
 	}
 	focus = {
 		id = ncr_pokersiege
 		icon = GFX_goal_generic_fortify_city
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_baronofbarons
 		}
 		x = 0
 		y = 11
+		completion_reward = {
+			add_manpower = -500
+			remove_ideas = baronswarbuyout
+		}
 
 	}
 	focus = {
 		id = ncr_newnorth
 		icon = GFX_goal_generic_construction2
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_pokersiege
 		}
 		x = 0
 		y = 12
+		completion_reward = {
+			
+			add_popularity = {
+				ideology = elites
+				popularity = 0.1
+			}
+			
+			every_state = {
+				limit = {
+					is_baron_state = yes
+				}
+				add_core_of = NCR
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+				}
+			}	
+			
+		}
 
 	}
 	focus = {
 		id = ncr_sympathies
 		icon = GFX_goal_generic_positive_trade_relations
-		cost = 10.00
+		cost = 10
 		prerequisite = {
 			focus = ncr_baja
 		}
@@ -170,34 +290,77 @@ focus_tree = {
 		}
 		x = 2
 		y = 5
-
+		completion_reward = {
+			add_political_power = -25
+			add_opinion_modifier = { target = BVC modifier = sympathies }
+			reverse_add_opinion_modifier = { target = BVC modifier = sympathies }
+			add_opinion_modifier = { target = BLP modifier = sympathies }
+			reverse_add_opinion_modifier = { target = BLP modifier = sympathies }
+		}
 	}
 	focus = {
 		id = ncr_repaid
 		icon = GFX_goal_generic_consumer_goods
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_sympathies
 		}
 		x = 2
 		y = 6
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_baja_california_state = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = water_generator
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+			add_timed_idea = {
+				days = 180
+				idea = rattletailrepaid
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_bajastate
 		icon = GFX_goal_generic_improve_relations
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_repaid
 		}
 		x = 2
 		y = 7
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_baja_california_state = yes
+				}
+				BJS = {
+					transfer_state = PREV
+				}
+				add_core_of = BJS
+			}
+			
+			NCR = {
+				puppet = BJS
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_diplomatic
 		icon = GFX_goal_generic_intelligence_exchange
-		cost = 10.00
+		cost = 10
 		prerequisite = {
 			focus = ncr_emergency
 		}
@@ -205,47 +368,93 @@ focus_tree = {
 			focus = ncr_buyout
 			focus = ncr_exodus
 		}
+		available = {
+			has_country_flag = diplomission
+		}
 		x = 2
 		y = 9
+		completion_reward = {
+			add_political_power = 50
+		}
 
 	}
 	focus = {
 		id = ncr_steeldeal
 		icon = GFX_goal_generic_production2
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_diplomatic
 		}
 		x = 2
 		y = 10
+		completion_reward = {
+			BOS = {
+				random_owned_controlled_state = {
+					add_resource = {
+						type = advanced_technology
+						amount = 5
+					}
+					add_resource = {
+						type = electricity
+						amount = 5
+					}
+					add_resource = {
+						type = electronics
+						amount = 5
+					}
+				}
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_patrol
 		icon = GFX_goal_generic_national_unity
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_steeldeal
 		}
 		x = 2
 		y = 11
+		completion_reward = {
+			give_military_access = BOS
+			remove_ideas = baronswar
+		}
 
 	}
 	focus = {
 		id = ncr_allisgood
 		icon = GFX_goal_generic_improve_relations
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_patrol
 		}
 		x = 2
 		y = 12
-
+		completion_reward = {
+			add_opinion_modifier = { target = BOS modifier = allisgood }
+			reverse_add_opinion_modifier = { target = BOS modifier = allisgood }
+			add_opinion_modifier = { target = MOJ modifier = allisgood }
+			reverse_add_opinion_modifier = { target = MOJ modifier = allisgood }
+			
+			every_state = {
+				limit = {
+					is_baron_state = yes
+				}
+				add_core_of = NCR
+			}
+			
+			add_popularity = {
+				ideology = people
+				popularity = 0.1
+			}		
+			
+		}
 	}
 	focus = {
 		id = ncr_politicobandito
 		icon = GFX_goal_generic_forceful_treaty
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_baja
 		}
@@ -255,34 +464,70 @@ focus_tree = {
 		}
 		x = 4
 		y = 5
+		completion_reward = {
+			add_political_power = -50
+			add_opinion_modifier = { target = BVC modifier = politicobanditos }
+			reverse_add_opinion_modifier = { target = BVC modifier = politicobanditos }
+			add_opinion_modifier = { target = BLP modifier = politicobanditos }
+			reverse_add_opinion_modifier = { target = BLP modifier = politicobanditos }
+		}
 
 	}
 	focus = {
 		id = ncr_payments
 		icon = GFX_goal_generic_intelligence_exchange
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_politicobandito
 		}
 		x = 4
 		y = 6
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_baja_california_state = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+				}
+			}
+			
+			add_timed_idea = {
+				days = 180
+				idea = banditopayments
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_integration
 		icon = GFX_goal_generic_national_unity
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_payments
 		}
 		x = 4
 		y = 7
+		completion_reward = {
+			
+			country_event = { id = nf_ncr.8 }
+			
+			add_popularity = {
+				ideology = elites
+				popularity = 0.1
+			}	
+		}
 
 	}
 	focus = {
 		id = ncr_exodus
 		icon = GFX_goal_generic_trade
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_emergency
 		}
@@ -290,49 +535,99 @@ focus_tree = {
 			focus = ncr_diplomatic
 			focus = ncr_buyout
 		}
+		available = {
+			has_country_flag = exodus
+		}
 		x = 4
 		y = 9
+		completion_reward = {
+			remove_ideas = ncrbarons
+			
+			every_state = {
+				limit = {
+					is_baron_state = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = -3
+				}
+			}	
+		}
 
 	}
 	focus = {
 		id = ncr_milcentres
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_exodus
 		}
 		x = 4
 		y = 10
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_baron_state = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = {
+						all_provinces = yes
+					}
+					level = 1
+					instant_build = yes
+				}
+			}	
+		}
 
 	}
 	focus = {
 		id = ncr_brahminbill
 		icon = GFX_focus_renounce_the_treaty_of_triannon
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_milcentres
 		}
 		x = 4
 		y = 11
+		completion_reward = {
+			remove_ideas = baronswar
+			
+			add_ideas = brahminbill
+		}
 
 	}
 	focus = {
 		id = ncr_rationing
 		icon = GFX_goal_generic_position_armies
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_brahminbill
 		}
 		x = 4
 		y = 12
+		completion_reward = {
+			
+			add_ideas = rationing
+			
+			every_state = {
+				limit = {
+					is_baron_state = yes
+				}
+				add_core_of = NCR
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_drummund
 		icon = GFX_goal_generic_axis_build_infantry
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_petersonswar
+		}
+		available = {
+			has_country_flag = drummund
 		}
 		mutually_exclusive = {
 			focus = ncr_baron
@@ -340,34 +635,48 @@ focus_tree = {
 		}
 		x = 7
 		y = 5
+		completion_reward = {
+			army_experience = 10
+			air_experience = 10
+		}
 
 	}
 	focus = {
 		id = ncr_oldworldmilitary
 		icon = GFX_focus_generic_little_entente
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_drummund
 		}
 		x = 7
 		y = 6
+		completion_reward = {
+			add_ideas = oldworldmilitary
+		}
 
 	}
 	focus = {
 		id = ncr_drummundreturn
 		icon = GFX_goal_rhineland
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_oldworldmilitary
 		}
 		x = 7
 		y = 7
+		completion_reward = {
+			create_field_marshal = {
+				name = "General Drummund"
+				portrait_path = "gfx/leaders/NCR/Portrait_Drummund.dds"
+				skill = 5
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_baron
 		icon = GFX_goal_generic_construct_military
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_petersonswar
 		}
@@ -377,34 +686,48 @@ focus_tree = {
 		}
 		x = 9
 		y = 5
+		completion_reward = {
+			add_political_power = 50
+			army_experience = 10
+		}
 
 	}
 	focus = {
 		id = ncr_industrialcomplex
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_baron
 		}
 		x = 9
 		y = 6
+		completion_reward = {
+			add_ideas = militindustrial
+		}
 
 	}
 	focus = {
 		id = ncr_bigjim
 		icon = GFX_goal_rhineland
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_industrialcomplex
 		}
 		x = 9
 		y = 7
+		completion_reward = {
+			create_field_marshal = {
+				name = "Big Jim Marshal"
+				portrait_path = "gfx/leaders/NCR/Portrait_Generic.dds"
+				skill = 3
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_rangergeneral
 		icon = GFX_goal_generic_special_forces
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_petersonswar
 		}
@@ -414,34 +737,47 @@ focus_tree = {
 		}
 		x = 11
 		y = 5
+		completion_reward = {
+			army_experience = 20
+			navy_experience = 10
+		}
 
 	}
 	focus = {
 		id = ncr_standards
 		icon = GFX_goal_generic_forceful_treaty
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_rangergeneral
 		}
 		x = 11
 		y = 6
-
+		completion_reward = {
+			add_ideas = draftstandards
+		}
 	}
 	focus = {
 		id = ncr_mossman
 		icon = GFX_goal_rhineland
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_standards
 		}
 		x = 11
 		y = 7
+		completion_reward = {
+			create_field_marshal = {
+				name = "Ranger General Mossman"
+				portrait_path = "gfx/leaders/NCR/Portrait_Generic.dds"
+				skill = 4
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_openlong15
 		icon = GFX_goal_generic_major_war
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_drummundreturn
 			focus = ncr_bigjim
@@ -449,34 +785,60 @@ focus_tree = {
 		}
 		x = 7
 		y = 8
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = SCR
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_long15
 		icon = GFX_goal_generic_construct_infrastructure
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_openlong15
 		}
 		x = 6
 		y = 9
+		completion_reward = {
+			77 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_mojaveoutpost
 		icon = GFX_goal_generic_construct_military
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_openlong15
 		}
 		x = 8
 		y = 9
+		completion_reward = {
+			add_building_construction = {
+				type = bunker 
+				level = 2
+				province = {
+					id = 322
+					id = 494
+				}
+				instant_build = yes
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_eviction
 		icon = GFX_goal_generic_demand_territory
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_mossman
 			focus = ncr_bigjim
@@ -484,200 +846,334 @@ focus_tree = {
 		}
 		x = 11
 		y = 8
+		completion_reward = {
+			add_manpower = -500
+			add_political_power = -25
+			every_state = {
+				limit = {
+					is_core_of = RAP
+				}
+				add_core_of = NCR
+				NCR = {
+					transfer_state = PREV
+				}
+			}
+			
+			CES = {
+				country_event = { id = nf_ncr.9 }
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_riverbank
 		icon = GFX_goal_generic_construction
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_eviction
 		}
 		x = 10
 		y = 9
+		completion_reward = {
+			every_state = {
+				limit = {
+					owner = { tag = NCR }
+					is_colorado_river_state = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_aradeshport
 		icon = GFX_goal_generic_construct_naval_dockyard
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_eviction
 		}
 		x = 12
 		y = 9
+		completion_reward = {
+			147 = {
+				set_state_name = "Port Aradesh"
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_aradeshfort
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_riverbank
 			focus = ncr_aradeshport
 		}
 		x = 11
 		y = 10
+		completion_reward = {
+			147 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_riverpatrols
 		icon = GFX_goal_generic_navy_carrier
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_aradeshfort
 		}
 		x = 11
 		y = 11
+		completion_reward = {
+			add_ideas = riverpatrols
+		}
 
 	}
 	focus = {
 		id = ncr_tandi
 		icon = GFX_goal_generic_demand_territory
-		cost = 10.00
+		cost = 1
 		prerequisite = {
 			focus = ncr_founders
 		}
 		x = 16
 		y = 1
+		completion_reward = {
+			country_event = { id = nf_ncr.10 }
+		}
 
 	}
 	focus = {
 		id = ncr_development
 		icon = GFX_goal_generic_demand_territory
-		cost = 10.00
+		cost = 1
 		prerequisite = {
 			focus = ncr_tandi
 		}
 		x = 16
 		y = 2
+		completion_reward = {
+			country_event = { id = nf_ncr.11 }
+		}
 
 	}
 	focus = {
 		id = ncr_navarro
 		icon = GFX_goal_generic_demand_territory
-		cost = 10.00
+		cost = 1
 		prerequisite = {
 			focus = ncr_development
 		}
 		x = 16
 		y = 3
+		completion_reward = {
+			country_event = { id = nf_ncr.12 }
+		}
 
 	}
 	focus = {
 		id = ncr_councilhill
 		icon = GFX_focus_generic_home_defense
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_navarro
 		}
 		x = 16
 		y = 4
+		completion_reward = {
+			add_political_power = 50
+		}
 
 	}
 	focus = {
 		id = ncr_capitalfund
 		icon = GFX_goal_generic_construct_civilian
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_councilhill
 		}
 		x = 14
 		y = 5
+		completion_reward = {
+			253 = {
+				add_extra_state_shared_building_slots = 2
+				
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_militacademy
 		icon = GFX_goal_generic_position_armies
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_councilhill
 		}
 		x = 16
 		y = 5
+		completion_reward = {
+			army_experience = 25
+		}
 
 	}
 	focus = {
 		id = ncr_oldworld
 		icon = GFX_goal_generic_allies_build_infantry
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_militacademy
 		}
 		x = 16
 		y = 6
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_armourexperiment
 		icon = GFX_goal_generic_secret_weapon
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_oldworld
 		}
 		x = 16
 		y = 7
+		completion_reward = {
+			set_technology = { power_armour = 1 }
+		}
 
 	}
 	focus = {
 		id = ncr_capitalfort
 		icon = GFX_goal_generic_construct_military
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_armourexperiment
 		}
 		x = 16
 		y = 8
+		completion_reward = {
+			253 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = {
+						all_provinces = yes
+					}
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_rangerhq
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_councilhill
 		}
 		x = 18
 		y = 5
+		completion_reward = {
+			253 = {
+				add_extra_state_shared_building_slots = 2
+				
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_gammacore
 		icon = GFX_goal_generic_special_forces
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_rangerhq
 		}
 		x = 18
 		y = 6
+		completion_reward = {
+			#No Ghouls or Mutants yet
+		}
 
 	}
 	focus = {
 		id = ncr_reorgranger
 		icon = GFX_goal_generic_small_arms
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_gammacore
 		}
 		x = 18
 		y = 7
+		completion_reward = {
+			add_ideas = reorgranger
+		}
 
 	}
 	focus = {
 		id = ncr_rangerprop
 		icon = GFX_goal_generic_propaganda
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_reorgranger
 		}
 		x = 18
 		y = 8
+		completion_reward = {
+			add_ideas = ncrrangerprop
+		}
 
 	}
 	focus = {
 		id = ncr_pitch
 		icon = GFX_goal_generic_occupy_states_ongoing_war
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_mayorvictory
 		}
@@ -688,7 +1184,7 @@ focus_tree = {
 	focus = {
 		id = ncr_newleague
 		icon = GFX_focus_hun_assassinate_horthy
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_pitch
 		}
@@ -699,7 +1195,7 @@ focus_tree = {
 	focus = {
 		id = ncr_leagueradio
 		icon = GFX_goal_generic_radar
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_newleague
 		}
@@ -710,7 +1206,7 @@ focus_tree = {
 	focus = {
 		id = ncr_firstseason
 		icon = GFX_goal_generic_propaganda
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_newleague
 		}
@@ -721,7 +1217,7 @@ focus_tree = {
 	focus = {
 		id = ncr_calileague
 		icon = GFX_focus_hun_assassinate_horthy
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_firstseason
 		}
@@ -732,7 +1228,7 @@ focus_tree = {
 	focus = {
 		id = ncr_sac
 		icon = GFX_goal_generic_construct_civilian
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_barons
 		}
@@ -743,7 +1239,7 @@ focus_tree = {
 	focus = {
 		id = ncr_80sgarage
 		icon = GFX_goal_generic_army_motorized
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_sac
 		}
@@ -754,7 +1250,7 @@ focus_tree = {
 	focus = {
 		id = ncr_baroninvest
 		icon = GFX_goal_generic_positive_trade_relations
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_80sgarage
 		}
@@ -765,7 +1261,7 @@ focus_tree = {
 	focus = {
 		id = ncr_longroadhome
 		icon = GFX_goal_generic_construct_infrastructure
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_baroninvest
 		}
@@ -776,7 +1272,7 @@ focus_tree = {
 	focus = {
 		id = ncr_oldcity
 		icon = GFX_goal_generic_construct_civ_factory
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_boneyard
 		}
@@ -787,7 +1283,7 @@ focus_tree = {
 	focus = {
 		id = ncr_bearport
 		icon = GFX_goal_generic_air_fighter
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_oldcity
 		}
@@ -798,7 +1294,7 @@ focus_tree = {
 	focus = {
 		id = ncr_bearforceexpansion
 		icon = GFX_goal_generic_air_doctrine
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_bearport
 		}
@@ -809,7 +1305,7 @@ focus_tree = {
 	focus = {
 		id = ncr_followers
 		icon = GFX_focus_research
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_bearport
 		}
@@ -820,7 +1316,7 @@ focus_tree = {
 	focus = {
 		id = ncr_boneyardsprawl
 		icon = GFX_goal_generic_construct_civ_factory
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_followers
 		}
@@ -831,7 +1327,7 @@ focus_tree = {
 	focus = {
 		id = ncr_newcity
 		icon = GFX_goal_generic_construct_civ_factory
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_boneyard
 		}
@@ -842,7 +1338,7 @@ focus_tree = {
 	focus = {
 		id = ncr_dayglowroads
 		icon = GFX_goal_generic_construct_infrastructure
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_newcity
 		}
@@ -853,7 +1349,7 @@ focus_tree = {
 	focus = {
 		id = ncr_mint
 		icon = GFX_focus_generic_the_giant_wakes
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_dayglowroads
 		}
@@ -864,7 +1360,7 @@ focus_tree = {
 	focus = {
 		id = ncr_scavfund
 		icon = GFX_goal_generic_construction2
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_mint
 		}
@@ -875,7 +1371,7 @@ focus_tree = {
 	focus = {
 		id = ncr_allisgoodboneyard
 		icon = GFX_goal_support_democracy
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_boneyardsprawl
 		}
@@ -889,7 +1385,7 @@ focus_tree = {
 	focus = {
 		id = ncr_junktown
 		icon = GFX_goal_generic_construct_civilian
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_barons
 		}
@@ -900,7 +1396,7 @@ focus_tree = {
 	focus = {
 		id = ncr_gizmo
 		icon = GFX_goal_generic_construct_civ_factory
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_junktown
 		}
@@ -911,7 +1407,7 @@ focus_tree = {
 	focus = {
 		id = ncr_doctormorbid
 		icon = GFX_focus_research
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_gizmo
 		}
@@ -922,7 +1418,7 @@ focus_tree = {
 	focus = {
 		id = ncr_newwall
 		icon = GFX_goal_generic_fortify_city
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_doctormorbid
 		}
@@ -933,7 +1429,7 @@ focus_tree = {
 	focus = {
 		id = ncr_grinvestments
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_dayglowroads
 		}
@@ -944,7 +1440,7 @@ focus_tree = {
 	focus = {
 		id = ncr_grexpansion
 		icon = GFX_goal_generic_construct_civilian
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_grinvestments
 		}
@@ -955,7 +1451,7 @@ focus_tree = {
 	focus = {
 		id = ncr_standardarms
 		icon = GFX_goal_continuous_repairments
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_bearsroar
 		}
@@ -966,7 +1462,7 @@ focus_tree = {
 	focus = {
 		id = ncr_grdeals
 		icon = GFX_goal_generic_intelligence_exchange
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_standardarms
 		}
@@ -977,7 +1473,7 @@ focus_tree = {
 	focus = {
 		id = ncr_grliscense
 		icon = GFX_goal_generic_army_artillery
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_grdeals
 		}
@@ -986,15 +1482,15 @@ focus_tree = {
 
 	}
 	focus = {
-		id = ncr_drummund
+		id = ncr_drummund1
 		icon = GFX_goal_generic_axis_build_infantry
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
-			focus = ncr_petersonswar
+			focus = ncr_bearsroar
 		}
 		mutually_exclusive = {
-			focus = ncr_baron
-			focus = ncr_rangergeneral
+			focus = ncr_rangergenmossman
+			focus = ncr_jim
 		}
 		x = 31
 		y = 5
@@ -1003,9 +1499,9 @@ focus_tree = {
 	focus = {
 		id = ncr_blast
 		icon = GFX_goal_poland_goal
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
-			focus = ncr_drummund
+			focus = ncr_drummund1
 		}
 		x = 31
 		y = 6
@@ -1014,7 +1510,7 @@ focus_tree = {
 	focus = {
 		id = ncr_mobile
 		icon = GFX_goal_generic_occupy_states_ongoing_war
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_blast
 		}
@@ -1025,7 +1521,7 @@ focus_tree = {
 	focus = {
 		id = ncr_spear
 		icon = GFX_goal_generic_army_tanks
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_mobile
 		}
@@ -1036,12 +1532,12 @@ focus_tree = {
 	focus = {
 		id = ncr_jim
 		icon = GFX_goal_generic_construct_military
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_bearsroar
 		}
 		mutually_exclusive = {
-			focus = ncr_drummund
+			focus = ncr_drummund1
 			focus = ncr_rangergenmossman
 		}
 		x = 33
@@ -1051,7 +1547,7 @@ focus_tree = {
 	focus = {
 		id = ncr_drills
 		icon = GFX_goal_rhineland
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_jim
 		}
@@ -1062,7 +1558,7 @@ focus_tree = {
 	focus = {
 		id = ncr_march
 		icon = GFX_focus_generic_little_entente
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_drills
 		}
@@ -1073,7 +1569,7 @@ focus_tree = {
 	focus = {
 		id = ncr_draft
 		icon = GFX_goal_generic_forceful_treaty
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_march
 		}
@@ -1084,13 +1580,13 @@ focus_tree = {
 	focus = {
 		id = ncr_rangergenmossman
 		icon = GFX_goal_generic_special_forces
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_bearsroar
 		}
 		mutually_exclusive = {
 			focus = ncr_jim
-			focus = ncr_drummund
+			focus = ncr_drummund1
 		}
 		x = 35
 		y = 5
@@ -1099,7 +1595,7 @@ focus_tree = {
 	focus = {
 		id = ncr_rangercore
 		icon = GFX_goal_generic_military_sphere
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_rangergenmossman
 		}
@@ -1110,7 +1606,7 @@ focus_tree = {
 	focus = {
 		id = ncr_rangerlead
 		icon = GFX_goal_generic_army_artillery
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_rangercore
 		}
@@ -1121,7 +1617,7 @@ focus_tree = {
 	focus = {
 		id = ncr_rangercanopeners
 		icon = GFX_goal_generic_occupy_start_war
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_rangerlead
 		}
@@ -1132,7 +1628,7 @@ focus_tree = {
 	focus = {
 		id = ncr_mojave
 		icon = GFX_goal_generic_major_war
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_mojaveoutpost
 			focus = ncr_long15
@@ -1144,7 +1640,7 @@ focus_tree = {
 	focus = {
 		id = ncr_oldworldwall
 		icon = GFX_focus_generic_strike_at_democracy2
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_mojave
 		}
@@ -1155,7 +1651,7 @@ focus_tree = {
 	focus = {
 		id = ncr_mojavehero
 		icon = GFX_goal_support_democracy
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_mojave
 			focus = ncr_aradeshfort
@@ -1167,18 +1663,27 @@ focus_tree = {
 	focus = {
 		id = ncr_protege
 		icon = GFX_goal_support_democracy
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_mojavehero
 		}
 		x = 9
 		y = 12
+		completion_reward = {
+			create_corps_commander = {
+				name = "General Lee Oliver"
+				portrait_path = "gfx/leaders/NCR/Portrait_Oliver.dds"
+				skill = 6
+				traits = {
+				}
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_damassault
 		icon = GFX_goal_generic_alliance
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_oldworldwall
 		}
@@ -1192,7 +1697,7 @@ focus_tree = {
 	focus = {
 		id = ncr_longmarch
 		icon = GFX_focus_yug_pan_slavic_congress
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_damassault
 		}
@@ -1203,7 +1708,7 @@ focus_tree = {
 	focus = {
 		id = ncr_triumph
 		icon = GFX_goal_support_democracy
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_damassault
 		}
@@ -1214,7 +1719,7 @@ focus_tree = {
 	focus = {
 		id = ncr_mojaveforts
 		icon = GFX_goal_generic_construct_military
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_triumph
 		}
@@ -1225,7 +1730,7 @@ focus_tree = {
 	focus = {
 		id = ncr_powertopeople
 		icon = GFX_goal_generic_construct_infrastructure
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_mojaveforts
 		}
@@ -1236,7 +1741,7 @@ focus_tree = {
 	focus = {
 		id = ncr_hardline
 		icon = GFX_goal_generic_major_war
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_powertopeople
 			focus = ncr_heavytroops
@@ -1248,7 +1753,7 @@ focus_tree = {
 	focus = {
 		id = ncr_urbandraft
 		icon = GFX_focus_renounce_the_treaty_of_triannon
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_longmarch
 		}
@@ -1259,7 +1764,7 @@ focus_tree = {
 	focus = {
 		id = ncr_heavytroops
 		icon = GFX_goal_generic_special_forces
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_urbandraft
 		}
@@ -1270,7 +1775,7 @@ focus_tree = {
 	focus = {
 		id = ncr_armament
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_capitalfund
 		}
@@ -1281,7 +1786,7 @@ focus_tree = {
 	focus = {
 		id = ncr_bazaar
 		icon = GFX_goal_generic_construct_civ_factory
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_armament
 		}
@@ -1292,7 +1797,7 @@ focus_tree = {
 	focus = {
 		id = ncr_powerplant
 		icon = GFX_goal_generic_oil_refinery
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_bazaar
 		}
@@ -1303,7 +1808,7 @@ focus_tree = {
 	focus = {
 		id = ncr_beacon
 		icon = GFX_goal_support_democracy
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_powerplant
 		}
@@ -1320,7 +1825,7 @@ focus_tree = {
 	focus = {
 		id = ncr_thepeople
 		icon = GFX_goal_support_democracy
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_mayorvictory
 		}
@@ -1331,7 +1836,7 @@ focus_tree = {
 	focus = {
 		id = ncr_thirteen
 		icon = GFX_goal_generic_construct_civilian
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_mayorvictory
 		}
@@ -1342,7 +1847,7 @@ focus_tree = {
 	focus = {
 		id = ncr_militport
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_thirteen
 		}
@@ -1353,7 +1858,7 @@ focus_tree = {
 	focus = {
 		id = ncr_seabear
 		icon = GFX_goal_generic_navy_battleship
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_militport
 		}
@@ -1364,7 +1869,7 @@ focus_tree = {
 	focus = {
 		id = ncr_dayglowprospers
 		icon = GFX_goal_generic_construct_civilian
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_thepeople
 		}
@@ -1375,7 +1880,7 @@ focus_tree = {
 	focus = {
 		id = ncr_scavunion
 		icon = GFX_goal_generic_construction2
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_dayglowprospers
 		}
@@ -1386,7 +1891,7 @@ focus_tree = {
 	focus = {
 		id = ncr_migration
 		icon = GFX_goal_generic_positive_trade_relations
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_dayglowprospers
 		}
@@ -1397,7 +1902,7 @@ focus_tree = {
 	focus = {
 		id = ncr_supermutants
 		icon = GFX_goal_generic_secret_weapon
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_migration
 		}
@@ -1408,7 +1913,7 @@ focus_tree = {
 	focus = {
 		id = ncr_flyingbears
 		icon = GFX_goal_generic_air_fighter
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_bearforceexpansion
 		}
@@ -1419,7 +1924,7 @@ focus_tree = {
 	focus = {
 		id = ncr_hub
 		icon = GFX_goal_generic_construct_civilian
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_barons
 		}
@@ -1430,7 +1935,7 @@ focus_tree = {
 	focus = {
 		id = ncr_crimsoncaravan
 		icon = GFX_goal_generic_intelligence_exchange
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_hub
 		}
@@ -1441,7 +1946,7 @@ focus_tree = {
 	focus = {
 		id = ncr_hubcrime
 		icon = GFX_goal_generic_military_sphere
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_crimsoncaravan
 		}
@@ -1452,7 +1957,7 @@ focus_tree = {
 	focus = {
 		id = ncr_richroad
 		icon = GFX_goal_generic_construct_infrastructure
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_hubcrime
 		}
@@ -1463,7 +1968,7 @@ focus_tree = {
 	focus = {
 		id = ncr_mechcore
 		icon = GFX_goal_generic_army_motorized
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_bearsroar
 		}
@@ -1474,7 +1979,7 @@ focus_tree = {
 	focus = {
 		id = ncr_shock
 		icon = GFX_goal_anti_comintern_pact
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_mechcore
 		}
@@ -1485,7 +1990,7 @@ focus_tree = {
 	focus = {
 		id = ncr_rapid
 		icon = GFX_goal_generic_war_with_comintern
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_shock
 		}
