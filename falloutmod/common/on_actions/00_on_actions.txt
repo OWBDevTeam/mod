@@ -172,7 +172,14 @@ on_actions = {
                 }
                 country_event = { id = nf_legion.3 }
             }
+			every_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				decimate_half_all_industry = yes
+			}
 		}
+		
 	}
 
 	#on_government_change = {
@@ -192,20 +199,44 @@ on_actions = {
 	#on_annex = {
 	#	effect = {
 	#		
+	#		
 	#	}
 	#}
 
 	#Not run on a specific country.
-	on_startup = {
-		every_country = {
-			# Add start event commands here
-		}
-	}
-
-	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
-	#on_state_control_changed = {
+	#on_startup = {
 	#	effect = {
-	#
+	#		every_country = {
+	#			# Add start event commands here
+	#		}
 	#	}
 	#}
+
+	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
+	on_state_control_changed = {
+		effect = {
+			FROM.FROM = {
+				if {
+					limit = {
+						NOT = {
+							AND = {
+								is_owned_by = PREV
+								PREV = { ROOT = { has_war_with = FROM } }
+							}
+						}
+					}
+					decimate_half_all_industry = yes
+				}
+				if {
+					limit = {
+						AND = {
+							is_owned_by = PREV
+							PREV = { ROOT = { has_war_with = FROM } }
+						}
+					}
+					undecimate_half_all_industry = yes
+				}
+			}
+		}
+	}
 }
