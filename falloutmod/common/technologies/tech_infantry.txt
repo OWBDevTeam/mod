@@ -368,6 +368,14 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { electricity > 8 }
+			}
+			modifier = {
+				factor = 2
+				electricity > 12
+			}
 		}
 	}
     
