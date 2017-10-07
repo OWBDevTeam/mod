@@ -1,9 +1,9 @@
-NDefines.NGame.START_DATE = "2265.1.1.12"
+NDefines.NGame.START_DATE = "2275.1.1.12"
 NDefines.NGame.END_DATE = "2400.1.1.1"
 NDefines.NDiplomacy.VOLUNTEERS_DIVISIONS_REQUIRED = 8 		-- Vanilla is 30
 NDefines.NAI.GENERATE_WARGOAL_THREAT_BASELINE = 0.0
 NDefines.NAI.DIPLOMACY_SEND_MAX_FACTION = 0.5
-NDefines.NDiplomacy.TENSION_TIME_SCALE_START_DATE = "2265.1.1.12"	-- Starting at this date, the tension values will be scaled down (will be equal to 1 before that)
+NDefines.NDiplomacy.TENSION_TIME_SCALE_START_DATE = "2275.1.1.12"	-- Starting at this date, the tension values will be scaled down (will be equal to 1 before that)
 
 -- AI battleplans
 NDefines.NAI.FALLBACK_LOSING_FACTOR = 0.0 					                    -- The lower this number  the longer the AI will hold the line before sending them to the fallback line
