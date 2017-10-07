@@ -1,6 +1,5 @@
 ﻿add_namespace = nf_ncr
 
-
 country_event = {
 	id = nf_ncr.1
 	title = nf_ncr.1.t
@@ -42,6 +41,10 @@ country_event = {
 		name = nf_ncr.2.a
 		
 		set_country_flag = bajaharlon
+		
+		ai_chance = {
+			base = 100
+		}
 		
 	}
 	
@@ -103,6 +106,10 @@ country_event = {
 	
 	option = {
 		name = nf_ncr.4.a
+		
+		ai_chance = {
+			base = 100
+		}
 		
 		set_country_flag = buyout
 	}
@@ -169,6 +176,10 @@ country_event = {
 		name = nf_ncr.6.a
 		
 		set_country_flag = drummund
+		
+		ai_chance = {
+			base = 100
+		}
 	}
 	
 	option = {
@@ -852,6 +863,10 @@ country_event = { #Civil War
 	option = {
 		name = nf_ncr.13.f #Kimball
 		
+		ai_chance = {
+			base = 100
+		}
+		
 		trigger = {
 			has_completed_focus = ncr_mojavehero
 			has_completed_focus = ncr_protege
@@ -1114,7 +1129,63 @@ country_event = { #Civil War
 			}
 		
 		}
+	}
 		
 		
+}
+
+country_event = { #Hoover Dam
+	id = nf_ncr.14
+	title = nf_ncr.14.t
+	desc = nf_ncr.14.d
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_ncr.14.a
+		trigger = {
+			252 = {
+				is_owned_by = DAM
+			}
+		}
+		annex_country = { target = DAM transfer_troops = no }	
 		
+	}
+	
+	option = {
+		name = nf_ncr.14.b
+		trigger = {	
+			252 = {
+				is_owned_by = MOJ
+			}
+		}
+		NCR = {
+			give_military_access = MOJ
+		}
+		every_state = {
+			limit = {
+				is_new_vegas_state = yes
+				OR = {
+					is_owned_by = NCR
+					is_owned_by = MOJ
+				}
+			}
+			
+			set_border_war = yes
+			
+		}
+	}
+	
+	option = {
+		name = nf_ncr.14.c
+		trigger = {	
+			252 = {
+				is_owned_by = VEG
+			}
+		}
+		
+		country_event = { id = nf_ncr.15 }
+	}
+	
 }

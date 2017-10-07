@@ -149,38 +149,38 @@ on_actions = {
 	#}
 
 	# ROOT is capitulated country, FROM is winner
-	on_capitulation = {
-		effect = {
-			news_event = { id = country_capitulated.0 days = 0 }
-            # Legion lost
-            if = {
-                limit = {
-                    tag = CES
-                    has_war_with = NCR
-                    has_country_flag = battle_for_hoover_dam
-                }
-                country_event = { id = nf_legion.4 }
-            }
-            if = {
-                limit = {
-                    tag = NCR
-                    has_war_with = CES
-                    FROM = { 
-                        tag = CES
-                        has_country_flag = battle_for_hoover_dam 
-                    }
-                }
-                country_event = { id = nf_legion.3 }
-            }
-			every_state = {
-				limit = {
-					is_core_of = ROOT
-				}
-				decimate_half_all_industry = yes
-			}
-		}
-		
-	}
+	#on_capitulation = {
+	#	effect = {
+	#		news_event = { id = country_capitulated.0 days = 0 }
+    #        # Legion lost
+    #        if = {
+    #            limit = {
+    #                tag = CES
+    #                has_war_with = NCR
+    #                has_country_flag = battle_for_hoover_dam
+    #            }
+    #            country_event = { id = nf_legion.4 }
+    #        }
+    #        if = {
+    #            limit = {
+    #                tag = NCR
+    #                has_war_with = CES
+    #                FROM = { 
+    #                    tag = CES
+    #                    has_country_flag = battle_for_hoover_dam 
+    #                }
+    #            }
+    #            country_event = { id = nf_legion.3 }
+    #        }
+	#		every_state = {
+	#			limit = {
+	#				is_core_of = ROOT
+	#			}
+	#			decimate_half_all_industry = yes
+	#		}
+	#	}
+	#	
+	#}
 
 	#on_government_change = {
 	#

@@ -64,7 +64,7 @@ focus_tree = {
 	focus = {
 		id = ces_alea_iacta_est
 		icon = GFX_goal_generic_military_sphere
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_caesar_son_of_mars
 		}
@@ -82,7 +82,7 @@ focus_tree = {
 	focus = {
 		id = ces_the_hangdogs
 		icon = GFX_goal_generic_major_war
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_alea_iacta_est
 		}
@@ -135,7 +135,7 @@ focus_tree = {
 	focus = {
 		id = ces_legion_mongrels
 		icon = GFX_goal_generic_wolf_pack
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_the_hangdogs
 		}
@@ -156,7 +156,7 @@ focus_tree = {
 	focus = {
 		id = ces_the_twin_mothers
 		icon = GFX_goal_generic_major_war
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_alea_iacta_est
 		}
@@ -212,7 +212,7 @@ focus_tree = {
 	focus = {
 		id = ces_caesar_the_godslayer
 		icon = GFX_goal_generic_secret_weapon
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_the_twin_mothers
 		}
@@ -232,7 +232,7 @@ focus_tree = {
 	focus = {
 		id = ces_two_sun
 		icon = GFX_goal_generic_major_war
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_alea_iacta_est
 		}
@@ -288,7 +288,7 @@ focus_tree = {
 	focus = {
 		id = ces_taming_the_city
 		icon = GFX_goal_generic_fortify_city
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_two_sun
 		}
@@ -312,7 +312,7 @@ focus_tree = {
 	focus = {
 		id = ces_cochise_county_cowboys
 		icon = GFX_goal_generic_major_war
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_alea_iacta_est
 		}
@@ -363,7 +363,7 @@ focus_tree = {
 	focus = {
 		id = ces_legion_outlaws
 		icon = GFX_goal_generic_army_doctrines
-		cost = 8.6
+		cost = 1
 		available = {
 			NOT = { country_exists = COW }
 		}
@@ -396,10 +396,7 @@ focus_tree = {
                 custom_effect_tooltip = legion_must_own_hangdog_territory
             }
         
-            every_owned_state = {
-                limit = {
-                    is_core_of = HAN
-                }
+            525 = {
                 add_building_construction = {
 					type = arms_factory
 					level = 1
@@ -507,18 +504,22 @@ focus_tree = {
     focus = {
 		id = ces_conqueror_of_the_86
 		icon = GFX_goal_anschluss
-		cost = 8.6
+		cost = 1
 		prerequisite = {
-			focus = ces_the_twin_mothers
+			focus = ces_caesar_the_godslayer
+			focus = ces_goddess_diana
 		}
 		prerequisite = {
-			focus = ces_two_sun
+			focus = ces_taming_the_city
+			focus = ces_the_cult_of_nas
 		}
 		prerequisite = {
-			focus = ces_cochise_county_cowboys
+			focus = ces_legion_outlaws
+			focus = ces_wyatt_the_demon
 		}
 		prerequisite = {
-			focus = ces_the_hangdogs
+			focus = ces_shottol_god_of_dogs
+			focus = ces_legion_mongrels
 		}
 		x = 9
 		y = 7
@@ -533,7 +534,7 @@ focus_tree = {
 	focus = {
 		id = ces_the_brotherhood_of_steel
 		icon = GFX_goal_generic_position_armies
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_conqueror_of_the_86
 		}
@@ -551,7 +552,7 @@ focus_tree = {
     focus = {
 		id = ces_smoke_out_the_rats
 		icon = GFX_goal_legion_bos_war
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_the_brotherhood_of_steel
 		}
@@ -571,7 +572,7 @@ focus_tree = {
 	focus = {
 		id = ces_annex_hidden_valley
 		icon = GFX_goal_generic_fortify_city
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_smoke_out_the_rats
 		}
@@ -591,7 +592,7 @@ focus_tree = {
 	focus = {
 		id = ces_broken_steel
 		icon = GFX_goal_generic_CAS
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_annex_hidden_valley
 		}
@@ -606,7 +607,7 @@ focus_tree = {
 	focus = {
 		id = ces_enslaving_the_scribes
 		icon = GFX_focus_research
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_annex_hidden_valley
 		}
@@ -626,7 +627,7 @@ focus_tree = {
 	focus = {
 		id = ces_the_last_knight
 		icon = GFX_goal_generic_attack_allies
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_broken_steel
 		}
@@ -640,7 +641,7 @@ focus_tree = {
     focus = {
 		id = ces_deconstructing_perfection
 		icon = GFX_focus_wonderweapons
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_enslaving_the_scribes
 		}
@@ -655,7 +656,7 @@ focus_tree = {
 	focus = {
 		id = ces_honour_the_steelbreakers
 		icon = GFX_goal_generic_special_forces
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_deconstructing_perfection
 			focus = ces_the_last_knight
@@ -676,7 +677,7 @@ focus_tree = {
 	focus = {
 		id = ces_new_judea
 		icon = GFX_goal_generic_position_armies
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_conqueror_of_the_86
 		}
@@ -694,7 +695,7 @@ focus_tree = {
     focus = {
 		id = ces_the_white_leg_petition
 		icon = GFX_goal_legion_diplomatic
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_new_judea
 		}
@@ -718,7 +719,7 @@ focus_tree = {
 	focus = {
 		id = ces_white_legs_accept
 		icon = GFX_goal_generic_intelligence_exchange
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_the_white_leg_petition
 		}
@@ -748,7 +749,7 @@ focus_tree = {
 	focus = {
 		id = ces_white_legs_refuse
 		icon = GFX_goal_legion_diplomatic
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_the_white_leg_petition
 		}
@@ -782,7 +783,7 @@ focus_tree = {
 	focus = {
 		id = ces_weapons_of_war
 		icon = GFX_goal_generic_positive_trade_relations
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_white_legs_refuse
 			focus = ces_white_legs_accept
@@ -852,7 +853,7 @@ focus_tree = {
 	focus = {
 		id = ces_graham_execution
 		icon = GFX_goal_legion_crucifixion
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_weapons_of_war
 		}
@@ -959,7 +960,7 @@ focus_tree = {
 	focus = {
 		id = ces_crossing_the_rubicon
 		icon = GFX_goal_generic_position_armies
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_conqueror_of_the_86
 		}
@@ -967,6 +968,30 @@ focus_tree = {
 		y = 8
 		completion_reward = {
 			add_political_power = 60
+			if = {
+				limit = {
+					252 = {
+						is_owned_by = DAM
+					}
+				}
+				create_wargoal = {
+					target = DAM
+					type = annex_everything
+				}
+			}
+			
+			if = {
+				limit = {
+					252 = {
+						is_owned_by = VEG
+					}
+				}
+				create_wargoal = {
+					target = VEG
+					type = annex_everything
+				}
+			}
+					
 		}
 
 	}
@@ -981,27 +1006,20 @@ focus_tree = {
 		available = {
 			NCR = { owns_state = 252 }
 		}
+		bypass = {
+			owns_state = 252
+		}
 		will_lead_to_war_with = NCR
 		x = 9
 		y = 9
 		completion_reward = {
-            if = {
-                limit = { country_exists = DAM }
-                create_wargoal = {
-                    type = take_state_focus
-                    target = NCR
-                    generator = {
-                        252
-                    }
-                }
-                # Add cores on all Vegas owned land
-                NCR = {
-                    every_owned_state = { 
-                        limit = { is_new_vegas_state = yes }
-                        add_core_of = ROOT
-                    }
-                }	
-            }
+			create_wargoal = {
+				type = take_state_focus
+				target = NCR
+				generator = {
+					252
+				}
+			}
             set_country_flag = battle_for_hoover_dam
 		}
 	}
@@ -1044,7 +1062,7 @@ focus_tree = {
 			focus = ces_war_for_hoover_dam
 		}
         available = {
-            owns_state = 252
+            has_country_flag = hoover_dam_won
         }
 		mutually_exclusive = {
 			focus = ces_the_burned_man
@@ -1053,7 +1071,7 @@ focus_tree = {
 		y = 10
 		completion_reward = {
 			add_ideas = legion_nf_hoover_dam
-		
+			
 		}
 
 	}
@@ -1195,7 +1213,7 @@ focus_tree = {
     focus = {
 		id = ces_poking_the_bear
 		icon = GFX_goal_generic_demand_territory
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_crossing_the_colorado
 			focus = ces_to_the_victor_go_the_spoils
@@ -1471,6 +1489,11 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = ces_poking_the_bear
+		}
+		bypass = {
+			NOT = {
+				country_exists = VEG
+			}
 		}
 		will_lead_to_war_with = VEG
 		x = 5
@@ -1865,8 +1888,8 @@ focus_tree = {
 		x = 8
 		y = 18
 		completion_reward = {
-			add_manpower = -200
-			transfer_state = 137
+			add_manpower = -1000
+			transfer_state = 533
 		}
 
 	}
@@ -1895,7 +1918,7 @@ focus_tree = {
 	focus = {
 		id = ces_augustus
 		icon = GFX_goal_generic_demand_territory
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_poking_the_bear
 		}
