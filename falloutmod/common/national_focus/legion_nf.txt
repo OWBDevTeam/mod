@@ -82,7 +82,7 @@ focus_tree = {
 	focus = {
 		id = ces_the_hangdogs
 		icon = GFX_goal_generic_major_war
-		cost = 1
+		cost = 8.6
 		prerequisite = {
 			focus = ces_alea_iacta_est
 		}
@@ -156,7 +156,7 @@ focus_tree = {
 	focus = {
 		id = ces_the_twin_mothers
 		icon = GFX_goal_generic_major_war
-		cost = 1
+		cost = 8.6
 		prerequisite = {
 			focus = ces_alea_iacta_est
 		}
@@ -232,7 +232,7 @@ focus_tree = {
 	focus = {
 		id = ces_two_sun
 		icon = GFX_goal_generic_major_war
-		cost = 1
+		cost = 8.6
 		prerequisite = {
 			focus = ces_alea_iacta_est
 		}
@@ -312,7 +312,7 @@ focus_tree = {
 	focus = {
 		id = ces_cochise_county_cowboys
 		icon = GFX_goal_generic_major_war
-		cost = 1
+		cost = 8.6
 		prerequisite = {
 			focus = ces_alea_iacta_est
 		}
@@ -552,7 +552,7 @@ focus_tree = {
     focus = {
 		id = ces_smoke_out_the_rats
 		icon = GFX_goal_legion_bos_war
-		cost = 1
+		cost = 8.6
 		prerequisite = {
 			focus = ces_the_brotherhood_of_steel
 		}
@@ -680,9 +680,6 @@ focus_tree = {
 		cost = 1
 		prerequisite = {
 			focus = ces_conqueror_of_the_86
-		}
-		available = {
-			has_completed_focus = ces_the_burned_man
 		}
 		x = 5
 		y = 8
@@ -859,6 +856,10 @@ focus_tree = {
 		}
 		available = {
             NOT = { country_exists = NCN }
+			has_completed_focus = ces_the_burned_man
+		}
+		bypass = {
+			has_completed_focus = ces_triumph_at_the_dam
 		}
 		x = 5
 		y = 12
@@ -1848,9 +1849,17 @@ focus_tree = {
 			focus = ces_the_great_khans
 		}
 		bypass = {
-			NOT = {
-				country_exists = BVC
-				country_exists = BLP
+			OR = {
+				NOT = {
+					country_exists = BVC
+					country_exists = BLP
+				}
+				BVC = {
+					is_in_faction_with = NCR
+				}
+				BLP = {
+					is_in_faction_with = NCR
+				}
 			}
 		}
 		x = 10
@@ -1883,7 +1892,7 @@ focus_tree = {
 			focus = ces_camp_searchlight
 		}
         bypass = {
-            owns_state = 137
+            owns_state = 533
         }
 		x = 8
 		y = 18
@@ -1951,8 +1960,22 @@ focus_tree = {
 		x = 16
 		y = 16
 		completion_reward = {
-			add_state_core = 253
+			every_state = {
+				limit = {
+					is_new_thesis_state = yes
+				}
+				
+				add_core_of = CES
+			}
 			add_ideas = legion_nf_new_thesis
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.4
+			}
+			add_popularity = {
+				ideology = people
+				popularity = 0.2
+			}
 		}
 
 	}
@@ -1975,6 +1998,10 @@ focus_tree = {
 		y = 16
 		completion_reward = {
 			remove_ideas = national_spirit_rejection_of_automation
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.2
+			}
 		}
 
 	}
@@ -1997,6 +2024,10 @@ focus_tree = {
 		y = 16
 		completion_reward = {
 			add_ideas = legion_nf_immortal_empire
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.2
+			}
 		}
 
 	}
@@ -2019,6 +2050,10 @@ focus_tree = {
 		y = 16
         completion_reward = {
             add_ideas = legion_nf_spqr
+			add_popularity = {
+				ideology = elites
+				popularity = 0.2
+			}
         }
 	}
 	focus = {

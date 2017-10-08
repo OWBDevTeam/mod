@@ -1,0 +1,55 @@
+﻿add_namespace = nf_ranger
+
+country_event = {
+	id = nf_ranger.1 #Ranger Election
+	title = nf_ranger.1.t
+	desc = nf_ranger.1.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_ranger.1.a
+		
+		
+	}
+	
+	option = {
+		name = nf_ranger.1.b
+		
+		ai_chance = {
+			base = 100
+		}
+		
+		retire_country_leader = yes
+        
+		create_country_leader  = {
+			name = "Hell Razor"
+			desc = "HELL_RAZOR_DESC"
+			picture = "Portrait_DES_Leader.dds"
+			expire = "3000.1.1"
+			ideology = peoples_militia
+			traits = {
+			}
+			id = 993
+		}
+		
+	}
+	
+	option = {
+		name = nf_ranger.1.c
+		
+		retire_country_leader = yes
+		
+		create_country_leader  = {
+			name = "Thrasher Sagarra"
+			desc = "THRASHER_SAGARRA_DESC"
+			picture = "Portrait_DES_Leader.dds"
+			expire = "3000.1.1"
+			ideology = peoples_militia
+			traits = {
+			}
+			id = 991
+		}
+	}
+}
