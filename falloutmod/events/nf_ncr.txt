@@ -1185,7 +1185,113 @@ country_event = { #Hoover Dam
 			}
 		}
 		
-		country_event = { id = nf_ncr.15 }
+		VEG = {
+			country_event = { id = nf_ncr.15 }
+		}
 	}
 	
 }
+
+country_event = { #Vegas Treaty
+	id = nf_ncr.15
+	title = nf_ncr.15.t
+	desc = nf_ncr.15.d
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_ncr.15.a
+		
+		NCR = {
+			give_military_access = VEG
+			diplomatic_relation = { country = VEG relation = non_aggression_pact }
+			211 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			transfer_state = 252
+			transfer_state = 613
+		}
+	}
+		
+}
+
+country_event = { #Take me out to the ballgame!
+	id = nf_ncr.16
+	title = nf_ncr.16.t
+	desc = nf_ncr.16.d
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+
+	option = {
+		name = nf_ncr.16.a
+		
+		add_national_unity = 0.05
+		
+	}
+
+	option = {
+		name = nf_ncr.16.b
+		
+		add_ideas = 118thcore
+	}
+	
+	option = {
+		name = nf_ncr.16.c
+		
+		add_ideas = theatoms
+		
+	}
+	
+}
+
+country_event = { #Baron Investment
+	id = nf_ncr.17
+	title = nf_ncr.17.t
+	desc = nf_ncr.17.d
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_ncr.17.a
+		
+		135 = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+	
+	}
+	
+	option = {
+		name = nf_ncr.17.b
+		
+		135 = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+	
+	}
+	
+	option = {
+		name = nf_ncr.17.c
+		
+		add_ideas = privatepolice
+	
+	}
+	
+}
+
