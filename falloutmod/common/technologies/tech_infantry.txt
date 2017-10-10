@@ -367,10 +367,22 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 2
 			modifier = {
 				factor = 0
 				NOT = { electricity > 8 }
+			}
+			modifier = {
+				factor = 0
+				tag = CES
+			}
+			modifier = {
+				factor = 0
+				tag = NCR
+			}
+			modifier = {
+				factor = 0
+				has_tech = warrior_equipment
 			}
 			modifier = {
 				factor = 2
