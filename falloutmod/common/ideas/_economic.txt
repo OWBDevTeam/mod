@@ -12,10 +12,10 @@ ideas = {
 		
 			modifier = {
 				consumer_goods_factor = 0.40
-				production_speed_industrial_complex_factor = -0.5
-				production_speed_arms_factory_factor = -0.5
-				conversion_cost_civ_to_mil_factor = 0.5
-				conversion_cost_mil_to_civ_factor = 0.5
+				production_speed_industrial_complex_factor = -0.65
+				production_speed_arms_factory_factor = -0.65
+				conversion_cost_civ_to_mil_factor = 0.65
+				conversion_cost_mil_to_civ_factor = 0.65
 				generate_wargoal_tension = 1.00
 				join_faction_tension = 0.20
 				lend_lease_tension = 0.50
@@ -25,8 +25,21 @@ ideas = {
 			
 			allowed_to_remove = {
 				OR = {
-					threat > 0.5
-					has_war = yes
+					threat > 0.95
+					AND = {
+						has_war = yes
+						any_enemy_country = {
+							ic_ratio > 0.7
+							strength_ratio > 0.7
+						}
+					}
+					AND = {
+						has_defensive_war = yes
+						any_enemy_country = {
+							ic_ratio > 0.25
+							strength_ratio > 0.25
+						}
+					}
 				}
 			}
 			

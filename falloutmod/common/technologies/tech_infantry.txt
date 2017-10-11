@@ -275,6 +275,14 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 0
+				is_researching_technology = blunt_weaponry
+			}
+			modifier = {
+				factor = 0
+				has_tech = blunt_weaponry
+			}
 		}
 	}
     
@@ -285,7 +293,9 @@ technologies = {
         enable_equipments = {
             ballistic_equipment_1
         }
-        
+		XOR = {
+			slashing_weaponry
+		}
 		path = {
 			leads_to_tech = warrior_equipment
 			research_cost_coeff = 1
@@ -310,6 +320,14 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 0
+				is_researching_technology = slashing_weaponry
+			}
+			modifier = {
+				factor = 0
+				has_tech = slashing_weaponry
+			}
 		}
 	}
     
@@ -318,6 +336,9 @@ technologies = {
         category_all_infantry = {
             soft_attack = 0.05
         }
+	XOR = {
+		basic_laser_weaponry
+	}
 		path = {
 			leads_to_tech = improved_ballistic_weaponry
 			research_cost_coeff = 1
@@ -338,6 +359,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 10
+			modifier = {
+				factor = 0
+				is_researching_technology = basic_laser_weaponry
+			}
 		}
 	}
     
@@ -347,7 +372,9 @@ technologies = {
         enable_equipments = {
             energy_equipment_1
         }
-        
+        XOR = {
+		warrior_equipment
+	}
 		path = {
 			leads_to_tech = improved_laser_weaponry
 			research_cost_coeff = 1
@@ -387,6 +414,10 @@ technologies = {
 			modifier = {
 				factor = 2
 				electricity > 12
+			}
+			modifier = {
+				factor = 0
+				is_researching_technology = warrior_equipment
 			}
 		}
 	}
@@ -646,6 +677,9 @@ technologies = {
         enable_equipments = {
             melee_equipment_1
         }
+		XOR = {
+			basic_ballistic_weaponry
+		}
         
         path = {
 			leads_to_tech = slashing_weaponry
@@ -671,6 +705,14 @@ technologies = {
                 		factor = 10
                 		tag = CES
             		}
+			modifier = {
+				factor = 0
+				is_researching_technology = standard_weaponry_tech
+			}
+			modifier = {
+				factor = 0
+				has_tech = standard_weaponry_tech
+			}
 		}
 	}
     
@@ -678,7 +720,6 @@ technologies = {
         enable_equipments = {
             melee_equipment_2
         }
-        
         path = {
 			leads_to_tech = powered_weaponry
 			research_cost_coeff = 1
@@ -700,10 +741,18 @@ technologies = {
 		ai_will_do = {
 			factor = 10
             
-            		modifier = {
-                		factor = 10
-                		tag = CES
-           		 }
+            modifier = {
+                factor = 10
+                	tag = CES
+           	}
+			modifier = {
+				factor = 0
+				is_researching_technology = basic_ballistic_weaponry
+			}
+			modifier = {
+				factor = 0
+				has_tech = basic_ballistic_weaponry
+			}
 		}
 	}
     
@@ -715,7 +764,10 @@ technologies = {
         dependencies = {
             settled_civilization = 1
         }
-        
+        path = {
+			leads_to_tech = warrior_equipment
+			research_cost_coeff = 1
+		}
 		research_cost = 1.4
 		start_year = 2278
 		folder = {
