@@ -12,10 +12,10 @@ ideas = {
 		
 			modifier = {
 				consumer_goods_factor = 0.40
-				production_speed_industrial_complex_factor = -0.65
-				production_speed_arms_factory_factor = -0.65
-				conversion_cost_civ_to_mil_factor = 0.65
-				conversion_cost_mil_to_civ_factor = 0.65
+				production_speed_industrial_complex_factor = -0.5
+				production_speed_arms_factory_factor = -0.5
+				conversion_cost_civ_to_mil_factor = 0.5
+				conversion_cost_mil_to_civ_factor = 0.5
 				generate_wargoal_tension = 1.00
 				join_faction_tension = 0.20
 				lend_lease_tension = 0.50
@@ -25,21 +25,20 @@ ideas = {
 			
 			allowed_to_remove = {
 				OR = {
-					threat > 0.95
-					AND = {
-						has_war = yes
-						any_enemy_country = {
-							ic_ratio > 0.7
-							strength_ratio > 0.7
+					threat > 0.7
+					has_war = yes
+				}
+				any_enemy_country = {
+					ic_ratio = { 
+							tag = ROOT 
+							ratio > 0.2
 						}
+				}
+				if = {
+					limit = {
+						original_tag = NCR
 					}
-					AND = {
-						has_defensive_war = yes
-						any_enemy_country = {
-							ic_ratio > 0.25
-							strength_ratio > 0.25
-						}
-					}
+					has_completed_focus = ncr_petersonswar
 				}
 			}
 			
@@ -103,7 +102,14 @@ ideas = {
 					has_government = intellectuals
 					has_war = yes
 					threat > 0.05
-				}			
+				}
+
+				if = {
+					limit = {
+						original_tag = NCR
+					}
+					has_completed_focus = ncr_openlong15
+				}	
 			}
 			
 			cost = 150
@@ -119,10 +125,10 @@ ideas = {
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 1
+   				factor = 2
 
    				modifier = {
-					factor = 2
+					factor = 20
 					
 					is_major = yes
 				}
@@ -137,7 +143,14 @@ ideas = {
 					has_government = intellectuals
 					has_war = yes
 					threat > 0.15
-				}			
+				}
+
+				if = {
+					limit = {
+						original_tag = NCR
+					}
+					has_completed_focus = NCR_mojave
+				}
 			}
 
 			cost = 150
@@ -153,10 +166,10 @@ ideas = {
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 1
+   				factor = 2
 
    				modifier = {
-					factor = 2
+					factor = 20
 					
 					is_major = yes
 				}
@@ -181,7 +194,14 @@ ideas = {
 							}
 						}
 					}
-				}			
+				}
+
+				if = {
+					limit = {
+						original_tag = NCR
+					}
+					has_completed_focus = NCR_mojavehero
+				}
 			}
 		
 			cost = 150
@@ -197,12 +217,12 @@ ideas = {
 			cancel_if_invalid = no
 			
 			ai_will_do = {
-   				factor = 1
+   				factor = 5
 
-   				modifier = {
-					factor = 40
-					
-					is_major = yes
+				modifier = {
+					#High prio on production
+					factor = 20
+					manpower_per_military_factory >  1000
 				}
    			}
 		}
@@ -219,7 +239,40 @@ ideas = {
 						ratio > 0.5
 					}
 				}
+
+				if = {
+					limit = {
+						original_tag = NCR
+					}
+					has_completed_focus = NCR_triumph
+				}
 			}
+
+			ai_will_do = {
+   				factor = 1
+
+				modifier = {
+					factor = 25
+					#Prio this if nation has a lot of manpower compared to MIC
+					manpower_per_military_factory >  10000
+				}
+
+				modifier = {
+					#Block  unless nation has a lot of manpower
+					factor = 0
+					manpower_per_military_factory <  3000
+				}
+
+				
+				modifier = {
+					# never take this if we are on low conscription laws for safety
+					factor = 0
+					OR = {
+						has_idea = volunteer_only
+						has_idea = limited_conscription
+					}
+				}				
+   			}
 			
 			cost = 150
 			removal_cost = -1
@@ -281,21 +334,12 @@ ideas = {
 			available = {
 				OR = {
 					AND = {
-						has_government = people
 						has_war = yes
 						any_enemy_country = {
 							ic_ratio = { 
 								tag = ROOT 
 								ratio > 0.2
 							}
-						}
-					}
-					AND = {
-						NOT = { has_government = people }
-						OR = {
-							has_idea = partial_economic_mobilisation
-							has_idea = war_economy
-							has_idea = tot_economic_mobilisation
 						}
 					}
 				}
@@ -332,13 +376,12 @@ ideas = {
 			
 			available = {
 				has_war = yes
-				OR = { 
-					has_government = elites
-					has_government = intellectuals
-				}
 				OR = {
 					has_idea = war_economy
 					has_idea = tot_economic_mobilisation
+				}
+				OR = {
+					NOT = {	tag = NCR }
 				}
 			}
 			

@@ -136,12 +136,17 @@ on_actions = {
 	#}
 
 	#PREV is war target
-	#on_declare_war = {
-	#	effect = {
-			#FROM = { set_country_flag = had_war }
-			#ROOT = { set_country_flag = had_war }
-	#	}
-	#}
+	on_declare_war = {
+		effect = {
+				if {
+					limit = {
+						PREV = { original_tag = HAN }
+						ROOT = { original_tag = CES }
+					}
+					PREV = { country_event = { days = 1 id = hangdogs.1 } }
+				}
+		}
+	}
 
 	# When a new faction is formed
 	#on_faction_formed = {
@@ -206,7 +211,7 @@ on_actions = {
 					}
 				}
 				MRA = {
-					country_event = raider_rabble.1
+					country_event = { days = 1 id = raider_rabble.1 }
 				}
 			}
 		}
