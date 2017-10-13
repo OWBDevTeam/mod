@@ -1,0 +1,119 @@
+equipments = {
+
+	light_robot_equipment = {
+		year = 1934
+	
+		is_archetype = yes
+		is_buildable = no
+		is_convertable = yes
+		picture = archetype_light_robot_equipment			
+		type = armor
+		group_by = archetype
+		
+		interface_category = interface_category_armor
+		
+		upgrades = {
+			tank_reliability_upgrade
+			tank_engine_upgrade
+			tank_armor_upgrade
+			tank_gun_upgrade
+		}
+
+		#Misc Abilities
+		maximum_speed = 10
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 4
+		breakthrough = 26
+		hardness = 0.8
+		armor_value = 10
+
+		#Offensive Abilities
+		soft_attack = 10
+		hard_attack = 4
+		ap_attack = 10
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 10
+		
+		build_cost_ic = 8
+		resources = {
+			fuel = 1
+			scrap = 2
+		}
+
+	}
+
+	light_robot_equipment_1 = {
+		year = 1934
+		
+		archetype = light_robot_equipment
+		parent = light_robot_equipment
+		priority = 10
+		visual_level = 0
+		is_convertable = yes
+	}
+	# security protectron
+	light_robot_equipment_2 = {
+		year = 1936
+		
+		archetype = light_robot_equipment
+		parent = light_robot_equipment_1
+		priority = 10
+		visual_level = 1
+		is_convertable = yes
+
+		#Misc Abilities
+		maximum_speed = 12
+
+		#Defensive Abilities
+		defense = 5
+		breakthrough = 36
+		armor_value = 15
+
+		#Offensive Abilities
+		soft_attack = 14
+		hard_attack = 6
+		ap_attack = 30
+		air_attack = 0		
+		
+		build_cost_ic = 9
+		resources = {
+			fuel = 1
+			scrap = 3
+		}
+	}
+
+	# securitrons
+	light_robot_equipment_3 = {
+		year = 1941
+	
+		archetype = light_robot_equipment
+		parent = light_robot_equipment_2
+		priority = 10
+		visual_level = 2
+		is_convertable = yes
+
+		#Misc Abilities
+		maximum_speed = 14
+
+		#Defensive Abilities
+		defense = 6
+		breakthrough = 46
+		armor_value = 30
+
+		#Offensive Abilities
+		soft_attack = 18
+		hard_attack = 9
+		ap_attack = 50
+		air_attack = 0	
+		
+		build_cost_ic = 10 
+		resources = {
+			fuel = 2
+			scrap = 4
+		}
+	}
+}

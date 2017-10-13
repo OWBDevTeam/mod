@@ -1,0 +1,122 @@
+equipments = {
+
+	heavy_robot_equipment = {
+		year = 1934
+
+		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_heavy_robot_equipment
+		is_buildable = no
+		is_convertable = yes
+		type = armor
+		group_by = archetype
+		
+		interface_category = interface_category_armor
+		
+		upgrades = {
+			tank_reliability_upgrade
+			tank_engine_upgrade
+			tank_armor_upgrade
+			tank_gun_upgrade
+		}
+		
+		#Misc Abilities
+		maximum_speed = 5
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 6
+		breakthrough = 36
+		hardness = 0.95
+		armor_value = 70
+
+		#Offensive Abilities
+		soft_attack = 12
+		hard_attack = 12
+		ap_attack = 35
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 14
+		
+		build_cost_ic = 25 
+		resources = {
+			fuel = 1
+			scrap = 3
+			advanced_technology = 3
+		}
+		
+	}
+
+	# 1934
+	heavy_robot_equipment_1 = {
+		year = 1934
+
+		archetype = heavy_robot_equipment		
+		priority = 90
+		visual_level = 0
+		is_convertable = yes
+	}
+
+	# 1941
+	heavy_robot_equipment_2 = {
+		year = 1941
+
+		archetype = heavy_robot_equipment
+		parent = heavy_robot_equipment_1
+		priority = 90
+		visual_level = 1
+		is_convertable = yes
+		
+		#Misc Abilities
+		maximum_speed = 6
+
+		#Defensive Abilities
+		defense = 8
+		breakthrough = 52
+		armor_value = 110
+
+		#Offensive Abilities
+		soft_attack = 22
+		hard_attack = 30
+		ap_attack = 111
+		
+		build_cost_ic = 27 
+		resources = {
+			fuel = 1
+			scrap = 3
+			advanced_technology = 3
+		}
+	}
+
+	# 1943
+	heavy_robot_equipment_3 = {
+		year = 1943
+
+		archetype = heavy_robot_equipment
+		parent = heavy_robot_equipment_2
+		priority = 90
+		visual_level = 2
+		is_convertable = yes
+
+		#Misc Abilities
+		maximum_speed = 6
+
+		#Defensive Abilities
+		defense = 9
+		breakthrough = 67
+		armor_value = 130
+
+		#Offensive Abilities
+		soft_attack = 28
+		hard_attack = 40
+		ap_attack = 131
+		
+		build_cost_ic = 30
+		resources = {
+			fuel = 1
+			scrap = 4
+			advanced_technology = 3
+		}
+	}
+}
