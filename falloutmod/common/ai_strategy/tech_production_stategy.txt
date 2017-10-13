@@ -1,0 +1,39 @@
+commerical_protectron_robot_ratios = {
+	enable = {
+		has_tech = commerical_protectron
+	}
+	abort = {
+		has_tech = mr_gutsy_tech 
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = robot
+		value = 10
+	}
+	ai_strategy = {
+		type = template_prio
+		id = robot
+		value = 10
+	}
+	
+}
+mr_gutsy_robot_ratios = {
+	enable = {
+		has_tech = mr_gutsy_tech 
+	}
+	#abort = {
+	#	has_tech = mr_gutsy_tech 
+	#}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = robot
+		value = 30
+	}
+	ai_strategy = {
+		type = template_prio
+		id = robot
+		value = 30
+	}
+}
