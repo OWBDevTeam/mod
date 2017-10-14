@@ -43,7 +43,7 @@ NDefines.NAI.DIPLOMACY_IMPROVE_RELATION_COST_FACTOR = 7.0                       
 NDefines.NAI.TRADEABLE_FACTORIES_FRACTION = 1
 
 ----------------------
-NDefines.NAI.COMBINED_ARMS_LEVEL = 2							-- 0 = Never, 1 = Infantry/Artillery, 2 = Go wild
+NDefines.NAI.COMBINED_ARMS_LEVEL = 1							-- 0 = Never, 1 = Infantry/Artillery, 2 = Go wild
 NDefines.NAI.MICRO_POCKET_SIZE = 10						-- Pockets with a size equal to or lower than this will be mocroed by the AI, for efficiency.
 
 -- AI Diplomacy
