@@ -1,7 +1,106 @@
 ideas = {
 
 	country = {
+		
+		oldworldmachines = {
+			
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+		
+			modifier = {
+				global_building_slots_factor = 0.05
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		
+		oldworldarmour = {
+			
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+		
+			equipment_bonus = {
+				category_all_infantry = {
+					urban = {
+						attack = 0.1
+						defence = 0.1
+					}
+				}
+			}
+			
+			modifier = {
+				enemy_partisan_effect = -0.15
+			}
+		}
+		
+		oldworldtheatre = {
+			
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = 0.005
+				unity_factor = 0.05
+			}
+		}
+		
+		denmotherpenalty = {
+			
+			picture = great_depression
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+		
+		}
 	
+		long15 = {
+			
+			picture = great_depression
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		
+		}
+		
+		brahminbarons = {
+			
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				monthly_population = 0.05
+				consumer_goods_factor = 0.03
+			}
+		
+		}
+		
 		ncrguns = {
 			
 			picture = generic_morale_bonus
@@ -21,8 +120,151 @@ ideas = {
 					instant = yes
 				}
 			}
+
+		}
 		
+		ncrguns2 = {
+			
+			picture = generic_morale_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				equipment_conversion_speed = -0.15
+			}
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = 0.15
+					instant = yes
+				}
+			}
+
+		}
 		
+		gunrunnerliscense = {
+			
+			picture = generic_infantry_bonus
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					reliability = 0.05
+					soft_attack = 0.05
+				}
+			}
+
+		}
+		
+		drummandsarmy = {
+		
+			picture = generic_infantry_bonus 
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				experience_gain_factor = 0.07
+			}
+			research_bonus = {
+				air_equipment = 0.1
+			}
+		}
+		
+		blastfromthepast = {
+		
+			picture = generic_infantry_bonus 
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+				
+			equipment_bonus = {
+				explosive_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+		
+		mobilearmy = {
+		
+			picture = generic_infantry_bonus 
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+				
+			equipment_bonus = {
+				motorized = {
+					maximum_speed = 0.1
+				}
+			}
+		}
+		
+		speartip = {
+		
+			picture = generic_infantry_bonus 
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+				
+			equipment_bonus = {
+				armor = {
+					breakthrough = 0.1
+					soft_attack = 0.1
+				}
+			}
+		}
+		
+		bigjim = {
+			picture = generic_infantry_bonus 
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				combat_width_factor = -0.04
+			}
+				
+			equipment_bonus = {
+				category_all_infantry = {
+					casualty_trickleback = 0.1
+					combat_width_factor = -0.04
+				}
+			}
+		}
+		
+		jimdrills = {
+			picture = generic_infantry_bonus 
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+				
+			equipment_bonus = {
+				category_all_infantry = {
+					soft_attack = 0.05
+					hard_attack = 0.05
+					defense = 0.05
+				}
+			}
 		}
 		
 		ncrtechlimits = {
@@ -445,7 +687,78 @@ ideas = {
 		
 		}
 		
+		followerfunding = {
 		
+			removal_cost = -1
+			
+			allowed = {
+			}
+			
+			picture = generic_research_bonus
+			
+			modifier = {
+				research_time_factor = -0.03
+			}
+			
+		}
+		
+		ncrmint = {
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+
+			picture = generic_morale_bonus
+			
+			modifier = {
+				min_export = -0.05
+			}
+		}
+		
+		theboneyard = {
+		
+			allowed = { 
+			}
+			
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		
+		gizmoslegacy = {
+		
+			allowed = { 
+			}
+			
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.05
+			}
+		}
+		
+		gunrunnerexpanded = {
+			
+			allowed = { 
+			}
+			
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+			
+			modifier = {
+				equipment_conversion_speed = 0.15
+			}
+			
+		}
 	}
 	
 	theorist = {	
