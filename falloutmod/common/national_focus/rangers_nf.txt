@@ -71,6 +71,11 @@ focus_tree = {
 		prerequisite = {
 			focus = des_jackals
 		}
+		available = {
+			NOT = {
+				country_exists = JAC
+			}
+		}
 		x = 7
 		y = 4
 		completion_reward = { 
@@ -87,6 +92,11 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = des_jackals
+		}
+		available = {
+			NOT = {
+				country_exists = JAC
+			}
 		}
 		x = 9
 		y = 4
@@ -128,6 +138,11 @@ focus_tree = {
 		prerequisite = {
 			focus = des_vipers
 		}
+		available = {
+			NOT = {
+				country_exists = VIP
+			}
+		}
 		x = 11
 		y = 4
 		completion_reward = {
@@ -150,6 +165,11 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = des_vipers
+		}
+		available = {
+			NOT = {
+				country_exists = VIP
+			}
 		}
 		x = 13
 		y = 4
@@ -842,6 +862,9 @@ focus_tree = {
 		}
 		x = 0
 		y = 14
+		available = {
+			has_war_with = CES
+		}
 		completion_reward = {
 			
 			210 = {
@@ -865,6 +888,12 @@ focus_tree = {
 		prerequisite = {
 			focus = des_wastelandprotect
 		}
+		available = {
+			OR = {
+				has_war_with = TRL
+				has_war_with = WBH
+			}
+		}
 		x = 4
 		y = 14
 		completion_reward = {
@@ -878,6 +907,9 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = des_wastelandprotect
+		}
+		available = {
+			has_war_with = NCR
 		}
 		x = 2
 		y = 14
@@ -1377,6 +1409,9 @@ focus_tree = {
 		prerequisite = {
 			focus = des_coop
 		}
+		available = {
+			has_war_with = BOS
+		}
 		x = 16
 		y = 14
 		completion_reward = {
@@ -1412,6 +1447,9 @@ focus_tree = {
 		prerequisite = {
 			focus = des_coop
 		}
+		available = {
+			has_war_with = CES
+		}
 		x = 18
 		y = 14
 		completion_reward = {
@@ -1440,6 +1478,12 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = des_coop
+		}
+		available = {
+			OR = {
+				has_war_with = WBH
+				has_war_with = TRL
+			}
 		}
 		x = 20
 		y = 14

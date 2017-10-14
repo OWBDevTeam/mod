@@ -160,7 +160,7 @@ country_event = {
 			}
 		}
 		
-		add_manpower = 100
+		add_manpower = 1000
 	}
 }
 
@@ -603,15 +603,15 @@ country_event = { #Civil War
 			
 			declare_war_on = {
 				target = NCR
-				type = annex_everything
+				type = civil_war
 			}
 			declare_war_on = {
 				target = BAR
-				type = annex_everything
+				type = civil_war
 			}
 			declare_war_on = {
 				target = BON
-				type = annex_everything
+				type = civil_war
 			}
 			
 			transfer_state = 591
@@ -742,15 +742,15 @@ country_event = { #Civil War
 				
 				declare_war_on = {
 					target = NCR
-					type = annex_everything
+					type = civil_war
 				}
 				declare_war_on = {
 					target = BAR
-					type = annex_everything
+					type = civil_war
 				}
 				declare_war_on = {
 					target = ENC
-					type = annex_everything
+					type = civil_war
 				}
 				
 				every_state = {
@@ -795,15 +795,15 @@ country_event = { #Civil War
 				
 				declare_war_on = {
 					target = NCR
-					type = annex_everything
+					type = civil_war
 				}
 				declare_war_on = {
 					target = BON
-					type = annex_everything
+					type = civil_war
 				}
 				declare_war_on = {
 					target = ENC
-					type = annex_everything
+					type = civil_war
 				}
 				
 				
@@ -920,15 +920,15 @@ country_event = { #Civil War
 				
 				declare_war_on = {
 					target = NCR
-					type = annex_everything
+					type = civil_war
 				}
 				declare_war_on = {
 					target = BAR
-					type = annex_everything
+					type = civil_war
 				}
 				declare_war_on = {
 					target = BON
-					type = annex_everything
+					type = civil_war
 				}
 				
 				transfer_state = 591
@@ -1040,15 +1040,15 @@ country_event = { #Civil War
 				
 				declare_war_on = {
 					target = NCR
-					type = annex_everything
+					type = civil_war
 				}
 				declare_war_on = {
 					target = BAR
-					type = annex_everything
+					type = civil_war
 				}
 				declare_war_on = {
 					target = ENC
-					type = annex_everything
+					type = civil_war
 				}
 				
 				every_state = {
@@ -1093,15 +1093,15 @@ country_event = { #Civil War
 				
 				declare_war_on = {
 					target = NCR
-					type = annex_everything
+					type = civil_war
 				}
 				declare_war_on = {
 					target = BON
-					type = annex_everything
+					type = civil_war
 				}
 				declare_war_on = {
 					target = ENC
-					type = annex_everything
+					type = civil_war
 				}
 				
 				
@@ -1160,20 +1160,10 @@ country_event = { #Hoover Dam
 				is_owned_by = MOJ
 			}
 		}
-		NCR = {
-			give_military_access = MOJ
-		}
-		every_state = {
-			limit = {
-				is_new_vegas_state = yes
-				OR = {
-					is_owned_by = NCR
-					is_owned_by = MOJ
-				}
-			}
-			
-			set_border_war = yes
-			
+		declare_war_on = {
+			target = MOJ
+			type = take_state_focus
+			generator = 252
 		}
 	}
 	
@@ -1295,3 +1285,73 @@ country_event = { #Baron Investment
 	
 }
 
+country_event = { #Scouring the Old City
+	id = nf_ncr.18
+	title = nf_ncr.18.t
+	desc = nf_ncr.18.d
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_ncr.18.a 
+		
+		add_ideas = oldworldmachines
+	}
+	
+	option = {
+		name = nf_ncr.18.b 
+		
+		add_ideas = oldworldarmour
+	}
+	
+	option = {
+		name = nf_ncr.18.c 
+		
+		add_ideas = oldworldtheatre
+	}
+}
+
+country_event = { #Den-Mother
+	id = nf_ncr.19
+	title = nf_ncr.19.t
+	desc = nf_ncr.19.d
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_ncr.19.a
+		
+		add_timed_idea = denmotherpenalty
+		
+		country_event = { days = 730 id = nf_ncr.20 }
+	}
+	
+	option = {
+		name = nf_ncr.19.a
+		
+		country_event = { days = 1095 id = nf_ncr.20 }
+	}
+	
+}
+
+country_event = { #Den-Mother
+	id = nf_ncr.20
+	title = nf_ncr.20.t
+	desc = nf_ncr.20.d
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_ncr.20.a
+		
+			add_equipment_to_stockpile = {
+				type = cas_equipment_3 
+				amount = 1 
+				producer = NCR
+			}
+	}
+	
+}
