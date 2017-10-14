@@ -40,7 +40,7 @@ focus_tree = {
 	focus = {
 		id = ncr_emergency
 		icon = GFX_goal_generic_demand_territory
-		cost = 1
+		cost = 2.2
 		available = {
 			date > 2278.3.30
 			has_ideas = baronswar
@@ -211,7 +211,7 @@ focus_tree = {
 	focus = {
 		id = ncr_buyout
 		icon = GFX_goal_generic_positive_trade_relations
-		cost = 1
+		cost = 2.2
 		prerequisite = {
 			focus = ncr_emergency
 		}
@@ -238,7 +238,7 @@ focus_tree = {
 	focus = {
 		id = ncr_baronofbarons
 		icon = GFX_goal_generic_construct_infrastructure
-		cost = 1
+		cost = 2.2
 		prerequisite = {
 			focus = ncr_buyout
 		}
@@ -252,7 +252,7 @@ focus_tree = {
 	focus = {
 		id = ncr_pokersiege
 		icon = GFX_goal_generic_fortify_city
-		cost = 1
+		cost = 2.2
 		prerequisite = {
 			focus = ncr_baronofbarons
 		}
@@ -267,7 +267,7 @@ focus_tree = {
 	focus = {
 		id = ncr_newnorth
 		icon = GFX_goal_generic_construction2
-		cost = 1
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_pokersiege
 		}
@@ -280,16 +280,20 @@ focus_tree = {
 				popularity = 0.1
 			}
 			
-			every_state = {
-				limit = {
-					is_baron_state = yes
-				}
-				add_core_of = NCR
+			135 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
 				}
+			}
+			
+			every_state = {
+				limit = {
+					is_baron_state = yes
+				}
+				add_core_of = NCR
+				
 			}	
 			
 		}
@@ -381,7 +385,7 @@ focus_tree = {
 	focus = {
 		id = ncr_diplomatic
 		icon = GFX_goal_generic_intelligence_exchange
-		cost = 1
+		cost = 2.2
 		prerequisite = {
 			focus = ncr_emergency
 		}
@@ -402,7 +406,7 @@ focus_tree = {
 	focus = {
 		id = ncr_steeldeal
 		icon = GFX_goal_generic_production2
-		cost = 1
+		cost = 2.2
 		prerequisite = {
 			focus = ncr_diplomatic
 		}
@@ -431,7 +435,7 @@ focus_tree = {
 	focus = {
 		id = ncr_patrol
 		icon = GFX_goal_generic_national_unity
-		cost = 1
+		cost = 2.2
 		prerequisite = {
 			focus = ncr_steeldeal
 		}
@@ -446,7 +450,7 @@ focus_tree = {
 	focus = {
 		id = ncr_allisgood
 		icon = GFX_goal_generic_improve_relations
-		cost = 1
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_patrol
 		}
@@ -551,7 +555,7 @@ focus_tree = {
 	focus = {
 		id = ncr_exodus
 		icon = GFX_goal_generic_trade
-		cost = 1
+		cost = 2.2
 		prerequisite = {
 			focus = ncr_emergency
 		}
@@ -565,24 +569,20 @@ focus_tree = {
 		x = 4
 		y = 9
 		completion_reward = {
-			remove_ideas = ncrbarons
-			
-			every_state = {
-				limit = {
-					is_baron_state = yes
-				}
+			remove_ideas = brahminbarons
+			135 = {
 				add_building_construction = {
 					type = industrial_complex
 					level = -3
 				}
-			}	
+			}
 		}
 
 	}
 	focus = {
 		id = ncr_milcentres
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 1
+		cost = 2.2
 		prerequisite = {
 			focus = ncr_exodus
 		}
@@ -608,7 +608,7 @@ focus_tree = {
 	focus = {
 		id = ncr_brahminbill
 		icon = GFX_focus_renounce_the_treaty_of_triannon
-		cost = 1
+		cost = 2.2
 		prerequisite = {
 			focus = ncr_milcentres
 		}
@@ -624,7 +624,7 @@ focus_tree = {
 	focus = {
 		id = ncr_rationing
 		icon = GFX_goal_generic_position_armies
-		cost = 1
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_brahminbill
 		}
@@ -840,6 +840,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			add_timed_idea = {
+				idea = long15
+				days = 60
+			}
+			
 		}
 
 	}
@@ -967,6 +972,20 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			
+			CES = {
+				381 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = {
+							all_provinces = yes
+							limit_to_naval_base = yes
+						}
+						instant_build = yes
+					}
+				}
+			}
 		}
 
 	}
@@ -978,7 +997,7 @@ focus_tree = {
 			focus = ncr_aradeshfort
 		}
 		x = 11
-		y = 11
+		y = 12
 		completion_reward = {
 			add_ideas = riverpatrols
 		}
@@ -1389,7 +1408,7 @@ focus_tree = {
 		x = 23
 		y = 5
 		completion_reward = {
-			
+			country_event = { id = nf_ncr.18 }
 		}
 
 	}
@@ -1402,6 +1421,23 @@ focus_tree = {
 		}
 		x = 23
 		y = 6
+		completion_reward = {
+			350 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			
+			country_event = { id = nf_ncr.19 } 
+		}
 
 	}
 	focus = {
@@ -1413,6 +1449,14 @@ focus_tree = {
 		}
 		x = 21
 		y = 7
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_equipment	
+			}
+		}
 
 	}
 	focus = {
@@ -1424,6 +1468,9 @@ focus_tree = {
 		}
 		x = 23
 		y = 7
+		completion_reward = {
+			add_ideas = followerfunding
+		}
 
 	}
 	focus = {
@@ -1435,6 +1482,16 @@ focus_tree = {
 		}
 		x = 23
 		y = 8
+		completion_reward = {
+			350 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex 
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 	focus = {
@@ -1446,6 +1503,16 @@ focus_tree = {
 		}
 		x = 25
 		y = 5
+		completion_reward = {
+			350 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex 
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 	focus = {
@@ -1457,6 +1524,18 @@ focus_tree = {
 		}
 		x = 25
 		y = 6
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_boneyard_road_state = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 	focus = {
@@ -1468,6 +1547,17 @@ focus_tree = {
 		}
 		x = 25
 		y = 7
+		completion_reward = {
+			350 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			
+			add_ideas = ncrmint
+		}
 
 	}
 	focus = {
@@ -1479,6 +1569,19 @@ focus_tree = {
 		}
 		x = 25
 		y = 8
+		completion_reward = {
+			350 = {
+				add_resource = {
+					type = metal
+					level = 8
+				}
+				add_resource = {
+					type = fuel
+					level = 4
+				}
+			}
+		}
+		
 
 	}
 	focus = {
@@ -1493,6 +1596,9 @@ focus_tree = {
 		}
 		x = 24
 		y = 9
+		completion_reward = {
+			add_ideas = theboneyard
+		}
 
 	}
 	focus = {
@@ -1504,6 +1610,21 @@ focus_tree = {
 		}
 		x = 26
 		y = 11
+		completion_reward = {
+			489 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex 
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure 
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 	focus = {
@@ -1515,6 +1636,9 @@ focus_tree = {
 		}
 		x = 26
 		y = 12
+		completion_reward = {
+			add_ideas = gizmoslegacy
+		}
 
 	}
 	focus = {
@@ -1526,6 +1650,22 @@ focus_tree = {
 		}
 		x = 26
 		y = 13
+		completion_reward = {
+			489 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			
+			add_tech_bonus = {
+				name = medical_bonus
+				bonus = 0.5
+				uses = 1
+				category = chem_tech	
+			}
+		}
 
 	}
 	focus = {
@@ -1537,6 +1677,18 @@ focus_tree = {
 		}
 		x = 26
 		y = 14
+		completion_reward = {
+			489 = {
+				add_building_construction = {
+					type = bunker
+					province = {
+						all_provinces = yes
+					}
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 	focus = {
@@ -1548,6 +1700,16 @@ focus_tree = {
 		}
 		x = 27
 		y = 7
+		completion_reward = {
+			350 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 	focus = {
@@ -1559,6 +1721,9 @@ focus_tree = {
 		}
 		x = 27
 		y = 8
+		completion_reward = {
+			add_ideas = gunrunnerexpanded
+		}
 
 	}
 	focus = {
@@ -1570,18 +1735,31 @@ focus_tree = {
 		}
 		x = 29
 		y = 5
+		completion_reward = {
+			
+			add_ideas = ncrguns2
+			
+			hidden_effect = {
+				remove_ideas = ncrguns
+			}
+		}
 
 	}
 	focus = {
 		id = ncr_grdeals
 		icon = GFX_goal_generic_intelligence_exchange
 		cost = 8.6
+		available = {
+			has_completed_focus = ncr_grinvestments
+		}
 		prerequisite = {
 			focus = ncr_standardarms
 		}
 		x = 29
 		y = 6
-
+		completion_reward = {
+			remove_ideas = ncrguns2
+		}
 	}
 	focus = {
 		id = ncr_grliscense
@@ -1590,8 +1768,14 @@ focus_tree = {
 		prerequisite = {
 			focus = ncr_grdeals
 		}
+		available = {
+			has_completed_focus = ncr_grexpansion
+		}
 		x = 29
 		y = 7
+		completion_reward = {
+			add_ideas = gunrunnerliscense
+		}
 
 	}
 	focus = {
@@ -1607,6 +1791,9 @@ focus_tree = {
 		}
 		x = 31
 		y = 5
+		completion_reward = {
+			add_ideas = drummandsarmy
+		}
 
 	}
 	focus = {
@@ -1618,6 +1805,16 @@ focus_tree = {
 		}
 		x = 31
 		y = 6
+		completion_reward = {
+			add_tech_bonus = {
+				name = explosive_bonus
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+			
+			add_ideas = blastfromthepast
+		}
 
 	}
 	focus = {
@@ -1629,7 +1826,16 @@ focus_tree = {
 		}
 		x = 31
 		y = 7
-
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.5
+				uses = 1
+				category = motorized
+			}
+			
+			add_ideas = mobilearmy
+		}
 	}
 	focus = {
 		id = ncr_spear
@@ -1640,6 +1846,9 @@ focus_tree = {
 		}
 		x = 31
 		y = 8
+		completion_reward = {
+			add_ideas = speartip
+		}
 
 	}
 	focus = {
@@ -1655,6 +1864,9 @@ focus_tree = {
 		}
 		x = 33
 		y = 5
+		completion_reward = {
+			add_ideas = bigjim
+		}
 
 	}
 	focus = {
@@ -1666,6 +1878,9 @@ focus_tree = {
 		}
 		x = 33
 		y = 6
+		completion_reward = {
+			add_ideas = jimdrills
+		}
 
 	}
 	focus = {
@@ -1677,6 +1892,9 @@ focus_tree = {
 		}
 		x = 33
 		y = 7
+		completion_reward = {
+			
+		}
 
 	}
 	focus = {
@@ -1763,11 +1981,13 @@ focus_tree = {
 		prerequisite = {
 			focus = ncr_mojave
 		}
-		ai_will_do = {
-			factor = 1000
+		bypass = {
+			252 = {
+				is_owned_by = CES
+			}
 		}
 		x = 7
-		y = 11
+		y = 12
 		completion_reward = {
 			country_event = { id = nf_ncr.14 }
 		}
