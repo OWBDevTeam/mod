@@ -60,11 +60,11 @@ technologies = {
         on_research_complete = {
 			limit = {
 				NOT = {
-					has_template_containing_unit = motorbike
+					has_template_containing_unit = motorized
 				}
 			}
 			hidden_effect = {
-				load_oob = "unlock_motorbike"
+				load_oob = "unlock_motorized"
 			}			
 			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
 		}
@@ -77,8 +77,8 @@ technologies = {
 		}
 		
 		categories = {
-            vehicle_tech
-		motorized_equipment
+            		vehicle_tech
+			motorized_equipment
 		}
 		
 		ai_will_do = {
@@ -156,131 +156,6 @@ technologies = {
 		}
 	}
     
-    # Scrap Buggy
-    buggy_tech_1 = {
-        enable_equipments = {
-            buggy_equipment_1
-        }
-        
-        allow = { always = no }
-        
-        dependencies = {
-            settled_civilization = 1
-            
-        }
-        
-		path = {
-			leads_to_tech = buggy_tech_2
-			research_cost_coeff = 1
-		}	
-		
-        dependencies = {
-            settled_civilization = 1
-        }
-        
-        on_research_complete = {
-			limit = {
-				NOT = {
-					has_template_containing_unit = buggy
-				}
-			}
-			hidden_effect = {
-				load_oob = "unlock_buggy"
-			}			
-			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
-		}
-        
-		research_cost = 1.0
-		start_year = 2275
-		folder = {
-			name = fallout_vehicle_folder
-			position = { x = @Row_3 y = @Col_1 }
-		}
-		
-		categories = {
-            		vehicle_tech
-			motorized_equipment
-		}
-		
-		ai_will_do = {
-			factor = 15
-		}
-	}
-    
-    # Salvaged Buggy
-    buggy_tech_2 = {
-        enable_equipments = {
-            buggy_equipment_2
-        }
-        
-        allow = { always = no }
-        
-        dependencies = {
-            settled_civilization = 1
-            
-        }
-        
-		path = {
-			leads_to_tech = buggy_tech_3
-			research_cost_coeff = 1
-		}	
-
-        dependencies = {
-            settled_civilization = 1
-        }
-        
-		research_cost = 1.0
-		start_year = 2275
-		folder = {
-			name = fallout_vehicle_folder
-			position = { x = @Row_3 y = @Col_2 }
-		}
-		
-		categories = {
-            		vehicle_tech
-			motorized_equipment
-		}
-		
-		ai_will_do = {
-			factor = 11
-		}
-	}
-    
-    # Wasteland buggy
-    buggy_tech_3 = {
-        enable_equipments = {
-            buggy_equipment_3
-        }
-        
-        allow = { always = no }
-        
-		path = {
-			leads_to_tech = buggy_tech_2
-			research_cost_coeff = 1
-		}	
-		
-        dependencies = {
-            settled_civilization = 1
-            
-        }
-        
-		research_cost = 1.0
-		start_year = 2275
-		folder = {
-			name = fallout_vehicle_folder
-			position = { x = @Row_3 y = @Col_3 }
-		}
-		
-		categories = {
-            		vehicle_tech
-			motorized_equipment
-		}
-		
-		ai_will_do = {
-			factor = 10
-		}
-	}
-    
     # Scrap Car
     car_tech_1 = {
         enable_equipments = {
@@ -296,18 +171,6 @@ technologies = {
             settled_civilization = 1
             
         }
-        
-        on_research_complete = {
-			limit = {
-				NOT = {
-					has_template_containing_unit = car
-				}
-			}
-			hidden_effect = {
-				load_oob = "unlock_car"
-			}			
-			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
-		}
         
 		research_cost = 1.0
 		start_year = 2275
@@ -334,10 +197,6 @@ technologies = {
         
 		path = {
 			leads_to_tech = car_tech_3
-			research_cost_coeff = 1
-		}
-        path = {
-			leads_to_tech = bus_tech_1
 			research_cost_coeff = 1
 		}
         path = {
@@ -392,82 +251,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 10
-		}
-	}
-    
-    # Wasteland Bus
-    bus_tech_1 = {
-        enable_equipments = {
-            bus_equipment_1
-        }
-        
-        path = {
-			leads_to_tech = bus_tech_2
-			research_cost_coeff = 1
-		}
-        dependencies = {
-            settled_civilization = 1
-            
-        }
-        
-        on_research_complete = {
-			limit = {
-				NOT = {
-					has_template_containing_unit = bus
-				}
-			}
-			hidden_effect = {
-				load_oob = "unlock_bus"
-			}			
-			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
-		}
-        
-		research_cost = 1.0
-		start_year = 2275
-		folder = {
-			name = fallout_vehicle_folder
-			position = { x = @Row_3 y = @Col_3 }
-		}
-		
-		categories = {
-            		vehicle_tech
-			motorized_equipment
-		}
-		
-		ai_will_do = {
-			factor = 10
-		}
-	}
-    
-    # Fortified Bus
-    bus_tech_2 = {  
-        enable_equipments = {
-            bus_equipment_2
-        }
-        
-        path = {
-			leads_to_tech = bus_tech_3
-			research_cost_coeff = 1
-		}
-        dependencies = {
-            settled_civilization = 1
-            
-        }
-        
-		research_cost = 1.0
-		start_year = 2275
-		folder = {
-			name = fallout_vehicle_folder
-			position = { x = @Row_3 y = @Col_4 }
-		}
-		
-		categories = {
-            		vehicle_tech
-			motorized_equipment
-		}
-		
-		ai_will_do = {
-			factor = 15
 		}
 	}
     

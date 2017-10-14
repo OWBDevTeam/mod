@@ -1,0 +1,260 @@
+equipments = {
+
+	motorized_equipment = {
+		is_archetype = yes
+		picture = archetype_motorized_equipment		
+		is_buildable = no
+		type = {
+			motorized
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+
+		#Space taken in convoy
+		lend_lease_cost = 5
+
+		build_cost_ic = 2.5
+		resources = {
+			metal = 1
+			electricity = 1
+		}
+	}
+
+    # Scrap Trucks
+	truck_equipment_1 = {
+		archetype = motorized_equipment
+		priority = 10
+		type = {
+			motorized
+		}
+		
+		maximum_speed = 12
+		reliability = 0.8
+		hardness = 0.1
+
+		#Space taken in convoy
+		lend_lease_cost = 5
+
+		build_cost_ic = 2.5
+		resources = {
+			metal = 1
+			electricity = 1
+		}
+	}
+
+    # Salvaged Trucks
+	truck_equipment_2 = {
+		archetype = motorized_equipment
+        parent = truck_equipment_1
+		priority = 20	
+
+		maximum_speed = 16
+		reliability = 0.9
+		build_cost_ic = 4
+		resources = {
+			metal = 1
+			electricity = 1
+		}	
+	}
+    
+    # Wasteland Truck
+    truck_equipment_3 = {
+		archetype = motorized_equipment
+        parent = truck_equipment_2
+		priority = 30	
+		maximum_speed = 16
+		reliability = 0.9
+		build_cost_ic = 4
+		resources = {
+			metal = 2
+			electricity = 1
+		}	
+	}
+    
+    # Great War Truck
+    truck_equipment_4 = {
+		archetype = motorized_equipment
+        parent = truck_equipment_3
+		priority = 40	
+		maximum_speed = 16
+		reliability = 0.9
+		build_cost_ic = 4
+		resources = {
+			metal = 2
+			electricity = 1
+		}	
+	}
+    
+    # Super Mutant Battlewagons
+    super_mutant_battlewagons_equipment = {
+		parent = truck_equipment_4
+		archetype = motorized_equipment
+		priority = 100	
+
+		maximum_speed = 16
+		reliability = 0.9
+		build_cost_ic = 4
+		resources = {
+			metal = 4
+			electricity = 1
+		}
+	}
+	
+	# Motorcycles
+	motorbike_equipment_1 = {
+		archetype = motorized_equipment
+		priority = 30			
+		maximum_speed = 12
+		reliability = 0.8
+		hardness = 0.1
+
+		#Space taken in convoy
+		lend_lease_cost = 5
+
+		build_cost_ic = 2.5
+		resources = {
+			fuel = 1
+			metal = 1
+			electronics = 1
+		}
+	}
+
+    # Salvaged Motorcycles
+	motorbike_equipment_2 = {
+		archetype = motorized_equipment
+        parent = motorbike_equipment_1
+		priority = 40	
+
+		maximum_speed = 16
+		reliability = 0.9
+		build_cost_ic = 4
+        
+		resources = {
+			fuel = 2
+			metal = 1
+			electronics = 1
+		}	
+	}
+    
+    # Wasteland Motorcycles
+	motorbike_equipment_3 = {
+		archetype = motorized_equipment
+        parent = motorbike_equipment_2
+		priority = 50	
+        
+		maximum_speed = 16
+		reliability = 0.95
+		build_cost_ic = 6
+        
+		resources = {
+			fuel = 2
+			metal = 2
+			electronics = 2
+		}	
+	}
+    
+    # Uniques
+    eighties_warbikes = {
+		archetype = motorized_equipment
+        parent = motorbike_equipment_3
+		priority = 100	
+
+        maximum_speed = 18
+		reliability = 0.95
+		build_cost_ic = 6
+        
+		resources = {
+			fuel = 2
+			metal = 2
+			electronics = 2
+		}
+	}
+    
+    legion_motor_chariots = {
+		archetype = motorized_equipment
+        parent = motorbike_equipment_3
+		priority = 100		
+
+        maximum_speed = 16
+		reliability = 0.95
+		build_cost_ic = 6
+        
+        soft_attack = 0.1
+        
+        resources = {
+			fuel = 2
+			metal = 2
+			electronics = 2
+		}
+	}
+    
+    ranger_harley_davisons = {
+		archetype = motorized_equipment
+        parent = motorbike_equipment_3
+		priority = 100			
+        
+        maximum_speed = 16
+		reliability = 0.98
+		build_cost_ic = 6
+        
+        resources = {
+			fuel = 2
+			metal = 2
+			electronics = 2
+		}
+	}
+	
+	 # Scrap Car
+	car_equipment_1 = {
+		archetype = motorized_equipment
+		priority = 30			
+		maximum_speed = 12
+		reliability = 0.8
+		hardness = 0.1
+
+		#Space taken in convoy
+		lend_lease_cost = 5
+
+		build_cost_ic = 2.5
+		resources = {
+			fuel = 1
+			metal = 1
+			electronics = 1
+		}
+	}
+
+    # Salvaged Car
+	car_equipment_2 = {
+		archetype = motorized_equipment
+        parent = car_equipment_1
+		priority = 40	
+        
+		maximum_speed = 16
+		reliability = 0.9
+		build_cost_ic = 4
+        
+		resources = {
+			fuel = 2
+			metal = 1
+			electronics = 2
+		}	
+	}
+    
+    # Wasteland Car
+    car_equipment_3 = {
+		archetype = motorized_equipment
+        parent = car_equipment_2
+		priority = 50	
+        
+		maximum_speed = 16
+		reliability = 0.9
+		build_cost_ic = 4
+        
+		resources = {
+			fuel = 2
+			metal = 1
+			electronics = 2
+		}	
+	}
+}
