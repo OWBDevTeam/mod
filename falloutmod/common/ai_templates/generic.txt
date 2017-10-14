@@ -455,6 +455,7 @@ infantry_generic = {
 			anti_personnel_company
 			flamer_company
 			laser_company
+			motorized
 			motorized_support
 			signal_company
 			dog_company
@@ -545,7 +546,6 @@ infantry_generic = {
 			laser_company
 			motorized_support
 			signal_company
-			motorbike_support
 			dog_company
 			anti_tank_company
 			anti_personnel_brigade
@@ -728,7 +728,6 @@ mechanized_generic = {
 			
 			regiments = {
 				apc = 10
-				
 			}
 		}
 
@@ -749,7 +748,7 @@ mechanized_generic = {
 motorized_generic = {
 
 	roles = {
-		motorized
+		mobile
 	}
 	
 	upgrade_prio = {
@@ -821,7 +820,7 @@ motorized_generic = {
 		
 		target_template = {
 			weight = 0.9
-			match_value = 3000.0
+			match_value = 5000.0
 			
 			support = {
 				anti_tank_company = 1
@@ -839,10 +838,7 @@ motorized_generic = {
 			light_tank
 			medium_tank
 			heavy_tank
-			motorbike_support
 			signal_company
-			bus_support
-			car_support
 			anti_tank_company
 			anti_personnel_brigade
 		}	
