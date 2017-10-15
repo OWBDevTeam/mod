@@ -26,7 +26,7 @@ NDefines.NAI.PLAN_MIN_SIZE_FOR_FALLBACK = 500					                -- A country w
 
 NDefines.NAI.MIN_FIELD_STRENGTH_TO_BUILD_UNITS = 0.7			                -- Cancel unit production if below this to get resources out to units in the field
 NDefines.NAI.MIN_MANPOWER_TO_BUILD_UNITS = 0.7					                -- Cancel unit production if below this to get resources out to units in the field (producing too many units will cause problems)
-NDefines.NAI.PRODUCTION_EQUIPMENT_SURPLUS_FACTOR = 1.5 -- Base value for how much of currently used equipment the AI will at least strive to have in stock
+NDefines.NAI.PRODUCTION_EQUIPMENT_SURPLUS_FACTOR = 0.5 -- Base value for how much of currently used equipment the AI will at least strive to have in stock
 
 
 NDefines.NAI.DEPLOY_MIN_TRAINING_PEACE_FACTOR = 0.9		                        -- Required percentage of training (1.0 = 100%) for AI to deploy unit in peacetime
