@@ -1,9 +1,9 @@
-add_namespace = scavenging
+﻿add_namespace = scavenging
 
 country_event = {
 	id = scavenging.1
 	fire_only_once = no
-	mean_time_to_happen = { days = 60 }
+	mean_time_to_happen = { days = 180 }
 	hidden = no
 	
 	title = scavenging.1.t
@@ -23,7 +23,7 @@ country_event = {
 					NOT = { has_tech = basic_laser_weaponry }
 				} 
 			}
-			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 100 producer = ROOT } 
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 100 } 
 		}
 		
 		if = {
@@ -34,7 +34,7 @@ country_event = {
 					NOT = { has_tech = basic_laser_weaponry }
 				} 
 			}
-			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 100 producer = ROOT } 
+			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 100} 
 		}
 		
 		if = {
@@ -45,7 +45,7 @@ country_event = {
 					NOT = { has_tech = improved_laser_weaponry }
 				} 
 			}
-			add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 100 producer = ROOT } 
+			add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 100} 
 		}
 		
 		if = {
@@ -55,7 +55,7 @@ country_event = {
 					NOT = { has_tech = advanced_laser_weaponry }
 				} 
 			}
-			add_equipment_to_stockpile = { type = ballistic_equipment_3 amount = 100 producer = ROOT } 
+			add_equipment_to_stockpile = { type = ballistic_equipment_3 amount = 100} 
 		}
 		
 		if = { 
@@ -66,7 +66,7 @@ country_event = {
 					NOT = { has_tech = improved_laser_weaponry }
 				} 
 			}
-			add_equipment_to_stockpile = { type = energy_equipment_1 amount = 100 producer = ROOT } 
+			add_equipment_to_stockpile = { type = energy_equipment_1 amount = 100} 
 		}
 		
 		if = { 
@@ -77,7 +77,7 @@ country_event = {
 					NOT = { has_tech = advanced_laser_weaponry }
 				} 
 			}
-			add_equipment_to_stockpile = { type = energy_equipment_2 amount = 100 producer = ROOT } 
+			add_equipment_to_stockpile = { type = energy_equipment_2 amount = 100} 
 		}
 		
 		if = { 
@@ -86,7 +86,7 @@ country_event = {
 					has_tech = advanced_laser_weaponry 
 				} 
 			}
-			add_equipment_to_stockpile = { type = energy_equipment_3 amount = 100 producer = ROOT } 
+			add_equipment_to_stockpile = { type = energy_equipment_3 amount = 100} 
 		}
 		
 	}
