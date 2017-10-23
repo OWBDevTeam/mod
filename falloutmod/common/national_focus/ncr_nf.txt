@@ -1125,6 +1125,7 @@ focus_tree = {
 		y = 7
 		completion_reward = {
 			set_technology = { power_armour = 1 }
+			load_oob = ncrheavytroops
 		}
 
 	}
@@ -1893,7 +1894,7 @@ focus_tree = {
 		x = 33
 		y = 7
 		completion_reward = {
-			
+			add_ideas = ncrmarch
 		}
 
 	}
@@ -1906,6 +1907,9 @@ focus_tree = {
 		}
 		x = 33
 		y = 8
+		completion_reward = {
+			add_ideas = jimdraft
+		}
 
 	}
 	focus = {
@@ -1921,6 +1925,9 @@ focus_tree = {
 		}
 		x = 35
 		y = 5
+		completion_reward = {
+			add_ideas = rangergenmossman
+		}
 
 	}
 	focus = {
@@ -1932,6 +1939,9 @@ focus_tree = {
 		}
 		x = 35
 		y = 6
+		completion_reward = {
+			add_ideas = rangercore
+		}
 
 	}
 	focus = {
@@ -1943,6 +1953,9 @@ focus_tree = {
 		}
 		x = 35
 		y = 7
+		completion_reward = {
+			add_ideas = rangerlead
+		}
 
 	}
 	focus = {
@@ -1954,6 +1967,9 @@ focus_tree = {
 		}
 		x = 35
 		y = 8
+		completion_reward = {
+			add_ideas = rangercanopeners
+		}
 
 	}
 	focus = {
@@ -2003,6 +2019,9 @@ focus_tree = {
 		}
 		x = 9
 		y = 11
+		completion_reward = {
+			add_ideas = aaronkimball
+		}
 
 	}
 	focus = {
@@ -2022,6 +2041,7 @@ focus_tree = {
 				traits = {
 				}
 			}
+			load_oob = ncrheavytroops
 		}
 
 	}
@@ -2037,6 +2057,7 @@ focus_tree = {
 		}
 		bypass = {
 			has_country_flag = hoover_dam_lost
+			has_country_flag = hoover_dam_won
 		}
 		available = {
 			CES = {
@@ -2047,11 +2068,8 @@ focus_tree = {
 		y = 13
 		completion_reward = {
 			create_wargoal = {
-				type = take_state_focus
+				type = hoover_dam
 				target = CES
-				generator = {
-					252
-				}
 			}
             set_country_flag = battle_for_hoover_dam
 		}
@@ -2069,6 +2087,10 @@ focus_tree = {
 		}
 		x = 10
 		y = 14
+		completion_reward = {
+			add_national_unity = -0.1
+			add_political_power = -100
+		}
 
 
 	}
@@ -2084,6 +2106,15 @@ focus_tree = {
 		}
 		x = 8
 		y = 14
+		completion_reward = {
+			add_political_power = 50
+			every_state = {
+				limit = {
+					is_new_vegas_state = yes
+				}
+				add_core_of = NCR
+			}
+		}
 
 	}
 	focus = {
@@ -2095,6 +2126,22 @@ focus_tree = {
 		}
 		x = 8
 		y = 15
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_new_vegas_state = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 	focus = {
@@ -2106,6 +2153,28 @@ focus_tree = {
 		}
 		x = 8
 		y = 16
+		completion_reward = {
+			252 = {
+				add_resource = {
+                    type = electricity
+                    amount = -30
+                }
+				add_resource = {
+                    type = electronics
+                    amount = -5
+                }
+			}
+			capital_scope = {
+                add_resource = {
+                    type = electricity
+                    amount = 30
+                }
+				add_resource = {
+                    type = electronics
+                    amount = 5
+                }
+            }
+		}
 
 	}
 	focus = {
@@ -2116,8 +2185,17 @@ focus_tree = {
 			focus = ncr_powertopeople
 			focus = ncr_heavytroops
 		}
+		available = {
+			date > 2279.1.1
+		}
 		x = 9
 		y = 17
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = CES
+			}
+		}
 
 	}
 	focus = {
@@ -2129,6 +2207,9 @@ focus_tree = {
 		}
 		x = 10
 		y = 15
+		completion_reward = {
+			add_ideas = urbandraft
+		}
 
 	}
 	focus = {
@@ -2140,6 +2221,10 @@ focus_tree = {
 		}
 		x = 10
 		y = 16
+		completion_reward = {
+			add_ideas = heavytroops
+			load_oob = ncrheavytroops
+		}
 
 	}
 	focus = {
@@ -2151,6 +2236,15 @@ focus_tree = {
 		}
 		x = 14
 		y = 6
+		completion_reward = {
+			252 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+			}
+		}
 
 	}
 	focus = {
@@ -2162,6 +2256,19 @@ focus_tree = {
 		}
 		x = 14
 		y = 7
+		completion_reward = {
+			252 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+				}
+			}
+		}
 
 	}
 	focus = {
@@ -2173,6 +2280,14 @@ focus_tree = {
 		}
 		x = 14
 		y = 8
+		completion_reward = {
+			252 = {
+				add_resource = {
+					type = electricity
+					amount = 10
+				}
+			}
+		}
 
 	}
 	focus = {
@@ -2190,6 +2305,9 @@ focus_tree = {
 		}
 		x = 16
 		y = 9
+		completion_reward = {
+			add_national_unity = 0.1
+		}
 
 	}
 	focus = {
@@ -2201,6 +2319,10 @@ focus_tree = {
 		}
 		x = 14
 		y = 11
+		completion_reward = {
+			add_political_power = 50
+			country_event = { id = nf_ncr.21 }
+		}
 
 	}
 	focus = {
@@ -2212,7 +2334,25 @@ focus_tree = {
 		}
 		x = 16
 		y = 11
-
+		completion_reward = {
+			63 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = ncr_militport
@@ -2223,7 +2363,16 @@ focus_tree = {
 		}
 		x = 16
 		y = 12
-
+		completion_reward = {
+			63 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = ncr_seabear
@@ -2234,6 +2383,9 @@ focus_tree = {
 		}
 		x = 16
 		y = 13
+		completion_reward = {
+			load_oob = seabear
+		}
 
 	}
 	focus = {
@@ -2245,6 +2397,14 @@ focus_tree = {
 		}
 		x = 14
 		y = 12
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}	
+		}
 
 	}
 	focus = {
@@ -2256,6 +2416,9 @@ focus_tree = {
 		}
 		x = 14
 		y = 13
+		completion_reward = {
+			add_ideas = scavunion
+		}
 
 	}
 	focus = {
@@ -2267,6 +2430,9 @@ focus_tree = {
 		}
 		x = 12
 		y = 13
+		completion_reward = {
+			country_event = { id = nf_ncr.22 }
+		}
 
 	}
 	focus = {
@@ -2278,6 +2444,9 @@ focus_tree = {
 		}
 		x = 12
 		y = 14
+		completion_reward = {
+			country_event = { id = nf_ncr.23 }
+		}
 
 	}
 	focus = {
@@ -2289,6 +2458,9 @@ focus_tree = {
 		}
 		x = 21
 		y = 8
+		completion_reward = {
+			add_ideas = flyingbears
+		}
 
 	}
 	focus = {
@@ -2300,6 +2472,21 @@ focus_tree = {
 		}
 		x = 24
 		y = 11
+		completion_reward = {
+			1 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex 
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure 
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 	focus = {
@@ -2311,6 +2498,9 @@ focus_tree = {
 		}
 		x = 24
 		y = 12
+		completion_reward = {
+			#Briar literally never said what this does why would you do this to me dude
+		}
 
 	}
 	focus = {
@@ -2322,6 +2512,9 @@ focus_tree = {
 		}
 		x = 24
 		y = 13
+		completion_reward = {
+			country_event = { id = nf_ncr.24 }
+		}
 
 	}
 	focus = {
@@ -2333,6 +2526,31 @@ focus_tree = {
 		}
 		x = 24
 		y = 14
+		completion_reward = {
+			1 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			
+			489 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			
+			252 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 	focus = {
@@ -2344,6 +2562,11 @@ focus_tree = {
 		}
 		x = 37
 		y = 5
+		completion_reward = {
+			add_equipment_to_stockpile = { type = truck_equipment_1 amount = 20 producer = NCR }
+			
+			add_ideas = mechcore
+		}
 
 	}
 	focus = {
@@ -2355,6 +2578,12 @@ focus_tree = {
 		}
 		x = 37
 		y = 6
+		completion_reward = {
+			add_equipment_to_stockpile = { type = apc_equipment_1 amount = 20 producer = NCR }
+			
+			add_ideas = shockcomp
+		}
+
 
 	}
 	focus = {
@@ -2366,6 +2595,9 @@ focus_tree = {
 		}
 		x = 37
 		y = 7
+		completion_reward = {
+			add_ideas = rapidadvance
+		}
 
 	}
 }

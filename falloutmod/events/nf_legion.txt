@@ -40,6 +40,14 @@ country_event = {
 	option = {
 		name = nf_legion.1.option.a
         
+		ai_chance = {
+			base = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 100
+			}
+		}
+		
         set_country_flag = accepted_petition
 		
 		add_opinion_modifier = { 
@@ -61,6 +69,14 @@ country_event = {
     option = {
 		name = nf_legion.1.option.b
         
+		ai_chance = {
+			base = 1
+			modifier = {
+				is_historical_focus_on = no
+				factor = 100
+			}
+		}
+		
 		set_country_flag = refused_petition
 	}
 }
@@ -78,6 +94,10 @@ country_event = {
 	option = {
 		name = nf_legion.2.option.a
         
+		ai_chance = {
+			base = 7
+		}
+		
         set_country_flag = accepted_petition
         
         add_opinion_modifier = { 
@@ -99,6 +119,10 @@ country_event = {
     option = {
 		name = nf_legion.2.option.b
         
+		ai_chance = {
+			base = 3
+		}
+		
 		set_country_flag = refused_petition
         
         add_opinion_modifier = { 

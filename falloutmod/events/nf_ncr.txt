@@ -1355,3 +1355,188 @@ country_event = { #Den-Mother
 	}
 	
 }
+
+country_event = { #Legal Reform/New Industry
+	id = nf_ncr.21
+	title = nf_ncr.21.t
+	desc = nf_ncr.21.d
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_ncr.21.a
+	
+		63 = {
+			add_extra_state_shared_building_slots = 8
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	
+	option = {
+		name = nf_ncr.21.b
+	
+		63 = {
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+	
+	option = {
+		name = nf_ncr.21.c
+	
+		63 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 4
+				instant_build = yes
+			}
+		}
+	}
+	
+}
+
+country_event = { #Baja Migration
+	id = nf_ncr.22
+	title = nf_ncr.22.t
+	desc = nf_ncr.22.d
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_ncr.22.a
+	
+		add_timed_idea = {
+			idea = allarewelcome
+			days = 365
+		}
+	}
+	
+	option = {
+		name = nf_ncr.22.b
+	
+		add_timed_idea = {
+			idea = immigrationlimits
+			days = 365
+		}
+	}
+	
+	option = {
+		name = nf_ncr.22.c
+	
+		add_timed_idea = {
+			idea = onlythebest
+			days = 365
+		}
+	}
+}
+
+country_event = { #Mutant Migrants
+	id = nf_ncr.23
+	title = nf_ncr.23.t
+	desc = nf_ncr.23.d
+	picture = GFX_report_event_fascist_speech
+	
+	option = {
+		name = nf_ncr.23.a
+		
+		#No super mutants yet
+		
+	}
+	
+	option = {
+		name = nf_ncr.23.b
+		
+		add_ideas = mutantlabour
+		
+		63 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		
+	}
+	
+	option = {
+		name = nf_ncr.23.c
+		
+		63 = {
+			add_resource = {
+				type = electricity
+				amount = 10
+			}
+			add_resource = {
+				type = fuel
+				amount = 10
+			}
+		}
+	}
+	
+}
+
+country_event = { #Hub Crime
+	id = nf_ncr.24
+	title = nf_ncr.24.t
+	desc = nf_ncr.24.d
+	picture = GFX_report_event_fascist_speech
+	
+	option = {
+		name = nf_ncr.24.a
+		
+		1 = {
+			add_building_construction = {
+				type = industrial_complex 
+				level = 2
+				instant_build = yes
+			}
+		}
+		
+		add_ideas = hubdrugs
+		
+	}
+	
+	option = {
+		name = nf_ncr.24.b
+		
+		1 = {
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+		
+		add_ideas = hubweapons
+		
+	}
+	
+	option = {
+		name = nf_ncr.24.c
+		
+		1 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		
+		add_national_unity = 0.03
+		
+	}
+	
+	
+	
+}

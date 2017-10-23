@@ -205,11 +205,25 @@ focus_tree = {
 		x = 7
 		y = 6
 		completion_reward = {
-			LON = { 
-				country_event = { id = mormon.4 }
+			if = {
+				limit = {
+					LON = {
+						is_ai = yes
+					}
+				}
+				puppet = LON
+			}
+			if = {
+				limit = {
+					LON = {
+						is_ai = no
+					}
+				}
+				LON = { 
+					country_event = { id = mormon.4 }
+				}
 			}
 		}
-
 	}
 	focus = {
 		id = lds_lonetreesupport
@@ -236,8 +250,23 @@ focus_tree = {
 		x = 9
 		y = 6
 		completion_reward = {
-			IRE = { 
-				country_event = { id = mormon.5 }
+			if = {
+				limit = {
+					IRE = {
+						is_ai = yes
+					}
+				}
+				puppet = IRE
+			}
+			if = {
+				limit = {
+					IRE = {
+						is_ai = no
+					}
+				}
+				IRE = { 
+					country_event = { id = mormon.4 }
+				}
 			}
 		}
 
@@ -281,7 +310,24 @@ focus_tree = {
 		x = 12
 		y = 5
 		completion_reward = {
-			country_event = { id = mormon.6 }
+			if = {
+				limit = {
+					CRZ = {
+						is_ai = yes
+					}
+				}
+				puppet = CRZ
+			}
+			if = {
+				limit = {
+					CRZ = {
+						is_ai = no
+					}
+				}
+				CRZ = { 
+					country_event = { id = mormon.4 }
+				}
+			}
 		}
 
 	}
@@ -295,7 +341,24 @@ focus_tree = {
 		x = 14
 		y = 5
 		completion_reward = {
-			country_event = { id = mormon.7 }
+			if = {
+				limit = {
+					TAR = {
+						is_ai = yes
+					}
+				}
+				puppet = TAR
+			}
+			if = {
+				limit = {
+					TAR = {
+						is_ai = no
+					}
+				}
+				TAR = { 
+					country_event = { id = mormon.4 }
+				}
+			}
 		}
 
 	}
@@ -706,7 +769,24 @@ focus_tree = {
 		x = 16
 		y = 5
 		completion_reward = {
-			country_event = { id = mormon.10 }
+			if = {
+				limit = {
+					SOR = {
+						is_ai = yes
+					}
+				}
+				puppet = SOR
+			}
+			if = {
+				limit = {
+					SOR = {
+						is_ai = no
+					}
+				}
+				SOR = { 
+					country_event = { id = mormon.4 }
+				}
+			}
 		}
 
 	}
@@ -811,7 +891,24 @@ focus_tree = {
 		x = 20
 		y = 5
 		completion_reward = {
-			country_event = { id = mormon.11 }
+			if = {
+				limit = {
+					DEA = {
+						is_ai = yes
+					}
+				}
+				puppet = DEA
+			}
+			if = {
+				limit = {
+					DEA = {
+						is_ai = no
+					}
+				}
+				DEA = { 
+					country_event = { id = mormon.4 }
+				}
+			}
 		}
 
 	}
