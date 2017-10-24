@@ -196,13 +196,20 @@ focus_tree = {
 		y = 7
 		completion_reward = {
 			create_wargoal = {
-				type = annex_everything
+				type = raider_war
 				target = BVC
 			}
 			
 			BVC = {
 				create_faction = fantasma_cartel
-				add_to_faction = BLP
+				add_to_faction = BLP	
+			}
+			
+			BLP = {
+				add_to_war = {
+					targeted_alliance = BVP
+					enemy = NCR
+				}
 			}
 			
 		}
@@ -817,7 +824,7 @@ focus_tree = {
 		y = 8
 		completion_reward = {
 			create_wargoal = {
-				type = annex_everything
+				type = raider_war
 				target = SCR
 			}
 		}
@@ -1984,7 +1991,7 @@ focus_tree = {
 		y = 10
 		completion_reward = {
 			create_wargoal = {
-				type = annex_everything
+				type = raider_war
 				target = MRA
 			}
 		}

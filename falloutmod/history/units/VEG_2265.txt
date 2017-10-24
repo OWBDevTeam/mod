@@ -1,17 +1,69 @@
 ﻿division_template = {
-	name = "Blueskirt Division"
+	name = "Securitron Division"
+
+	regiments = {
+		medium_robot = { x = 0 y = 0 }
+		medium_robot = { x = 0 y = 1 }
+		medium_robot = { x = 0 y = 2 }
+		medium_robot = { x = 1 y = 0 }
+		medium_robot = { x = 1 y = 1 }
+		medium_robot = { x = 1 y = 2 }	
+	}
+	priority = 2
+}
+
+division_template = {
+	name = "Infantry Division"
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
-		infantry = { x = 1 y = 2 }
 		infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
-		infantry = { x = 2 y = 2 }
 		infantry = { x = 3 y = 0 }
 		infantry = { x = 3 y = 1 }
+	}
+}
+
+
+units = {
+
+	division {
+		name = "Strip Security"
+		location = 3179
+		division_template = "Securitron Division"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	
+	division {
+		name = "Strip Security"
+		location = 3179
+		division_template = "Securitron Division"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	
+	division {
+		name = "Strip Security"
+		location = 3179
+		division_template = "Securitron Division"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = medium_robot_equipment_3
+			creator = "VEG"
+		}
+		requested_factories = 1
+		progress = 0.25
+		efficiency = 50
 	}
 }
