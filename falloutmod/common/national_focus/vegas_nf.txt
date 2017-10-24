@@ -1,0 +1,1419 @@
+focus_tree = {
+	id = vegas_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = VEG
+		}
+	}
+	default = no
+	focus = {
+		id = veg_judgement
+		icon = GFX_goal_generic_demand_territory
+		cost = 1
+		x = 21
+		y = 0
+
+	}
+	focus = {
+		id = veg_software
+		icon = GFX_goal_generic_demand_territory
+		cost = 1
+		prerequisite = {
+			focus = veg_judgement
+		}
+		x = 21
+		y = 1
+
+	}
+	focus = {
+		id = veg_families
+		icon = GFX_goal_generic_demand_territory
+		cost = 1
+		prerequisite = {
+			focus = veg_software
+		}
+		x = 21
+		y = 2
+
+	}
+	focus = {
+		id = veg_newvegas
+		icon = GFX_goal_generic_demand_territory
+		cost = 1
+		prerequisite = {
+			focus = veg_families
+		}
+		x = 21
+		y = 3
+
+	}
+	focus = {
+		id = veg_oldauthority
+		icon = GFX_goal_support_fascism
+		cost = 8.6
+		prerequisite = {
+			focus = veg_newvegas
+		}
+		x = 4
+		y = 4
+
+	}
+	focus = {
+		id = veg_newmanagement
+		icon = GFX_goal_support_democracy
+		cost = 8.6
+		prerequisite = {
+			focus = veg_newvegas
+		}
+		x = 14
+		y = 4
+
+	}
+	focus = {
+		id = veg_king
+		icon = GFX_focus_hun_elect_a_king
+		cost = 8.6
+		prerequisite = {
+			focus = veg_newmanagement
+		}
+		mutually_exclusive = {
+			focus = veg_joker
+		}
+		x = 11
+		y = 5
+
+	}
+	focus = {
+		id = veg_everyman
+		icon = GFX_generic_recruitment_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_king
+		}
+		x = 10
+		y = 6
+
+	}
+	focus = {
+		id = veg_muggers
+		icon = GFX_focus_spy
+		cost = 8.6
+		prerequisite = {
+			focus = veg_king
+		}
+		x = 13
+		y = 6
+
+	}
+	focus = {
+		id = veg_followers
+		icon = GFX_generic_generic_diplomatic_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_muggers
+		}
+		x = 12
+		y = 7
+
+	}
+	focus = {
+		id = veg_joker
+		icon = GFX_goal_generic_wolf_pack
+		cost = 8.6
+		prerequisite = {
+			focus = veg_newmanagement
+		}
+		mutually_exclusive = {
+			focus = veg_king
+		}
+		x = 18
+		y = 5
+
+	}
+	focus = {
+		id = veg_thugs
+		icon = GFX_focus_generic_little_entente
+		cost = 8.6
+		prerequisite = {
+			focus = veg_joker
+		}
+		x = 15
+		y = 6
+
+	}
+	focus = {
+		id = veg_hiredhelp
+		icon = GFX_generic_generic_diplomatic_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_joker
+		}
+		x = 17
+		y = 6
+
+	}
+	focus = {
+		id = veg_familyman
+		icon = GFX_goal_generic_national_unity
+		cost = 8.6
+		prerequisite = {
+			focus = veg_joker
+		}
+		x = 21
+		y = 6
+
+	}
+	focus = {
+		id = veg_gomorrahthugs
+		icon = GFX_focus_generic_little_entente
+		cost = 8.6
+		prerequisite = {
+			focus = veg_familyman
+		}
+		mutually_exclusive = {
+			focus = veg_topsthugs
+		}
+		x = 19
+		y = 7
+
+	}
+	focus = {
+		id = veg_topsthugs
+		icon = GFX_focus_generic_little_entente
+		cost = 8.6
+		prerequisite = {
+			focus = veg_familyman
+		}
+		mutually_exclusive = {
+			focus = veg_ultraluxethugs
+			focus = veg_gomorrahthugs
+		}
+		x = 21
+		y = 7
+
+	}
+	focus = {
+		id = veg_ultraluxethugs
+		icon = GFX_focus_generic_little_entente
+		cost = 8.6
+		prerequisite = {
+			focus = veg_familyman
+		}
+		mutually_exclusive = {
+			focus = veg_topsthugs
+		}
+		x = 23
+		y = 7
+
+	}
+	focus = {
+		id = veg_compensation
+		icon = GFX_goal_generic_national_unity
+		cost = 8.6
+		prerequisite = {
+			focus = veg_gomorrahthugs
+		}
+		prerequisite = {
+			focus = veg_topsthugs
+		}
+		prerequisite = {
+			focus = veg_ultraluxethugs
+		}
+		x = 21
+		y = 8
+
+	}
+	focus = {
+		id = veg_familysupremacy
+		icon = GFX_generic_ideological_fury_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_compensation
+		}
+		x = 20
+		y = 9
+
+	}
+	focus = {
+		id = veg_privatearmies
+		icon = GFX_generic_land_doctrines_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_compensation
+		}
+		x = 22
+		y = 9
+
+	}
+	focus = {
+		id = veg_aligned
+		icon = GFX_goal_molotov_ribbentrop_pact
+		cost = 8.6
+		prerequisite = {
+			focus = veg_privatearmies
+		}
+		x = 22
+		y = 10
+
+	}
+	focus = {
+		id = veg_checkereddevil
+		icon = GFX_focus_spy
+		cost = 8.6
+		prerequisite = {
+			focus = veg_aligned
+		}
+		prerequisite = {
+			focus = veg_familysupremacy
+		}
+		x = 21
+		y = 11
+
+	}
+	focus = {
+		id = veg_ultraluxe
+		icon = GFX_generic_large_scale_normal_industry_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_newvegas
+		}
+		x = 28
+		y = 4
+
+	}
+	focus = {
+		id = veg_whitegloves
+		icon = GFX_goal_generic_major_alliance
+		cost = 8.6
+		prerequisite = {
+			focus = veg_ultraluxe
+		}
+		mutually_exclusive = {
+			focus = veg_khaganate
+		}
+		x = 26
+		y = 5
+
+	}
+	focus = {
+		id = veg_wealthycontacts
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 8.6
+		prerequisite = {
+			focus = veg_whitegloves
+		}
+		x = 26
+		y = 6
+
+	}
+	focus = {
+		id = veg_meatonthemenu
+		icon = GFX_goal_generic_secret_weapon
+		cost = 8.6
+		prerequisite = {
+			focus = veg_wealthycontacts
+		}
+		mutually_exclusive = {
+			focus = veg_abandon
+		}
+		x = 25
+		y = 7
+
+	}
+	focus = {
+		id = veg_abandon
+		icon = GFX_generic_food_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_wealthycontacts
+		}
+		mutually_exclusive = {
+			focus = veg_meatonthemenu
+		}
+		x = 27
+		y = 7
+
+	}
+	focus = {
+		id = veg_khaganate
+		icon = GFX_goal_generic_major_alliance
+		cost = 8.6
+		prerequisite = {
+			focus = veg_ultraluxe
+		}
+		mutually_exclusive = {
+			focus = veg_whitegloves
+		}
+		x = 29
+		y = 5
+
+	}
+	focus = {
+		id = veg_pickelhaube
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 8.6
+		prerequisite = {
+			focus = veg_khaganate
+		}
+		x = 29
+		y = 6
+
+	}
+	focus = {
+		id = veg_buryhatchet
+		icon = GFX_goal_generic_construction2
+		cost = 8.6
+		prerequisite = {
+			focus = veg_pickelhaube
+		}
+		x = 29
+		y = 7
+
+	}
+	focus = {
+		id = veg_tops
+		icon = GFX_generic_cities_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_newvegas
+		}
+		x = 32
+		y = 4
+
+	}
+	focus = {
+		id = veg_chairmen
+		icon = GFX_goal_generic_major_alliance
+		cost = 8.6
+		prerequisite = {
+			focus = veg_tops
+		}
+		mutually_exclusive = {
+			focus = veg_kings
+		}
+		x = 31
+		y = 5
+
+	}
+	focus = {
+		id = veg_arms
+		icon = GFX_generic_ammo_boxes_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_chairmen
+		}
+		x = 31
+		y = 6
+
+	}
+	focus = {
+		id = veg_newdeal
+		icon = GFX_generic_military_industry_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_arms
+		}
+		x = 31
+		y = 7
+
+	}
+	focus = {
+		id = veg_kings
+		icon = GFX_goal_generic_major_alliance
+		cost = 8.6
+		prerequisite = {
+			focus = veg_tops
+		}
+		mutually_exclusive = {
+			focus = veg_chairmen
+		}
+		x = 33
+		y = 5
+
+	}
+	focus = {
+		id = veg_westside
+		icon = GFX_generic_slums_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_kings
+		}
+		x = 33
+		y = 6
+
+	}
+	focus = {
+		id = veg_north
+		icon = GFX_generic_large_scale_normal_industry_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_westside
+		}
+		x = 33
+		y = 7
+
+	}
+	focus = {
+		id = veg_gomorrah
+		icon = GFX_generic_military_industry_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_newvegas
+		}
+		x = 36
+		y = 4
+
+	}
+	focus = {
+		id = veg_consig
+		icon = GFX_goal_generic_major_alliance
+		cost = 8.6
+		prerequisite = {
+			focus = veg_gomorrah
+		}
+		mutually_exclusive = {
+			focus = veg_omertas
+		}
+		x = 35
+		y = 5
+
+	}
+	focus = {
+		id = veg_skullsandsuits
+		icon = GFX_goal_generic_CAS
+		cost = 8.6
+		prerequisite = {
+			focus = veg_consig
+		}
+		x = 35
+		y = 6
+
+	}
+	focus = {
+		id = veg_cologne
+		icon = GFX_generic_common_energy_weapons_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_skullsandsuits
+		}
+		x = 35
+		y = 7
+
+	}
+	focus = {
+		id = veg_house
+		icon = GFX_generic_ideological_fury_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_oldauthority
+		}
+		x = 4
+		y = 5
+
+	}
+	focus = {
+		id = veg_nwo
+		icon = GFX_generic_land_doctrines_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_house
+		}
+		mutually_exclusive = {
+			focus = veg_economy
+		}
+		x = 2
+		y = 6
+
+	}
+	focus = {
+		id = veg_economy
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 8.6
+		prerequisite = {
+			focus = veg_house
+		}
+		mutually_exclusive = {
+			focus = veg_nwo
+		}
+		x = 6
+		y = 6
+
+	}
+	focus = {
+		id = veg_vault
+		icon = GFX_bos_study_securitron_software
+		cost = 8.6
+		prerequisite = {
+			focus = veg_platinumchip
+		}
+		x = 4
+		y = 8
+
+	}
+	focus = {
+		id = veg_platinumchip
+		icon = GFX_generic_data_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_house
+		}
+		x = 4
+		y = 7
+
+	}
+	focus = {
+		id = veg_prime
+		icon = GFX_focus_generic_the_giant_wakes
+		cost = 8.6
+		prerequisite = {
+			focus = veg_vault
+		}
+		x = 4
+		y = 9
+
+	}
+	focus = {
+		id = veg_securenorth
+		icon = GFX_generic_ideological_fury_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_nwo
+		}
+		x = 2
+		y = 7
+
+	}
+	focus = {
+		id = veg_rockthesuburbs
+		icon = GFX_generic_slums_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_nwo
+		}
+		x = 0
+		y = 7
+
+	}
+	focus = {
+		id = veg_secure
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = veg_securenorth
+		}
+		prerequisite = {
+			focus = veg_rockthesuburbs
+		}
+		mutually_exclusive = {
+			focus = veg_clean
+		}
+		x = 0
+		y = 8
+
+	}
+	focus = {
+		id = veg_clean
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = veg_rockthesuburbs
+		}
+		prerequisite = {
+			focus = veg_securenorth
+		}
+		mutually_exclusive = {
+			focus = veg_secure
+		}
+		x = 2
+		y = 8
+
+	}
+	focus = {
+		id = veg_broken
+		icon = GFX_bos_the_mojave_signal
+		cost = 8.6
+		prerequisite = {
+			focus = veg_secure
+		}
+		x = 0
+		y = 9
+
+	}
+	focus = {
+		id = veg_reborn
+		icon = GFX_generic_advanced_technology_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_broken
+		}
+		x = 0
+		y = 10
+
+	}
+	focus = {
+		id = veg_frisco
+		icon = GFX_generic_ammo_boxes_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_clean
+		}
+		x = 2
+		y = 9
+
+	}
+	focus = {
+		id = veg_silver
+		icon = GFX_generic_metal_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_frisco
+		}
+		x = 2
+		y = 10
+
+	}
+	focus = {
+		id = veg_architect
+		icon = GFX_goal_support_fascism
+		cost = 8.6
+		prerequisite = {
+			focus = veg_reborn
+			focus = veg_silver
+		}
+		x = 1
+		y = 11
+
+	}
+	focus = {
+		id = veg_foreigninvest
+		icon = GFX_generic_supplies_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_economy
+		}
+		x = 6
+		y = 7
+
+	}
+	focus = {
+		id = veg_ncrembassy
+		icon = GFX_generic_NCR_diplomatic_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_foreigninvest
+		}
+		x = 6
+		y = 8
+
+	}
+	focus = {
+		id = veg_jointscavenge
+		icon = GFX_generic_metal_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_ncrembassy
+		}
+		x = 6
+		y = 9
+
+	}
+	focus = {
+		id = veg_ncrrail
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 8.6
+		prerequisite = {
+			focus = veg_jointscavenge
+		}
+		x = 6
+		y = 10
+
+	}
+	focus = {
+		id = veg_ncrdeal
+		icon = GFX_focus_ally_NCR
+		cost = 8.6
+		prerequisite = {
+			focus = veg_ncrrail
+		}
+		x = 6
+		y = 11
+
+	}
+	focus = {
+		id = veg_prepcity
+		icon = GFX_generic_large_scale_normal_industry_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_economy
+		}
+		x = 8
+		y = 7
+
+	}
+	focus = {
+		id = veg_segregate
+		icon = GFX_generic_walls_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_prepcity
+		}
+		mutually_exclusive = {
+			focus = veg_revitalize
+		}
+		x = 8
+		y = 8
+
+	}
+	focus = {
+		id = veg_revitalize
+		icon = GFX_generic_slums_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_prepcity
+			focus = veg_everyman
+		}
+		mutually_exclusive = {
+			focus = veg_segregate
+		}
+		x = 10
+		y = 8
+
+	}
+	focus = {
+		id = veg_vault21
+		icon = GFX_goal_generic_attack_allies
+		cost = 8.6
+		prerequisite = {
+			focus = veg_segregate
+			focus = veg_revitalize
+		}
+		x = 9
+		y = 9
+
+	}
+	focus = {
+		id = veg_cerulean
+		icon = GFX_generic_robots_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_vault21
+		}
+		x = 8
+		y = 10
+
+	}
+	focus = {
+		id = veg_industry
+		icon = GFX_generic_large_scale_normal_industry_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_vault21
+		}
+		x = 10
+		y = 10
+
+	}
+	focus = {
+		id = veg_followersupport
+		icon = GFX_focus_research
+		cost = 8.6
+		prerequisite = {
+			focus = veg_cerulean
+		}
+		x = 8
+		y = 11
+
+	}
+	focus = {
+		id = veg_walls
+		icon = GFX_generic_walls_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_industry
+		}
+		x = 10
+		y = 11
+
+	}
+	focus = {
+		id = veg_securitron
+		icon = GFX_generic_data_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_muggers
+		}
+		x = 14
+		y = 7
+
+	}
+	focus = {
+		id = veg_vic
+		icon = GFX_goal_rhineland
+		cost = 8.6
+		prerequisite = {
+			focus = veg_followers
+		}
+		prerequisite = {
+			focus = veg_securitron
+		}
+		x = 13
+		y = 8
+
+	}
+	focus = {
+		id = veg_first
+		icon = GFX_generic_ideological_fury_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_vic
+		}
+		mutually_exclusive = {
+			focus = veg_mojave
+		}
+		x = 12
+		y = 9
+
+	}
+	focus = {
+		id = veg_mojave
+		icon = GFX_bos_elder_recalled
+		cost = 8.6
+		prerequisite = {
+			focus = veg_vic
+		}
+		mutually_exclusive = {
+			focus = veg_first
+		}
+		x = 14
+		y = 9
+
+	}
+	focus = {
+		id = veg_raiderend
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = veg_first
+		}
+		x = 12
+		y = 10
+
+	}
+	focus = {
+		id = veg_mojavesecond
+		icon = GFX_goal_generic_major_war
+		cost = 8.6
+		prerequisite = {
+			focus = veg_raiderend
+		}
+		x = 12
+		y = 11
+
+	}
+	focus = {
+		id = veg_dambusters
+		icon = GFX_goal_generic_major_alliance
+		cost = 8.6
+		prerequisite = {
+			focus = veg_mojave
+		}
+		x = 14
+		y = 10
+
+	}
+	focus = {
+		id = veg_mojavesecure
+		icon = GFX_goal_generic_military_deal
+		cost = 8.6
+		prerequisite = {
+			focus = veg_dambusters
+		}
+		x = 14
+		y = 11
+
+	}
+	focus = {
+		id = veg_assassinate
+		icon = GFX_focus_spy
+		cost = 8.6
+		prerequisite = {
+			focus = veg_mojavesecond
+			focus = veg_mojavesecure
+		}
+		mutually_exclusive = {
+			focus = veg_warforvegas
+		}
+		x = 14
+		y = 12
+
+	}
+	focus = {
+		id = veg_warforvegas
+		icon = GFX_generic_common_firearms_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_mojavesecure
+			focus = veg_mojavesecond
+		}
+		mutually_exclusive = {
+			focus = veg_assassinate
+		}
+		x = 12
+		y = 12
+
+	}
+	focus = {
+		id = veg_peoplesvegas
+		icon = GFX_goal_support_democracy
+		cost = 8.6
+		prerequisite = {
+			focus = veg_warforvegas
+			focus = veg_assassinate
+		}
+		x = 13
+		y = 13
+
+	}
+	focus = {
+		id = veg_yesman
+		icon = GFX_bos_study_securitron_software
+		cost = 8.6
+		prerequisite = {
+			focus = veg_hiredhelp
+		}
+		x = 17
+		y = 7
+
+	}
+	focus = {
+		id = veg_lowfriends
+		icon = GFX_generic_ideological_fury_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_yesman
+		}
+		mutually_exclusive = {
+			focus = veg_highfriends
+		}
+		x = 16
+		y = 8
+
+	}
+	focus = {
+		id = veg_highfriends
+		icon = GFX_generic_ideological_fury_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_yesman
+		}
+		mutually_exclusive = {
+			focus = veg_lowfriends
+		}
+		x = 18
+		y = 8
+
+	}
+	focus = {
+		id = veg_wrongpackage
+		icon = GFX_goal_generic_secret_weapon
+		cost = 8.6
+		prerequisite = {
+			focus = veg_lowfriends
+			focus = veg_highfriends
+		}
+		x = 17
+		y = 9
+
+	}
+	focus = {
+		id = veg_crackthevault
+		icon = GFX_bos_study_securitron_software
+		cost = 8.6
+		prerequisite = {
+			focus = veg_wrongpackage
+		}
+		x = 17
+		y = 10
+
+	}
+	focus = {
+		id = veg_allin
+		icon = GFX_generic_ideological_fury_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_crackthevault
+		}
+		x = 17
+		y = 11
+
+	}
+	focus = {
+		id = veg_ringading
+		icon = GFX_goal_support_fascism
+		cost = 8.6
+		prerequisite = {
+			focus = veg_allin
+		}
+		x = 16
+		y = 12
+
+	}
+	focus = {
+		id = veg_nevadapact
+		icon = GFX_goal_tripartite_pact
+		cost = 8.6
+		prerequisite = {
+			focus = veg_allin
+		}
+		x = 18
+		y = 12
+
+	}
+	focus = {
+		id = veg_omertas
+		icon = GFX_goal_generic_major_alliance
+		cost = 8.6
+		prerequisite = {
+			focus = veg_gomorrah
+		}
+		mutually_exclusive = {
+			focus = veg_consig
+		}
+		x = 37
+		y = 5
+
+	}
+	focus = {
+		id = veg_addiction
+		icon = GFX_generic_food_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_omertas
+		}
+		x = 37
+		y = 6
+
+	}
+	focus = {
+		id = veg_mobsters
+		icon = GFX_generic_common_firearms_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_addiction
+		}
+		x = 37
+		y = 7
+
+	}
+	focus = {
+		id = veg_lucky38
+		icon = GFX_generic_cities_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_newdeal
+			focus = veg_north
+			focus = veg_cologne
+			focus = veg_mobsters
+			focus = veg_buryhatchet
+			focus = veg_abandon
+			focus = veg_meatonthemenu
+		}
+		x = 32
+		y = 8
+
+	}
+	focus = {
+		id = veg_robco
+		icon = GFX_generic_robots_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_lucky38
+		}
+		x = 26
+		y = 9
+
+	}
+	focus = {
+		id = veg_firstbatch
+		icon = GFX_focus_generic_little_entente
+		cost = 8.6
+		prerequisite = {
+			focus = veg_robco
+		}
+		x = 25
+		y = 10
+
+	}
+	focus = {
+		id = veg_expansion
+		icon = GFX_generic_military_industry_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_robco
+		}
+		x = 27
+		y = 10
+
+	}
+	focus = {
+		id = veg_smallarms
+		icon = GFX_generic_regular_firearms_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_lucky38
+		}
+		x = 30
+		y = 9
+
+	}
+	focus = {
+		id = veg_rapidresponse
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 8.6
+		prerequisite = {
+			focus = veg_lucky38
+		}
+		x = 34
+		y = 9
+
+	}
+	focus = {
+		id = veg_fourthfam
+		icon = GFX_bos_the_mojave_signal
+		cost = 8.6
+		prerequisite = {
+			focus = veg_lucky38
+		}
+		x = 37
+		y = 9
+
+	}
+	focus = {
+		id = veg_elijah
+		icon = GFX_bos_elijah's_genius
+		cost = 8.6
+		prerequisite = {
+			focus = veg_fourthfam
+		}
+		x = 37
+		y = 10
+
+	}
+	focus = {
+		id = veg_t45d
+		icon = GFX_generic_t45d_power_armour_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_elijah
+		}
+		x = 37
+		y = 11
+
+	}
+	focus = {
+		id = veg_bossecurity
+		icon = GFX_generic_t51b_power_armour_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_t45d
+		}
+		x = 37
+		y = 12
+
+	}
+	focus = {
+		id = veg_warlabs
+		icon = GFX_focus_wonderweapons
+		cost = 8.6
+		prerequisite = {
+			focus = veg_smallarms
+		}
+		prerequisite = {
+			focus = veg_rapidresponse
+		}
+		x = 32
+		y = 10
+
+	}
+	focus = {
+		id = veg_justlikethesims
+		icon = GFX_generic_data_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_warlabs
+		}
+		x = 32
+		y = 11
+
+	}
+	focus = {
+		id = veg_security
+		icon = GFX_goal_rhineland
+		cost = 8.6
+		prerequisite = {
+			focus = veg_smallarms
+		}
+		x = 30
+		y = 10
+
+	}
+	focus = {
+		id = veg_vehicles
+		icon = GFX_goal_generic_production
+		cost = 8.6
+		prerequisite = {
+			focus = veg_security
+		}
+		x = 30
+		y = 11
+
+	}
+	focus = {
+		id = veg_mobile
+		icon = GFX_goal_generic_army_motorized
+		cost = 8.6
+		prerequisite = {
+			focus = veg_vehicles
+		}
+		x = 30
+		y = 12
+
+	}
+	focus = {
+		id = veg_boomers
+		icon = GFX_generic_air_doctrines_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_mobile
+		}
+		x = 32
+		y = 13
+
+	}
+	focus = {
+		id = veg_militia
+		icon = GFX_generic_common_firearms_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_mobile
+		}
+		x = 30
+		y = 13
+
+	}
+	focus = {
+		id = veg_lakemead
+		icon = GFX_goal_generic_air_bomber
+		cost = 8.6
+		prerequisite = {
+			focus = veg_boomers
+		}
+		x = 32
+		y = 14
+
+	}
+	focus = {
+		id = veg_handh
+		icon = GFX_generic_military_industry_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_rapidresponse
+		}
+		x = 34
+		y = 10
+
+	}
+	focus = {
+		id = veg_zappsigns
+		icon = GFX_generic_electricity_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_handh
+		}
+		x = 34
+		y = 11
+
+	}
+	focus = {
+		id = veg_sewage
+		icon = GFX_generic_slums_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_zappsigns
+		}
+		x = 34
+		y = 12
+
+	}
+	focus = {
+		id = veg_securitrons1
+		icon = GFX_bos_study_securitron_software
+		cost = 8.6
+		prerequisite = {
+			focus = veg_expansion
+		}
+		x = 27
+		y = 11
+
+	}
+	focus = {
+		id = veg_handys
+		icon = GFX_goal_generic_production
+		cost = 8.6
+		prerequisite = {
+			focus = veg_firstbatch
+		}
+		x = 25
+		y = 11
+
+	}
+	focus = {
+		id = veg_gutsys
+		icon = GFX_generic_robots_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_handys
+		}
+		x = 25
+		y = 12
+
+	}
+	focus = {
+		id = veg_expandeddeployment
+		icon = GFX_bos_study_securitron_software
+		cost = 8.6
+		prerequisite = {
+			focus = veg_securitrons1
+		}
+		x = 27
+		y = 12
+
+	}
+	focus = {
+		id = veg_robotstrats
+		icon = GFX_generic_land_doctrines_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_gutsys
+		}
+		x = 25
+		y = 13
+
+	}
+	focus = {
+		id = veg_securitybots
+		icon = GFX_generic_advanced_firearms_focus
+		cost = 8.6
+		prerequisite = {
+			focus = veg_robotstrats
+		}
+		prerequisite = {
+			focus = veg_expandeddeployment
+		}
+		x = 26
+		y = 14
+
+	}
+}

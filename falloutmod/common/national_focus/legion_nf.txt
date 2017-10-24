@@ -1015,11 +1015,8 @@ focus_tree = {
 		y = 9
 		completion_reward = {
 			create_wargoal = {
-				type = take_state_focus
+				type = hoover_dam
 				target = NCR
-				generator = {
-					252
-				}
 			}
             set_country_flag = battle_for_hoover_dam
 		}
@@ -1202,10 +1199,24 @@ focus_tree = {
 		x = 10
 		y = 13
 		completion_reward = {
+			252 = {
+				add_resource = {
+                    type = electricity
+                    amount = -30
+                }
+				add_resource = {
+                    type = electronics
+                    amount = -5
+                }
+			}
 			capital_scope = {
                 add_resource = {
                     type = electricity
-                    amount = 20
+                    amount = 30
+                }
+				add_resource = {
+                    type = electronics
+                    amount = 5
                 }
             }
 		}
