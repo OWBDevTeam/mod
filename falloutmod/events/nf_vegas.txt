@@ -82,7 +82,15 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.4.a 
+		name = nf_vegas.4.a
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 10
+			}
+		}
 		
 		add_ideas = omertas
 		
@@ -91,6 +99,14 @@ country_event = {
 	
 	option = {
 		name = nf_vegas.4.b
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
 		
 		add_ideas = consigs
 		
@@ -112,6 +128,14 @@ country_event = {
 	option = {
 		name = nf_vegas.5.a 
 		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 10
+			}
+		}
+		
 		add_ideas = chairmen
 		
 		country_event = { id = nf_vegas.6 days = 1 }
@@ -121,6 +145,14 @@ country_event = {
 		name = nf_vegas.5.b 
 		
 		add_ideas = kings
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
 		
 		country_event = { id = nf_vegas.6 days = 1 }
 	}
@@ -138,12 +170,28 @@ country_event = {
 	option = {
 		name = nf_vegas.6.a 
 		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 10
+			}
+		}
+		
 		add_ideas = whitegloves
 		
 	}
 	
 	option = {
 		name = nf_vegas.6.b 
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
 		
 		add_ideas = khaganate
 		
@@ -221,7 +269,6 @@ country_event = {
 		name = nf_vegas.8.a 
 		
 		VEG = {
-			leave_faction = NewVegas
 			create_faction = mojave_alliance
 			add_to_faction = MOJ
 		}

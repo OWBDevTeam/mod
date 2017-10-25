@@ -539,8 +539,8 @@ focus_tree = {
 			focus = ces_conqueror_of_the_86
 		}
 		available = {
-			any_neighbor_state = {
-				is_owned_by = MOJ
+			CES = {
+				is_neighbor_of = MOJ
 			}
 		}
 		x = 1
@@ -971,25 +971,30 @@ focus_tree = {
 			add_political_power = 60
 			if = {
 				limit = {
-					252 = {
-						is_owned_by = DAM
+					is_historical_focus_on = no
+				}
+				if = {
+					limit = {
+						252 = {
+							is_owned_by = DAM
+						}
+					}
+					create_wargoal = {
+						target = DAM
+						type = legion_conquest_war
 					}
 				}
-				create_wargoal = {
-					target = DAM
-					type = legion_conquest_war
-				}
-			}
 			
-			if = {
-				limit = {
-					252 = {
-						is_owned_by = VEG
+				if = {
+					limit = {
+						252 = {
+							is_owned_by = VEG
+						}
 					}
-				}
-				create_wargoal = {
-					target = VEG
-					type = legion_conquest_war
+					create_wargoal = {
+						target = VEG
+						type = legion_conquest_war
+					}
 				}
 			}
 					
@@ -1813,7 +1818,7 @@ focus_tree = {
                             NOT = {
                                 has_opinion = {                         
                                     value = 0
-                                    tag = NCR
+                                    target = NCR
                                 }
                             }
                         }
@@ -2531,7 +2536,7 @@ focus_tree = {
 			focus = ces_the_road_eastwards
 		}
         available = {
-            has_manpower = 1000
+            has_manpower > 1000
         }
 		x = 25
 		y = 10

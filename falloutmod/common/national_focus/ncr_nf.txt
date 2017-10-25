@@ -43,7 +43,7 @@ focus_tree = {
 		cost = 2.2
 		available = {
 			date > 2278.3.30
-			has_ideas = baronswar
+			has_idea = baronswar
 		}
 		ai_will_do = {
 			factor = 10
@@ -865,14 +865,16 @@ focus_tree = {
 		x = 8
 		y = 9
 		completion_reward = {
-			add_building_construction = {
-				type = bunker 
-				level = 2
-				province = {
-					id = 322
-					id = 494
+			47 = {
+				add_building_construction = {
+					type = bunker 
+					level = 2
+					province = {
+						id = 3222
+						id = 5762
+					}
+					instant_build = yes
 				}
-				instant_build = yes
 			}
 		}
 
@@ -1581,11 +1583,11 @@ focus_tree = {
 			350 = {
 				add_resource = {
 					type = metal
-					level = 8
+					amount = 8
 				}
 				add_resource = {
 					type = fuel
-					level = 4
+					amount = 4
 				}
 			}
 		}
@@ -1839,7 +1841,7 @@ focus_tree = {
 				name = motorized_bonus
 				bonus = 0.5
 				uses = 1
-				category = motorized
+				category = motorized_equipment
 			}
 			
 			add_ideas = mobilearmy

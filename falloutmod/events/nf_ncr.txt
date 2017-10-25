@@ -644,8 +644,9 @@ country_event = { #Civil War
 					limit = {
 						is_baja_california_state = yes
 					}
-					
-					transfer_state = PREV
+					ENC = {
+						transfer_state = PREV
+					}
 				}
 				
 			}
@@ -870,19 +871,20 @@ country_event = { #Civil War
 		trigger = {
 			has_completed_focus = ncr_mojavehero
 			has_completed_focus = ncr_protege
-		}
-		NOT = {
-			AND = {
-				has_completed_focus = ncr_integration
-				has_completed_focus = ncr_mossman
-			}
-			AND = {
-				has_completed_focus = ncr_newnorth
-				has_completed_focus = ncr_bigjim	
-			}
-			AND = {
-				has_completed_focus = ncr_allisgood
-				has_completed_focus = ncr_bajastate 
+			
+			NOT = {
+				AND = {
+					has_completed_focus = ncr_integration
+					has_completed_focus = ncr_mossman
+				}
+				AND = {
+					has_completed_focus = ncr_newnorth
+					has_completed_focus = ncr_bigjim	
+				}
+				AND = {
+					has_completed_focus = ncr_allisgood
+					has_completed_focus = ncr_bajastate 
+				}
 			}
 		}
 		
@@ -959,8 +961,9 @@ country_event = { #Civil War
 						limit = {
 							is_baja_california_state = yes
 						}
-						
-						transfer_state = PREV
+						ENC = {
+							transfer_state = PREV
+						}
 					}
 					
 				}
@@ -1228,7 +1231,7 @@ country_event = { #Take me out to the ballgame!
 	option = {
 		name = nf_ncr.16.b
 		
-		add_ideas = 118thcore
+		add_ideas = hundredeighteenthcore
 	}
 	
 	option = {
@@ -1323,7 +1326,7 @@ country_event = { #Den-Mother
 	option = {
 		name = nf_ncr.19.a
 		
-		add_timed_idea = denmotherpenalty
+		add_timed_idea = { idea = denmotherpenalty days = 730 }
 		
 		country_event = { days = 730 id = nf_ncr.20 }
 	}
@@ -1447,6 +1450,8 @@ country_event = { #Mutant Migrants
 	desc = nf_ncr.23.d
 	picture = GFX_report_event_fascist_speech
 	
+	is_triggered_only = yes
+	
 	option = {
 		name = nf_ncr.23.a
 		
@@ -1491,6 +1496,8 @@ country_event = { #Hub Crime
 	title = nf_ncr.24.t
 	desc = nf_ncr.24.d
 	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
 	
 	option = {
 		name = nf_ncr.24.a
