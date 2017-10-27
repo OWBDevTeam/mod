@@ -80,6 +80,15 @@ focus_tree = {
 		cost = 8.6
 		x = 16
 		y = 10
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					has_completed_focus = ncr_beacon
+				}
+			}
+		}
 		available = {
 			has_completed_focus = ncr_councilhill
 		}	
@@ -96,7 +105,16 @@ focus_tree = {
 		y = 4
 		available = {
 			has_completed_focus = ncr_councilhill
-		}	
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					has_completed_focus = ncr_beacon
+				}
+			}
+		}
 		completion_reward = {
 			add_tech_bonus = {
 				name = industrial_bonus
@@ -116,6 +134,15 @@ focus_tree = {
 		available = {
 			has_completed_focus = ncr_councilhill
 		}	
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					has_completed_focus = ncr_beacon
+				}
+			}
+		}
 		completion_reward = {
 			add_timed_idea = {
 				idea = ncrbarons
@@ -820,6 +847,14 @@ focus_tree = {
 			focus = ncr_bigjim
 			focus = ncr_mossman
 		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_war = yes
+				date < 1.1.2277
+			}
+		}
 		x = 7
 		y = 8
 		completion_reward = {
@@ -890,6 +925,14 @@ focus_tree = {
 		}
 		x = 11
 		y = 8
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_war = yes
+				date < 1.1.2277
+			}
+		}
 		completion_reward = {
 			add_manpower = -500
 			add_political_power = -25
@@ -2077,7 +2120,7 @@ focus_tree = {
 		y = 13
 		completion_reward = {
 			create_wargoal = {
-				type = hoover_dam
+				type = hoover_dam_wargoal
 				target = CES
 			}
             set_country_flag = battle_for_hoover_dam

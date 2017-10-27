@@ -89,6 +89,13 @@ focus_tree = {
 		will_lead_to_war_with = HAN
 		x = 3
 		y = 5
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
 		completion_reward = {
 			# Normal
             if = {
@@ -163,6 +170,13 @@ focus_tree = {
 		will_lead_to_war_with = TTM
 		x = 7
 		y = 5
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
 		completion_reward = {
             # Normal
             if = {
@@ -239,6 +253,13 @@ focus_tree = {
 		will_lead_to_war_with = TWO
 		x = 11
 		y = 5
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
 		completion_reward = {
             # Normal
             if = {
@@ -315,6 +336,13 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = ces_alea_iacta_est
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 		will_lead_to_war_with = COW
 		x = 15
@@ -541,6 +569,13 @@ focus_tree = {
 		available = {
 			CES = {
 				is_neighbor_of = MOJ
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_war = yes
 			}
 		}
 		x = 1
@@ -967,6 +1002,14 @@ focus_tree = {
 		}
 		x = 9
 		y = 8
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_war = yes
+				date < 1.1.2277
+			}
+		}
 		completion_reward = {
 			add_political_power = 60
 			if = {
@@ -1020,7 +1063,7 @@ focus_tree = {
 		y = 9
 		completion_reward = {
 			create_wargoal = {
-				type = hoover_dam
+				type = hoover_dam_wargoal
 				target = NCR
 			}
             set_country_flag = battle_for_hoover_dam
@@ -1241,6 +1284,13 @@ focus_tree = {
         bypass = {
             NOT = { country_exists = NCR }
         }
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
 		x = 9
 		y = 14
 		completion_reward = {
@@ -1262,6 +1312,16 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_conqueror_of_the_86
 		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 10
+				date > 2278
+				NOT = {
+					has_war_with = NCR	
+				}
+			}
+		}
 		x = 15
 		y = 8
 		completion_reward = {
@@ -1280,6 +1340,13 @@ focus_tree = {
 		will_lead_to_war_with = RBD
 		x = 13
 		y = 9
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
 		completion_reward = {
             if = {
                 limit = { country_exists = RBD }
@@ -1393,6 +1460,13 @@ focus_tree = {
 		will_lead_to_war_with = PEC
 		x = 17
 		y = 9
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
 		completion_reward = {
 			if = {
                 limit = { country_exists = PEC }
@@ -1763,6 +1837,14 @@ focus_tree = {
 		}
 		x = 9
 		y = 15
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 100
+				has_war = no
+				date > 1.1.2279
+			}
+		}
 		completion_reward = {
 			army_experience = 30
 			add_ideas = legion_nf_worthy_foe
