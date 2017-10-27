@@ -1,0 +1,773 @@
+focus_tree = {
+	id = reno_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = NEW
+		}
+	}
+	default = no
+	focus = {
+		id = new_littlecity
+		icon = GFX_generic_ideological_fury_focus
+		x = 11
+		y = 0
+
+	}
+	focus = {
+		id = new_thefamily
+		icon = GFX_focus_research
+		mutually_exclusive = {
+			focus = new_salvatores
+			focus = new_whitepawn
+			focus = new_mordinos
+		}
+		x = 10
+		y = 4
+
+	}
+	focus = {
+		id = new_church
+		icon = GFX_focus_generic_self_management
+		prerequisite = {
+			focus = new_thefamily
+		}
+		x = 10
+		y = 5
+
+	}
+	focus = {
+		id = new_speakeasies
+		icon = GFX_generic_cities_focus
+		prerequisite = {
+			focus = new_church
+		}
+		x = 10
+		y = 6
+
+	}
+	focus = {
+		id = new_police
+		icon = GFX_bos_steel_giants
+		prerequisite = {
+			focus = new_speakeasies
+		}
+		x = 10
+		y = 7
+
+	}
+	focus = {
+		id = new_criminalworld
+		icon = GFX_generic_ideological_fury_focus
+		prerequisite = {
+			focus = new_littlecity
+		}
+		x = 11
+		y = 1
+
+	}
+	focus = {
+		id = new_deal
+		icon = GFX_generic_ideological_fury_focus
+		prerequisite = {
+			focus = new_criminalworld
+		}
+		x = 11
+		y = 2
+
+	}
+	focus = {
+		id = new_expansionism
+		icon = GFX_generic_ideological_fury_focus
+		prerequisite = {
+			focus = new_deal
+		}
+		x = 3
+		y = 3
+
+	}
+	focus = {
+		id = new_savages
+		icon = GFX_goal_generic_major_war
+		prerequisite = {
+			focus = new_expansionism
+		}
+		x = 1
+		y = 4
+
+	}
+	focus = {
+		id = new_bet
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = {
+			focus = new_savages
+		}
+		x = 0
+		y = 6
+
+	}
+	focus = {
+		id = new_slavery
+		icon = GFX_legion_slaves
+		prerequisite = {
+			focus = new_savages
+		}
+		x = 2
+		y = 5
+
+	}
+	focus = {
+		id = new_loosends
+		icon = GFX_goal_generic_major_war
+		prerequisite = {
+			focus = new_expansionism
+		}
+		x = 5
+		y = 4
+
+	}
+	focus = {
+		id = new_spoils
+		icon = GFX_generic_electricity_focus
+		prerequisite = {
+			focus = new_loosends
+		}
+		x = 4
+		y = 5
+
+	}
+	focus = {
+		id = new_shop
+		icon = GFX_goal_generic_position_armies
+		prerequisite = {
+			focus = new_loosends
+		}
+		x = 6
+		y = 6
+
+	}
+	focus = {
+		id = new_topdog
+		icon = GFX_focus_hun_elect_a_king
+		prerequisite = {
+			focus = new_deal
+		}
+		x = 11
+		y = 3
+
+	}
+	focus = {
+		id = new_salvatores
+		icon = GFX_goal_support_fascism
+		prerequisite = {
+			focus = new_topdog
+		}
+		mutually_exclusive = {
+			focus = new_thefamily
+			focus = new_mordinos
+			focus = new_whitepawn
+		}
+		x = 8
+		y = 4
+
+	}
+	focus = {
+		id = new_whitepawn
+		icon = GFX_focus_generic_the_giant_wakes
+		prerequisite = {
+			focus = new_topdog
+		}
+		mutually_exclusive = {
+			focus = new_thefamily
+			focus = new_mordinos
+			focus = new_salvatores
+			focus = new_mordinos
+		}
+		x = 12
+		y = 4
+
+	}
+	focus = {
+		id = new_bishop
+		icon = GFX_generic_land_doctrines_focus
+		prerequisite = {
+			focus = new_whitepawn
+		}
+		x = 12
+		y = 5
+
+	}
+	focus = {
+		id = new_f3
+		icon = GFX_generic_generic_diplomatic_focus
+		prerequisite = {
+			focus = new_bishop
+		}
+		x = 12
+		y = 6
+
+	}
+	focus = {
+		id = new_queen
+		icon = GFX_focus_spy
+		prerequisite = {
+			focus = new_f3
+		}
+		x = 12
+		y = 7
+
+	}
+	focus = {
+		id = new_mordinos
+		icon = GFX_focus_generic_home_defense
+		prerequisite = {
+			focus = new_topdog
+		}
+		mutually_exclusive = {
+			focus = new_whitepawn
+			focus = new_thefamily
+			focus = new_salvatores
+			focus = new_whitepawn
+		}
+		x = 14
+		y = 4
+
+	}
+	focus = {
+		id = new_addictionempire
+		icon = GFX_focus_generic_little_entente
+		prerequisite = {
+			focus = new_mordinos
+		}
+		x = 14
+		y = 5
+
+	}
+	focus = {
+		id = new_myron
+		icon = GFX_generic_advanced_technology_focus
+		prerequisite = {
+			focus = new_addictionempire
+		}
+		x = 14
+		y = 6
+
+	}
+	focus = {
+		id = new_jetbeta
+		icon = GFX_focus_research
+		prerequisite = {
+			focus = new_myron
+		}
+		x = 14
+		y = 7
+
+	}
+	focus = {
+		id = new_allroads
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = {
+			focus = new_deal
+		}
+		x = 20
+		y = 3
+
+	}
+	focus = {
+		id = new_sharkclub
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = {
+			focus = new_allroads
+		}
+		x = 18
+		y = 4
+
+	}
+	focus = {
+		id = new_boxing
+		icon = GFX_goal_generic_propaganda
+		prerequisite = {
+			focus = new_sharkclub
+		}
+		x = 16
+		y = 5
+
+	}
+	focus = {
+		id = new_desperado
+		icon = GFX_goal_generic_construction
+		prerequisite = {
+			focus = new_sharkclub
+		}
+		x = 18
+		y = 5
+
+	}
+	focus = {
+		id = new_distillery
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = {
+			focus = new_desperado
+		}
+		x = 18
+		y = 6
+
+	}
+	focus = {
+		id = new_expansion
+		icon = GFX_generic_laser_muskets_focus
+		prerequisite = {
+			focus = new_distillery
+		}
+		x = 18
+		y = 7
+
+	}
+	focus = {
+		id = new_precautions
+		icon = GFX_generic_walls_focus
+		prerequisite = {
+			focus = new_allroads
+		}
+		x = 20
+		y = 4
+
+	}
+	focus = {
+		id = new_radio
+		icon = GFX_generic_communcation_focus
+		prerequisite = {
+			focus = new_precautions
+		}
+		x = 20
+		y = 5
+
+	}
+	focus = {
+		id = new_sweatshop
+		icon = GFX_generic_military_industry_focus
+		prerequisite = {
+			focus = new_radio
+		}
+		x = 20
+		y = 6
+
+	}
+	focus = {
+		id = new_farmsteads
+		icon = GFX_generic_food_focus
+		prerequisite = {
+			focus = new_allroads
+		}
+		x = 22
+		y = 4
+
+	}
+	focus = {
+		id = new_airport
+		icon = GFX_generic_airbases_focus
+		prerequisite = {
+			focus = new_farmsteads
+		}
+		x = 22
+		y = 5
+
+	}
+	focus = {
+		id = new_contracts
+		icon = GFX_generic_recruitment_focus
+		prerequisite = {
+			focus = new_airport
+		}
+		x = 22
+		y = 6
+
+	}
+	focus = {
+		id = new_sierradepot
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = {
+			focus = new_contracts
+		}
+		x = 22
+		y = 7
+
+	}
+	focus = {
+		id = new_sanctuary
+		icon = GFX_generic_cities_focus
+		prerequisite = {
+			focus = new_sweatshop
+		}
+		prerequisite = {
+			focus = new_expansion
+		}
+		prerequisite = {
+			focus = new_sierradepot
+		}
+		x = 20
+		y = 8
+
+	}
+	focus = {
+		id = new_slavers
+		icon = GFX_legion_slaves
+		prerequisite = {
+			focus = new_farmsteads
+		}
+		x = 24
+		y = 5
+
+	}
+	focus = {
+		id = new_oldbirds
+		icon = GFX_generic_ghouls_focus
+		prerequisite = {
+			focus = new_airport
+		}
+		x = 24
+		y = 6
+
+	}
+	focus = {
+		id = new_golgotha
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+			focus = new_contracts
+		}
+		x = 24
+		y = 7
+
+	}
+	focus = {
+		id = new_techslot
+		icon = GFX_focus_research
+		prerequisite = {
+			focus = new_sierradepot
+		}
+		x = 24
+		y = 8
+
+	}
+	focus = {
+		id = new_mercmilitary
+		icon = GFX_generic_land_doctrines_focus
+		prerequisite = {
+			focus = new_deal
+		}
+		x = 31
+		y = 3
+
+	}
+	focus = {
+		id = new_uniques
+		icon = GFX_focus_generic_little_entente
+		prerequisite = {
+			focus = new_mercmilitary
+		}
+		x = 27
+		y = 4
+
+	}
+	focus = {
+		id = new_roaring
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = {
+			focus = new_uniques
+		}
+		mutually_exclusive = {
+			focus = new_thradd
+			focus = new_granite
+			focus = new_artillery
+		}
+		x = 26
+		y = 5
+
+	}
+	focus = {
+		id = new_artillery
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = {
+			focus = new_uniques
+		}
+		mutually_exclusive = {
+			focus = new_thradd
+			focus = new_granite
+			focus = new_roaring
+		}
+		x = 28
+		y = 5
+
+	}
+	focus = {
+		id = new_thradd
+		icon = GFX_bos_steel_giants
+		prerequisite = {
+			focus = new_uniques
+		}
+		mutually_exclusive = {
+			focus = new_granite
+			focus = new_roaring
+			focus = new_artillery
+		}
+		x = 28
+		y = 6
+
+	}
+	focus = {
+		id = new_capsforloyalty
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = {
+			focus = new_mercmilitary
+		}
+		x = 31
+		y = 4
+
+	}
+	focus = {
+		id = new_councilfunding
+		icon = GFX_generic_land_doctrines_focus
+		prerequisite = {
+			focus = new_capsforloyalty
+		}
+		x = 31
+		y = 5
+
+	}
+	focus = {
+		id = new_enctech
+		icon = GFX_generic_naval_doctrines_focus
+		prerequisite = {
+			focus = new_councilfunding
+		}
+		mutually_exclusive = {
+			focus = new_mutanttech
+		}
+		x = 30
+		y = 6
+
+	}
+	focus = {
+		id = new_mutanttech
+		icon = GFX_focus_hun_assassinate_horthy
+		prerequisite = {
+			focus = new_councilfunding
+		}
+		mutually_exclusive = {
+			focus = new_enctech
+		}
+		x = 32
+		y = 6
+
+	}
+	focus = {
+		id = new_genericmercs
+		icon = GFX_focus_generic_little_entente
+		prerequisite = {
+			focus = new_mercmilitary
+		}
+		x = 35
+		y = 4
+
+	}
+	focus = {
+		id = new_vengefulsons
+		icon = GFX_legion_numeri
+		prerequisite = {
+			focus = new_genericmercs
+		}
+		mutually_exclusive = {
+			focus = new_pablos
+		}
+		x = 34
+		y = 5
+
+	}
+	focus = {
+		id = new_pablos
+		icon = GFX_goal_generic_axis_build_infantry
+		prerequisite = {
+			focus = new_genericmercs
+		}
+		mutually_exclusive = {
+			focus = new_vengefulsons
+		}
+		x = 36
+		y = 5
+
+	}
+	focus = {
+		id = new_gladiators
+		icon = GFX_generic_robots_focus
+		prerequisite = {
+			focus = new_pablos
+			focus = new_vengefulsons
+		}
+		mutually_exclusive = {
+			focus = new_roadpsychos
+		}
+		x = 34
+		y = 6
+
+	}
+	focus = {
+		id = new_oldallies
+		icon = GFX_bos_forbidden_secrets
+		prerequisite = {
+			focus = new_bloodynight
+		}
+		x = 8
+		y = 7
+
+	}
+	focus = {
+		id = new_stash
+		icon = GFX_generic_common_energy_weapons_focus
+		prerequisite = {
+			focus = new_salvatores
+		}
+		x = 8
+		y = 5
+
+	}
+	focus = {
+		id = new_bloodynight
+		icon = GFX_generic_communcation_focus
+		prerequisite = {
+			focus = new_stash
+		}
+		x = 8
+		y = 6
+
+	}
+	focus = {
+		id = new_hedge
+		icon = GFX_generic_walls_focus
+		prerequisite = {
+			focus = new_spoils
+		}
+		x = 4
+		y = 6
+
+	}
+	focus = {
+		id = new_hordes
+		icon = GFX_generic_bunkers_focus
+		prerequisite = {
+			focus = new_slavery
+		}
+		x = 2
+		y = 6
+
+	}
+	focus = {
+		id = new_klamathdeal
+		icon = GFX_generic_generic_diplomatic_focus
+		prerequisite = {
+			focus = new_expansionism
+		}
+		x = 3
+		y = 7
+
+	}
+	focus = {
+		id = new_klamathagreements
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = {
+			focus = new_klamathdeal
+		}
+		x = 4
+		y = 8
+
+	}
+	focus = {
+		id = new_takedown
+		icon = GFX_goal_generic_major_war
+		prerequisite = {
+			focus = new_klamathdeal
+		}
+		x = 2
+		y = 8
+
+	}
+	focus = {
+		id = new_township
+		icon = GFX_focus_generic_self_management
+		prerequisite = {
+			focus = new_takedown
+		}
+		x = 2
+		y = 9
+
+	}
+	focus = {
+		id = new_debtwarriors
+		icon = GFX_focus_generic_little_entente
+		prerequisite = {
+			focus = new_klamathagreements
+		}
+		x = 4
+		y = 9
+
+	}
+	focus = {
+		id = new_addictsworks
+		icon = GFX_goal_generic_construction2
+		prerequisite = {
+			focus = new_desperado
+		}
+		x = 16
+		y = 6
+
+	}
+	focus = {
+		id = new_rail
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = {
+			focus = new_distillery
+		}
+		x = 16
+		y = 7
+
+	}
+	focus = {
+		id = new_silverrush
+		icon = GFX_generic_advanced_technology_focus
+		prerequisite = {
+			focus = new_expansion
+		}
+		x = 16
+		y = 8
+
+	}
+	focus = {
+		id = new_granite
+		icon = GFX_bos_forbidden_secrets
+		prerequisite = {
+			focus = new_uniques
+		}
+		mutually_exclusive = {
+			focus = new_thradd
+			focus = new_roaring
+			focus = new_artillery
+		}
+		x = 26
+		y = 6
+
+	}
+	focus = {
+		id = new_roadpsychos
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = {
+			focus = new_vengefulsons
+			focus = new_pablos
+		}
+		mutually_exclusive = {
+			focus = new_gladiators
+		}
+		x = 36
+		y = 6
+
+	}
+}
