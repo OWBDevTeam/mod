@@ -1,4 +1,4 @@
-﻿capital = 291
+capital = 291
 oob = "VLT_2265"
 
 set_technology = {
@@ -13,22 +13,59 @@ set_politics = {
     parties = {
         people = { popularity = 0 }
         elites = { popularity = 0 }
-        intellectuals = { popularity = 0 }
-        ruler = { popularity = 100 }
+        intellectuals = { popularity = 100 }
+        ruler = { popularity = 0 }
     }
-    ruling_party = ruler
+    ruling_party = intellectuals
     elections_allowed = yes
 }
 
 add_ideas = { }
 
-create_country_leader  = {
-    name = "Eddie"
-    desc = "Eddie_DESC"
-    picture = "Portrait_Eddie.dds"
-    expire = "3000.1.1"
-    ideology = militarist_oligarchy
-    
-    traits = {
-    }
+create_country_leader = {
+	name = "First Citizen Lynette"
+	id = 910
+	desc = "POLITICS_CITIZEN_DESC"
+	picture = "gfx/leaders/vault/first_citizen.dds"
+	expire = "3000.1.1"
+	ideology = ideocracy
+	traits = {
+	}
+}
+create_country_leader = {
+	name = "Festus"
+	id = 911
+	desc = "POLITICS_FESTUS_DESC"
+	picture = "gfx/leaders/vault/festus.dds"
+	expire = "3000.1.1"
+	ideology = town_hall_democracy
+	traits = {
+	}
+}
+create_country_leader = {
+	name = "Security Chief Wallace"
+	id = 912
+	desc = "POLITICS_SEC_CHIEF_DESC"
+	picture = "gfx/leaders/vault/security_chief.dds"
+	expire = "3000.1.1"
+	ideology = militarist_oligarchy
+	traits = {
+	}
+}
+create_country_leader = {
+	name = "The Brain"
+	id = 913
+	desc = "POLITICS_BRAIN_DESC"
+	picture = "gfx/leaders/vault/brain.dds"
+	expire = "3000.1.1"
+	ideology = oligarchy
+	traits = {
+	}
+}
+create_corps_commander = {
+	name = "Nicholas Wallace"
+	gfx = "gfx/leaders/vault/security_chief.dds"
+	traits = {  
+	}
+	skill = 3
 }
