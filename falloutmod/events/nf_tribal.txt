@@ -1,16 +1,114 @@
 ﻿add_namespace = nf_tribal
-
 country_event = {
 	id = nf_tribal.1
-	title = nf_tribal.1.title
-	desc = nf_tribal.1.desc
-	picture = GFX_report_event_fascist_speech
-
-    is_triggered_only = yes
-    
+	title = nf_tribal.1.t
+	desc = nf_tribal.1.d
+	picture = GFX_nf_tribal_1
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
 	option = {
-		name = nf_tribal.1.option.a
-        
+		name = nf_tribal.1.a
+		add_ideas = rivergods
+	}
+		option = {
+		name = nf_tribal.1.b
+		add_ideas = mountaingods
+		hidden_effect = {
+			set_technology = {
+				mountaingods = 1
+			}
+		}
+	}
+		option = {
+		name = nf_tribal.1.c
+		add_ideas = sungods
+		hidden_effect = {
+			set_technology = {
+				sungods = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nf_tribal.2
+	title = nf_tribal.2.t 
+	desc = nf_tribal.2.d
+	picture = GFX_nf_tribal_2
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = nf_tribal.2.a 
+		add_ideas = warlegend
+	}
+	option = {
+		name = nf_tribal.2.b
+		add_ideas = shamanlegend
+	}
+	option = {
+		name = nf_tribal.2.c 
+		add_ideas = builderlegend
+		hidden_effect = {
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = nf_tribal.3
+	title = nf_tribal.3.t 
+	desc = nf_tribal.3.d
+	picture = GFX_nf_tribal_3
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = nf_tribal.3.a 
+		add_ideas = erawar
+	}
+	option = {
+		name = nf_tribal.3.b
+		add_ideas = eramigration
+		
+		hidden_effect = {
+			set_technology = {
+				eramigration = 1
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = nf_tribal.3.c 
+		add_ideas = eraprosperity
+		
+		add_manpower = 2000
+		MONTHLY_POPULATION = 0.1
 		
 	}
 }
