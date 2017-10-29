@@ -1,0 +1,111 @@
+﻿add_namespace = faction
+
+country_event = {
+	id = faction.1 #Do The Nevada Pact
+	title = faction.1.t
+	desc = faction.1.d
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = faction.1.a
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 100
+			}
+		}
+		
+		trigger = {
+			NOT = { 
+				has_global_flag = nevadapact
+			}
+		}
+			
+		if = {
+			limit = {
+				tag = NEW
+			}
+			VLT = {
+				country_event = faction.2
+			}
+		}
+		if = {
+			limit = {
+				tag = VLT
+			}
+			NEW = {
+				country_event = faction.2
+			}
+		}
+		
+	}
+	
+	option = {
+		name = faction.1.b
+		
+		trigger = {
+			has_global_flag = nevadapact
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 100
+			}
+		}
+		
+		VLT = {
+			add_to_faction = NEW
+		}
+		NEW = {
+			add_to_faction = VLT
+		}
+        
+	}
+
+}
+
+country_event = {
+	id = faction.2 #Let's do Nevada Pact bro
+	title = faction.2.t
+	desc = faction.2.d
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = faction.2.a
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 100
+			}
+		}
+		
+		NEW = {
+			create_faction = nevada_pact
+			set_global_flag = nevadapact
+			add_to_faction = VLT
+		}
+		
+	}
+	
+	option = {
+		name = faction.2.b
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+		
+		#Refuse
+	
+	}
+}

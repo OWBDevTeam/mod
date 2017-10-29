@@ -676,18 +676,30 @@ country_event = { #Civil War
 				}
 			}
 			
-			#if = {
-			#	limit = {
-			#		NEW = {
-			#			Enclave Reno
-			#		}
-			#	}
-			#	
-			#	puppet = NEW
-			#	
-			#}
-			
-			
+			if = {
+				limit = {
+					NEW = {
+						has_cosmetic_tag = ENC
+					}
+				}
+				if = {
+					limit = {
+						NEW = {
+							is_ai = yes
+						}
+					}
+					annex_country = { target = NEW transfer_troops = yes }
+				}
+				if = {
+					limit = {
+						NEW = {
+							is_ai = no
+						}
+					}
+					create_faction = western_enclave
+					add_to_faction = NEW
+				}
+			}
 			
 			set_politics = {
 				parties = {
@@ -993,16 +1005,30 @@ country_event = { #Civil War
 					}
 				}
 				
-				#if = {
-				#	limit = {
-				#		NEW = {
-				#			Enclave Reno
-				#		}
-				#	}
-				#	
-				#	puppet = NEW
-				#	
-				#}
+				if = {
+					limit = {
+						NEW = {
+							has_cosmetic_tag = ENC
+						}
+					}
+					if = {
+						limit = {
+							NEW = {
+								is_ai = yes
+							}
+						}
+						annex_country = { target = NEW transfer_troops = yes }
+					}
+					if = {
+						limit = {
+							NEW = {
+								is_ai = no
+							}
+						}
+						create_faction = western_enclave
+						add_to_faction = NEW
+					}
+				}
 				
 				
 				

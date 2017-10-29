@@ -50,3 +50,113 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = nf_reno.2 #Pick a faction
+	title = nf_reno.2.t
+	desc = nf_reno.2.d
+	
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			has_completed_focus = new_queen
+			has_completed_focus = new_jetbeta
+		}
+		OR = {
+			has_completed_focus = new_roaring
+			has_completed_focus = new_artillery
+		}
+	}
+
+	option = {
+		name = nf_reno.2.a
+        
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 100
+			}
+		}
+		
+		country_event = { id = factionevent.1 }
+	}
+	
+	option = {
+		name = nf_reno.2.b
+		
+		
+	}
+	
+	option = {
+		name = nf_reno.2.c 
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_opinion = {
+					target = NCR
+					value > 50
+				}
+				factor = 100
+			}
+		}
+		
+		NCR = {
+			add_to_faction = NEW
+		}
+		
+	}
+
+}
+
+country_event = {
+	id = nf_reno.3 #Enclave bitches
+	title = nf_reno.3.t
+	desc = nf_reno.3.d
+	
+	fire_only_once = yes
+	trigger = {
+		has_completed_focus = new_queen
+		has_completed_focus = new_jetbeta
+		has_completed_focus = new_roaring
+		has_completed_focus = new_artillery
+	}
+	
+	immediate = {
+		set_cosmetic_tag = ENC
+		create_country_leader = {
+			name = "Sergeant Dornan"
+			desc = "Dornan_DESC"
+			picture = "Portrait_Dornan.dds"
+			expire = "3000.1.1"
+			ideology = ideocracy
+			
+			traits = {
+				
+			}
+		}
+		set_politics = {
+			parties = {
+				people = { popularity = 0 }
+				elites = { popularity = 80 }
+				intellectuals = { popularity = 20 }
+				ruler = { popularity = 0 }
+			}
+			ruling_party = intellectuals
+			elections_allowed = no
+		}
+		hidden_effect = {
+			set_technology = {
+				power_armour_enclave1 = 1
+				tesla_weaponry = 1
+				vertiberd_gunship = 1 
+				settled_civilization = 1
+				scientific_civilization = 1
+				vertiberd_transport1 = 1 
+			}
+			load_oob = renoenclave
+		}
+	}
+
+}
