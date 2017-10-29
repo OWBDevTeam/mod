@@ -1131,6 +1131,30 @@ focus_tree = {
 		x = 20
 		y = 10
 		completion_reward = {
+			
+			
+		}
+
+	}
+	focus = {
+		id = lds_godskingdom
+		icon = GFX_goal_support_democracy
+		cost = 8.6
+		prerequisite = {
+			focus = lds_legion
+			focus = lds_missionary
+		}
+		x = 17
+		y = 11
+		completion_reward = {
+			
+			every_state = {
+                limit = {
+                    is_utah_state = yes
+                }
+                add_core_of = NCN
+            }
+			
 			if = {
 				limit = {
 					DEA = {
@@ -1193,28 +1217,6 @@ focus_tree = {
 				}
 				annex_country = { target = CRZ transfer_troops = yes }
 			}
-			
-		}
-
-	}
-	focus = {
-		id = lds_godskingdom
-		icon = GFX_goal_support_democracy
-		cost = 8.6
-		prerequisite = {
-			focus = lds_legion
-			focus = lds_missionary
-		}
-		x = 17
-		y = 11
-		completion_reward = {
-			
-			every_state = {
-                limit = {
-                    is_utah_state = yes
-                }
-                add_core_of = NCN
-            }
 			
 		}
 
@@ -1355,8 +1357,7 @@ focus_tree = {
 		x = 20
 		y = 9
 		completion_reward = {
-			set_rule = { can_create_factions = yes }
-			create_faction = missionary_alliance
+			
 		}
 
 	}
