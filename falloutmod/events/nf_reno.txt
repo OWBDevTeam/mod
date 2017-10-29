@@ -117,10 +117,10 @@ country_event = {
 	
 	fire_only_once = yes
 	trigger = {
-		has_completed_focus = new_queen
-		has_completed_focus = new_jetbeta
-		has_completed_focus = new_roaring
-		has_completed_focus = new_artillery
+		has_completed_focus = new_oldallies
+		has_completed_focus = new_granite
+		has_completed_focus = new_enctech
+		has_completed_focus = new_sanctuary
 	}
 	
 	immediate = {
@@ -156,6 +156,75 @@ country_event = {
 				vertiberd_transport1 = 1 
 			}
 			load_oob = renoenclave
+		}
+	}
+
+}
+
+
+country_event = {
+	id = nf_reno.4 #Mutant Takeover
+	title = nf_reno.4.t
+	desc = nf_reno.4.d
+	
+	fire_only_once = yes
+	trigger = {
+		has_completed_focus = new_police
+		has_completed_focus = new_thradd
+		has_completed_focus = new_mutanttech
+		has_completed_focus = new_sanctuary
+	}
+	
+	
+	
+	
+	immediate = {
+		THR = {
+			create_country_leader = {
+				name = "Thradd the Immortal"
+				desc = "Thradd_DESC"
+				picture = "Portrait_Thradd.dds"
+				expire = "3000.1.1"
+				ideology = warlordship
+				
+				traits = {
+					
+				}
+			}
+			set_politics = {
+				parties = {
+					people = { popularity = 0 }
+					elites = { popularity = 20 }
+					intellectuals = { popularity = 20 }
+					ruler = { popularity = 60 }
+				}
+				ruling_party = ruler
+				elections_allowed = no
+			}
+			if = {
+				limit = {
+					TRL = {
+						exists = yes
+					}	
+				}
+				create_faction = masters_army
+				add_to_faction = TRL
+				if = {
+					limit = {
+						VLT = {
+							has_country_leader = {
+								id = 913
+							}
+						}
+					}
+					add_to_faction = VLT
+				}
+			}
+			
+			hidden_effect = {
+				annex_country = { target = NEW transfer_troops = yes }
+				change_tag_from = NEW
+			}
 		}
 	}
 
