@@ -8,7 +8,7 @@ country_event = {
 	
 	option = {
 		name = nf_vault_city.1.a
-		add_manpower = 3000
+		add_manpower = 1000
 		291 = {
 			add_building_construction = {
 				type = infrastructure
@@ -19,7 +19,7 @@ country_event = {
 	}
 	option = {
 		name = nf_vault_city.1.b
-		add_manpower = 2000
+		add_manpower = 600
 		291 = {
 			add_building_construction = {
 				type = infrastructure
@@ -31,7 +31,8 @@ country_event = {
 	}
 	option = {
 		name = nf_vault_city.1.c
-		add_manpower = 1000
+		
+		add_manpower = 400
 		291 = {
 			add_building_construction = {
 				type = infrastructure
@@ -74,21 +75,47 @@ country_event = {
 	
 	option = {
 		name = nf_vault_city.3.a
-		set_technology = {
-			ballistic_equipment_1
+		add_resource = { 
+			type = metal 
+			amount = 2 
+			state = 291 
 		}
+		add_equipment_to_stockpile = {
+			type = ballistic_equipment_1
+			amount = 2000
+			producer = VLT
+		}
+		load_oob = vaultfirearms
 	}
 	option = {
 		name = nf_vault_city.3.b
 		set_technology = {
-			energy_equipment_1
+			basic_laser_weaponry = 1
 		}
+		add_resource = { 
+			type = electronics 
+			amount = 3 
+			state = 291 
+		}
+		news_event = {
+			id = nf_vault_city.8
+			days = 1
+		}
+		load_oob = vaultlasers
 	}
 	option = {
 		name = nf_vault_city.3.c
-		set_technology = {
-			light_robot_quipment_1
+		add_resource = { 
+			type = fuel
+			amount = 5 
+			state = 291 
 		}
+		add_equipment_to_stockpile = {
+			type = light_robot_equipment_1
+			amount = 100
+			producer = VLT
+		}
+		load_oob = vaultrobots
 	}
 }
 country_event = {
@@ -98,59 +125,117 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = nf_vault_city.4.a
+		name = nf_vault_city.4.c
 		set_political_party = {
-			ideology =  oligarchy
-			popularity = 1
+			ideology =  ruler
+			popularity = 0.6
 		}
 		set_politics = {
 			ruling_party = ruler
 			elections_allowed = no
 		}
-		conscription = .05
+		add_ideas = braintrust
 	}	
+	option = {
+		name = nf_vault_city.4.a
+		add_research_slot = 1
+		set_political_party = {
+			ideology = intellectuals
+			popularity = 0.7
+		}
+	}
 	option = {
 		name = nf_vault_city.4.b
 		set_political_party = {
-			ideology = ideocracy 
-			popularity = 1
-		}
-		set_politics = {
-			ruling_party = intellectuals
-			elections_allowed = no
-		}
-		research_time_factor = -0.05
-		add_research_slot = 1
-	}
-	option = {
-		name = nf_vault_city.4.c
-		set_political_party = {
-			ideology = militaristic_oligarchy
-			popularity = 1
+			ideology = elites
+			popularity = 0.6
 		}
 		set_politics = {
 			ruling_party = elites 
 			elections_allowed = no
 		}
-		
+		add_ideas = {
+			vaultmartiallaw
+			impenetrablecity
+		}
 	}
 	option = {
 		name = nf_vault_city.4.dd
 		set_political_party = {
-			ideology = townhall_democracy
-			popularity = 1
+			ideology = people
+			popularity = 0.6
 		}
 		set_politics = {
 			ruling_party = people
 			elections_allowed = no
 		}
-		production_speed_buildings_factor = 0.05
+		add_ideas = festus
 		291 = {
+			add_extra_state_shared_building_slots = 5
 			add_building_construction = {
 				type = electricity_generator
 				level = 5
 				instant_build = yes
 			}
 		}
+	}
+}
+country_event = {
+	id = nf_vault_city.5
+	title = nf_vault_city.5.t 
+	desc = nf_vault_city.5.d 
+	is_triggered_only = yes
+	option = {
+		name = nf_vault_city.5.a
+		
+	}
+	option = {
+		name = nf_vault_city.5.b 
+		
+	}
+}
+country_event = {
+	id = nf_vault_city.6
+	title = nf_vault_city.6.t 
+	desc = nf_vault_city.6.d 
+	is_triggered_only = yes
+	option = {
+		name = nf_vault_city.6.a
+		
+	}
+	option = {
+		name = nf_vault_city.6.b 
+		
+	}
+}
+country_event = {
+	id = nf_vault_city.7
+	title = nf_vault_city.7.t 
+	desc = nf_vault_city.7.d 
+	is_triggered_only = yes
+	option = {
+		name = nf_vault_city.7.a
+		
+	}
+	option = {
+		name = nf_vault_city.7.b 
+		
+	}
+}
+news_event = {
+	id = nf_vault_city.8
+	title = nf_vault_city.8.t 
+	desc = nf_vault_city.8.d 
+	is_triggered_only = yes
+	immediate = {
+	
+		add_equipment_to_stockpile = {
+			type = energy_equipment_1
+			amount = 1000
+			producer = VLT
+		}
+	}
+	option = {
+		name = nf_vault_city.8.a
 	}
 }

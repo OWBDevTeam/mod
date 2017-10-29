@@ -1,5 +1,5 @@
 focus_tree = {
-	id = vault_city_nf
+	id = vaultcity_nf
 	country = {
 		factor = 0
 		modifier = {
@@ -55,7 +55,7 @@ focus_tree = {
 				days = 1
 			}
 		}
-		
+
 	}
 	focus = {
 		id = vault_gecko
@@ -65,60 +65,60 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_spec
 		}
-		x = 9
+		x = 13
 		y = 3
 		completion_reward = {
 			country_event = {
 				id = nf_vault_city.4
 			}
 		}
+
 	}
 	focus = {
-		id = vault_sec
-		text = vault_sec
+		id = vault_tribals
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 1.00
 		prerequisite = {
 			focus = vault_gecko
 		}
-		x = 5
+		x = 6
 		y = 5
 		completion_reward = {
-			army_experience = 20
+			add_political_power = 20
 		}
+		
 	}
 	focus = {
-		id = vault_robot
-		text = vault_robot
+		id = vault_flock
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
-			focus = vault_sec
+			focus = vault_tribals
 		}
-		x = 2
-		y = 1
-		relative_position_id = vault_sec
+		x = 6
+		y = 7
 		completion_reward = {
-			add_tech_bonus = {
-				name = vault_robotics
-				bonus = 0.4
-				uses = 2
-				category = robotics_tech
+			add_political_power = 60
+			create_wargoal = {
+			type = puppet_wargoal_focus
+			target = PAL
+				
 			}
 		}
+
 	}
 	focus = {
 		id = vault_cyclops
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
-			focus = vault_gecko
+			focus = vault_tribals
 		}
-		x = 13
-		y = 12
+		x = 10
+		y = 7
 		completion_reward = {
 			create_wargoal = {
-				type = puppet
+				type = puppet_wargoal_focus
 				target = CYC
 			}
 		}
@@ -127,53 +127,45 @@ focus_tree = {
 		id = vault_politics
 		text = vault_politics
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_gecko
 		}
-		x = 18
+		x = 20
 		y = 5
 		completion_reward = {
 			add_political_power = 120
 		}
-	}
-	focus = {
-		id = vault_first_1
-		text = vault_first_1
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = vault_politics
-			has_country_leader = {
-			id = 910
-			ruling_only = yes
-				name = "First Citizen Lynette"
-			}
-				
-		}
-		x = 16
-		y = 6
-		completion_reward = {
-			
-		}
+
 	}
 	focus = {
 		id = vault_brain_1
 		text = vault_brain_1
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_politics
 		}
-		x = 12
+		x = 14
 		y = 6
+		available = {
+			has_country_leader = {
+				id = 913
+				ruling_only = yes
+				name = "The Brain"
+			}
+		}
+		completion_reward = {
+			add_political_power = 60
+			add_ideas = molethumb
+		}
 
 	}
 	focus = {
 		id = vault_brain_2
 		text = vault_brain_2
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_brain_1
 		}
@@ -183,177 +175,250 @@ focus_tree = {
 
 	}
 	focus = {
-		id = vault_chief_1
-		text = vault_chief_1
+		id = vault_first_1
+		text = vault_first_1
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_politics
 		}
-		x = 20
-		y = 6
-
-	}
-	focus = {
-		id = vault_utopia
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = vault_gecko
-		}
-		x = 22
-		y = 11
-
-	}
-	focus = {
-		id = vault_med_reg
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = vault_utopia
-		}
-		x = 20
-		y = 12
-
-	}
-	focus = {
-		id = vault_draft
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = vault_med_reg
-		}
-		x = 20
-		y = 13
-
-	}
-	focus = {
-		id = vault_mil_sec
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = vault_draft
-		}
-		x = 20
-		y = 14
-
-	}
-	focus = {
-		id = vault_citizen
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = vault_mil_sec
-		}
 		x = 18
-		y = 15
-
-	}
-	focus = {
-		id = vault_robo_sec
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = vault_mil_sec
+		y = 6
+		available = {
+			has_country_leader = {
+				id = 910
+				ruling_only = yes
+				name = "First Citizen Lynette"
+			}
 		}
-		x = 20
-		y = 15
-
-	}
-	focus = {
-		id = vault_serv_1
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = vault_utopia
+		x = 17
+		y = 6
+		completion_reward = {
+			add_political_power = 60
+			add_ideas = oldways
 		}
-		x = 22
-		y = 12
 
 	}
 	focus = {
-		id = vault_serv_2
+		id = vault_chief_1
+		text = vault_chief_1
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
-			focus = vault_serv_1
+			focus = vault_politics
 		}
 		x = 22
-		y = 14
-
-	}
-	focus = {
-		id = vault_serv_3
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = vault_serv_2
+		y = 6
+		available = {
+			has_country_leader = {
+				id = 912
+				ruling_only = yes
+				name = "Security Chief Wallace"
+			}
 		}
-		x = 22
-		y = 16
+		completion_reward = {
+			add_political_power = 60
+			add_ideas = courtyardcrackdown
+		}
 
 	}
 	focus = {
 		id = vault_festus_1
 		text = vault_festus_1
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_politics
 		}
-		x = 24
+		x = 26
 		y = 6
+		available = {
+			has_country_leader = {
+				id = 911
+				ruling_only = yes
+				name = "Festus"
+			}
+		}
+		completion_reward = {
+			add_political_power = 60
+			add_ideas = ghoulconferences
+		}
+
+	}
+	focus = {
+		id = vault_utopia
+		icon = GFX_goal_unknown
+		cost = 8.0
+		prerequisite = {
+			focus = vault_gecko
+		}
+		x = 34
+		y = 5
+
+	}
+	focus = {
+		id = vault_med_reg
+		icon = GFX_goal_unknown
+		cost = 8.0
+		prerequisite = {
+			focus = vault_utopia
+		}
+		x = 32
+		y = 6
+
+	}
+	focus = {
+		id = vault_draft
+		icon = GFX_goal_unknown
+		cost = 8.0
+		prerequisite = {
+			focus = vault_med_reg
+		}
+		x = 32
+		y = 7
+
+	}
+	focus = {
+		id = vault_mil_sec
+		icon = GFX_goal_unknown
+		cost = 8.0
+		prerequisite = {
+			focus = vault_draft
+		}
+		x = 32
+		y = 8
+
+	}
+	focus = {
+		id = vault_citizen
+		icon = GFX_goal_unknown
+		cost = 8.0
+		prerequisite = {
+			focus = vault_mil_sec
+		}
+		x = 30
+		y = 9
+
+	}
+	focus = {
+		id = vault_robo_sec
+		icon = GFX_goal_unknown
+		cost = 8.0
+		prerequisite = {
+			focus = vault_mil_sec
+		}
+		x = 32
+		y = 9
+
+	}
+	focus = {
+		id = vault_serv_1
+		icon = GFX_goal_unknown
+		cost = 8.0
+		prerequisite = {
+			focus = vault_utopia
+		}
+		x = 34
+		y = 6
+		completion_reward = {
+			country_event = {
+				id = nf_vault_city.5
+			}
+		}
+
+	}
+	focus = {
+		id = vault_serv_2
+		icon = GFX_goal_unknown
+		cost = 8.0
+		prerequisite = {
+			focus = vault_serv_1
+		}
+		x = 34
+		y = 8
+		completion_reward = {
+			country_event = {
+				id = nf_vault_city.6
+			}
+		}
+
+	}
+	focus = {
+		id = vault_serv_3
+		icon = GFX_goal_unknown
+		cost = 8.0
+		prerequisite = {
+			focus = vault_serv_2
+		}
+		x = 34
+		y = 10
+		completion_reward = {
+			country_event = {
+				id = nf_vault_city.7
+			}
+		}
 
 	}
 	focus = {
 		id = vault_downtown
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_utopia
 		}
-		x = 24
-		y = 12
+		x = 36
+		y = 6
 
 	}
 	focus = {
 		id = vault_courtyard
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_downtown
 		}
-		x = 24
-		y = 13
+		x = 36
+		y = 7
 
 	}
 	focus = {
 		id = vault_sec_station
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_courtyard
 		}
-		x = 24
-		y = 14
+		x = 36
+		y = 8
 
 	}
 	focus = {
 		id = vault_wall
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_sec_station
 		}
-		x = 24
-		y = 15
+		x = 36
+		y = 9
+
+	}
+	focus = {
+		id = vault_second_city
+		icon = GFX_goal_unknown
+		cost = 8.0
+		prerequisite = {
+			focus = vault_sec_station
+		}
+		x = 38
+		y = 9
 
 	}
 	focus = {
 		id = vault_first_2
 		text = vault_first_2
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_first_1
 		}
@@ -366,7 +431,7 @@ focus_tree = {
 		id = vault_brain_3
 		text = vault_brain_3
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_brain_2
 		}
@@ -379,7 +444,7 @@ focus_tree = {
 		id = vault_brain_4a
 		text = vault_brain_4a
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_brain_3
 		}
@@ -395,7 +460,7 @@ focus_tree = {
 		id = vault_brain_4b
 		text = vault_brain_4b
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_brain_3
 		}
@@ -411,7 +476,7 @@ focus_tree = {
 		id = vault_first_3
 		text = vault_first_3
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_first_2
 		}
@@ -424,7 +489,7 @@ focus_tree = {
 		id = vault_first_4a
 		text = vault_first_4a
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_first_3
 		}
@@ -440,7 +505,7 @@ focus_tree = {
 		id = vault_first_4b
 		text = vault_first_4b
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_first_3
 		}
@@ -456,7 +521,7 @@ focus_tree = {
 		id = vault_chief_2
 		text = vault_chief_2
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_chief_1
 		}
@@ -469,7 +534,7 @@ focus_tree = {
 		id = vault_chief_3
 		text = vault_chief_3
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_chief_2
 		}
@@ -482,7 +547,7 @@ focus_tree = {
 		id = vault_cheif_4a
 		text = vault_chief_4a
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_chief_3
 		}
@@ -498,7 +563,7 @@ focus_tree = {
 		id = vault_chief_4b
 		text = vault_chief_4b
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_chief_3
 		}
@@ -514,7 +579,7 @@ focus_tree = {
 		id = vault_festus_2
 		text = vault_festus_2
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_festus_1
 		}
@@ -527,7 +592,7 @@ focus_tree = {
 		id = vault_festus_3
 		text = vault_festus_2
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_festus_2
 		}
@@ -540,7 +605,7 @@ focus_tree = {
 		id = vault_festus_4a
 		text = vault_festus_4a
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_festus_3
 		}
@@ -556,7 +621,7 @@ focus_tree = {
 		id = vault_festus_4b
 		text = vault_festus_4b
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_festus_3
 		}
@@ -569,97 +634,167 @@ focus_tree = {
 
 	}
 	focus = {
+		id = vault_sec
+		text = vault_sec
+		icon = GFX_goal_unknown
+		cost = 8.0
+		prerequisite = {
+			focus = vault_gecko
+		}
+		x = 41
+		y = 5
+		completion_reward = {
+			army_experience = 20
+		}
+
+	}
+	focus = {
 		id = vault_garage
 		text = vault_garage
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_sec
 		}
 		x = -2
 		y = 1
 		relative_position_id = vault_sec
+		completion_reward = {
+			add_tech_bonus = {
+				name = vault_garage
+				bonus = 0.4
+				uses = 2
+				category = vehicle_tech
+			}
+		}
 
 	}
 	focus = {
 		id = vault_arm_guard
 		text = vault_arm_guard
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_sec
 		}
 		x = 0
 		y = 1
 		relative_position_id = vault_sec
+		completion_reward = {
+			add_tech_bonus = {
+				name = vault_weapons
+				bonus = 0.4
+				uses = 2
+				category = infantry_weapons
+			}
+		}
+
+	}
+	focus = {
+		id = vault_robot
+		text = vault_robot
+		icon = GFX_goal_unknown
+		cost = 8.0
+		prerequisite = {
+			focus = vault_sec
+		}
+		x = 2
+		y = 1
+		relative_position_id = vault_sec
+		completion_reward = {
+			add_tech_bonus = {
+				name = vault_robotics
+				bonus = 0.4
+				uses = 2
+				category = robotics_tech
+			}
+		}
 
 	}
 	focus = {
 		id = vault_airstrip
 		text = vault_airstrip
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_garage
 		}
 		x = 0
 		y = 1
 		relative_position_id = vault_garage
+		completion_reward = {
+			add_tech_bonus = {
+				name = vault_air
+				bonus = 0.4
+				uses = 2
+				category = air_equipment
+			}
+		}
 
 	}
 	focus = {
 		id = vault_pride_guard
 		text = vault_pride_guard
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_arm_guard
 		}
 		x = 0
 		y = 1
 		relative_position_id = vault_arm_guard
+		completion_reward = {
+			add_ideas = vaultpride
+			army_experience = 30
+		}
 
 	}
 	focus = {
 		id = vault_tank
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_robot
 		}
 		x = 0
 		y = 1
 		relative_position_id = vault_robot
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = vault_tanks
+				bonus = 0.4
+				uses = 2
+				category = vehicle_tech
+			}
+		}
 
 	}
 	focus = {
 		id = vault_armor_sec
 		text = vault_armor_sec
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_pride_guard
 		}
 		x = 0
 		y = 1
 		relative_position_id = vault_pride_guard
-
-	}
-	focus = {
-		id = vault_flock
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = vault_gecko
+		completion_reward = {
+			add_tech_bonus = {
+				name = vault_pa
+				bonus = 0.4
+				uses = 2
+				category = power_armor_tech
+			}
 		}
-		x = 9
-		y = 12
 
 	}
 	focus = {
 		id = vault_flock_diagnose
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_flock
 		}
@@ -671,7 +806,7 @@ focus_tree = {
 	focus = {
 		id = vault_flock_annex
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_flock
 		}
@@ -684,19 +819,19 @@ focus_tree = {
 		id = vault_80s
 		text = vault_80s
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
-			focus = vault_gecko
+			focus = vault_tribals
 		}
-		x = 5
-		y = 12
+		x = 2
+		y = 7
 
 	}
 	focus = {
 		id = vault_80s_roam
 		text = vault_80s_roam
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_80s
 		}
@@ -720,7 +855,7 @@ focus_tree = {
 	focus = {
 		id = vault_cyclops_eager
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_cyclops
 		}
@@ -732,7 +867,7 @@ focus_tree = {
 	focus = {
 		id = vault_cyclops_serv
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_cyclops
 		}
@@ -744,7 +879,7 @@ focus_tree = {
 	focus = {
 		id = vault_flock_goggles
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_flock_diagnose
 		}
@@ -754,32 +889,39 @@ focus_tree = {
 
 	}
 	focus = {
-		id = vault_flock_brain
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = vault_flock_filters
-		}
-		x = 10
-		y = 15
-		
-
-	}
-	focus = {
 		id = vault_flock_filters
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_flock_annex
 		}
-		x = 10
-		y = 14
+		x = 7
+		y = 9
+
+	}
+	focus = {
+		id = vault_flock_brain
+		icon = GFX_goal_unknown
+		cost = 8.0
+		prerequisite = {
+			focus = vault_flock_filters
+		}
+		x = 0
+		y = 1
+		relative_position_id = vault_flock_filters
+		available = {
+			has_country_leader = {
+				id = 913
+				ruling_only = yes
+				name = "The Brain"
+			}
+		}
 
 	}
 	focus = {
 		id = vault_80s_def
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_80s_blockade
 		}
@@ -791,7 +933,7 @@ focus_tree = {
 	focus = {
 		id = vault_i80
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_80s_roam
 		}
@@ -803,7 +945,7 @@ focus_tree = {
 	focus = {
 		id = vault_80s_gift
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_i80
 		}
@@ -815,7 +957,7 @@ focus_tree = {
 	focus = {
 		id = vault_80s_guard
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_80s_def
 		}
@@ -839,7 +981,7 @@ focus_tree = {
 	focus = {
 		id = vault_flock_help
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_flock_goggles
 		}
@@ -849,20 +991,9 @@ focus_tree = {
 
 	}
 	focus = {
-		id = vault_cyclops_help
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = vault_cyclops_hounds
-		}
-		x = 12
-		y = 16
-
-	}
-	focus = {
 		id = vault_cyclops_hounds
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_cyclops_eager
 		}
@@ -872,9 +1003,22 @@ focus_tree = {
 
 	}
 	focus = {
+		id = vault_cyclops_help
+		icon = GFX_goal_unknown
+		cost = 8.0
+		prerequisite = {
+			focus = vault_cyclops_hounds
+		}
+		x = 0
+		y = 2
+		relative_position_id = vault_cyclops_hounds
+
+	}
+
+	focus = {
 		id = vault_cyclops_fort
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_cyclops_serv
 		}
@@ -886,38 +1030,34 @@ focus_tree = {
 	focus = {
 		id = vault_cyclops_army
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_cyclops_fort
 		}
 		x = 0
 		y = 1
 		relative_position_id = vault_cyclops_fort
+		available = {
+			has_country_leader = {
+				id = 913
+				ruling_only = yes
+				name = "The Brain"
+			}
+		}
 
 	}
 	focus = {
 		id = vault_gem
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 8.0
 		prerequisite = {
 			focus = vault_robo_sec
 		}
 		prerequisite = {
 			focus = vault_wall
 		}
-		x = 22
-		y = 17
-
-	}
-	focus = {
-		id = vault_second_city
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = vault_sec_station
-		}
-		x = 26
-		y = 15
+		x = 34
+		y = 11
 
 	}
 }
