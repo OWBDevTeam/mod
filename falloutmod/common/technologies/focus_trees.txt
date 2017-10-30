@@ -290,15 +290,6 @@ technologies = {
 				defence = +0.1
 			}
 		}
-	}
-	eramigration = {
-		research_cost = 1
-		allow = {
-			always = no
-		}
-		infantry = {
-			army_speed_factor = 0.1
-		}
 	}	
 	vaultmed = {
 		research_cost = 1
@@ -307,6 +298,34 @@ technologies = {
 		}
 		category_all_infantry = {
 			casualty_trickleback = 0.20
+		}
+	}
+	mutant_access = {
+		enable_subunits = {
+            super_mutant_infantry
+        }
+		research_cost = 1
+		allow = {
+			always = no
+		}
+	}
+	ghoul_access = {
+		enable_subunits = {
+			ghoul_infantry
+		}
+		research_cost = 1
+		allow = {
+			always = no
+		}
+	}
+	mutant_supremacy = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+		super_mutant_infantry = {
+			attack = 0.05
+			defense = 0.05
 		}
 	}
 }

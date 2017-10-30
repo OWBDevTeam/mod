@@ -18,7 +18,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = {
 				id = nf_vault_city.1
-				days = 1
 			}
 		}
 	}
@@ -35,7 +34,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = {
 				id = nf_vault_city.2
-				days = 1
 			}
 		}
 	}
@@ -52,7 +50,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = {
 				id = nf_vault_city.3
-				days = 1
 			}
 		}
 
@@ -172,7 +169,9 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = vault_brain_1
-
+		completion_reward = {
+			add_ideas = controlapparati
+		}
 	}
 	focus = {
 		id = vault_first_1
@@ -252,7 +251,16 @@ focus_tree = {
 		}
 		x = 34
 		y = 5
-
+		completion_reward = {
+			291 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex					
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = vault_med_reg
@@ -263,7 +271,9 @@ focus_tree = {
 		}
 		x = 32
 		y = 6
-
+		completion_reward = {
+			add_ideas = vaultmedreg
+		}
 	}
 	focus = {
 		id = vault_draft
@@ -274,7 +284,9 @@ focus_tree = {
 		}
 		x = 32
 		y = 7
-
+		completion_reward = {
+			add_ideas = courtyarddraft
+		}
 	}
 	focus = {
 		id = vault_mil_sec
@@ -285,7 +297,9 @@ focus_tree = {
 		}
 		x = 32
 		y = 8
-
+		completion_reward = {
+			add_ideas = milsecurity
+		}
 	}
 	focus = {
 		id = vault_citizen
@@ -296,7 +310,9 @@ focus_tree = {
 		}
 		x = 30
 		y = 9
-
+		completion_reward = {
+			add_ideas = citizenservice
+		}
 	}
 	focus = {
 		id = vault_robo_sec
@@ -307,7 +323,17 @@ focus_tree = {
 		}
 		x = 32
 		y = 9
-
+		completion_reward = {
+			291 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_ideas = vault_robosec
+		}
 	}
 	focus = {
 		id = vault_serv_1
@@ -333,7 +359,7 @@ focus_tree = {
 			focus = vault_serv_1
 		}
 		x = 34
-		y = 8
+		y = 7
 		completion_reward = {
 			country_event = {
 				id = nf_vault_city.6
@@ -349,7 +375,7 @@ focus_tree = {
 			focus = vault_serv_2
 		}
 		x = 34
-		y = 10
+		y = 8
 		completion_reward = {
 			country_event = {
 				id = nf_vault_city.7
@@ -366,7 +392,16 @@ focus_tree = {
 		}
 		x = 36
 		y = 6
-
+		completion_reward = {
+			336 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+						type = industrial_complex						
+						level = 2
+						instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = vault_courtyard
@@ -377,7 +412,22 @@ focus_tree = {
 		}
 		x = 36
 		y = 7
-
+		completion_reward = {
+		
+			336 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+						type = industrial_complex					
+						level = 2
+						instant_build = yes
+				}
+				add_building_construction = {
+						type = arms_factory						
+						level = 2
+						instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = vault_sec_station
@@ -388,7 +438,28 @@ focus_tree = {
 		}
 		x = 36
 		y = 8
-
+		completion_reward = {
+			291 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory						
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker					
+					level = 1
+					instant_build = yes
+					province = 8915
+				}
+				add_building_construction = {
+					type = bunker					
+					level = 1
+					instant_build = yes
+					province = 8913
+				}
+			}
+		}
 	}
 	focus = {
 		id = vault_wall
@@ -399,6 +470,32 @@ focus_tree = {
 		}
 		x = 36
 		y = 9
+		completion_reward = {
+			336 = {
+				add_building_construction = {
+					type = bunker					
+					level = 3
+					instant_build = yes
+					province = 8911
+				}
+			}
+			339 = {
+				add_building_construction = {
+					type = bunker					
+					level = 3
+					instant_build = yes
+					province = 8912
+				}
+			}
+			375 = {
+				add_building_construction = {
+					type = bunker					
+					level = 3
+					instant_build = yes
+					province = 3313
+				}
+			}
+		}
 
 	}
 	focus = {
@@ -410,7 +507,9 @@ focus_tree = {
 		}
 		x = 38
 		y = 9
-
+		completion_reward = {
+			remove_ideas = courtyard
+		}
 	}
 	focus = {
 		id = vault_first_2
@@ -423,6 +522,12 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = vault_first_1
+		completion_reward = {
+			swap_ideas =  { 
+				remove_idea = utopia 
+				add_idea = firstutopia 
+			}
+		}
 
 	}
 	focus = {
@@ -436,7 +541,9 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = vault_brain_2
-
+		completion_reward = {
+			add_ideas = loyalcitizens
+		}
 	}
 	focus = {
 		id = vault_brain_4a
@@ -452,7 +559,9 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = vault_brain_3
-
+		completion_reward = {
+			add_ideas = humanbreed
+		}
 	}
 	focus = {
 		id = vault_brain_4b
@@ -468,7 +577,11 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = vault_brain_3
-
+		completion_reward = {
+			set_technology = {
+				mutant_supremacy = 1
+			}
+		}
 	}
 	focus = {
 		id = vault_first_3
@@ -481,7 +594,9 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = vault_first_2
-
+		completion_reward = {
+			add_ideas = populationcontrol
+		}
 	}
 	focus = {
 		id = vault_first_4a
@@ -497,7 +612,18 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = vault_first_3
-
+		completion_reward = {
+			291 = {
+				add_extra_state_shared_building_slots = 6
+				
+				add_building_construction = {
+						type = industrial_complex						
+						level = 4
+						instant_build = yes
+				}
+			}
+			add_ideas = firsteconomy
+		}
 	}
 	focus = {
 		id = vault_first_4b
@@ -513,7 +639,18 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = vault_first_3
-
+		completion_reward = {
+			291 = {
+				add_extra_state_shared_building_slots = 4
+				
+				add_building_construction = {
+						type = arms_factory						
+						level = 2
+						instant_build = yes
+				}
+			}
+			add_ideas = firstmilitary
+		}
 	}
 	focus = {
 		id = vault_chief_2
@@ -526,7 +663,9 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = vault_chief_1
-
+		completion_reward = {
+			add_ideas = vcprot
+		}
 	}
 	focus = {
 		id = vault_chief_3
@@ -539,7 +678,12 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = vault_chief_2
-
+		completion_reward = {
+			swap_ideas = {
+				add_idea = avcprot
+				remove_idea = vcprot
+			}
+		}
 	}
 	focus = {
 		id = vault_cheif_4a
@@ -555,7 +699,9 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = vault_chief_3
-
+		completion_reward = {
+			add_ideas = advinfsup
+		}
 	}
 	focus = {
 		id = vault_chief_4b
@@ -571,7 +717,9 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = vault_chief_3
-
+		completion_reward = {
+			add_ideas = advmotsup
+		}
 	}
 	focus = {
 		id = vault_festus_2
@@ -584,7 +732,10 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = vault_festus_1
-
+		completion_reward = {
+			add_manpower = 5000
+			load_oob = vault_ghoul_migration
+		}
 	}
 	focus = {
 		id = vault_festus_3
@@ -597,7 +748,23 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = vault_festus_2
-
+		completion_reward = {
+			add_resource = {
+				type = electronics
+				amount = 20
+				state = 339
+			}
+			add_resource = {
+				type = electricity
+				amount = 20
+				state = 339
+			}
+			add_resource = {
+				type = advanced_technology
+				amount = 10
+				state = 339
+			}
+		}
 	}
 	focus = {
 		id = vault_festus_4a
@@ -613,7 +780,9 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = vault_festus_3
-
+		completion_reward = {
+			add_ideas = oldworldideals
+		}
 	}
 	focus = {
 		id = vault_festus_4b
@@ -629,7 +798,9 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = vault_festus_3
-
+		completion_reward = {
+			add_ideas = modernprag
+		}
 	}
 	focus = {
 		id = vault_sec
@@ -800,7 +971,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_flock
 		completion_reward = {
-			
+			add_ideas = flockdoc
 		}
 
 	}
@@ -814,6 +985,10 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = vault_flock
+		available = {
+			controls_state = 223
+			controls_state = 458
+		}
 		completion_reward = {
 			add_state_core = 223
 			add_state_core = 458
@@ -857,31 +1032,29 @@ focus_tree = {
 		text = vault_80s_roam
 		icon = GFX_goal_unknown
 		cost = 8.0
-
+		mutually_exclusive = {
+			focus = vault_80s_blockade
+		}
 		prerequisite = {
 			focus = vault_80s
 		}
 		x = 1
 		y = 8
+
 		available = {
-			always = no 
+			NOT = {
+				has_country_leader = {
+					id = 913
+					ruling_only = yes
+					name = "The Brain"
+				}
 			}
+		}
 		completion_reward = {
-		
+			give_military_access = EHT
 			diplomatic_relation = { 
-				country = EHT 
-				relation = offer_military_access
-			}
-			EHT = {
-				diplomatic_relation = { 
-					country = VLT 
-					relation = offer_military_access
-				}
-				diplomatic_relation = { 
-					country = VLT 
-					relation = non_aggression_pact
-				}
-			
+				country = EHT
+				relation = non_aggression_pact
 			}
 		}
 	}
@@ -892,20 +1065,20 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_80s
 		}
+		mutually_exclusive = {
+			focus = vault_80s_roam
+		}
 		x = 3
 		y = 8
-		available = {
-			always = no
-		}
 		completion_reward = {
 			375 = {
-				3459 = {
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
-						type = bunker
-						level = 3
-						instant_build = yes
-					}
+			
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = bunker						
+					level = 3
+					instant_build = yes
+					province = 3459
 				}
 			}
 		}
@@ -965,11 +1138,13 @@ focus_tree = {
 		y = 9
 		completion_reward = {
 			PAL = {
+				add_resource = {
+					type = water 
+					amount = 10 
+					state = 223
+				}
 				223 = {
 					add_extra_state_shared_building_slots = 2
-					add_resource = {
-						water = 10
-					}
 					add_building_construction = {
 						type = industrial_complex
 						level = 2
@@ -996,7 +1171,9 @@ focus_tree = {
 				name = "The Brain"
 			}
 		}
-
+		completion_reward = {
+			load_oob = vault_flock_brain
+		}
 	}
 	focus = {
 		id = vault_80s_def
@@ -1008,10 +1185,20 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = vault_80s_blockade
-
+		completion_reward = {
+			add_ideas = def80s
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
-		id = vault_i80
+		id = vault_80s_gift
 		icon = GFX_goal_unknown
 		cost = 8.0
 		prerequisite = {
@@ -1020,22 +1207,36 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = vault_80s_roam
-
+		completion_reward = {
+			add_resource = {
+					type = fuel 
+					amount = 10 
+					state = 291
+				}
+			add_ideas = gift80s
+		}
 	}
 	focus = {
-		id = vault_80s_gift
+		id = vault_i80
 		icon = GFX_goal_unknown
 		cost = 8.0
 		prerequisite = {
-			focus = vault_i80
+			focus = vault_80s_gift
 		}
 		x = 0
 		y = 1
-		relative_position_id = vault_i80
-
+		relative_position_id = vault_80s_gift
+		completion_reward = {
+			EHT = {
+				country_event = {
+					id = nf_80s.1
+				}
+			}
+		}
 	}
+	
 	focus = {
-		id = vault_80s_guard
+		id = vault_80s_violence
 		icon = GFX_goal_unknown
 		cost = 8.0
 		prerequisite = {
@@ -1044,31 +1245,52 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = vault_80s_def
-
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = EHT
+			}
+		}		
 	}
 	focus = {
 		id = vault_80s_help
 		icon = GFX_goal_unknown
 		cost = 2.00
 		prerequisite = {
-			focus = vault_80s_gift
+			focus = vault_i80
 		}
 		x = 0
 		y = 1
-		relative_position_id = vault_80s_gift
-
+		relative_position_id = vault_i80
+		available = {
+			has_war = yes
+		}
+		completion_reward = {
+		custom_effect_tooltip = help80s
+			hidden_effect = {
+				load_oob = vault_80s
+			}
+		}
 	}
 	focus = {
 		id = vault_flock_help
 		icon = GFX_goal_unknown
-		cost = 8.0
+		cost = 2.0
 		prerequisite = {
 			focus = vault_flock_goggles
 		}
 		x = 0
 		y = 2
 		relative_position_id = vault_flock_goggles
-
+		available = {
+			has_war = yes
+		}
+		completion_reward = {
+			custom_effect_tooltip = helpflock
+			hidden_effect = {
+				load_oob = vault_flock
+			}
+		}
 	}
 	focus = {
 		id = vault_cyclops_hounds
@@ -1080,19 +1302,37 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = vault_cyclops_eager
+		completion_reward = {
+			CYC = {
+				add_ideas = houndsnorth
+			}
+		}
 
 	}
 	focus = {
 		id = vault_cyclops_help
 		icon = GFX_goal_unknown
-		cost = 8.0
+		cost = 2.0
 		prerequisite = {
 			focus = vault_cyclops_hounds
 		}
 		x = 0
 		y = 2
 		relative_position_id = vault_cyclops_hounds
-
+		available = {
+			has_war = yes
+		}
+		completion_reward = {
+			create_corps_commander = {
+				name = "Polyphemus"
+				id = 950
+				gfx = "gfx/leaders/vault/security_chief.dds"
+				traits = { 
+					settlement_protector
+				}
+				skill = 5
+			}
+		}
 	}
 
 	focus = {
@@ -1105,7 +1345,21 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = vault_cyclops_serv
-
+		completion_reward = {
+			add_resource = {
+				type = metal
+				amount = 10
+				state = 73
+			}
+			73 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory						
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = vault_cyclops_army
@@ -1124,6 +1378,9 @@ focus_tree = {
 				name = "The Brain"
 			}
 		}
+		completion_reward = {
+			load_oob = vault_cyclops_brain
+		}
 
 	}
 	focus = {
@@ -1138,6 +1395,20 @@ focus_tree = {
 		}
 		x = 34
 		y = 11
-
+		completion_reward = {
+			291 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+						type = arms_factory						
+						level = 2
+						instant_build = yes
+				}
+				add_building_construction = {
+						type = industrial_complex						
+						level = 2
+						instant_build = yes
+				}
+			}
+		}
 	}
 }

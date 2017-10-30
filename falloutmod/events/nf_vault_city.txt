@@ -115,7 +115,7 @@ country_event = {
 			amount = 100
 			producer = VLT
 		}
-		load_oob = vault_robots
+		load_oob = vault_robot
 	}
 }
 country_event = {
@@ -132,6 +132,7 @@ country_event = {
 			ideology = intellectuals
 			popularity = 0.7
 		}
+		add_ideas = citizen1
 	}
 	option = {
 		name = nf_vault_city.4.b
@@ -159,6 +160,7 @@ country_event = {
 			elections_allowed = no
 		}
 		add_ideas = festus
+		remove_unit_leader = 949
 		339 = {
 			add_extra_state_shared_building_slots = 5
 			add_building_construction = {
@@ -166,6 +168,12 @@ country_event = {
 				level = 5
 				instant_build = yes
 			}
+		}
+		hidden_effect = {
+				set_technology = {
+					ghoul_access = 1
+				}
+				load_oob = vault_festus
 		}
 	}
 	option = {
@@ -179,6 +187,14 @@ country_event = {
 			elections_allowed = no
 		}
 		add_ideas = braintrust
+		remove_unit_leader = 949
+		hidden_effect = {
+			set_technology = {
+				super_mutant_civilization = 1
+				mutant_access = 1
+			}
+			load_oob = vault_molerat
+		}
 	}	
 }
 country_event = {
@@ -188,11 +204,11 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = nf_vault_city.5.a
-		
+		add_ideas = servrights
 	}
 	option = {
 		name = nf_vault_city.5.b 
-		
+		add_ideas = servreg
 	}
 }
 country_event = {
@@ -202,11 +218,11 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = nf_vault_city.6.a
-		
+		add_ideas = servskill
 	}
 	option = {
 		name = nf_vault_city.6.b 
-		
+		add_ideas = servunskill
 	}
 }
 country_event = {
@@ -216,11 +232,11 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = nf_vault_city.7.a
-		
+		add_ideas = servshifts
 	}
 	option = {
 		name = nf_vault_city.7.b 
-		
+		add_ideas = servwork
 	}
 }
 news_event = {
@@ -253,5 +269,23 @@ country_event = {
 	option = {
 		name = nf_vault_city.9.b 
 		unlock_national_focus = vault_80s_blockade
+	}
+}
+country_event = {
+	id = nf_vault_city.10
+	title = nf_vault_city.10.t 
+	desc = nf_vault_city.10.d 
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_vault_city.10.a
+		EHT = {
+				transfer_state = 375
+				give_guarantee = VLT
+			}
+		give_guarantee = EHT
+	}
+	option = {
+		name = nf_vault_city.10.a
 	}
 }
