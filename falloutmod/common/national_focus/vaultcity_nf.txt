@@ -191,8 +191,6 @@ focus_tree = {
 				name = "First Citizen Lynette"
 			}
 		}
-		x = 17
-		y = 6
 		completion_reward = {
 			add_political_power = 60
 			add_ideas = oldways
@@ -801,6 +799,9 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = vault_flock
+		completion_reward = {
+			
+		}
 
 	}
 	focus = {
@@ -813,7 +814,10 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = vault_flock
-
+		completion_reward = {
+			add_state_core = 223
+			add_state_core = 458
+		}
 	}
 	focus = {
 		id = vault_80s
@@ -825,20 +829,61 @@ focus_tree = {
 		}
 		x = 2
 		y = 7
-
+		available = {
+			NOT = {
+				has_country_leader = {
+					id = 913
+					ruling_only = yes
+					name = "The Brain"
+				}
+			}
+		}
+		bypass = {
+			has_country_leader = {
+				id = 913
+				ruling_only = yes
+				name = "The Brain"
+			}
+		}
+		completion_reward = {
+			add_political_power = 80
+			country_event = {
+				id = nf_vault_city.9
+			}
+		}
 	}
 	focus = {
 		id = vault_80s_roam
 		text = vault_80s_roam
 		icon = GFX_goal_unknown
 		cost = 8.0
+
 		prerequisite = {
 			focus = vault_80s
 		}
-		x = -1
-		y = 1
-		relative_position_id = vault_80s
-
+		x = 1
+		y = 8
+		available = {
+			always = no 
+			}
+		completion_reward = {
+		
+			diplomatic_relation = { 
+				country = EHT 
+				relation = offer_military_access
+			}
+			EHT = {
+				diplomatic_relation = { 
+					country = VLT 
+					relation = offer_military_access
+				}
+				diplomatic_relation = { 
+					country = VLT 
+					relation = non_aggression_pact
+				}
+			
+			}
+		}
 	}
 	focus = {
 		id = vault_80s_blockade
@@ -847,10 +892,23 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_80s
 		}
-		x = 1
-		y = 1
-		relative_position_id = vault_80s
-
+		x = 3
+		y = 8
+		available = {
+			always = no
+		}
+		completion_reward = {
+			375 = {
+				3459 = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+		}
 	}
 	focus = {
 		id = vault_cyclops_eager
@@ -874,7 +932,11 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = vault_cyclops
-
+		completion_reward = {
+			add_state_core = 367
+			add_state_core = 567
+			add_state_core = 73
+		}
 	}
 	focus = {
 		id = vault_flock_goggles
@@ -886,7 +948,11 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = vault_flock_diagnose
-
+		completion_reward = {
+			PAL = {
+				add_ideas = flockgoggles
+			}
+		}
 	}
 	focus = {
 		id = vault_flock_filters
@@ -897,7 +963,21 @@ focus_tree = {
 		}
 		x = 7
 		y = 9
-
+		completion_reward = {
+			PAL = {
+				223 = {
+					add_extra_state_shared_building_slots = 2
+					add_resource = {
+						water = 10
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
 	}
 	focus = {
 		id = vault_flock_brain
