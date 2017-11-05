@@ -87,7 +87,7 @@ focus_tree = {
 	}
 	focus = {
 		id = vault_flock
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_flock
 		cost = 8.0
 		prerequisite = {
 			focus = vault_tribals
@@ -962,10 +962,13 @@ focus_tree = {
 	}
 	focus = {
 		id = vault_flock_diagnose
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_flock
 		cost = 8.0
 		prerequisite = {
 			focus = vault_flock
+		}
+		mutually_exclusive = {
+			focus = vault_flock_annex
 		}
 		x = -1
 		y = 1
@@ -977,7 +980,7 @@ focus_tree = {
 	}
 	focus = {
 		id = vault_flock_annex
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_flock
 		cost = 8.0
 		prerequisite = {
 			focus = vault_flock
@@ -997,7 +1000,7 @@ focus_tree = {
 	focus = {
 		id = vault_80s
 		text = vault_80s
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_80s
 		cost = 8.0
 		prerequisite = {
 			focus = vault_tribals
@@ -1030,7 +1033,7 @@ focus_tree = {
 	focus = {
 		id = vault_80s_roam
 		text = vault_80s_roam
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_80s
 		cost = 8.0
 		mutually_exclusive = {
 			focus = vault_80s_blockade
@@ -1060,7 +1063,7 @@ focus_tree = {
 	}
 	focus = {
 		id = vault_80s_blockade
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_80s
 		cost = 2.00
 		prerequisite = {
 			focus = vault_80s
@@ -1085,10 +1088,13 @@ focus_tree = {
 	}
 	focus = {
 		id = vault_cyclops_eager
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_cyclops
 		cost = 8.0
 		prerequisite = {
 			focus = vault_cyclops
+		}
+		mutually_exclusive = {
+			focus = vault_cyclops_serve
 		}
 		x = -1
 		y = 1
@@ -1097,7 +1103,7 @@ focus_tree = {
 	}
 	focus = {
 		id = vault_cyclops_serv
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_cyclops
 		cost = 8.0
 		prerequisite = {
 			focus = vault_cyclops
@@ -1113,7 +1119,7 @@ focus_tree = {
 	}
 	focus = {
 		id = vault_flock_goggles
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_flock
 		cost = 8.0
 		prerequisite = {
 			focus = vault_flock_diagnose
@@ -1129,7 +1135,7 @@ focus_tree = {
 	}
 	focus = {
 		id = vault_flock_filters
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_flock
 		cost = 8.0
 		prerequisite = {
 			focus = vault_flock_annex
@@ -1156,7 +1162,7 @@ focus_tree = {
 	}
 	focus = {
 		id = vault_flock_brain
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_flock
 		cost = 8.0
 		prerequisite = {
 			focus = vault_flock_filters
@@ -1177,7 +1183,7 @@ focus_tree = {
 	}
 	focus = {
 		id = vault_80s_def
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_80s
 		cost = 8.0
 		prerequisite = {
 			focus = vault_80s_blockade
@@ -1199,7 +1205,7 @@ focus_tree = {
 	}
 	focus = {
 		id = vault_80s_gift
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_80s
 		cost = 8.0
 		prerequisite = {
 			focus = vault_80s_roam
@@ -1218,7 +1224,7 @@ focus_tree = {
 	}
 	focus = {
 		id = vault_i80
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_80s
 		cost = 8.0
 		prerequisite = {
 			focus = vault_80s_gift
@@ -1237,7 +1243,7 @@ focus_tree = {
 	
 	focus = {
 		id = vault_80s_violence
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_80s
 		cost = 8.0
 		prerequisite = {
 			focus = vault_80s_def
@@ -1254,7 +1260,7 @@ focus_tree = {
 	}
 	focus = {
 		id = vault_80s_help
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_80s
 		cost = 2.00
 		prerequisite = {
 			focus = vault_i80
@@ -1274,7 +1280,7 @@ focus_tree = {
 	}
 	focus = {
 		id = vault_flock_help
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_flock
 		cost = 2.0
 		prerequisite = {
 			focus = vault_flock_goggles
@@ -1294,7 +1300,7 @@ focus_tree = {
 	}
 	focus = {
 		id = vault_cyclops_hounds
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_cyclops
 		cost = 8.0
 		prerequisite = {
 			focus = vault_cyclops_eager
@@ -1311,7 +1317,7 @@ focus_tree = {
 	}
 	focus = {
 		id = vault_cyclops_help
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_cyclops
 		cost = 2.0
 		prerequisite = {
 			focus = vault_cyclops_hounds
@@ -1337,7 +1343,7 @@ focus_tree = {
 
 	focus = {
 		id = vault_cyclops_fort
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_cyclops
 		cost = 8.0
 		prerequisite = {
 			focus = vault_cyclops_serv
@@ -1363,7 +1369,7 @@ focus_tree = {
 	}
 	focus = {
 		id = vault_cyclops_army
-		icon = GFX_goal_vault_all_clear
+		icon = GFX_goal_vault_cyclops
 		cost = 8.0
 		prerequisite = {
 			focus = vault_cyclops_fort
