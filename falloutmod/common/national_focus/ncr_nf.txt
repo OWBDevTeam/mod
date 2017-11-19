@@ -223,7 +223,7 @@ focus_tree = {
 		y = 7
 		completion_reward = {
 			create_wargoal = {
-				type = raider_war
+				type = annex_everything
 				target = BVC
 			}
 			
@@ -858,7 +858,7 @@ focus_tree = {
 		y = 8
 		completion_reward = {
 			create_wargoal = {
-				type = raider_war
+				type = annex_everything
 				target = SCR
 			}
 		}
@@ -2034,7 +2034,7 @@ focus_tree = {
 		y = 10
 		completion_reward = {
 			create_wargoal = {
-				type = raider_war
+				type = annex_everything
 				target = MRA
 			}
 		}
@@ -2124,7 +2124,7 @@ focus_tree = {
 	focus = {
 		id = ncr_longmarch
 		icon = GFX_focus_yug_pan_slavic_congress
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_damassault
 		}
@@ -2135,7 +2135,27 @@ focus_tree = {
 		y = 14
 		completion_reward = {
 			add_national_unity = -0.1
-			add_political_power = -100
+			533 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					province = {
+						id = 3201
+					}
+					instant_build = yes
+				}
+			}
+			272 = {	
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+					instant_build = yes
+				}
+			}
 		}
 
 
@@ -2143,7 +2163,7 @@ focus_tree = {
 	focus = {
 		id = ncr_triumph
 		icon = GFX_goal_support_democracy
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_damassault
 		}
@@ -2166,7 +2186,7 @@ focus_tree = {
 	focus = {
 		id = ncr_mojaveforts
 		icon = GFX_goal_generic_construct_military
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_triumph
 		}
@@ -2177,6 +2197,28 @@ focus_tree = {
 				limit = {
 					is_new_vegas_state = yes
 				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = {
+						id = 5760
+						id = 3236
+						id = 5759
+					}
+					instant_build = yes
+				}
+			}
+			533 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = {
+						id = 3201
+					}
+					instant_build = yes
+				}
+			}
+			272 = {	
 				add_building_construction = {
 					type = coastal_bunker
 					level = 2
@@ -2193,7 +2235,7 @@ focus_tree = {
 	focus = {
 		id = ncr_powertopeople
 		icon = GFX_goal_generic_construct_infrastructure
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_mojaveforts
 		}
@@ -2247,7 +2289,7 @@ focus_tree = {
 	focus = {
 		id = ncr_urbandraft
 		icon = GFX_focus_renounce_the_treaty_of_triannon
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_longmarch
 		}
@@ -2261,7 +2303,7 @@ focus_tree = {
 	focus = {
 		id = ncr_heavytroops
 		icon = GFX_goal_generic_special_forces
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ncr_urbandraft
 		}

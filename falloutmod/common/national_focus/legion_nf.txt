@@ -101,7 +101,7 @@ focus_tree = {
             if = {
                 limit = { country_exists = HAN }
                 create_wargoal = {
-                    type = legion_absorb_war
+                    type = annex_everything
                     target = HAN
                 }
                 HAN = {
@@ -182,7 +182,7 @@ focus_tree = {
             if = {
                 limit = { country_exists = TTM }
                 create_wargoal = {
-                    type = legion_absorb_war
+                    type = annex_everything
                     target = TTM
                 }
                 TTM = {
@@ -265,7 +265,7 @@ focus_tree = {
             if = {
                 limit = { country_exists = TWO }
                 create_wargoal = {
-                    type = legion_absorb_war
+                    type = annex_everything
                     target = TWO
                 }
                 TWO = {
@@ -352,7 +352,7 @@ focus_tree = {
             if = {
                 limit = { country_exists = COW }
                 create_wargoal = {
-                    type = legion_absorb_war
+                    type = annex_everything
                     target = COW
                 }
                 COW = {
@@ -598,7 +598,7 @@ focus_tree = {
 			if = {
                 limit = { country_exists = MOJ }
                 create_wargoal = {
-                    type = legion_conquest_war
+                    type = annex_everything
                     target = MOJ
                 }	
             }
@@ -727,12 +727,13 @@ focus_tree = {
     focus = {
 		id = ces_the_white_leg_petition
 		icon = GFX_goal_legion_diplomatic
-		cost = 1
+		cost = 8.6
 		prerequisite = {
 			focus = ces_new_judea
 		}
         available = {
             country_exists = WHT
+			has_completed_focus = ces_war_for_hoover_dam
         }
 		x = 5
 		y = 9
@@ -820,18 +821,27 @@ focus_tree = {
 			focus = ces_white_legs_refuse
 			focus = ces_white_legs_accept
 		}
+		bypass = {
+			EHT = { 
+				has_opinion_modifier = disloyal_tribe
+			}
+			WHT = { 
+				has_opinion_modifier = disloyal_tribe
+			}
+		}
         available = {
-            EHT = { 
-                OR = {
-                    has_country_flag = accepted_petition
-                    has_country_flag = refused_petition
-                }
-            }
+            OR = {
+				EHT = { 
+					has_opinion_modifier = loyal_tribe
+				}
+				WHT = { 
+					has_opinion_modifier = loyal_tribe
+				}
+			}
         }
 		x = 5
 		y = 11
 		completion_reward = {
-            # White Legs allied
 			if = {
 				limit = {
 					WHT = { has_opinion_modifier = loyal_tribe }
@@ -850,7 +860,6 @@ focus_tree = {
 					}
 				}
 			}
-            # Eighties allied
 			if = {
 				limit = {
 					EHT = { has_opinion_modifier = loyal_tribe }
@@ -891,10 +900,6 @@ focus_tree = {
 		}
 		available = {
             NOT = { country_exists = NCN }
-			has_completed_focus = ces_the_burned_man
-		}
-		bypass = {
-			has_completed_focus = ces_triumph_at_the_dam
 		}
 		x = 5
 		y = 12
@@ -1024,7 +1029,7 @@ focus_tree = {
 					}
 					create_wargoal = {
 						target = DAM
-						type = legion_conquest_war
+						type = annex_everything
 					}
 				}
 			
@@ -1036,7 +1041,7 @@ focus_tree = {
 					}
 					create_wargoal = {
 						target = VEG
-						type = legion_conquest_war
+						type = annex_everything
 					}
 				}
 			}
@@ -1062,6 +1067,9 @@ focus_tree = {
 		x = 9
 		y = 9
 		completion_reward = {
+			
+			553 = { set_state_name = "Legate Camp" }
+		
 			country_event = { id = hooverdam.2 }
 		}
 	}
@@ -1069,7 +1077,7 @@ focus_tree = {
 	focus = {
 		id = ces_the_burned_man
 		icon = GFX_goal_generic_attack_allies
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_war_for_hoover_dam
 		}
@@ -1082,6 +1090,9 @@ focus_tree = {
 		x = 8
 		y = 10
 		completion_reward = {
+			
+			remove_unit_leader = 983
+		
 			add_ideas = legion_nf_burned_man_rumours
 			
 			create_corps_commander = {
@@ -1099,7 +1110,7 @@ focus_tree = {
 	focus = {
 		id = ces_triumph_at_the_dam
 		icon = GFX_goal_support_fascism
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_war_for_hoover_dam
 		}
@@ -1112,15 +1123,26 @@ focus_tree = {
 		x = 10
 		y = 10
 		completion_reward = {
-			add_ideas = legion_nf_hoover_dam
+		
+			remove_unit_leader = 983
+		
+			add_ideas = legion_nf_burned_man_rumours
 			
+			create_corps_commander = {
+				name = "Legate Lanius"
+				portrait_path = "gfx/leaders/CES/Portrait_Lanius.dds"
+				skill = 5
+				traits = {
+					
+				}
+			}
 		}
 
 	}
 	focus = {
 		id = ces_lick_the_bulls_wounds
 		icon = GFX_goal_generic_forceful_treaty
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_the_burned_man
 		}
@@ -1134,7 +1156,7 @@ focus_tree = {
 	focus = {
 		id = ces_fortify_the_dam
 		icon = GFX_goal_generic_fortify_city
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_triumph_at_the_dam
 		}
@@ -1166,52 +1188,100 @@ focus_tree = {
 	focus = {
 		id = ces_fortification_hill
 		icon = GFX_goal_generic_construct_military
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_lick_the_bulls_wounds
 		}
 		x = 8
 		y = 12
 		completion_reward = {
-			359 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
+			if = {
+				limit = {
+					CES = {
+						owns_state = 359
+					}
 				}
-                add_building_construction = {
-					type = bunker
-					level = 2
-					province = {
-                        all_provinces = yes
-                    }
-                    instant_build = yes
-                }
-            }
+				
+				359 = { set_state_name = "Fort Hill" }
+				
+				359 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = {
+							all_provinces = yes
+						}
+						instant_build = yes
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					NOT = {
+						CES = {
+							owns_state = 359
+						}
+					}
+				}
+				
+				553 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						instant_build = yes
+					}
+				}
+				
+				49 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						instant_build = yes
+					}
+				}
+			}
 		}
 
 	}
 	focus = {
 		id = ces_crossing_the_colorado
 		icon = GFX_goal_generic_construct_naval_dockyard
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_fortification_hill
 		}
 		x = 8
 		y = 13
-		completion_reward = {   
-            random_owned_state = {
-                limit = {
-                    OR = {
-                        is_new_vegas_state = yes
-                        region = 29 # West Arizona
-                    }
-                    is_coastal = yes
-                }       
+		completion_reward = {  
+
+			add_manpower = -1000
+			
+			transfer_state = 99
+			
+            99 = {    
+				set_state_name = "Caesar's Landing"
                 add_building_construction = {
                     type = dockyard
+                    level = 2
+                    instant_build = yes
+                }
+				add_building_construction = {
+                    type = naval_base
                     level = 2
                     instant_build = yes
                 }
@@ -1222,7 +1292,7 @@ focus_tree = {
 	focus = {
 		id = ces_the_rubicon_is_crossed
 		icon = GFX_goal_generic_secret_weapon
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_fortify_the_dam
 		}
@@ -1230,13 +1300,31 @@ focus_tree = {
 		y = 12
 		completion_reward = {
 			add_ideas = legion_nf_rubicon_crossed
+
+			add_manpower = -1000
+			
+			transfer_state = 99
+			
+            99 = {    
+				set_state_name = "Caesar's Landing"
+                add_building_construction = {
+                    type = dockyard
+                    level = 2
+                    instant_build = yes
+                }
+				add_building_construction = {
+                    type = naval_base
+                    level = 2
+                    instant_build = yes
+                }
+            }
 		}
 
 	}
 	focus = {
 		id = ces_to_the_victor_go_the_spoils
 		icon = GFX_goal_legion_via_militaris
-		cost = 8.6
+		cost = 1
 		prerequisite = {
 			focus = ces_the_rubicon_is_crossed
 		}
@@ -1347,7 +1435,7 @@ focus_tree = {
             if = {
                 limit = { country_exists = RBD }
                 create_wargoal = {
-                    type = legion_conquest_war
+                    type = annex_everything
                     target = RBD
                 }
             }
@@ -1467,7 +1555,7 @@ focus_tree = {
 			if = {
                 limit = { country_exists = PEC }
                 create_wargoal = {
-                    type = legion_conquest_war
+                    type = annex_everything
                     target = PEC
                 }
             }
@@ -1594,7 +1682,7 @@ focus_tree = {
 			if = {
                 limit = { country_exists = VEG }
                 create_wargoal = {
-                    type = legion_conquest_war
+                    type = annex_everything
                     target = VEG
                 }
                 VEG = {
@@ -2016,7 +2104,7 @@ focus_tree = {
 		y = 19
 		completion_reward = {
 			create_wargoal = {
-				type = legion_conquest_war
+				type = annex_everything
 				target = NCR
 			}
 		}

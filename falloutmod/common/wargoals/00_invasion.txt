@@ -54,52 +54,52 @@ wargoal_types = {
 		
 		threat = 0.1
 	}
-	#take_state = {
-	#	# PREV = original target country
-	#	# ROOT = goal owner country
-	#
-	#	allowed = {
-	#		NOT = {
-	#			AND = {
-	#				PREV = { original_tag = DAM }
-	#				OR = {
-	#					ROOT = { original_tag = CES }
-	#					ROOT = { original_tag = NCR }
-	#					ROOT = { original_tag = MOJ }
-	#					ROOT = { original_tag = VEG }
-	#				}
-	#			}
-	#		}
-	#	}
-	#	
-	#	available = {
-	#		NOT = {
-	#			AND = {
-	#				PREV = { original_tag = DAM }
-	#				OR = {
-	#					ROOT = { original_tag = CES }
-	#					ROOT = { original_tag = NCR }
-	#					ROOT = { original_tag = MOJ }
-	#					ROOT = { original_tag = VEG }
-	#				}
-	#			}
-	#		}
-	#	}
-	#	
-	#	take_states = {
-	#		
-	#	}
-	#	
-	#	generate_base_cost = 200		
-	#	generate_per_state_cost = 50
-	#	
-	#	take_states_limit = 5
-	#	take_states_cost = -20
-	#	
-	#	expire = 60
-	#	
-	#	threat = 2
-	#}
+	take_state = {
+		# PREV = original target country
+		# ROOT = goal owner country
+	
+		allowed = {
+			NOT = {
+				AND = {
+					PREV = { original_tag = DAM }
+					OR = {
+						ROOT = { original_tag = CES }
+						ROOT = { original_tag = NCR }
+						ROOT = { original_tag = MOJ }
+						ROOT = { original_tag = VEG }
+					}
+				}
+			}
+		}
+		
+		available = {
+			NOT = {
+				AND = {
+					PREV = { original_tag = DAM }
+					OR = {
+						ROOT = { original_tag = CES }
+						ROOT = { original_tag = NCR }
+						ROOT = { original_tag = MOJ }
+						ROOT = { original_tag = VEG }
+					}
+				}
+			}
+		}
+		
+		take_states = {
+			
+		}
+		
+		generate_base_cost = 200		
+		generate_per_state_cost = 50
+		
+		take_states_limit = 5
+		take_states_cost = -20
+		
+		expire = 60
+		
+		threat = 2
+	}
 	
 	take_state_focus = {
 		# PREV = original target country

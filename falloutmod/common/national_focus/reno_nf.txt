@@ -30,7 +30,7 @@ focus_tree = {
 			focus = new_mordinos
 		}
 		available = {
-			has_country_leader = { id = 981 }
+			has_country_leader = { id = 971 }
 		}
 		x = 10
 		y = 4
@@ -79,7 +79,8 @@ focus_tree = {
 		y = 7
 		cost = 8.6
 		completion_reward = {
-			
+			add_ideas = newrenopolice
+			load_oob = newrenopolice
 		}
 
 	}
@@ -91,23 +92,23 @@ focus_tree = {
 		}
 		x = 11
 		y = 1
-		cost = 8.6
+		cost = 1
 		completion_reward = {
-		
+			country_event = { id = nf_reno.5 }
 		}
 
 	}
 	focus = {
-		id = new_deal
+		id = new_renodeal
 		icon = GFX_goal_generic_ideological_fury_focus
 		prerequisite = {
 			focus = new_criminalworld
 		}
 		x = 11
 		y = 2
-		cost = 8.6
+		cost = 1
 		completion_reward = {
-		
+			country_event = { id = nf_reno.6 }
 		}
 
 	}
@@ -115,13 +116,13 @@ focus_tree = {
 		id = new_expansionism
 		icon = GFX_goal_generic_ideological_fury_focus
 		prerequisite = {
-			focus = new_deal
+			focus = new_renodeal
 		}
 		x = 3
 		y = 3
 		cost = 8.6
 		completion_reward = {
-		
+			add_political_power = 80
 		}
 
 	}
@@ -135,7 +136,10 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
-		
+			create_wargoal = {
+				target = ANT
+				type = annex_everything
+			}
 		}
 
 	}
@@ -149,7 +153,8 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
-		
+			add_state_core = 382
+			add_state_core = 126
 		}
 
 	}
@@ -163,7 +168,7 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
-		
+			add_manpower = 500
 		}
 
 	}
@@ -177,7 +182,10 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
-		
+			create_wargoal = {
+				type = annex_everything
+				target = YKZ
+			}
 		}
 
 	}
@@ -191,7 +199,16 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
-		
+			285 = {
+				add_resource = {
+					type = metal
+					amount = 10
+				}
+				add_resource = {
+					type = electricity
+					amount = 5
+				}
+			}
 		}
 
 	}
@@ -205,7 +222,9 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
-		
+			add_state_core = 160
+			add_state_core = 284
+			add_state_core = 475
 		}
 
 	}
@@ -213,13 +232,13 @@ focus_tree = {
 		id = new_topdog
 		icon = GFX_focus_hun_elect_a_king
 		prerequisite = {
-			focus = new_deal
+			focus = new_renodeal
 		}
 		x = 11
 		y = 3
-		cost = 8.6
+		cost = 1
 		completion_reward = {
-		
+			country_event = { id = nf_reno.7 }
 		}
 
 	}
@@ -234,11 +253,15 @@ focus_tree = {
 			focus = new_mordinos
 			focus = new_whitepawn
 		}
+		available = {
+			has_country_leader = { id = 972 }
+		}
 		x = 8
 		y = 4
 		cost = 8.6
 		completion_reward = {
-		
+			add_ideas = salvatores
+			add_political_power = 60
 		}
 
 	}
@@ -254,11 +277,15 @@ focus_tree = {
 			focus = new_salvatores
 			focus = new_mordinos
 		}
+		available = {
+			has_country_leader = { id = 970 }
+		}
 		x = 12
 		y = 4
 		cost = 8.6
 		completion_reward = {
-		
+			add_ideas = bishops
+			add_political_power = 60
 		}
 
 	}
@@ -272,7 +299,16 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
-		
+			create_corps_commander = {
+				name = "Mr Bishop"
+				portrait_path = "gfx/leaders/NEW/Portrait_Bishop.dds"
+				skill = 6
+				traits = {
+					
+				}
+			}
+			
+			add_ideas = bishopbcfour
 		}
 
 	}
@@ -286,7 +322,17 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
-		
+			add_national_unity = 0.05
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
 		}
 
 	}
@@ -300,7 +346,7 @@ focus_tree = {
 		y = 7
 		cost = 8.6
 		completion_reward = {
-		
+			add_ideas = thequeen
 		}
 
 	}
@@ -316,11 +362,15 @@ focus_tree = {
 			focus = new_salvatores
 			focus = new_whitepawn
 		}
+		available = {
+			has_country_leader = { id = 973 }
+		}
 		x = 14
 		y = 4
 		cost = 8.6
 		completion_reward = {
-		
+			add_ideas = mordinos
+			add_political_power = 60
 		}
 
 	}
@@ -334,7 +384,7 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
-		
+			add_ideas = empireofaddiction
 		}
 
 	}
@@ -348,7 +398,7 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
-		
+			add_ideas = myronlegacy
 		}
 
 	}
@@ -362,7 +412,8 @@ focus_tree = {
 		y = 7
 		cost = 8.6
 		completion_reward = {
-		
+			add_research_slot = 1
+			add_ideas = jetbeta
 		}
 
 	}
@@ -370,13 +421,26 @@ focus_tree = {
 		id = new_allroads
 		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = {
-			focus = new_deal
+			focus = new_renodeal
 		}
 		x = 20
 		y = 3
 		cost = 8.6
 		completion_reward = {
-		
+			285 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			295 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
 		}
 
 	}
@@ -390,7 +454,14 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
-		
+			285 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 
 	}
@@ -404,7 +475,7 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
-		
+			add_national_unity = 0.05
 		}
 
 	}
@@ -418,7 +489,14 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
-		
+			285 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 
 	}
@@ -432,7 +510,14 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
-		
+			285 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 
 	}
@@ -446,7 +531,14 @@ focus_tree = {
 		y = 7
 		cost = 8.6
 		completion_reward = {
-		
+			285 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 
 	}
@@ -460,7 +552,16 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
-		
+			285 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					province = {
+						all_provinces = yes
+					}
+					instant_build = yes
+				}
+			}
 		}
 
 	}
@@ -474,7 +575,13 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
-		
+			285 = {
+				add_building_construction = {
+					type = radar_station
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 
 	}
@@ -488,7 +595,7 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
-		
+			add_ideas = sweatshop
 		}
 
 	}
@@ -502,7 +609,7 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
-		
+			add_ideas = modoc
 		}
 
 	}
@@ -516,7 +623,13 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
-		
+			285 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 
 	}
@@ -530,7 +643,7 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
-		
+			add_ideas = contracts
 		}
 
 	}
@@ -544,7 +657,15 @@ focus_tree = {
 		y = 7
 		cost = 8.6
 		completion_reward = {
-		
+			285 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+
 		}
 
 	}
@@ -562,7 +683,7 @@ focus_tree = {
 		y = 8
 		cost = 8.6
 		completion_reward = {
-		
+			add_manpower = 1500
 		}
 
 	}
@@ -576,7 +697,7 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
-		
+			add_ideas = modocslaves
 		}
 
 	}
@@ -590,7 +711,7 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
-		
+			load_oob = oldbirds
 		}
 
 	}
@@ -604,7 +725,7 @@ focus_tree = {
 		y = 7
 		cost = 8.6
 		completion_reward = {
-		
+			add_ideas = golgotharestored
 		}
 
 	}
@@ -618,7 +739,7 @@ focus_tree = {
 		y = 8
 		cost = 8.6
 		completion_reward = {
-		
+			add_research_slot = 1
 		}
 
 	}
@@ -626,13 +747,13 @@ focus_tree = {
 		id = new_mercmilitary
 		icon = GFX_goal_generic_land_doctrines_focus
 		prerequisite = {
-			focus = new_deal
+			focus = new_renodeal
 		}
 		x = 31
 		y = 3
 		cost = 8.6
 		completion_reward = {
-		
+			army_experience = 20
 		}
 
 	}
@@ -646,7 +767,12 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
-		
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
 		}
 
 	}
@@ -661,11 +787,25 @@ focus_tree = {
 			focus = new_granite
 			focus = new_artillery
 		}
+		available = {
+			has_country_leader = { id = 970 }
+		}
 		x = 26
 		y = 5
 		cost = 8.6
 		completion_reward = {
-		
+			create_corps_commander = {
+				name = "Colonel Jalabert"
+				portrait_path = "gfx/leaders/Settler/Portrait_Settler_Generic_13.dds"
+				skill = 3
+				traits = {
+					
+				}
+			}
+			
+			load_oob = roaringbears
+			
+			add_ideas = roaringbears
 		}
 
 	}
@@ -680,11 +820,25 @@ focus_tree = {
 			focus = new_granite
 			focus = new_roaring
 		}
+		available = {
+			has_country_leader = { id = 973 }
+		}
 		x = 28
 		y = 5
 		cost = 8.6
 		completion_reward = {
-		
+			create_corps_commander = {
+				name = "Tobias Halvorsen"
+				portrait_path = "gfx/leaders/Settler/Portrait_Settler_Generic_4.dds"
+				skill = 2
+				traits = {
+					
+				}
+			}
+			
+			load_oob = hellhammers
+			
+			add_ideas = hellhammers
 		}
 
 	}
@@ -699,11 +853,25 @@ focus_tree = {
 			focus = new_roaring
 			focus = new_artillery
 		}
+		available = {
+			has_country_leader = { id = 971 }
+		}
 		x = 28
 		y = 6
 		cost = 8.6
 		completion_reward = {
-		
+			create_corps_commander = {
+				name = "Thradd"
+				portrait_path = "gfx/leaders/NEW/Portrait_Thradd.dds"
+				skill = 3
+				traits = {
+					
+				}
+			}
+			
+			load_oob = thraddimmortals
+			
+			add_ideas = thraddimmortals
 		}
 
 	}
@@ -717,7 +885,7 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
-		
+			add_ideas = capsforloyalty
 		}
 
 	}
@@ -731,7 +899,7 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
-		
+			add_ideas = renomilitarycouncil
 		}
 
 	}
@@ -741,6 +909,9 @@ focus_tree = {
 		prerequisite = {
 			focus = new_councilfunding
 		}
+		available = {
+			has_completed_focus = new_sanctuary
+		}
 		mutually_exclusive = {
 			focus = new_mutanttech
 		}
@@ -748,7 +919,7 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
-		
+			add_ideas = enclavetechnician
 		}
 	}
 	focus = {
@@ -757,6 +928,9 @@ focus_tree = {
 		prerequisite = {
 			focus = new_councilfunding
 		}
+		available = {
+			has_completed_focus = new_sanctuary
+		}
 		mutually_exclusive = {
 			focus = new_enctech
 		}
@@ -764,7 +938,7 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
-		
+			add_ideas = mutanttact
 		}
 	}
 	focus = {
@@ -777,7 +951,7 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
-		
+			add_ideas = genericmercs
 		}
 
 	}
@@ -794,7 +968,18 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
-		
+			create_corps_commander = {
+				name = "Runs-With-Hatred"
+				portrait_path = "gfx/leaders/Tribal/Portrait_Tribal_Generic_10.dds"
+				skill = 2
+				traits = {
+					
+				}
+			}
+
+			load_oob = vengefulsons
+			
+			add_ideas = vengefulsons
 		}
 
 	}
@@ -811,7 +996,25 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
-		
+			create_corps_commander = {
+				name = "Pablo"
+				portrait_path = "gfx/leaders/COW/Portrait_COW_Leader.dds"
+				skill = 2
+				traits = {
+					
+				}
+			}
+			
+			load_oob = pabloconquistadors
+			
+			add_ideas = pabloconquistadors
+			
+			add_tech_bonus = {
+				name = ballistic_bonus
+				bonus = 0.5
+				uses = 1
+				category = ballistic_weaponry_tech
+			}
 		}
 
 	}
@@ -829,208 +1032,25 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
-		
-		}
-
-	}
-	focus = {
-		id = new_oldallies
-		icon = GFX_goal_bos_forbidden_secrets
-		prerequisite = {
-			focus = new_bloodynight
-		}
-		x = 8
-		y = 7
-		cost = 8.6
-		completion_reward = {
-		
-		}
-
-	}
-	focus = {
-		id = new_stash
-		icon = GFX_goal_generic_common_energy_weapons_focus
-		prerequisite = {
-			focus = new_salvatores
-		}
-		x = 8
-		y = 5
-		cost = 8.6
-		completion_reward = {
-		
-		}
-
-	}
-	focus = {
-		id = new_bloodynight
-		icon = GFX_goal_generic_communcation_focus
-		prerequisite = {
-			focus = new_stash
-		}
-		x = 8
-		y = 6
-		cost = 8.6
-		completion_reward = {
-		
-		}
-
-	}
-	focus = {
-		id = new_hedge
-		icon = GFX_goal_generic_walls_focus
-		prerequisite = {
-			focus = new_spoils
-		}
-		x = 4
-		y = 6
-		cost = 8.6
-		completion_reward = {
-		
-		}
-
-	}
-	focus = {
-		id = new_hordes
-		icon = GFX_goal_generic_bunkers_focus
-		prerequisite = {
-			focus = new_slavery
-		}
-		x = 2
-		y = 6
-		cost = 8.6
-		completion_reward = {
-		
-		}
-
-	}
-	focus = {
-		id = new_klamathdeal
-		icon = GFX_goal_generic_generic_diplomatic_focus
-		prerequisite = {
-			focus = new_expansionism
-		}
-		x = 3
-		y = 7
-		cost = 8.6
-		completion_reward = {
-		
-		}
-
-	}
-	focus = {
-		id = new_klamathagreements
-		icon = GFX_goal_generic_intelligence_exchange
-		prerequisite = {
-			focus = new_klamathdeal
-		}
-		x = 4
-		y = 8
-		cost = 8.6
-		completion_reward = {
-		
-		}
-
-	}
-	focus = {
-		id = new_takedown
-		icon = GFX_goal_generic_major_war
-		prerequisite = {
-			focus = new_klamathdeal
-		}
-		x = 2
-		y = 8
-		cost = 8.6
-		completion_reward = {
-		
-		}
-
-	}
-	focus = {
-		id = new_township
-		icon = GFX_focus_generic_self_management
-		prerequisite = {
-			focus = new_takedown
-		}
-		x = 2
-		y = 9
-		cost = 8.6
-		completion_reward = {
-		
-		}
-
-	}
-	focus = {
-		id = new_debtwarriors
-		icon = GFX_focus_generic_little_entente
-		prerequisite = {
-			focus = new_klamathagreements
-		}
-		x = 4
-		y = 9
-		cost = 8.6
-		completion_reward = {
-		
-		}
-
-	}
-	focus = {
-		id = new_addictsworks
-		icon = GFX_goal_generic_construction2
-		prerequisite = {
-			focus = new_desperado
-		}
-		x = 16
-		y = 6
-		cost = 8.6
-		completion_reward = {
-		
-		}
-
-	}
-	focus = {
-		id = new_rail
-		icon = GFX_goal_generic_construct_infrastructure
-		prerequisite = {
-			focus = new_distillery
-		}
-		x = 16
-		y = 7
-		cost = 8.6
-		completion_reward = {
-		
-		}
-
-	}
-	focus = {
-		id = new_silverrush
-		icon = GFX_goal_generic_advanced_technology_focus
-		prerequisite = {
-			focus = new_expansion
-		}
-		x = 16
-		y = 8
-		cost = 8.6
-		completion_reward = {
-		
-		}
-
-	}
-	focus = {
-		id = new_granite
-		icon = GFX_goal_bos_forbidden_secrets
-		prerequisite = {
-			focus = new_uniques
-		}
-		mutually_exclusive = {
-			focus = new_thradd
-			focus = new_roaring
-			focus = new_artillery
-		}
-		x = 26
-		y = 6
-		cost = 8.6
-		completion_reward = {
-		
+			create_corps_commander = {
+				name = "Pit Master Frazz"
+				portrait_path = "gfx/leaders/Raider/Portrait_Raider_Generic_8.dds"
+				skill = 2
+				traits = {
+					
+				}
+			}
+			
+			load_oob = junkcitygladiators
+			
+			add_ideas = junkcitygladiators
+			
+			add_tech_bonus = {
+				name = robotic_bonus
+				bonus = 0.5
+				uses = 1
+				category = robotics_tech
+			}
 		}
 
 	}
@@ -1048,7 +1068,401 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
-		
+			create_corps_commander = {
+				name = "Warcrying Todd"
+				portrait_path = "gfx/leaders/Raider/Portrait_Raider_Generic_10.dds"
+				skill = 2
+				traits = {
+					
+				}
+			}
+			
+			load_oob = roadpsychos
+			
+			add_ideas = roadpsychos
+			
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.5
+				uses = 1
+				category = vehicle_tech
+			}
+		}
+
+	}
+	focus = {
+		id = new_oldallies
+		icon = GFX_goal_bos_forbidden_secrets
+		prerequisite = {
+			focus = new_bloodynight
+		}
+		x = 8
+		y = 7
+		cost = 8.6
+		completion_reward = {
+			hidden_effect = {
+				set_technology = { power_armour_enclave1 = 1 }
+				set_technology = { vertiberd_gunship = 1 }
+				set_technology = { vertiberd_transport1 = 1 }
+			}
+			295 = {
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			load_oob = oldallies
+		}
+
+	}
+	focus = {
+		id = new_stash
+		icon = GFX_goal_generic_common_energy_weapons_focus
+		prerequisite = {
+			focus = new_salvatores
+		}
+		x = 8
+		y = 5
+		cost = 8.6
+		completion_reward = {
+			add_ideas = oldstash
+			add_equipment_to_stockpile = {
+				type = energy_equipment_2 
+				amount = 200 
+				producer = NEW
+			}
+		}
+
+	}
+	focus = {
+		id = new_bloodynight
+		icon = GFX_goal_generic_communcation_focus
+		prerequisite = {
+			focus = new_stash
+		}
+		x = 8
+		y = 6
+		cost = 8.6
+		completion_reward = {
+			add_national_unity = 0.1
+			add_popularity = {
+				ideology = people
+				popularity = -0.2
+			}
+		}
+
+	}
+	focus = {
+		id = new_hedge
+		icon = GFX_goal_generic_walls_focus
+		prerequisite = {
+			focus = new_spoils
+		}
+		x = 4
+		y = 6
+		cost = 8.6
+		completion_reward = {
+			159 = {
+				add_building_construction = {
+					type = bunker 
+					level = 2
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+					instant_build = yes
+				}
+			}
+			614 = {
+				add_building_construction = {
+					type = bunker 
+					level = 2
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+					instant_build = yes
+				}
+			}
+			160 = {
+				add_building_construction = {
+					type = bunker 
+					level = 2
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = new_hordes
+		icon = GFX_goal_generic_bunkers_focus
+		prerequisite = {
+			focus = new_slavery
+		}
+		x = 2
+		y = 6
+		cost = 8.6
+		completion_reward = {
+			126 = {
+				add_building_construction = {
+					type = bunker 
+					level = 1
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+					instant_build = yes
+				}
+			}
+			382 = {
+				add_building_construction = {
+					type = bunker 
+					level = 1
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+					instant_build = yes
+				}
+			}
+			585 = {
+				add_building_construction = {
+					type = bunker 
+					level = 1
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+					instant_build = yes
+				}
+			}
+			263 = {
+				add_building_construction = {
+					type = bunker 
+					level = 1
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = new_klamathdeal
+		icon = GFX_goal_generic_generic_diplomatic_focus
+		prerequisite = {
+			focus = new_expansionism
+		}
+		x = 3
+		y = 7
+		cost = 8.6
+		completion_reward = {
+			add_political_power = 80
+			add_opinion_modifier = { modifier = klamethdeal target = KLA }
+			reverse_add_opinion_modifier = { modifier = klamethdeal target = KLA }
+		}
+
+	}
+	focus = {
+		id = new_klamathagreements
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = {
+			focus = new_klamathdeal
+		}
+		x = 4
+		y = 8
+		cost = 8.6
+		completion_reward = {
+			if = {
+				limit = {
+					KLA = {
+						is_ai = yes
+					}
+				}
+				puppet = KLA
+				KLA = {
+					57 = {
+						add_building_construction = {
+							type = arms_factory
+							level = 3
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = industrial_complex
+							level = 3
+							instant_build = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					KLA = {
+						is_ai = no
+					}
+				}
+				KLA = { 
+					country_event = { id = nf_reno.8 }
+				}
+			}
+
+		}
+	}
+	focus = {
+		id = new_takedown
+		icon = GFX_goal_generic_major_war
+		prerequisite = {
+			focus = new_klamathdeal
+		}
+		x = 2
+		y = 8
+		cost = 8.6
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = KLA
+			}
+		}
+
+	}
+	focus = {
+		id = new_township
+		icon = GFX_focus_generic_self_management
+		prerequisite = {
+			focus = new_takedown
+		}
+		x = 2
+		y = 9
+		cost = 8.6
+		completion_reward = {
+			add_state_core = 57
+			add_state_core = 59
+			add_state_core = 454
+		}
+
+	}
+	focus = {
+		id = new_debtwarriors
+		icon = GFX_focus_generic_little_entente
+		prerequisite = {
+			focus = new_klamathagreements
+		}
+		available = {
+			KLA = {
+				is_puppet_of = NEW
+			}
+		}
+		x = 4
+		y = 9
+		cost = 8.6
+		completion_reward = {
+			add_ideas = debtwarriorsreno
+			KLA = {
+				add_ideas = debtwarriorsklameth
+			}
+		}
+
+	}
+	focus = {
+		id = new_addictsworks
+		icon = GFX_goal_generic_construction2
+		prerequisite = {
+			focus = new_desperado
+		}
+		x = 16
+		y = 6
+		cost = 8.6
+		completion_reward = {
+			add_ideas = addictswork
+		}
+
+	}
+	focus = {
+		id = new_rail
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = {
+			focus = new_distillery
+		}
+		x = 16
+		y = 7
+		cost = 8.6
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_owned_by = NEW
+					region = 12
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = new_silverrush
+		icon = GFX_goal_generic_advanced_technology_focus
+		prerequisite = {
+			focus = new_expansion
+		}
+		x = 16
+		y = 8
+		cost = 8.6
+		completion_reward = {
+			285 = {
+				add_resource = {
+					type = advanced_technology
+					amount = 10
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = new_granite
+		icon = GFX_goal_bos_forbidden_secrets
+		prerequisite = {
+			focus = new_uniques
+		}
+		mutually_exclusive = {
+			focus = new_thradd
+			focus = new_roaring
+			focus = new_artillery
+		}
+		available = {
+			has_country_leader = { id = 972 }
+		}
+		x = 26
+		y = 6
+		cost = 8.6
+		completion_reward = {
+			create_corps_commander = {
+				name = "Sgt. Granite"
+				portrait_path = "gfx/leaders/ENC/Portrait_Enclave_Generic.dds"
+				skill = 4
+				traits = {
+					
+				}
+			}
+			
+			hidden_effect = {
+				set_technology = { power_armour_enclave1 = 1 }
+			}
+			
+			load_oob = granitecompany
+			
+			add_ideas = granitecompany
 		}
 
 	}

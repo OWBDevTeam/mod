@@ -175,9 +175,6 @@ country_event = {
 		has_completed_focus = new_sanctuary
 	}
 	
-	
-	
-	
 	immediate = {
 		THR = {
 			create_country_leader = {
@@ -228,4 +225,183 @@ country_event = {
 		}
 	}
 
+}
+
+country_event = {
+	id = nf_reno.5
+	title = nf_reno.5.t
+	desc = nf_reno.5.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_reno.5.a
+        
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 300 producer = NEW }
+		
+		add_ideas = chopshop
+		
+		285 = {
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+	
+	option = {
+		name = nf_reno.5.b
+        
+		add_national_unity = 0.05
+		
+		285 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+	
+	option = {
+		name = nf_reno.5.c
+        
+		add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 300 producer = NEW }
+		
+		285 = {
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = nf_reno.6
+	title = nf_reno.6.t
+	desc = nf_reno.6.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_reno.6.a
+        
+		add_ideas = deal1
+	}
+	
+	option = {
+		name = nf_reno.6.b
+        
+		add_ideas = deal2
+	}
+	
+	option = {
+		name = nf_reno.6.a
+        
+		add_ideas = deal3
+	}
+	
+	
+}
+
+country_event = {
+	id = nf_reno.7
+	title = nf_reno.7.t
+	desc = nf_reno.7.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_reno.7.a
+        ai_will_do = {
+			factor = 2
+		}
+		
+		
+		set_politics = {
+			ruling_party = elites
+			elections_allowed = no
+		}
+	}
+	
+	option = {
+		name = nf_reno.7.b
+        
+		ai_will_do = {
+			factor = 2
+		}
+		
+		set_politics = {
+			ruling_party = intellectuals
+			elections_allowed = no
+		}
+	}
+	
+	option = {
+		name = nf_reno.7.c
+        
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 100
+			}
+		}
+		
+	}
+	
+	option = {
+		name = nf_reno.7.d
+        
+		ai_will_do = {
+			factor = 1
+		}
+		
+		set_politics = {
+			ruling_party = ruler
+			elections_allowed = no
+		}
+	}
+	
+	
+}
+
+country_event = {
+	id = nf_reno.8
+	title = nf_reno.8.t
+	desc = nf_reno.8.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_reno.8.a
+		NEW = {
+			puppet = KLA
+		}
+		57 = {
+			add_building_construction = {
+				type = arms_factory
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+		}
+	}
+	
+	option = {
+		name = nf_reno.8.b
+		
+	}
+	
 }

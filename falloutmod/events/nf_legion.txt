@@ -188,86 +188,56 @@ country_event = {
         
         kill_country_leader = yes
 		
-		if = {
-			limit = {
-				NOT = {
-					has_completed_focus = ces_the_burned_man
-				}
-			}
+		create_country_leader  = {
+			name = "Lanius"
+			desc = "Lanius_DESC"
+			picture = "Portrait_Lanius.dds"
+			expire = "3000.1.1"
+			ideology = warlordship
+			id = 996
 			
-			create_country_leader  = {
-				name = "Malpais Legate"
-				desc = "Graham_DESC"
-				picture = "Portrait_Malpais.dds"
-				expire = "3000.1.1"
-				ideology = benevolent_dictatorship
-				id = 996
-				
-				traits = {
-					warmonger
-				}
+			traits = {
+				cruel_tyrant
+				warmonger
 			}
-				
 		}
-		
-		if = {
-			limit = {
-				has_completed_focus = ces_the_burned_man
-			}
-					
-			create_country_leader  = {
-				name = "Lanius"
-				desc = "Lanius_DESC"
-				picture = "Portrait_Lanius.dds"
-				expire = "3000.1.1"
-				ideology = warlordship
-				id = 996
-				
-				traits = {
-					cruel_tyrant
-					warmonger
-				}
-			}
 			
-			declare_war_on = {
+		declare_war_on = {
 			target = CSI
 			type = civil_war
 		}
 			
-			CSI = {
-			
-				set_politics = {
-					ruling_party = elites
-				}
-			
-				create_country_leader  = {
-					name = "Vulpes Inculta"
-					desc = "Inculta_DESC"
-					picture = "Portrait_Inculta.dds"
-					expire = "3000.1.1"
-					ideology = feudalism
-					id = 997
-					
-					traits = {
-						cruel_tyrant
-					}
-				}
+		CSI = {
 		
-				every_state = {
-					limit = {
-						is_arizona_state = yes
-						is_owned_by = CES
-						
-					}
-					CSI = {
-						transfer_state = PREV
-					}
-				}
-			
+			set_politics = {
+				ruling_party = elites
 			}
-			
-		}
 		
+			create_country_leader  = {
+				name = "Vulpes Inculta"
+				desc = "Inculta_DESC"
+				picture = "Portrait_Inculta.dds"
+				expire = "3000.1.1"
+				ideology = feudalism
+				id = 997
+				
+				traits = {
+					cruel_tyrant
+				}
+			}
+	
+			every_state = {
+				limit = {
+					is_arizona_state = yes
+					is_owned_by = CES
+					
+				}
+				CSI = {
+					transfer_state = PREV
+				}
+			}
+		
+		}	
         
 	}
 	
@@ -298,69 +268,33 @@ country_event = {
 			type = civil_war
 		}
 		
-		CSI = {
-			
-			if = {
-				limit = {
-					NOT = {
-						CES = {
-							has_completed_focus = ces_the_burned_man
-						}
-					}
-				}
+		CSI = {					
+			create_country_leader  = {
+				name = "Lanius"
+				desc = "Lanius_DESC"
+				picture = "Portrait_Lanius.dds"
+				expire = "3000.1.1"
+				ideology = warlordship
+				id = 996
 				
-				create_country_leader  = {
-					name = "Malpais Legate"
-					desc = "Graham_DESC"
-					picture = "Portrait_Malpais.dds"
-					expire = "3000.1.1"
-					ideology = benevolent_dictatorship
-					id = 996
-					
-					traits = {
-						warmonger
-					}
+				traits = {
+					cruel_tyrant
+					warmonger
 				}
-					
 			}
 			
-			if = {
+			every_state = {
 				limit = {
-					CES = {
-						has_completed_focus = ces_the_burned_man
+					OR = {
+						is_new_mexico_state = yes
+						is_colorado_state = yes
 					}
+					is_owned_by = CES
 				}
-						
-				create_country_leader  = {
-					name = "Lanius"
-					desc = "Lanius_DESC"
-					picture = "Portrait_Lanius.dds"
-					expire = "3000.1.1"
-					ideology = warlordship
-					id = 996
-					
-					traits = {
-						cruel_tyrant
-						warmonger
-					}
+				CSI = {
+					transfer_state = PREV
 				}
-				
-				every_state = {
-					limit = {
-						OR = {
-							is_new_mexico_state = yes
-							is_colorado_state = yes
-						}
-						is_owned_by = CES
-					}
-					CSI = {
-						transfer_state = PREV
-					}
-				}
-				
 			}
-			
-			
 			
 		}
         
@@ -393,7 +327,66 @@ country_event = {
 	option = {
 		name = nf_legion.6.option.a
         
-        add_political_power = 100
+		CSI = {
+			create_country_leader  = {
+				name = "Lucius"
+				desc = "Lucius_DESC"
+				picture = "Portrait_Lucius.dds"
+				expire = "3000.1.1"
+				ideology = benevolent_dictatorship
+				id = 995
+				
+				traits = {
+				}
+			}
+			
+			set_research_slots = 4
+			set_politics = {
+				parties = {
+					people = { popularity = 0 }
+					elites = { popularity = 20 }
+					intellectuals = { popularity = 30 }
+					ruler = { popularity = 50 }
+				}
+				ruling_party = ruler
+				elections_allowed = no
+			}
+			
+			set_cosmetic_tag = BOM
+			
+			set_capital = 359	
+			
+			transfer_state = 359
+			transfer_state = 553
+			transfer_state = 49
+			
+			if = {
+				limit = {
+					252 = {
+						is_owned_by = CES
+					}
+				}
+				
+				transfer_state = 252
+			}
+			
+			
+			declare_war_on = {
+				target = CES
+				type = civil_war
+			}
+			
+			hidden_effect = {
+				set_technology = {
+					powered_weaponry = 1
+					scientific_civilization = 1
+					improved_laser_weaponry = 1
+					power_armour = 1
+					securitron_tech = 1
+				}
+				load_oob = brotherhoodofmars
+			}
+		}
 	}
     
     option = {
@@ -539,6 +532,7 @@ country_event = {
             name = "Malpais Legate"
             portrait_path = "gfx/leaders/CES/Portrait_Malpais.dds"
             skill = 5
+			id = 983
             traits = {
                 urban_assault_specialist
             }
@@ -555,6 +549,7 @@ country_event = {
             name = "Malpais Legate"
             portrait_path = "gfx/leaders/CES/Portrait_Malpais.dds"
             skill = 5
+			id = 983
             traits = {
                 desert_fox
                 trickster
@@ -572,6 +567,7 @@ country_event = {
             name = "Malpais Legate"
             portrait_path = "gfx/leaders/CES/Portrait_Malpais.dds"
             skill = 5
+			id = 983
             traits = {
                 desert_fox
             }
@@ -671,52 +667,52 @@ country_event = {	#Legion lost
 	
 	}
 	
-	option = {
-		name = nf_legion.11.b #Return to Tribes/ Balkanize
-		
-		
-		every_state = {
-			limit = {
-				is_core_of = TWI
-			}
-			TWI = {
-				transfer_state = PREV
-			}
-		}
-		every_state = {
-			limit = {
-				is_core_of = HAN
-			}
-			HAN = {
-				transfer_state = PREV
-			}
-		}
-		every_state = {
-			limit = {
-				is_core_of = TWO
-			}
-			TWO = {
-				transfer_state = PREV
-			}
-		}
-		every_state = {
-			limit = {
-				is_core_of = TTM
-			}
-			TTM = {
-				transfer_state = PREV
-			}
-		}
-		every_state = {
-			limit = {
-				is_core_of = COW
-			}
-			COW = {
-				transfer_state = PREV
-			}
-		}
-		
-	}
+	#option = {
+	#	name = nf_legion.11.b #Return to Tribes/ Balkanize
+	#	
+	#	
+	#	every_state = {
+	#		limit = {
+	#			is_core_of = TWI
+	#		}
+	#		TWI = {
+	#			transfer_state = PREV
+	#		}
+	#	}
+	#	every_state = {
+	#		limit = {
+	#			is_core_of = HAN
+	#		}
+	#		HAN = {
+	#			transfer_state = PREV
+	#		}
+	#	}
+	#	every_state = {
+	#		limit = {
+	#			is_core_of = TWO
+	#		}
+	#		TWO = {
+	#			transfer_state = PREV
+	#		}
+	#	}
+	#	every_state = {
+	#		limit = {
+	#			is_core_of = TTM
+	#		}
+	#		TTM = {
+	#			transfer_state = PREV
+	#		}
+	#	}
+	#	every_state = {
+	#		limit = {
+	#			is_core_of = COW
+	#		}
+	#		COW = {
+	#			transfer_state = PREV
+	#		}
+	#	}
+	#	
+	#}
 	
 	option = {
 		name = nf_legion.11.c #Take it all for yourself
