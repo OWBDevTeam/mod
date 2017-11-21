@@ -526,7 +526,6 @@ infantry_generic = {
 				medical_chem_company = 1
 				explosive_company = 1
 				anti_tank_company = 1
-				motorized_support = 1
 			}
 			
 			regiments = {
@@ -723,8 +722,8 @@ mechanized_generic = {
 		}
 		
 		target_template = {
-			weight = 1.0
-			match_value = 1.0
+			weight = 0.9
+			match_value = 1000
 			
 			support = {
 				anti_tank_company = 1
@@ -748,6 +747,7 @@ mechanized_generic = {
 			signal_company
 			anti_tank_company
 			anti_personnel_brigade
+			anti_personnel_company
 		}
 		replace_at_match = 0.4
 		replace_with = motorized_mechanized_mix
@@ -824,10 +824,11 @@ mechanized_generic = {
 			logistics_company
 			anti_tank_company
 			anti_personnel_brigade
+			
 		}
-		replace_at_match = 0.4
+		replace_at_match = 0.7
 		replace_with = mechanized_default
-		target_min_match = 0.5
+		target_min_match = 0.6
 	}
 	mechanized_default = {
 		reinforce_prio = 2

@@ -1,16 +1,43 @@
-NCR_production = {
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+# contain
+# area_priority
+NCR_unit_production = {
 	enable = {
-		tag = NCR
+		original_tag = NCR
 	}
+	abort = {
+		always = no
+	}
+
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
-		value = 75
+		value = 70
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 8 #30 to 8
 	}
 	ai_strategy = {
 		type = role_ratio
 		id = mechanized
-		value = 25
+		value = 20
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 10
 	}
 		ai_strategy = {
 		type = unit_ratio
@@ -35,16 +62,6 @@ NCR_production = {
 		value = 15
 	}
 	ai_strategy = {
-		type = template_prio
-		id = mechanized
-		value = 50
-	}
-	ai_strategy = {
-		type = template_prio
-		id = infantry
-		value = 50
-	}
-	ai_strategy = {
 		type = unit_ratio
 		id = fighter
 		value = 70
@@ -54,4 +71,88 @@ NCR_production = {
 		id = fighter
 		value = 20
 	}
+}
+
+NCR_anti_armor = {
+	enable = {
+		original_tag = NCR
+		ai_wants_divisions > 5 #Decreasing the amount of motorized the AI wants
+		
+		any_enemy_country = {
+			ROOT = {
+				estimated_intel_max_armor = {
+					tag = PREV
+					value > 25
+				}
+			}
+		}
+	}
+	abort = {
+		ai_wants_divisions < 6 #Decreasing the amount of motorized the AI wants
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = anti_armor
+		value = 15
+	}
+}
+
+NCR_armored_production = {
+	enable = {
+		original_tag = NCR
+		ai_wants_divisions > 24 #Decreasing the amount of tanks the AI wants
+	}
+	abort = {
+		ai_wants_divisions < 25 #Decreasing the amount of tanks the AI wants
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 5
+	}
+}
+
+NCR_highered_armored_production = {
+	enable = {
+		original_tag = NCR
+		num_of_military_factories > 109
+	}
+	abort = {
+		num_of_military_factories < 110
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 10
+	}
+}
+
+NCR_template_design = {
+	enable = {
+		original_tag = NCR			
+	}
+	abort = { 
+		always = no
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = robot
+		value = 20
+	}
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = 50
+	}
+	ai_strategy = {
+		type = template_prio
+		id = mechanized
+		value = 30
+	}
+
+
 }
