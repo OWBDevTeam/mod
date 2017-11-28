@@ -60,7 +60,7 @@ NDefines.NDiplomacy.DIPLOMACY_ACCEPT_VOLUNTEERS_BASE = 400	-- Base value of volu
 NDefines.NMilitary.EXPERIENCE_LOSS_FACTOR = 4.0  
 NDefines.NMilitary.FIELD_EXPERIENCE_SCALE = 0.008
 -- research
-NDefines.NTechnology.BASE_YEAR_AHEAD_PENALTY_FACTOR = 1.25		-- Base year ahead penalty
+NDefines.NTechnology.BASE_YEAR_AHEAD_PENALTY_FACTOR = 1.35		-- Base year ahead penalty
 NDefines.NAI.RESEARCH_DAYS_BETWEEN_WEIGHT_UPDATE = 7 	-- Refreshes need scores based on country situation.
 NDefines.NAI.RESEARCH_LAND_DOCTRINE_NEED_GAIN_FACTOR = 0.15 -- Multiplies value based on relative military industry size / country size.
 NDefines.NAI.RESEARCH_NAVAL_DOCTRINE_NEED_GAIN_FACTOR = 0.05 -- Multiplies value based on relative naval industry size / country size.
@@ -71,3 +71,6 @@ NDefines.NAI.RESEARCH_BONUS_FACTOR = 0.9 				-- To which extent AI should care a
 NDefines.NAI.MAX_AHEAD_RESEARCH_PENALTY = 3             -- max ahead of tiem penalty ai will pick ever
 NDefines.NAI.RESEARCH_AHEAD_OF_TIME_FACTOR = 2.3 		-- To which extent AI should care about ahead of time penalties to research
 NDefines.NAI.RESEARCH_BASE_DAYS = 60					-- AI adds a base number of days when weighting completion time for techs to ensure it doesn't only research quick techs
+
+-- production
+NDefines.NProduction.MIN_POSSIBLE_TRAINING_MANPOWER = 3700 -- minimum amount of units able to be trained

@@ -83,17 +83,33 @@ default_unit_production = {
 	}
 }
 
-ai_army_building_300 = { # Please Stop Building Units
+stop_building_infantry = { # Please Stop Building Units
 	enable = {
-		NOT = {ai_wants_divisions < 300}
-		NOT = {has_army_size = { size < 300 }}
-		has_war = no
-		num_of_factories > 99
+		OR = {
+			AND = {
+				NOT = {ai_wants_divisions < 300}
+				NOT = {has_army_size = { size < 300 }}
+				#has_war = no
+				num_of_factories > 99
+			}
+			AND = {
+				has_army_size = { size > 10 }
+				NOT = {ai_wants_divisions < 10 }
+				NOT = { has_manpower > 500 }
+			}
+		}
 	}	
 	abort = { 
 		OR = {
-			has_army_size = { size < 300 }
-			NOT = {num_of_factories > 99}
+			AND = {
+				has_army_size = { size < 300 }
+				NOT = {num_of_factories > 99}
+				has_manpower > 500
+			}
+			AND = {
+				has_army_size = { size < 8 }
+				ai_wants_divisions < 10
+			}
 		}
 	}
 	ai_strategy = { 
@@ -104,6 +120,16 @@ ai_army_building_300 = { # Please Stop Building Units
 	ai_strategy = { 
 		type = unit_ratio
 		id = infantry
+		value = -70		
+	}
+	ai_strategy = { 
+		type = build_army 
+		id = garrison
+		value = 0		
+	}
+	ai_strategy = { 
+		type = unit_ratio
+		id = garrison
 		value = 0		
 	}
 }
