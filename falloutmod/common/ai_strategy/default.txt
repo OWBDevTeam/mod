@@ -83,6 +83,30 @@ default_unit_production = {
 	}
 }
 
+ai_army_building_300 = { # Please Stop Building Units
+	enable = {
+		NOT = {ai_wants_divisions < 300}
+		NOT = {has_army_size = { size < 300 }}
+		has_war = no
+		num_of_factories > 99
+	}	
+	abort = { 
+		OR = {
+			has_army_size = { size < 300 }
+			NOT = {num_of_factories > 99}
+		}
+	}
+	ai_strategy = { 
+		type = build_army 
+		id = infantry
+		value = 0		
+	}
+	ai_strategy = { 
+		type = unit_ratio
+		id = infantry
+		value = 0		
+	}
+}
 DEFAULT_template_design = {
 	enable = {
 		always = yes		
