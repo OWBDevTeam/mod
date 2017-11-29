@@ -76,5 +76,5 @@ NDefines.NAI.RESEARCH_BASE_DAYS = 60					-- AI adds a base number of days when w
 NDefines.NProduction.MIN_POSSIBLE_TRAINING_MANPOWER = 3700 -- minimum amount of units able to be trained
 
 
-NDefines.NAI.UPGRADE_DIVISION_RELUCTANCE = 2000
-NDefines.NAI.UPGRADE_PERCENTAGE_OF_FORCES = 1.0
+NDefines.NAI.UPGRADE_DIVISION_RELUCTANCE = 2000  -- stop randomly upgrading to infantry
+NDefines.NAI.UPGRADE_PERCENTAGE_OF_FORCES = 0.1
