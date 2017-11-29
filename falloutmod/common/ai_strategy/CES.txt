@@ -1,0 +1,15 @@
+CES_invade_NCR = {
+	enable = {
+		tag = CES
+
+	OR = {
+		has_war_with = NCR
+		}
+	}
+	abort = {
+		always = no
+	}
+
+	ai_strategy = { type = area_priority        id = south_california 			  value = 2000 }
+	ai_strategy = { type = invade               id = "NCR" 					  value = 5000 }
+}
