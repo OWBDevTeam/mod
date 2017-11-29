@@ -121,7 +121,7 @@ robot_generic = {
 		}
 	}
 	
-	match_to_count = 0.5
+	match_to_count = 0.8
 
 	light_robot_default = {
 		upgrade_prio = {
@@ -360,7 +360,7 @@ robot_generic = {
 			anti_tank_company
 		}
 		
-		replace_at_match = 0.8
+		replace_at_match = 0.4
 		replace_with = heavy_robot_default
 		target_min_match = 0.5
 	}
@@ -379,7 +379,7 @@ infantry_generic = {
 		}
 	}
 	
-	match_to_count = 0.10
+	match_to_count = 0.5
 	
 	infantry_default_1 = {
         reinforce_prio = 1
@@ -448,7 +448,6 @@ infantry_generic = {
 		
 		allowed_types = {
 			infantry
-			militia
 			medical_chem_company 
 			defensive_chem_company
 			explosive_company
@@ -536,7 +535,6 @@ infantry_generic = {
 		
 		allowed_types = {
 			infantry
-			militia
 			medical_chem_company 
 			defensive_chem_company
 			explosive_company
@@ -549,9 +547,6 @@ infantry_generic = {
 			anti_tank_company
 			anti_personnel_brigade
 		}
-		#replace_at_match = 0.4
-		#replace_with = wasteland_infantry_default
-		#target_min_match = 0.5
 	}
 }
 power_armour_generic = {
@@ -670,6 +665,7 @@ mechanized_generic = {
 				factor = 1
 			}
 		}
+	match_to_count = 0.8
 	motorized_default = {
 		upgrade_prio = {
 			factor = 1
@@ -723,7 +719,7 @@ mechanized_generic = {
 		
 		target_template = {
 			weight = 0.9
-			match_value = 1000
+			match_value = 3000
 			
 			support = {
 				anti_tank_company = 1
