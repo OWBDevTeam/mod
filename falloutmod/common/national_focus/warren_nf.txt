@@ -1,0 +1,1076 @@
+focus_tree = {
+	id = warren_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = TRL
+		}
+	}
+	default = no
+	focus = {
+		id = firstholotape
+		icon = GFX_goal_unknown
+		cost = 1.00
+		x = 13
+		y = 0
+		completion_reward = {
+			country_event = nf.warren.1
+		}
+	}
+	focus = {
+		id = secholotape
+		icon = GFX_goal_unknown
+		cost = 1.00
+		prerequisite = {
+			focus = firstholotape
+		}
+		x = 13
+		y = 1
+		completion_reward = {
+			country_event = nf.warren.2
+		}
+	}
+	focus = {
+		id = thirdholotape
+		icon = GFX_goal_unknown
+		cost = 1.00
+		prerequisite = {
+			focus = secholotape
+		}
+		x = 13
+		y = 2
+		completion_reward = {
+			country_event = nf.warren.3
+		}	
+	}
+	focus = {
+		id = fourthholotape
+		icon = GFX_goal_unknown
+		cost = 1.00
+		prerequisite = {
+			focus = thirdholotape
+		}
+		x = 13
+		y = 3
+		completion_reward = {
+			country_event = nf.warren.4
+		}
+	}
+	focus = {
+		id = warrenstirs
+		icon = GFX_goal_unknown
+		cost = 1.00
+		prerequisite = {
+			focus = fourthholotape
+		}
+		x = 6
+		y = 5
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
+	focus = {
+		id = memories_of_ages
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = fourthholotape
+		}
+		x = 18
+		y = 5
+		
+	}
+	focus = {
+		id = weaponsfuture
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = memories_of_ages
+		}
+		mutually_exclusive = {
+			focus = weaponspast
+		}
+		x = 14
+		y = 6
+
+	}
+	focus = {
+		id = weaponspast
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = memories_of_ages
+		}
+		mutually_exclusive = {
+			focus = weaponsfuture
+		}
+		x = 12
+		y = 6
+
+	}
+	focus = {
+		id = tribalzappa
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = weaponsfuture
+		}
+		x = 14
+		y = 7
+
+	}
+	focus = {
+		id = morezappa
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = tribalzappa
+		}
+		x = 14
+		y = 8
+
+	}
+	focus = {
+		id = morezappa
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = tribalzappa
+		}
+		x = 14
+		y = 9
+
+	}
+	focus = {
+		id = guardianwild
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = memories_of_ages
+		}
+		x = 17
+		y = 6
+
+	}
+	focus = {
+		id = warriorswild
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = memories_of_ages
+		}
+		x = 19
+		y = 6
+
+	}
+	focus = {
+		id = baneofman
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = guardianwild
+		}
+		prerequisite = {
+			focus = warriorswild
+		}
+		x = 18
+		y = 7
+
+	}
+	focus = {
+		id = realmsofgoliath
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = baneofman
+		}
+		x = 18
+		y = 8
+
+	}
+	focus = {
+		id = callofgiants
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = realmsofgoliath
+		}
+		mutually_exclusive = {
+			focus = callofhorde
+		}
+		x = 17
+		y = 9
+
+	}
+	focus = {
+		id = trollsofthewarren
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = callofgiants
+		}
+		x = 16
+		y = 10
+
+	}
+	focus = {
+		id = callofhorde
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = realmsofgoliath
+		}
+		mutually_exclusive = {
+			focus = callofgiants
+		}
+		x = 19
+		y = 9
+
+	}
+	focus = {
+		id = callofthefirst
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = callofgiants
+			focus = callofhorde
+		}
+		x = 18
+		y = 10
+
+	}
+	focus = {
+		id = sonsofman
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = callofhorde
+		}
+		x = 20
+		y = 10
+
+	}
+	focus = {
+		id = riverexpedition
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = memories_of_ages
+		}
+		x = 23
+		y = 6
+
+	}
+	focus = {
+		id = mutantwarship
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = riverexpedition
+		}
+		x = 22
+		y = 7
+
+	}
+	focus = {
+		id = amassingfleet
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = mutantwarship
+		}
+		x = 22
+		y = 8
+
+	}
+	focus = {
+		id = mutantcanoe
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = riverexpedition
+		}
+		x = 24
+		y = 7
+
+	}
+	focus = {
+		id = raidingculture
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = mutantcanoe
+		}
+		x = 24
+		y = 8
+
+	}
+	focus = {
+		id = rivergiants
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = amassingfleet
+		}
+		prerequisite = {
+			focus = raidingculture
+		}
+		x = 23
+		y = 9
+
+	}
+	focus = {
+		id = slavesunworthy
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = fourthholotape
+		}
+		x = 32
+		y = 5
+
+	}
+	focus = {
+		id = forceddigging
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = slavesunworthy
+		}
+		x = 31
+		y = 6
+
+	}
+	focus = {
+		id = expandingslavelabour
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = forceddigging
+		}
+		x = 29
+		y = 7
+
+	}
+	focus = {
+		id = slavemutanthouse
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = expandingslavelabour
+		}
+		x = 27
+		y = 8
+
+	}
+	focus = {
+		id = unwillinggatherers
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = forceddigging
+		}
+		x = 31
+		y = 7
+
+	}
+	focus = {
+		id = mutantlabor
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = slavesunworthy
+		}
+		x = 32
+		y = 8
+
+	}
+	focus = {
+		id = militarizedlabour
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = mutantlabor
+		}
+		x = 32
+		y = 9
+
+	}
+	focus = {
+		id = readyforwar
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = slavesunworthy
+		}
+		x = 33
+		y = 6
+
+	}
+	focus = {
+		id = stockpiledweapons
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = readyforwar
+		}
+		x = 33
+		y = 7
+
+	}
+	focus = {
+		id = rewardsofvictory
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = readyforwar
+		}
+		x = 35
+		y = 7
+
+	}
+	focus = {
+		id = gloriouscity
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = rewardsofvictory
+		}
+		x = 35
+		y = 8
+
+	}
+	focus = {
+		id = defendingthewarren
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = rewardsofvictory
+		}
+		x = 37
+		y = 8
+
+	}
+	focus = {
+		id = oregonline
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = defendingthewarren
+		}
+		x = 37
+		y = 9
+
+	}
+	focus = {
+		id = willwarchief
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = fourthholotape
+		}
+		x = 46
+		y = 5
+
+	}
+	focus = {
+		id = pittmancunning
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = willwarchief
+		}
+		x = 42
+		y = 6
+
+	}
+	focus = {
+		id = nightkinmigration
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = pittmancunning
+		}
+		x = 42
+		y = 7
+
+	}
+	focus = {
+		id = southernpush
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = nightkinmigration
+		}
+		x = 42
+		y = 8
+
+	}
+	focus = {
+		id = vengeancemaster
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = southernpush
+		}
+		x = 41
+		y = 9
+
+	}
+	focus = {
+		id = redriver
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = southernpush
+		}
+		x = 43
+		y = 9
+
+	}
+	focus = {
+		id = mariposareborn
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = vengeancemaster
+		}
+		prerequisite = {
+			focus = redriver
+		}
+		x = 42
+		y = 10
+
+	}
+	focus = {
+		id = bonesnarlloyalty
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = willwarchief
+		}
+		x = 46
+		y = 6
+
+	}
+	focus = {
+		id = cannibalmutants
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = bonesnarlloyalty
+		}
+		x = 46
+		y = 7
+
+	}
+	focus = {
+		id = preparingthewarren
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = cannibalmutants
+		}
+		x = 46
+		y = 8
+
+	}
+	focus = {
+		id = developingslavesmines
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = preparingthewarren
+		}
+		x = 45
+		y = 9
+
+	}
+	focus = {
+		id = ritualscarring
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = preparingthewarren
+		}
+		x = 47
+		y = 9
+
+	}
+	focus = {
+		id = eatersman
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = developingslavesmines
+		}
+		prerequisite = {
+			focus = ritualscarring
+		}
+		x = 46
+		y = 10
+
+	}
+	focus = {
+		id = bettysmight
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = willwarchief
+		}
+		x = 50
+		y = 6
+
+	}
+	focus = {
+		id = armorrepurposing
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = bettysmight
+		}
+		x = 50
+		y = 7
+
+	}
+	focus = {
+		id = causeoftrouble
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = armorrepurposing
+		}
+		x = 50
+		y = 8
+
+	}
+	focus = {
+		id = mutantshocktactics
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = causeoftrouble
+		}
+		x = 49
+		y = 9
+
+	}
+	focus = {
+		id = mounthawk
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = causeoftrouble
+		}
+		x = 51
+		y = 9
+
+	}
+	focus = {
+		id = brotherhoodmutants
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = mutantshocktactics
+		}
+		prerequisite = {
+			focus = mounthawk
+		}
+		x = 50
+		y = 10
+
+	}
+	focus = {
+		id = drumswest
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = warrenstirs
+		}
+		x = 6
+		y = 6
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = RBT
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = MDT
+			}
+		}
+	}
+	focus = {
+		id = breakingribs
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = drumswest
+		}
+		x = 5
+		y = 7
+		completion_reward = {
+			add_state_core = 587
+			add_state_core = 506
+			add_state_core = 450
+			add_state_core = 448
+			add_state_core = 490
+		}
+	}
+	focus = {
+		id = drinking_marrow
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = drumswest
+		}
+		x = 7
+		y = 7
+		completion_reward = {
+			add_state_core = 268
+			add_state_core = 113
+			add_state_core = 231
+			add_state_core = 467
+		}
+	}
+	focus = {
+		id = forced_mutation
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = breakingribs
+		}
+		prerequisite = {
+			focus = drinking_marrow
+		}
+		x = 6
+		y = 8
+		completion_reward = {
+			load_oob = warren_forced
+		}
+	}
+	focus = {
+		id = williamette
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = breakingribs
+		}
+		x = 4
+		y = 8
+		
+	}
+	focus = {
+		id = broken_tribes
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = drinking_marrow
+		}
+		x = 8
+		y = 8
+
+	}
+	focus = {
+		id = fromtheruins
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = williamette
+		}
+		x = 4
+		y = 9
+
+	}
+	focus = {
+		id = pinnaclepoint
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = broken_tribes
+		}
+		x = 8
+		y = 9
+
+	}
+	focus = {
+		id = warhornswest
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = forced_mutation
+		}
+		x = 6
+		y = 9
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything 
+				target = BPT
+			}
+			create_wargoal = {
+				type = annex_everything 
+				target = CHE
+			}
+		}
+	}
+	focus = {
+		id = pickingbones
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = warhornswest
+		}
+		x = 5
+		y = 10
+
+	}
+	focus = {
+		id = takinghomes
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = warhornswest
+		}
+		x = 7
+		y = 10
+
+	}
+	focus = {
+		id = forcedmut2
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = pickingbones
+		}
+		prerequisite = {
+			focus = takinghomes
+		}
+		x = 6
+		y = 11
+
+	}
+	focus = {
+		id = oldroad
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = pickingbones
+		}
+		x = 4
+		y = 11
+
+	}
+	focus = {
+		id = armory
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = takinghomes
+		}
+		x = 8
+		y = 11
+
+	}
+	focus = {
+		id = greattribes
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = forcedmut2
+		}
+		x = 6
+		y = 12
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything 
+				target = BDT
+			}
+			create_wargoal = {
+				type = annex_everything 
+				target = MLT
+			}
+		}
+	}
+	focus = {
+		id = oldguns
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = armory
+		}
+		x = 8
+		y = 12
+
+	}
+	focus = {
+		id = bone_picks
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = oldroad
+		}
+		x = 4
+		y = 12
+		completion_reward = {	
+			add_ideas = bonepicks
+		}
+	}
+	focus = {
+		id = overrun
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = greattribes
+		}
+		x = 5
+		y = 13
+		
+	}
+	focus = {
+		id = dancingbones
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = greattribes
+		}
+		x = 7
+		y = 13
+		
+	}
+	focus = {
+		id = forcedmute3
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = overrun
+		}
+		prerequisite = {
+			focus = dancingbones
+		}
+		x = 6
+		y = 14
+
+	}
+	focus = {
+		id = bountifulcoast
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = overrun
+		}
+		x = 4
+		y = 14
+
+	}
+	focus = {
+		id = worthyfoe
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = dancingbones
+		}
+		x = 8
+		y = 14
+
+	}
+	focus = {
+		id = mirelurkconverts
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = bountifulcoast
+		}
+		x = 4
+		y = 15
+
+	}
+	focus = {
+		id = monsterwoods
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = forcedmute3
+		}
+		x = 6
+		y = 15
+
+	}
+	focus = {
+		id = greatherd
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = worthyfoe
+		}
+		x = 8
+		y = 15
+
+	}
+	focus = {
+		id = tribaldakka
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = weaponspast
+		}
+		x = 12
+		y = 7
+
+	}
+	focus = {
+		id = moredakka
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = tribaldakka
+		}
+		x = 12
+		y = 8
+
+	}
+	focus = {
+		id = betterdakka
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = moredakka
+		}
+		x = 12
+		y = 9
+
+	}
+	focus = {
+		id = goliath
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = rivergiants
+		}
+		x = 23
+		y = 10
+
+	}
+	focus = {
+		id = forcedroads
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = expandingslavelabour
+		}
+		x = 29
+		y = 8
+
+	}
+	focus = {
+		id = slaveworkshop
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = slavemutanthouse
+		}
+		x = 27
+		y = 9
+
+	}
+}
