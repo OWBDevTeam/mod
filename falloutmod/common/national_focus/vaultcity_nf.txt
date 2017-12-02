@@ -1087,21 +1087,6 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = vault_cyclops_eager
-		icon = GFX_goal_vault_cyclops
-		cost = 8.0
-		prerequisite = {
-			focus = vault_cyclops
-		}
-		mutually_exclusive = {
-			focus = vault_cyclops_serve
-		}
-		x = -1
-		y = 1
-		relative_position_id = vault_cyclops
-
-	}
-	focus = {
 		id = vault_cyclops_serv
 		icon = GFX_goal_vault_cyclops
 		cost = 8.0
@@ -1116,6 +1101,21 @@ focus_tree = {
 			add_state_core = 567
 			add_state_core = 73
 		}
+	}
+	focus = {
+		id = vault_cyclops_eager
+		icon = GFX_goal_vault_cyclops
+		cost = 8.0
+		prerequisite = {
+			focus = vault_cyclops
+		}
+		mutually_exclusive = {
+			focus = vault_cyclops_serve
+		}
+		x = -1
+		y = 1
+		relative_position_id = vault_cyclops
+
 	}
 	focus = {
 		id = vault_flock_goggles
