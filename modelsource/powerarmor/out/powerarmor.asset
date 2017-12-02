@@ -1,0 +1,27 @@
+entity = {
+	name = "BOS_infantry_entity"
+	pdxmesh = "powerarmor_t51_mesh"
+	
+	default_state = "idle"
+	state = { name = "attack"			}
+	state = { name = "attack"			 }
+	state = { name = "defend"			 }
+	state = { name = "support_attack"	}
+	state = { name = "move"				animation = "move" 		 		animation_blend_time = 0.0 animation_speed = 1.0}
+
+	state = { name = "retreat"		 }
+	state = { name = "death"		}
+	state = { name = "idle"			 }
+
+	state = { name = "training"	 }
+
+	attach = { 	name = "rifle1"	Right_Hand_node = "FRA_infantry_weapon_rifle_right_entity" }	
+	attach = { 	name = "rifle2"	Left_Hand_node = "FRA_infantry_weapon_rifle_left_entity" }	
+	attach = { 	name = "rifle3"	Root = "FRA_infantry_weapon_rifle_right_entity" }
+				
+}
+
+animation = {
+	name = "fo4_t51_move_animation"
+	file = "fo4_t51_move.amin"
+}
