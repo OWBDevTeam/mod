@@ -78,3 +78,6 @@ NDefines.NProduction.MIN_POSSIBLE_TRAINING_MANPOWER = 3700 -- minimum amount of 
 
 NDefines.NAI.UPGRADE_DIVISION_RELUCTANCE = 2000  -- stop randomly upgrading to infantry
 NDefines.NAI.UPGRADE_PERCENTAGE_OF_FORCES = 0.1
+
+--NNavy
+NDefines.NNavy.NAVAL_INVASION_PREPARE_HOURS = 64								-- base hours needed to prepare an invasion
