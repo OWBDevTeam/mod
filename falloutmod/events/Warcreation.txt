@@ -69,9 +69,18 @@ country_event = {
 				limit = {
 					any_neighbor_state = {
 						is_owned_by = ROOT
+						AND = {
+							OR = {
+								free_building_slots = { building = industrial_complex size > 0 include_locked = no }
+								dockyard > 0
+								industrial_complex > 0
+								arms_factory > 0
+							
+							}
+						}
 					}
+					add_claim_by = ROOT
 				}
-			add_claim_by = ROOT
 			}
 		}
 	}
