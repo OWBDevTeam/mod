@@ -170,3 +170,90 @@ NCR_invade_CES = {
 
 	ai_strategy = { type = invade               id = "CES" 					  value = 5000 }
 }
+
+NCR_ignore_northern_minors = { #don't sit around in the north when more important stuff is happening
+	enable = {
+		tag = NCR
+		has_war_with = CES
+	}
+	abort = {
+		NOT = { has_war_with = CES }
+	}
+	ai_strategy = {
+		type = ignore
+		id = "KLA"
+		value = 500
+	}
+	ai_strategy = {
+		type = ignore
+		id = "DES"
+		value = 500
+	}
+	ai_strategy = {
+		type = ignore
+		id = "SKY"
+		value = 500
+	}
+	ai_strategy = {
+		type = ignore
+		id = "NBM"
+		value = 500
+	}
+	ai_strategy = {
+		type = ignore
+		id = "YKZ"
+		value = 500
+	}
+	ai_strategy = {
+		type = ignore
+		id = "NEW"
+		value = 500
+	}
+}
+
+NCR_prepare_for_war = {
+	enable = {
+		tag = NCR
+		has_government = democratic
+		is_historical_focus_on = yes
+		NOT = { 
+			NCR = { has_capitulated = yes }
+			NCR = { exists = no }
+			NCR = { is_puppet = yes }
+		}
+		NOT = { CES = { has_war_with = NCR } }
+		NOT = { 
+			CES = { has_capitulated = yes }
+			CES = { exists = no }
+			CES = { is_puppet = yes }
+			is_in_faction_with = CES
+		}
+		
+		NOT = { surrender_progress > 0 }
+	}
+	abort = {
+		OR = { 
+			CES = { has_capitulated = yes }
+			CES = { exists = no }
+			CES = { is_puppet = yes }
+			is_in_faction_with = CES
+			has_war_with = CES
+			NCR = { has_capitulated = yes }
+			NCR = { exists = no }
+			NCR = { is_puppet = yes }
+			
+			surrender_progress > 0
+		}
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = "CES"
+		value = 100
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "CES"
+		value = 500
+	}
+}

@@ -1,0 +1,26 @@
+last_date = "2280.1.1"
+
+tests = {
+	CES_has_invaded_NCR = {
+         success = {
+             date > "2270.1.1"
+             date < "1980.1.1"
+             NCR = { any_owned_state = { is_controlled_by = CES } }
+         }
+
+         fail = {
+             date > "1980.1.1"
+         }
+    }
+	NCR_has_invaded_CES = {
+         success = {
+             date > "2270.1.1"
+             date < "1980.1.1"
+             CES = { any_owned_state = { is_controlled_by = NCR } }
+         }
+
+         fail = {
+             date > "1980.1.1"
+         }
+    }
+}
