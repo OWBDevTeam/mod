@@ -160,10 +160,26 @@ NCR_invade_CES = {
 
 		OR = {
 			has_war_with = CES
+			is_justifying_wargoal_against = CES
+			has_wargoal_against = CES
+			CES = {
+				is_justifying_wargoal_against = NCR
+				has_wargoal_against = NCR
+			}
 		}
 	}
 	abort = {
-		always = no
+		OR = { 
+			CES = { has_capitulated = yes }
+			CES = { exists = no }
+			CES = { is_puppet = yes }
+			is_in_faction_with = CES
+			NCR = { has_capitulated = yes }
+			NCR = { exists = no }
+			NCR = { is_puppet = yes }
+			
+			surrender_progress > 0.5
+		}
 	}
 
 	ai_strategy = { type = area_priority        id = arizona_sonora 			  value = 2000 }
