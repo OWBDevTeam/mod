@@ -44,7 +44,14 @@ CES_invade_NCR = {
 CES_ignore_northern_minors = { #don't sit around in the north when more important stuff is happening
 	enable = {
 		tag = CES
-		has_war_with = NCR
+		OR = {
+			has_war_with = NCR
+			NCR = { 
+				is_justifying_wargoal_against = CES
+				has_wargoal_against = CES
+			}
+		}
+
 	}
 	abort = {
 		NOT = { has_war_with = NCR }
