@@ -5,19 +5,21 @@ NDefines.NAI.GENERATE_WARGOAL_THREAT_BASELINE = 0.0
 NDefines.NAI.DIPLOMACY_SEND_MAX_FACTION = 0.5
 NDefines.NDiplomacy.TENSION_TIME_SCALE_START_DATE = "2275.1.1.12"	-- Starting at this date, the tension values will be scaled down (will be equal to 1 before that)
 
+-- NCountry
+NDefines.NCountry.ARMY_SCORE_MULTIPLIER = 0.15					-- Based on number of armies.
 -- AI battleplans
 NDefines.NAI.FALLBACK_LOSING_FACTOR = 0.0 					                    -- The lower this number  the longer the AI will hold the line before sending them to the fallback line
-NDefines.NAI.PLAN_FACTION_STRONG_TO_EXECUTE = 0.65 --0.80	0.60		        -- % or more of units in an order to consider ececuting the plan
-NDefines.NAI.ORG_UNIT_STRONG = 2 --0.5	 --0.75		0.9				            -- Organization % for unit to be considered strong
-NDefines.NAI.STR_UNIT_STRONG = 0.65 --0.9 --0.7		0.75					    -- Strength (equipment) % for unit to be considered strong
+NDefines.NAI.PLAN_FACTION_STRONG_TO_EXECUTE = 0.65  -- % or more of units in an order to consider ececuting the plan
+NDefines.NAI.ORG_UNIT_STRONG = 0.8 -- Organization % for unit to be considered strong
+NDefines.NAI.STR_UNIT_STRONG = 0.65 -- Strength (equipment) % for unit to be considered strong
 
-NDefines.NAI.PLAN_FACTION_WEAK_TO_ABORT = 0.5 --0.50		0.65		        -- % or more of units in an order to consider executing the plan
-NDefines.NAI.ORG_UNIT_WEAK = 0.45 --0.25 --0.3			0.15					-- Organization % for unit to be considered weak
-NDefines.NAI.STR_UNIT_WEAK = 0.4 --0.6 --0.5			0.1					    -- Strength (equipment) % for unit to be considered weak
+NDefines.NAI.PLAN_FACTION_WEAK_TO_ABORT = 0.5 -- % or more of units in an order to consider executing the plan
+NDefines.NAI.ORG_UNIT_WEAK = 0.45 -- Organization % for unit to be considered weak
+NDefines.NAI.STR_UNIT_WEAK = 0.4 -- Strength (equipment) % for unit to be considered weak
 
 --NDefines.NAI.PLAN_AVG_PREPARATION_TO_EXECUTE = 0.0				            -- % or more average plan preparation before executing
 NDefines.NAI.AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.5			                -- If less than this fraction of units on a front is moving  AI sees it as ready for action	
---NDefines.NAI.PLAN_VALUE_TO_EXECUTE = -1.1                                     -- AI will typically avoid carrying out a plan it below this value (0.0 is considered balanced).
+NDefines.NAI.PLAN_VALUE_TO_EXECUTE = 0.0                                     -- AI will typically avoid carrying out a plan it below this value (0.0 is considered balanced).
 
 --NDefines.NAI.LOCATION_BALANCE_TO_ADVANCE = 0.0				                -- Limit on location strength balance between country and enemy for unit to dare to move forward.
 NDefines.NAI.PLAN_ACTIVATION_MAJOR_WEIGHT_FACTOR = 0.0 		                    -- AI countries will hold on activating plans if stronger countries have plans in the same location. Majors count extra (value of 1 will negate this)
@@ -26,7 +28,10 @@ NDefines.NAI.PLAN_MIN_SIZE_FOR_FALLBACK = 500					                -- A country w
 
 NDefines.NAI.MIN_FIELD_STRENGTH_TO_BUILD_UNITS = 0.7			                -- Cancel unit production if below this to get resources out to units in the field
 NDefines.NAI.MIN_MANPOWER_TO_BUILD_UNITS = 0.7					                -- Cancel unit production if below this to get resources out to units in the field (producing too many units will cause problems)
-NDefines.NAI.PRODUCTION_EQUIPMENT_SURPLUS_FACTOR = 0.5 -- Base value for how much of currently used equipment the AI will at least strive to have in stock
+NDefines.NAI.PRODUCTION_EQUIPMENT_SURPLUS_FACTOR = 0.3 -- Base value for how much of currently used equipment the AI will at least strive to have in stoc
+
+NDefines.NAI.DESIRED_UNITS_FACTOR_AREA_ORDER = 0.25				-- Factor for desired number of units to assign to area defense orders
+NDefines.NAI.MIN_UNITS_FACTOR_AREA_ORDER = 0.25					-- Factor for min number of units to assign to area defense orders
 
 
 NDefines.NAI.DEPLOY_MIN_TRAINING_PEACE_FACTOR = 0.9		                        -- Required percentage of training (1.0 = 100%) for AI to deploy unit in peacetime
@@ -41,10 +46,13 @@ NDefines.NAI.DEPLOY_MIN_EQUIPMENT_WAR_FACTOR = 0.90		-- Required percentage of e
 NDefines.NAI.NEW_LEADER_EXTRA_PP_FACTOR = 5.0
 NDefines.NAI.DIPLOMACY_IMPROVE_RELATION_COST_FACTOR = 7.0                       -- Desire to boost relations subtracts the cost multiplied by this
 NDefines.NAI.TRADEABLE_FACTORIES_FRACTION = 1
-
+-- Naval invasion stuffs
+NDefines.NAI.MAX_UNITS_FACTOR_INVASION_ORDER = 0.5				-- Factor for max number of units to assign to naval invasion orders
+NDefines.NAI.MIN_UNITS_FACTOR_INVASION_ORDER = 0.1		
 ----------------------
 NDefines.NAI.COMBINED_ARMS_LEVEL = 1							-- 0 = Never, 1 = Infantry/Artillery, 2 = Go wild
 NDefines.NAI.MICRO_POCKET_SIZE = 10						-- Pockets with a size equal to or lower than this will be mocroed by the AI, for efficiency.
+NDefines.NAI.MAX_MICRO_ATTACKS_PER_ORDER = 32
 
 -- AI Diplomacy
 NDefines.NAI.FORCE_FACTOR_AGAINST_EXTRA_MINOR = 0.4			-- AI considers generating wargoals against minors below this % of force compared to themselves to get at a bigger enemy.
@@ -57,8 +65,9 @@ NDefines.NAI.FASCISTS_ANTAGONIZE_DEMOCRACIES = 170
 NDefines.NAI.FASCISTS_ANTAGONIZE_COMMUNISTS = 170
 NDefines.NAI.MIN_ANTAGONIZE_FOR_WARGOAL_JUSTIFICATION = -1000	-- AI countries will not fabricate claims against countries with an antagonization value lower than this.
 NDefines.NDiplomacy.DIPLOMACY_ACCEPT_VOLUNTEERS_BASE = 400	-- Base value of volunteer acceptance (help is welcome)
-NDefines.NMilitary.EXPERIENCE_LOSS_FACTOR = 4.0  
-NDefines.NMilitary.FIELD_EXPERIENCE_SCALE = 0.008
+NDefines.NMilitary.EXPERIENCE_LOSS_FACTOR = 4.0  -- Scale to smaller unit sizes
+NDefines.NMilitary.UNIT_EXPERIENCE_SCALE = 1.0
+NDefines.NMilitary.FIELD_EXPERIENCE_SCALE = 0.08 -- Scale to smaller unit sizes
 -- research
 NDefines.NTechnology.BASE_YEAR_AHEAD_PENALTY_FACTOR = 1.35		-- Base year ahead penalty
 NDefines.NAI.RESEARCH_DAYS_BETWEEN_WEIGHT_UPDATE = 7 	-- Refreshes need scores based on country situation.
