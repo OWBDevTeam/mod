@@ -217,13 +217,39 @@ on_actions = {
 		}
 	}
 	#Not run on a specific country.
-	#on_startup = {
-	#	effect = {
-	#		every_country = {
-	#			# Add start event commands here
-	#		}
-	#	}
-	#}
+	on_startup = {
+		#setting initial technologies, these can be found in scripted effects/set_technology_effects: 
+		effect = {
+			#initial tribal technology
+			every_country = {
+				limit = {
+					is_tribal_nation = yes
+				}
+				set_technology_tribal = yes
+			}
+			#initial raider technology
+			every_country = {
+				limit = {
+					is_raider_nation = yes
+				}
+				set_technology_raider = yes
+			}
+			#initial settler technology
+			every_country = {
+				limit = {
+					is_settler_nation = yes
+				}
+				set_technology_settler = yes
+			}
+			#initial generic brotherhood technology
+			every_country = {
+				limit = {
+					is_brotherhood_nation = yes
+				}
+				set_technology_brotherhood = yes
+			}
+		}
+	}
 
 	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
 	on_state_control_changed = {

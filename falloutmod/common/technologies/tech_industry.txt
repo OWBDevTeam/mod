@@ -36,10 +36,11 @@ technologies = {
     # Agarian Industry
     #-------------------------
     organised_tato_farming = {
+		global_building_slots_factor = 0.15
         industrial_capacity_factory = 0.1
-        global_building_slots_factor = 0.5
-        conscription_factor = 0.05
-        equipment_conversion_speed = 0.05
+        line_change_production_efficiency_factor = 0.05
+		production_factory_start_efficiency_factor = 0.05
+        conscription_factor = 0.02
         
         xor = { basic_forges }
         
@@ -60,15 +61,27 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 6
+			modifier = {
+				factor = 0
+				is_researching_technology = basic_forges
+			}
+			modifier = {
+				factor = 0
+				has_tech = basic_forges
+			}
+		}
+		ai_research_weights = {
+			defensive = -1.0
 		}
 	}
     
     brahmin_milking = {
+		global_building_slots_factor = 0.15
         industrial_capacity_factory = 0.1
-        global_building_slots_factor = 0.5
-        conscription_factor = 0.05
-        equipment_conversion_speed = 0.05
+        line_change_production_efficiency_factor = 0.05
+		production_factory_start_efficiency_factor = 0.05
+        conscription_factor = 0.02
         
 		path = {
 			leads_to_tech = sharecropper_farms
@@ -87,15 +100,19 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 6
+		}
+		ai_research_weights = {
+			defensive = -1.0
 		}
 	}
     
     sharecropper_farms = {
-        industrial_capacity_factory = 0.15
-        global_building_slots_factor = 0.1
-        conscription_factor = 0.05
-        equipment_conversion_speed = 0.05
+		global_building_slots_factor = 0.15
+        industrial_capacity_factory = 0.10
+        line_change_production_efficiency_factor = 0.05
+		production_factory_start_efficiency_factor = 0.05
+        conscription_factor = 0.02
         
 		path = {
 			leads_to_tech = brahmin_herding_equipment
@@ -118,15 +135,19 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 6
+		}
+		ai_research_weights = {
+			defensive = -1.0
 		}
 	}
     
     brahmin_herding_equipment = {
-        industrial_capacity_factory = 0.15
-        global_building_slots_factor = 0.15
-        conscription_factor = 0.05
-        equipment_conversion_speed = 0.05
+		global_building_slots_factor = 0.15
+		industrial_capacity_factory = 0.10
+        line_change_production_efficiency_factor = 0.05
+		production_factory_start_efficiency_factor = 0.05
+        conscription_factor = 0.02
         
 		path = {
 			leads_to_tech = mechanized_agriculture
@@ -149,15 +170,19 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 6
+		}
+		ai_research_weights = {
+			defensive = -1.0
 		}
 	}
     
     mechanized_agriculture = {
-        industrial_capacity_factory = 0.2
-        global_building_slots_factor = 0.15
-        conscription_factor = 0.05
-        equipment_conversion_speed = 0.05
+		global_building_slots_factor = 0.15
+		industrial_capacity_factory = 0.2
+        line_change_production_efficiency_factor = 0.05
+		production_factory_start_efficiency_factor = 0.05
+        conscription_factor = 0.02
         
         dependencies = {
             scientific_civilization = 1
@@ -175,7 +200,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 6
+		}
+		ai_research_weights = {
+			defensive = -1.0
 		}
 	}
     
@@ -185,6 +213,8 @@ technologies = {
     basic_forges = {
         industrial_capacity_factory = 0.2
         global_building_slots_factor = 0.2
+		production_factory_max_efficiency_factor = 0.05
+		production_factory_efficiency_gain_factor = -0.05
         equipment_conversion_speed = 0.1
         
         xor = { organised_tato_farming }
@@ -206,13 +236,26 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 6
+			modifier = {
+				factor = 0
+				is_researching_technology = organised_tato_farming
+			}
+			modifier = {
+				factor = 0
+				has_tech = organised_tato_farming
+			}
+		}
+		ai_research_weights = {
+			offensive = -1.0
 		}
 	}
     
     primitive_workshops = {
         industrial_capacity_factory = 0.2
         global_building_slots_factor = 0.2
+		production_factory_max_efficiency_factor = 0.05
+		production_factory_efficiency_gain_factor = -0.05
         equipment_conversion_speed = 0.1
         
 		path = {
@@ -232,13 +275,18 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
+		}
+		ai_research_weights = {
+			offensive = -1.0
 		}
 	}
     
     wasteland_workshops = {
-        industrial_capacity_factory = 0.25
-        global_building_slots_factor = 0.25
+        industrial_capacity_factory = 0.2
+        global_building_slots_factor = 0.2
+		production_factory_max_efficiency_factor = 0.05
+		production_factory_efficiency_gain_factor = -0.05
         equipment_conversion_speed = 0.1
         
 		path = {
@@ -262,13 +310,18 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
+		}
+		ai_research_weights = {
+			offensive = -1.0
 		}
 	}
     
     pneumatic_presses = {
-        industrial_capacity_factory = 0.25
-        global_building_slots_factor = 0.25
+        industrial_capacity_factory = 0.2
+        global_building_slots_factor = 0.2
+		production_factory_max_efficiency_factor = 0.05
+		production_factory_efficiency_gain_factor = -0.05
         equipment_conversion_speed = 0.1
         
 		path = {
@@ -292,13 +345,18 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
+		}
+		ai_research_weights = {
+			offensive = -1.0
 		}
 	}
     
     automated_production = {
-        industrial_capacity_factory = 0.3
-        global_building_slots_factor = 0.3
+        industrial_capacity_factory = 0.2
+        global_building_slots_factor = 0.2
+		production_factory_max_efficiency_factor = 0.05
+		production_factory_efficiency_gain_factor = -0.05
         equipment_conversion_speed = 0.1
         
         dependencies = {
@@ -317,7 +375,10 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
+		}
+		ai_research_weights = {
+			offensive = -1.0
 		}
 	}
     
@@ -325,9 +386,8 @@ technologies = {
     # Organisation
     #-------------------------
     oral_instruction = {
-        production_factory_max_efficiency_factor = 0.1
-        production_factory_efficiency_gain_factor = 0.1
-        
+		production_factory_max_efficiency_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.05
 		path = {
 			leads_to_tech = traditional_instruction
 			research_cost_coeff = 1
@@ -345,13 +405,13 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
     traditional_instruction = {
-        production_factory_max_efficiency_factor = 0.1
-        production_factory_efficiency_gain_factor = 0.1
+ 		production_factory_max_efficiency_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.05
         
 		path = {
 			leads_to_tech = physical_blueprints
@@ -370,13 +430,13 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
     physical_blueprints = {
-        production_factory_max_efficiency_factor = 0.1
-        production_factory_efficiency_gain_factor = 0.1
+		production_factory_max_efficiency_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.05
    
 		path = {
 			leads_to_tech = electronic_blueprints
@@ -399,13 +459,13 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
     electronic_blueprints = {
-        production_factory_max_efficiency_factor = 0.1
-        production_factory_efficiency_gain_factor = 0.1
+		production_factory_max_efficiency_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.05
         
 		path = {
 			leads_to_tech = robotic_helpers
@@ -428,13 +488,13 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
     robotic_helpers = {
-        production_factory_max_efficiency_factor = 0.1
-        production_factory_efficiency_gain_factor = 0.1
+		production_factory_max_efficiency_factor = 0.08
+		production_factory_efficiency_gain_factor = 0.08
         
         dependencies = {
             scientific_civilization = 1
@@ -452,7 +512,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
@@ -474,7 +534,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
@@ -493,7 +553,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
@@ -516,7 +576,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
@@ -539,7 +599,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
@@ -562,7 +622,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
@@ -599,7 +659,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
@@ -633,7 +693,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
@@ -671,7 +731,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
@@ -709,7 +769,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
@@ -743,7 +803,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
@@ -753,8 +813,9 @@ technologies = {
     tribal_huts = {
         MONTHLY_POPULATION = 0.03
         conversion_cost_mil_to_civ_factor = -0.1
+		conversion_cost_civ_to_mil_factor = -0.1
 
-		research_cost = 1.4
+		research_cost = 1.0
 		start_year = 2275
 		folder = {
 			name = fallout_industry_folder
@@ -766,15 +827,15 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
     adobe_housing = {
         MONTHLY_POPULATION = 0.03
         conversion_cost_mil_to_civ_factor = -0.1
-        
-		research_cost = 1.4
+        conversion_cost_civ_to_mil_factor = -0.1
+		research_cost = 1.0
 		start_year = 2278
 		folder = {
 			name = fallout_industry_folder
@@ -786,19 +847,20 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
     metal_shacks = {
         MONTHLY_POPULATION = 0.03
         conversion_cost_mil_to_civ_factor = -0.1
+		conversion_cost_civ_to_mil_factor = -0.1
         
         dependencies = {
             settled_civilization = 1
         }
         
-		research_cost = 1.4
+		research_cost = 1.0
 		start_year = 2281
 		folder = {
 			name = fallout_industry_folder
@@ -810,19 +872,19 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
     brick_housing = {
         MONTHLY_POPULATION = 0.03
         conversion_cost_mil_to_civ_factor = -0.1
-        
+        conversion_cost_civ_to_mil_factor = -0.1
         dependencies = {
             settled_civilization = 1
         }
         
-		research_cost = 1.4
+		research_cost = 1.0
 		start_year = 2285
 		folder = {
 			name = fallout_industry_folder
@@ -834,19 +896,20 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
     
     pre_war_housing = {
         MONTHLY_POPULATION = 0.03
         conversion_cost_mil_to_civ_factor = -0.1
+		conversion_cost_civ_to_mil_factor = -0.1
         
         dependencies = {
             scientific_civilization = 1
         }
         
-		research_cost = 1.4
+		research_cost = 1.0
 		start_year = 2290
 		folder = {
 			name = fallout_industry_folder
@@ -858,7 +921,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 4
 		}
 	}
 
