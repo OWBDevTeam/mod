@@ -332,13 +332,6 @@ country_event = {
 				}
 			}
 		}
-	    NCR = {
-			NOT = {
-				any_owned_state = {
-					is_border_conflict = yes
-				}
-			}
-		}
 		#has_opinion_modifier = hostile_status
 			OR = {
 				# Route 95 and Nelson
@@ -583,7 +576,7 @@ country_event = {
 					limit = {
 						is_border_conflict = yes
 					}
-					NCR = { set_state_owner = PREV }
+					NCR = { transfer_state = PREV }
 					set_border_war = no
 				}
 			}
