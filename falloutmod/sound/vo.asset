@@ -13,6 +13,11 @@ category =
 	NCR_infantry_positive_combat
 	NCR_infantry_retreat
 	NCR_infantry_move_out
+	DES_infantry_idle
+	DES_infantry_neutral_combat
+	DES_infantry_positive_combat
+	DES_infantry_retreat
+	DES_infantry_move_out
 	VEG_infantry_idle
 	VEG_infantry_neutral_combat
 	VEG_infantry_positive_combat
@@ -132,6 +137,7 @@ soundeffect =
 		sound = nc_Neutral_006
 		sound = nc_Neutral_007
 		sound = nc_Neutral_008
+		sound = nc_Neutral_009
     }
 	max_audible = 1
 	max_audible_behaviour = fail
@@ -162,6 +168,95 @@ soundeffect =
 soundeffect = 
 {
     name = "NCR_infantry_retreat"
+    sounds = {
+	sound = nc_Retreat_001
+	sound = nc_Retreat_002
+	sound = nc_Retreat_003
+	sound = nc_Retreat_004
+	sound = nc_Retreat_005
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.45
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "NCR_infantry_move_out"
+    sounds = {
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.45
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+##### DES
+soundeffect = 
+{
+    name = "DES_infantry_idle"
+    sounds = {
+		sound = nc_Idle_001
+        sound = nc_Idle_002
+        sound = nc_Idle_003
+		sound = nc_Idle_004
+		sound = nc_Idle_005
+		sound = nc_Idle_006
+		sound = nc_Idle_007
+		sound = nc_Idle_008
+		sound = nc_Idle_009
+		sound = nc_Idle_010
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.45
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15 }
+}
+soundeffect = 
+{
+    name = "DES_infantry_neutral_combat"
+    sounds = {
+        sound = nc_Neutral_001
+        sound = nc_Neutral_002
+		sound = nc_Neutral_003
+		sound = nc_Neutral_004
+		sound = nc_Neutral_005
+		sound = nc_Neutral_006
+		sound = nc_Neutral_007
+		sound = nc_Neutral_008
+		sound = nc_Neutral_009
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.45
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "DES_infantry_positive_combat"
+    sounds = {
+        sound = nc_Positive_001
+		sound = nc_Positive_002
+		sound = nc_Positive_003
+		sound = nc_Positive_004
+		sound = nc_Positive_005
+		sound = nc_Positive_006
+		sound = nc_Positive_007
+		sound = nc_Positive_008
+		sound = nc_Positive_009
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.45
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "DES_infantry_retreat"
     sounds = {
 	sound = nc_Retreat_001
 	sound = nc_Retreat_002
