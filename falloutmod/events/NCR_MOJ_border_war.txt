@@ -6,7 +6,7 @@ country_event = {
 	desc = NCR_MOJ_border_war.1.d
 	picture = GFX_report_event_NCR_soldiers_fighting
 
-	fire_only_once = yes
+	fire_only_once = no
 
 	mean_time_to_happen = {
 		days = 15
@@ -59,12 +59,12 @@ country_event = {
 				50 = {
 					country_event = { id = NCR_MOJ_border_war.4 days = 1 }
 					add_political_power = 100
-					add_manpower = -100
+					add_manpower = -50
 				}
 				50 = {
 					country_event = { id = NCR_MOJ_border_war.5 days = 1 }
 					add_political_power = -50
-					add_manpower = -2500
+					add_manpower = -100
 				}
 			}
 			custom_effect_tooltip = NCR_MOJ_border_war.1.tt_2
@@ -87,12 +87,12 @@ country_event = {
 				30 = {
 					country_event = { id = NCR_MOJ_border_war.4 days = 1 }
 					add_political_power = 50
-					add_manpower = -100
+					add_manpower = -700
 				}
 				70 = {
 					country_event = { id = NCR_MOJ_border_war.5 days = 1 }
 					add_political_power = -25
-					add_manpower = -250
+					add_manpower = -150
 				}
 			}
 			custom_effect_tooltip = NCR_MOJ_border_war.1.tt_2
@@ -124,7 +124,7 @@ country_event = {
 				50 = {
 					country_event = { id = NCR_MOJ_border_war.6 }
 					add_political_power = -75
-					add_manpower = -2500
+					add_manpower = -1000
 				}
 				50 = {
 					country_event = { id = NCR_MOJ_border_war.7 }
@@ -321,31 +321,61 @@ country_event = {
 	desc = NCR_MOJ_border_war.8.d
 	picture = GFX_report_event_NCR_soldiers_fighting
 	
-	fire_only_once = yes
+	fire_only_once = no
 
 	trigger = {
 		has_country_flag = MOJ_offensive_executed
 		#has_opinion_modifier = hostile_status
-		MOJ = {
 			OR = {
-				divisions_in_state = {
-					state = 562
-					size > 0
+				# Route 95 and Nelson
+				AND = {
+					MOJ = {
+						has_full_control_of_state = 137
+					}
+					NCR = {
+						divisions_in_state = {
+							state = 533
+							size > 0
+						}
+					}
 				}
-				divisions_in_state = {
-					state = 573
-					size > 0
+				# Helios One and Route 95
+				AND = {
+					MOJ = {
+						has_full_control_of_state = 417
+					}
+					NCR = {
+						divisions_in_state = {
+							state = 137
+							size > 0
+						}
+					}
 				}
-				divisions_in_state = {
-					state = 417
-					size > 0
+				# Goodsprings and Sloan
+				AND = {
+					MOJ = {
+						has_full_control_of_state = 562
+					}
+					NCR = {
+						divisions_in_state = {
+							state = 552
+							size > 0
+						}
+					}
 				}
-				divisions_in_state = {	
-					state = 137	
-					size > 0	
-				}	
+				# Sloan and Black Mountain
+				AND = {
+					MOJ = {
+						has_full_control_of_state = 573
+					}
+					NCR = {
+						divisions_in_state = {
+							state = 562
+							size > 0
+						}
+					}
+				}
 			}
-		}	
 	}	
 	
 	mean_time_to_happen = {	
@@ -362,32 +392,78 @@ country_event = {
 		name = NCR_MOJ_border_war.8.a
 		if = {
 			limit = {
-				divisions_in_state = {
-					state = 562
-					size > 0
+				# Route 95 and Nelson
+				AND = {
+					MOJ = {
+						has_full_control_of_state = 137
+					}
+					NCR = {
+						divisions_in_state = {
+							state = 533
+							size > 0
+						}
+					}
+				}
+			}
+			533 = { set_border_war = yes }
+			137 = { set_border_war = yes }
+		}
+		if = {
+			limit = {
+				# Helios One and Route 95
+				AND = {
+					MOJ = {
+						has_full_control_of_state = 417
+					}
+					NCR = {
+						divisions_in_state = {
+							state = 137
+							size > 0
+						}
+					}
+				}
+			}
+			137 = { set_border_war = yes }
+			MOJ = { 417 = { set_border_war = yes } }
+		}
+		if = {
+			# Goodsprings and Sloan
+			limit = {
+				AND = {
+					MOJ = {
+						has_full_control_of_state = 573
+					}
+					NCR = {
+						divisions_in_state = {
+							state = 562
+							size > 0
+						}
+					}
 				}
 			}
 			562 = { set_border_war = yes }
+			419 = { set_border_war = yes }
+			MOJ = { 573 = { set_border_war = yes } }
 		}
 		if = {
+			# Goodsprings and Sloan
 			limit = {
-				divisions_in_state = {
-					state = 573
-					size > 0
+				# Sloan and Black Mountain
+				AND = {
+					MOJ = {
+						has_full_control_of_state = 573
+					}
+					NCR = {
+						divisions_in_state = {
+							state = 562
+							size > 0
+						}
+					}
 				}
 			}
-			573 = { set_border_war = yes }
+			562 = { set_border_war = yes }
+			MOJ = { 573 = { set_border_war = yes } }
 		}
-		if = {
-			limit = {
-				divisions_in_state = {
-					state = 417
-					size > 0
-				}
-			}
-			417 = { set_border_war = yes }
-		}
-		137 = { set_border_war = yes }
 	}
 	option = {
 		name = NCR_MOJ_border_war.8.b
@@ -411,27 +487,19 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
-			562 = {
-				if = {
-					limit = { is_border_conflict = yes }
+			NCR = {
+				every_owned_state = {
+					limit = {
+						is_border_conflict = yes
+					}
 					set_border_war = no
 				}
 			}
-			573 = {
-				if = {
-					limit = { is_border_conflict = yes }
-					set_border_war = no
-				}
-			}
-			417 = {
-				if = {
-					limit = { is_border_conflict = yes }
-					set_border_war = no
-				}
-			}
-			137 = {
-				if = {
-					limit = { is_border_conflict = yes }
+			MOJ = {
+				every_owned_state = {
+					limit = {
+						is_border_conflict = yes
+					}
 					set_border_war = no
 				}
 			}
@@ -478,32 +546,13 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
-			562 = {
-				if = {
-					limit = { is_border_conflict = yes }
+			MOJ = {
+				every_owned_state = {
+					limit = {
+						is_border_conflict = yes
+					}
 					set_border_war = no
-					NCR = { transfer_state = 562 }
-				}
-			}
-			573 = {
-				if = {
-					limit = { is_border_conflict = yes }
-					set_border_war = no
-					NCR = { transfer_state = 573 }
-				}
-			}
-			417 = {
-				if = {
-					limit = { is_border_conflict = yes }
-					set_border_war = no
-					NCR = { transfer_state = 417 }
-				}
-			}
-			137 = {
-				if = {
-					limit = { is_border_conflict = yes }
-					set_border_war = no
-					NCR = { transfer_state = 137 }
+					set_state_owner = NCR
 				}
 			}
 		}
@@ -528,7 +577,7 @@ country_event = {
 
 	option = {
 		name = NCR_MOJ_border_war.12.a
-		add_political_power = 100
+		add_political_power = 45
 		add_national_unity = 0.05
 	}
 }
@@ -545,53 +594,7 @@ country_event = {
 	option = {
 		name = NCR_MOJ_border_war.13.a
 		effect_tooltip = {
-			137 = { set_border_war = yes }
-			NCR = {
-				if = {
-					limit = {
-						OR = {
-							divisions_in_state = {
-								state = 533
-								size > 0
-							}
-							divisions_in_state = {
-								state = 181
-								size > 0
-							}
-							
-						}
-					}
-					MOJ = { 562 = { set_border_war = yes } }
-				}
-				if = {
-					limit = {
-						OR = {
-							divisions_in_state = {
-								state = 137
-								size > 0
-							}
-							divisions_in_state = {
-								state = 562
-								size > 0
-							}
-							divisions_in_state = {
-								state = 417
-								size > 0
-							}
-						}
-					}
-					MOJ = { 573 = { set_border_war = yes } }
-				}
-				if = {
-					limit = {
-						divisions_in_state = {
-							state = 137
-							size > 0
-						}
-					}
-					MOJ = { 417 = { set_border_war = yes } }
-				}
-			}
+			
 		}
 	}
 }
