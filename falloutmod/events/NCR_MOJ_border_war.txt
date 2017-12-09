@@ -1,0 +1,597 @@
+﻿add_namespace = NCR_MOJ_border_war
+# NCR-Mojave BOS conflicts
+country_event = {
+	id = NCR_MOJ_border_war.1
+	title = NCR_MOJ_border_war.1.t
+	desc = NCR_MOJ_border_war.1.d
+	picture = GFX_report_event_NCR_soldiers_fighting
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	trigger = {
+		tag = NCR
+		NOT = { has_war_with = MOJ }
+		any_neighbor_country = {
+			tag = MOJ
+			##has_opinion_modifier = hostile_status
+		}
+	}
+
+	immediate = { set_country_flag = MOJ_offensive_executed }
+
+	option = {
+		name = NCR_MOJ_border_war.1.a
+		effect_tooltip = {
+			custom_effect_tooltip = NCR_MOJ_border_war.1.tt
+			random_list = {
+				70 = {
+					country_event = { id = NCR_MOJ_border_war.4 days = 1 }
+					add_political_power = 200
+					add_manpower = -100
+				}
+				30 = {
+					country_event = { id = NCR_MOJ_border_war.5 days = 1 }
+					add_political_power = -100
+					add_manpower = -250
+				}
+			}
+			custom_effect_tooltip = NCR_MOJ_border_war.1.tt_2
+			country_event = { id = NCR_MOJ_border_war.3 days = 1 }
+			add_political_power = 100
+		}
+		hidden_effect = {
+			MOJ = {
+				set_country_flag = MOJ_major_attack
+				country_event = { id = NCR_MOJ_border_war.2 days = 1 }
+			}
+		}
+	}
+
+	option = {
+		name = NCR_MOJ_border_war.1.b
+		effect_tooltip = {
+			custom_effect_tooltip = NCR_MOJ_border_war.1.tt
+			random_list = {
+				50 = {
+					country_event = { id = NCR_MOJ_border_war.4 days = 1 }
+					add_political_power = 100
+					add_manpower = -100
+				}
+				50 = {
+					country_event = { id = NCR_MOJ_border_war.5 days = 1 }
+					add_political_power = -50
+					add_manpower = -2500
+				}
+			}
+			custom_effect_tooltip = NCR_MOJ_border_war.1.tt_2
+			country_event = { id = NCR_MOJ_border_war.3 days = 1 }
+			add_political_power = 50
+		}
+		hidden_effect = {
+			MOJ = {
+				set_country_flag = MOJ_medium_attack
+				country_event = { id = NCR_MOJ_border_war.2 days = 1 }
+			}
+		}
+	}
+
+	option = {
+		name = NCR_MOJ_border_war.1.c
+		effect_tooltip = {
+			custom_effect_tooltip = NCR_MOJ_border_war.1.tt
+			random_list = {
+				30 = {
+					country_event = { id = NCR_MOJ_border_war.4 days = 1 }
+					add_political_power = 50
+					add_manpower = -100
+				}
+				70 = {
+					country_event = { id = NCR_MOJ_border_war.5 days = 1 }
+					add_political_power = -25
+					add_manpower = -250
+				}
+			}
+			custom_effect_tooltip = NCR_MOJ_border_war.1.tt_2
+			country_event = { id = NCR_MOJ_border_war.3 days = 1 }
+			add_political_power = 25
+		}
+		hidden_effect = {
+			MOJ = {
+				set_country_flag = MOJ_minor_attack
+				country_event = { id = NCR_MOJ_border_war.2 days = 1 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = NCR_MOJ_border_war.2
+	title = NCR_MOJ_border_war.2.t
+	desc = NCR_MOJ_border_war.2.d
+	picture = GFX_report_event_NCR_soldiers_fighting
+
+	is_triggered_only = yes
+
+	option = {
+		name = NCR_MOJ_border_war.2.a
+		ai_chance = { factor = 80 }
+		effect_tooltip = {
+			random_list = {
+				50 = {
+					country_event = { id = NCR_MOJ_border_war.6 }
+					add_political_power = -75
+					add_manpower = -2500
+				}
+				50 = {
+					country_event = { id = NCR_MOJ_border_war.7 }
+					add_political_power = 150
+					add_manpower = -100
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = MOJ_major_attack }
+				NCR = {
+					random_list = {
+						70 = {
+							country_event = { id = NCR_MOJ_border_war.4 }
+						}
+						30 = {
+							country_event = { id = NCR_MOJ_border_war.5 }
+						}
+					}
+				}
+			}
+			if = {
+				limit = { has_country_flag = MOJ_medium_attack }
+				NCR = {
+					random_list = {
+						50 = {
+							country_event = { id = NCR_MOJ_border_war.4 }
+						}
+						50 = {
+							country_event = { id = NCR_MOJ_border_war.5 }
+						}
+					}
+				}
+			}
+			if = {
+				limit = { has_country_flag = MOJ_minor_attack }
+				NCR = {
+					random_list = {
+						30 = {
+							country_event = { id = NCR_MOJ_border_war.4 }
+						}
+						70 = {
+							country_event = { id = NCR_MOJ_border_war.5 }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = NCR_MOJ_border_war.2.b
+		ai_chance = { factor = 20 }
+		NCR = { country_event = { id = NCR_MOJ_border_war.3 days = 1 } }
+		add_political_power = -50
+	}
+}
+
+country_event = {
+	id = NCR_MOJ_border_war.3
+	title = NCR_MOJ_border_war.3.t
+	desc = NCR_MOJ_border_war.3.d
+	picture = GFX_report_event_NCR_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NCR_MOJ_border_war.3.a
+		if = {
+			limit = { MOJ = { has_country_flag = MOJ_major_attack } }
+			add_political_power = 100
+		}
+		if = {
+			limit = { MOJ = { has_country_flag = MOJ_medium_attack } }
+			add_political_power = 50
+		}
+		if = {
+			limit = { MOJ = { has_country_flag = MOJ_minor_attack } }
+			add_political_power = 25
+		}
+		MOJ = {
+			clr_country_flag = MOJ_major_attack
+			clr_country_flag = MOJ_medium_attack
+			clr_country_flag = MOJ_minor_attack
+		}
+	}
+}
+
+country_event = {
+	id = NCR_MOJ_border_war.4
+	title = NCR_MOJ_border_war.4.t
+	desc = NCR_MOJ_border_war.4.d
+	picture = GFX_report_event_NCR_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NCR_MOJ_border_war.4.a
+		if = {
+			limit = { MOJ = { has_country_flag = MOJ_major_attack } }
+			add_political_power = 200
+			add_manpower = -100
+		}
+		if = {
+			limit = { MOJ = { has_country_flag = MOJ_medium_attack } }
+			add_political_power = 100
+			add_manpower = -100
+		}
+		if = {
+			limit = { MOJ = { has_country_flag = MOJ_minor_attack } }
+			add_political_power = 50
+			add_manpower = -100
+		}
+		MOJ = {
+			# lost border war event
+			country_event = { id = NCR_MOJ_border_war.6 }
+			clr_country_flag = MOJ_major_attack
+			clr_country_flag = MOJ_medium_attack
+			clr_country_flag = MOJ_minor_attack
+		}
+	}
+}
+
+country_event = {
+	id = NCR_MOJ_border_war.5
+	title = NCR_MOJ_border_war.5.t
+	desc = NCR_MOJ_border_war.5.d
+	picture = GFX_report_event_NCR_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NCR_MOJ_border_war.5.a
+		if = {
+			limit = { MOJ = { has_country_flag = MOJ_major_attack } }
+			add_political_power = -100
+			add_manpower = -250
+		}
+		if = {
+			limit = { MOJ = { has_country_flag = MOJ_medium_attack } }
+			add_political_power = -50
+			add_manpower = -2500
+		}
+		if = {
+			limit = { MOJ = { has_country_flag = MOJ_minor_attack } }
+			add_political_power = -25
+			add_manpower = -250
+		}
+		MOJ = {
+			# won border war 
+			country_event = { id = NCR_MOJ_border_war.7 }
+			clr_country_flag = MOJ_major_attack
+			clr_country_flag = MOJ_medium_attack
+			clr_country_flag = MOJ_minor_attack
+		}
+	}
+}
+
+country_event = {
+	id = NCR_MOJ_border_war.6
+	title = NCR_MOJ_border_war.6.t
+	desc = NCR_MOJ_border_war.6.d
+	picture = GFX_report_event_NCR_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NCR_MOJ_border_war.6.a
+		add_political_power = -75
+		add_manpower = -2500
+	}
+}
+
+country_event = {
+	id = NCR_MOJ_border_war.7
+	title = NCR_MOJ_border_war.7.t
+	desc = NCR_MOJ_border_war.7.d
+	picture = GFX_report_event_NCR_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = NCR_MOJ_border_war.7.a
+		add_political_power = 150
+		add_manpower = -100
+	}
+}
+
+# Border War (NCR)
+country_event = {
+	id = NCR_MOJ_border_war.8
+	title = NCR_MOJ_border_war.8.t
+	desc = NCR_MOJ_border_war.8.d
+	picture = GFX_report_event_NCR_soldiers_fighting
+	
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = MOJ_offensive_executed
+		#has_opinion_modifier = hostile_status
+		MOJ = {
+			OR = {
+				divisions_in_state = {
+					state = 562
+					size > 0
+				}
+				divisions_in_state = {
+					state = 573
+					size > 0
+				}
+				divisions_in_state = {
+					state = 417
+					size > 0
+				}
+				divisions_in_state = {	
+					state = 137	
+					size > 0	
+				}	
+			}
+		}	
+	}	
+	
+	mean_time_to_happen = {	
+		days = 21	
+	}	
+
+	immediate = {
+		hidden_effect = {
+			MOJ = { country_event = { id = NCR_MOJ_border_war.13 } }
+		}
+	}
+	
+	option = {
+		name = NCR_MOJ_border_war.8.a
+		if = {
+			limit = {
+				divisions_in_state = {
+					state = 562
+					size > 0
+				}
+			}
+			562 = { set_border_war = yes }
+		}
+		if = {
+			limit = {
+				divisions_in_state = {
+					state = 573
+					size > 0
+				}
+			}
+			573 = { set_border_war = yes }
+		}
+		if = {
+			limit = {
+				divisions_in_state = {
+					state = 417
+					size > 0
+				}
+			}
+			417 = { set_border_war = yes }
+		}
+		137 = { set_border_war = yes }
+	}
+	option = {
+		name = NCR_MOJ_border_war.8.b
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+}
+
+# NCR loses Border War
+country_event = {
+	id = NCR_MOJ_border_war.9
+	title = NCR_MOJ_border_war.9.t
+	desc = NCR_MOJ_border_war.9.d
+	picture = GFX_report_event_NCR_soldiers_fighting
+	
+	is_triggered_only = yes
+
+	trigger = {
+		tag = NCR
+	}
+
+	immediate = {
+		hidden_effect = {
+			562 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			573 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			417 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			137 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = NCR_MOJ_border_war.9.a
+		add_political_power = -100
+		add_manpower = -500
+		add_national_unity = -0.05
+		MOJ = { country_event = { id = NCR_MOJ_border_war.10 } }
+	}
+}
+
+# MOJ wins Border War
+country_event = {
+	id = NCR_MOJ_border_war.10
+	title = NCR_MOJ_border_war.10.t
+	desc = NCR_MOJ_border_war.10.d
+	picture = GFX_report_event_NCR_soldiers_fighting
+	
+	is_triggered_only = yes
+
+	option = {
+		name = NCR_MOJ_border_war.10.a
+		add_political_power = 100
+		add_national_unity = 0.05
+	}
+}
+
+# MOJ loses Border War
+country_event = {
+	id = NCR_MOJ_border_war.11
+	title = NCR_MOJ_border_war.11.t
+	desc = NCR_MOJ_border_war.11.d
+	picture = GFX_report_event_NCR_soldiers_fighting
+	
+	is_triggered_only = yes
+
+	trigger = {
+		tag = MOJ
+	}
+
+	immediate = {
+		hidden_effect = {
+			562 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+					NCR = { transfer_state = 562 }
+				}
+			}
+			573 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+					NCR = { transfer_state = 573 }
+				}
+			}
+			417 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+					NCR = { transfer_state = 417 }
+				}
+			}
+			137 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+					NCR = { transfer_state = 137 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = NCR_MOJ_border_war.11.a
+		add_political_power = -100
+		add_national_unity = -0.05
+		NCR = { country_event = { id = NCR_MOJ_border_war.12 } }
+	}
+}
+
+# NCR wins Border War
+country_event = {
+	id = NCR_MOJ_border_war.12
+	title = NCR_MOJ_border_war.12.t
+	desc = NCR_MOJ_border_war.12.d
+	picture = GFX_report_event_NCR_soldiers_fighting
+	
+	is_triggered_only = yes
+
+	option = {
+		name = NCR_MOJ_border_war.12.a
+		add_political_power = 100
+		add_national_unity = 0.05
+	}
+}
+
+# Border War Starts (MOJ)
+country_event = {
+	id = NCR_MOJ_border_war.13
+	title = NCR_MOJ_border_war.13.t
+	desc = NCR_MOJ_border_war.13.d
+	picture = GFX_report_event_NCR_soldiers_fighting
+	
+	is_triggered_only = yes
+
+	option = {
+		name = NCR_MOJ_border_war.13.a
+		effect_tooltip = {
+			137 = { set_border_war = yes }
+			NCR = {
+				if = {
+					limit = {
+						OR = {
+							divisions_in_state = {
+								state = 533
+								size > 0
+							}
+							divisions_in_state = {
+								state = 181
+								size > 0
+							}
+							
+						}
+					}
+					MOJ = { 562 = { set_border_war = yes } }
+				}
+				if = {
+					limit = {
+						OR = {
+							divisions_in_state = {
+								state = 137
+								size > 0
+							}
+							divisions_in_state = {
+								state = 562
+								size > 0
+							}
+							divisions_in_state = {
+								state = 417
+								size > 0
+							}
+						}
+					}
+					MOJ = { 573 = { set_border_war = yes } }
+				}
+				if = {
+					limit = {
+						divisions_in_state = {
+							state = 137
+							size > 0
+						}
+					}
+					MOJ = { 417 = { set_border_war = yes } }
+				}
+			}
+		}
+	}
+}
