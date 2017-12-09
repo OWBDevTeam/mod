@@ -6,7 +6,7 @@ country_event = {
 	desc = NCR_MOJ_border_war.1.d
 	picture = GFX_report_event_NCR_soldiers_fighting
 
-	fire_only_once = no
+	fire_only_once = yes
 
 	mean_time_to_happen = {
 		days = 15
@@ -325,12 +325,30 @@ country_event = {
 
 	trigger = {
 		has_country_flag = MOJ_offensive_executed
+		MOJ = {
+			NOT = {
+				any_owned_state = {
+					is_border_conflict = yes
+				}
+			}
+		}
+	    NCR = {
+			NOT = {
+				any_owned_state = {
+					is_border_conflict = yes
+				}
+			}
+		}
 		#has_opinion_modifier = hostile_status
 			OR = {
 				# Route 95 and Nelson
 				AND = {
 					MOJ = {
 						has_full_control_of_state = 137
+						divisions_in_state = {
+							state = 137
+							size > 0
+						}
 					}
 					NCR = {
 						divisions_in_state = {
@@ -343,6 +361,10 @@ country_event = {
 				AND = {
 					MOJ = {
 						has_full_control_of_state = 417
+						divisions_in_state = {
+							state = 417
+							size > 0
+						}
 					}
 					NCR = {
 						divisions_in_state = {
@@ -355,6 +377,10 @@ country_event = {
 				AND = {
 					MOJ = {
 						has_full_control_of_state = 562
+						divisions_in_state = {
+							state = 562
+							size > 0
+						}
 					}
 					NCR = {
 						divisions_in_state = {
@@ -396,6 +422,10 @@ country_event = {
 				AND = {
 					MOJ = {
 						has_full_control_of_state = 137
+						divisions_in_state = {
+							state = 137
+							size > 0
+						}
 					}
 					NCR = {
 						divisions_in_state = {
@@ -406,6 +436,8 @@ country_event = {
 				}
 			}
 			533 = { set_border_war = yes }
+			181 = { set_border_war = yes }
+			272 = { set_border_war = yes }
 			137 = { set_border_war = yes }
 		}
 		if = {
@@ -443,7 +475,7 @@ country_event = {
 			}
 			562 = { set_border_war = yes }
 			419 = { set_border_war = yes }
-			MOJ = { 573 = { set_border_war = yes } }
+			573 = { set_border_war = yes }
 		}
 		if = {
 			# Goodsprings and Sloan
@@ -462,7 +494,7 @@ country_event = {
 				}
 			}
 			562 = { set_border_war = yes }
-			MOJ = { 573 = { set_border_war = yes } }
+			573 = { set_border_war = yes }
 		}
 	}
 	option = {
@@ -551,8 +583,16 @@ country_event = {
 					limit = {
 						is_border_conflict = yes
 					}
+					NCR = { set_state_owner = PREV }
 					set_border_war = no
-					set_state_owner = NCR
+				}
+			}
+			NCR = {
+				every_owned_state = {
+					limit = {
+						is_border_conflict = yes
+					}
+					set_border_war = no
 				}
 			}
 		}
