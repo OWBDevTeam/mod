@@ -55,6 +55,22 @@ focus_tree = {
 			focus = des_mojave
 		}
 		will_lead_to_war_with = JAC
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					has_completed_focus = des_vipers
+					NOT = {
+						has_completed_focus = des_vipercore
+					}
+				}
+			}
+		}
 		x = 8
 		y = 3
 		completion_reward = {
@@ -124,10 +140,19 @@ focus_tree = {
 		x = 12
 		y = 3
 		ai_will_do = {
-			factor = 1
+			factor = 10
 			modifier = {
 				factor = 0
 				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					has_completed_focus = des_jackals
+					NOT = {
+						has_completed_focus = des_heel
+					}
+				}
 			}
 		}
 		completion_reward = {
@@ -233,6 +258,7 @@ focus_tree = {
 		y = 6
 		completion_reward = {
 			476 = {
+				set_state_name = "Vipera Outpost" 
 				add_building_construction = {
 					type = infrastructure
 					level = 2
@@ -279,7 +305,8 @@ focus_tree = {
 		x = 7
 		y = 6
 		completion_reward = {
-			161 = {
+			171 = {
+				set_state_name = "Canis Outpost" 
 				add_building_construction = {
 					type = infrastructure
 					level = 2
@@ -305,6 +332,7 @@ focus_tree = {
 		y = 6
 		completion_reward = {
 			161 = {
+				set_state_name = "Yerington" 
 				add_resource = {
                     type = water
                     amount = 5
@@ -315,6 +343,7 @@ focus_tree = {
 				}
 			}
 			add_manpower = 3000
+		
 		}
 
 	}

@@ -56,27 +56,13 @@ country_event = {
 	title = nf_reno.2.t
 	desc = nf_reno.2.d
 	
-	fire_only_once = yes
-	trigger = {
-		OR = {
-			has_completed_focus = new_queen
-			has_completed_focus = new_jetbeta
-		}
-		OR = {
-			has_completed_focus = new_roaring
-			has_completed_focus = new_artillery
-		}
-	}
+	is_triggered_only = yes
 
 	option = {
 		name = nf_reno.2.a
         
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 100
-			}
+			factor = 10
 		}
 		
 		country_event = { id = factionevent.1 }
@@ -100,6 +86,10 @@ country_event = {
 				}
 				factor = 100
 			}
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 100
+			}
 		}
 		
 		NCR = {
@@ -115,15 +105,11 @@ country_event = {
 	title = nf_reno.3.t
 	desc = nf_reno.3.d
 	
-	fire_only_once = yes
-	trigger = {
-		has_completed_focus = new_oldallies
-		has_completed_focus = new_granite
-		has_completed_focus = new_enctech
-		has_completed_focus = new_sanctuary
-	}
+	is_triggered_only = yes
 	
-	immediate = {
+	option = {
+		name = nf_reno.3.a
+		
 		set_cosmetic_tag = ENC
 		create_country_leader = {
 			name = "Sergeant Dornan"
@@ -167,15 +153,11 @@ country_event = {
 	title = nf_reno.4.t
 	desc = nf_reno.4.d
 	
-	fire_only_once = yes
-	trigger = {
-		has_completed_focus = new_police
-		has_completed_focus = new_thradd
-		has_completed_focus = new_mutanttech
-		has_completed_focus = new_sanctuary
-	}
+	is_triggered_only = yes 
 	
-	immediate = {
+	option = {
+		name = nf_reno.4.a
+		
 		THR = {
 			create_country_leader = {
 				name = "Thradd the Immortal"

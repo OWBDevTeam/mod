@@ -81,6 +81,19 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = newrenopolice
 			load_oob = newrenopolice
+			
+			hidden_effect = {
+				if = {
+					limit = {
+						AND = {
+							has_completed_focus = new_thradd
+							has_completed_focus = new_mutanttech
+						}
+					}
+					
+					country_event = { id = nf_reno.4 } 
+				}
+			}
 		}
 
 	}
@@ -347,6 +360,16 @@ focus_tree = {
 		cost = 8.6
 		completion_reward = {
 			add_ideas = thequeen
+			
+			hidden_effect = {
+				if = {
+					limit = {
+						has_completed_focus = new_roaring
+					}
+					
+					country_event = { id = nf_reno.2 } 
+				}
+			}
 		}
 
 	}
@@ -414,6 +437,16 @@ focus_tree = {
 		completion_reward = {
 			add_research_slot = 1
 			add_ideas = jetbeta
+			
+			hidden_effect = {
+				if = {
+					limit = {
+						has_completed_focus = new_artillery
+					}
+					
+					country_event = { id = nf_reno.2 } 
+				}
+			}
 		}
 
 	}
@@ -806,6 +839,16 @@ focus_tree = {
 			load_oob = roaringbears
 			
 			add_ideas = roaringbears
+			
+			hidden_effect = {
+				if = {
+					limit = {
+						has_completed_focus = new_queen
+					}
+					
+					country_event = { id = nf_reno.2 } 
+				}
+			}
 		}
 
 	}
@@ -839,6 +882,16 @@ focus_tree = {
 			load_oob = hellhammers
 			
 			add_ideas = hellhammers
+			
+			hidden_effect = {
+				if = {
+					limit = {
+						has_completed_focus = new_jetbeta
+					}
+					
+					country_event = { id = nf_reno.2 } 
+				}
+			}
 		}
 
 	}
@@ -866,6 +919,19 @@ focus_tree = {
 				skill = 3
 				traits = {
 					
+				}
+			}
+			
+			hidden_effect = {
+				if = {
+					limit = {
+						AND = {
+							has_completed_focus = new_police
+							has_completed_focus = new_mutanttech
+						}
+					}
+					
+					country_event = { id = nf_reno.4 } 
 				}
 			}
 			
@@ -920,6 +986,20 @@ focus_tree = {
 		cost = 8.6
 		completion_reward = {
 			add_ideas = enclavetechnician
+			
+			hidden_effect = {
+				if = {
+					limit = {
+						AND = {
+							has_completed_focus = new_oldallies
+							has_completed_focus = new_granite
+						}
+					}
+					
+					country_event = { id = nf_reno.3 }
+					
+				}
+			}
 		}
 	}
 	focus = {
@@ -939,6 +1019,19 @@ focus_tree = {
 		cost = 8.6
 		completion_reward = {
 			add_ideas = mutanttact
+			
+			hidden_effect = {
+				if = {
+					limit = {
+						AND = {
+							has_completed_focus = new_police
+							has_completed_focus = new_thradd
+						}
+					}
+					
+					country_event = { id = nf_reno.4 } 
+				}
+			}
 		}
 	}
 	focus = {
@@ -1104,6 +1197,17 @@ focus_tree = {
 				set_technology = { power_armour_enclave1 = 1 }
 				set_technology = { vertiberd_gunship = 1 }
 				set_technology = { vertiberd_transport1 = 1 }
+				if = {
+					limit = {
+						AND = {
+							has_completed_focus = new_granite
+							has_completed_focus = new_enctech
+						}
+					}
+					
+					country_event = { id = nf_reno.3 }
+					
+				}
 			}
 			295 = {
 				add_building_construction = {
@@ -1458,11 +1562,23 @@ focus_tree = {
 			
 			hidden_effect = {
 				set_technology = { power_armour_enclave1 = 1 }
+				if = {
+					limit = {
+						AND = {
+							has_completed_focus = new_oldallies
+							has_completed_focus = new_enctech
+						}
+					}
+					
+					country_event = { id = nf_reno.3 }
+					
+				}
 			}
 			
 			load_oob = granitecompany
 			
 			add_ideas = granitecompany
+			
 		}
 
 	}
