@@ -439,6 +439,10 @@ country_event = {
 				AND = {
 					MOJ = {
 						has_full_control_of_state = 417
+						divisions_in_state = {
+							state = 417
+							size > 0
+						}
 					}
 					NCR = {
 						divisions_in_state = {
@@ -449,7 +453,7 @@ country_event = {
 				}
 			}
 			137 = { set_border_war = yes }
-			MOJ = { 417 = { set_border_war = yes } }
+			417 = { set_border_war = yes }
 		}
 		if = {
 			# Goodsprings and Sloan
@@ -457,26 +461,33 @@ country_event = {
 				AND = {
 					MOJ = {
 						has_full_control_of_state = 573
+						divisions_in_state = {
+							state = 573
+							size > 0
+						}
 					}
 					NCR = {
 						divisions_in_state = {
-							state = 562
+							state = 552
 							size > 0
 						}
 					}
 				}
 			}
+			552 = { set_border_war = yes }
 			562 = { set_border_war = yes }
 			419 = { set_border_war = yes }
-			573 = { set_border_war = yes }
 		}
 		if = {
-			# Goodsprings and Sloan
 			limit = {
 				# Sloan and Black Mountain
 				AND = {
 					MOJ = {
 						has_full_control_of_state = 573
+						divisions_in_state = {
+							state = 573
+							size > 0
+						}
 					}
 					NCR = {
 						divisions_in_state = {
