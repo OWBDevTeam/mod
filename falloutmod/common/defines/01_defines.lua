@@ -90,3 +90,5 @@ NDefines.NAI.UPGRADE_PERCENTAGE_OF_FORCES = 0.1
 
 --NNavy
 NDefines.NNavy.NAVAL_INVASION_PREPARE_HOURS = 64								-- base hours needed to prepare an invasion
+
+NDefines.NMilitary.BORDER_WAR_VICTORY = 0.65					   -- At wich border war balance of power is victory declared

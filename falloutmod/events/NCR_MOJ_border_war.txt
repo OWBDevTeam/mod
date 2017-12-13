@@ -1,5 +1,7 @@
 ﻿add_namespace = NCR_MOJ_border_war
-# NCR-Mojave BOS conflicts
+# NCR-Mojave BOS conflicts, heavily changed and modified version of
+# the China-PRC conflicts scripted by Mechano for the NCR
+# Mojave Campaign against the Mojave Brotherhood
 country_event = {
 	id = NCR_MOJ_border_war.1
 	title = NCR_MOJ_border_war.1.t
@@ -9,7 +11,7 @@ country_event = {
 	fire_only_once = yes
 
 	mean_time_to_happen = {
-		days = 15
+		days = 10
 	}
 
 	trigger = {
@@ -18,6 +20,103 @@ country_event = {
 		any_neighbor_country = {
 			tag = MOJ
 			##has_opinion_modifier = hostile_status
+		}
+		MOJ = {
+			OR = {
+				# Route 95
+				AND = {
+					137 = { is_border_conflict = no }
+					has_full_control_of_state = 137
+					divisions_in_state = {
+						state = 137
+						size > 0
+					}
+					# checking if any neighbor states are valid for the NCR
+					OR = {
+						NCR = {
+							# Nelson
+							divisions_in_state = {
+								state = 533
+								size > 0
+							}
+							# Novac
+							divisions_in_state = {
+								state = 181
+								size > 0
+							}
+						}
+					}
+				}
+				# Helios One
+				AND = {
+					417 = { is_border_conflict = no }
+					has_full_control_of_state = 417
+					divisions_in_state = {
+						state = 417
+						size > 0
+					}
+					OR = {
+						NCR = {
+							# Route 95
+							divisions_in_state = {
+								state = 137
+								size > 0
+							}
+							# Black Mountain
+							divisions_in_state = {
+								state = 573
+								size > 0
+							}
+						}
+					}
+				}
+				# Black Mountain
+				AND = {
+					573 = { is_border_conflict = no }
+					has_full_control_of_state = 573
+					divisions_in_state = {
+						state = 573
+						size > 0
+					}
+					OR = {
+						NCR = {
+							# Route 95
+							divisions_in_state = {
+								state = 137
+								size > 0
+							}
+							# Sloan
+							divisions_in_state = {
+								state = 562
+								size > 0
+							}
+						}
+					}
+				}
+				# Sloan
+				AND = {
+					562 = { is_border_conflict = no }
+					has_full_control_of_state = 562
+					divisions_in_state = {
+						state = 562
+						size > 0
+					}
+					OR = {
+						NCR = {
+							# Goodsprings
+							divisions_in_state = {
+								state = 552
+								size > 0
+							}
+							# Primm
+							divisions_in_state = {
+								state = 419
+								size > 0
+							}
+						}
+					}
+				}	
+			}
 		}
 	}
 
@@ -118,7 +217,7 @@ country_event = {
 
 	option = {
 		name = NCR_MOJ_border_war.2.a
-		ai_chance = { factor = 80 }
+		ai_chance = { factor = 99 }
 		effect_tooltip = {
 			random_list = {
 				50 = {
@@ -178,9 +277,24 @@ country_event = {
 
 	option = {
 		name = NCR_MOJ_border_war.2.b
-		ai_chance = { factor = 20 }
+		ai_chance = { factor = 1 }
+		# Just give up and give the NCR all of your external states without
+		# a fight. Might be a valid strategy but will seriously help the NCR
+		# and remove any chance of resistance
 		NCR = { country_event = { id = NCR_MOJ_border_war.3 days = 1 } }
-		add_political_power = -50
+		add_political_power = -250 # Shameful Display
+		NCR = {
+			transfer_state = 137
+			transfer_state = 417
+			transfer_state = 573
+			transfer_state = 562
+		}
+		hidden_effect = {
+			clr_country_flag = MOJ_major_attack
+			clr_country_flag = MOJ_medium_attack
+			clr_country_flag = MOJ_major_attack
+			clr_country_flag = MOJ_offensive_executed
+		}
 	}
 }
 
@@ -267,7 +381,7 @@ country_event = {
 		if = {
 			limit = { MOJ = { has_country_flag = MOJ_medium_attack } }
 			add_political_power = -50
-			add_manpower = -2500
+			add_manpower = -1000
 		}
 		if = {
 			limit = { MOJ = { has_country_flag = MOJ_minor_attack } }
@@ -295,7 +409,7 @@ country_event = {
 	option = {
 		name = NCR_MOJ_border_war.6.a
 		add_political_power = -75
-		add_manpower = -2500
+		add_manpower = -100
 	}
 }
 
@@ -315,6 +429,8 @@ country_event = {
 }
 
 # Border War (NCR)
+# continues the mojave campaign against the Mojave BOS (MOJ)
+# triggered after the Mojave executed offensive operations
 country_event = {
 	id = NCR_MOJ_border_war.8
 	title = NCR_MOJ_border_war.8.t
@@ -325,76 +441,107 @@ country_event = {
 
 	trigger = {
 		has_country_flag = MOJ_offensive_executed
+		# MOJ has divisions positioned on it's borders
+		# in states it owns that are not already in border conflicts
+		# and the NCR has a neighbor state that also has troops
+		# note that Hidden Valley does not count on purpose
 		MOJ = {
-			NOT = {
-				any_owned_state = {
-					is_border_conflict = yes
+			OR = {
+				# Route 95
+				AND = {
+					137 = { is_border_conflict = no }
+					has_full_control_of_state = 137
+					divisions_in_state = {
+						state = 137
+						size > 0
+					}
+					# checking if any neighbor states are valid for the NCR
+					OR = {
+						NCR = {
+							# Nelson
+							divisions_in_state = {
+								state = 533
+								size > 0
+							}
+							# Novac
+							divisions_in_state = {
+								state = 181
+								size > 0
+							}
+						}
+					}
 				}
+				# Helios One
+				AND = {
+					417 = { is_border_conflict = no }
+					has_full_control_of_state = 417
+					divisions_in_state = {
+						state = 417
+						size > 0
+					}
+					OR = {
+						NCR = {
+							# Route 95
+							divisions_in_state = {
+								state = 137
+								size > 0
+							}
+							# Black Mountain
+							divisions_in_state = {
+								state = 573
+								size > 0
+							}
+						}
+					}
+				}
+				# Black Mountain
+				AND = {
+					573 = { is_border_conflict = no }
+					has_full_control_of_state = 573
+					divisions_in_state = {
+						state = 573
+						size > 0
+					}
+					OR = {
+						NCR = {
+							# Route 95
+							divisions_in_state = {
+								state = 137
+								size > 0
+							}
+							# Sloan
+							divisions_in_state = {
+								state = 562
+								size > 0
+							}
+						}
+					}
+				}
+				# Sloan
+				AND = {
+					562 = { is_border_conflict = no }
+					has_full_control_of_state = 562
+					divisions_in_state = {
+						state = 562
+						size > 0
+					}
+					OR = {
+						NCR = {
+							# Goodsprings
+							divisions_in_state = {
+								state = 552
+								size > 0
+							}
+							# Primm
+							divisions_in_state = {
+								state = 419
+								size > 0
+							}
+						}
+					}
+				}	
 			}
 		}
-		#has_opinion_modifier = hostile_status
-			OR = {
-				# Route 95 and Nelson
-				AND = {
-					MOJ = {
-						has_full_control_of_state = 137
-						divisions_in_state = {
-							state = 137
-							size > 0
-						}
-					}
-					NCR = {
-						divisions_in_state = {
-							state = 533
-							size > 0
-						}
-					}
-				}
-				# Helios One and Route 95
-				AND = {
-					MOJ = {
-						has_full_control_of_state = 417
-						divisions_in_state = {
-							state = 417
-							size > 0
-						}
-					}
-					NCR = {
-						divisions_in_state = {
-							state = 137
-							size > 0
-						}
-					}
-				}
-				# Goodsprings and Sloan
-				AND = {
-					MOJ = {
-						has_full_control_of_state = 562
-						divisions_in_state = {
-							state = 562
-							size > 0
-						}
-					}
-					NCR = {
-						divisions_in_state = {
-							state = 552
-							size > 0
-						}
-					}
-				}
-				# Sloan and Black Mountain
-				AND = {
-					MOJ = {
-						has_full_control_of_state = 573
-					}
-					NCR = {
-						divisions_in_state = {
-							state = 562
-							size > 0
-						}
-					}
-				}
-			}
 	}	
 	
 	mean_time_to_happen = {	
@@ -409,96 +556,227 @@ country_event = {
 	
 	option = {
 		name = NCR_MOJ_border_war.8.a
-		if = {
-			limit = {
-				# Route 95 and Nelson
-				AND = {
-					MOJ = {
+		MOJ = {
+			if = {
+				limit = {
+					# Route 95
+					AND = {
+						137 = { is_border_conflict = no }
 						has_full_control_of_state = 137
 						divisions_in_state = {
 							state = 137
 							size > 0
 						}
-					}
-					NCR = {
-						divisions_in_state = {
-							state = 533
-							size > 0
+						# checking if any neighbor states are valid for the NCR
+						OR = {
+							NCR = {
+								# Nelson
+								divisions_in_state = {
+									state = 533
+									size > 0
+								}
+								# Novac
+								divisions_in_state = {
+									state = 181
+									size > 0
+								}
+							}
 						}
 					}
 				}
+				137 = { set_border_war = yes }
+				# set border war for Nelson
+				if = {
+					limit = {
+						533 = { is_border_conflict = no }
+						NCR = {
+							divisions_in_state = {
+								state = 533
+								size > 0
+							}
+						}
+					}
+					533 = { set_border_war = yes }
+				}
+				# set border war for Novac
+				if = {
+					limit = {
+						181 = { is_border_conflict = no }
+						NCR = { 
+							divisions_in_state = {
+								state = 181
+								size > 0
+							}
+						}
+					}
+					181 = { set_border_war = yes }
+				}
 			}
-			533 = { set_border_war = yes }
-			181 = { set_border_war = yes }
-			272 = { set_border_war = yes }
-			137 = { set_border_war = yes }
-		}
-		if = {
-			limit = {
-				# Helios One and Route 95
-				AND = {
-					MOJ = {
+			if = {
+				limit = {
+					# Helios One
+					AND = {
+						417 = { is_border_conflict = no }
 						has_full_control_of_state = 417
 						divisions_in_state = {
 							state = 417
 							size > 0
 						}
-					}
-					NCR = {
-						divisions_in_state = {
-							state = 137
-							size > 0
+						# checking if any neighbor states are valid for the NCR
+						OR = {
+							NCR = {
+								# Route 95
+								divisions_in_state = {
+									state = 137
+									size > 0
+								}
+								# Black Mountain
+								divisions_in_state = {
+									state = 573
+									size > 0
+								}
+							}
 						}
 					}
 				}
+				417 = { set_border_war = yes }
+				# set border war for Route 95
+				if = {
+					limit = {
+						137 = { is_border_conflict = no }
+						NCR = {
+							divisions_in_state = {
+								state = 137
+								size > 0
+							}
+						}
+					}
+					137 = { set_border_war = yes }
+				}
+				# set border war for Black Mountain
+				if = {
+					limit = {
+						573 = { is_border_conflict = no }
+						NCR = { 
+							divisions_in_state = {
+								state = 573
+								size > 0
+							}
+						}
+					}
+					573 = { set_border_war = yes }
+				}
 			}
-			137 = { set_border_war = yes }
-			417 = { set_border_war = yes }
-		}
-		if = {
-			# Goodsprings and Sloan
-			limit = {
-				AND = {
-					MOJ = {
+			if = {
+				limit = {
+					# Black Mountain
+					AND = {
+						573 = { is_border_conflict = no }
 						has_full_control_of_state = 573
 						divisions_in_state = {
 							state = 573
 							size > 0
 						}
-					}
-					NCR = {
-						divisions_in_state = {
-							state = 552
-							size > 0
+						# checking if any neighbor states are valid for the NCR
+						OR = {
+							NCR = {
+								# Route 95
+								divisions_in_state = {
+									state = 137
+									size > 0
+								}
+								# Sloan
+								divisions_in_state = {
+									state = 562
+									size > 0
+								}
+							}
 						}
 					}
 				}
-			}
-			552 = { set_border_war = yes }
-			562 = { set_border_war = yes }
-			419 = { set_border_war = yes }
-		}
-		if = {
-			limit = {
-				# Sloan and Black Mountain
-				AND = {
-					MOJ = {
-						has_full_control_of_state = 573
-						divisions_in_state = {
-							state = 573
-							size > 0
+				417 = { set_border_war = yes }
+				# set border war for Route 95
+				if = {
+					limit = {
+						137 = { is_border_conflict = no }
+						NCR = {
+							divisions_in_state = {
+								state = 137
+								size > 0
+							}
 						}
 					}
-					NCR = {
+					137 = { set_border_war = yes }
+				}
+				# set border war for Sloan
+				if = {
+					limit = {
+						562 = { is_border_conflict = no }
+						NCR = { 
+							divisions_in_state = {
+								state = 562
+								size > 0
+							}
+						}
+					}
+					562 = { set_border_war = yes }
+				}
+			}
+			if = {
+				limit = {
+					# Sloan
+					AND = {
+						562 = { is_border_conflict = no }
+						has_full_control_of_state = 562
 						divisions_in_state = {
 							state = 562
 							size > 0
 						}
+						# checking if any neighbor states are valid for the NCR
+						OR = {
+							NCR = {
+								# Goodsprings
+								divisions_in_state = {
+									state = 552
+									size > 0
+								}
+								# Primm
+								divisions_in_state = {
+									state = 419
+									size > 0
+								}
+							}
+						}
 					}
 				}
+				562 = { set_border_war = yes }
+				# set border war for Goodsprings
+				if = {
+					limit = {
+						552 = { is_border_conflict = no }
+						NCR = {
+							divisions_in_state = {
+								state = 552
+								size > 0
+							}
+						}
+					}
+					552 = { set_border_war = yes }
+				}
+				# set border war for Primm
+				if = {
+					limit = {
+						419 = { is_border_conflict = no }
+						NCR = { 
+							divisions_in_state = {
+								state = 419
+								size > 0
+							}
+						}
+					}
+					419 = { set_border_war = yes }
+				}
 			}
-			562 = { set_border_war = yes }
-			573 = { set_border_war = yes }
 		}
 	}
 	option = {
@@ -515,10 +793,53 @@ country_event = {
 	desc = NCR_MOJ_border_war.9.d
 	picture = GFX_report_event_NCR_soldiers_fighting
 	
-	is_triggered_only = yes
+	is_triggered_only = no
+	fire_only_once = no
 
 	trigger = {
 		tag = NCR
+		OR = {
+			#  Loss in Route 95
+			AND = {
+				# Route 95
+				MOJ = { has_full_control_of_state = 137 }
+				137 = { is_border_conflict = yes }
+				# Nelson
+				533 = { is_border_conflict = no }
+				# Novac
+				181 = { is_border_conflict = no }
+			}
+			# Loss in Helios 1
+			AND = {
+				# Helios 1
+				MOJ = { has_full_control_of_state = 417 }
+				417 = { is_border_conflict = yes }
+				# Route 95
+				137 = { is_border_conflict = no }
+				# Novac
+				573 = { is_border_conflict = no }
+			}
+			# Loss in Black Mountain
+			AND = {
+				# Black Mountain
+				MOJ = { has_full_control_of_state = 573 }
+				573 = { is_border_conflict = yes }
+				# Route 95
+				137 = { is_border_conflict = no }
+				# Sloan
+				562 = { is_border_conflict = no }
+			}
+			# Loss in Sloan
+			AND = {
+				# Sloan
+				MOJ = { has_full_control_of_state = 562 }
+				562 = { is_border_conflict = yes }
+				# Goodsprings
+				552 = { is_border_conflict = no }
+				# Primm
+				419 = { is_border_conflict = no }
+			}
+		}
 	}
 
 	immediate = {
@@ -531,17 +852,11 @@ country_event = {
 					set_border_war = no
 				}
 			}
-			MOJ = {
-				every_owned_state = {
-					limit = {
-						is_border_conflict = yes
-					}
-					set_border_war = no
-				}
-			}
 		}
 	}
-	
+	mean_time_to_happen = {	
+		days = 2
+	}	
 	option = {
 		name = NCR_MOJ_border_war.9.a
 		add_political_power = -100
@@ -552,6 +867,7 @@ country_event = {
 }
 
 # MOJ wins Border War
+# triggered from the NCR losing border war in NCR_MOJ_border_war.9
 country_event = {
 	id = NCR_MOJ_border_war.10
 	title = NCR_MOJ_border_war.10.t
@@ -564,6 +880,14 @@ country_event = {
 		name = NCR_MOJ_border_war.10.a
 		add_political_power = 100
 		add_national_unity = 0.05
+		MOJ = {
+			every_owned_state = {
+				limit = {
+					is_border_conflict = yes
+				}
+				set_border_war = no
+			}
+		}
 	}
 }
 
@@ -574,10 +898,60 @@ country_event = {
 	desc = NCR_MOJ_border_war.11.d
 	picture = GFX_report_event_NCR_soldiers_fighting
 	
-	is_triggered_only = yes
+	is_triggered_only = no
 
 	trigger = {
 		tag = MOJ
+		OR = {
+			#  Loss in Route 95
+			AND = {
+				# Route 95
+				MOJ = { has_full_control_of_state = 137 }
+				137 = { is_border_conflict = no }
+				OR = {
+					# Nelson
+					533 = { is_border_conflict = yes }
+					# Novac
+					181 = { is_border_conflict = yes }
+				}
+			}
+			# Loss in Helios 1
+			AND = {
+				# Helios 1
+				MOJ = { has_full_control_of_state = 417 }
+				417 = { is_border_conflict = no }
+				OR = {
+					# Route 95
+					137 = { is_border_conflict = yes }
+					# Novac
+					573 = { is_border_conflict = yes }
+				}
+			}
+			# Loss in Black Mountain
+			AND = {
+				# Black Mountain
+				MOJ = { has_full_control_of_state = 573 }
+				573 = { is_border_conflict = no }
+				OR = {
+					# Route 95
+					137 = { is_border_conflict = yes }
+					# Sloan
+					562 = { is_border_conflict = yes }
+				}
+			}
+			# Loss in Sloan
+			AND = {
+				# Sloan
+				MOJ = { has_full_control_of_state = 562 }
+				562 = { is_border_conflict = no }
+				OR = {
+					# Goodsprings
+					552 = { is_border_conflict = yes }
+					# Primm
+					419 = { is_border_conflict = yes }
+				}
+			}
+		}
 	}
 
 	immediate = {
@@ -601,16 +975,20 @@ country_event = {
 			}
 		}
 	}
-	
+	mean_time_to_happen = {
+		days = 2
+	}
 	option = {
 		name = NCR_MOJ_border_war.11.a
 		add_political_power = -100
 		add_national_unity = -0.05
+		add_manpower = -50
 		NCR = { country_event = { id = NCR_MOJ_border_war.12 } }
 	}
 }
 
 # NCR wins Border War
+# triggered from MOJ losing in NCR_MOJ_border_war.12
 country_event = {
 	id = NCR_MOJ_border_war.12
 	title = NCR_MOJ_border_war.12.t
@@ -626,7 +1004,8 @@ country_event = {
 	}
 }
 
-# Border War Starts (MOJ)
+# Border War Starts (MOJ), triggered from NCR in 
+# NCR_MOJ_border_war.8
 country_event = {
 	id = NCR_MOJ_border_war.13
 	title = NCR_MOJ_border_war.13.t
@@ -638,7 +1017,263 @@ country_event = {
 	option = {
 		name = NCR_MOJ_border_war.13.a
 		effect_tooltip = {
-			
+			if = {
+				limit = {
+					# Route 95
+					AND = {
+						137 = { is_border_conflict = no }
+						has_full_control_of_state = 137
+						divisions_in_state = {
+							state = 137
+							size > 0
+						}
+						# checking if any neighbor states are valid for the NCR
+						OR = {
+							NCR = {
+								# Nelson
+								divisions_in_state = {
+									state = 533
+									size > 0
+								}
+								# Novac
+								divisions_in_state = {
+									state = 181
+									size > 0
+								}
+							}
+						}
+					}
+				}
+				137 = { set_border_war = yes }
+				# set border war for Nelson
+				if = {
+					limit = {
+						533 = { is_border_conflict = no }
+						NCR = {
+							divisions_in_state = {
+								state = 533
+								size > 0
+							}
+						}
+					}
+					533 = { set_border_war = yes }
+				}
+				# set border war for Novac
+				if = {
+					limit = {
+						181 = { is_border_conflict = no }
+						NCR = { 
+							divisions_in_state = {
+								state = 181
+								size > 0
+							}
+						}
+					}
+					181 = { set_border_war = yes }
+				}
+			}
+			if = {
+				limit = {
+					# Helios One
+					AND = {
+						417 = { is_border_conflict = no }
+						has_full_control_of_state = 417
+						divisions_in_state = {
+							state = 417
+							size > 0
+						}
+						# checking if any neighbor states are valid for the NCR
+						OR = {
+							NCR = {
+								# Route 95
+								divisions_in_state = {
+									state = 137
+									size > 0
+								}
+								# Black Mountain
+								divisions_in_state = {
+									state = 573
+									size > 0
+								}
+							}
+						}
+					}
+				}
+				417 = { set_border_war = yes }
+				# set border war for Route 95
+				if = {
+					limit = {
+						137 = { is_border_conflict = no }
+						NCR = {
+							divisions_in_state = {
+								state = 137
+								size > 0
+							}
+						}
+					}
+					137 = { set_border_war = yes }
+				}
+				# set border war for Black Mountain
+				if = {
+					limit = {
+						573 = { is_border_conflict = no }
+						NCR = { 
+							divisions_in_state = {
+								state = 573
+								size > 0
+							}
+						}
+					}
+					573 = { set_border_war = yes }
+				}
+			}
+			if = {
+				limit = {
+					# Black Mountain
+					AND = {
+						573 = { is_border_conflict = no }
+						has_full_control_of_state = 573
+						divisions_in_state = {
+							state = 573
+							size > 0
+						}
+						# checking if any neighbor states are valid for the NCR
+						OR = {
+							NCR = {
+								# Route 95
+								divisions_in_state = {
+									state = 137
+									size > 0
+								}
+								# Sloan
+								divisions_in_state = {
+									state = 562
+									size > 0
+								}
+							}
+						}
+					}
+				}
+				417 = { set_border_war = yes }
+				# set border war for Route 95
+				if = {
+					limit = {
+						137 = { is_border_conflict = no }
+						NCR = {
+							divisions_in_state = {
+								state = 137
+								size > 0
+							}
+						}
+					}
+					137 = { set_border_war = yes }
+				}
+				# set border war for Sloan
+				if = {
+					limit = {
+						562 = { is_border_conflict = no }
+						NCR = { 
+							divisions_in_state = {
+								state = 562
+								size > 0
+							}
+						}
+					}
+					562 = { set_border_war = yes }
+				}
+			}
+			if = {
+				limit = {
+					# Sloan
+					AND = {
+						562 = { is_border_conflict = no }
+						has_full_control_of_state = 562
+						divisions_in_state = {
+							state = 562
+							size > 0
+						}
+						# checking if any neighbor states are valid for the NCR
+						OR = {
+							NCR = {
+								# Goodsprings
+								divisions_in_state = {
+									state = 552
+									size > 0
+								}
+								# Primm
+								divisions_in_state = {
+									state = 419
+									size > 0
+								}
+							}
+						}
+					}
+				}
+				562 = { set_border_war = yes }
+				# set border war for Goodsprings
+				if = {
+					limit = {
+						552 = { is_border_conflict = no }
+						NCR = {
+							divisions_in_state = {
+								state = 552
+								size > 0
+							}
+						}
+					}
+					552 = { set_border_war = yes }
+				}
+				# set border war for Primm
+				if = {
+					limit = {
+						419 = { is_border_conflict = no }
+						NCR = { 
+							divisions_in_state = {
+								state = 419
+								size > 0
+							}
+						}
+					}
+					419 = { set_border_war = yes }
+				}
+			}
 		}
+	}
+}
+
+# NCR-BOS border conflicts are complete (For NCR)
+# triggered from MOJ losing all possible border war states to the NCR
+country_event = {
+	id = NCR_MOJ_border_war.14
+	title = NCR_MOJ_border_war.14.t
+	desc = NCR_MOJ_border_war.14.d
+	picture = GFX_report_event_NCR_soldiers_fighting
+	
+	is_triggered_only = no
+	trigger = {
+		tag = NCR
+		has_country_flag = MOJ_offensive_executed
+		OR = {
+			AND = {
+				# Route 95
+				has_full_control_of_state = 137
+				# Black Mountain
+				has_full_control_of_state = 573
+				# Sloan
+				has_full_control_of_state = 562
+				# Helios 1
+				has_full_control_of_state = 471
+			}
+			MOJ = { exists = no }
+		}
+	}
+
+	option = {
+		name = NCR_MOJ_border_war.14.a
+		add_political_power = 45
+		add_national_unity = 0.05
+	}
+	mean_time_to_happen = {
+		days = 10
 	}
 }

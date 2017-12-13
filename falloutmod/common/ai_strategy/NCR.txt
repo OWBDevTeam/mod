@@ -154,9 +154,71 @@ NCR_template_design = {
 		value = 30
 	}
 }
+NCR_area_priority = {
+	enable = {
+		original_tag = NCR
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = north_california 
+		value = 80
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = south_california
+		value = 120
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = arizona_sonora
+		value = 80
+	}
+	ai_strategy = {
+		type = area_priority
+		id = nevada
+		value = 50
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = colorado_newmexico
+		value = 40
+	}
+	ai_strategy = {
+		type = area_priority
+		id = new_vegas
+		value = 100
+	}
+	ai_strategy = {
+		type = area_priority
+		id = oregon
+		value = 10
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = utah
+		value = -40
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = idaho
+		value = -80
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = washington_british_columbia
+		value = -10
+	}
+}
 NCR_invade_CES = {
 	enable = {
-		tag = NCR
+		original_tag = NCR
 
 		OR = {
 			has_war_with = CES
@@ -188,11 +250,15 @@ NCR_invade_CES = {
 
 NCR_ignore_northern_minors = { #don't sit around in the north when more important stuff is happening
 	enable = {
-		tag = NCR
-		has_war_with = CES
+		original_tag = NCR
+		OR = {
+			has_war_with = CES
+			has_country_flag = MOJ_offensive_executed
+		}
 	}
 	abort = {
 		NOT = { has_war_with = CES }
+		NOT = { has_country_flag = MOJ_offensive_executed }
 	}
 	ai_strategy = {
 		type = ignore
@@ -228,7 +294,7 @@ NCR_ignore_northern_minors = { #don't sit around in the north when more importan
 
 NCR_prepare_for_war = {
 	enable = {
-		tag = NCR
+		original_tag = NCR
 		has_government = democratic
 		is_historical_focus_on = yes
 		NOT = { 
@@ -270,5 +336,327 @@ NCR_prepare_for_war = {
 		type = antagonize
 		id = "CES"
 		value = 500
+	}
+}
+
+# AI should station any available troops garrisoning areas with 
+# border wars occuring for the Mojave Campaign against the
+# Mojave BOS
+NCR_hostile_MOJ_mojave_campaign = {
+	enable = {
+		original_tag = NCR
+		has_country_flag = MOJ_offensive_executed
+	}
+	abort = {
+		NOT = { has_country_flag = MOJ_offensive_executed }
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "MOJ"
+		value = 500
+	}
+	ai_strategy = {
+		type = contain
+		id = "MOJ"
+		value = 500
+	}
+}
+NCR_border_war_route_95 = {
+	enable = {
+		original_tag = NCR
+		has_country_flag = MOJ_offensive_executed
+		# route 95
+		137 = { is_border_conflict = yes }
+		has_war = no
+		NOT = {
+			any_country = {
+				is_justifying_wargoal_against = NCR
+				has_wargoal_against = NCR
+			}
+		}
+	}
+	abort = {
+		# route 95
+		OR = {
+			137 = { is_border_conflict = no }
+			has_war = yes
+			any_country = {
+				is_justifying_wargoal_against = NCR
+				has_wargoal_against = NCR
+			}
+		}
+	}
+	#ai_strategy = {
+	#	type = garrison
+	#	id = "137"
+	#	value = 3000
+	#}
+	ai_strategy = {
+		type = area_priority
+		id = new_vegas
+		value = 300
+	}
+}
+
+NCR_border_war_helios_one = {
+	enable = {
+		original_tag = NCR
+		has_country_flag = MOJ_offensive_executed
+		#  helios 1
+		417 = { is_border_conflict = yes }
+		has_war = no
+		NOT = {
+			any_country = {
+				is_justifying_wargoal_against = NCR
+				has_wargoal_against = NCR
+			}
+		}
+	}
+	abort = {
+		OR = {
+			# helios 1
+			417 = { is_border_conflict = no }
+			has_war = yes
+			any_country = {
+				is_justifying_wargoal_against = NCR
+				has_wargoal_against = NCR
+			}
+		}
+	}
+	#ai_strategy = {
+	#	type = garrison
+	#	id = "417"
+	#	value = 3000
+	#}
+	ai_strategy = {
+		type = area_priority
+		id = new_vegas
+		value = 300
+	}
+}
+
+NCR_border_war_nelson = {
+	enable = {
+		original_tag = NCR
+		has_country_flag = MOJ_offensive_executed
+		# Nelson
+		533 = { is_border_conflict = yes }
+		has_war = no
+		NOT = {
+			any_country = {
+				is_justifying_wargoal_against = NCR
+				has_wargoal_against = NCR
+			}
+		}
+	}
+	abort = {
+		OR = {
+			# Nelson
+			533 = { is_border_conflict = no }
+			has_war = yes
+			any_country = {
+				is_justifying_wargoal_against = NCR
+				has_wargoal_against = NCR
+			}
+		}
+	}
+	#ai_strategy = {
+	#	type = garrison
+	#	id = "533"
+	#	value = 3000
+	#}
+	ai_strategy = {
+		type = area_priority
+		id = new_vegas
+		value = 300
+	}
+}
+
+NCR_border_war_black_mountain = {
+	enable = {
+		original_tag = NCR
+		has_country_flag = MOJ_offensive_executed
+		# Black Mountain
+		has_full_control_of_state = 573
+		573 = { is_border_conflict = yes }
+		has_war = no
+		NOT = {
+			any_country = {
+				is_justifying_wargoal_against = NCR
+				has_wargoal_against = NCR
+			}
+		}
+	}
+	abort = {
+		OR = {
+			# Black Mountain
+			573 = { is_border_conflict = no }
+			has_war = yes
+			any_country = {
+				is_justifying_wargoal_against = NCR
+				has_wargoal_against = NCR
+			}
+		}
+	}
+	#ai_strategy = {
+	#	type = garrison
+	#	id = "573"
+	#	value = 3000
+	#}
+	ai_strategy = {
+		type = area_priority
+		id = new_vegas
+		value = 300
+	}
+}
+
+NCR_border_war_sloan = {
+	enable = {
+		original_tag = NCR
+		has_country_flag = MOJ_offensive_executed
+		# Sloan
+		has_full_control_of_state = 562
+		562 = { is_border_conflict = yes }
+		has_war = no
+		NOT = {
+			any_country = {
+				is_justifying_wargoal_against = NCR
+				has_wargoal_against = NCR
+			}
+		}
+	}
+	abort = {
+		OR = {
+			# Sloan
+			562 = { is_border_conflict = no }
+			has_war = yes
+			any_country = {
+				is_justifying_wargoal_against = NCR
+				has_wargoal_against = NCR
+			}
+		}
+	}
+	#ai_strategy = {
+	#	type = garrison
+	#	id = "562"
+	#	value = 3000
+	#}
+	ai_strategy = {
+		type = area_priority
+		id = new_vegas
+		value = 300
+	}
+}
+
+NCR_border_war_primm = {
+	enable = {
+		original_tag = NCR
+		has_country_flag = MOJ_offensive_executed
+		# Primm
+		has_full_control_of_state = 419
+		419 = { is_border_conflict = yes }
+		has_war = no
+		NOT = {
+			any_country = {
+				is_justifying_wargoal_against = NCR
+				has_wargoal_against = NCR
+			}
+		}
+	}
+	abort = {
+		OR = {
+			# Primm
+			419 = { is_border_conflict = no }
+			has_war = yes
+			any_country = {
+				is_justifying_wargoal_against = NCR
+				has_wargoal_against = NCR
+			}
+		}
+	}
+	#ai_strategy = {
+	#	type = garrison
+	#	id = "419"
+	#	value = 3000
+	#}
+	ai_strategy = {
+		type = area_priority
+		id = new_vegas
+		value = 300
+	}
+}
+NCR_border_war_goodsprings = {
+	enable = {
+		original_tag = NCR
+		has_country_flag = MOJ_offensive_executed
+		# Goodsprings
+		has_full_control_of_state = 552
+		552 = { is_border_conflict = yes }
+		has_war = no
+		NOT = {
+			any_country = {
+				is_justifying_wargoal_against = NCR
+				has_wargoal_against = NCR
+			}
+		}
+	}
+	abort = {
+		OR = {
+			# Goodsprings
+			552 = { is_border_conflict = no }
+			has_war = yes
+			any_country = {
+				is_justifying_wargoal_against = NCR
+				has_wargoal_against = NCR
+			}
+		}
+	}
+	#ai_strategy = {
+	#	type = garrison
+	#	id = "552"
+	#	value = 3000
+	#}
+	ai_strategy = {
+		type = area_priority
+		id = new_vegas
+		value = 300
+	}
+}
+
+NCR_border_war_novac = {
+	enable = {
+		original_tag = NCR
+		has_country_flag = MOJ_offensive_executed
+		# Novac
+		has_full_control_of_state = 181
+		181 = { is_border_conflict = yes }
+		has_war = no
+		NOT = {
+			any_country = {
+				is_justifying_wargoal_against = NCR
+				has_wargoal_against = NCR
+			}
+		}
+	}
+	abort = {
+		OR = {
+			# Novac
+			181 = { is_border_conflict = no }
+			has_war = yes
+			any_country = {
+				is_justifying_wargoal_against = NCR
+				has_wargoal_against = NCR
+			}
+		}
+	}
+	#ai_strategy = {
+	#	type = garrison
+	#	id = "181"
+	#	value = 3000
+	#}
+	ai_strategy = {
+		type = area_priority
+		id = new_vegas
+		value = 300
 	}
 }

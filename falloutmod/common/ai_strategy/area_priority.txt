@@ -1,7 +1,10 @@
 
 default_area_priority = {
 	enable = {
-		always = yes
+		NOT = {
+			tag = NCR
+			tag = CES
+		}
 	}
 
 	ai_strategy = {
@@ -32,13 +35,11 @@ default_area_priority = {
 		id = colorado_newmexico
 		value = 40
 	}
-	
 	ai_strategy = {
 		type = area_priority
-		id = nevada
-		value = 50
+		id = new_vegas
+		value = 60
 	}
-	
 	ai_strategy = {
 		type = area_priority
 		id = oregon
