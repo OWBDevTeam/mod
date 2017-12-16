@@ -1,0 +1,71 @@
+add_namespace = generic_raider
+
+# Origin of the Gang
+country_event = {
+	id = generic_raider.0
+	title = generic_raider.0.title
+	desc = generic_raider.0.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+
+	option = {
+		name = old_world_criminals
+        army_org_factor = 1.05
+	}
+	option = {
+		name = former_tribal
+		army_speed_factor = 1.10
+	}
+	option = {
+		name = vault_dwellers_gone_bad
+        production_factory_max_efficiency_factor = 1.10
+		line_change_production_efficiency_factor = 1.10
+	}
+}
+country_event = {
+	id = generic_raider.1
+	title = generic_raider.1.title
+	desc = generic_raider.1.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+
+	option = {
+		name = biker_gang
+        add_manpower = 10000
+		
+	}
+	option = {
+		name = drug_runner_gang
+		army_speed_factor = 1.10
+		
+	}
+	option = {
+		name = classical_raiders
+        training_time_factor = 1.10
+		load_oob = "generic_raider_militia"
+	}
+}
+country_event = {
+	id = generic_raider.2
+	title = generic_raider.2.title
+	desc = generic_raider.2.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+
+	option = {
+		name = slaves
+        NDefines.NCountry.LOCAL_MANPOWER_ACCESSIBLE_NON_CORE_FACTOR = 1.10
+	}
+	option = {
+		name = conflict
+        production_factory_max_efficiency_factor = 1.10
+		line_change_production_efficiency_factor = 1.10
+	}
+	option = {
+		name = respect
+        army_org_factor = 1.05
+	}
+}
