@@ -1,0 +1,1183 @@
+focus_tree = {
+	id = generic_raider
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = SCO
+		}
+	}
+	
+	default = yes
+	reset_on_civilwar = no
+
+	focus = {
+		id = origin_of_the_gang
+		icon = GFX_goal_generic_demand_territory
+		x = 18
+		y = 0
+		cost = 1
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = generic_raider.0 } # Origin of the Gang
+		}
+	}
+	focus = {
+		id = gang_lifestyle
+		icon = GFX_goal_generic_demand_territory
+		x = 18
+		y = 1
+		cost = 1
+
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = origin_of_the_gang
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.1 } # Gang Lifestyle
+		}
+	}
+	focus = {
+		id = gang_ambitions
+		icon = GFX_goal_generic_demand_territory
+		x = 18
+		y = 2
+		cost = 1
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = gang_lifestyle
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	
+	#NEW LEADERSHIP TREE
+	focus = {
+		id = new_leadership
+		icon = GFX_goal_generic_demand_territory
+		x = 7
+		y = 3
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = gang_ambitions
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = the_sadists
+		icon = GFX_goal_support_fascism
+		x = 4
+		y = 4
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = new_leadership
+		}
+		mutually_exclusive = {
+			focus = the_eggheads
+			focus = the_grunts
+			focus = the_boss
+		}
+		completion_reward = {
+			add_political_power = 60
+			set_politics = {
+				ruling_party = elites
+				elections_allowed = no
+			}
+		}
+	}
+	focus = {
+		id = the_eggheads
+		icon = GFX_goal_support_democracy
+		x = 6
+		y = 4
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = new_leadership
+		}
+		mutually_exclusive = {
+			focus = the_sadists
+			focus = the_grunts
+			focus = the_boss
+		}
+		completion_reward = {
+			add_political_power = 60
+			set_politics = {
+				ruling_party = intellectuals
+				elections_allowed = no
+			}
+		}
+	}
+	focus = {
+		id = the_grunts
+		icon = GFX_goal_support_communism
+		x = 8
+		y = 4
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = new_leadership
+		}
+		mutually_exclusive = {
+			focus = the_sadists
+			focus = the_eggheads
+			focus = the_boss
+		}
+		completion_reward = {
+			add_political_power = 60
+			set_politics = {
+				ruling_party = people
+				elections_allowed = no
+			}
+		}
+	}
+	focus = {
+		id = the_boss
+		icon = GFX_goal_generic_neutrality_focus
+		x = 10
+		y = 4
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = new_leadership
+		}
+		mutually_exclusive = {
+			focus = the_sadists
+			focus = the_eggheads
+			focus = the_grunts
+		}
+		completion_reward = {
+			add_political_power = 60
+			set_politics = {
+				ruling_party = ruler
+				elections_allowed = no
+			}
+		}
+	}
+	focus = {
+		id = preparing_for_total_war
+		icon =GFX_goal_generic_forceful_treaty
+		x = 4
+		y = 5
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = the_sadists
+		}
+
+		completion_reward = {
+		add_ideas = preparing_for_total_war
+		
+		
+		}
+	}
+	focus = {
+		id = critical_thinking
+		icon = GFX_goal_generic_demand_territory
+		x = 6
+		y = 5
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = the_eggheads
+		}
+
+		completion_reward = {
+			add_ideas = critical_thinking
+		}
+	}
+	focus = {
+		id = gangland_diplomacy
+		icon = GFX_goal_generic_demand_territory
+		x = 8
+		y = 5
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = the_grunts
+		}
+
+		completion_reward = {
+			add_national_unity = 0.1
+		}
+	}
+	focus = {
+		id = dont_question_the_boss
+		icon = GFX_goal_generic_demand_territory
+		x = 10
+		y = 5
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = the_boss
+		}
+
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = draconian_recovery_methods
+		icon = GFX_goal_generic_demand_territory
+		x = 4
+		y = 6
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = preparing_for_total_war
+		}
+
+		completion_reward = {
+		add_ideas = draconian_recovery_methods
+			
+		}
+	}
+	focus = {
+		id = master_plan
+		icon = GFX_goal_generic_demand_territory
+		x = 6
+		y = 6
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = critical_thinking
+		}
+
+		completion_reward = {
+		
+			add_ideas = master_plan
+			
+		}
+	}
+	focus = {
+		id = everyone_works
+		icon = GFX_goal_generic_demand_territory
+		x = 8
+		y = 6
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = gangland_diplomacy
+		}
+
+		completion_reward = {
+			remove_ideas = 
+		}
+	}
+	focus = {
+		id = iron_grip
+		icon = GFX_goal_generic_demand_territory
+		x = 10
+		y = 6
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = dont_question_the_boss
+		}
+
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	#IMPROVE THE HIDEOUT TREE
+	
+	focus = {
+		id = improve_the_hideout
+		icon = GFX_goal_generic_demand_territory
+		x = 16
+		y = 3
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = gang_ambitions
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = cruel_heartland
+		icon = GFX_goal_generic_demand_territory
+		x = 14
+		y = 4
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = improve_the_hideout
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = skulls_on_sticks
+		icon = GFX_goal_generic_demand_territory
+		x = 16
+		y = 4
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = improve_the_hideout
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = territorial_reinforcement
+		icon = GFX_goal_generic_demand_territory
+		x = 14
+		y = 5
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = cruel_heartland
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = terrorise_the_locals
+		icon = GFX_goal_generic_demand_territory
+		x = 16
+		y = 5
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = skulls_on_sticks
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = raider_headquarters
+		icon = GFX_goal_generic_demand_territory
+		x = 16
+		y = 6
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = terrorise_the_locals
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = territoriality
+		icon = GFX_goal_generic_demand_territory
+		x = 16
+		y = 7
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = raider_headquarters
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = manifest_destiny
+		icon = GFX_goal_generic_demand_territory
+		x = 16
+		y = 8
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = territoriality
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = we_never_die
+		icon = GFX_goal_generic_demand_territory
+		x = 14
+		y = 8
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = territoriality
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	
+	
+
+	#INCORPORATE SLAVERS TREE
+	focus = {
+		id = incorporate_slavers
+		icon = GFX_goal_generic_demand_territory
+		x = 18
+		y = 3
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = gang_ambitions
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = slave_labour
+		icon = GFX_goal_generic_demand_territory
+		x = 18
+		y = 4
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = incorporate_slavers
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}focus = {
+		id = encourage_slavers
+		icon = GFX_goal_generic_demand_territory
+		x = 20
+		y = 4
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = incorporate_slavers
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = forced_labour
+		icon = GFX_goal_generic_demand_territory
+		x = 18
+		y = 5
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = slave_labour
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = establish_the_slave_trade
+		icon = GFX_goal_generic_demand_territory
+		x = 20
+		y = 5
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = encourage_slavers
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = industrial_interest
+		icon = GFX_goal_generic_demand_territory
+		x = 22
+		y = 5
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = encourage_slavers
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = slave_scientists
+		icon = GFX_goal_generic_demand_territory
+		x = 18
+		y = 6
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = forced_labour
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = drug_dealers
+		icon = GFX_goal_generic_demand_territory
+		x = 20
+		y = 6
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = forced_labour
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = hideout_expansion
+		icon = GFX_goal_generic_demand_territory
+		x = 22
+		y = 6
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = industrial_interest
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = slave_researchers
+		icon = GFX_goal_generic_demand_territory
+		x = 18
+		y = 8
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = slave_scientists
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = raid_workshops
+		icon = GFX_goal_generic_demand_territory
+		x = 20
+		y = 7
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = drug_dealers
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = slaver_settlement
+		icon = GFX_goal_generic_demand_territory
+		x = 22
+		y = 7
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = hideout_expansion
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = supply_stashes
+		icon = GFX_goal_generic_demand_territory
+		x = 20
+		y = 8
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = raid_workshops
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	
+	
+	
+	
+	#SLAVE RESEARCHERS TREE
+	focus = {
+		id = new_age_weaponry
+		icon = GFX_goal_generic_demand_territory
+		x = 18
+		y = 9
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = slave_researchers
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = turn_the_lights_on
+		icon = GFX_goal_generic_demand_territory
+		x = 20
+		y = 9
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = slave_researchers
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = guns_with_legs
+		icon = GFX_goal_generic_demand_territory
+		x = 18
+		y = 10
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = new_age_weaponry
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = terminals_for_all
+		icon = GFX_goal_generic_demand_territory
+		x = 20
+		y = 10
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = turn_the_lights_on
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = a_weapon_to_surpass_the_other_gang
+		icon = GFX_goal_generic_demand_territory
+		x = 22
+		y = 10
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = turn_the_lights_on
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = find_the_good_stuff
+		icon = GFX_goal_generic_demand_territory
+		x = 18
+		y = 11
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = guns_with_legs
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = raider_computer_logs
+		icon = GFX_goal_generic_demand_territory
+		x = 20
+		y = 11
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = terminals_for_all
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = convert_metal_armour
+		icon = GFX_goal_generic_demand_territory
+		x = 22
+		y = 11
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = a_weapon_to_surpass_the_other_gang
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = shitty_robots
+		icon = GFX_goal_generic_demand_territory
+		x = 18
+		y = 12
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = find_the_good_stuff
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = taking_the_best
+		icon = GFX_goal_generic_demand_territory
+		x = 20
+		y = 12
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = raider_computer_logs
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = power_armor_familiarity
+		icon = GFX_goal_generic_demand_territory
+		x = 22
+		y = 12
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = convert_metal_armour
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	
+	
+	
+	
+	#DOPED SOLDIERS TREE
+	focus = {
+		id = doped_soldiers
+		icon = GFX_goal_generic_demand_territory
+		x = 28
+		y = 3
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = gang_ambitions
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = prove_yourself
+		icon = GFX_goal_generic_demand_territory
+		x = 26
+		y = 4
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = doped_soldiers
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = lightning_raids
+		icon = GFX_goal_generic_demand_territory
+		x = 28
+		y = 4
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = doped_soldiers
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = brutal_hazing
+		icon = GFX_goal_generic_demand_territory
+		x = 26
+		y = 5
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = lightning_raids
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = blood_soaked_gender_equality
+		icon = GFX_goal_generic_demand_territory
+		x = 28
+		y = 5
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = lightning_raids
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = recruit_them_young
+		icon = GFX_goal_generic_demand_territory
+		x = 26
+		y = 6
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = blood_soaked_gender_equality
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = take_what_you_need
+		icon = GFX_goal_generic_demand_territory
+		x = 28
+		y = 6
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = blood_soaked_gender_equality
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = expand_the_garage
+		icon = GFX_goal_generic_demand_territory
+		x = 26
+		y = 7
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = take_what_you_need
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = business_booms
+		icon = GFX_goal_generic_demand_territory
+		x = 30
+		y = 7
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = take_what_you_need
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = chop_shop_shimmy
+		icon = GFX_goal_generic_demand_territory
+		x = 24
+		y = 8
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite= {
+			focus = expand_the_garage
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = kings_of_the_roads
+		icon = GFX_goal_generic_demand_territory
+		x = 26
+		y = 8
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = expand_the_garage
+		}
+		mutually_exclusive = {
+			focus = call_in_the_warboys
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = call_in_the_warboys
+		icon = GFX_goal_generic_demand_territory
+		x = 28
+		y = 8
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = expand_the_garage
+		}
+		mutually_exclusive = {
+			focus = kings_of_the_roads
+		}
+		
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = short_fused_engineers
+		icon = GFX_goal_generic_demand_territory
+		x = 30
+		y = 8
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = business_booms
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = gear_head_slaves
+		icon = GFX_goal_generic_demand_territory
+		x = 24
+		y = 9
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite= {
+			focus = chop_shop_shimmy
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = custom_rides
+		icon = GFX_goal_generic_demand_territory
+		x = 26
+		y = 9
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = kings_of_the_roads
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = metal_boxes
+		icon = GFX_goal_generic_demand_territory
+		x = 28
+		y = 9
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = call_in_the_warboys
+		}
+		
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = an_explosion_in_understanding
+		icon = GFX_goal_generic_demand_territory
+		x = 30
+		y = 9
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = short_fused_engineers
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = the_magnum_opus
+		icon = GFX_goal_generic_demand_territory
+		x = 24
+		y = 10
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = gear_head_slaves
+		}
+		
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
+	focus = {
+		id = roaring_machines
+		icon = GFX_goal_generic_demand_territory
+		x = 27
+		y = 10
+		cost = 8.6
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = custom_rides
+			focus = metal_boxes
+		}
+		completion_reward = {
+			country_event = { id = generic_raider.2 } # Gang Ambitions
+		}
+	}
