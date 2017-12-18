@@ -1,4 +1,4 @@
-add_namespace = generic_raider
+﻿add_namespace = generic_raider
 
 # Origin of the Gang
 country_event = {
@@ -11,16 +11,15 @@ country_event = {
 
 	option = {
 		name = old_world_criminals
-        army_org_factor = 1.05
+        add_ideas = idea_old_world_criminals
 	}
 	option = {
 		name = former_tribal
-		army_speed_factor = 1.10
+		add_ideas = idea_former_tribal
 	}
 	option = {
 		name = vault_dwellers_gone_bad
-        production_factory_max_efficiency_factor = 1.10
-		line_change_production_efficiency_factor = 1.10
+		add_ideas = idea_vault_dwellers_gone_bad
 	}
 }
 country_event = {
@@ -38,12 +37,10 @@ country_event = {
 	}
 	option = {
 		name = drug_runner_gang
-		army_speed_factor = 1.10
-		
+		add_ideas = idea_drug_runner_gang
 	}
 	option = {
 		name = classical_raiders
-        training_time_factor = 1.10
 		load_oob = "generic_raider_militia"
 	}
 }
@@ -57,15 +54,15 @@ country_event = {
 
 	option = {
 		name = slaves
-        NDefines.NCountry.LOCAL_MANPOWER_ACCESSIBLE_NON_CORE_FACTOR = 1.10
+        add_ideas = raider_idea_slaves
 	}
 	option = {
 		name = conflict
-        production_factory_max_efficiency_factor = 1.10
-		line_change_production_efficiency_factor = 1.10
+		add_ideas = raider_idea_conflict
+
 	}
 	option = {
 		name = respect
-        army_org_factor = 1.05
+        add_ideas = raider_idea_respect
 	}
 }
