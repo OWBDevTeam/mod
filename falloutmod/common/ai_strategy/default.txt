@@ -125,32 +125,76 @@ stop_building_infantry = { # Please Stop Building Units
 }
 DEFAULT_template_design = {
 	enable = {
-		always = yes		
+		NOT = { 
+			OR = {
+				is_brotherhood_nation = yes
+				tag = CES tag = NCR 
+			}
+		}
+		date < 2277.1.1				
 	}
-	ai_strategy = {
-		type = template_prio
-		id = infantry
-		value = 40
+	abort = { 
+		date > 2277.1.1
 	}
-	ai_strategy = {
-		type = template_prio
-		id = power_armour
-		value = 10
-	}
-	ai_strategy = {
-		type = template_prio
-		id = garrison
-		value = 15
-	}
-	#ai_strategy = {
-	#	type = template_prio
-	#	id = motorized
-	#	value = 20
-	#}
+
 	ai_strategy = {
 		type = template_prio
 		id = mechanized
+		value = 10
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = light_robot
+		value = 50
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = 60
+	}
+}
+
+DEFAULT_template_design = {
+	enable = {
+		NOT = { 
+			OR = {
+				is_brotherhood_nation = yes
+				tag = CES tag = NCR
+			}
+		}
+		date > 2277.1.1				
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = mechanized
+		value = 40
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = light_robot
+		value = 10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_robot
+		value = 50
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = heavy_robot
 		value = 20
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = 10
 	}
 }
 #default_area_priority = {
