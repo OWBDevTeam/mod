@@ -1,19 +1,19 @@
 ﻿division_template = {
-	name = "Brotherhood Infantry"
+	name = "PA Cell"
+
 	regiments = {
-		infantry = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
-		infantry = { x = 1 y = 0 }
-		infantry = { x = 1 y = 1 }
-		infantry = { x = 1 y = 2 }
-		infantry = { x = 2 y = 0 }
-		infantry = { x = 2 y = 1 }
-		infantry = { x = 2 y = 2 }
-		infantry = { x = 3 y = 0 }
-		infantry = { x = 3 y = 1 }
+		power_armour = { x = 0 y = 0 }
+		power_armour = { x = 0 y = 1 }
+		power_armour = { x = 0 y = 2 }
+		power_armour = { x = 1 y = 0 }
+		power_armour = { x = 1 y = 1 }
+		power_armour = { x = 1 y = 2 }
+		power_armour = { x = 2 y = 0 }
+		power_armour = { x = 2 y = 1 }
+		power_armour = { x = 2 y = 2 }
+		power_armour = { x = 3 y = 0 }
+		power_armour = { x = 3 y = 1 }
 	}
-	priority = 2
 }
 
 division_template = {
@@ -25,12 +25,52 @@ division_template = {
 		militia = { x = 1 y = 1 }
 	}
 }
+units = {
+
+	division {
+		name = "1. PA"
+		location = 6987
+		division_template = "PA Cell"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+units = {
+
+	division {
+		name = "2. PA"
+		location = 3235
+		division_template = "PA Cell"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+units = {
+
+	division {
+		name = "3. PA"
+		location = 3199
+		division_template = "PA Cell"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+units = {
+
+	division {
+		name = "4. PA"
+		location = 6990
+		division_template = "PA Cell"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
 
 ##### Starting Production #####
 instant_effect = {
 	add_equipment_production = {
 		equipment = {
-			type = infantry_equipment_1
+			type = energy_equipment_2
 			creator = "MOJ"
 		}
 		requested_factories = 1

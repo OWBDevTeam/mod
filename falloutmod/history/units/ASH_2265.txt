@@ -9,16 +9,39 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Ashton Defenders"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
 		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		explosive_company = { x = 0 y = 0 }
 	}
 }
 
+units = {
+	division {
+		name = "1st Ashton Defenders"
+		location = 3258
+		division_template = "Ashton Defenders"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "2nd Ashton Defenders"
+		location = 3258
+		division_template = "Ashton Defenders"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+}
 ##### Starting Production #####
 instant_effect = {
 	add_equipment_production = {

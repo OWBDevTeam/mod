@@ -9,16 +9,38 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Dam Warriors"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
 		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		explosive_company = { x = 0 y = 0 }
 	}
 }
-
+units = {
+	division {
+		name = "1st Dam Warriors"
+		location = 6603
+		division_template = "Dam Warriors"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "2nd Dam Warriors"
+		location = 6603
+		division_template = "Dam Warriors"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
 ##### Starting Production #####
 instant_effect = {
 	add_equipment_production = {
