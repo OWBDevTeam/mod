@@ -534,7 +534,30 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 4
+			factor = 1
+			modifier = {
+				factor = 5.0
+				OR = {
+					fuel > 4
+					metal > 4
+					water > 4
+					electricity > 4
+					electronics > 4
+					advanced_technology > 4
+				}
+			}
+			
+			modifier = {
+				factor = 1.5
+				OR = {
+					fuel > 8
+					metal > 8
+					water > 8
+					electricity > 8
+					electronics > 8
+					advanced_technology > 8
+				}
+			}
 		}
 	}
     
@@ -620,7 +643,6 @@ technologies = {
 		categories = {
 			industry
 		}
-		
 		ai_will_do = {
 			factor = 4
 		}
@@ -827,7 +849,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 4
+			factor = 1
 		}
 	}
     
@@ -847,7 +869,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 4
+			factor = 1
 		}
 	}
     
@@ -872,7 +894,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 4
+			factor = 1
 		}
 	}
     
@@ -896,7 +918,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 4
+			factor = 1
 		}
 	}
     
@@ -921,7 +943,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 4
+			factor = 1
 		}
 	}
 
@@ -1102,7 +1124,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 5
+			factor = 0 # temporary AI won't use buildings
 			modifier = {
 				factor = 0.5
 				electricity > 10
@@ -1332,7 +1354,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 5
+			factor = 0 # temporary AI won't use buildings
 			modifier = {
 				factor = 0.5
 				metal > 10
@@ -1562,7 +1584,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 5
+			factor = 0 # temporary AI won't use buildings
 			modifier = {
 				factor = 0.5
 				fuel > 10
@@ -1703,6 +1725,7 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 5
+
 			modifier = {
 				factor = 0.5
 				fuel > 10
@@ -1792,7 +1815,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 5
+			factor = 0 # temporary AI won't use buildings
 			modifier = {
 				factor = 0.5
 				electronics > 10
@@ -2022,7 +2045,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 5
+			factor = 0 # temporary AI won't use buildings
 			modifier = {
 				factor = 0.5
 				advanced_technology  > 10
