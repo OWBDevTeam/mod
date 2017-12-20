@@ -107,8 +107,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		cost = 10.00
 		x = 2
-		y = 1
-
+		y = 3
 	}
 	focus = {
 		id = settler_laboratory
@@ -118,8 +117,10 @@ focus_tree = {
 			focus = settler_schools
 		}
 		x = 2
-		y = 2
-
+		y = 4
+        completion_reward = {
+			add_research_slot = 1
+		}
 	}
 	focus = {
 		id = settler_medical
@@ -129,8 +130,15 @@ focus_tree = {
 			focus = settler_laboratory
 		}
 		x = 0
-		y = 3
-
+		y = 5
+        completion_reward = {
+			add_tech_bonus = {
+				name = medical_bonus
+				bonus = 0.5
+				uses = 1
+				category = chem_tech
+			}
+		}
 	}
 	focus = {
 		id = settler_chemistry
@@ -140,7 +148,7 @@ focus_tree = {
 			focus = settler_medical
 		}
 		x = 0
-		y = 4
+		y = 6
 
 	}
 	focus = {
@@ -151,8 +159,15 @@ focus_tree = {
 			focus = settler_laboratory
 		}
 		x = 2
-		y = 3
-
+		y = 5
+		completion_reward = {
+        add_tech_bonus = {
+				name = robot_bonus
+				bonus = 0.5
+				uses = 1
+				category = robotics_tech
+			}
+		}
 	}
 	focus = {
 		id = settler_robco
@@ -162,7 +177,7 @@ focus_tree = {
 			focus = settler_science
 		}
 		x = 2
-		y = 4
+		y = 6
 
 	}
 	focus = {
@@ -173,7 +188,7 @@ focus_tree = {
 			focus = settler_robco
 		}
 		x = 1
-		y = 5
+		y = 7
 
 	}
 	focus = {
@@ -184,7 +199,7 @@ focus_tree = {
 			focus = settler_robco
 		}
 		x = 3
-		y = 5
+		y = 7
 
 	}
 	focus = {
@@ -195,7 +210,7 @@ focus_tree = {
 			focus = settlers_protection
 		}
 		x = 3
-		y = 6
+		y = 8
 
 	}
 	focus = {
@@ -206,8 +221,39 @@ focus_tree = {
 			focus = settler_laboratory
 		}
 		x = 6
-		y = 3
-
+		y = 5
+       completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = settler_vehicles
@@ -217,8 +263,15 @@ focus_tree = {
 			focus = settler_garage
 		}
 		x = 6
-		y = 4
-
+		y = 6
+        completion_reward = {
+			add_tech_bonus = {
+				name = transport_bonus
+				bonus = 0.5
+				uses = 1
+				category = vehicle_tech
+			}
+		}
 	}
 	focus = {
 		id = settler_teams
@@ -228,9 +281,23 @@ focus_tree = {
 			focus = settler_vehicles
 		}
 		x = 5
-		y = 5
-
-	}
+		y = 7
+        completion_reward = {
+			random_owned_controlled_state = {
+			  add_resource = {
+				type = fuel
+				amount = 6
+				}
+				add_resource = {
+				type = scrap
+				amount = 6
+				}
+		    }
+		
+	    }
+	
+		
+    }
 	focus = {
 		id = settler_war
 		icon = GFX_goal_unknown
@@ -239,8 +306,15 @@ focus_tree = {
 			focus = settler_vehicles
 		}
 		x = 7
-		y = 5
-
+		y = 7
+        completion_reward = {
+			add_tech_bonus = {
+				name = apc_bonus
+				bonus = 0.5
+				uses = 1
+				category = 
+			}
+		}
 	}
 	focus = {
 		id = settler_thinktank
@@ -253,8 +327,15 @@ focus_tree = {
 			focus = settler_war
 		}
 		x = 6
-		y = 6
-
+		y = 8
+        completion_reward = {
+			add_tech_bonus = {
+				name = thinktank_bonus
+				bonus = 0.5
+				uses = 1
+				category = 
+			}
+		}
 	}
 	focus = {
 		id = settlers_wall
@@ -298,7 +379,45 @@ focus_tree = {
 		}
 		x = 11
 		y = 3
-
+          completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		
+			add_tech_bonus = {
+				name = gunsmith_bonus
+				bonus = 0.5
+				uses = 1
+				category =  ballistic_weaponry_tech
+			}
+		}
 	}
 	focus = {
 		id = settler_subsidize
@@ -518,7 +637,14 @@ focus_tree = {
 		}
 		x = 22
 		y = 3
-
+		completion_reward = {
+			add_tech_bonus = {
+				name = industry_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
 	}
 	focus = {
 		id = settler_pride
@@ -529,6 +655,9 @@ focus_tree = {
 		}
 		x = 22
 		y = 4
+       completion_reward = {
+			add_ideas =	local_pride
+		}
 
 	}
 	focus = {
@@ -540,7 +669,38 @@ focus_tree = {
 		}
 		x = 22
 		y = 5
-
+        completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = settler_city
@@ -551,7 +711,6 @@ focus_tree = {
 		}
 		x = 22
 		y = 6
-
 	}
 	focus = {
 		id = settlers_markets
@@ -562,7 +721,67 @@ focus_tree = {
 		}
 		x = 21
 		y = 7
-
+        completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		 random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = radar_station
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = radar_station
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = radar_station
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = settler_labor
@@ -587,7 +806,9 @@ focus_tree = {
 		}
 		x = 22
 		y = 8
-
+        completion_reward = {
+			add_research_slot = 1
+		}
 	}
 	focus = {
 		id = settler_enforce
@@ -674,7 +895,9 @@ focus_tree = {
 		}
 		x = 29
 		y = 3
-
+        completion_reward = {
+			add_research_slot = 1
+		}	
 	}
 	focus = {
 		id = settler_aerodynamics
@@ -685,7 +908,14 @@ focus_tree = {
 		}
 		x = 29
 		y = 4
-
+        completion_reward = {
+			add_tech_bonus = {
+				name = air_bonus
+				bonus = 0.5
+				uses = 1
+				category = light_air
+			}
+		}
 	}
 	focus = {
 		id = settler_support
@@ -815,6 +1045,6 @@ focus_tree = {
 			focus = settler_firefighter
 		}
 		x = 1
-		y = 6
+		y = 8
 	}
 }
