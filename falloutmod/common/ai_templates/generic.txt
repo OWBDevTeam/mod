@@ -109,7 +109,7 @@ robot_generic = {
 		factor = 2.17
 
 		modifier = {
-			factor = 7
+			factor = 2
 			OR = {
 				has_tech = mr_handy_tech
 			}
@@ -189,8 +189,7 @@ robot_generic = {
 			}
 			
 			regiments = {
-				light_robot = 5
-				motorbike = 3
+				light_robot = 8
 			}
 		}
 		
@@ -211,10 +210,10 @@ robot_generic = {
 
 	heavy_robot_default = {
 		upgrade_prio = {
-			factor = 0
+			factor = 1
 
 			modifier = {
-				factor = 0
+				factor = 2
 			}
 		}
 		
@@ -385,10 +384,10 @@ infantry_generic = {
         custom_icon = 3
 		
 		upgrade_prio = {
-			factor = 1
+			factor = 2
 
 			modifier = {
-				factor = 0.01
+				factor = 5
 			}
 		}
 		production_prio = {
@@ -564,9 +563,6 @@ power_armour_generic = {
 			anti_tank_company
 			anti_personnel_brigade
 		}
-		#replace_at_match = 0.4
-		#replace_with = wasteland_infantry_default
-		#target_min_match = 0.5
 	}
 }
 mechanized_generic = {
@@ -580,13 +576,13 @@ mechanized_generic = {
 				factor = 1
 			}
 		}
-	match_to_count = 0.8
+	match_to_count = 0.2
 	motorized_default = {
 		upgrade_prio = {
-			factor = 1
+			factor = 2
 
 			modifier = {
-				factor = 1
+				factor = 5
 			}
 		}
 		

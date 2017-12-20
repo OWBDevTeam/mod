@@ -9,16 +9,63 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Raider Group"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
 		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+	support = {
+		explosive_company = { x = 0 y = 0 }
 	}
 }
 
+units = {
+	division {
+		name = "Novac Raiders"
+		location = 6997
+		division_template = "Raider Group"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	
+	division {
+		name = "Nelson Raiders"
+		location = 5764
+		division_template = "Raider Group"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	
+	division {
+		name = "Nipton Raiders"
+		location = 5759
+		division_template = "Raider Group"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	
+	division {
+		name = "Primm Raiders"
+		location = 3236
+		division_template = "Raider Group"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	
+	division {
+		name = "Goodsprings Raiders"
+		location = 5765
+		division_template = "Raider Group"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+}
 ##### Starting Production #####
 instant_effect = {
 	add_equipment_production = {
