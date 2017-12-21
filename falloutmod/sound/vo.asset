@@ -6,23 +6,18 @@ category =
 	CES_infantry_idle
 	CES_infantry_neutral_combat
 	CES_infantry_positive_combat
-	CES_infantry_retreat
-	CES_infantry_move_out
 	NCR_infantry_idle
 	NCR_infantry_neutral_combat
 	NCR_infantry_positive_combat
 	NCR_infantry_retreat
-	NCR_infantry_move_out
 	DES_infantry_idle
 	DES_infantry_neutral_combat
 	DES_infantry_positive_combat
 	DES_infantry_retreat
-	DES_infantry_move_out
 	VEG_infantry_idle
 	VEG_infantry_neutral_combat
 	VEG_infantry_positive_combat
 	VEG_infantry_retreat
-	VEG_infantry_move_out
  }
   compressor = 
  {
@@ -84,30 +79,6 @@ soundeffect =
 		sound = ce_Positive_003
 		sound = ce_Positive_004
 		sound = ce_Positive_005
-    }
-	max_audible = 1
-	max_audible_behaviour = fail
-	volume = 0.45
-	volume_random_offset = { 0.0 -0.15 }
-	playbackrate_random_offset = { 0.0 -0.15}
-}
-soundeffect = 
-{
-    name = "CES_infantry_retreat"
-    sounds = {
-    }
-	max_audible = 1
-	max_audible_behaviour = fail
-	volume = 0.45
-	volume_random_offset = { 0.0 -0.15 }
-	playbackrate_random_offset = { 0.0 -0.15}
-}
-soundeffect = 
-{
-    name = "CES_infantry_move_out"
-    sounds = {
-        sound = ce_Positive_001
-
     }
 	max_audible = 1
 	max_audible_behaviour = fail
@@ -194,17 +165,6 @@ soundeffect =
 	volume_random_offset = { 0.0 -0.15 }
 	playbackrate_random_offset = { 0.0 -0.15}
 }
-soundeffect = 
-{
-    name = "NCR_infantry_move_out"
-    sounds = {
-    }
-	max_audible = 1
-	max_audible_behaviour = fail
-	volume = 0.45
-	volume_random_offset = { 0.0 -0.15 }
-	playbackrate_random_offset = { 0.0 -0.15}
-}
 ##### DES
 soundeffect = 
 {
@@ -283,17 +243,6 @@ soundeffect =
 	volume_random_offset = { 0.0 -0.15 }
 	playbackrate_random_offset = { 0.0 -0.15}
 }
-soundeffect = 
-{
-    name = "NCR_infantry_move_out"
-    sounds = {
-    }
-	max_audible = 1
-	max_audible_behaviour = fail
-	volume = 0.45
-	volume_random_offset = { 0.0 -0.15 }
-	playbackrate_random_offset = { 0.0 -0.15}
-}
 ##### VEG
 soundeffect = 
 {
@@ -339,18 +288,6 @@ soundeffect =
     name = "VEG_infantry_retreat"
     sounds = {
 	sound = ve_Retreat_001
-    }
-	max_audible = 1
-	max_audible_behaviour = fail
-	volume = 0.45
-	volume_random_offset = { 0.0 -0.15 }
-	playbackrate_random_offset = { 0.0 -0.15}
-}
-soundeffect = 
-{
-    name = "VEG_infantry_move_out"
-    sounds = {
-        sound = ve_Positive_001
     }
 	max_audible = 1
 	max_audible_behaviour = fail
@@ -461,11 +398,6 @@ sound =
 {
 name = "ce_Positive_005"
 file = "ces/ce_Positive_005.wav"
-}
-sound =
-{
-name = "ce_Retreat_001"
-file = "ces/ce_Retreat_001.wav"
 }
 #-----------------
 #New California Republic
