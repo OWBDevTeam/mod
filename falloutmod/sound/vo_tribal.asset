@@ -1,5 +1,5 @@
 #voice files extracted and implemented by Mechano
-# ANT BLA BMT BPT CHY CLI CRZ CYC DAM DEA HAN LON MDT MLT NAM NAV ORG 
+# ANT BLA BMT BPT CHY CLI CRZ CYC DAM DEA EHT HAN LON MDT MLT NAM NAV ORG 
 # PAL PNT RAP RBT RED RID RPD RST SHO SOR SPR TAR TOB TOI TON TUR TWI
 # UIN UMB YAK YEL YMP WHT
 category = 
@@ -46,6 +46,10 @@ category =
 	DEA_infantry_neutral_combat
 	DEA_infantry_positive_combat
 	DEA_infantry_retreat
+	EHT_infantry_idle
+	EHT_infantry_neutral_combat
+	EHT_infantry_positive_combat
+	EHT_infantry_retreat
 	HAN_infantry_idle
 	HAN_infantry_neutral_combat
 	HAN_infantry_positive_combat
@@ -1094,7 +1098,96 @@ soundeffect =
 	volume_random_offset = { 0.0 -0.15 }
 	playbackrate_random_offset = { 0.0 -0.15}
 }
+########## EHT
 
+soundeffect = 
+{
+    name = "EHT_infantry_idle"
+    sounds = {
+		sound = tribal_Idle_001
+        sound = tribal_Idle_002
+        sound = tribal_Idle_003
+		sound = tribal_Idle_004
+		sound = tribal_Idle_005
+		sound = tribal_Idle_006
+		sound = tribal_Idle_007
+		sound = tribal_Idle_008
+		sound = tribal_Idle_009
+		sound = tribal_Idle_010
+		sound = tribal_Idle_011
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.45
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15 }
+}
+
+soundeffect = 
+{
+    name = "EHT_infantry_neutral_combat"
+    sounds = {
+        sound = tribal_Neutral_001
+        sound = tribal_Neutral_002
+		sound = tribal_Neutral_003
+		sound = tribal_Neutral_004
+		sound = tribal_Neutral_005
+		sound = tribal_Neutral_006
+		sound = tribal_Neutral_007
+		sound = tribal_Neutral_008
+		sound = tribal_Neutral_009
+		sound = tribal_Neutral_010
+		sound = tribal_Neutral_011
+		sound = tribal_Neutral_012
+		sound = tribal_Neutral_013
+		sound = tribal_Neutral_014
+		sound = tribal_Neutral_015
+		sound = tribal_Neutral_016
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.45
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+
+soundeffect = 
+{
+    name = "EHT_infantry_positive_combat"
+    sounds = {
+        sound = tribal_Positive_001
+		sound = tribal_Positive_002
+		sound = tribal_Positive_003
+		sound = tribal_Positive_004
+		sound = tribal_Positive_005
+		sound = tribal_Positive_006
+		sound = tribal_Positive_007
+		sound = tribal_Positive_008
+		sound = tribal_Positive_009
+		sound = tribal_Positive_010
+		sound = tribal_Positive_011
+		sound = tribal_Positive_012
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.45
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+
+soundeffect = 
+{
+    name = "EHT_infantry_retreat"
+    sounds = {
+	sound = tribal_Retreat_001
+	sound = tribal_Retreat_002
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.45
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
 ########## HAN
 
 soundeffect = 
