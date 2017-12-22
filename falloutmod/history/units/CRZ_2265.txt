@@ -9,15 +9,57 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Crazy Horns Band"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
 		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
 	}
 }
+
+units = {
+	division {
+		name = "Horn Blowers"
+		location = 6467
+		division_template = "Crazy Horns Band"
+		start_experience_factor = 0.65
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "The Fearless Band"
+		location = 6494
+		division_template = "Crazy Horns Band"
+		start_experience_factor = 0.62
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Price Foragers"
+		location = 6468
+		division_template = "Crazy Horns Band"
+		start_experience_factor = 0.15
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Wasteland Tribesman"
+		location = 6456
+		division_template = "Crazy Horns Band"
+		start_experience_factor = 0.15
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Red Men"
+		location = 6434
+		division_template = "Crazy Horns Band"
+		start_experience_factor = 0.62
+		start_equipment_factor = 1.0
+	}
+}
+
 
 ##### Starting Production #####
 instant_effect = {

@@ -9,16 +9,50 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Dead Horse Warband"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
 		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
 	}
 }
 
+units = {
+	division {
+		name = "Men of the Chalk"
+		location = 3102
+		division_template = "Dead Horse Warband"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Dead Horse Lookouts"
+		location = 7473
+		division_template = "Dead Horse Warband"
+		start_experience_factor = 0.82
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "The Point Band"
+		location = 3095
+		division_template = "Dead Horse Warband"
+		start_experience_factor = 0.85
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Southern Men"
+		location = 6447
+		division_template = "Dead Horse Warband"
+		start_experience_factor = 0.82
+		start_equipment_factor = 1.0
+	}
+}
 ##### Starting Production #####
 instant_effect = {
 	add_equipment_production = {

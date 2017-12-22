@@ -9,16 +9,48 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Tar Walker Hunters"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
 		infantry = { x = 2 y = 0 }
 	}
 }
 
+units = {
+	division {
+		name = "Ruins Dwellers"
+		location = 6423
+		division_template = "Tar Walker Hunters"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Foragers of Payson"
+		location = 6491
+		division_template = "Tar Walker Hunters"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Nephi Hunters"
+		location = 6425
+		division_template = "Tar Walker Hunters"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Manti Foragers"
+		location = 6492
+		division_template = "Tar Walker Hunters"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+}
 
 ##### Starting Production #####
 instant_effect = {

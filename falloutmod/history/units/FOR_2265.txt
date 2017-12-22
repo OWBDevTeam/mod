@@ -9,16 +9,42 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Foraging Group"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
 	}
 }
 
+units = {
+
+	division {
+		name = "Lionel's Band"
+		location = 3097
+		division_template = "Foraging Group"
+		start_experience_factor = 0.9
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "1. Foraging Group"
+		location = 6635
+		division_template = "Foraging Group"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "2. Foraging Group"
+		location = 6692
+		division_template = "Foraging Group"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+}
 ##### Starting Production #####
 instant_effect = {
 	add_equipment_production = {
