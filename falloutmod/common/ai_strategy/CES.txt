@@ -119,7 +119,7 @@ CES_area_priority = {
 	ai_strategy = {
 		type = area_priority
 		id = colorado_newmexico
-		value = 40
+		value = 60
 	}
 	ai_strategy = {
 		type = area_priority
@@ -195,5 +195,82 @@ CES_prepare_for_war = {
 		type = antagonize
 		id = "NCR"
 		value = 500
+	}
+}
+CES_focus_on_invading_hangdogs = {
+	enable = {
+		original_tag = CES
+		OR = {
+			has_war_with = HAN
+			is_justifying_wargoal_against = HAN
+			has_wargoal_against = HAN
+		}
+		HAN = { NOT = { is_in_faction_with = CES } }
+		NOT = { has_war_with = NCR }
+		NCR = {
+			NOT = { is_justifying_wargoal_against = CES }
+			NOT = { has_wargoal_against = CES }
+		}
+		NOT = { surrender_progress > 0.1 }
+		NOT = {
+			any_enemy_country = {
+				AND = {
+					NOT = {
+						tag = HAN
+					}
+					strength_ratio	= { tag = CES ratio > 0.15 }
+				}
+			}
+		}
+		
+	}
+	abort = {
+		OR = {
+			HAN = {
+				exists = no
+				has_capitulated = yes
+				is_in_faction_with = CES
+			}
+			AND = {
+				NOT = { has_war_with = HAN }
+				NOT = { is_justifying_wargoal_against = HAN }
+				NOT = { has_wargoal_against = HAN }
+			}
+			any_enemy_country = {
+				AND = {
+					NOT = {
+						tag = HAN
+					}
+					strength_ratio	= { tag = CES ratio > 0.15 }
+				}
+			}
+			surrender_progress > 0.1
+			has_war_with = NCR
+			NCR = {
+				is_justifying_wargoal_against = CES
+				has_wargoal_against = CES
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = "HAN"
+		value = 500
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "HAN"
+		value = 500
+	}
+	ai_strategy = {
+		type = invade
+		id = "HAN"
+		value = 500
+	}
+	ai_strategy = {
+		type = area_priority
+		id = colorado_newmexico
+		value = 160
 	}
 }
