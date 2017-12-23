@@ -1,0 +1,75 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+EHT_unit_production = {
+	enable = {
+		tag = EHT
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 10
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = mechanized
+		value = 90
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 15
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = mechanized
+		value = 15
+	}
+		ai_strategy = {
+		type = unit_ratio
+		id = capital_ship
+		value = 20
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = submarine
+		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = screen_ship
+		value = 30
+	}
+	ai_strategy = {
+		type = unit_ratio
+		id = convoy
+		value = 15
+	}
+}
+EHT_template_design = {
+	enable = {
+		tag = EHT	
+	}
+	ai_strategy = {
+		type = template_prio
+		id = mechanized
+		value = 90
+	}
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = 10
+	}
+}
+}
