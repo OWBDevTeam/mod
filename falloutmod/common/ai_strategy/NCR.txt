@@ -256,6 +256,29 @@ NCR_area_priority = {
 		value = -10
 	}
 }
+NCR_ally_rangers = {
+	enable = {
+		original_tag = NCR
+		DES = {
+			NOT = { is_in_faction_with = CES }
+			exists = yes
+		}
+	}
+	abort = {
+		NOT = { country_exists = DES }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "DES"			
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = "DES"			
+		value = 200
+	}
+}
 NCR_invade_CES = {
 	enable = {
 		original_tag = NCR
