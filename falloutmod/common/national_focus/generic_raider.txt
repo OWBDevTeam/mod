@@ -1,52 +1,60 @@
-focus_tree = {
+focus_tree = 
+{
 	id = raider_generic
-	country = {
+	country = 
+	{
 		factor = 0
-		modifier = {
-			OR = {
-			tag = BRK
-        	tag = CLI
-        	tag = COW
-        	tag = DAM
-        	tag = FIE
-        	tag = FRI
-        	tag = GRA
-        	tag = HAI
-        	tag = IRN
-        	tag = JAC
-        	tag = MRA
-        	tag = THO
-        	tag = BLP
-        	tag = PMR
-        	tag = RIP
-        	tag = SCO
-        	tag = SCR
-        	tag = SKY
-			tag = BVC
-			tag = VIP
-			tag = YKZ
-			
+		modifier = 
+		{
+			OR = 
+			{
+				tag = BRK
+				tag = CLI
+				tag = COW
+				tag = DAM
+				tag = FIE
+				tag = FRI
+				tag = GRA
+				tag = HAI
+				tag = IRN
+				tag = JAC
+				tag = MRA
+				tag = THO
+				tag = BLP
+				tag = PMR
+				tag = RIP
+				tag = SCO
+				tag = SCR
+				tag = SKY
+				tag = BVC
+				tag = VIP
+				tag = YKZ	
 			}
-			
 			add = 10
 		}
 	}
 	default = no
 
-	focus = {
+	focus = 
+	{
 		id = origin_of_the_gang
-		icon = GFX_goal_generic_demand_territory
+		icon = GFX_goal_generic_ideological_fury_focus
 		x = 18
 		y = 0
 		cost = 1
 
 		available_if_capitulated = yes
 
-		completion_reward = {
-			country_event = { id = generic_raider.0 } # Origin of the Gang
+		completion_reward = 
+		{
+			country_event = 
+			{ 
+				id = generic_raider.0 
+			} # Origin of the Gang
 		}
 	}
-	focus = {
+	focus = 
+	{
 		id = gang_lifestyle
 		icon = GFX_goal_generic_demand_territory
 		x = 18
@@ -54,29 +62,48 @@ focus_tree = {
 		cost = 1
 
 		available_if_capitulated = yes
-		prerequisite = {
+		prerequisite = 
+		{
 			focus = origin_of_the_gang
 		}
-		completion_reward = {
-			country_event = { id = generic_raider.1 } # Gang Lifestyle
+		completion_reward = 
+		{
+			country_event = 
+			{ 
+				id = generic_raider.1
+			} # Gang Lifestyle
 		}
 	}
 	focus = {
 		id = gang_ambitions
-		icon = GFX_goal_generic_demand_territory
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
 		x = 18
 		y = 2
 		cost = 1
 
 		available_if_capitulated = yes
 		
-		prerequisite = {
+		prerequisite = 
+		{
 			focus = gang_lifestyle
 		}
-		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+		completion_reward = 
+		{
+			country_event = 
+			{ 
+				id = generic_raider.2 
+			} # Gang Ambitions
 		}
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	#NEW LEADERSHIP TREE
 	focus = {
@@ -262,7 +289,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = dont_question_the_boss
 		}
 	}
 	focus = {
@@ -315,9 +342,6 @@ focus_tree = {
 			focus = gangland_diplomacy
 		}
 
-		completion_reward = {
-			remove_ideas = 
-		}
 	}
 	focus = {
 		id = iron_grip
@@ -333,7 +357,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = iron_grip
 		}
 	}
 	
@@ -360,7 +384,49 @@ focus_tree = {
 			focus = gang_ambitions
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+						
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -376,7 +442,37 @@ focus_tree = {
 			focus = improve_the_hideout
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+
+				}
+			}
 		}
 	}
 	focus = {
@@ -392,7 +488,7 @@ focus_tree = {
 			focus = improve_the_hideout
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_national_unity = 0.05
 		}
 	}
 	focus = {
@@ -408,7 +504,7 @@ focus_tree = {
 			focus = cruel_heartland
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = territorial_reinforcement
 		}
 	}
 	focus = {
@@ -424,7 +520,9 @@ focus_tree = {
 			focus = skulls_on_sticks
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+		
+			add_national_unity = 0.05
+			add_political_power = 60
 		}
 	}
 	focus = {
@@ -440,7 +538,49 @@ focus_tree = {
 			focus = terrorise_the_locals
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+						
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -456,7 +596,7 @@ focus_tree = {
 			focus = raider_headquarters
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = territoriality
 		}
 	}
 	focus = {
@@ -508,7 +648,7 @@ focus_tree = {
 			focus = gang_ambitions
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_manpower = 100
 		}
 	}
 	focus = {
@@ -524,7 +664,7 @@ focus_tree = {
 			focus = incorporate_slavers
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = slave_labour
 		}
 	}focus = {
 		id = encourage_slavers
@@ -539,7 +679,8 @@ focus_tree = {
 			focus = incorporate_slavers
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_manpower = 100
+			add_national_unity = -0.05
 		}
 	}
 	focus = {
@@ -555,7 +696,7 @@ focus_tree = {
 			focus = slave_labour
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = forced_labour
 		}
 	}
 	focus = {
@@ -571,7 +712,8 @@ focus_tree = {
 			focus = encourage_slavers
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_manpower = 200
+			add_national_unity = -0.05
 		}
 	}
 	focus = {
@@ -587,7 +729,12 @@ focus_tree = {
 			focus = encourage_slavers
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
 		}
 	}
 	focus = {
@@ -603,7 +750,7 @@ focus_tree = {
 			focus = forced_labour
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_research_slot = 1
 		}
 	}
 	focus = {
@@ -635,7 +782,12 @@ focus_tree = {
 			focus = industrial_interest
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
 		}
 	}
 	focus = {
@@ -651,7 +803,7 @@ focus_tree = {
 			focus = slave_scientists
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = slave_researchers
 		}
 	}
 	focus = {
@@ -683,7 +835,36 @@ focus_tree = {
 			focus = hideout_expansion
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -1201,4 +1382,5 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = generic_raider.2 } # Gang Ambitions
 		}
+	}
 	}
