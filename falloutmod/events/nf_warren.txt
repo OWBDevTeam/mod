@@ -93,11 +93,54 @@ country_event = {
 	
 	option = {
 		name = nf_warren.3.a 
+		load_oob = warren_big_brother
+		2161 = {
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+			}
+		}
+		add_ideas = warren_big_brother
 	}
 	option = {
-		name = nf_warren.3.b 
+		name = nf_warren.3.b
+		load_oob = warren_thunder
+		add_ideas = warren_thunder_smoke
 	}
 	option = {
 		name = nf_warren.3.c 
+		add_ideas =  warren_tooth_claw
+		load_oob = warren_forced
+	}
+}
+country_event = {
+	id = nf_warren.4
+	title = nf_warren.4.t
+	desc = nf_warren.4.d 
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_warren.4.a 
+		add_resource = {
+			type = metal
+			amount = 10
+			state = 235
+		}
+		add_resource = {
+			type = electricity
+			amount = 5
+			state = 235
+		}	
+	}
+	option = {
+		name = nf_warren.4.b 
+		add_ideas = warren_people
+	}
+	option = {
+		name = nf_warren.4.c 
+		add_ideas = warren_warriors
 	}
 }
