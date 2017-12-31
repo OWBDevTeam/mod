@@ -207,9 +207,6 @@ focus_tree = {
 		}
 		x = 3
 		y = 7
-		completion_reward = {
-		add_ideas = police_protection
-		}
 
 	}
 	focus = {
@@ -956,6 +953,10 @@ focus_tree = {
 		}
 		x = 27
 		y = 2
+		completion_reward = {
+		add_ideas = elites
+		add_political_power = 60
+		}
 
 	}
 	focus = {
@@ -994,6 +995,11 @@ focus_tree = {
 		}
 		x = 29
 		y = 2
+		
+		completion_reward = {
+		add_ideas = intellectuals
+		add_political_power = 60
+		}
 
 	}
 	focus = {
@@ -1025,7 +1031,36 @@ focus_tree = {
 				uses = 1
 				category = light_air
 			}
-		}
+		random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = air_base
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+		}	
 	}
 	focus = {
 		id = settler_support
@@ -1041,6 +1076,10 @@ focus_tree = {
 		}
 		x = 31
 		y = 2
+		completion_reward = {
+		add_ideas = people
+		add_political_power = 60
+		}
 
 	}
 	focus = {
@@ -1052,6 +1091,9 @@ focus_tree = {
 		}
 		x = 31
 		y = 3
+		completion_reward = {
+		add_national_unity = 0.1
+		}
 
 	}
 	focus = {
@@ -1079,6 +1121,10 @@ focus_tree = {
 		}
 		x = 33
 		y = 2
+		completion_reward = {
+		add_ideas = ruler
+		add_political_power = 60
+		}
 
 	}
 	focus = {
@@ -1113,7 +1159,7 @@ focus_tree = {
 		x = 23
 		y = 9
 		completion_reward = {
-		set_technology = { shbb_tech = 1 }
+		set_technology = { power_armour_t45d = 1 }
 		}
 	}
 	focus = {
@@ -1125,7 +1171,9 @@ focus_tree = {
 		}
 		x = 21
 		y = 9
-
+		completion_reward = {
+		set_technology = { energy_weaponry_tech5 = 1 }
+		}
 	}
 	focus = {
 		id = settler_fallback
@@ -1158,5 +1206,8 @@ focus_tree = {
 		}
 		x = 1
 		y = 8
+		completion_reward = {
+		add_ideas = police_protection
+		}
 	}
 }
