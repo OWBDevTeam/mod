@@ -1089,7 +1089,7 @@ mechanized_generic = {
 		
 		target_template = {
 			weight = 0.9
-			match_value = 3000
+			match_value = 3500
 			
 			support = {
 				anti_tank_company = 1
@@ -1115,86 +1115,9 @@ mechanized_generic = {
 			anti_personnel_brigade
 			anti_personnel_company
 		}
-		replace_at_match = 0.4
-		replace_with = motorized_mechanized_mix
-		target_min_match = 0.5
-	}
-	motorized_mechanized_mix = {
-		reinforce_prio = 2
-		target_width = 30.0
-		width_weight = 2.0
-		column_swap_factor = 0.1
-		production_prio = {
-			factor = 1
-
-			modifier = {
-				factor = 1
-			}
-		}
-		stat_weights = {
-			0.01 #-- default_morale
-			1.10 #-- defense
-			1.10 #-- breakthrough
-			0.60 #-- hardness
-			2.00 #-- soft_attack
-			0.00 #-- hard_attack
-			0.10 #-- recon
-			0.01 #-- entrenchment
-			0.10 #-- initiative
-			0.01 #-- casualty_trickleback
-			-0.05 #-- supply_consumption_factor
-			-0.01 #-- supply_consumption
-			0.00 #-- suppression
-			0.00 #-- suppression_factor
-			0.01 #-- experience_loss_factor
-			#-- Air Values
-			0.02 #-- air_attack
-			#-- Common Values
-			50.00 #-- max_organisation
-			0.80 #-- max_strength
-			0.00 #-- build_cost_ic
-			10.0 #-- maximum_speed
-			0.20 #-- armor_value
-			0.05 #-- ap_attack
-			0.10 #-- reliability
-			0.10 #-- reliability_factor
-			0.00 #-- weight
-		}
-
-		target_template = {
-			weight = 0.9
-			match_value = 1000.0
-			
-			support = {
-				anti_personnel_company = 1
-				recon_company = 1
-				signal_company = 1
-				explosive_company = 1
-				anti_tank_company = 1
-			}
-			
-			regiments = {
-				apc = 5
-				motorized = 5
-			}
-		}
-
-		allowed_types = {
-			light_armor
-			motorized
-			signal_company
-			recon_company
-			explosive_company
-			anti_personnel_company
-			maintenance_company
-			logistics_company
-			anti_tank_company
-			anti_personnel_brigade
-			
-		}
 		replace_at_match = 0.7
 		replace_with = mechanized_default
-		target_min_match = 0.6
+		target_min_match = 0.5
 	}
 	mechanized_default = {
 		reinforce_prio = 2
