@@ -956,14 +956,72 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
-			MOJ = {
-				every_owned_state = {
-					limit = {
-						is_border_conflict = yes
-					}
-					NCR = { transfer_state = PREV }
-					set_border_war = no
+			if = {
+				limit = {
+					AND = {
+						# Route 95
+						MOJ = { has_full_control_of_state = 137 }
+						137 = { is_border_conflict = no }
+						OR = {
+							# Nelson
+							533 = { is_border_conflict = yes }
+							# Novac
+							181 = { is_border_conflict = yes }
+						}
+					}	
 				}
+				NCR = { transfer_state = 137 }
+			}
+			if = {
+				limit = {
+					# Loss in Helios 1
+					AND = {
+						# Helios 1
+						MOJ = { has_full_control_of_state = 417 }
+						417 = { is_border_conflict = no }
+						OR = {
+							# Route 95
+							137 = { is_border_conflict = yes }
+							# Novac
+							573 = { is_border_conflict = yes }
+						}
+					}	
+				}
+				NCR = { transfer_state = 417 }
+			}
+			if = {
+				limit = {
+					# Loss in Black Mountain
+					AND = {
+						# Black Mountain
+						MOJ = { has_full_control_of_state = 573 }
+						573 = { is_border_conflict = no }
+						OR = {
+							# Route 95
+							137 = { is_border_conflict = yes }
+							# Sloan
+							562 = { is_border_conflict = yes }
+						}
+					}
+				}
+				NCR = { transfer_state = 573 }
+			}
+			if = {
+				limit = {
+					# Loss in Sloan
+					AND = {
+						# Sloan
+						MOJ = { has_full_control_of_state = 562 }
+						562 = { is_border_conflict = no }
+						OR = {
+							# Goodsprings
+							552 = { is_border_conflict = yes }
+							# Primm
+							419 = { is_border_conflict = yes }
+						}
+					}	
+				}
+				NCR = { transfer_state = 562 }
 			}
 			NCR = {
 				every_owned_state = {
