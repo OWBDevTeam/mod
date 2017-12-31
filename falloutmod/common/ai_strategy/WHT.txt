@@ -1,0 +1,37 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+WHT_ally_caesar = {
+	enable = {
+		original_tag = WHT
+		NOT = { has_country_flag = refused_petition }
+		CES = {
+			has_completed_focus = ces_the_white_leg_petition
+			NOT = { is_in_faction_with = NCR }
+			exists = yes
+		}
+	}
+	abort = {
+		NOT = { country_exists = CES }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "CES"			
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = "CES"			
+		value = 200
+	}
+}

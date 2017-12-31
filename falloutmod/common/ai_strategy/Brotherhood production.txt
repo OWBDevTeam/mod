@@ -54,3 +54,28 @@ Brotherhood_production = {
 		value = 100
 	}
 }
+
+generic_boost_for_power_armour = {
+	
+	enable = {
+		has_tech = power_armour
+		NOT = { has_template_ai_majority_unit = power_armour }
+	}
+
+	abort = {	
+		has_template_ai_majority_unit = power_armour
+	}
+
+	# lets do changes more often during this period too
+	ai_strategy = {
+		type = template_xp_reserve 
+		value = -125
+	}
+
+	# this is gateway
+	ai_strategy = {
+		type = template_prio
+		id = power_armour
+		value = 200
+	}
+}

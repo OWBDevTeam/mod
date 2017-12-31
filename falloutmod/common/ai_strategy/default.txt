@@ -158,6 +158,82 @@ DEFAULT_template_design = {
 	}
 }
 
+generic_boost_light_for_light_armor = {
+	
+	enable = {
+		has_tech = commercial_protectron
+		NOT = { has_template_ai_majority_unit = light_robot }
+	}
+
+	abort = {	
+		has_template_ai_majority_unit = light_robot
+	}
+
+	# lets do changes more often during this period too
+	ai_strategy = {
+		type = template_xp_reserve 
+		value = -125
+	}
+
+	# this is gateway
+	ai_strategy = {
+		type = template_prio
+		id = light_robot
+		value = 200
+	}
+}
+
+generic_boost_for_mechanized = {
+	
+	enable = {
+		has_tech = bike_tech_1
+		NOT = { has_template_ai_majority_unit = motorized }
+	}
+
+	abort = {	
+		has_template_ai_majority_unit = motorized
+	}
+
+	# lets do changes more often during this period too
+	ai_strategy = {
+		type = template_xp_reserve 
+		value = -125
+	}
+
+	# this is gateway
+	ai_strategy = {
+		type = template_prio
+		id = motorized
+		value = 200
+	}
+}
+
+
+generic_boost_light_for_medium_robot = {
+	
+	enable = {
+		has_tech = mr_handy_tech
+		NOT = { has_template_ai_majority_unit = medium_robot }
+	}
+
+	abort = {	
+		has_template_ai_majority_unit = medium_robot
+	}
+
+	# lets do changes more often during this period too
+	ai_strategy = {
+		type = template_xp_reserve 
+		value = -125
+	}
+
+	# this is gateway
+	ai_strategy = {
+		type = template_prio
+		id = medium_robot
+		value = 100
+	}
+}
+
 DEFAULT_template_design = {
 	enable = {
 		NOT = { 
