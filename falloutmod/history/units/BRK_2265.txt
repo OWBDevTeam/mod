@@ -10,16 +10,49 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Raiders of the Coast"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
 		infantry = { x = 2 y = 0 }
 	}
 }
 
+units = {
+	division {
+		name = "Graven's Marauders"
+		location = 3622
+		division_template = "Raiders of the Coast"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Arista Smugglers"
+		location = 7399
+		division_template = "Raiders of the Coast"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Koover Raid Party"
+		location = 7207
+		division_template = "Raiders of the Coast"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Frostbite Band"
+		location = 4405
+		division_template = "Raiders of the Coast"
+		start_experience_factor = 0.85
+		start_equipment_factor = 1.0
+	}
+}
 ##### Starting Production #####
 instant_effect = {
 	add_equipment_production = {
