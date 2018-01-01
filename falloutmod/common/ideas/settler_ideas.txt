@@ -226,14 +226,12 @@ ideas = {
 			}
 			
 			removal_cost = -1
-		
-			modifier = { 
+	
 			  equipment_bonus = {
-				support_equipment_1 = {
-					build_cost_ic = -0.10
-				} 
-			  }
-		    }
+				support_equipment = {
+					build_cost_ic = -0.1
+				}
+			}
 		}	
 	settler_robco = {
 		
@@ -244,13 +242,11 @@ ideas = {
 			
 			removal_cost = -1
 		
-			modifier = { 
 			  equipment_bonus = {
-				light_robot_equipment_1 = {
-					build_cost_ic = -0.10
-				} 
-			  }
-		    }
+				robot_equipment = {
+					build_cost_ic = -0.1
+				}
+			}
 		}	
 	oligarchical_power = {
 			
@@ -315,8 +311,7 @@ ideas = {
 			}
 			
 			removal_cost = -1
-		
-			modifier = { 
+
 			  equipment_bonus = {
 				infantry_weapons = {
 					build_cost_ic = -0.10
@@ -388,6 +383,70 @@ ideas = {
 			modifier = {
 				army_org_Factor = 0.10
 			}
+	    }
+	settler_militia_organization = {
+			
+			picture = generic_central_management
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org_Factor = 0.10
+			}
+	    }
+	settler_standardized_military = {
+			
+			picture = generic_central_management
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				supply_consumption_factor = -0.20
+			}
+	    }
+	settler_fallback_tactics = {
+			
+			picture = generic_central_management
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_morale_factor = 0.1
+			}
+	    }
+	settler_tactical_awareness = {
+			
+			picture = generic_central_management
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				recon_factor = 0.05
+			}
+	    }
+	settler_point_defence = {
+			
+			picture = generic_central_management
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				defence = 0.05
+			}
 	    }	
-	}	
 }
