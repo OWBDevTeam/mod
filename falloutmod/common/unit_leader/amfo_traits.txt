@@ -3,13 +3,9 @@ leader_traits = {
 	conqueror = { 
 		
 		type = corps_commander
-		gain_xp = {
-			OR = {
-				is_attacker = yes
-				has_combat_modifier = lack_of_supply
-			}
+		allowed = {
+			always = no # not gainable
 		}
-		cost = 1000
 		modifier = {
 			army_infantry_attack_factor = 0.1
 			supply_consumption_factor = -0.2
@@ -23,10 +19,9 @@ leader_traits = {
 	loyalty = {
 		
 		type = corps_commander
-		gain_xp = {
-			is_defender = yes
+		allowed = {
+			always = no # not gainable
 		}
-		cost = 1000
 		modifier = {
 			dig_in_speed_factor = 0.25
 			max_dig_in_factor = 0.25
@@ -41,10 +36,10 @@ leader_traits = {
 	slavemaster = {
 		
 		type = corps_commander
-			gain_xp = {
-				dig_in < 10
-			}
-			cost = 1000
+		allowed = {
+			always = no # not gainable
+		}
+
 			modifier = {
 				army_speed_factor = 0.1
 			}
@@ -56,10 +51,12 @@ leader_traits = {
 	
 	settlement_protector = { 
 		type = corps_commander
+		allowed = {
+			always = no # not gainable
+		}
 		gain_xp = {
 			is_attacker = no
 		}
-		cost = 1000
 		modifier = {
 			max_dig_in_factor = 0.15
 		}

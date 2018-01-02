@@ -1,0 +1,35 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+KHA_ally_caesar = {
+	enable = {
+		original_tag = KHA
+		CES = {
+			NOT = { is_in_faction_with = NCR }
+			exists = yes
+		}
+	}
+	abort = {
+		NOT = { country_exists = CES }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "CES"			
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = "CES"			
+		value = 200
+	}
+}

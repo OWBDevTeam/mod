@@ -9,12 +9,12 @@ set_technology = {
 
 set_politics = {
     parties = {
-        people = { popularity = 0 }
+        people = { popularity = 90 }
         elites = { popularity = 0 }
         intellectuals = { popularity = 0 }
-        ruler = { popularity = 100 }
+        ruler = { popularity = 10 }
     }
-    ruling_party = ruler
+    ruling_party = people
     elections_allowed = yes
 }
 
@@ -25,13 +25,19 @@ add_ideas = {
 }
 
 create_country_leader  = {
-    name = "Eddie"
-    desc = "Eddie_DESC"
-    picture = "Portrait_Eddie.dds"
+    name = "Rushing-Waters"
+    desc = "DEA_Leader_DESC"
+    picture = "gfx/leaders/Tribal/Portrait_Tribal_Generic_3.dds"
     expire = "3000.1.1"
-    ideology = militarist_oligarchy
+    ideology = tribal_council
     
     traits = {
     }
 }
-
+create_corps_commander = {
+    name = "Rushing-Waters"
+    portrait_path = "gfx/leaders/Tribal/Portrait_Tribal_Generic_3.dds"
+	skill = 2
+    traits = {
+    }
+}

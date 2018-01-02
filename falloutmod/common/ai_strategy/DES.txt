@@ -1,0 +1,36 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+DES_ally_ncr = {
+	enable = {
+		original_tag = DES
+		has_completed_focus = des_treaty
+		NCR = {
+			NOT = { is_in_faction_with = CES }
+			exists = yes
+		}
+	}
+	abort = {
+		NOT = { country_exists = NCR }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "NCR"			
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = "NCR"			
+		value = 200
+	}
+}

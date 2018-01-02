@@ -151,6 +151,53 @@ CES_area_priority = {
 	}
 }
 
+CES_ally_whitelegs = {
+	enable = {
+		original_tag = CES
+		WHT = {
+			NOT = { has_country_flag = refused_petition }
+			NOT = { is_in_faction_with = NCR }
+			exists = yes
+		}
+	}
+	abort = {
+		NOT = { country_exists = WHT }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "WHT"			
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = "WHT"			
+		value = 200
+	}
+}
+CES_ally_khans = {
+	enable = {
+		original_tag = CES
+		KHA = {
+			NOT = { is_in_faction_with = NCR }
+			exists = yes
+		}
+	}
+	abort = {
+		NOT = { country_exists = KHA }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "KHA"			
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "KHA"			
+		value = 100
+	}
+}
 CES_prepare_for_war = {
 	enable = {
 		tag = CES
@@ -218,7 +265,7 @@ CES_focus_on_invading_hangdogs = {
 					NOT = {
 						tag = HAN
 					}
-					strength_ratio	= { tag = CES ratio > 0.15 }
+					strength_ratio	= { tag = CES ratio > 0.25 }
 				}
 			}
 		}
@@ -241,7 +288,7 @@ CES_focus_on_invading_hangdogs = {
 					NOT = {
 						tag = HAN
 					}
-					strength_ratio	= { tag = CES ratio > 0.15 }
+					strength_ratio	= { tag = CES ratio > 0.25 }
 				}
 			}
 			surrender_progress > 0.1

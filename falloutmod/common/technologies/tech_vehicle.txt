@@ -260,8 +260,11 @@ technologies = {
     
     # Scrap Tank
     tank_tech_1 = {
+		enable_subunits = {
+            tank
+        }
         enable_equipments = {
-            light_tank_equipment_1
+            tank_equipment_1
         }
         
         path = {
@@ -276,11 +279,11 @@ technologies = {
         on_research_complete = {
 			limit = {
 				NOT = {
-					has_template_containing_unit = light_tank
+					has_template_containing_unit = tank
 				}
 			}
 			hidden_effect = {
-				load_oob = "unlock_light_tank"
+				load_oob = "unlock_tank"
 			}			
 			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
 		}
@@ -305,7 +308,7 @@ technologies = {
     # Wasteland Tank
     tank_tech_2 = {
         enable_equipments = {
-            medium_tank_equipment_1
+            tank_equipment_2
         }
         
         dependencies = {
@@ -316,18 +319,6 @@ technologies = {
         path = {
 			leads_to_tech = tank_tech_3
 			research_cost_coeff = 1
-		}
-
-        on_research_complete = {
-			limit = {
-				NOT = {
-					has_template_containing_unit = medium_tank
-				}
-			}
-			hidden_effect = {
-				load_oob = "unlock_medium_tank"
-			}			
-			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
 		}
         
 		research_cost = 1.0
@@ -350,7 +341,7 @@ technologies = {
     # Great War Tank
     tank_tech_3 = {
         enable_equipments = {
-            heavy_tank_equipment_1
+            tank_equipment_3
         }
         
         dependencies = {
@@ -358,17 +349,7 @@ technologies = {
             
         }
         
-        on_research_complete = {
-			limit = {
-				NOT = {
-					has_template_containing_unit = heavy_tank
-				}
-			}
-			hidden_effect = {
-				load_oob = "unlock_heavy_tank"
-			}			
-			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
-		}
+
         
 		research_cost = 1.0
 		start_year = 2275

@@ -48,12 +48,17 @@ default_unit_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = infantry
-		value = 75
+		value = 65
 	}
 	ai_strategy = {
 		type = role_ratio
 		id = mechanized
 		value = 25
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 10
 	}
 	ai_strategy = {
 		type = equipment_production_factor
@@ -84,44 +89,56 @@ default_unit_production = {
 	}
 }
 
-stop_building_infantry = { # Please Stop Building Units
+stop_building_too_many_units = { # Please Stop Building Units
 	enable = {
+		AND = {
+			NOT = { ai_wants_divisions < 300}
+			has_army_size = { size > 300 }
+			num_of_factories > 99
+		}
+	}
+	abort = {
 		OR = {
-			AND = {
-				NOT = {ai_wants_divisions < 300}
-				NOT = {has_army_size = { size < 300 }}
-				#has_war = no
-				num_of_factories > 99
-			}
-			AND = {
-				has_army_size = { size > 10 }
-				NOT = {ai_wants_divisions < 10 }
-				NOT = { has_manpower > 500 }
-			}
+			ai_wants_divisions < 300
+			has_army_size = { size < 300 }
+			num_of_factories < 99
+		}
+	}
+	ai_strategy = { 
+		type = role_ratio
+		id = infantry
+		value = -500	
+	}
+	ai_strategy = { 
+		type = role_ratio
+		id = mechanized
+		value = -500	
+	}
+}
+stop_building_units_reserve_manpower = { # Please Stop Building Units
+	enable = {
+		AND = {
+			has_manpower < 500
+			num_divisions > 8
+			ai_wants_divisions > 8
 		}
 	}	
-	abort = { 
+	abort = {
 		OR = {
-			AND = {
-				has_army_size = { size < 300 }
-				NOT = {num_of_factories > 99}
-				has_manpower > 500
-			}
-			AND = {
-				has_army_size = { size < 8 }
-				ai_wants_divisions < 10
-			}
+			has_manpower > 500
+			num_divisions < 9
+			ai_wants_divisions < 9
 		}
 	}
 	ai_strategy = { 
-		type = build_army 
+		type = role_ratio
 		id = infantry
-		value = 0		
+		value = -500	
 	}
 	ai_strategy = { 
-		type = unit_ratio
-		id = infantry
-		value = -70		
+		type = role_ratio
+		id = mechanized
+		value = -500	
 	}
 }
 DEFAULT_template_design = {
@@ -155,6 +172,82 @@ DEFAULT_template_design = {
 		type = template_prio
 		id = infantry
 		value = 60
+	}
+}
+
+generic_boost_light_for_light_armor = {
+	
+	enable = {
+		has_tech = commercial_protectron
+		NOT = { has_template_ai_majority_unit = light_robot }
+	}
+
+	abort = {	
+		has_template_ai_majority_unit = light_robot
+	}
+
+	# lets do changes more often during this period too
+	ai_strategy = {
+		type = template_xp_reserve 
+		value = -125
+	}
+
+	# this is gateway
+	ai_strategy = {
+		type = template_prio
+		id = light_robot
+		value = 200
+	}
+}
+
+generic_boost_for_mechanized = {
+	
+	enable = {
+		has_tech = bike_tech_1
+		NOT = { has_template_ai_majority_unit = motorized }
+	}
+
+	abort = {	
+		has_template_ai_majority_unit = motorized
+	}
+
+	# lets do changes more often during this period too
+	ai_strategy = {
+		type = template_xp_reserve 
+		value = -125
+	}
+
+	# this is gateway
+	ai_strategy = {
+		type = template_prio
+		id = motorized
+		value = 200
+	}
+}
+
+
+generic_boost_light_for_medium_robot = {
+	
+	enable = {
+		has_tech = mr_handy_tech
+		NOT = { has_template_ai_majority_unit = medium_robot }
+	}
+
+	abort = {	
+		has_template_ai_majority_unit = medium_robot
+	}
+
+	# lets do changes more often during this period too
+	ai_strategy = {
+		type = template_xp_reserve 
+		value = -125
+	}
+
+	# this is gateway
+	ai_strategy = {
+		type = template_prio
+		id = medium_robot
+		value = 100
 	}
 }
 

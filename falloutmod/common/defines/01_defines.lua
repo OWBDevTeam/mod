@@ -27,11 +27,13 @@ NDefines.NAI.PLAN_ACTIVATION_PLAYER_WEIGHT_FACTOR = 0.0 		                -- AI 
 NDefines.NAI.PLAN_MIN_SIZE_FOR_FALLBACK = 500					                -- A country with less provinces than this will not draw fallback plans  but rather station their troops along the front
 
 NDefines.NAI.MIN_FIELD_STRENGTH_TO_BUILD_UNITS = 0.7			                -- Cancel unit production if below this to get resources out to units in the field
-NDefines.NAI.MIN_MANPOWER_TO_BUILD_UNITS = 0.7					                -- Cancel unit production if below this to get resources out to units in the field (producing too many units will cause problems)
-NDefines.NAI.PRODUCTION_EQUIPMENT_SURPLUS_FACTOR = 0.3 -- Base value for how much of currently used equipment the AI will at least strive to have in stoc
+NDefines.NAI.MIN_MANPOWER_TO_BUILD_UNITS = 0.9					                -- Cancel unit production if below this to get resources out to units in the field (producing too many units will cause problems)
+NDefines.NAI.PRODUCTION_EQUIPMENT_SURPLUS_FACTOR = 0.7 -- Base value for how much of currently used equipment the AI will at least strive to have in stock
 
 NDefines.NAI.DESIRED_UNITS_FACTOR_AREA_ORDER = 0.25				-- Factor for desired number of units to assign to area defense orders
 NDefines.NAI.MIN_UNITS_FACTOR_AREA_ORDER = 0.25					-- Factor for min number of units to assign to area defense orders
+NDefines.NAI.MIN_SUPPLY_USE_SANITY_CAP = 100	                                -- Ignore supply cap if below this value when deciding on how many divisions to produce.
+NDefines.NAI.MAX_SUPPLY_DIVISOR = 0.5
 
 
 NDefines.NAI.DEPLOY_MIN_TRAINING_PEACE_FACTOR = 0.9		                        -- Required percentage of training (1.0 = 100%) for AI to deploy unit in peacetime
@@ -85,8 +87,10 @@ NDefines.NAI.RESEARCH_BASE_DAYS = 60					-- AI adds a base number of days when w
 NDefines.NProduction.MIN_POSSIBLE_TRAINING_MANPOWER = 3700 -- minimum amount of units able to be trained
 
 
-NDefines.NAI.UPGRADE_DIVISION_RELUCTANCE = 21  -- (2000) stop randomly upgrading to infantry
+NDefines.NAI.UPGRADE_DIVISION_RELUCTANCE = 30  -- (2000) stop randomly upgrading to infantry
 NDefines.NAI.UPGRADE_PERCENTAGE_OF_FORCES = 0.1
+NDefines.NAI.DIVISION_UPGRADE_MIN_XP = 5							            -- Minimum XP before attempting to upgrade a division template.
+NDefines.NAI.UPGRADE_XP_RUSH_UPDATE = 50								        -- If XP is above this on the daily tick the AI will attempt to spend it
 
 --NNavy
 NDefines.NNavy.NAVAL_INVASION_PREPARE_HOURS = 64								-- base hours needed to prepare an invasion
