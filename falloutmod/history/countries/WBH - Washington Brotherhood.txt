@@ -29,6 +29,16 @@ set_politics = {
     elections_allowed = no
 }
 
+declare_war_on = {
+		target = ISN
+		type = annex_everything
+	}
+
+declare_war_on = {
+		target = TCA
+		type = annex_everything
+	}
+	
 add_ideas = { }
 
 set_research_slots = 4
@@ -40,6 +50,23 @@ create_country_leader  = {
     ideology = militarist_technocracy
     
     traits = {
+		warmonger
     }
 }
 
+create_corps_commander = {
+	name = "Elder Immortal"
+	picture = "Portrait_Immortal.dds"
+	traits = { winter_specialist fortress_buster }
+	skill = 4
+}
+
+create_corps_commander = {
+	name = "Star Paladin Rodriguez"
+	picture = "Portrait_Rodriguez.dds"
+	traits = { winter_specialist }
+	skill = 3
+}
+
+create_faction = Northern League
+add_to_faction = WBH
