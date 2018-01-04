@@ -40,15 +40,16 @@ entity = {
 	pdxmesh = "powerarmor_t51_mesh"
 	
 	default_state = "idle"
-	state = { name = "attack"			animation = "shoot" 					animation_blend_time = 0.0  animation_speed = 1.0 looping = yes #propagate_state = { rifle2 = "idle" } 
-	}
-	state = { name = "defend"			 }
-	state = { name = "support_attack"	}
-	state = { name = "move"				animation = "move" 		 		animation_blend_time = 0.0 animation_speed = 1.0}
-
-	state = { name = "retreat"		 }
+	state = { name = "attack"			animation = "attack" animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack" chance = 2} }
+	state = { name = "attack"			animation = "attack2" animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack" chance = 1 }
+	state = { name = "defend"			animation="shoot" }
+	state = { name = "support_attack"	animation="shoot"}
+	state = { name = "move"				animation = "move" 	animation_blend_time = 0.0 animation_speed = 1.0}
+	###PLACEHOLDER
+	state = { name = "retreat"		animation="move" }
 	state = { name = "death"		}
-	state = { name = "idle" animation = "move" }
+	###HIGH PRIORITY
+	state = { name = "idle" }
 
 	state = { name = "training"	 }
 
@@ -73,12 +74,3 @@ entity = {
 	}
 }
 ##### ANIMATION
-animation = {
-	name = "fo4_t51_move_animation"
-	file = "powerarmor/fo4_t51_move.anim"
-}
-
-animation = {
-	name = "fo4_t51_shoot_animation"
-	file = "powerarmor/fo4_t51_shoot.anim"
-}
