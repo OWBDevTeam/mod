@@ -121,10 +121,7 @@ focus_tree =
 		}
 		completion_reward = {
 			add_political_power = 60
-			set_politics = {
-				ruling_party = elites
-				elections_allowed = no
-			}
+			add_ideas = raider_sadists
 		}
 	}
 	focus = {
@@ -146,9 +143,7 @@ focus_tree =
 		}
 		completion_reward = {
 			add_political_power = 60
-			set_politics = {
-				ruling_party = intellectuals
-				elections_allowed = no
+			add_ideas = raider_eggheads
 			}
 		}
 	}
@@ -171,9 +166,7 @@ focus_tree =
 		}
 		completion_reward = {
 			add_political_power = 60
-			set_politics = {
-				ruling_party = people
-				elections_allowed = no
+			add_ideas = raider_grunts
 			}
 		}
 	}
@@ -196,9 +189,7 @@ focus_tree =
 		}
 		completion_reward = {
 			add_political_power = 60
-			set_politics = {
-				ruling_party = ruler
-				elections_allowed = no
+			add_ideas = raider_boss
 			}
 		}
 	}
@@ -320,7 +311,7 @@ focus_tree =
 		
 		prerequisite = {
 			focus = gangland_diplomacy
-		}
+		}	
 
 	}
 	focus = {
@@ -608,7 +599,7 @@ focus_tree =
 			focus = territoriality
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+        add_ideas = settler_we_never_die
 		}
 	}
 	
@@ -646,7 +637,8 @@ focus_tree =
 		completion_reward = {
 			add_ideas = slave_labour
 		}
-	}focus = {
+	}
+	focus = {
 		id = encourage_slavers
 		icon = GFX_goal_generic_demand_territory
 		x = 20
@@ -746,9 +738,14 @@ focus_tree =
 			focus = forced_labour
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_tech_bonus = {
+				name = drugdealers_bonus
+				bonus = 0.5
+				uses = 1
+				category = chem_tech
+			}
 		}
-	}
+		}
 	focus = {
 		id = hideout_expansion
 		icon = GFX_goal_generic_demand_territory
@@ -799,7 +796,7 @@ focus_tree =
 			focus = drug_dealers
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = raider_raid_workshops
 		}
 	}
 	focus = {
@@ -860,9 +857,20 @@ focus_tree =
 			focus = raid_workshops
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
-		}
-	}
+			random_owned_controlled_state = {
+			  add_resource = {
+				type = water
+				amount = 5
+				}
+				add_resource = {
+				type = scrap
+				amount = 7
+				}
+		    }
+		
+	    }
+	 }
+	
 	
 	
 	
@@ -881,7 +889,7 @@ focus_tree =
 			focus = slave_researchers
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = raider_new_age_weaponry
 		}
 	}
 	focus = {
@@ -897,9 +905,17 @@ focus_tree =
 			focus = slave_researchers
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
-		}
+			random_owned_controlled_state = {
+				add_resource = {
+				type = power
+				amount = 10
+				}
+		    }
+		
+	    }
 	}
+		
+	
 	focus = {
 		id = guns_with_legs
 		icon = GFX_goal_generic_demand_territory
@@ -913,8 +929,14 @@ focus_tree =
 			focus = new_age_weaponry
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+		add_tech_bonus = {
+				name = raider_robot_bonus
+				bonus = 0.5
+				uses = 1
+				category = robotics_tech
+			}
 		}
+		
 	}
 	focus = {
 		id = terminals_for_all
@@ -929,7 +951,7 @@ focus_tree =
 			focus = turn_the_lights_on
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+        add_ideas = raider_terminals_for_all
 		}
 	}
 	focus = {
@@ -945,7 +967,7 @@ focus_tree =
 			focus = turn_the_lights_on
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+		set_technology = { power_armour = 1}
 		}
 	}
 	focus = {
@@ -956,7 +978,7 @@ focus_tree =
 		cost = 8.6
 
 		available_if_capitulated = yes
-		
+			
 		prerequisite = {
 			focus = guns_with_legs
 		}
@@ -977,7 +999,7 @@ focus_tree =
 			focus = terminals_for_all
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = raider_raider_computer_logs
 		}
 	}
 	focus = {
@@ -1009,7 +1031,7 @@ focus_tree =
 			focus = find_the_good_stuff
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = raider_shitty_robots
 		}
 	}
 	focus = {
@@ -1025,7 +1047,14 @@ focus_tree =
 			focus = raider_computer_logs
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			random_owned_controlled_state = {
+				add_resource = {
+				type = advanced_technology
+				amount = 5
+				}
+		    }
+		
+	    }
 		}
 	}
 	focus = {
@@ -1041,7 +1070,7 @@ focus_tree =
 			focus = convert_metal_armour
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = raider_power_armor_familiarity
 		}
 	}
 	
