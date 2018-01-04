@@ -115,7 +115,7 @@ stop_building_too_many_units = { # Please Stop Building Units
 		value = -500	
 	}
 }
-stop_building_units_reserve_manpower = { # Please Stop Building Units
+stop_building_units_reserve_manpower_500 = { # Please Stop Building Units
 	enable = {
 		AND = {
 			has_manpower < 500
@@ -128,6 +128,58 @@ stop_building_units_reserve_manpower = { # Please Stop Building Units
 			has_manpower > 500
 			num_divisions < 9
 			ai_wants_divisions < 9
+		}
+	}
+	ai_strategy = { 
+		type = role_ratio
+		id = infantry
+		value = -500	
+	}
+	ai_strategy = { 
+		type = role_ratio
+		id = mechanized
+		value = -500	
+	}
+}
+stop_building_units_reserve_manpower_1000 = { # Please Stop Building Units
+	enable = {
+		AND = {
+			has_manpower < 1000
+			num_divisions > 16
+			ai_wants_divisions > 16
+		}
+	}	
+	abort = {
+		OR = {
+			has_manpower > 1000
+			num_divisions < 17
+			ai_wants_divisions < 17
+		}
+	}
+	ai_strategy = { 
+		type = role_ratio
+		id = infantry
+		value = -500	
+	}
+	ai_strategy = { 
+		type = role_ratio
+		id = mechanized
+		value = -500	
+	}
+}
+stop_building_units_reserve_manpower_2000 = { # Please Stop Building Units
+	enable = {
+		AND = {
+			has_manpower < 2000
+			num_divisions > 32
+			ai_wants_divisions > 32
+		}
+	}	
+	abort = {
+		OR = {
+			has_manpower > 2000
+			num_divisions < 33
+			ai_wants_divisions < 33
 		}
 	}
 	ai_strategy = { 
