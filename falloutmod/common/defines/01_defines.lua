@@ -70,6 +70,7 @@ NDefines.NDiplomacy.DIPLOMACY_ACCEPT_VOLUNTEERS_BASE = 400	-- Base value of volu
 NDefines.NMilitary.EXPERIENCE_LOSS_FACTOR = 4.0  -- Scale to smaller unit sizes
 NDefines.NMilitary.UNIT_EXPERIENCE_SCALE = 1.0
 NDefines.NMilitary.FIELD_EXPERIENCE_SCALE = 0.08 -- Scale to smaller unit sizes
+NDefines.NNavy.AMPHIBIOUS_LANDING_PENALTY = -0.4				-- amphibious landing penalty
 -- research
 NDefines.NTechnology.BASE_YEAR_AHEAD_PENALTY_FACTOR = 1.35		-- Base year ahead penalty
 NDefines.NAI.RESEARCH_DAYS_BETWEEN_WEIGHT_UPDATE = 7 	-- Refreshes need scores based on country situation.
