@@ -1107,7 +1107,7 @@ focus_tree =
 			focus = doped_soldiers
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = raider_prove_yourself
 		}
 	}
 	focus = {
@@ -1123,7 +1123,7 @@ focus_tree =
 			focus = doped_soldiers
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = raider_lightning_raids
 		}
 	}
 	focus = {
@@ -1139,7 +1139,7 @@ focus_tree =
 			focus = lightning_raids
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = raider_brutal_hazing
 		}
 	}
 	focus = {
@@ -1155,7 +1155,7 @@ focus_tree =
 			focus = lightning_raids
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+		  	conscription = 0.03
 		}
 	}
 	focus = {
@@ -1171,7 +1171,7 @@ focus_tree =
 			focus = blood_soaked_gender_equality
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			conscription = 0.03
 		}
 	}
 	focus = {
@@ -1203,9 +1203,39 @@ focus_tree =
 			focus = take_what_you_need
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
 		}
 	}
+	
 	focus = {
 		id = business_booms
 		icon = GFX_goal_generic_demand_territory
@@ -1219,7 +1249,12 @@ focus_tree =
 			focus = take_what_you_need
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_tech_bonus = {
+				name = raider_explosives_bonus
+				bonus = 0.5
+				uses = 1
+				category = explosive_tech
+			}
 		}
 	}
 	focus = {
