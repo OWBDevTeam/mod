@@ -34,25 +34,50 @@ entity = {
 	attach = { 	name = "rifle3"	Root_node_2 = "FRA_infantry_weapon_rifle_right_entity" }
 				
 }
-
+##Power armor
 entity = {
+	###Name - entity name, structed: unitname_entity
 	name = "power_armour_entity"
+	####paradox mesh - inside a .gfx file (powerarmor_meshes.gfx)
 	pdxmesh = "powerarmor_t51_mesh"
 	
+	####Animations and triggers
+	
+	###state to be in when nothing else is triggered
 	default_state = "idle"
-	state = { name = "attack"			animation = "attack" animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack" chance = 2 }
+	####state to use when attacking an enemy
+	state = { name = "attack" 	
+		###animation = "" - animation inside gfx file (powerarmor_meshes.gfx)
+		animation = "attack" 
+		###How much animation blends between, transitions smoothly instead of jumping
+		animation_blend_time = 0.0  
+		###percentage speed, ex: 90 frames at 30fps is 3seconds*animation speed
+		animation_speed = 1.0 
+		###Does it loop while state is active
+		looping = no 
+		###State to go to after animation is complete
+		next_state = "attack" 
+		##random chance to occur, add all same named states chance, pick one. ex: 2+1 = 3, this has 2/3rds chance to happen
+		chance = 2 }
+	###second attack state (shooting gun)
 	state = { name = "attack"			animation = "attack2" animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack" chance = 1 }
+	###defensive state
 	state = { name = "defend"			animation="shoot" }
+	####supporting another attacking unit
 	state = { name = "support_attack"	animation="shoot"}
+	###movement on map with no enemies
 	state = { name = "move"				animation = "move" 	animation_blend_time = 0.0 animation_speed = 1.0}
+	###retreat "limp"
 	###PLACEHOLDER
 	state = { name = "retreat"		animation="move" }
+	#### death state (despawns after this)
 	state = { name = "death"		}
 	###HIGH PRIORITY
 	state = { name = "idle" animation="move"}
-
+	### training state, normally many of these
 	state = { name = "training"	 }
-
+	
+	####These attachments are called inside the state = {} to change the bone the weapon is attached to. ex: back, hands
 	#attach = { 	name = "rifle1"	Right_Hand_node = "laser_rifle_entity" }	
 	attach = { 	name = "rifle2"	hand_l = "laser_rifle_entity" }	
 	#attach = { 	name = "rifle3"	Root = "laser_rifle_entity" }
@@ -63,7 +88,8 @@ entity = {
 	name = "laser_rifle_entity"
 	pdxmesh = "laser_rile_mesh"
 	locator = { name = muzzle position = { 0 0 -2.5 } }
-
+	
+	###inheret state from attached objects
 	get_state_from_parent = yes
 	default_state = "idle"
 	state = { name = "idle" }
@@ -74,8 +100,11 @@ entity = {
 	}
 }
 ##### ANIMATION
+####declaring animations 
 animation = {
+	####internal reference name for .gfx
 	name = "fo4_t51_charge_shoot_anim"
+	###path reletive to this file's location
 	file = "powerarmor/fo4_t51_charge_shoot_anim.anim"
 }
 animation = {
