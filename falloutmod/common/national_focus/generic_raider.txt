@@ -145,7 +145,6 @@ focus_tree =
 			add_political_power = 60
 			add_ideas = raider_eggheads
 			}
-		}
 	}
 	focus = {
 		id = the_grunts
@@ -169,7 +168,7 @@ focus_tree =
 			add_ideas = raider_grunts
 			}
 		}
-	}
+	
 	focus = {
 		id = the_boss
 		icon = GFX_goal_generic_neutrality_focus
@@ -191,7 +190,7 @@ focus_tree =
 			add_political_power = 60
 			add_ideas = raider_boss
 			}
-		}
+	
 	}
 	focus = {
 		id = preparing_for_total_war
@@ -1055,7 +1054,7 @@ focus_tree =
 		    }
 		
 	    }
-		}
+		
 	}
 	focus = {
 		id = power_armor_familiarity
@@ -1270,7 +1269,12 @@ focus_tree =
 			focus = expand_the_garage
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_tech_bonus = {
+				name = raider_vehicle_bonus bike_tech
+				bonus = 0.5
+				uses = 1
+				category = vehicle_tech
+			}
 		}
 	}
 	focus = {
@@ -1289,7 +1293,12 @@ focus_tree =
 			focus = call_in_the_warboys
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_tech_bonus = {
+				name = raider_bike_bonus 
+				bonus = 0.5
+				uses = 1
+				category = bike_tech
+			}
 		}
 	}
 	focus = {
@@ -1309,7 +1318,12 @@ focus_tree =
 		}
 		
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_tech_bonus = {
+				name = raider_truck_bonus 
+				bonus = 0.5
+				uses = 1
+				category = truck_tech
+			}
 		}
 	}
 	focus = {
@@ -1325,7 +1339,7 @@ focus_tree =
 			focus = business_booms
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = raider_engineers
 		}
 	}
 	focus = {
@@ -1357,7 +1371,7 @@ focus_tree =
 			focus = kings_of_the_roads
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = raider_custom_rides
 		}
 	}
 	focus = {
@@ -1374,7 +1388,7 @@ focus_tree =
 		}
 		
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = raider_metal_boxes
 		}
 	}
 	focus = {
@@ -1390,7 +1404,7 @@ focus_tree =
 			focus = short_fused_engineers
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			set_technology = { explosive_tech_5 = 1}
 		}
 	}
 	focus = {
@@ -1407,7 +1421,12 @@ focus_tree =
 		}
 		
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_tech_bonus = {
+				name = raider_tank_bonus 
+				bonus = 0.5
+				uses = 1
+				category = tank_tech
+			}
 		}
 	}
 	focus = {
@@ -1424,7 +1443,7 @@ focus_tree =
 			focus = metal_boxes
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = raider_roaring_machines
 		}
 	}
-	}
+}
