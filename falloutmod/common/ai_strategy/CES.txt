@@ -64,7 +64,13 @@ CES_ignore_northern_minors = { #don't sit around in the north when more importan
 
 	}
 	abort = {
-		NOT = { has_war_with = NCR }
+		AND = {
+			NOT = { has_war_with = NCR }
+			NCR = {
+				NOT = { is_justifying_wargoal_against = CES }
+				NOT = { has_wargoal_against = CES }
+			}
+		}
 	}
 	ai_strategy = {
 		type = ignore
@@ -106,19 +112,19 @@ CES_area_priority = {
 	ai_strategy = {
 		type = area_priority
 		id = north_california 
-		value = 80
+		value = 55
 	}
 	
 	ai_strategy = {
 		type = area_priority
 		id = south_california
-		value = 120
+		value = 70
 	}
 	
 	ai_strategy = {
 		type = area_priority
 		id = arizona_sonora
-		value = 80
+		value = 90
 	}
 	ai_strategy = {
 		type = area_priority
@@ -129,7 +135,7 @@ CES_area_priority = {
 	ai_strategy = {
 		type = area_priority
 		id = colorado_newmexico
-		value = 50
+		value = 60
 	}
 	ai_strategy = {
 		type = area_priority
@@ -247,14 +253,6 @@ CES_focus_on_invading_hangdogs = {
 				NOT = { is_justifying_wargoal_against = HAN }
 				NOT = { has_wargoal_against = HAN }
 			}
-			any_enemy_country = {
-				AND = {
-					NOT = {
-						tag = HAN
-					}
-					strength_ratio	= { tag = CES ratio > 0.25 }
-				}
-			}
 			surrender_progress > 0.1
 			has_war_with = NCR
 			NCR = {
@@ -267,7 +265,7 @@ CES_focus_on_invading_hangdogs = {
 	ai_strategy = {
 		type = conquer
 		id = "HAN"
-		value = 500
+		value = 1000
 	}
 	ai_strategy = {
 		type = antagonize
@@ -277,7 +275,7 @@ CES_focus_on_invading_hangdogs = {
 	ai_strategy = {
 		type = invade
 		id = "HAN"
-		value = 500
+		value = 2000
 	}
 	ai_strategy = {
 		type = ignore

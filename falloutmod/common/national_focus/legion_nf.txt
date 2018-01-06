@@ -110,11 +110,34 @@ focus_tree = {
                     }
                 }	
             }
-            # Safety
-            if = {
-                limit = { NOT = { country_exists = HAN } }
-                add_political_power = 100
-            }
+                        # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = HAN
+							NOT = { is_controlled_by = HAN }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = HAN
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					every_owned_state = {
+						limit = {
+							is_core_of = HAN
+						}
+						add_core_of = ROOT
+					}
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
+			}
 		}
 
 	}
@@ -191,13 +214,35 @@ focus_tree = {
                     }
                 }	
             }
-            # Safety
-            if = {
-                limit = { NOT = { country_exists = TTM } }
-                add_political_power = 100
-            }
+						# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = TTM
+							NOT = { is_controlled_by = TTM }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = TTM
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					every_owned_state = {
+						limit = {
+							is_core_of = TTM
+						}
+						add_core_of = ROOT
+					}
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
+			}
 		}
-
 	}
 	focus = {
 		id = ces_goddess_diana
@@ -275,10 +320,34 @@ focus_tree = {
                 }	
             }
             # Safety
-            if = {
-                limit = { NOT = { country_exists = TWO } }
-                add_political_power = 100
-            }
+            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = TWO
+							NOT = { is_controlled_by = TWO }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = TWO
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					every_owned_state = {
+						limit = {
+							is_core_of = TWO
+						}
+						add_core_of = ROOT
+					}
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
+			}
 		}
 	}
 	focus = {
@@ -361,11 +430,34 @@ focus_tree = {
                     }
                 }	
             }
-            # Safety
-            if = {
-                limit = { NOT = { country_exists = COW } }
-                add_political_power = 100
-            }
+            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = COW
+							NOT = { is_controlled_by = COW }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = COW
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					every_owned_state = {
+						limit = {
+							is_core_of = COW
+						}
+						add_core_of = ROOT
+					}
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
+			}
 		}	
 	}
 	focus = {
@@ -1429,6 +1521,28 @@ focus_tree = {
                     target = RBD
                 }
             }
+			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = RBD
+							NOT = { is_controlled_by = RBD }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = RBD
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
+			}
 		}
 
 	}
@@ -1442,6 +1556,11 @@ focus_tree = {
 		}
 		x = 12
 		y = 10
+		available = {
+			any_owned_state = {
+				is_baudelio_state = yes
+			}
+		}
 		completion_reward = {
             add_political_power = -50
             
@@ -1479,6 +1598,11 @@ focus_tree = {
 		}
 		x = 14
 		y = 10
+		available = {
+			any_owned_state = {
+				is_baudelio_state = yes
+			}
+		}
 		completion_reward = {
             if = {
                 limit = {
@@ -1516,6 +1640,11 @@ focus_tree = {
 		}
 		x = 13
 		y = 11
+		available = {
+			any_owned_state = {
+				is_baudelio_state = yes
+			}
+		}
 		completion_reward = {
             every_state = { 
                 limit = { is_baudelio_state = yes }
@@ -1549,6 +1678,28 @@ focus_tree = {
                     target = PEC
                 }
             }
+			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = PEC
+							NOT = { is_controlled_by = PEC }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = PEC
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
+			}
 		}
 
 	}
@@ -1598,6 +1749,11 @@ focus_tree = {
 		}
 		x = 18
 		y = 10
+		available = {
+			any_owned_state = {
+				is_pecos_state = yes
+			}
+		}
 		completion_reward = {
 			if = {
                 limit = {
@@ -1680,7 +1836,35 @@ focus_tree = {
                         limit = { is_new_vegas_state = yes }
                         add_core_of = ROOT
                     }
-                }	
+                }
+				            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+				if = {
+					limit = {
+						any_state = {
+							AND = {
+								is_core_of = VEG
+								NOT = { is_controlled_by = VEG }
+							}
+						}
+					}
+					every_country = {
+						limit = {
+							any_owned_state = {
+								is_core_of = VEG
+							}
+						}
+						add_named_threat = { threat = 5 name = stole_cores }
+						every_owned_state = {
+							limit = {
+								is_core_of = VEG
+							}
+							add_core_of = ROOT
+						}
+						ROOT = {
+							create_wargoal = { type = annex_everything target = PREV }
+						}
+					}
+				}
             }
 		}
 

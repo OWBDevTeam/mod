@@ -227,7 +227,28 @@ focus_tree = {
 				type = annex_everything
 				target = BVC
 			}
-			
+			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = BVC
+							NOT = { is_controlled_by = BVC }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = BVC
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
+			}
 			BVC = {
 				create_faction = fantasma_cartel
 				add_to_faction = BLP	
@@ -308,6 +329,11 @@ focus_tree = {
 		}
 		x = 0
 		y = 12
+		available = {
+			any_owned_state = {
+				is_baron_state = yes
+			}
+		}
 		completion_reward = {
 			
 			add_popularity = {
@@ -367,6 +393,11 @@ focus_tree = {
 		}
 		x = 2
 		y = 6
+		available = {
+			any_owned_state = {
+				is_baja_california_state = yes
+			}
+		}
 		completion_reward = {
 			every_state = {
 				limit = {
@@ -862,6 +893,28 @@ focus_tree = {
 			create_wargoal = {
 				type = annex_everything
 				target = SCR
+			}
+			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = SCR
+							NOT = { is_controlled_by = SCR }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = SCR
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
 			}
 		}
 
@@ -2049,6 +2102,28 @@ focus_tree = {
 				type = annex_everything
 				target = MRA
 			}
+			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = MRA
+							NOT = { is_controlled_by = MRA }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = MRA
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
+			}
 		}
 
 	}
@@ -2300,7 +2375,6 @@ focus_tree = {
 				target = CES
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_urbandraft

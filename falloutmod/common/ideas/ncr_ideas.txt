@@ -333,14 +333,14 @@ ideas = {
 			equipment_bonus = {
 				motorized = {
 					max_organisation = 10
-					land_reinforce_rate = 0.01
 				}
 				mechanized = {
 					max_organisation = 10
-					land_reinforce_rate = 0.01
 				}
 			}
-		
+			modifier = {
+				land_reinforce_rate = 0.1
+			}
 		}
 		
 		onlythebest = {
@@ -451,11 +451,8 @@ ideas = {
 			
 			removal_cost = -1
 				
-			equipment_bonus = {
-				category_all_infantry = {
-					casualty_trickleback = 0.1
-					combat_width_factor = -0.04
-				}
+			modifier = {
+				heat_attrition_factor = -0.1
 			}
 		}
 		
@@ -909,8 +906,7 @@ ideas = {
 			
 			equipment_bonus = {
 				spec_ops = {
-					night_attack = 0.2
-					recon = 2
+					recon = 1
 				}
 			}
 		}
