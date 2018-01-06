@@ -154,6 +154,28 @@ focus_tree = {
 				target = ANT
 				type = annex_everything
 			}
+			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = ANT
+							NOT = { is_controlled_by = ANT }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = ANT
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
+			}
 		}
 
 	}
@@ -200,6 +222,28 @@ focus_tree = {
 			create_wargoal = {
 				type = annex_everything
 				target = YKZ
+			}
+			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = YKZ
+							NOT = { is_controlled_by = YKZ }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = YKZ
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
 			}
 		}
 
@@ -1437,6 +1481,28 @@ focus_tree = {
 			create_wargoal = {
 				type = puppet_wargoal_focus
 				target = KLA
+			}
+			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = KLA
+							NOT = { is_controlled_by = KLA }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = KLA
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
 			}
 		}
 

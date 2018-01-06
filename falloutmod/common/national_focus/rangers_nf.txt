@@ -78,6 +78,28 @@ focus_tree = {
 				type = annex_everything
 				target = JAC		
 			}
+			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = JAC
+							NOT = { is_controlled_by = JAC }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = JAC
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
+			}
 		}
 
 	}
@@ -159,6 +181,28 @@ focus_tree = {
 			create_wargoal = {
 				type = annex_everything
 				target = VIP
+			}
+			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = VIP
+							NOT = { is_controlled_by = VIP }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = VIP
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
 			}
 		}
 
