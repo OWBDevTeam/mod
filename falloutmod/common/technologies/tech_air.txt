@@ -538,7 +538,9 @@ technologies = {
         enable_equipments = {
             xian_85_fighter_equipment
         }
-        
+        allow = {
+		tag = SHI
+	}
         dependencies = {
             scientific_civilization = 1
             
@@ -567,7 +569,12 @@ technologies = {
         enable_equipments = {
             vb_gunship_equipment
         }
-        
+       	allow = {
+		OR = {
+			is_brotherhood_nation = yes
+			tag = ENC
+		}
+	}
         dependencies = {
             scientific_civilization = 1
             
@@ -597,7 +604,12 @@ technologies = {
         enable_equipments = {
             vb_transport_plane_equipment
         }
-        
+        allow = {
+		OR = {
+			is_brotherhood_nation = yes
+			tag = ENC
+		}
+	}
         path = {
 			leads_to_tech = vertiberd_transport2
 			research_cost_coeff = 1
