@@ -219,6 +219,7 @@ on_actions = {
 	#Not run on a specific country.
 	on_startup = {
 		#setting initial technologies, these can be found in scripted effects/set_technology_effects: 
+		# Scripted by Mechano
 		effect = {
 			#initial tribal technology
 			every_country = {
@@ -255,6 +256,8 @@ on_actions = {
 	}
 
 	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
+	# Captured states have a reduction to all industry by 50% unless recaptured
+	# scripted by Mechano
 	on_state_control_changed = {
 		effect = {
 			FROM.FROM = {

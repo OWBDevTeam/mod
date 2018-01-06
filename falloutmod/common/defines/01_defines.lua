@@ -1,3 +1,5 @@
+-- Miscellaneous defines changes for gameplay and AI purposes
+-- Mostly done by Mechano
 NDefines.NGame.START_DATE = "2275.1.1.12"
 NDefines.NGame.END_DATE = "2400.1.1.1"
 NDefines.NDiplomacy.VOLUNTEERS_DIVISIONS_REQUIRED = 8 		-- Vanilla is 30
