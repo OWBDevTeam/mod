@@ -582,7 +582,7 @@ focus_tree =
 			focus = territoriality
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = raider_manifest_destiny
 		}
 	}
 	focus = {
@@ -980,7 +980,12 @@ focus_tree =
 			focus = guns_with_legs
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			random_owned_controlled_state = {
+				add_resource = {
+				type = electricity
+				amount = 10
+				}
+		    }		
 		}
 	}
 	focus = {
@@ -1012,7 +1017,7 @@ focus_tree =
 			focus = a_weapon_to_surpass_the_other_gang
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_equipment_to_stockpile = { type = power_armor_equipment_1 amount = 50 producer = <SCOPE> }
 		}
 	}
 	focus = {
@@ -1088,7 +1093,7 @@ focus_tree =
 			focus = gang_ambitions
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = raider_doped_soldiers
 		}
 	}
 	focus = {
@@ -1353,7 +1358,7 @@ focus_tree =
 			focus = chop_shop_shimmy
 		}
 		completion_reward = {
-			country_event = { id = generic_raider.2 } # Gang Ambitions
+			add_ideas = raider_gearhead_slaves
 		}
 	}
 	focus = {
