@@ -1206,7 +1206,13 @@ focus_tree = {
 		x = 23
 		y = 9
 		completion_reward = {
-		set_technology = { power_armour_t45d = 1 }
+		add_tech_bonus = {
+				name = sett;er_power_armour_bonus
+				bonus = 0.5
+				uses = 1
+				category = power_armour_t45d
+			}
+	    }
 		}
 	}
 	focus = {
@@ -1219,8 +1225,13 @@ focus_tree = {
 		x = 21
 		y = 9
 		completion_reward = {
-		set_technology = { advanced_laser_weaponry = 1 }
-		}
+		add_tech_bonus = {
+				name = sett;er_energy_bonus
+				bonus = 0.5
+				uses = 1
+				category = energy_weaponry_tech
+			}
+	    }
 	}
 	focus = {
 		id = settler_fallback
