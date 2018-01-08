@@ -80,10 +80,10 @@ NDefines.NAI.RESEARCH_LAND_DOCTRINE_NEED_GAIN_FACTOR = 0.15 -- Multiplies value 
 NDefines.NAI.RESEARCH_NAVAL_DOCTRINE_NEED_GAIN_FACTOR = 0.05 -- Multiplies value based on relative naval industry size / country size.
 NDefines.NAI.RESEARCH_AIR_DOCTRINE_NEED_GAIN_FACTOR = 0.07 -- Multiplies value based on relative number of air base / country size.
 NDefines.NAI.RESEARCH_NEW_WEIGHT_FACTOR = 10 			-- Impact of previously unexplored tech weights. Higher means more random exploration.
-NDefines.NAI.RESEARCH_AHEAD_BONUS_FACTOR = 2.0         -- To which extent AI should care about ahead of time bonuses to research
+--NDefines.NAI.RESEARCH_AHEAD_BONUS_FACTOR = 2.0         -- To which extent AI should care about ahead of time bonuses to research
 NDefines.NAI.RESEARCH_BONUS_FACTOR = 0.9 				-- To which extent AI should care about bonuses to research
-NDefines.NAI.MAX_AHEAD_RESEARCH_PENALTY = 3             -- max ahead of tiem penalty ai will pick ever
-NDefines.NAI.RESEARCH_AHEAD_OF_TIME_FACTOR = 2.3 		-- To which extent AI should care about ahead of time penalties to research
+--NDefines.NAI.MAX_AHEAD_RESEARCH_PENALTY = 3             -- max ahead of tiem penalty ai will pick ever
+--NDefines.NAI.RESEARCH_AHEAD_OF_TIME_FACTOR = 2.3 		-- To which extent AI should care about ahead of time penalties to research
 NDefines.NAI.RESEARCH_BASE_DAYS = 60					-- AI adds a base number of days when weighting completion time for techs to ensure it doesn't only research quick techs
 
 -- production
