@@ -131,7 +131,7 @@ default_peace = {
 			}
 		}
 		modifier = { #Do not take human held lands...
-			factor = 0
+			factor = 0.1
 			NOT = { 
 				FROM = { 
 					OR = {
@@ -273,7 +273,7 @@ default_peace = {
 		}
 
 		modifier = {
-			factor = 0		
+			factor = 0.1
 			NOT = { FROM = { is_claimed_by = ROOT } }
 			NOT = {
 				FROM = {
@@ -300,7 +300,7 @@ default_peace = {
 		}
 
 		modifier = { #Only take claimed/core land if a puppet.
-			factor = 0
+			factor = 0.1
 			is_puppet = yes
 			FROM = {
 				NOT = {
