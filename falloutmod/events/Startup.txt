@@ -10,7 +10,6 @@ country_event = {
     
     trigger = {
         NOT = { has_country_flag = setup_country_ideas }
-        
     }
 	
     immediate = {
@@ -21,5 +20,100 @@ country_event = {
 		name = startup.1.option.a
 		
         
+	}
+}
+
+# Legion startup
+country_event = {
+	id = startup.2
+	title = startup.2.title
+	desc = startup.2.desc
+    
+    is_triggered_only = yes
+    
+	option = {
+		name = startup.2.option.a
+		NCR = { add_ideas = enhanced_legion_campaign }
+		every_country = {
+			limit = {
+				AND = {
+					is_legion_conquest = yes
+					is_ai = yes
+				}
+			}
+			add_ideas = enhanced_legion_campaign
+		}
+
+        ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = startup.2.option.b
+        ai_chance = {
+			factor = 0
+		}
+		every_country = {
+			limit = {
+				AND = {
+					is_legion_conquest = yes
+					is_ai = yes
+				}
+			}
+			add_ideas = enhanced_legion_campaign
+		}
+	}
+	option = {
+		name = startup.2.option.c
+        ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# NCR startup
+country_event = {
+	id = startup.3
+	title = startup.3.title
+	desc = startup.3.desc
+    
+    is_triggered_only = yes
+    
+	option = {
+		name = startup.3.option.a
+		CES = { add_ideas = enhanced_ncr_campaign }
+		every_country = {
+			limit = {
+				AND = {
+					is_ncr_conquest = yes
+					is_ai = yes
+				}
+			}
+			add_ideas = enhanced_ncr_campaign
+		}
+        ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = startup.3.option.b
+        ai_chance = {
+			factor = 0
+		}
+		every_country = {
+			limit = {
+				AND = {
+					is_ncr_conquest = yes
+					is_ai = yes
+				}
+			}
+			add_ideas = enhanced_ncr_campaign
+		}
+	}
+	option = {
+		name = startup.3.option.c
+        ai_chance = {
+			factor = 100
+		}
 	}
 }
