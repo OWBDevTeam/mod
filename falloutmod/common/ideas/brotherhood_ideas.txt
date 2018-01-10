@@ -1292,17 +1292,13 @@ ideas = {
 			level = 7
 			
 			available = {
-				if = {
-					limit = {
-						original_tag = BOS
-					}
-				}
+				original_tag = BOS
 				NOT = { has_idea = outsider_recruitment }
 				NOT = { has_idea = wasteland_conscripts }
 			}
 
 			modifier = {
-				conscription = 0.01
+				conscription = 0.03
 			}
 			
 			cancel_if_invalid = no
@@ -1315,17 +1311,12 @@ ideas = {
 			level = 6
 			
 			available = {
-				if = {
-					limit = {
-						original_tag = BOS
-						has_completed_focus = bos_outsiders
-					}
-				}
-				
+				original_tag = BOS
+				has_completed_focus = bos_wastelandconscripts
 			}
 
 			modifier = {
-				conscription = 0.025
+				conscription = 0.06
 			}
 			
 			default = no
@@ -1340,24 +1331,16 @@ ideas = {
 			level = 6
 			
 			available = {
-				if = {
-					limit = {
-						original_tag = BOS
-						has_completed_focus = bos_wastelandconscripts
-					}
-				}
-				
+				original_tag = BOS
+				has_completed_focus = bos_wastelandconscripts
 			}
 
 			modifier = {
-				conscription = 0.05
+				conscription = 0.12
 			}
 			
 			default = no
 			
 			cancel_if_invalid = no
 		}
-
-
-
 }
