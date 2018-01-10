@@ -39,7 +39,7 @@ technologies = {
         enable_equipments = {
             motorbike_equipment_1
         }
-	enable_subunits = {
+		enable_subunits = {
             motorized
             motorized_support
         }
@@ -87,7 +87,27 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
+			factor = 2
+			
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "2276.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "2277.1.1"
+			}
+			
+			modifier = {
+				factor = 1.2
+				date > "2278.1.1"
+			}
 		}
 	}
     
@@ -112,8 +132,8 @@ technologies = {
             
         }
         
-		research_cost = 1.0
-		start_year = 2275
+		research_cost = 2.0
+		start_year = 2276
 		folder = {
 			name = fallout_vehicle_folder
 			position = { x = @Row_2 y = @Col_2 }
@@ -126,10 +146,32 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 30
+			factor = 2
+			modifier = {
+				factor = 1.1
+				is_raider_nation = yes
+			}
+			modifier = {
+				factor = 1.1
+				date > "2276.1.1"
+			}
+			
+			modifier = {
+				factor = 1.1
+				date > "2277.1.1"
+			}
+			
+			modifier = {
+				factor = 1.1
+				date > "2278.1.1"
+			}
 			modifier = {
 				has_tech = truck_tech_1
-				factor = 0.1
+				factor = 0
+			}
+			modifier = {
+				is_researching_technology = truck_tech_1
+				factor = 0
 			}
 		}
 	}
@@ -145,8 +187,8 @@ technologies = {
             
         }
         
-		research_cost = 1.0
-		start_year = 2275
+		research_cost = 2.0
+		start_year = 2278
 		folder = {
 			name = fallout_vehicle_folder
 			position = { x = @Row_2 y = @Col_3 }
@@ -159,7 +201,20 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 25
+			factor = 2
+			modifier = {
+				factor = 1.1
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2280.1.1"
+			}
+			
+			modifier = {
+				factor = 1.1
+				date > "2281.1.1"
+			}
 		}
 	}
     
@@ -179,8 +234,8 @@ technologies = {
             
         }
         
-		research_cost = 1.0
-		start_year = 2275
+		research_cost = 2.0
+		start_year = 2277
 		folder = {
 			name = fallout_vehicle_folder
 			position = { x = @Row_4 y = @Col_2 }
@@ -193,7 +248,20 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 2
+			modifier = {
+				factor = 1.1
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2279.1.1"
+			}
+			
+			modifier = {
+				factor = 1.1
+				date > "2280.1.1"
+			}
 		}
 	}
     
@@ -217,8 +285,8 @@ technologies = {
             
         }
         
-		research_cost = 1.0
-		start_year = 2275
+		research_cost = 2.0
+		start_year = 2278
 		folder = {
 			name = fallout_vehicle_folder
 			position = { x = @Row_4 y = @Col_3 }
@@ -231,7 +299,20 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 2
+			modifier = {
+				factor = 1.1
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2280.1.1"
+			}
+			
+			modifier = {
+				factor = 1.1
+				date > "2281.1.1"
+			}
 		}
 	}
     
@@ -246,8 +327,8 @@ technologies = {
             
         }
         
-		research_cost = 1.0
-		start_year = 2275
+		research_cost = 2.0
+		start_year = 2280
 		folder = {
 			name = fallout_vehicle_folder
 			position = { x = @Row_4 y = @Col_4 }
@@ -260,7 +341,19 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 2
+			modifier = {
+				factor = 1.1
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2282.1.1"
+			}
 		}
 	}
     
@@ -294,8 +387,8 @@ technologies = {
 			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
 		}
         
-		research_cost = 1.0
-		start_year = 2275
+		research_cost = 2.0
+		start_year = 2281
 		folder = {
 			name = fallout_vehicle_folder
 			position = { x = @Row_5 y = @Col_3 }
@@ -308,7 +401,19 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 14
+			factor = 2
+			modifier = {
+				factor = 1.1
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2283.1.1"
+			}
 		}
 	}
     
@@ -328,8 +433,8 @@ technologies = {
 			research_cost_coeff = 1
 		}
         
-		research_cost = 1.0
-		start_year = 2275
+		research_cost = 2.0
+		start_year = 2282
 		folder = {
 			name = fallout_vehicle_folder
 			position = { x = @Row_5 y = @Col_4 }
@@ -342,7 +447,19 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 14
+			factor = 2
+			modifier = {
+				factor = 1.1
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2284.1.1"
+			}
 		}
 	}
     
@@ -351,16 +468,11 @@ technologies = {
         enable_equipments = {
             tank_equipment_3
         }
-        
         dependencies = {
             scientific_civilization = 1
-            
         }
-        
-
-        
-		research_cost = 1.0
-		start_year = 2275
+		research_cost = 2.0
+		start_year = 2283
 		folder = {
 			name = fallout_vehicle_folder
 			position = { x = @Row_5 y = @Col_5 }
@@ -373,7 +485,19 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 2
+			modifier = {
+				factor = 1.1
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2285.1.1"
+			}
 		}
 	}
     
@@ -405,8 +529,8 @@ technologies = {
 			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
 		}
         
-		research_cost = 1.0
-		start_year = 2275
+		research_cost = 2.0
+		start_year = 2276
 		folder = {
 			name = fallout_vehicle_folder
 			position = { x = @Row_7 y = @Col_1 }
@@ -419,10 +543,31 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 30
+			factor = 2
+			modifier = {
+				factor = 1.1
+				is_settler_nation = yes
+			}
+			modifier = {
+				factor = 1.1
+				date > "2276.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2277.1.1"
+			}
+			
+			modifier = {
+				factor = 1.1
+				date > "2278.1.1"
+			}
 			modifier = {
 				has_tech = bike_tech_2
-				factor = 0.1
+				factor = 0
+			}
+			modifier = {
+				is_researching_technology = bike_tech_2
+				factor = 0
 			}
 		}
 	}
@@ -448,8 +593,8 @@ technologies = {
 		}
         
         
-		research_cost = 1.0
-		start_year = 2275
+		research_cost = 2.0
+		start_year = 2278
 		folder = {
 			name = fallout_vehicle_folder
 			position = { x = @Row_7 y = @Col_2 }
@@ -462,7 +607,20 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 13
+			factor = 2
+			modifier = {
+				factor = 1.1
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2280.1.1"
+			}
+			
+			modifier = {
+				factor = 1.1
+				date > "2281.1.1"
+			}
 		}
 	}
     
@@ -486,8 +644,8 @@ technologies = {
 			research_cost_coeff = 1
 		}
         
-		research_cost = 1.0
-		start_year = 2275
+		research_cost = 2.0
+		start_year = 2279
 		folder = {
 			name = fallout_vehicle_folder
 			position = { x = @Row_7 y = @Col_3 }
@@ -500,7 +658,20 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 2
+			modifier = {
+				factor = 1.1
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2281.1.1"
+			}
+			
+			modifier = {
+				factor = 1.1
+				date > "2282.1.1"
+			}
 		}
 	}
     
@@ -515,8 +686,8 @@ technologies = {
             
         }
         
-		research_cost = 1.0
-		start_year = 2275
+		research_cost = 2.0
+		start_year = 2280
 		folder = {
 			name = fallout_vehicle_folder
 			position = { x = @Row_7 y = @Col_5 }
@@ -529,7 +700,18 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			modifier = {
+				factor = 1.1
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2282.1.1"
+			}
 		}
 	}
     
@@ -563,8 +745,8 @@ technologies = {
 			research_cost_coeff = 1
 		}
         
-		research_cost = 1.0
-		start_year = 2275
+		research_cost = 2.0
+		start_year = 2281
 		folder = {
 			name = fallout_vehicle_folder
 			position = { x = @Row_6 y = @Col_3 }
@@ -577,7 +759,19 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 18
+			factor = 2
+			modifier = {
+				factor = 1.1
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2283.1.1"
+			}
 		}
 	}
     
@@ -602,8 +796,8 @@ technologies = {
 			research_cost_coeff = 1
 		}
         
-		research_cost = 1.0
-		start_year = 2275
+		research_cost = 2.0
+		start_year = 2282
 		folder = {
 			name = fallout_vehicle_folder
 			position = { x = @Row_6 y = @Col_4 }
@@ -616,7 +810,19 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 100
+			factor = 2
+			modifier = {
+				factor = 1.1
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2284.1.1"
+			}
 		}
 	}
     
@@ -636,8 +842,8 @@ technologies = {
 			research_cost_coeff = 1
 		}
         
-		research_cost = 1.0
-		start_year = 2275
+		research_cost = 2.0
+		start_year = 2283
 		folder = {
 			name = fallout_vehicle_folder
 			position = { x = @Row_6 y = @Col_5 }
@@ -650,7 +856,19 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 11
+			factor = 2
+			modifier = {
+				factor = 1.1
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2284.1.1"
+			}
+			modifier = {
+				factor = 1.1
+				date > "2285.1.1"
+			}
 		}
 	}
     
@@ -673,7 +891,7 @@ technologies = {
             
         }
         
-		research_cost = 1.0
+		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_vehicle_folder
@@ -709,7 +927,7 @@ technologies = {
             
         }
         
-		research_cost = 1.0
+		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_vehicle_folder
@@ -743,7 +961,7 @@ technologies = {
             
         }
         
-		research_cost = 1.0
+		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_vehicle_folder
@@ -777,7 +995,7 @@ technologies = {
             
         }
         
-		research_cost = 1.0
+		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_vehicle_folder
@@ -811,7 +1029,7 @@ technologies = {
             
         }
         
-		research_cost = 1.0
+		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_vehicle_folder
@@ -850,7 +1068,7 @@ technologies = {
             super_mutant_civilization = 1
         }
         
-		research_cost = 1.0
+		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_vehicle_folder
