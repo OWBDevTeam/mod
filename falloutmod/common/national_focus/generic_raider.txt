@@ -259,7 +259,7 @@ focus_tree =
 		}
 
 		completion_reward = {
-			add_ideas = dont_question_the_boss
+			add_ideas = raider_dont_question_the_boss
 		}
 	}
 	focus = {
@@ -964,8 +964,13 @@ focus_tree =
 			focus = turn_the_lights_on
 		}
 		completion_reward = {
-		set_technology = { power_armour = 1}
-		}
+		add_tech_bonus = {
+				name = raider_power_armour_bonus
+				bonus = 0.75
+				uses = 1
+				category = power_armor_tech
+			}
+		}	
 	}
 	focus = {
 		id = find_the_good_stuff
@@ -1017,7 +1022,7 @@ focus_tree =
 			focus = a_weapon_to_surpass_the_other_gang
 		}
 		completion_reward = {
-			add_equipment_to_stockpile = { type = power_armour_equipment_1 amount = 50 }
+			add_equipment_to_stockpile = { type = power_armor_equipment_1 amount = 50 }
 		}
 	}
 	focus = {
@@ -1255,7 +1260,7 @@ focus_tree =
 				name = raider_explosives_bonus
 				bonus = 0.5
 				uses = 1
-				category = explosive_tech
+				category = artillery
 			}
 		}
 	}
@@ -1325,7 +1330,7 @@ focus_tree =
 				name = raider_truck_bonus 
 				bonus = 0.5
 				uses = 1
-				category = truck_tech
+				category = motorized_equipment
 			}
 		}
 	}
@@ -1407,7 +1412,12 @@ focus_tree =
 			focus = short_fused_engineers
 		}
 		completion_reward = {
-			set_technology = { explosive_tech_5 = 1}
+			add_tech_bonus = {
+				name = raider_howitzer_bonus
+				bonus = 0.75
+				uses = 1
+				category = artillery
+			}
 		}
 	}
 	focus = {
