@@ -4,7 +4,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			tag = CES
+			original_tag = CES
 		}
 	}
 	default = no
@@ -645,6 +645,9 @@ focus_tree = {
 		y = 7
 		completion_reward = {
 			army_experience = 25
+			hidden_effect = {
+				set_country_flag = conquered_86
+			}
 		}
 
 	}
@@ -1159,8 +1162,8 @@ focus_tree = {
 		x = 9
 		y = 9
 		completion_reward = {
-			
 			553 = { set_state_name = "Legate Camp" }
+			359 = { set_state_name = "Fortification Hill" }
 		
 			country_event = { id = hooverdam.2 }
 		}
@@ -1187,10 +1190,11 @@ focus_tree = {
 		
 			add_ideas = legion_nf_burned_man_rumours
 			
-			create_corps_commander = {
+			create_field_marshal = {
 				name = "Legate Lanius"
 				portrait_path = "gfx/leaders/CES/Portrait_Lanius.dds"
 				skill = 5
+				id = 1004
 				traits = {
 					
 				}
@@ -1220,10 +1224,11 @@ focus_tree = {
 		
 			add_ideas = legion_nf_burned_man_rumours
 			
-			create_corps_commander = {
+			create_field_marshal = {
 				name = "Legate Lanius"
 				portrait_path = "gfx/leaders/CES/Portrait_Lanius.dds"
 				skill = 5
+				id = 1004
 				traits = {
 					
 				}
@@ -1476,7 +1481,6 @@ focus_tree = {
 			}
 			country_event = { id = nf_legion.5 } # Caesar's Illness
 		}
-
 	}
     #---------------------------
     # Mexico sub-tree
@@ -2311,7 +2315,7 @@ focus_tree = {
 			focus = ces_augustus
 		}
         available = {
-			has_country_leader = { id = 994 }
+			has_country_leader = { id = 1000 } # Caesar
 		}
 		mutually_exclusive = {
 			focus = ces_brotherhood
@@ -2348,7 +2352,7 @@ focus_tree = {
 			focus = ces_augustus
 		}
         available = {
-			has_country_leader = { id = 995 }
+			has_country_leader = { id = 1006 } # Lucius
 		}
 		mutually_exclusive = {
 			focus = ces_thesis
@@ -2374,7 +2378,7 @@ focus_tree = {
 			focus = ces_augustus
 		}
 		available = {
-			has_country_leader = { id = 996 }
+			has_country_leader = { id = 1007 } # Lanius
 		}
 		mutually_exclusive = {
 			focus = ces_brotherhood
@@ -2400,7 +2404,7 @@ focus_tree = {
 			focus = ces_augustus
 		}
 		available = {
-			has_country_leader = { id = 997 }
+			has_country_leader = { id = 1005 } # Vulpes
 		}
 		mutually_exclusive = {
 			focus = ces_brotherhood
