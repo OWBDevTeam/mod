@@ -120,6 +120,13 @@ focus_tree = {
 			focus = gentribal_highchief
 			focus = gentribal_elder
 		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { has_government = elites }
+			}
+		}
 		x = 5
 		y = 4
 		completion_reward = {
@@ -142,6 +149,13 @@ focus_tree = {
 		}
 		x = 7
 		y = 4
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { has_government = people }
+			}
+		}
 		completion_reward = {
 			add_ideas = high_shaman
 			add_political_power = 60
@@ -207,6 +221,13 @@ focus_tree = {
 			focus = gentribal_elder
 			focus = gentribal_shaman
 			focus = gentribal_war
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { has_government = ruler }
+			}
 		}
 		x = 11
 		y = 4
@@ -779,6 +800,13 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = gentribal_shaman
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { has_government = intellectuals }
+			}
 		}
 		x = 7
 		y = 5
