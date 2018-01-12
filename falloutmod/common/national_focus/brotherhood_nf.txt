@@ -1198,38 +1198,16 @@ focus_tree = {
 			}
 		}
 	}
-	focus = {
-		id = bos_navarrodefense
-		icon = GFX_goal_generic_cities_focus
-		cost = 8.6
-		prerequisite = {
-			focus = bos_navarrooutpost
-		}
-		x = 37
-		y = 6
-		completion_reward = {
-			548 = {
-				add_building_construction = {
-					type = bunker
-					level = 4
-					province = {
-						all_provinces = yes
-					}
-					instant_build = yes
-				}
-			}
-		}
-
-	}
+	
 	focus = {
 		id = bos_navarrohangars
 		icon = GFX_goal_bos_scourge_focus
 		cost = 8.6
 		prerequisite = {
-			focus = bos_navarrodefense
-		}
+			focus = bos_navarrooutpost
+		}	
 		x = 37
-		y = 7
+		y = 6
 		completion_reward = {
 			548 = {
 				add_building_construction = {
@@ -1247,77 +1225,19 @@ focus_tree = {
 
 	}
 	focus = {
-		id = bos_controlcentre
-		icon = GFX_goal_generic_communcation_focus
+		id = bos_secrets
+		icon = GFX_goal_generic_air_doctrines_focus
 		cost = 8.6
+		mutually_exclusive = {
+		focus = bos_maxsongifts
+        }
 		prerequisite = {
-			focus = bos_navarrohangars
+			focus = bos_powerarmourdevelop
 		}
 		x = 37
 		y = 8
 		completion_reward = {
-			548 = {
-				add_building_construction = {
-					type = radar_station
-					level = 4
-					instant_build = yes
-				}
-			}
-		}
-
-	}
-	focus = {
-		id = bos_research
-		icon = GFX_goal_bos_generic_research
-		cost = 8.6
-		prerequisite = {
-			focus = bos_controlcentre
-		}
-		x = 37
-		y = 9
-		completion_reward = {
-			add_ideas = navarroscribes
-		}
-	}
-	focus = {
-		id = bos_secrets
-		icon = GFX_goal_generic_air_doctrines_focus
-		cost = 8.6
-		prerequisite = {
-			focus = bos_research
-		}
-		x = 37
-		y = 10
-		completion_reward = {
 			add_ideas = navarrosecrets
-		}
-
-	}
-	focus = {
-		id = bos_vertibirdrepairs
-		icon = GFX_goal_generic_airbases_focus
-		cost = 8.6
-		prerequisite = {
-			focus = bos_secrets
-		}
-		x = 37
-		y = 11
-		completion_reward = {
-			add_ideas = vertibirdrepairs
-		}
-
-	}
-	focus = {
-		id = bos_vertibirdequipment
-		icon = GFX_goal_generic_air_production
-		cost = 8.6
-		prerequisite = {
-			focus = bos_vertibirdrepairs
-		}
-		x = 37
-		y = 12
-		completion_reward = {
-			add_ideas = vertibirdequip
 		}
 
 	}
@@ -1326,10 +1246,10 @@ focus_tree = {
 		icon = GFX_goal_generic_build_tank
 		cost = 8.6
 		prerequisite = {
-			focus = bos_vertibirdequipment
+			focus = bos_navarrohangars
 		}
 		x = 37
-		y = 13
+		y = 7
 		completion_reward = {
 			add_ideas = powerarmourdevelopment
 		}
@@ -1340,10 +1260,10 @@ focus_tree = {
 		icon = GFX_goal_generic_air_naval_bomber
 		cost = 8.6
 		prerequisite = {
-			focus = bos_powerarmourdevelop
+			focus = bos_maxsongifts
 		}
-		x = 37
-		y = 14
+		x = 39
+		y = 9
 		completion_reward = {
 			add_ideas = zeppelinfoundry
 		}
@@ -1354,10 +1274,10 @@ focus_tree = {
 		icon = GFX_goal_bos_forbidden_secrets
 		cost = 8.6
 		prerequisite = {
-			focus = bos_zeppelinfoundry
+			focus = bos_secrets
 		}
 		x = 37
-		y = 15
+		y = 9
 		completion_reward = {
 			add_ideas = forbiddensecrets
 		
@@ -1369,10 +1289,10 @@ focus_tree = {
 		icon = GFX_goal_generic_electricity_focus
 		cost = 8.6
 		prerequisite = {
-			focus = bos_navarrodefense
+			focus = bos_navarrooutpost
 		}
 		x = 39
-		y = 7
+		y = 6
 		completion_reward = {
 			random_owned_controlled_state = {
 				add_building_construction = {
@@ -1392,17 +1312,13 @@ focus_tree = {
 			focus = bos_generatordesign
 		}
 		x = 39
-		y = 8
+		y = 7
 		completion_reward = {
 			random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
 					level = 3
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
 					instant_build = yes
 				}
 			}
@@ -1416,8 +1332,11 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_powerarmourdevelop
 		}
+		mutually_exclusive = {
+		focus = bos_secrets
+        }
 		x = 39
-		y = 14
+		y = 8
 		completion_reward = {
 			add_ideas = armyknowledge
 		}
@@ -1558,37 +1477,29 @@ focus_tree = {
 				163 = {
 					add_building_construction = {
 						type = infrastructure
-						level = 3
+						level = 2
 						instant_build = yes
 					}
-				}
-			}
-			
-			474 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 3
-					instant_build = yes
 				}
 			}
 			104 = {
 				add_building_construction = {
 					type = infrastructure
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 			}
 			132 = {
 				add_building_construction = {
 					type = infrastructure
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 			}
 			473 = {
 				add_building_construction = {
 					type = infrastructure
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1611,6 +1522,7 @@ focus_tree = {
 					owns_state = 163
 				}
 				163 = {
+				add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = arms_factory
 						level = 1
@@ -1619,14 +1531,8 @@ focus_tree = {
 				}
 			}
 			
-			474 = {
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
 			104 = {
+			add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
 					level = 1
@@ -1634,6 +1540,7 @@ focus_tree = {
 				}
 			}
 			132 = {
+			add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
 					level = 1
@@ -1641,6 +1548,7 @@ focus_tree = {
 				}
 			}
 			473 = {
+			add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
 					level = 1
@@ -1667,38 +1575,31 @@ focus_tree = {
 				}
 				163 = {
 					add_building_construction = {
-						type = industrial_complex
-						level = 1
+						type = infrastructure
+						level = 2
 						instant_build = yes
 					}
 				}
 			}
 			
-			474 = {
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
 			104 = {
 				add_building_construction = {
-					type = industrial_complex
-					level = 1
+					type = infrastructure
+					level = 2
 					instant_build = yes
 				}
 			}
 			132 = {
 				add_building_construction = {
-					type = industrial_complex
-					level = 1
+					type = infrastructure
+					level = 2
 					instant_build = yes
 				}
 			}
 			473 = {
 				add_building_construction = {
-					type = industrial_complex
-					level = 1
+					type = infrastructure
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1721,6 +1622,7 @@ focus_tree = {
 					owns_state = 163
 				}
 				163 = {
+				add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = arms_factory
 						level = 1
@@ -1729,14 +1631,8 @@ focus_tree = {
 				}
 			}
 			
-			474 = {
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
 			104 = {
+			add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
 					level = 1
@@ -1744,6 +1640,7 @@ focus_tree = {
 				}
 			}
 			132 = {
+			add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
 					level = 1
@@ -1751,6 +1648,7 @@ focus_tree = {
 				}
 			}
 			473 = {
+			add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
 					level = 1
@@ -1776,6 +1674,7 @@ focus_tree = {
 					owns_state = 163
 				}
 				163 = {
+				add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = industrial_complex
 						level = 1
@@ -1784,14 +1683,8 @@ focus_tree = {
 				}
 			}
 			
-			474 = {
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
 			104 = {
+			add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -1799,6 +1692,7 @@ focus_tree = {
 				}
 			}
 			132 = {
+			add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -1806,6 +1700,7 @@ focus_tree = {
 				}
 			}
 			473 = {
+			add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -1816,61 +1711,7 @@ focus_tree = {
 		}
 
 	}
-	focus = {
-		id = bos_armedbay
-		icon = GFX_goal_generic_military_industry_focus
-		cost = 8.6
-		prerequisite = {
-			focus = bos_westforge
-		}
-		x = 43
-		y = 10
-		completion_reward = {
-			if = {
-				limit = {
-					owns_state = 163
-				}
-				163 = {
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-			
-			474 = {
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			104 = {
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			132 = {
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			473 = {
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			
-		}
-
-	}
+	
 	focus = {
 		id = bos_fighters
 		icon = GFX_goal_generic_airbases_focus
@@ -2708,7 +2549,7 @@ focus_tree = {
 			focus = bos_forbiddensecrets
 		}
 		x = 37
-		y = 16
+		y = 10
 		completion_reward = {
 			add_ideas = forbiddenweapons
 		}
@@ -2743,9 +2584,10 @@ focus_tree = {
 		y = 6
 		completion_reward = {
 			157 = {
+			add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 4
+					level = 2
 					instant_build = yes
 				}
 			}
