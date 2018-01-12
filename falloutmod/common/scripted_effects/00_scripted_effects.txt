@@ -15,3 +15,648 @@
 #		example_effect = yes
 #	}
 #
+fire_NCR_civil_war = {
+	# Enclave Intellectuals
+	# creating country leaders
+	create_country_leader = {
+		name = "Grant C. Hayes"
+		desc = "Hayes_DESC"
+		picture = "Portrait_Hayes.dds"
+		expire = "3000.1.1"
+		ideology = ideocracy
+				
+		traits = {
+					
+		}
+	}
+	# Allgood: Ruler
+	create_country_leader = {
+		name = "Allgood Murphy"
+		desc = "Allgood_DESC"
+		picture = "Portrait_Allgood.dds"
+		expire = "3000.1.1"
+		ideology = benevolent_dictatorship
+					
+		traits = {
+						
+		}
+	}
+	# Barons: Elites
+	create_country_leader = {
+		name = "Anton Flynn"
+		desc = "Anton_Flynn_DESC"
+		picture = "Portrait_Flynn.dds"
+		expire = "3000.1.1"
+		ideology = conspiratory_oligarchy
+					
+		traits = {
+						
+		}
+	}
+	hidden_effect = {
+		every_owned_state = {
+			set_state_flag = do_not_decimate
+		}
+	}
+	# firing wars
+	# Barons
+	start_civil_war = {
+		ideology = elites
+		size = 0.3
+		capital = 135 # sac town
+		states_filter = {
+			owner = { tag = NCR }
+			is_boneyard_road_state = no # don't give them very southern states			
+			NOT = { 
+				OR = {
+					state = 63 # Enclave capital (Glowville)
+					state = 253 # NCR capital (Shady Sands)
+					state = 350 # Allgood capital (Boneyard)
+				}
+			}	
+		}
+		keep_unit_leaders = { }
+	}
+	hidden_effect = {
+		NCR = { country_event = nf_ncr.25 }
+	}
+}
+
+setup_NCR_enclave = {
+	# add Reno enclave to this one
+	if = {
+		limit = {
+			NEW = {
+				has_cosmetic_tag = ENC
+			}
+		}
+		if = {
+			limit = {
+				NEW = {
+					is_ai = yes
+				}
+			}
+			annex_country = { target = NEW transfer_troops = yes }
+			else = {
+				create_faction = western_enclave
+				add_to_faction = NEW
+			}
+		}
+	}
+	set_politics = {
+		parties = {
+			people = { popularity = 0 }
+			elites = { popularity = 20 }
+			intellectuals = { popularity = 80 }
+			ruler = { popularity = 0 }
+		}
+		ruling_party = intellectuals
+		elections_allowed = no
+	}
+	hidden_effect = {
+		set_technology = {
+			power_armour_enclave1 = 1
+			tesla_weaponry = 1
+			vertiberd_gunship = 1 
+			vertiberd_transport1 = 1 
+		}
+		load_oob = enclavecivilwar
+	}
+	if = {
+		limit = {
+			has_completed_focus = ncr_integration
+			BJS = {
+				exists = yes
+			}
+		}		
+		NCR = {
+			release_puppet = BJS
+		}		
+		ENC = {
+			puppet = BJS
+		}
+	}
+}
+
+transfer_ncr_ideas_civil_war = {
+	if = {
+		limit = {
+			NCR = {
+				has_idea = oldworldmachines 
+			}
+		}
+		add_ideas = oldworldmachines 
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = oldworldarmour 
+			}
+		}
+		add_ideas = oldworldarmour 
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = oldworldtheatre  
+			}
+		}
+		add_ideas = oldworldtheatre  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = denmotherpenalty  
+			}
+		}
+		add_ideas = denmotherpenalty  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = long15  
+			}
+		}
+		add_ideas = long15  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = brahminbarons  
+			}
+		}
+		add_ideas = brahminbarons  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = ncrguns  
+			}
+		}
+		add_ideas = ncrguns  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = ncrguns2  
+			}
+		}
+		add_ideas = ncrguns2  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = heavytroops  
+			}
+		}
+		add_ideas = heavytroops  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = scavunion  
+			}
+		}
+		add_ideas = scavunion  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = allarewelcome  
+			}
+		}
+		add_ideas = allarewelcome  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = immigrationlimits  
+			}
+		}
+		add_ideas = immigrationlimits  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = mutantlabour  
+			}
+		}
+		add_ideas = mutantlabour  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = flyingbears  
+			}
+		}
+		add_ideas = flyingbears  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = hubdrugs  
+			}
+		}
+		add_ideas = hubdrugs  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = hubweapons  
+			}
+		}
+		add_ideas = hubweapons  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = mechcore  
+			}
+		}
+		add_ideas = mechcore  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = shockcomp  
+			}
+		}
+		add_ideas = shockcomp  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = rapidadvance  
+			}
+		}
+		add_ideas = rapidadvance  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = onlythebest  
+			}
+		}
+		add_ideas = onlythebest  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = gunrunnerliscense  
+			}
+		}
+		add_ideas = gunrunnerliscense  
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = drummandsarmy   
+			}
+		}
+		add_ideas = drummandsarmy   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = blastfromthepast   
+			}
+		}
+		add_ideas = blastfromthepast   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = speartip    
+			}
+		}
+		add_ideas = speartip    
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = bigjim   
+			}
+		}
+		add_ideas = bigjim   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = jimdrills   
+			}
+		}
+		add_ideas = jimdrills   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = ncrtechlimits   
+			}
+		}
+		add_ideas = ncrtechlimits   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = aradesh   
+			}
+		}
+		add_ideas = aradesh   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = seth   
+			}
+		}
+		add_ideas = seth   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = tandi   
+			}
+		}
+		add_ideas = tandi   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = baronswar   
+			}
+		}
+		add_ideas = baronswar   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = baronswarbuyout   
+			}
+		}
+		add_ideas = baronswarbuyout   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = ncrbarons   
+			}
+		}
+		add_ideas = ncrbarons   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = baronofbarons   
+			}
+		}
+		add_ideas = baronofbarons   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = rattletailrepaid   
+			}
+		}
+		add_ideas = rattletailrepaid   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = banditopayments   
+			}
+		}
+		add_ideas = banditopayments   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = brahminbill   
+			}
+		}
+		add_ideas = brahminbill   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = rationing   
+			}
+		}
+		add_ideas = rationing   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = oldworldmilitary   
+			}
+		}
+		add_ideas = oldworldmilitary   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = privatepolice   
+			}
+		}
+		add_ideas = privatepolice   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = militindustrial   
+			}
+		}
+		add_ideas = militindustrial   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = draftstandards   
+			}
+		}
+		add_ideas = draftstandards   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = riverpatrols   
+			}
+		}
+		add_ideas = riverpatrols   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = nevtradeagreements   
+			}
+		}
+		add_ideas = nevtradeagreements   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = monopoly   
+			}
+		}
+		add_ideas = monopoly   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = newleague   
+			}
+		}
+		add_ideas = newleague   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = leagueradio   
+			}
+		}
+		add_ideas = leagueradio   
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = ncrdraft    
+			}
+		}
+		add_ideas = ncrdraft    
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = hundredeighteenthcore    
+			}
+		}
+		add_ideas = hundredeighteenthcore    
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = theatoms    
+			}
+		}
+		add_ideas = theatoms    
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = reorgranger    
+			}
+		}
+		add_ideas = reorgranger    
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = rangercore    
+			}
+		}
+		add_ideas = rangercore    
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = rangerlead    
+			}
+		}
+		add_ideas = rangerlead    
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = rangercanopeners    
+			}
+		}
+		add_ideas = rangercanopeners    
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = aaronkimball    
+			}
+		}
+		add_ideas = aaronkimball    
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = urbandraft    
+			}
+		}
+		add_ideas = urbandraft    
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = ncrmarch    
+			}
+		}
+		add_ideas = ncrmarch    
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = jimdraft    
+			}
+		}
+		add_ideas = jimdraft    
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = rangergenmossman    
+			}
+		}
+		add_ideas = rangergenmossman    
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = ncrrangerprop    
+			}
+		}
+		add_ideas = ncrrangerprop    
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = followerfunding    
+			}
+		}
+		add_ideas = followerfunding    
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = ncrmint    
+			}
+		}
+		add_ideas = ncrmint    
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = theboneyard    
+			}
+		}
+		add_ideas = theboneyard    
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = gizmoslegacy    
+			}
+		}
+		add_ideas = gizmoslegacy    
+	}
+	if = {
+		limit = {
+			NCR = {
+				has_idea = gunrunnerexpanded    
+			}
+		}
+		add_ideas = gunrunnerexpanded    
+	}
+}
