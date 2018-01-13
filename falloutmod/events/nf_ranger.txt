@@ -10,15 +10,20 @@ country_event = {
     
 	option = {
 		name = nf_ranger.1.a
-		
-		
+		ai_chance = {
+			base = 1
+		}
 	}
 	
 	option = {
 		name = nf_ranger.1.b
 		
 		ai_chance = {
-			base = 100
+			base = 1
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
 		}
 		
 		retire_country_leader = yes
@@ -40,7 +45,9 @@ country_event = {
 		name = nf_ranger.1.c
 		
 		retire_country_leader = yes
-		
+		ai_chance = {
+			base = 1
+		}
 		create_country_leader  = {
 			name = "Thrasher Sagarra"
 			desc = "THRASHER_SAGARRA_DESC"
