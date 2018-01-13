@@ -675,9 +675,11 @@ focus_tree = {
 		x = 2
 		y = 7
 		completion_reward = {
-			country_event = { id = mormon.8 }
+			create_wargoal = {
+				type = annex_everything
+				target = MUR
+			}
 		}
-
 	}
 	focus = {
 		id = lds_heretics
@@ -690,7 +692,7 @@ focus_tree = {
 		x = 8
 		y = 7
 		completion_reward = {
-			country_event = { id = mormon.9 }
+			country_event = { id = mormon.4 }
 		}
 
 	}
@@ -1080,8 +1082,12 @@ focus_tree = {
 		x = 16
 		y = 9
 		completion_reward = {
-			custom_effect_tooltip = mormonweapons_tt
-			hidden_effect = { set_technology = { advanced_ballistic_weaponry = 1 }}
+			add_tech_bonus = {
+				name = infantry_tech_bonus
+				bonus = 0.3
+				uses = 2
+				category = infantry_tech
+			}
 		}
 
 	}
@@ -1096,7 +1102,12 @@ focus_tree = {
 		y = 9
 		completion_reward = {
 			custom_effect_tooltip = mormonmedicine_tt
-			hidden_effect = { set_technology = { healing_powder = 1 } }
+			add_tech_bonus = {
+				name = chem_tech_bonus
+				bonus = 0.7
+				uses = 1
+				category = chem_tech
+			}
 		}
 
 	}
@@ -1145,6 +1156,7 @@ focus_tree = {
 		y = 10
 		completion_reward = {
 			add_ideas = mormonsready
+			
 		}
 
 	}
@@ -1164,8 +1176,7 @@ focus_tree = {
 		x = 20
 		y = 10
 		completion_reward = {
-			
-			
+			add_ideas = missionaries_of_god 
 		}
 
 	}
@@ -1387,10 +1398,29 @@ focus_tree = {
 		prerequisite = {
 			focus = lds_merciful
 		}
+		bypass = {
+			HGH = {
+				exists = no
+			}
+		}
 		x = 20
 		y = 9
 		completion_reward = {
-			
+			if = {
+				limit = {
+					is_faction_leader = yes
+					HGH = { is_ai = yes }
+				}
+				add_to_faction = HGH
+			}
+			if = {
+				limit = {
+					HGH = {
+						exists = yes
+						is_ai = no
+					}
+				}
+			}
 		}
 
 	}

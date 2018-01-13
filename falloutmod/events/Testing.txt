@@ -127,3 +127,20 @@ country_event = {
 		name = test_event.7.b
 	}
 }
+# annex everyone
+country_event = {
+	id = test_event.8
+	title = test_event.8.t
+	desc = test_event.8.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	option = {
+		name = test_event.7.a
+		every_country = {
+			ROOT = { annex_country = { target = PREV transfer_troops = yes } }
+		}
+	}
+	option = {
+		name = test_event.8.b
+	}
+}
