@@ -9,13 +9,22 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Pale Fighters"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 2 y = 0 }
+	}
+}
+units = {
+	division {
+		name = "Pale Fighters"
+		location = 1200
+		division_template = "Pale Fighters"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
 	}
 }
 

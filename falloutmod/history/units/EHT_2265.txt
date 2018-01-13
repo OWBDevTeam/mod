@@ -9,16 +9,52 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Eighties War-riders"
 	regiments = {
-		infantry = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 1 y = 0 }
-		infantry = { x = 1 y = 1 }
-		infantry = { x = 2 y = 0 }
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
 	}
 }
-
+units = {
+	division {
+		name = "Oasis War-riders"
+		location = 2680
+		division_template = "Eighties War-riders"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Gold Hill War-riders"
+		location = 3398
+		division_template = "Eighties War-riders"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Bloody War-riders"
+		location = 8287
+		division_template = "Eighties War-riders"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Jericho War-riders"
+		location = 6414
+		division_template = "Eighties War-riders"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Aragonite War-riders"
+		location = 8297
+		division_template = "Eighties War-riders"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+}
 ##### Starting Production #####
 instant_effect = {
 	add_equipment_production = {

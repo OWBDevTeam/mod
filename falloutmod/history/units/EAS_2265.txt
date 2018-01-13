@@ -9,7 +9,7 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Caravan Guard"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -18,7 +18,22 @@ division_template = {
 		infantry = { x = 2 y = 0 }
 	}
 }
-
+units = {
+	division {
+		name = "1. Caravan Guard"
+		location = 3548
+		division_template = "Caravan Guard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "2. Caravan Guard"
+		location = 3579
+		division_template = "Caravan Guard"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+}
 ##### Starting Production #####
 instant_effect = {
 	add_equipment_production = {

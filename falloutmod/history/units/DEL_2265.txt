@@ -9,7 +9,7 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Delta Draftsmen"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -18,7 +18,29 @@ division_template = {
 		infantry = { x = 2 y = 0 }
 	}
 }
-
+units = {
+	division {
+		name = "Capital Draft"
+		location = 6465
+		division_template = "Delta Draftsmen"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Sevier Draftsmen"
+		location = 8315
+		division_template = "Delta Draftsmen"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Cricket Draftsmen"
+		location = 8241
+		division_template = "Delta Draftsmen"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+}
 ##### Starting Production #####
 instant_effect = {
 	add_equipment_production = {

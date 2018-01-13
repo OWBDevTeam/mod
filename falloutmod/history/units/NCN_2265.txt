@@ -9,13 +9,48 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Disciples of God"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
 		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+}
+
+units = {
+	division {
+		name = "Jerusalem's Disciples"
+		location = 6306
+		division_template = "Disciples of God"
+		start_experience_factor = 0.85
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Canaan's Disciples"
+		location = 6536
+		division_template = "Disciples of God"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Brigham Disciples"
+		location = 7441
+		division_template = "Disciples of God"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Povo's Disciples"
+		location = 6506
+		division_template = "Reavers"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
 	}
 }
 

@@ -9,13 +9,30 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Friskers"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+}
+units = {
+	division {
+		name = "Frisco Bandits"
+		location = 1532
+		division_template = "Friskers"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Escalante Prowlers"
+		location = 6368
+		division_template = "Friskers"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
 	}
 }
 

@@ -9,16 +9,26 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Thornmen"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
 	}
 }
-
+units = {
+	division {
+		name = "Thorn's Men"
+		location = 8893
+		division_template = "Thornmen"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
 
 ##### Starting Production #####
 instant_effect = {

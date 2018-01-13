@@ -9,13 +9,24 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Kidnapper Cell"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+}
+units = {
+	division {
+		name = "Grabber Kidnappers"
+		location = 3410
+		division_template = "Kidnapper Cell"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
 	}
 }
 

@@ -9,7 +9,7 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Settlement Guard"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -18,7 +18,36 @@ division_template = {
 		infantry = { x = 2 y = 0 }
 	}
 }
-
+units = {
+	division {
+		name = "Etna Guard"
+		location = 8403
+		division_template = "Settlement Guard"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Kelton Guard"
+		location = 6500
+		division_template = "Settlement Guard"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Lucin Guard"
+		location = 8388
+		division_template = "Settlement Guard"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Montello Guard"
+		location = 8386
+		division_template = "Settlement Guard"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+}
 ##### Starting Production #####
 instant_effect = {
 	add_equipment_production = {

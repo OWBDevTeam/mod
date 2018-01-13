@@ -9,13 +9,29 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Riperult Mutilators"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 2 y = 0 }
+	}
+}
+units = {
+	division {
+		name = "Jiggs Smugglers"
+		location = 3317
+		division_template = "Riperult Mutilators"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "'Drakul' Mutilators"
+		location = 8470
+		division_template = "Riperult Mutilators"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
 	}
 }
 

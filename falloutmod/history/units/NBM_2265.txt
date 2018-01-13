@@ -9,7 +9,7 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Battle Mountain Conscripts"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -18,7 +18,15 @@ division_template = {
 		infantry = { x = 2 y = 0 }
 	}
 }
-
+units = {
+	division {
+		name = "Guards of the Battle Mountain"
+		location = 3463
+		division_template = "Battle Mountain Conscripts"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+}
 ##### Starting Production #####
 instant_effect = {
 	add_equipment_production = {

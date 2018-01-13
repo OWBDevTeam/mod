@@ -9,15 +9,42 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Chapel Missionaries"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		infantry = { x = 2 y = 3 }
 	}
 }
+units = {
+	division {
+		name = "1. Chapel Missionaries"
+		location = 1010
+		division_template = "Chapel Missionaries"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "2. Chapel Missionaries"
+		location = 6523
+		division_template = "Chapel Missionaries"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "3. Chapel Missionaries"
+		location = 6520
+		division_template = "Chapel Missionaries"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+}
+
 
 ##### Starting Production #####
 instant_effect = {
