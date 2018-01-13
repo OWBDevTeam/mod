@@ -150,7 +150,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		cost = 10.00
 		prerequisite = {
-			foc	us = tribalzappa
+			focus = tribalzappa
 		}
 		x = 14
 		y = 8
@@ -183,7 +183,9 @@ focus_tree = {
 		}
 		x = 17
 		y = 6
-
+		completion_reward = {
+			add_ideas = warrenguardianswild
+		}
 	}
 	focus = {
 		id = warriorswild
@@ -194,7 +196,9 @@ focus_tree = {
 		}
 		x = 19
 		y = 6
-
+		completion_reward = {
+			add_ideas = warrenwarriorswild
+		}
 	}
 	focus = {
 		id = baneofman
@@ -208,7 +212,15 @@ focus_tree = {
 		}
 		x = 18
 		y = 7
-
+		completion_reward = {
+			army_experience = 30
+			add_tech_bonus = {
+				name = bane_of_man
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
 	}
 	focus = {
 		id = realmsofgoliath
@@ -219,7 +231,9 @@ focus_tree = {
 		}
 		x = 18
 		y = 8
-
+		completion_reward = {
+			add_ideas = warren_goliath_realm
+		}
 	}
 	focus = {
 		id = callofgiants
@@ -723,13 +737,48 @@ focus_tree = {
 		x = 6
 		y = 6
 		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = RBT
+		custom_effect_tooltip = drumswesttooltip
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = RBT
+							NOT = { is_controlled_by = RBT }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = RBT
+						}
+					}
+					
+					ROOT = { 
+			create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
 			}
-			create_wargoal = {
-				type = annex_everything
-				target = MDT
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = MDT
+							NOT = { is_controlled_by = MDT }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = MDT
+						}
+					}
+					
+					ROOT = { 
+			create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
 			}
 		}
 	}
@@ -899,13 +948,48 @@ focus_tree = {
 		x = 6
 		y = 9
 		completion_reward = {
-			create_wargoal = {
-				type = annex_everything 
-				target = BPT
+			custom_effect_tooltip = warhornstooltip
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = BPT
+							NOT = { is_controlled_by = BPT }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = BPT
+						}
+					}
+					
+					ROOT = { 
+			create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
 			}
-			create_wargoal = {
-				type = annex_everything 
-				target = CHE
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = CHE
+							NOT = { is_controlled_by = CHE }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = CHE
+						}
+					}
+					
+					ROOT = { 
+			create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
 			}
 		}
 	}
@@ -945,25 +1029,34 @@ focus_tree = {
 		}
 		x = 7
 		y = 10
-		#available = {
-		#	if = {
-		#		limit = {
-		#			BPT = {
-		#				is_puppet_of = TRL
-		#			}
-		#		}
-		#	}
-		#	
-		#	OR = {
-		#		limit = {
-		#			TRL = {
-		#				owns_state = 251
-		#				owns_state = 150
-		#				owns_state = 86
-		#			}
-		#		}
-		#	}
-		#}
+		available = {
+			if = {
+				limit = {
+					CHE = {
+						is_puppet_of = TRL
+					}
+				}
+			}
+			
+			OR = {
+				limit = {
+					TRL = {
+						owns_state = 426
+						owns_state = 580
+						owns_state = 480
+						owns_state = 121
+						owns_state = 536
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_state_core = 426
+			add_state_core = 580
+			add_state_core = 480
+			add_state_core = 121
+			add_state_core = 536
+		}
 	}
 	focus = {
 		id = forcedmut2
@@ -1014,13 +1107,47 @@ focus_tree = {
 		x = 6
 		y = 12
 		completion_reward = {
-			create_wargoal = {
-				type = annex_everything 
-				target = BDT
+		if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = BDT
+							NOT = { is_controlled_by = BDT }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = BDT
+						}
+					}
+					
+					ROOT = { 
+			create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
 			}
-			create_wargoal = {
-				type = annex_everything 
-				target = MLT
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = MLT
+							NOT = { is_controlled_by = MLT }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = MLT
+						}
+					}
+					
+					ROOT = { 
+			create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
 			}
 		}
 	}
