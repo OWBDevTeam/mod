@@ -67,6 +67,7 @@ focus_tree = {
 		id = bos_hangars
 		icon = GFX_goal_bos_scourge_focus
 		cost = 8.6
+		mutually_exclusive = { focus = bos_harbours}
 		prerequisite = {
 			focus = bos_oldamerica
 		}
@@ -101,6 +102,7 @@ focus_tree = {
 		id = bos_harbours
 		icon = GFX_goal_bos_steel_cage
 		cost = 8.6
+		mutually_exclusive = { focus = bos_hangars }
 		prerequisite = {
 			focus = bos_oldamerica
 		}
@@ -1716,10 +1718,11 @@ focus_tree = {
 		id = bos_fighters
 		icon = GFX_goal_generic_airbases_focus
 		cost = 8.6
+		mutually_exclusive = { focus = bos_support }
 		prerequisite = {
 			focus = bos_hangars
 		}
-		x = 1
+		x = 0
 		y = 5
 		completion_reward = {
 			add_tech_bonus = {
@@ -1735,11 +1738,12 @@ focus_tree = {
 		id = bos_support
 		icon = GFX_goal_generic_air_doctrines_focus
 		cost = 8.6
+		mutually_exclusive = { focus = bos_fighters }
 		prerequisite = {
-			focus = bos_fighters
+			focus = bos_hangars
 		}
-		x = 1
-		y = 6
+		x = 2
+		y = 5
 		completion_reward = {
 			add_tech_bonus = {
 				name = support_bonus
@@ -1755,10 +1759,10 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		cost = 8.6
 		prerequisite = {
-			focus = bos_support
+			focus = bos_support focus = bos_fighters
 		}
 		x = 1
-		y = 7
+		y = 6
 		completion_reward = {
 			add_tech_bonus = {
 				name = air_doctrine_bonus
@@ -1780,7 +1784,7 @@ focus_tree = {
 			focus = bos_bombers
 		}
 		x = 0
-		y = 8
+		y = 7
 		completion_reward = {
 			add_tech_bonus = {
 				name = zeppelin_bonus
@@ -1802,7 +1806,7 @@ focus_tree = {
 			focus = bos_behemoths
 		}
 		x = 2
-		y = 8
+		y = 7
 		completion_reward = {
 			add_tech_bonus = {
 				name = bomber_bonus
@@ -1818,12 +1822,12 @@ focus_tree = {
 		icon = GFX_goal_bos_scourge_focus
 		cost = 8.6
 		prerequisite = {
-			focus = bos_behemoths
+			focus = bos_behemoths focus = bos_bombers
 		}
-		x = 0
-		y = 9
+		x = 1
+		y = 8
 		completion_reward = {
-			country_event = { id = nf_brotherhood.21 }
+			add_equipment_to_stockpile = { type = tactical_bomber_equipment_2 amount = 1 producer = BOS }
 		}
 
 	}
@@ -1831,10 +1835,11 @@ focus_tree = {
 		id = bos_seatrials
 		icon = GFX_goal_generic_navy_submarine
 		cost = 8.6
+		mutually_exclusive = { focus = bos_screening }	
 		prerequisite = {
 			focus = bos_harbours
 		}
-		x = 5
+		x = 4
 		y = 5
 		completion_reward = {
 			add_tech_bonus = {
@@ -1851,7 +1856,7 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		cost = 8.6
 		prerequisite = {
-			focus = bos_seatrials
+			focus = bos_screening focus = bos_seatrials
 		}
 		x = 5
 		y = 6
@@ -1868,11 +1873,12 @@ focus_tree = {
 		id = bos_screening
 		icon = GFX_goal_generic_navy_battleship
 		cost = 8.6
+		mutually_exclusive = { focus = bos_seatrials }
 		prerequisite = {
-			focus = bos_navallexicon
+			focus = bos_harbours
 		}
-		x = 5
-		y = 7
+		x = 6
+		y = 5
 		completion_reward = {
 			add_tech_bonus = {
 				name = war_barge_bonus
@@ -1888,13 +1894,13 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_anti_submarine
 		cost = 8.6
 		prerequisite = {
-			focus = bos_screening
+			focus = bos_navallexicon
 		}
 		mutually_exclusive = {
 			focus = bos_aircatapults
 		}
 		x = 4
-		y = 8
+		y = 7
 		completion_reward = {
 			add_tech_bonus = {
 				name = siege_ship_bonus
@@ -1910,13 +1916,13 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_carrier
 		cost = 8.6
 		prerequisite = {
-			focus = bos_screening
+			focus = bos_navallexicon
 		}
 		mutually_exclusive = {
 			focus = bos_seabehemoths
 		}
 		x = 6
-		y = 8
+		y = 7
 		completion_reward = {
 			add_tech_bonus = {
 				name =	carrier_bonus
@@ -1932,12 +1938,12 @@ focus_tree = {
 		icon = GFX_goal_bos_steel_cage
 		cost = 8.6
 		prerequisite = {
-			focus = bos_aircatapults
+			focus = bos_aircatapults focus = bos_seabehemoths 
 		}
-		x = 6
-		y = 9
+		x = 5
+		y = 8
 		completion_reward = {
-			country_event = { id = nf_brotherhood.26 }
+			add_equipment_to_stockpile = { type = carrier_equipment_2 amount = 1 producer = BOS }
 		}
 
 	}
