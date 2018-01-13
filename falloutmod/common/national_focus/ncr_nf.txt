@@ -28,7 +28,6 @@ focus_tree = {
 		icon = GFX_goal_NCR_Baja
 		cost = 1
 		available = {
-			date > 2276.5.5
 			has_completed_focus = ncr_councilhill
 		}
 		ai_will_do = {
@@ -396,16 +395,10 @@ focus_tree = {
 		}
 		x = 2
 		y = 6
-		available = {
-			any_owned_state = {
-				is_baja_california_state = yes
-			}
-		}
 		completion_reward = {
 			every_state = {
 				limit = {
 					is_baja_california_state = yes
-					is_controlled_by = NCR
 				}
 				add_building_construction = {
 					type = infrastructure
@@ -886,10 +879,6 @@ focus_tree = {
 		will_lead_to_war_with = SCR
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				factor = 0
-				date < 1.1.2277
-			}
 		}
 		x = 7
 		y = 8

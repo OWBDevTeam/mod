@@ -723,16 +723,6 @@ NCR_focus_on_invading_mojave_raiders = {
 			NOT = { has_wargoal_against = NCR }
 		}
 		NOT = { surrender_progress > 0.1 }
-		NOT = {
-			any_enemy_country = {
-				AND = {
-					NOT = {
-						tag = MRA
-					}
-					strength_ratio	= { tag = NCR ratio > 0.25 }
-				}
-			}
-		}
 		
 	}
 	abort = {
@@ -746,14 +736,6 @@ NCR_focus_on_invading_mojave_raiders = {
 				NOT = { has_war_with = MRA }
 				NOT = { is_justifying_wargoal_against = MRA }
 				NOT = { has_wargoal_against = MRA }
-			}
-			any_enemy_country = {
-				AND = {
-					NOT = {
-						tag = MRA
-					}
-					strength_ratio	= { tag = NCR ratio > 0.25 }
-				}
 			}
 			surrender_progress > 0.1
 			has_war_with = CES
