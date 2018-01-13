@@ -1030,23 +1030,16 @@ focus_tree = {
 		x = 7
 		y = 10
 		available = {
-			if = {
-				limit = {
-					CHE = {
-						is_puppet_of = TRL
-					}
-				}
-			}
-			
 			OR = {
-				limit = {
-					TRL = {
-						owns_state = 426
-						owns_state = 580
-						owns_state = 480
-						owns_state = 121
-						owns_state = 536
-					}
+				CHE = {
+					is_puppet_of = TRL
+				}
+				OR = {
+					owns_state = 426
+					owns_state = 580
+					owns_state = 480
+					owns_state = 121
+					owns_state = 536
 				}
 			}
 		}
