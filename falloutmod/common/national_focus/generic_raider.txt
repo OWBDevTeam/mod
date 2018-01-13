@@ -493,7 +493,7 @@ focus_tree =
 		completion_reward = {
 		
 			add_national_unity = 0.05
-			add_political_power = 60
+			add_political_power = 40
 		}
 	}
 	focus = {
@@ -684,8 +684,8 @@ focus_tree =
 			focus = encourage_slavers
 		}
 		completion_reward = {
-			add_manpower = 200
-			add_national_unity = -0.05
+			add_manpower = 250
+			add_national_unity = -0.1
 		}
 	}
 	focus = {
@@ -745,7 +745,7 @@ focus_tree =
 				category = chem_tech
 			}
 		}
-		}
+	}
 	focus = {
 		id = hideout_expansion
 		icon = GFX_goal_generic_demand_territory
@@ -860,11 +860,11 @@ focus_tree =
 			random_owned_controlled_state = {
 			  add_resource = {
 				type = water
-				amount = 5
+				amount = 4
 				}
 				add_resource = {
 				type = scrap
-				amount = 7
+				amount = 6
 				}
 		    }
 		
@@ -908,7 +908,7 @@ focus_tree =
 			random_owned_controlled_state = {
 				add_resource = {
 				type = electricity
-				amount = 10
+				amount = 8
 				}
 		    }
 		
@@ -934,7 +934,6 @@ focus_tree =
 				category = robotics_tech
 			}
 		}
-		
 	}
 	focus = {
 		id = terminals_for_all
@@ -965,11 +964,12 @@ focus_tree =
 			focus = turn_the_lights_on
 		}
 		completion_reward = {
-		add_tech_bonus = {
-				name = raider_power_armour_bonus
-				bonus = 0.75
+		 set_technology = { power_armour = 1}
+		 add_tech_bonus = {
+				name = raider_power_armor_bonus 
+				bonus = 0.5
 				uses = 1
-				technology = power_armour
+				category = power_armor_tech
 			}
 		}	
 	}
@@ -989,7 +989,7 @@ focus_tree =
 			random_owned_controlled_state = {
 				add_resource = {
 				type = electronics
-				amount = 7
+				amount = 5
 				}
 		    }		
 		}
@@ -1234,10 +1234,10 @@ focus_tree =
 						}
 					}
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 			}
