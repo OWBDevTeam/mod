@@ -692,9 +692,23 @@ focus_tree = {
 		x = 8
 		y = 7
 		completion_reward = {
-			country_event = { id = mormon.4 }
+			if = {
+				limit = {
+					MUR = {
+						is_ai = yes
+					}
+				}
+				puppet = MUR
+			}
+			if = {
+				limit = {
+					MUR = {
+						is_ai = no
+					}
+					MUR = { country_event = nf_mormon.4 }
+				}
+			}
 		}
-
 	}
 	focus = {
 		id = lds_crazyhornreward
