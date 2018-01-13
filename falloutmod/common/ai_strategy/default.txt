@@ -251,6 +251,29 @@ generic_boost_light_for_light_armor = {
 		value = 200
 	}
 }
+generic_boost_build_armor = {
+	
+	enable = {
+		has_tech = commercial_protectron
+	}
+
+	abort = {	
+	}
+
+	#
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 30
+	}
+
+	# this is gateway
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = -30
+	}
+}
 
 generic_boost_for_mechanized = {
 	
