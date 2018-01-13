@@ -68,6 +68,7 @@ focus_tree = {
 		y = 5
 		completion_reward = {
 			add_political_power = 120
+			
 		}
 	}
 	focus = {
@@ -79,7 +80,15 @@ focus_tree = {
 		}
 		x = 18
 		y = 5
-		
+		completion_reward = {
+			army_experience = 30
+			add_tech_bonus = {
+				name = memory_ages
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
 	}
 	focus = {
 		id = weaponsfuture
@@ -93,7 +102,14 @@ focus_tree = {
 		}
 		x = 14
 		y = 6
-
+		completion_reward = [
+			add_tech_bonus = {
+				name = weapons_future
+				bonus = 0.5
+				uses = 1
+				category = energy_weaponry_tech
+			}
+		}
 	}
 	focus = {
 		id = weaponspast
@@ -107,7 +123,14 @@ focus_tree = {
 		}
 		x = 12
 		y = 6
-
+		completion_reward = [
+			add_tech_bonus = {
+				name = weapons_past
+				bonus = 0.5
+				uses = 1
+				category = ballistic_weaponry_tech
+			}
+		}
 	}
 	focus = {
 		id = tribalzappa
@@ -118,18 +141,22 @@ focus_tree = {
 		}
 		x = 14
 		y = 7
-
+		completion_reward = {
+			add_ideas = warren_zappa
+		}
 	}
 	focus = {
 		id = morezappa
 		icon = GFX_goal_unknown
 		cost = 10.00
 		prerequisite = {
-			focus = tribalzappa
+			foc	us = tribalzappa
 		}
 		x = 14
 		y = 8
-
+		completion_reward = {
+			add_ideas = warren_zappa2
+		}
 	}
 	focus = {
 		id = morezappa2
@@ -140,7 +167,12 @@ focus_tree = {
 		}
 		x = 14
 		y = 9
-
+		completion_reward = {
+			set_technology = {
+			improved_laser_weaponry = 1
+			laser_tech = 1
+			}
+		}
 	}
 	focus = {
 		id = guardianwild
@@ -1116,7 +1148,9 @@ focus_tree = {
 		}
 		x = 12
 		y = 7
-
+		completion_reward = {
+			add_ideas = warren_dakka
+		}
 	}
 	focus = {
 		id = moredakka
@@ -1127,7 +1161,9 @@ focus_tree = {
 		}
 		x = 12
 		y = 8
-
+		completion_reward = {
+			add_ideas = warren_dakka2
+		}
 	}
 	focus = {
 		id = betterdakka
@@ -1138,7 +1174,12 @@ focus_tree = {
 		}
 		x = 12
 		y = 9
-
+		completion_reward = {
+			set_technology = {
+			basic_infantry_equipment = 1
+			anti_personnel_tech = 1
+			}
+		}
 	}
 	focus = {
 		id = goliath
