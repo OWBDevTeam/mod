@@ -140,7 +140,7 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_oldamerica
 		}
-		x = 8
+		x = 9
 		y = 4
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -158,21 +158,6 @@ focus_tree = {
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
 			}
-		}
-
-	}
-	focus = {
-		id = bos_optics
-		icon = GFX_goal_bos_generic_infantry
-		cost = 8.6
-		prerequisite = {
-			focus = bos_expansion
-		}
-		x = 10
-		y = 5
-		completion_reward = {
-			custom_effect_tooltip = bos_optics_tt
-			hidden_effect = { set_technology = { bosoptics = 1 }}
 		}
 
 	}
@@ -2108,79 +2093,14 @@ focus_tree = {
 
 	}
 	focus = {
-		id = bos_tohonopact
-		icon = GFX_goal_bos_tohono_pact
-		cost = 8.6
-		prerequisite = {
-			focus = bos_optics
-		}
-		x = 10
-		y = 7
-		completion_reward = {
-			country_event = { id = nf_brotherhood.27 }
-		}
-
-	}
-	focus = {
-		id = bos_arizonanweapons
-		icon = GFX_goal_bos_generic_infantry
-		cost = 8.6
-		prerequisite = {
-			focus = bos_tohonopact
-		}
-		x = 10
-		y = 8
-		completion_reward = {
-			add_ideas = arizonanweapons
-		}
-
-	}
-	focus = {
-		id = bos_robots
-		icon = GFX_goal_generic_build_tank
-		cost = 8.6
-		prerequisite = {
-			focus = bos_arizonanweapons
-		}
-		x = 10
-		y = 9
-		completion_reward = {
-			add_equipment_to_stockpile = {
-				type = mr_gutsy_equipment 
-				amount = 360 
-				producer = BOS
-			}
-			add_equipment_to_stockpile = {
-				type = sentrybot_equipment 
-				amount = 180 
-				producer = BOS
-			}
-		}
-
-	}
-	focus = {
-		id = bos_steelcrusade
-		icon = GFX_goal_bos_steel_crusade
-		cost = 8.6
-		prerequisite = {
-			focus = bos_robots
-		}
-		x = 10
-		y = 10
-		completion_reward = {
-			add_state_claim = 
-		}
-
-	}
-	focus = {
 		id = bos_oldbonds
 		icon = GFX_goal_bos_ncr_diplomacy
 		cost = 8.6
 		prerequisite = {
-			focus = bos_surfacetensions
+			focus = bos_expansion 
 		}
 		prerequisite = {
-			focus = bos_robots
+		    focus = bos_surfacetensions
 		}
 		will_lead_to_war_with = CES
 		available = {
@@ -2189,8 +2109,8 @@ focus_tree = {
 			}
 			has_country_flag = avoidedncrwar
 		}
-		x = 12
-		y = 10
+		x = 11
+		y = 8
 		completion_reward = {
 			add_to_war = {
 				targeted_alliance = NCR
@@ -2206,8 +2126,8 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_oldbonds
 		}
-		x = 14
-		y = 11
+		x = 12	
+		y = 9
 		completion_reward = {
 			add_ideas = bosncrdrive
 		}
@@ -2220,8 +2140,8 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_oldbonds
 		}
-		x = 12
-		y = 11
+		x = 10
+		y = 9
 		completion_reward = {
 			NCR = {
 				add_ideas = brotherhoodlogistics
@@ -2235,8 +2155,8 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_logistics
 		}
-		x = 12
-		y = 12
+		x = 10
+		y = 10
 		completion_reward = {
 			253 = {
 				add_building_construction = {
