@@ -512,15 +512,47 @@ country_event = { #Civil War
 	title = nf_ncr.13.t
 	desc = nf_ncr.13.d
 	picture = GFX_report_event_fascist_speech
-	
+	is_triggered_only = no
+    fire_only_once = yes
 	trigger = {
 		tag = NCR
-		date > 2281.3.8
+		date > "2279.1.1"
+		NOT = {
+			any_neighbor_country = {
+				AND = {
+					has_war_with = NCR
+					NOT = { original_tag = CES }
+					strength_ratio = { tag = NCR ratio > 0.15 }
+				}
+			}
+		}
+		NOT = { surrender_progress > 0.15 } 
 	}
-	
-	fire_only_once = yes
-
-	mean_time_to_happen = { days = 7 }
+	mean_time_to_happen = {
+		days = 900
+		modifier = {
+			factor = 3
+			is_ai = yes
+		}
+		modifier = {
+			factor = 0.5
+			CES = {
+				OR = {
+					exists = no
+					has_civil_war = yes
+					has_capitulated = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 1.1
+			is_historical_focus_on = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_war_with = CES
+		}
+	}
 	
 	option = {
 		name = nf_ncr.13.a #Anton Flynn and the Baron's Union
@@ -532,7 +564,7 @@ country_event = { #Civil War
 				has_completed_focus = ncr_mojavehero 
 			}
 		}
-		
+		retire_country_leader = yes
 		create_country_leader = {
 			name = "Anton Flynn"
 			desc = "Anton_Flynn_DESC"
@@ -556,7 +588,7 @@ country_event = { #Civil War
 				has_completed_focus = ncr_mojavehero 
 			}
 		}
-		
+		retire_country_leader = yes
 		create_country_leader = {
 			name = "Allgood Murphy"
 			desc = "Allgood_DESC"
@@ -580,138 +612,11 @@ country_event = { #Civil War
 				has_completed_focus = ncr_mojavehero 
 			}
 		}
-		
-		ENC = {
-			create_country_leader = {
-				name = "Grant C. Hayes"
-				desc = "Hayes_DESC"
-				picture = "Portrait_Hayes.dds"
-				expire = "3000.1.1"
-				ideology = ideocracy
-				
-				traits = {
-					
-				}
-			}
-			
-			declare_war_on = {
-				target = NCR
-				type = civil_war
-			}
-			declare_war_on = {
-				target = BAR
-				type = civil_war
-			}
-			declare_war_on = {
-				target = BON
-				type = civil_war
-			}
-			
-			transfer_state = 591
-			transfer_state = 292
-			transfer_state = 205
-			transfer_state = 63
-			transfer_state = 583
-			transfer_state = 80
-			transfer_state = 4
-			add_state_core = 548
-			
-			hidden_effect = {
-				set_technology = {
-					power_armour_enclave1 = 1
-					tesla_weaponry = 1
-					vertiberd_gunship = 1 
-					settled_civilization = 1
-					scientific_civilization = 1
-					vertiberd_transport1 = 1 
-				}
-				load_oob = enclavecivilwar
-			}
-			
-			if = {
-				limit = {
-					BJS = {
-						exists = no
-					}
-				}
-				every_state = {
-					limit = {
-						is_baja_california_state = yes
-					}
-					ENC = {
-						transfer_state = PREV
-					}
-				}
-				
-			}
-			
-			every_state = {
-				limit = {
-					is_core_of = NCR
-				}
-				
-				add_core_of = ENC
-			}
-			
-			if = {
-				limit = {
-					has_completed_focus = ncr_integration
-					BJS = {
-						exists = yes
-					}
-				}
-				
-				NCR = {
-					release_puppet = BJS
-				}
-				
-				ENC = {
-					puppet = BJS
-				}
-			}
-			
-			if = {
-				limit = {
-					NEW = {
-						has_cosmetic_tag = ENC
-					}
-				}
-				if = {
-					limit = {
-						NEW = {
-							is_ai = yes
-						}
-					}
-					annex_country = { target = NEW transfer_troops = yes }
-				}
-				if = {
-					limit = {
-						NEW = {
-							is_ai = no
-						}
-					}
-					create_faction = western_enclave
-					add_to_faction = NEW
-				}
-			}
-			
-			set_politics = {
-				parties = {
-					people = { popularity = 0 }
-					elites = { popularity = 80 }
-					intellectuals = { popularity = 20 }
-					ruler = { popularity = 0 }
-				}
-				ruling_party = intellectuals
-				elections_allowed = no
-			}
-			
-			set_capital = 63
-			
-			change_tag_from = NCR
-		}
+		fire_NCR_civil_war = yes # common/scripted effects
+		set_country_flag = ncr_switch_to_enclave
 		
 		NCR = {
+			retire_country_leader = yes
 			create_country_leader = {
 				name = "General Drummund"
 				desc = "Drummund_DESC"
@@ -724,117 +629,6 @@ country_event = { #Civil War
 				}
 			}
 		}
-		
-		hidden_effect = {
-		
-			BON = {
-				
-				create_country_leader = {
-					name = "Allgood Murphy"
-					desc = "Allgood_DESC"
-					picture = "Portrait_Allgood.dds"
-					expire = "3000.1.1"
-					ideology = constitutional_republic
-					
-					traits = {
-						
-					}
-				}
-				
-				transfer_state = 19
-				transfer_state = 1
-				transfer_state = 180
-				transfer_state = 396
-				transfer_state = 350
-				
-				declare_war_on = {
-					target = NCR
-					type = civil_war
-				}
-				declare_war_on = {
-					target = BAR
-					type = civil_war
-				}
-				declare_war_on = {
-					target = ENC
-					type = civil_war
-				}
-				
-				every_state = {
-					limit = {
-						is_core_of = NCR
-					}
-					
-					add_core_of = BON
-				}
-				
-			}
-			
-			BAR = {
-				
-				create_country_leader = {
-					name = "Anton Flynn"
-					desc = "Anton_Flynn_DESC"
-					picture = "Portrait_Flynn.dds"
-					expire = "3000.1.1"
-					ideology = constitutional_republic
-					
-					traits = {
-						
-					}
-				}
-				
-				every_state = {
-					limit = {
-						is_baron_state = yes
-					}
-					BAR = {
-						transfer_state = PREV
-					}
-				}
-				
-				transfer_state = 141
-				transfer_state = 135
-				transfer_state = 605
-				transfer_state = 603
-				transfer_state = 190
-				transfer_state = 529
-				
-				declare_war_on = {
-					target = NCR
-					type = civil_war
-				}
-				declare_war_on = {
-					target = BON
-					type = civil_war
-				}
-				declare_war_on = {
-					target = ENC
-					type = civil_war
-				}
-				
-				
-				every_state = {
-					limit = {
-						is_core_of = NCR
-					}
-					
-					add_core_of = BAR
-				}
-				
-			}
-			
-			BOS = {
-				
-				transfer_state = 312
-				transfer_state = 433
-				transfer_state = 558
-				transfer_state = 606
-				
-			}
-		
-		}
-		
 	}
 	
 	option = {
@@ -848,7 +642,7 @@ country_event = { #Civil War
 				has_completed_focus = ncr_mojavehero 
 			}
 		}
-		
+		retire_country_leader = yes
 		create_country_leader = {
 			name = "General Drummund"
 			desc = "Drummund_DESC"
@@ -906,248 +700,8 @@ country_event = { #Civil War
 
 	option = {
 		name = nf_ncr.13.g #You dun goofed	
-		
-		hidden_effect = {
-		
-			ENC = {
-				create_country_leader = {
-					name = "Grant C. Hayes"
-					desc = "Hayes_DESC"
-					picture = "Portrait_Hayes.dds"
-					expire = "3000.1.1"
-					ideology = ideocracy
-					
-					traits = {
-						
-					}
-				}
-				
-				declare_war_on = {
-					target = NCR
-					type = civil_war
-				}
-				declare_war_on = {
-					target = BAR
-					type = civil_war
-				}
-				declare_war_on = {
-					target = BON
-					type = civil_war
-				}
-				
-				transfer_state = 591
-				transfer_state = 292
-				transfer_state = 205
-				transfer_state = 63
-				transfer_state = 583
-				transfer_state = 80
-				transfer_state = 4
-				add_state_core = 548
-				
-				hidden_effect = {
-					set_technology = {
-						power_armour_enclave1 = 1
-						tesla_weaponry = 1
-						vertiberd_gunship = 1 
-						vertiberd_transport1 = 1 
-					}
-					load_oob = enclavecivilwar
-				}
-				
-				if = {
-					limit = {
-						BJS = {
-							exists = no
-						}
-					}
-					every_state = {
-						limit = {
-							is_baja_california_state = yes
-						}
-						ENC = {
-							transfer_state = PREV
-						}
-					}
-					
-				}
-				
-				every_state = {
-					limit = {
-						is_core_of = NCR
-					}
-					
-					add_core_of = ENC
-				}
-				
-				if = {
-					limit = {
-						has_completed_focus = ncr_integration
-						BJS = {
-							exists = yes
-						}
-					}
-					
-					NCR = {
-						release_puppet = BJS
-					}
-					
-					ENC = {
-						puppet = BJS
-					}
-				}
-				
-				if = {
-					limit = {
-						NEW = {
-							has_cosmetic_tag = ENC
-						}
-					}
-					if = {
-						limit = {
-							NEW = {
-								is_ai = yes
-							}
-						}
-						annex_country = { target = NEW transfer_troops = yes }
-					}
-					if = {
-						limit = {
-							NEW = {
-								is_ai = no
-							}
-						}
-						create_faction = western_enclave
-						add_to_faction = NEW
-					}
-				}
-				
-				
-				
-				set_politics = {
-					parties = {
-						people = { popularity = 0 }
-						elites = { popularity = 80 }
-						intellectuals = { popularity = 20 }
-						ruler = { popularity = 0 }
-					}
-					ruling_party = intellectuals
-					elections_allowed = no
-				}
-				
-				set_capital = 63
-				
-			}
-		
-			BON = {
-				
-				create_country_leader = {
-					name = "Allgood Murphy"
-					desc = "Allgood_DESC"
-					picture = "Portrait_Allgood.dds"
-					expire = "3000.1.1"
-					ideology = constitutional_republic
-					
-					traits = {
-						
-					}
-				}
-				
-				transfer_state = 19
-				transfer_state = 1
-				transfer_state = 180
-				transfer_state = 396
-				transfer_state = 350
-				
-				declare_war_on = {
-					target = NCR
-					type = civil_war
-				}
-				declare_war_on = {
-					target = BAR
-					type = civil_war
-				}
-				declare_war_on = {
-					target = ENC
-					type = civil_war
-				}
-				
-				every_state = {
-					limit = {
-						is_core_of = NCR
-					}
-					
-					add_core_of = BON
-				}
-				
-			}
-			
-			BAR = {
-				
-				create_country_leader = {
-					name = "Anton Flynn"
-					desc = "Anton_Flynn_DESC"
-					picture = "Portrait_Flynn.dds"
-					expire = "3000.1.1"
-					ideology = constitutional_republic
-					
-					traits = {
-						
-					}
-				}
-				
-				every_state = {
-					limit = {
-						is_baron_state = yes
-					}
-					BAR = {
-						transfer_state = PREV
-					}
-				}
-				
-				transfer_state = 141
-				transfer_state = 135
-				transfer_state = 605
-				transfer_state = 603
-				transfer_state = 190
-				transfer_state = 529
-				
-				declare_war_on = {
-					target = NCR
-					type = civil_war
-				}
-				declare_war_on = {
-					target = BON
-					type = civil_war
-				}
-				declare_war_on = {
-					target = ENC
-					type = civil_war
-				}
-				
-				
-				every_state = {
-					limit = {
-						is_core_of = NCR
-					}
-					
-					add_core_of = BAR
-				}
-				
-			}
-			
-			BOS = {
-				
-				transfer_state = 312
-				transfer_state = 433
-				transfer_state = 558
-				transfer_state = 606
-				
-			}
-		
-		}
-	}
-		
-		
+		fire_NCR_civil_war = yes # common/scripted effects
+	}	
 }
 
 
@@ -1483,8 +1037,205 @@ country_event = { #Hub Crime
 		
 		add_national_unity = 0.03
 		
+	}	
+}
+country_event = { #Barons annex civil war created
+	id = nf_ncr.25
+	title = nf_ncr.25.t
+	desc = nf_ncr.25.d
+	picture = GFX_report_event_fascist_speech
+	hidden = yes
+	is_triggered_only = yes
+		immediate = {
+			every_country = {
+				limit = {
+					original_tag = NCR
+					has_government = elites
+				}
+				BAR = { annex_country = { target = PREV transfer_troops = yes } }
+			}
+		}
+	option = {
+		name = nf_ncr.25.a
+		country_event = { days = 1 id = nf_ncr.26 }
+	}	
+}
+country_event = { #allgood civil war firing
+	id = nf_ncr.26
+	title = nf_ncr.26.t
+	desc = nf_ncr.26.d
+	picture = GFX_report_event_fascist_speech
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		# Barons
+		start_civil_war = {
+			ideology = ruler
+			size = 0.3
+			capital = 350
+			states_filter = {
+				owner = { original_tag = NCR }
+				is_baron_state = no
+				NOT = { 
+					OR = {
+						state = 63 # Enclave capital (Glowville)
+						state = 253 # NCR capital (Shady Sands)
+						state = 135 # baron capital (sac town)
+					}
+				}
+			}
+			keep_unit_leaders = { }
+		}
+		country_event = { hours = 1 id = nf_ncr.27 }
 	}
-	
-	
-	
+	option = {
+		name = nf_ncr.26.a
+		
+		
+	}	
+}
+country_event = { #allgood annex civil war created
+	id = nf_ncr.27
+	title = nf_ncr.27.t
+	desc = nf_ncr.27.d
+	picture = GFX_report_event_fascist_speech
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		# Allgood
+		every_country = {
+			limit = {
+				original_tag = NCR
+				has_government = ruler
+			}
+			BON = { annex_country = { target = PREV transfer_troops = yes } }
+		}
+		country_event = { days = 1 id = nf_ncr.28 }
+	}
+	option = {
+		name = nf_ncr.27.a
+		
+	}	
+}
+country_event = { #enclave civil war created
+	id = nf_ncr.28
+	title = nf_ncr.28.t
+	desc = nf_ncr.28.d
+	picture = GFX_report_event_fascist_speech
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		# Enclave
+		# Enclave
+		start_civil_war = {
+			ideology = intellectuals
+			size = 0.05
+			capital = 63
+			states = { 63 }
+			states_filter = {
+				owner = { tag = NCR }
+				is_baron_state = no
+				is_boneyard_road_state = no # don't give them boneyard land	
+				NOT = { 
+					OR = {
+						state = 253 # NCR capital (Shady Sands)
+						state = 350 # Allgood capital (Boneyard)
+						state = 135 # baron capital (sac town)
+					}
+				}
+			}
+			keep_unit_leaders = { }
+		}
+		country_event = { hours = 1 id = nf_ncr.29 }
+	}
+	option = {
+		name = nf_ncr.28.a
+		
+	}	
+}
+
+country_event = { #enclave civil war created
+	id = nf_ncr.29
+	title = nf_ncr.29.t
+	desc = nf_ncr.29.d
+	picture = GFX_report_event_fascist_speech
+	hidden = no
+	is_triggered_only = yes
+	immediate = {
+		# Allgood
+		every_country = {
+			limit = {
+				original_tag = NCR
+				has_government = intellectuals
+			}
+			ENC = { annex_country = { target = PREV transfer_troops = yes } }
+		}
+	}
+	option = {
+		name = nf_ncr.29.a
+		every_country = {
+			limit = {
+				OR = {	
+					tag = BAR
+					tag = BON
+					tag = ENC
+					tag = NCR
+				}
+			}
+			every_country = {
+				limit = {
+					NOT = { tag = PREV }
+					OR = {
+						tag = BAR
+						tag = BON
+						tag = ENC
+						tag = NCR
+					}
+				}
+				declare_war_on = {
+					target = PREV
+					type = civil_war
+				}
+			}
+		}
+		NCR = {
+			hidden_effect = {
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+			}
+		}
+		BON = {
+			transfer_ncr_ideas_civil_war = yes
+			hidden_effect = {
+				
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+			}
+		}
+		ENC = {
+			setup_NCR_enclave = yes
+			hidden_effect = {
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+			}
+		}
+		BAR = {
+			transfer_ncr_ideas_civil_war = yes
+			hidden_effect = {
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = ncr_switch_to_enclave
+				is_ai = no
+			}
+			ENC = { change_tag_from	= NCR }
+		}
+	}	
 }
