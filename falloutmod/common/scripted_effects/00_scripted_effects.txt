@@ -85,8 +85,15 @@ fire_NCR_civil_war = {
 		}
 		keep_unit_leaders = { }
 	}
+	random_country = {
+		limit = {
+			original_tag = NCR
+			has_government = elites
+		}
+		set_cosmetic_tag = BAR
+	}
 	hidden_effect = {
-		NCR = { country_event = nf_ncr.25 }
+		NCR = { country_event =  { days = 1 id = nf_ncr.25 }  }
 	}
 }
 

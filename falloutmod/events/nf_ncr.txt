@@ -1086,7 +1086,7 @@ country_event = { #allgood civil war firing
 			}
 			keep_unit_leaders = { }
 		}
-		country_event = { hours = 1 id = nf_ncr.27 }
+		country_event = { days = 1 id = nf_ncr.27 }
 	}
 	option = {
 		name = nf_ncr.26.a
@@ -1109,6 +1109,13 @@ country_event = { #allgood annex civil war created
 				has_government = ruler
 			}
 			BON = { annex_country = { target = PREV transfer_troops = yes } }
+		}
+		random_country = {
+			limit = {
+				original_tag = NCR
+				has_government = ruler
+			}
+			set_cosmetic_tag = BON
 		}
 		country_event = { days = 1 id = nf_ncr.28 }
 	}
@@ -1146,7 +1153,14 @@ country_event = { #enclave civil war created
 			}
 			keep_unit_leaders = { }
 		}
-		country_event = { hours = 1 id = nf_ncr.29 }
+		random_country = {
+			limit = {
+				original_tag = NCR
+				has_government = intellectuals
+			}
+			set_cosmetic_tag = ENC
+		}
+		country_event = { days = 1 id = nf_ncr.29 }
 	}
 	option = {
 		name = nf_ncr.28.a
@@ -1173,6 +1187,11 @@ country_event = { #enclave civil war created
 	}
 	option = {
 		name = nf_ncr.29.a
+		hidden_effect = {
+			ENC = {
+				transfer_state = 63
+			}
+		}
 		every_country = {
 			limit = {
 				OR = {	
