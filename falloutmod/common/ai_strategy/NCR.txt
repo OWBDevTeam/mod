@@ -271,29 +271,29 @@ NCR_area_priority = {
 		value = 1
 	}
 }
-NCR_ally_rangers = {
-	enable = {
-		original_tag = NCR
-		DES = {
-			NOT = { is_in_faction_with = CES }
-			exists = yes
-		}
-	}
-	abort = {
-		NOT = { country_exists = DES }
-	}
-	
-	ai_strategy = {
-		type = befriend
-		id = "DES"			
-		value = 200
-	}
-	ai_strategy = {
-		type = alliance
-		id = "DES"			
-		value = 200
-	}
-}
+#NCR_ally_rangers = {
+#	enable = {
+#		original_tag = NCR
+#		DES = {
+#			NOT = { is_in_faction_with = CES }
+#			exists = yes
+#		}
+#	}
+#	abort = {
+#		NOT = { country_exists = DES }
+#	}
+#	
+#	ai_strategy = {
+#		type = befriend
+#		id = "DES"			
+#		value = 200
+#	}
+#	ai_strategy = {
+#		type = alliance
+#		id = "DES"			
+#		value = 200
+#	}
+#}
 NCR_invade_CES = {
 	enable = {
 		original_tag = NCR
@@ -789,17 +789,6 @@ NCR_focus_on_invading_baja = {
 			NOT = { has_wargoal_against = NCR }
 		}
 		NOT = { surrender_progress > 0.1 }
-		NOT = {
-			any_enemy_country = {
-				AND = {
-					NOT = {
-						tag = BVC
-					}
-					strength_ratio	= { tag = NCR ratio > 0.25 }
-				}
-			}
-		}
-		
 	}
 	abort = {
 		OR = {
@@ -812,14 +801,6 @@ NCR_focus_on_invading_baja = {
 				NOT = { has_war_with = BVC }
 				NOT = { is_justifying_wargoal_against = BVC }
 				NOT = { has_wargoal_against = BVC }
-			}
-			any_enemy_country = {
-				AND = {
-					NOT = {
-						tag = BVC
-					}
-					strength_ratio	= { tag = NCR ratio > 0.25 }
-				}
 			}
 			surrender_progress > 0.1
 			has_war_with = CES
