@@ -271,12 +271,6 @@ entity = {
 	event = { time = 1.2 node="cartridge" particle = "rifle_cartridge_particle"  keep_particle = yes sound = { soundeffect = infantry_rifle_cartridge } }
 	}
 }
-####
-entity = {
-	name = "infantry_laser_gun_entity"
-	pdxmesh = "ENG_tank_medium_mesh"
-	scale = 0.3
-}
 ####ROBOTS
 entity = {
 	name = "light_robot_entity"
@@ -299,6 +293,67 @@ entity = {
 	##attach = { 	name = "rifle3"	Root_node_2 = "FRA_infantry_weapon_rifle_right_entity" }
 				
 }
+####MOTORIZED
+entity = {
+		name = "owb_motorized_entity"
+		pdxmesh = "motorized_frame_mesh"
+		
+		state = { name = "idle"				animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "retreat"			animation = "move" 	 				animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "training"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "death"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "support_attack"	animation = "attack" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "attack"			animation = "attack" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "defend"			animation = "attack" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "move"				animation = "move" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		scale = 1.0
+		
+		attach = { 	name = "vehicle"			vehicle = "generic_motorized_vehicle_entity" }
+		attach = { 	name = "infantry"			infantry = "owb_infantry_entity" }
+}
+
+entity = {
+		name = "owb_motorized_vehicle_entity"
+		pdxmesh = "generic_motorized_mesh"
+		
+		state = { name = "idle"				animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "retreat"			animation = "move" 	 				animation_blend_time = 0.3 animation_speed = 1.0 
+			event = { time = 0 node="left_wheel" particle = "tank_moving_tracks_particle"  keep_particle = no trigger_once = yes}
+			event = { time = 0 node="right_wheel" particle = "tank_moving_tracks_particle"  keep_particle = no trigger_once = yes}
+			event = { trigger_once = yes sound = { soundeffect = "motorized_unit_move_animation" } }
+		}
+		state = { name = "training"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "death"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "support_attack"	animation = "idle" 	animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "attack"				animation = "move" 					animation_blend_time = 0.3 animation_speed = 1.0
+			event = { time = 0 node="left_wheel" particle = "tank_moving_tracks_particle"  keep_particle = no trigger_once = yes}
+			event = { time = 0 node="right_wheel" particle = "tank_moving_tracks_particle"  keep_particle = no trigger_once = yes}
+			event = { trigger_once = yes sound = { soundeffect = "motorized_unit_move_animation" } }
+		}
+		state = { name = "defend"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "move"				animation = "move" 					animation_blend_time = 0.3 animation_speed = 1.0
+			event = { time = 0 node="left_wheel" particle = "tank_moving_tracks_particle"  keep_particle = no trigger_once = yes}
+			event = { time = 0 node="right_wheel" particle = "tank_moving_tracks_particle"  keep_particle = no trigger_once = yes}
+			event = { trigger_once = yes sound = { soundeffect = "motorized_unit_move_animation" } }
+		}
+		scale = 0.6			
+}
+entity = {
+		clone = "owb_motorized_entity"
+		name = "NCR_motorized_entity"
+		pdxmesh = "motorized_frame_mesh"
+		scale = 1.0
+		
+		attach = { 	name = "vehicle"			vehicle = "NCR_motorized_vehicle_entity" }
+		attach = { 	name = "infantry"			infantry = "NCR_infantry_entity" }
+}
+entity = {
+		clone = "owb_motorized_vehicle_entity"
+		name = "NCR_motorized_vehicle_entity"
+		pdxmesh = "NCR_motorized_mesh"
+		scale = 0.6			
+}
+
 ##Power armor
 entity = {
 	###Name - entity name, structed: unitname_entity
