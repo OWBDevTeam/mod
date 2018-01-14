@@ -271,6 +271,28 @@ entity = {
 	event = { time = 1.2 node="cartridge" particle = "rifle_cartridge_particle"  keep_particle = yes sound = { soundeffect = infantry_rifle_cartridge } }
 	}
 }
+#### LASER
+entity = {
+	name = "laser_rifle_entity"
+	pdxmesh = "laser_rile_mesh"
+	locator = { name = muzzle position = { 0 0 -2.5 } }
+	scale = 0.75
+	###inheret state from attached objects
+	get_state_from_parent = yes
+	default_state = "idle"
+	state = { name = "idle" }
+	state = { name = "move"	}
+	
+	state = { name = "attack"
+		event = { time = 0.5 node = "muzzle"  entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_mg_attack } life = 1 } 
+	}
+	state = { name = "defend"
+		event = { time = 0.5 node = "muzzle"  entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_mg_attack } life = 1 } 
+	}
+	state = { name = "support_attack"
+		event = { time = 0.5 node = "muzzle"  entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_mg_attack } life = 1 } 
+	}
+}
 ####ROBOTS
 entity = {
 	name = "light_robot_entity"
@@ -344,14 +366,8 @@ entity = {
 		pdxmesh = "motorized_frame_mesh"
 		scale = 1.0
 		
-		attach = { 	name = "vehicle"			vehicle = "NCR_motorized_vehicle_entity" }
+		attach = { 	name = "vehicle"			vehicle = "generic_motorized_vehicle_entity" }
 		attach = { 	name = "infantry"			infantry = "NCR_infantry_entity" }
-}
-entity = {
-		clone = "owb_motorized_vehicle_entity"
-		name = "NCR_motorized_vehicle_entity"
-		pdxmesh = "NCR_motorized_mesh"
-		scale = 0.6			
 }
 
 ##Power armor
@@ -402,22 +418,6 @@ entity = {
 	attach = { 	name = "rifle2"	hand_l = "laser_rifle_entity" }	
 	#attach = { 	name = "rifle3"	Root = "laser_rifle_entity" }
 				
-}
-#### WEAPONS
-entity = {
-	name = "laser_rifle_entity"
-	pdxmesh = "laser_rile_mesh"
-	locator = { name = muzzle position = { 0 0 -2.5 } }
-	
-	###inheret state from attached objects
-	get_state_from_parent = yes
-	default_state = "idle"
-	state = { name = "idle" }
-	state = { name = "move"	}
-	
-	state = { name = "attack"
-		event = { time = 0 node = "muzzle"  entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_mg_attack } life = 1 } 
-	}
 }
 ##### ANIMATION
 ####declaring animations 
