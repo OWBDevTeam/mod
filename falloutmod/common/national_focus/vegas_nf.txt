@@ -124,7 +124,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = freesidesupport
 		}
-
 	}
 	focus = {
 		id = veg_muggers
@@ -317,6 +316,9 @@ focus_tree = {
 		}
 		x = 22
 		y = 9
+		available = {
+			controls_state = 211
+		}
 		completion_reward = {
 			211 = {
 				add_extra_state_shared_building_slots = 3
@@ -397,7 +399,9 @@ focus_tree = {
 		x = 26
 		y = 5
 		completion_reward = {
-			#show_ideas_tooltip = marjorie
+			#show_ideas_tooltip = marjorie'
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = majorie 
 		}
 
 	}
@@ -410,6 +414,9 @@ focus_tree = {
 		}
 		x = 26
 		y = 6
+		available = {
+			has_idea = majorie
+		}
 		completion_reward = {
 			swap_ideas = {
 				add_idea = whitegloves2
@@ -452,8 +459,8 @@ focus_tree = {
 		y = 7
 		completion_reward = {
 			swap_ideas = {
-				add_idea = whitegloves2
-				remove_idea = whitegloves4
+				add_idea = whitegloves4
+				remove_idea = whitegloves2
 			}
 		}
 
@@ -471,7 +478,8 @@ focus_tree = {
 		x = 29
 		y = 5
 		completion_reward = {
-			#show_ideas_tooltip = papakhan
+			custom_effect_tooltip = available_army_chief
+			show_ideas_tooltip = papa_khan
 		}
 
 	}
@@ -484,6 +492,9 @@ focus_tree = {
 		}
 		x = 29
 		y = 6
+		available = {
+			has_idea = papa_khan
+		}
 		completion_reward = {
 			swap_ideas = {
 				add_idea = khaganate2
@@ -540,8 +551,9 @@ focus_tree = {
 		y = 5
 		completion_reward = {
 			#show_ideas_tooltip = benny
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = benny 
 		}
-
 	}
 	focus = {
 		id = veg_arms
@@ -549,6 +561,9 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = veg_chairmen
+		}
+		available = {
+			has_idea = benny
 		}
 		x = 31
 		y = 6
@@ -592,6 +607,8 @@ focus_tree = {
 		y = 5
 		completion_reward = {
 			#show_ideas_tooltip = theking
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = the_king 
 		}
 
 	}
@@ -604,6 +621,10 @@ focus_tree = {
 		}
 		x = 33
 		y = 6
+		available = {
+			has_idea = the_king
+			controls_state = 313
+		}
 		completion_reward = {
 			313 = {
 				add_extra_state_shared_building_slots = 2
@@ -625,6 +646,9 @@ focus_tree = {
 		}
 		x = 33
 		y = 7
+		available = {
+			controls_state = 344
+		}
 		completion_reward = {
 			344 = {
 				add_extra_state_shared_building_slots = 1
@@ -654,6 +678,9 @@ focus_tree = {
 		}
 		x = 36
 		y = 4
+		available = {
+			controls_state = 211
+		}
 		completion_reward = {
 			211 = {
 				add_extra_state_shared_building_slots = 1
@@ -680,6 +707,8 @@ focus_tree = {
 		y = 5
 		completion_reward = {
 			#show_ideas_tooltip = motorunner
+			custom_effect_tooltip = available_high_command
+			show_ideas_tooltip = motor_runner
 		}
 
 	}
@@ -689,6 +718,9 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = veg_consig
+		}
+		available = {
+			has_idea = motor_runner
 		}
 		x = 35
 		y = 6
@@ -766,20 +798,6 @@ focus_tree = {
 
 	}
 	focus = {
-		id = veg_vault
-		icon = GFX_goal_VEG_The_Vault
-		cost = 8.6
-		prerequisite = {
-			focus = veg_platinumchip
-		}
-		x = 4
-		y = 8
-		completion_reward = {
-		
-		}
-
-	}
-	focus = {
 		id = veg_platinumchip
 		icon = GFX_goal_VEG_The_Platinum_Chip
 		cost = 8.6
@@ -789,7 +807,21 @@ focus_tree = {
 		x = 4
 		y = 7
 		completion_reward = {
-		
+			country_event = nf_vegas.16
+		}
+
+	}
+	focus = {
+		id = veg_vault
+		icon = GFX_goal_VEG_The_Vault
+		cost = 8.6
+		prerequisite = {
+			focus = veg_platinumchip
+		}
+		x = 4
+		y = 8
+		completion_reward = {
+			country_event = nf_vegas.17
 		}
 
 	}
@@ -803,7 +835,7 @@ focus_tree = {
 		x = 4
 		y = 9
 		completion_reward = {
-		
+			country_event = nf_vegas.18
 		}
 
 	}
@@ -936,11 +968,11 @@ focus_tree = {
 		prerequisite = {
 			focus = veg_broken
 		}
-		available = {
-			owns_state = 46
-		}
 		x = 0
 		y = 10
+		available = {
+			controls_state = 46
+		}
 		completion_reward = {
 			46 = {
 				add_building_construction = {
@@ -965,6 +997,11 @@ focus_tree = {
 		}
 		x = 2
 		y = 9
+		bypass = {
+			FRI = {
+				exists = no
+			}
+		}
 		completion_reward = {
 			create_wargoal = {
 				target = FRI
@@ -1028,6 +1065,11 @@ focus_tree = {
 		}
 		x = 6
 		y = 8
+		bypass = {
+			NCR = {
+				exists = no
+			}
+		}
 		completion_reward = {
 			add_opinion_modifier = { target = NCR modifier = ncrembassy }
 			reverse_add_opinion_modifier = { target = NCR modifier = ncrembassy }
@@ -1043,6 +1085,9 @@ focus_tree = {
 		}
 		x = 6
 		y = 9
+		available = {
+			controls_state = 211
+		}
 		completion_reward = {
 			211 = {
 				add_resource = {
@@ -1063,6 +1108,7 @@ focus_tree = {
 		available = {
 			419 = {
 				is_owned_by = NCR
+				is_controlled_by = NCR
 			}
 		}
 		x = 6
@@ -1089,6 +1135,9 @@ focus_tree = {
 		}
 		x = 6
 		y = 11
+		bypass = {
+			NCR = { exists = no }
+		}
 		completion_reward = {
 			swap_ideas = {
 				add_idea = goodbusiness3
@@ -1108,6 +1157,9 @@ focus_tree = {
 		}
 		x = 8
 		y = 7
+		available = {
+			controls_state = 211
+		}
 		completion_reward = {
 			211 = {
 				add_building_construction = {
@@ -1164,9 +1216,8 @@ focus_tree = {
 		x = 9
 		y = 9
 		completion_reward = {
-			
+			country_event = nf_vegas.9
 		}
-
 	}
 	focus = {
 		id = veg_cerulean
@@ -1177,6 +1228,9 @@ focus_tree = {
 		}
 		x = 8
 		y = 10
+		available = {
+			controls_state = 211
+		}
 		completion_reward = {
 			211 = {
 				add_extra_state_shared_building_slots = 2
@@ -1198,6 +1252,9 @@ focus_tree = {
 		}
 		x = 10
 		y = 10
+		available = {
+			controls_state = 211
+		}
 		completion_reward = {
 			211 = {
 				add_extra_state_shared_building_slots = 3
@@ -1265,7 +1322,7 @@ focus_tree = {
 		x = 13
 		y = 8
 		completion_reward = {
-			
+			country_event = nf_vegas.10
 		}
 
 	}
@@ -1468,7 +1525,7 @@ focus_tree = {
 		x = 12
 		y = 12
 		completion_reward = {
-			
+			country_event = nf_vegas.15
 		}
 
 	}
@@ -1519,7 +1576,7 @@ focus_tree = {
 		x = 16
 		y = 8
 		completion_reward = {
-		
+			country_event = nf_vegas.11
 		}
 
 	}
@@ -1536,7 +1593,7 @@ focus_tree = {
 		x = 18
 		y = 8
 		completion_reward = {
-		
+			country_event = nf_vegas.12
 		}
 		
 	}
@@ -1551,7 +1608,7 @@ focus_tree = {
 		x = 17
 		y = 9
 		completion_reward = {
-		
+			country_event = nf_vegas.13
 		}
 	}
 	focus = {
@@ -1613,6 +1670,13 @@ focus_tree = {
 		}
 		x = 18
 		y = 12
+		bypass = {
+			AND = {
+				NOT = { country_exists = DES }
+				NOT = { country_exists = NEW }
+				NOT = { country_exists = VLT }
+			}
+		}
 		completion_reward = {
 			if = {
 				limit = {
@@ -1654,7 +1718,8 @@ focus_tree = {
 		x = 37
 		y = 5
 		completion_reward = {
-			#show_ideas_tooltip = nero
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = nero
 		}
 
 	}
@@ -1667,6 +1732,9 @@ focus_tree = {
 		}
 		x = 37
 		y = 6
+		available = {
+			has_idea = nero
+		}
 		completion_reward = {
 			swap_ideas = {
 				add_idea = omertas2
@@ -1684,6 +1752,9 @@ focus_tree = {
 		}
 		x = 37
 		y = 7
+		available = {
+			controls_state = 211
+		}
 		completion_reward = {
 			211 = {
 				add_extra_state_shared_building_slots = 1
@@ -1734,6 +1805,9 @@ focus_tree = {
 		}
 		x = 26
 		y = 9
+		available = {
+			controls_state = 211
+		}
 		completion_reward = {
 			211 = {
 				add_building_construction = {
@@ -1770,6 +1844,9 @@ focus_tree = {
 		}
 		x = 27
 		y = 10
+		available = {
+			controls_state = 211
+		}
 		completion_reward = {
 			211 = {
 				add_building_construction = {
@@ -1812,6 +1889,9 @@ focus_tree = {
 		y = 9
 		completion_reward = {
 			every_owned_state = {
+				limit = {
+					is_controlled_by = VEG
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -2016,6 +2096,9 @@ focus_tree = {
 		}
 		x = 34
 		y = 10
+		available = {
+			controls_state = 211
+		}
 		completion_reward = {
 			211 = {
 				add_building_construction = {
@@ -2038,6 +2121,9 @@ focus_tree = {
 		}
 		x = 34
 		y = 11
+		available = {
+			controls_state = 211
+		}
 		completion_reward = {
 			211 = {
 				add_building_construction = {
