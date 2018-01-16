@@ -34,6 +34,7 @@ country_event = {
 	option = {
 		name = nf_warren.2.a
 		235 = {
+			add_extra_state_shared_building_slots = 4
 			add_building_construction = {
 				type = industrial_complex
 				level = 1
@@ -42,6 +43,11 @@ country_event = {
 			add_building_construction = {
 				type = arms_factory
 				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				level = 2
 				instant_build = yes
 			}
 		}
@@ -54,6 +60,7 @@ country_event = {
 				level = 2
 				instant_build = yes
 			}
+			add_extra_state_shared_building_slots = 5
 			add_building_construction = {
 				type = industrial_complex
 				level = 3
@@ -63,7 +70,7 @@ country_event = {
 		}
 		add_resource = {
 			type = water
-			amount = 4
+			amount = 8
 			state = 235
 			}
 		add_manpower = 900
@@ -71,6 +78,7 @@ country_event = {
 	option = {
 		name = nf_warren.2.c 
 		235 = {
+			add_extra_state_shared_building_slots = 3
 			add_building_construction = {
 				type = arms_factory
 				level = 3
@@ -86,22 +94,22 @@ country_event = {
 country_event = {
 	id = nf_warren.3
 	title = nf_warren.3.t
-	desc = nf_warren.3.d 
+	desc = nf_warren.3.d
 	picture = GFX_report_event_fascist_speech
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = nf_warren.3.a 
+		name = nf_warren.3.a
 		load_oob = warren_big_brother
-		2161 = {
+		add_ideas = warren_big_brother
+		235 = {
 			add_building_construction = {
 				type = bunker
 				level = 2
 				instant_build = yes
 			}
 		}
-		add_ideas = warren_big_brother
 	}
 	option = {
 		name = nf_warren.3.b
@@ -109,21 +117,21 @@ country_event = {
 		add_ideas = warren_thunder_smoke
 	}
 	option = {
-		name = nf_warren.3.c 
-		add_ideas =  warren_tooth_claw
+		name = nf_warren.3.c
+		add_ideas = warren_tooth_claw
 		load_oob = warren_forced
 	}
 }
 country_event = {
 	id = nf_warren.4
 	title = nf_warren.4.t
-	desc = nf_warren.4.d 
+	desc = nf_warren.4.d
 	picture = GFX_report_event_fascist_speech
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = nf_warren.4.a 
+		name = nf_warren.4.a
 		add_resource = {
 			type = metal
 			amount = 10
@@ -136,11 +144,11 @@ country_event = {
 		}	
 	}
 	option = {
-		name = nf_warren.4.b 
+		name = nf_warren.4.b
 		add_ideas = warren_people
 	}
 	option = {
-		name = nf_warren.4.c 
+		name = nf_warren.4.c
 		add_ideas = warren_warriors
 	}
 }
