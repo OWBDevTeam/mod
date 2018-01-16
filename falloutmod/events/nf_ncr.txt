@@ -612,21 +612,24 @@ country_event = { #Civil War
 				has_completed_focus = ncr_mojavehero 
 			}
 		}
-		fire_NCR_civil_war = yes # common/scripted effects
-		set_country_flag = ncr_switch_to_enclave
-		
-		NCR = {
-			retire_country_leader = yes
-			create_country_leader = {
-				name = "General Drummund"
-				desc = "Drummund_DESC"
-				picture = "Portrait_Drummund.dds"
-				expire = "3000.1.1"
-				ideology = peoples_militia
-				
-				traits = {
-					
-				}
+		custom_effect_tooltip = NCR_civil_war_fires_switch_to_enclave
+		hidden_effect = {
+			fire_NCR_civil_war = yes # common/scripted effects
+			set_country_flag = ncr_switch_to_enclave
+			
+			NCR = {
+				#retire_country_leader = yes
+				#create_country_leader = {
+				#	name = "General Drummund"
+				#	desc = "Drummund_DESC"
+				#	picture = "Portrait_Drummund.dds"
+				#	expire = "3000.1.1"
+				#	ideology = peoples_militia
+				#	
+				#	traits = {
+				#		
+				#	}
+				#}
 			}
 		}
 	}
@@ -700,7 +703,10 @@ country_event = { #Civil War
 
 	option = {
 		name = nf_ncr.13.g #You dun goofed	
-		fire_NCR_civil_war = yes # common/scripted effects
+		custom_effect_tooltip = NCR_civil_war_fires
+		hidden_effect = {
+			fire_NCR_civil_war = yes # common/scripted effects
+		}
 	}	
 }
 
@@ -1168,7 +1174,7 @@ country_event = { #enclave civil war created
 	}	
 }
 
-country_event = { #enclave civil war created
+country_event = { #enclave civil war annexed
 	id = nf_ncr.29
 	title = nf_ncr.29.t
 	desc = nf_ncr.29.d
@@ -1187,75 +1193,77 @@ country_event = { #enclave civil war created
 	}
 	option = {
 		name = nf_ncr.29.a
+		custom_effect_tooltip = ncr_civil_war_starts
 		hidden_effect = {
 			ENC = {
 				transfer_state = 63
 				set_capital = 63
 			}
-		}
-		every_country = {
-			limit = {
-				OR = {	
-					tag = BAR
-					tag = BON
-					tag = ENC
-					tag = NCR
-				}
-			}
+		
 			every_country = {
 				limit = {
-					NOT = { tag = PREV }
-					OR = {
+					OR = {	
 						tag = BAR
 						tag = BON
 						tag = ENC
 						tag = NCR
 					}
 				}
-				declare_war_on = {
-					target = PREV
-					type = civil_war
+				every_country = {
+					limit = {
+						NOT = { tag = PREV }
+						OR = {
+							tag = BAR
+							tag = BON
+							tag = ENC
+							tag = NCR
+						}
+					}
+					declare_war_on = {
+						target = PREV
+						type = civil_war
+					}
 				}
 			}
-		}
-		NCR = {
-			hidden_effect = {
-				every_owned_state = {
-					clr_state_flag = do_not_decimate
+			NCR = {
+				hidden_effect = {
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
 				}
 			}
-		}
-		BON = {
-			transfer_ncr_ideas_civil_war = yes
-			hidden_effect = {
-				
-				every_owned_state = {
-					clr_state_flag = do_not_decimate
+			BON = {
+				transfer_ncr_ideas_civil_war = yes
+				hidden_effect = {
+					
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
 				}
 			}
-		}
-		ENC = {
-			setup_NCR_enclave = yes
-			hidden_effect = {
-				every_owned_state = {
-					clr_state_flag = do_not_decimate
+			ENC = {
+				setup_NCR_enclave = yes
+				hidden_effect = {
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
 				}
 			}
-		}
-		BAR = {
-			transfer_ncr_ideas_civil_war = yes
-			hidden_effect = {
-				every_owned_state = {
-					clr_state_flag = do_not_decimate
+			BAR = {
+				transfer_ncr_ideas_civil_war = yes
+				hidden_effect = {
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
 				}
 			}
-		}
-		if = {
-			limit = {
-				has_country_flag = ncr_switch_to_enclave
-				is_ai = no
+			if = {
+				limit = {
+					has_country_flag = ncr_switch_to_enclave
+					is_ai = no
+				}
+				ENC = { change_tag_from	= NCR }
 			}
-			ENC = { change_tag_from	= NCR }
 		}
-	}	
+	}
 }
