@@ -79,9 +79,18 @@ country_event = {
 		name = nf_mormon.2.option.a
         
 		custom_effect_tooltip = godlyautomatons_tt
+	    LDS = {
 		hidden_effect = {
 			load_oob = godlyautomatons
+			set_technology = { commercial_protectron = 1 }
+			random_owned_controlled_state = {
+				add_resource = {
+				type = electricity
+				amount = 10
+				}
+		    }
 		}
+	    }
 	}
 	
 	option = {
