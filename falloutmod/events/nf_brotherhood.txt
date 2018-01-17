@@ -852,8 +852,13 @@ country_event = {
 		}
 		load_oob = thevagrants
 		
-		add_relation_modifier = { target = SHI modifier = shislightlydislikesbos }
+		SHI = {
+        add_relation_modifier = { 
+        target = BOS 
+        modifier = shislightlydislikesbos
+     }
 	}	 
+}
 }
 country_event = {
 	id = nf_brotherhood.36 #Unfortunate Accident#
@@ -870,7 +875,12 @@ country_event = {
 		
 		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 100 producer = BOS }
 		
-		add_relation_modifier = { target = SHI modifier = shislightlydislikesbos }
+		SHI = {
+        add_relation_modifier = { 
+        target = BOS 
+        modifier = shislightlydislikesbos
+     }
+	 }
 	}	
 }
 country_event = {
@@ -891,9 +901,14 @@ country_event = {
 			type = advanced_technology
 			amount = 8
 			}	
-		}	
-		add_relation_modifier = { target = SHI modifier = shihatesbos }
+		}
+		
+		SHI = {
+        add_relation_modifier = { 
+        target = BOS 
+        modifier = shislightlydislikesbos
+        }
+      }
 	}	
-}	
-}	
+}
 
