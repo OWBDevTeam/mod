@@ -164,11 +164,31 @@ country_event = {
     
 	option = {
 		name = nf_brotherhood.7.a
+		BOS = {
+		country_event = { id = nf_brotherhood.35 }
+		}
+		
+        
+	}
+
+    option = {
+		name = nf_brotherhood.7.b
+		BOS = {
+		country_event = { id = nf_brotherhood.36 }
+		}
 		
         
 	}
 	
-	
+	option = {
+		name = nf_brotherhood.7.c
+		BOS = {
+		country_event = { id = nf_brotherhood.37 }
+		add_relation_modifier = { target = SHI modifier = shihatesbos }
+		}
+		
+        
+	}	
 }
 
 country_event = {
@@ -804,7 +824,7 @@ country_event = {
 	option = {
 		name = nf_brotherhood.34.a
 		
-		load_oob = navarrogarrison
+		load_oob = maxsongarrison
 		
 		create_corps_commander = {
 				name = "Lieutant Smith"
@@ -812,8 +832,62 @@ country_event = {
 				skill = 3
 		}
 	}
-}	
-	
-	
-	
 }
+country_event = {
+	id = nf_brotherhood.35 #The Vagrants pledge their support#
+	title = nf_brotherhood.35.t
+	desc = nf_brotherhood.35.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.35.a
+		BOS = {
+		create_corps_commander = {
+				name = "Lieutant Smith"
+				portrait_path = "gfx/leaders/BOS/Portrait_Generic.dds"
+				skill = 3
+		}
+		load_oob = thevagrants
+		add_relation_modifier = { target = SHI modifier = shislightlydislikesbos }
+		}
+		
+        
+	}
+}	
+country_event = {
+	id = nf_brotherhood.36 #Unfortunate Accident#
+	title = nf_brotherhood.36.t
+	desc = nf_brotherhood.36.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.36.a
+		BOS = {
+		army_experience = 25
+		add_relation_modifier = { target = SHI modifier = shislightlydislikesbos }
+		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 100 producer = BOS }
+		}
+	}	
+}
+country_event = {
+	id = nf_brotherhood.38 #Shi Close the doors forever#
+	title = nf_brotherhood.38.t
+	desc = nf_brotherhood.38.desc
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_brotherhood.38.a
+		BOS = {
+		add_relation_modifier = { target = SHI modifier = shihatesbos }
+		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 100 producer = BOS }
+		}
+	}	
+}	
+}	
+
