@@ -845,11 +845,13 @@ country_event = {
 		name = nf_brotherhood.35.a
 		BOS = {
 		create_corps_commander = {
-				name = "Lieutant Smith"
+				name = "A. Ron Meyers"
 				portrait_path = "gfx/leaders/BOS/Portrait_Generic.dds"
-				skill = 3
+				skill = 4
 		}
 		load_oob = thevagrants
+		}
+		SHI = {
 		add_relation_modifier = { target = SHI modifier = shislightlydislikesbos }
 		}
 		
@@ -868,24 +870,28 @@ country_event = {
 		name = nf_brotherhood.36.a
 		BOS = {
 		army_experience = 25
-		add_relation_modifier = { target = SHI modifier = shislightlydislikesbos }
 		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 100 producer = BOS }
+		SHI = {
+		add_relation_modifier = { target = SHI modifier = shislightlydislikesbos }
+		}
 		}
 	}	
 }
 country_event = {
-	id = nf_brotherhood.38 #Shi Close the doors forever#
-	title = nf_brotherhood.38.t
-	desc = nf_brotherhood.38.desc
+	id = nf_brotherhood.37 #Shi Close the doors forever#
+	title = nf_brotherhood.37.t
+	desc = nf_brotherhood.37.desc
 	picture = GFX_report_event_fascist_speech
 
     is_triggered_only = yes
     
 	option = {
-		name = nf_brotherhood.38.a
+		name = nf_brotherhood.37.a
 		BOS = {
-		add_relation_modifier = { target = SHI modifier = shihatesbos }
 		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 100 producer = BOS }
+		SHI = {
+		add_relation_modifier = { target = SHI modifier = shihatesbos }
+		}
 		}
 	}	
 }	
