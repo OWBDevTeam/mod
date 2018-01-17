@@ -181,6 +181,9 @@ focus_tree = {
 		prerequisite = {
 			focus = memories_of_ages
 		}
+		mutually_exclusive = {
+			focus = warriorswild
+		}
 		x = 17
 		y = 6
 		completion_reward = {
@@ -193,6 +196,9 @@ focus_tree = {
 		cost = 10.00
 		prerequisite = {
 			focus = memories_of_ages
+		}
+		mutually_exclusive = {
+			focus = guardianwild
 		}
 		x = 19
 		y = 6
@@ -232,7 +238,7 @@ focus_tree = {
 		x = 18
 		y = 8
 		completion_reward = {
-			add_ideas = warren_goliath_realm
+			add_ideas = warren_realm_goliath
 		}
 	}
 	focus = {
@@ -247,7 +253,9 @@ focus_tree = {
 		}
 		x = 17
 		y = 9
-
+		completion_reward = {
+			add_ideas = warrencallofgiants
+		}
 	}
 	focus = {
 		id = trollsofthewarren
@@ -258,7 +266,12 @@ focus_tree = {
 		}
 		x = 16
 		y = 10
-
+		completion_reward = {
+			swap_ideas = {
+				add_idea = warrentrollsofthewarren
+				remove_idea = warrencallofgiants
+			}
+		}
 	}
 	focus = {
 		id = callofhorde
@@ -272,7 +285,9 @@ focus_tree = {
 		}
 		x = 19
 		y = 9
-
+		completion_reward = {
+			add_ideas = warrencallofhorde
+		}
 	}
 	focus = {
 		id = callofthefirst
@@ -284,7 +299,9 @@ focus_tree = {
 		}
 		x = 18
 		y = 10
-
+		completion_reward = {
+			add_ideas = warrencallofthefirst
+		}
 	}
 	focus = {
 		id = sonsofman
@@ -295,7 +312,13 @@ focus_tree = {
 		}
 		x = 20
 		y = 10
-
+		completion_reward = {
+			swap_ideas = {
+				add_idea = warrensonsofman
+				remove_idea = warrencallofhorde
+			}
+			army_experience = 30
+		}
 	}
 	focus = {
 		id = riverexpedition
@@ -306,7 +329,28 @@ focus_tree = {
 		}
 		x = 23
 		y = 6
-
+		completion_reward = {
+			235 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 2160
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			create_navy_leader = {
+				name = "Wave Breaker"
+				picture = ""
+				traits = {
+				}
+				skill = 3
+			}
+		}
 	}
 	focus = {
 		id = mutantwarship
@@ -317,7 +361,14 @@ focus_tree = {
 		}
 		x = 22
 		y = 7
-
+		completion_reward = {
+			add_tech_bonus = {
+				name = mutantwarship
+				bonus = 0.5
+				uses = 1
+				category = ship_cruiser_tech
+			}
+		}
 	}
 	focus = {
 		id = amassingfleet
@@ -328,7 +379,9 @@ focus_tree = {
 		}
 		x = 22
 		y = 8
-
+		completion_reward = {
+			add_ideas = warrenamassingfleet
+		}
 	}
 	focus = {
 		id = mutantcanoe
@@ -339,7 +392,14 @@ focus_tree = {
 		}
 		x = 24
 		y = 7
-
+		completion_reward = {
+			add_tech_bonus = {
+				name = mutantwarship
+				bonus = 0.5
+				uses = 1
+				category = ship_destroyer_tech
+			}
+		}
 	}
 	focus = {
 		id = raidingculture
@@ -350,7 +410,9 @@ focus_tree = {
 		}
 		x = 24
 		y = 8
-
+		completion_reward = {
+			add_ideas = warrenraidingculture
+		}
 	}
 	focus = {
 		id = rivergiants
@@ -364,7 +426,14 @@ focus_tree = {
 		}
 		x = 23
 		y = 9
-
+		completion_reward = {
+			add_tech_bonus = {
+				name = rivergiants
+				bonus = 0.5
+				uses = 1
+				category = ship_heavy_cruiser_tech
+			}
+		}
 	}
 	focus = {
 		id = slavesunworthy
@@ -375,7 +444,14 @@ focus_tree = {
 		}
 		x = 32
 		y = 5
-
+		completion_reward = {
+			add_tech_bonus = {
+				name = unworthyslaves
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
 	}
 	focus = {
 		id = forceddigging
@@ -386,7 +462,14 @@ focus_tree = {
 		}
 		x = 31
 		y = 6
-
+		completion_reward = {
+			add_tech_bonus = {
+				name = forceddigging
+				bonus = 0.5
+				uses = 1
+				technology = quarry_picks
+			}
+		}
 	}
 	focus = {
 		id = expandingslavelabour
@@ -397,7 +480,29 @@ focus_tree = {
 		}
 		x = 29
 		y = 7
-
+		completion_reward = {
+			235 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			437 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			166 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = slavemutanthouse
@@ -408,7 +513,9 @@ focus_tree = {
 		}
 		x = 27
 		y = 8
-
+		completion_reward = {
+			add_ideas = warrenhouseslaves
+		}
 	}
 	focus = {
 		id = unwillinggatherers
@@ -419,7 +526,9 @@ focus_tree = {
 		}
 		x = 31
 		y = 7
-
+		completion_reward = {
+			add_ideas = warrengatherers
+		}
 	}
 	focus = {
 		id = mutantlabor
@@ -430,7 +539,15 @@ focus_tree = {
 		}
 		x = 32
 		y = 8
-
+		completion_reward = {
+			add_tech_bonus = {
+				name = mutantlabor
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			add_ideas = warrenmutantlabor
+		}
 	}
 	focus = {
 		id = militarizedlabour
@@ -441,7 +558,9 @@ focus_tree = {
 		}
 		x = 32
 		y = 9
-
+		completion_reward = {
+			add_ideas = warrenmilitarizedlabor
+		}
 	}
 	focus = {
 		id = readyforwar
@@ -452,7 +571,9 @@ focus_tree = {
 		}
 		x = 33
 		y = 6
-
+		completion_reward = {
+			add_ideas = warrenreadyforwar
+		}
 	}
 	focus = {
 		id = stockpiledweapons
@@ -463,6 +584,20 @@ focus_tree = {
 		}
 		x = 33
 		y = 7
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_2
+				amount = 1000
+				producer = TRL
+			}
+			235 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 	focus = {
@@ -474,7 +609,9 @@ focus_tree = {
 		}
 		x = 35
 		y = 7
-
+		completion_reward = {
+			add_ideas = warrenrewardsofvictory
+		}
 	}
 	focus = {
 		id = gloriouscity
@@ -485,7 +622,15 @@ focus_tree = {
 		}
 		x = 35
 		y = 8
-
+		completion_reward = {
+			235 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = defendingthewarren
@@ -496,7 +641,9 @@ focus_tree = {
 		}
 		x = 37
 		y = 8
-
+		completion_reward = {
+			add_ideas = warrendefendingthewarren
+		}
 	}
 	focus = {
 		id = oregonline
@@ -507,7 +654,24 @@ focus_tree = {
 		}
 		x = 37
 		y = 9
-
+		completion_reward = {
+			437 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 2163
+				}
+			}
+			437 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4107
+				}
+			}
+		}
 	}
 	focus = {
 		id = willwarchief
@@ -518,7 +682,10 @@ focus_tree = {
 		}
 		x = 46
 		y = 5
-
+		completion_reward = {
+			country_event = nf_warren.5
+			add_political_power = 120
+		}
 	}
 	focus = {
 		id = pittmancunning
@@ -529,7 +696,12 @@ focus_tree = {
 		}
 		x = 42
 		y = 6
-
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_ideas = pittman1
+		}
 	}
 	focus = {
 		id = nightkinmigration
@@ -540,7 +712,9 @@ focus_tree = {
 		}
 		x = 42
 		y = 7
-
+		completion_reward = {
+			add_manpower = 3000
+		}
 	}
 	focus = {
 		id = southernpush
@@ -549,9 +723,89 @@ focus_tree = {
 		prerequisite = {
 			focus = nightkinmigration
 		}
+		available = {
+			or = {
+				if = {
+					MDT = {
+						exists = no
+					}
+					BPT = {
+						exists = no
+					}
+					TRL = {
+						controls_state = 113
+						controls_state = 467
+						controls_state = 251
+					}
+				}
+				if = {
+					MDT = {
+						is_puppet_of = TRL
+					}
+					BPT = {
+						is_puppet_of = TRL
+					}
+				}
+			
+				
+			}
+			
+		}
 		x = 42
 		y = 8
-
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = ARR
+			}
+			create_wargoal = { 
+				type = annex_everything
+				target = KLA
+			}
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = ARR
+							NOT = { is_controlled_by = ARR }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = ARR
+						}
+					}
+					
+					ROOT = { 
+			create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = KLA
+							NOT = { is_controlled_by = KLA }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = KLA
+						}
+					}
+					
+					ROOT = { 
+			create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
+			}
+		}
+		
 	}
 	focus = {
 		id = vengeancemaster
@@ -562,7 +816,28 @@ focus_tree = {
 		}
 		x = 41
 		y = 9
-
+		available = {
+			or = {
+				if = {
+					ARR = {
+						is_puppet_of = TRL
+					}
+				}
+				if = {
+					ARR = {
+						exists = no
+					}
+					TRL = {
+						owns_state = 337
+						owns_state = 96
+						owns_state = 32
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_ideas = pittman2
+		}
 	}
 	focus = {
 		id = redriver
@@ -573,7 +848,28 @@ focus_tree = {
 		}
 		x = 43
 		y = 9
-
+		available = {
+			or = {
+				if = {
+					KLA = {
+						is_puppet_of = TRL
+					}
+				}
+				if = {
+					KLA = {
+						exists = no
+					}
+					TRL = {
+						owns_state = 57
+						owns_state = 59
+						owns_state = 454
+					}
+				}
+			}
+		}
+		completion_reward = {
+			add_ideas = pittman3
+		}
 	}
 	focus = {
 		id = mariposareborn
@@ -585,8 +881,22 @@ focus_tree = {
 		prerequisite = {
 			focus = redriver
 		}
+		available = {
+			TRL = {
+				owns_state = 351
+			}
+		}
 		x = 42
 		y = 10
+		completion_reward = {
+			remove_ideas = {
+				pittman1,
+				pittman2,
+				pittman3
+			}
+			add_ideas = pittman4
+			
+		}
 
 	}
 	focus = {
@@ -598,7 +908,12 @@ focus_tree = {
 		}
 		x = 46
 		y = 6
-
+		available = {
+			always = no
+		}
+		completion_reward = {
+			add_ideas = bonesnarl1
+		}
 	}
 	focus = {
 		id = cannibalmutants
@@ -609,7 +924,12 @@ focus_tree = {
 		}
 		x = 46
 		y = 7
-
+		completion_reward = {
+			swap_ideas = { 
+				remove_idea = bonesnarl1
+				add_idea = bonesnarl2
+			}
+		}
 	}
 	focus = {
 		id = preparingthewarren
@@ -620,7 +940,20 @@ focus_tree = {
 		}
 		x = 46
 		y = 8
-
+		completion_reward = {
+			235 = {
+				add_building_construction = {
+					type = arms_factory 
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = developingslavesmines
@@ -629,9 +962,25 @@ focus_tree = {
 		prerequisite = {
 			focus = preparingthewarren
 		}
+		available = {
+			TRL = {
+				num_of_civilian_factories > 25
+			}
+		}
 		x = 45
 		y = 9
-
+		completion_reward = {
+			add_resource = {
+				type = metal
+				amount = 25
+				state = 235
+			}
+			add_resource = {
+				type = water
+				amount 10
+				state = 235
+			}
+		}
 	}
 	focus = {
 		id = ritualscarring
@@ -642,7 +991,17 @@ focus_tree = {
 		}
 		x = 47
 		y = 9
-
+		available = {
+			TRL = {
+				num_of_military_factories > 25
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = bonesnarl2
+				add_idea = bonesnarl3
+			}
+		}
 	}
 	focus = {
 		id = eatersman
@@ -656,6 +1015,62 @@ focus_tree = {
 		}
 		x = 46
 		y = 10
+		available = {
+			or = {
+				BPT = {
+					exists = no
+				}
+				BPT = {
+					is_puppet_of = TRL
+				}
+			}
+			or = {
+				BDT = {
+					exists = no
+				}
+				BDT = {
+					is_puppet_of = TRL
+				}
+			}
+			or = {
+				RBT = {
+					exists = no
+				}
+				RBT = {
+					is_puppet_of = TRL
+				}
+			}
+			or = {
+				CHE = {
+					exists = no
+				}
+				CHE = {
+					is_puppet_of = TRL
+				}
+			}
+			or = {
+				MLT = {
+					exists = no
+				}
+				MLT = {
+					is_puppet_of = TRL
+				}
+			}
+			or = {
+				MDT = {
+					exists = no
+				}
+				MDT = {
+					is_puppet_of = TRL
+				}
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = bonesnarl3
+				add_idea = bonesnarl4
+			}
+		}
 
 	}
 	focus = {
@@ -667,7 +1082,9 @@ focus_tree = {
 		}
 		x = 50
 		y = 6
-
+		available = {
+			always = no
+		}
 	}
 	focus = {
 		id = armorrepurposing
@@ -687,9 +1104,79 @@ focus_tree = {
 		prerequisite = {
 			focus = armorrepurposing
 		}
+		available = {
+			or = {
+				if = {
+					RBT = {
+						exists = no
+					}
+					
+					TRL = {
+						controls_state = 587
+					}
+				}
+				if = {
+					RBT = {
+						is_puppet_of = TRL
+					}
+				}
+			}
+			
+		}
 		x = 50
 		y = 8
-
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = WBH
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = TCA
+			}
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = WBH
+							NOT = { is_controlled_by = WBH }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = WBH
+						}
+					}
+					
+					ROOT = { 
+			create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = TCA
+							NOT = { is_controlled_by = TCA }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = TCA
+						}
+					}
+					
+					ROOT = { 
+			create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
+			}
+		}
 	}
 	focus = {
 		id = mutantshocktactics
@@ -737,7 +1224,14 @@ focus_tree = {
 		x = 6
 		y = 6
 		completion_reward = {
-		custom_effect_tooltip = drumswesttooltip
+			create_wargoal = {
+				type = annex_everything
+				target = RBT
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = MDT
+			}
 			if = {
 				limit = {
 					any_state = {
@@ -785,7 +1279,7 @@ focus_tree = {
 	focus = {
 		id = breakingribs
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 5.00
 		prerequisite = {
 			focus = drumswest
 		}
@@ -802,7 +1296,7 @@ focus_tree = {
 	focus = {
 		id = drinking_marrow
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 5.00
 		prerequisite = {
 			focus = drumswest
 		}
@@ -948,7 +1442,14 @@ focus_tree = {
 		x = 6
 		y = 9
 		completion_reward = {
-			custom_effect_tooltip = warhornstooltip
+			create_wargoal = {
+				type = annex_everything
+				target = BPT
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = CHE
+			}
 			if = {
 				limit = {
 					any_state = {
@@ -996,7 +1497,7 @@ focus_tree = {
 	focus = {
 		id = pickingbones
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 5.00
 		prerequisite = {
 			focus = warhornswest
 		}
@@ -1023,7 +1524,7 @@ focus_tree = {
 	focus = {
 		id = takinghomes
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 5.00
 		prerequisite = {
 			focus = warhornswest
 		}
@@ -1100,6 +1601,14 @@ focus_tree = {
 		x = 6
 		y = 12
 		completion_reward = {
+		create_wargoal = {
+				type = annex_everything
+				target = BDT
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = MLT
+			}
 		if = {
 				limit = {
 					any_state = {
