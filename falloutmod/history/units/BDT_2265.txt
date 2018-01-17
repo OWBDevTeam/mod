@@ -9,16 +9,47 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Bone Shakers"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
 	}
 }
-
+units = {
+	division {
+		name = "Cranium's Dustwalkers"
+		location = 646
+		division_template = "Bone Shakers"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Burns Climbers"
+		location = 3611
+		division_template = "Bone Shakers"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Wandering Band"
+		location = 4139
+		division_template = "Bone Shakers"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Dune Men"
+		location = 4164
+		division_template = "Bone Shakers"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+}
 ##### Starting Production #####
 instant_effect = {
 	add_equipment_production = {

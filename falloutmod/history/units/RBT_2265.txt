@@ -9,15 +9,40 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Breaking Battlers"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
-		infantry = { x = 2 y = 0 }
+		infantry = { x = 1 y = 2 }
 	}
 }
+
+units = {
+	division {
+		name = "Ankenny Wise-Men"
+		location = 4115
+		division_template = "Breaking Battlers"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Beavers"
+		location = 8574
+		division_template = "Breaking Battlers"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Elkhorn Rabble"
+		location = 4123
+		division_template = "Breaking Battlers"
+		start_experience_factor = 0.65
+		start_equipment_factor = 1.0
+	}
+}
+
 
 ##### Starting Production #####
 instant_effect = {

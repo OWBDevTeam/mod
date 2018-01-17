@@ -1,10 +1,35 @@
 ﻿division_template = {
-	name = "Super Mutant Infantry"
+	name = "Super Mutant Battlegroup"
 	regiments = {
 		super_mutant_infantry = { x = 0 y = 0 }
 		super_mutant_infantry = { x = 0 y = 1 }
 		super_mutant_infantry = { x = 1 y = 0 }
 		super_mutant_infantry = { x = 1 y = 1 }
+		super_mutant_infantry = { x = 1 y = 2 }
+	}
+}
+
+units = {
+	division {
+		name = "Mariposa Remnants"
+		location = 2158
+		division_template = "Super Mutant Battlegroup"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Carcas-Wearers"
+		location = 1985
+		division_template = "Super Mutant Battlegroup"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Head-Squashers"
+		location = 1987
+		division_template = "Super Mutant Battlegroup"
+		start_experience_factor = 0.65
+		start_equipment_factor = 1.0
 	}
 }
 

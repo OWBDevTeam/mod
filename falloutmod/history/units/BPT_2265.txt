@@ -9,13 +9,23 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Pickers"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
-		infantry = { x = 2 y = 0 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+
+units = {
+	division {
+		name = "Arago Pickers"
+		location = 1746
+		division_template = "Pickers"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
 	}
 }
 

@@ -9,16 +9,39 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Combat Group"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
-		infantry = { x = 2 y = 0 }
+		infantry = { x = 1 y = 2 }
 	}
 }
 
+units = {
+	division {
+		name = "1. Combat Group"
+		location = 2215
+		division_template = "Pickers"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "2. Combat Group"
+		location = 4262
+		division_template = "Pickers"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "3. Combat Group"
+		location = 4155
+		division_template = "Pickers"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+}
 ##### Starting Production #####
 instant_effect = {
 	add_equipment_production = {

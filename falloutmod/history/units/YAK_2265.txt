@@ -9,13 +9,31 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Yakama Prowlers"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+}
+units = {
+	division {
+		name = "Walowwa Prowlers"
+		location = 4043
+		division_template = "Yakama Prowlers"
+		start_experience_factor = 0.60
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Minam Prowlers"
+		location = 434
+		division_template = "Yakama Prowlers"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
 	}
 }
 
