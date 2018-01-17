@@ -812,6 +812,32 @@ entity = {
 		scale = 0.6			
 }
 entity = {
+		name = "CES_motorized_vehicle_entity"
+		pdxmesh = "CES_generic_motorized_mesh"
+		
+		state = { name = "idle"				animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "retreat"			animation = "move" 	 				animation_blend_time = 0.3 animation_speed = 1.0 
+			event = { time = 0 node="left_wheel" particle = "tank_moving_tracks_particle"  keep_particle = no trigger_once = yes}
+			event = { time = 0 node="right_wheel" particle = "tank_moving_tracks_particle"  keep_particle = no trigger_once = yes}
+			event = { trigger_once = yes sound = { soundeffect = "motorized_unit_move_animation" } }
+		}
+		state = { name = "training"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "death"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "support_attack"	animation = "idle" 	animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "attack"				animation = "move" 					animation_blend_time = 0.3 animation_speed = 1.0
+			event = { time = 0 node="left_wheel" particle = "tank_moving_tracks_particle"  keep_particle = no trigger_once = yes}
+			event = { time = 0 node="right_wheel" particle = "tank_moving_tracks_particle"  keep_particle = no trigger_once = yes}
+			event = { trigger_once = yes sound = { soundeffect = "motorized_unit_move_animation" } }
+		}
+		state = { name = "defend"			animation = "idle" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+		state = { name = "move"				animation = "move" 					animation_blend_time = 0.3 animation_speed = 1.0
+			event = { time = 0 node="left_wheel" particle = "tank_moving_tracks_particle"  keep_particle = no trigger_once = yes}
+			event = { time = 0 node="right_wheel" particle = "tank_moving_tracks_particle"  keep_particle = no trigger_once = yes}
+			event = { trigger_once = yes sound = { soundeffect = "motorized_unit_move_animation" } }
+		}
+		scale = 0.6			
+}
+entity = {
 		clone = "owb_motorized_entity"
 		name = "NCR_motorized_entity"
 		pdxmesh = "motorized_frame_mesh"
@@ -837,6 +863,15 @@ entity = {
 		
 		attach = { 	name = "vehicle"			vehicle = "generic_motorized_vehicle_entity" }
 		attach = { 	name = "infantry"			infantry = "BON_infantry_entity" }
+}
+entity = {
+		clone = "owb_motorized_entity"
+		name = "CES_motorized_entity"
+		pdxmesh = "motorized_frame_mesh"
+		scale = 1.0
+		
+		attach = { 	name = "vehicle"			vehicle = "CES_motorized_vehicle_entity" }
+		attach = { 	name = "infantry"			infantry = "CES_infantry_entity" }
 }
 ##Power armor
 entity = {
