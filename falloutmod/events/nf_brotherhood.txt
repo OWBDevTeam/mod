@@ -844,21 +844,22 @@ country_event = {
     
 	option = {
 		name = nf_brotherhood.35.a
-		BOS = {
+		
 		create_corps_commander = {
 				name = "A. Ron Meyers"
 				portrait_path = "gfx/leaders/BOS/Portrait_Generic.dds"
 				skill = 4
 		}
 		load_oob = thevagrants
-		}
-		SHI = {
-		add_relation_modifier = { target = SHI modifier = shislightlydislikesbos }
-		}
 		
-        
-	}
-}	
+		SHI = {
+        add_relation_modifier = { 
+        target = BOS 
+        modifier = shislightlydislikesbos
+     }
+	}	 
+}
+}
 country_event = {
 	id = nf_brotherhood.36 #Unfortunate Accident#
 	title = nf_brotherhood.36.t
@@ -869,14 +870,17 @@ country_event = {
     
 	option = {
 		name = nf_brotherhood.36.a
-		BOS = {
+
 		army_experience = 25
-		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 100 producer = BOS }
-		}
-		SHI = {
-		add_relation_modifier = { target = SHI modifier = shislightlydislikesbos }
-		}
 		
+		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 100 producer = BOS }
+		
+		SHI = {
+        add_relation_modifier = { 
+        target = BOS 
+        modifier = shislightlydislikesbos
+     }
+	 }
 	}	
 }
 country_event = {
@@ -889,13 +893,22 @@ country_event = {
     
 	option = {
 		name = nf_brotherhood.37.a
-		BOS = {
+		
 		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 100 producer = BOS }
+		
+		104 = {
+			add_resource = {
+			type = advanced_technology
+			amount = 8
+			}	
 		}
+		
 		SHI = {
-		add_relation_modifier = { target = SHI modifier = shihatesbos }
-		}
+        add_relation_modifier = { 
+        target = BOS 
+        modifier = shislightlydislikesbos
+        }
+      }
 	}	
-}	
-}	
+}
 
