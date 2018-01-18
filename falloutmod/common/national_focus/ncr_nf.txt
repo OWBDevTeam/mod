@@ -948,6 +948,7 @@ focus_tree = {
 		y = 9
 		available = {
 			owns_state = 47
+			controls_state = 47
 		}
 		completion_reward = {
 			47 = {
@@ -1241,7 +1242,9 @@ focus_tree = {
 		y = 7
 		completion_reward = {
 			set_technology = { power_armour = 1 }
-			load_oob = ncrheavytroops
+			custom_effect_tooltip = load_ncrheavytroops
+			hidden_effect = { load_oob = ncrheavytroops }
+			
 		}
 
 	}
@@ -1313,7 +1316,8 @@ focus_tree = {
 		x = 18
 		y = 6
 		completion_reward = {
-			load_oob = gammacore
+			custom_effect_tooltip = load_gammacore
+			hidden_effect = { load_oob = gammacore }
 		}
 
 	}
@@ -1383,6 +1387,9 @@ focus_tree = {
 		}
 		x = 18
 		y = 12
+		available = {
+			controls_state = 63
+		}
 		completion_reward = {
 			
 			add_national_unity = 0.025
@@ -2273,6 +2280,9 @@ focus_tree = {
 		}
 		x = 9
 		y = 12
+		available = {
+			has_tech = power_armour
+		}
 		completion_reward = {
 			create_corps_commander = {
 				name = "General Lee Oliver"
@@ -2281,7 +2291,8 @@ focus_tree = {
 				traits = {
 				}
 			}
-			load_oob = ncrheavytroops
+			custom_effect_tooltip = load_ncrheavytroops
+			hidden_effect = { load_oob = ncrheavytroops }
 		}
 
 	}
@@ -2514,7 +2525,8 @@ focus_tree = {
 		y = 16
 		completion_reward = {
 			add_ideas = heavytroops
-			load_oob = ncrheavytroops
+			custom_effect_tooltip = load_ncrheavytroops
+			hidden_effect = { load_oob = ncrheavytroops }
 		}
 
 	}
@@ -2696,7 +2708,8 @@ focus_tree = {
 			controls_state = 63
 		}
 		completion_reward = {
-			load_oob = seabear
+			custom_effect_tooltip = load_seabear
+			hidden_effect = { load_oob = seabear }
 		}
 
 	}
