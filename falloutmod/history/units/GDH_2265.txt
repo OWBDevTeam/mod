@@ -9,16 +9,34 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Gente Revivalists"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
-		infantry = { x = 2 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
 	}
 }
 
+units = {
+	division {
+		name = "Gente-City Revivalists"
+		location = 7775
+		division_template = "Gente Revivalists"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Gente Port-Guards"
+		location = 7553
+		division_template = "Gente Revivalists"
+		start_experience_factor = 0.60
+		start_equipment_factor = 1.0
+	}
+}
 
 ##### Starting Production #####
 instant_effect = {

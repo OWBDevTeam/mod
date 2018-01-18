@@ -9,14 +9,52 @@
 }
 
 division_template = {
-	name = "Infantry Force"
+	name = "Old Company"
 	regiments = {
-		infantry = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 1 y = 0 }
-		infantry = { x = 1 y = 1 }
-		infantry = { x = 2 y = 0 }
+		ghoul_infantry  = { x = 0 y = 0 }
+		ghoul_infantry  = { x = 0 y = 1 }
+		ghoul_infantry  = { x = 1 y = 0 }
+		ghoul_infantry  = { x = 1 y = 1 }
+		ghoul_infantry  = { x = 2 y = 0 }
+		ghoul_infantry  = { x = 2 y = 1 }
 	}
+}
+units = {
+	division {
+			name = "'Thunder' Company"
+			location = 3927
+			division_template = "Old Company"
+			start_experience_factor = 0.5
+			start_equipment_factor = 1.0
+		}
+	division {
+			name = "Coer Border Patrol"
+			location = 4059
+			division_template = "Old Company"
+			start_experience_factor = 0.15
+			start_equipment_factor = 1.0
+		}
+	division {
+			name = "Joso Settlement-Garrison"
+			location = 4049
+			division_template = "Old Company"
+			start_experience_factor = 0.16
+			start_equipment_factor = 1.0
+		}
+	division {
+			name = "Pasco Crossing-Patrol"
+			location = 1500
+			division_template = "Old Company"
+			start_experience_factor = 0.16
+			start_equipment_factor = 1.0
+		}
+	division {
+			name = "Northlands Watchmen"
+			location =  8527
+			division_template = "Old Company"
+			start_experience_factor = 0.16
+			start_equipment_factor = 1.0
+		}
 }
 
 
