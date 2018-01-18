@@ -337,7 +337,9 @@ robot_generic = {
 			0.00 #-- weight
 		}
 		
-
+		can_upgrade_in_field = {
+			has_equipment = { medium_robot_equipment < 50 } 
+		}
 		target_template = {
 			weight = 0.9
 			match_value = 5000.0
@@ -346,11 +348,10 @@ robot_generic = {
 				explosive_company = 1
 				recon_company = 1
 				maintenance_company = 1
-				logistics_company = 1
 			}
 			
 			regiments = {
-				medium_robot = 10
+				medium_robot = 8
 			}
 		}
 
