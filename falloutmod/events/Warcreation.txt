@@ -13,7 +13,7 @@ country_event = {
 	is_triggered_only = no
 	fire_only_once = no
 	trigger = {
-		#date > 2275.1.6.12
+		date > "2275.1.6.12"
 		elgible_wargoal_sender = yes
 	}
 	option = {
@@ -26,7 +26,11 @@ country_event = {
 		}
 	}
 	mean_time_to_happen = {
-		days = 8000
+		days = 10000
+		modifier = {
+			factor = 0.6
+			threat > 0.5
+		}
 		modifier = {
 			factor = 0.5
 			has_government = ruler
@@ -36,7 +40,7 @@ country_event = {
 			has_government = intellectuals
 		}
 		modifier = {
-			factor = 0.3
+			factor = 0.4
 			has_government = elites
 		}
 	}
