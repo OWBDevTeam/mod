@@ -1,13 +1,13 @@
 ﻿division_template = {
-	name = "Car Division"
+	name = "Motorized Group"
 
 	regiments = {
-		car = { x = 0 y = 0 }
-		car = { x = 0 y = 1 }
-        car = { x = 0 y = 2 }
-        car = { x = 1 y = 0 }
-		car = { x = 1 y = 1 }
-        car = { x = 1 y = 2 }
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+        motorized = { x = 0 y = 2 }
+        motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+        motorized = { x = 1 y = 2 }
 	}
 }
 
@@ -16,7 +16,14 @@ units = {
 	division {
 		name = "Vegas Mobile Division"
 		location = 3179
-		division_template = "Car Division"
+		division_template = "Motorized Group"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Vegas Mobile Division"
+		location = 3179
+		division_template = "Motorized Group"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
