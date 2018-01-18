@@ -31,7 +31,7 @@ country_event = {
 		create_country_leader  = {
 			name = "Hell Razor"
 			desc = "HELL_RAZOR_DESC"
-			picture = "Portrait_DES_Leader.dds"
+			picture = "Portrait_Razer.dds"
 			expire = "3000.1.1"
 			ideology = peoples_militia
 			traits = {
@@ -51,7 +51,7 @@ country_event = {
 		create_country_leader  = {
 			name = "Thrasher Sagarra"
 			desc = "THRASHER_SAGARRA_DESC"
-			picture = "Portrait_DES_Leader.dds"
+			picture = "Portrait_Thrasher.dds"
 			expire = "3000.1.1"
 			ideology = peoples_militia
 			traits = {
@@ -71,20 +71,25 @@ country_event = {
     
 	option = {
 		name = nf_ranger.2.a
-		load_oob = ranger_engineers
 		set_technology = {
 			engineercorps = 1
+			bike_tech_1 = 1
 		}
+		load_oob = ranger_engineers
+		custom_effect_tooltip = ranger_engineers
+		
 	}
 	option = {
 		name = nf_ranger.2.b
 		load_oob = ranger_national
 		add_ideas = nationalguard
+		custom_effect_tooltip = ranger_nationalguard
 	}
 	option = {
 		name = nf_ranger.2.c
 		load_oob = ranger_rangers
 		add_ideas = armyrangers
+		custom_effect_tooltip = ranger_armyrangers
 	}
 }
 country_event = {
