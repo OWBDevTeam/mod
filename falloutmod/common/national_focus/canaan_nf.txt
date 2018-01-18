@@ -247,7 +247,11 @@ focus_tree = {
 		}
 		x = 7
 		y = 6
+		available = {
+			has_political_power > 25
+		}
 		completion_reward = {
+			add_political_power = -25
 			if = {
 				limit = {
 					LON = {
@@ -292,7 +296,11 @@ focus_tree = {
 		}
 		x = 9
 		y = 6
+		available = {
+			has_political_power > 25
+		}
 		completion_reward = {
+			add_political_power = -25
 			if = {
 				limit = {
 					IRE = {
@@ -338,6 +346,9 @@ focus_tree = {
 		}
 		x = 13
 		y = 4
+		available = {
+			has_manpower > 100
+		}
 		completion_reward = {
 			add_manpower = -100
 		}
@@ -414,6 +425,9 @@ focus_tree = {
 		}
 		x = 20
 		y = 4
+		available = {
+			has_manpower > 100
+		}
 		completion_reward = {
 			add_manpower = -100
 		}
@@ -691,7 +705,11 @@ focus_tree = {
 		}
 		x = 8
 		y = 7
+		available = {
+			has_political_power = 50
+		}
 		completion_reward = {
+			add_political_power = -50
 			if = {
 				limit = {
 					MUR = {
@@ -875,6 +893,9 @@ focus_tree = {
 		}
 		x = 17
 		y = 4
+		available = {
+			has_manpower > 100
+		}
 		completion_reward = {
 			add_manpower = -100
 			custom_effect_tooltip = available_political_advisor
@@ -1012,7 +1033,7 @@ focus_tree = {
 				create_corps_commander = {
 					name = "Joshua Graham"
 					portrait_path = "gfx/leaders/LDS/Portrait_Graham.dds"
-					skill =4
+					skill =7
 					traits = {
 					}
 				}
@@ -1396,10 +1417,13 @@ focus_tree = {
 		}
 		x = 28
 		y = 10
+		available = {
+			controls_state = 551
+		}
 		completion_reward = {
 			add_resource = {
 				type = electricity
-				amount = 6
+				amount = 16
 				state = 551
 			}
 		}
@@ -1489,7 +1513,7 @@ focus_tree = {
 					add_extra_state_shared_building_slots = 4
 					add_building_construction = {
 						type = arms_factory
-						level = 4
+						level = 2
 						instant_build = yes
 					}
 				}
