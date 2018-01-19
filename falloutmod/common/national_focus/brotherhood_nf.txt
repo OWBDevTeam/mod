@@ -1337,9 +1337,9 @@ focus_tree = {
 	focus = {
 		id = bos_welcomingcommittee
 		icon = GFX_goal_bos_welcoming_committee
-		cost = 8.6
+		cost = 4.3
 		prerequisite = {
-			focus = bos_secureequipment
+			focus = bos_rangerpaladins
 		}
 		available = {
 			DES = {
@@ -1347,7 +1347,7 @@ focus_tree = {
 			}
 		}
 		x = 41
-		y = 5
+		y = 6
 		completion_reward = {
 			DES = {
 				load_oob = welcomingcommittee
@@ -1358,12 +1358,12 @@ focus_tree = {
 	focus = {
 		id = bos_rangerpaladins
 		icon = GFX_goal_bos_generic
-		cost = 8.6
+		cost = 4.3
 		prerequisite = {
-			focus = bos_welcomingcommittee
+			focus = bos_secureequipment
 		}
 		x = 41
-		y = 6
+		y = 5
 		completion_reward = {
 			DES = {
 				set_technology = {
@@ -1376,12 +1376,12 @@ focus_tree = {
 	focus = {
 		id = bos_brotherhoodarms
 		icon = GFX_goal_generic_military_sphere
-		cost = 8.6
+		cost = 4.3
 		prerequisite = {
-			focus = bos_rangerpaladins
+			focus = bos_scribelexicon
 		}
 		x = 41
-		y = 7
+		y = 8
 		completion_reward = {
 			DES = {
 				country_event = {
@@ -1394,12 +1394,12 @@ focus_tree = {
 	focus = {
 		id = bos_scribelexicon
 		icon = GFX_goal_generic_common_energy_weapons_focus
-		cost = 8.6
+		cost = 4.3
 		prerequisite = {
-			focus = bos_brotherhoodarms
+			focus = bos_welcomingcommittee
 		}
 		x = 41
-		y = 8
+		y = 7
 		completion_reward = {
 			DES = {
 				set_technology = { improved_laser_weaponry = 1 }
@@ -1409,7 +1409,7 @@ focus_tree = {
 	focus = {
 		id = bos_hammer
 		icon = GFX_goal_generic_production
-		cost = 8.6
+		cost = 4.3
 		prerequisite = {
 			focus = bos_scribelexicon
 		}
@@ -1425,7 +1425,7 @@ focus_tree = {
 	focus = {
 		id = bos_anvil
 		icon = GFX_goal_generic_walls_focus
-		cost = 8.6
+		cost = 4.3
 		prerequisite = {
 			focus = bos_hammer
 		}
@@ -1440,7 +1440,7 @@ focus_tree = {
 	focus = {
 		id = bos_steel
 		icon = GFX_goal_bos_generic
-		cost = 8.6
+		cost = 4.3
 		prerequisite = {
 			focus = bos_anvil
 		}
