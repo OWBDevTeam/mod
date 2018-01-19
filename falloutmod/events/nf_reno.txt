@@ -180,15 +180,21 @@ country_event = {
 				ruling_party = ruler
 				elections_allowed = no
 			}
+			hidden_effect = {
+				annex_country = { target = NEW transfer_troops = yes }
+				change_tag_from = NEW
+		    }
+			create_faction = masters_army
+		}
 			if = {
 				limit = {
 					TRL = {
 						exists = yes
 					}	
 				}
-				create_faction = masters_army
 				TRL = {
 				country_event = nf_reno.8
+				}
 				}
 				if = {
 					limit = {
@@ -202,13 +208,7 @@ country_event = {
 					country_event = nf_reno.12
 					}
 				}
-			}
-			
-			hidden_effect = {
-				annex_country = { target = NEW transfer_troops = yes }
-				change_tag_from = NEW
-			}
-		}
+			}	
 	}
 
 }
@@ -351,7 +351,7 @@ country_event = {
 	}
 	
 	option = {
-		name = nf_reno.7.d
+		name = nf_reno.7.e
         
 		ai_chance = {
 			factor = 1
