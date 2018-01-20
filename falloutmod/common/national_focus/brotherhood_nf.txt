@@ -330,6 +330,9 @@ focus_tree = {
 		id = bos_slums
 		icon = GFX_goal_generic_construct_infrastructure
 		cost = 8.6
+		mutually_exclusive - {
+		     focus = bos_strip
+		}
 		prerequisite = {
 			focus = bos_exploresilicon
 			focus = bos_scrapsilicon
@@ -351,6 +354,9 @@ focus_tree = {
 		id = bos_strip
 		icon = GFX_goal_generic_building_focus
 		cost = 8.6
+		mutually_exclusive - {
+		     focus = bos_slums
+		}
 		prerequisite = {
 			focus = bos_scrapsilicon
 			focus = bos_exploresilicon
@@ -1287,6 +1293,7 @@ focus_tree = {
 		y = 6
 		completion_reward = {
 			random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = electricity_generator
 					level = 5
@@ -2338,6 +2345,7 @@ focus_tree = {
 		y = 10
 		completion_reward = {
 			157 = {
+			add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
