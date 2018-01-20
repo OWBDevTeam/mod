@@ -578,45 +578,17 @@ focus_tree = {
 
 	}
 	focus = {
-		id = bos_mojavesignal
-		icon = GFX_goal_bos_the_mojave_signal
-		cost = 8.6
-		prerequisite = {
-			focus = bos_mojavevets
-		}
-		x = 22
-		y = 5
-		completion_reward = {
-			if = {
-				limit = {
-					MOJ = {
-						has_country_leader = { id = 981 }
-					}
-				}
-				country_event = { id = nf_brotherhood.11 }
-			}
-			if = {
-				limit = {
-					MOJ = {
-						has_country_leader = { id = 982 }
-					}
-				}
-				country_event = { id = nf_brotherhood.12 }
-			}
-		}
-	}
-	focus = {
 		id = bos_genius
 		icon = GFX_goal_bos_elijah's_genius
 		cost = 8.6
 		prerequisite = {
-			focus = bos_mojavesignal
+			focus = bos_mojavevets
 		}
 		mutually_exclusive = {
 			focus = bos_hardin
 		}
 		x = 21
-		y = 6
+		y = 5
 		available = {
 			MOJ = {
 				has_country_leader = { id = 981 }
@@ -631,13 +603,13 @@ focus_tree = {
 		icon = GFX_goal_bos_hardin's_tactics
 		cost = 8.6
 		prerequisite = {
-			focus = bos_mojavesignal
+			focus = bos_mojavevets
 		}
 		mutually_exclusive = {
 			focus = bos_genius
 		}
 		x = 23
-		y = 6
+		y = 5
 		available = {
 			MOJ = {
 				has_country_leader = { id = 982 }
@@ -2317,7 +2289,7 @@ focus_tree = {
 		x = 21
 		y = 11
 		completion_reward = {
-			load_oob = sunsetsarsparilla
+			load_oob = bossunsetsarsparilla
 		}
 
 	}
