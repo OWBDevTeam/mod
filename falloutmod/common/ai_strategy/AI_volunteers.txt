@@ -453,13 +453,6 @@ lend_lease_RED = {
 	ai_strategy = { type = support id = "RED" value = 200 }
 }
 
-lend_lease_RID = {
-	enable = { elgible_volunteers_sender = yes RID = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } RID = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "RID" value = 200 }
-	ai_strategy = { type = support id = "RID" value = 200 }
-}
-
 lend_lease_RIP = {
 	enable = { elgible_volunteers_sender = yes RIP = { eligible_volunteers_receiver = yes } }
 	abort = { OR = { NOT = { elgible_volunteers_sender = yes } RIP = { NOT = {  eligible_volunteers_receiver = yes } } } }
