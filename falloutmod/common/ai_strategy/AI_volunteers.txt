@@ -54,13 +54,6 @@ lend_lease_BLP = {
 	ai_strategy = { type = support id = "BLP" value = 200 }
 }
 
-lend_lease_BMT = {
-	enable = { elgible_volunteers_sender = yes BMT = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } BMT = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "BMT" value = 200 }
-	ai_strategy = { type = support id = "BMT" value = 200 }
-}
-
 lend_lease_BOS = {
 	enable = { elgible_volunteers_sender = yes BOS = { eligible_volunteers_receiver = yes } }
 	abort = { OR = { NOT = { elgible_volunteers_sender = yes } BOS = { NOT = {  eligible_volunteers_receiver = yes } } } }
@@ -108,13 +101,6 @@ lend_lease_CHE = {
 	abort = { OR = { NOT = { elgible_volunteers_sender = yes } CHE = { NOT = {  eligible_volunteers_receiver = yes } } } }
 	ai_strategy = { type = send_volunteers_desire id = "CHE" value = 200 }
 	ai_strategy = { type = support id = "CHE" value = 200 }
-}
-
-lend_lease_CHY = {
-	enable = { elgible_volunteers_sender = yes CHY = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } CHY = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "CHY" value = 200 }
-	ai_strategy = { type = support id = "CHY" value = 200 }
 }
 
 lend_lease_CLI = {
@@ -327,13 +313,6 @@ lend_lease_LON = {
 	ai_strategy = { type = support id = "LON" value = 200 }
 }
 
-lend_lease_LOS = {
-	enable = { elgible_volunteers_sender = yes LOS = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } LOS = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "LOS" value = 200 }
-	ai_strategy = { type = support id = "LOS" value = 200 }
-}
-
 lend_lease_MDT = {
 	enable = { elgible_volunteers_sender = yes MDT = { eligible_volunteers_receiver = yes } }
 	abort = { OR = { NOT = { elgible_volunteers_sender = yes } MDT = { NOT = {  eligible_volunteers_receiver = yes } } } }
@@ -369,13 +348,6 @@ lend_lease_MUR = {
 	ai_strategy = { type = support id = "MUR" value = 200 }
 }
 
-lend_lease_NAM = {
-	enable = { elgible_volunteers_sender = yes NAM = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } NAM = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "NAM" value = 200 }
-	ai_strategy = { type = support id = "NAM" value = 200 }
-}
-
 lend_lease_NAV = {
 	enable = { elgible_volunteers_sender = yes NAV = { eligible_volunteers_receiver = yes } }
 	abort = { OR = { NOT = { elgible_volunteers_sender = yes } NAV = { NOT = {  eligible_volunteers_receiver = yes } } } }
@@ -404,32 +376,11 @@ lend_lease_NCR = {
 	ai_strategy = { type = support id = "NCR" value = 200 }
 }
 
-lend_lease_NCS = {
-	enable = { elgible_volunteers_sender = yes NCS = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } NCS = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "NCS" value = 200 }
-	ai_strategy = { type = support id = "NCS" value = 200 }
-}
-
 lend_lease_NEW = {
 	enable = { elgible_volunteers_sender = yes NEW = { eligible_volunteers_receiver = yes } }
 	abort = { OR = { NOT = { elgible_volunteers_sender = yes } NEW = { NOT = {  eligible_volunteers_receiver = yes } } } }
 	ai_strategy = { type = send_volunteers_desire id = "NEW" value = 200 }
 	ai_strategy = { type = support id = "NEW" value = 200 }
-}
-
-lend_lease_ORG = {
-	enable = { elgible_volunteers_sender = yes ORG = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } ORG = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "ORG" value = 200 }
-	ai_strategy = { type = support id = "ORG" value = 200 }
-}
-
-lend_lease_ORI = {
-	enable = { elgible_volunteers_sender = yes ORI = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } ORI = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "ORI" value = 200 }
-	ai_strategy = { type = support id = "ORI" value = 200 }
 }
 
 lend_lease_PAL = {
@@ -523,25 +474,11 @@ lend_lease_RPD = {
 	ai_strategy = { type = support id = "RPD" value = 200 }
 }
 
-lend_lease_RST = {
-	enable = { elgible_volunteers_sender = yes RST = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } RST = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "RST" value = 200 }
-	ai_strategy = { type = support id = "RST" value = 200 }
-}
-
 lend_lease_RUB = {
 	enable = { elgible_volunteers_sender = yes RUB = { eligible_volunteers_receiver = yes } }
 	abort = { OR = { NOT = { elgible_volunteers_sender = yes } RUB = { NOT = {  eligible_volunteers_receiver = yes } } } }
 	ai_strategy = { type = send_volunteers_desire id = "RUB" value = 200 }
 	ai_strategy = { type = support id = "RUB" value = 200 }
-}
-
-lend_lease_RVR = {
-	enable = { elgible_volunteers_sender = yes RVR = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } RVR = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "RVR" value = 200 }
-	ai_strategy = { type = support id = "RVR" value = 200 }
 }
 
 lend_lease_SCO = {
@@ -586,13 +523,6 @@ lend_lease_SOR = {
 	ai_strategy = { type = support id = "SOR" value = 200 }
 }
 
-lend_lease_SPR = {
-	enable = { elgible_volunteers_sender = yes SPR = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } SPR = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "SPR" value = 200 }
-	ai_strategy = { type = support id = "SPR" value = 200 }
-}
-
 lend_lease_TAR = {
 	enable = { elgible_volunteers_sender = yes TAR = { eligible_volunteers_receiver = yes } }
 	abort = { OR = { NOT = { elgible_volunteers_sender = yes } TAR = { NOT = {  eligible_volunteers_receiver = yes } } } }
@@ -633,13 +563,6 @@ lend_lease_TOC = {
 	abort = { OR = { NOT = { elgible_volunteers_sender = yes } TOC = { NOT = {  eligible_volunteers_receiver = yes } } } }
 	ai_strategy = { type = send_volunteers_desire id = "TOC" value = 200 }
 	ai_strategy = { type = support id = "TOC" value = 200 }
-}
-
-lend_lease_TOI = {
-	enable = { elgible_volunteers_sender = yes TOI = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } TOI = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "TOI" value = 200 }
-	ai_strategy = { type = support id = "TOI" value = 200 }
 }
 
 lend_lease_TON = {
@@ -747,13 +670,6 @@ lend_lease_YAK = {
 	ai_strategy = { type = support id = "YAK" value = 200 }
 }
 
-lend_lease_YEL = {
-	enable = { elgible_volunteers_sender = yes YEL = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } YEL = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "YEL" value = 200 }
-	ai_strategy = { type = support id = "YEL" value = 200 }
-}
-
 lend_lease_YKZ = {
 	enable = { elgible_volunteers_sender = yes YKZ = { eligible_volunteers_receiver = yes } }
 	abort = { OR = { NOT = { elgible_volunteers_sender = yes } YKZ = { NOT = {  eligible_volunteers_receiver = yes } } } }
@@ -766,18 +682,4 @@ lend_lease_YMP = {
 	abort = { OR = { NOT = { elgible_volunteers_sender = yes } YMP = { NOT = {  eligible_volunteers_receiver = yes } } } }
 	ai_strategy = { type = send_volunteers_desire id = "YMP" value = 200 }
 	ai_strategy = { type = support id = "YMP" value = 200 }
-}
-
-lend_lease_ZDW = {
-	enable = { elgible_volunteers_sender = yes ZDW = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } ZDW = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "ZDW" value = 200 }
-	ai_strategy = { type = support id = "ZDW" value = 200 }
-}
-
-lend_lease_ZIP = {
-	enable = { elgible_volunteers_sender = yes ZIP = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } ZIP = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "ZIP" value = 200 }
-	ai_strategy = { type = support id = "ZIP" value = 200 }
 }
