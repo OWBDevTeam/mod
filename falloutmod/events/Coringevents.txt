@@ -3,27 +3,25 @@ add_namespace = coring_event
 country_event = {
 	id = coring_event.1
 	fire_only_once = no
-	mean_time_to_happen = { days = 1 }
-	hidden = no
-	
+	hidden = yes
+	is_triggered_only = yes
 	title = coring_event.1.t
 	desc = coring_event.1.d
 	
-	trigger = {
-		any_owned_state = {
-			has_state_flag = {
-				flag = coring_state
-				days > 100
-			}
-		}
-	}
-	option = {
-		name = coring_event.1.a
+	#trigger = {
+	#	any_owned_state = {
+	#		has_state_flag = {
+	#			flag = coring_state
+	#			days > 100
+	#		}
+	#	}
+	#}
+	immediate = {	
 		every_owned_state = {
 			limit = {
 				has_state_flag = {
 					flag = coring_state
-					days > 100
+					days > 99
 				}
 			}
 			add_core_of = FROM
@@ -34,49 +32,78 @@ country_event = {
 		}
 		remove_ideas = coring_state
 		remove_ideas = core_state
+		# recall the autocoring check event
+		if = {
+			limit = {
+				has_idea = enable_autocoring
+			}
+			country_event = { id = coring_event.2 days = 1 }
+		}
+	}
+	option = {
+		name = coring_event.1.a
+		
 	}
 }
 
-# AI event forces them to core
+# Check for available cores and start coring if so
 country_event = {
 	id = coring_event.2
 	fire_only_once = no
-	mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
 	hidden = yes
 	
 	title = coring_event.2.t
 	desc = coring_event.2.d
 	
-	trigger = {
-			OR = {
-				is_ai = yes
-				has_idea = enable_autocoring
+	#trigger = {
+	#		OR = {
+	#			is_ai = yes
+	#			has_idea = enable_autocoring
+	#		}
+	#		is_major = no
+	#		NOT = {
+	#			OR = {
+	#				has_idea = coring_state
+	#				has_idea = core_state
+	#			}
+	#		}
+	#		any_owned_state = {
+	#			is_controlled_by = ROOT
+	#			NOT = {
+	#				is_core_of = ROOT
+	#			}
+	#		}
+	#}
+	immediate = {
+		if = {
+			limit = {
+				is_major = no
+				has_civil_war = no
+                NOT = {
+                    has_idea = coring_state
+                }
+                any_owned_state = {
+                    AND = {
+                        is_controlled_by = ROOT
+                        NOT = {
+                            is_core_of = ROOT
+                        }
+                    }
+                }
 			}
-			is_major = no
-			NOT = {
-				OR = {
-				has_idea = coring_state
-				has_idea = core_state
-				}
-			}
-			any_owned_state = {
-				is_controlled_by = ROOT
+		}
+		add_ideas = core_state
+		add_ideas = coring_state
+		random_owned_controlled_state = {
+			limit = {
 				NOT = {
 					is_core_of = ROOT
 				}
 			}
-	}
-	immediate = {
-		add_ideas = core_state
-			add_ideas = coring_state
-			random_owned_controlled_state = {
-				limit = {
-					NOT = {
-						is_core_of = ROOT
-					}
-				}
-				set_state_flag = coring_state
-			}
+			set_state_flag = coring_state
+		}
+		country_event = { id = coring_event.1 days = 100 }
 	}
 	option = {
 		name =coring_event.2.a
