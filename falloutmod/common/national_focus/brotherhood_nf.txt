@@ -2054,57 +2054,6 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = bos_cathedral
-		icon = GFX_goal_generic_large_scale_normal_industry_focus
-		cost = 8.6
-		prerequisite = {
-			focus = bos_victoryordeath
-		}
-		x = 8
-		y = 12
-		completion_reward = {
-			132 = {
-				add_building_construction = {
-					type = bunker
-					level = 4
-					province = {
-						all_provinces = yes
-					}
-					instant_build = yes
-				}
-			}
-		}
-
-	}
-	focus = {
-		id = bos_steelgiants
-		icon = GFX_goal_generic_secret_weapon
-		cost = 8.6
-		prerequisite = {
-			focus = bos_cathedral
-		}
-		x = 8
-		y = 13
-		completion_reward = {
-			load_oob = steelgiants
-		}
-
-	}
-	focus = {
-		id = bos_tactics
-		icon = GFX_goal_bos_generic_infantry
-		cost = 8.6
-		prerequisite = {
-			focus = bos_steelgiants
-		}
-		x = 8
-		y = 14
-		completion_reward = {
-			add_ideas = newtactics
-		}
-
-	}
-	focus = {
 		id = bos_oldbonds
 		icon = GFX_goal_bos_ncr_diplomacy
 		cost = 8.6
@@ -2239,6 +2188,9 @@ focus_tree = {
 		x = 16
 		y = 11
 		completion_reward = {
+		BOS = {
+			declare_war_on = { target = SHI type = annex_everything }
+		}	
 			SHI = {
 				every_owned_state = { 
 					add_core_of = BOS
