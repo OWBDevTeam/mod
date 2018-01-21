@@ -19,10 +19,7 @@ country_event = {
 	immediate = {	
 		every_owned_state = {
 			limit = {
-				has_state_flag = {
-					flag = coring_state
-					days > 99
-				}
+				has_state_flag = coring_state
 			}
 			add_core_of = FROM
 			hidden_effect = {
@@ -37,7 +34,7 @@ country_event = {
 			limit = {
 				has_idea = enable_autocoring
 			}
-			country_event = coring_event.2
+			country_event = { id = coring_event.2 days = 1 }
 		}
 	}
 	option = {
