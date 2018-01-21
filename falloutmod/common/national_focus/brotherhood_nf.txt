@@ -712,34 +712,6 @@ focus_tree = {
 
 	}
 	focus = {
-		id = bos_microfusion
-		icon = GFX_goal_poland_goal
-		cost = 8.6
-		prerequisite = {
-			focus = bos_blueprints
-		}
-		x = 27
-		y = 5
-		completion_reward = {
-			add_ideas = microfusion
-		}
-
-	}
-	focus = {
-		id = bos_focusedlens
-		icon = GFX_goal_generic_common_energy_weapons_focus
-		cost = 8.6
-		prerequisite = {
-			focus = bos_microfusion
-		}
-		x = 27
-		y = 6
-		completion_reward = {
-			add_ideas = focuslens
-		}
-
-	}
-	focus = {
 		id = bos_reactionchambers
 		icon = GFX_goal_generic_occupy_start_war
 		cost = 8.6
@@ -747,9 +719,9 @@ focus_tree = {
 			focus = bos_focusedlens
 		}
 		x = 27
-		y = 7
+		y = 5
 		completion_reward = {
-			add_ideas = reactionchambers
+			add_ideas = laserfocusfoundry
 		}
 
 	}
@@ -764,7 +736,7 @@ focus_tree = {
 			focus = bos_oldworld
 		}
 		x = 25
-		y = 8
+		y = 6
 		completion_reward = {
 			add_ideas = bossimpledesigns
 		}
@@ -781,23 +753,9 @@ focus_tree = {
 			focus = bos_simplified
 		}
 		x = 27
-		y = 8
+		y = 6
 		completion_reward = {
 			add_ideas = bosoldworldfocuses
-		}
-
-	}
-	focus = {
-		id = bos_allinone
-		icon = GFX_goal_generic_production2
-		cost = 8.6
-		prerequisite = {
-			focus = bos_simplified
-		}
-		x = 25
-		y = 9
-		completion_reward = {
-			add_ideas = cellsinone
 		}
 
 	}
@@ -807,10 +765,10 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = bos_oldworld
-			focus = bos_allinone
+			focus = bos_simplified
 		}
-		x = 27
-		y = 10
+		x = 26
+		y = 7
 		completion_reward = {
 			add_ideas = powermanagement
 		}
@@ -829,7 +787,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = land_doc_bonus
 				bonus = 0.5
-				uses = 1
+				uses = 2
 				category = land_doctrine
 			}
 		}
@@ -848,7 +806,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = land_doc_bonus
 				bonus = 0.5
-				uses = 1
+				uses = 2
 				category = land_doctrine
 			}
 		}
@@ -867,7 +825,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = land_doc_bonus
 				bonus = 0.5
-				uses = 4
+				uses = 2
 				category = land_doctrine
 			}
 		}
@@ -887,34 +845,6 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = bos_servos
-		icon = GFX_goal_generic_production2
-		cost = 8.6
-		prerequisite = {
-			focus = bos_scribemaintenance
-		}
-		x = 31
-		y = 6
-		completion_reward = {
-			add_ideas = servoupkeep
-		}
-
-	}
-	focus = {
-		id = bos_alloys
-		icon = GFX_goal_generic_construction
-		cost = 8.6
-		prerequisite = {
-			focus = bos_servos
-		}
-		x = 31
-		y = 7
-		completion_reward = {
-			add_ideas = alloyfoundries
-		}
-
-	}
-	focus = {
 		id = bos_superioralloys
 		icon = GFX_goal_generic_build_tank
 		cost = 8.6
@@ -925,7 +855,7 @@ focus_tree = {
 			focus = bos_scraprefinement
 		}
 		x = 31
-		y = 8
+		y = 5
 		completion_reward = {
 			add_ideas = superioralloys
 		}
@@ -2356,23 +2286,9 @@ focus_tree = {
 			focus = bos_superioralloys
 		}
 		x = 33
-		y = 8
+		y = 5
 		completion_reward = {
 			add_ideas = scraprefinement
-		}
-
-	}
-	focus = {
-		id = bos_industrialservos
-		icon = GFX_goal_generic_production2
-		cost = 8.6
-		prerequisite = {
-			focus = bos_scraprefinement
-		}
-		x = 33
-		y = 9
-		completion_reward = {
-			add_ideas = industrialservos
 		}
 
 	}
@@ -2382,10 +2298,10 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = bos_superioralloys
-			focus = bos_industrialservos
+			focus = bos_scraprefinement
 		}
-		x = 31
-		y = 10
+		x = 32
+		y = 6
 		completion_reward = {
 			add_ideas = alloyconstruct
 		}
