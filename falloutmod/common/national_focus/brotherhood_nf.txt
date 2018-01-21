@@ -738,7 +738,10 @@ focus_tree = {
 		x = 25
 		y = 6
 		completion_reward = {
-			add_ideas = bossimpledesigns
+			swap_ideas = {
+				remove_idea = laserfocusfoundry
+				add_idea = bossimpledesigns
+			}
 		}
 
 	}
@@ -755,7 +758,10 @@ focus_tree = {
 		x = 27
 		y = 6
 		completion_reward = {
-			add_ideas = bosoldworldfocuses
+			swap_ideas = {
+				remove_idea = laserfocusfoundry
+				add_idea = bosoldworldfocuses
+			}
 		}
 
 	}
@@ -849,7 +855,7 @@ focus_tree = {
 		icon = GFX_goal_generic_build_tank
 		cost = 8.6
 		prerequisite = {
-			focus = bos_alloys
+			focus = bos_scribemaintenance
 		}
 		mutually_exclusive = {
 			focus = bos_scraprefinement
@@ -857,7 +863,10 @@ focus_tree = {
 		x = 31
 		y = 6
 		completion_reward = {
-			add_ideas = superioralloys
+			swap_ideas = {
+				remove_idea = maintenanceroutines
+				add_idea = superioralloys
+			}
 		}
 
 	}
@@ -2278,7 +2287,7 @@ focus_tree = {
 		icon = GFX_goal_anti_comintern_pact
 		cost = 8.6
 		prerequisite = {
-			focus = bos_alloys
+			focus = bos_scribemaintenance
 		}
 		mutually_exclusive = {
 			focus = bos_superioralloys
@@ -2286,7 +2295,10 @@ focus_tree = {
 		x = 33
 		y = 6
 		completion_reward = {
-			add_ideas = scraprefinement
+			swap_ideas = {
+				remove_idea = maintenanceroutines
+				add_idea = scraprefinement
+			}
 		}
 
 	}
