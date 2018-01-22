@@ -503,7 +503,7 @@ country_event = { #Demand The Bay
 	option = {
 		name = nf_brotherhood.22.a
 		
-		SHI = { country_event = { id = nf_brotherhood.23 }}
+		NCR = { country_event = { id = nf_brotherhood.23 }}
 	}
 	
 }
@@ -520,11 +520,16 @@ country_event = {
 	option = {
 		name = nf_brotherhood.23.a #Give the BOS the bay
 		
+		BOS = { set_state_owner = 511 }
+		BOS = { set_state_controller = 511 }
 		BOS = {
-			annex_country = {
-				target = SHI
-			}
+		add_state_core = 511
 		}
+		
+		BOS = {
+		country_event = { id = nf_brotherhood.38 }
+		}
+	
 	}
 	
 	option = {
@@ -545,19 +550,11 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = nf_brotherhood.24.a #Declare war for the Bay
+		name = nf_brotherhood.24.a #NCR Refused giving the Bay
 
-		declare_war_on = {
-			target = SHI
-			type = brotherhood_tech_war
-		}
+		BOS = {add_opinion_modifier = { target = NCR modifier = brotherhoodassault }
 	}
-	
-	option = {
-		name = nf_brotherhood.24.b #Back down
-	
 	}
-	
 }
 
 country_event = { #Victory or Death
@@ -899,6 +896,23 @@ country_event = {
 		SHI = {add_opinion_modifier = { target = BOS modifier = shihatesbos }
         }
       }
-	}	
+	}
+country_event = {
+
+	id = nf_brotherhood.38
+	title = nf_brotherhood.38.t
+	desc = nf_brotherhood.38.desc
+	picture = GFX_report_event_fascist_speech
+	
+	is_triggered_only = yes
+
+	option = {
+		name = nf_brotherhood.38.a #NCR gave us the Bay
+
+		BOS = {add_opinion_modifier = { target = NCR modifier = ncrassault }
+	}
+	
+	
+}	
 }
 
