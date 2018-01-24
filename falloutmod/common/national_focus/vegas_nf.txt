@@ -99,6 +99,9 @@ focus_tree = {
 		id = veg_king
 		icon = GFX_goal_VEG_The_King
 		cost = 8.6
+		available = {
+		has_idea = kings
+		}
 		prerequisite = {
 			focus = veg_newmanagement
 		}
@@ -167,6 +170,9 @@ focus_tree = {
 		id = veg_joker
 		icon = GFX_goal_VEG_The_Joker
 		cost = 8.6
+		available = {
+		has_idea = chairmen
+		}
 		prerequisite = {
 			focus = veg_newmanagement
 		}
@@ -232,6 +238,7 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = veg_topsthugs
+			focus = veg_ultraluxethugs
 		}
 		x = 19
 		y = 7
@@ -269,6 +276,7 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = veg_topsthugs
+			focus = veg_gomorrahthugs
 		}
 		x = 23
 		y = 7
@@ -283,13 +291,9 @@ focus_tree = {
 		icon = GFX_goal_VEG_Family_Compensation
 		cost = 8.6
 		prerequisite = {
-			focus = veg_gomorrahthugs
-		}
-		prerequisite = {
 			focus = veg_topsthugs
-		}
-		prerequisite = {
 			focus = veg_ultraluxethugs
+			focus = veg_gomorrahthugs
 		}
 		x = 21
 		y = 8
@@ -395,6 +399,9 @@ focus_tree = {
 		id = veg_whitegloves
 		icon = GFX_goal_VEG_The_White_Glove_Society
 		cost = 8.6
+		available = {
+		has_idea = whitegloves
+		}
 		prerequisite = {
 			focus = veg_ultraluxe
 		}
@@ -474,6 +481,9 @@ focus_tree = {
 		id = veg_khaganate
 		icon = GFX_goal_VEG_The_Khaganate
 		cost = 8.6
+		available = {
+		has_idea = khaganate
+		}
 		prerequisite = {
 			focus = veg_ultraluxe
 		}
@@ -546,6 +556,9 @@ focus_tree = {
 		id = veg_chairmen
 		icon = GFX_goal_VEG_The_Chairmen
 		cost = 8.6
+		available = {
+		has_idea = chairmen
+		}
 		prerequisite = {
 			focus = veg_tops
 		}
@@ -602,6 +615,9 @@ focus_tree = {
 		id = veg_kings
 		icon = GFX_goal_VEG_The_Kings
 		cost = 8.6
+		available = {
+		has_idea = kings
+		}
 		prerequisite = {
 			focus = veg_tops
 		}
@@ -702,6 +718,9 @@ focus_tree = {
 		id = veg_consig
 		icon = GFX_goal_VEG_The_Consiglieres
 		cost = 8.6
+		available = {
+		has_idea = consigs
+		}
 		prerequisite = {
 			focus = veg_gomorrah
 		}
@@ -1547,6 +1566,7 @@ focus_tree = {
 		y = 13
 		completion_reward = {
 			add_ideas = trueindependence
+			remove_ideas = potentialcoup
 		}
 
 	}
@@ -1664,6 +1684,7 @@ focus_tree = {
 		y = 12
 		completion_reward = {
 			add_ideas = brightlights
+			remove_ideas = potentialcoup
 		}
 
 	}
@@ -1715,6 +1736,9 @@ focus_tree = {
 		id = veg_omertas
 		icon = GFX_goal_VEG_The_Omertas
 		cost = 8.6
+		available = {
+		has_idea = omertas
+		}
 		prerequisite = {
 			focus = veg_gomorrah
 		}
