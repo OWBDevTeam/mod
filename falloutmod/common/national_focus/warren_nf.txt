@@ -1085,6 +1085,121 @@ focus_tree = {
 		available = {
 			always = no
 		}
+		completion_reward = {
+			add_ideas = warren_betty_1
+			if = {
+				limit = {
+					TRL = {
+						has_tech = militia_training
+					}
+					NOT = {
+						TRL = {
+							has_tech = warrior_training
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						warrior_training = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						TRL = {
+							has_tech = militia_training
+						}
+					}
+					
+				}
+				TRL = {
+					set_technology = {
+						militia_training = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					TRL = {
+						has_tech = warrior_training
+					}
+					NOT = {
+						TRL = {
+							has_tech = guerilla_tactics
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						guerilla_tactics = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					TRL = {
+						has_tech = guerilla_tactics
+					}
+					NOT = {
+						TRL = {
+							has_tech = platoon_training
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						platoon_training = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					TRL = {
+						has_tech = oral_instruction
+					}
+					NOT = {
+						TRL = {
+							has_tech = traditional_instruction
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						traditional_instruction = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					TRL = {
+						has_tech = traditional_instruction
+					}
+					NOT = {
+						TRL = {
+							has_tech = physical_blueprints
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						physical_blueprints = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = traditional_instruction
+					}
+				}
+				TRL = {
+					set_technology = {
+						traditional_instruction = 1
+					}
+				}
+			}
+		}
 	}
 	focus = {
 		id = armorrepurposing
@@ -1095,7 +1210,187 @@ focus_tree = {
 		}
 		x = 50
 		y = 7
-
+		completion_reward = {
+			if = {
+				limit = {
+					TRL = {
+						has_tech = militia_training
+					}
+					NOT = {
+						TRL = {
+							has_tech = warrior_training
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						warrior_training = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						TRL = {
+							has_tech = militia_training
+						}
+					}
+					
+				}
+				TRL = {
+					set_technology = {
+						militia_training = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					TRL = {
+						has_tech = warrior_training
+					}
+					NOT = {
+						TRL = {
+							has_tech = guerilla_tactics
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						guerilla_tactics = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					TRL = {
+						has_tech = guerilla_tactics
+					}
+					NOT = {
+						TRL = {
+							has_tech = platoon_training
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						platoon_training = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					TRL = {
+						has_tech = platoon_training
+					}
+					NOT = {
+						TRL = {
+							has_tech = basic_drill
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						basic_drill = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						TRL = {
+							has_tech = woodworking
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						woodworking = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					TRL = {
+						has_tech = woodworking
+					}
+					NOT = {
+						TRL = {
+							has_tech = clay_working
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						clay_working = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					TRL = {
+						has_tech = clay_working
+					}
+					NOT = {
+						TRL = {
+							has_tech = metal_working
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						metal_working = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						TRL = {
+							has_tech = leather_armour
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						leather_armour = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					TRL = {
+						has_tech = leather_armour
+					}
+					NOT = {
+						TRL = {
+							has_tech = metal_armour
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						metal_armour = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					TRL = {
+						has_tech = metal_armour
+					}
+					NOT = {
+						TRL = {
+							has_tech = combat_armour
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						combat_armour = 1
+					}
+				}
+			}
+		}
 	}
 	focus = {
 		id = causeoftrouble
@@ -1187,6 +1482,12 @@ focus_tree = {
 		}
 		x = 49
 		y = 9
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = warren_betty_1
+				add_idea = warren_betty_2
+			}
+		}
 
 	}
 	focus = {
@@ -1198,6 +1499,16 @@ focus_tree = {
 		}
 		x = 51
 		y = 9
+		completion_reward = {
+			351 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 
 	}
 	focus = {
@@ -1212,7 +1523,9 @@ focus_tree = {
 		}
 		x = 50
 		y = 10
-
+		completion_reward = {
+			load_oob = warren_brotherhood
+		}
 	}
 	focus = {
 		id = drumswest
@@ -1977,7 +2290,7 @@ focus_tree = {
 		x = 6
 		y = 15
 		completion_reward = {
-			load_oob = warren_woods_mosnter
+			load_oob = warren_woods_monster
 		}
 	}
 	focus = {
@@ -2045,7 +2358,9 @@ focus_tree = {
 		}
 		x = 23
 		y = 10
-
+		completion_reward = {
+			load_oob = warren_goliath
+		}
 	}
 	focus = {
 		id = forcedroads
@@ -2056,7 +2371,9 @@ focus_tree = {
 		}
 		x = 29
 		y = 8
-
+		completion_reward = {
+			add_ideas = warren_forcedroads
+		}
 	}
 	focus = {
 		id = slaveworkshop
@@ -2067,6 +2384,15 @@ focus_tree = {
 		}
 		x = 27
 		y = 9
-
+		completion_reward = {
+			add_ideas = warren_slave_workshops
+			235 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 }
