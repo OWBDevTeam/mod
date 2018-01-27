@@ -1709,14 +1709,26 @@ focus_tree = {
 				limit = {
 					has_global_flag = nevadapact
 				}
-				DES = {
-					add_to_faction = VEG
+				if = {
+					limit = {
+						NEW = {
+							is_faction_leader = yes
+						}
+					}
+					NEW = {
+						add_to_faction = VEG
+					}
 				}
-				NEW = {
-					add_to_faction = VEG
-				}
-				VLT = {
-					add_to_faction = VEG
+				
+				if = {
+					limit = {
+						DES = {
+							is_faction_leader = yes
+						}
+					}
+					DES = {
+						add_to_faction = VEG
+					}
 				}
 			}	
 			
