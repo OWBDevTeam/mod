@@ -63,6 +63,7 @@ country_event = {
 			target = NCN
 			type = annex_everything
 		}
+		
 	}
     
     # Refuse
@@ -233,6 +234,10 @@ country_event = {
 			factor = 1.5
 			has_war_with = NCR
 		}
+	}
+	
+	immediate = {
+		set_country_flag = legion_had_civil_war
 	}
 	# stay as Lanius
 	option = {
@@ -477,7 +482,7 @@ country_event = {
 					intellectuals = { popularity = 35 }
 					ruler = { popularity = 50 }
 				}
-				ruling_party = ruler
+				ruling_party = intellectuals
 				elections_allowed = no
 			}
 			
@@ -487,7 +492,6 @@ country_event = {
 				set_technology = {
 					powered_weaponry = 1
 					scientific_civilization = 1
-					improved_laser_weaponry = 1
 					power_armour = 1
 					securitron_tech = 1
 				}
@@ -555,8 +559,7 @@ country_event = {
 			limit = {
 				original_tag = CES
 				has_government = intellectuals
-			}
-			change_tag_from = CES
+			} 
 			set_research_slots = 4
 			set_politics = {
 				parties = {
@@ -565,7 +568,7 @@ country_event = {
 					intellectuals = { popularity = 35 }
 					ruler = { popularity = 50 }
 				}
-				ruling_party = ruler
+				ruling_party = intellectuals
 				elections_allowed = no
 			}
 			
@@ -575,12 +578,13 @@ country_event = {
 				set_technology = {
 					powered_weaponry = 1
 					scientific_civilization = 1
-					improved_laser_weaponry = 1
 					power_armour = 1
 					securitron_tech = 1
 				}
 				load_oob = brotherhoodofmars
 			}
+			
+			change_tag_from = CES
 		}
 		hidden_effect = {
 			every_owned_state = {
