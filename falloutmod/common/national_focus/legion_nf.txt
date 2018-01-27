@@ -90,7 +90,7 @@ focus_tree = {
 		x = 3
 		y = 5
 		ai_will_do = {
-			factor = 10
+			factor = 50
 			modifier = {
 				factor = 0
 				has_war = yes
@@ -828,7 +828,7 @@ focus_tree = {
 		}
         available = {
             country_exists = WHT
-			has_completed_focus = ces_war_for_hoover_dam
+			#has_completed_focus = ces_war_for_hoover_dam
         }
 		x = 5
 		y = 9
@@ -1499,7 +1499,7 @@ focus_tree = {
 			NCR = {
 				add_political_power = -60
 			}
-			country_event = { id = nf_legion.5 } # Caesar's Illness
+			#country_event = { id = nf_legion.5 } # Caesar's Illness
 		}
 	}
     #---------------------------
@@ -1832,9 +1832,9 @@ focus_tree = {
 		id = ces_the_lights_of_vegas
 		icon = GFX_goal_generic_war_focus
 		cost = 8.6
-		prerequisite = {
-			focus = ces_poking_the_bear
-		}
+		#prerequisite = {
+		#	focus = ces_poking_the_bear
+		#}
 		available = {
 			VEG = {
 				is_neighbor_of = CES
@@ -2344,12 +2344,12 @@ focus_tree = {
 		id = ces_augustus
 		icon = GFX_goal_generic_ideological_fury_focus
 		cost = 1
-		prerequisite = {
-			focus = ces_poking_the_bear
+		#prerequisite = {
+		#	focus = ces_poking_the_bear
+		#}
+		available = {
+			has_country_flag = legion_had_civil_war
 		}
-        bypass = {
-            has_country_flag = caesar_survived
-        }
 		x = 15
 		y = 15
 		completion_reward = {
