@@ -434,12 +434,17 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.16.a 
+		name = nf_vegas.16.a
 		
+		country_event = { days = 70 id = nf_vegas.19 }
 	}
 	
 	option = {
 		name = nf_vegas.16.b 
+		
+		BOS = {
+		country_event = nf_vegas.20
+		}
 			
 	}
 	
@@ -474,14 +479,85 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.17.a 
+		name = nf_vegas.18.a 
 		
 	}
 	
 	option = {
-		name = nf_vegas.17.b 
+		name = nf_vegas.18.b 
 			
 	}
+	
+}
+#Delayed Delivery#
+country_event = {
+	id = nf_vegas.19
+	title = nf_vegas.19.t
+	desc = nf_vegas.19.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.19.a 
+		
+		limit = {
+		if = {
+		VEG = {
+		has_idea = unstableOS
+		}
+		swap_ideas = { remove_idea = unstableOS add_idea = platinumOS }
+		}
+		}
+		
+		limit = {
+		if = {
+		VEG = {
+		has_idea = stableOS
+		}
+		swap_ideas = { remove_idea = stableOS add_idea = platinumOS }
+		}
+		}
+		
+}
+		
+}
+country_event = {
+	id = nf_vegas.20
+	title = nf_vegas.20.t
+	desc = nf_vegas.20.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.20.a
+		104 = {
+		add_resource = {
+				type = advanced_technology
+				amount = 1
+				}
+		}		
+		VEG = {
+		country_event = { days = 75 id = nf_vegas.19 }
+		}
+	}
+	
+	option = {
+	    name = nf_vegas.20.b
+		
+		104 = {
+		add_resource = {
+				type = advanced_technology
+				amount = 4
+				}
+		}
+        VEG = {
+		country_event = { days = 5 id = nf_vegas.19 }
+		}	
+	}
+	
+}
 	
 }
 	
