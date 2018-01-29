@@ -1,16 +1,136 @@
 ﻿add_namespace = nf_settler
 
-country_event = {
-	id = nf_settler.1
-	title = nf_settler.1.title
+country_event = { #What our Forefathers Found#
+	id = nf_settler.1 
+	title = nf_settler.1.t
 	desc = nf_settler.1.desc
 	picture = GFX_event_generic_settlement_2
 
     is_triggered_only = yes
     
 	option = {
-		name = nf_settler.1.option.a
-        
+		name = nf_settler.1.option.a #Clean Water#
 		
+		add_ideas = settlercleanwater
 	}
+	
+	option = {
+		name = nf_settler.1.option.b #Ruined Military Factories#
+		
+		random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+	}
+	option = {
+		name = nf_settler.1.option.b #Ruined Civilian Factories#
+		
+		random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+	}	
 }
+country_event = { #How we defend ourselves#
+	id = nf_settler.2
+	title = nf_settler.2.t
+	desc = nf_settler.2.desc
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_settler.2.option.a #With Militia#
+		
+		load_oob = settlermilitia
+	}
+	
+	option = {
+		name = nf_settler.2.option.b #With Old World Science#
+		
+		load_oob = settlerprotectron
+	}
+	
+	option = {
+		name = nf_settler.2.option.b #With Mercenaries#
+		
+		load_oob = settlermercenaries
+	}
+}	
+country_event = { #What will we become#
+	id = nf_settler.2
+	title = nf_settler.2.t
+	desc = nf_settler.2.desc
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_settler.2.option.a #Powerful#
+		
+		add_ideas = settlerpowerful
+	}
+	
+	option = {
+		name = nf_settler.2.option.b #Advanced#
+		
+		add_ideas = settleradvanced
+	}
+	
+	option = {
+		name = nf_settler.2.option.b #Wealthy#
+		
+		load_oob = settlerwealthy
+	}	
