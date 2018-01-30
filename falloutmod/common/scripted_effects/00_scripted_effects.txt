@@ -121,11 +121,11 @@ setup_NCR_enclave = {
 	set_politics = {
 		parties = {
 			people = { popularity = 0 }
-			elites = { popularity = 20 }
-			intellectuals = { popularity = 80 }
+			elites = { popularity = 80 }
+			intellectuals = { popularity = 20 }
 			ruler = { popularity = 0 }
 		}
-		ruling_party = intellectuals
+		ruling_party = elites
 		elections_allowed = no
 	}
 	hidden_effect = {
@@ -136,6 +136,18 @@ setup_NCR_enclave = {
 			vertiberd_transport1 = 1
 		}
 		load_oob = enclavecivilwar
+		retire_country_leader = yes 
+		create_country_leader = {
+			name = "Grant C. Hayes"
+			desc = "Hayes_DESC"
+			picture = "gfx/leaders/ENC/Portrait_Hayes.dds"
+			expire = "3000.1.1"
+			ideology = militarist_technocracy
+
+			traits = {
+
+			}
+		}
 	}
 	if = {
 		limit = {

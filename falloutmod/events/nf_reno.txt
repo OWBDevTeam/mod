@@ -115,9 +115,9 @@ country_event = {
 		create_country_leader = {
 			name = "Sergeant Dornan"
 			desc = "Dornan_DESC"
-			picture = "Portrait_Dornan.dds"
+			picture = "ENC\Portrait_Enclave_Generic.dds"
 			expire = "3000.1.1"
-			ideology = ideocracy
+			ideology = militarist_technocracy
 			
 			traits = {
 				
@@ -130,7 +130,7 @@ country_event = {
 				intellectuals = { popularity = 20 }
 				ruler = { popularity = 0 }
 			}
-			ruling_party = intellectuals
+			ruling_party = elites
 			elections_allowed = no
 		}
 		hidden_effect = {
@@ -315,6 +315,12 @@ country_event = {
 		name = nf_reno.7.a
         ai_chance = {
 			factor = 2
+			modifier = {
+				NCR = {
+					is_ai = no
+				}
+				factor = 10
+			}
 		}
 		
 		
@@ -329,6 +335,17 @@ country_event = {
         
 		ai_chance = {
 			factor = 2
+			modifier = {
+				OR = {
+					VLT = {
+						is_ai = no
+					}
+					TRL = {
+						is_ai = no
+					}
+				}
+				factor = 10
+			}
 		}
 		
 		set_politics = {
