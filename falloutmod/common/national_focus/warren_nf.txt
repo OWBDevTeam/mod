@@ -676,7 +676,7 @@ focus_tree = {
 	focus = {
 		id = willwarchief
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 5.00
 		prerequisite = {
 			focus = fourthholotape
 		}
@@ -690,17 +690,22 @@ focus_tree = {
 	focus = {
 		id = pittmancunning
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 5.00
 		prerequisite = {
 			focus = willwarchief
 		}
 		x = 42
 		y = 6
 		available = {
-			always = no
+			has_country_leader = {
+				id = 914
+				ruling_only = yes
+				name = "The First and Pittman"
+			}
 		}
 		completion_reward = {
 			add_ideas = pittman1
+			load_oob = pittmannightkin
 		}
 	}
 	focus = {
@@ -902,14 +907,18 @@ focus_tree = {
 	focus = {
 		id = bonesnarlloyalty
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 5.00
 		prerequisite = {
 			focus = willwarchief
 		}
 		x = 46
 		y = 6
 		available = {
-			always = no
+			has_country_leader = {
+				id = 916
+				ruling_only = yes
+				name = "The First and Bonesnarl"
+			}
 		}
 		completion_reward = {
 			add_ideas = bonesnarl1
@@ -964,7 +973,7 @@ focus_tree = {
 		}
 		available = {
 			TRL = {
-				num_of_civilian_factories > 25
+				num_of_civilian_factories > 12
 			}
 		}
 		x = 45
@@ -993,7 +1002,7 @@ focus_tree = {
 		y = 9
 		available = {
 			TRL = {
-				num_of_military_factories > 25
+				num_of_military_factories > 12
 			}
 		}
 		completion_reward = {
@@ -1076,14 +1085,19 @@ focus_tree = {
 	focus = {
 		id = bettysmight
 		icon = GFX_goal_unknown
-		cost = 10.00
+		cost = 5.00
 		prerequisite = {
 			focus = willwarchief
 		}
 		x = 50
 		y = 6
 		available = {
-			always = no
+			has_country_leader = {
+				id = 915
+				ruling_only = yes
+				name = "The First and Betty"
+			}
+					
 		}
 		completion_reward = {
 			add_ideas = warren_betty_1
@@ -2101,7 +2115,7 @@ focus_tree = {
 			if = {
 				limit = {
 					TRL = {
-						has_tech = support_equipment
+						has_tech = support_weaponry
 					}
 					NOT = {
 						TRL = {
