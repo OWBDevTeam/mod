@@ -1090,6 +1090,40 @@ focus_tree = {
 			if = {
 				limit = {
 					TRL = {
+						has_tech = guerilla_tactics
+					}
+					NOT = {
+						TRL = {
+							has_tech = platoon_training
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						platoon_training = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					TRL = {
+						has_tech = warrior_training
+					}
+					NOT = {
+						TRL = {
+							has_tech = guerilla_tactics
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						guerilla_tactics = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					TRL = {
 						has_tech = militia_training
 					}
 					NOT = {
@@ -1122,37 +1156,21 @@ focus_tree = {
 			if = {
 				limit = {
 					TRL = {
-						has_tech = warrior_training
+						has_tech = traditional_instruction
 					}
 					NOT = {
 						TRL = {
-							has_tech = guerilla_tactics
+							has_tech = physical_blueprints
 						}
 					}
 				}
 				TRL = {
 					set_technology = {
-						guerilla_tactics = 1
+						physical_blueprints = 1
 					}
 				}
 			}
-			if = {
-				limit = {
-					TRL = {
-						has_tech = guerilla_tactics
-					}
-					NOT = {
-						TRL = {
-							has_tech = platoon_training
-						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						platoon_training = 1
-					}
-				}
-			}
+			
 			if = {
 				limit = {
 					TRL = {
@@ -1170,23 +1188,7 @@ focus_tree = {
 					}
 				}
 			}
-			if = {
-				limit = {
-					TRL = {
-						has_tech = traditional_instruction
-					}
-					NOT = {
-						TRL = {
-							has_tech = physical_blueprints
-						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						physical_blueprints = 1
-					}
-				}
-			}
+			
 			if = {
 				limit = {
 					NOT = {
@@ -1214,6 +1216,57 @@ focus_tree = {
 			if = {
 				limit = {
 					TRL = {
+						has_tech = platoon_training
+					}
+					NOT = {
+						TRL = {
+							has_tech = basic_drill
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						basic_drill = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					TRL = {
+						has_tech = guerilla_tactics
+					}
+					NOT = {
+						TRL = {
+							has_tech = platoon_training
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						platoon_training = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					TRL = {
+						has_tech = warrior_training
+					}
+					NOT = {
+						TRL = {
+							has_tech = guerilla_tactics
+						}
+					}
+				}
+				TRL = {
+					set_technology = {
+						guerilla_tactics = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					TRL = {
 						has_tech = militia_training
 					}
 					NOT = {
@@ -1243,68 +1296,25 @@ focus_tree = {
 					}
 				}
 			}
+			
+			
+
+
+			
 			if = {
 				limit = {
 					TRL = {
-						has_tech = warrior_training
+						has_tech = clay_working
 					}
 					NOT = {
 						TRL = {
-							has_tech = guerilla_tactics
+							has_tech = metal_working
 						}
 					}
 				}
 				TRL = {
 					set_technology = {
-						guerilla_tactics = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					TRL = {
-						has_tech = guerilla_tactics
-					}
-					NOT = {
-						TRL = {
-							has_tech = platoon_training
-						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						platoon_training = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					TRL = {
-						has_tech = platoon_training
-					}
-					NOT = {
-						TRL = {
-							has_tech = basic_drill
-						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						basic_drill = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					NOT = {
-						TRL = {
-							has_tech = woodworking
-						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						woodworking = 1
+						metal_working = 1
 					}
 				}
 			}
@@ -1327,32 +1337,32 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					TRL = {
-						has_tech = clay_working
-					}
 					NOT = {
 						TRL = {
-							has_tech = metal_working
+							has_tech = woodworking
 						}
 					}
 				}
 				TRL = {
 					set_technology = {
-						metal_working = 1
+						woodworking = 1
 					}
 				}
 			}
 			if = {
 				limit = {
+					TRL = {
+						has_tech = metal_armour
+					}
 					NOT = {
 						TRL = {
-							has_tech = leather_armour
+							has_tech = combat_armour
 						}
 					}
 				}
 				TRL = {
 					set_technology = {
-						leather_armour = 1
+						combat_armour = 1
 					}
 				}
 			}
@@ -1373,20 +1383,18 @@ focus_tree = {
 					}
 				}
 			}
+			
 			if = {
 				limit = {
-					TRL = {
-						has_tech = metal_armour
-					}
 					NOT = {
 						TRL = {
-							has_tech = combat_armour
+							has_tech = leather_armour
 						}
 					}
 				}
 				TRL = {
 					set_technology = {
-						combat_armour = 1
+						leather_armour = 1
 					}
 				}
 			}
@@ -2079,7 +2087,7 @@ focus_tree = {
 				}
 				TRL = {
 					set_technology = {
-						support_equipment = 1
+						support_weaponry = 1
 					}
 				}
 				add_tech_bonus = {
