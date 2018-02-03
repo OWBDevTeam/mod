@@ -1072,24 +1072,24 @@ focus_tree = {
 		x = 1
 		y = 6
 			available = {
-					NOT = {
-							has_country_leader = {
-									id = 913
-									ruling_only = yes
-									name = "The Brain"
-								}
+				NOT = {
+						has_country_leader = {
+								id = 913
+								ruling_only = yes
+								name = "The Brain"
 						}
+					}
+				if = {
+					has_country_flag = roam80s
 				}
-			TRL = {
-				has_country_flag = roam80s
 			}
-			completion_reward = {
-					give_military_access = EHT
-					diplomatic_relation = {
-							country = EHT
-							relation = non_aggression_pact
-						}
-				}
+		completion_reward = {
+			give_military_access = EHT
+			diplomatic_relation = {
+				country = EHT
+				relation = non_aggression_pact
+			}
+		}
 
 	}
 	focus = {
@@ -1103,10 +1103,9 @@ focus_tree = {
 			focus = vault_80s_roam
 		}
 		available = {
-				or = {
-					has_country_flag = blockade80s
-					has_tech = mutant_access
-				}
+			or = {
+				has_country_flag = blockade80s
+				has_tech = mutant_access
 			}
 		}
 		x = 3
