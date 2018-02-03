@@ -1028,7 +1028,7 @@ focus_tree = {
 		id = vault_80s
 		text = vault_80s
 		icon = GFX_goal_80
-		cost = 8.6
+		cost = 5
 		prerequisite = {
 			focus = vault_tribals
 		}
@@ -1062,7 +1062,7 @@ focus_tree = {
 		id = vault_80s_roam
 		text = vault_80s_roam
 		icon = GFX_goal_generic_generic_diplomatic_focus
-		cost = 8.6
+		cost = 5
 		prerequisite = {
 			focus = vault_80s
 		}
@@ -1080,6 +1080,9 @@ focus_tree = {
 								}
 						}
 				}
+			TRL = {
+				has_country_flag = roam80s
+			}
 			completion_reward = {
 					give_military_access = EHT
 					diplomatic_relation = {
@@ -1098,6 +1101,14 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = vault_80s_roam
+		}
+		available = {
+			hidden = {
+				or = {
+					has_country_flag = blockade80s
+					has_tech = mutant_access
+				}
+			}
 		}
 		x = 3
 		y = 6
@@ -1123,6 +1134,11 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = vault_cyclops_eager
+		}
+		available = {
+			CYC = {
+				exists = no
+			}
 		}
 		x = 1
 		y = 1
