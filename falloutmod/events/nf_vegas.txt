@@ -315,11 +315,8 @@ country_event = {
 	option = {
 		name = nf_vegas.10.a 
 		
-	}
-	
-	option = {
-		name = nf_vegas.10.b 
-			
+		create_corps_commander = { name = "Victor" picture = "GFX_Portrait_Nero.dds" traits = { } skill = 6 }
+		
 	}
 	
 }
@@ -356,11 +353,9 @@ country_event = {
 	option = {
 		name = nf_vegas.12.a 
 		
-	}
-	
-	option = {
-		name = nf_vegas.12.b 
-			
+		set_technology = { anti_personnel_tech = 1 }
+		load_oob = vegaschairmen #DO THE OOB#
+		
 	}
 	
 }
@@ -556,6 +551,29 @@ country_event = {
 		country_event = { days = 5 id = nf_vegas.19 }
 		}	
 	}
+	
+}
+country_event = {
+	id = nf_vegas.21
+	title = nf_vegas.21.t
+	desc = nf_vegas.21.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.21.a
+		
+		MOJ = {
+		declare_war_on = { target = MRA type = annex_everything }
+		add_state_core = 533
+		add_state_core = 272
+		add_state_core = 181
+		add_state_core = 206
+		add_state_core = 419
+		add_state_core = 552
+        }
+   }
 	
 }
 	
