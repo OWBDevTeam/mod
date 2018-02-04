@@ -92,7 +92,9 @@ country_event = {
 	}
 	option = {
 		name = nf_qol.2.b
-		country_event = nf_qol.3
+		BON = {
+			country_event = nf_qol.3
+		}
 	}
 	option = {
 		name = nf_qol.2.c
@@ -129,12 +131,12 @@ country_event = {
 	option = {
 		name = nf_qol.3.a
 		BOS = {
-			declare_war_on = {
-				type = annex_everything
+			add_to_war = {
+				targeted_alliance = BON
 				target = NCR
 			}
-			declare_war_on = {
-				type = annex_everything
+			add_to_war = {
+				targeted_alliance = BON
 				target = BAR
 			}
 			add_to_faction = BON
@@ -156,6 +158,7 @@ country_event = {
 			transfer_state = 51
 			transfer_state = 245	
 		}
+		add_political_power = -100
 	}
 	option = {
 		name = nf_qol.3.b
@@ -202,6 +205,9 @@ country_event = {
 		}
 		add_political_power = -200
 		add_to_faction = BOS
+		every_country = {
+			news_event = nf_qol.6
+		}
 	}
 	option = {
 		name = nf_qol.4.b 
@@ -253,6 +259,15 @@ country_event = {
 			}
 		}
 		
+	}
+}
+news_event = {
+	id = nf_qol.6
+	title = nf_qol.6.t
+	desc = nf_qol.6.d 
+	
+	option = {
+		name = nf_vault_city.6.a 
 	}
 }
 	
