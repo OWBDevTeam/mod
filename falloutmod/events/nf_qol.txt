@@ -1,6 +1,6 @@
 ﻿add_namespace = nf_qol
 
-country_event = {
+country_event = { #Enclave Resurgent
 	id = nf_qol.1
 	title = nf_qol.1.t 
 	desc = nf_qol.1.d 
@@ -17,6 +17,9 @@ country_event = {
 	}
 	option = {
 		name = nf_qol.1.a
+		ai_chance = {
+			factor = 3.0
+		}
 		BOS = {
 			declare_war_on = {
 				type = annex_everything
@@ -26,9 +29,10 @@ country_event = {
 	}
 	option = {
 		name = nf_qol.1.b
+		add_political_power = -60
 	}
 }
-country_event = {
+country_event = { #BOS-NCR Civil War Interaction
 	id = nf_qol.2
 	title = nf_qol.2.t 
 	desc = nf_qol.2.d 
@@ -68,7 +72,6 @@ country_event = {
 				type = annex_everything
 				target = BON
 			}
-			BOS = {
 			transfer_state = 216
 			transfer_state = 474
 			transfer_state = 473
@@ -86,8 +89,10 @@ country_event = {
 			transfer_state = 64
 			transfer_state = 51
 			transfer_state = 245
-			
 		}
+		
+		ai_chance = {
+			factor = 4.0
 		}
 	}
 	option = {
@@ -95,10 +100,21 @@ country_event = {
 		BON = {
 			country_event = nf_qol.3
 		}
+
+		ai_chance = {
+			factor = 3.0
+		}
+
+			
 	}
 	option = {
 		name = nf_qol.2.c
 		add_political_power = -200
+	
+		ai_chance = {
+			factor = 3.0
+		}
+		
 	}
 	option = {
 		name = nf_qol.2.dd
@@ -120,9 +136,14 @@ country_event = {
 				enemy = BON
 			}
 		}
+		
+		ai_chance = {
+			factor = 10.0
+		}
+		
 	}
 }
-country_event = {
+country_event = { #Support the boneyard
 	id = nf_qol.3
 	title = nf_qol.3.t 
 	desc = nf_qol.3.d 
@@ -132,12 +153,11 @@ country_event = {
 		name = nf_qol.3.a
 		BOS = {
 			add_to_war = {
-				targeted_alliance = BON
-				target = NCR
+				enemy = NCR
 			}
 			add_to_war = {
 				targeted_alliance = BON
-				target = BAR
+				enemy = BAR
 			}
 			add_to_faction = BON
 			transfer_state = 216
@@ -159,13 +179,22 @@ country_event = {
 			transfer_state = 245	
 		}
 		add_political_power = -100
+		
+		ai_chance = {
+			factor = 6.0
+		}
+	
 	}
 	option = {
 		name = nf_qol.3.b
 		
+		ai_chance = {
+			factor = 4.0
+		}
+		
 	}
 }
-country_event = {
+country_event = { #Boneyard Resurrects the BOS
 	id = nf_qol.4
 	title = nf_qol.4.t 
 	desc = nf_qol.4.d 
@@ -208,13 +237,18 @@ country_event = {
 		every_country = {
 			news_event = nf_qol.6
 		}
+		
+		ai_chance = {
+			factor = 10.0
+		}
+		
 	}
 	option = {
 		name = nf_qol.4.b 
 		
 	}
 }
-country_event = {
+country_event = { #BOS Unpuppets
 	id = nf_qol.5
 	title = nf_qol.5.t 
 	desc = nf_qol.5.d 
@@ -234,6 +268,9 @@ country_event = {
 	}
 	option = {
 		name = nf_qol.5.a
+		ai_chance = {
+			factor = 7.0
+		}
 		end_puppet = BOS
 		BOS = {
 			transfer_state = 216
@@ -258,14 +295,20 @@ country_event = {
 				type = annex_everything
 			}
 		}
+	}
+	option = {
+		name = nf_qol.5.b 
 		
+		ai_chance = {
+			factor = 3.0
+		}
 	}
 }
-news_event = {
+news_event = { #World Announce that the BOS returned
 	id = nf_qol.6
 	title = nf_qol.6.t
 	desc = nf_qol.6.d 
-	
+	is_triggered_only = yes
 	option = {
 		name = nf_qol.6.a 
 	}
