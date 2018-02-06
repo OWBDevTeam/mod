@@ -212,8 +212,6 @@ focus_tree = {
 		cost = 10.00
 		prerequisite = {
 			focus = guardianwild
-		}
-		prerequisite = {
 			focus = warriorswild
 		}
 		x = 18
@@ -697,11 +695,7 @@ focus_tree = {
 		x = 42
 		y = 6
 		available = {
-			has_country_leader = {
-				id = 914
-				ruling_only = yes
-				name = "The First and Pittman"
-			}
+			has_country_flag = pittman
 		}
 		completion_reward = {
 			add_ideas = pittman1
@@ -914,11 +908,7 @@ focus_tree = {
 		x = 46
 		y = 6
 		available = {
-			has_country_leader = {
-				id = 916
-				ruling_only = yes
-				name = "The First and Bonesnarl"
-			}
+			has_country_flag = bonesnarl
 		}
 		completion_reward = {
 			add_ideas = bonesnarl1
@@ -1092,11 +1082,7 @@ focus_tree = {
 		x = 50
 		y = 6
 		available = {
-			has_country_leader = {
-				id = 915
-				ruling_only = yes
-				name = "The First and Betty"
-			}
+			has_country_flag = betty
 					
 		}
 		completion_reward = {
@@ -1543,6 +1529,16 @@ focus_tree = {
 		prerequisite = {
 			focus = mounthawk
 		}
+		available = {
+			or = {
+				WBH = {
+					is_puppet_of = TRL
+				}
+				WBH = {
+					exists = no
+				}
+			}
+		}
 		x = 50
 		y = 10
 		completion_reward = {
@@ -1630,9 +1626,9 @@ focus_tree = {
 					TRL = {
 						owns_state = 587
 						owns_state = 506
+						owns_state = 449
 						owns_state = 450
-						owns_state = 448
-						owns_state = 490
+						owns_state = 493
 					}
 				}
 			}
@@ -1643,8 +1639,8 @@ focus_tree = {
 			add_state_core = 587
 			add_state_core = 506
 			add_state_core = 450
-			add_state_core = 448
-			add_state_core = 490
+			add_state_core = 449
+			add_state_core = 493
 		}
 	}
 	focus = {
@@ -1874,14 +1870,20 @@ focus_tree = {
 			focus = warhornswest
 		}
 		available = {
-			BPT = {
-				is_puppet_of = TRL
-			}
-			OR = {
-				owns_state = 251
-				owns_state = 600
-				owns_state = 150
-				owns_state = 86
+		or = {
+				if = {
+					BPT = {
+						is_puppet_of = TRL
+					}
+				}
+				if = {
+					TRL = {
+						owns_state = 251
+						owns_state = 600
+						owns_state = 150
+						owns_state = 86
+					}
+				}
 			}
 		}
 		x = 5
@@ -1903,16 +1905,20 @@ focus_tree = {
 		x = 7
 		y = 10
 		available = {
-			OR = {
-				CHE = {
-					is_puppet_of = TRL
+			or = {
+				if = {
+					CHE = {
+						is_puppet_of = TRL
+					}
 				}
-				OR = {
-					owns_state = 426
-					owns_state = 580
-					owns_state = 480
-					owns_state = 121
-					owns_state = 536
+				if = {
+					TRL = {
+						owns_state = 426
+						owns_state = 580
+						owns_state = 480
+						owns_state = 121
+						owns_state = 536
+					}
 				}
 			}
 		}
@@ -1952,14 +1958,18 @@ focus_tree = {
 		y = 11
 		available = {
 			or = {
-				BPT = {
-					is_puppet_of = TRL
+				if = {
+					BPT = {
+						is_puppet_of = TRL
+					}
 				}
-				TRL = {
-					owns_state = 251
-					owns_state = 600
-					owns_state = 150
-					owns_state = 86
+				if = {
+					TRL = {
+						owns_state = 251
+						owns_state = 600
+						owns_state = 150
+						owns_state = 86
+					}
 				}
 			}
 		}
@@ -2004,11 +2014,16 @@ focus_tree = {
 		}
 		available = {
 			or = {
-				CHE = {
-					is_puppet_of = TRL
+				if = {
+					CHE = {
+						is_puppet_of = TRL
+						owns_state = 580
+					}
 				}
-				TRL = {
-					owns_state = 580
+				if = {
+					TRL = {
+						owns_state = 580
+					}
 				}
 			}
 		}
@@ -2191,12 +2206,18 @@ focus_tree = {
 		x = 5
 		y = 13
 		available = {
-			MLT = {
-				is_puppet_of = TRL
-			}
-			OR = {
-				owns_state = 358
-				owns_state = 451
+			or = {
+				if = {
+					MLT = {
+						is_puppet_of = TRL
+					}
+				}
+				if = {
+					TRL = {
+						owns_state = 451
+						owns_state = 358
+					}
+				}
 			}
 		}
 		completion_reward = {
@@ -2215,16 +2236,32 @@ focus_tree = {
 		x = 7
 		y = 13
 		available = {
-			BDT = {
-				is_puppet_of = TRL
+			or = {
+				if = {
+					BDT = {
+						is_puppet_of = TRL
+					}
+				}
+				if = {
+					TRL = {
+						owns_state = 343
+						owns_state = 298
+						owns_state = 155
+						owns_state = 71
+						owns_state = 323
+						owns_state = 29
+					}
+				}
 			}
-			OR = {
-				owns_state = 343
-				owns_state = 298
-				owns_state = 155
-				owns_state = 71
-				owns_state = 323
-				owns_state = 29
+		}
+		completion_reward = {
+			TRL = {
+				add_state_core = 343
+				add_state_core = 298
+				add_state_core = 155
+				add_state_core = 71
+				add_state_core = 323
+				add_state_core = 29
 			}
 		}
 		

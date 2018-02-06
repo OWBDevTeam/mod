@@ -1425,6 +1425,9 @@ focus_tree = {
 		x = 12
 		y = 10
 		completion_reward = {
+		add_state_core = 380
+		add_state_core = 12
+		add_state_core = 106
 			create_wargoal = {
 				type = annex_everything
 				target = FIE
@@ -1442,15 +1445,23 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = veg_raiderend
+			focus = veg_dambusters
 		}
+		
 		bypass = {
 			NOT = {
 				country_exists = MRA
 			}
 		}
 		x = 12
-		y = 11
+		y = 12
 		completion_reward = {
+		add_state_core = 533
+		add_state_core = 272
+		add_state_core = 181
+		add_state_core = 206
+		add_state_core = 419
+		add_state_core = 552
 			create_wargoal = {
 				type = annex_everything
 				target = MRA
@@ -1493,20 +1504,11 @@ focus_tree = {
 			}
 		}
 		x = 14
-		y = 11
+		y = 13
 		completion_reward = {
-			MOJ = {
-				declare_war_on = { 
-					target = MRA
-					type = raider_war
-				}	
-			}
-			
-			add_to_war = {
-				targeted_alliance = MOJ
-				enemy = MRA
-			}
-			
+		MOJ = {
+		country_event = nf_vegas.21
+		}
 		}
 	}
 	focus = {
@@ -1524,7 +1526,7 @@ focus_tree = {
 			people > 0.7
 		}
 		x = 14
-		y = 12
+		y = 14
 		completion_reward = {
 			kill_country_leader = yes
 			set_politics = {
@@ -1548,7 +1550,7 @@ focus_tree = {
 			focus = veg_assassinate
 		}
 		x = 12
-		y = 12
+		y = 14
 		completion_reward = {
 			country_event = nf_vegas.15
 		}
@@ -1563,7 +1565,7 @@ focus_tree = {
 			focus = veg_assassinate
 		}
 		x = 13
-		y = 13
+		y = 15
 		completion_reward = {
 			add_ideas = trueindependence
 			remove_ideas = potentialcoup

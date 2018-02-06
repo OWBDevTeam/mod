@@ -1,0 +1,317 @@
+﻿add_namespace = nf_qol
+
+country_event = { #Enclave Resurgent
+	id = nf_qol.1
+	title = nf_qol.1.t 
+	desc = nf_qol.1.d 
+	is_triggered_only = no
+	trigger = {
+		tag = BOS
+		ENC = {
+			has_war_with = NCR
+		}
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = nf_qol.1.a
+		ai_chance = {
+			factor = 3.0
+		}
+		BOS = {
+			declare_war_on = {
+				type = annex_everything
+				target = ENC
+			}
+		}
+	}
+	option = {
+		name = nf_qol.1.b
+		add_political_power = -60
+	}
+}
+country_event = { #BOS-NCR Civil War Interaction
+	id = nf_qol.2
+	title = nf_qol.2.t 
+	desc = nf_qol.2.d 
+	is_triggered_only = no
+	trigger = {
+		tag = BOS
+		NCR = {
+			has_war_with = BAR
+			has_war_with = ENC
+			has_war_with = BON
+		}
+		BOS = {
+			exists = yes
+		}
+		NOT = {
+			BOS = {
+				is_puppet_of = NCR
+			}
+		}
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = nf_qol.2.a
+		BOS = {
+			declare_war_on = {
+				type = annex_everything
+				target = NCR
+			}
+			declare_war_on = {
+				type = annex_everything
+				target = BAR
+			}
+			declare_war_on = {
+				type = annex_everything
+				target = BON
+			}
+			transfer_state = 216
+			transfer_state = 474
+			transfer_state = 473
+			transfer_state = 132
+			transfer_state = 104
+			transfer_state = 312
+			transfer_state = 606
+			transfer_state = 558
+			transfer_state = 433
+			transfer_state = 357
+			transfer_state = 360
+			transfer_state = 157
+			transfer_state = 70
+			transfer_state = 602
+			transfer_state = 64
+			transfer_state = 51
+			transfer_state = 245
+		}
+		
+		ai_chance = {
+			factor = 4.0
+		}
+	}
+	option = {
+		name = nf_qol.2.b
+		BON = {
+			country_event = nf_qol.3
+		}
+
+		ai_chance = {
+			factor = 3.0
+		}
+
+			
+	}
+	option = {
+		name = nf_qol.2.c
+		add_political_power = -200
+	
+		ai_chance = {
+			factor = 3.0
+		}
+		
+	}
+	option = {
+		name = nf_qol.2.dd
+		trigger = {
+			NCR = {
+				has_completed_focus = ncr_allisgood
+			}
+			BOS = {
+				has_completed_focus = bos_oldbonds 
+			}
+		}
+		BOS = {
+			add_to_war = {
+				targeted_alliance = NCR
+				enemy = BAR
+			}
+			add_to_war = {
+				targeted_alliance = NCR
+				enemy = BON
+			}
+		}
+		
+		ai_chance = {
+			factor = 10.0
+		}
+		
+	}
+}
+country_event = { #Support the boneyard
+	id = nf_qol.3
+	title = nf_qol.3.t 
+	desc = nf_qol.3.d 
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_qol.3.a
+		BOS = {
+			add_to_war = {
+				enemy = NCR
+			}
+			add_to_war = {
+				targeted_alliance = BON
+				enemy = BAR
+			}
+			add_to_faction = BON
+			transfer_state = 216
+			transfer_state = 474
+			transfer_state = 473
+			transfer_state = 132
+			transfer_state = 104
+			transfer_state = 312
+			transfer_state = 606
+			transfer_state = 558
+			transfer_state = 433
+			transfer_state = 357
+			transfer_state = 360
+			transfer_state = 157
+			transfer_state = 70
+			transfer_state = 602
+			transfer_state = 64
+			transfer_state = 51
+			transfer_state = 245	
+		}
+		add_political_power = -100
+		
+		ai_chance = {
+			factor = 6.0
+		}
+	
+	}
+	option = {
+		name = nf_qol.3.b
+		
+		ai_chance = {
+			factor = 4.0
+		}
+		
+	}
+}
+country_event = { #Boneyard Resurrects the BOS
+	id = nf_qol.4
+	title = nf_qol.4.t 
+	desc = nf_qol.4.d 
+	is_triggered_only = no
+	fire_only_once = yes
+	trigger = {
+		tag = BON
+		BOS = {
+			exists = no
+		}
+		BON = {
+			exists = yes
+		}
+	}
+	option = {
+		name = nf_qol.4.a
+		create_faction = "Boneyard Brotherhood"
+		BOS = {
+			transfer_state = 216
+			transfer_state = 474
+			transfer_state = 473
+			transfer_state = 132
+			transfer_state = 104
+			transfer_state = 312
+			transfer_state = 606
+			transfer_state = 558
+			transfer_state = 433
+			transfer_state = 357
+			transfer_state = 360
+			transfer_state = 157
+			transfer_state = 70
+			transfer_state = 602
+			transfer_state = 64
+			transfer_state = 51
+			transfer_state = 245
+			load_oob = boneyardbrotherhood
+		}
+		add_political_power = -200
+		add_to_faction = BOS
+		every_country = {
+			news_event = nf_qol.6
+		}
+		
+		ai_chance = {
+			factor = 10.0
+		}
+		
+	}
+	option = {
+		name = nf_qol.4.b 
+		
+	}
+}
+country_event = { #BOS Unpuppets
+	id = nf_qol.5
+	title = nf_qol.5.t 
+	desc = nf_qol.5.d 
+	is_triggered_only = no
+	fire_only_once = yes
+	trigger = {
+		tag = NCR
+		BOS = {
+			is_puppet_of = NCR
+		}
+		BON = {
+			exists = yes
+		}
+		BAR = {
+			exists = yes
+		}
+	}
+	option = {
+		name = nf_qol.5.a
+		ai_chance = {
+			factor = 7.0
+		}
+		end_puppet = BOS
+		BOS = {
+			transfer_state = 216
+			transfer_state = 474
+			transfer_state = 473
+			transfer_state = 132
+			transfer_state = 104
+			transfer_state = 312
+			transfer_state = 606
+			transfer_state = 558
+			transfer_state = 433
+			transfer_state = 357
+			transfer_state = 360
+			transfer_state = 157
+			transfer_state = 70
+			transfer_state = 602
+			transfer_state = 64
+			transfer_state = 51
+			transfer_state = 245
+			declare_war_on = {
+				target = NCR
+				type = annex_everything
+			}
+		}
+	}
+	option = {
+		name = nf_qol.5.b 
+		
+		ai_chance = {
+			factor = 3.0
+		}
+	}
+}
+news_event = { #World Announce that the BOS returned
+	id = nf_qol.6
+	title = nf_qol.6.t
+	desc = nf_qol.6.d 
+	is_triggered_only = yes
+	option = {
+		name = nf_qol.6.a 
+	}
+}
+	
+
