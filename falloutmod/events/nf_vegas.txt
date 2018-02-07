@@ -601,7 +601,16 @@ country_event = {
 	
 	option = {
 		name = nf_vegas.22.a
-
+		
+        limit = {
+	if = {
+		VEG = { 
+		has_idea = vegasprime1
+		} 
+	}
+		remove_idea = vegasprime1
+		}
+		
 		add_ideas = {
 		vegasprime2
 		}
