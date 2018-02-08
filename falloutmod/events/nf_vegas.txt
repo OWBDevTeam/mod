@@ -463,12 +463,31 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.17.a 
+		name = nf_vegas.17.a
 		
-	}
+		limit = {
+		if = {
+		VEG = {
+		has_idea = kings
+		}
+		}
+		country_event = nf_vegas.23
+	    }
+		
+		limit = {
+		if = {
+		VEG = {
+		has_idea = chairmen
+		}
+		}
+		country_event = nf_vegas.24
+	    }
+	}	
 	
 	option = {
 		name = nf_vegas.17.b 
+		
+		country_event = nf_vegas.25
 			
 	}
 	
@@ -485,9 +504,7 @@ country_event = {
 	option = {
 		name = nf_vegas.18.a 
 		
-		add_ideas = {
-		vegasprime1
-		}
+		add_ideas = vegasprime1
 		country_event = { id = nf_vegas.22 days = 370 }
 		
 	}
@@ -615,6 +632,108 @@ country_event = {
 		vegasprime2
 		}
 		
+	}
+	
+}
+country_event = {
+	id = nf_vegas.23 #King's Inflitration#
+	title = nf_vegas.23.t
+	desc = nf_vegas.23.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.23.a
+		
+      random_list = { 50 = { country_event = nf_vegas.26 } 50 = { country_event = nf_vegas.27 } }    
+	}
+	
+}
+country_event = {
+	id = nf_vegas.24 #Benny's Inflitration#
+	title = nf_vegas.24.t
+	desc = nf_vegas.24.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.24.a
+		
+      random_list = { 70 = { country_event = nf_vegas.26 } 30 = { country_event = nf_vegas.27 } }    
+	}
+	
+}
+country_event = {
+	id = nf_vegas.25 #Firefight on Fortification Hill#
+	title = nf_vegas.25.t
+	desc = nf_vegas.25.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.25.a
+		
+	  add_manpower = -1500
+      country_event = nf_vegas.26
+	}
+	option = {
+		name = nf_vegas.25.b
+		
+	  add_manpower = -1000
+      random_list = { 60 = { country_event = nf_vegas.26 } 40 = { country_event = nf_vegas.27 } }    
+	}
+	option = {
+		name = nf_vegas.25.b
+		
+	  add_manpower = -500
+      random_list = { 30 = { country_event = nf_vegas.26 } 70 = { country_event = nf_vegas.27 } }    
+	}
+	
+}
+country_event = {
+	id = nf_vegas.26 #Securitron Army#
+	title = nf_vegas.26.t
+	desc = nf_vegas.26.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.26.a
+			
+	  set_technology = { securitron_2_tech = 1 }
+	  load_oob = vegassecuritronarmy1
+	  add_ideas = securitron_vault
+	  limit = {
+	  if = {
+	  VEG = {
+	  has_idea = robco
+	  } }
+	  swap_ideas = {
+	  remove_idea = robco
+	  add_idea = securitron_vault
+	  }
+	 
+	}
+	
+}
+country_event = {
+	id = nf_vegas.27 #Securitron Army#
+	title = nf_vegas.27.t
+	desc = nf_vegas.27.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.27.a
+			
+	  set_technology = { securitron_2_tech = 1 }
+	  load_oob = vegassecuritronarmy2
+	 
 	}
 	
 }
