@@ -418,13 +418,6 @@ lend_lease_PNT = {
 	ai_strategy = { type = support id = "PNT" value = 200 }
 }
 
-lend_lease_POW = {
-	enable = { elgible_volunteers_sender = yes POW = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } POW = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "POW" value = 200 }
-	ai_strategy = { type = support id = "POW" value = 200 }
-}
-
 lend_lease_RAP = {
 	enable = { elgible_volunteers_sender = yes RAP = { eligible_volunteers_receiver = yes } }
 	abort = { OR = { NOT = { elgible_volunteers_sender = yes } RAP = { NOT = {  eligible_volunteers_receiver = yes } } } }
@@ -460,13 +453,6 @@ lend_lease_RIP = {
 	ai_strategy = { type = support id = "RIP" value = 200 }
 }
 
-lend_lease_RPD = {
-	enable = { elgible_volunteers_sender = yes RPD = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } RPD = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "RPD" value = 200 }
-	ai_strategy = { type = support id = "RPD" value = 200 }
-}
-
 lend_lease_RUB = {
 	enable = { elgible_volunteers_sender = yes RUB = { eligible_volunteers_receiver = yes } }
 	abort = { OR = { NOT = { elgible_volunteers_sender = yes } RUB = { NOT = {  eligible_volunteers_receiver = yes } } } }
@@ -479,13 +465,6 @@ lend_lease_SCO = {
 	abort = { OR = { NOT = { elgible_volunteers_sender = yes } SCO = { NOT = {  eligible_volunteers_receiver = yes } } } }
 	ai_strategy = { type = send_volunteers_desire id = "SCO" value = 200 }
 	ai_strategy = { type = support id = "SCO" value = 200 }
-}
-
-lend_lease_SCP = {
-	enable = { elgible_volunteers_sender = yes SCP = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } SCP = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "SCP" value = 200 }
-	ai_strategy = { type = support id = "SCP" value = 200 }
 }
 
 lend_lease_SHI = {
