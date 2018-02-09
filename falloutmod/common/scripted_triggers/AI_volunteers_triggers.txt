@@ -28,7 +28,7 @@ eligible_volunteers_receiver = {
 			}
 		}
 		OR = { #why should it send volunteers?
-			ROOT = { has_opinion = { target = PREV value > -20 } } # do not hate each other
+			ROOT = { has_opinion = { target = PREV value > 10 } } # do not hate each other
 			is_in_faction_with = ROOT #faction members
 
 			AND = { has_government = intellectuals ROOT = { has_government = intellectuals } } #shared ideology
