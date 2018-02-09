@@ -292,12 +292,49 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.9.a 
+		name = nf_vegas.9.a
+		
+		limit = {
+		if = {
+		VEG = {
+		has_idea = wealthyclientele
+		} }
+		swap_ideas = {
+		remove_idea = wealthyclientele
+		add_idea = wealthyclientele2 }
+		} }
+		limit = {
+		if = {
+		VEG = {
+		has_idea = middleclassclientele
+		} }
+		swap_ideas = {
+		remove_idea = middleclassclientele
+		add_idea = middleclassclientele2 }
+		} }
+		
+		
+		
 		
 	}
 	
 	option = {
-		name = nf_vegas.8.b 
+		name = nf_vegas.8.b
+		
+		211 = {
+                add_resource = {
+				type = fuel
+				amount = 10
+                }				
+                add_resource = {
+				type = scrap
+				amount = 20
+				}
+				add_resource = {
+				type = advanced_technology
+				amount = 5
+				}
+		    }
 			
 	}
 	
