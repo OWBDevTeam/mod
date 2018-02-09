@@ -293,29 +293,28 @@ country_event = {
 	
 	option = {
 		name = nf_vegas.9.a
-		
-		limit = {
 		if = {
-		VEG = {
-		has_idea = wealthyclientele
-		} }
-		swap_ideas = {
-		remove_idea = wealthyclientele
-		add_idea = wealthyclientele2 }
-		} }
-		limit = {
+			limit = {
+				VEG = {
+					has_idea = wealthyclientele
+				} 	
+			}
+			swap_ideas = {
+				remove_idea = wealthyclientele
+				add_idea = wealthyclientele2 
+			}
+		}
 		if = {
-		VEG = {
-		has_idea = middleclassclientele
-		} }
-		swap_ideas = {
-		remove_idea = middleclassclientele
-		add_idea = middleclassclientele2 }
-		} }
-		
-		
-		
-		
+			limit = {
+				VEG = {
+					has_idea = middleclassclientele
+				}
+			}
+			swap_ideas = {
+				remove_idea = middleclassclientele
+				add_idea = middleclassclientele2 
+			}
+		}
 	}
 	
 	option = {
@@ -502,22 +501,24 @@ country_event = {
 	option = {
 		name = nf_vegas.17.a
 		
-		limit = {
+		
 		if = {
-		VEG = {
-		has_idea = kings
-		}
-		}
-		country_event = nf_vegas.23
+			limit = {
+				VEG = {
+					has_idea = kings
+				}
+			}
+			country_event = nf_vegas.23
 	    }
 		
-		limit = {
+		
 		if = {
-		VEG = {
-		has_idea = chairmen
-		}
-		}
-		country_event = nf_vegas.24
+			limit = {
+				VEG = {
+				has_idea = chairmen
+				}
+			}
+			country_event = nf_vegas.24
 	    }
 	}	
 	
@@ -565,26 +566,25 @@ country_event = {
 	option = {
 		name = nf_vegas.19.a 
 		
-		limit = {
+		
 		if = {
-		VEG = {
-		has_idea = unstableOS
-		}
-		swap_ideas = { remove_idea = unstableOS add_idea = platinumOS }
-		}
+			limit = {
+				VEG = {
+					has_idea = unstableOS
+				}
+			}
+			swap_ideas = { remove_idea = unstableOS add_idea = platinumOS }	
 		}
 		
-		limit = {
 		if = {
-		VEG = {
-		has_idea = stableOS
+			limit = {
+				VEG = {
+					has_idea = stableOS
+				}
+			}
+			swap_ideas = { remove_idea = stableOS add_idea = platinumOS }
 		}
-		swap_ideas = { remove_idea = stableOS add_idea = platinumOS }
-		}
-		}
-		
-}
-		
+	}	
 }
 country_event = {
 	id = nf_vegas.20
@@ -597,13 +597,13 @@ country_event = {
 	option = {
 		name = nf_vegas.20.a
 		104 = {
-		add_resource = {
+			add_resource = {
 				type = advanced_technology
 				amount = 1
-				}
+			}
 		}		
 		VEG = {
-		country_event = { days = 75 id = nf_vegas.19 }
+			country_event = { days = 75 id = nf_vegas.19 }
 		}
 	}
 	
@@ -611,16 +611,15 @@ country_event = {
 	    name = nf_vegas.20.b
 		
 		104 = {
-		add_resource = {
+			add_resource = {
 				type = advanced_technology
 				amount = 4
-				}
+			}
 		}
         VEG = {
-		country_event = { days = 5 id = nf_vegas.19 }
+			country_event = { days = 5 id = nf_vegas.19 }
 		}	
 	}
-	
 }
 country_event = {
 	id = nf_vegas.21
@@ -634,16 +633,15 @@ country_event = {
 		name = nf_vegas.21.a
 		
 		MOJ = {
-		declare_war_on = { target = MRA type = annex_everything }
-		add_state_core = 533
-		add_state_core = 272
-		add_state_core = 181
-		add_state_core = 206
-		add_state_core = 419
-		add_state_core = 552
+			declare_war_on = { target = MRA type = annex_everything }
+			add_state_core = 533
+			add_state_core = 272
+			add_state_core = 181
+			add_state_core = 206
+			add_state_core = 419
+			add_state_core = 552
         }
-   }
-	
+    }
 }
 country_event = {
 	id = nf_vegas.22
@@ -655,22 +653,18 @@ country_event = {
 	
 	option = {
 		name = nf_vegas.22.a
-		
-        limit = {
-	if = {
-		VEG = { 
-		has_idea = vegasprime1
-		} 
-	}
-		remove_idea = vegasprime1
+		if = {
+			limit = {
+				VEG = { 
+					has_idea = vegasprime1
+				}
+			}
+			remove_ideas = vegasprime1
+			add_ideas = {
+				vegasprime2
+			}
 		}
-		
-		add_ideas = {
-		vegasprime2
-		}
-		
-	}
-	
+	}	
 }
 country_event = {
 	id = nf_vegas.23 #King's Inflitration#
@@ -744,18 +738,19 @@ country_event = {
 	  set_technology = { securitron_2_tech = 1 }
 	  load_oob = vegassecuritronarmy1
 	  add_ideas = securitron_vault
-	  limit = {
-	  if = {
-	  VEG = {
-	  has_idea = robco
-	  } }
-	  swap_ideas = {
-	  remove_idea = robco
-	  add_idea = securitron_vault
-	  }
-	 
+	  
+	    if = {
+			limit = {
+				VEG = {
+					has_idea = robco
+				}
+			}
+			swap_ideas = {
+				remove_ideas = robco
+				add_ideas = securitron_vault
+			}
+		}
 	}
-	
 }
 country_event = {
 	id = nf_vegas.27 #Securitron Army#
