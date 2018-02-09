@@ -10,1001 +10,224 @@ focus_tree = {
 	default = no
 	focus = {
 		id = firstholotape
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_data_focus
 		cost = 1.00
-		x = 13
+		x = 11
 		y = 0
-		completion_reward = {
-			country_event = nf_warren.1
-		}
+			completion_reward = {
+					country_event = nf_warren.1
+				}
+
 	}
 	focus = {
 		id = secholotape
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_data_focus
 		cost = 1.00
 		prerequisite = {
 			focus = firstholotape
 		}
-		x = 13
+		x = 11
 		y = 1
-		completion_reward = {
-			country_event = nf_warren.2
-		}
+			completion_reward = {
+					country_event = nf_warren.2
+				}
+
 	}
 	focus = {
 		id = thirdholotape
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_data_focus
 		cost = 1.00
 		prerequisite = {
 			focus = secholotape
 		}
-		x = 13
+		x = 11
 		y = 2
-		completion_reward = {
-			country_event = nf_warren.3
-		}	
+			completion_reward = {
+					country_event = nf_warren.3
+				}
+
 	}
 	focus = {
 		id = fourthholotape
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_data_focus
 		cost = 1.00
 		prerequisite = {
 			focus = thirdholotape
 		}
-		x = 13
+		x = 11
 		y = 3
-		completion_reward = {
-			country_event = nf_warren.4
-		}
+			completion_reward = {
+					country_event = nf_warren.4
+				}
+
 	}
 	focus = {
 		id = warrenstirs
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_ideological_fury_focus
 		cost = 1.00
 		prerequisite = {
 			focus = fourthholotape
 		}
-		x = 6
-		y = 5
-		completion_reward = {
-			add_political_power = 120
-			
-		}
-	}
-	focus = {
-		id = memories_of_ages
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = fourthholotape
-		}
-		x = 18
-		y = 5
-		completion_reward = {
-			army_experience = 30
-			add_tech_bonus = {
-				name = memory_ages
-				bonus = 0.5
-				uses = 1
-				category = land_doctrine
-			}
-		}
-	}
-	focus = {
-		id = weaponsfuture
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = memories_of_ages
-		}
-		mutually_exclusive = {
-			focus = weaponspast
-		}
-		x = 14
-		y = 6
-		completion_reward = [
-			add_tech_bonus = {
-				name = weapons_future
-				bonus = 0.5
-				uses = 1
-				category = energy_weaponry_tech
-			}
-		}
-	}
-	focus = {
-		id = weaponspast
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = memories_of_ages
-		}
-		mutually_exclusive = {
-			focus = weaponsfuture
-		}
-		x = 12
-		y = 6
-		completion_reward = [
-			add_tech_bonus = {
-				name = weapons_past
-				bonus = 0.5
-				uses = 1
-				category = ballistic_weaponry_tech
-			}
-		}
-	}
-	focus = {
-		id = tribalzappa
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = weaponsfuture
-		}
-		x = 14
-		y = 7
-		completion_reward = {
-			add_ideas = warren_zappa
-		}
-	}
-	focus = {
-		id = morezappa
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = tribalzappa
-		}
-		x = 14
-		y = 8
-		completion_reward = {
-			add_ideas = warren_zappa2
-		}
-	}
-	focus = {
-		id = morezappa2
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = morezappa
-		}
-		x = 14
-		y = 9
-		completion_reward = {
-			set_technology = {
-			improved_laser_weaponry = 1
-			laser_tech = 1
-			}
-		}
-	}
-	focus = {
-		id = guardianwild
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = memories_of_ages
-		}
-		mutually_exclusive = {
-			focus = warriorswild
-		}
-		x = 17
-		y = 6
-		completion_reward = {
-			add_ideas = warrenguardianswild
-		}
-	}
-	focus = {
-		id = warriorswild
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = memories_of_ages
-		}
-		mutually_exclusive = {
-			focus = guardianwild
-		}
-		x = 19
-		y = 6
-		completion_reward = {
-			add_ideas = warrenwarriorswild
-		}
-	}
-	focus = {
-		id = baneofman
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = guardianwild
-			focus = warriorswild
-		}
-		x = 18
-		y = 7
-		completion_reward = {
-			army_experience = 30
-			add_tech_bonus = {
-				name = bane_of_man
-				bonus = 0.5
-				uses = 2
-				category = land_doctrine
-			}
-		}
-	}
-	focus = {
-		id = realmsofgoliath
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = baneofman
-		}
-		x = 18
-		y = 8
-		completion_reward = {
-			add_ideas = warren_realm_goliath
-		}
-	}
-	focus = {
-		id = callofgiants
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = realmsofgoliath
-		}
-		mutually_exclusive = {
-			focus = callofhorde
-		}
-		x = 17
-		y = 9
-		completion_reward = {
-			add_ideas = warrencallofgiants
-		}
-	}
-	focus = {
-		id = trollsofthewarren
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = callofgiants
-		}
-		x = 16
-		y = 10
-		completion_reward = {
-			swap_ideas = {
-				add_idea = warrentrollsofthewarren
-				remove_idea = warrencallofgiants
-			}
-		}
-	}
-	focus = {
-		id = callofhorde
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = realmsofgoliath
-		}
-		mutually_exclusive = {
-			focus = callofgiants
-		}
-		x = 19
-		y = 9
-		completion_reward = {
-			add_ideas = warrencallofhorde
-		}
-	}
-	focus = {
-		id = callofthefirst
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = callofgiants
-			focus = callofhorde
-		}
-		x = 18
-		y = 10
-		completion_reward = {
-			add_ideas = warrencallofthefirst
-		}
-	}
-	focus = {
-		id = sonsofman
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = callofhorde
-		}
-		x = 20
-		y = 10
-		completion_reward = {
-			swap_ideas = {
-				add_idea = warrensonsofman
-				remove_idea = warrencallofhorde
-			}
-			army_experience = 30
-		}
-	}
-	focus = {
-		id = riverexpedition
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = memories_of_ages
-		}
-		x = 23
-		y = 6
-		completion_reward = {
-			235 = {
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					instant_build = yes
-					province = 2160
+		x = 2
+		y = 4
+			completion_reward = {
+					add_political_power = 120
 				}
-				add_building_construction = {
-					type = dockyard
-					level = 3
-					instant_build = yes
-				}
-			}
-			create_navy_leader = {
-				name = "Wave Breaker"
-				picture = ""
-				traits = {
-				}
-				skill = 3
-			}
-		}
-	}
-	focus = {
-		id = mutantwarship
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = riverexpedition
-		}
-		x = 22
-		y = 7
-		completion_reward = {
-			add_tech_bonus = {
-				name = mutantwarship
-				bonus = 0.5
-				uses = 1
-				category = ship_cruiser_tech
-			}
-		}
-	}
-	focus = {
-		id = amassingfleet
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = mutantwarship
-		}
-		x = 22
-		y = 8
-		completion_reward = {
-			add_ideas = warrenamassingfleet
-		}
-	}
-	focus = {
-		id = mutantcanoe
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = riverexpedition
-		}
-		x = 24
-		y = 7
-		completion_reward = {
-			add_tech_bonus = {
-				name = mutantwarship
-				bonus = 0.5
-				uses = 1
-				category = ship_destroyer_tech
-			}
-		}
-	}
-	focus = {
-		id = raidingculture
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = mutantcanoe
-		}
-		x = 24
-		y = 8
-		completion_reward = {
-			add_ideas = warrenraidingculture
-		}
-	}
-	focus = {
-		id = rivergiants
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = amassingfleet
-		}
-		prerequisite = {
-			focus = raidingculture
-		}
-		x = 23
-		y = 9
-		completion_reward = {
-			add_tech_bonus = {
-				name = rivergiants
-				bonus = 0.5
-				uses = 1
-				category = ship_heavy_cruiser_tech
-			}
-		}
-	}
-	focus = {
-		id = slavesunworthy
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = fourthholotape
-		}
-		x = 32
-		y = 5
-		completion_reward = {
-			add_tech_bonus = {
-				name = unworthyslaves
-				bonus = 0.5
-				uses = 1
-				category = industry
-			}
-		}
-	}
-	focus = {
-		id = forceddigging
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = slavesunworthy
-		}
-		x = 31
-		y = 6
-		completion_reward = {
-			add_tech_bonus = {
-				name = forceddigging
-				bonus = 0.5
-				uses = 1
-				technology = quarry_picks
-			}
-		}
-	}
-	focus = {
-		id = expandingslavelabour
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = forceddigging
-		}
-		x = 29
-		y = 7
-		completion_reward = {
-			235 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 3
-					instant_build = yes
-				}
-			}
-			437 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 3
-					instant_build = yes
-				}
-			}
-			166 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 3
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = slavemutanthouse
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = expandingslavelabour
-		}
-		x = 27
-		y = 8
-		completion_reward = {
-			add_ideas = warrenhouseslaves
-		}
-	}
-	focus = {
-		id = unwillinggatherers
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = forceddigging
-		}
-		x = 31
-		y = 7
-		completion_reward = {
-			add_ideas = warrengatherers
-		}
-	}
-	focus = {
-		id = mutantlabor
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = slavesunworthy
-		}
-		x = 32
-		y = 8
-		completion_reward = {
-			add_tech_bonus = {
-				name = mutantlabor
-				bonus = 0.5
-				uses = 1
-				category = industry
-			}
-			add_ideas = warrenmutantlabor
-		}
-	}
-	focus = {
-		id = militarizedlabour
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = mutantlabor
-		}
-		x = 32
-		y = 9
-		completion_reward = {
-			add_ideas = warrenmilitarizedlabor
-		}
-	}
-	focus = {
-		id = readyforwar
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = slavesunworthy
-		}
-		x = 33
-		y = 6
-		completion_reward = {
-			add_ideas = warrenreadyforwar
-		}
-	}
-	focus = {
-		id = stockpiledweapons
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = readyforwar
-		}
-		x = 33
-		y = 7
-		completion_reward = {
-			add_equipment_to_stockpile = {
-				type = ballistic_equipment_2
-				amount = 1000
-				producer = TRL
-			}
-			235 = {
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
 
 	}
 	focus = {
-		id = rewardsofvictory
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = readyforwar
-		}
-		x = 35
-		y = 7
-		completion_reward = {
-			add_ideas = warrenrewardsofvictory
-		}
-	}
-	focus = {
-		id = gloriouscity
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = rewardsofvictory
-		}
-		x = 35
-		y = 8
-		completion_reward = {
-			235 = {
-				add_building_construction = {
-					type = industrial_complex
-					level = 3
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = defendingthewarren
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = rewardsofvictory
-		}
-		x = 37
-		y = 8
-		completion_reward = {
-			add_ideas = warrendefendingthewarren
-		}
-	}
-	focus = {
-		id = oregonline
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = defendingthewarren
-		}
-		x = 37
-		y = 9
-		completion_reward = {
-			437 = {
-				add_building_construction = {
-					type = bunker
-					level = 2
-					instant_build = yes
-					province = 2163
-				}
-			}
-			437 = {
-				add_building_construction = {
-					type = bunker
-					level = 2
-					instant_build = yes
-					province = 4107
-				}
-			}
-		}
-	}
-	focus = {
 		id = willwarchief
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_ideological_fury_focus
 		cost = 5.00
 		prerequisite = {
 			focus = fourthholotape
 		}
-		x = 46
-		y = 5
-		completion_reward = {
-			country_event = nf_warren.5
-			add_political_power = 120
-		}
+		x = 11
+		y = 4
+			completion_reward = {
+					country_event = nf_warren.5
+					add_political_power = 120
+				}
+
 	}
 	focus = {
 		id = pittmancunning
-		icon = GFX_goal_unknown
+		icon = GFX_goal_support_fascism
 		cost = 5.00
 		prerequisite = {
 			focus = willwarchief
 		}
-		x = 42
-		y = 6
-		available = {
-			has_country_flag = pittman
+		mutually_exclusive = {
+			focus = bonesnarlloyalty
+			focus = bettysmight
 		}
-		completion_reward = {
-			add_ideas = pittman1
-			load_oob = pittmannightkin
-		}
-	}
-	focus = {
-		id = nightkinmigration
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = pittmancunning
-		}
-		x = 42
-		y = 7
-		completion_reward = {
-			add_manpower = 3000
-		}
-	}
-	focus = {
-		id = southernpush
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = nightkinmigration
-		}
-		available = {
-			or = {
-				if = {
-					MDT = {
-						exists = no
-					}
-					BPT = {
-						exists = no
-					}
-					TRL = {
-						controls_state = 113
-						controls_state = 467
-						controls_state = 251
-					}
+		x = 7
+		y = 5
+			available = {
+					has_country_flag = pittman
 				}
-				if = {
-					MDT = {
-						is_puppet_of = TRL
-					}
-					BPT = {
-						is_puppet_of = TRL
-					}
+			completion_reward = {
+					add_ideas = pittman1
+					load_oob = pittmannightkin
 				}
-			
-				
-			}
-			
-		}
-		x = 42
-		y = 8
-		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = ARR
-			}
-			create_wargoal = { 
-				type = annex_everything
-				target = KLA
-			}
-			if = {
-				limit = {
-					any_state = {
-						AND = {
-							is_core_of = ARR
-							NOT = { is_controlled_by = ARR }
-						}
-					}
-				}
-				every_country = {
-					limit = {
-						any_owned_state = {
-							is_core_of = ARR
-						}
-					}
-					
-					ROOT = { 
-			create_wargoal = { type = annex_everything target = PREV }
-					}
-				}
-			}
-			if = {
-				limit = {
-					any_state = {
-						AND = {
-							is_core_of = KLA
-							NOT = { is_controlled_by = KLA }
-						}
-					}
-				}
-				every_country = {
-					limit = {
-						any_owned_state = {
-							is_core_of = KLA
-						}
-					}
-					
-					ROOT = { 
-			create_wargoal = { type = annex_everything target = PREV }
-					}
-				}
-			}
-		}
-		
-	}
-	focus = {
-		id = vengeancemaster
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = southernpush
-		}
-		x = 41
-		y = 9
-		available = {
-			or = {
-				if = {
-					ARR = {
-						is_puppet_of = TRL
-					}
-				}
-				if = {
-					ARR = {
-						exists = no
-					}
-					TRL = {
-						owns_state = 337
-						owns_state = 96
-						owns_state = 32
-					}
-				}
-			}
-		}
-		completion_reward = {
-			add_ideas = pittman2
-		}
-	}
-	focus = {
-		id = redriver
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = southernpush
-		}
-		x = 43
-		y = 9
-		available = {
-			or = {
-				if = {
-					KLA = {
-						is_puppet_of = TRL
-					}
-				}
-				if = {
-					KLA = {
-						exists = no
-					}
-					TRL = {
-						owns_state = 57
-						owns_state = 59
-						owns_state = 454
-					}
-				}
-			}
-		}
-		completion_reward = {
-			add_ideas = pittman3
-		}
-	}
-	focus = {
-		id = mariposareborn
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = vengeancemaster
-		}
-		prerequisite = {
-			focus = redriver
-		}
-		available = {
-			TRL = {
-				owns_state = 351
-			}
-		}
-		x = 42
-		y = 10
-		completion_reward = {
-			remove_ideas = pittman1
-
-			remove_ideas = pittman2
-
-			remove_ideas = pittman3
-			add_ideas = pittman4
-			
-		}
 
 	}
 	focus = {
 		id = bonesnarlloyalty
-		icon = GFX_goal_unknown
+		icon = GFX_goal_support_democracy
 		cost = 5.00
 		prerequisite = {
 			focus = willwarchief
 		}
-		x = 46
-		y = 6
-		available = {
-			has_country_flag = bonesnarl
+		mutually_exclusive = {
+			focus = pittmancunning
+			focus = bettysmight
 		}
-		completion_reward = {
-			add_ideas = bonesnarl1
-		}
+		x = 11
+		y = 5
+			available = {
+					has_country_flag = bonesnarl
+				}
+			completion_reward = {
+					add_ideas = bonesnarl1
+				}
+
 	}
 	focus = {
 		id = cannibalmutants
-		icon = GFX_goal_unknown
+		icon = GFX_goal_VEG_The_Human_Banquet
 		cost = 10.00
 		prerequisite = {
 			focus = bonesnarlloyalty
 		}
-		x = 46
-		y = 7
-		completion_reward = {
-			swap_ideas = { 
-				remove_idea = bonesnarl1
-				add_idea = bonesnarl2
-			}
-		}
+		x = 11
+		y = 6
+			completion_reward = {
+					swap_ideas = {
+							remove_idea = bonesnarl1
+							add_idea = bonesnarl2
+						}
+				}
+
 	}
 	focus = {
 		id = preparingthewarren
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
 		cost = 10.00
 		prerequisite = {
 			focus = cannibalmutants
 		}
-		x = 46
-		y = 8
-		completion_reward = {
-			235 = {
-				add_building_construction = {
-					type = arms_factory 
-					level = 2
-					instant_build = yes
+		x = 11
+		y = 7
+			completion_reward = {
+					235 = {
+							add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}
+						}
 				}
-				add_building_construction = {
-					type = industrial_complex
-					level = 3
-					instant_build = yes
-				}
-			}
-		}
+
 	}
 	focus = {
 		id = developingslavesmines
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_metal_focus
 		cost = 10.00
 		prerequisite = {
 			focus = preparingthewarren
 		}
-		available = {
-			TRL = {
-				num_of_civilian_factories > 12
-			}
-		}
-		x = 45
-		y = 9
-		completion_reward = {
-			add_resource = {
-				type = metal
-				amount = 25
-				state = 235
-			}
-			add_resource = {
-				type = water
-				amount = 10
-				state = 235
-			}
-		}
+		x = 10
+		y = 8
+			available = {
+					TRL = {
+							num_of_civilian_factories > 12
+						}
+				}
+			completion_reward = {
+					add_resource = {
+							type = metal
+							amount = 25
+							state = 235
+						}
+					add_resource = {
+							type = water
+							amount = 10
+							state = 235
+						}
+				}
+
 	}
 	focus = {
 		id = ritualscarring
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_secret_weapon
 		cost = 10.00
 		prerequisite = {
 			focus = preparingthewarren
 		}
-		x = 47
-		y = 9
-		available = {
-			TRL = {
-				num_of_military_factories > 12
-			}
-		}
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = bonesnarl2
-				add_idea = bonesnarl3
-			}
-		}
+		x = 12
+		y = 8
+			available = {
+					TRL = {
+							num_of_military_factories > 12
+						}
+				}
+			completion_reward = {
+					swap_ideas = {
+							remove_idea = bonesnarl2
+							add_idea = bonesnarl3
+						}
+				}
+
 	}
 	focus = {
 		id = eatersman
-		icon = GFX_goal_unknown
+		icon = GFX_goal_support_fascism
 		cost = 10.00
 		prerequisite = {
 			focus = developingslavesmines
@@ -1012,516 +235,518 @@ focus_tree = {
 		prerequisite = {
 			focus = ritualscarring
 		}
-		x = 46
-		y = 10
-		available = {
-			or = {
-				BPT = {
-					exists = no
+		x = 11
+		y = 9
+			available = {
+					or = {
+							BPT = {
+									exists = no
+								}
+							BPT = {
+									is_puppet_of = TRL
+								}
+						}
+					or = {
+							BDT = {
+									exists = no
+								}
+							BDT = {
+									is_puppet_of = TRL
+								}
+						}
+					or = {
+							RBT = {
+									exists = no
+								}
+							RBT = {
+									is_puppet_of = TRL
+								}
+						}
+					or = {
+							CHE = {
+									exists = no
+								}
+							CHE = {
+									is_puppet_of = TRL
+								}
+						}
+					or = {
+							MLT = {
+									exists = no
+								}
+							MLT = {
+									is_puppet_of = TRL
+								}
+						}
+					or = {
+							MDT = {
+									exists = no
+								}
+							MDT = {
+									is_puppet_of = TRL
+								}
+						}
 				}
-				BPT = {
-					is_puppet_of = TRL
+			completion_reward = {
+					swap_ideas = {
+							remove_idea = bonesnarl3
+							add_idea = bonesnarl4
+						}
 				}
-			}
-			or = {
-				BDT = {
-					exists = no
-				}
-				BDT = {
-					is_puppet_of = TRL
-				}
-			}
-			or = {
-				RBT = {
-					exists = no
-				}
-				RBT = {
-					is_puppet_of = TRL
-				}
-			}
-			or = {
-				CHE = {
-					exists = no
-				}
-				CHE = {
-					is_puppet_of = TRL
-				}
-			}
-			or = {
-				MLT = {
-					exists = no
-				}
-				MLT = {
-					is_puppet_of = TRL
-				}
-			}
-			or = {
-				MDT = {
-					exists = no
-				}
-				MDT = {
-					is_puppet_of = TRL
-				}
-			}
-		}
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = bonesnarl3
-				add_idea = bonesnarl4
-			}
-		}
 
 	}
 	focus = {
 		id = bettysmight
-		icon = GFX_goal_unknown
+		icon = GFX_focus_research
 		cost = 5.00
 		prerequisite = {
 			focus = willwarchief
 		}
-		x = 50
-		y = 6
-		available = {
-			has_country_flag = betty
-					
+		mutually_exclusive = {
+			focus = pittmancunning
+			focus = bonesnarlloyalty
 		}
-		completion_reward = {
-			add_ideas = warren_betty_1
-			if = {
-				limit = {
-					TRL = {
-						has_tech = guerilla_tactics
-					}
-					NOT = {
-						TRL = {
-							has_tech = platoon_training
+		x = 15
+		y = 5
+			available = {
+					has_country_flag = betty
+				}
+			completion_reward = {
+					add_ideas = warren_betty_1
+					if = {
+							limit = {
+									TRL = {
+											has_tech = guerilla_tactics
+										}
+									NOT = {
+											TRL = {
+													has_tech = platoon_training
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											platoon_training = 1
+										}
+								}
 						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						platoon_training = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					TRL = {
-						has_tech = warrior_training
-					}
-					NOT = {
-						TRL = {
-							has_tech = guerilla_tactics
+					if = {
+							limit = {
+									TRL = {
+											has_tech = warrior_training
+										}
+									NOT = {
+											TRL = {
+													has_tech = guerilla_tactics
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											guerilla_tactics = 1
+										}
+								}
 						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						guerilla_tactics = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					TRL = {
-						has_tech = militia_training
-					}
-					NOT = {
-						TRL = {
-							has_tech = warrior_training
+					if = {
+							limit = {
+									TRL = {
+											has_tech = militia_training
+										}
+									NOT = {
+											TRL = {
+													has_tech = warrior_training
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											warrior_training = 1
+										}
+								}
 						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						warrior_training = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					NOT = {
-						TRL = {
-							has_tech = militia_training
+					if = {
+							limit = {
+									NOT = {
+											TRL = {
+													has_tech = militia_training
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											militia_training = 1
+										}
+								}
 						}
-					}
-					
-				}
-				TRL = {
-					set_technology = {
-						militia_training = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					TRL = {
-						has_tech = traditional_instruction
-					}
-					NOT = {
-						TRL = {
-							has_tech = physical_blueprints
+					if = {
+							limit = {
+									TRL = {
+											has_tech = traditional_instruction
+										}
+									NOT = {
+											TRL = {
+													has_tech = physical_blueprints
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											physical_blueprints = 1
+										}
+								}
 						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						physical_blueprints = 1
-					}
-				}
-			}
-			
-			if = {
-				limit = {
-					TRL = {
-						has_tech = oral_instruction
-					}
-					NOT = {
-						TRL = {
-							has_tech = traditional_instruction
+					if = {
+							limit = {
+									TRL = {
+											has_tech = oral_instruction
+										}
+									NOT = {
+											TRL = {
+													has_tech = traditional_instruction
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											traditional_instruction = 1
+										}
+								}
 						}
-					}
+					if = {
+							limit = {
+									NOT = {
+											has_tech = traditional_instruction
+										}
+								}
+							TRL = {
+									set_technology = {
+											traditional_instruction = 1
+										}
+								}
+						}
 				}
-				TRL = {
-					set_technology = {
-						traditional_instruction = 1
-					}
-				}
-			}
-			
-			if = {
-				limit = {
-					NOT = {
-						has_tech = traditional_instruction
-					}
-				}
-				TRL = {
-					set_technology = {
-						traditional_instruction = 1
-					}
-				}
-			}
-		}
+
 	}
 	focus = {
 		id = armorrepurposing
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_build_tank
 		cost = 10.00
 		prerequisite = {
 			focus = bettysmight
 		}
-		x = 50
-		y = 7
-		completion_reward = {
-			if = {
-				limit = {
-					TRL = {
-						has_tech = platoon_training
-					}
-					NOT = {
-						TRL = {
-							has_tech = basic_drill
+		x = 15
+		y = 6
+			completion_reward = {
+					if = {
+							limit = {
+									TRL = {
+											has_tech = platoon_training
+										}
+									NOT = {
+											TRL = {
+													has_tech = basic_drill
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											basic_drill = 1
+										}
+								}
 						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						basic_drill = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					TRL = {
-						has_tech = guerilla_tactics
-					}
-					NOT = {
-						TRL = {
-							has_tech = platoon_training
+					if = {
+							limit = {
+									TRL = {
+											has_tech = guerilla_tactics
+										}
+									NOT = {
+											TRL = {
+													has_tech = platoon_training
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											platoon_training = 1
+										}
+								}
 						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						platoon_training = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					TRL = {
-						has_tech = warrior_training
-					}
-					NOT = {
-						TRL = {
-							has_tech = guerilla_tactics
+					if = {
+							limit = {
+									TRL = {
+											has_tech = warrior_training
+										}
+									NOT = {
+											TRL = {
+													has_tech = guerilla_tactics
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											guerilla_tactics = 1
+										}
+								}
 						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						guerilla_tactics = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					TRL = {
-						has_tech = militia_training
-					}
-					NOT = {
-						TRL = {
-							has_tech = warrior_training
+					if = {
+							limit = {
+									TRL = {
+											has_tech = militia_training
+										}
+									NOT = {
+											TRL = {
+													has_tech = warrior_training
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											warrior_training = 1
+										}
+								}
 						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						warrior_training = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					NOT = {
-						TRL = {
-							has_tech = militia_training
+					if = {
+							limit = {
+									NOT = {
+											TRL = {
+													has_tech = militia_training
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											militia_training = 1
+										}
+								}
 						}
-					}
-					
+					if = {
+							limit = {
+									TRL = {
+											has_tech = clay_working
+										}
+									NOT = {
+											TRL = {
+													has_tech = metal_working
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											metal_working = 1
+										}
+								}
+						}
+					if = {
+							limit = {
+									TRL = {
+											has_tech = woodworking
+										}
+									NOT = {
+											TRL = {
+													has_tech = clay_working
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											clay_working = 1
+										}
+								}
+						}
+					if = {
+							limit = {
+									NOT = {
+											TRL = {
+													has_tech = woodworking
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											woodworking = 1
+										}
+								}
+						}
+					if = {
+							limit = {
+									TRL = {
+											has_tech = metal_armour
+										}
+									NOT = {
+											TRL = {
+													has_tech = combat_armour
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											combat_armour = 1
+										}
+								}
+						}
+					if = {
+							limit = {
+									TRL = {
+											has_tech = leather_armour
+										}
+									NOT = {
+											TRL = {
+													has_tech = metal_armour
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											metal_armour = 1
+										}
+								}
+						}
+					if = {
+							limit = {
+									NOT = {
+											TRL = {
+													has_tech = leather_armour
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											leather_armour = 1
+										}
+								}
+						}
 				}
-				TRL = {
-					set_technology = {
-						militia_training = 1
-					}
-				}
-			}
-			
-			
 
-
-			
-			if = {
-				limit = {
-					TRL = {
-						has_tech = clay_working
-					}
-					NOT = {
-						TRL = {
-							has_tech = metal_working
-						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						metal_working = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					TRL = {
-						has_tech = woodworking
-					}
-					NOT = {
-						TRL = {
-							has_tech = clay_working
-						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						clay_working = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					NOT = {
-						TRL = {
-							has_tech = woodworking
-						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						woodworking = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					TRL = {
-						has_tech = metal_armour
-					}
-					NOT = {
-						TRL = {
-							has_tech = combat_armour
-						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						combat_armour = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					TRL = {
-						has_tech = leather_armour
-					}
-					NOT = {
-						TRL = {
-							has_tech = metal_armour
-						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						metal_armour = 1
-					}
-				}
-			}
-			
-			if = {
-				limit = {
-					NOT = {
-						TRL = {
-							has_tech = leather_armour
-						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						leather_armour = 1
-					}
-				}
-			}
-		}
 	}
 	focus = {
 		id = causeoftrouble
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_war_focus
 		cost = 10.00
 		prerequisite = {
 			focus = armorrepurposing
 		}
-		available = {
-			or = {
-				if = {
-					RBT = {
-						exists = no
-					}
-					
-					TRL = {
-						controls_state = 587
-					}
-				}
-				if = {
-					RBT = {
-						is_puppet_of = TRL
-					}
-				}
-			}
-			
-		}
-		x = 50
-		y = 8
-		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = WBH
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = TCA
-			}
-			if = {
-				limit = {
-					any_state = {
-						AND = {
-							is_core_of = WBH
-							NOT = { is_controlled_by = WBH }
+		x = 15
+		y = 7
+			available = {
+					or = {
+							if = {
+									RBT = {
+											exists = no
+										}
+									TRL = {
+											controls_state = 587
+										}
+								}
+							if = {
+									RBT = {
+											is_puppet_of = TRL
+										}
+								}
 						}
-					}
 				}
-				every_country = {
-					limit = {
-						any_owned_state = {
-							is_core_of = WBH
+			completion_reward = {
+					create_wargoal = {
+							type = annex_everything
+							target = WBH
 						}
-					}
-					
-					ROOT = { 
-			create_wargoal = { type = annex_everything target = PREV }
-					}
-				}
-			}
-			if = {
-				limit = {
-					any_state = {
-						AND = {
-							is_core_of = TCA
-							NOT = { is_controlled_by = TCA }
+					create_wargoal = {
+							type = annex_everything
+							target = TCA
 						}
-					}
-				}
-				every_country = {
-					limit = {
-						any_owned_state = {
-							is_core_of = TCA
+					if = {
+							limit = {
+									any_state = {
+											AND = {
+													is_core_of = WBH
+													NOT = {
+															is_controlled_by = WBH
+														}
+												}
+										}
+								}
+							every_country = {
+									limit = {
+											any_owned_state = {
+													is_core_of = WBH
+												}
+										}
+									ROOT = {
+											create_wargoal = {
+													type = annex_everything
+													target = PREV
+												}
+										}
+								}
 						}
-					}
-					
-					ROOT = { 
-			create_wargoal = { type = annex_everything target = PREV }
-					}
+					if = {
+							limit = {
+									any_state = {
+											AND = {
+													is_core_of = TCA
+													NOT = {
+															is_controlled_by = TCA
+														}
+												}
+										}
+								}
+							every_country = {
+									limit = {
+											any_owned_state = {
+													is_core_of = TCA
+												}
+										}
+									ROOT = {
+											create_wargoal = {
+													type = annex_everything
+													target = PREV
+												}
+										}
+								}
+						}
 				}
-			}
-		}
+
 	}
 	focus = {
 		id = mutantshocktactics
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_land_doctrines_focus
 		cost = 10.00
 		prerequisite = {
 			focus = causeoftrouble
 		}
-		x = 49
-		y = 9
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = warren_betty_1
-				add_idea = warren_betty_2
-			}
-		}
+		x = 14
+		y = 8
+			completion_reward = {
+					swap_ideas = {
+							remove_idea = warren_betty_1
+							add_idea = warren_betty_2
+						}
+				}
 
 	}
 	focus = {
 		id = mounthawk
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_military_industry_focus
 		cost = 10.00
 		prerequisite = {
 			focus = causeoftrouble
 		}
-		x = 51
-		y = 9
-		completion_reward = {
-			351 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
+		x = 16
+		y = 8
+			completion_reward = {
+					351 = {
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+						}
 				}
-			}
-		}
 
 	}
 	focus = {
 		id = brotherhoodmutants
-		icon = GFX_goal_unknown
+		icon = GFX_goal_bos_steel_giants
 		cost = 10.00
 		prerequisite = {
 			focus = mutantshocktactics
@@ -1529,929 +754,1804 @@ focus_tree = {
 		prerequisite = {
 			focus = mounthawk
 		}
-		available = {
-			or = {
-				WBH = {
-					is_puppet_of = TRL
-				}
-				WBH = {
-					exists = no
-				}
-			}
-		}
-		x = 50
-		y = 10
-		completion_reward = {
-			load_oob = warren_brotherhood
-		}
-	}
-	focus = {
-		id = drumswest
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = warrenstirs
-		}
-		x = 6
-		y = 6
-		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = RBT
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = MDT
-			}
-			if = {
-				limit = {
-					any_state = {
-						AND = {
-							is_core_of = RBT
-							NOT = { is_controlled_by = RBT }
-						}
-					}
-				}
-				every_country = {
-					limit = {
-						any_owned_state = {
-							is_core_of = RBT
-						}
-					}
-					
-					ROOT = { 
-			create_wargoal = { type = annex_everything target = PREV }
-					}
-				}
-			}
-			if = {
-				limit = {
-					any_state = {
-						AND = {
-							is_core_of = MDT
-							NOT = { is_controlled_by = MDT }
-						}
-					}
-				}
-				every_country = {
-					limit = {
-						any_owned_state = {
-							is_core_of = MDT
-						}
-					}
-					
-					ROOT = { 
-			create_wargoal = { type = annex_everything target = PREV }
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = breakingribs
-		icon = GFX_goal_unknown
-		cost = 5.00
-		prerequisite = {
-			focus = drumswest
-		}
-		available = {
-			
-			or = {
-				if = {
-					RBT = {
-						is_puppet_of = TRL
-					}
-				}
-				if = {
-					TRL = {
-						owns_state = 587
-						owns_state = 506
-						owns_state = 449
-						owns_state = 450
-						owns_state = 493
-					}
-				}
-			}
-		}
-		x = 5
-		y = 7
-		completion_reward = {
-			add_state_core = 587
-			add_state_core = 506
-			add_state_core = 450
-			add_state_core = 449
-			add_state_core = 493
-		}
-	}
-	focus = {
-		id = drinking_marrow
-		icon = GFX_goal_unknown
-		cost = 5.00
-		prerequisite = {
-			focus = drumswest
-		}
-		available = {
-			or = {
-				if = {
-			
-					MDT = {
-						is_puppet_of = TRL
-					}
-				}
-				if = {
-					TRL = {
-						owns_state = 268
-						owns_state = 113
-						owns_state = 231
-						owns_state = 467
-					}
-				}
-			}
-		}
-		x = 7
-		y = 7
-		completion_reward = {
-			add_state_core = 268
-			add_state_core = 113
-			add_state_core = 231
-			add_state_core = 467
-		}
-	}
-	focus = {
-		id = forced_mutation
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = breakingribs
-		}
-		prerequisite = {
-			focus = drinking_marrow
-		}
-		x = 6
-		y = 8
-		completion_reward = {
-			load_oob = warren_forced1
-		}
-	}
-	focus = {
-		id = williamette
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = breakingribs
-		}
-		available = {
-			owns_state = 493
-		}
-		x = 4
-		y = 8
-		completion_reward = {
-			493 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = bunker
-					level = 1
-					instant_build = yes
-					province = 8574
-				}
-			}
-		}
-	}
-	focus = {
-		id = broken_tribes
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = drinking_marrow
-		}
-		x = 8
-		y = 8
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 1
-										include_locked = yes
-									}
-									is_in_home_area = yes
+		x = 15
+		y = 9
+			available = {
+					or = {
+							WBH = {
+									is_puppet_of = TRL
 								}
-							}
+							WBH = {
+									exists = no
+								}
 						}
-					}
 				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
+			completion_reward = {
+					load_oob = warren_brotherhood
 				}
-			}
-		}
-	}
-	focus = {
-		id = fromtheruins
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = williamette
-		}
-		x = 4
-		y = 9
-		completion_reward = {
-			add_tech_bonus = {
-				name = Warren_ruins
-				bonus = 0.5
-				uses = 1
-				category = industry
-			}
-		}
-	}
-	focus = {
-		id = pinnaclepoint
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = broken_tribes
-		}
-		x = 8
-		y = 9
-		completion_reward = {
-			add_tech_bonus = {
-				name = Warren_ruins
-				bonus = 0.5
-				uses = 1
-				category = industry
-			}
-		}
-	}
-	focus = {
-		id = warhornswest
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = forced_mutation
-		}
-		x = 6
-		y = 9
-		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = BPT
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = CHE
-			}
-			if = {
-				limit = {
-					any_state = {
-						AND = {
-							is_core_of = BPT
-							NOT = { is_controlled_by = BPT }
-						}
-					}
-				}
-				every_country = {
-					limit = {
-						any_owned_state = {
-							is_core_of = BPT
-						}
-					}
-					
-					ROOT = { 
-			create_wargoal = { type = annex_everything target = PREV }
-					}
-				}
-			}
-			if = {
-				limit = {
-					any_state = {
-						AND = {
-							is_core_of = CHE
-							NOT = { is_controlled_by = CHE }
-						}
-					}
-				}
-				every_country = {
-					limit = {
-						any_owned_state = {
-							is_core_of = CHE
-						}
-					}
-					
-					ROOT = { 
-			create_wargoal = { type = annex_everything target = PREV }
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = pickingbones
-		icon = GFX_goal_unknown
-		cost = 5.00
-		prerequisite = {
-			focus = warhornswest
-		}
-		available = {
-		or = {
-				if = {
-					BPT = {
-						is_puppet_of = TRL
-					}
-				}
-				if = {
-					TRL = {
-						owns_state = 251
-						owns_state = 600
-						owns_state = 150
-						owns_state = 86
-					}
-				}
-			}
-		}
-		x = 5
-		y = 10
-		completion_reward = {
-			add_state_core = 251
-			add_state_core = 600
-			add_state_core = 150
-			add_state_core = 86
-		}
-	}
-	focus = {
-		id = takinghomes
-		icon = GFX_goal_unknown
-		cost = 5.00
-		prerequisite = {
-			focus = warhornswest
-		}
-		x = 7
-		y = 10
-		available = {
-			or = {
-				if = {
-					CHE = {
-						is_puppet_of = TRL
-					}
-				}
-				if = {
-					TRL = {
-						owns_state = 426
-						owns_state = 580
-						owns_state = 480
-						owns_state = 121
-						owns_state = 536
-					}
-				}
-			}
-		}
-		completion_reward = {
-			add_state_core = 426
-			add_state_core = 580
-			add_state_core = 480
-			add_state_core = 121
-			add_state_core = 536
-		}
-	}
-	focus = {
-		id = forcedmut2
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = pickingbones
-		}
-		prerequisite = {
-			focus = takinghomes
-		}
-		x = 6
-		y = 11
-		completion_reward = {
-			load_oob = warren_forced2
-		}
 
 	}
 	focus = {
-		id = oldroad
-		icon = GFX_goal_unknown
+		id = slavesunworthy
+		icon = GFX_goal_legion_slaves
 		cost = 10.00
 		prerequisite = {
-			focus = pickingbones
-		}
-		x = 4
-		y = 11
-		available = {
-			or = {
-				if = {
-					BPT = {
-						is_puppet_of = TRL
-					}
-				}
-				if = {
-					TRL = {
-						owns_state = 251
-						owns_state = 600
-						owns_state = 150
-						owns_state = 86
-					}
-				}
-			}
-		}
-		completion_reward = {
-			251 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-			600 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-			150 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-			86 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-
-	}
-	focus = {
-		id = armory
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = takinghomes
-		}
-		available = {
-			or = {
-				if = {
-					CHE = {
-						is_puppet_of = TRL
-						owns_state = 580
-					}
-				}
-				if = {
-					TRL = {
-						owns_state = 580
-					}
-				}
-			}
-		}
-		x = 8
-		y = 11
-		completion_reward = {
-			add_ideas = warren_chemult_armory
-		}
-	}
-	focus = {
-		id = greattribes
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = forcedmut2
-		}
-		x = 6
-		y = 12
-		completion_reward = {
-		create_wargoal = {
-				type = annex_everything
-				target = BDT
-			}
-			create_wargoal = {
-				type = annex_everything
-				target = MLT
-			}
-		if = {
-				limit = {
-					any_state = {
-						AND = {
-							is_core_of = BDT
-							NOT = { is_controlled_by = BDT }
-						}
-					}
-				}
-				every_country = {
-					limit = {
-						any_owned_state = {
-							is_core_of = BDT
-						}
-					}
-					
-					ROOT = { 
-			create_wargoal = { type = annex_everything target = PREV }
-					}
-				}
-			}
-			if = {
-				limit = {
-					any_state = {
-						AND = {
-							is_core_of = MLT
-							NOT = { is_controlled_by = MLT }
-						}
-					}
-				}
-				every_country = {
-					limit = {
-						any_owned_state = {
-							is_core_of = MLT
-						}
-					}
-					
-					ROOT = { 
-			create_wargoal = { type = annex_everything target = PREV }
-					}
-				}
-			}
-		}
-	}
-	focus = {
-		id = oldguns
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = armory
-		}
-		x = 8
-		y = 12
-		completion_reward = {
-			if = {
-				limit = {
-				
-					NOT = {
-						TRL = {
-							has_tech = support_weaponry
-						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						support_weaponry = 1
-					}
-				}
-				add_tech_bonus = {
-					name = memory_ages
-					bonus = 0.5
-					uses = 2
-					category = explosive_tech
-				}
-					
-			}
-			if = {
-				limit = {
-					TRL = {
-						has_tech = support_weaponry
-					}
-					NOT = {
-						TRL = {
-							has_tech = explosive_tech
-						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						explosive_tech = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					TRL = {
-						has_tech = explosive_tech
-					}
-					NOT = {
-						TRL = {
-							has_tech = explosive_tech_2
-						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						explosive_tech_2 = 1
-					}
-				}
-				load_oob = warren_oldguns
-			}
-			if = {
-				limit = {
-					TRL = {
-						has_tech = explosive_tech_2
-					}
-					NOT = {
-						TRL = {
-							has_tech = explosive_tech_3
-						}
-					}
-				}
-				TRL = {
-					set_technology = {
-						explosive_tech_3 = 1
-					}
-				}
-				load_oob = warren_oldguns
-			}
-		}
-
-	}
-	focus = {
-		id = bone_picks
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = oldroad
-		}
-		x = 4
-		y = 12
-		completion_reward = {	
-			add_ideas = bonepicks
-		}
-	}
-	focus = {
-		id = overrun
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = greattribes
-		}
-		x = 5
-		y = 13
-		available = {
-			or = {
-				if = {
-					MLT = {
-						is_puppet_of = TRL
-					}
-				}
-				if = {
-					TRL = {
-						owns_state = 451
-						owns_state = 358
-					}
-				}
-			}
-		}
-		completion_reward = {
-			add_state_core = 358
-			add_state_core = 451
-		}
-		
-	}
-	focus = {
-		id = dancingbones
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = greattribes
-		}
-		x = 7
-		y = 13
-		available = {
-			or = {
-				if = {
-					BDT = {
-						is_puppet_of = TRL
-					}
-				}
-				if = {
-					TRL = {
-						owns_state = 343
-						owns_state = 298
-						owns_state = 155
-						owns_state = 71
-						owns_state = 323
-						owns_state = 29
-					}
-				}
-			}
-		}
-		completion_reward = {
-			TRL = {
-				add_state_core = 343
-				add_state_core = 298
-				add_state_core = 155
-				add_state_core = 71
-				add_state_core = 323
-				add_state_core = 29
-			}
-		}
-		
-	}
-	focus = {
-		id = forcedmute3
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = overrun
-		}
-		prerequisite = {
-			focus = dancingbones
-		}
-		x = 6
-		y = 14
-		completion_reward = {
-			load_oob = warren_forced3
-		}
-
-	}
-	focus = {
-		id = bountifulcoast
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = overrun
-		}
-		x = 4
-		y = 14
-		completion_reward = {
-			add_ideas = warren_bountiful_coast
-			358 = {
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = worthyfoe
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = dancingbones
-		}
-		x = 8
-		y = 14
-		completion_reward = {
-			create_corps_commander = {
-				name = "General Shatterhand"
-				portrait_path = ""
-				skill = 5
-				traits = {
-				ranger
-				urban_assault_specialist
-				}
-			}
-		}
-
-	}
-	focus = {
-		id = mirelurkconverts
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = bountifulcoast
-		}
-		x = 4
-		y = 15
-		completion_reward = {
-			add_ideas = warren_mirelurk
-		}
-
-	}
-	focus = {
-		id = monsterwoods
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = forcedmute3
-		}
-		x = 6
-		y = 15
-		completion_reward = {
-			load_oob = warren_woods_monster
-		}
-	}
-	focus = {
-		id = greatherd
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = worthyfoe
-		}
-		x = 8
-		y = 15
-		completion_reward = {
-			add_manpower = 1500
-		}
-
-	}
-	focus = {
-		id = tribaldakka
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = weaponspast
-		}
-		x = 12
-		y = 7
-		completion_reward = {
-			add_ideas = warren_dakka
-		}
-	}
-	focus = {
-		id = moredakka
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = tribaldakka
-		}
-		x = 12
-		y = 8
-		completion_reward = {
-			add_ideas = warren_dakka2
-		}
-	}
-	focus = {
-		id = betterdakka
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = moredakka
-		}
-		x = 12
-		y = 9
-		completion_reward = {
-			set_technology = {
-			basic_infantry_equipment = 1
-			anti_personnel_tech = 1
-			}
-		}
-	}
-	focus = {
-		id = goliath
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = rivergiants
+			focus = fourthholotape
 		}
 		x = 23
-		y = 10
-		completion_reward = {
-			load_oob = warren_goliath
-		}
+		y = 4
+			completion_reward = {
+					add_tech_bonus = {
+							name = unworthyslaves
+							bonus = 0.5
+							uses = 1
+							category = industry
+						}
+				}
+
 	}
 	focus = {
-		id = forcedroads
-		icon = GFX_goal_unknown
+		id = forceddigging
+		icon = GFX_goal_generic_construction2
+		cost = 10.00
+		prerequisite = {
+			focus = slavesunworthy
+		}
+		x = 22
+		y = 5
+			completion_reward = {
+					add_tech_bonus = {
+							name = forceddigging
+							bonus = 0.5
+							uses = 1
+							technology = quarry_picks
+						}
+				}
+
+	}
+	focus = {
+		id = expandingslavelabour
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10.00
+		prerequisite = {
+			focus = forceddigging
+		}
+		x = 20
+		y = 6
+			completion_reward = {
+					235 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 3
+									instant_build = yes
+								}
+						}
+					437 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 3
+									instant_build = yes
+								}
+						}
+					166 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 3
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = slavemutanthouse
+		icon = GFX_goal_generic_recruitment_focus
 		cost = 10.00
 		prerequisite = {
 			focus = expandingslavelabour
 		}
-		x = 29
-		y = 8
-		completion_reward = {
-			add_ideas = warren_forcedroads
+		x = 18
+		y = 7
+			completion_reward = {
+					add_ideas = warrenhouseslaves
+				}
+
+	}
+	focus = {
+		id = unwillinggatherers
+		icon = GFX_goal_generic_metal_focus
+		cost = 10.00
+		prerequisite = {
+			focus = forceddigging
 		}
+		x = 22
+		y = 6
+			completion_reward = {
+					add_ideas = warrengatherers
+				}
+
+	}
+	focus = {
+		id = mutantlabor
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 10.00
+		prerequisite = {
+			focus = slavesunworthy
+		}
+		x = 23
+		y = 7
+			completion_reward = {
+					add_tech_bonus = {
+							name = mutantlabor
+							bonus = 0.5
+							uses = 1
+							category = industry
+						}
+					add_ideas = warrenmutantlabor
+				}
+
+	}
+	focus = {
+		id = militarizedlabour
+		icon = GFX_goal_generic_pipe_weapons_focus
+		cost = 10.00
+		prerequisite = {
+			focus = mutantlabor
+		}
+		x = 23
+		y = 8
+			completion_reward = {
+					add_ideas = warrenmilitarizedlabor
+				}
+
+	}
+	focus = {
+		id = readyforwar
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 10.00
+		prerequisite = {
+			focus = slavesunworthy
+		}
+		x = 24
+		y = 5
+			completion_reward = {
+					add_ideas = warrenreadyforwar
+				}
+
+	}
+	focus = {
+		id = stockpiledweapons
+		icon = GFX_goal_generic_regular_firearms_focus
+		cost = 10.00
+		prerequisite = {
+			focus = readyforwar
+		}
+		x = 24
+		y = 6
+			completion_reward = {
+					add_equipment_to_stockpile = {
+							type = ballistic_equipment_2
+							amount = 1000
+							producer = TRL
+						}
+					235 = {
+							add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = rewardsofvictory
+		icon = GFX_goal_generic_building_focus
+		cost = 10.00
+		prerequisite = {
+			focus = readyforwar
+		}
+		x = 26
+		y = 6
+			completion_reward = {
+					add_ideas = warrenrewardsofvictory
+				}
+
+	}
+	focus = {
+		id = gloriouscity
+		icon = GFX_goal_generic_cities_focus
+		cost = 10.00
+		prerequisite = {
+			focus = rewardsofvictory
+		}
+		x = 26
+		y = 7
+			completion_reward = {
+					235 = {
+							add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = defendingthewarren
+		icon = GFX_goal_generic_walls_focus
+		cost = 10.00
+		prerequisite = {
+			focus = rewardsofvictory
+		}
+		x = 28
+		y = 7
+			completion_reward = {
+					add_ideas = warrendefendingthewarren
+				}
+
+	}
+	focus = {
+		id = oregonline
+		icon = GFX_goal_generic_bunkers_focus
+		cost = 10.00
+		prerequisite = {
+			focus = defendingthewarren
+		}
+		x = 28
+		y = 8
+			completion_reward = {
+					437 = {
+							add_building_construction = {
+									type = bunker
+									level = 2
+									instant_build = yes
+									province = 2163
+								}
+						}
+					437 = {
+							add_building_construction = {
+									type = bunker
+									level = 2
+									instant_build = yes
+									province = 4107
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = memories_of_ages
+		icon = GFX_goal_generic_data_focus
+		cost = 10.00
+		prerequisite = {
+			focus = fourthholotape
+		}
+		x = 35
+		y = 4
+			completion_reward = {
+					army_experience = 30
+					add_tech_bonus = {
+							name = memory_ages
+							bonus = 0.5
+							uses = 1
+							category = land_doctrine
+						}
+				}
+
+	}
+	focus = {
+		id = weaponspast
+		icon = GFX_goal_generic_ammo_boxes_focus
+		cost = 10.00
+		prerequisite = {
+			focus = memories_of_ages
+		}
+		mutually_exclusive = {
+			focus = weaponsfuture
+		}
+		x = 30
+		y = 5
+			completion_reward = {
+					add_tech_bonus = {
+							name = weapons_past
+							bonus = 0.5
+							uses = 1
+							category = ballistic_weaponry_tech
+						}
+				}
+
+	}
+	focus = {
+		id = tribaldakka
+		icon = GFX_goal_generic_common_firearms_focus
+		cost = 10.00
+		prerequisite = {
+			focus = weaponspast
+		}
+		x = 30
+		y = 6
+			completion_reward = {
+					add_ideas = warren_dakka
+				}
+
+	}
+	focus = {
+		id = moredakka
+		icon = GFX_goal_generic_regular_firearms_focus
+		cost = 10.00
+		prerequisite = {
+			focus = tribaldakka
+		}
+		x = 30
+		y = 7
+			completion_reward = {
+					add_ideas = warren_dakka2
+				}
+
+	}
+	focus = {
+		id = betterdakka
+		icon = GFX_goal_generic_advanced_firearms_focus
+		cost = 10.00
+		prerequisite = {
+			focus = moredakka
+		}
+		x = 30
+		y = 8
+			completion_reward = {
+					set_technology = {
+							basic_infantry_equipment = 1
+							anti_personnel_tech = 1
+						}
+				}
+
+	}
+	focus = {
+		id = weaponsfuture
+		icon = GFX_goal_generic_electricity_focus
+		cost = 10.00
+		prerequisite = {
+			focus = memories_of_ages
+		}
+		mutually_exclusive = {
+			focus = weaponspast
+		}
+		x = 32
+		y = 5
+			completion_reward = {
+					add_tech_bonus = {
+							name = weapons_future
+							bonus = 0.5
+							uses = 1
+							category = energy_weaponry_tech
+						}
+				}
+
+	}
+	focus = {
+		id = tribalzappa
+		icon = GFX_goal_generic_laser_muskets_focus
+		cost = 10.00
+		prerequisite = {
+			focus = weaponsfuture
+		}
+		x = 32
+		y = 6
+			completion_reward = {
+					add_ideas = warren_zappa
+				}
+
+	}
+	focus = {
+		id = morezappa
+		icon = GFX_goal_generic_common_energy_weapons_focus
+		cost = 10.00
+		prerequisite = {
+			focus = tribalzappa
+		}
+		x = 32
+		y = 7
+			completion_reward = {
+					add_ideas = warren_zappa2
+				}
+
+	}
+	focus = {
+		id = morezappa2
+		icon = GFX_goal_generic_advanced_energy_weapons_focus
+		cost = 10.00
+		prerequisite = {
+			focus = morezappa
+		}
+		x = 32
+		y = 8
+			completion_reward = {
+					set_technology = {
+							improved_laser_weaponry = 1
+							laser_tech = 1
+						}
+				}
+
+	}
+	focus = {
+		id = guardianwild
+		icon = GFX_goal_generic_defence
+		cost = 10.00
+		prerequisite = {
+			focus = memories_of_ages
+		}
+		mutually_exclusive = {
+			focus = warriorswild
+		}
+		x = 34
+		y = 5
+			completion_reward = {
+					add_ideas = warrenguardianswild
+				}
+
+	}
+	focus = {
+		id = warriorswild
+		icon = GFX_goal_generic_war_focus
+		cost = 10.00
+		prerequisite = {
+			focus = memories_of_ages
+		}
+		mutually_exclusive = {
+			focus = guardianwild
+		}
+		x = 36
+		y = 5
+			completion_reward = {
+					add_ideas = warrenwarriorswild
+				}
+
+	}
+	focus = {
+		id = baneofman
+		icon = GFX_goal_generic_secret_weapon
+		cost = 10.00
+		prerequisite = {
+			focus = guardianwild
+			focus = warriorswild
+		}
+		x = 35
+		y = 6
+			completion_reward = {
+					army_experience = 30
+					add_tech_bonus = {
+							name = bane_of_man
+							bonus = 0.5
+							uses = 2
+							category = land_doctrine
+						}
+				}
+
+	}
+	focus = {
+		id = realmsofgoliath
+		icon = GFX_focus_generic_home_defense
+		cost = 10.00
+		prerequisite = {
+			focus = baneofman
+		}
+		x = 35
+		y = 7
+			completion_reward = {
+					add_ideas = warren_realm_goliath
+				}
+
+	}
+	focus = {
+		id = callofgiants
+		icon = GFX_goal_generic_CAS
+		cost = 10.00
+		prerequisite = {
+			focus = realmsofgoliath
+		}
+		mutually_exclusive = {
+			focus = callofhorde
+		}
+		x = 34
+		y = 8
+			completion_reward = {
+					add_ideas = warrencallofgiants
+				}
+
+	}
+	focus = {
+		id = trollsofthewarren
+		icon = GFX_goal_generic_attack_allies
+		cost = 10.00
+		prerequisite = {
+			focus = callofgiants
+		}
+		x = 33
+		y = 9
+			completion_reward = {
+					swap_ideas = {
+							add_idea = warrentrollsofthewarren
+							remove_idea = warrencallofgiants
+						}
+				}
+
+	}
+	focus = {
+		id = callofhorde
+		icon = GFX_goal_generic_recruitment_focus
+		cost = 10.00
+		prerequisite = {
+			focus = realmsofgoliath
+		}
+		mutually_exclusive = {
+			focus = callofgiants
+		}
+		x = 36
+		y = 8
+			completion_reward = {
+					add_ideas = warrencallofhorde
+				}
+
+	}
+	focus = {
+		id = callofthefirst
+		icon = GFX_goal_support_fascism
+		cost = 10.00
+		prerequisite = {
+			focus = callofgiants
+			focus = callofhorde
+		}
+		x = 35
+		y = 9
+			completion_reward = {
+					add_ideas = warrencallofthefirst
+				}
+
+	}
+	focus = {
+		id = sonsofman
+		icon = GFX_focus_generic_little_entente
+		cost = 10.00
+		prerequisite = {
+			focus = callofhorde
+		}
+		x = 37
+		y = 9
+			completion_reward = {
+					swap_ideas = {
+							add_idea = warrensonsofman
+							remove_idea = warrencallofhorde
+						}
+					army_experience = 30
+				}
+
+	}
+	focus = {
+		id = riverexpedition
+		icon = GFX_goal_generic_harbours_focus
+		cost = 10.00
+		prerequisite = {
+			focus = memories_of_ages
+		}
+		x = 39
+		y = 5
+			completion_reward = {
+					235 = {
+							add_building_construction = {
+									type = naval_base
+									level = 2
+									instant_build = yes
+									province = 2160
+								}
+							add_building_construction = {
+									type = dockyard
+									level = 3
+									instant_build = yes
+								}
+						}
+					create_navy_leader = {
+							name = "Wave Breaker"
+							picture = ""
+							traits = {
+
+}
+							skill = 3
+						}
+				}
+
+	}
+	focus = {
+		id = mutantwarship
+		icon = GFX_goal_generic_navy_battleship
+		cost = 10.00
+		prerequisite = {
+			focus = riverexpedition
+		}
+		x = 38
+		y = 6
+			completion_reward = {
+					add_tech_bonus = {
+							name = mutantwarship
+							bonus = 0.5
+							uses = 1
+							category = ship_cruiser_tech
+						}
+				}
+
+	}
+	focus = {
+		id = amassingfleet
+		icon = GFX_goal_generic_navy_carrier
+		cost = 10.00
+		prerequisite = {
+			focus = mutantwarship
+		}
+		x = 38
+		y = 7
+			completion_reward = {
+					add_ideas = warrenamassingfleet
+				}
+
+	}
+	focus = {
+		id = mutantcanoe
+		icon = GFX_goal_generic_navy_submarine
+		cost = 10.00
+		prerequisite = {
+			focus = riverexpedition
+		}
+		x = 40
+		y = 6
+			completion_reward = {
+					add_tech_bonus = {
+							name = mutantwarship
+							bonus = 0.5
+							uses = 1
+							category = ship_destroyer_tech
+						}
+				}
+
+	}
+	focus = {
+		id = raidingculture
+		icon = GFX_goal_generic_navy_anti_submarine
+		cost = 10.00
+		prerequisite = {
+			focus = mutantcanoe
+		}
+		x = 40
+		y = 7
+			completion_reward = {
+					add_ideas = warrenraidingculture
+				}
+
+	}
+	focus = {
+		id = rivergiants
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 10.00
+		prerequisite = {
+			focus = amassingfleet
+		}
+		prerequisite = {
+			focus = raidingculture
+		}
+		x = 39
+		y = 8
+			completion_reward = {
+					add_tech_bonus = {
+							name = rivergiants
+							bonus = 0.5
+							uses = 1
+							category = ship_heavy_cruiser_tech
+						}
+				}
+
+	}
+	focus = {
+		id = nightkinmigration
+		icon = GFX_focus_generic_little_entente
+		cost = 10.00
+		prerequisite = {
+			focus = pittmancunning
+		}
+		x = 7
+		y = 6
+			completion_reward = {
+					add_manpower = 3000
+				}
+
+	}
+	focus = {
+		id = southernpush
+		icon = GFX_goal_generic_war_focus
+		cost = 10.00
+		prerequisite = {
+			focus = nightkinmigration
+		}
+		x = 7
+		y = 7
+			available = {
+					or = {
+							if = {
+									MDT = {
+											exists = no
+										}
+									BPT = {
+											exists = no
+										}
+									TRL = {
+											controls_state = 113
+											controls_state = 467
+											controls_state = 251
+										}
+								}
+							if = {
+									MDT = {
+											is_puppet_of = TRL
+										}
+									BPT = {
+											is_puppet_of = TRL
+										}
+								}
+						}
+				}
+			completion_reward = {
+					create_wargoal = {
+							type = annex_everything
+							target = ARR
+						}
+					create_wargoal = {
+							type = annex_everything
+							target = KLA
+						}
+					if = {
+							limit = {
+									any_state = {
+											AND = {
+													is_core_of = ARR
+													NOT = {
+															is_controlled_by = ARR
+														}
+												}
+										}
+								}
+							every_country = {
+									limit = {
+											any_owned_state = {
+													is_core_of = ARR
+												}
+										}
+									ROOT = {
+											create_wargoal = {
+													type = annex_everything
+													target = PREV
+												}
+										}
+								}
+						}
+					if = {
+							limit = {
+									any_state = {
+											AND = {
+													is_core_of = KLA
+													NOT = {
+															is_controlled_by = KLA
+														}
+												}
+										}
+								}
+							every_country = {
+									limit = {
+											any_owned_state = {
+													is_core_of = KLA
+												}
+										}
+									ROOT = {
+											create_wargoal = {
+													type = annex_everything
+													target = PREV
+												}
+										}
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = vengeancemaster
+		icon = GFX_goal_generic_army_motorized
+		cost = 10.00
+		prerequisite = {
+			focus = southernpush
+		}
+		x = 6
+		y = 8
+			available = {
+					or = {
+							if = {
+									ARR = {
+											is_puppet_of = TRL
+										}
+								}
+							if = {
+									ARR = {
+											exists = no
+										}
+									TRL = {
+											owns_state = 337
+											owns_state = 96
+											owns_state = 32
+										}
+								}
+						}
+				}
+			completion_reward = {
+					add_ideas = pittman2
+				}
+
+	}
+	focus = {
+		id = redriver
+		icon = GFX_goal_generic_attack_allies
+		cost = 10.00
+		prerequisite = {
+			focus = southernpush
+		}
+		x = 8
+		y = 8
+			available = {
+					or = {
+							if = {
+									KLA = {
+											is_puppet_of = TRL
+										}
+								}
+							if = {
+									KLA = {
+											exists = no
+										}
+									TRL = {
+											owns_state = 57
+											owns_state = 59
+											owns_state = 454
+										}
+								}
+						}
+				}
+			completion_reward = {
+					add_ideas = pittman3
+				}
+
+	}
+	focus = {
+		id = mariposareborn
+		icon = GFX_goal_generic_demand_territory
+		cost = 10.00
+		prerequisite = {
+			focus = vengeancemaster
+		}
+		prerequisite = {
+			focus = redriver
+		}
+		x = 7
+		y = 9
+			available = {
+					TRL = {
+							owns_state = 351
+						}
+				}
+			completion_reward = {
+					remove_ideas = pittman1
+					remove_ideas = pittman2
+					remove_ideas = pittman3
+					add_ideas = pittman4
+				}
+
+	}
+	focus = {
+		id = drumswest
+		icon = GFX_goal_generic_war_focus
+		cost = 10.00
+		prerequisite = {
+			focus = warrenstirs
+		}
+		x = 2
+		y = 5
+			completion_reward = {
+					create_wargoal = {
+							type = annex_everything
+							target = RBT
+						}
+					create_wargoal = {
+							type = annex_everything
+							target = MDT
+						}
+					if = {
+							limit = {
+									any_state = {
+											AND = {
+													is_core_of = RBT
+													NOT = {
+															is_controlled_by = RBT
+														}
+												}
+										}
+								}
+							every_country = {
+									limit = {
+											any_owned_state = {
+													is_core_of = RBT
+												}
+										}
+									ROOT = {
+											create_wargoal = {
+													type = annex_everything
+													target = PREV
+												}
+										}
+								}
+						}
+					if = {
+							limit = {
+									any_state = {
+											AND = {
+													is_core_of = MDT
+													NOT = {
+															is_controlled_by = MDT
+														}
+												}
+										}
+								}
+							every_country = {
+									limit = {
+											any_owned_state = {
+													is_core_of = MDT
+												}
+										}
+									ROOT = {
+											create_wargoal = {
+													type = annex_everything
+													target = PREV
+												}
+										}
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = breakingribs
+		icon = GFX_focus_generic_self_management
+		cost = 5.00
+		prerequisite = {
+			focus = drumswest
+		}
+		x = 1
+		y = 6
+			available = {
+					or = {
+							if = {
+									RBT = {
+											is_puppet_of = TRL
+										}
+								}
+							if = {
+									TRL = {
+											owns_state = 587
+											owns_state = 506
+											owns_state = 449
+											owns_state = 450
+											owns_state = 493
+										}
+								}
+						}
+				}
+			completion_reward = {
+					add_state_core = 587
+					add_state_core = 506
+					add_state_core = 450
+					add_state_core = 449
+					add_state_core = 493
+				}
+
+	}
+	focus = {
+		id = drinking_marrow
+		icon = GFX_focus_generic_self_management
+		cost = 5.00
+		prerequisite = {
+			focus = drumswest
+		}
+		x = 3
+		y = 6
+			available = {
+					or = {
+							if = {
+									MDT = {
+											is_puppet_of = TRL
+										}
+								}
+							if = {
+									TRL = {
+											owns_state = 268
+											owns_state = 113
+											owns_state = 231
+											owns_state = 467
+										}
+								}
+						}
+				}
+			completion_reward = {
+					add_state_core = 268
+					add_state_core = 113
+					add_state_core = 231
+					add_state_core = 467
+				}
+
+	}
+	focus = {
+		id = forced_mutation
+		icon = GFX_goal_generic_secret_weapon
+		cost = 10.00
+		prerequisite = {
+			focus = breakingribs
+		}
+		prerequisite = {
+			focus = drinking_marrow
+		}
+		x = 2
+		y = 7
+			completion_reward = {
+					load_oob = warren_forced1
+				}
+
+	}
+	focus = {
+		id = williamette
+		icon = GFX_goal_generic_bunkers_focus
+		cost = 10.00
+		prerequisite = {
+			focus = breakingribs
+		}
+		x = 0
+		y = 7
+			available = {
+					owns_state = 493
+				}
+			completion_reward = {
+					493 = {
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = bunker
+									level = 1
+									instant_build = yes
+									province = 8574
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = broken_tribes
+		icon = GFX_goal_NCR_Industrialcomplex
+		cost = 10.00
+		prerequisite = {
+			focus = drinking_marrow
+		}
+		x = 4
+		y = 7
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = industrial_complex
+											size > 1
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 1
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = fromtheruins
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 10.00
+		prerequisite = {
+			focus = williamette
+		}
+		x = 0
+		y = 8
+			completion_reward = {
+					add_tech_bonus = {
+							name = Warren_ruins
+							bonus = 0.5
+							uses = 1
+							category = industry
+						}
+				}
+
+	}
+	focus = {
+		id = pinnaclepoint
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 10.00
+		prerequisite = {
+			focus = broken_tribes
+		}
+		x = 4
+		y = 8
+			completion_reward = {
+					add_tech_bonus = {
+							name = Warren_ruins
+							bonus = 0.5
+							uses = 1
+							category = industry
+						}
+				}
+
+	}
+	focus = {
+		id = warhornswest
+		icon = GFX_goal_generic_war_focus
+		cost = 10.00
+		prerequisite = {
+			focus = forced_mutation
+		}
+		x = 2
+		y = 8
+			completion_reward = {
+					create_wargoal = {
+							type = annex_everything
+							target = BPT
+						}
+					create_wargoal = {
+							type = annex_everything
+							target = CHE
+						}
+					if = {
+							limit = {
+									any_state = {
+											AND = {
+													is_core_of = BPT
+													NOT = {
+															is_controlled_by = BPT
+														}
+												}
+										}
+								}
+							every_country = {
+									limit = {
+											any_owned_state = {
+													is_core_of = BPT
+												}
+										}
+									ROOT = {
+											create_wargoal = {
+													type = annex_everything
+													target = PREV
+												}
+										}
+								}
+						}
+					if = {
+							limit = {
+									any_state = {
+											AND = {
+													is_core_of = CHE
+													NOT = {
+															is_controlled_by = CHE
+														}
+												}
+										}
+								}
+							every_country = {
+									limit = {
+											any_owned_state = {
+													is_core_of = CHE
+												}
+										}
+									ROOT = {
+											create_wargoal = {
+													type = annex_everything
+													target = PREV
+												}
+										}
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = pickingbones
+		icon = GFX_focus_generic_self_management
+		cost = 5.00
+		prerequisite = {
+			focus = warhornswest
+		}
+		x = 1
+		y = 9
+			available = {
+					or = {
+							if = {
+									BPT = {
+											is_puppet_of = TRL
+										}
+								}
+							if = {
+									TRL = {
+											owns_state = 251
+											owns_state = 600
+											owns_state = 150
+											owns_state = 86
+										}
+								}
+						}
+				}
+			completion_reward = {
+					add_state_core = 251
+					add_state_core = 600
+					add_state_core = 150
+					add_state_core = 86
+				}
+
+	}
+	focus = {
+		id = takinghomes
+		icon = GFX_focus_generic_self_management
+		cost = 5.00
+		prerequisite = {
+			focus = warhornswest
+		}
+		x = 3
+		y = 9
+			available = {
+					or = {
+							if = {
+									CHE = {
+											is_puppet_of = TRL
+										}
+								}
+							if = {
+									TRL = {
+											owns_state = 426
+											owns_state = 580
+											owns_state = 480
+											owns_state = 121
+											owns_state = 536
+										}
+								}
+						}
+				}
+			completion_reward = {
+					add_state_core = 426
+					add_state_core = 580
+					add_state_core = 480
+					add_state_core = 121
+					add_state_core = 536
+				}
+
+	}
+	focus = {
+		id = forcedmut2
+		icon = GFX_goal_generic_secret_weapon
+		cost = 10.00
+		prerequisite = {
+			focus = pickingbones
+		}
+		prerequisite = {
+			focus = takinghomes
+		}
+		x = 2
+		y = 10
+			completion_reward = {
+					load_oob = warren_forced2
+				}
+
+	}
+	focus = {
+		id = oldroad
+		icon = GFX_goal_legion_via_militaris
+		cost = 10.00
+		prerequisite = {
+			focus = pickingbones
+		}
+		x = 0
+		y = 10
+			available = {
+					or = {
+							if = {
+									BPT = {
+											is_puppet_of = TRL
+										}
+								}
+							if = {
+									TRL = {
+											owns_state = 251
+											owns_state = 600
+											owns_state = 150
+											owns_state = 86
+										}
+								}
+						}
+				}
+			completion_reward = {
+					251 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+					600 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+					150 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+					86 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = armory
+		icon = GFX_goal_generic_common_firearms_focus
+		cost = 10.00
+		prerequisite = {
+			focus = takinghomes
+		}
+		x = 4
+		y = 10
+			available = {
+					or = {
+							if = {
+									CHE = {
+											is_puppet_of = TRL
+											owns_state = 580
+										}
+								}
+							if = {
+									TRL = {
+											owns_state = 580
+										}
+								}
+						}
+				}
+			completion_reward = {
+					add_ideas = warren_chemult_armory
+				}
+
+	}
+	focus = {
+		id = greattribes
+		icon = GFX_goal_generic_war_focus
+		cost = 10.00
+		prerequisite = {
+			focus = forcedmut2
+		}
+		x = 2
+		y = 11
+			completion_reward = {
+					create_wargoal = {
+							type = annex_everything
+							target = BDT
+						}
+					create_wargoal = {
+							type = annex_everything
+							target = MLT
+						}
+					if = {
+							limit = {
+									any_state = {
+											AND = {
+													is_core_of = BDT
+													NOT = {
+															is_controlled_by = BDT
+														}
+												}
+										}
+								}
+							every_country = {
+									limit = {
+											any_owned_state = {
+													is_core_of = BDT
+												}
+										}
+									ROOT = {
+											create_wargoal = {
+													type = annex_everything
+													target = PREV
+												}
+										}
+								}
+						}
+					if = {
+							limit = {
+									any_state = {
+											AND = {
+													is_core_of = MLT
+													NOT = {
+															is_controlled_by = MLT
+														}
+												}
+										}
+								}
+							every_country = {
+									limit = {
+											any_owned_state = {
+													is_core_of = MLT
+												}
+										}
+									ROOT = {
+											create_wargoal = {
+													type = annex_everything
+													target = PREV
+												}
+										}
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = oldguns
+		icon = GFX_goal_NCR_Blast_from_the_Past
+		cost = 10.00
+		prerequisite = {
+			focus = armory
+		}
+		x = 4
+		y = 11
+			completion_reward = {
+					if = {
+							limit = {
+									NOT = {
+											TRL = {
+													has_tech = support_weaponry
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											support_weaponry = 1
+										}
+								}
+							add_tech_bonus = {
+									name = memory_ages
+									bonus = 0.5
+									uses = 2
+									category = explosive_tech
+								}
+						}
+					if = {
+							limit = {
+									TRL = {
+											has_tech = support_weaponry
+										}
+									NOT = {
+											TRL = {
+													has_tech = explosive_tech
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											explosive_tech = 1
+										}
+								}
+						}
+					if = {
+							limit = {
+									TRL = {
+											has_tech = explosive_tech
+										}
+									NOT = {
+											TRL = {
+													has_tech = explosive_tech_2
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											explosive_tech_2 = 1
+										}
+								}
+							load_oob = warren_oldguns
+						}
+					if = {
+							limit = {
+									TRL = {
+											has_tech = explosive_tech_2
+										}
+									NOT = {
+											TRL = {
+													has_tech = explosive_tech_3
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											explosive_tech_3 = 1
+										}
+								}
+							load_oob = warren_oldguns
+						}
+				}
+
+	}
+	focus = {
+		id = bone_picks
+		icon = GFX_goal_legion_blacksmith
+		cost = 10.00
+		prerequisite = {
+			focus = oldroad
+		}
+		x = 0
+		y = 11
+			completion_reward = {
+					add_ideas = bonepicks
+				}
+
+	}
+	focus = {
+		id = overrun
+		icon = GFX_focus_generic_self_management
+		cost = 10.00
+		prerequisite = {
+			focus = greattribes
+		}
+		x = 1
+		y = 12
+			available = {
+					or = {
+							if = {
+									MLT = {
+											is_puppet_of = TRL
+										}
+								}
+							if = {
+									TRL = {
+											owns_state = 451
+											owns_state = 358
+										}
+								}
+						}
+				}
+			completion_reward = {
+					add_state_core = 358
+					add_state_core = 451
+				}
+
+	}
+	focus = {
+		id = dancingbones
+		icon = GFX_focus_generic_self_management
+		cost = 10.00
+		prerequisite = {
+			focus = greattribes
+		}
+		x = 3
+		y = 12
+			available = {
+					or = {
+							if = {
+									BDT = {
+											is_puppet_of = TRL
+										}
+								}
+							if = {
+									TRL = {
+											owns_state = 343
+											owns_state = 298
+											owns_state = 155
+											owns_state = 71
+											owns_state = 323
+											owns_state = 29
+										}
+								}
+						}
+				}
+			completion_reward = {
+					TRL = {
+							add_state_core = 343
+							add_state_core = 298
+							add_state_core = 155
+							add_state_core = 71
+							add_state_core = 323
+							add_state_core = 29
+						}
+				}
+
+	}
+	focus = {
+		id = forcedmute3
+		icon = GFX_goal_generic_secret_weapon
+		cost = 10.00
+		prerequisite = {
+			focus = overrun
+		}
+		prerequisite = {
+			focus = dancingbones
+		}
+		x = 2
+		y = 13
+			completion_reward = {
+					load_oob = warren_forced3
+				}
+
+	}
+	focus = {
+		id = bountifulcoast
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 10.00
+		prerequisite = {
+			focus = overrun
+		}
+		x = 0
+		y = 13
+			completion_reward = {
+					add_ideas = warren_bountiful_coast
+					358 = {
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = worthyfoe
+		icon = GFX_goal_generic_land_doctrines_focus
+		cost = 10.00
+		prerequisite = {
+			focus = dancingbones
+		}
+		x = 4
+		y = 13
+			completion_reward = {
+					create_corps_commander = {
+							name = "General Shatterhand"
+							portrait_path = ""
+							skill = 5
+							traits = { ranger  urban_assault_specialist }
+						}
+				}
+
+	}
+	focus = {
+		id = mirelurkconverts
+		icon = GFX_goal_generic_naval_doctrines_focus
+		cost = 10.00
+		prerequisite = {
+			focus = bountifulcoast
+		}
+		x = 0
+		y = 14
+			completion_reward = {
+					add_ideas = warren_mirelurk
+				}
+
+	}
+	focus = {
+		id = monsterwoods
+		icon = GFX_goal_generic_CAS
+		cost = 10.00
+		prerequisite = {
+			focus = forcedmute3
+		}
+		x = 2
+		y = 14
+			completion_reward = {
+					load_oob = warren_woods_monster
+				}
+
+	}
+	focus = {
+		id = greatherd
+		icon = GFX_goal_generic_ammo_boxes_focus
+		cost = 10.00
+		prerequisite = {
+			focus = worthyfoe
+		}
+		x = 4
+		y = 14
+			completion_reward = {
+					add_manpower = 1500
+				}
+
+	}
+	focus = {
+		id = goliath
+		icon = GFX_goal_generic_navy_battleship
+		cost = 10.00
+		prerequisite = {
+			focus = rivergiants
+		}
+		x = 39
+		y = 9
+			completion_reward = {
+					load_oob = warren_goliath
+				}
+
+	}
+	focus = {
+		id = forcedroads
+		icon = GFX_goal_generic_construction
+		cost = 10.00
+		prerequisite = {
+			focus = expandingslavelabour
+		}
+		x = 20
+		y = 7
+			completion_reward = {
+					add_ideas = warren_forcedroads
+				}
+
 	}
 	focus = {
 		id = slaveworkshop
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_military_industry_focus
 		cost = 10.00
 		prerequisite = {
 			focus = slavemutanthouse
 		}
-		x = 27
-		y = 9
-		completion_reward = {
-			add_ideas = warren_slave_workshops
-			235 = {
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
+		x = 18
+		y = 8
+			completion_reward = {
+					add_ideas = warren_slave_workshops
+					235 = {
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+						}
 				}
-			}
-		}
+
 	}
 }
