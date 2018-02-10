@@ -20,7 +20,7 @@ NDefines.NAI.ORG_UNIT_WEAK = 0.45 -- Organization % for unit to be considered we
 NDefines.NAI.STR_UNIT_WEAK = 0.4 -- Strength (equipment) % for unit to be considered weak
 
 --NDefines.NAI.PLAN_AVG_PREPARATION_TO_EXECUTE = 0.0				            -- % or more average plan preparation before executing
-NDefines.NAI.AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.5			                -- If less than this fraction of units on a front is moving  AI sees it as ready for action	
+NDefines.NAI.AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.25			                -- If less than this fraction of units on a front is moving  AI sees it as ready for action	
 NDefines.NAI.PLAN_VALUE_TO_EXECUTE = 0.0                                     -- AI will typically avoid carrying out a plan it below this value (0.0 is considered balanced).
 
 --NDefines.NAI.LOCATION_BALANCE_TO_ADVANCE = 0.0				                -- Limit on location strength balance between country and enemy for unit to dare to move forward.
@@ -38,7 +38,7 @@ NDefines.NAI.MIN_SUPPLY_USE_SANITY_CAP = 100	                                -- 
 NDefines.NAI.MAX_SUPPLY_DIVISOR = 0.5
 
 
-NDefines.NAI.DEPLOY_MIN_TRAINING_PEACE_FACTOR = 0.9		                        -- Required percentage of training (1.0 = 100%) for AI to deploy unit in peacetime
+NDefines.NAI.DEPLOY_MIN_TRAINING_PEACE_FACTOR = 0.94		                        -- Required percentage of training (1.0 = 100%) for AI to deploy unit in peacetime
 NDefines.NAI.DEPLOY_MIN_TRAINING_WAR_FACTOR = 0.25		                        -- Required percentage of training (1.0 = 100%) for AI to deploy unit in wartime
 NDefines.NAI.MANPOWER_FREE_USAGE_THRESHOLD = 50000			-- If AI has this much manpower he doesn't care about the percentage
 NDefines.NAI.MANPOWER_RESERVED_THRESHOLD = 0.25					-- The AI will not deploy more units if he goes below this percentage
