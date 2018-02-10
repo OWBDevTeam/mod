@@ -21,6 +21,15 @@ default_peace = {
 	# ROOT = Taker, FROM = Giver
 	annex = {
 		factor = 1000
+		modifier = {
+			factor = 1000
+			AND = {
+				ROOT = { has_annex_war_goal = FROM }
+				FROM = {
+					NOT = { num_of_controlled_states > 2 }
+				}
+			}
+		}
 	}
 
 	# ROOT = Taker, FROM = Liberated
@@ -40,6 +49,10 @@ default_peace = {
 	# ROOT = Taker, FROM = State
 	take_states = {
 		factor = 600
+		modifier = {
+			always = yes
+			add = 10
+		}
 		modifier = { #Don't steal claims and cores from faction members unless we also have a right to that clay unless they are puppets
 			factor = 0.1
 			NOT = { 
@@ -232,7 +245,7 @@ default_peace = {
 			}
 		}
 		modifier = {
-			factor = 0.05	
+			factor = 0.1	
 			NOT = { # has a claim to it
 				FROM = { 
 					OR = {
@@ -252,12 +265,6 @@ default_peace = {
 				}
 			}
 			OR = {
-				#Must be taken in contiguous chunks.
-				FROM = { 
-					is_coastal = yes
-					#Temp Workaround since "is_island_state" doesn't cover some cases like Gotland, Iceland, Crete, Norn Iron
-				}
-				#Minor old world AI sticks to their own continents 
 				NOT = { # don't take states you can't even reach
 					FROM = {
 						OR = {
