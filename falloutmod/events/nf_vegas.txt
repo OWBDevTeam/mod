@@ -270,13 +270,16 @@ country_event = {
 		name = nf_vegas.8.a 
 		
 		VEG = {
-			create_faction = mojave_alliance
-			add_to_faction = MOJ
+		country_event = nf_vegas.28
 		}
 	}
 	
 	option = {
 		name = nf_vegas.8.b 
+		
+		VEG = {
+		country_event = nf_vegas.29
+		}
 			
 	}
 	
@@ -766,6 +769,47 @@ country_event = {
 	  set_technology = { securitron_2_tech = 1 }
 	  load_oob = vegassecuritronarmy2
 	 
+	}
+	
+}
+country_event = {
+	id = nf_vegas.28 #Mojave Chapter joins#
+	title = nf_vegas.28.t
+	desc = nf_vegas.28.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.28.a 
+		
+		VEG = {
+			add_to_faction = MOJ
+			add_opinion_modifier = { target = MOJ modifier = mojavepactjoined }
+		}
+		MOJ = {
+			add_opinion_modifier = { target = VEG modifier = mojavepactjoined }
+		}
+	}
+	
+}
+country_event = {
+	id = nf_vegas.29 #Mojave Chapter refuses#
+	title = nf_vegas.29.t
+	desc = nf_vegas.29.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.29.a 
+		
+		VEG = {
+			add_opinion_modifier = { target = MOJ modifier = mojavepactrefused }
+		}
+		MOJ = {
+			add_opinion_modifier = { target = VEG modifier = mojavepactrefused }
+		}
 	}
 	
 }

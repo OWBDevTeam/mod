@@ -1386,14 +1386,18 @@ focus_tree = {
 		x = 14
 		y = 9
 		completion_reward = {
+		create_faction = mojave_alliance
 			if = {
 				limit = {
 					MOJ = {
 						is_ai = yes
 					}
 				}
-				create_faction = mojave_alliance
 				add_to_faction = MOJ
+				add_opinion_modifier = { target = MOJ modifier = mojavepactjoined }
+				MOJ = {
+				add_opinion_modifier = { target = VEG modifier = mojavepactjoined }
+				}
 			}
 			
 			if = {
@@ -1484,9 +1488,24 @@ focus_tree = {
 		x = 14
 		y = 10
 		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = DAM
+			if = {
+				limit = {
+					DAM = {
+						is_ai = yes
+					}
+				}
+				add_to_faction = DAM
+			}
+			
+			if = {
+				limit = {
+					DAM = {
+						is_ai = no
+					}
+				}
+				DAM = {
+					country_event = { id = nf_vegas.8 }
+				}
 			}
 		}
 
