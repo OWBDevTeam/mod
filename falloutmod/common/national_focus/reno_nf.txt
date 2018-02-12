@@ -145,6 +145,20 @@ focus_tree = {
 		prerequisite = {
 			focus = new_expansionism
 		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = {
+					tag = ANT
+					ratio > 0.6
+				}
+			}
+		}
 		will_lead_to_war_with = ANT
 		x = 1
 		y = 4
@@ -213,6 +227,20 @@ focus_tree = {
 		icon = GFX_goal_generic_major_war
 		prerequisite = {
 			focus = new_expansionism
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = {
+					tag = YKZ
+					ratio > 0.6
+				}
+			}
 		}
 		will_lead_to_war_with = YKZ
 		x = 5
@@ -1558,6 +1586,20 @@ focus_tree = {
 		icon = GFX_goal_generic_major_war
 		prerequisite = {
 			focus = new_klamathdeal
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = {
+					tag = KLA
+					ratio > 0.6
+				}
+			}
 		}
 		will_lead_to_war_with = KLA
 		 mutually_exclusive = {

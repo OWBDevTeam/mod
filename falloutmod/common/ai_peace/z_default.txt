@@ -22,16 +22,20 @@ default_peace = {
 	annex = {
 		factor = 1000
 		modifier = {
-			add = 10
+			add = 100000
 			always = yes
 		}
 		modifier = {
 			factor = 1000
-			AND = {
-				ROOT = { has_annex_war_goal = FROM }
-				FROM = {
-					NOT = { num_of_controlled_states > 2 }
-				}
+			has_annex_war_goal = FROM
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				is_owner_neighbor_of = FROM
+			}
+			NOT = {
+				has_annex_war_goal = FROM
 			}
 		}
 	}
@@ -55,7 +59,7 @@ default_peace = {
 		factor = 600
 		modifier = {
 			always = yes
-			add = 10
+			add = 100
 		}
 		modifier = { #Don't steal claims and cores from faction members unless we also have a right to that clay unless they are puppets
 			factor = 0.1
