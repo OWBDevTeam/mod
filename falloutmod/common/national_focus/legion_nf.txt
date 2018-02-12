@@ -814,6 +814,9 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_conqueror_of_the_86
 		}
+		available = {
+			has_completed_focus = ces_war_for_hoover_dam
+        }
 		x = 5
 		y = 8
 		completion_reward = {
@@ -1219,6 +1222,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = ces_the_burned_man
 		}
+		ai_will_do = {
+			factor = 10
+		}
 		x = 10
 		y = 10
 		completion_reward = {
@@ -1246,6 +1252,9 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_the_burned_man
 		}
+		ai_will_do = {
+			factor = 10
+		}
 		x = 8
 		y = 11
 		completion_reward = {
@@ -1259,6 +1268,9 @@ focus_tree = {
 		cost = 1
 		prerequisite = {
 			focus = ces_triumph_at_the_dam
+		}
+		ai_will_do = {
+			factor = 10
 		}
         available = {
             owns_state = 252
@@ -1291,6 +1303,9 @@ focus_tree = {
 		cost = 1
 		prerequisite = {
 			focus = ces_lick_the_bulls_wounds
+		}
+		ai_will_do = {
+			factor = 10
 		}
 		x = 8
 		y = 12
@@ -1367,6 +1382,9 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_fortification_hill
 		}
+		ai_will_do = {
+			factor = 10
+		}
 		x = 8
 		y = 13
 		available = {
@@ -1416,6 +1434,9 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_fortify_the_dam
 		}
+		ai_will_do = {
+			factor = 10
+		}
 		x = 10
 		y = 12
 		completion_reward = {
@@ -1447,6 +1468,9 @@ focus_tree = {
 		cost = 1
 		prerequisite = {
 			focus = ces_the_rubicon_is_crossed
+		}
+		ai_will_do = {
+			factor = 10
 		}
 		x = 10
 		y = 13
@@ -2134,10 +2158,21 @@ focus_tree = {
 				has_war = no
 				date > 1.1.2279
 			}
+			modifier = {
+				NOT = {
+					has_country_flag = legion_had_civil_war
+				}
+				factor = 0
+			}
 		}
+		will_lead_to_war_with = NCR
 		completion_reward = {
 			army_experience = 30
 			add_ideas = legion_nf_worthy_foe
+			create_wargoal = {
+				type = annex_everything
+				target = NCR
+			}
 		}
 
 	}
@@ -2145,7 +2180,7 @@ focus_tree = {
     focus = {
 		id = ces_divide_et_impera
 		icon = GFX_goal_generic_attack_allies
-		cost = 8.6
+		cost = 4.4
 		prerequisite = {
 			focus = ces_a_worthy_foe
 		}
@@ -2171,7 +2206,7 @@ focus_tree = {
 	focus = {
 		id = ces_render_unto_caesar
 		icon = GFX_goal_generic_Legion_diplomatic_focus
-		cost = 8.6
+		cost = 4.4
 		prerequisite = {
 			focus = ces_a_worthy_foe
 		}
@@ -2213,7 +2248,7 @@ focus_tree = {
 	focus = {
 		id = ces_the_great_khans
 		icon = GFX_goal_legion_diplomatic
-		cost = 8.6
+		cost = 4.4
 		prerequisite = {
 			focus = ces_render_unto_caesar
 		}
@@ -2232,7 +2267,7 @@ focus_tree = {
 	focus = {
 		id = ces_the_baja_raiders
 		icon = GFX_goal_legion_diplomatic
-		cost = 8.6
+		cost = 4.4
 		prerequisite = {
 			focus = ces_the_great_khans
 		}
@@ -2261,7 +2296,7 @@ focus_tree = {
 	focus = {
 		id = ces_camp_searchlight
 		icon = GFX_goal_generic_major_war
-		cost = 8.6
+		cost = 4.4
 		prerequisite = {
 			focus = ces_divide_et_impera
 		}
@@ -2275,7 +2310,7 @@ focus_tree = {
 	focus = {
 		id = ces_battle_of_nelson
 		icon = GFX_goal_generic_harbours_focus
-		cost = 8.6
+		cost = 4.4
 		prerequisite = {
 			focus = ces_camp_searchlight
 		}
@@ -2321,27 +2356,27 @@ focus_tree = {
 		}
 
 	}
-	focus = {
-		id = ces_in_hoc_signo_taurus_vinces
-		icon = GFX_goal_legion_ncr_war
-		cost = 8.6
-		prerequisite = {
-			focus = ces_battle_of_nelson
-		}
-		prerequisite = {
-			focus = ces_the_baja_raiders
-		}
-		will_lead_to_war_with = NCR
-		x = 9
-		y = 19
-		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = NCR
-			}
-		}
-
-	}
+	#focus = {
+	#	id = ces_in_hoc_signo_taurus_vinces
+	#	icon = GFX_goal_legion_ncr_war
+	#	cost = 8.6
+	#	prerequisite = {
+	#		focus = ces_battle_of_nelson
+	#	}
+	#	prerequisite = {
+	#		focus = ces_the_baja_raiders
+	#	}
+	#	will_lead_to_war_with = NCR
+	#	x = 9
+	#	y = 19
+	#	completion_reward = {
+	#		create_wargoal = {
+	#			type = annex_everything
+	#			target = NCR
+	#		}
+	#	}
+	#
+	#}
     
 	focus = {
 		id = ces_augustus
