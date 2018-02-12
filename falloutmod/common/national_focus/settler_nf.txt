@@ -186,6 +186,7 @@ focus_tree = {
 				uses = 1
 				category = chem_tech
 			}
+			
 		}
 	}
 	focus = {
@@ -259,7 +260,18 @@ focus_tree = {
 		x = 3
 		y = 8
 		completion_reward = {
-		add_ideas = settler_medical_protection
+			add_tech_bonus = {
+				name = medical_bonus
+				bonus = 0.5
+				uses = 1
+				category = chem_tech
+			}
+			 add_tech_bonus = {
+				name = robot_bonus
+				bonus = 0.5
+				uses = 1
+				category = robotics_tech
+			}
 		}
 
 	}
@@ -446,8 +458,9 @@ focus_tree = {
 		x = 11
 		y = 5
 		completion_reward = {
-		load_oob =  settlercaravanmilitia
-		add_manpower = 500
+		load_oob =  "settlercaravanmilitia"
+		add_ideas = caravanmilitia
+		add_manpower = 250
 		}
 
 	}
@@ -1280,8 +1293,7 @@ focus_tree = {
 		x = 33
 		y = 7
 		completion_reward = {
-		load_oob = settlerpersonalbodyguard
-		add_manpower = 300
+			add_ideas = settlerbodyguards
 		}
 
 	}
@@ -1292,15 +1304,13 @@ focus_tree = {
 		prerequisite = {
 			focus = settler_robed
 		}
+		available = {
+			has_tech = power_armour
+		}
 		x = 23
 		y = 12
 		completion_reward = {
-		add_tech_bonus = {
-				name = settler_power_armour_bonus
-				bonus = 0.75
-				uses = 1
-				technology = power_armour_t45d
-			}
+			set_technology = { power_armour_t45d = 1 }
 	    }
 	}
 	focus = {
@@ -1310,15 +1320,13 @@ focus_tree = {
 		prerequisite = {
 			focus = settler_robed
 		}
+		available = {
+			has_tech = overcharged_ammunition
+		}
 		x = 21
 		y = 12
 		completion_reward = {
-		add_tech_bonus = {
-				name = settler_energy_bonus
-				bonus = 0.75
-				uses = 1
-				technology = advanced_laser_weaponry
-			}
+			set_technology = { advanced_laser_weaponry = 1 }
 	    }
 	}
 	focus = {
