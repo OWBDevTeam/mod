@@ -127,7 +127,7 @@ country_event = {
 		name = test_event.7.b
 	}
 }
-# annex everyone
+# 
 country_event = {
 	id = test_event.8
 	title = test_event.8.t
@@ -136,11 +136,28 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = test_event.7.a
-		every_country = {
-			ROOT = { annex_country = { target = PREV transfer_troops = yes } }
+		load_oob = settlerpersonalbodyguard
+        ROOT = {
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Personal Bodyguard\" division_template = \"Personal Bodyguard\" start_experience_factor = 0.6"
+					owner = ROOT	
+				}
+			} 
 		}
-	}
+
+        add_manpower = 300
+    } 
 	option = {
 		name = test_event.8.b
+		save_event_target_as = unit_spawn_nation
+		ROOT = {
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Personal Bodyguard\" division_template = \"NCR Troopers\" start_experience_factor = 0.6"
+					owner = NCR
+				}
+			}
+		}
 	}
 }
