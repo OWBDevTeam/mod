@@ -12,6 +12,7 @@ country_event = { #What our Forefathers Found#
 		name = nf_settler.1.option.a #Clean Water#
 		
 		add_ideas = settlercleanwater
+		
 	}
 	
 	option = {
@@ -92,10 +93,11 @@ country_event = { #How we defend ourselves#
     is_triggered_only = yes
     
 	option = {
-		name = nf_settler.2.option.a #With Militia#
+		name = nf_settler.2.option.a
 		
 		set_technology = { dog_tech = 1 }
-		load_oob = settlermilitia
+		load_oob = "settlermilitia"
+		add_manpower = 450
 		
 	}
 	
@@ -103,14 +105,17 @@ country_event = { #How we defend ourselves#
 		name = nf_settler.2.option.b #With Old World Science#
 		
 		set_technology = { commercial_protectron = 1 }
-		load_oob = settlerprotectron
+		load_oob = "settlerprotectron"
+		add_equipment_to_stockpile = { type = light_robot_equipment amount = 200 }
+		
 	}
 	
 	option = {
 		name = nf_settler.2.option.c #With Mercenaries#
 		
 		set_technology = { anti_personnel_tech = 1 }
-		load_oob = settlermercenaries
+		load_oob = "settlermercenaries"
+		add_manpower = 450
 	}
 }	
 country_event = { #What will we become#
@@ -136,5 +141,5 @@ country_event = { #What will we become#
 	option = {
 		name = nf_settler.3.option.c #Wealthy#
 		
-		load_oob = settlerwealthy
+		add_ideas = settlerwealthy
 	}	

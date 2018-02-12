@@ -22,7 +22,7 @@ focus_tree = {
 	focus = {
 		id = settler_forfathers
 		icon = GFX_goal_generic_building_focus
-		cost = 10.00
+		cost = 1.00
 		x = 12
 		y = 1
 
@@ -65,7 +65,7 @@ focus_tree = {
 	focus = {
 		id = settler_palisade
 		icon = GFX_goal_generic_building_focus
-		cost = 1.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_become
 		}
@@ -80,7 +80,7 @@ focus_tree = {
 	focus = {
 		id = settler_community
 		icon = GFX_goal_generic_slums_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_become
 		}
@@ -133,7 +133,7 @@ focus_tree = {
 	focus = {
 		id = settler_reorganization 
 		icon = GFX_goal_generic_communcation_focus
-		cost = 10.00
+		cost = 8.6
 				prerequisite = {
 			focus = settler_become
 		}
@@ -147,7 +147,7 @@ focus_tree = {
 	focus = {
 		id = settler_schools
 		icon = GFX_goal_generic_advanced_technology_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_become
 		}
@@ -160,7 +160,7 @@ focus_tree = {
 	focus = {
 		id = settler_laboratory
 		icon = GFX_focus_research
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_schools
 		}
@@ -173,7 +173,7 @@ focus_tree = {
 	focus = {
 		id = settler_medical
 		icon = GFX_goal_generic_food_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_laboratory
 		}
@@ -186,12 +186,13 @@ focus_tree = {
 				uses = 1
 				category = chem_tech
 			}
+			
 		}
 	}
 	focus = {
 		id = settler_chemistry
 		icon = GFX_goal_generic_data_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_medical
 		}
@@ -205,7 +206,7 @@ focus_tree = {
 	focus = {
 		id = settler_science
 		icon = GFX_goal_generic_advanced_technology_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_laboratory
 		}
@@ -223,7 +224,7 @@ focus_tree = {
 	focus = {
 		id = settler_robco
 		icon = GFX_goal_generic_robots_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_science
 		}
@@ -237,7 +238,7 @@ focus_tree = {
 	focus = {
 		id = settler_firefighter
 		icon = GFX_goal_generic_cities_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_robco
 		}
@@ -252,21 +253,32 @@ focus_tree = {
 	focus = {
 		id = settlers_protection
 		icon = GFX_goal_generic_special_forces
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_robco
 		}
 		x = 3
 		y = 8
 		completion_reward = {
-		add_ideas = settler_medical_protection
+			add_tech_bonus = {
+				name = medical_bonus
+				bonus = 0.5
+				uses = 1
+				category = chem_tech
+			}
+			 add_tech_bonus = {
+				name = robot_bonus
+				bonus = 0.5
+				uses = 1
+				category = robotics_tech
+			}
 		}
 
 	}
 	focus = {
 		id = settler_construction
 		icon = GFX_goal_generic_large_scale_normal_industry_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settlers_protection
 		}
@@ -281,7 +293,7 @@ focus_tree = {
 	focus = {
 		id = settler_garage
 		icon = GFX_goal_generic_military_industry_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_laboratory
 		}
@@ -323,7 +335,7 @@ focus_tree = {
 	focus = {
 		id = settler_vehicles
 		icon = GFX_goal_generic_construct_infrastructure
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_garage
 		}
@@ -341,7 +353,7 @@ focus_tree = {
 	focus = {
 		id = settler_teams
 		icon = GFX_goal_generic_supplies_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_vehicles
 		}
@@ -366,7 +378,7 @@ focus_tree = {
 	focus = {
 		id = settler_war
 		icon = GFX_goal_generic_army_motorized
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_vehicles
 		}
@@ -384,7 +396,7 @@ focus_tree = {
 	focus = {
 		id = settler_thinktank
 		icon = GFX_focus_NZL_bob_semple_tank
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_teams
 		}
@@ -405,7 +417,7 @@ focus_tree = {
 	focus = {
 		id = settlers_wall
 		icon = GFX_goal_generic_walls_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_palisade
 		}
@@ -419,7 +431,7 @@ focus_tree = {
 	focus = {
 		id = settler_defenses
 		icon = GFX_goal_generic_bunkers_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settlers_wall
 		}
@@ -439,22 +451,23 @@ focus_tree = {
 	focus = {
 		id = settler_caravan
 		icon = GFX_goal_bottlecap
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_palisade
 		}
 		x = 11
 		y = 5
 		completion_reward = {
-		load_oob =  settlercaravanmilitia
-		add_manpower = 500
+		load_oob =  "settlercaravanmilitia"
+		add_ideas = caravanmilitia
+		add_manpower = 250
 		}
 
 	}
 	focus = {
 		id = settler_gunsmiths
 		icon = GFX_goal_generic_common_firearms_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_caravan
 		}
@@ -503,7 +516,7 @@ focus_tree = {
 	focus = {
 		id = settler_subsidize
 		icon = GFX_goal_generic_regular_firearms_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_gunsmiths
 		}
@@ -517,7 +530,7 @@ focus_tree = {
 	focus = {
 		id = settler_armory
 		icon = GFX_goal_generic_ammo_boxes_focus	
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_subsidize
 		}
@@ -560,7 +573,7 @@ focus_tree = {
 	focus = {
 		id = settlers_commanders
 		icon = GFX_focus_generic_military_mission
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_palisade
 		}
@@ -573,7 +586,7 @@ focus_tree = {
 	focus = {
 		id = settler_drills
 		icon = GFX_goal_generic_pipe_weapons_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settlers_commanders
 		}
@@ -587,7 +600,7 @@ focus_tree = {
 	focus = {
 		id = settler_organization
 		icon = GFX_goal_generic_axis_build_infantry
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settlers_commanders
 		}
@@ -601,7 +614,7 @@ focus_tree = {
 	focus = {
 		id = settler_posters
 		icon = GFX_goal_generic_recruitment_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_organization
 		}
@@ -618,7 +631,7 @@ focus_tree = {
 	focus = {
 		id = settler_encourage
 		icon = GFX_focus_generic_little_entente
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_posters
 		}
@@ -632,7 +645,7 @@ focus_tree = {
 	focus = {
 		id = settler_standard
 		icon = GFX_goal_generic_allies_build_infantry
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_posters
 		}
@@ -646,7 +659,7 @@ focus_tree = {
 	focus = {
 		id = settler_oldworld
 		icon = GFX_goal_generic_ideological_fury_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_standard
 		}
@@ -660,7 +673,7 @@ focus_tree = {
 	focus = {
 		id = settler_awareness
 		icon = GFX_goal_generic_communcation_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_oldworld
 		}
@@ -674,7 +687,7 @@ focus_tree = {
 	focus = {
 		id = settler_marching
 		icon = GFX_goal_generic_recruitment_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_oldworld
 		}
@@ -688,7 +701,7 @@ focus_tree = {
 	focus = {
 		id = settler_distance
 		icon = GFX_goal_generic_land_doctrines_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_marching
 		}
@@ -701,21 +714,21 @@ focus_tree = {
 	focus = {
 		id = settler_arrive
 		icon = GFX_goal_generic_slums_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_community
 		}
 		x = 19
 		y = 5
 		completion_reward = {
-		add_timed_idea = { idea = settler_wasteland_settlers  days = 100 }
+		add_timed_idea = { idea = settler_wasteland_settlers  days = 365 }
 		}
 
 	}
 	focus = {
 		id = settler_tato
 		icon = GFX_goal_generic_supplies_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_arrive
 		}
@@ -728,7 +741,7 @@ focus_tree = {
 	focus = {
 		id = settler_brahmin
 		icon = GFX_goal_generic_food_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_tato
 		}
@@ -742,7 +755,7 @@ focus_tree = {
 	focus = 5
 		id = settler_traderoutes
 		icon = GFX_goal_generic_construct_infrastructure
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_community
 		}
@@ -783,7 +796,7 @@ focus_tree = {
 	focus = {
 		id = settler_future
 		icon = GFX_goal_generic_building_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_traderoutes
 		}
@@ -801,7 +814,7 @@ focus_tree = {
 	focus = {
 		id = settler_pride
 		icon = GFX_goal_generic_national_unity
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_future
 		}
@@ -815,7 +828,7 @@ focus_tree = {
 	focus = {
 		id = settler_town
 		icon = GFX_goal_generic_slums_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_pride
 		}
@@ -857,7 +870,7 @@ focus_tree = {
 	focus = {
 		id = settler_city
 		icon = GFX_goal_generic_cities_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_town
 		}
@@ -872,7 +885,7 @@ focus_tree = {
 	focus = {
 		id = settlers_markets
 		icon = GFX_goal_generic_large_scale_normal_industry_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_city
 		}
@@ -921,7 +934,7 @@ focus_tree = {
 	focus = {
 		id = settler_labor
 		icon = GFX_focus_yug_pan_slavic_congress
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_city
 		}
@@ -965,7 +978,7 @@ focus_tree = {
 	focus = {
 		id = settler_robed
 		icon = GFX_goal_focus_spy
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_labor
 		}
@@ -981,7 +994,7 @@ focus_tree = {
 	focus = {
 		id = settler_enforce
 		icon = GFX_goal_bottlecap
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_traderoutes
 		}
@@ -995,7 +1008,7 @@ focus_tree = {
 	focus = {
 		id = settler_roadways
 		icon = GFX_goal_generic_construct_infrastructure
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_enforce
 		}
@@ -1034,7 +1047,7 @@ focus_tree = {
 	focus = {
 		id = settler_elites
 		icon = GFX_goal_generic_dangerous_deal
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_reorganization
 		}
@@ -1061,7 +1074,7 @@ focus_tree = {
 	focus = {
 		id = settler_oligarch
 		icon = GFX_focus_rom_parties_end
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_elites
 		}
@@ -1075,7 +1088,7 @@ focus_tree = {
 	focus = {
 		id = settler_monopoly
 		icon = GFX_goal_generic_neutrality_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_oligarch
 		}
@@ -1089,7 +1102,7 @@ focus_tree = {
 	focus = {
 		id = settler_intellectuals
 		icon = GFX_goal_tfv_generic_tech_sharing
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_reorganization
 		}
@@ -1117,7 +1130,7 @@ focus_tree = {
 	focus = {
 		id = settler_minds
 		icon = GFX_goal_generic_scientific_exchange
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_intellectuals
 		}
@@ -1130,7 +1143,7 @@ focus_tree = {
 	focus = {
 		id = settler_aerodynamics
 		icon = GFX_goal_generic_air_fighter2	
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_minds
 		}
@@ -1177,7 +1190,7 @@ focus_tree = {
 	focus = {
 		id = settler_support
 		icon = GFX_goal_generic_demand_territory
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_reorganization
 		}
@@ -1204,7 +1217,7 @@ focus_tree = {
 	focus = {
 		id = settler_council
 		icon = GFX_focus_generic_the_giant_wakes
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_support
 		}
@@ -1218,7 +1231,7 @@ focus_tree = {
 	focus = {
 		id = settler_loyalty
 		icon = GFX_goal_generic_demand_territory
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_council
 		}
@@ -1232,7 +1245,7 @@ focus_tree = {
 	focus = {
 		id = settler_empower
 		icon = GFX_focus_rom_royal_dictatorship
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_reorganization
 		}
@@ -1259,7 +1272,7 @@ focus_tree = {
 	focus = {
 		id = settler_rivals
 		icon = GFX_focus_hun_assassinate_horthy
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_empower
 		}
@@ -1273,58 +1286,53 @@ focus_tree = {
 	focus = {
 		id = settler_bodyguards
 		icon = GFX_goal_generic_war_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_rivals
 		}
 		x = 33
 		y = 7
 		completion_reward = {
-		load_oob = settlerpersonalbodyguard
-		add_manpower = 300
+			add_ideas = settlerbodyguards
 		}
 
 	}
 	focus = {
 		id = settler_paladin
 		icon = GFX_goal_generic_t45d_power_armour_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_robed
+		}
+		available = {
+			has_tech = power_armour
 		}
 		x = 23
 		y = 12
 		completion_reward = {
-		add_tech_bonus = {
-				name = settler_power_armour_bonus
-				bonus = 0.75
-				uses = 1
-				technology = power_armour_t45d
-			}
+			set_technology = { power_armour_t45d = 1 }
 	    }
 	}
 	focus = {
 		id = settler_scribe
 		icon = GFX_goal_generic_BoS_diplomatic_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_robed
+		}
+		available = {
+			has_tech = overcharged_ammunition
 		}
 		x = 21
 		y = 12
 		completion_reward = {
-		add_tech_bonus = {
-				name = settler_energy_bonus
-				bonus = 0.75
-				uses = 1
-				technology = advanced_laser_weaponry
-			}
+			set_technology = { advanced_laser_weaponry = 1 }
 	    }
 	}
 	focus = {
 		id = settler_fallback
 		icon = GFX_goal_generic_special_forces
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_standard
 		}
@@ -1338,7 +1346,7 @@ focus_tree = {
 	focus = {
 		id = settler_pointdefense
 		icon = GFX_goal_generic_walls_focus
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_oldworld
 		}
@@ -1353,7 +1361,7 @@ focus_tree = {
 	focus = {
 		id = settler_police
 		icon = GFX_goal_focus_spy
-		cost = 10.00
+		cost = 8.6
 		prerequisite = {
 			focus = settler_firefighter
 		}

@@ -1548,6 +1548,7 @@ focus_tree = {
 		y = 14
 		completion_reward = {
 			kill_country_leader = yes
+			set_country_flag = theking
 			set_politics = {
 				ruling_party = people 
 			}
@@ -1984,6 +1985,12 @@ focus_tree = {
 		}
 		x = 37
 		y = 9
+		available = {
+			VEG = {
+				has_country_flag = theking 
+				is_in_faction_with = MOJ
+			}
+		}
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -1999,7 +2006,7 @@ focus_tree = {
 		x = 37
 		y = 10
 		completion_reward = {
-			#add_stability = 5
+			add_ideas = vegaselijahrestoration
 		}
 
 	}

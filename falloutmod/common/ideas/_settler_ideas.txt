@@ -1,6 +1,39 @@
 ideas = {
 	
 	country = {
+	
+		settlerbodyguards = {
+		
+				picture = General_Staff
+					
+				allowed = {
+				}
+
+				removal_cost = 1
+				
+				modifier = {
+					conscription = 0.02
+				}
+			
+			}
+			
+		caravanmilitia = {
+		
+			picture = idea_generic_local_self_management
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+
+			  equipment_bonus = {
+				militia = {
+					soft_attack = 0.05
+					defense = 0.05
+				} 
+			  }
+		    }
+		
 		settler_nation = {
             
 			picture = generic_morale_bonus
@@ -315,7 +348,9 @@ ideas = {
 			}
 			
 		}
-	settler_subsidized_weapon_manufacturers = {
+	
+			
+			settler_subsidized_weapon_manufacturers = {
 		
 			picture = idea_generic_local_self_management
 			
@@ -485,22 +520,7 @@ ideas = {
 			modifier = {
 				org_loss_when_moving = -0.10
 			}
-	    }
-	settler_medical_protection = {
-			
-			picture = Idea_generic_agrarian_society
-			
-			allowed = {
-			}
-
-			removal_cost = 1
-			
-			equipment_bonus = {
-				category_all_infantry = {
-					casualty_trickleback = 0.05
-			}
-	    }
-	}	
+	    }	
 	settler_militia_commanders = {
 			
 			picture = General_Staff
@@ -567,9 +587,11 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				industrial_capacity_factory = 0.1
+				industrial_capacity_factory = 0.05
+				consumer_goods_factor = -0.03
 			}
 
 		}		
-	}	
+	}
+
 }

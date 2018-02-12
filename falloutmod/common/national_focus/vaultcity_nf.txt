@@ -760,7 +760,7 @@ focus_tree = {
 	}
 	focus = {
 		id = vault_festus_3
-		text = vault_festus_2
+		text = vault_festus_3
 		icon = GFX_goal_generic_cities_focus
 		cost = 8.6
 		prerequisite = {
@@ -993,6 +993,11 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = vault_flock_annex
 		}
+		available = {
+			PAL = {
+				is_puppet_of = VLT
+			}
+		}
 		x = -1
 		y = 1
 		relative_position_id = vault_flock
@@ -1161,6 +1166,11 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = vault_cyclops_serve
+		}
+		available = {
+			CYC = {
+				is_puppet_of = VLT
+			}
 		}
 		x = -1
 		y = 1
