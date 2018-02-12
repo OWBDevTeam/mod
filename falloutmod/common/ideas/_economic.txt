@@ -92,10 +92,8 @@ ideas = {
 			
 			available = {
 				OR = {
-					has_government = elites
-					has_government = intellectuals
 					has_war = yes
-					threat > 0.05
+					threat > 0.1
 				}
 			}
 			
@@ -126,10 +124,16 @@ ideas = {
 			
 			available = {
 				OR = {
-					has_government = elites
-					has_government = intellectuals
+					AND = {
 					has_war = yes
-					threat > 0.15
+						any_enemy_country = {
+							ic_ratio = { 
+								tag = ROOT 
+								ratio > 0.2
+							}
+						}
+					}
+					threat > 0.3
 				}
 			}
 
@@ -160,10 +164,8 @@ ideas = {
 			
 			
 			available = {
-				threat > 0.15
+				threat > 0.6
 				OR = {
-					has_government = elites
-					has_government = intellectuals
 					custom_trigger_tooltip = { tooltip = or_clarification_tooltip always = no }
 					AND = {
 						has_war = yes
@@ -205,7 +207,7 @@ ideas = {
 			
 			available = {
 				has_war = yes
-				threat > 0.2
+				threat > 0.8
 				any_enemy_country = {
 					ic_ratio = { 
 						tag = ROOT 
@@ -227,13 +229,13 @@ ideas = {
 				modifier = {
 					factor = 25
 					#Prio this if nation has a lot of manpower compared to MIC
-					manpower_per_military_factory >  10000
+					manpower_per_military_factory >  250
 				}
 
 				modifier = {
 					#Block  unless nation has a lot of manpower
 					factor = 0
-					manpower_per_military_factory <  3000
+					manpower_per_military_factory <  50
 				}
 
 				
