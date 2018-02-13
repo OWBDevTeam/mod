@@ -419,11 +419,30 @@ country_event = {
 	option = {
 		name = nf_vegas.13.a 
 		
+	if = {
+	  limit = {
+		VEG = {
+			has_idea = unstableOS
+		}
 	}
-	
-	option = {
-		name = nf_vegas.13.b 
-			
+	swap_ideas = { 
+	remove_idea = unstableOS 
+	add_idea = platinumOS 
+	}
+	}
+	if = {
+	  limit = {
+		VEG = {
+			has_idea = stableOS
+		}
+	}
+	swap_ideas = { 
+	remove_idea = stableOS 
+	add_idea = platinumOS 
+	}
+	}
+}
+		
 	}
 	
 }
