@@ -834,6 +834,275 @@ country_event = {
 	}
 	
 }
+country_event = {
+	id = nf_vegas.30 #New Vegas creates Nevada Pact#
+	title = nf_vegas.30.t
+	desc = nf_vegas.30.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.30.a 
+		
+		create_faction = nevada_pact
+		
+		DES = {
+		country_event = nf_vegas.31
+		}
+		NEW = {
+		country_event = nf_vegas.34
+		}
+		
+	}
+	
+}
+country_event = {
+	id = nf_vegas.31 #Desert Rangers Invitation from New Vegas#
+	title = nf_vegas.31.t
+	desc = nf_vegas.31.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.31.a #Accept#
+		
+		VEG = {
+		country_event = nf_vegas.32
+		}
+		
+		
+	}
+	option = {
+		name = nf_vegas.31.b #Refuse#
+		
+		VEG = {
+		country_event = nf_vegas.33
+		}
+		
+		
+	}
+	
+}
+country_event = {
+	id = nf_vegas.32 #Desert Rangers Accept Invitation from New Vegas#
+	title = nf_vegas.32.t
+	desc = nf_vegas.32.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.32.a
+		
+		VEG = {
+		add_to_faction = DES
+		add_opinion_modifier = { target = DES modifier = nevadapact }
+		}
+		
+		DES = {
+		add_opinion_modifier = { target = VEG modifier = nevadapact }
+		}
+		
+		
+	}
+	
+}
+country_event = {
+	id = nf_vegas.33 #Desert Rangers Refuse Invitation from New Vegas#
+	title = nf_vegas.33.t
+	desc = nf_vegas.33.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.33.a
+		
+		VEG = {
+		add_opinion_modifier = { target = DES modifier = nevadapactrefused }
+		}
+		
+	}
+	
+}
+country_event = {
+	id = nf_vegas.34 #New Reno Receives Invitation from New Vegas#
+	title = nf_vegas.34.t
+	desc = nf_vegas.34.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.34.a #Accept#
+		
+		VEG = {
+		country_event = nf_vegas.35
+		}
+		
+		
+	}
+	option = {
+		name = nf_vegas.34.b #Refuse#
+		
+		VEG = {
+		country_event = nf_vegas.36
+		}
+		
+		
+	}
+	
+}
+country_event = {
+	id = nf_vegas.35 #New Reno Accepts Invitation from New Vegas#
+	title = nf_vegas.35.t
+	desc = nf_vegas.35.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.35.a
+		
+		VEG = {
+		add_to_faction = NEW
+		add_opinion_modifier = { target = NEW modifier = nevadapact }
+		}
+		
+		NEW = {
+		add_opinion_modifier = { target = VEG modifier = nevadapact }
+		}
+		
+		
+	}
+	
+}
+country_event = {
+	id = nf_vegas.36 #New Reno Refuses Invitation from New Vegas#
+	title = nf_vegas.36.t
+	desc = nf_vegas.36.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.36.a
+		
+		VEG = {
+		add_opinion_modifier = { target = NEW modifier = nevadapactrefused }
+		}
+		
+	}
+	
+}
+country_event = {
+	id = nf_vegas.37 #New Vegas wants to join our faction Nevada Pact#
+	title = nf_vegas.37.t
+	desc = nf_vegas.37.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.37.a  #Accept them#
+		
+		VEG = {
+		country_event = nf_vegas.38  #Refuse them#
+		}
+		
+		
+	}
+	option = {
+		name = nf_vegas.37.b
+		
+		VEG = {
+		country_event = nf_vegas.39
+		}
+		
+		
+	}
+	
+}
+country_event = {
+	id = nf_vegas.38 #New Vegas is accepted into Nevada Pact#
+	title = nf_vegas.38.t
+	desc = nf_vegas.38.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.38.a
+		
+		if = {
+				limit = {
+					DES = {
+						is_faction_leader = yes
+					}
+				}
+				VEG = {
+				add_opinion_modifier = { target = DES modifier = nevadapact }
+				}
+				DES = {
+					add_to_faction = VEG
+					add_opinion_modifier = { target = VEG modifier = nevadapact }
+				}
+		}
+		if = {
+				limit = {
+					NEW = {
+						is_faction_leader = yes
+					}
+				}
+				VEG = {
+				add_opinion_modifier = { target = NEW modifier = nevadapact }
+				}
+				NEW = {
+					add_to_faction = VEG
+					add_opinion_modifier = { target = VEG modifier = nevadapact }
+				}
+		}
+	
+	}
+	
+}
+country_event = {
+	id = nf_vegas.39 #New Vegas is refused entry into Nevada Pact#
+	title = nf_vegas.39.t
+	desc = nf_vegas.39.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.39.a
+		
+		if = {
+				limit = {
+					DES = {
+						is_faction_leader = yes
+					}
+				}
+				VEG = {
+				add_opinion_modifier = { target = DES modifier = nevadapactrefused }
+				}
+		}
+		if = {
+				limit = {
+					NEW = {
+						is_faction_leader = yes
+					}
+				}
+				VEG = {
+				add_opinion_modifier = { target = NEW modifier = nevadapactrefused }
+				}
+		}
+	
+	}
+	
+}
 	
 }
 	

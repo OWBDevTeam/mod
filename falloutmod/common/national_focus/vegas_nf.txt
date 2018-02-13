@@ -1745,7 +1745,7 @@ focus_tree = {
 						}
 					}
 					NEW = {
-						add_to_faction = VEG
+						country_event = { days = 1 id = nf_vegas.37 }
 					}
 				}
 				
@@ -1756,7 +1756,7 @@ focus_tree = {
 						}
 					}
 					DES = {
-						add_to_faction = VEG
+						country_event = { days = 1 id = nf_vegas.37 }
 					}
 				}
 			}	
@@ -1767,8 +1767,9 @@ focus_tree = {
 						has_global_flag = nevadapact
 					}
 				}
-				create_faction = nevada_pact
-				set_global_flag = nevadapact
+				VEG = {
+				country_event = nf_vegas.30
+				}
 			}
 		}
 
