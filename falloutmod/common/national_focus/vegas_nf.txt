@@ -766,7 +766,10 @@ focus_tree = {
 		x = 35
 		y = 7
 		completion_reward = {
-		unity_factor = 0.05
+			swap_ideas = {
+				add_idea = consigs3
+				remove_idea = consigs2
+			}
 		}
 
 	}
@@ -1641,9 +1644,7 @@ focus_tree = {
 			focus = veg_lowfriends
 		}
 		available = {
-		VEG = {
-		has_idea = chairmen
-		}
+			has_idea = benny
 		}
 		x = 18
 		y = 8
@@ -1759,7 +1760,7 @@ focus_tree = {
 						country_event = { days = 1 id = nf_vegas.37 }
 					}
 				}
-			}	
+			}
 			
 			if = {
 				limit = {
@@ -1768,7 +1769,7 @@ focus_tree = {
 					}
 				}
 				VEG = {
-				country_event = nf_vegas.30
+				country_event = { days = 1 id = nf_vegas.30 }
 				}
 			}
 		}
