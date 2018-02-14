@@ -323,7 +323,7 @@ country_event = {
 	}
 	
 	option = {
-		name = nf_vegas.8.b
+		name = nf_vegas.9.b
 		
 		211 = {
                 add_resource = {
@@ -421,33 +421,31 @@ country_event = {
 	option = {
 		name = nf_vegas.13.a 
 		
-	if = {
-	  limit = {
-		VEG = {
-			has_idea = unstableOS
+		if = {
+			limit = {
+				VEG = {
+					has_idea = unstableOS
+				}
+			}
+			swap_ideas = { 
+				remove_idea = unstableOS 
+				add_idea = platinumOS 
+			}
 		}
-	}
-	swap_ideas = { 
-	remove_idea = unstableOS 
-	add_idea = platinumOS 
-	}
-	}
-	if = {
-	  limit = {
-		VEG = {
-			has_idea = stableOS
+		if = {
+			limit = {
+				VEG = {
+					has_idea = stableOS
+				}
+			}
+			swap_ideas = { 
+				remove_idea = stableOS 
+				add_idea = platinumOS 
+			}
 		}
-	}
-	swap_ideas = { 
-	remove_idea = stableOS 
-	add_idea = platinumOS 
-	}
-	}
+	}	
 }
-		
-	}
 	
-}
 # Enlist the Khans sent to khans
 country_event = {
 	id = nf_vegas.14
@@ -488,8 +486,11 @@ country_event = {
 				ideology = ruler
 				size = 0.7
 				capital = 211
-				states = { 211 }
+				states = { 
+					211 
+				}
 			}
+		}
 	}
 	
 }
@@ -1125,8 +1126,6 @@ country_event = {
 		name = nf_vegas.40.a
 		set_capital = 211
 	}	
-	
-}
 	
 }
 	
