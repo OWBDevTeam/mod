@@ -480,11 +480,16 @@ country_event = {
 	option = {
 		name = nf_vegas.15.a 
 		
-	}
-	
-	option = {
-		name = nf_vegas.15.b 
-			
+		hidden_effect = {
+			set_capital = 211
+			set_global_flag = vegas_civil_war
+			start_civil_war = {
+				ruling_party = people
+				ideology = ruler
+				size = 0.7
+				capital = 211
+				states = { 211 }
+			}
 	}
 	
 }
@@ -1101,6 +1106,25 @@ country_event = {
 		}
 	
 	}
+	
+}
+country_event = {
+	id = nf_vegas.40 #New Vegas Civil War Over#
+	title = nf_vegas.40.t
+	desc = nf_vegas.40.d
+	picture = GFX_report_event_fascist_speech
+
+    trigger = {
+		original_tag = VEG
+		has_government = people
+		has_global_flag = vegas_civil_war
+		owns_state = 211
+	}
+	
+	option = {
+		name = nf_vegas.40.a
+		set_capital = 211
+	}	
 	
 }
 	
