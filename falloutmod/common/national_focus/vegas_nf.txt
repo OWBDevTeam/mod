@@ -648,9 +648,17 @@ focus_tree = {
 		}
 		completion_reward = {
 			313 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = {
+						all_provinces = yes
+					}
 					level = 2
 					instant_build = yes
 				}
@@ -672,10 +680,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			344 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = infrastructure
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				add_building_construction = {
@@ -683,7 +691,7 @@ focus_tree = {
 					province = {
 						all_provinces = yes
 					}
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -766,7 +774,10 @@ focus_tree = {
 		x = 35
 		y = 7
 		completion_reward = {
-		unity_factor = 0.05
+			swap_ideas = {
+				add_idea = consigs3
+				remove_idea = consigs2
+			}
 		}
 
 	}
@@ -1641,9 +1652,7 @@ focus_tree = {
 			focus = veg_lowfriends
 		}
 		available = {
-		VEG = {
-		has_idea = chairmen
-		}
+			has_idea = benny
 		}
 		x = 18
 		y = 8
@@ -1676,12 +1685,9 @@ focus_tree = {
 		x = 17
 		y = 10
 		completion_reward = {
-			add_popularity = {
-				ideology = elites
-				popularity = 0.05
-			}
-		}
-	}
+		   country_event = nf_vegas.47
+	    }
+	}	
 	focus = {
 		id = veg_allin
 		icon = GFX_goal_VEG_All-In
@@ -1759,7 +1765,7 @@ focus_tree = {
 						country_event = { days = 1 id = nf_vegas.37 }
 					}
 				}
-			}	
+			}
 			
 			if = {
 				limit = {
@@ -1768,7 +1774,7 @@ focus_tree = {
 					}
 				}
 				VEG = {
-				country_event = nf_vegas.30
+				country_event = { days = 1 id = nf_vegas.30 }
 				}
 			}
 		}
@@ -1829,10 +1835,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			211 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 3
 				}
 			}
 			
@@ -1882,6 +1888,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			211 = {
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
 					level = 2
@@ -1922,9 +1929,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			211 = {
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -2055,7 +2063,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = veg_justlikethesims
+		id = veg_justlikethesim
 		icon = GFX_goal_generic_data_focus
 		cost = 8.6
 		prerequisite = {
@@ -2122,9 +2130,6 @@ focus_tree = {
 		y = 12
 		completion_reward = {
 			custom_effect_tooltip = load_vegasmobilewarfare
-			set_technology = {
-				bike_tech_1 = 1
-			}
 			hidden_effect = { load_oob = vegasmobilewarfare }
 		}
 
@@ -2186,6 +2191,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			211 = {
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -2211,9 +2217,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			211 = {
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -2287,7 +2294,7 @@ focus_tree = {
 		completion_reward = {
 			swap_ideas ={
 				add_idea = securitron2
-				remove_idea = securitron2
+				remove_idea = securitron1
 			}
 		}
 	}
