@@ -684,7 +684,7 @@ country_event = {
 	option = {
 		name = nf_vegas.23.a
 		
-      random_list = { 50 = { country_event = nf_vegas.26 } 50 = { country_event = nf_vegas.27 } }    
+      random_list = { 50 = { country_event = nf_vegas.50 } 50 = { country_event = nf_vegas.27 } }    
 	}
 	
 }
@@ -699,7 +699,7 @@ country_event = {
 	option = {
 		name = nf_vegas.24.a
 		
-      random_list = { 70 = { country_event = nf_vegas.26 } 30 = { country_event = nf_vegas.27 } }    
+      random_list = { 70 = { country_event = nf_vegas.51 } 30 = { country_event = nf_vegas.27 } }    
 	}
 	
 }
@@ -1290,7 +1290,62 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = nf_vegas.50 #The King's Inflitration Succeeds#
+	title = nf_vegas.50.t
+	desc = nf_vegas.50.d
+	picture = GFX_report_event_fascist_speech
 
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.50.a
+			
+	  set_technology = { securitron_2_tech = 1 }
+	  load_oob = vegassecuritronarmy1
+	  add_ideas = securitron_vault
+	  
+	    if = {
+			limit = {
+				VEG = {
+					has_idea = robco
+				}
+			}
+			swap_ideas = {
+				remove_idea = robco
+				add_idea = securitron_vault
+			}
+		}
+	}
+}
+country_event = {
+	id = nf_vegas.51 #Benny's Inflitration Succeeds#
+	title = nf_vegas.51.t
+	desc = nf_vegas.51.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.51.a
+			
+	  set_technology = { securitron_2_tech = 1 }
+	  load_oob = vegassecuritronarmy1
+	  add_ideas = securitron_vault
+	  
+	    if = {
+			limit = {
+				VEG = {
+					has_idea = robco
+				}
+			}
+			swap_ideas = {
+				remove_idea = robco
+				add_idea = securitron_vault
+			}
+		}
+	}
+}
 }	
 
 	
