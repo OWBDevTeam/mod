@@ -108,13 +108,11 @@ country_event = {
 			}
 		}
 		
-		add_ideas = consigs
+	    FIE = {
+		   country_event = nf_vegas.41
+		}
 		
-		unity_factor = -0.15
 		
-		annex_country = { target = FIE transfer_troops = yes }
-		
-		country_event = { id = nf_vegas.5 days = 1 }
 	}
 	
 }
@@ -195,9 +193,9 @@ country_event = {
 			}
 		}
 		
-		add_ideas = khaganate
-		
-		annex_country = { target = KHA transfer_troops = yes }
+		KHA = {
+		country_event = nf_vegas.44
+		}
 	}
 	
 }
@@ -444,27 +442,6 @@ country_event = {
 			}
 		}
 	}	
-}
-	
-# Enlist the Khans sent to khans
-country_event = {
-	id = nf_vegas.14
-	title = nf_vegas.14.t
-	desc = nf_vegas.14.d
-	picture = GFX_report_event_fascist_speech
-
-    is_triggered_only = yes    
-	
-	option = {
-		name = nf_vegas.14.a 
-		
-	}
-	
-	option = {
-		name = nf_vegas.14.b 
-			
-	}
-	
 }
 # War for Vegas: Gunfire in the streets of vegas
 country_event = {
@@ -1102,7 +1079,7 @@ country_event = {
 					}
 				}
 				VEG = {
-				add_opinion_modifier = { target = NEW modifier = nevadapactrefused }
+				add_opinion_modifier = { target = NEW modifier = nevadapactrefused } 
 				}
 		}
 	
@@ -1124,9 +1101,140 @@ country_event = {
 	
 	option = {
 		name = nf_vegas.40.a
+		
 		set_capital = 211
 	}	
 	
 }
+country_event = {
+	id = nf_vegas.41 #New Vegas offers annexation to the Fiends#
+	title = nf_vegas.41.t
+	desc = nf_vegas.41.d
+	picture = GFX_report_event_fascist_speech
+
+    
+	
+	option = {
+		name = nf_vegas.41.a #Accept#
+		
+		ai_chance = {
+			factor = 1
+		}
+		VEG = {
+		  country_event = nf_vegas.42 
+		}
+	}
+	
+	option = {
+		name = nf_vegas.41.b #Refuse#
+		
+		VEG = {
+		  country_event = nf_vegas.43
+		}
+		
+	}
+	
+}
+country_event = {
+	id = nf_vegas.42 #The Fiends accept#
+	title = nf_vegas.42.t
+	desc = nf_vegas.42.d
+	picture = GFX_report_event_fascist_speech
+
+    
+	
+	option = {
+		name = nf_vegas.42.a #Annex the Fiends#
+		
+		VEG = {
+		  annex_country = FIE
+		  country_event = { id = nf_vegas.5 days = 1 }
+		  add_ideas = consigs
+		}
+	}
+}
+country_event = {
+	id = nf_vegas.43 #The Fiends refuse#
+	title = nf_vegas.43.t
+	desc = nf_vegas.43.d
+	picture = GFX_report_event_fascist_speech
+
+    
+	
+	option = {
+		name = nf_vegas.43.a #Settle for the Omertas#
+		
+		VEG = {
+		  country_event = { id = nf_vegas.5 days = 1 }
+		  add_ideas = omertas
+		}
+	}
+}
+country_event = {
+	id = nf_vegas.44 #New Vegas offers annexation to the Khans#
+	title = nf_vegas.44.t
+	desc = nf_vegas.44.d
+	picture = GFX_report_event_fascist_speech
+
+    
+	
+	option = {
+		name = nf_vegas.44.a #Accept#
+		
+		ai_chance = {
+			factor = 1
+		}
+		VEG = {
+		  country_event = nf_vegas.45 
+		}
+	}
+	
+	option = {
+		name = nf_vegas.44.b #Refuse#
+		
+		VEG = {
+		  country_event = nf_vegas.46
+		}
+		
+	}
+	
+}
+country_event = {
+	id = nf_vegas.45 #The Khans accept#
+	title = nf_vegas.45.t
+	desc = nf_vegas.45.d
+	picture = GFX_report_event_fascist_speech
+
+    
+	
+	option = {
+		name = nf_vegas.45.a #Annex the Khans#
+		
+		VEG = {
+		  annex_country = KHA
+		  add_ideas = khaganate
+		}
+	}
+}
+country_event = {
+	id = nf_vegas.46 #The Khans refuse#
+	title = nf_vegas.46.t
+	desc = nf_vegas.46.d
+	picture = GFX_report_event_fascist_speech
+
+    
+	
+	option = {
+		name = nf_vegas.46.a #Settle for the Whitegloves#
+		
+		VEG = {
+		  add_ideas = whitegloves
+		}
+	}
+}
+
+
+}	
+
 	
 	
