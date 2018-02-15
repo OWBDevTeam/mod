@@ -282,17 +282,20 @@ country_event = {
 				}
 				keep_unit_leaders = { 1001 }
 			}
-			else = {
-				start_civil_war = {
-					ideology = elites
-					size = 0.25
-					capital = 522
-					states_filter = {
-						owner = { original_tag = CES }
-						is_CES_civil_war_non_eligable = no					
-					}
-					keep_unit_leaders = { 1003 1002 1004 }
+		}
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			start_civil_war = {
+				ideology = elites
+				size = 0.25
+				capital = 522
+				states_filter = {
+					owner = { original_tag = CES }
+					is_CES_civil_war_non_eligable = no					
 				}
+				keep_unit_leaders = { 1003 1002 1004 }
 			}
 		}
 		hidden_effect = {
@@ -364,17 +367,20 @@ country_event = {
 				}
 				keep_unit_leaders = { 1002 1003 1004 }
 			}
-			else = {
-				start_civil_war = {
-					ideology = elites
-					size = 0.70
-					capital = 522
-					states_filter = {
-						owner = { original_tag = CES }
-						is_CES_civil_war_non_eligable = no					
-					}
-					keep_unit_leaders = { 1002 1003 1004 }
+		}
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			start_civil_war = {
+				ideology = elites
+				size = 0.70
+				capital = 522
+				states_filter = {
+					owner = { original_tag = CES }
+					is_CES_civil_war_non_eligable = no					
 				}
+				keep_unit_leaders = { 1002 1003 1004 }
 			}
 		}
 		hidden_effect = {
@@ -455,16 +461,19 @@ country_event = {
 				}
 				keep_unit_leaders = { 1001 1003 1004 }
 			}
-			else = {
-				start_civil_war = {
-					ideology = intellectuals
-					size = 0.2
-					capital = 359
-					keep_unit_leaders = { 1001 1003 1004 }
-					states_filter = {
-						owner = { original_tag = CES }
-						is_CES_civil_war_non_eligable = no					
-					}
+		}
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			start_civil_war = {
+				ideology = intellectuals
+				size = 0.2
+				capital = 359
+				keep_unit_leaders = { 1001 1003 1004 }
+				states_filter = {
+					owner = { original_tag = CES }
+					is_CES_civil_war_non_eligable = no					
 				}
 			}
 		}
@@ -547,8 +556,12 @@ country_event = {
 					is_CES_civil_war_non_eligable = no					
 				}
 			}
-			else = {
-				start_civil_war = {
+		}
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			start_civil_war = {
 					ideology = intellectuals
 					size = 0.2
 					capital = 359
@@ -557,7 +570,6 @@ country_event = {
 						is_CES_civil_war_non_eligable = no					
 					}
 					keep_unit_leaders = { 1001 1003 1004 }
-				}
 			}
 		}
 		random_country = {
