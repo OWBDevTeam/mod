@@ -1232,7 +1232,64 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = nf_vegas.47 #Benny's Army#
+	title = nf_vegas.47.t
+	desc = nf_vegas.47.d
+	picture = GFX_report_event_fascist_speech
 
+    
+	
+	option = {
+		name = nf_vegas.47.a #Time to grease some palms#
+		
+		country_event = { id = nf_vegas.48 hours = 4 }
+		
+	}
+}
+country_event = {
+	id = nf_vegas.48 #Foul Business#
+	title = nf_vegas.48.t
+	desc = nf_vegas.48.d
+	picture = GFX_report_event_fascist_speech
+
+    
+	
+	option = {
+		name = nf_vegas.48.a #Ever seen a 12.7 SMG, Legionary?#
+		
+		country_event = { id = nf_vegas.49 hours = 2 }
+		
+	}
+}
+country_event = {
+	id = nf_vegas.49 #Trojan Horse#
+	title = nf_vegas.49.t
+	desc = nf_vegas.49.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.49.a #Dead nobodies face down in the dirt.#
+			
+	    set_technology = { securitron_2_tech = 1 }
+	    load_oob = vegassecuritronarmy1
+	    add_ideas = securitron_vault
+	  
+	    if = {
+			limit = {
+				VEG = {
+					has_idea = robco
+				}
+			}
+			swap_ideas = {
+				remove_idea = robco
+				add_idea = securitron_vault
+			}
+		}
+	}
+}
 
 }	
 
