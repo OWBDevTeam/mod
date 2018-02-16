@@ -84,40 +84,47 @@ country_event = { #What our Forefathers Found#
 			}
 	}	
 }
-country_event = { #How we defend ourselves#
-	id = nf_settler.2
-	title = nf_settler.2.t
-	desc = nf_settler.2.desc
-	picture = GFX_event_generic_settlement_2
+country_event = { 
+    id = nf_settler.2
+    title = nf_settler.2.t
+    desc = nf_settler.2.desc
+    picture = GFX_event_generic_settlement_2
 
     is_triggered_only = yes
     
-	option = {
-		name = nf_settler.2.option.a
-		
-		set_technology = { dog_tech = 1 }
-		load_oob = "settlermilitia"
-		add_manpower = 450
-		
-	}
-	
-	option = {
-		name = nf_settler.2.option.b #With Old World Science#
-		
-		set_technology = { commercial_protectron = 1 }
-		load_oob = "settlerprotectron"
-		add_equipment_to_stockpile = { type = light_robot_equipment amount = 200 }
-		
-	}
-	
-	option = {
-		name = nf_settler.2.option.c #With Mercenaries#
-		
-		set_technology = { anti_personnel_tech = 1 }
-		load_oob = "settlermercenaries"
-		add_manpower = 450
-	}
-}	
+    option = {
+        name = nf_settler.2.option.a
+        
+        add_ideas = settlerdefendingwitha
+    }
+    
+    option = {
+        name = nf_settler.2.option.b #With Old World Science#
+        
+        add_ideas = settlerdefendingwithb
+        random_owned_controlled_state = {
+            add_resource = {
+                   type = fuel
+                   amount = 6
+                }                
+                add_resource = {
+                   type = scrap
+                   amount = 6
+                }
+                add_resource = {
+                   type = fuel
+                   amount = 6
+                }
+            }    
+        
+    }
+    
+    option = {
+        name = nf_settler.2.option.c #With Mercenaries#
+        
+        add_ideas = settlerdefendingwithc
+    }
+}
 country_event = { #What will we become#
 	id = nf_settler.3
 	title = nf_settler.3.t
