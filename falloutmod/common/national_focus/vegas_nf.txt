@@ -885,13 +885,13 @@ focus_tree = {
 		}
 		x = 2
 		y = 7
+		will_lead_to_war_with = KHA
 		completion_reward = {
 			create_wargoal = {
 				target = KHA 
 				type = annex_everything
 			}
 		}
-
 	}
 	focus = {
 		id = veg_rockthesuburbs
@@ -907,6 +907,7 @@ focus_tree = {
 		}
 		x = 0
 		y = 7
+		will_lead_to_war_with = FIE
 		completion_reward = {
 			create_wargoal = {
 				target = FIE 
@@ -935,6 +936,7 @@ focus_tree = {
 		}
 		x = 0
 		y = 8
+		will_lead_to_war_with = DAM
 		completion_reward = {
 			create_wargoal = {
 				target = DAM 
@@ -963,6 +965,7 @@ focus_tree = {
 		}
 		x = 2
 		y = 8
+		will_lead_to_war_with = MRA
 		completion_reward = {
 			create_wargoal = {
 				target = MRA 
@@ -985,6 +988,7 @@ focus_tree = {
 		}
 		x = 0
 		y = 9
+		will_lead_to_war_with = MOJ
 		completion_reward = {
 			create_wargoal = {
 				type = annex_everything
@@ -1030,6 +1034,7 @@ focus_tree = {
 		}
 		x = 2
 		y = 9
+		will_lead_to_war_with = FRI
 		bypass = {
 			FRI = {
 				exists = no
@@ -1436,6 +1441,8 @@ focus_tree = {
 		}
 		x = 12
 		y = 10
+		will_lead_to_war_with = FIE
+		will_lead_to_war_with = KHA
 		completion_reward = {
 		add_state_core = 380
 		add_state_core = 12
@@ -1467,6 +1474,7 @@ focus_tree = {
 		}
 		x = 12
 		y = 12
+		will_lead_to_war_with = MRA
 		completion_reward = {
 		add_state_core = 533
 		add_state_core = 272
@@ -1533,11 +1541,11 @@ focus_tree = {
 		x = 14
 		y = 13
 		completion_reward = {
-		MOJ = {
-		country_event = nf_vegas.21
+		    MOJ = {
+		        country_event = nf_vegas.21
+		    }
 		}
-		}
-	}
+   }
 	focus = {
 		id = veg_assassinate
 		icon = GFX_goal_VEG_Assassinate_House
@@ -1582,7 +1590,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = nf_vegas.15
 		}
-
 	}
 	focus = {
 		id = veg_peoplesvegas
@@ -1598,7 +1605,6 @@ focus_tree = {
 			add_ideas = trueindependence
 			remove_ideas = potentialcoup
 		}
-
 	}
 	focus = {
 		id = veg_yesman
@@ -1617,7 +1623,6 @@ focus_tree = {
 				popularity = 0.05
 			}
 		}
-
 	}
 	focus = {
 		id = veg_lowfriends
@@ -1632,15 +1637,15 @@ focus_tree = {
 		x = 16
 		y = 8
 		available = {
-		VEG = {
-			has_idea = khaganate
-		}
+		    VEG = {
+			    has_idea = khaganate
+		    }
 		}
 		completion_reward = {
 			country_event = nf_vegas.11
 		}
 
-	}
+   }
 	focus = {
 		id = veg_highfriends
 		icon = GFX_goal_generic_ideological_fury_focus
@@ -1721,7 +1726,6 @@ focus_tree = {
 			add_ideas = brightlights
 			remove_ideas = potentialcoup
 		}
-
 	}
 	focus = {
 		id = veg_nevadapact
@@ -1799,7 +1803,6 @@ focus_tree = {
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = nero
 		}
-
 	}
 	focus = {
 		id = veg_addiction
@@ -1819,7 +1822,6 @@ focus_tree = {
 				remove_idea = omertas
 			}
 		}
-
 	}
 	focus = {
 		id = veg_mobsters
@@ -1848,7 +1850,6 @@ focus_tree = {
 				producer = VEG
 			}
 		}
-
 	}
 	focus = {
 		id = veg_lucky38
@@ -1872,7 +1873,6 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 100
 		}
-
 	}
 	focus = {
 		id = veg_robco
@@ -1895,10 +1895,8 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			add_ideas = robcoreborn
 		}
-
 	}
 	focus = {
 		id = veg_firstbatch
@@ -1913,7 +1911,6 @@ focus_tree = {
 			custom_effect_tooltip = load_firstbatch
 			hidden_effect = { load_oob = firstbatch }
 		}
-
 	}
 	focus = {
 		id = veg_expansion
@@ -2000,7 +1997,6 @@ focus_tree = {
 		completion_reward = {
 			add_research_slot = 1
 		}
-
 	}
 	focus = {
 		id = veg_elijah
@@ -2014,7 +2010,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = vegaselijahrestoration
 		}
-
 	}
 	focus = {
 		id = veg_t45d
@@ -2028,7 +2023,6 @@ focus_tree = {
 		completion_reward = {
 			set_technology = { power_armour_t45d = 1 }
 		}
-
 	}
 	focus = {
 		id = veg_bossecurity
@@ -2043,7 +2037,6 @@ focus_tree = {
 			custom_effect_tooltip = load_vegassecurity
 			hidden_effect = { load_oob = vegassecurity }
 		}
-
 	}
 	focus = {
 		id = veg_warlabs
@@ -2060,7 +2053,6 @@ focus_tree = {
 		completion_reward = {
 			add_research_slot = 1
 		}
-
 	}
 	focus = {
 		id = veg_justlikethesim
@@ -2079,7 +2071,6 @@ focus_tree = {
 				category = land_doctrine
 			}
 		}
-
 	}
 	focus = {
 		id = veg_security
@@ -2098,7 +2089,6 @@ focus_tree = {
 				category = infantry_tech
 			}
 		}
-
 	}
 	focus = {
 		id = veg_vehicles
@@ -2117,7 +2107,6 @@ focus_tree = {
 				category = vehicle_tech
 			}
 		}
-
 	}
 	focus = {
 		id = veg_mobile
@@ -2146,7 +2135,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = boomeragreement
 		}
-
 	}
 	focus = {
 		id = veg_militia
@@ -2160,7 +2148,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = militiaarms
 		}
-
 	}
 	focus = {
 		id = veg_lakemead
@@ -2201,7 +2188,6 @@ focus_tree = {
 			
 			add_ideas = handh
 		}
-
 	}
 	focus = {
 		id = veg_zappsigns
@@ -2225,7 +2211,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = veg_sewage
@@ -2252,7 +2237,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = securitron1
 		}
-
 	}
 	focus = {
 		id = veg_handys
@@ -2266,7 +2250,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = mrhandys
 		}
-
 	}
 	focus = {
 		id = veg_gutsys
@@ -2280,7 +2263,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = mrgutsys
 		}
-
 	}
 	focus = {
 		id = veg_expandeddeployment
@@ -2310,7 +2292,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = robobrains
 		}
-
 	}
 	focus = {
 		id = veg_sentrybots
@@ -2327,6 +2308,5 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = sentrybots
 		}
-
 	}
 }
