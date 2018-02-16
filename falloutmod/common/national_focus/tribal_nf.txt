@@ -212,8 +212,7 @@ focus_tree = {
 		x = 9
 		y = 6
 		completion_reward = {
-			add_manpower = 400
-			army_experience = 25
+			add_ideas = elder3
 		}
 
 	}
@@ -437,10 +436,13 @@ focus_tree = {
 		prerequisite = {
 			focus = gentribal_factions
 		}
+		available = {
+			has_tech = explosive_tech_2
+		}
 		x = 11
 		y = 8
 		completion_reward = {
-			set_technology = { explosive_tech = 1 }
+			set_technology = { explosive_tech_3 = 1 }
 		}
 
 	}
@@ -451,10 +453,13 @@ focus_tree = {
 		prerequisite = {
 			focus = gentribal_factions
 		}
+		available = {
+			has_tech = warrior_equipment
+		}
 		x = 13
 		y = 8
 		completion_reward = {
-			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 600 }
+			set_technology = { improved_ballistic_weaponry = 1 }
 		}
 	}
 	focus = {
@@ -779,12 +784,16 @@ focus_tree = {
 		prerequisite = {
 			focus = gentribal_skirmish
 		}
+		available = {
+			has_tech = guerilla_tactics
+			has_tech = metal_armour
+		}
 		x = 3
 		y = 10
 		completion_reward = {
-			custom_effect_tooltip = gentribal_bodyguards_tt
-			hidden_effect = { load_oob = tribalbodyguards }
-		}
+			set_technology = { platoon_training = 1 }
+			set_technology = { combat_armour = 1 }
+	    }
 
 	}
 	focus = {
