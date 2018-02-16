@@ -1,5 +1,4 @@
-focus_tree = 
-{
+focus_tree = {
 	id = raider_generic
 	country = 
 	{
@@ -15,102 +14,73 @@ focus_tree =
 	}
 	default = no
 
-	focus = 
-	{
+	focus = {
 		id = origin_of_the_gang
 		icon = GFX_goal_generic_ideological_fury_focus
-		x = 18
+		cost = 1.00
+		x = 11
 		y = 0
-		cost = 1
+			available_if_capitulated = yes
+			completion_reward = {
+					country_event = {
+							id = generic_raider.0
+						}
+				}
 
-		available_if_capitulated = yes
-
-		completion_reward = 
-		{
-			country_event = 
-			{ 
-				id = generic_raider.0 
-			} # Origin of the Gang
-		}
 	}
-	focus = 
-	{
+	focus = {
 		id = gang_lifestyle
-		icon = GFX_goal_generic_demand_territory
-		x = 18
-		y = 1
-		cost = 1
-
-		available_if_capitulated = yes
-		prerequisite = 
-		{
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 1.00
+		prerequisite = {
 			focus = origin_of_the_gang
 		}
-		completion_reward = 
-		{
-			country_event = 
-			{ 
-				id = generic_raider.1
-			} # Gang Lifestyle
-		}
+		x = 11
+		y = 1
+			available_if_capitulated = yes
+			completion_reward = {
+					country_event = {
+							id = generic_raider.1
+						}
+				}
+
 	}
 	focus = {
 		id = gang_ambitions
-		icon = GFX_goal_generic_large_scale_normal_industry_focus
-		x = 18
-		y = 2
-		cost = 1
-
-		available_if_capitulated = yes
-		
-		prerequisite = 
-		{
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 1.00
+		prerequisite = {
 			focus = gang_lifestyle
 		}
-		completion_reward = 
-		{
-			country_event = 
-			{ 
-				id = generic_raider.2 
-			} # Gang Ambitions
-		}
+		x = 11
+		y = 2
+			available_if_capitulated = yes
+			completion_reward = {
+					country_event = {
+							id = generic_raider.2
+						}
+				}
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	#NEW LEADERSHIP TREE
 	focus = {
 		id = new_leadership
-		icon = GFX_goal_generic_demand_territory
-		x = 7
-		y = 3
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 8.60
 		prerequisite = {
 			focus = gang_ambitions
 		}
-		completion_reward = {
-			add_political_power = 100
-		}
+		x = 3
+		y = 3
+			available_if_capitulated = yes
+			completion_reward = {
+					add_political_power = 100
+				}
+
 	}
 	focus = {
 		id = the_sadists
 		icon = GFX_goal_support_fascism
-		x = 4
-		y = 4
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		cost = 8.60
 		prerequisite = {
 			focus = new_leadership
 		}
@@ -119,27 +89,28 @@ focus_tree =
 			focus = the_grunts
 			focus = the_boss
 		}
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				NOT = { has_government = elites }
-			}
-		}
-		completion_reward = {
-			add_political_power = 60
-			add_ideas = raider_sadists
-		}
+		x = 0
+		y = 4
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 1
+					modifier = {
+							factor = 0
+							NOT = {
+									has_government = elites
+								}
+						}
+				}
+			completion_reward = {
+					add_political_power = 60
+					add_ideas = raider_sadists
+				}
+
 	}
 	focus = {
 		id = the_eggheads
-		icon = GFX_goal_support_democracy
-		x = 6
-		y = 4
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_focus_research
+		cost = 8.60
 		prerequisite = {
 			focus = new_leadership
 		}
@@ -148,27 +119,28 @@ focus_tree =
 			focus = the_grunts
 			focus = the_boss
 		}
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				NOT = { has_government = intellectuals }
-			}
-		}
-		completion_reward = {
-			add_political_power = 60
-			add_ideas = raider_eggheads
-			}
+		x = 2
+		y = 4
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 1
+					modifier = {
+							factor = 0
+							NOT = {
+									has_government = intellectuals
+								}
+						}
+				}
+			completion_reward = {
+					add_political_power = 60
+					add_ideas = raider_eggheads
+				}
+
 	}
 	focus = {
 		id = the_grunts
-		icon = GFX_goal_support_communism
-		x = 8
-		y = 4
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_support_democracy
+		cost = 8.60
 		prerequisite = {
 			focus = new_leadership
 		}
@@ -177,28 +149,28 @@ focus_tree =
 			focus = the_eggheads
 			focus = the_boss
 		}
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				NOT = { has_government = people }
-			}
-		}
-		completion_reward = {
-			add_political_power = 60
-			add_ideas = raider_grunts
-			}
-		}
-	
+		x = 4
+		y = 4
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 1
+					modifier = {
+							factor = 0
+							NOT = {
+									has_government = people
+								}
+						}
+				}
+			completion_reward = {
+					add_political_power = 60
+					add_ideas = raider_grunts
+				}
+
+	}
 	focus = {
 		id = the_boss
 		icon = GFX_goal_generic_neutrality_focus
-		x = 10
-		y = 4
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		cost = 8.60
 		prerequisite = {
 			focus = new_leadership
 		}
@@ -207,1285 +179,1184 @@ focus_tree =
 			focus = the_eggheads
 			focus = the_grunts
 		}
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				NOT = { has_government = ruler }
-			}
-		}
-		completion_reward = {
-			add_political_power = 60
-			add_ideas = raider_boss
-			}
-	
-	}
-	focus = {
-		id = preparing_for_total_war
-		icon = GFX_goal_generic_forceful_treaty
-		x = 4
-		y = 5
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = the_sadists
-		}
-
-		completion_reward = {
-		add_ideas = preparing_for_total_war
-		
-		
-		}
-	}
-	focus = {
-		id = critical_thinking
-		icon = GFX_goal_generic_demand_territory
 		x = 6
-		y = 5
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = the_eggheads
-		}
-
-		completion_reward = {
-			add_ideas = critical_thinking
-		}
-	}
-	focus = {
-		id = gangland_diplomacy
-		icon = GFX_goal_generic_demand_territory
-		x = 8
-		y = 5
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = the_grunts
-		}
-
-		completion_reward = {
-			add_national_unity = 0.1
-		}
-	}
-	focus = {
-		id = dont_question_the_boss
-		icon = GFX_goal_generic_demand_territory
-		x = 10
-		y = 5
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = the_boss
-		}
-
-		completion_reward = {
-			add_ideas = raider_dont_question_the_boss
-		}
-	}
-	focus = {
-		id = draconian_recovery_methods
-		icon = GFX_goal_generic_demand_territory
-		x = 4
-		y = 6
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = preparing_for_total_war
-		}
-
-		completion_reward = {
-		add_ideas = draconian_recovery_methods
-			
-		}
-	}
-	focus = {
-		id = master_plan
-		icon = GFX_goal_generic_demand_territory
-		x = 6
-		y = 6
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = critical_thinking
-		}
-
-		completion_reward = {
-		add_ideas = master_plan
-		}
-	}
-	focus = {
-		id = everyone_works
-		icon = GFX_goal_generic_demand_territory
-		x = 8
-		y = 6
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = gangland_diplomacy
-		}
-		completion_reward = {
-		add_ideas = raider_everyone_works
-		}
+		y = 4
+			available_if_capitulated = yes
+			ai_will_do = {
+					factor = 1
+					modifier = {
+							factor = 0
+							NOT = {
+									has_government = ruler
+								}
+						}
+				}
+			completion_reward = {
+					add_political_power = 60
+					add_ideas = raider_boss
+				}
 
 	}
-	focus = {
-		id = iron_grip
-		icon = GFX_goal_generic_demand_territory
-		x = 10
-		y = 6
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = dont_question_the_boss
-		}
-
-		completion_reward = {
-			add_ideas = iron_grip
-		}
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	#IMPROVE THE HIDEOUT TREE
-	
 	focus = {
 		id = improve_the_hideout
-		icon = GFX_goal_generic_demand_territory
-		x = 16
-		y = 3
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_generic_slums_focus
+		cost = 8.60
 		prerequisite = {
 			focus = gang_ambitions
 		}
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-						
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
+		x = 10
+		y = 3
+			available_if_capitulated = yes
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
 									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
+											building = arms_factory
+											size > 0
+											include_locked = yes
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
 								}
-							}
+							add_extra_state_shared_building_slots = 3
+							add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
 						}
-					}
 				}
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
 
-				}
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
 	}
 	focus = {
 		id = cruel_heartland
-		icon = GFX_goal_generic_demand_territory
-		x = 14
-		y = 4
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 8.60
 		prerequisite = {
 			focus = improve_the_hideout
 		}
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = infrastructure
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-
-				}
-			}
-		}
-	}
-	focus = {
-		id = skulls_on_sticks
-		icon = GFX_goal_generic_demand_territory
-		x = 16
+		x = 8
 		y = 4
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = improve_the_hideout
-		}
-		completion_reward = {
-			add_national_unity = 0.05
-		}
-	}
-	focus = {
-		id = territorial_reinforcement
-		icon = GFX_goal_generic_demand_territory
-		x = 14
-		y = 5
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = cruel_heartland
-		}
-		completion_reward = {
-			add_ideas = territorial_reinforcement
-		}
-	}
-	focus = {
-		id = terrorise_the_locals
-		icon = GFX_goal_generic_demand_territory
-		x = 16
-		y = 5
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = skulls_on_sticks
-		}
-		completion_reward = {
-		
-			add_national_unity = 0.05
-			add_political_power = 40
-		}
-	}
-	focus = {
-		id = raider_headquarters
-		icon = GFX_goal_generic_demand_territory
-		x = 16
-		y = 6
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = terrorise_the_locals
-		}
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-						
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
+			available_if_capitulated = yes
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
 									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
+											building = infrastructure
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = infrastructure
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
 								}
-							}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = infrastructure
+									level = 2
+									instant_build = yes
+								}
 						}
-					}
 				}
-				add_extra_state_shared_building_slots = 4
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
 
-				}
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
 	}
-	focus = {
-		id = territoriality
-		icon = GFX_goal_generic_demand_territory
-		x = 16
-		y = 7
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = raider_headquarters
-		}
-		completion_reward = {
-			add_ideas = territoriality
-		}
-	}
-	focus = {
-		id = manifest_destiny
-		icon = GFX_goal_generic_demand_territory
-		x = 16
-		y = 8
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = territoriality
-		}
-		completion_reward = {
-			add_ideas = raider_manifest_destiny
-		}
-	}
-	focus = {
-		id = we_never_die
-		icon = GFX_goal_generic_demand_territory
-		x = 14
-		y = 8
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = territoriality
-		}
-		completion_reward = {
-        add_ideas = raider_we_never_die
-		}
-	}
-	
-	
-
-	#INCORPORATE SLAVERS TREE
 	focus = {
 		id = incorporate_slavers
-		icon = GFX_goal_generic_demand_territory
-		x = 18
-		y = 3
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_generic_recruitment_focus
+		cost = 8.60
 		prerequisite = {
 			focus = gang_ambitions
 		}
-		completion_reward = {
-			add_manpower = 100
-		}
+		x = 12
+		y = 3
+			available_if_capitulated = yes
+			completion_reward = {
+					add_manpower = 100
+				}
+
 	}
 	focus = {
 		id = slave_labour
-		icon = GFX_goal_generic_demand_territory
-		x = 18
-		y = 4
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_generic_recruitment_focus
+		cost = 8.60
 		prerequisite = {
 			focus = incorporate_slavers
 		}
-		completion_reward = {
-			add_ideas = slave_labour
-		}
-	}
-	focus = {
-		id = encourage_slavers
-		icon = GFX_goal_generic_demand_territory
-		x = 20
+		x = 12
 		y = 4
-		cost = 8.6
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = slave_labour
+				}
 
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = incorporate_slavers
-		}
-		completion_reward = {
-			add_manpower = 500
-			add_national_unity = -0.05
-		}
 	}
 	focus = {
 		id = forced_labour
-		icon = GFX_goal_generic_demand_territory
-		x = 18
-		y = 5
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_NCR_Industrialcomplex
+		cost = 8.60
 		prerequisite = {
 			focus = slave_labour
 		}
-		completion_reward = {
-			add_ideas = forced_labour
-		}
-	}
-	focus = {
-		id = establish_the_slave_trade
-		icon = GFX_goal_generic_demand_territory
-		x = 20
+		x = 12
 		y = 5
-		cost = 8.6
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = forced_labour
+				}
 
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = encourage_slavers
-		}
-		completion_reward = {
-			add_manpower = 500
-			add_national_unity = -0.1
-		}
-	}
-	focus = {
-		id = industrial_interest
-		icon = GFX_goal_generic_demand_territory
-		x = 22
-		y = 5
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = encourage_slavers
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				name = secret_bonus
-				bonus = 0.5
-				uses = 1
-				category = industry
-			}
-		}
 	}
 	focus = {
 		id = slave_scientists
-		icon = GFX_goal_generic_demand_territory
-		x = 18
-		y = 6
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_focus_research
+		cost = 8.60
 		prerequisite = {
 			focus = forced_labour
 		}
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-	focus = {
-		id = drug_dealers
-		icon = GFX_goal_generic_demand_territory
-		x = 20
+		x = 12
 		y = 6
-		cost = 8.6
+			available_if_capitulated = yes
+			completion_reward = {
+					add_research_slot = 1
+				}
 
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = forced_labour
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				name = drugdealers_bonus
-				bonus = 0.5
-				uses = 1
-				category = chem_tech
-			}
-		}
-	}
-	focus = {
-		id = hideout_expansion
-		icon = GFX_goal_generic_demand_territory
-		x = 22
-		y = 6
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = industrial_interest
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				name = secret_bonus
-				bonus = 0.5
-				uses = 2
-				category = industry
-			}
-		}
 	}
 	focus = {
 		id = slave_researchers
-		icon = GFX_goal_generic_demand_territory
-		x = 18
-		y = 8
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_focus_rocketry
+		cost = 8.60
 		prerequisite = {
 			focus = slave_scientists
 		}
-		completion_reward = {
-			add_ideas = slave_researchers
-		}
-	}
-	focus = {
-		id = raid_workshops
-		icon = GFX_goal_generic_demand_territory
-		x = 20
-		y = 7
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = drug_dealers
-		}
-		completion_reward = {
-			add_ideas = raider_raid_workshops
-		}
-	}
-	focus = {
-		id = slaver_settlement
-		icon = GFX_goal_generic_demand_territory
-		x = 22
-		y = 7
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = hideout_expansion
-		}
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = supply_stashes
-		icon = GFX_goal_generic_demand_territory
-		x = 20
+		x = 12
 		y = 8
-		cost = 8.6
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = slave_researchers
+				}
 
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = raid_workshops
-		}
-		completion_reward = {
-			random_owned_controlled_state = {
-			  add_resource = {
-				type = water
-				amount = 4
-				}
-				add_resource = {
-				type = scrap
-				amount = 6
-				}
-		    }
-		
-	    }
-	 }
-	
-	
-	
-	
-	
-	#SLAVE RESEARCHERS TREE
+	}
 	focus = {
 		id = new_age_weaponry
-		icon = GFX_goal_generic_demand_territory
-		x = 18
-		y = 9
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_generic_laser_muskets_focus
+		cost = 8.60
 		prerequisite = {
 			focus = slave_researchers
 		}
-		completion_reward = {
-			add_ideas = raider_new_age_weaponry
-		}
+		x = 11
+		y = 9
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_new_age_weaponry
+				}
+
 	}
 	focus = {
 		id = turn_the_lights_on
-		icon = GFX_goal_generic_demand_territory
-		x = 20
-		y = 9
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_generic_electricity_focus
+		cost = 8.60
 		prerequisite = {
 			focus = slave_researchers
 		}
-		completion_reward = {
-			random_owned_controlled_state = {
-				add_resource = {
-				type = electricity
-				amount = 8
+		x = 13
+		y = 9
+			available_if_capitulated = yes
+			completion_reward = {
+					random_owned_controlled_state = {
+							add_resource = {
+									type = electricity
+									amount = 8
+								}
+						}
 				}
-		    }
-		
-	    }
-	}
-	focus = {
-		id = guns_with_legs
-		icon = GFX_goal_generic_demand_territory
-		x = 18
-		y = 10
-		cost = 8.6
 
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = new_age_weaponry
-		}
-		completion_reward = {
-		add_tech_bonus = {
-				name = raider_robot_bonus
-				bonus = 0.5
-				uses = 1
-				category = robotics_tech
-			}
-		}
 	}
 	focus = {
 		id = terminals_for_all
-		icon = GFX_goal_generic_demand_territory
-		x = 20
-		y = 10
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_bos_generic_research
+		cost = 8.60
 		prerequisite = {
 			focus = turn_the_lights_on
 		}
-		completion_reward = {
-        add_ideas = raider_terminals_for_all
-		}
-	}
-	focus = {
-		id = a_weapon_to_surpass_the_other_gang
-		icon = GFX_goal_generic_demand_territory
-		x = 22
+		x = 13
 		y = 10
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = turn_the_lights_on
-		}
-		completion_reward = {
-		 set_technology = { power_armour = 1}
-		 add_tech_bonus = {
-				name = raider_power_armor_bonus 
-				bonus = 0.5
-				uses = 1
-				category = power_armor_tech
-			}
-		}	
-	}
-	focus = {
-		id = find_the_good_stuff
-		icon = GFX_goal_generic_demand_territory
-		x = 18
-		y = 11
-		cost = 8.6
-
-		available_if_capitulated = yes
-			
-		prerequisite = {
-			focus = guns_with_legs
-		}
-		completion_reward = {
-			random_owned_controlled_state = {
-				add_resource = {
-				type = electronics
-				amount = 5
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_terminals_for_all
 				}
-		    }		
-		}
+
 	}
 	focus = {
 		id = raider_computer_logs
-		icon = GFX_goal_generic_demand_territory
-		x = 20
-		y = 11
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_generic_data_focus
+		cost = 8.60
 		prerequisite = {
 			focus = terminals_for_all
 		}
-		completion_reward = {
-			add_ideas = raider_raider_computer_logs
+		x = 13
+		y = 11
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_raider_computer_logs
+				}
+
+	}
+	focus = {
+		id = encourage_slavers
+		icon = GFX_goal_legion_slaves
+		cost = 8.60
+		prerequisite = {
+			focus = incorporate_slavers
 		}
+		x = 14
+		y = 4
+			available_if_capitulated = yes
+			completion_reward = {
+					add_manpower = 500
+					add_national_unity = -0.05
+				}
+
+	}
+	focus = {
+		id = establish_the_slave_trade
+		icon = GFX_goal_generic_recruitment_focus
+		cost = 8.60
+		prerequisite = {
+			focus = encourage_slavers
+		}
+		x = 14
+		y = 5
+			available_if_capitulated = yes
+			completion_reward = {
+					add_manpower = 500
+					add_national_unity = -0.1
+				}
+
+	}
+	focus = {
+		id = drug_dealers
+		icon = GFX_goal_generic_supplies_focus
+		cost = 8.60
+		prerequisite = {
+			focus = forced_labour
+		}
+		x = 14
+		y = 6
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = drugdealers_bonus
+							bonus = 0.5
+							uses = 1
+							category = chem_tech
+						}
+				}
+
+	}
+	focus = {
+		id = raid_workshops
+		icon = GFX_goal_legion_workshop
+		cost = 8.60
+		prerequisite = {
+			focus = drug_dealers
+		}
+		x = 14
+		y = 7
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_raid_workshops
+				}
+
+	}
+	focus = {
+		id = supply_stashes
+		icon = GFX_goal_generic_food_focus
+		cost = 8.60
+		prerequisite = {
+			focus = raid_workshops
+		}
+		x = 14
+		y = 8
+			available_if_capitulated = yes
+			completion_reward = {
+					random_owned_controlled_state = {
+							add_resource = {
+									type = water
+									amount = 4
+								}
+							add_resource = {
+									type = scrap
+									amount = 6
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = a_weapon_to_surpass_the_other_gang
+		icon = GFX_goal_generic_t45d_power_armour_focus
+		cost = 8.60
+		prerequisite = {
+			focus = turn_the_lights_on
+		}
+		x = 15
+		y = 10
+			available_if_capitulated = yes
+			completion_reward = {
+					set_technology = {
+							power_armour = 1
+						}
+					add_tech_bonus = {
+							name = raider_power_armor_bonus
+							bonus = 0.5
+							uses = 1
+							category = power_armor_tech
+						}
+				}
+
 	}
 	focus = {
 		id = convert_metal_armour
-		icon = GFX_goal_generic_demand_territory
-		x = 22
-		y = 11
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_generic_t51b_power_armour_focus
+		cost = 8.60
 		prerequisite = {
 			focus = a_weapon_to_surpass_the_other_gang
 		}
-		completion_reward = {
-			add_equipment_to_stockpile = { type = power_armor_equipment_1 amount = 50 }
-		}
-	}
-	focus = {
-		id = shitty_robots
-		icon = GFX_goal_generic_demand_territory
-		x = 18
-		y = 12
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = find_the_good_stuff
-		}
-		completion_reward = {
-			add_ideas = raider_shitty_robots
-		}
-	}
-	focus = {
-		id = taking_the_best
-		icon = GFX_goal_generic_demand_territory
-		x = 20
-		y = 12
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = raider_computer_logs
-		}
-		completion_reward = {
-			random_owned_controlled_state = {
-				add_resource = {
-				type = advanced_technology
-				amount = 5
+		x = 15
+		y = 11
+			available_if_capitulated = yes
+			completion_reward = {
+					add_equipment_to_stockpile = {
+							type = power_armor_equipment_1
+							amount = 50
+						}
 				}
-		    }
-		
-	    }
-		
+
 	}
 	focus = {
-		id = power_armor_familiarity
-		icon = GFX_goal_generic_demand_territory
-		x = 22
-		y = 12
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		id = industrial_interest
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 8.60
 		prerequisite = {
-			focus = convert_metal_armour
+			focus = encourage_slavers
 		}
-		completion_reward = {
-			add_ideas = raider_power_armour_familiarity
-		}
+		x = 16
+		y = 5
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = secret_bonus
+							bonus = 0.5
+							uses = 1
+							category = industry
+						}
+				}
+
 	}
-	
-	
-	
-	
-	#DOPED SOLDIERS TREE
+	focus = {
+		id = hideout_expansion
+		icon = GFX_goal_generic_data_focus
+		cost = 8.60
+		prerequisite = {
+			focus = industrial_interest
+		}
+		x = 16
+		y = 6
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = secret_bonus
+							bonus = 0.5
+							uses = 2
+							category = industry
+						}
+				}
+
+	}
+	focus = {
+		id = slaver_settlement
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 8.60
+		prerequisite = {
+			focus = hideout_expansion
+		}
+		x = 16
+		y = 7
+			available_if_capitulated = yes
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 3
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
 	focus = {
 		id = doped_soldiers
-		icon = GFX_goal_generic_demand_territory
-		x = 28
-		y = 3
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_generic_war_focus
+		cost = 8.60
 		prerequisite = {
 			focus = gang_ambitions
 		}
-		completion_reward = {
-			add_ideas = raider_doped_soldiers
-		}
-	}
-	focus = {
-		id = prove_yourself
-		icon = GFX_goal_generic_demand_territory
-		x = 26
-		y = 4
-		cost = 8.6
+		x = 21
+		y = 3
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_doped_soldiers
+				}
 
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = doped_soldiers
-		}
-		completion_reward = {
-			add_ideas = raider_prove_yourself
-		}
 	}
 	focus = {
 		id = lightning_raids
-		icon = GFX_goal_generic_demand_territory
-		x = 28
-		y = 4
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_generic_electricity_focus
+		cost = 8.60
 		prerequisite = {
 			focus = doped_soldiers
 		}
-		completion_reward = {
-			add_ideas = raider_lightning_raids
-		}
-	}
-	focus = {
-		id = brutal_hazing
-		icon = GFX_goal_generic_demand_territory
-		x = 26
-		y = 5
-		cost = 8.6
+		x = 20
+		y = 4
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_lightning_raids
+				}
 
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = lightning_raids
-		}
-		completion_reward = {
-			add_ideas = raider_brutal_hazing
-		}
 	}
 	focus = {
 		id = blood_soaked_gender_equality
-		icon = GFX_goal_generic_demand_territory
-		x = 28
-		y = 5
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_generic_recruitment_focus
+		cost = 8.60
 		prerequisite = {
 			focus = lightning_raids
 		}
-		completion_reward = {
-		  	add_ideas = raider_gender_equality
-		}
-	}
-	focus = {
-		id = recruit_them_young
-		icon = GFX_goal_generic_demand_territory
-		x = 26
-		y = 6
-		cost = 8.6
+		x = 20
+		y = 5
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_gender_equality
+				}
 
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = blood_soaked_gender_equality
-		}
-		completion_reward = {
-			add_ideas = raider_recruit_them_young
-		}
 	}
 	focus = {
 		id = take_what_you_need
-		icon = GFX_goal_generic_demand_territory
-		x = 28
-		y = 6
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_generic_supplies_focus
+		cost = 8.60
 		prerequisite = {
 			focus = blood_soaked_gender_equality
 		}
-		completion_reward = {
-			add_ideas = raider_take_what_you_need
-		}
+		x = 20
+		y = 6
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_take_what_you_need
+				}
+
 	}
 	focus = {
 		id = expand_the_garage
-		icon = GFX_goal_generic_demand_territory
-		x = 26
-		y = 7
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 8.60
 		prerequisite = {
 			focus = take_what_you_need
 		}
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
+		x = 20
+		y = 7
+			available_if_capitulated = yes
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
 									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
 								}
-							}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
 						}
-					}
 				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-	
-	focus = {
-		id = business_booms
-		icon = GFX_goal_generic_demand_territory
-		x = 30
-		y = 7
-		cost = 8.6
 
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = take_what_you_need
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				name = raider_explosives_bonus
-				bonus = 0.5
-				uses = 1
-				category = artillery
-			}
-		}
 	}
 	focus = {
 		id = chop_shop_shimmy
-		icon = GFX_goal_generic_demand_territory
-		x = 24
-		y = 8
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite= {
+		icon = GFX_goal_generic_army_motorized
+		cost = 8.60
+		prerequisite = {
 			focus = expand_the_garage
 		}
-		completion_reward = {
-			add_tech_bonus = {
-				name = raider_vehicle_bonus 
-				bonus = 0.5
-				uses = 1
-				category = vehicle_tech
-			}
-		}
+		x = 17
+		y = 8
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = raider_vehicle_bonus
+							bonus = 0.5
+							uses = 1
+							category = vehicle_tech
+						}
+				}
+
 	}
 	focus = {
 		id = kings_of_the_roads
-		icon = GFX_goal_generic_demand_territory
-		x = 26
-		y = 8
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_generic_army_motorized
+		cost = 8.60
 		prerequisite = {
 			focus = expand_the_garage
 		}
 		mutually_exclusive = {
 			focus = call_in_the_warboys
 		}
-		completion_reward = {
-			add_tech_bonus = {
-				name = raider_bike_bonus 
-				bonus = 0.5
-				uses = 1
-				category = bike_tech
-			}
-		}
-	}
-	focus = {
-		id = call_in_the_warboys
-		icon = GFX_goal_generic_demand_territory
-		x = 28
+		x = 19
 		y = 8
-		cost = 8.6
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = raider_bike_bonus
+							bonus = 0.5
+							uses = 1
+							category = bike_tech
+						}
+				}
 
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = expand_the_garage
-		}
-		mutually_exclusive = {
-			focus = kings_of_the_roads
-		}
-		
-		completion_reward = {
-			add_tech_bonus = {
-				name = raider_apc_bonus 
-				bonus = 0.5
-				uses = 1
-				category = apc_tech
-			}
-		}
-	}
-	focus = {
-		id = short_fused_engineers
-		icon = GFX_goal_generic_demand_territory
-		x = 30
-		y = 8
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = business_booms
-		}
-		completion_reward = {
-			add_ideas = raider_engineers
-		}
-	}
-	focus = {
-		id = gear_head_slaves
-		icon = GFX_goal_generic_demand_territory
-		x = 24
-		y = 9
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite= {
-			focus = chop_shop_shimmy
-		}
-		completion_reward = {
-			add_ideas = raider_gearhead_slaves
-		}
 	}
 	focus = {
 		id = custom_rides
-		icon = GFX_goal_generic_demand_territory
-		x = 26
-		y = 9
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_generic_production
+		cost = 8.60
 		prerequisite = {
 			focus = kings_of_the_roads
 		}
-		completion_reward = {
-			add_ideas = raider_custom_rides
+		x = 19
+		y = 9
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_custom_rides
+				}
+
+	}
+	focus = {
+		id = call_in_the_warboys
+		icon = GFX_goal_NCR_Shock_Companies
+		cost = 8.60
+		prerequisite = {
+			focus = expand_the_garage
 		}
+		mutually_exclusive = {
+			focus = kings_of_the_roads
+		}
+		x = 21
+		y = 8
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = raider_apc_bonus
+							bonus = 0.5
+							uses = 1
+							category = apc_tech
+						}
+				}
+
 	}
 	focus = {
 		id = metal_boxes
-		icon = GFX_goal_generic_demand_territory
-		x = 28
-		y = 9
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_generic_production
+		cost = 8.60
 		prerequisite = {
 			focus = call_in_the_warboys
 		}
-		
-		completion_reward = {
-			add_ideas = raider_metal_boxes
-		}
-	}
-	focus = {
-		id = an_explosion_in_understanding
-		icon = GFX_goal_generic_demand_territory
-		x = 30
+		x = 21
 		y = 9
-		cost = 8.6
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_metal_boxes
+				}
 
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = short_fused_engineers
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				name = raider_howitzer_bonus
-				bonus = 0.75
-				uses = 1
-				technology = explosive_tech_5
-			}
-		}
-	}
-	focus = {
-		id = the_magnum_opus
-		icon = GFX_goal_generic_demand_territory
-		x = 24
-		y = 10
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
-		prerequisite = {
-			focus = gear_head_slaves
-		}
-		
-		completion_reward = {
-			add_tech_bonus = {
-				name = raider_tank_bonus 
-				bonus = 0.5
-				uses = 1
-				category = tank_tech
-			}
-		}
 	}
 	focus = {
 		id = roaring_machines
-		icon = GFX_goal_generic_demand_territory
-		x = 27
-		y = 10
-		cost = 8.6
-
-		available_if_capitulated = yes
-		
+		icon = GFX_goal_NCR_Mechanized_Core
+		cost = 8.60
 		prerequisite = {
 			focus = custom_rides
 			focus = metal_boxes
 		}
-		completion_reward = {
-			add_ideas = raider_roaring_machines
+		x = 20
+		y = 10
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_roaring_machines
+				}
+
+	}
+	focus = {
+		id = prove_yourself
+		icon = GFX_goal_generic_land_doctrines_focus
+		cost = 8.60
+		prerequisite = {
+			focus = doped_soldiers
 		}
+		x = 22
+		y = 4
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_prove_yourself
+				}
+
+	}
+	focus = {
+		id = brutal_hazing
+		icon = GFX_goal_generic_pipe_weapons_focus
+		cost = 8.60
+		prerequisite = {
+			focus = lightning_raids
+		}
+		x = 22
+		y = 5
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_brutal_hazing
+				}
+
+	}
+	focus = {
+		id = recruit_them_young
+		icon = GFX_goal_generic_recruitment_focus
+		cost = 8.60
+		prerequisite = {
+			focus = blood_soaked_gender_equality
+		}
+		x = 22
+		y = 6
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_recruit_them_young
+				}
+
+	}
+	focus = {
+		id = preparing_for_total_war
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 8.60
+		prerequisite = {
+			focus = the_sadists
+		}
+		x = 0
+		y = 5
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = preparing_for_total_war
+				}
+
+	}
+	focus = {
+		id = critical_thinking
+		icon = GFX_goal_generic_land_doctrines_focus
+		cost = 8.60
+		prerequisite = {
+			focus = the_eggheads
+		}
+		x = 2
+		y = 5
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = critical_thinking
+				}
+
+	}
+	focus = {
+		id = gangland_diplomacy
+		icon = GFX_goal_generic_generic_diplomatic_focus
+		cost = 8.60
+		prerequisite = {
+			focus = the_grunts
+		}
+		x = 4
+		y = 5
+			available_if_capitulated = yes
+			completion_reward = {
+					add_national_unity = 0.1
+				}
+
+	}
+	focus = {
+		id = dont_question_the_boss
+		icon = GFX_goal_generic_demand_territory
+		cost = 8.60
+		prerequisite = {
+			focus = the_boss
+		}
+		x = 6
+		y = 5
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_dont_question_the_boss
+				}
+
+	}
+	focus = {
+		id = draconian_recovery_methods
+		icon = GFX_goal_generic_ammo_boxes_focus
+		cost = 8.60
+		prerequisite = {
+			focus = preparing_for_total_war
+		}
+		x = 0
+		y = 6
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = draconian_recovery_methods
+				}
+
+	}
+	focus = {
+		id = master_plan
+		icon = GFX_goal_generic_position_armies
+		cost = 8.60
+		prerequisite = {
+			focus = critical_thinking
+		}
+		x = 2
+		y = 6
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = master_plan
+				}
+
+	}
+	focus = {
+		id = everyone_works
+		icon = GFX_goal_generic_building_focus
+		cost = 8.60
+		prerequisite = {
+			focus = gangland_diplomacy
+		}
+		x = 4
+		y = 6
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_everyone_works
+				}
+
+	}
+	focus = {
+		id = iron_grip
+		icon = GFX_focus_generic_self_management
+		cost = 8.60
+		prerequisite = {
+			focus = dont_question_the_boss
+		}
+		x = 6
+		y = 6
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = iron_grip
+				}
+
+	}
+	focus = {
+		id = skulls_on_sticks
+		icon = GFX_goal_generic_secret_weapon
+		cost = 8.60
+		prerequisite = {
+			focus = improve_the_hideout
+		}
+		x = 10
+		y = 4
+			available_if_capitulated = yes
+			completion_reward = {
+					add_national_unity = 0.05
+				}
+
+	}
+	focus = {
+		id = territorial_reinforcement
+		icon = GFX_goal_generic_walls_focus
+		cost = 8.60
+		prerequisite = {
+			focus = cruel_heartland
+		}
+		x = 8
+		y = 5
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = territorial_reinforcement
+				}
+
+	}
+	focus = {
+		id = terrorise_the_locals
+		icon = GFX_goal_generic_attack_allies
+		cost = 8.60
+		prerequisite = {
+			focus = skulls_on_sticks
+		}
+		x = 10
+		y = 5
+			available_if_capitulated = yes
+			completion_reward = {
+					add_national_unity = 0.05
+					add_political_power = 40
+				}
+
+	}
+	focus = {
+		id = raider_headquarters
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 8.60
+		prerequisite = {
+			focus = terrorise_the_locals
+		}
+		x = 10
+		y = 6
+			available_if_capitulated = yes
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																			building = industrial_complex
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 4
+							add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = territoriality
+		icon = GFX_goal_generic_small_arms
+		cost = 8.60
+		prerequisite = {
+			focus = raider_headquarters
+		}
+		x = 10
+		y = 7
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = territoriality
+				}
+
+	}
+	focus = {
+		id = manifest_destiny
+		icon = GFX_goal_generic_war_focus
+		cost = 8.60
+		prerequisite = {
+			focus = territoriality
+		}
+		x = 10
+		y = 8
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_manifest_destiny
+				}
+
+	}
+	focus = {
+		id = we_never_die
+		icon = GFX_goal_generic_bunkers_focus
+		cost = 8.60
+		prerequisite = {
+			focus = territoriality
+		}
+		x = 8
+		y = 8
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_we_never_die
+				}
+
+	}
+	focus = {
+		id = guns_with_legs
+		icon = GFX_goal_generic_advanced_firearms_focus
+		cost = 8.60
+		prerequisite = {
+			focus = new_age_weaponry
+		}
+		x = 11
+		y = 10
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = raider_robot_bonus
+							bonus = 0.5
+							uses = 1
+							category = robotics_tech
+						}
+				}
+
+	}
+	focus = {
+		id = find_the_good_stuff
+		icon = GFX_goal_generic_electronics_focus
+		cost = 8.60
+		prerequisite = {
+			focus = guns_with_legs
+		}
+		x = 11
+		y = 11
+			available_if_capitulated = yes
+			completion_reward = {
+					random_owned_controlled_state = {
+							add_resource = {
+									type = electronics
+									amount = 5
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = shitty_robots
+		icon = GFX_goal_generic_robots_focus
+		cost = 8.60
+		prerequisite = {
+			focus = find_the_good_stuff
+		}
+		x = 11
+		y = 12
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_shitty_robots
+				}
+
+	}
+	focus = {
+		id = taking_the_best
+		icon = GFX_goal_generic_advanced_technology_focus
+		cost = 8.60
+		prerequisite = {
+			focus = raider_computer_logs
+		}
+		x = 13
+		y = 12
+			available_if_capitulated = yes
+			completion_reward = {
+					random_owned_controlled_state = {
+							add_resource = {
+									type = advanced_technology
+									amount = 5
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = power_armor_familiarity
+		icon = GFX_goal_generic_t45d_power_armour_focus
+		cost = 8.60
+		prerequisite = {
+			focus = convert_metal_armour
+		}
+		x = 15
+		y = 12
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_power_armour_familiarity
+				}
+
+	}
+	focus = {
+		id = business_booms
+		icon = GFX_goal_generic_army_artillery2
+		cost = 8.60
+		prerequisite = {
+			focus = take_what_you_need
+		}
+		x = 23
+		y = 7
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = raider_explosives_bonus
+							bonus = 0.5
+							uses = 1
+							category = artillery
+						}
+				}
+
+	}
+	focus = {
+		id = short_fused_engineers
+		icon = GFX_goal_generic_electricity_focus
+		cost = 8.60
+		prerequisite = {
+			focus = business_booms
+		}
+		x = 23
+		y = 8
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_engineers
+				}
+
+	}
+	focus = {
+		id = gear_head_slaves
+		icon = GFX_goal_generic_production2
+		cost = 8.60
+		prerequisite = {
+			focus = chop_shop_shimmy
+		}
+		x = 17
+		y = 9
+			available_if_capitulated = yes
+			completion_reward = {
+					add_ideas = raider_gearhead_slaves
+				}
+
+	}
+	focus = {
+		id = an_explosion_in_understanding
+		icon = GFX_goal_NCR_Blast_from_the_Past
+		cost = 8.60
+		prerequisite = {
+			focus = short_fused_engineers
+		}
+		x = 23
+		y = 9
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = raider_howitzer_bonus
+							bonus = 0.75
+							uses = 1
+							technology = explosive_tech_5
+						}
+				}
+
+	}
+	focus = {
+		id = the_magnum_opus
+		icon = GFX_goal_NCR_The_Tip_of_the_Spear
+		cost = 8.60
+		prerequisite = {
+			focus = gear_head_slaves
+		}
+		x = 17
+		y = 10
+			available_if_capitulated = yes
+			completion_reward = {
+					add_tech_bonus = {
+							name = raider_tank_bonus
+							bonus = 0.5
+							uses = 1
+							category = tank_tech
+						}
+				}
+
 	}
 }
