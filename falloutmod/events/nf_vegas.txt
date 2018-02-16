@@ -66,7 +66,7 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.3.a 
+		name = nf_vegas.3.a
 		
 		country_event = { id = nf_vegas.4 days = 1 }
 	}
@@ -126,7 +126,7 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.5.a 
+		name = nf_vegas.5.a
 		
 		ai_chance = {
 			factor = 1
@@ -142,7 +142,7 @@ country_event = {
 	}
 	
 	option = {
-		name = nf_vegas.5.b 
+		name = nf_vegas.5.b
 		
 		add_ideas = kings
 		
@@ -168,7 +168,7 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.6.a 
+		name = nf_vegas.6.a
 		
 		ai_chance = {
 			factor = 1
@@ -183,7 +183,7 @@ country_event = {
 	}
 	
 	option = {
-		name = nf_vegas.6.b 
+		name = nf_vegas.6.b
 		
 		ai_chance = {
 			factor = 1
@@ -209,7 +209,7 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.7.a 
+		name = nf_vegas.7.a
 		
 		211 = {
 		    add_extra_state_shared_building_slots = 3
@@ -229,7 +229,7 @@ country_event = {
 	}
 	
 	option = {
-		name = nf_vegas.7.b 
+		name = nf_vegas.7.b
 		
 		154 = {
 			add_building_construction = {
@@ -267,7 +267,7 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.8.a 
+		name = nf_vegas.8.a
 		
 		VEG = {
 		country_event = nf_vegas.28
@@ -275,7 +275,7 @@ country_event = {
 	}
 	
 	option = {
-		name = nf_vegas.8.b 
+		name = nf_vegas.8.b
 		
 		VEG = {
 		country_event = nf_vegas.29
@@ -284,8 +284,6 @@ country_event = {
 	}
 	
 }
-
-# the fate of vault 21
 country_event = {
 	id = nf_vegas.9
 	title = nf_vegas.9.t
@@ -325,24 +323,21 @@ country_event = {
 		
 		211 = {
                 add_resource = {
-				type = fuel
-				amount = 10
+				   type = fuel
+				   amount = 10
                 }				
                 add_resource = {
-				type = scrap
-				amount = 20
+				   type = scrap
+				   amount = 20
 				}
 				add_resource = {
-				type = advanced_technology
-				amount = 5
+				   type = advanced_technology
+				   amount = 5
 				}
-		    }
-			
+		}
 	}
 	
 }
-
-# Vegas Vic
 country_event = {
 	id = nf_vegas.10
 	title = nf_vegas.10.t
@@ -352,14 +347,12 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.10.a 
+		name = nf_vegas.10.a
 		
 		create_corps_commander = { name = "Victor" picture = "GFX_Portrait_Nero.dds" traits = { } skill = 6 }
-		
 	}
 	
 }
-# friends in low places: Khans join
 country_event = {
 	id = nf_vegas.11
 	title = nf_vegas.11.t
@@ -369,26 +362,21 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.11.a 
+		name = nf_vegas.11.a
 		
 		set_technology = { healing_powder = 1 }
 		load_oob = vegasjessup
 		create_corps_commander = { name = "Jessup" picture = "GFX_Portrait_Jessup.dds" traits = { desert_fox } skill = 3 }
 		
 	}
-	
 	option = {
 		name = nf_vegas.11.b
 		
 		set_technology = { flamer_tech = 1 }
 		load_oob = vegaschance
 		create_corps_commander = { name = "Chance" picture = "GFX_Portrait_Chance.dds" traits = { urban_assault_specialist commando } skill = 4 }
-			
 	}
-	
 }
-
-# friends in high places, chairmen join
 country_event = {
 	id = nf_vegas.12
 	title = nf_vegas.12.t
@@ -398,7 +386,7 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.12.a 
+		name = nf_vegas.12.a
 		
 		set_technology = { anti_personnel_tech = 1 }
 		load_oob = vegaschairmen 
@@ -407,7 +395,6 @@ country_event = {
 	}
 	
 }
-# Wrong package, ain't that a kick in the head
 country_event = {
 	id = nf_vegas.13
 	title = nf_vegas.13.t
@@ -417,7 +404,7 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.13.a 
+		name = nf_vegas.13.a
 		
 		if = {
 			limit = {
@@ -436,14 +423,13 @@ country_event = {
 					has_idea = stableOS
 				}
 			}
-			swap_ideas = { 
+			swap_ideas = {
 				remove_idea = stableOS 
 				add_idea = platinumOS 
 			}
 		}
 	}	
 }
-# War for Vegas: Gunfire in the streets of vegas
 country_event = {
 	id = nf_vegas.15
 	title = nf_vegas.15.t
@@ -453,7 +439,7 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.15.a 
+		name = nf_vegas.15.a
 		
 		hidden_effect = {
 			set_capital = 211
@@ -471,7 +457,6 @@ country_event = {
 	}
 	
 }
-# The platinum chip: Expedient Delivery
 country_event = {
 	id = nf_vegas.16
 	title = nf_vegas.16.t
@@ -487,7 +472,7 @@ country_event = {
 	}
 	
 	option = {
-		name = nf_vegas.16.b 
+		name = nf_vegas.16.b
 		
 		BOS = {
 		country_event = nf_vegas.20
@@ -496,7 +481,6 @@ country_event = {
 	}
 	
 }
-# The Vault: Securitron Army
 country_event = {
 	id = nf_vegas.17
 	title = nf_vegas.17.t
@@ -530,14 +514,13 @@ country_event = {
 	}	
 	
 	option = {
-		name = nf_vegas.17.b 
+		name = nf_vegas.17.b
 		
 		country_event = nf_vegas.25
 			
 	}
 	
 }
-# Vegas Prime: Reconstructing Greatness
 country_event = {
 	id = nf_vegas.18
 	title = nf_vegas.18.t
@@ -547,7 +530,7 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.18.a 
+		name = nf_vegas.18.a
 		
 		add_ideas = vegasprime1
 		country_event = { id = nf_vegas.22 days = 370 }
@@ -555,13 +538,12 @@ country_event = {
 	}
 	
 	option = {
-		name = nf_vegas.18.b 
+		name = nf_vegas.18.b
 		
 		country_event = { id = nf_vegas.22 days = 740 }
 	}
 	
 }
-#Delayed Delivery#
 country_event = {
 	id = nf_vegas.19
 	title = nf_vegas.19.t
@@ -571,7 +553,7 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.19.a 
+		name = nf_vegas.19.a
 		
 		
 		if = {
@@ -674,7 +656,7 @@ country_event = {
 	}	
 }
 country_event = {
-	id = nf_vegas.23 #King's Inflitration#
+	id = nf_vegas.23
 	title = nf_vegas.23.t
 	desc = nf_vegas.23.d
 	picture = GFX_report_event_fascist_speech
@@ -689,7 +671,7 @@ country_event = {
 	
 }
 country_event = {
-	id = nf_vegas.24 #Benny's Inflitration#
+	id = nf_vegas.24
 	title = nf_vegas.24.t
 	desc = nf_vegas.24.d
 	picture = GFX_report_event_fascist_speech
@@ -704,7 +686,7 @@ country_event = {
 	
 }
 country_event = {
-	id = nf_vegas.25 #Firefight on Fortification Hill#
+	id = nf_vegas.25
 	title = nf_vegas.25.t
 	desc = nf_vegas.25.d
 	picture = GFX_report_event_fascist_speech
@@ -732,7 +714,7 @@ country_event = {
 	
 }
 country_event = {
-	id = nf_vegas.26 #Securitron Army#
+	id = nf_vegas.26
 	title = nf_vegas.26.t
 	desc = nf_vegas.26.d
 	picture = GFX_report_event_fascist_speech
@@ -760,7 +742,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = nf_vegas.27 #Burning Vault#
+	id = nf_vegas.27
 	title = nf_vegas.27.t
 	desc = nf_vegas.27.d
 	picture = GFX_report_event_fascist_speech
@@ -770,14 +752,14 @@ country_event = {
 	option = {
 		name = nf_vegas.27.a
 			
-	  set_technology = { securitron_2_tech = 1 }
-	  load_oob = vegassecuritronarmy2
+	    set_technology = { securitron_2_tech = 1 }
+	    load_oob = vegassecuritronarmy2
 	 
 	}
 	
 }
 country_event = {
-	id = nf_vegas.28 #Mojave Chapter joins#
+	id = nf_vegas.28
 	title = nf_vegas.28.t
 	desc = nf_vegas.28.d
 	picture = GFX_report_event_fascist_speech
@@ -785,7 +767,7 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.28.a 
+		name = nf_vegas.28.a
 		
 		VEG = {
 			add_to_faction = MOJ
@@ -798,7 +780,7 @@ country_event = {
 	
 }
 country_event = {
-	id = nf_vegas.29 #Mojave Chapter refuses#
+	id = nf_vegas.29
 	title = nf_vegas.29.t
 	desc = nf_vegas.29.d
 	picture = GFX_report_event_fascist_speech
@@ -806,7 +788,7 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.29.a 
+		name = nf_vegas.29.a
 		
 		VEG = {
 			add_opinion_modifier = { target = MOJ modifier = mojavepactrefused }
@@ -818,7 +800,7 @@ country_event = {
 	
 }
 country_event = {
-	id = nf_vegas.30 #New Vegas Founds the Nevada Pact#
+	id = nf_vegas.30
 	title = nf_vegas.30.t
 	desc = nf_vegas.30.d
 	picture = GFX_report_event_fascist_speech
@@ -826,7 +808,7 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.30.a 
+		name = nf_vegas.30.a
 		
 		create_faction = nevada_pact
 		
@@ -841,7 +823,7 @@ country_event = {
 	
 }
 country_event = {
-	id = nf_vegas.31 #Desert Rangers Invitation from New Vegas#
+	id = nf_vegas.31
 	title = nf_vegas.31.t
 	desc = nf_vegas.31.d
 	picture = GFX_report_event_fascist_speech
@@ -849,7 +831,7 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.31.a #Accept#
+		name = nf_vegas.31.a
 		
 		VEG = {
 		country_event = nf_vegas.32
@@ -858,7 +840,7 @@ country_event = {
 		
 	}
 	option = {
-		name = nf_vegas.31.b #Refuse#
+		name = nf_vegas.31.b
 		
 		VEG = {
 		country_event = nf_vegas.33
@@ -869,7 +851,7 @@ country_event = {
 	
 }
 country_event = {
-	id = nf_vegas.32 #Desert Rangers Accept Invitation from New Vegas#
+	id = nf_vegas.32
 	title = nf_vegas.32.t
 	desc = nf_vegas.32.d
 	picture = GFX_report_event_fascist_speech
@@ -893,7 +875,7 @@ country_event = {
 	
 }
 country_event = {
-	id = nf_vegas.33 #Desert Rangers Refuse Invitation from New Vegas#
+	id = nf_vegas.33
 	title = nf_vegas.33.t
 	desc = nf_vegas.33.d
 	picture = GFX_report_event_fascist_speech
@@ -911,7 +893,7 @@ country_event = {
 	
 }
 country_event = {
-	id = nf_vegas.34 #New Reno Receives Invitation from New Vegas#
+	id = nf_vegas.34
 	title = nf_vegas.34.t
 	desc = nf_vegas.34.d
 	picture = GFX_report_event_fascist_speech
@@ -919,7 +901,7 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.34.a #Accept#
+		name = nf_vegas.34.a
 		
 		VEG = {
 		country_event = nf_vegas.35
@@ -928,7 +910,7 @@ country_event = {
 		
 	}
 	option = {
-		name = nf_vegas.34.b #Refuse#
+		name = nf_vegas.34.b
 		
 		VEG = {
 		country_event = nf_vegas.36
@@ -939,7 +921,7 @@ country_event = {
 	
 }
 country_event = {
-	id = nf_vegas.35 #New Reno Accepts Invitation from New Vegas#
+	id = nf_vegas.35
 	title = nf_vegas.35.t
 	desc = nf_vegas.35.d
 	picture = GFX_report_event_fascist_speech
@@ -963,7 +945,7 @@ country_event = {
 	
 }
 country_event = {
-	id = nf_vegas.36 #New Reno Refuses Invitation from New Vegas#
+	id = nf_vegas.36
 	title = nf_vegas.36.t
 	desc = nf_vegas.36.d
 	picture = GFX_report_event_fascist_speech
@@ -981,7 +963,7 @@ country_event = {
 	
 }
 country_event = {
-	id = nf_vegas.37 #New Vegas wants to join our faction Nevada Pact#
+	id = nf_vegas.37
 	title = nf_vegas.37.t
 	desc = nf_vegas.37.d
 	picture = GFX_report_event_fascist_speech
@@ -989,10 +971,10 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.37.a  #Accept them#
+		name = nf_vegas.37.a
 		
 		VEG = {
-		country_event = nf_vegas.38  #Refuse them#
+		    country_event = nf_vegas.38  
 		}
 		
 		
@@ -1001,15 +983,13 @@ country_event = {
 		name = nf_vegas.37.b
 		
 		VEG = {
-		country_event = nf_vegas.39
+		    country_event = nf_vegas.39
 		}
-		
-		
 	}
 	
 }
 country_event = {
-	id = nf_vegas.38 #New Vegas is accepted into Nevada Pact#
+	id = nf_vegas.38
 	title = nf_vegas.38.t
 	desc = nf_vegas.38.d
 	picture = GFX_report_event_fascist_speech
@@ -1020,39 +1000,39 @@ country_event = {
 		name = nf_vegas.38.a
 		
 		if = {
-				limit = {
-					DES = {
-						is_faction_leader = yes
-					}
-				}
-				VEG = {
-				add_opinion_modifier = { target = DES modifier = nevadapact }
-				}
+			limit = {
 				DES = {
-					add_to_faction = VEG
-					add_opinion_modifier = { target = VEG modifier = nevadapact }
+					is_faction_leader = yes
 				}
+			}
+			VEG = {
+			    add_opinion_modifier = { target = DES modifier = nevadapact }
+			}
+			DES = {
+				add_to_faction = VEG
+				add_opinion_modifier = { target = VEG modifier = nevadapact }
+			}
 		}
 		if = {
-				limit = {
-					NEW = {
-						is_faction_leader = yes
-					}
-				}
-				VEG = {
-				add_opinion_modifier = { target = NEW modifier = nevadapact }
-				}
+			limit = {
 				NEW = {
-					add_to_faction = VEG
-					add_opinion_modifier = { target = VEG modifier = nevadapact }
+					is_faction_leader = yes
 				}
+			}
+			VEG = {
+			    add_opinion_modifier = { target = NEW modifier = nevadapact }
+			}
+			NEW = {
+				add_to_faction = VEG
+				add_opinion_modifier = { target = VEG modifier = nevadapact }
+			}
 		}
 	
 	}
 	
 }
 country_event = {
-	id = nf_vegas.39 #New Vegas is refused entry into Nevada Pact#
+	id = nf_vegas.39
 	title = nf_vegas.39.t
 	desc = nf_vegas.39.d
 	picture = GFX_report_event_fascist_speech
@@ -1063,31 +1043,31 @@ country_event = {
 		name = nf_vegas.39.a
 		
 		if = {
-				limit = {
-					DES = {
-						is_faction_leader = yes
-					}
+			limit = {
+				DES = {
+					is_faction_leader = yes
 				}
-				VEG = {
-				add_opinion_modifier = { target = DES modifier = nevadapactrefused }
-				}
+			}
+			VEG = {
+			    add_opinion_modifier = { target = DES modifier = nevadapactrefused }
+			}
 		}
 		if = {
-				limit = {
-					NEW = {
-						is_faction_leader = yes
-					}
+			limit = {
+				NEW = {
+					is_faction_leader = yes
 				}
-				VEG = {
-				add_opinion_modifier = { target = NEW modifier = nevadapactrefused } 
-				}
+			}
+			VEG = {
+			    add_opinion_modifier = { target = NEW modifier = nevadapactrefused } 
+			}
 		}
 	
 	}
 	
 }
 country_event = {
-	id = nf_vegas.40 #New Vegas Civil War Over#
+	id = nf_vegas.40
 	title = nf_vegas.40.t
 	desc = nf_vegas.40.d
 	picture = GFX_report_event_fascist_speech
@@ -1107,7 +1087,7 @@ country_event = {
 	
 }
 country_event = {
-	id = nf_vegas.41 #New Vegas offers annexation to the Fiends#
+	id = nf_vegas.41
 	title = nf_vegas.41.t
 	desc = nf_vegas.41.d
 	picture = GFX_report_event_fascist_speech
@@ -1115,7 +1095,7 @@ country_event = {
     
 	
 	option = {
-		name = nf_vegas.41.a #Accept#
+		name = nf_vegas.41.a
 		
 		ai_chance = {
 			factor = 1
@@ -1126,7 +1106,7 @@ country_event = {
 	}
 	
 	option = {
-		name = nf_vegas.41.b #Refuse#
+		name = nf_vegas.41.b
 		
 		VEG = {
 		  country_event = nf_vegas.43
@@ -1136,7 +1116,7 @@ country_event = {
 	
 }
 country_event = {
-	id = nf_vegas.42 #The Fiends accept#
+	id = nf_vegas.42
 	title = nf_vegas.42.t
 	desc = nf_vegas.42.d
 	picture = GFX_report_event_fascist_speech
@@ -1144,7 +1124,7 @@ country_event = {
     
 	
 	option = {
-		name = nf_vegas.42.a #Annex the Fiends#
+		name = nf_vegas.42.a 
 		
 		VEG = {
 		  annex_country = { target = FIE }
@@ -1154,7 +1134,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = nf_vegas.43 #The Fiends refuse#
+	id = nf_vegas.43
 	title = nf_vegas.43.t
 	desc = nf_vegas.43.d
 	picture = GFX_report_event_fascist_speech
@@ -1162,7 +1142,7 @@ country_event = {
     
 	
 	option = {
-		name = nf_vegas.43.a #Settle for the Omertas#
+		name = nf_vegas.43.a 
 		
 		VEG = {
 		  country_event = { id = nf_vegas.5 days = 1 }
@@ -1171,7 +1151,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = nf_vegas.44 #New Vegas offers annexation to the Khans#
+	id = nf_vegas.44
 	title = nf_vegas.44.t
 	desc = nf_vegas.44.d
 	picture = GFX_report_event_fascist_speech
@@ -1179,7 +1159,7 @@ country_event = {
     
 	
 	option = {
-		name = nf_vegas.44.a #Accept#
+		name = nf_vegas.44.a
 		
 		ai_chance = {
 			factor = 1
@@ -1188,19 +1168,17 @@ country_event = {
 		  country_event = nf_vegas.45 
 		}
 	}
-	
+
 	option = {
-		name = nf_vegas.44.b #Refuse#
+		name = nf_vegas.44.b
 		
 		VEG = {
 		  country_event = nf_vegas.46
-		}
-		
+		}	
 	}
-	
 }
 country_event = {
-	id = nf_vegas.45 #The Khans accept#
+	id = nf_vegas.45
 	title = nf_vegas.45.t
 	desc = nf_vegas.45.d
 	picture = GFX_report_event_fascist_speech
@@ -1208,7 +1186,7 @@ country_event = {
     
 	
 	option = {
-		name = nf_vegas.45.a #Annex the Khans#
+		name = nf_vegas.45.a 
 		
 		VEG = {
 		  annex_country = KHA
@@ -1217,7 +1195,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = nf_vegas.46 #The Khans refuse#
+	id = nf_vegas.46
 	title = nf_vegas.46.t
 	desc = nf_vegas.46.d
 	picture = GFX_report_event_fascist_speech
@@ -1225,7 +1203,7 @@ country_event = {
     
 	
 	option = {
-		name = nf_vegas.46.a #Settle for the Whitegloves#
+		name = nf_vegas.46.a
 		
 		VEG = {
 		  add_ideas = whitegloves
@@ -1233,7 +1211,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = nf_vegas.47 #Benny's Army#
+	id = nf_vegas.47
 	title = nf_vegas.47.t
 	desc = nf_vegas.47.d
 	picture = GFX_report_event_fascist_speech
@@ -1241,14 +1219,13 @@ country_event = {
     
 	
 	option = {
-		name = nf_vegas.47.a #Time to grease some palms#
+		name = nf_vegas.47.a
 		
 		country_event = { id = nf_vegas.48 hours = 4 }
-		
 	}
 }
 country_event = {
-	id = nf_vegas.48 #Foul Business#
+	id = nf_vegas.48
 	title = nf_vegas.48.t
 	desc = nf_vegas.48.d
 	picture = GFX_report_event_fascist_speech
@@ -1256,14 +1233,13 @@ country_event = {
     
 	
 	option = {
-		name = nf_vegas.48.a #Ever seen a 12.7 SMG, Legionary?#
+		name = nf_vegas.48.a
 		
 		country_event = { id = nf_vegas.49 hours = 2 }
-		
 	}
 }
 country_event = {
-	id = nf_vegas.49 #Trojan Horse#
+	id = nf_vegas.49
 	title = nf_vegas.49.t
 	desc = nf_vegas.49.d
 	picture = GFX_report_event_fascist_speech
@@ -1271,7 +1247,7 @@ country_event = {
     is_triggered_only = yes    
 	
 	option = {
-		name = nf_vegas.49.a #Dead nobodies face down in the dirt.#
+		name = nf_vegas.49.a
 			
 	    set_technology = { securitron_2_tech = 1 }
 	    load_oob = vegassecuritronarmy1
@@ -1291,7 +1267,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = nf_vegas.50 #The King's Inflitration Succeeds#
+	id = nf_vegas.50
 	title = nf_vegas.50.t
 	desc = nf_vegas.50.d
 	picture = GFX_report_event_fascist_speech
@@ -1319,7 +1295,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = nf_vegas.51 #Benny's Inflitration Succeeds#
+	id = nf_vegas.51
 	title = nf_vegas.51.t
 	desc = nf_vegas.51.d
 	picture = GFX_report_event_fascist_speech
@@ -1329,9 +1305,9 @@ country_event = {
 	option = {
 		name = nf_vegas.51.a
 			
-	  set_technology = { securitron_2_tech = 1 }
-	  load_oob = vegassecuritronarmy1
-	  add_ideas = securitron_vault
+	    set_technology = { securitron_2_tech = 1 }
+	    load_oob = vegassecuritronarmy1
+	    add_ideas = securitron_vault
 	  
 	    if = {
 			limit = {
@@ -1346,7 +1322,7 @@ country_event = {
 		}
 	}
 }
-}	
+	
 
 	
 	
