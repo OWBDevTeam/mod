@@ -4,7 +4,7 @@ country_event = {
 	id = nf_vegas.1
 	title = nf_vegas.1.t
 	desc = nf_vegas.1.d
-	picture = GFX_report_event_fascist_speech
+	picture = event_VEG_wall
 
     is_triggered_only = yes
     
@@ -39,7 +39,7 @@ country_event = {
 	id = nf_vegas.2
 	title = nf_vegas.2.t
 	desc = nf_vegas.2.d
-	picture = GFX_report_event_fascist_speech
+	picture = event_VEG_lucky38
 
     is_triggered_only = yes
     
@@ -61,7 +61,7 @@ country_event = {
 	id = nf_vegas.3
 	title = nf_vegas.3.t
 	desc = nf_vegas.3.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_strip
 
     is_triggered_only = yes    
 	
@@ -77,7 +77,7 @@ country_event = {
 	id = nf_vegas.4
 	title = nf_vegas.4.t
 	desc = nf_vegas.4.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_gomorrah
 
     is_triggered_only = yes    
 	
@@ -121,7 +121,7 @@ country_event = {
 	id = nf_vegas.5
 	title = nf_vegas.5.t
 	desc = nf_vegas.5.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_tops
 
     is_triggered_only = yes    
 	
@@ -163,7 +163,7 @@ country_event = {
 	id = nf_vegas.6
 	title = nf_vegas.6.t
 	desc = nf_vegas.6.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_ultraluxe
 
     is_triggered_only = yes    
 	
@@ -204,7 +204,7 @@ country_event = {
 	id = nf_vegas.7
 	title = nf_vegas.7.t
 	desc = nf_vegas.7.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_strip
 
     is_triggered_only = yes    
 	
@@ -262,7 +262,7 @@ country_event = {
 	id = nf_vegas.8
 	title = nf_vegas.8.t
 	desc = nf_vegas.8.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_strip
 
     is_triggered_only = yes    
 	
@@ -288,7 +288,7 @@ country_event = {
 	id = nf_vegas.9
 	title = nf_vegas.9.t
 	desc = nf_vegas.9.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_vault21
 
     is_triggered_only = yes    
 	
@@ -342,7 +342,7 @@ country_event = {
 	id = nf_vegas.10
 	title = nf_vegas.10.t
 	desc = nf_vegas.10.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_thekings
 
     is_triggered_only = yes    
 	
@@ -357,7 +357,7 @@ country_event = {
 	id = nf_vegas.11
 	title = nf_vegas.11.t
 	desc = nf_vegas.11.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_khans
 
     is_triggered_only = yes    
 	
@@ -381,7 +381,7 @@ country_event = {
 	id = nf_vegas.12
 	title = nf_vegas.12.t
 	desc = nf_vegas.12.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_tops
 
     is_triggered_only = yes    
 	
@@ -399,7 +399,7 @@ country_event = {
 	id = nf_vegas.13
 	title = nf_vegas.13.t
 	desc = nf_vegas.13.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_platinumchip
 
     is_triggered_only = yes    
 	
@@ -434,7 +434,7 @@ country_event = {
 	id = nf_vegas.15
 	title = nf_vegas.15.t
 	desc = nf_vegas.15.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_battle
 
     is_triggered_only = yes    
 	
@@ -443,7 +443,16 @@ country_event = {
 		
 		hidden_effect = {
 		    set_politics = { ruling_party = people elections_allowed = no }
-			start_civil_war = { ideology = ruler size = 0.3}
+			start_civil_war = { 
+				ideology = people
+				size = 0.55
+				states_filter = {
+					NOT = {
+						state = 211
+					}
+				}
+			}
+			country_event = { id = nf_vegas.40 days = 1 }
 		}
 	}
 	
@@ -452,7 +461,7 @@ country_event = {
 	id = nf_vegas.16
 	title = nf_vegas.16.t
 	desc = nf_vegas.16.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_platinumchip
 
     is_triggered_only = yes    
 	
@@ -476,7 +485,7 @@ country_event = {
 	id = nf_vegas.17
 	title = nf_vegas.17.t
 	desc = nf_vegas.17.d
-	picture = GFX_report_event_fascist_speech
+	picture = event_VEG_securitronvault
 
     is_triggered_only = yes    
 	
@@ -516,7 +525,7 @@ country_event = {
 	id = nf_vegas.18
 	title = nf_vegas.18.t
 	desc = nf_vegas.18.d
-	picture = GFX_report_event_fascist_speech
+	picture = event_VEG_securitronvault
 
     is_triggered_only = yes    
 	
@@ -539,7 +548,7 @@ country_event = {
 	id = nf_vegas.19
 	title = nf_vegas.19.t
 	desc = nf_vegas.19.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_platinumchip
 
     is_triggered_only = yes    
 	
@@ -570,7 +579,7 @@ country_event = {
 	id = nf_vegas.20
 	title = nf_vegas.20.t
 	desc = nf_vegas.20.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_strip
 
     is_triggered_only = yes    
 	
@@ -605,7 +614,7 @@ country_event = {
 	id = nf_vegas.21
 	title = nf_vegas.21.t
 	desc = nf_vegas.21.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_BOS_desert_patrol
 
     is_triggered_only = yes    
 	
@@ -627,7 +636,7 @@ country_event = {
 	id = nf_vegas.22
 	title = nf_vegas.22.t
 	desc = nf_vegas.22.d
-	picture = GFX_report_event_fascist_speech
+	picture = event_VEG_securitronvault
 
     is_triggered_only = yes    
 	
@@ -650,7 +659,7 @@ country_event = {
 	id = nf_vegas.23
 	title = nf_vegas.23.t
 	desc = nf_vegas.23.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_thekings
 
     is_triggered_only = yes    
 	
@@ -665,7 +674,7 @@ country_event = {
 	id = nf_vegas.24
 	title = nf_vegas.24.t
 	desc = nf_vegas.24.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_CES_caesar
 
     is_triggered_only = yes    
 	
@@ -680,7 +689,7 @@ country_event = {
 	id = nf_vegas.25
 	title = nf_vegas.25.t
 	desc = nf_vegas.25.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_CES_caesar
 
     is_triggered_only = yes    
 	
@@ -708,7 +717,7 @@ country_event = {
 	id = nf_vegas.26
 	title = nf_vegas.26.t
 	desc = nf_vegas.26.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_CES_first_battle_for_hoover_dam
 
     is_triggered_only = yes    
 	
@@ -736,7 +745,7 @@ country_event = {
 	id = nf_vegas.27
 	title = nf_vegas.27.t
 	desc = nf_vegas.27.d
-	picture = GFX_report_event_fascist_speech
+	picture = event_VEG_securitronvault
 
     is_triggered_only = yes    
 	
@@ -753,7 +762,7 @@ country_event = {
 	id = nf_vegas.28
 	title = nf_vegas.28.t
 	desc = nf_vegas.28.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_BOS_desert_patrol
 
     is_triggered_only = yes    
 	
@@ -774,7 +783,7 @@ country_event = {
 	id = nf_vegas.29
 	title = nf_vegas.29.t
 	desc = nf_vegas.29.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_BOS_desert_patrol
 
     is_triggered_only = yes    
 	
@@ -794,7 +803,7 @@ country_event = {
 	id = nf_vegas.30
 	title = nf_vegas.30.t
 	desc = nf_vegas.30.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_DES_rangers_symbol
 
     is_triggered_only = yes    
 	
@@ -817,7 +826,7 @@ country_event = {
 	id = nf_vegas.31
 	title = nf_vegas.31.t
 	desc = nf_vegas.31.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_DES_rangers_symbol
 
     is_triggered_only = yes    
 	
@@ -845,7 +854,7 @@ country_event = {
 	id = nf_vegas.32
 	title = nf_vegas.32.t
 	desc = nf_vegas.32.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_DES_rangers_symbol
 
     is_triggered_only = yes    
 	
@@ -869,7 +878,7 @@ country_event = {
 	id = nf_vegas.33
 	title = nf_vegas.33.t
 	desc = nf_vegas.33.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_DES_rangers_symbol
 
     is_triggered_only = yes    
 	
@@ -887,7 +896,7 @@ country_event = {
 	id = nf_vegas.34
 	title = nf_vegas.34.t
 	desc = nf_vegas.34.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_DES_rangers_symbol
 
     is_triggered_only = yes    
 	
@@ -915,7 +924,7 @@ country_event = {
 	id = nf_vegas.35
 	title = nf_vegas.35.t
 	desc = nf_vegas.35.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_DES_rangers_symbol
 
     is_triggered_only = yes    
 	
@@ -939,7 +948,7 @@ country_event = {
 	id = nf_vegas.36
 	title = nf_vegas.36.t
 	desc = nf_vegas.36.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_DES_rangers_symbol
 
     is_triggered_only = yes    
 	
@@ -957,7 +966,7 @@ country_event = {
 	id = nf_vegas.37
 	title = nf_vegas.37.t
 	desc = nf_vegas.37.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_DES_rangers_symbol
 
     is_triggered_only = yes    
 	
@@ -983,7 +992,7 @@ country_event = {
 	id = nf_vegas.38
 	title = nf_vegas.38.t
 	desc = nf_vegas.38.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_DES_rangers_symbol
 
     is_triggered_only = yes    
 	
@@ -1026,7 +1035,7 @@ country_event = {
 	id = nf_vegas.39
 	title = nf_vegas.39.t
 	desc = nf_vegas.39.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_DES_rangers_symbol
 
     is_triggered_only = yes    
 	
@@ -1061,19 +1070,25 @@ country_event = {
 	id = nf_vegas.40
 	title = nf_vegas.40.t
 	desc = nf_vegas.40.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_thekings
 
-    trigger = {
-		original_tag = VEG
-		has_government = people
-		has_global_flag = vegas_civil_war
-		owns_state = 211
-	}
+    is_triggered_only = yes
 	
 	option = {
 		name = nf_vegas.40.a
-		
-		set_capital = 211
+		random_country = {
+			limit = {
+				original_tag = VEG
+				has_government = people
+			}
+			if = {
+				limit = {
+					controls_state = 211
+				}
+				set_capital = 211
+			}
+			change_tag_from	= VEG
+		}
 	}	
 	
 }
@@ -1081,7 +1096,7 @@ country_event = {
 	id = nf_vegas.41
 	title = nf_vegas.41.t
 	desc = nf_vegas.41.d
-	picture = GFX_report_event_fascist_speech
+	picture = event_VEG_lucky38
 
 	is_triggered_only = yes
 	
@@ -1108,7 +1123,7 @@ country_event = {
 	id = nf_vegas.42
 	title = nf_vegas.42.t
 	desc = nf_vegas.42.d
-	picture = GFX_report_event_fascist_speech
+	picture = event_VEG_lucky38
 
     is_triggered_only = yes
 	
@@ -1126,7 +1141,7 @@ country_event = {
 	id = nf_vegas.43
 	title = nf_vegas.43.t
 	desc = nf_vegas.43.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_gomorrah
 
 	is_triggered_only = yes
 	
@@ -1143,7 +1158,7 @@ country_event = {
 	id = nf_vegas.44
 	title = nf_vegas.44.t
 	desc = nf_vegas.44.d
-	picture = GFX_report_event_fascist_speech
+	picture = event_VEG_lucky38
 
     is_triggered_only = yes
 	
@@ -1170,7 +1185,7 @@ country_event = {
 	id = nf_vegas.45
 	title = nf_vegas.45.t
 	desc = nf_vegas.45.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_khans
 
     is_triggered_only = yes
 	
@@ -1187,7 +1202,7 @@ country_event = {
 	id = nf_vegas.46
 	title = nf_vegas.46.t
 	desc = nf_vegas.46.d
-	picture = GFX_report_event_fascist_speech
+	picture = GFX_event_VEG_ultraluxe
 
     is_triggered_only = yes
 	
@@ -1203,7 +1218,7 @@ country_event = {
 	id = nf_vegas.47
 	title = nf_vegas.47.t
 	desc = nf_vegas.47.d
-	picture = GFX_report_event_fascist_speech
+	picture = event_VEG_lucky38
 
     is_triggered_only = yes
 	
@@ -1217,7 +1232,7 @@ country_event = {
 	id = nf_vegas.48
 	title = nf_vegas.48.t
 	desc = nf_vegas.48.d
-	picture = GFX_report_event_fascist_speech
+	picture = event_VEG_lucky38
 	
 	is_triggered_only = yes
 	
@@ -1231,7 +1246,7 @@ country_event = {
 	id = nf_vegas.49
 	title = nf_vegas.49.t
 	desc = nf_vegas.49.d
-	picture = GFX_report_event_fascist_speech
+	picture = event_VEG_lucky38
 
     is_triggered_only = yes    
 	
@@ -1259,7 +1274,7 @@ country_event = {
 	id = nf_vegas.50
 	title = nf_vegas.50.t
 	desc = nf_vegas.50.d
-	picture = GFX_report_event_fascist_speech
+	picture = event_VEG_securitronvault
 
     is_triggered_only = yes    
 	
@@ -1287,7 +1302,7 @@ country_event = {
 	id = nf_vegas.51
 	title = nf_vegas.51.t
 	desc = nf_vegas.51.d
-	picture = GFX_report_event_fascist_speech
+	picture = event_VEG_securitronvault
 
     is_triggered_only = yes    
 	
