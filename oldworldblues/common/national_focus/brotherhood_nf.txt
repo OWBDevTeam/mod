@@ -235,13 +235,17 @@ focus_tree = {
 		x = 16
 		y = 5
 		completion_reward = {
-		ARR = {add_opinion_modifier = { target = BOS modifier = arroyolikebos } }
+		ARR = { add_opinion_modifier = { target = BOS modifier = arroyolikebos } }
 		
 			if = {
 				limit = {
 					ARR = { is_ai = yes }
 				}
 				add_to_faction = ARR
+				ARR = {
+				    set_political_party = { ideology = intellectuals popularity = 0.5 }
+					set_politics = { ruling_party = intellectuals elections_allowed = no }
+				}
 			}
 			
 			if = {
