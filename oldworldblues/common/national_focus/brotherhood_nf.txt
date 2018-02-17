@@ -243,8 +243,10 @@ focus_tree = {
 				}
 				add_to_faction = ARR
 				ARR = {
-				    set_political_party = { ideology = intellectuals popularity = 0.5 }
-					set_politics = { ruling_party = intellectuals elections_allowed = no }
+					set_politics = { 
+					    ruling_party = intellectuals elections_allowed = no 
+						add_popularity = { ideology = intellectuals popularity = 0.5 }
+					}
 				}
 			}
 			
