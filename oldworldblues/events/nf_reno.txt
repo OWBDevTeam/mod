@@ -184,8 +184,11 @@ country_event = {
 				ruling_party = ruler
 				elections_allowed = no
 			}
+			THR = {
+			    country_event = { days = 5 id = nf_reno.15 }
+			}
 			hidden_effect = {
-				annex_country = { target = NEW transfer_troops = yes }
+				annex_country = { target = NEW transfer_troops = no }
 				change_tag_from = NEW
 		    }
 		}
@@ -196,9 +199,9 @@ country_event = {
 					}	
 				}
 				TRL = {
-				country_event = nf_reno.9
+				    country_event = nf_reno.9
 				}
-				}
+			}
 				if = {
 					limit = {
 						VLT = {
@@ -208,7 +211,7 @@ country_event = {
 						}
 					}
 					VLT = {
-					country_event = nf_reno.12
+					    country_event = nf_reno.12
 					}
 				}
 	}	
@@ -515,7 +518,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = nf_reno.14 #Vault City rejects our invitation(we are very angry now)#
+	id = nf_reno.14 
 	title = nf_reno.14.t
 	desc = nf_reno.14.d
 	picture = GFX_report_event_fascist_speech
@@ -526,11 +529,31 @@ country_event = {
 	     
 		name = nf_reno.14.a
 		THR = {
-		create_wargoal = {
-        type = annex_everything
-        target = VLT
-        }
+		    create_wargoal = {
+                type = annex_everything
+                target = VLT
+            }
 		}
+	}
+}
+country_event = {
+	id = nf_reno.15
+	title = nf_reno.15.t
+	desc = nf_reno.15.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+    
+	option = {
+	     
+		name = nf_reno.15.a
+        every_state = {
+            limit = {
+                is_core_of = NEW
+            }
+            add_core_of = THR
+           }
+		load_oob = thraddlegion   
 	}
 }
 
