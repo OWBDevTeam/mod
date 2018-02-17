@@ -606,7 +606,7 @@ country_event = {
 			}
 		}
         VEG = {
-			country_event = { days = 5 id = nf_vegas.19 }
+			country_event = { days = 5 id = nf_vegas.52 }
 		}	
 	}
 }
@@ -1325,7 +1325,39 @@ country_event = {
 			}
 		}
 	}
-}
+}	
+country_event = {
+	id = nf_vegas.52
+	title = nf_vegas.52.t
+	desc = nf_vegas.52.d
+	picture = GFX_event_VEG_platinumchip
+
+    is_triggered_only = yes    
+	
+	option = {
+		name = nf_vegas.52.a
+		
+		
+		if = {
+			limit = {
+				VEG = {
+					has_idea = unstableOS
+				}
+			}
+			swap_ideas = { remove_idea = unstableOS add_idea = platinumOS }	
+		}
+		
+		if = {
+			limit = {
+				VEG = {
+					has_idea = stableOS
+				}
+			}
+			swap_ideas = { remove_idea = stableOS add_idea = platinumOS }
+		}
+	}	
+}	
+
 	
 
 	
