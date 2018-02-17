@@ -1884,7 +1884,7 @@ focus_tree = {
                 }
                 VEG = {
                     every_owned_state = { 
-                        limit = { is_new_vegas_state = yes }
+                        limit = { is_new_vegas = yes }
                         add_core_of = ROOT
                     }
                 }
@@ -1934,7 +1934,7 @@ focus_tree = {
                 limit = {
                     NOT = {
                         any_owned_state = {
-                            is_new_vegas_state = yes
+                            is_new_vegas = yes
                         }
                     }
                 }
@@ -1943,7 +1943,7 @@ focus_tree = {
             
 			every_owned_state = {
                 limit = {
-                    is_new_vegas_state = yes
+                    is_new_vegas = yes
                 }
                 add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1969,7 +1969,7 @@ focus_tree = {
                 limit = {
                     NOT = {
                         any_owned_state = {
-                            is_new_vegas_state = yes
+                            is_new_vegas = yes
                         }
                     }
                 }
@@ -1978,7 +1978,7 @@ focus_tree = {
             
 			every_owned_state = {
                 limit = {
-                    is_new_vegas_state = yes
+                    is_new_vegas = yes
                 }
                 add_building_construction = {
 					type = arms_factory
@@ -2013,7 +2013,7 @@ focus_tree = {
                 limit = {
                     NOT = {
                         any_owned_state = {
-                            is_new_vegas_state = yes
+                            is_new_vegas = yes
                         }
                     }
                 }
@@ -2022,7 +2022,7 @@ focus_tree = {
             
 			every_owned_state = {
                 limit = {
-                    is_new_vegas_state = yes
+                    is_new_vegas = yes
                 }
                 add_building_construction = {
 					type = bunker
@@ -2050,7 +2050,7 @@ focus_tree = {
                 limit = {
                     NOT = {
                         any_owned_state = {
-                            is_new_vegas_state = yes
+                            is_new_vegas = yes
                         }
                     }
                 }
@@ -2059,7 +2059,7 @@ focus_tree = {
             
 			every_owned_state = {
                 limit = {
-                    is_new_vegas_state = yes
+                    is_new_vegas = yes
                 }
                 add_building_construction = {
 					type = infrastructure
@@ -2083,7 +2083,7 @@ focus_tree = {
                 limit = {
                     NOT = {
                         any_owned_state = {
-                            is_new_vegas_state = yes
+                            is_new_vegas = yes
                         }
                     }
                 }
@@ -2092,7 +2092,7 @@ focus_tree = {
             
 			every_owned_state = {
                 limit = {
-                    is_new_vegas_state = yes
+                    is_new_vegas = yes
                 }
                 add_building_construction = {
 					type = air_base
@@ -2134,7 +2134,11 @@ focus_tree = {
             if = {
                 limit = { owns_state = 211 }
                 set_capital = 211
+				211 = {
+					set_state_name = "Nova Roma"
+				}
             }
+			
             
 			add_ideas = legion_nf_nova_roma
 		}
