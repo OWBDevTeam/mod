@@ -1783,7 +1783,9 @@ entity = {
 	#### death state (despawns after this)
 	state = { name = "death"		}
 	###HIGH PRIORITY
-	state = { name = "idle" animation="move"}
+	state = { name = "idle" animation="idle1" chance = 6 looping=no}
+	state = { name = "idle" animation ="idle2" chance = 3 next_state="idle1"}
+	state = { name = "idle" animation ="idle3" chance = 1 next_state="idle1"}
 	### training state, normally many of these
 	state = { name = "training"	 }
 	
@@ -1801,6 +1803,18 @@ animation = {
 	name = "fo4_t51_charge_shoot_anim"
 	###path reletive to this file's location
 	file = "powerarmor/fo4_t51_charge_shoot_anim.anim"
+}
+animation = {
+	name = "fo4_t51_idel1_anim"
+	file = "powerarmor/fo4_t51_idel1_anim.anim"
+}
+animation = {
+	name = "fo4_t51_idel2_anim"
+	file = "powerarmor/fo4_t51_idel2_anim.anim"
+}
+animation = {
+	name = "fo4_t51_idel3_anim"
+	file = "powerarmor/fo4_t51_idel3_anim.anim"
 }
 animation = {
 	name = "fo4_t51_standingfire_anim"
