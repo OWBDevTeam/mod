@@ -1,0 +1,1699 @@
+focus_tree = {
+	id = rangers_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = DES
+		}
+	}
+	default = no
+	focus = {
+		id = des_origins
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 1
+		x = 10
+		y = 0
+		completion_reward = {
+			country_event = { id = nf_ranger.2 }
+		}
+
+	}
+	focus = {
+		id = des_prisons
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 1
+		prerequisite = {
+			focus = des_origins
+		}
+		x = 10
+		y = 1
+		completion_reward = {
+			country_event = { id = nf_ranger.3 }
+		}
+
+	}
+	focus = {
+		id = des_mojave
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 1
+		prerequisite = {
+			focus = des_prisons
+		}
+		x = 10
+		y = 2
+		completion_reward = {
+			country_event = { id = nf_ranger.4 }
+		}
+
+	}
+	focus = {
+		id = des_jackals
+		icon = GFX_goal_generic_major_war
+		cost = 4.4
+		prerequisite = {
+			focus = des_mojave
+		}
+		will_lead_to_war_with = JAC
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					has_completed_focus = des_vipers
+					NOT = {
+						has_completed_focus = des_vipercore
+					}
+				}
+			}
+		}
+		x = 8
+		y = 3
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = JAC		
+			}
+			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = JAC
+							NOT = { is_controlled_by = JAC }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = JAC
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = des_canis
+		icon = GFX_goal_generic_special_forces
+		cost = 4.4
+		prerequisite = {
+			focus = des_jackals
+		}
+		available = {
+			NOT = {
+				country_exists = JAC
+			}
+			any_owned_state = {
+				is_core_of = JAC
+			}
+		}
+		x = 7
+		y = 4
+		completion_reward = { 
+			custom_effect_tooltip = ranger_team_canis
+			hidden_effect = { load_oob = rangers_elite }
+		}
+
+	}
+	focus = {
+		id = des_kennel
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 4.4
+		prerequisite = {
+			focus = des_jackals
+		}
+		available = {
+			NOT = {
+				country_exists = JAC
+			}
+		}
+		x = 9
+		y = 4
+		completion_reward = {
+			every_owned_state = {
+                limit = {
+                    is_core_of = JAC
+                }
+                add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+            }
+		}
+
+	}
+	focus = {
+		id = des_vipers
+		icon = GFX_goal_generic_major_war
+		cost = 4.4
+		prerequisite = {
+			focus = des_mojave
+		}
+		will_lead_to_war_with = VIP
+		x = 12
+		y = 3
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					has_completed_focus = des_jackals
+					NOT = {
+						has_completed_focus = des_heel
+					}
+				}
+			}
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = VIP
+			}
+			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = VIP
+							NOT = { is_controlled_by = VIP }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = VIP
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = des_venom
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 4.4
+		prerequisite = {
+			focus = des_vipers
+		}
+		available = {
+			NOT = {
+				country_exists = VIP
+			}
+			any_owned_state = {
+				is_core_of = VIP
+			}
+		}
+		x = 11
+		y = 4
+		completion_reward = {
+			every_owned_state = {
+                limit = {
+                    is_core_of = VIP
+                }
+                add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+            }
+		}
+
+	}
+	focus = {
+		id = des_vipera
+		icon = GFX_goal_generic_special_forces
+		cost = 4.4
+		prerequisite = {
+			focus = des_vipers
+		}
+		available = {
+			NOT = {
+				country_exists = VIP
+			}
+		}
+		x = 13
+		y = 4
+		completion_reward = { 
+			custom_effect_tooltip = ranger_team_vipera
+			hidden_effect = { load_oob = rangers_elite }
+		}
+
+	}
+	focus = {
+		id = des_vipercore
+		icon = GFX_goal_generic_national_unity
+		cost = 4.4
+		prerequisite = {
+			focus = des_venom
+		}
+		prerequisite = {
+			focus = des_vipera
+		}
+		x = 12
+		y = 5
+		completion_reward = {
+			every_state = {
+                limit = {
+                    is_core_of = VIP
+                }
+                add_core_of = DES
+            }
+		}
+
+	}
+	focus = {
+		id = des_conscription
+		icon = GFX_goal_generic_propaganda
+		cost = 4.4
+		prerequisite = {
+			focus = des_vipercore
+		}
+		x = 11
+		y = 6
+		completion_reward = {
+			add_ideas = raiderconscripts
+		}
+
+	}
+	focus = {
+		id = des_outpostviper
+		icon = GFX_goal_generic_communcation_focus
+		cost = 4.4
+		prerequisite = {
+			focus = des_vipercore
+		}
+		x = 13
+		y = 6
+		available = {
+			controls_state = 476
+		}
+		completion_reward = {
+			476 = {
+				set_state_name = "Vipera Outpost" 
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = des_heel
+		icon = GFX_goal_generic_national_unity
+		cost = 4.4
+		prerequisite = {
+			focus = des_canis
+		}
+		prerequisite = {
+			focus = des_kennel
+		}
+		x = 8
+		y = 5
+		completion_reward = {
+			every_state = {
+                limit = {
+                    is_core_of = JAC
+                }
+                add_core_of = DES
+            }
+		}
+
+	}
+	focus = {
+		id = des_outpostjackal
+		icon = GFX_goal_generic_communcation_focus
+		cost = 4.4
+		prerequisite = {
+			focus = des_heel
+		}
+		x = 7
+		y = 6
+		available = {
+			controls_state = 171
+		}
+		completion_reward = {
+			171 = {
+				set_state_name = "Canis Outpost" 
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = des_yerington
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 4.4
+		prerequisite = {
+			focus = des_heel
+		}
+		x = 9
+		y = 6
+		available = {
+			controls_state = 161
+		}
+		completion_reward = {
+			161 = {
+				set_state_name = "Yerington" 
+				add_resource = {
+                    type = water
+                    amount = 5
+                }
+				add_resource = {
+					type = fuel
+					amount = 5
+				}
+			}
+			add_manpower = 1500
+		
+		}
+
+	}
+	focus = {
+		id = des_general
+		icon = GFX_goal_generic_generic_diplomatic_focus
+		cost = 8.6
+		prerequisite = {
+			focus = des_conscription
+		}
+		prerequisite = {
+			focus = des_outpostviper
+		}
+		prerequisite = {
+			focus = des_yerington
+		}
+		prerequisite = {
+			focus = des_outpostjackal
+		}
+		x = 10
+		y = 7
+		completion_reward = {
+			country_event = { id = nf_ranger.1 }
+		}
+
+	}
+	focus = {
+		id = des_thrasher
+		icon = GFX_goal_support_fourth_int
+		cost = 8.6
+		prerequisite = {
+			focus = des_general
+		}
+		available = {
+			has_country_flag = DES_leader_chosen
+			has_country_leader = { id = 991 } #Thrasher Sagarra		
+		}
+		x = 2
+		y = 8
+		completion_reward = {
+			add_political_power = 120
+		}
+
+	}
+	focus = {
+		id = des_vargas
+		icon = GFX_goal_support_democracy
+		cost = 8.6
+		prerequisite = {
+			focus = des_general
+		}
+		available = {
+			has_country_flag = DES_leader_chosen
+			has_country_leader = { id = 992 } #Snake Vargas	
+		}
+		x = 10
+		y = 8
+		completion_reward = {
+			add_political_power = 120
+		}
+
+	}
+	focus = {
+		id = des_razor
+		icon = GFX_goal_tripartite_pact
+		cost = 8.6
+		prerequisite = {
+			focus = des_general
+		}
+		available = {
+			has_country_flag = DES_leader_chosen
+			has_country_leader = { id = 993 } #Hell Razor	
+		}
+		x = 18
+		y = 8
+		completion_reward = {
+			add_political_power = 120
+		}
+
+	}
+	focus = {
+		id = des_tread
+		icon = GFX_goal_generic_walls_focus
+		cost = 8.6
+		prerequisite = {
+			focus = des_vargas
+		}
+		x = 8
+		y = 9
+		completion_reward = {
+			add_ideas = rangercores
+		}
+
+	}
+	focus = {
+		id = des_caravans
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 8.6
+		prerequisite = {
+			focus = des_vargas
+		}
+		x = 10
+		y = 9
+		completion_reward = {
+			VEG = {
+				add_opinion_modifier = {
+					target = DES modifier = caravan_protection
+				}
+			}
+			VLT = {
+				add_opinion_modifier = {
+					target = DES modifier = caravan_protection
+				}
+			}
+			NEW = {
+				add_opinion_modifier = {
+					target = DES modifier = caravan_protection
+				}
+			}
+		}
+	}
+	focus = {
+		id = des_planning
+		icon = GFX_goal_generic_position_armies
+		cost = 8.6
+		prerequisite = {
+			focus = des_vargas
+		}
+		x = 12
+		y = 9
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = des_population
+		icon = GFX_goal_generic_national_unity
+		cost = 8.6
+		prerequisite = {
+			focus = des_caravans
+		}
+		x = 10
+		y = 10
+		completion_reward = {
+			add_manpower = 1500
+		}
+	}
+	focus = {
+		id = des_radio
+		icon = GFX_goal_generic_communcation_focus
+		cost = 8.6
+		prerequisite = {
+			focus = des_planning
+		}
+		x = 12
+		y = 10
+		completion_reward = {
+			210 = {
+				add_building_construction = {
+					type = radar_station
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = des_veterans
+		icon = GFX_goal_generic_secret_weapon
+		cost = 8.6
+		prerequisite = {
+			focus = des_tread
+		}
+		x = 8
+		y = 10
+		completion_reward = {
+			army_experience = 30
+		}
+
+	}
+	focus = {
+		id = des_pact
+		icon = GFX_goal_generic_generic_diplomatic_focus
+		cost = 8.6
+		prerequisite = {
+			focus = des_veterans
+		}
+		prerequisite = {
+			focus = des_population
+		}
+		prerequisite = {
+			focus = des_radio
+		}
+		x = 10
+		y = 11
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = nevadapact
+				}
+				if = {
+					limit = {
+						NEW = {
+							is_faction_leader = yes
+						}
+					}
+					NEW = {
+						add_to_faction = VEG
+					}
+				}
+				
+				if = {
+					limit = {
+						VEG = {
+							is_faction_leader = yes
+						}
+					}
+					VEG = {
+						add_to_faction = DES
+					}
+				}
+				
+			}	
+			
+			if = {
+				limit = {
+					NOT = { 
+						has_global_flag = nevadapact
+					}
+				}
+				create_faction = nevada_pact
+				set_global_flag = nevadapact
+			}
+		}
+	}
+	focus = {
+		id = des_intervention
+		icon = GFX_goal_generic_territory_or_war
+		cost = 8.6
+		prerequisite = {
+			focus = des_pact
+		}
+		x = 6
+		y = 12
+		completion_reward = {
+			add_ideas = rangerintervention
+		}
+
+	}
+	focus = {
+		id = des_echobase
+		icon = GFX_goal_generic_airbases_focus
+		cost = 8.6
+		prerequisite = {
+			focus = des_pact
+		}
+		x = 8
+		y = 12
+		available = {
+			controls_state = 210
+		}
+		completion_reward = {
+			
+			210 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			
+			hidden_effect = {
+				load_oob = rangers_planes
+			}
+		}
+
+	}
+	focus = {
+		id = des_funding
+		icon = GFX_goal_generic_construction
+		cost = 8.6
+		prerequisite = {
+			focus = des_pact
+		}
+		x = 10
+		y = 12
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = des_recruitment
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 8.6
+		prerequisite = {
+			focus = des_pact
+		}
+		x = 14
+		y = 12
+		completion_reward = {
+			add_ideas = nevadarecruitment
+		}
+		
+	}
+	focus = {
+		id = des_outriders
+		icon = GFX_goal_generic_army_motorized
+		cost = 8.6
+		prerequisite = {
+			focus = des_pact
+		}
+		available = {
+			has_tech = bike_tech_2
+		}
+		x = 12
+		y = 12
+		completion_reward = {
+			set_technology = { apc_tech_1 = 1 }
+		}
+
+	}
+	focus = {
+		id = des_knights
+		icon = GFX_goal_generic_special_forces
+		cost = 8.6
+		prerequisite = {
+			focus = des_thrasher
+		}
+		x = 1
+		y = 9
+		completion_reward = {
+			add_ideas = knighttactics
+		}
+
+	}
+	focus = {
+		id = des_database
+		icon = GFX_goal_generic_land_doctrines_focus
+		cost = 8.6
+		prerequisite = {
+			focus = des_thrasher
+		}
+		x = 3
+		y = 9
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_tech
+			}
+		}
+	}
+	focus = {
+		id = des_workbench
+		icon = GFX_goal_generic_production
+		cost = 8.6
+		prerequisite = {
+			focus = des_knights
+		}
+		x = 1
+		y = 10
+		completion_reward = {
+			add_ideas = rangersworkbench
+		}
+
+	}
+	focus = {
+		id = des_drills
+		icon = GFX_goal_generic_position_armies
+		cost = 8.6
+		prerequisite = {
+			focus = des_database
+		}
+		x = 3
+		y = 10
+		completion_reward = {
+			army_experience = 40
+		}
+
+	}
+	focus = {
+		id = des_steel
+		icon = GFX_goal_generic_CAS
+		cost = 8.6
+		prerequisite = {
+			focus = des_drills
+		}
+		prerequisite = {
+			focus = des_workbench
+		}
+		x = 2
+		y = 11
+		completion_reward = {
+			set_cosmetic_tag = DES_BOS
+			BOS = { add_to_faction = DES }
+		}
+
+	}
+	focus = {
+		id = des_bosfunding
+		icon = GFX_goal_generic_national_unity
+		cost = 8.6
+		prerequisite = {
+			focus = des_steel
+		}
+		x = 2
+		y = 12
+		completion_reward = {
+		
+			add_ideas = bosfunding_tt 
+			
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			
+			custom_effect_tooltip = bosfunding_tt
+			hidden_effect = {
+				set_technology = { bosfunding = 1 }
+			}
+		}
+
+	}
+	focus = {
+		id = des_wastelandprotect
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 8.6
+		prerequisite = {
+			focus = des_bosfunding
+		}
+		available = {
+			is_in_faction_with = BOS
+		}
+		x = 2
+		y = 13
+		completion_reward = {
+			set_technology = { advanced_laser_weaponry = 1 }
+			add_ideas = wastelandprotect
+			army_experience = 30
+		}
+
+	}
+	focus = {
+		id = des_citadel
+		icon = GFX_goal_generic_navy_carrier
+		cost = 8.6
+		prerequisite = {
+			focus = des_wastelandprotect
+		}
+		x = 0
+		y = 14
+		available = {
+			has_war_with = CES
+			controls_state = 210
+		}
+		completion_reward = {
+			
+			210 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			
+			hidden_effect = {
+				load_oob = rangers_planes
+			}
+		}
+
+	}
+	focus = {
+		id = des_giant
+		icon = GFX_goal_generic_special_forces
+		cost = 8.6
+		prerequisite = {
+			focus = des_wastelandprotect
+		}
+		available = {
+			OR = {
+				has_war_with = TRL
+				has_war_with = WBH
+			}
+		}
+		x = 4
+		y = 14
+		completion_reward = {
+			add_ideas = slayinggiants
+		}
+
+	}
+	focus = {
+		id = des_bear
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		prerequisite = {
+			focus = des_wastelandprotect
+		}
+		available = {
+			has_war_with = NCR
+		}
+		x = 2
+		y = 14
+		completion_reward = {
+			custom_effect_tooltip = rangerswidth_tt
+			hidden_effect = {set_technology = { rangerswidth = 1 }}
+		}
+
+	}
+	focus = {
+		id = des_reorganize
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 8.6
+		prerequisite = {
+			focus = des_ncrfunding
+			focus = des_bosfunding
+			focus = des_pact
+		}
+		x = 10
+		y = 13
+		completion_reward = {
+			add_political_power = 100
+		}
+
+	}
+	focus = {
+		id = des_trader
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 8.6
+		prerequisite = {
+			focus = des_reorganize
+		}
+		x = 10
+		y = 14
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = des_quartermaster
+		icon = GFX_goal_generic_production
+		cost = 8.6
+		prerequisite = {
+			focus = des_reorganize
+		}
+		x = 12
+		y = 14
+		completion_reward = {
+			add_ideas = rangersquartermaster
+		}
+
+	}
+	focus = {
+		id = des_mechanic
+		icon = GFX_goal_generic_army_motorized
+		cost = 8.6
+		prerequisite = {
+			focus = des_reorganize
+		}
+		x = 14
+		y = 14
+		completion_reward = {
+			add_ideas = rangersmechanic
+		}
+
+	}
+	focus = {
+		id = des_recruiter
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 8.6
+		prerequisite = {
+			focus = des_reorganize
+		}
+		x = 8
+		y = 14
+		completion_reward = {
+			add_ideas = rangersrecruiter
+		}
+
+	}
+	focus = {
+		id = des_physician
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 8.6
+		prerequisite = {
+			focus = des_reorganize
+		}
+		x = 6
+		y = 14
+		completion_reward = {
+			add_tech_bonus = {
+				name = chem_bonus
+				bonus = 0.5
+				uses = 2
+				category = chem_tech
+			}
+		}
+
+	}
+	focus = {
+		id = des_medic
+		icon = GFX_goal_generic_data_focus
+		cost = 8.6
+		prerequisite = {
+			focus = des_physician
+		}
+		x = 6
+		y = 15
+		completion_reward = {
+			custom_effect_tooltip = rangersmedic_tt
+			hidden_effect = {
+				set_technology = { rangersmedic = 1 }
+			}
+		}
+
+	}
+	focus = {
+		id = des_propaganda
+		icon = GFX_goal_generic_propaganda
+		cost = 8.6
+		prerequisite = {
+			focus = des_recruiter
+		}
+		x = 8
+		y = 15
+		completion_reward = {
+			add_ideas = rangerspropaganda
+		}
+
+	}
+	focus = {
+		id = des_outreach
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		prerequisite = {
+			focus = des_trader
+		}
+		x = 10
+		y = 15
+		completion_reward = {
+			add_ideas = rangersoutreach
+		}
+
+	}
+	focus = {
+		id = des_armouries
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 8.6
+		prerequisite = {
+			focus = des_quartermaster
+		}
+		x = 12
+		y = 15
+		completion_reward = {
+			add_ideas = rangersarmouries
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = des_depot
+		icon = GFX_goal_generic_army_tanks
+		cost = 8.6
+		prerequisite = {
+			focus = des_mechanic
+		}
+		x = 14
+		y = 15
+		completion_reward = {
+			add_ideas = rangerdepot
+		}
+
+	}
+	focus = {
+		id = des_attrition
+		icon = GFX_goal_generic_bunkers_focus
+		cost = 8.6
+		prerequisite = {
+			focus = des_bear
+		}
+		x = 2
+		y = 15
+		completion_reward = {
+			custom_effect_tooltip = rangersattrition_tt
+			hidden_effect = {
+				set_technology = { rangersattrition = 1 }
+			}
+		}
+
+	}
+	focus = {
+		id = des_aviation
+		icon = GFX_goal_generic_airbases_focus
+		cost = 8.6
+		prerequisite = {
+			focus = des_citadel
+		}
+		x = 0
+		y = 15
+		completion_reward = {
+			add_ideas = rangersaviation
+		}
+
+	}
+	focus = {
+		id = des_tall
+		icon = GFX_goal_generic_build_tank
+		cost = 8.6
+		prerequisite = {
+			focus = des_giant
+		}
+		x = 4
+		y = 15
+		completion_reward = {
+			add_ideas = standingtall
+		}
+
+	}
+	focus = {
+		id = des_boshonours
+		icon = GFX_goal_support_fourth_int
+		cost = 8.6
+		prerequisite = {
+			focus = des_tall
+			focus = des_attrition
+			focus = des_aviation
+		}
+		x = 2
+		y = 16
+		completion_reward = {
+			set_technology = { power_armour_t51b = 1 }
+		}
+	}
+	focus = {
+		id = des_reorganized
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 8.6
+		prerequisite = {
+			focus = des_medic
+		}
+		prerequisite = {
+			focus = des_propaganda
+		}
+		prerequisite = {
+			focus = des_outreach
+		}
+		prerequisite = {
+			focus = des_armouries
+		}
+		prerequisite = {
+			focus = des_depot
+		}
+		x = 10
+		y = 16
+		completion_reward = {
+			add_ideas = reorganizedrangers
+			add_political_power = 100
+		}
+
+	}
+	focus = {
+		id = des_legionprep
+		icon = GFX_goal_generic_bunkers_focus
+		cost = 8.6
+		prerequisite = {
+			focus = des_razor
+		}
+		x = 17
+		y = 9
+		completion_reward = {
+			custom_effect_tooltip = legionprep_tt
+			hidden_effect = {
+				45 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 3274
+						instant_build = yes
+					}
+				}
+				334 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 3275
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 1586
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 5078
+						instant_build = yes
+					}
+				}
+				347 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 4950
+						instant_build = yes
+					}
+				}
+				489 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 1582
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 3290
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						province = 3289
+						instant_build = yes
+					}
+				}
+				set_technology = { legionprep = 1 }
+			}
+		}
+
+	}
+	focus = {
+		id = des_mechanized
+		icon = GFX_goal_generic_army_motorized
+		cost = 8.6
+		prerequisite = {
+			focus = des_razor
+		}
+		x = 19
+		y = 9
+		completion_reward = {
+			add_tech_bonus = {
+				name = vehicle_bonus
+				bonus = 0.5
+				uses = 2
+				category = vehicle_tech
+			}
+		}
+	}
+	focus = {
+		id = des_leadership
+		icon = GFX_goal_generic_propaganda
+		cost = 8.6
+		prerequisite = {
+			focus = des_legionprep
+		}
+		x = 17
+		y = 10
+		completion_reward = {
+			army_experience = 40
+		}
+
+	}
+	focus = {
+		id = des_californians
+		icon = GFX_goal_generic_special_forces
+		cost = 8.6
+		prerequisite = {
+			focus = des_mechanized
+		}
+		x = 19
+		y = 10
+		completion_reward = {
+			add_manpower = 2500
+		}
+
+	}
+	focus = {
+		id = des_treaty
+		icon = GFX_goal_tripartite_pact
+		cost = 8.6
+		prerequisite = {
+			focus = des_leadership
+		}
+		prerequisite = {
+			focus = des_californians
+		}
+		x = 18
+		y = 11
+		completion_reward = {
+			set_cosmetic_tag = DES_NCR
+			NCR = { add_to_faction = DES }
+		}
+
+	}
+	focus = {
+		id = des_ncrfunding
+		icon = GFX_goal_generic_national_unity
+		cost = 8.6
+		prerequisite = {
+			focus = des_treaty
+		}
+		x = 18
+		y = 12
+		completion_reward = {
+		
+			add_ideas = ncrfunding 
+			
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}	
+
+	}
+	focus = {
+		id = des_coop
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 8.6
+		prerequisite = {
+			focus = des_ncrfunding
+		}
+		x = 18
+		y = 13
+		completion_reward = {
+			army_experience = 30
+		}
+
+	}
+	focus = {
+		id = des_bunkers
+		icon = GFX_goal_generic_cities_focus
+		cost = 8.6
+		prerequisite = {
+			focus = des_coop
+		}
+		available = {
+			has_war_with = BOS
+		}
+		x = 16
+		y = 14
+		completion_reward = {
+			add_tech_bonus = {
+				name = explosives_bonus
+				bonus = 0.5
+				uses = 2
+				category = artillery
+			}
+		}
+
+	}
+	focus = {
+		id = des_jericho
+		icon = GFX_goal_generic_special_forces
+		cost = 8.6
+		prerequisite = {
+			focus = des_bunkers
+		}
+		x = 16
+		y = 15
+		completion_reward = {
+			add_timed_idea = {
+				idea = opjericho
+				days = 100
+			}
+		}
+	}
+	focus = {
+		id = des_greatwar
+		icon = GFX_goal_generic_attack_allies
+		cost = 8.6
+		prerequisite = {
+			focus = des_coop
+		}
+		available = {
+			has_war_with = CES
+		}
+		x = 18
+		y = 14
+		completion_reward = {
+			add_ideas = rangerslegionwar
+		}
+
+	}
+	focus = {
+		id = des_arizona
+		icon = GFX_goal_generic_propaganda
+		cost = 8.6
+		prerequisite = {
+			focus = des_greatwar
+		}
+		x = 18
+		y = 15
+		completion_reward = {
+			add_state_core = 517
+			add_state_core = 146
+		}
+
+	}
+	focus = {
+		id = des_threat
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		prerequisite = {
+			focus = des_coop
+		}
+		available = {
+			OR = {
+				has_war_with = WBH
+				has_war_with = TRL
+			}
+		}
+		x = 20
+		y = 14
+		completion_reward = {
+			add_ideas = rangersnewthreat
+		}
+
+	}
+	focus = {
+		id = des_march
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 8.6
+		prerequisite = {
+			focus = des_threat
+		}
+		x = 20
+		y = 15
+		completion_reward = {
+			add_ideas = rangermarch
+		}
+
+	}
+	focus = {
+		id = des_honours
+		icon = GFX_goal_support_democracy
+		cost = 8.6
+		prerequisite = {
+			focus = des_jericho
+			focus = des_arizona
+			focus = des_march
+		}
+		x = 18
+		y = 16
+		completion_reward = {
+			army_experience = 40
+			add_ideas = ncrhonours
+		}
+
+	}
+}

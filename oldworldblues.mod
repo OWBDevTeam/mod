@@ -1,5 +1,5 @@
 ﻿name="Old World Blues"
-path="mod/falloutmod/"
+path="mod/oldworldblues/"
 tags={
 	"Alternative History"
 	"Map"
