@@ -2283,23 +2283,78 @@ focus_tree = {
 		}
 		bypass = {
 			OR = {
-				NOT = {
-					country_exists = BVC
-					country_exists = BLP
-				}
 				BVC = {
 					is_in_faction_with = NCR
 				}
 				BLP = {
 					is_in_faction_with = NCR
 				}
+				country_exists = BJS
 			}
 		}
 		x = 10
 		y = 18
 		completion_reward = {
-			add_to_faction = BVC
-			add_to_faction = BLP
+			if = {
+				limit = {
+					AND = {
+						NOT = {
+							country_exists = BVC 
+							country_exists = BLP
+						}
+						NOT = {
+							country_exists = BJS
+						}
+					}
+				}
+				
+				BLP = {
+					transfer_state = 651
+					transfer_state = 650
+					transfer_state = 41
+					transfer_state = 174
+					transfer_state = 158
+					transfer_state = 136
+					transfer_state = 481
+					add_to_war = {
+						targeted_alliance = CES
+						enemy = NCR
+					}				
+				}
+				BVC = {
+					transfer_state = 97
+					transfer_state = 325
+					transfer_state = 176
+					add_to_war = {
+						targeted_alliance = CES
+						enemy = NCR
+					}				
+				}
+				
+			}
+			if = {
+				limit = {
+					country_exists = BVC
+				}
+				BVC = {
+					add_to_war = {
+						targeted_alliance = CES
+						enemy = NCR
+					}				
+				}
+			}
+			if = {
+				limit = {
+					country_exists = BLP
+				}
+				BLP = {
+					add_to_war = {
+						targeted_alliance = CES
+						enemy = NCR
+					}				
+				}
+			}
+			
 		}
 
 	}
@@ -2489,7 +2544,7 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = legion_nf_immortal_empire
 			add_popularity = {
-				ideology = ruler
+				ideology = elites
 				popularity = 0.2
 			}
 		}
@@ -2515,7 +2570,7 @@ focus_tree = {
         completion_reward = {
             add_ideas = legion_nf_spqr
 			add_popularity = {
-				ideology = elites
+				ideology = ruler
 				popularity = 0.2
 			}
         }
@@ -3503,7 +3558,7 @@ focus_tree = {
 			focus = ces_general_aurelius_of_phoenix
 		}
         available = {
-			has_country_leader = { id = 995 }
+			has_country_leader = { id = 1006 } # Lucius
 		}
 		x = 31
 		y = 10

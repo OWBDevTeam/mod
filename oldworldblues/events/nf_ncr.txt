@@ -608,17 +608,19 @@ country_event = { #Civil War
 			has_completed_focus = ncr_mojavehero
 			
 			NOT = {
-				AND = {
-					has_completed_focus = ncr_integration
-					has_completed_focus = ncr_mossman
-				}
-				AND = {
-					has_completed_focus = ncr_newnorth
-					has_completed_focus = ncr_bigjim	
-				}
-				AND = {
-					has_completed_focus = ncr_allisgood
-					has_completed_focus = ncr_bajastate 
+				OR = {
+					AND = {
+						has_completed_focus = ncr_integration
+						has_completed_focus = ncr_mossman
+					}
+					AND = {
+						has_completed_focus = ncr_newnorth
+						has_completed_focus = ncr_bigjim	
+					}
+					AND = {
+						has_completed_focus = ncr_allisgood
+						has_completed_focus = ncr_bajastate 
+					}
 				}
 			}
 		}
