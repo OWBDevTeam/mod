@@ -832,6 +832,9 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_new_judea
 		}
+		bypass = {
+			NOT = country_exists = WHT
+		}
         available = {
             country_exists = WHT
 			OR = {
@@ -860,7 +863,9 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_the_white_leg_petition
 		}
-        
+        bypass = {
+			NOT = country_exists = WHT
+		}
         available = {
             country_exists = WHT
             WHT = {
@@ -889,6 +894,9 @@ focus_tree = {
 		cost = 1
 		prerequisite = {
 			focus = ces_the_white_leg_petition
+		}
+		bypass = {
+			NOT = country_exists = WHT
 		}
         available = {
             country_exists = WHT
@@ -926,11 +934,23 @@ focus_tree = {
 			focus = ces_white_legs_accept
 		}
 		bypass = {
-			EHT = { 
-				has_opinion_modifier = disloyal_tribe
-			}
-			WHT = { 
-				has_opinion_modifier = disloyal_tribe
+			OR = {
+				AND = {
+					EHT = { 
+						has_opinion_modifier = disloyal_tribe
+					}
+					WHT = { 
+						has_opinion_modifier = disloyal_tribe
+					}
+				}
+				AND = {
+					NOT = { 
+						country_exists = WHT	
+					}
+					NOT = {
+						country_exists = EHT
+					}
+				}
 			}
 		}
         available = {
