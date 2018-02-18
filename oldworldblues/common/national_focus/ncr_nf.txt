@@ -190,6 +190,10 @@ focus_tree = {
 			add_political_power = 25
 			add_opinion_modifier = { target = BVC modifier = deployedrangers }
 			add_opinion_modifier = { target = BLP modifier = deployedrangers }
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+			}
 			custom_effect_tooltip = rangerdeploy_tt
 			hidden_effect = {
 				load_oob = bajarangers
@@ -290,6 +294,10 @@ focus_tree = {
 				remove_ideas = baronswar
 				load_oob = thebuyout
 			}
+			add_popularity = {
+				ideology = elites
+				popularity = 0.05
+			}
 		}
 
 	}
@@ -336,11 +344,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			
-			add_popularity = {
-				ideology = elites
-				popularity = 0.1
-			}
-			
 			135 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
@@ -378,9 +381,15 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = -25
 			add_opinion_modifier = { target = BVC modifier = sympathies }
-			reverse_add_opinion_modifier = { target = BVC modifier = sympathies }
-			add_opinion_modifier = { target = BLP modifier = sympathies }
-			reverse_add_opinion_modifier = { target = BLP modifier = sympathies }
+			add_opinion_modifier = { target = BLP modifier = sympathies }	
+			hidden_effect = {
+				reverse_add_opinion_modifier = { target = BVC modifier = sympathies }
+				reverse_add_opinion_modifier = { target = BLP modifier = sympathies }
+			}
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
 		}
 	}
 	focus = {
@@ -460,6 +469,10 @@ focus_tree = {
 		y = 9
 		completion_reward = {
 			add_political_power = 50
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
 		}
 
 	}
@@ -518,9 +531,11 @@ focus_tree = {
 		y = 12
 		completion_reward = {
 			add_opinion_modifier = { target = BOS modifier = allisgood }
-			reverse_add_opinion_modifier = { target = BOS modifier = allisgood }
+			hidden_effect = {
+				reverse_add_opinion_modifier = { target = BOS modifier = allisgood }
+				reverse_add_opinion_modifier = { target = MOJ modifier = allisgood }
+			}
 			add_opinion_modifier = { target = MOJ modifier = allisgood }
-			reverse_add_opinion_modifier = { target = MOJ modifier = allisgood }
 			
 			every_state = {
 				limit = {
@@ -528,11 +543,7 @@ focus_tree = {
 				}
 				add_core_of = NCR
 			}
-			
-			add_popularity = {
-				ideology = people
-				popularity = 0.1
-			}		
+	
 			
 		}
 	}
@@ -555,9 +566,15 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = -50
 			add_opinion_modifier = { target = BVC modifier = politicobanditos }
-			reverse_add_opinion_modifier = { target = BVC modifier = politicobanditos }
+			hidden_effect = {
+				reverse_add_opinion_modifier = { target = BLP modifier = politicobanditos }
+				reverse_add_opinion_modifier = { target = BVC modifier = politicobanditos }
+			}
 			add_opinion_modifier = { target = BLP modifier = politicobanditos }
-			reverse_add_opinion_modifier = { target = BLP modifier = politicobanditos }
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.05
+			}
 		}
 
 	}
@@ -604,11 +621,7 @@ focus_tree = {
 		completion_reward = {
 			
 			country_event = { id = nf_ncr.8 }
-			
-			add_popularity = {
-				ideology = elites
-				popularity = 0.1
-			}	
+
 		}
 
 	}
@@ -635,6 +648,10 @@ focus_tree = {
 					type = industrial_complex
 					level = -3
 				}
+			}
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
 			}
 		}
 
@@ -721,7 +738,11 @@ focus_tree = {
 		y = 5
 		completion_reward = {
 			army_experience = 10
-			air_experience = 10
+			air_experience = 10		
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+			}	
 		}
 
 	}
@@ -776,6 +797,10 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 50
 			army_experience = 10
+			add_popularity = {
+				ideology = elites
+				popularity = 0.05
+			}
 		}
 
 	}
@@ -830,6 +855,10 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 20
 			navy_experience = 10
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.05
+			}
 		}
 
 	}
@@ -2270,6 +2299,10 @@ focus_tree = {
 		y = 11
 		completion_reward = {
 			add_ideas = aaronkimball
+			add_popularity = {
+				ideology = people
+				popularity = 0.1
+			}
 		}
 
 	}
