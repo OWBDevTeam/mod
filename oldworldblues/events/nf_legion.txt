@@ -340,6 +340,11 @@ country_event = {
 			}
 		}
 		
+		set_politics = {
+			ruling_party = ruler
+			elections_allowed = no
+		}
+		
 		hidden_effect = {
 			359 = { set_state_name = "Fortification Hill" }
 		}
@@ -362,7 +367,7 @@ country_event = {
 				is_ai = no
 			}
 			start_civil_war = {
-				ideology = ruler
+				ideology = elites
 				size = 0.45
 				capital = 522
 				states_filter = {
@@ -377,7 +382,7 @@ country_event = {
 				is_ai = yes
 			}
 			start_civil_war = {
-				ideology = ruler
+				ideology = elites
 				size = 0.70
 				capital = 522
 				states_filter = {
@@ -394,17 +399,19 @@ country_event = {
 		random_country = {
 			limit = {
 				original_tag = CES
-				has_government = ruler
+				has_government = elites
 			}
-			set_cosmetic_tag = VLP
-			change_tag_from = CES
 			set_country_flag = legion_had_civil_war
+			set_cosmetic_tag = CES
 		}
 		hidden_effect = {
 			every_owned_state = {
 				clr_state_flag = do_not_decimate
 			}
 		}
+		
+		set_cosmetic_tag = VLP
+		
 		custom_effect_tooltip = vulpes_chosen
 	}
     
