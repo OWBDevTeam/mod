@@ -441,92 +441,10 @@ country_event = {
     # Stay as Caesar
 	option = {
 		name = nf_legion.6.option.a
-        hidden_effect = {
-			359 = { set_state_name = "Fortification Hill" }
-			every_owned_state = {
-				set_state_flag = do_not_decimate
-			}
-		}
-		create_country_leader  = {
-			name = "Lucius"
-			desc = "Lucius_DESC"
-			picture = "Portrait_Lucius.dds"
-			expire = "3000.1.1"
-			ideology = technocracy
-			id = 1006
-				
-			traits = {
-			}
-		}
-		if = {
-			limit = {
-				is_ai = no
-			}
-			start_civil_war = {
-				ideology = intellectuals
-				size = 0.55
-				capital = 359
-				states_filter = {
-					owner = { original_tag = CES }
-					is_CES_civil_war_non_eligable = no					
-				}
-				keep_unit_leaders = { 1001 1003 1004 }
-			}
-		}
-		if = {
-			limit = {
-				is_ai = yes
-			}
-			start_civil_war = {
-				ideology = intellectuals
-				size = 0.2
-				capital = 359
-				keep_unit_leaders = { 1001 1003 1004 }
-				states_filter = {
-					owner = { original_tag = CES }
-					is_CES_civil_war_non_eligable = no					
-				}
-			}
-		}
-		hidden_effect = {
-			remove_unit_leader = 1002
-			set_country_flag = legion_had_civil_war
-		}
-		random_country = {
-			limit = {
-				original_tag = CES
-				has_government = intellectuals
-			}
-			set_research_slots = 4
-			set_politics = {
-				parties = {
-					people = { popularity = 0 }
-					elites = { popularity = 15 }
-					intellectuals = { popularity = 35 }
-					ruler = { popularity = 50 }
-				}
-				ruling_party = intellectuals
-				elections_allowed = no
-			}
 			
-			set_cosmetic_tag = BOM
-				
-			hidden_effect = {
-				set_technology = {
-					powered_weaponry = 1
-					scientific_civilization = 1
-					power_armour = 1
-					securitron_tech = 1
-				}
-				load_oob = brotherhoodofmars
-				set_country_flag = legion_had_civil_war
-			}
-		}
-		hidden_effect = {
-			every_owned_state = {
-				clr_state_flag = do_not_decimate
-			}
-		}
+		remove_unit_leader = 1002
+		set_country_flag = legion_had_civil_war
+		
 		custom_effect_tooltip = caesar_chosen
 	}
     
