@@ -64,9 +64,7 @@ country_event = {
 		add_state_claim = 252
 		add_state_claim = 613
 	}
-		
-		
-	}
+
 }
 
 country_event = {
@@ -494,8 +492,6 @@ country_event = {
 			factor = 100
 		}
 		
-		give_military_access = VEG
-		diplomatic_relation = { country = VEG relation = non_aggression_pact }
 		211 = {
 			add_building_construction = {
 				type = air_base
@@ -507,9 +503,13 @@ country_event = {
 				amount = 8
 			}
 		}
-		transfer_state = 252
-		transfer_state = 613
 		
+		NCR = {
+			give_military_access = VEG
+			diplomatic_relation = { country = VEG relation = non_aggression_pact }
+			transfer_state = 252
+			transfer_state = 613
+		}
 	}
 	
 	option = {
