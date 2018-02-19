@@ -81,18 +81,11 @@ fire_NCR_civil_war = {
 	# Barons
 	start_civil_war = {
 		ideology = elites
-		size = 0.3
+		size = 0.25
 		capital = 135 # sac town
+		states = { 141 369 135 60 584 168 421 543 162 369 141 182 56 441 511 }
 		states_filter = {
-			owner = { tag = NCR }
-			is_boneyard_road_state = no # don't give them very southern states
-			NOT = {
-				OR = {
-					state = 63 # Enclave capital (Glowville)
-					state = 253 # NCR capital (Shady Sands)
-					state = 350 # Allgood capital (Boneyard)
-				}
-			}
+			
 		}
 		keep_unit_leaders = { }
 	}
@@ -104,7 +97,7 @@ fire_NCR_civil_war = {
 		set_cosmetic_tag = BAR
 	}
 	hidden_effect = {
-		NCR = { country_event =  { days = 2 id = nf_ncr.25 }  }
+		NCR = { country_event =  { id = nf_ncr.25 }  }
 	}
 }
 
@@ -162,7 +155,9 @@ setup_NCR_enclave = {
 	}
 	if = {
 		limit = {
-			has_completed_focus = ncr_integration
+			NCR = {
+				has_completed_focus = ncr_integration
+			}
 			BJS = {
 				exists = yes
 			}

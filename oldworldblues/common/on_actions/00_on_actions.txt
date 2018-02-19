@@ -152,6 +152,105 @@ on_actions = {
 	#on_faction_formed = {
 	#
 	#}
+	
+	on_civil_war_end = {
+		effect = {
+			if = {
+				limit = {
+					AND = {
+						ROOT = {
+							tag = BAR
+						}
+						FROM = {
+							tag = NCR
+						}
+					}
+				}
+							
+				every_state = {
+					limit = {
+						AND = {
+							is_core_of = NCR
+							is_baron_state = no
+						}
+					}				
+					remove_core_of = BAR
+					NCR = {
+						transfer_state = PREV
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					AND = {
+						ROOT = {
+							tag = BON
+						}
+						FROM = {
+							tag = NCR
+						}
+					}
+				}
+							
+				every_state = {
+					limit = {
+						AND = {
+							is_core_of = NCR
+							NOT = {
+								state = 350
+								state = 591
+								state = 292
+								state = 19
+								state = 180
+								state = 396
+							}
+						}
+					}				
+					remove_core_of = BON
+					NCR = {
+						transfer_state = PREV
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					AND = {
+						ROOT = {
+							tag = ENC
+						}
+						FROM = {
+							tag = NCR
+						}
+					}
+				}
+							
+				if = {
+					limit = {
+						NEW = {
+							has_cosmetic_tag = ENC
+						}
+					}
+					if = {
+						limit = {
+							AND = {
+								NEW = {
+									is_ai = no
+								}
+								ENC = {
+									is_ai = yes
+								}
+							}
+						}
+						NEW = {
+							annex_country = { target = ENC transfer_troops = yes }
+						}
+					}
+				}
+			}
+		}
+	}
 
 	# ROOT is capitulated country, FROM is winner
 	#on_capitulation = {

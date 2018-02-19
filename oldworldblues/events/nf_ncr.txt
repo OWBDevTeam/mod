@@ -988,7 +988,7 @@ country_event = { #Barons annex civil war created
 		}
 	option = {
 		name = nf_ncr.25.a
-		country_event = { days = 1 id = nf_ncr.26 }
+		country_event = { id = nf_ncr.26 }
 	}	
 }
 country_event = { #allgood civil war firing
@@ -1004,16 +1004,9 @@ country_event = { #allgood civil war firing
 			ideology = ruler
 			size = 0.3
 			capital = 350
+			states = { 350 396 180 19 292 591 }
 			states_filter = {
-				owner = { original_tag = NCR }
-				is_baron_state = no
-				NOT = { 
-					OR = {
-						state = 63 # Enclave capital (Glowville)
-						state = 253 # NCR capital (Shady Sands)
-						state = 135 # baron capital (sac town)
-					}
-				}
+			
 			}
 			keep_unit_leaders = { }
 		}
@@ -1024,7 +1017,7 @@ country_event = { #allgood civil war firing
 			}
 			set_cosmetic_tag = BON
 		}
-		country_event = { days = 2 id = nf_ncr.27 }
+		country_event = { id = nf_ncr.27 }
 	}
 	option = {
 		name = nf_ncr.26.a
@@ -1048,7 +1041,7 @@ country_event = { #allgood annex civil war created
 			}
 			BON = { annex_country = { target = PREV transfer_troops = yes } }
 		}
-		country_event = { days = 1 id = nf_ncr.28 }
+		country_event = { id = nf_ncr.28 }
 	}
 	option = {
 		name = nf_ncr.27.a
@@ -1067,20 +1060,11 @@ country_event = { #enclave civil war created
 		# Enclave
 		start_civil_war = {
 			ideology = intellectuals
-			size = 0.05
+			size = 0.5
 			capital = 63
-			states = { 63 }
+			states = { 63 583 4 205 80 }
 			states_filter = {
-				owner = { tag = NCR }
-				is_baron_state = no
-				is_boneyard_road_state = no # don't give them boneyard land	
-				NOT = { 
-					OR = {
-						state = 253 # NCR capital (Shady Sands)
-						state = 350 # Allgood capital (Boneyard)
-						state = 135 # baron capital (sac town)
-					}
-				}
+			
 			}
 			keep_unit_leaders = { }
 		}
@@ -1091,7 +1075,7 @@ country_event = { #enclave civil war created
 			}
 			set_cosmetic_tag = ENC
 		}
-		country_event = { days = 2 id = nf_ncr.29 }
+		country_event = { days = 1 id = nf_ncr.29 }
 	}
 	option = {
 		name = nf_ncr.28.a
@@ -1115,10 +1099,6 @@ country_event = { #enclave civil war annexed, civil war starts
 			}
 			ENC = { annex_country = { target = PREV transfer_troops = yes } }
 		}
-	}
-	option = {
-		name = nf_ncr.29.a
-		custom_effect_tooltip = ncr_civil_war_starts
 		hidden_effect = {
 			ENC = {
 				transfer_state = 63
@@ -1184,11 +1164,18 @@ country_event = { #enclave civil war annexed, civil war starts
 			}
 			if = {
 				limit = {
-					has_country_flag = ncr_switch_to_enclave
-					is_ai = no
+					NCR = {
+						has_country_flag = ncr_switch_to_enclave
+						is_ai = no
+					}
 				}
 				ENC = { change_tag_from	= NCR }
 			}
 		}
+	}
+	option = {
+		name = nf_ncr.29.a
+		custom_effect_tooltip = ncr_civil_war_starts
+		
 	}
 }
