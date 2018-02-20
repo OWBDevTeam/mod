@@ -138,12 +138,25 @@ on_actions = {
 	#PREV is war target
 	on_declare_war = {
 		effect = {
-				if {
+				if = {
 					limit = {
 						PREV = { original_tag = HAN }
-						ROOT = { original_tag = CES }
+						original_tag = CES
 					}
 					PREV = { country_event = { days = 1 id = hangdogs.1 } }
+				}
+				if = {
+					limit = {
+						has_annex_war_goal = PREV
+					}
+				ROOT = {
+						every_state = {
+							limit = {
+								is_owned_by = PREV
+							}
+							add_claim_by = PREV
+						}
+					}
 				}
 		}
 	}
