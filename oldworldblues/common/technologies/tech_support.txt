@@ -235,7 +235,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-			
+			modifier = {
+				factor = 2
+				num_divisions > 20
+			}
 			modifier = {
 				factor = 1.2
 				date > "2279.1.1"
@@ -276,7 +279,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-			
+			modifier = {
+				factor = 2
+				num_divisions > 40
+			}
 			modifier = {
 				factor = 1.2
 				date > "2279.1.1"
@@ -321,7 +327,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-			
+			modifier = {
+				factor = 2
+				num_divisions > 60
+			}
 			modifier = {
 				factor = 1.2
 				date > "2283.1.1"
@@ -362,7 +371,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-			
+			modifier = {
+				factor = 2
+				num_divisions > 80
+			}
 			modifier = {
 				factor = 1.2
 				date > "2287.1.1"
@@ -1448,6 +1460,10 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
+				factor = 0.1
+				NOT = { num_of_military_factories > 5 }
+			}
+			modifier = {
 				factor = 10
 				any_enemy_country = {
 					ROOT = {
@@ -2200,7 +2216,11 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-			
+			modifier = {
+				NOT = { manpower_per_military_factory > 300 }
+				NOT = { surrender_progress > 0.5 }
+				factor = 5
+			}
 			modifier = {
 				factor = 1.2
 				date > "2276.1.1"
