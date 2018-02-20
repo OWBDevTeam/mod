@@ -236,6 +236,10 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
+				factor = 0.1
+				NOT = { num_of_military_factories > 10 }
+			}
+			modifier = {
 				factor = 2
 				num_divisions > 20
 			}
@@ -531,7 +535,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 6
+			factor = 1
 		}
 	}
     
@@ -695,6 +699,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0.1
+				NOT = { num_of_military_factories > 4 }
+			}
 			modifier = {
 				factor = 2
 				date > "2276.1.1"
@@ -1209,6 +1217,7 @@ technologies = {
 			modifier = {
 				factor = 0
 				has_tech = anti_personnel_tech
+				NOT = { is_brotherhood_nation = yes }
 			}
 		}
 	}
@@ -1461,7 +1470,17 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.1
-				NOT = { num_of_military_factories > 5 }
+				NOT = { num_of_military_factories > 10 }
+				NOT = {
+					any_enemy_country = {
+						ROOT = {
+							estimated_intel_max_armor = {
+								tag = PREV
+								value > 30
+							}
+						}
+					}
+				}
 			}
 			modifier = {
 				factor = 10
@@ -1476,11 +1495,27 @@ technologies = {
 			}
 			modifier = {
 				factor = 2
-				date > "2275.1.6"
+				date > "2277.1.6"
+				any_enemy_country = {
+					ROOT = {
+						estimated_intel_max_armor = {
+							tag = PREV
+							value > 10
+						}
+					}
+				}
 			}
 			modifier = {
+				any_enemy_country = {
+					ROOT = {
+						estimated_intel_max_armor = {
+							tag = PREV
+							value > 10
+						}
+					}
+				}
 				factor = 5
-				date > "2276.1.1"
+				date > "2278.1.1"
 			}
 		}
 	}
@@ -2217,8 +2252,9 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				NOT = { manpower_per_military_factory > 300 }
+				NOT = { manpower_per_military_factory > 400 }
 				NOT = { surrender_progress > 0.5 }
+				num_of_military_factories > 8
 				factor = 5
 			}
 			modifier = {
@@ -2261,7 +2297,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 2
 			
 			modifier = {
 				factor = 1.2
@@ -2309,7 +2345,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 2
 			
 			modifier = {
 				factor = 1.2
@@ -2352,7 +2388,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 2
 			
 			modifier = {
 				factor = 1.2
