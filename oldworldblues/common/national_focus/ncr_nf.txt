@@ -996,7 +996,6 @@ focus_tree = {
 			focus = ncr_bigjim
 			focus = ncr_drummundreturn
 		}
-		will_lead_to_war_with = MRA
 		x = 11
 		y = 8
 		ai_will_do = {
@@ -1010,36 +1009,23 @@ focus_tree = {
 			RAP = { exists = no }
 		}
 		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = RAP
-			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
-			if = {
+			add_manpower = -500
+			add_political_power = -25
+			every_state = {
 				limit = {
-					any_state = {
-						AND = {
-							is_core_of = RAP
-							NOT = { is_controlled_by = RAP }
-						}
-					}
+					is_core_of = RAP
 				}
-				every_country = {
-					limit = {
-						any_owned_state = {
-							is_core_of = RAP
-						}
-					}
-					add_named_threat = { threat = 5 name = stole_cores }
-					ROOT = {
-						create_wargoal = { type = annex_everything target = PREV }
-					}
-				}
+				add_core_of = NCR	
 			}
+			
+			NCR = {
+				annex_country = { target = RAP }
+			}
+			
 			CES = {
 				country_event = { id = nf_ncr.9 }
 			}
-		}`
+		}
 
 	}
 	focus = {
