@@ -366,7 +366,7 @@ focus_tree = {
 				amount = 6
 				}
 				add_resource = {
-				type = scrap
+				type = electronics
 				amount = 6
 				}
 		    }
@@ -638,7 +638,10 @@ focus_tree = {
 		x = 14
 		y = 8
 		completion_reward = {
-		add_ideas =	encourage_women
+			swap_ideas = {
+				add_idea = encourage_women
+				remove_idea = militia_posters
+			}
 		}
 
 	}
@@ -680,7 +683,10 @@ focus_tree = {
 		x = 16
 		y = 10
 		completion_reward = {
-		add_ideas = settler_tactical_awareness
+		swap_ideas = {
+				add_idea = settler_tactical_awareness
+				remove_idea = settler_old_tactics
+			}
 		}
 
 	}
@@ -708,7 +714,10 @@ focus_tree = {
 		x = 18
 		y = 11
 		completion_reward = {
-		add_ideas = settler_long_distance_movements
+		swap_ideas = {
+				add_idea = settler_long_distance_movements
+				remove_idea = marching_drills
+			}
 		}
 	}
 	focus = {
@@ -721,7 +730,7 @@ focus_tree = {
 		x = 19
 		y = 5
 		completion_reward = {
-		add_timed_idea = { idea = settler_wasteland_settlers  days = 365 }
+		add_ideas = { idea = settler_wasteland_settlers }
 		}
 
 	}
@@ -735,7 +744,10 @@ focus_tree = {
 		x = 19
 		y = 6
         completion_reward = {
-			add_ideas =	tato_farming
+			swap_ideas = {
+				add_idea = tato_farming
+				remove_idea = settler_wasteland_settlers
+			}
 		}
 	}
 	focus = {
@@ -748,7 +760,10 @@ focus_tree = {
 		x = 19
 		y = 7
 		completion_reward = {
-			add_ideas =	brahmin_herding
+			swap_ideas = {
+				add_idea = brahmin_herding
+				remove_idea = tato_farming
+			}
 		}
 
 	}
@@ -1339,7 +1354,10 @@ focus_tree = {
 		x = 14
 		y = 9
 		completion_reward = {
-        add_ideas = settler_fallback_tactics
+		swap_ideas = {
+				add_idea = settler_fallback_tactics
+				remove_idea = settler_standardized_military
+			}
 		}
 
 	}
