@@ -864,11 +864,16 @@ focus_tree = {
 		x = 2
 		y = 11
 		completion_reward = {
-			set_cosmetic_tag = DES_BOS
-			BOS = { add_to_faction = DES }
-		}
-
-	}
+		   DES = {
+			   set_cosmetic_tag = DES_BOS
+			   BOS = { add_to_faction = DES }
+			   add_opinion_modifier = { target = BOS modifier = steelrangers }
+		   }   
+		   BOS = {
+		       add_opinion_modifier = { target = DES modifier = steelrangers }
+		   }
+	   }
+	}   
 	focus = {
 		id = des_bosfunding
 		icon = GFX_goal_generic_national_unity
