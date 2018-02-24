@@ -22,6 +22,7 @@ ideas = {
             
             modifier = {
 		army_morale_factor = 0.2
+		conscription_factor = 0.02
 		}
 			
         }
@@ -42,6 +43,7 @@ ideas = {
 			
 			modifier = {
 				max_planning = 0.15
+				planning_speed = 0.1
 			}
 		}
 		iron_grip = {
@@ -82,6 +84,7 @@ ideas = {
 			picture = generic_morale_bonus
 			modifier = {
 				production_speed_infrastructure_factor  = 0.1
+			    production_speed_buildings_factor = 0.1
 			}
 		}
 		
@@ -89,7 +92,9 @@ ideas = {
 			name = slave_researchers
 			picture = generic_morale_bonus
 			modifier = {
-				research_time_factor = -0.03 
+				research_time_factor = -0.03
+				production_speed_infrastructure_factor  = 0.1
+				production_speed_buildings_factor = 0.1
 			}
 		}
 		
@@ -201,7 +206,9 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				research_time_factor = -0.03	
+				research_time_factor = -0.06
+				production_speed_infrastructure_factor  = 0.1
+				production_speed_buildings_factor = 0.1
 			}
 	    }
 		raider_raider_computer_logs = {
@@ -215,6 +222,9 @@ ideas = {
 		
 			modifier = {
 				max_planning = 0.05
+				research_time_factor = -0.06
+				production_speed_infrastructure_factor  = 0.1
+				production_speed_buildings_factor = 0.1
 			}
 		}
 		raider_shitty_robots = {
@@ -225,8 +235,11 @@ ideas = {
 			}
 			
 			removal_cost = -1
-	
+
 			  equipment_bonus = {
+			    energy_equipment = {
+					build_cost_ic = -0.1	
+				}
 				robot_equipment = {
 					build_cost_ic = -0.1
 				}
@@ -271,6 +284,7 @@ ideas = {
 		
 			modifier = {
 			    planning_speed = 0.10
+				army_speed_factor = 0.1
 			}
 		}
 		raider_brutal_hazing = {
@@ -352,7 +366,9 @@ ideas = {
 			
 			removal_cost = -1
 			modifier = { 
-			conscription = 0.02
+			   conscription = 0.02
+		       planning_speed = 0.10
+			   army_speed_factor = 0.1
 			}
 		}
 		raider_recruit_them_young = {
@@ -407,6 +423,8 @@ ideas = {
 		
 			modifier = {
 			justify_war_goal_time = -0.15
+			army_core_attack_factor = 0.1
+			army_core_defence_factor  = 0.1
 			}
 		}
 		raider_take_what_you_need = {
@@ -420,6 +438,9 @@ ideas = {
 		
 			modifier = {
 				no_supply_grace = 24
+			    conscription = 0.02
+		        planning_speed = 0.10
+			    army_speed_factor = 0.1
 			}
 		}
 		raider_dont_question_the_boss = {

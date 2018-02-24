@@ -337,9 +337,11 @@ focus_tree = {
 		y = 5
 			available_if_capitulated = yes
 			completion_reward = {
-					add_ideas = forced_labour
-				}
-
+			   swap_ideas = {
+					add_idea = forced_labour
+					remove_idea = slave_labour
+				}	
+			}
 	}
 	focus = {
 		id = slave_scientists
@@ -367,9 +369,11 @@ focus_tree = {
 		y = 8
 			available_if_capitulated = yes
 			completion_reward = {
-					add_ideas = slave_researchers
-				}
-
+				swap_ideas = {
+				   add_idea = slave_researchers
+				   remove_idea = forced_labour
+			    }
+			}	
 	}
 	focus = {
 		id = new_age_weaponry
@@ -417,9 +421,11 @@ focus_tree = {
 		y = 10
 			available_if_capitulated = yes
 			completion_reward = {
-					add_ideas = raider_terminals_for_all
+			    swap_ideas = {
+					add_idea = raider_terminals_for_all
+					remove_idea = slave_researchers
 				}
-
+            }
 	}
 	focus = {
 		id = raider_computer_logs
@@ -432,9 +438,11 @@ focus_tree = {
 		y = 11
 			available_if_capitulated = yes
 			completion_reward = {
-					add_ideas = raider_raider_computer_logs
+			   swap_ideas = {
+					add_idea = raider_raider_computer_logs
+					remove_idea = raider_terminals_for_all
 				}
-
+            }
 	}
 	focus = {
 		id = encourage_slavers
@@ -484,8 +492,8 @@ focus_tree = {
 							bonus = 0.5
 							uses = 1
 							category = chem_tech
-						}
-				}
+					}
+			}
 
 	}
 	focus = {
@@ -675,8 +683,11 @@ focus_tree = {
 		y = 4
 			available_if_capitulated = yes
 			completion_reward = {
-					add_ideas = raider_lightning_raids
-				}
+               swap_ideas = {			
+					add_idea = raider_lightning_raids
+					remove_idea = raider_doped_soldiers
+				}	
+			}
 
 	}
 	focus = {
@@ -690,9 +701,11 @@ focus_tree = {
 		y = 5
 			available_if_capitulated = yes
 			completion_reward = {
-					add_ideas = raider_gender_equality
-				}
-
+			    swap_ideas = {
+					add_idea = raider_gender_equality
+					remove_idea = raider_lightning_raids
+				}	
+			}
 	}
 	focus = {
 		id = take_what_you_need
@@ -705,9 +718,11 @@ focus_tree = {
 		y = 6
 			available_if_capitulated = yes
 			completion_reward = {
-					add_ideas = raider_take_what_you_need
+			    swap_ideas = {
+					add_idea = raider_take_what_you_need
+					remove_idea = raider_gender_equality
 				}
-
+			}
 	}
 	focus = {
 		id = expand_the_garage
@@ -981,9 +996,11 @@ focus_tree = {
 		y = 6
 			available_if_capitulated = yes
 			completion_reward = {
-					add_ideas = draconian_recovery_methods
-				}
-
+			   swap_ideas = {
+					add_idea = draconian_recovery_methods
+					remove_idea = preparing_for_total_war
+				}	
+			}
 	}
 	focus = {
 		id = master_plan
@@ -996,9 +1013,11 @@ focus_tree = {
 		y = 6
 			available_if_capitulated = yes
 			completion_reward = {
-					add_ideas = master_plan
+			   swap_ideas = {
+					add_idea = master_plan
+					remove_idea = critical_thinking
 				}
-
+			}	
 	}
 	focus = {
 		id = everyone_works
@@ -1041,9 +1060,8 @@ focus_tree = {
 		y = 4
 			available_if_capitulated = yes
 			completion_reward = {
-					add_national_unity = 0.05
-				}
-
+				add_national_unity = 0.05
+			}
 	}
 	focus = {
 		id = territorial_reinforcement
@@ -1056,9 +1074,8 @@ focus_tree = {
 		y = 5
 			available_if_capitulated = yes
 			completion_reward = {
-					add_ideas = territorial_reinforcement
-				}
-
+				add_ideas = territorial_reinforcement
+			}
 	}
 	focus = {
 		id = terrorise_the_locals
@@ -1157,9 +1174,12 @@ focus_tree = {
 		y = 8
 			available_if_capitulated = yes
 			completion_reward = {
-					add_ideas = raider_manifest_destiny
+			   swap_ideas = {
+					add_idea = raider_manifest_destiny
+					remove_idea = territoriality
 				}
-
+				
+			}				
 	}
 	focus = {
 		id = we_never_die
@@ -1193,8 +1213,7 @@ focus_tree = {
 							uses = 1
 							category = robotics_tech
 						}
-				}
-
+			}
 	}
 	focus = {
 		id = find_the_good_stuff
@@ -1213,7 +1232,7 @@ focus_tree = {
 									amount = 5
 								}
 						}
-				}
+			}
 
 	}
 	focus = {
@@ -1227,9 +1246,11 @@ focus_tree = {
 		y = 12
 			available_if_capitulated = yes
 			completion_reward = {
-					add_ideas = raider_shitty_robots
-				}
-
+                    swap_ideas = {			
+					add_idea = raider_shitty_robots
+					remove_idea = raider_new_age_weaponry
+			    }
+            }
 	}
 	focus = {
 		id = taking_the_best
@@ -1246,7 +1267,7 @@ focus_tree = {
 							add_resource = {
 									type = advanced_technology
 									amount = 5
-								}
+							}
 						}
 				}
 
@@ -1352,8 +1373,8 @@ focus_tree = {
 							bonus = 0.5
 							uses = 1
 							category = tank_tech
-						}
-				}
+					}
+			}
 
 	}
 }
