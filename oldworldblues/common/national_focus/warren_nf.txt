@@ -68,6 +68,9 @@ focus_tree = {
 		prerequisite = {
 			focus = fourthholotape
 		}
+		ai_will_do = {
+			factor = 10
+		}
 		x = 2
 		y = 4
 			completion_reward = {
@@ -1682,6 +1685,9 @@ focus_tree = {
 		}
 		x = 2
 		y = 5
+		ai_will_do = {
+			factor = 10
+		}
 		will_lead_to_war_with = MDT
 		will_lead_to_war_with = RBT
 			completion_reward = {
@@ -1756,24 +1762,27 @@ focus_tree = {
 		}
 		x = 1
 		y = 6
-			available = {
-					or = {
-							if = {
-									RBT = {
-											is_puppet_of = TRL
-										}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+				or = {
+						if = {
+								RBT = {
+									is_puppet_of = TRL
 								}
-							if = {
-									TRL = {
-											owns_state = 587
-											owns_state = 506
-											owns_state = 449
-											owns_state = 450
-											owns_state = 493
-										}
+							}
+						if = {
+								TRL = {
+										owns_state = 587
+										owns_state = 506
+										owns_state = 449
+										owns_state = 450
+										owns_state = 493
 								}
 						}
 				}
+		}
 			completion_reward = {
 					add_state_core = 587
 					add_state_core = 506
@@ -1789,6 +1798,9 @@ focus_tree = {
 		cost = 5.00
 		prerequisite = {
 			focus = drumswest
+		}
+		ai_will_do = {
+			factor = 10
 		}
 		x = 3
 		y = 6
@@ -1827,6 +1839,9 @@ focus_tree = {
 		prerequisite = {
 			focus = drinking_marrow
 		}
+		ai_will_do = {
+			factor = 10
+		}
 		x = 2
 		y = 7
 			completion_reward = {
@@ -1840,6 +1855,9 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = breakingribs
+		}
+		ai_will_do = {
+			factor = 10
 		}
 		x = 0
 		y = 7
@@ -1952,6 +1970,9 @@ focus_tree = {
 		prerequisite = {
 			focus = forced_mutation
 		}
+		ai_will_do = {
+			factor = 10
+		}
 		x = 2
 		y = 8
 		will_lead_to_war_with = CHE
@@ -2028,6 +2049,9 @@ focus_tree = {
 		}
 		x = 1
 		y = 9
+		ai_will_do = {
+			factor = 10
+		}
 			available = {
 					or = {
 							if = {
@@ -2062,6 +2086,9 @@ focus_tree = {
 		}
 		x = 3
 		y = 9
+		ai_will_do = {
+			factor = 10
+		}
 			available = {
 					or = {
 							if = {
@@ -2098,6 +2125,9 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = takinghomes
+		}
+		ai_will_do = {
+			factor = 10
 		}
 		x = 2
 		y = 10
@@ -2202,6 +2232,9 @@ focus_tree = {
 		}
 		x = 2
 		y = 11
+		ai_will_do = {
+			factor = 10
+		}
 		will_lead_to_war_with = BDT
 		will_lead_to_war_with = MLT
 			completion_reward = {
@@ -2379,6 +2412,9 @@ focus_tree = {
 		}
 		x = 1
 		y = 12
+		ai_will_do = {
+			factor = 10
+		}
 			available = {
 					or = {
 							if = {
@@ -2409,6 +2445,9 @@ focus_tree = {
 		}
 		x = 3
 		y = 12
+		ai_will_do = {
+			factor = 10
+		}
 			available = {
 					or = {
 							if = {
