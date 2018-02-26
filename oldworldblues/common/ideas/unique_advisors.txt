@@ -1,0 +1,53 @@
+ideas = {
+political_advisor = {
+		selene_advisor = {
+			
+			picture = selene_advisor_portrait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+			OR = {
+				has_completed_focus = ces_goddess_diana
+				has_completed_focus = ces_caesar_the_godslayer
+				}
+			}
+			xor = {
+			      selene_command
+				  }
+			traits = { mother_shaman }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}		
+	}
+	high_command = {
+		selene_command = {
+			
+			picture = selene_command_portait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+				OR = {
+				has_completed_focus = ces_goddess_diana
+				has_completed_focus = ces_caesar_the_godslayer
+				}
+			}
+			xor = {
+			      selene_advisor
+				  }
+			
+			traits = { war_shaman }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	}
