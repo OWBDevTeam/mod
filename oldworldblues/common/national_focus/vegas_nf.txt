@@ -1026,7 +1026,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = veg_frisco
+		id = veg_hopeville
 		icon = GFX_goal_generic_ammo_boxes_focus
 		cost = 8.6
 		prerequisite = {
@@ -1034,31 +1034,40 @@ focus_tree = {
 		}
 		x = 2
 		y = 9
-		will_lead_to_war_with = FRI
+		will_lead_to_war_with = HOP
 		bypass = {
-			FRI = {
+			HOP = {
 				exists = no
 			}
 		}
 		completion_reward = {
 			create_wargoal = {
-				target = FRI
+				target = HOP
 				type = annex_everything
 			}
 		}
 
 	}
 	focus = {
-		id = veg_silver
+		id = veg_ashton
 		icon = GFX_goal_generic_metal_focus
 		cost = 8.6
 		prerequisite = {
-			focus = veg_frisco
+			focus = veg_hopeville
 		}
 		x = 2
 		y = 10
+		will_lead_to_war_with = ASH
+		bypass = {
+			ASH = {
+				exists = no
+			}
+		}
 		completion_reward = {
-			add_ideas = robcosilver
+			create_wargoal = {
+				target = ASH
+				type = annex_everything
+			}
 		}
 
 	}
@@ -1068,7 +1077,7 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = veg_reborn
-			focus = veg_silver
+			focus = veg_ashton
 		}
 		x = 1
 		y = 11
