@@ -42,27 +42,6 @@ political_advisor = {
 			ai_will_do = {
 				factor = 10
 			}
-		}	
-        carmine_advisor = {
-			
-			picture = carmine_advisor_portait
-			
-			allowed = {
-				original_tag = CES # Unlocked via focus
-			}
-			available = 
-			{
-				OR = {
-				has_completed_focus = ces_wyatt_the_demon
-				has_completed_focus = ces_legion_outlaws
-				}
-				NOT = { has_idea = carmine_command }
-			}
-			traits = { arizona_ranger }
-			
-			ai_will_do = {
-				factor = 10
-			}
 		}
         
 		carmine_advisor = {
@@ -81,6 +60,28 @@ political_advisor = {
 				NOT = { has_idea = carmine_advisor }
 			}
 			traits = { bushranger }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+
+        earnhardt_advisor = {
+			
+			picture = earnhardt_advisor_portrait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+			OR = {
+				has_completed_focus = ces_cult_of_nas
+				has_completed_focus = ces_cult_of_nas_minor
+				}
+				NOT = { has_idea = earnhardt_command }
+			}
+			traits = { speed_demon }
 			
 			ai_will_do = {
 				factor = 10
@@ -148,6 +149,28 @@ political_advisor = {
 				NOT = { has_idea = carmine_advisor }
 			}
 			traits = { bushranger }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+
+        earnhardt_command = {
+			
+			picture = earnhardt_command_portrait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+			OR = {
+				has_completed_focus = ces_cult_of_nas
+				has_completed_focus = ces_cult_of_nas_minor
+				}
+				NOT = { has_idea = earnhardt_advisor }
+			}
+			traits = { pit_lord }
 			
 			ai_will_do = {
 				factor = 10
