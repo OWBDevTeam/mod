@@ -1367,7 +1367,75 @@ country_event = {
 			swap_ideas = { remove_idea = stableOS add_idea = platinumOS }
 		}
 	}	
-}	
+}
+country_event = {
+	id = nf_vegas.53
+	title = nf_vegas.53.t 
+	desc = nf_vegas.53.d 
+	picture = GFX_event_VEG_tops
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_vegas.53.a 
+		VEG = {
+			country_event = nf_vegas.54
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		name = nf_vegas.53.b
+		
+	}
+}
+country_event = {
+	id = nf_vegas.54
+	title = nf_vegas.54.t 
+	desc = nf_vegas.54.d 
+	picture = GFX_event_VEG_tops
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_vegas.54.a 
+		limit = {
+			every_owned_state = {
+				AND = {
+					is_core_of = MRA
+					is_controlled_by = NCR
+				}
+			}
+		}
+		VEG = {
+			transfer_state = PREV
+		}
+			
+		limit = {
+			any_state = {
+				AND = {
+					is_core_of = MOJ
+					is_controlled_by = NCR
+				}
+			}
+			VEG = {
+				transfer_state = PREV
+			}
+			
+		}
+		ai_chance = {
+			factor = 1.0
+		}
+	}
+	
+	option = {
+		name = nf_vegas.54.b
+		
+	}
+}
+
+			
 
 	
 

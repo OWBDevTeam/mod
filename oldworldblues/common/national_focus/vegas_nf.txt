@@ -1087,28 +1087,48 @@ focus_tree = {
 
 	}
 	focus = {
-		id = veg_foreigninvest
+		id = veg_newvegastreaty
 		icon = GFX_goal_generic_supplies_focus
 		cost = 8.6
 		prerequisite = {
 			focus = veg_economy
 		}
+		available = {
+			NCR = {
+				owns_state = 252
+			}
+		}
 		x = 6
 		y = 7
 		completion_reward = {
-			swap_ideas = {
-				add_idea = goodbusiness2
-				remove_idea = goodbusiness
+			253 = {
+				add_resource = {
+					type = electricity
+					amount = 20
+				}
 			}
+			211 = {
+				add_resource = {
+					type = electricity
+					amount = 5
+				}
+			}
+			NCR = {
+				give_guarantee = VEG
+			}
+			VEG = {
+				give_military_access = NCR
+			}
+			
 		}
 
 	}
 	focus = {
-		id = veg_ncrembassy
+		id = veg_ncrtradedeal
 		icon = GFX_goal_generic_NCR_diplomatic_focus
 		cost = 8.6
 		prerequisite = {
-			focus = veg_foreigninvest
+			focus = veg_newvegastreaty
 		}
 		x = 6
 		y = 8
@@ -1118,17 +1138,19 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			add_opinion_modifier = { target = NCR modifier = ncrembassy }
-			reverse_add_opinion_modifier = { target = NCR modifier = ncrembassy }
+			swap_ideas = {
+				remove_idea = goodbusiness
+				add_idea = goodbusiness2
+			}
 		}
 
 	}
 	focus = {
-		id = veg_jointscavenge
+		id = veg_ncrrail
 		icon = GFX_goal_generic_metal_focus
 		cost = 8.6
 		prerequisite = {
-			focus = veg_ncrembassy
+			focus = veg_ncrtradedeal
 		}
 		x = 6
 		y = 9
@@ -1146,11 +1168,11 @@ focus_tree = {
 
 	}
 	focus = {
-		id = veg_ncrrail
+		id = veg_ncrembassy
 		icon = GFX_goal_generic_construct_infrastructure
 		cost = 8.6
 		prerequisite = {
-			focus = veg_jointscavenge
+			focus = veg_ncrrail
 		}
 		available = {
 			419 = {
@@ -1161,24 +1183,23 @@ focus_tree = {
 		x = 6
 		y = 10
 		completion_reward = {
-			every_state = {
-				limit = {
-					is_new_vegas_state = yes
-				}
+			211 = {
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = infrastructure
-					level = 1
+					type = industrial_complex 
+					level = 2
+					instant_build = yes
 				}
 			}
 		}
 
 	}
 	focus = {
-		id = veg_ncrdeal
+		id = veg_ncrstatehood
 		icon = GFX_goal_generic_NCR_diplomatic_focus
 		cost = 8.6
 		prerequisite = {
-			focus = veg_ncrrail
+			focus = veg_ncrembassy
 		}
 		x = 6
 		y = 11
@@ -1186,12 +1207,10 @@ focus_tree = {
 			NCR = { exists = no }
 		}
 		completion_reward = {
-			swap_ideas = {
-				add_idea = goodbusiness3
-				remove_idea = goodbusiness2
+			NCR = {
+				country_event = nf_vegas.53
+
 			}
-			add_opinion_modifier = { target = NCR modifier = ncrtradedeal }
-			reverse_add_opinion_modifier = { target = NCR modifier = ncrtradedeal }
 		}
 
 	}
