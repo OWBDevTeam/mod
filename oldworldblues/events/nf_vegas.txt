@@ -649,7 +649,6 @@ country_event = {
 				}
 			}
 			remove_ideas = vegasprime1
-			}
 		}
 		add_ideas = vegasprime2
 	}	
@@ -1400,7 +1399,7 @@ country_event = {
 	
 	option = {
 		name = nf_vegas.54.a 
-		limit = {
+		NCR = {
 			every_owned_state = {
 				AND = {
 					is_core_of = MRA
@@ -1412,8 +1411,8 @@ country_event = {
 			transfer_state = PREV
 		}
 			
-		limit = {
-			any_state = {
+		NCR = {
+			every_owned_state = {
 				AND = {
 					is_core_of = MOJ
 					is_controlled_by = NCR
