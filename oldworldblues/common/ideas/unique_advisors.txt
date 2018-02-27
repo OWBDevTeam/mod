@@ -13,11 +13,30 @@ political_advisor = {
 				has_completed_focus = ces_goddess_diana
 				has_completed_focus = ces_caesar_the_godslayer
 				}
+				NOT = { has_idea = selene_command }
 			}
-			xor = {
-			      selene_command
-				  }
 			traits = { mother_shaman }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}		
+		bares_his_teeth_advisor = {
+			
+			picture = bares_his_teeth_advisor_portrait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+			OR = {
+				has_completed_focus = ces_shottol_god_of_dogs
+				has_completed_focus = ces_legion_mongrels
+				}
+				NOT = { has_idea = bares_his_teeth_command }
+			}
+			traits = { caesars_hound }
 			
 			ai_will_do = {
 				factor = 10
@@ -38,16 +57,34 @@ political_advisor = {
 				has_completed_focus = ces_goddess_diana
 				has_completed_focus = ces_caesar_the_godslayer
 				}
+				NOT = { has_idea = selene_advisor }
 			}
-			xor = {
-			      selene_advisor
-				  }
-			
 			traits = { war_shaman }
 			
 			ai_will_do = {
 				factor = 10
 			}
 		}
+		bares_his_teeth_command = {
+			
+			picture = bares_his_teeth_command_portrait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+			OR = {
+				has_completed_focus = ces_shottol_god_of_dogs
+				has_completed_focus = ces_legion_mongrels
+				}
+				NOT = { has_idea = bares_his_teeth_advisor }
+			}
+			traits = { war_dog }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}		
 	}
 	}
