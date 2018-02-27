@@ -20,7 +20,8 @@ political_advisor = {
 			ai_will_do = {
 				factor = 10
 			}
-		}		
+		}	
+		
 		bares_his_teeth_advisor = {
 			
 			picture = bares_his_teeth_advisor_portrait
@@ -37,6 +38,49 @@ political_advisor = {
 				NOT = { has_idea = bares_his_teeth_command }
 			}
 			traits = { caesars_hound }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}	
+        carmine_advisor = {
+			
+			picture = carmine_advisor_portait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+				OR = {
+				has_completed_focus = ces_wyatt_the_demon
+				has_completed_focus = ces_legion_outlaws
+				}
+				NOT = { has_idea = carmine_command }
+			}
+			traits = { arizona_ranger }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+        
+		carmine_advisor = {
+			
+			picture = carmine_command_portait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+				OR = {
+				has_completed_focus = ces_wyatt_the_demon
+				has_completed_focus = ces_legion_outlaws
+				}
+				NOT = { has_idea = carmine_advisor }
+			}
+			traits = { bushranger }
 			
 			ai_will_do = {
 				factor = 10
@@ -65,6 +109,7 @@ political_advisor = {
 				factor = 10
 			}
 		}
+		
 		bares_his_teeth_command = {
 			
 			picture = bares_his_teeth_command_portrait
@@ -81,6 +126,28 @@ political_advisor = {
 				NOT = { has_idea = bares_his_teeth_advisor }
 			}
 			traits = { war_dog }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}	
+
+        carmine_command = {
+			
+			picture = selene_command_portait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+				OR = {
+				has_completed_focus = ces_wyatt_the_demon
+				has_completed_focus = ces_legion_outlaws
+				}
+				NOT = { has_idea = carmine_advisor }
+			}
+			traits = { bushranger }
 			
 			ai_will_do = {
 				factor = 10
