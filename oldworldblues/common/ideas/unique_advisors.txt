@@ -86,7 +86,43 @@ political_advisor = {
 			ai_will_do = {
 				factor = 10
 			}
-		}		
+		}
+		
+		vulpes_inculta_advisor = {
+			
+			picture = vulpes_inculta_minister
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+				NOT = { has_idea = vulpes_inculta_command }
+			}
+			traits = { fox_cruelty }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		lucius_advisor = {
+			
+			picture = lucius_minister
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+				NOT = { has_idea = lucius_command }
+			}
+			traits = { total_war_tactician }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
 	}
 	high_command = {
 		selene_command = {
@@ -175,6 +211,42 @@ political_advisor = {
 			ai_will_do = {
 				factor = 10
 			}
-		}		
+		}
+		
+		lucius_command = {
+			
+			picture = lucius_minister
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+				NOT = { has_idea = lucius_advisor }
+			}
+			traits = { praetorian_prefect }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		vulpes_inculta_command = {
+			
+			picture = vulpes_inculta_minister
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+				NOT = { has_idea = vulpes_inculta_advisor }
+			}
+			traits = { earth_scorcher }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
 	}
 	}
