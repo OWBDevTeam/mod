@@ -249,4 +249,40 @@ political_advisor = {
 			}
 		}
 	}
+	
+	army_chief = {
+                
+        malpais_legatus = {
+	    
+	    picture = malpais_legate_chief
+            allowed = {
+                original_tag = CES
+            }
+            available = { NOT = {has_completed_focus = ces_burned_man_rumours}}
+            
+            traits = { army_chief_offensive_3 }
+                    
+            ai_will_do = {
+                factor = 1
+            }
+        }
+	
+	 lanius_legatus = {
+	 
+	    picture = lanius_legate_chief
+	    
+            allowed = {
+                original_tag = CES
+            }
+            available = {
+                has_completed_focus = ces_burned_man_rumours
+            }
+            
+            traits = { army_chief_organization_3 }
+                    
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
 	}
