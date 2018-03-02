@@ -20,7 +20,7 @@ leader_traits = {
         
 	caesars_hound = {
 		random = no
-		local_resources_factor = 0.1
+		local_resources_factor = 0.15
 		
 		ai_will_do = {
 			factor = 1
@@ -66,7 +66,9 @@ leader_traits = {
 		 equipment_bonus = {
             motorized_equipment = {
                 instant = yes
-                maximum_speed = 0.20
+                maximum_speed = 0.10
+				soft_attack = 0.05
+				defense = 0.05
             }
 			}
 		
@@ -107,6 +109,7 @@ leader_traits = {
 		random = no
 		economy_cost_factor = -0.1
 		mobilization_laws_cost_factor = -0.1
+		experience_gain_army = 0.05
 		
 		ai_will_do = {
 			factor = 1
@@ -118,15 +121,15 @@ leader_traits = {
 		 equipment_bonus = {
             melee_equipment_1 = {
                 instant = yes
-                breakthrough = 0.5
+                breakthrough = 0.25
             }
 			 melee_equipment_2 = {
                 instant = yes
-                breakthrough = 0.10
+                breakthrough = 0.25
             }
 			 melee_equipment_3 = {
                 instant = yes
-                breakthrough = 0.20
+                breakthrough = 0.25
             }
 			}
 		
@@ -180,9 +183,9 @@ leader_traits = {
 	
 	peaceful_foreman = {
 		random = no
-		production_factory_efficiency_gain_factor = 0.1
-		production_factory_start_efficiency_factor = 0.1
-		conscription_factor = -0.02
+		production_factory_efficiency_gain_factor = 0.15
+		production_factory_start_efficiency_factor = 0.15
+		conscription_factor = -0.05
 		justify_war_goal_time = 0.25
 		
 		ai_will_do = {
@@ -192,11 +195,10 @@ leader_traits = {
 	
 	gun_runner = {
 		random = no
-		production_speed_arms_factory_factor = 0.1
 		consumer_goods_factor = 0.05
 		equipment_bonus = {
-                ballistic_equipment_1 = { build_cost_ic = -0.10 instant = yes }
-                ballistic_equipment_2 = { build_cost_ic = -0.10 instant = yes }
+                ballistic_equipment_1 = { build_cost_ic = -0.15 instant = yes }
+                ballistic_equipment_2 = { build_cost_ic = -0.15 instant = yes }
             }
 		
 		ai_will_do = {
@@ -208,7 +210,7 @@ leader_traits = {
 		random = no
 		MONTHLY_POPULATION = 0.1
 		production_infrastructure_factor = 0.1
-		conscription_factor = -0.02
+		conscription_factor = -0.05
 		
 		ai_will_do = {
 			factor = 1
