@@ -20,7 +20,11 @@ default_peace = {
 	
 	# ROOT = Taker, FROM = Giver
 	annex = {
-		add = 10000
+		factor = 1
+		modifier = {
+			add = 10000
+			always = yes
+		}
 		modifier = {
 			add = 10000
 			always = yes
@@ -47,7 +51,7 @@ default_peace = {
 
 	# ROOT = Taker, FROM = State
 	take_states = {
-		add = 5000 #always take anything happily
+		factor = 5000 #always take anything happily
 		modifier = { #very good to take controlled states
 			add = 5000
 			FROM = {

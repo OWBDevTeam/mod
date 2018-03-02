@@ -1403,27 +1403,31 @@ country_event = {
 		name = nf_vegas.54.a 
 		NCR = {
 			every_owned_state = {
-				AND = {
-					is_core_of = MRA
-					is_controlled_by = NCR
+				limit = {
+					AND = {
+						is_core_of = MRA
+						is_controlled_by = NCR
+					}
+				}
+				VEG = {
+					transfer_state = PREV
 				}
 			}
 		}
-		VEG = {
-			transfer_state = PREV
-		}
+		
 			
 		NCR = {
 			every_owned_state = {
-				AND = {
-					is_core_of = MOJ
-					is_controlled_by = NCR
+				limit = {
+					AND = {
+						is_core_of = MOJ
+						is_controlled_by = NCR
+					}
+				}
+				VEG = {
+					transfer_state = PREV
 				}
 			}
-			VEG = {
-				transfer_state = PREV
-			}
-			
 		}
 		ai_chance = {
 			factor = 1.0
