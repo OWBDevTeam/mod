@@ -231,9 +231,11 @@ focus_tree = {
 		x = 2
 		y = 7
 		completion_reward = {
-		add_ideas = settler_robco
+		    swap_ideas = {
+		        add_idea = settler_robco
+		        remove_idea = new_schools
+		    }
 		}
-
 	}
 	focus = {
 		id = settler_firefighter
@@ -245,10 +247,8 @@ focus_tree = {
 		x = 1
 		y = 8
 		completion_reward = {
-		add_ideas = firefighter_protection
+		    add_ideas = firefighter_protection
 		}
-		
-
 	}
 	focus = {
 		id = settlers_protection
@@ -424,7 +424,10 @@ focus_tree = {
 		x = 9
 		y = 5
 		completion_reward = {
-		add_ideas = wall_construction
+		    swap_ideas = {
+		        add_idea = wall_construction
+		        remove_idea = erect_palisade
+		    }
 		}
 
 	}
@@ -458,9 +461,8 @@ focus_tree = {
 		x = 11
 		y = 5
 		completion_reward = {
-		load_oob =  "settlercaravanmilitia"
-		add_ideas = caravanmilitia
-		add_manpower = 250
+		   add_ideas = caravanmilitia
+		   add_manpower = 250
 		}
 
 	}
@@ -523,9 +525,11 @@ focus_tree = {
 		x = 11
 		y = 7
 		completion_reward = {
-		add_ideas = settler_subsidized_weapon_manufacturers
+		   swap_ideas = {
+		    add_idea = settler_subsidized_weapon_manufacturers
+		    remove_idea = caravanmilitia
+		   }
 		}
-
 	}
 	focus = {
 		id = settler_armory
@@ -567,7 +571,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-        add_ideas = established_armory
+		    swap_ideas = {	
+                add_idea = established_armory
+	            remove_idea = settler_subsidized_weapon_manufacturers
+		    }
 	    }
 	}
 	focus = {
@@ -730,7 +737,7 @@ focus_tree = {
 		x = 19
 		y = 5
 		completion_reward = {
-			add_ideas = settler_wasteland_settlers
+		    add_timed_idea = { idea = settler_wasteland_settlers days = 100 }
 		}
 
 	}
@@ -744,10 +751,7 @@ focus_tree = {
 		x = 19
 		y = 6
         completion_reward = {
-			swap_ideas = {
-				add_idea = tato_farming
-				remove_idea = settler_wasteland_settlers
-			}
+				add_ideas = tato_farming
 		}
 	}
 	focus = {
@@ -837,7 +841,7 @@ focus_tree = {
 		y = 7
        completion_reward = {
 			add_ideas =	local_pride
-		}
+       }
 
 	}
 	focus = {
@@ -986,9 +990,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_ideas =	labor_treaties
+		    swap_ideas = {
+			    add_idea = labor_treaties
+				remove_idea = local_pride
+			}	
 		}
-
 	}
 	focus = {
 		id = settler_robed
@@ -1096,7 +1102,10 @@ focus_tree = {
 		x = 27
 		y = 6
 		completion_reward = {
-		add_ideas = oligarchical_power
+		    swap_ideas = {
+		        add_idea = oligarchical_power
+		        remove_idea = elites
+		    }
 		}
 
 	}
@@ -1110,9 +1119,11 @@ focus_tree = {
 		x = 27
 		y = 7
 		completion_reward = {
-		add_ideas = settler_monopoly
+		    swap_ideas = {
+		        add_idea = settler_monopoly
+		        remove_idea = oligarchical_power
+		    }
 		}
-
 	}
 	focus = {
 		id = settler_intellectuals
@@ -1253,7 +1264,10 @@ focus_tree = {
 		x = 31
 		y = 7
 		completion_reward = {
-		add_ideas = loyalty
+		    swap_ideas = {
+		        add_idea = loyalty
+		        remove_idea = people
+		    }
 		}
 
 	}
@@ -1308,9 +1322,11 @@ focus_tree = {
 		x = 33
 		y = 7
 		completion_reward = {
-			add_ideas = settlerbodyguards
+		    swap_ideas = {
+			    add_idea = settlerbodyguards
+			    remove_idea = eliminating_rivals
+			}
 		}
-
 	}
 	focus = {
 		id = settler_paladin
@@ -1386,7 +1402,10 @@ focus_tree = {
 		x = 1		
 		y = 9
 		completion_reward = {
-		add_ideas = police_protection
+		    swap_ideas = {
+		        add_idea = police_protection
+			    remove_idea = firefighter_protection
+			}
 		}
 	}
 }

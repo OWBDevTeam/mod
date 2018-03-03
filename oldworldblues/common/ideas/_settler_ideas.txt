@@ -13,10 +13,9 @@ ideas = {
 				
 				modifier = {
 					conscription = 0.02
+					justify_war_goal_time = -0.15
 				}
-			
-			}
-			
+		}	
 		caravanmilitia = {
 		
 			picture = idea_generic_local_self_management
@@ -32,7 +31,7 @@ ideas = {
 					defense = 0.05
 				} 
 			  }
-		    }
+		}
 		
 		settler_nation = {
             
@@ -86,6 +85,7 @@ ideas = {
 			
 			modifier = {
 				conscription = 0.01
+				army_core_defence_factor = 0.05
 			}
 	    }
 	
@@ -99,7 +99,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				research_time_factor = -0.03	
+				research_time_factor = -0.03
 			}
 	    }	
 	
@@ -127,6 +127,7 @@ ideas = {
 			
 			modifier = {
 			enemy_partisan_effect = -0.15
+			industry_repair_factor = 0.1
 		    }
 		}
     tato_farming = {
@@ -139,7 +140,7 @@ ideas = {
 			removal_cost = -1
 		
 			modifier = {
-			MONTHLY_POPULATION = 0.20
+			MONTHLY_POPULATION = 0.05
 		    }
 		}
 		
@@ -153,7 +154,7 @@ ideas = {
 			removal_cost = -1
 		
 			modifier = {
-			MONTHLY_POPULATION = 0.25
+			MONTHLY_POPULATION = 0.1
 		    }
 		}			
 	enforced_trade_laws = {
@@ -179,7 +180,7 @@ ideas = {
 			removal_cost = -1
 		
 			modifier = {
-			industry_repair_factor = 0.1
+			    industry_repair_factor = 0.1
 		    }
 		}
     wall_construction = {
@@ -192,7 +193,8 @@ ideas = {
 			removal_cost = -1
 		
 			modifier = {
-		    production_speed_bunker_factor = 0.1
+		        production_speed_bunker_factor = 0.1
+				max_dig_in = 5
 		    }
 		}
 	established_armory = {
@@ -205,9 +207,18 @@ ideas = {
 			removal_cost = -1
 		
 			modifier = {
-		    production_speed_arms_factory_factor = 0.1
+		       production_speed_arms_factory_factor = 0.1
 		    }
-		}
+			equipment_bonus = {
+			   infantry_weapons = {
+				build_cost_ic = -0.10
+			   }
+			   militia = {
+				soft_attack = 0.05
+				defense = 0.05
+			   } 
+		    }
+	}
     intellectuals = {
 		
 			picture = generic_research_bonus
@@ -276,8 +287,8 @@ ideas = {
 				support_equipment = {
 					build_cost_ic = -0.1
 				}
-			}
-		}	
+			  }
+	}	
 	settler_robco = {
 		
 			picture = generic_license_production
@@ -287,12 +298,15 @@ ideas = {
 			
 			removal_cost = -1
 		
-			  equipment_bonus = {
-				robot_equipment = {
+			equipment_bonus = {
+			    robot_equipment = {
 					build_cost_ic = -0.1
 				}
 			}
-		}	
+			modifier = {
+				research_time_factor = -0.03
+			}
+	}
 	oligarchical_power = {
 			
 			picture = rom_carol_ii_hedonist
@@ -303,7 +317,8 @@ ideas = {
 			removal_cost = -1
 		
 			modifier = {
-			industrial_capacity_factory = 0.05
+			    industrial_capacity_factory = 0.05
+				elites_drift = 0.05
 		    }
 		}
 	settler_monopoly = {
@@ -317,6 +332,8 @@ ideas = {
 			
 			modifier = {
 				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.05
+				elites_drift = 0.05
 			}
 		}
 	eliminating_rivals = {
@@ -345,26 +362,29 @@ ideas = {
 			modifier = {
 				enemy_justify_war_goal_time = 0.20
 				political_power_gain = 0.5
+				people_drift = 0.05
 			}
 			
-		}
-	
-			
-			settler_subsidized_weapon_manufacturers = {
+	}	
+	settler_subsidized_weapon_manufacturers = {
 		
-			picture = idea_generic_local_self_management
+		picture = idea_generic_local_self_management
 			
-			allowed = {
+		allowed = {
 			}
 			
-			removal_cost = -1
+		removal_cost = -1
 
-			  equipment_bonus = {
-				infantry_weapons = {
-					build_cost_ic = -0.10
-				} 
-			  }
-		    }
+		equipment_bonus = {
+			infantry_weapons = {
+				build_cost_ic = -0.10
+			}
+			militia = {
+				soft_attack = 0.05
+				defense = 0.05
+			} 
+		}
+	}
     militia_posters = {
 			
 			picture = Bitter_Loser
