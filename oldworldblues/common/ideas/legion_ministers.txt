@@ -1,0 +1,296 @@
+ideas = {
+political_advisor = {
+		selene_advisor = {
+			
+			picture = selene_advisor_portrait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+			OR = {
+				has_completed_focus = ces_goddess_diana
+				has_completed_focus = ces_caesar_the_godslayer
+				}
+				NOT = { has_idea = selene_command }
+			}
+			traits = { mother_shaman }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}	
+		
+		bares_his_teeth_advisor = {
+			
+			picture = bares_his_teeth_advisor_portrait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+			OR = {
+				has_completed_focus = ces_shottol_god_of_dogs
+				has_completed_focus = ces_legion_mongrels
+				}
+				NOT = { has_idea = bares_his_teeth_command }
+			}
+			traits = { caesars_hound }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+        
+		carmine_advisor = {
+			
+			picture = carmine_command_portait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+				OR = {
+				has_completed_focus = ces_wyatt_the_demon
+				has_completed_focus = ces_legion_outlaws
+				}
+				NOT = { has_idea = carmine_command }
+			}
+			traits = { arizona_ranger }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+
+        earnhardt_advisor = {
+			
+			picture = earnhardt_advisor_portrait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+			OR = {
+				has_completed_focus = ces_the_cult_of_nas
+				has_completed_focus = ces_taming_the_city
+				}
+				NOT = { has_idea = earnhardt_command }
+			}
+			traits = { speed_demon }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		vulpes_inculta_advisor = {
+			
+			picture = vulpes_inculta_minister
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+				NOT = { has_idea = vulpes_inculta_command }
+			}
+			traits = { fox_cruelty }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		lucius_advisor = {
+			
+			picture = lucius_minister
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+				NOT = { has_idea = lucius_command }
+			}
+			traits = { total_war_tactician }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	high_command = {
+		selene_command = {
+			
+			picture = selene_command_portrait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+			OR = {
+				has_completed_focus = ces_goddess_diana
+				has_completed_focus = ces_caesar_the_godslayer
+				}
+				NOT = { has_idea = selene_advisor }
+			}
+			traits = { mother_shaman }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		bares_his_teeth_command = {
+			
+			picture = bares_his_teeth_command_portrait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+			OR = {
+				has_completed_focus = ces_shottol_god_of_dogs
+				has_completed_focus = ces_legion_mongrels
+				}
+				NOT = { has_idea = bares_his_teeth_advisor }
+			}
+			traits = { war_dog }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}	
+
+        carmine_command = {
+			
+			picture = carmine_command_portrait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+			OR = {
+				has_completed_focus = ces_wyatt_the_demon
+				has_completed_focus = ces_legion_outlaws
+				}
+				NOT = { has_idea = carmine_advisor }
+			}
+			traits = { bushranger }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+
+        earnhardt_command = {
+			
+			picture = earnhardt_command_portrait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+			OR = {
+				has_completed_focus = ces_the_cult_of_nas
+				has_completed_focus = ces_taming_the_city
+				}
+				NOT = { has_idea = earnhardt_advisor }
+			}
+			traits = { pit_lord }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		lucius_command = {
+			
+			picture = lucius_minister			
+			allowed = { original_tag = CES # Unlocked via focus }
+			available = 
+			{
+				NOT = { has_idea = lucius_advisor }
+			}
+			traits = { praetorian_prefect }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		vulpes_inculta_command = {
+			
+			picture = vulpes_inculta_minister
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+				NOT = { has_idea = vulpes_inculta_advisor }
+			}
+			traits = { earth_scorcher }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	
+army_chief = {
+                
+        malpais_legatus = {
+			
+			picture = malpais_legate_chief
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = { NOT = 
+							{ OR = 
+								{ 
+								has_completed_focus = ces_the_burned_man
+								has_completed_focus = ces_triumph_at_the_dam 
+								} 
+							} 
+						}
+						
+			traits = { army_chief_offensive_3 }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	
+	 lanius_legatus = {
+			
+			picture = lanius_legate_chief
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = { OR = 
+							{ 
+							has_completed_focus = ces_the_burned_man
+							has_completed_focus = ces_triumph_at_the_dam 
+							} 
+						}
+						
+			traits = { monster_of_the_east_chief }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+ 	}
+ }
