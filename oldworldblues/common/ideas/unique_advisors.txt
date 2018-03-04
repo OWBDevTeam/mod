@@ -171,119 +171,66 @@ political_advisor = {
 		zachariah_rigby = {
 					
 				picture = zachariah_rigby_advisor
-					
 				allowed = { original_tag = NCR }
 				available = { has_completed_focus = ncr_grdeals }
-					
 				traits = { gun_runner }
 			}
 			
 		julie_farkas = {
 					
 				picture = julie_farkas_advisor
-					
 				allowed = { original_tag = NCR }
 				available = { has_completed_focus = ncr_followers }
-					
 				traits = { follower_of_the_apocalypse }
 			}
 	}
 	high_command = {
-		selene_command = {
-			
-			picture = selene_command_portait
-			
-			allowed = {
-				original_tag = CES # Unlocked via focus
-			}
-			available = 
-			{
-				OR = {
-				has_completed_focus = ces_goddess_diana
-				has_completed_focus = ces_caesar_the_godslayer
-				}
-				NOT = { has_idea = selene_advisor }
-			}
+		selene_command = { 
+		        picture = selene_command_portait
+			allowed = { original_tag = CES # Unlocked via focus }
+			available = { OR = { has_completed_focus = ces_goddess_diana
+				             has_completed_focus = ces_caesar_the_godslayer}
+				      NOT = { has_idea = selene_advisor } }
 			traits = { war_shaman }
-			
-			ai_will_do = {
-				factor = 10
-			}
+			ai_will_do = { factor = 10 }
 		}
 		
-		bares_his_teeth_command = {
-			
+		bares_his_teeth_command = {			
 			picture = bares_his_teeth_command_portrait
-			
-			allowed = {
-				original_tag = CES # Unlocked via focus
-			}
-			available = 
-			{
-			OR = {
-				has_completed_focus = ces_shottol_god_of_dogs
-				has_completed_focus = ces_legion_mongrels
-				}
-				NOT = { has_idea = bares_his_teeth_advisor }
-			}
+			allowed = { original_tag = CES # Unlocked via focus }
+			available = { OR = { has_completed_focus = ces_shottol_god_of_dogs
+				             has_completed_focus = ces_legion_mongrels }
+				      NOT = { has_idea = bares_his_teeth_advisor } }
 			traits = { war_dog }
-			
-			ai_will_do = {
-				factor = 10
-			}
+			ai_will_do = { factor = 10 }
 		}	
 
-        carmine_command = {
+                carmine_command = {
 			
-			picture = selene_command_portait
-			
-			allowed = {
-				original_tag = CES # Unlocked via focus
-			}
-			available = 
-			{
-				OR = {
-				has_completed_focus = ces_wyatt_the_demon
-				has_completed_focus = ces_legion_outlaws
-				}
-				NOT = { has_idea = carmine_advisor }
-			}
+			picture = carmine_command_portait
+			allowed = { original_tag = CES # Unlocked via focus }
+			available = { OR = { has_completed_focus = ces_wyatt_the_demon
+				  	     has_completed_focus = ces_legion_outlaws }
+				      NOT = { has_idea = carmine_advisor } }
 			traits = { bushranger }
-			
-			ai_will_do = {
-				factor = 10
-			}
+			ai_will_do = { factor = 10 }
 		}
 
-        earnhardt_command = {
+                earnhardt_command = {
 			
 			picture = earnhardt_command_portrait
-			
-			allowed = {
-				original_tag = CES # Unlocked via focus
-			}
-			available = 
-			{
-			OR = {
-				has_completed_focus = ces_cult_of_nas
-				has_completed_focus = ces_cult_of_nas_minor
-				}
-				NOT = { has_idea = earnhardt_advisor }
-			}
+			allowed = { original_tag = CES # Unlocked via focus }
+			available = { OR = { has_completed_focus = ces_cult_of_nas
+					     has_completed_focus = ces_cult_of_nas_minor }
+				      NOT = { has_idea = earnhardt_advisor } }
 			traits = { pit_lord }
-			
-			ai_will_do = {
-				factor = 10
-			}
+			ai_will_do = { factor = 10 }
 		}
 		
 		lucius_command = {
 			
-			picture = lucius_minister
-			
-			allowed = {
-				original_tag = CES # Unlocked via focus
-			}
+			picture = lucius_minister			
+			allowed = { original_tag = CES # Unlocked via focus }
 			available = 
 			{
 				NOT = { has_idea = lucius_advisor }
@@ -362,6 +309,7 @@ political_advisor = {
 			ai_will_do = { factor = 1 }
 		}
 	}
+	}
 	
 army_chief = {
                 
@@ -380,10 +328,9 @@ army_chief = {
 	    picture = lanius_legate_chief
             allowed = { original_tag = CES }
             available = { OR = { has_completed_focus = ces_the_burned_man
-				has_completed_focus = ces_triumph_at_the_dam }
-            }
+				has_completed_focus = ces_triumph_at_the_dam } }
             traits = { monster_of_the_east_chief }
             ai_will_do = {  factor = 1 }
         }
  }
-}
+ }
