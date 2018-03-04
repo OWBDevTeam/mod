@@ -410,29 +410,47 @@ political_advisor = {
 army_chief = {
                 
         malpais_legatus = {
-	    
-	    picture = malpais_legate_chief
-            allowed = { original_tag = CES }
-            available = { NOT = { OR = { has_completed_focus = ces_the_burned_man
-	                              has_completed_focus = ces_triumph_at_the_dam } } }
-            traits = { army_chief_offensive_3 }
-            
-	    ai_will_do = {
-			factor = 1
+			
+			picture = malpais_legate_chief
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = { NOT = 
+							{ OR = 
+								{ 
+								has_completed_focus = ces_the_burned_man
+								has_completed_focus = ces_triumph_at_the_dam 
+								} 
+							} 
+						}
+						
+			traits = { army_chief_offensive_3 }
+			
+			ai_will_do = {
+				factor = 10
+			}
 		}
-        }
 	
 	 lanius_legatus = {
-	 
-	    picture = lanius_legate_chief
-            allowed = { original_tag = CES }
-            available = { OR = { has_completed_focus = ces_the_burned_man
-				has_completed_focus = ces_triumph_at_the_dam } }
-            traits = { monster_of_the_east_chief }
-           
-	   ai_will_do = {
-			factor = 1
+			
+			picture = lanius_legate_chief
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = { OR = 
+							{ 
+							has_completed_focus = ces_the_burned_man
+							has_completed_focus = ces_triumph_at_the_dam 
+							} 
+						}
+						
+			traits = { monster_of_the_east_chief }
+			
+			ai_will_do = {
+				factor = 10
+			}
 		}
-        }
- }
+ 	}
  }
