@@ -185,60 +185,92 @@ political_advisor = {
 			}
 	}
 	high_command = {
-		selene_command = { 
-		
-		        picture = selene_command_portait
-			allowed = { original_tag = CES # Unlocked via focus }
-			available = { OR = { has_completed_focus = ces_goddess_diana
-				             has_completed_focus = ces_caesar_the_godslayer }
-				      NOT = { has_idea = selene_advisor } }
-			traits = { war_shaman }
+		selene_command = {
+			
+			picture = selene_command_portrait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+			OR = {
+				has_completed_focus = ces_goddess_diana
+				has_completed_focus = ces_caesar_the_godslayer
+				}
+				NOT = { has_idea = selene_advisor }
+			}
+			traits = { mother_shaman }
 			
 			ai_will_do = {
-			factor = 1
-		        }
+				factor = 10
+			}
 		}
 		
 		bares_his_teeth_command = {
-		
+			
 			picture = bares_his_teeth_command_portrait
-			allowed = { original_tag = CES # Unlocked via focus }
-			available = { OR = { has_completed_focus = ces_shottol_god_of_dogs
-				             has_completed_focus = ces_legion_mongrels }
-				      NOT = { has_idea = bares_his_teeth_advisor } }
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+			OR = {
+				has_completed_focus = ces_shottol_god_of_dogs
+				has_completed_focus = ces_legion_mongrels
+				}
+				NOT = { has_idea = bares_his_teeth_advisor }
+			}
 			traits = { war_dog }
 			
 			ai_will_do = {
-			        factor = 1
-		        }
+				factor = 10
+			}
 		}	
 
-                carmine_command = {
+        carmine_command = {
 			
-			picture = carmine_command_portait
-			allowed = { original_tag = CES # Unlocked via focus }
-			available = { OR = { has_completed_focus = ces_wyatt_the_demon
-				  	     has_completed_focus = ces_legion_outlaws }
-				      NOT = { has_idea = carmine_advisor } }
+			picture = carmine_command_portrait
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+			OR = {
+				has_completed_focus = ces_wyatt_the_demon
+				has_completed_focus = ces_legion_outlaws
+				}
+				NOT = { has_idea = carmine_advisor }
+			}
 			traits = { bushranger }
 			
 			ai_will_do = {
-			        factor = 10
-		        }
+				factor = 10
+			}
 		}
 
-                earnhardt_command = {
+        earnhardt_command = {
 			
 			picture = earnhardt_command_portrait
-			allowed = { original_tag = CES # Unlocked via focus }
-			available = { OR = { has_completed_focus = ces_the_cult_of_nas
-				             has_completed_focus = ces_taming_the_city }
-				      NOT = { has_idea = earnhardt_advisor } }
+			
+			allowed = {
+				original_tag = CES # Unlocked via focus
+			}
+			available = 
+			{
+			OR = {
+				has_completed_focus = ces_the_cult_of_nas
+				has_completed_focus = ces_taming_the_city
+				}
+				NOT = { has_idea = earnhardt_advisor }
+			}
 			traits = { pit_lord }
 			
 			ai_will_do = {
-			        factor = 10
-		        }
+				factor = 10
+			}
 		}
 		
 		lucius_command = {
@@ -275,70 +307,103 @@ political_advisor = {
 		}
 		
 		major_dhatri = {
-		
-			picture = major_dhatri_command 
-			allowed = { original_tag = NCR # Unlocked via focus }
+			
+			picture = major_dhatri_command
+			
+			allowed = {
+				original_tag = NCR # Unlocked via focus
+			}
+			
 			traits = { first_recon_commander }
 			
 			ai_will_do = {
-			factor = 1
-		}
+				factor = 10
+			}
 		}
 		
 		colonel_royez = {
 			
 			picture = colonel_royez_command
-			allowed = { original_tag = NCR }
-			available = { has_completed_focus = ncr_mojave }
-			traits = { all_american_badass}
+			
+			allowed = {
+				original_tag = NCR # Unlocked via focus
+			}
+			
+			available = 
+			{
+				has_completed_focus = ncr_mojave
+				}
+			
+			traits = { all_american_badass }
 			
 			ai_will_do = {
-			factor = 1
-		}
+				factor = 10
+			}
 		}
 		
 		general_oliver = {
 			
 			picture = general_oliver_command
-			allowed = { original_tag = NCR }
-			traits = { general_wait_and_see  }
+			
+			allowed = {
+				original_tag = NCR # Unlocked via focus
+			}
+			
+			available = 
+			{
+				has_completed_focus = ncr_protege
+				}
+			
+			traits = { general_wait_and_see }
 			
 			ai_will_do = {
-			factor = 1
-		}
+				factor = 10
+			}
 		}
 		
 		chief_hanlon = {
 			
 			picture = chief_hanlon_command
-			allowed = { original_tag = NCR }
+			
+			allowed = {
+				original_tag = NCR # Unlocked via focus
+			}
+			
 			traits = { war_hero }
 			
 			ai_will_do = {
-			factor = 1
-		}
+				factor = 10
+			}
 		}
 		
 		colonel_moore = {
-		
+			
 			picture = colonel_moore_command
-			allowed = { original_tag = NCR }
+			
+			allowed = {
+				original_tag = NCR # Unlocked via focus
+			}
+			
 			traits = { unblinking_hawk }
 			
 			ai_will_do = {
-			factor = 1
-		}
+				factor = 10
+			}
 		}
 		
 		colonel_hsu = {
 			
 			picture = colonel_hsu_command
-			allowed = { original_tag = NCR }
+			
+			allowed = {
+				original_tag = NCR # Unlocked via focus
+			}
+			
 			traits = { calm_leader }
 			
 			ai_will_do = {
-			factor = 1
-		}
+				factor = 10
+			}
 		}
 	}
 	
