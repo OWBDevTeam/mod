@@ -113,10 +113,10 @@ country_event = {
 		
 		set_cosmetic_tag = ENC
 		create_country_leader = {
-			name = "Sergeant Dornan"
+			name = "Governor Arch Dornan"
 			id = 791
 			desc = "Dornan_DESC"
-			picture = "gfx/leaders/ENC/Portrait_Enclave_Generic.dds"
+			picture = "gfx/leaders/NEW/Portrait_New_Reno_Arch_Dornan.dds"
 			expire = "3000.1.1"
 			ideology = militarist_technocracy
 			
@@ -175,9 +175,13 @@ country_event = {
 				}
 			}
 			
-			set_party_name = { ideology = ruler 
+			set_party_name = { 
+			ideology = ruler 
 			long_name = "Warlord Thradd"
-			name = "Warlord Thradd" }
+			name = "Warlord Thradd" 
+			}
+			
+			set_cosmetic_tag = THR
 			
 			create_faction = "Master's New Army"
 			
@@ -191,14 +195,6 @@ country_event = {
 				ruling_party = ruler
 				elections_allowed = no
 			}
-			
-			#NEW = {
-			    country_event = { days = 5 id = nf_reno.15 }
-			}
-			
-			hidden_effect = {
-				load_oob = thraddlegion
-		    }#
 		}
 	}	
 }

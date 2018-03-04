@@ -1649,6 +1649,7 @@ focus_tree = {
 			add_state_core = 57
 			add_state_core = 59
 			add_state_core = 454
+			add_state_core = 467
 		}
 
 	}
@@ -1853,7 +1854,7 @@ focus_tree = {
 			create_field_marshal = {
 				name = "Arch Dornan"
 				desc = "Dornan_DESC"
-				picture = "gfx/leaders/ENC/Portrait_Enclave_Generic.dds"
+				picture = "Portrait_New_Reno_Arch_Dornan.dds"
 				skill = 6
 			}
 			load_oob = biomedenclave
@@ -1870,6 +1871,7 @@ focus_tree = {
 		cost = 8.6
 		completion_reward = {
 			614 = {
+			If = {
 			limit = {
 				free_building_slots = {
 					building = arms_factory
@@ -1900,6 +1902,7 @@ focus_tree = {
 				}	
 			}
 		}
+	 }
 	}
 	focus = {
 		id = new_vertibird
@@ -1928,6 +1931,7 @@ focus_tree = {
 		cost = 8.6
 		completion_reward = {
 			285 = {
+			If = {
 			limit = {
 				free_building_slots = {
 					building = arms_factory
@@ -1949,7 +1953,8 @@ focus_tree = {
 							}
 						}
 					}
-				}	
+				}
+            }				
 			add_extra_state_shared_building_slots = 3
 			add_building_construction = {
 				type = arms_factory
@@ -2243,6 +2248,7 @@ focus_tree = {
 		completion_reward = {
 			NEW = {
 				285 = {
+			If = {
 				limit = {
 					free_building_slots = {
 						building = arms_factory
@@ -2275,6 +2281,7 @@ focus_tree = {
 			}
 			TRL = {
 				235 = {
+			If = {
 				limit = {
 					free_building_slots = {
 						building = arms_factory
@@ -2306,7 +2313,9 @@ focus_tree = {
 				}
 			}
 		}
-	}
+	  }
+    } 
+  }
 	focus = {
 		id = new_for_master
 		icon = GFX_goal_NEW_for_the_master

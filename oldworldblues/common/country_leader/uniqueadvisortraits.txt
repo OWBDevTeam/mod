@@ -122,15 +122,15 @@ leader_traits = {
 		random = no
 		intellectuals_drift = 0.025
 		 equipment_bonus = {
-            melee_equipment_1 = {
+            		melee_equipment_1 = {
                 instant = yes
                 breakthrough = 0.25
             }
-			 melee_equipment_2 = {
+			melee_equipment_2 = {
                 instant = yes
                 breakthrough = 0.25
             }
-			 melee_equipment_3 = {
+			melee_equipment_3 = {
                 instant = yes
                 breakthrough = 0.25
             }
@@ -151,7 +151,7 @@ leader_traits = {
 		}
 	}
 	
-	monster_of_the_east = {
+	monster_of_the_east_chief = {
 		random = no
 		enemy_partisan_effect = -0.1
 		non_core_manpower = 0.05
@@ -220,4 +220,70 @@ leader_traits = {
 			factor = 1
 		}
 	}
+	
+	first_recon_commander = {
+		random = no
+		attrition = -0.12
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	all_american_badass = {
+		random = no
+		army_core_attack_factor = 0.075
+		army_core_defence_factor = 0.075
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	general_wait_and_see = {
+		random = no
+		army_defence_factor = -0.05
+		planning_speed = -0.2
+		max_planning = 0.15
+		equipment_bonus = {
+                          power_armor_equipment_1 = { instant = yes
+		                hardness = 0.10 }
+					}
+				
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	war_hero = {
+		random = no
+		unity_factor = 0.05
+		army_org_factor = 0.05
+		army_morale_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	unblinking_hawk = {
+		random = no
+		planning_speed = 0.1
+		justify_war_goal_time = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	calm_leader = {
+		random = no
+		army_org_factor = 0.1
+		supply_consumption_factor = -0.1
+		enemy_partisan_effect = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+        }
 }
