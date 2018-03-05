@@ -52,10 +52,10 @@ country_event = {
 		
 		WHT = {
 		    set_politics = {
-			    ruling_party = elites 
+			    ruling_party = ruler 
 				elections_allowed = no 
 			}
-			add_popularity = { ideology = elites popularity = 0.5 }
+			add_popularity = { ideology = ruler popularity = 0.5 }
 		}	
 		
 		add_opinion_modifier = { 
@@ -109,9 +109,9 @@ country_event = {
 		
 		EHT = {
 		    set_politics = {
-			    ruling_party = elites elections_allowed = no
+			    ruling_party = ruler elections_allowed = no
 			}
-			add_popularity = { ideology = elites popularity = 0.5 }
+			add_popularity = { ideology = ruler popularity = 0.5 }
 		}
 		
         set_country_flag = accepted_petition
@@ -267,7 +267,7 @@ country_event = {
 			desc = "Lanius_DESC"
 			picture = "Portrait_Lanius.dds"
 			expire = "3000.1.1"
-			ideology = feudalism
+			ideology = warlordship
 			id = 1007
 			
 			traits = {
@@ -280,7 +280,7 @@ country_event = {
 			desc = "Inculta_DESC"
 			picture = "Portrait_Inculta.dds"
 			expire = "3000.1.1"
-			ideology = oligarchy
+			ideology = conspiratory_oligarchy
 			id = 1005
 				
 			traits = {
@@ -291,30 +291,126 @@ country_event = {
 			limit = {
 				is_ai = no
 			}
-			start_civil_war = {
-				ideology = ruler
-				size = 0.55
-				capital = 522
-				states_filter = {
-					owner = { original_tag = CES }
-					is_CES_civil_war_non_eligable = no					
+			if = {
+				limit = { 
+					AND = {
+						elites > 0 
+						NOT = { 
+							OR = {
+								elites > 0.7 
+								elites > 0.9 #Because really if you've had Vulpes this whole time why would you then choose Lanius 
+							}
+						}
+					}
 				}
-				keep_unit_leaders = { 1001 }
+				start_civil_war = {
+					ideology = elites
+					size = 0.55
+					capital = 522
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1003 1002 1004 }
+				}
+			}
+			if = {
+				limit = { 
+					AND = {
+						elites > 0.7 
+						NOT = { 
+							elites > 0.9 
+						}
+					}
+				}
+				start_civil_war = {
+					ideology = elites
+					size = 0.65
+					capital = 522
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1003 1002 1004 }
+				}
+			}
+			if = {
+				limit = { 
+					elites > 0.9 
+				}
+				start_civil_war = {
+					ideology = elites
+					size = 0.75
+					capital = 522
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1003 1002 1004 }
+				}
 			}
 		}
 		if = {
 			limit = {
 				is_ai = yes
 			}
-			start_civil_war = {
-				ideology = ruler
-				size = 0.25
-				capital = 522
-				states_filter = {
-					owner = { original_tag = CES }
-					is_CES_civil_war_non_eligable = no					
+			if = {
+				limit = { 
+					AND = {
+						elites > 0 
+						NOT = { 
+							OR = {
+								elites > 0.7 
+								elites > 0.9 #Because really if you've had Vulpes this whole time why would you then choose Lanius 
+							}
+						}
+					}
 				}
-				keep_unit_leaders = { 1003 1002 1004 }
+				start_civil_war = {
+					ideology = elites
+					size = 0.25
+					capital = 522
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1003 1002 1004 }
+				}
+			}
+			if = {
+				limit = { 
+					AND = {
+						elites > 0.7 
+						NOT = { 
+							elites > 0.9 
+						}
+					}
+				}
+				start_civil_war = {
+					ideology = elites
+					size = 0.35
+					capital = 522
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1003 1002 1004 }
+				}
+			}
+			if = {
+				limit = { 
+					elites > 0.9 
+				}
+				start_civil_war = {
+					ideology = elites
+					size = 0.45
+					capital = 522
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1003 1002 1004 }
+				}
 			}
 		}
 		hidden_effect = {
@@ -324,7 +420,7 @@ country_event = {
 		random_country = {
 			limit = {
 				original_tag = CES
-				has_government = ruler
+				has_government = elites
 			}
 			set_cosmetic_tag = VLP
 			set_country_flag = legion_had_civil_war
@@ -346,7 +442,7 @@ country_event = {
 			desc = "Inculta_DESC"
 			picture = "Portrait_Inculta.dds"
 			expire = "3000.1.1"
-			ideology = oligarchy
+			ideology = conspiratory_oligarchy
 			id = 1005
 			
 			traits = {
@@ -356,7 +452,7 @@ country_event = {
 		}
 		
 		set_politics = {
-			ruling_party = ruler
+			ruling_party = elites
 			elections_allowed = no
 		}
 		
@@ -369,7 +465,7 @@ country_event = {
 			desc = "Lanius_DESC"
 			picture = "Portrait_Lanius.dds"
 			expire = "3000.1.1"
-			ideology = tribalism
+			ideology = warlordship
 			id = 1007
 				
 			traits = {
@@ -381,30 +477,126 @@ country_event = {
 			limit = {
 				is_ai = no
 			}
-			start_civil_war = {
-				ideology = elites
-				size = 0.45
-				capital = 522
-				states_filter = {
-					owner = { original_tag = CES }
-					is_CES_civil_war_non_eligable = no					
+			if = {
+				limit = { 
+					AND = {
+						ruler > 0 
+						NOT = { 
+							OR = {
+								ruler > 0.7 
+								ruler > 0.9 
+							}
+						}
+					}
 				}
-				keep_unit_leaders = { 1002 1003 1004 }
+				start_civil_war = {
+					ideology = ruler
+					size = 0.45
+					capital = 522
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1002 1003 1004 }
+				}
+			}
+			if = {
+				limit = { 
+					AND = {
+						ruler > 0.7 
+						NOT = { 
+							ruler > 0.9 
+						}
+					}
+				}
+				start_civil_war = {
+					ideology = ruler
+					size = 0.55
+					capital = 522
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1002 1003 1004 }
+				}
+			}
+			if = {
+				limit = { 
+					ruler > 0.9 
+				}
+				start_civil_war = {
+					ideology = ruler
+					size = 0.65
+					capital = 522
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1002 1003 1004 }
+				}
 			}
 		}
 		if = {
 			limit = {
 				is_ai = yes
 			}
-			start_civil_war = {
-				ideology = elites
-				size = 0.70
-				capital = 522
-				states_filter = {
-					owner = { original_tag = CES }
-					is_CES_civil_war_non_eligable = no					
+			if = {
+				limit = { 
+					AND = {
+						ruler > 0 
+						NOT = { 
+							OR = {
+								ruler > 0.7 
+								ruler > 0.9 
+							}
+						}
+					}
 				}
-				keep_unit_leaders = { 1002 1003 1004 }
+				start_civil_war = {
+					ideology = ruler
+					size = 0.70
+					capital = 522
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1002 1003 1004 }
+				}
+			}
+			if = {
+				limit = { 
+					AND = {
+						ruler > 0.7 
+						NOT = { 
+							ruler > 0.9 
+						}
+					}
+				}
+				start_civil_war = {
+					ideology = ruler
+					size = 0.8
+					capital = 522
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1002 1003 1004 }
+				}
+			}
+			if = {
+				limit = { 
+					ruler > 0.9 
+				}
+				start_civil_war = {
+					ideology = ruler
+					size = 0.9
+					capital = 522
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1002 1003 1004 }
+				}
 			}
 		}
 		hidden_effect = {
@@ -414,10 +606,9 @@ country_event = {
 		random_country = {
 			limit = {
 				original_tag = CES
-				has_government = elites
+				has_government = ruler
 			}
 			set_country_flag = legion_had_civil_war
-			set_cosmetic_tag = CES
 		}
 		hidden_effect = {
 			every_owned_state = {
@@ -490,14 +681,109 @@ country_event = {
 			limit = {
 				is_ai = no
 			}
-			start_civil_war = {
-				ideology = intellectuals
-				size = 0.35
-				capital = 359
-				keep_unit_leaders = { 1001 1003 1004 }
-				states_filter = {
-					owner = { original_tag = CES }
-					is_CES_civil_war_non_eligable = no					
+			if = {
+				limit = { 
+					AND = {
+						intellectuals > 0 
+						NOT = { 
+							OR = {
+								intellectuals > 0.2 
+								intellectuals > 0.4 
+								intellectuals > 0.6
+								intellectuals > 0.8
+							}
+						}
+					}
+				}
+				start_civil_war = {
+					ideology = intellectuals
+					size = 0.35
+					capital = 359
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1001 1003 1004 }
+				}
+			}
+			if = {
+				limit = { 
+					AND = {
+						intellectuals > 0.2 
+						NOT = { 
+							OR = {
+								intellectuals > 0.4 
+								intellectuals > 0.6
+								intellectuals > 0.8
+							}
+						}
+					}
+				}
+				start_civil_war = {
+					ideology = intellectuals
+					size = 0.45
+					capital = 359
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1001 1003 1004 }
+				}
+			}
+			if = {
+				limit = { 
+					AND = {
+						intellectuals > 0.4
+						NOT = { 
+							OR = {
+								intellectuals > 0.6
+								intellectuals > 0.8
+							}
+						}
+					}
+				}
+				start_civil_war = {
+					ideology = intellectuals
+					size = 0.55
+					capital = 359
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1001 1003 1004 }
+				}
+			}
+			if = {
+				limit = { 
+					AND = {
+						intellectuals > 0.6
+						NOT = { 
+							intellectuals > 0.8
+						}
+					}
+				}
+				start_civil_war = {
+					ideology = intellectuals
+					size = 0.65
+					capital = 359
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1001 1003 1004 }
+				}
+			}
+			if = {
+				limit = { intellectuals > 0.8 }
+				start_civil_war = {
+					ideology = intellectuals
+					size = 0.75
+					capital = 359
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1001 1003 1004 }
 				}
 			}
 		}
@@ -505,7 +791,21 @@ country_event = {
 			limit = {
 				is_ai = yes
 			}
-			start_civil_war = {
+			if = {
+				limit = { 
+					AND = {
+						intellectuals > 0 
+						NOT = { 
+							OR = {
+								intellectuals > 0.2 
+								intellectuals > 0.4 
+								intellectuals > 0.6
+								intellectuals > 0.8
+							}
+						}
+					}
+				}
+				start_civil_war = {
 					ideology = intellectuals
 					size = 0.2
 					capital = 359
@@ -514,7 +814,89 @@ country_event = {
 						is_CES_civil_war_non_eligable = no					
 					}
 					keep_unit_leaders = { 1001 1003 1004 }
+				}
 			}
+			if = {
+				limit = { 
+					AND = {
+						intellectuals > 0.2 
+						NOT = { 
+							OR = {
+								intellectuals > 0.4 
+								intellectuals > 0.6
+								intellectuals > 0.8
+							}
+						}
+					}
+				}
+				start_civil_war = {
+					ideology = intellectuals
+					size = 0.3
+					capital = 359
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1001 1003 1004 }
+				}
+			}
+			if = {
+				limit = { 
+					AND = {
+						intellectuals > 0.4
+						NOT = { 
+							OR = {
+								intellectuals > 0.6
+								intellectuals > 0.8
+							}
+						}
+					}
+				}
+				start_civil_war = {
+					ideology = intellectuals
+					size = 0.4
+					capital = 359
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1001 1003 1004 }
+				}
+			}
+			if = {
+				limit = { 
+					AND = {
+						intellectuals > 0.6
+						NOT = { 
+							intellectuals > 0.8
+						}
+					}
+				}
+				start_civil_war = {
+					ideology = intellectuals
+					size = 0.5
+					capital = 359
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1001 1003 1004 }
+				}
+			}
+			if = {
+				limit = { intellectuals > 0.8 }
+				start_civil_war = {
+					ideology = intellectuals
+					size = 0.6
+					capital = 359
+					states_filter = {
+						owner = { original_tag = CES }
+						is_CES_civil_war_non_eligable = no					
+					}
+					keep_unit_leaders = { 1001 1003 1004 }
+				}
+			}
+			
 		}
 		random_country = {
 			limit = {
@@ -525,7 +907,7 @@ country_event = {
 			set_politics = {
 				parties = {
 					people = { popularity = 0 }
-					elites = { popularity = 15 }
+					ruler = { popularity = 15 }
 					intellectuals = { popularity = 35 }
 					ruler = { popularity = 50 }
 				}
