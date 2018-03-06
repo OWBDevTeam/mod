@@ -2335,6 +2335,15 @@ focus_tree = {
 				}
 				
 				BLP = {
+					transfer_state = 97
+					transfer_state = 325
+					transfer_state = 176
+					add_to_war = {
+						targeted_alliance = CES
+						enemy = NCR
+					}				
+				}
+				BVC = {
 					transfer_state = 651
 					transfer_state = 650
 					transfer_state = 41
@@ -2342,15 +2351,6 @@ focus_tree = {
 					transfer_state = 158
 					transfer_state = 136
 					transfer_state = 481
-					add_to_war = {
-						targeted_alliance = CES
-						enemy = NCR
-					}				
-				}
-				BVC = {
-					transfer_state = 97
-					transfer_state = 325
-					transfer_state = 176
 					add_to_war = {
 						targeted_alliance = CES
 						enemy = NCR
@@ -3286,6 +3286,10 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = ces_follower_slaves
+		}
+		available = {
+			owns_state = 46
+			controls_state = 46
 		}
 		x = 24
 		y = 14
