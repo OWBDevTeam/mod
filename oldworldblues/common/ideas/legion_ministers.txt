@@ -96,7 +96,10 @@ political_advisor = {
 				original_tag = CES 
 			}
 			available = 
-			{
+			{	
+				OR = { 
+					has_country_leader = { id = 1000 }
+					has_country_leader = { id = 1005 } }
 				NOT = { has_idea = vulpes_inculta_command }
 			}
 			traits = { fox_cruelty }
@@ -115,7 +118,9 @@ political_advisor = {
 			}
 			available = 
 			{
-				NOT = { has_idea = lucius_command }
+				NOT = { 
+				has_idea = lucius_command
+				country exists = BOM }
 			}
 			traits = { total_war_tactician }
 			
@@ -218,7 +223,9 @@ political_advisor = {
 			picture = lucius_minister			
 			allowed = { original_tag = CES }
 			available = {
-				NOT = { has_idea = lucius_advisor }
+				NOT = { 
+				has_idea = lucius_advisor
+				country exists = BOM }
 			}
 			traits = { praetorian_prefect }
 			
@@ -235,6 +242,9 @@ political_advisor = {
 			}
 			available = 
 			{
+				OR = { 
+					has_country_leader = { id = 1000 }
+					has_country_leader = { id = 1005 } }
 				NOT = { has_idea = vulpes_inculta_advisor }
 			}
 			traits = { earth_scorcher }
@@ -277,11 +287,12 @@ army_chief = {
 			allowed = {
 				original_tag = CES 
 			}
-			available = { OR = 
-							{ 
-							has_completed_focus = ces_the_burned_man
-							has_completed_focus = ces_triumph_at_the_dam 
-							} 
+			available = { 
+			has_country_leader = { id = 1000 }
+			has_country_leader = { id = 1006 }
+			OR = 
+				{ has_completed_focus = ces_the_burned_man
+				  has_completed_focus = ces_triumph_at_the_dam } 
 						}
 						
 			traits = { monster_of_the_east_chief }
