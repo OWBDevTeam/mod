@@ -160,7 +160,7 @@ focus_tree = {
 		x = 2
 		y = 6
 		completion_reward = {
-			add_national_unity = -0.1
+			add_stability = -0.01
             add_ideas = legion_nf_shottol_god_of_dogs
 		}
 
@@ -263,7 +263,7 @@ focus_tree = {
 		x = 6
 		y = 6
 		completion_reward = {
-			add_national_unity = -0.1
+			add_stability = -0.01
             add_ideas = legion_nf_goddess_diana
 			hidden_effect = {
 				set_country_flag = caesarlives
@@ -287,7 +287,7 @@ focus_tree = {
 		x = 8
 		y = 6
 		completion_reward = {
-			add_national_unity = 0.1
+			add_stability = -0.01
             add_ideas = legion_nf_caesar_the_godslayer
 		}
 	}
@@ -369,7 +369,8 @@ focus_tree = {
 		x = 12
 		y = 6
 		completion_reward = {
-			add_national_unity = -0.1
+			add_stability = -0.1
+			add_war_support = -0.05
             add_ideas = legion_nf_cult_of_nas
             custom_effect_tooltip = cult_of_nas_tt
 			hidden_effect = {
@@ -479,7 +480,8 @@ focus_tree = {
 		x = 16
 		y = 6
 		completion_reward = {
-			add_national_unity = -0.1
+			add_stability = -0.1
+			add_war_support = -0.05
 			add_ideas = legion_nf_wyatt_the_demon
 		}
 	}
@@ -2039,7 +2041,8 @@ focus_tree = {
 		x = 4
 		y = 18
 		completion_reward = {
-            add_national_unity = 0.05
+            add_stability = 0.05
+			add_war_support = 0.025
             
 			if = {
                 limit = {
@@ -2400,7 +2403,10 @@ focus_tree = {
 		x = 8
 		y = 17
 		completion_reward = {
-			NCR = { add_national_unity = -0.05 }
+			NCR = { 
+				add_stability = -0.05
+				add_war_support = 0.025
+			}
 		}
 
 	}
@@ -3358,7 +3364,8 @@ focus_tree = {
 		x = 29
 		y = 5
 		completion_reward = {
-			add_national_unity = -0.05
+			add_stability = -0.05
+			add_war_support = -0.025
 			add_ideas = legion_nf_numeri 
 		}
 	}
