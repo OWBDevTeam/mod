@@ -120,7 +120,7 @@ political_advisor = {
 			{
 				NOT = { 
 				has_idea = lucius_command
-				country exists = BOM }
+				country_exists = BOM }
 			}
 			traits = { total_war_tactician }
 			
@@ -225,7 +225,7 @@ political_advisor = {
 			available = {
 				NOT = { 
 				has_idea = lucius_advisor
-				country exists = BOM }
+				country_exists = BOM }
 			}
 			traits = { praetorian_prefect }
 			
@@ -288,8 +288,9 @@ army_chief = {
 				original_tag = CES 
 			}
 			available = { 
-			has_country_leader = { id = 1000 }
-			has_country_leader = { id = 1006 }
+			OR = {
+				has_country_leader = { id = 1000 }
+				has_country_leader = { id = 1006 } }
 			OR = 
 				{ has_completed_focus = ces_the_burned_man
 				  has_completed_focus = ces_triumph_at_the_dam } 
