@@ -189,7 +189,10 @@ guiTypes = {
 			position = { x = 0 y = 130 }
 			size = { width = 440 height = 100%% }
 			verticalScrollbar = "right_vertical_slider"
-			margin = { top = 13 left = 13 bottom = 15 right = 25}			
+			vertical_scroll_step = 50
+			scroll_wheel_factor = 40
+			smooth_scrolling = yes
+			margin = { top = 13 left = 13 bottom = 15 right = 25}
 			
 			background = {
 				name = "Background"
@@ -205,7 +208,7 @@ guiTypes = {
 				name = "item_grid"
 				position = { x = 1 y = 5 }
 				size = { width = 100% height = 100%% }
-				slotsize = { width = 500 height = 52 }
+				slotsize = { width = 500 height = 1 }
 				max_slots_horizontal = 1
 				format = "UPPER_LEFT"
 			}	
@@ -214,7 +217,7 @@ guiTypes = {
 		containerWindowType = {
 			name = "possible_constructions"
 			position = { x = 438 y = 48 }
-			size = { width = 104 height = 585 }
+			size = { width = 104 height = 672 } # 585
 			
 #			background = {
 #				name = "Background"
@@ -223,49 +226,49 @@ guiTypes = {
 
 			iconType = {
 				name = "constructions_bg1"
-				position = { x = 0 y = 66 }
+				position = { x = 0 y = 6 }
 				quadTextureSprite = "GFX_constructions_bg2"
 			}
 
 			iconType = {
 				name = "constructions_bg2"
-				position = { x = 0 y = 350 }
+				position = { x = 0 y = 152 }
 				quadTextureSprite = "GFX_constructions_bg1"
 			}
 			
 			iconType = {
 				name = "constructions_bg3"
-				position = { x = 0 y = 208 }
+				position = { x = 0 y = 427 }
 				quadTextureSprite = "GFX_constructions_bg2"
 			}
 
 			iconType = {
 				name = "constructions_bg4"
-				position = { x = 0 y = 0 }
+				position = { x = 0 y = 572 }
 				quadTextureSprite = "GFX_constructions_bg3"
 			}
 
 			iconType = {
 				name = "state_constructions"
-				position = { x = 3 y = 68 }
+				position = { x = 5 y = 9 }
 				quadTextureSprite = "GFX_state_constructions"
 			}
 
 			iconType = {
 				name = "shared_constructions"
-				position = { x = 3 y = 353 }
+				position = { x = 5 y = 155 }
 				quadTextureSprite = "GFX_shared_constructions"
 			}
 
 			iconType = {
 				name = "province_constructions"
-				position = { x = 3 y = 211 }
+				position = { x = 5 y = 430 } # 343
 				quadTextureSprite = "GFX_province_constructions"
 			}
 			
 			gridBoxType = {
 				name = "non_shared_item_grid"
-				position = { x = 8 y = 112 }
+				position = { x = 8 y = 51 }
 				size = { width = 100% height = 100% }
 				slotsize = { width = 46 height = 44 }
 				max_slots_horizontal = 2
@@ -274,7 +277,7 @@ guiTypes = {
 			
 			gridBoxType = {
 				name = "shared_item_grid"
-				position = { x = 8 y = 396 }
+				position = { x = 8 y = 196 }
 				size = { width = 100% height = 100% }
 				slotsize = { width = 46 height = 44 }
 				max_slots_horizontal = 2
@@ -283,7 +286,7 @@ guiTypes = {
 			
 			gridBoxType = {
 				name = "province_item_grid"
-				position = { x = 8 y = 256 }
+				position = { x = 8 y = 472 }
 				size = { width = 100% height = 100% }
 				slotsize = { width = 46 height = 44 }
 				max_slots_horizontal = 2
@@ -293,7 +296,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "convert_ic_button"
-			position = { x = -81 y = 58 }
+			position = { x = -81 y = 631 }
 			quadTextureSprite ="GFX_convert_ic_button"
 			buttonFont = "Main_14_black"
 			Orientation = "UPPER_RIGHT"
@@ -303,7 +306,7 @@ guiTypes = {
 				
 		buttonType = {
 			name = "minimize"
-			position = { x = -100 y = 12 }
+			position = { x = -74 y = 690 }
 			quadTextureSprite ="GFX_production_line_arrow_left"
 			buttonFont = "Main_14_black"
 			Orientation = "UPPER_RIGHT"
@@ -312,7 +315,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "expand"
-			position = { x = -100 y = 12 }
+			position = { x = -74 y = 690 }
 			quadTextureSprite ="GFX_production_line_arrow_right"
 			buttonFont = "Main_14_black"
 			Orientation = "UPPER_RIGHT"
@@ -327,6 +330,15 @@ guiTypes = {
 			shortcut = "ESCAPE"
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
+		}
+		
+		#todo remove, text icons are not being displayed unless they are in gui
+		buttonType = {
+			name = "temp"
+			position = { x = -402 y = 9 }
+			quadTextureSprite ="GFX_backhoe_icon_small"
+			buttonFont = "Main_14_black"
+			Orientation = "UPPER_LEFT"
 		}
 		
 		iconType ={
@@ -368,6 +380,7 @@ guiTypes = {
 		background = {
 			name = "Background"
 			quadTextureSprite ="GFX_construction_entry_bg"
+			pdx_tooltip = "PRODUCTION_DRAG_N_DROP"
 		}
 
 		buttonType = {
@@ -583,6 +596,54 @@ guiTypes = {
 			name = "picture"
 			position = { x = 210 y = 25 }
 			spriteType = "GFX_traded_factories_icon"
+			centerposition = yes
+			
+			allwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "factories"
+			position = { x = 254 y = 17 }
+			textureFile = ""
+			font = "hoi_18b"
+			text = "-"
+			maxWidth = 50
+			maxHeight = 20
+			format = center
+			
+			allwaystransparent = yes
+		}		
+	}
+
+	containerWindowType = {
+		name = "static_project_factories_entry"
+		position = { x=0 y=0 }
+		size = { width = 400 height = 52 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_construction_special_entry_bg"
+		}
+		
+		instantTextboxType = {
+			name = "name"
+			position = { x = 20 y = 16 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "CONSTRUCTION_FACTORIES_PROJECTS_LABEL"
+			maxWidth = 250
+			maxHeight = 20
+			format = left
+			
+			allwaystransparent = yes
+		}
+		
+		iconType = {
+			name = "picture"
+			position = { x = 210 y = 26}
+			spriteType = "GFX_special_project_icon"
 			centerposition = yes
 			
 			allwaystransparent = yes
