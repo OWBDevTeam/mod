@@ -1,6 +1,7 @@
 ﻿division_template = {
-	name = "PA Division"
-
+	name = "Enclave Infantry"
+	is_locked = yes
+	
 	regiments = {
 		power_armour = { x = 0 y = 0 }
 		power_armour = { x = 0 y = 1 }
@@ -12,21 +13,31 @@
 		power_armour = { x = 1 y = 3 }
 	}
 }
+
 units = {
 
 	division {
-		name = "Enclave Remnants"
+		name = "1st Nevada Core"
 		location = 9139
-		division_template = "PA Division"
-		start_experience_factor = 1.0
+		division_template = "Enclave Infantry"
+		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
 	
 	division {
-		name = "Enclave Remnants"
+		name = "2nd Nevada Core"
 		location = 9139
-		division_template = "PA Division"
-		start_experience_factor = 1.0
+		division_template = "Enclave Infantry"
+		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
+	
+	division {
+		name = "3rd Nevada Core"
+		location = 9139
+		division_template = "Enclave Infantry"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	
 }
