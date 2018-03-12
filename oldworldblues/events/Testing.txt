@@ -161,3 +161,21 @@ country_event = {
 		}
 	}
 }
+# generate ACE
+country_event = {
+	id = test_event.9
+	title = test_event.9.t
+	desc = test_event.9.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	# male ACE
+	option = {
+		name = test_event.9.a
+		add_ace = { name = "MALE" surname = "ACE" callsign = "**TESTING**" type = fighter_genius is_female = no }
+    	} 
+	#  female ACE
+	option = {
+		name = test_event.9.a
+		add_ace = { name = "FEMALE" surname = "ACE" callsign = "**TESTING**" type = fighter_genius is_female = yes }
+    	} 
+}
