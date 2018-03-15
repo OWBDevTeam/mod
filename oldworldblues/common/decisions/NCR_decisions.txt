@@ -14,7 +14,7 @@ NCR_banditry_category = {
 		icon = generic_oppression
 		
 		available = {
-			has_completed_focus = ncr_rangerhq
+			has_completed_focus = NCR_pacify_the_countryside
 			has_country_flag = NCR_northern_bandits
 			divisions_in_state = {
 				state = 141	
@@ -87,7 +87,7 @@ NCR_banditry_category = {
 
 		complete_effect = {
 			custom_effect_tooltip = NCR_hunt_down_northern_bandits_tt
-			add_manpower = -200
+			add_manpower = -1000
 			
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
@@ -96,7 +96,7 @@ NCR_banditry_category = {
 
 			army_experience = 10
 
-			remove_mission = NCR_maintain_northern_control
+			remove_mission = NCR_northern_bandits_control
 			clr_country_flag = NCR_northern_bandits
 			if = {
 				limit = {
@@ -239,7 +239,7 @@ NCR_banditry_category = {
 
 		complete_effect = {
 			custom_effect_tooltip = NCR_hunt_down_eastern_bandits_tt
-			add_manpower = -200
+			add_manpower = -1000
 			
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
@@ -391,7 +391,7 @@ NCR_banditry_category = {
 
 		complete_effect = {
 			custom_effect_tooltip = NCR_hunt_down_western_bandits_tt
-			add_manpower = -200
+			add_manpower = -1000
 			
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
@@ -484,13 +484,13 @@ NCR_banditry_category = {
 		timeout_effect = {
 			random_list = {
 				25 = {
-					country_event = ncr_bandit_sabotage.21
+					country_event = wtt_manchukou_bandit_sabotage.21
 				}
 				25 = {
-					country_event = ncr_bandit_sabotage.22
+					country_event = wtt_manchukou_bandit_sabotage.22
 				}
 				25 = {
-					country_event = ncr_bandit_sabotage.23
+					country_event = wtt_manchukou_bandit_sabotage.23
 				}
 				25 = {
 					
