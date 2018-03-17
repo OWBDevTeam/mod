@@ -1,0 +1,83 @@
+add_namespace = nf_genericbos
+
+#Our Past
+country_event = { 
+	id = nf_genericbos.1
+	title = nf_genericbos.1.t
+	desc = nf_genericbos.1.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_genericbos.1.option.a 
+		
+		add_ideas = genericbosdevotees
+		
+	}
+	
+	option = {
+		name = nf_genericbos.1.option.b 
+		
+		add_ideas = genericbosdespise
+		
+	}
+}
+#Our Interim
+country_event = {
+	id = nf_genericbos.2
+	title = nf_genericbos.2.t
+	desc = nf_genericbos.2.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_genericbos.2.option.a 
+		
+		capital_scope = {
+		    add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+		}
+	}
+	
+	option = {
+		name = nf_genericbos.2.option.b 
+		
+		capital_scope = {
+		    add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+		}
+	}
+}
+#Our Future
+country_event = { 
+	id = nf_genericbos.3
+	title = nf_genericbos.3.t
+	desc = nf_genericbos.3.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_genericbos.3.option.a 
+		
+		add_ideas = genericbosfactoryoutput
+		
+	}
+	
+	option = {
+		name = nf_genericbos.3.option.b 
+		
+		add_ideas = genericbosresources
+		
+	}
+}
