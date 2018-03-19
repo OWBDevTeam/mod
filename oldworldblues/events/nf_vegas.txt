@@ -349,7 +349,16 @@ country_event = {
 	option = {
 		name = nf_vegas.10.a
 		
-		create_corps_commander = { name = "Victor" picture = "GFX/leaders/VEG/Portrait_Victor.dds" traits = { } skill = 6 }
+		create_corps_commander = { 
+			name = "Victor" 
+			picture = "GFX/leaders/VEG/Portrait_Victor.dds" 
+			traits = { } 
+			skill = 6 
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 2
+			}
 	}
 	
 }
@@ -366,7 +375,16 @@ country_event = {
 		
 		set_technology = { healing_powder = 1 }
 		load_oob = vegasjessup
-		create_corps_commander = { name = "Jessup" picture = "GFX/leaders/VEG/Portrait_Jessup.dds" traits = { desert_fox } skill = 3 }
+		create_corps_commander = { 
+			name = "Jessup" 
+			picture = "GFX/leaders/VEG/Portrait_Jessup.dds" 
+			traits = { desert_fox } 
+			skill = 3 
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+			}
 		
 	}
 	option = {
@@ -374,7 +392,16 @@ country_event = {
 		
 		set_technology = { flamer_tech = 1 }
 		load_oob = vegaschance
-		create_corps_commander = { name = "Chance" picture = "GFX/leaders/VEG/Portrait_Chance.dds" traits = { urban_assault_specialist commando } skill = 4 }
+		create_corps_commander = { 
+			name = "Chance" 
+			picture = "GFX/leaders/VEG/Portrait_Chance.dds" 
+			traits = { urban_assault_specialist commando } 
+			skill = 4 
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+			}
 	}
 }
 country_event = {
@@ -390,7 +417,16 @@ country_event = {
 		
 		set_technology = { anti_personnel_tech = 1 }
 		load_oob = vegaschairmen 
-		create_corps_commander = { name = "Swank" picture = "GFX/leaders/VEG/Portrait_Swank.dds" traits = { urban_assault_specialist } skill = 4 }
+		create_corps_commander = { 
+			name = "Swank" 
+			picture = "GFX/leaders/VEG/Portrait_Swank.dds" 
+			traits = { urban_assault_specialist } 
+			skill = 4
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+			}
 		
 	}
 	
@@ -405,7 +441,9 @@ country_event = {
 	
 	option = {
 		name = nf_vegas.13.a
-		
+		hidden_effect = {
+			set_country_flag = veg_chip_delivered
+		}
 		if = {
 			limit = {
 				VEG = {
@@ -475,7 +513,7 @@ country_event = {
 		name = nf_vegas.16.b
 		
 		BOS = {
-		country_event = nf_vegas.20
+			country_event = nf_vegas.20
 		}
 			
 	}
@@ -554,8 +592,9 @@ country_event = {
 	
 	option = {
 		name = nf_vegas.19.a
-		
-		
+		hidden_effect = {
+			set_country_flag = veg_chip_delivered
+		}
 		if = {
 			limit = {
 				VEG = {
@@ -1352,7 +1391,9 @@ country_event = {
 	option = {
 		name = nf_vegas.52.a
 		
-		
+		hidden_effect = {
+			set_country_flag = veg_chip_delivered
+		}
 		if = {
 			limit = {
 				VEG = {

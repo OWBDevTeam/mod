@@ -1,501 +1,215 @@
-@MAN_HUNT_BANDITS_EQUIPMENT_COST_TRIGGER = 499
-@MAN_HUNT_BANDITS_EQUIPMENT_COST_EFFECT = -500
 
-NCR_banditry_category = {
+ NCR_helios_category = {
 
-#  #  ##  ###  ### #  # ### ###  #  # 
-## # #  # #  #  #  #  # #   #  # ## # 
-# ## #  # ###   #  #### ##  ###  # ## 
-#  # #  # #  #  #  #  # #   #  # #  # 
-#  #  ##  #  #  #  #  # ### #  # #  # 
-
-	NCR_pacify_bandits_in_the_northern_countryside = {
+  NCR_repair_helios_fantastic = {
 
 		icon = generic_oppression
 		
 		available = {
-			has_completed_focus = ncr_rangerhq
-			has_country_flag = NCR_northern_bandits
-			divisions_in_state = {
-				state = 141	
-				size > 5
-			}
+		NCR = { owns_state = 417 }
+		NCR = { controls_state = 417 }
 		}
 
 		highlight_states = {
-			state = 141
+			state = 417
 		}
 
-		cost = 0
+		cost = 50
 
 		ai_will_do = {
-			factor = 0
-			modifier = {
-				add = 200
-				divisions_in_state = {
-					state = 141	
-					size > 5
-				}
-			}
+			factor = 33
 		}
 
 		visible = {
-			NOT = { has_active_mission = NCR_maintain_northern_control }
-			has_country_flag = NCR_northern_bandits
+			NCR = { owns_state = 417 }
+			NOT = { has_country_flag = NCR_helios_brotherhood}
+			OR = { NOT = { has_country_flag = NCR_helios_fantastic}}
+			OR = { NOT = { has_country_flag = NCR_helios_followers}}
 		}
 
 		is_good = yes
 
 		complete_effect = {
-			activate_mission = NCR_maintain_northern_control
-			custom_effect_tooltip = NCR_pacify_bandits_mission_explanation
-		}
-	}
-
-	NCR_hunt_down_northern_bandits = {
-
-		icon = generic_oppression
-
-		available = {
-			has_completed_focus = ncr_rangerhq
-			has_equipment = { infantry_equipment > @MAN_HUNT_BANDITS_EQUIPMENT_COST_TRIGGER }
-			has_country_flag = NCR_northern_bandits
-		}
-
-		cost = 0
-
-		highlight_states = {
-			state = 141
-		}
-		visible = {
-			has_country_flag = NCR_northern_bandits
-		}
-		is_good = yes
-
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 0
-			modifier = {
-				add = 200
-				divisions_in_state = {
-					state = 141	
-					size < 6
-				}
-			}
-		}
-
-		complete_effect = {
-			custom_effect_tooltip = NCR_hunt_down_northern_bandits_tt
-			add_manpower = -200
+			set_country_flag = NCR_helios_fantastic
 			
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = @MAN_HUNT_BANDITS_EQUIPMENT_COST_EFFECT
-			}
-
-			army_experience = 10
-
-			remove_mission = NCR_maintain_northern_control
-			clr_country_flag = NCR_northern_bandits
-			if = {
-				limit = {
-					NOT = { has_country_flag = NCR_eastern_bandits }
-					NOT = { has_country_flag = NCR_western_bandits }
-				}
-				remove_ideas = NCR_banditry
-			}
-		}
-	}
-
-	NCR_maintain_northern_control = {
-
-		icon = generic_civil_support
-
-		available = {
-			always = no
-		}
-
-		days_mission_timeout = NCR_main_control_timer?180
-
-		activation = {
-			always = no #Triggered from effect
-		}
-
-		remove = {
-			divisions_in_state = {
-				state = 141	
-				size < 6
-			}
-		}
-
-		highlight_states = {
-			state = 141
-		}
-
-		visible = {
-			
-		}
-
-		is_good = yes
-
-		timeout_effect = {
-			custom_effect_tooltip = NCR_hunt_down_northern_bandits_tt
-			army_experience = 10
-			clr_country_flag = NCR_northern_bandits
-			if = {
-				limit = {
-					NOT = { has_country_flag = NCR_eastern_bandits }
-					NOT = { has_country_flag = NCR_western_bandits }
-				}
-				remove_ideas = NCR_banditry
+			417 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+					type = electricity_generator
+					level = 5
+					instant_build = yes
+				}	
+			   add_resource = {
+						type = fuel
+						amount = 15
+			  }	
+               add_resource = {
+						type = electricity
+						amount = 15
+			  }				  
 			}
 		}
 	}
-
-###  ##   ## ### ### ###  #  # 
-#   #  # #    #  #   #  # ## # 
-##  ####  #   #  ##  ###  # ## 
-#   #  #   #  #  #   #  # #  # 
-### #  # ##   #  ### #  # #  # 
-
-	NCR_pacify_bandits_in_the_eastern_countryside = {
-
-		icon = generic_oppression
-		
-		available = {
-			has_completed_focus = ncr_rangerhq
-			has_country_flag = NCR_eastern_bandits
-			divisions_in_state = {
-				state = 182
-				size > 5
-			}
-		}
-
-		highlight_states = {
-			state = 182
-		}
-
-		cost = 0
-
-		ai_will_do = {
-			factor = 0
-			modifier = {
-				add = 200
-				divisions_in_state = {
-					state = 182	
-					size > 5
-				}
-			}
-		}
-
-		visible = {
-			NOT = { has_active_mission = NCR_maintain_eastern_control }
-			has_country_flag = NCR_eastern_bandits
-		}
-
-		is_good = yes
-
-		complete_effect = {
-			activate_mission = NCR_maintain_eastern_control
-			custom_effect_tooltip = NCR_pacify_bandits_mission_explanation
-		}
-	}
-
-	NCR_hunt_down_eastern_bandits = {
-
-		icon = generic_oppression
-
-		available = {
-			has_completed_focus = ncr_rangerhq
-			has_equipment = { infantry_equipment > @MAN_HUNT_BANDITS_EQUIPMENT_COST_TRIGGER }
-			has_country_flag = NCR_eastern_bandits
-		}
-
-		visible = {
-			has_country_flag = NCR_eastern_bandits
-		}
-
-		cost = 0
-
-		highlight_states = {
-			state = 182
-		}
-
-		is_good = yes
-
-		fire_only_once = yes
-
-		ai_will_do = {
-			factor = 0
-			modifier = {
-				add = 200
-				divisions_in_state = {
-					state = 182	
-					size < 6
-				}
-			}
-		}
-
-		complete_effect = {
-			custom_effect_tooltip = NCR_hunt_down_eastern_bandits_tt
-			add_manpower = -200
-			
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = @MAN_HUNT_BANDITS_EQUIPMENT_COST_EFFECT
-			}
-
-			army_experience = 10
-
-			remove_mission = NCR_maintain_eastern_control
-			clr_country_flag = NCR_eastern_bandits
-			if = {
-				limit = {
-					NOT = { has_country_flag = NCR_northern_bandits }
-					NOT = { has_country_flag = NCR_western_bandits }
-				}
-				remove_ideas = NCR_banditry
-			}
-		}
-	}
-
-	NCR_maintain_eastern_control = {
-
-		icon = generic_civil_support
-
-		available = {			
-			always = no
-		}
-
-		days_mission_timeout = NCR_main_control_timer?180
-
-		activation = {
-			always = no #Triggered from effect
-		}
-
-		remove = {
-			divisions_in_state = {
-				state = 182	
-				size < 6
-			}
-		}
-
-		highlight_states = {
-			state = 182
-		}
-
-		visible = {
-			
-		}
-
-		is_good = yes
-
-		timeout_effect = {
-			custom_effect_tooltip = MCR_hunt_down_eastern_bandits_tt
-			army_experience = 10
-			clr_country_flag = NCR_eastern_bandits
-			if = {
-				limit = {
-					NOT = { has_country_flag = NCR_northern_bandits }
-					NOT = { has_country_flag = NCR_western_bandits }
-				}
-				remove_ideas = NCR_banditry
-			}
-		}
-	}
-
-#   # ###  ## ### ### ###  #  # 
-#   # #   #    #  #   #  # ## # 
-# # # ##   #   #  ##  ###  # ## 
-# # # #     #  #  #   #  # #  # 
- # #  ### ##   #  ### #  # #  # 
 	
-	NCR_pacify_bandits_in_the_western_countryside = {
+	NCR_repair_helios_followers = {
 
 		icon = generic_oppression
 		
 		available = {
-			has_completed_focus = ncr_rangerhq
-			has_country_flag = NCR_western_bandits
-			divisions_in_state = {
-				state = 4	
-				size > 5
-			}
+		NCR = { owns_state = 417 }
+		NCR = { controls_state = 417 }
 		}
 
 		highlight_states = {
-			state = 4
+			state = 417
 		}
 
-		cost = 0
+		cost = 100
 
 		ai_will_do = {
-			factor = 0
-			modifier = {
-				add = 200
-				divisions_in_state = {
-					state = 4	
-					size > 5
-				}
-			}
+			factor = 33
 		}
 
 		visible = {
-			NOT = { has_active_mission = NCR_maintain_western_control }
-			has_country_flag = NCR_western_bandits
+			NCR = { owns_state = 417 }
+			NOT = { has_country_flag = NCR_helios_brotherhood}
+			OR = { NOT = { has_country_flag = NCR_helios_fantastic}}
+			OR = {NOT = { has_country_flag = NCR_helios_followers}}
 		}
 
 		is_good = yes
 
 		complete_effect = {
-			activate_mission = NCR_maintain_western_control
-			custom_effect_tooltip = NCR_pacify_bandits_mission_explanation
-		}
+			set_country_flag = NCR_helios_followers
+			417 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+					type = electricity_generator
+					level = 5
+					instant_build = yes
+				}	
+			  add_resource = {
+						type = fuel
+						amount = 20
+			 }
+              add_resource = {
+						type = electricity
+						amount = 20
+			  }						 
+			}
+			custom_effect_tooltip = repair_helios_vegas_tt
+			hidden_effect = {
+			VEG = {add_opinion_modifier = { target = NCR modifier = repairedhelios }}
+			KHA = {add_opinion_modifier = { target = NCR modifier = repairedhelios }} 
+			NCR = {add_opinion_modifier = { target = KHA modifier = repairedhelios }}
+			NCR = {add_opinion_modifier = { target = VEG modifier = repairedhelios }}
+			480 = {
+			add_resource = {
+						type = electricity
+						amount = 5
+			}	
+			add_resource = {
+						type = fuel
+						amount = 5
+			 }		
+			}
+			
+			46 = {
+			add_resource = {
+						type = electricity
+						amount = 5
+			}	
+			add_resource = {
+						type = fuel
+						amount = 5
+			 }		
+			}
+			
+			211 = {
+			add_resource = {
+						type = electricity
+						amount = 5
+			}	
+			add_resource = {
+						type = fuel
+						amount = 5
+		 	 }		
+			}
+			
+			106 = {
+			add_resource = {
+						type = electricity
+						amount = 5
+			}	
+			add_resource = {
+						type = fuel
+						amount = 5
+		 	  }		
+			}
+		 }
+	  }
 	}
-
-	NCR_hunt_down_western_bandits = {
+	
+	NCR_repair_helios_brotherhood = {
 
 		icon = generic_oppression
-
+		
 		available = {
-			has_completed_focus = ncr_rangerhq
-			has_equipment = { infantry_equipment > @MAN_HUNT_BANDITS_EQUIPMENT_COST_TRIGGER }
-			has_country_flag = NCR_western_bandits
+		NCR = { owns_state = 417 }
+		NCR = { controls_state = 417 }
+		MOJ = { exists = yes }
 		}
-
-		cost = 0
 
 		highlight_states = {
-			state = 4
+			state = 417
 		}
 
-		visible = {
-			has_country_flag = NCR_western_bandits
-		}
-
-		is_good = yes
-
-		fire_only_once = yes
+		cost = 150
 
 		ai_will_do = {
-			factor = 0
-			modifier = {
-				add = 200
-				divisions_in_state = {
-					state = 4	
-					size < 6
-				}
-			}
-		}
-
-		complete_effect = {
-			custom_effect_tooltip = NCR_hunt_down_western_bandits_tt
-			add_manpower = -200
-			
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = @MAN_HUNT_BANDITS_EQUIPMENT_COST_EFFECT
-			}
-
-			army_experience = 10
-
-			remove_mission = NCR_maintain_western_control
-			clr_country_flag = NCR_western_bandits
-			if = {
-				limit = {
-					NOT = { has_country_flag = NCR_eastern_bandits }
-					NOT = { has_country_flag = NCR_northern_bandits }
-				}
-				remove_ideas = NCR_banditry
-			}
-		}
-	}
-
-	NCR_maintain_western_control = {
-
-		icon = generic_civil_support
-
-		available = {			
-			always = no
-		}
-
-		days_mission_timeout = NCR_main_control_timer?180
-
-		activation = {
-			always = no #Triggered from effect
-		}
-
-		remove = {
-			divisions_in_state = {
-				state = 4	
-				size < 6
-			}
-		}
-
-		highlight_states = {
-			state = 4
+			factor = 33
 		}
 
 		visible = {
-			
+			NCR = { owns_state = 417 }
+			NOT = { has_country_flag = NCR_helios_followers}
+			OR = { NOT = { has_country_flag = NCR_helios_fantastic}}
+			OR = { NOT = { has_country_flag = NCR_helios_brotherhood}}
+			MOJ = { exists = yes }
 		}
 
 		is_good = yes
 
-		timeout_effect = {
-			custom_effect_tooltip = NCR_hunt_down_western_bandits_tt
-			army_experience = 10
-			clr_country_flag = NCR_western_bandits
-			if = {
-				limit = {
-					NOT = { has_country_flag = NCR_eastern_bandits }
-					NOT = { has_country_flag = NCR_northern_bandits }
+		complete_effect = {
+			set_country_flag = NCR_helios_brotherhood
+			417 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+					type = electricity_generator
+					level = 5
+					instant_build = yes
 				}
-				remove_ideas = NCR_banditry
+			add_resource = {
+						type = fuel
+						amount = 35
+			 }
+			 add_resource = {
+						type = electricity
+						amount = 35
+			 }
 			}
-		}
-	}
-
-	NCR_bandit_raids = {
-
-		icon = generic_civil_support
-
-		available = {
-			NOT = { has_idea = NCR_banditry }
-		}
-
-		days_mission_timeout = 180
-
-		activation = {
-			has_idea = NCR_banditry
-		}
-
-		visible = {
-			
-		}		
-
-		fixed_random_seed = no
-
-		fire_only_once = no
-
-		is_good = no
-
-		timeout_effect = {
-			random_list = {
-				25 = {
-					country_event = ncr_bandit_sabotage.21
+			custom_effect_tooltip = NCR_coup_tt
+			hidden_effect = {
+				random_list = {
+				50 = {
+					country_event = ncr_helios_event.21
+					MOJ = {country_event = ncr_helios_event.23}
 				}
-				25 = {
-					country_event = ncr_bandit_sabotage.22
-				}
-				25 = {
-					country_event = ncr_bandit_sabotage.23
-				}
-				25 = {
-					
+				50 = {
+					country_event = ncr_helios_event.22
 				}
 			}
+		   }
 		}
 	}
 }

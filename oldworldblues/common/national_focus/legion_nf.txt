@@ -160,7 +160,7 @@ focus_tree = {
 		x = 2
 		y = 6
 		completion_reward = {
-			add_stability = -0.01
+			add_stability = -0.05
             add_ideas = legion_nf_shottol_god_of_dogs
 		}
 
@@ -263,7 +263,7 @@ focus_tree = {
 		x = 6
 		y = 6
 		completion_reward = {
-			add_stability = -0.01
+			add_stability = -0.05
             add_ideas = legion_nf_goddess_diana
 			hidden_effect = {
 				set_country_flag = caesarlives
@@ -287,7 +287,8 @@ focus_tree = {
 		x = 8
 		y = 6
 		completion_reward = {
-			add_stability = -0.01
+			add_war_support = 0.025
+			add_stability = 0.025
             add_ideas = legion_nf_caesar_the_godslayer
 		}
 	}
@@ -369,8 +370,8 @@ focus_tree = {
 		x = 12
 		y = 6
 		completion_reward = {
-			add_stability = -0.1
-			add_war_support = -0.05
+			add_stability = -0.05
+			add_war_support = -0.025
             add_ideas = legion_nf_cult_of_nas
             custom_effect_tooltip = cult_of_nas_tt
 			hidden_effect = {
@@ -480,8 +481,8 @@ focus_tree = {
 		x = 16
 		y = 6
 		completion_reward = {
-			add_stability = -0.1
-			add_war_support = -0.05
+			add_stability = -0.05
+			add_war_support = -0.025
 			add_ideas = legion_nf_wyatt_the_demon
 		}
 	}
@@ -1236,8 +1237,12 @@ focus_tree = {
 				skill = 5
 				id = 1004
 				traits = {
-					
+					conqueror
 				}
+				attack_skill = 5
+				defense_skill = 3
+				planning_skill = 2
+				logistics_skill = 2
 			}
 			
 		}
@@ -1273,8 +1278,12 @@ focus_tree = {
 				skill = 5
 				id = 1004
 				traits = {
-					
+					conqueror
 				}
+				attack_skill = 3
+				defense_skill = 5
+				planning_skill = 2
+				logistics_skill = 2
 			}
 		}
 
@@ -3426,6 +3435,10 @@ focus_tree = {
 				traits = {
 					conqueror
 				}
+				attack_skill = 3
+				defense_skill = 1
+				planning_skill = 3
+				logistics_skill = 1
 			}
 		}
 	}
@@ -3506,6 +3519,10 @@ focus_tree = {
 				traits = {
 					loyalty
 				}
+				attack_skill = 2
+				defense_skill = 3
+				planning_skill = 1
+				logistics_skill = 1
 			}
 		}
 
@@ -3581,12 +3598,16 @@ focus_tree = {
 		y = 9
 		completion_reward = {
 			create_corps_commander = {
-				name = "Aurelius Of Phoenix"
+				name = "Aurelius of Phoenix"
 				portrait_path = "gfx/leaders/CES/Portrait_Phoenix.dds"
 				skill = 3
 				traits = {
 					slavemaster
 				}
+				attack_skill = 1
+				defense_skill = 4
+				planning_skill = 1
+				logistics_skill = 1
 			}
 		}
 

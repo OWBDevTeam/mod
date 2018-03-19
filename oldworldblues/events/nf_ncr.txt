@@ -1178,75 +1178,80 @@ country_event = { #enclave civil war annexed, civil war starts
 	}
 }
 
-add_namespace = ncr_bandit_sabotage
-#Bandit sabotage - factory sabotaged
+add_namespace = ncr_helios_event
+#Brotherhood Takes Over Helios One 
 country_event = {
-	id = ncr_bandit_sabotage.21
-	title = ncr_bandit_sabotage.21.t
-	desc = ncr_bandit_sabotage.21.desc
+	id = ncr_helios_event.21
+	title = ncr_helios_event.21.t
+	desc = ncr_helios_event.21.d
 	picture = GFX_report_event_generic_ruins
 
 	is_triggered_only = yes
 	
+	fire_only_once = yes
+	
 	option = {
-		name = ncr_bandit_sabotage.21.a #okay
-		random_owned_state = {
-			limit = {
-				is_fully_controlled_by = ROOT
-				arms_factory > 0
-			}
-			damage_building = {
-				type = arms_factory
-				damage = 0.9
-			}
+		name = ncr_helios_event.21.a #We Concede
+		
+		ai_chance = {
+			base = 0
 		}
+		
+		add_political_power = -50
+		add_war_support = -0.1
+		add_stability = -0.1
+		NCR = {add_opinion_modifier = { target = MOJ modifier = stolehelios } }
+	}
+	
+	option = {
+		name = ncr_helios_event.21.b #Death to the Brotherhood
+		
+		ai_chance = {
+			base = 1000
+		}
+		    create_wargoal = {
+                    type = annex_everything
+                    target = MOJ
+                }
+		NCR = {add_opinion_modifier = { target = MOJ modifier = stolehelios } }
 	}
 }
 
-#Bandit sabotage - civilian factory sabotaged
+#Brotherhood Honors The Deal
 country_event = {
-	id = ncr_bandit_sabotage.22
-	title = ncr_bandit_sabotage.22.t
-	desc = ncr_bandit_sabotage.21.desc
+	id = ncr_helios_event.22
+	title = ncr_helios_event.22.t
+	desc = ncr_helios_event.22.d
 	picture = GFX_report_event_generic_ruins
 
 	is_triggered_only = yes
 	
+	fire_only_once = yes
+	
 	option = {
-		name = ncr_bandit_sabotage.21.a #okay
-		random_owned_state = {
-			limit = {
-				is_fully_controlled_by = ROOT
-				arms_factory > 0
-			}
-			damage_building = {
-				type = industrial_complex
-				damage = 0.9
-			}
-		}
+		name = ncr_helios_event.22.a #Fantastic!
+		add_political_power = 50
+		add_stability = 0.05
+		MOJ = {add_opinion_modifier = { target = NCR modifier = repairedhelios } }
+		NCR = {add_opinion_modifier = { target = MOJ modifier = repairedhelios } }
+		
 	}
 }
-
-#Bandit sabotage - bridge blown
+	
+#Brotherhood Helios One Retaken
 country_event = {
-	id = ncr_bandit_sabotage.23
-	title = ncr_bandit_sabotage.23.t
-	desc = ncr_bandit_sabotage.23.desc
-	picture = GFX_report_event_generic_train
+	id = ncr_helios_event.23
+	title = ncr_helios_event.23.t
+	desc = ncr_helios_event.23.d
+	picture = GFX_report_event_generic_ruins
 
 	is_triggered_only = yes
 	
+	fire_only_once = yes
+	
 	option = {
-		name = ncr_bandit_sabotage.21.a #okay
-		random_owned_state = {
-			limit = {
-				is_fully_controlled_by = ROOT
-				arms_factory > 0
-			}
-			damage_building = {
-				type = infrastructure
-				damage = 2
-			}
-		}
+		name = ncr_helios_event.23.a #Fantastic!
+		transfer_state = 417
 	}
+	
 }

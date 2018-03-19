@@ -122,19 +122,11 @@ leader_traits = {
 		random = no
 		intellectuals_drift = 0.025
 		 equipment_bonus = {
-            		melee_equipment_1 = {
+            		infantry_equipment = {
                 instant = yes
                 breakthrough = 0.25
             }
-			melee_equipment_2 = {
-                instant = yes
-                breakthrough = 0.25
-            }
-			melee_equipment_3 = {
-                instant = yes
-                breakthrough = 0.25
-            }
-			}
+		}
 		
 		ai_will_do = {
 			factor = 1
@@ -200,8 +192,7 @@ leader_traits = {
 		random = no
 		consumer_goods_factor = 0.05
 		equipment_bonus = {
-                ballistic_equipment_1 = { build_cost_ic = -0.15 instant = yes }
-                ballistic_equipment_2 = { build_cost_ic = -0.15 instant = yes }
+                infantry_equipment = { build_cost_ic = -0.15 instant = yes }
             }
 		
 		ai_will_do = {
@@ -245,7 +236,7 @@ leader_traits = {
 		planning_speed = -0.2
 		max_planning = 0.15
 		equipment_bonus = {
-                          power_armor_equipment_1 = { instant = yes
+                          power_armor_equipment = { instant = yes
 		                hardness = 0.10 }
 					}
 				
@@ -413,7 +404,7 @@ viper = {
 jackal = {
 		random = no
 		stability_factor = -0.1
-		supply_consumption_factor = 0.2
+		supply_consumption_factor = -0.2
 		
 		ai_will_do = {
 			factor = 1
@@ -506,17 +497,13 @@ two_timing_dealer = {
 		random = no
 		enemy_partisan_effect = -0.1
 		political_power_factor = -0.1
-		research_bonus = {
-				energy_weaponry_tech = -0.10
-				laser_battery_tech = -0.1
-		}
 		
 		ai_will_do = {
 			factor = 1
 		}
 	}
 	
-	pre_war_adminstrator = {
+	pre_war_administrator = {
 		random = no
 		mobilization_speed = 0.1
 		stability_factor = -0.1
@@ -552,8 +539,8 @@ two_timing_dealer = {
 		equipment_bonus = {
             motorized_equipment = {
                 instant = yes
-                max_speed = 0.075
-				breakthrough = 0.075
+                maximum_speed = 0.075
+		breakthrough = 0.075
 				
             }
 		}
@@ -582,29 +569,18 @@ two_timing_dealer = {
 	esoteric_engineer = {
 		random = no
 		equipment_bonus = {
-            energy_equipment_1 = {
-                instant = yes
-                soft_attack = 0.05
-				hard_attack = 0.05
-				ap_attack = 0.05
-				
-            }
-			energy_equipment_2 = {
-                instant = yes
-                soft_attack = 0.05
-				hard_attack = 0.05
-				ap_attack = 0.05
-				
-            }
-			energy_equipment_3 = {
-                instant = yes
-                soft_attack = 0.05
-				hard_attack = 0.05
-				ap_attack = 0.05
-				
-            }
-		}
-		
+            		laser_equipment = {
+                		instant = yes
+                		soft_attack = 0.075
+				hard_attack = 0.075
+				ap_attack = 0.075
+			}
+			power_armor_equipment = {
+               		instant = yes
+                	breakthrough = 0.075
+			hardness = 0.075
+			}
+            	}		
 		ai_will_do = {
 			factor = 1
 		}
@@ -660,43 +636,120 @@ two_timing_dealer = {
 	flash_in_the_pan = {
 		random = no
 		equipment_bonus = {
-            anti_personnel_equipment_1 = {
+            anti_personnel_equipment = {
                 instant = yes
 				hard_attack = 0.075
 				soft_attack = 0.05
 				ap_attack = 0.025
             }
-			anti_personnel_equipment_2 = {
-                instant = yes
-				hard_attack = 0.075
-				soft_attack = 0.05
-				ap_attack = 0.025
-            }
-			anti_personnel_equipment_3 = {
-                instant = yes
-				hard_attack = 0.075
-				soft_attack = 0.05
-				ap_attack = 0.025
-            }
-			explosive_equipment_1 = {
-                instant = yes
-				hard_attack = 0.075
-				soft_attack = 0.05
-				ap_attack = 0.025
-            }
-			explosive_equipment_2 = {
-                instant = yes
-				hard_attack = 0.075
-				soft_attack = 0.05
-				ap_attack = 0.025
-            }
-			explosive_equipment_3 = {
+		explosive_equipment = {
                 instant = yes
 				hard_attack = 0.075
 				soft_attack = 0.05
 				ap_attack = 0.025
             }
 		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	beloved_personality = {
+		random = no
+		war_support_factor = 0.05
+		stability_factor = 0.05
+		conscription_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+sensitive_artist = {
+		random = no
+		stability_factor = 0.05
+		production_speed_industrial_complex_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+internal_repair = {
+		random = no
+		supply_consumption_factor = -0.05
+		land_reinforce_rate = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+pre_simulated_tactics = {
+		random = no
+		planning_speed = 0.1
+		max_planning = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+adaptive_learning = {
+		random = no
+		army_moral_factor = 0.075
+		defence = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	} 
+	
+armed_politeness = {
+		random = no
+		enemy_partisan_effect = -0.25
+		partisan_effect = 0.25
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+aggressive_ai = {
+		random = no
+		equipment_bonus = {
+			medium_robot_equipment = {
+                instant = yes
+                soft_attack = 0.075
+		hard_attack = 0.05
+		ap_attack = 0.025
+          		}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+reserved_ai = {
+		random = no
+		max_dig_in = 0.1
+		equipment_bonus = {
+            		medium_robot_equipment = {
+                instant = yes
+                hardness = 0.05
+            		}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+unpredictable_ai = {
+		random = no
+		planning_speed = 0.05
+		experience_gain_army_factor = 0.1
 		
 		ai_will_do = {
 			factor = 1

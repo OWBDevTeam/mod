@@ -100,7 +100,7 @@ focus_tree = {
 		icon = GFX_goal_VEG_The_King
 		cost = 8.6
 		available = {
-		has_idea = kings
+		    has_idea = kings
 		}
 		prerequisite = {
 			focus = veg_newmanagement
@@ -159,9 +159,11 @@ focus_tree = {
 				name = "Arcade Gannon"
 				portrait_path = "gfx/leaders/VEG/Portrait_Arcade.dds"
 				skill = 4
-				traits = {
-					
-				}
+				traits = { }
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 4
+				logistics_skill = 5
 			}
 		}
 
@@ -171,7 +173,7 @@ focus_tree = {
 		icon = GFX_goal_VEG_The_Joker
 		cost = 8.6
 		available = {
-		has_idea = chairmen
+		    has_idea = chairmen
 		}
 		prerequisite = {
 			focus = veg_newmanagement
@@ -414,6 +416,14 @@ focus_tree = {
 			#show_ideas_tooltip = marjorie'
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = majorie 
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					add_ideas = majorie
+				}
+			}
 		}
 
 	}
@@ -495,6 +505,14 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = available_army_chief
 			show_ideas_tooltip = papa_khan
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					add_ideas papa_khan
+				}
+			}
 		}
 
 	}
@@ -571,6 +589,14 @@ focus_tree = {
 			#show_ideas_tooltip = benny
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = benny 
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					add_ideas = benny
+				}
+			}
 		}
 	}
 	focus = {
@@ -629,7 +655,15 @@ focus_tree = {
 		completion_reward = {
 			#show_ideas_tooltip = theking
 			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = the_king 
+			show_ideas_tooltip = the_king
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					add_ideas = the_king
+				}
+			}
 		}
 
 	}
@@ -741,6 +775,14 @@ focus_tree = {
 			#show_ideas_tooltip = motorunner
 			custom_effect_tooltip = available_high_command
 			show_ideas_tooltip = motor_runner
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					add_ideas = motor_runner
+				}
+			}
 		}
 
 	}
@@ -836,6 +878,15 @@ focus_tree = {
 		prerequisite = {
 			focus = veg_house
 		}
+		available = {
+			OR = {
+				controls_state = 252
+				252 = {
+					is_controlled_by = NCR
+					is_controlled_by = CES
+				}
+			}
+		}
 		x = 4
 		y = 7
 		completion_reward = {
@@ -847,6 +898,10 @@ focus_tree = {
 		id = veg_vault
 		icon = GFX_goal_VEG_The_Vault
 		cost = 8.6
+		available = {
+			has_country_flag = veg_chip_delivered
+			has_idea = platinumOS
+		}
 		prerequisite = {
 			focus = veg_platinumchip
 		}
@@ -1830,6 +1885,14 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = nero
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					add_ideas = nero
+				}
+			}
 		}
 	}
 	focus = {
