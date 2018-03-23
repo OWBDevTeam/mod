@@ -1,0 +1,243 @@
+add_namespace = nf_genericbos
+add_namespace = nf_genericboswashington
+
+#Generic BOS#
+
+#Our Past
+country_event = { 
+	id = nf_genericbos.1
+	title = nf_genericbos.1.t
+	desc = nf_genericbos.1.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_genericbos.1.option.a 
+		
+		add_ideas = genericbosdevotees
+		
+	}
+	
+	option = {
+		name = nf_genericbos.1.option.b 
+		
+		add_ideas = genericbosdespise
+		
+	}
+}
+#Our Interim
+country_event = {
+	id = nf_genericbos.2
+	title = nf_genericbos.2.t
+	desc = nf_genericbos.2.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_genericbos.2.option.a 
+		
+		capital_scope = {
+		    add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+		}
+	}
+	
+	option = {
+		name = nf_genericbos.2.option.b 
+		
+		capital_scope = {
+		    add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+		}
+	}
+}
+#Our Future
+country_event = { 
+	id = nf_genericbos.3
+	title = nf_genericbos.3.t
+	desc = nf_genericbos.3.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_genericbos.3.option.a 
+		
+		add_ideas = genericbosfactoryoutput
+		
+	}
+	
+	option = {
+		name = nf_genericbos.3.option.b 
+		
+		add_ideas = genericbosresources
+		
+	}
+}
+
+#Washington State BOS#
+
+#Within The Blizzard#
+country_event = { 
+	id = nf_genericboswashington.1
+	title = nf_genericboswashington.1.t
+	desc = nf_genericboswashington.1.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_genericboswashington.1.option.a 
+		
+		add_political_power = 100
+		
+	}
+	
+}
+#Invitation sent to Old Country#
+country_event = {
+	id = nf_genericboswashington.2
+	title = nf_genericboswashington.2.t
+	desc = nf_genericboswashington.2.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_genericboswashington.2.option.a 
+		
+		WBH = {
+		   country_event = nf_genericboswashington.4
+		}
+	}
+	option = {
+		name = nf_genericboswashington.2.option.b 
+		
+		WBH = {
+		   country_event = nf_genericboswashington.5
+		}
+	}
+}
+#Invitation sent to Port Maw#
+country_event = { 
+	id = nf_genericboswashington.3
+	title = nf_genericboswashington.3.t
+	desc = nf_genericboswashington.3.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_genericboswashington.3.option.a 
+		
+		WBH = {
+		   country_event = nf_genericboswashington.6
+		}
+	}
+	option = {
+		name = nf_genericboswashington.3.option.b 
+		
+		WBH = {
+		   country_event = nf_genericboswashington.7
+		}
+	}
+}
+#Old Country accepts#
+country_event = { 
+	id = nf_genericboswashington.4
+	title = nf_genericboswashington.4.t
+	desc = nf_genericboswashington.4.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_genericboswashington.4.option.a 
+		
+		WBH = {
+		   add_to_faction = TOC
+		   add_opinion_modifier = { target = TOC modifier = northern_league }
+		}
+	}
+}
+#Old Country Refuses#
+country_event = { 
+	id = nf_genericboswashington.5
+	title = nf_genericboswashington.5.t
+	desc = nf_genericboswashington.5.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_genericboswashington.5.option.a 
+		
+		WBH = {
+		   add_opinion_modifier = { target = TOC modifier = northern_league_refused }
+		   create_wargoal = { type = annex_everything target = TOC }
+		}
+	}
+}
+#Port Maw Accepts#
+country_event = { 
+	id = nf_genericboswashington.6
+	title = nf_genericboswashington.6.t
+	desc = nf_genericboswashington.6.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_genericboswashington.6.option.a 
+		
+		WBH = {
+		   add_to_faction = PMR
+		   add_opinion_modifier = { target = PMR modifier = northern_league }
+		}
+		PMR = {
+			set_politics = { ruling_party = elites elections_allowed = no }
+			set_political_party = { ideology = elites popularity = 1 }	
+		}
+	}
+}
+#Port Maw Refuses#
+country_event = { 
+	id = nf_genericboswashington.7
+	title = nf_genericboswashington.7.t
+	desc = nf_genericboswashington.7.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_genericboswashington.7.option.a 
+		
+		WBH = {
+		   add_opinion_modifier = { target = PMR modifier = northern_league_refused }
+		   create_wargoal = { type = annex_everything target = PMR }
+		}
+	}
+}
+#Alaskan Expedition#
+country_event = { 
+	id = nf_genericboswashington.8
+	title = nf_genericboswashington.8.t
+	desc = nf_genericboswashington.8.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_genericboswashington.8.option.a
+	}
+}
