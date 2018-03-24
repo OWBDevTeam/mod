@@ -145,6 +145,13 @@ focus_tree = {
 		prerequisite = {
 			focus = new_expansionism
 		}
+		abandon = {
+		    ANT = { 
+			    OR = {
+			        exists = no 
+				}	
+			}
+		}
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -228,6 +235,13 @@ focus_tree = {
 		icon = GFX_goal_generic_major_war
 		prerequisite = {
 			focus = new_expansionism
+		}
+		abandon = {
+		    YKZ = { 
+			    OR = {
+			        exists = no 
+				}	
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -1554,6 +1568,14 @@ focus_tree = {
 		prerequisite = {
 			focus = new_expansionism
 		}
+		abandon = {
+		    KLA = { 
+			    OR = {
+			        exists = no 
+			        is_puppet = yes
+				}	
+			}
+		}
 		x = 3
 		y = 7
 		cost = 8.6
@@ -1573,6 +1595,14 @@ focus_tree = {
 		 mutually_exclusive = {
             focus = new_takedown
         }
+		abandon = {
+		    KLA = { 
+			    OR = {
+			        exists = no 
+			        is_puppet = yes
+				}	
+			}
+		}
 		x = 4
 		y = 8
 		cost = 8.6
@@ -1675,6 +1705,14 @@ focus_tree = {
 		icon = GFX_focus_generic_self_management
 		prerequisite = {
 			focus = new_takedown
+		}
+		available = {
+			NEW = { 
+			    owns_state = 57
+			    owns_state = 59
+			    owns_state = 454
+			    owns_state = 467 
+			}
 		}
 		x = 2
 		y = 9
