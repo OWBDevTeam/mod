@@ -954,8 +954,17 @@ focus_tree = {
 			focus = ncr_openlong15
 		}
 		available = {
-			NCR = {
-				has_full_control_of_state = 77
+			OR = {
+				any_country = {
+					AND = {
+						is_in_faction_with = NCR
+						has_full_control_of_state = 77
+					}
+				}
+			
+				NCR = {
+					has_full_control_of_state = 77
+				}
 			}
 		}
 		x = 6
@@ -986,8 +995,14 @@ focus_tree = {
 		x = 8
 		y = 9
 		available = {
-			owns_state = 47
-			controls_state = 47
+			any_country = {
+				AND = {
+					is_in_faction_with = NCR
+					owns_state = 47
+					controls_state = 47
+				}
+				
+			}
 		}
 		completion_reward = {
 			47 = {
@@ -2292,17 +2307,23 @@ focus_tree = {
 			factor = 10
 		}
 		available = {
-			AND = {	
-				OR = {
-					owns_state = 533
-					owns_state = 137
-					owns_state = 573
-					owns_state = 380
-				}
-				OR = {
-					owns_state = 272
-					owns_state = 206
-					owns_state = 181
+			any_country = {
+				AND = {
+					is_in_faction_with = NCR
+				
+					AND = {	
+						OR = {
+							owns_state = 533
+							owns_state = 137
+							owns_state = 573
+							owns_state = 380
+						}
+						OR = {
+							owns_state = 272
+							owns_state = 206
+							owns_state = 181
+						}
+					}
 				}
 			}
 		}
