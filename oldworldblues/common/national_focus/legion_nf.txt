@@ -1906,14 +1906,23 @@ focus_tree = {
 		#	focus = ces_poking_the_bear
 		#}
 		available = {
-			VEG = {
-				is_neighbor_of = CES
+			613 = {
+				is_fully_controlled_by = CES
 			}
 		}
 		bypass = {
 			NOT = {
 				country_exists = VEG
 			}
+		}
+		ai_will_do = {
+			modifier = {
+				CES = {
+					has_war_with = NCR
+				}
+				factor = 0
+			}
+			factor = 6
 		}
 		will_lead_to_war_with = VEG
 		x = 5
