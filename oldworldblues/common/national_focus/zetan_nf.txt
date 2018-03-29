@@ -4,7 +4,7 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			tag = VLT
+			tag = UFO
 		}
 	}
 	default = no
@@ -12,20 +12,35 @@ focus_tree = {
 		id = zetan_landing
 		icon = GFX_goal_generic_ideological_fury_focus
 		cost = 0.5
-		x = 20
+		x = 10
 		y = 0
 		completion_reward = {
-		    add_political_power = 100
+		    load_oob = zetanlanding
+			add_equipment_to_stockpile = { type = heavy_robot_equipment_2 amount = 50000 producer = UFO }
 		}	
 	}
 	focus = {
-		id = zetan_republic
-		icon = GFX_goal_generic_ideological_fury_focus
+		id = zetan_vegas
+		icon = GFX_goal_generic_BoS_diplomatic_focus
 		cost = 0.5
-		x = 20
+		x = 10
 		y = 1
 		prerequisite = {
 		    focus = zetan_landing
+		}
+		will_lead_to_war_with = VEG
+		completion_reward = {
+		    create_wargoal = { type = annex_everything target = VEG }
+		}
+	}
+	focus = {
+		id = zetan_republic
+		icon = GFX_goal_generic_NCR_diplomatic_focus
+		cost = 0.5
+		x = 10
+		y = 2
+		prerequisite = {
+		    focus = zetan_vegas
 		}
 		will_lead_to_war_with = NCR
 		completion_reward = {
@@ -34,12 +49,12 @@ focus_tree = {
 	}
 	focus = {
 		id = zetan_legion
-		icon = GFX_goal_generic_ideological_fury_focus
+		icon = GFX_goal_generic_Legion_diplomatic_focus
 		cost = 0.5
-		x = 18
-		y = 1
+		x = 8
+		y = 2
 		prerequisite = {
-		    focus = zetan_landing
+		    focus = zetan_vegas
 		}
 		will_lead_to_war_with = CES
 		completion_reward = {
@@ -48,12 +63,12 @@ focus_tree = {
 	}
 	focus = {
 		id = zetan_brotherhood
-		icon = GFX_goal_generic_ideological_fury_focus
+		icon = GFX_goal_generic_BoS_diplomatic_focus
 		cost = 0.5
-		x = 22
-		y = 1
+		x = 12
+		y = 2
 		prerequisite = {
-		    focus = zetan_landing
+		    focus = zetan_vegas
 		}
 		will_lead_to_war_with = BOS
 		completion_reward = {

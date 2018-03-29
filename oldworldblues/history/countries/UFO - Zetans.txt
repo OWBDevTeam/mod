@@ -1,5 +1,5 @@
 ﻿capital = 389
-oob = "SKY_2265"
+oob = "UFO_2275"
 
 set_technology = {
     militia_training = 1
@@ -18,12 +18,20 @@ set_technology = {
 	traditional_instruction = 1
 	physical_blueprints = 1
 	electronic_blueprints = 1
-	robotic_helpers = 1
+	robotic_helpers = 1	
     tribal_civilization = 1
     settled_civilization = 1
 	plasma_weaponry = 1
 	beta_wave_tuner = 1
 	photon_agitator = 1
+	mr_handy_tech = 1
+	mr_gutsy_tech = 1
+	robo_brain_tech = 1
+	pre_war_targeting_systems_tech = 1
+	sentry_bot_tech = 1
+	commercial_protectron = 1
+	security_protectron_tech = 1
+	servo_maintenance_tech = 1
 }
 
 set_stability = 0.8 
@@ -38,10 +46,20 @@ add_ideas = {
 set_politics = {
     parties = {
         people = { popularity = 0 }
-        elites = { popularity = 0 }
-        intellectuals = { popularity = 100 }
+        elites = { popularity = 100 }
+        intellectuals = { popularity = 0 }
         ruler = { popularity = 0 }
     }
-    ruling_party = intellectuals
+    ruling_party = elites
     elections_allowed = no
+}
+create_country_leader  = {
+    name = "Zetan Commander"
+    desc = "Zetan_Commander_DESC"
+    picture = "Portrait_Zetan"
+    expire = "3000.1.1"
+    ideology = militarist_technocracy
+    
+    traits = {
+    }
 }
