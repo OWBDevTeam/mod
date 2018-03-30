@@ -11,7 +11,7 @@ focus_tree = {
 	focus = {
 		id = zetan_landing
 		icon = GFX_goal_generic_ideological_fury_focus
-		cost = 0.5
+		cost = 25
 		x = 10
 		y = 0
 		completion_reward = {
@@ -22,7 +22,7 @@ focus_tree = {
 	focus = {
 		id = zetan_vegas
 		icon = GFX_goal_generic_BoS_diplomatic_focus
-		cost = 0.5
+		cost = 52
 		x = 10
 		y = 1
 		prerequisite = {
@@ -31,12 +31,14 @@ focus_tree = {
 		will_lead_to_war_with = VEG
 		completion_reward = {
 		    create_wargoal = { type = annex_everything target = VEG }
+		    create_wargoal = { type = annex_everything target = GRA }
+		    create_wargoal = { type = annex_everything target = KHA }
 		}
 	}
 	focus = {
 		id = zetan_republic
 		icon = GFX_goal_generic_NCR_diplomatic_focus
-		cost = 0.5
+		cost = 52
 		x = 10
 		y = 2
 		prerequisite = {
@@ -50,7 +52,7 @@ focus_tree = {
 	focus = {
 		id = zetan_legion
 		icon = GFX_goal_generic_Legion_diplomatic_focus
-		cost = 0.5
+		cost = 52
 		x = 8
 		y = 2
 		prerequisite = {
@@ -64,7 +66,7 @@ focus_tree = {
 	focus = {
 		id = zetan_brotherhood
 		icon = GFX_goal_generic_BoS_diplomatic_focus
-		cost = 0.5
+		cost = 52
 		x = 12
 		y = 2
 		prerequisite = {
