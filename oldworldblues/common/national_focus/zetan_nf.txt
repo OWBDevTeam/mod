@@ -1,0 +1,103 @@
+focus_tree = {
+	id = zetan_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = UFO
+		}
+	}
+	default = no
+	focus = {
+		id = zetan_landing
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 15
+		x = 10
+		y = 0
+		completion_reward = {
+		    load_oob = zetanlanding
+			add_equipment_to_stockpile = { type = heavy_robot_equipment_2 amount = 50000 producer = UFO }
+		}	
+	}
+	focus = {
+		id = zetan_vegas
+		icon = GFX_goal_generic_BoS_diplomatic_focus
+		cost = 11
+		x = 10
+		y = 1
+		prerequisite = {
+		    focus = zetan_landing
+		}
+		available = {
+		    VEG = {
+			    exists = yes
+			}	
+		}
+		will_lead_to_war_with = VEG
+		will_lead_to_war_with = GRA
+		will_lead_to_war_with = KHA
+		completion_reward = {
+		    create_wargoal = { type = annex_everything target = VEG }
+		    create_wargoal = { type = annex_everything target = GRA }
+		    create_wargoal = { type = annex_everything target = KHA }
+		}
+	}
+	focus = {
+		id = zetan_republic
+		icon = GFX_goal_generic_NCR_diplomatic_focus
+		cost = 11
+		x = 10
+		y = 2
+		prerequisite = {
+		    focus = zetan_vegas
+		}
+		available = {
+		    NCR = {
+			    exists = yes
+			}	
+		}
+		will_lead_to_war_with = NCR
+		completion_reward = {
+		    create_wargoal = { type = annex_everything target = NCR }
+		}	
+	}
+	focus = {
+		id = zetan_legion
+		icon = GFX_goal_generic_Legion_diplomatic_focus
+		cost = 11
+		x = 8
+		y = 2
+		prerequisite = {
+		    focus = zetan_vegas
+		}
+		available = {
+		    CES = {
+			    exists = yes
+			}	
+		}
+		will_lead_to_war_with = CES
+		completion_reward = {
+		    create_wargoal = { type = annex_everything target = CES }
+		}	
+	}
+	focus = {
+		id = zetan_brotherhood
+		icon = GFX_goal_generic_BoS_diplomatic_focus
+		cost = 11
+		x = 12
+		y = 2
+		prerequisite = {
+		    focus = zetan_vegas
+		}
+		available = {
+		    BOS = {
+			    exists = yes
+			}	
+		}
+		will_lead_to_war_with = BOS
+		will_lead_to_war_with = MOJ
+		completion_reward = {
+		    create_wargoal = { type = annex_everything target = BOS }
+			create_wargoal = { type = annex_everything target = MOJ }
+		}	
+	}
