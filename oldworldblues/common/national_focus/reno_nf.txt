@@ -145,13 +145,14 @@ focus_tree = {
 		prerequisite = {
 			focus = new_expansionism
 		}
-		abandon = {
-		    ANT = { 
-			    OR = {
-			        exists = no 
+		available = {
+			ANT = { 
+				OR = {
+					exists = yes
 				}	
 			}
 		}
+		cancel_if_invalid = yes
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -175,7 +176,7 @@ focus_tree = {
 				target = ANT
 				type = annex_everything
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -252,13 +253,14 @@ focus_tree = {
 		prerequisite = {
 			focus = new_expansionism
 		}
-		abandon = {
-		    YKZ = { 
-			    OR = {
-			        exists = no 
+		available = {
+			YKZ = { 
+				OR = {
+					exists = yes
 				}	
 			}
 		}
+		cancel_if_invalid = yes
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -282,7 +284,7 @@ focus_tree = {
 				type = annex_everything
 				target = YKZ
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -1600,14 +1602,15 @@ focus_tree = {
 		prerequisite = {
 			focus = new_expansionism
 		}
-		abandon = {
-		    KLA = { 
-			    OR = {
-			        exists = no 
-			        is_puppet = yes
+		available = {
+			KLA = { 
+				AND = {
+					exists = yes
+					is_puppet = no
 				}	
 			}
 		}
+		cancel_if_invalid = yes
 		x = 3
 		y = 7
 		cost = 8.6
@@ -1625,16 +1628,17 @@ focus_tree = {
 			focus = new_klamathdeal
 		}
 		 mutually_exclusive = {
-            focus = new_takedown
-        }
-		abandon = {
-		    KLA = { 
-			    OR = {
-			        exists = no 
-			        is_puppet = yes
+			focus = new_takedown
+		}
+		available = {
+			KLA = { 
+				OR = {
+					exists = yes
+					is_puppet = no
 				}	
 			}
 		}
+		cancel_if_invalid = yes
 		x = 4
 		y = 8
 		cost = 8.6
@@ -1697,8 +1701,8 @@ focus_tree = {
 		}
 		will_lead_to_war_with = KLA
 		 mutually_exclusive = {
-            focus = new_klamathagreements
-        }
+			focus = new_klamathagreements
+		}
 		x = 2
 		y = 8
 		cost = 8.6
@@ -1707,7 +1711,7 @@ focus_tree = {
 				type = puppet_wargoal_focus
 				target = KLA
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -1740,10 +1744,10 @@ focus_tree = {
 		}
 		available = {
 			NEW = { 
-			    owns_state = 57
-			    owns_state = 59
-			    owns_state = 454
-			    owns_state = 467 
+				owns_state = 57
+				owns_state = 59
+				owns_state = 454
+				owns_state = 467 
 			}
 		}
 		x = 2
@@ -2043,44 +2047,44 @@ focus_tree = {
 		cost = 8.6
 		completion_reward = {
 			285 = {
-			If = {
-			limit = {
-				free_building_slots = {
-					building = arms_factory
-					size > 0
-					include_locked = yes
-				}
-				OR = {
-					is_in_home_area = yes
-					NOT = {
-						owner = {
-							any_owned_state = {
-								free_building_slots = {
-									building = arms_factory
-									size > 0
-									include_locked = yes
+				If = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+										is_in_home_area = yes
 									}
-								is_in_home_area = yes
 								}
 							}
 						}
 					}
-				}
-            }				
-			add_extra_state_shared_building_slots = 3
-			add_building_construction = {
-				type = arms_factory
-				level = 3
-				instant_build = yes
-				}	
-			add_building_construction = {
-				type = bunker 
-				level = 2
-				province = {
-					all_provinces = yes
-					limit_to_border = yes
-				}
-				instant_build = yes
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}	
+					add_building_construction = {
+						type = bunker 
+						level = 2
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						instant_build = yes
+					}
 				}
 			}
 		}	
@@ -2426,7 +2430,7 @@ focus_tree = {
 			}
 		}
 	  }
-    } 
+	} 
   }
 	focus = {
 		id = new_for_master
@@ -2450,7 +2454,7 @@ focus_tree = {
 				type = annex_everything
 				target = NCR
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -2476,7 +2480,7 @@ focus_tree = {
 				type = annex_everything
 				target = BOS
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
