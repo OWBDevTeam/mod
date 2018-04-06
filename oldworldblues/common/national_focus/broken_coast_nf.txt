@@ -1,0 +1,1048 @@
+focus_tree = {
+	id = broken_coast_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 200
+			tag = BRK
+		}
+	}
+	
+	focus = {
+		id = brk_nf_our_fathers
+		icon = GFX_goal_generic_building_focus
+		cost = 1.00
+		x = 12
+		y = 1
+
+		completion_reward = {
+			country_event = { id = nf_event_brk.1 }
+		}
+	}
+	
+	focus = {
+		id = brk_nf_our_goals
+		icon = GFX_goal_generic_building_focus
+		cost = 1.00
+		x = 12
+		y = 2
+		
+		prerequisite = {
+			focus = brk_nf_our_fathers
+		}
+
+		completion_reward = {
+			country_event = { id = nf_event_brk.2 }
+		}
+	}	
+	
+	focus = {
+		id = brk_nf_our_gods
+		icon = GFX_goal_generic_building_focus
+		cost = 1.00
+		x = 12
+		y = 3
+
+		prerequisite = {
+			focus = brk_nf_our_goals
+		}
+		
+		completion_reward = {
+			country_event = { id = nf_event_brk.3 }
+		}
+	}
+	
+	focus = {
+		id = brk_nf_grand_moot
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 12
+		y = 4
+
+		prerequisite = {
+			focus = brk_nf_our_gods
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_tech_upgrade
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 9
+		y = 5
+
+		prerequisite = {
+			focus = brk_nf_grand_moot
+		}
+		
+		available = { 
+				BRK = { has_completed_focus = brk_nf_master_smith}
+				BRK = { has_completed_focus = brk_nf_manufacturing_drive_2}
+		}	
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_tech_upgrade_1
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 15
+		y = 5
+
+		prerequisite = {
+			focus = brk_nf_grand_moot
+		}
+		
+		available = { 
+				BRK = { has_completed_focus = brk_nf_tech_upgrade}
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_ruler_pol
+		icon = GFX_focus_rom_royal_dictatorship
+		cost = 8.6
+		x = 8
+		y = 8
+		
+		mutually_exclusive = {
+			focus = brk_nf_people_pol
+		}
+
+		prerequisite = {
+			focus = brk_nf_grand_moot
+		}
+		
+		completion_reward = {
+			add_ideas = brk_ruler
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+			}
+		}
+	}
+
+	focus = {
+		id = brk_nf_ruler_pol_1
+		icon = GFX_focus_generic_home_defense
+		cost = 8.6
+		x = 8
+		y = 9
+		
+		prerequisite = {
+			focus = brk_nf_ruler_pol
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = brk_ruler_1
+				remove_idea = brk_ruler
+		   }
+		   add_popularity = {
+				ideology = ruler
+				popularity = 0.2
+			}
+		}
+	}
+	
+	focus = {
+		id = brk_nf_ruler_pol_side
+		icon = GFX_focus_generic_home_defense
+		cost = 8.6
+		x = 6
+		y = 9
+		
+		prerequisite = {
+			focus = brk_nf_ruler_pol
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = brk_nf_ruler_pol_side_1
+		icon = GFX_focus_generic_home_defense
+		cost = 8.6
+		x = 6
+		y = 10
+		
+		prerequisite = {
+			focus = brk_nf_ruler_pol_side
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = brk_nf_ruler_pol_2
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		cost = 8.6
+		x = 8
+		y = 10
+		
+		prerequisite = {
+			focus = brk_nf_ruler_pol_1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = brk_ruler_2
+				remove_idea = brk_ruler_1
+		   }
+		   add_popularity = {
+				ideology = ruler
+				popularity = 0.3
+			}
+		}
+	}
+	
+	focus = {
+		id = brk_nf_wife_of_conquest
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		cost = 8.6
+		x = 7
+		y = 11
+		
+		prerequisite = {
+			focus = brk_nf_ruler_pol_2
+		}
+		mutually_exclusive = { 
+			focus = brk_nf_wife_of_strength
+		}
+		available = { 
+				BRK = { controls_state = 420 }
+		}
+		
+		 
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = brk_ruler_3_conquest
+				remove_idea = brk_ruler_2
+		   }
+		}
+	}
+	
+	focus = {
+		id = brk_nf_wife_of_strength
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		cost = 8.6
+		x = 9
+		y = 11
+		
+		prerequisite = {
+			focus = brk_nf_ruler_pol_2
+		}
+		mutually_exclusive = { 
+			focus = brk_nf_wife_of_conquest
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = brk_ruler_3_strength
+				remove_idea = brk_ruler_2
+		   }
+		}
+	}
+	
+	focus = {
+		id = brk_nf_people_pol
+		icon = GFX_focus_rom_handle_king
+		cost = 8.6
+		x = 16
+		y = 8
+		
+		mutually_exclusive = {
+			focus = brk_nf_ruler_pol
+		}
+
+		prerequisite = {
+			focus = brk_nf_grand_moot
+		}
+		
+		completion_reward = {
+			add_ideas = brk_people
+			add_popularity = {
+				ideology = people
+				popularity = 0.1
+			}
+		}
+	}	
+
+	focus = {
+		id = brk_nf_people_pol_1
+		icon = GFX_goal_tfv_burn_the_royal_portraits
+		cost = 8.6
+		x = 16
+		y = 9
+
+		prerequisite = {
+			focus = brk_nf_people_pol
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = brk_people_1
+				remove_idea = brk_people
+		   }
+		   add_popularity = {
+				ideology = people
+				popularity = 0.2
+			}
+		}
+	}
+	
+	focus = {
+		id = brk_nf_people_pol_side
+		icon = GFX_goal_tfv_burn_the_royal_portraits
+		cost = 8.6
+		x = 18
+		y = 9
+
+		prerequisite = {
+			focus = brk_nf_people_pol_side
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = brk_nf_people_pol_side_1
+		icon = GFX_goal_tfv_burn_the_royal_portraits
+		cost = 8.6
+		x = 18
+		y = 10
+
+		prerequisite = {
+			focus = brk_nf_people_pol
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = brk_nf_people_pol_2
+		icon = GFX_focus_YUG_pan_slavic_congress
+		cost = 8.6
+		x = 16
+		y = 10
+
+		prerequisite = {
+			focus = brk_nf_people_pol_1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = brk_people_2
+				remove_idea = brk_people_1
+		   }
+		   add_popularity = {
+				ideology = people
+				popularity = 0.3
+			}
+			set_politics = { ruling_party = people elections_allowed = no }
+		}
+	}
+	
+	focus = {
+		id = brk_nf_warrior_priests
+		icon = GFX_focus_YUG_pan_slavic_congress
+		cost = 8.6
+		x = 15
+		y = 11
+
+		prerequisite = {
+			focus = brk_nf_people_pol_2
+		}
+		mutually_exclusive = {
+			focus = brk_nf_home_priests
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_home_priests
+		icon = GFX_focus_YUG_pan_slavic_congress
+		cost = 8.6
+		x = 17
+		y = 11
+
+		prerequisite = {
+			focus = brk_nf_people_pol_2
+		}
+		mutually_exclusive = {
+			focus = brk_nf_warrior_priests
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_til_strid
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 12
+		y = 10
+
+		prerequisite = {
+			focus = brk_nf_people_pol_1
+			focus = brk_nf_ruler_pol_1
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_frozen_shores
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 12
+		y = 11
+
+		prerequisite = {
+			focus = brk_nf_til_strid
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_raid_dredgers
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 13
+		y = 12
+
+		prerequisite = {
+			focus = brk_nf_frozen_shores
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_raid_bellingham
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 11
+		y = 12
+
+		prerequisite = {
+			focus = brk_nf_frozen_shores
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_ignite_the_forges
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 3
+		y = 5
+
+		prerequisite = {
+			focus = brk_nf_grand_moot
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_salvage_parties
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 2
+		y = 6
+
+		prerequisite = {
+			focus = brk_nf_grand_moot
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_drive_the_cattle_home
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 4
+		y = 6
+
+		prerequisite = {
+			focus = brk_nf_grand_moot
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_expand_the_forges
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 3
+		y = 7
+
+		prerequisite = {
+			focus = brk_nf_ignite_the_forges
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_water_purification
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 2
+		y = 8
+
+		prerequisite = {
+			focus = brk_nf_salvage_parties
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_slave_habitation
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 4
+		y = 8
+
+		prerequisite = {
+			focus = brk_nf_drive_the_cattle_home
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_scour_the_coast
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 3
+		y = 9
+
+		prerequisite = {
+			focus = brk_nf_expand_the_forges
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_boon_of_njord
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 2
+		y = 10
+
+		prerequisite = {
+			focus = brk_nf_water_purification
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_slave_selection
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 4
+		y = 10
+
+		prerequisite = {
+			focus = brk_nf_slave_habitation
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_blessed_steel
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 3
+		y = 11
+
+		prerequisite = {
+			focus = brk_nf_scour_the_coast
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_dig_deep
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 2
+		y = 12
+
+		prerequisite = {
+			focus = brk_nf_boon_of_njord
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_slave_shedules
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 4
+		y = 12
+
+		prerequisite = {
+			focus = brk_nf_slave_selection
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_smith
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 12
+		y = 5
+
+		prerequisite = {
+			focus = brk_nf_grand_moot
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_add_spikes
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 13
+		y = 6
+
+		prerequisite = {
+			focus = brk_nf_grand_moot
+		}
+		mutually_exclusive = {
+			focus = brk_nf_add_plating
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_add_plating
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 11
+		y = 6
+
+		prerequisite = {
+			focus = brk_nf_grand_moot
+		}
+		mutually_exclusive = {
+			focus = brk_nf_add_spikes
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_master_smith
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 12
+		y = 7
+
+		prerequisite = {
+			focus = brk_nf_add_plating
+			focus = brk_nf_add_spikes
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_add_more_spikes
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 14
+		y = 7
+
+		prerequisite = {
+			focus = brk_nf_add_spikes
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_add_more_plating
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 10
+		y = 7
+
+		prerequisite = {
+			focus = brk_nf_add_plating
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_dockyards
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 21
+		y = 5
+
+		prerequisite = {
+			focus = brk_nf_grand_moot
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_longboats
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 20
+		y = 6
+
+		prerequisite = {
+			focus = brk_nf_grand_moot
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_longboats_1
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 20
+		y = 8
+
+		prerequisite = {
+			focus = brk_nf_longboats
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_longboats_2
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 20
+		y = 10
+
+		prerequisite = {
+			focus = brk_nf_longboats_1
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_longboats_3
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 20
+		y = 12
+
+		prerequisite = {
+			focus = brk_nf_longboats_2
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_workshops
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 22
+		y = 6
+
+		prerequisite = {
+			focus = brk_nf_grand_moot
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_workshops_1
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 22
+		y = 8
+
+		prerequisite = {
+			focus = brk_nf_workshops
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_workshops_2
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 22
+		y = 10
+
+		prerequisite = {
+			focus = brk_nf_workshops_1
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_workshops_3
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 22
+		y = 12
+
+		prerequisite = {
+			focus = brk_nf_workshops_2
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_dockyards_1
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 21
+		y = 7
+
+		prerequisite = {
+			focus = brk_nf_dockyards
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_dockyards_2
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 21
+		y = 9
+
+		prerequisite = {
+			focus = brk_nf_dockyards_1
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_dockyards_3
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 21
+		y = 11
+
+		prerequisite = {
+			focus = brk_nf_dockyards_2
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_recruitment_drive
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 6
+		y = 5
+
+		prerequisite = {
+			focus = brk_nf_grand_moot
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_recruitment_drive_1
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 7
+		y = 6
+
+		prerequisite = {
+			focus = brk_nf_recruitment_drive
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_recruitment_drive_2
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 6
+		y = 7
+
+		prerequisite = {
+			focus = brk_nf_recruitment_drive_1
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_manufacturing_drive
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 18
+		y = 5
+
+		prerequisite = {
+			focus = brk_nf_grand_moot
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_manufacturing_drive_1
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 17
+		y = 6
+
+		prerequisite = {
+			focus = brk_nf_manufacturing_drive
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_manufacturing_drive_2
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 18
+		y = 7
+
+		prerequisite = {
+			focus = brk_nf_manufacturing_drive_1
+		}
+		
+		completion_reward = {
+
+		}
+	}
+
+}	
