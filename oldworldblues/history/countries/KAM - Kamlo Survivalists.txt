@@ -1,0 +1,70 @@
+﻿capital = 27
+oob = "KAM_2265"
+
+set_technology = {
+    # baseline techs
+        tribal_civilization = 1
+        settled_civilization = 1
+        
+        #industry
+        oral_instruction = 1
+        
+        #infantry
+        standard_weaponry_tech = 1
+        blunt_weaponry = 1
+        
+        #support
+        explosive_tech = 1
+        anti_personnel_tech = 1
+        support_weaponry = 1
+        
+        #vehicle
+        bike_tech_1 = 1
+        
+        #naval
+        destroyer_tech = 1
+        destroyer_tech_2 = 1
+        cruiser_tech = 1
+        naval_invasion_tech = 1
+}
+
+set_stability = 0.65
+set_war_support = 0.25
+
+set_politics = {
+    parties = {
+        people = { popularity = 0 }
+        elites = { popularity = 70 }
+        intellectuals = { popularity = 5 }
+        ruler = { popularity = 25 }
+    }
+    ruling_party = elites
+    elections_allowed = no
+}
+
+add_ideas = { }
+
+create_country_leader = {
+    name = "Ranger Kenneth"
+    desc = "KENNETH_DESC"
+    picture = "Portrait_KAM_Leader.dds"
+    expire = "3000.1.1"
+    ideology = survivalism
+    traits = {
+        cruel_tyrant
+    }
+}
+
+create_field_marshal = {
+	name = "Ranger Kenneth"
+	portrait_path = "gfx/leaders/KAM/Portrait_KAM_Leader.dds"
+	skill = 4
+	traits = {
+		offensive_doctrine
+	}
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 4
+}
+
