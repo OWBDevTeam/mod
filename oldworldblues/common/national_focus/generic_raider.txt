@@ -1348,18 +1348,17 @@ focus_tree = {
 		prerequisite = {
 			focus = short_fused_engineers
 		}
+		available = {
+			has_tech = explosive_tech_4
+		}
 		x = 23
 		y = 9
-			available_if_capitulated = yes
-			completion_reward = {
-					add_tech_bonus = {
-							name = raider_howitzer_bonus
-							bonus = 0.75
-							uses = 1
-							technology = explosive_tech_5
-						}
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			set_technology = {
+				explosive_tech_5 = 1 
+			}
+		}
 	}
 	focus = {
 		id = the_magnum_opus
