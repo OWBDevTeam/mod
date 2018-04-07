@@ -554,7 +554,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		completion_reward = {
 			add_equipment_to_stockpile = {
-				type = power_armour_raider
+				type = raider_power_armour_equipment
 				amount = 250
 			}
 		}
@@ -1281,15 +1281,15 @@ focus_tree = {
 		prerequisite = {
 			focus = take_what_you_need
 		}
-		available = {
-			has_tech = explosive_tech_4
-		}
 		x = 23
 		y = 7
 	    available_if_capitulated = yes
 		completion_reward = {
-			set_technology = {
-				explosive_tech_5 = 1 
+			add_tech_bonus = {
+				name = raider_explosives_bonus
+				bonus = 0.75
+				uses = 1
+				category = artillery
 			}
 		}
 	}
@@ -1330,18 +1330,17 @@ focus_tree = {
 		prerequisite = {
 			focus = short_fused_engineers
 		}
+		available = {
+			has_tech = explosive_tech_4
+		}
 		x = 23
 		y = 9
-			available_if_capitulated = yes
-			completion_reward = {
-					add_tech_bonus = {
-							name = raider_howitzer_bonus
-							bonus = 0.75
-							uses = 1
-							technology = explosive_tech_5
-						}
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			set_technology = {
+				explosive_tech_5 = 1 
+			}
+		}
 	}
 	focus = {
 		id = the_magnum_opus
