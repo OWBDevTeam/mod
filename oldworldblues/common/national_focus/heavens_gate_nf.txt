@@ -58,7 +58,7 @@ focus_tree = {
 		id = hea_nf_open_pol
 		icon = GFX_goal_generic_political_pressure
 		cost = 8.6
-		x = 10
+		x = 13
 		y = 4
 
 		prerequisite = {
@@ -74,7 +74,7 @@ focus_tree = {
 		id = hea_nf_ruler_pol
 		icon = GFX_focus_rom_royal_dictatorship
 		cost = 8.6
-		x = 9
+		x = 12
 		y = 5
 		
 		mutually_exclusive = {
@@ -98,7 +98,7 @@ focus_tree = {
 		id = hea_nf_ruler_pol_1
 		icon = GFX_focus_generic_home_defense
 		cost = 8.6
-		x = 9
+		x = 12
 		y = 6
 		
 		prerequisite = {
@@ -121,7 +121,7 @@ focus_tree = {
 		id = hea_nf_ruler_pol_2
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		cost = 8.6
-		x = 9
+		x = 12
 		y = 7
 		
 		prerequisite = {
@@ -144,7 +144,7 @@ focus_tree = {
 		id = hea_nf_elite_pol
 		icon = GFX_focus_rom_parties_end
 		cost = 8.6
-		x = 11
+		x = 14
 		y = 5
 
 		mutually_exclusive = {
@@ -168,7 +168,7 @@ focus_tree = {
 		id = hea_nf_elite_pol_1
 		icon = GFX_goal_generic_military_deal
 		cost = 8.6
-		x = 11
+		x = 14
 		y = 6
 		
 		prerequisite = {
@@ -191,7 +191,7 @@ focus_tree = {
 		id = hea_nf_elite_pol_2
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 11
+		x = 14
 		y = 7
 		
 		prerequisite = {
@@ -215,7 +215,7 @@ focus_tree = {
 		id = hea_nf_consolidate_pol
 		icon = GFX_goal_generic_political_pressure
 		cost = 8.6
-		x = 10
+		x = 13
 		y = 8
 
 		prerequisite = {
@@ -232,7 +232,7 @@ focus_tree = {
 		id = hea_nf_grand_cathedral
 		icon = GFX_goal_generic_political_pressure
 		cost = 8.6
-		x = 10
+		x = 13
 		y = 9
 
 		prerequisite = {
@@ -468,65 +468,11 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hea_nf_gods_militia
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 19
-		y = 5
-		
-		prerequisite = {
-			focus = hea_nf_economy
-		}
-		
-		completion_reward = {
-			add_ideas = hin_gods_militia
-		}
-	}
-	
-	focus = {
-		id = hea_nf_gods_militia_1
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 19
-		y = 6
-		
-		prerequisite = {
-			focus = hea_nf_gods_militia
-		}
-		
-		completion_reward = {
-			swap_ideas = {
-				add_idea = hin_gods_militia_1
-				remove_idea = hin_gods_militia
-		   }
-		}
-	}
-	
-	focus = {
-		id = hea_nf_gods_militia_2
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 19
-		y = 7
-		
-		prerequisite = {
-			focus = hea_nf_gods_militia_1
-		}
-		
-		completion_reward = {
-			swap_ideas = {
-				add_idea = hin_gods_militia_2
-				remove_idea = hin_gods_militia_1
-		   }
-		}
-	}
-	
-	focus = {
 		id = hea_nf_community_service
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 7
-		y = 4
+		x = 9
+		y = 5
 		
 		prerequisite = {
 			focus = hea_nf_economy
@@ -546,8 +492,8 @@ focus_tree = {
 		id = hea_nf_path_of_steam
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 7
-		y = 5
+		x = 9
+		y = 6
 		
 		prerequisite = {
 			focus = hea_nf_community_service
@@ -570,10 +516,90 @@ focus_tree = {
 	}
 	
 	focus = {
+		id = hea_nf_school_of_steam
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 8.6
+		x = 9
+		y = 7
+		
+		prerequisite = {
+			focus = hea_nf_path_of_steam
+		}
+				
+		completion_reward = {
+			add_research_slot = 1
+			add_ideas = hin_school_of_steam
+		}
+	}
+	
+	focus = {
+		id = hea_nf_school_of_steam_industry
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 8.6
+		x = 9
+		y = 8
+		
+		prerequisite = {
+			focus = hea_nf_school_of_steam
+		}
+				
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.15
+				uses = 3
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = hea_nf_school_of_steam_motorisation
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 8.6
+		x = 11
+		y = 8
+		
+		prerequisite = {
+			focus = hea_nf_school_of_steam
+		}
+				
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.15
+				uses = 3
+				category = motorized_equipment
+			}
+		}
+	}
+	
+	focus = {
+		id = hea_nf_school_of_steam_aviation
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 8.6
+		x = 7
+		y = 8
+		
+		prerequisite = {
+			focus = hea_nf_school_of_steam
+		}
+				
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_bonus
+				bonus = 0.15
+				uses = 3
+				category = air_equipment	
+			}
+		}
+	}
+	
+	focus = {
 		id = hea_nf_industry
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 15
+		x = 18
 		y = 4
 		
 		prerequisite = {
@@ -596,7 +622,7 @@ focus_tree = {
 		id = hea_nf_industry_1
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 14
+		x = 17
 		y = 5
 		
 		prerequisite = {
@@ -622,7 +648,7 @@ focus_tree = {
 		id = hea_nf_industry_2
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 14
+		x = 17
 		y = 6
 		
 		prerequisite = {
@@ -649,7 +675,7 @@ focus_tree = {
 		id = hea_nf_industry_3
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 14
+		x = 17
 		y = 7
 		
 		prerequisite = {
@@ -676,7 +702,7 @@ focus_tree = {
 		id = hea_nf_industry_4
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 14
+		x = 17
 		y = 8
 		
 		prerequisite = {
@@ -703,7 +729,7 @@ focus_tree = {
 		id = hea_nf_industry_mil_1
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 16
+		x = 19
 		y = 5
 		
 		prerequisite = {
@@ -729,7 +755,7 @@ focus_tree = {
 		id = hea_nf_industry_mil_2
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 16
+		x = 19
 		y = 6
 		
 		prerequisite = {
@@ -756,7 +782,7 @@ focus_tree = {
 		id = hea_nf_industry_mil_3
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 16
+		x = 19
 		y = 7
 		
 		prerequisite = {
@@ -783,7 +809,7 @@ focus_tree = {
 		id = hea_nf_industry_mil_4
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 16
+		x = 19
 		y = 8
 		
 		prerequisite = {
@@ -810,7 +836,7 @@ focus_tree = {
 		id = hea_nf_industry_5
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 15
+		x = 18
 		y = 10
 		
 		prerequisite = {
@@ -895,7 +921,7 @@ focus_tree = {
 		id = hea_nf_foreign_ministry
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 24
+		x = 25
 		y = 4
 		
 		prerequisite = {
@@ -1028,10 +1054,64 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hea_nf_embassy_lonetree
+		id = hea_nf_gods_militia
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 26
+		y = 5
+		
+		prerequisite = {
+			focus = hea_nf_foreign_ministry
+		}
+		
+		completion_reward = {
+			add_ideas = hin_gods_militia
+		}
+	}
+	
+	focus = {
+		id = hea_nf_gods_militia_1
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 8.6
+		x = 26
+		y = 6
+		
+		prerequisite = {
+			focus = hea_nf_gods_militia
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = hin_gods_militia_1
+				remove_idea = hin_gods_militia
+		   }
+		}
+	}
+	
+	focus = {
+		id = hea_nf_gods_militia_2
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 8.6
+		x = 26
+		y = 7
+		
+		prerequisite = {
+			focus = hea_nf_gods_militia_1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = hin_gods_militia_2
+				remove_idea = hin_gods_militia_1
+		   }
+		}
+	}
+	
+	focus = {
+		id = hea_nf_embassy_lonetree
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 8.6
+		x = 28
 		y = 5
 		
 		prerequisite = {
@@ -1049,8 +1129,8 @@ focus_tree = {
 		id = hea_nf_demand_submission_lonetree
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 26
-		y = 7
+		x = 28
+		y = 6
 		
 		prerequisite = {
 			focus = hea_nf_embassy_lonetree
@@ -1058,83 +1138,6 @@ focus_tree = {
 				
 		completion_reward = {
 			country_event = { id = nf_event_hin.7 }
-		}
-	}
-	
-	
-	focus = {
-		id = hea_nf_school_of_steam
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 24
-		y = 9
-				
-		completion_reward = {
-			add_research_slot = 1
-			add_ideas = hin_school_of_steam
-		}
-	}
-	
-	focus = {
-		id = hea_nf_school_of_steam_industry
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 22
-		y = 10
-		
-		prerequisite = {
-			focus = hea_nf_school_of_steam
-		}
-				
-		completion_reward = {
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 0.15
-				uses = 3
-				category = industry
-			}
-		}
-	}
-	
-	focus = {
-		id = hea_nf_school_of_steam_motorisation
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 24
-		y = 10
-		
-		prerequisite = {
-			focus = hea_nf_school_of_steam
-		}
-				
-		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				bonus = 0.15
-				uses = 3
-				category = motorized_equipment
-			}
-		}
-	}
-	
-	focus = {
-		id = hea_nf_school_of_steam_aviation
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 26
-		y = 10
-		
-		prerequisite = {
-			focus = hea_nf_school_of_steam
-		}
-				
-		completion_reward = {
-			add_tech_bonus = {
-				name = air_bonus
-				bonus = 0.15
-				uses = 3
-				category = air_equipment	
-			}
 		}
 	}
 }
