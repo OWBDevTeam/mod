@@ -431,10 +431,133 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = brk_nf_raid_dredgers
+		id = brk_nf_raid_whistler
 		icon = GFX_goal_generic_building_focus
 		cost = 8.6
-		x = 13
+		x = 12
+		y = 12
+
+		prerequisite = {
+			focus = brk_nf_frozen_shores
+		}
+		mutually_exclusive = {
+			focus = brk_nf_woo_whistler
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_demand_whistler
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 12
+		y = 14
+
+		prerequisite = {
+			focus = brk_nf_raid_whistler
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_integrate_enemies
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 12
+		y = 15
+
+		prerequisite = {
+			focus = brk_nf_demand_whistler
+			focus = brk_nf_aid_whistler
+		}
+		prerequisite = {
+			focus = brk_nf_enslave_kamlo
+		}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = brk_nf_lessons_of_war
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 12
+		y = 16
+
+		prerequisite = {
+			focus = brk_nf_integrate_enemies
+		}
+
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = brk_nf_woo_whistler
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 14
+		y = 12
+
+		prerequisite = {
+			focus = brk_nf_frozen_shores
+		}
+		mutually_exclusive = {
+			focus = brk_nf_raid_whistler
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_protect_whistler
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 14
+		y = 13
+
+		prerequisite = {
+			focus = brk_nf_woo_whistler
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_aid_whistler
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 14
+		y = 14
+
+		prerequisite = {
+			focus = brk_nf_protect_whistler
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_raid_kamlo
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 10
 		y = 12
 
 		prerequisite = {
@@ -447,14 +570,30 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = brk_nf_raid_bellingham
+		id = brk_nf_break_kamlo
 		icon = GFX_goal_generic_building_focus
 		cost = 8.6
-		x = 11
-		y = 12
+		x = 10
+		y = 13
 
 		prerequisite = {
-			focus = brk_nf_frozen_shores
+			focus = brk_nf_raid_kamlo
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_enslave_kamlo
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 10
+		y = 14
+
+		prerequisite = {
+			focus = brk_nf_break_kamlo
 		}
 		
 		completion_reward = {
@@ -1038,6 +1177,38 @@ focus_tree = {
 
 		prerequisite = {
 			focus = brk_nf_manufacturing_drive_1
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_new_victoria
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 7
+		y = 16
+
+		prerequisite = {
+			focus = brk_nf_integrate_enemies
+		}
+		
+		completion_reward = {
+
+		}
+	}
+	
+	focus = {
+		id = brk_nf_dredgers
+		icon = GFX_goal_generic_building_focus
+		cost = 8.6
+		x = 17
+		y = 16
+
+		prerequisite = {
+			focus = brk_nf_integrate_enemies
 		}
 		
 		completion_reward = {
