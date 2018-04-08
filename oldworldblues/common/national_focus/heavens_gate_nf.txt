@@ -4,14 +4,14 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 200
-			tag = HIN
+			tag = HEA
 		}
 	}
 	
 	default = no
 	
 	focus = {
-		id = hin_nf_precursers
+		id = hea_nf_precursers
 		icon = GFX_goal_generic_building_focus
 		cost = 1.00
 		x = 10
@@ -23,14 +23,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_beer
+		id = hea_nf_beer
 		icon = GFX_goal_generic_building_focus
 		cost = 1.00
 		x = 10
 		y = 2
 		
 		prerequisite = {
-			focus = hin_nf_precursers
+			focus = hea_nf_precursers
 		}
 
 		completion_reward = {
@@ -39,14 +39,14 @@ focus_tree = {
 	}	
 	
 	focus = {
-		id = hin_nf_economy
+		id = hea_nf_economy
 		icon = GFX_goal_generic_building_focus
 		cost = 1.00
 		x = 10
 		y = 3
 
 		prerequisite = {
-			focus = hin_nf_beer
+			focus = hea_nf_beer
 		}
 		
 		completion_reward = {
@@ -55,14 +55,14 @@ focus_tree = {
 	}	
 	
 	focus = {
-		id = hin_nf_open_pol
+		id = hea_nf_open_pol
 		icon = GFX_goal_generic_political_pressure
 		cost = 8.6
 		x = 10
 		y = 4
 
 		prerequisite = {
-			focus = hin_nf_economy
+			focus = hea_nf_economy
 		}
 		
 		completion_reward = {
@@ -71,18 +71,18 @@ focus_tree = {
 	}		
 	
 	focus = {
-		id = hin_nf_ruler_pol
+		id = hea_nf_ruler_pol
 		icon = GFX_focus_rom_royal_dictatorship
 		cost = 8.6
 		x = 9
 		y = 5
 		
 		mutually_exclusive = {
-			focus = hin_nf_elite_pol
+			focus = hea_nf_elite_pol
 		}
 
 		prerequisite = {
-			focus = hin_nf_open_pol
+			focus = hea_nf_open_pol
 		}
 		
 		completion_reward = {
@@ -95,14 +95,14 @@ focus_tree = {
 	}
 
 	focus = {
-		id = hin_nf_ruler_pol_1
+		id = hea_nf_ruler_pol_1
 		icon = GFX_focus_generic_home_defense
 		cost = 8.6
 		x = 9
 		y = 6
 		
 		prerequisite = {
-			focus = hin_nf_ruler_pol
+			focus = hea_nf_ruler_pol
 		}
 		
 		completion_reward = {
@@ -118,14 +118,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_ruler_pol_2
+		id = hea_nf_ruler_pol_2
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		cost = 8.6
 		x = 9
 		y = 7
 		
 		prerequisite = {
-			focus = hin_nf_ruler_pol_1
+			focus = hea_nf_ruler_pol_1
 		}
 		
 		completion_reward = {
@@ -141,18 +141,18 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_elite_pol
+		id = hea_nf_elite_pol
 		icon = GFX_focus_rom_parties_end
 		cost = 8.6
 		x = 11
 		y = 5
 
 		mutually_exclusive = {
-			focus = hin_nf_ruler_pol
+			focus = hea_nf_ruler_pol
 		}
 		
 		prerequisite = {
-			focus = hin_nf_open_pol
+			focus = hea_nf_open_pol
 		}
 		
 		completion_reward = {
@@ -165,14 +165,14 @@ focus_tree = {
 	}
 
 	focus = {
-		id = hin_nf_elite_pol_1
+		id = hea_nf_elite_pol_1
 		icon = GFX_goal_generic_military_deal
 		cost = 8.6
 		x = 11
 		y = 6
 		
 		prerequisite = {
-			focus = hin_nf_elite_pol
+			focus = hea_nf_elite_pol
 		}
 		
 		completion_reward = {
@@ -188,14 +188,14 @@ focus_tree = {
 	}	
 	
 	focus = {
-		id = hin_nf_elite_pol_2
+		id = hea_nf_elite_pol_2
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 11
 		y = 7
 		
 		prerequisite = {
-			focus = hin_nf_elite_pol_1
+			focus = hea_nf_elite_pol_1
 		}
 		
 		completion_reward = {
@@ -212,15 +212,15 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_consolidate_pol
+		id = hea_nf_consolidate_pol
 		icon = GFX_goal_generic_political_pressure
 		cost = 8.6
 		x = 10
 		y = 8
 
 		prerequisite = {
-			focus = hin_nf_elite_pol_2
-			focus = hin_nf_ruler_pol_2
+			focus = hea_nf_elite_pol_2
+			focus = hea_nf_ruler_pol_2
 		}
 		
 		completion_reward = {
@@ -229,14 +229,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_reichstag
+		id = hea_nf_grand_cathedral
 		icon = GFX_goal_generic_political_pressure
 		cost = 8.6
 		x = 10
 		y = 9
 
 		prerequisite = {
-			focus = hin_nf_consolidate_pol
+			focus = hea_nf_consolidate_pol
 		}
 		
 		completion_reward = {
@@ -246,14 +246,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_army
+		id = hea_nf_army
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 3
 		y = 4
 		
 		prerequisite = {
-			focus = hin_nf_economy
+			focus = hea_nf_economy
 		}
 		
 		completion_reward = {
@@ -267,14 +267,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_army_1
+		id = hea_nf_army_1
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 5
 		y = 5
 		
 		prerequisite = {
-			focus = hin_nf_army
+			focus = hea_nf_army
 		}
 		
 		completion_reward = {
@@ -290,17 +290,17 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_conscription
+		id = hea_nf_conscription
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 4
 		y = 6
 		
 		prerequisite = {
-			focus = hin_nf_army_1
+			focus = hea_nf_army_1
 		}
 		mutually_exclusive = {
-			focus = hin_nf_freikorp
+			focus = hea_nf_crusaders
 		}
 		
 		completion_reward = {
@@ -310,34 +310,34 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_freikorp
+		id = hea_nf_crusaders
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 6
 		y = 6
 		
 		prerequisite = {
-			focus = hin_nf_army_1
+			focus = hea_nf_army_1
 		}
 		mutually_exclusive = {
-			focus = hin_nf_conscription
+			focus = hea_nf_conscription
 		}
 		
 		completion_reward = {
-			add_ideas = hin_freikorp
+			add_ideas = hin_crusaders
 		}
 	}
 	
 	focus = {
-		id = hin_nf_army_3
+		id = hea_nf_army_3
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 5
 		y = 7
 		
 		prerequisite = {
-			focus = hin_nf_conscription
-			focus = hin_nf_freikorp
+			focus = hea_nf_conscription
+			focus = hea_nf_crusaders
 		}
 		
 		completion_reward = {
@@ -351,14 +351,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_air
+		id = hea_nf_air
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 1
 		y = 5
 		
 		prerequisite = {
-			focus = hin_nf_army
+			focus = hea_nf_army
 		}
 		
 		completion_reward = {
@@ -373,17 +373,17 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_air_knight
+		id = hea_nf_air_knight
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 0
 		y = 6
 		
 		prerequisite = {
-			focus = hin_nf_air
+			focus = hea_nf_air
 		}
 		mutually_exclusive = {
-			focus = hin_nf_air_peasant
+			focus = hea_nf_air_peasant
 		}
 		
 		completion_reward = {
@@ -392,17 +392,17 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_air_peasant
+		id = hea_nf_air_peasant
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 2
 		y = 6
 		
 		prerequisite = {
-			focus = hin_nf_air
+			focus = hea_nf_air
 		}
 		mutually_exclusive = {
-			focus = hin_nf_air_knight
+			focus = hea_nf_air_knight
 		}
 		
 		completion_reward = {
@@ -411,15 +411,15 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_air_1
+		id = hea_nf_air_1
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 1
 		y = 7
 		
 		prerequisite = {
-			focus = hin_nf_air_peasant
-			focus = hin_nf_air_knight
+			focus = hea_nf_air_peasant
+			focus = hea_nf_air_knight
 		}
 		
 		completion_reward = {
@@ -433,17 +433,17 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_general_staff
+		id = hea_nf_missionary_warriors
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 3
 		y = 8
 		
 		prerequisite = {
-			focus = hin_nf_army_3
+			focus = hea_nf_army_3
 		}
 		prerequisite = {
-			focus = hin_nf_air_1
+			focus = hea_nf_air_1
 		}
 		
 		completion_reward = {
@@ -452,14 +452,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_school_of_mobility
+		id = hea_nf_officer_priests
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 3
 		y = 10
 		
 		prerequisite = {
-			focus = hin_nf_general_staff
+			focus = hea_nf_missionary_warriors
 		}
 		
 		completion_reward = {
@@ -468,68 +468,68 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_landswehr
+		id = hea_nf_gods_militia
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 19
 		y = 5
 		
 		prerequisite = {
-			focus = hin_nf_economy
+			focus = hea_nf_economy
 		}
 		
 		completion_reward = {
-			add_ideas = hin_landswehr
+			add_ideas = hin_gods_militia
 		}
 	}
 	
 	focus = {
-		id = hin_nf_landswehr_1
+		id = hea_nf_gods_militia_1
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 19
 		y = 6
 		
 		prerequisite = {
-			focus = hin_nf_landswehr
+			focus = hea_nf_gods_militia
 		}
 		
 		completion_reward = {
 			swap_ideas = {
-				add_idea = hin_landswehr_1
-				remove_idea = hin_landswehr
+				add_idea = hin_gods_militia_1
+				remove_idea = hin_gods_militia
 		   }
 		}
 	}
 	
 	focus = {
-		id = hin_nf_landswehr_2
+		id = hea_nf_gods_militia_2
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 19
 		y = 7
 		
 		prerequisite = {
-			focus = hin_nf_landswehr_1
+			focus = hea_nf_gods_militia_1
 		}
 		
 		completion_reward = {
 			swap_ideas = {
-				add_idea = hin_landswehr_2
-				remove_idea = hin_landswehr_1
+				add_idea = hin_gods_militia_2
+				remove_idea = hin_gods_militia_1
 		   }
 		}
 	}
 	
 	focus = {
-		id = hin_nf_arbeitsdienst
+		id = hea_nf_community_service
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 7
 		y = 4
 		
 		prerequisite = {
-			focus = hin_nf_economy
+			focus = hea_nf_economy
 		}
 		
 		completion_reward = {
@@ -543,14 +543,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_reichsbahn
+		id = hea_nf_path_of_steam
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 7
 		y = 5
 		
 		prerequisite = {
-			focus = hin_nf_arbeitsdienst
+			focus = hea_nf_community_service
 		}
 		
 		completion_reward = {
@@ -570,14 +570,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_industry
+		id = hea_nf_industry
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 15
 		y = 4
 		
 		prerequisite = {
-			focus = hin_nf_economy
+			focus = hea_nf_economy
 		}
 		
 		completion_reward = {
@@ -593,17 +593,17 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_industry_1
+		id = hea_nf_industry_1
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 14
 		y = 5
 		
 		prerequisite = {
-			focus = hin_nf_industry
+			focus = hea_nf_industry
 		}
 		mutually_exclusive = {
-			focus = hin_nf_industry_mil_1
+			focus = hea_nf_industry_mil_1
 		}
 		
 		completion_reward = {
@@ -619,18 +619,18 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_industry_2
+		id = hea_nf_industry_2
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 14
 		y = 6
 		
 		prerequisite = {
-			focus = hin_nf_industry_mil_1
-			focus = hin_nf_industry_1
+			focus = hea_nf_industry_mil_1
+			focus = hea_nf_industry_1
 		}
 		mutually_exclusive = {
-			focus = hin_nf_industry_mil_2
+			focus = hea_nf_industry_mil_2
 		}
 		
 		completion_reward = {
@@ -646,18 +646,18 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_industry_3
+		id = hea_nf_industry_3
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 14
 		y = 7
 		
 		prerequisite = {
-			focus = hin_nf_industry_mil_2
-			focus = hin_nf_industry_2
+			focus = hea_nf_industry_mil_2
+			focus = hea_nf_industry_2
 		}
 		mutually_exclusive = {
-			focus = hin_nf_industry_mil_3
+			focus = hea_nf_industry_mil_3
 		}
 		
 		completion_reward = {
@@ -673,18 +673,18 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_industry_4
+		id = hea_nf_industry_4
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 14
 		y = 8
 		
 		prerequisite = {
-			focus = hin_nf_industry_mil_3
-			focus = hin_nf_industry_3
+			focus = hea_nf_industry_mil_3
+			focus = hea_nf_industry_3
 		}
 		mutually_exclusive = {
-			focus = hin_nf_industry_mil_4
+			focus = hea_nf_industry_mil_4
 		}
 		
 		completion_reward = {
@@ -700,17 +700,17 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_industry_mil_1
+		id = hea_nf_industry_mil_1
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 16
 		y = 5
 		
 		prerequisite = {
-			focus = hin_nf_industry
+			focus = hea_nf_industry
 		}
 		mutually_exclusive = {
-			focus = hin_nf_industry_1
+			focus = hea_nf_industry_1
 		}
 		
 		completion_reward = {
@@ -726,18 +726,18 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_industry_mil_2
+		id = hea_nf_industry_mil_2
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 16
 		y = 6
 		
 		prerequisite = {
-			focus = hin_nf_industry_mil_1
-			focus = hin_nf_industry_1
+			focus = hea_nf_industry_mil_1
+			focus = hea_nf_industry_1
 		}
 		mutually_exclusive = {
-			focus = hin_nf_industry_2
+			focus = hea_nf_industry_2
 		}
 		
 		completion_reward = {
@@ -753,18 +753,18 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_industry_mil_3
+		id = hea_nf_industry_mil_3
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 16
 		y = 7
 		
 		prerequisite = {
-			focus = hin_nf_industry_mil_2
-			focus = hin_nf_industry_2
+			focus = hea_nf_industry_mil_2
+			focus = hea_nf_industry_2
 		}
 		mutually_exclusive = {
-			focus = hin_nf_industry_3
+			focus = hea_nf_industry_3
 		}
 		
 		completion_reward = {
@@ -780,18 +780,18 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_industry_mil_4
+		id = hea_nf_industry_mil_4
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 16
 		y = 8
 		
 		prerequisite = {
-			focus = hin_nf_industry_mil_3
-			focus = hin_nf_industry_3
+			focus = hea_nf_industry_mil_3
+			focus = hea_nf_industry_3
 		}
 		mutually_exclusive = {
-			focus = hin_nf_industry_4
+			focus = hea_nf_industry_4
 		}
 		
 		completion_reward = {
@@ -807,15 +807,15 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_industry_5
+		id = hea_nf_industry_5
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 15
 		y = 10
 		
 		prerequisite = {
-			focus = hin_nf_industry_mil_4
-			focus = hin_nf_industry_4
+			focus = hea_nf_industry_mil_4
+			focus = hea_nf_industry_4
 		}
 		
 		completion_reward = {
@@ -836,20 +836,20 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_metal_kitten
+		id = hea_nf_machines_of_steam
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 9
 		y = 11
 		
 		prerequisite = {
-			focus = hin_nf_school_of_mobility
+			focus = hea_nf_officer_priests
 		}
 		prerequisite = {
-			focus = hin_nf_industry_5
+			focus = hea_nf_industry_5
 		}
 		mutually_exclusive = {
-			focus = hin_nf_metal_men
+			focus = hea_nf_men_of_steam
 		}
 				
 		completion_reward = {
@@ -864,20 +864,20 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_metal_men
+		id = hea_nf_men_of_steam
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 11
 		y = 11
 		
 		prerequisite = {
-			focus = hin_nf_school_of_mobility
+			focus = hea_nf_officer_priests
 		}
 		prerequisite = {
-			focus = hin_nf_industry_5
+			focus = hea_nf_industry_5
 		}
 		mutually_exclusive = {
-			focus = hin_nf_metal_kitten
+			focus = hea_nf_machines_of_steam
 		}
 				
 		completion_reward = {
@@ -892,14 +892,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_foreign_ministry
+		id = hea_nf_foreign_ministry
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 24
 		y = 4
 		
 		prerequisite = {
-			focus = hin_nf_economy
+			focus = hea_nf_economy
 		}
 				
 		completion_reward = {
@@ -908,17 +908,17 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_embassy_murtaugh
+		id = hea_nf_embassy_murtaugh
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 22
 		y = 5
 		
 		prerequisite = {
-			focus = hin_nf_foreign_ministry
+			focus = hea_nf_foreign_ministry
 		}
 		mutually_exclusive = {
-			focus = hin_nf_embassy_ires
+			focus = hea_nf_embassy_ires
 		}
 				
 		completion_reward = {
@@ -932,14 +932,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_protestant_league
+		id = hea_nf_defensive_league
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 22
 		y = 6
 		
 		prerequisite = {
-			focus = hin_nf_embassy_murtaugh
+			focus = hea_nf_embassy_murtaugh
 		}
 				
 		completion_reward = {
@@ -948,14 +948,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_strike_ires
+		id = hea_nf_strike_ires
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 22
 		y = 7
 		
 		prerequisite = {
-			focus = hin_nf_protestant_league
+			focus = hea_nf_defensive_league
 		}
 				
 		completion_reward = {
@@ -968,17 +968,17 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_embassy_ires
+		id = hea_nf_embassy_ires
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 24
 		y = 5
 		
 		prerequisite = {
-			focus = hin_nf_foreign_ministry
+			focus = hea_nf_foreign_ministry
 		}
 		mutually_exclusive = {
-			focus = hin_nf_embassy_murtaugh
+			focus = hea_nf_embassy_murtaugh
 		}
 				
 		completion_reward = {
@@ -993,14 +993,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_defensive_pact
+		id = hea_nf_defensive_pact
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 24
 		y = 6
 		
 		prerequisite = {
-			focus = hin_nf_embassy_ires
+			focus = hea_nf_embassy_ires
 		}
 				
 		completion_reward = {
@@ -1009,14 +1009,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_strike_murtaugh
+		id = hea_nf_strike_murtaugh
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 24
 		y = 7
 		
 		prerequisite = {
-			focus = hin_nf_defensive_pact
+			focus = hea_nf_defensive_pact
 		}
 				
 		completion_reward = {
@@ -1028,14 +1028,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_embassy_lonetree
+		id = hea_nf_embassy_lonetree
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 26
 		y = 5
 		
 		prerequisite = {
-			focus = hin_nf_foreign_ministry
+			focus = hea_nf_foreign_ministry
 		}
 				
 		completion_reward = {
@@ -1046,14 +1046,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_demand_submission_lonetree
+		id = hea_nf_demand_submission_lonetree
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 26
 		y = 7
 		
 		prerequisite = {
-			focus = hin_nf_embassy_lonetree
+			focus = hea_nf_embassy_lonetree
 		}
 				
 		completion_reward = {
@@ -1063,7 +1063,7 @@ focus_tree = {
 	
 	
 	focus = {
-		id = hin_nf_kaiser_society
+		id = hea_nf_school_of_steam
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 24
@@ -1071,19 +1071,19 @@ focus_tree = {
 				
 		completion_reward = {
 			add_research_slot = 1
-			add_ideas = hin_kaiser_society
+			add_ideas = hin_school_of_steam
 		}
 	}
 	
 	focus = {
-		id = hin_nf_kaiser_society_industry
+		id = hea_nf_school_of_steam_industry
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 22
 		y = 10
 		
 		prerequisite = {
-			focus = hin_nf_kaiser_society
+			focus = hea_nf_school_of_steam
 		}
 				
 		completion_reward = {
@@ -1097,14 +1097,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_kaiser_society_motorisation
+		id = hea_nf_school_of_steam_motorisation
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 24
 		y = 10
 		
 		prerequisite = {
-			focus = hin_nf_kaiser_society
+			focus = hea_nf_school_of_steam
 		}
 				
 		completion_reward = {
@@ -1118,14 +1118,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hin_nf_kaiser_society_aviation
+		id = hea_nf_school_of_steam_aviation
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 26
 		y = 10
 		
 		prerequisite = {
-			focus = hin_nf_kaiser_society
+			focus = hea_nf_school_of_steam
 		}
 				
 		completion_reward = {
