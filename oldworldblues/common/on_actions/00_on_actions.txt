@@ -166,7 +166,7 @@ on_actions = {
 	#
 	#}
 	
-	on_civil_war_end = {
+	on_peaceconference_ended = {
 		effect = {
 			if = {
 				limit = {
@@ -238,7 +238,7 @@ on_actions = {
 						}
 					}
 				}
-							
+
 				if = {
 					limit = {
 						NEW = {
@@ -255,6 +255,19 @@ on_actions = {
 									is_ai = yes
 								}
 							}
+						}
+						every_state = {
+							limit = {
+								is_core_of = ENC
+							}
+							add_core_of = NEW
+						}
+						if = {
+							limit = {
+								BJS = { exists = yes is_puppet_of = ENC }
+							}
+							ENC = { release_puppet = BJS }
+							NEW = { puppet = BJS }
 						}
 						NEW = {
 							annex_country = { target = ENC transfer_troops = yes }
