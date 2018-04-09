@@ -14,7 +14,7 @@ focus_tree = {
 		id = hea_nf_precursers
 		icon = GFX_goal_generic_building_focus
 		cost = 1.00
-		x = 10
+		x = 9
 		y = 1
 
 		completion_reward = {
@@ -26,7 +26,7 @@ focus_tree = {
 		id = hea_nf_beer
 		icon = GFX_goal_generic_building_focus
 		cost = 1.00
-		x = 10
+		x = 9
 		y = 2
 		
 		prerequisite = {
@@ -42,7 +42,7 @@ focus_tree = {
 		id = hea_nf_economy
 		icon = GFX_goal_generic_building_focus
 		cost = 1.00
-		x = 10
+		x = 9
 		y = 3
 
 		prerequisite = {
@@ -52,170 +52,13 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_event_hin.3 }
 		}
-	}	
-	
-	focus = {
-		id = hea_nf_open_pol
-		icon = GFX_goal_generic_political_pressure
-		cost = 8.6
-		x = 13
-		y = 4
-
-		prerequisite = {
-			focus = hea_nf_economy
-		}
-		
-		completion_reward = {
-			add_political_power = 100
-		}
-	}		
-	
-	focus = {
-		id = hea_nf_ruler_pol
-		icon = GFX_focus_rom_royal_dictatorship
-		cost = 8.6
-		x = 12
-		y = 5
-		
-		mutually_exclusive = {
-			focus = hea_nf_elite_pol
-		}
-
-		prerequisite = {
-			focus = hea_nf_open_pol
-		}
-		
-		completion_reward = {
-			add_ideas = hin_ruler
-			add_popularity = {
-				ideology = rules
-				popularity = 0.1
-			}
-		}
-	}
-
-	focus = {
-		id = hea_nf_ruler_pol_1
-		icon = GFX_focus_generic_home_defense
-		cost = 8.6
-		x = 12
-		y = 6
-		
-		prerequisite = {
-			focus = hea_nf_ruler_pol
-		}
-		
-		completion_reward = {
-			swap_ideas = {
-				add_idea = hin_ruler_1
-				remove_idea = hin_ruler
-		   }
-		   add_popularity = {
-				ideology = ruler
-				popularity = 0.2
-			}
-		}
-	}
-	
-	focus = {
-		id = hea_nf_ruler_pol_2
-		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-		cost = 8.6
-		x = 12
-		y = 7
-		
-		prerequisite = {
-			focus = hea_nf_ruler_pol_1
-		}
-		
-		completion_reward = {
-			swap_ideas = {
-				add_idea = hin_ruler_2
-				remove_idea = hin_ruler_1
-		   }
-		   add_popularity = {
-				ideology = ruler
-				popularity = 0.3
-			}
-		}
-	}
-	
-	focus = {
-		id = hea_nf_elite_pol
-		icon = GFX_focus_rom_parties_end
-		cost = 8.6
-		x = 14
-		y = 5
-
-		mutually_exclusive = {
-			focus = hea_nf_ruler_pol
-		}
-		
-		prerequisite = {
-			focus = hea_nf_open_pol
-		}
-		
-		completion_reward = {
-			add_ideas = hin_elite
-			add_popularity = {
-				ideology = elites
-				popularity = 0.1
-			}
-		}
-	}
-
-	focus = {
-		id = hea_nf_elite_pol_1
-		icon = GFX_goal_generic_military_deal
-		cost = 8.6
-		x = 14
-		y = 6
-		
-		prerequisite = {
-			focus = hea_nf_elite_pol
-		}
-		
-		completion_reward = {
-			swap_ideas = {
-				add_idea = hin_elite_1
-				remove_idea = hin_elite
-		   }
-		   add_popularity = {
-				ideology = elites
-				popularity = 0.2
-			}
-		}
-	}	
-	
-	focus = {
-		id = hea_nf_elite_pol_2
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 14
-		y = 7
-		
-		prerequisite = {
-			focus = hea_nf_elite_pol_1
-		}
-		
-		completion_reward = {
-			swap_ideas = {
-				add_idea = hin_elite_2
-				remove_idea = hin_elite_1
-		   }
-		   add_popularity = {
-				ideology = elites
-				popularity = 0.3
-			}
-		   set_politics = { ruling_party = elites elections_allowed = yes }
-		}
 	}
 	
 	focus = {
 		id = hea_nf_consolidate_pol
 		icon = GFX_goal_generic_political_pressure
 		cost = 8.6
-		x = 13
+		x = 19
 		y = 8
 
 		prerequisite = {
@@ -232,7 +75,7 @@ focus_tree = {
 		id = hea_nf_grand_cathedral
 		icon = GFX_goal_generic_political_pressure
 		cost = 8.6
-		x = 13
+		x = 19
 		y = 9
 
 		prerequisite = {
@@ -596,276 +439,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hea_nf_industry
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 18
-		y = 4
-		
-		prerequisite = {
-			focus = hea_nf_economy
-		}
-		
-		completion_reward = {
-			400 = 	{			
-			add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			add_extra_state_shared_building_slots = 1
-			}
-		}
-	}
-	
-	focus = {
-		id = hea_nf_industry_1
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 17
-		y = 5
-		
-		prerequisite = {
-			focus = hea_nf_industry
-		}
-		mutually_exclusive = {
-			focus = hea_nf_industry_mil_1
-		}
-		
-		completion_reward = {
-			365 = 	{			
-			add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			add_extra_state_shared_building_slots = 1
-			}
-		}
-	}
-	
-	focus = {
-		id = hea_nf_industry_2
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 17
-		y = 6
-		
-		prerequisite = {
-			focus = hea_nf_industry_mil_1
-			focus = hea_nf_industry_1
-		}
-		mutually_exclusive = {
-			focus = hea_nf_industry_mil_2
-		}
-		
-		completion_reward = {
-			290 = 	{			
-			add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			add_extra_state_shared_building_slots = 1
-			}
-		}
-	}
-	
-	focus = {
-		id = hea_nf_industry_3
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 17
-		y = 7
-		
-		prerequisite = {
-			focus = hea_nf_industry_mil_2
-			focus = hea_nf_industry_2
-		}
-		mutually_exclusive = {
-			focus = hea_nf_industry_mil_3
-		}
-		
-		completion_reward = {
-			379 = 	{			
-			add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			add_extra_state_shared_building_slots = 1
-			}
-		}
-	}
-	
-	focus = {
-		id = hea_nf_industry_4
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 17
-		y = 8
-		
-		prerequisite = {
-			focus = hea_nf_industry_mil_3
-			focus = hea_nf_industry_3
-		}
-		mutually_exclusive = {
-			focus = hea_nf_industry_mil_4
-		}
-		
-		completion_reward = {
-			280 = 	{			
-			add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			add_extra_state_shared_building_slots = 1
-			}
-		}
-	}
-	
-	focus = {
-		id = hea_nf_industry_mil_1
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 19
-		y = 5
-		
-		prerequisite = {
-			focus = hea_nf_industry
-		}
-		mutually_exclusive = {
-			focus = hea_nf_industry_1
-		}
-		
-		completion_reward = {
-			365 = 	{			
-			add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			add_extra_state_shared_building_slots = 1
-			}
-		}
-	}
-	
-	focus = {
-		id = hea_nf_industry_mil_2
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 19
-		y = 6
-		
-		prerequisite = {
-			focus = hea_nf_industry_mil_1
-			focus = hea_nf_industry_1
-		}
-		mutually_exclusive = {
-			focus = hea_nf_industry_2
-		}
-		
-		completion_reward = {
-			290 = 	{			
-			add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			add_extra_state_shared_building_slots = 1
-			}
-		}
-	}
-	
-	focus = {
-		id = hea_nf_industry_mil_3
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 19
-		y = 7
-		
-		prerequisite = {
-			focus = hea_nf_industry_mil_2
-			focus = hea_nf_industry_2
-		}
-		mutually_exclusive = {
-			focus = hea_nf_industry_3
-		}
-		
-		completion_reward = {
-			379 = 	{			
-			add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			add_extra_state_shared_building_slots = 1
-			}
-		}
-	}
-	
-	focus = {
-		id = hea_nf_industry_mil_4
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 19
-		y = 8
-		
-		prerequisite = {
-			focus = hea_nf_industry_mil_3
-			focus = hea_nf_industry_3
-		}
-		mutually_exclusive = {
-			focus = hea_nf_industry_4
-		}
-		
-		completion_reward = {
-			280 = 	{			
-			add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			add_extra_state_shared_building_slots = 1
-			}
-		}
-	}
-	
-	focus = {
-		id = hea_nf_industry_5
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 18
-		y = 10
-		
-		prerequisite = {
-			focus = hea_nf_industry_mil_4
-			focus = hea_nf_industry_4
-		}
-		
-		completion_reward = {
-			400 = 	{			
-			add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			add_extra_state_shared_building_slots = 4
-			}
-		}
-	}
-	
-	focus = {
 		id = hea_nf_machines_of_steam
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 9
+		x = 8
 		y = 11
 		
 		prerequisite = {
@@ -893,7 +470,7 @@ focus_tree = {
 		id = hea_nf_men_of_steam
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 11
+		x = 10
 		y = 11
 		
 		prerequisite = {
@@ -918,10 +495,433 @@ focus_tree = {
 	}
 	
 	focus = {
+		id = hea_nf_industry
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 8.6
+		x = 14
+		y = 4
+		
+		prerequisite = {
+			focus = hea_nf_economy
+		}
+		
+		completion_reward = {
+			116 = 	{			
+			add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	
+	focus = {
+		id = hea_nf_industry_1
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 8.6
+		x = 13
+		y = 5
+		
+		prerequisite = {
+			focus = hea_nf_industry
+		}
+		mutually_exclusive = {
+			focus = hea_nf_industry_mil_1
+		}
+		
+		completion_reward = {
+			52 = 	{			
+			add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	
+	focus = {
+		id = hea_nf_industry_2
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 8.6
+		x = 13
+		y = 6
+		
+		prerequisite = {
+			focus = hea_nf_industry_mil_1
+			focus = hea_nf_industry_1
+		}
+		mutually_exclusive = {
+			focus = hea_nf_industry_mil_2
+		}
+		
+		completion_reward = {
+			278 = 	{			
+			add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	
+	focus = {
+		id = hea_nf_industry_3
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 8.6
+		x = 13
+		y = 7
+		
+		prerequisite = {
+			focus = hea_nf_industry_mil_2
+			focus = hea_nf_industry_2
+		}
+		mutually_exclusive = {
+			focus = hea_nf_industry_mil_3
+		}
+		
+		completion_reward = {
+			18 = 	{			
+			add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	
+	focus = {
+		id = hea_nf_industry_4
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 8.6
+		x = 13
+		y = 8
+		
+		prerequisite = {
+			focus = hea_nf_industry_mil_3
+			focus = hea_nf_industry_3
+		}
+		mutually_exclusive = {
+			focus = hea_nf_industry_mil_4
+		}
+		
+		completion_reward = {
+			379 = 	{			
+			add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	
+	focus = {
+		id = hea_nf_industry_mil_1
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 8.6
+		x = 15
+		y = 5
+		
+		prerequisite = {
+			focus = hea_nf_industry
+		}
+		mutually_exclusive = {
+			focus = hea_nf_industry_1
+		}
+		
+		completion_reward = {
+			52 = 	{			
+			add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	
+	focus = {
+		id = hea_nf_industry_mil_2
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 8.6
+		x = 15
+		y = 6
+		
+		prerequisite = {
+			focus = hea_nf_industry_mil_1
+			focus = hea_nf_industry_1
+		}
+		mutually_exclusive = {
+			focus = hea_nf_industry_2
+		}
+		
+		completion_reward = {
+			278 = 	{			
+			add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	
+	focus = {
+		id = hea_nf_industry_mil_3
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 8.6
+		x = 15
+		y = 7
+		
+		prerequisite = {
+			focus = hea_nf_industry_mil_2
+			focus = hea_nf_industry_2
+		}
+		mutually_exclusive = {
+			focus = hea_nf_industry_3
+		}
+		
+		completion_reward = {
+			18 = 	{			
+			add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	
+	focus = {
+		id = hea_nf_industry_mil_4
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 8.6
+		x = 15
+		y = 8
+		
+		prerequisite = {
+			focus = hea_nf_industry_mil_3
+			focus = hea_nf_industry_3
+		}
+		mutually_exclusive = {
+			focus = hea_nf_industry_4
+		}
+		
+		completion_reward = {
+			379 = 	{			
+			add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	
+	focus = {
+		id = hea_nf_industry_5
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 8.6
+		x = 14
+		y = 10
+		
+		prerequisite = {
+			focus = hea_nf_industry_mil_4
+			focus = hea_nf_industry_4
+		}
+		
+		completion_reward = {
+			116 = 	{			
+			add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			add_extra_state_shared_building_slots = 4
+			}
+		}
+	}
+	
+	focus = {
+		id = hea_nf_open_pol
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		x = 19
+		y = 4
+
+		prerequisite = {
+			focus = hea_nf_economy
+		}
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}		
+	
+	focus = {
+		id = hea_nf_ruler_pol
+		icon = GFX_focus_rom_royal_dictatorship
+		cost = 8.6
+		x = 18
+		y = 5
+		
+		mutually_exclusive = {
+			focus = hea_nf_elite_pol
+		}
+
+		prerequisite = {
+			focus = hea_nf_open_pol
+		}
+		
+		completion_reward = {
+			add_ideas = hin_ruler
+			add_popularity = {
+				ideology = rules
+				popularity = 0.1
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_ruler_pol_1
+		icon = GFX_focus_generic_home_defense
+		cost = 8.6
+		x = 18
+		y = 6
+		
+		prerequisite = {
+			focus = hea_nf_ruler_pol
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = hin_ruler_1
+				remove_idea = hin_ruler
+		   }
+		   add_popularity = {
+				ideology = ruler
+				popularity = 0.2
+			}
+		}
+	}
+	
+	focus = {
+		id = hea_nf_ruler_pol_2
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		cost = 8.6
+		x = 18
+		y = 7
+		
+		prerequisite = {
+			focus = hea_nf_ruler_pol_1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = hin_ruler_2
+				remove_idea = hin_ruler_1
+		   }
+		   add_popularity = {
+				ideology = ruler
+				popularity = 0.3
+			}
+		}
+	}
+	
+	focus = {
+		id = hea_nf_elite_pol
+		icon = GFX_focus_rom_parties_end
+		cost = 8.6
+		x = 20
+		y = 5
+
+		mutually_exclusive = {
+			focus = hea_nf_ruler_pol
+		}
+		
+		prerequisite = {
+			focus = hea_nf_open_pol
+		}
+		
+		completion_reward = {
+			add_ideas = hin_elite
+			add_popularity = {
+				ideology = elites
+				popularity = 0.1
+			}
+		}
+	}
+
+	focus = {
+		id = hea_nf_elite_pol_1
+		icon = GFX_goal_generic_military_deal
+		cost = 8.6
+		x = 20
+		y = 6
+		
+		prerequisite = {
+			focus = hea_nf_elite_pol
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = hin_elite_1
+				remove_idea = hin_elite
+		   }
+		   add_popularity = {
+				ideology = elites
+				popularity = 0.2
+			}
+		}
+	}	
+	
+	focus = {
+		id = hea_nf_elite_pol_2
+		icon = GFX_focus_hun_assassinate_horthy
+		cost = 8.6
+		x = 20
+		y = 7
+		
+		prerequisite = {
+			focus = hea_nf_elite_pol_1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = hin_elite_2
+				remove_idea = hin_elite_1
+		   }
+		   add_popularity = {
+				ideology = elites
+				popularity = 0.3
+			}
+		   set_politics = { ruling_party = elites elections_allowed = yes }
+		}
+	}
+	
+	focus = {
 		id = hea_nf_foreign_ministry
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 25
+		x = 26
 		y = 4
 		
 		prerequisite = {
@@ -937,7 +937,7 @@ focus_tree = {
 		id = hea_nf_embassy_murtaugh
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 22
+		x = 23
 		y = 5
 		
 		prerequisite = {
@@ -961,7 +961,7 @@ focus_tree = {
 		id = hea_nf_defensive_league
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 22
+		x = 23
 		y = 6
 		
 		prerequisite = {
@@ -977,7 +977,7 @@ focus_tree = {
 		id = hea_nf_strike_ires
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 22
+		x = 23
 		y = 7
 		
 		prerequisite = {
@@ -997,7 +997,7 @@ focus_tree = {
 		id = hea_nf_embassy_ires
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 24
+		x = 25
 		y = 5
 		
 		prerequisite = {
@@ -1022,7 +1022,7 @@ focus_tree = {
 		id = hea_nf_defensive_pact
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 24
+		x = 25
 		y = 6
 		
 		prerequisite = {
@@ -1038,7 +1038,7 @@ focus_tree = {
 		id = hea_nf_strike_murtaugh
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 24
+		x = 25
 		y = 7
 		
 		prerequisite = {
@@ -1057,7 +1057,7 @@ focus_tree = {
 		id = hea_nf_gods_militia
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 26
+		x = 27
 		y = 5
 		
 		prerequisite = {
@@ -1073,7 +1073,7 @@ focus_tree = {
 		id = hea_nf_gods_militia_1
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 26
+		x = 27
 		y = 6
 		
 		prerequisite = {
@@ -1092,7 +1092,7 @@ focus_tree = {
 		id = hea_nf_gods_militia_2
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 26
+		x = 27
 		y = 7
 		
 		prerequisite = {
@@ -1111,7 +1111,7 @@ focus_tree = {
 		id = hea_nf_embassy_lonetree
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 28
+		x = 29
 		y = 5
 		
 		prerequisite = {
@@ -1129,7 +1129,7 @@ focus_tree = {
 		id = hea_nf_demand_submission_lonetree
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 28
+		x = 29
 		y = 6
 		
 		prerequisite = {
