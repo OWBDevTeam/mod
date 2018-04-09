@@ -7,9 +7,11 @@ political_advisor = {
 			allowed = {
 				original_tag = NEW
 			}
-			available = 
-			{	NOT = 
-				{ has_country_leader = { id = 972 }
+			available = {
+				NOT = { has_country_leader = { id = 972 } }
+				custom_trigger_tooltip = {
+					tooltip = dornan_back
+					NOT = { has_cosmetic_tag = ENC }
 				}
 			}
 			traits = { two_timing_dealer }
@@ -17,6 +19,7 @@ political_advisor = {
 			ai_will_do = {
 				factor = 10
 			}
+			cancel_if_invalid = yes
 		}
 		
 		christopher_wright = {
@@ -26,13 +29,16 @@ political_advisor = {
 			allowed = {
 				original_tag = NEW
 			}
-			available = 
-			{	NOT = 
-				{ 	OR = 
-					{ has_country_leader = { id = 971 }
-					has_completed_focus = new_queen
+			available = {
+				NOT = {
+					OR = {
+						has_country_leader = { id = 971 }
+						has_completed_focus = new_queen
 					}
-					
+				}
+				custom_trigger_tooltip = {
+					tooltip = dornan_back
+					NOT = { has_cosmetic_tag = ENC }
 				}
 			}
 			traits = { moonshine_intellectual }
@@ -40,6 +46,7 @@ political_advisor = {
 			ai_will_do = {
 				factor = 10
 			}
+			cancel_if_invalid = yes
 		}
 		
 		mr_bishop = {
@@ -49,13 +56,16 @@ political_advisor = {
 			allowed = {
 				original_tag = NEW
 			}
-			available = 
-			{	NOT = 
-				{ 	OR = 
-					{ has_country_leader = { id = 970 }
-					has_completed_focus = new_bloodynight
+			available = {
+				NOT = {
+					OR = {
+						has_country_leader = { id = 970 }
+						has_completed_focus = new_bloodynight
 					}
-					
+				}
+				custom_trigger_tooltip = {
+					tooltip = dornan_back
+					NOT = { has_cosmetic_tag = ENC }
 				}
 			}
 			traits = { chessmaster }
@@ -63,6 +73,7 @@ political_advisor = {
 			ai_will_do = {
 				factor = 10
 			}
+			cancel_if_invalid = yes
 		}
 		
 		lil_jesus_mordino = {
@@ -72,9 +83,13 @@ political_advisor = {
 			allowed = {
 				original_tag = NEW
 			}
-			available = 
-			{	NOT = 
-				{ has_country_leader = { id = 973 }
+			available = {
+				NOT = {
+					has_country_leader = { id = 973 }
+				}
+				custom_trigger_tooltip = {
+					tooltip = dornan_back
+					NOT = { has_cosmetic_tag = ENC }
 				}
 			}
 			traits = { jet_baron }
@@ -82,6 +97,7 @@ political_advisor = {
 			ai_will_do = {
 				factor = 10
 			}
+			cancel_if_invalid = yes
 		}
 		
 		tiaret_van_graff = {
@@ -91,19 +107,24 @@ political_advisor = {
 			allowed = {
 				original_tag = NEW
 			}
-			available = 
-			{ has_completed_focus = new_f3
+			available = {
+				has_completed_focus = new_f3
+				custom_trigger_tooltip = {
+					tooltip = dornan_back
+					NOT = { has_cosmetic_tag = ENC }
+				}
 			}
 			
 			research_bonus = {
 				energy_weaponry_tech = 0.10
 				laser_battery_tech = 0.1
-		}
+			}
 			traits = { bloody_bride_of_bishop }
 			
 			ai_will_do = {
 				factor = 10
 			}
+			cancel_if_invalid = yes
 		}
 		
 		ol_crookshanks = {
@@ -113,14 +134,19 @@ political_advisor = {
 			allowed = {
 				original_tag = NEW
 			}
-			available = 
-			{ has_completed_focus = new_sanctuary
+			available = {
+				has_completed_focus = new_sanctuary
+				custom_trigger_tooltip = {
+					tooltip = dornan_back
+					NOT = { has_cosmetic_tag = ENC }
+				}
 			}
 			traits = { pre_war_administrator }
 			
 			ai_will_do = {
 				factor = 10
 			}
+			cancel_if_invalid = yes
 		}
 	}
 	high_command = {
@@ -131,8 +157,8 @@ political_advisor = {
 			allowed = {
 				original_tag = NEW
 			}
-			available = 
-			{ has_completed_focus = new_pablos
+			available = {
+				has_completed_focus = new_pablos
 			}
 
 			traits = { conquistador_captain }
@@ -149,8 +175,8 @@ political_advisor = {
 			allowed = {
 				original_tag = NEW
 			}
-			available = 
-			{ has_completed_focus = new_vengefulsons
+			available = {
+				has_completed_focus = new_vengefulsons
 			}
 
 			traits = { burning_avenger }
@@ -167,8 +193,8 @@ political_advisor = {
 			allowed = {
 				original_tag = NEW
 			}
-			available = 
-			{ has_completed_focus = new_gladiators
+			available = {
+				has_completed_focus = new_gladiators
 			}
 
 			traits = { erratic_engineer }
@@ -185,8 +211,8 @@ political_advisor = {
 			allowed = {
 				original_tag = NEW
 			}
-			available = 
-			{ has_completed_focus = new_roadpsychos
+			available = {
+				has_completed_focus = new_roadpsychos
 			}
 
 			traits = { blitzer }
@@ -203,8 +229,8 @@ political_advisor = {
 			allowed = {
 				original_tag = NEW
 			}
-			available = 
-			{ has_completed_focus = new_enctech
+			available = {
+				has_completed_focus = new_enctech
 			}
 
 			traits = { esoteric_engineer }
@@ -221,8 +247,8 @@ political_advisor = {
 			allowed = {
 				original_tag = NEW
 			}
-			available = 
-			{ has_completed_focus = new_mutanttech
+			available = {
+				has_completed_focus = new_mutanttech
 			}
 
 			traits = { ancient_tactician }
@@ -241,8 +267,8 @@ political_advisor = {
 			allowed = {
 				original_tag = NEW
 			}
-			available = 
-			{	has_completed_focus = new_granite
+			available = {
+				has_completed_focus = new_granite
 			}
 			traits = { drill_sergeant }
 			
@@ -258,8 +284,8 @@ political_advisor = {
 			allowed = {
 				original_tag = NEW
 			}
-			available = 
-			{	has_completed_focus = new_thradd
+			available = {
+				has_completed_focus = new_thradd
 			}
 			traits = { immortal_titan }
 			
@@ -275,8 +301,8 @@ political_advisor = {
 			allowed = {
 				original_tag = NEW
 			}
-			available = 
-			{	has_completed_focus = new_roaring
+			available = {
+				has_completed_focus = new_roaring
 			}
 			traits = { the_bear_of_reno }
 			
@@ -292,8 +318,8 @@ political_advisor = {
 			allowed = {
 				original_tag = NEW
 			}
-			available = 
-			{	has_completed_focus = new_artillery
+			available = {
+				has_completed_focus = new_artillery
 			}
 			traits = { flash_in_the_pan }
 			

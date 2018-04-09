@@ -975,18 +975,19 @@ country_event = { #Barons annex civil war created
 	picture = GFX_report_event_fascist_speech
 	hidden = yes
 	is_triggered_only = yes
-		immediate = {
-			every_country = {
-				limit = {
-					original_tag = NCR
-					has_government = elites
-				}
-				BAR = { annex_country = { target = PREV transfer_troops = yes } }
+	immediate = {
+		every_country = {
+			limit = {
+				original_tag = NCR
+				has_government = elites
 			}
+			BAR = { annex_country = { target = PREV transfer_troops = yes } }
 		}
+		BAR = { set_NCR_factions_technology_on_civil_war = yes }
+	}
 	option = {
 		name = nf_ncr.25.a
-		country_event = { days = 1 id = nf_ncr.26 }
+		country_event = { id = nf_ncr.26 }# days = 1
 	}	
 }
 country_event = { #allgood civil war firing
@@ -1015,12 +1016,10 @@ country_event = { #allgood civil war firing
 			}
 			set_cosmetic_tag = BON
 		}
-		country_event = { days = 1 id = nf_ncr.27 }
+		country_event = { id = nf_ncr.27 }#days = 1
 	}
 	option = {
 		name = nf_ncr.26.a
-		
-		
 	}	
 }
 country_event = { #allgood annex civil war created
@@ -1039,11 +1038,11 @@ country_event = { #allgood annex civil war created
 			}
 			BON = { annex_country = { target = PREV transfer_troops = yes } }
 		}
-		country_event = { days = 1 id = nf_ncr.28 }
+		BON = { set_NCR_factions_technology_on_civil_war = yes }
+		country_event = { id = nf_ncr.28 }#days = 1
 	}
 	option = {
 		name = nf_ncr.27.a
-		
 	}	
 }
 country_event = { #enclave civil war created
@@ -1073,11 +1072,10 @@ country_event = { #enclave civil war created
 			}
 			set_cosmetic_tag = ENC
 		}
-		country_event = { days = 1 id = nf_ncr.29 }
+		country_event = { id = nf_ncr.29 }#days = 1
 	}
 	option = {
 		name = nf_ncr.28.a
-		
 	}	
 }
 
@@ -1099,6 +1097,7 @@ country_event = { #enclave civil war annexed, civil war starts
 		}
 		hidden_effect = {
 			ENC = {
+				set_NCR_factions_technology_on_civil_war = yes
 				transfer_state = 63
 				set_capital = 63
 			}
@@ -1174,7 +1173,6 @@ country_event = { #enclave civil war annexed, civil war starts
 	option = {
 		name = nf_ncr.29.a
 		custom_effect_tooltip = ncr_civil_war_starts
-		
 	}
 }
 
