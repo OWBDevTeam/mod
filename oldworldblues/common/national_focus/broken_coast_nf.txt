@@ -64,7 +64,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			add_political_power = 75
 		}
 	}
 	
@@ -85,14 +85,14 @@ focus_tree = {
 		}	
 		
 		completion_reward = {
-
+			add_ideas = brk_tech_adaptation
 		}
 	}
 	
 	focus = {
 		id = brk_nf_tech_upgrade_1
 		icon = GFX_goal_generic_building_focus
-		cost = 8.6
+		cost = 17.2
 		x = 15
 		y = 5
 
@@ -105,7 +105,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			remove_ideas = brk_tech_adaptation
 		}
 	}
 	
@@ -168,6 +168,15 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			add_building_construction = {
+					type = bunker
+					level = 6
+					province = {
+						id = 7207
+					}
+					instant_build = yes
+				}
+			add_political_power = 100
 		}
 	}
 	
@@ -183,6 +192,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			custom_effect_tooltip = brk_graven_ship_tt
 		}
 	}
 	
@@ -274,9 +284,9 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_ideas = brk_people
+			add_ideas = brk_elites
 			add_popularity = {
-				ideology = people
+				ideology = elites
 				popularity = 0.1
 			}
 		}
@@ -295,11 +305,11 @@ focus_tree = {
 		
 		completion_reward = {
 			swap_ideas = {
-				add_idea = brk_people_1
-				remove_idea = brk_people
+				add_idea = brk_elites_1
+				remove_idea = brk_elites
 		   }
 		   add_popularity = {
-				ideology = people
+				ideology = elites
 				popularity = 0.2
 			}
 		}
@@ -317,6 +327,15 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			add_building_construction = {
+					type = bunker
+					level = 6
+					province = {
+						id = 7207
+					}
+					instant_build = yes
+				}
+			add_political_power = 100
 		}
 	}
 	
@@ -330,8 +349,8 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_elites_pol
 		}
-		
 		completion_reward = {
+			custom_effect_tooltip = brk_raiding_fleet_tt
 		}
 	}
 	
@@ -348,14 +367,14 @@ focus_tree = {
 		
 		completion_reward = {
 			swap_ideas = {
-				add_idea = brk_people_2
-				remove_idea = brk_people_1
+				add_idea = brk_elites_2
+				remove_idea = brk_elites_1
 		   }
 		   add_popularity = {
-				ideology = people
+				ideology = elites
 				popularity = 0.3
 			}
-			set_politics = { ruling_party = people elections_allowed = no }
+			set_politics = { ruling_party = elites elections_allowed = no }
 		}
 	}
 	
@@ -374,7 +393,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			swap_ideas = {
+				add_idea = brk_elites_2_offense
+				remove_idea = brk_elites_2
+		   }
 		}
 	}
 	
@@ -393,7 +415,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			swap_ideas = {
+				add_idea = brk_elites_2_defense
+				remove_idea = brk_elites_2
+		   }
 		}
 	}
 	
@@ -410,7 +435,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			add_war_support = 0.2
 		}
 	}
 	
@@ -426,7 +451,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			add_stability = 0.1
 		}
 	}
 	
@@ -445,7 +470,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			country_event = { id = nf_event_brk.4 }
 		}
 	}
 	
@@ -461,7 +486,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			country_event = { id = nf_event_brk.5 }
 		}
 	}
 	
@@ -481,7 +506,18 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			
+			every_state = {
+				limit = {
+					is_core_of = WHI
+				}
+				add_core_of = BRK
+			}
+			every_state = {
+				limit = {
+					is_core_of = KAM
+				}
+				add_core_of = BRK
+			}
 		}
 	}
 	
@@ -498,7 +534,12 @@ focus_tree = {
 
 		
 		completion_reward = {
-			
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 4
+				category = land_doctrine
+			}
 		}
 	}
 	
@@ -517,7 +558,17 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+		
+			WHI = {
+				add_opinion_modifier = {
+					target = WHI
+					modifier = brk_woo_whi
+				}
+			}
+			add_opinion_modifier = {
+					target = WHI
+					modifier = brk_woo_whi
+				}
 		}
 	}
 	
@@ -533,7 +584,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			country_event = { id = nf_event_brk.6 }
 		}
 	}
 	
@@ -549,7 +600,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			country_event = { id = nf_event_brk.7 }
 		}
 	}
 	
@@ -565,7 +616,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			country_event = { id = nf_event_brk.8 }
 		}
 	}
 	
@@ -581,7 +632,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			country_event = { id = nf_event_brk.9 }
 		}
 	}
 	
@@ -597,7 +648,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			create_wargoal = {
+				type = annex_everything
+				target = KAM
+			}
 		}
 	}
 	
@@ -613,7 +667,13 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			492 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+				}
+			}
 		}
 	}
 	
@@ -629,7 +689,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			add_ideas = brk_salvage_parties
 		}
 	}
 	
@@ -645,7 +705,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			add_ideas = brk_slave
 		}
 	}
 	
@@ -661,9 +721,16 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			148 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+				}
+			}
 		}
 	}
+	
 	
 	focus = {
 		id = brk_nf_water_purification
@@ -677,7 +744,28 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			
+		492 = {	add_building_construction = {
+					type = water_generator
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		148 = {	add_building_construction = {
+					type = water_generator
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		561 = {	add_building_construction = {
+					type = water_generator
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
 		}
 	}
 	
@@ -693,7 +781,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			swap_ideas = {
+				add_idea = brk_slave_1
+				remove_idea = brk_slave
+		   }
 		}
 	}
 	
@@ -709,7 +800,23 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			356 = { add_resource = {
+					type = metal
+					amount = 2
+				} }
+			17 = { add_resource = {
+					type = metal
+					amount = 2
+				} }
+			505 = { add_resource = {
+					type = metal
+					amount = 2
+				} }
+			218 = { add_resource = {
+					type = metal
+					amount = 2
+				} 
+			}
 		}
 	}
 	
@@ -725,7 +832,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			add_ideas = brk_naval_range
 		}
 	}
 	
@@ -741,7 +848,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			swap_ideas = {
+				add_idea = brk_slave_2
+				remove_idea = brk_slave_1
+		   }
 		}
 	}
 	
@@ -757,7 +867,13 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			561 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+			}
 		}
 	}
 	
@@ -773,7 +889,16 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+		
+		24 = {	add_resource = {
+					type = metal
+					amount = 10
+				}
+				add_resource = {
+					type = fuel
+					amount = 2
+				}
+			}
 		}
 	}
 	
@@ -789,7 +914,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			swap_ideas = {
+				add_idea = brk_slave_2
+				remove_idea = brk_slave_1
+		   }
 		}
 	}
 	
@@ -805,7 +933,12 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
 		}
 	}
 	
@@ -824,7 +957,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			add_ideas = brk_spikes
 		}
 	}
 	
@@ -843,7 +976,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			add_ideas = brk_plates
 		}
 	}
 	
@@ -860,7 +993,12 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			add_tech_bonus = {
+				name = power_armor_tech
+				bonus = 0.5
+				uses = 1
+				category = power_armor_tech
+			}
 		}
 	}
 	
@@ -876,7 +1014,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			swap_ideas = {
+				add_idea = brk_spikes_1
+				remove_idea = brk_spikes
+		   }
 		}
 	}
 	
@@ -892,7 +1033,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			swap_ideas = {
+				add_idea = brk_plates_1
+				remove_idea = brk_plates
+		   }
 		}
 	}
 	
@@ -908,7 +1052,14 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			262 = {
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 1
 		}
 	}
 	
@@ -924,7 +1075,12 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			add_tech_bonus = {
+				name = naval_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
 		}
 	}
 	
@@ -940,7 +1096,12 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			add_tech_bonus = {
+				name = naval_bonus
+				bonus = 0.5
+				uses = 2
+				category = naval_equipment
+			}
 		}
 	}
 	
@@ -956,7 +1117,12 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			add_tech_bonus = {
+				name = naval_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
 		}
 	}
 	
@@ -972,7 +1138,12 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			add_tech_bonus = {
+				name = naval_bonus
+				bonus = 0.5
+				uses = 2
+				category = naval_equipment
+			}
 		}
 	}
 	
@@ -988,7 +1159,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			400 = 	{			
+			492 = 	{			
 			add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -1011,7 +1182,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			400 = 	{			
+			148 = 	{			
 			add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -1034,7 +1205,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			400 = 	{			
+			561 = 	{			
 			add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -1057,7 +1228,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			400 = 	{			
+			262 = 	{			
 			add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -1080,7 +1251,14 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			492 = {
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 1
 		}
 	}
 	
@@ -1096,7 +1274,14 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			148 = {
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 1
 		}
 	}
 	
@@ -1112,7 +1297,14 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			561 = {
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 1
 		}
 	}
 	
@@ -1128,7 +1320,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			add_manpower = 1000
 		}
 	}
 	
@@ -1144,7 +1336,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			add_manpower = 1500
 		}
 	}
 	
@@ -1160,7 +1352,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			add_manpower = 2000
 		}
 	}
 	
@@ -1176,7 +1368,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			add_ideas = brk_manu_drive
 		}
 	}
 	
@@ -1192,7 +1384,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			swap_ideas = {
+				add_idea = brk_manu_drive_1
+				remove_idea = brk_manu_drive
+		   }
 		}
 	}
 	
@@ -1208,7 +1403,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			swap_ideas = {
+				add_idea = brk_manu_drive_2
+				remove_idea = brk_manu_drive_1
+		   }
 		}
 	}
 	
@@ -1224,7 +1422,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			create_wargoal = {
+				type = annex_everything
+				target = VIC
+			}
 		}
 	}
 	
@@ -1240,7 +1441,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			create_wargoal = {
+				type = annex_everything
+				target = DRE
+			}
 		}
 	}
 
