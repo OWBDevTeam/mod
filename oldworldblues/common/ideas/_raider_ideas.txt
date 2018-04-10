@@ -2,83 +2,7 @@ ideas = {
 	country = {
         
         # Raider National Focuses
-		raider_nation = {
-            
-			picture = generic_morale_bonus
-            
-            
-            removal_cost = -1
-            
-            modifier = {
-                training_time_factor = 0.15
-				production_speed_buildings_factor = -0.1
-            }
-			
-        }
         
-        reckless_aggression = {
-             picture = generic_infantry_bonus
-            
-            allowed = {
-                is_raider_nation = yes
-            }
-            removal_cost = -1
-            
-            equipment_bonus = {
-                category_all_infantry = {
-                    soft_attack = 0.1
-                    defense = -0.1
-                    breakthrough = 0.05
-                    instant = yes
-                }
-            }
-        }
-        
-        roaring_machines = {
-             picture = generic_armor
-            
-            allowed = {
-                is_raider_nation = yes
-            }
-            removal_cost = -1
-            
-            equipment_bonus = {
-                motorbike_equipment = {
-                    maximum_speed = 0.1
-                    instant = yes
-                }
-                buggy_equipment = {
-                    maximum_speed = 0.1
-                    instant = yes
-                }
-                car_equipment = {
-                    maximum_speed = 0.1
-                    instant = yes
-                }
-            }
-        }
-		idea_former_tribal = {
-		    picture = GFX_idea_vault_open_bonus
-            
-            allowed = {
-                is_raider_nation = yes
-            }
-            removal_cost = -1
-			modifier = {
-				attrition = -0.05
-			}
-        }
-		idea_old_world_criminals = {
-		    picture = GFX_idea_vault_open_bonus
-            
-            allowed = {
-                is_raider_nation = yes
-            }
-            removal_cost = -1
-			modifier = {
-				army_org_factor = 0.05
-			}
-        }
 		idea_vault_dwellers_gone_bad = {
             picture = GFX_idea_vault_open_bonus
             
@@ -597,5 +521,81 @@ ideas = {
 			production_speed_buildings_factor = 0.1
 			}
 		}
+		raider_nation = {
+            
+			picture = generic_morale_bonus
+            
+            
+            removal_cost = -1
+            
+            modifier = {
+                training_time_factor = 0.15
+				production_speed_buildings_factor = -0.1
+            }
+			
+        }
+        
+        reckless_aggression = {
+             picture = generic_infantry_bonus
+            
+            allowed = {
+                is_raider_nation = yes
+            }
+            removal_cost = -1
+            
+            equipment_bonus = {
+                category_all_infantry = {
+                    soft_attack = 0.1
+                    defense = -0.1
+                    breakthrough = 0.05
+                    instant = yes
+                }
+            }
+        }
+        roaring_machines = {
+             picture = generic_armor
+            
+            allowed = {
+                is_raider_nation = yes
+            }
+            removal_cost = -1
+            
+            equipment_bonus = {
+                motorbike_equipment = {
+                    maximum_speed = 0.1
+                    instant = yes
+                }
+                buggy_equipment = {
+                    maximum_speed = 0.1
+                    instant = yes
+                }
+                car_equipment = {
+                    maximum_speed = 0.1
+                    instant = yes
+                }
+            }
+        }
+		idea_former_tribal = {
+		    picture = GFX_idea_vault_open_bonus
+            
+            allowed = {
+                is_raider_nation = yes
+            }
+            removal_cost = -1
+			modifier = {
+				army_speed_factor = 0.10
+			}
+        }
+		idea_old_world_criminals = {
+		    picture = GFX_idea_vault_open_bonus
+            
+            allowed = {
+                is_raider_nation = yes
+            }
+            removal_cost = -1
+			modifier = {
+				army_org_factor = 0.10
+			}
+        }
 	}
 }
