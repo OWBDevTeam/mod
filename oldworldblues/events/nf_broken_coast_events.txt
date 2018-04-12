@@ -73,18 +73,30 @@ country_event = {
 	picture = GFX_event_NCR_settlers
 
     is_triggered_only = yes
-    
-	option = {
+
+    option = {
 		name = nf_event_brk.4.a
-		add_ideas = 
+		HAI = { country_event = { id = nf_event_brk.40 }}
 		ai_chance = {
 			base = 100
 		}
 	}
-    option = {
-		name = nf_event_brk.4.b
+}
+
+country_event = {
+	id = nf_event_brk.40
+	title = nf_event_brk.40.t
+	desc = nf_event_brk.40.d
+	picture = GFX_event_NCR_settlers
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_event_brk.40.a
 		add_ideas = 
-		
+		ai_chance = {
+			base = 100
+		}
 	}
 }
 
@@ -98,15 +110,28 @@ country_event = {
     
 	option = {
 		name = nf_event_brk.5.a
-		add_ideas = 
+		HAI = { country_event = { id = nf_event_brk.50 }}
 		ai_chance = {
 			base = 100
 		}
 	}
-    option = {
-		name = nf_event_brk.5.b
+
+}
+
+country_event = {
+	id = nf_event_brk.50
+	title = nf_event_brk.50.t
+	desc = nf_event_brk.50.d
+	picture = GFX_event_NCR_settlers
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_event_brk.50.a
 		add_ideas = 
-		
+		ai_chance = {
+			base = 100
+		}
 	}
 }
 
@@ -125,12 +150,8 @@ country_event = {
 			base = 100
 		}
 	}
-    option = {
-		name = nf_event_brk.6.b
-		add_ideas = 
-		
-	}
 }
+
 
 country_event = {
 	id = nf_event_brk.7
@@ -147,13 +168,7 @@ country_event = {
 			base = 100
 		}
 	}
-    option = {
-		name = nf_event_brk.7.b
-		add_ideas = 
-		
-	}
 }
-
 
 country_event = {
 	id = nf_event_brk.8
@@ -169,32 +184,5 @@ country_event = {
 		ai_chance = {
 			base = 100
 		}
-	}
-    option = {
-		name = nf_event_brk.8.b
-		add_ideas = 
-		
-	}
-}
-
-country_event = {
-	id = nf_event_brk.9
-	title = nf_event_brk.9.t
-	desc = nf_event_brk.9.d
-	picture = GFX_event_NCR_settlers
-
-    is_triggered_only = yes
-    
-	option = {
-		name = nf_event_brk.9.a
-		add_ideas = 
-		ai_chance = {
-			base = 100
-		}
-	}
-    option = {
-		name = nf_event_brk.9.b
-		add_ideas = 
-		
 	}
 }
