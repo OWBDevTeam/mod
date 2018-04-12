@@ -2301,44 +2301,42 @@ guiTypes = {
 	
 	
 			iconType = {
-				name ="mob_warfare_bg"
-				spriteType = "GFX_mob_warfare_bg"
+				name ="automated_warfare_bg"
+				spriteType = "GFX_automated_warfare_bg"
 				position = { x=85 y=33 }
 			}			
 				
 			iconType = {
-				name ="sup_firepower_bg"
-				spriteType = "GFX_sup_firepower_bg"
+				name ="elite_army_bg"
+				spriteType = "GFX_elite_army_bg"
 				position = { x=575 y=33 }
 			}	
 	
 			iconType = {
-				name ="grand_battleplan_bg"
-				spriteType = "GFX_grand_battleplan_bg"
+				name ="grand_army_bg"
+				spriteType = "GFX_grand_army_bg"
 				position = { x=1050 y=33 }
-			}
-
-			iconType = {
-				name = "highlight_grand_battle_plan"
-				spriteType = "GFX_tutorial_research_small_item_icon_glow"
-				position = { x=1245 y=291}
-				hide = yes
-				alwaystransparent = yes
 			}
 	
 			iconType = {
-				name ="mass_assault_bg"
-				spriteType = "GFX_mass_assault_bg"
+				name ="terror_tactics_bg"
+				spriteType = "GFX_terror_tactics_bg"
 				position = { x=1535 y=33 }
-			}		
+			}
+
+		#	iconType = {
+		#		name ="outsider_warfare_bg"
+		#		spriteType = "GFX_outsider_warfare_bg"
+		#		position = { x=2012 y=33 }
+		#	}			
 			
 			instantTextBoxType = {
-				name = "mob_warfare_title"
-				position = { x = 120 y = 35 }
+				name = "automated_warfare_title"
+				position = { x = 120 y = 45 }
 				textureFile = ""
-				font = "hoi_22tech"
+				font = "hoi_36header"
 				borderSize = {x = 0 y = 4}
-				text = "MOBILE_WARFARE_DOCTRINE_LABEL"
+				text = "AUTOMATED_WARFARE_DOCTRINE_LABEL"
 				maxWidth = 400
 				maxHeight = 122
 				format = center
@@ -2346,12 +2344,12 @@ guiTypes = {
 			}			
 
 			instantTextBoxType = {
-				name = "superior_firepower_title"
-				position = { x = 600 y = 35 }
+				name = "elite_army_title"
+				position = { x = 600 y = 45 }
 				textureFile = ""
-				font = "hoi_22tech"
+				font = "hoi_36header"
 				borderSize = {x = 0 y = 4}
-				text = "SUPERIOR_FIREPOWER_DOCTRINE_LABEL"
+				text = "ELITE_ARMY_DOCTRINE_LABEL"
 				maxWidth = 400
 				maxHeight = 122
 				format = center
@@ -2359,12 +2357,12 @@ guiTypes = {
 			}
 
 			instantTextBoxType = {
-				name = "grand_battleplan_title"
-				position = { x = 1080 y = 35 }
+				name = "grand_army_title"
+				position = { x = 1080 y = 45 }
 				textureFile = ""
-				font = "hoi_22tech"
+				font = "hoi_36header"
 				borderSize = {x = 0 y = 4}
-				text = "GRAND_BATTLEPLAN_DOCTRINE_LABEL"
+				text = "GRAND_ARMY_DOCTRINE_LABEL"
 				maxWidth = 400
 				maxHeight = 122
 				format = center
@@ -2372,38 +2370,51 @@ guiTypes = {
 			}
 			
 			instantTextBoxType = {
-				name = "mass_assault_title"
-				position = { x = 1560 y = 35 }
+				name = "terror_tactics_title"
+				position = { x = 1560 y = 45 }
 				textureFile = ""
-				font = "hoi_22tech"
+				font = "hoi_36header"
 				borderSize = {x = 0 y = 4}
-				text = "MASS_ASSAULT_DOCTRINE_LABEL"
+				text = "TERROR_TACTICS_DOCTRINE_LABEL"
 				maxWidth = 400
 				maxHeight = 122
 				format = center
 				Orientation = "UPPER_LEFT"
-			}				
+			}	
+
+	#		instantTextBoxType = {
+	#			name = "outsider_warfare_title"
+	#			position = { x = 2040 y = 45 }
+	#			textureFile = ""
+	#			font = "hoi_36header"
+	#			borderSize = {x = 0 y = 4}
+	#			text = "OUTSIDER_WARFARE_DOCTRINE_LABEL"
+	#			maxWidth = 400
+	#			maxHeight = 122
+	#			format = center
+	#			Orientation = "UPPER_LEFT"
+	#		}			
 
 			instantTextBoxType = {
-				name = "mob_warfare_desc"
-				position = { x = 140 y = 90 }
+				name = "automated_warfare_desc"
+				position = { x = 120 y = 100 }
 				textureFile = ""
 				font = "hoi_20b"
 				borderSize = {x = 0 y = 4}
-				text = "MOBILE_WARFARE_DOCTRINE_DESC"
-				maxWidth = 350
+				text = "AUTOMATED_WARFARE_DOCTRINE_DESC"
+				maxWidth = 400
 				maxHeight = 122
 				format = center
 				Orientation = "UPPER_LEFT"
 			}
 
 			instantTextBoxType = {
-				name = "superior_firepower_desc"
-				position = { x = 600 y = 90 }
+				name = "elite_army_desc"
+				position = { x = 600 y = 100 }
 				textureFile = ""
 				font = "hoi_20b"
 				borderSize = {x = 0 y = 4}
-				text = "SUPERIOR_FIREPOWER_DOCTRINE_DESC"
+				text = "ELITE_ARMY_DOCTRINE_DESC"
 				maxWidth = 400
 				maxHeight = 122
 				format = center
@@ -2411,203 +2422,222 @@ guiTypes = {
 			}
 
 			instantTextBoxType = {
-				name = "grand_battleplan_desc"
-				position = { x = 1100 y = 90 }
+				name = "grand_army_desc"
+				position = { x = 1080 y = 100 }
 				textureFile = ""
 				font = "hoi_20b"
 				borderSize = {x = 0 y = 4}
-				text = "GRAND_BATTLEPLAN_DOCTRINE_DESC"
-				maxWidth = 350
+				text = "GRAND_ARMY_DOCTRINE_DESC"
+				maxWidth = 400
 				maxHeight = 122
 				format = center
 				Orientation = "UPPER_LEFT"
 			}
 			
 			instantTextBoxType = {
-				name = "mass assault_desc"
-				position = { x = 1606 y = 90 }
+				name = "terror_tactics_desc"
+				position = { x = 1560 y = 100 }
 				textureFile = ""
 				font = "hoi_20b"
 				borderSize = {x = 0 y = 4}
-				text = "MASS_ASSAULT_DOCTRINE_DESC"
-				maxWidth = 300
+				text = "TERROR_TACTICS_DOCTRINE_DESC"
+				maxWidth = 400
 				maxHeight = 122
 				format = center
 				Orientation = "UPPER_LEFT"
 			}
 			
+	#		instantTextBoxType = {
+	#			name = "outsider_warfare_desc"
+	#			position = { x = 2112 y = 100 }
+	#			textureFile = ""
+	#			font = "hoi_20b"
+	#			borderSize = {x = 0 y = 4}
+	#			text = "OUTSIDER_WARFARE_DOCTRINE_DESC"
+	#			maxWidth = 300
+	#			maxHeight = 122
+	#			format = center
+	#			Orientation = "UPPER_LEFT"
+	#		}
+			
+			# Subtitles
 			instantTextBoxType = {
 				name = "mob_warfare_subtitle1"
-				position = { x = 110 y = 435 }
+				position = { x = 110 y = 515 }
 				textureFile = ""
-				font = "hoi_22tech"
+				font = "hoi_22header"
 				borderSize = {x = 0 y = 4}
-				text = "MOBILE_INFANTRY_LABEL"
+				text = "AUTOMATED_WARFARE_LABEL"
 				maxWidth = 150
 				maxHeight = 122
 				format = center
 				Orientation = "UPPER_LEFT"
-				pdx_tooltip = "MOBILE_INFANTRY_LABEL_TT"
+				pdx_tooltip = "AUTOMATED_WARFARE_LABEL_TT"
 			}
 
 			instantTextBoxType = {
 				name = "mob_warfare_subtitle2"
-				position = { x = 355 y = 455 }
+				position = { x = 355 y = 515 }
 				textureFile = ""
-				font = "hoi_22tech"
+				font = "hoi_22header"
 				borderSize = {x = 0 y = 4}
-				text = "BLITZKRIEG_LABEL"
+				text = "AUTOMATED_WARFARE_LABEL_1"
 				maxWidth = 200
 				maxHeight = 122
 				format = center
 				Orientation = "UPPER_LEFT"
-				pdx_tooltip = "BLITZKRIEG_LABEL_TT"
+				pdx_tooltip = "AUTOMATED_WARFARE_LABEL_1_TT"
 			}
 			
 			instantTextBoxType = {
 				name = "mob_warfare_subtitle3"
-				position = { x = 110 y = 919 }
+				position = { x = 110 y = 979 }
 				textureFile = ""
-				font = "hoi_22tech"
+				font = "hoi_22header"
 				borderSize = {x = 0 y = 4}
-				text = "DESPERATE_DEFENSE_LABEL"
+				text = "AUTOMATED_WARFARE_LABEL_2"
 				maxWidth = 150
 				maxHeight = 122
 				format = center
 				Orientation = "UPPER_LEFT"
-				pdx_tooltip = "DESPERATE_DEFENSE_LABEL_TT"
+				pdx_tooltip = "AUTOMATED_WARFARE_LABEL_2_TT"
 			}
 
 			instantTextBoxType = {
 				name = "mob_warfare_subtitle4"
-				position = { x = 360 y = 919 }
+				position = { x = 360 y = 979 }
 				textureFile = ""
-				font = "hoi_22tech"
+				font = "hoi_22header"
 				borderSize = {x = 0 y = 4}
-				text = "MODERN_BLITZKRIEG_LABEL"
+				text = "AUTOMATED_WARFARE_LABEL_3"
 				maxWidth = 180
 				maxHeight = 122
 				format = center
 				Orientation = "UPPER_LEFT"
-				pdx_tooltip = "MODERN_BLITZKRIEG_LABEL_TT"
+				pdx_tooltip = "AUTOMATED_WARFARE_LABEL_3_TT"
 			}				
 			
+			
+			
+			
 			instantTextBoxType = {
-				name = "sup_firepower_subtitle1"
-				position = { x = 600 y = 435 }
+				name = "elite_army_subtitle1"
+				position = { x = 600 y = 495 }
 				textureFile = ""
-				font = "hoi_22tech"
+				font = "hoi_22header"
 				borderSize = {x = 0 y = 4}
-				text = "DISPERSED_SUPPORT_LABEL"
+				text = "ELITE_ARMY_LABEL"
 				maxWidth = 150
 				maxHeight = 122
 				format = center
 				Orientation = "UPPER_LEFT"
-				pdx_tooltip = "DISPERSED_SUPPORT_LABEL_TT"
+				pdx_tooltip = "ELITE_ARMY_LABEL_TT"
 			}				
 
 			instantTextBoxType = {
-				name = "sup_firepower_subtitle2"
-				position = { x = 850 y = 435 }
+				name = "elite_army_subtitle2"
+				position = { x = 850 y = 495 }
 				textureFile = ""
-				font = "hoi_22tech"
+				font = "hoi_22header"
 				borderSize = {x = 0 y = 4}
-				text = "INTEGRATED_SUPPORT_LABEL"
+				text = "ELITE_ARMY_LABEL_1"
 				maxWidth = 170
 				maxHeight = 122
 				format = center
 				Orientation = "UPPER_LEFT"
-				pdx_tooltip = "INTEGRATED_SUPPORT_LABEL_TT"
+				pdx_tooltip = "ELITE_ARMY_LABEL_1_TT"
 			}
 			
 			instantTextBoxType = {
-				name = "sup_firepower_subtitle3"
-				position = { x = 600 y = 795 }
+				name = "elite_army_subtitle3"
+				position = { x = 600 y = 855 }
 				textureFile = ""
-				font = "hoi_22tech"
+				font = "hoi_22header"
 				borderSize = {x = 0 y = 4}
-				text = "AIRLAND_BATTLE_LABEL"
+				text = "ELITE_ARMY_LABEL_2"
 				maxWidth = 150
 				maxHeight = 122
 				format = center
 				Orientation = "UPPER_LEFT"
-				pdx_tooltip = "AIRLAND_BATTLE_LABEL_TT"
+				pdx_tooltip = "ELITE_ARMY_LABEL_2_TT"
 			}				
 
 			instantTextBoxType = {
-				name = "sup_firepower_subtitle4"
-				position = { x = 840 y = 795 }
+				name = "elite_army_subtitle4"
+				position = { x = 840 y = 855 }
 				textureFile = ""
-				font = "hoi_22tech"
+				font = "hoi_22header"
 				borderSize = {x = 0 y = 4}
-				text = "SHOCK_AND_AWE_LABEL"
+				text = "ELITE_ARMY_LABEL_3"
 				maxWidth = 170
 				maxHeight = 122
 				format = center
 				Orientation = "UPPER_LEFT"
-				pdx_tooltip = "SHOCK_AND_AWE_LABEL_TT"
+				pdx_tooltip = "ELITE_ARMY_LABEL_3_TT"
 			}				
 			
 			instantTextBoxType = {
-				name = "grand_battleplan_subtitle1"
-				position = { x = 1070 y = 575 }
+				name = "grand_army_subtitle1"
+				position = { x = 1070 y = 635 }
 				textureFile = ""
-				font = "hoi_22tech"
+				font = "hoi_22header"
 				borderSize = {x = 0 y = 4}
-				text = "ASSAULT_LABEL"
+				text = "GRAND_ARMY_LABEL"
 				maxWidth = 170
 				maxHeight = 122
 				format = center
 				Orientation = "UPPER_LEFT"
-				pdx_tooltip = "ASSAULT_LABEL_TT"
+				pdx_tooltip = "GRAND_ARMY_LABEL_TT"
 			}
 
 			instantTextBoxType = {
-				name = "grand_battleplan_subtitle2"
-				position = { x = 1310 y = 575 }
+				name = "grand_army_subtitle2"
+				position = { x = 1310 y = 635 }
 				textureFile = ""
-				font = "hoi_22tech"
+				font = "hoi_22header"
 				borderSize = {x = 0 y = 4}
-				text = "INFILTRATION_LABEL"
+				text = "GRAND_ARMY_LABEL_1"
 				maxWidth = 200
 				maxHeight = 122
 				format = center
 				Orientation = "UPPER_LEFT"
-				pdx_tooltip = "INFILTRATION_LABEL_TT"
+				pdx_tooltip = "GRAND_ARMY_LABEL_1_TT"
 			}
 			
 			instantTextBoxType = {
-				name = "mass_assault_subtitle1"
-				position = { x = 1560 y = 435 }
+				name = "terror_tactics_subtitle1"
+				position = { x = 1560 y = 495 }
 				textureFile = ""
-				font = "hoi_22tech"
+				font = "hoi_22header"
 				borderSize = {x = 0 y = 4}
-				text = "DEEP_BATTLE_LABEL"
+				text = "TERROR_TACTICS_LABEL"
 				maxWidth = 150
 				maxHeight = 122
 				format = center
 				Orientation = "UPPER_LEFT"
-				pdx_tooltip = "DEEP_BATTLE_LABEL_TT"
+				pdx_tooltip = "TERROR_TACTICS_LABEL_TT"
 			}				
 
 			instantTextBoxType = {
-				name = "mass_assault_subtitle2"
-				position = { x = 1816 y = 435 }
+				name = "terror_tactics_subtitle2"
+				position = { x = 1816 y = 495 }
 				textureFile = ""
-				font = "hoi_22tech"
+				font = "hoi_22header"
 				borderSize = {x = 0 y = 4}
-				text = "MASS_MOBILIZATION_LABEL"
+				text = "TERROR_TACTICS_LABEL_1"
 				maxWidth = 150
 				maxHeight = 122
 				format = center
 				Orientation = "UPPER_LEFT"
-				pdx_tooltip = "MASS_MOBILIZATION_LABEL_TT"
+				pdx_tooltip = "TERROR_TACTICS_LABEL_1_TT"
 			}
+			
+			
 				
 			gridboxtype = {
-				name = "mobile_warfare_tree"
+				name = "automated_warfare_tree"
 				position = { x=80 y=172 }
-				size = { width = 478 height = 1350 }
+				size = { width = 478 height = 1430 }
 				slotsize = { width=60 height= 60 }
 				format = "UP"
 
@@ -2619,9 +2649,9 @@ guiTypes = {
 			}
 
 			gridboxtype = {
-				name = "superior_firepower_tree"
+				name = "elite_army_tree"
 				position = { x=560 y=172 }
-				size = { width = 480 height = 1350 }
+				size = { width = 480 height = 1430 }
 				slotsize = { width=60 height= 60 }
 				format = "UP"
 				
@@ -2633,9 +2663,9 @@ guiTypes = {
 			}
 
 			gridboxtype = {
-				name = "trench_warfare_tree"
+				name = "grand_army_tree"
 				position = { x=1040 y=172 }
-				size = { width = 480 height = 1350 }
+				size = { width = 480 height = 1430 }
 				slotsize = { width=60 height= 60 }
 				format = "UP"
 				
@@ -2648,9 +2678,9 @@ guiTypes = {
 			}
 
 			gridboxtype = {
-				name = "mass_assault_tree"
+				name = "terror_tactics_tree"
 				position = { x=1520 y=172 }
-				size = { width = 480 height = 1350 }
+				size = { width = 480 height = 1430 }
 				slotsize = { width=60 height= 60 }
 				format = "UP"
 				
@@ -2661,6 +2691,21 @@ guiTypes = {
 				}					
 				
 			}
+			
+	#		gridboxtype = {
+	#			name = "outsider_warfare_tree"
+	#			position = { x=2000 y=172 }
+	#			size = { width = 480 height = 1430 }
+	#			slotsize = { width=60 height= 60 }
+	#			format = "UP"
+	#			
+	#			background = {
+	#				name = "Background"
+	#				quadTextureSprite ="GFX_fullborder_tiled"
+	#				position = { x=0 y=-150 }					
+	#			}					
+	#			
+	#		}
 		}
         
         #------------------------------------------
@@ -3647,9 +3692,9 @@ guiTypes = {
     # Land Doctrine Items
     #------------------------------------------
     containerWindowType = {
-		name = "techtree_fallout_land_doctrine_folder_small_item"
+		name = "techtree_fallout_land_doctrine_folder_item"
 		position = { x=0 y=0 }
-		size = { width = 72 height = 72 }
+		size = { width = 70 height = 70 }
 		clipping = no
 
 		background = {
@@ -3659,8 +3704,9 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=3 y=3 }
+			position = { x=35 y=35 }
 			spriteType = "GFX_technology_medium"
+			centerposition = yes
 			alwaystransparent = yes
 		}	
 		
@@ -3680,85 +3726,13 @@ guiTypes = {
 			maxHeight = 20
 			format = right
 		}
-	}
-
-	containerWindowType = {
-		name = "techtree_fallout_land_doctrine_folder_item"
-		position = { x=-56 y=-7 }
-		size = { width = 183 height = 84 }
-		clipping = no
-
-		background = {
-			name = "Background"
-			quadTextureSprite ="GFX_technology_unavailable_item_bg"
-		}
-
-		iconType = {
-			name = "Icon"
-			position = { x=91 y=50 }
-			spriteType = "GFX_technology_medium"
-			centerposition = yes
-			alwaystransparent = yes
-		}
-
-		
-		instantTextBoxType = {
-			name = "Name"
-			position = { x = 3 y = -3 }
-			textureFile = ""
-			font = "hoi_20bs"
-			borderSize = {x = 4 y = 4}
-			text = "Happy-Go-Lucky-Tank"
-			maxWidth = 160
-			maxHeight = 20
-			fixedsize = yes
-			format = left
-		}
-
-		iconType = {
-			name = "bonus_icon"
-			position = { x=115 y=-22 }
-			spriteType = "GFX_tech_bonus"
-		}
-		instantTextBoxType = {
-			name = "bonus"
-			position = { x = 129 y = -22 }
-			textureFile = ""
-			font = "hoi_16mbs"
-			borderSize = {x = 4 y = 4}
-			text = "lol boat"
-			maxWidth = 50
-			maxHeight = 20
-			format = right
-		}
-		
-		
-		containerWindowType = {
-			name = "sub_technology_slot_0"
-			position = { x=141 y=1 }
-			size = { width = 35 height = 26 }
-			clipping = no
-			
-			background = {
-				name = "Background"
-				spriteType ="GFX_subtechnology_unavailable_item_bg"
-			}
-			
-			iconType = {
-				name = "picture"
-				position = { x=2 y=2 }
-				spriteType = "GFX_subtech_rocket"
-				alwaystransparent = yes
-			}
-		}		
-		
 	}
     
     #------------------------------------------
     # Air Doctrine Items
     #------------------------------------------
     containerWindowType = {
-		name = "techtree_fallout_air_doctrine_folder_small_item"
+		name = "techtree_fallout_air_doctrine_folder_item"
 		position = { x=0 y=0 }
 		size = { width = 72 height = 72 }
 		clipping = no
@@ -3773,7 +3747,7 @@ guiTypes = {
 			position = { x=3 y=3 }
 			spriteType = "GFX_technology_medium"
 			alwaystransparent = yes
-		}	
+		}
 		
 		iconType = {
 			name = "bonus_icon"
@@ -3791,85 +3765,13 @@ guiTypes = {
 			maxHeight = 20
 			format = right
 		}
-	}
-
-	containerWindowType = {
-		name = "techtree_fallout_air_doctrine_folder_item"
-		position = { x=-56 y=-7 }
-		size = { width = 183 height = 84 }
-		clipping = no
-
-		background = {
-			name = "Background"
-			quadTextureSprite ="GFX_technology_unavailable_item_bg"
-		}
-
-		iconType = {
-			name = "Icon"
-			position = { x=91 y=50 }
-			spriteType = "GFX_technology_medium"
-			centerposition = yes
-			alwaystransparent = yes
-		}
-
-		
-		instantTextBoxType = {
-			name = "Name"
-			position = { x = 3 y = -3 }
-			textureFile = ""
-			font = "hoi_20bs"
-			borderSize = {x = 4 y = 4}
-			text = "Happy-Go-Lucky-Tank"
-			maxWidth = 160
-			maxHeight = 20
-			fixedsize = yes
-			format = left
-		}
-
-		iconType = {
-			name = "bonus_icon"
-			position = { x=115 y=-22 }
-			spriteType = "GFX_tech_bonus"
-		}
-		instantTextBoxType = {
-			name = "bonus"
-			position = { x = 129 y = -22 }
-			textureFile = ""
-			font = "hoi_16mbs"
-			borderSize = {x = 4 y = 4}
-			text = "lol boat"
-			maxWidth = 50
-			maxHeight = 20
-			format = right
-		}
-		
-		
-		containerWindowType = {
-			name = "sub_technology_slot_0"
-			position = { x=141 y=1 }
-			size = { width = 35 height = 26 }
-			clipping = no
-			
-			background = {
-				name = "Background"
-				spriteType ="GFX_subtechnology_unavailable_item_bg"
-			}
-			
-			iconType = {
-				name = "picture"
-				position = { x=2 y=2 }
-				spriteType = "GFX_subtech_rocket"
-				alwaystransparent = yes
-			}
-		}		
-		
 	}
     
     #------------------------------------------
     # Naval Doctrine Items
     #------------------------------------------
     containerWindowType = {
-		name = "techtree_fallout_naval_doctrine_folder_small_item"
+		name = "techtree_fallout_naval_doctrine_folder_item"
 		position = { x=0 y=0 }
 		size = { width = 72 height = 72 }
 		clipping = no
@@ -3902,78 +3804,6 @@ guiTypes = {
 			maxHeight = 20
 			format = right
 		}
-	}
-
-	containerWindowType = {
-		name = "techtree_fallout_naval_doctrine_folder_item"
-		position = { x=-56 y=-7 }
-		size = { width = 183 height = 84 }
-		clipping = no
-
-		background = {
-			name = "Background"
-			quadTextureSprite ="GFX_technology_unavailable_item_bg"
-		}
-
-		iconType = {
-			name = "Icon"
-			position = { x=91 y=50 }
-			spriteType = "GFX_technology_medium"
-			centerposition = yes
-			alwaystransparent = yes
-		}
-
-		
-		instantTextBoxType = {
-			name = "Name"
-			position = { x = 3 y = -3 }
-			textureFile = ""
-			font = "hoi_20bs"
-			borderSize = {x = 4 y = 4}
-			text = "Happy-Go-Lucky-Tank"
-			maxWidth = 160
-			maxHeight = 20
-			fixedsize = yes
-			format = left
-		}
-
-		iconType = {
-			name = "bonus_icon"
-			position = { x=115 y=-22 }
-			spriteType = "GFX_tech_bonus"
-		}
-		instantTextBoxType = {
-			name = "bonus"
-			position = { x = 129 y = -22 }
-			textureFile = ""
-			font = "hoi_16mbs"
-			borderSize = {x = 4 y = 4}
-			text = "lol boat"
-			maxWidth = 50
-			maxHeight = 20
-			format = right
-		}
-		
-		
-		containerWindowType = {
-			name = "sub_technology_slot_0"
-			position = { x=141 y=1 }
-			size = { width = 35 height = 26 }
-			clipping = no
-			
-			background = {
-				name = "Background"
-				spriteType ="GFX_subtechnology_unavailable_item_bg"
-			}
-			
-			iconType = {
-				name = "picture"
-				position = { x=2 y=2 }
-				spriteType = "GFX_subtech_rocket"
-				alwaystransparent = yes
-			}
-		}		
-		
 	}
     
     #------------------------------------------

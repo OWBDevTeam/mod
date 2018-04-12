@@ -88,6 +88,7 @@ leader_traits = {
 		
 		modifier = {
 			planning_speed = -0.20
+			wounded_chance_factor = -0.5
 		}
 		
 		defense_skill_factor = 1
@@ -100,7 +101,7 @@ leader_traits = {
 		
 		modifier = {
 			planning_speed = 0.20
-			wounded_chance_factor = 1  # +100% chance to get wounded
+			wounded_chance_factor = 0.5  # +50% chance to get wounded
 		}
 		
 		attack_skill_factor = 1
@@ -599,8 +600,11 @@ leader_traits = {
 	panzer_leader = {
  		type = corps_commander
 		gain_xp = {
-			hardness > 0.4
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.4 }
+			check_variable = { num_armored > temp }
 		}
+		custom_gain_xp_trigger_tooltip = armored_ratio_over_40
 		cost = 700
 		modifier = {
 			army_armor_speed_factor = 0.05 
@@ -620,8 +624,8 @@ leader_traits = {
  		type = corps_commander
 		gain_xp = {
 			OR = {
-				temperature < -10
-				temperature > 40
+				temperature < -15
+				temperature > 27
 				has_combat_modifier = paradrop
 				has_combat_modifier = amphibious_attack
 			}
@@ -642,7 +646,7 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = desert
 		}
-		cost = 1050
+		cost = 700
 		modifier = {
 			desert = {
 				movement = 0.05
@@ -684,7 +688,7 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = mountain
 		}
-		cost = 1120
+		cost = 700
 		modifier = {
 			mountain = {
 				movement = 0.05
@@ -705,7 +709,7 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = hills
 		}
-		cost = 800
+		cost = 700
 		modifier = {
 			hills = {
 				movement = 0.05
@@ -768,7 +772,7 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = urban
 		}
-		cost = 1000
+		cost = 500
 		modifier = {
 			urban = {
 				movement = 0.05
@@ -919,7 +923,7 @@ leader_traits = {
 		}
 		cost = 500
 		modifier = {
-			equipment_capture_factor = 0.10
+			equipment_capture = 0.03
 		}
 		
 		ai_will_do = {
@@ -1355,7 +1359,7 @@ leader_traits = {
 		trait_type = status_trait
 	}
 	
-	recently_promoted = {  #TODO_WTT_ART icon
+	recently_promoted = {
 		type = all
 		trait_type = status_trait
 		
