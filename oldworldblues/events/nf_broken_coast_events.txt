@@ -10,15 +10,27 @@ country_event = {
     
 	option = {
 		name = nf_event_brk.1.a
-		add_ideas = 
+		add_ideas = brk_startup_natives
+		
 		ai_chance = {
-			base = 100
+			base = 33
 		}
 	}
     option = {
 		name = nf_event_brk.1.b
-		add_ideas = 
+		add_ideas = brk_startup_marines
 		
+		ai_chance = {
+			base = 33
+		}
+	}
+	option = {
+		name = nf_event_brk.1.c
+		add_ideas = brk_startup_sailors
+		
+		ai_chance = {
+			base = 33
+		}
 	}
 }
 
@@ -32,15 +44,28 @@ country_event = {
     
 	option = {
 		name = nf_event_brk.2.a
-		add_ideas = 
+		add_ideas = brk_startup_fled
+		
 		ai_chance = {
-			base = 100
+			base = 33
 		}
 	}
     option = {
 		name = nf_event_brk.2.b
-		add_ideas = 
+		add_ideas = brk_startup_sheltered
 		
+		ai_chance = {
+			base = 33
+		}
+	}
+	
+	option = {
+		name = nf_event_brk.2.c
+		add_ideas = brk_startup_weathered
+		
+		ai_chance = {
+			base = 33
+		}
 	}
 }
 
@@ -54,15 +79,19 @@ country_event = {
     
 	option = {
 		name = nf_event_brk.3.a
-		add_ideas = 
+		add_ideas = brk_startup_slaves
+		
 		ai_chance = {
-			base = 100
+			base = 50
 		}
 	}
     option = {
 		name = nf_event_brk.3.b
-		add_ideas = 
+		add_ideas = brk_startup_riches
 		
+		ai_chance = {
+			base = 50
+		}
 	}
 }
 
@@ -76,29 +105,21 @@ country_event = {
 
     option = {
 		name = nf_event_brk.4.a
-		HAI = { country_event = { id = nf_event_brk.40 }}
+			WHI = {
+				add_opinion_modifier = {
+					target = WHI
+					modifier = brk_raid
+				}
+			}
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 200 producer = WHI } 
+			
 		ai_chance = {
-			base = 100
+		base = 100
 		}
 	}
 }
 
-country_event = {
-	id = nf_event_brk.40
-	title = nf_event_brk.40.t
-	desc = nf_event_brk.40.d
-	picture = GFX_event_NCR_settlers
 
-    is_triggered_only = yes
-    
-	option = {
-		name = nf_event_brk.40.a
-		add_ideas = 
-		ai_chance = {
-			base = 100
-		}
-	}
-}
 
 country_event = {
 	id = nf_event_brk.5
@@ -110,7 +131,7 @@ country_event = {
     
 	option = {
 		name = nf_event_brk.5.a
-		HAI = { country_event = { id = nf_event_brk.50 }}
+		WHI = { country_event = { id = nf_event_brk.50 }}
 		ai_chance = {
 			base = 100
 		}
@@ -128,9 +149,26 @@ country_event = {
     
 	option = {
 		name = nf_event_brk.50.a
-		add_ideas = 
+		
+		BRK = { 
+			annex_country = { target = WHI } 
+		}
 		ai_chance = {
-			base = 100
+			base = 50
+		}
+	}
+	option = {
+		name = nf_event_brk.50.b
+		
+		BRK = {
+			create_wargoal = {
+				type = annex_everything
+				target = WHI
+			}
+		}
+		
+		ai_chance = {
+			base = 50
 		}
 	}
 }
@@ -145,9 +183,43 @@ country_event = {
     
 	option = {
 		name = nf_event_brk.6.a
-		add_ideas = 
+		WHI = { country_event = { id = nf_event_brk.60 }}
 		ai_chance = {
 			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = nf_event_brk.60
+	title = nf_event_brk.60.t
+	desc = nf_event_brk.60.d
+	picture = GFX_event_NCR_settlers
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_event_brk.60.a
+		
+		BRK = { 
+			annex_country = { target = WHI } 
+		}
+		ai_chance = {
+			base = 80
+		}
+	}
+	option = {
+		name = nf_event_brk.60.b
+		
+		BRK = {
+			create_wargoal = {
+				type = annex_everything
+				target = WHI
+			}
+		}
+		
+		ai_chance = {
+			base = 20
 		}
 	}
 }
@@ -163,7 +235,13 @@ country_event = {
     
 	option = {
 		name = nf_event_brk.7.a
-		add_ideas = 
+		KAM = {
+				add_opinion_modifier = {
+					target = KAM
+					modifier = brk_raid
+				}
+			}
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 200 producer = KAM } 
 		ai_chance = {
 			base = 100
 		}
@@ -180,7 +258,7 @@ country_event = {
     
 	option = {
 		name = nf_event_brk.8.a
-		add_ideas = 
+		KAM = { add_ideas = brk_terrorized }
 		ai_chance = {
 			base = 100
 		}
