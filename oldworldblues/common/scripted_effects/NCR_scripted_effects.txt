@@ -3653,6 +3653,13 @@ set_NCR_factions_technology_on_civil_war = {
 
 	if = {
 		limit = {
+			PREV = { has_tech = bike_tech_3 }
+		}
+		set_technology = { bike_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
 			PREV = { has_tech = car_tech_1 }
 		}
 		set_technology = { car_tech_1 = 1 }
@@ -3674,6 +3681,27 @@ set_NCR_factions_technology_on_civil_war = {
 
 	if = {
 		limit = {
+			PREV = { has_tech = tank_tech_1 }
+		}
+		set_technology = { tank_tech_1 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = tank_tech_2 }
+		}
+		set_technology = { tank_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = tank_tech_3 }
+		}
+		set_technology = { tank_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
 			PREV = { has_tech = truck_tech_1 }
 		}
 		set_technology = { truck_tech_1 = 1 }
@@ -3684,6 +3712,20 @@ set_NCR_factions_technology_on_civil_war = {
 			PREV = { has_tech = truck_tech_2 }
 		}
 		set_technology = { truck_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = truck_tech_3 }
+		}
+		set_technology = { truck_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = truck_tech_4 }
+		}
+		set_technology = { truck_tech_4 = 1 }
 	}
 
 	if = {
@@ -3709,29 +3751,43 @@ set_NCR_factions_technology_on_civil_war = {
 
 	if = {
 		limit = {
-			PREV = { has_tech = tank_tech_1 }
+			PREV = { has_tech = eighties_warbikes }
 		}
-		set_technology = { tank_tech_1 = 1 }
+		set_technology = { eighties_warbikes = 1 }
 	}
 
 	if = {
 		limit = {
-			PREV = { has_tech = tank_tech_2 }
+			PREV = { has_tech = legion_motor_chariots }
 		}
-		set_technology = { tank_tech_2 = 1 }
+		set_technology = { legion_motor_chariots = 1 }
 	}
 
 	if = {
 		limit = {
-			PREV = { has_tech = tank_tech_3 }
+			PREV = { has_tech = ranger_motorbikes }
 		}
-		set_technology = { tank_tech_3 = 1 }
+		set_technology = { ranger_motorbikes = 1 }
 	}
 
-	#if = {
-	#	limit = {
-	#		PREV = { has_tech = super_mutant_behemoth }
-	#	}
-	#	set_technology = { super_mutant_behemoth = 1 }
-	#}
+	if = {
+		limit = {
+			PREV = { has_tech = testudo_apc }
+		}
+		set_technology = { testudo_apc = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = super_mutant_battlewagons }
+		}
+		set_technology = { super_mutant_battlewagons = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = super_mutant_behemoth }
+		}
+		set_technology = { super_mutant_behemoth = 1 }
+	}
 }
