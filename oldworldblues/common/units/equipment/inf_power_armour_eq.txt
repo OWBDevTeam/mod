@@ -9,58 +9,146 @@ equipments = {
 		group_by = archetype
 		
 		interface_category = interface_category_land
+		
+		upgrades = {
+			pa_redundancy_upgrade
+			pa_production_upgrade
+			pa_servo_motion_upgrade
+			pa_plating_upgrade
+			pa_shock_upgrade
+			pa_visor_upgrade
+		}
 
         maximum_speed = 4
         
 		# Misc Abilities
-		reliability = 0.75
+		reliability = 0.90
 
 		# Defensive Abilities
-		breakthrough = 4
+		breakthrough = 1
 		hardness = 0.2
-		armor_value = 30
+		armor_value = 15
 
-		build_cost_ic = 8
+		build_cost_ic = 10
         
 		resources = {
-		metal = 2
-            	electronics = 1
-            	advanced_technology = 1
+			metal = 2
+			electronics = 1
 		}
 	}
     
     # Scavenged Power Armour
     power_armor_equipment_1 = {
 		archetype = power_armor_equipment
-
-		priority = 5
+		priority = 15
 		visual_level = 0
+		
+		breakthrough = 4
+		hardness = 0.2
+		armor_value = 30
         
-        reliability = 0.75
+        reliability = 0.70
+		
+		resources = {
+			metal = 2
+			electronics = 1
+			advanced_technology = 1
+		}
+		
+    }
+	
+	#Riot Armour
+	power_armor_light_equipment_1 = {
+		archetype = power_armor_equipment
+		parent = power_armor_equipment_1
+		priority = 10
+		visual_level = 0
+		
+		maximum_speed = 5
+		
+		breakthrough = 3
+		hardness = 0.1
+		armor_value = 15
+        
+        reliability = 0.8
+		
+		build_cost_ic = 6
+        
+		resources = {
+			metal = 2
+			electronics = 1
+		}
+    }
+	
+	# elite Riot Armour
+	power_armor_light_equipment_2 = {
+		archetype = power_armor_equipment
+		parent = power_armor_light_equipment_1
+		priority = 20
+		visual_level = 0
+		
+		maximum_speed = 5
+		
+		breakthrough = 4
+		hardness = 0.2
+		armor_value = 18
+        
+        reliability = 0.85
+		
+		build_cost_ic = 8
+        
+		resources = {
+			metal = 2
+			electronics = 1
+		}
     }
     
     # T-45d
     power_armor_equipment_2 = {
 		archetype = power_armor_equipment
 		parent = power_armor_equipment_1
-		priority = 10
+		priority = 30
 		visual_level = 1
         
-        reliability = 0.85
+        reliability = 0.80
         
         maximum_speed = 4
         
 		# Defensive Abilities
 		breakthrough = 5
-        	hardness = 0.3
+        hardness = 0.3
 		armor_value = 34
+        
+		build_cost_ic = 12
+        
+        resources = {
+			metal = 2
+            electronics = 2
+            advanced_technology = 2
+		}
+	}
+	
+	power_armor_light_equipment_3 = {
+		archetype = power_armor_equipment
+		parent = power_armor_equipment_2
+		priority = 40
+		visual_level = 1
+        
+        reliability = 0.75
+        
+        maximum_speed = 5
+        
+		# Defensive Abilities
+		breakthrough = 5
+        hardness = 0.25
+		armor_value = 28
         
 		build_cost_ic = 10
         
         resources = {
-		metal = 2
-            	electronics = 2
-            	advanced_technology = 2
+			metal = 2
+            electronics = 2
+            advanced_technology = 1
 		}
 	}
     
@@ -68,20 +156,21 @@ equipments = {
     power_armor_equipment_3 = {
 		archetype = power_armor_equipment
 		parent = power_armor_equipment_2
-		priority = 20
+		priority = 45
 		visual_level = 1
 
+		reliability = 0.75
 		# Defensive Abilities
 		breakthrough = 8
-       		hardness = 0.4
+       	hardness = 0.4
 		armor_value = 40
         
 		build_cost_ic = 16
         
         resources = {
-		metal = 3
+			metal = 3
            	electronics = 3
-            	advanced_technology = 3
+            advanced_technology = 3
 		}
 	}
     
@@ -101,9 +190,9 @@ equipments = {
 		build_cost_ic = 20
         
         resources = {
-		metal = 3
-            	electronics = 3
-            	advanced_technology = 3
+			metal = 3
+            electronics = 3
+            advanced_technology = 3
 		}
 	}
     
@@ -121,9 +210,9 @@ equipments = {
 		build_cost_ic = 24
         
         resources = {
-		metal = 4
-            	electronics = 4
-            	advanced_technology = 4
+			metal = 4
+            electronics = 4
+            advanced_technology = 4
 		}
 	}
     
@@ -140,9 +229,9 @@ equipments = {
 		build_cost_ic = 16
         
         resources = {
-		metal = 3
-            	electronics = 3
-            	advanced_technology = 3
+			metal = 3
+            electronics = 3
+            advanced_technology = 3
 		}
 	}
     
@@ -159,9 +248,9 @@ equipments = {
 		build_cost_ic = 12
         
         resources = {
-		metal = 2
-            	electronics = 2
-            	advanced_technology = 2
+			metal = 2
+            electronics = 2
+            advanced_technology = 2
 		}
 	}
     
@@ -178,8 +267,8 @@ equipments = {
 		build_cost_ic = 8
         
         resources = {
-		metal = 2
-            	electronics = 1
+			metal = 2
+           	electronics = 1
            	advanced_technology = 1
 		}
 	}
