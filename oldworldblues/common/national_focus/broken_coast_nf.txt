@@ -325,7 +325,7 @@ focus_tree = {
 		y = 9
 
 		prerequisite = {
-			focus = brk_nf_elites_pol_side
+			focus = brk_nf_elites_pol
 		}
 		
 		completion_reward = {
@@ -349,7 +349,7 @@ focus_tree = {
 		y = 10
 
 		prerequisite = {
-			focus = brk_nf_elites_pol
+			focus = brk_nf_elites_pol_side
 		}
 		completion_reward = {
 			custom_effect_tooltip = brk_raiding_fleet_tt
@@ -470,6 +470,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = brk_nf_woo_whistler
 		}
+		bypass = {
+			WHI = {  exists = no }
+		}
 		
 		completion_reward = {
 			country_event = { id = nf_event_brk.4 }
@@ -485,6 +488,9 @@ focus_tree = {
 
 		prerequisite = {
 			focus = brk_nf_raid_whistler
+		}
+		bypass = {
+			WHI = {  exists = no }
 		}
 		
 		completion_reward = {
@@ -505,6 +511,10 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = brk_nf_enslave_kamlo
+		}
+		available = {
+			WHI = {  exists = no }
+			KAM = {  exists = no }
 		}
 		
 		completion_reward = {
@@ -558,6 +568,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = brk_nf_raid_whistler
 		}
+		bypass = {
+			WHI = {  exists = no }
+		}
 		
 		completion_reward = {
 		
@@ -584,6 +597,9 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_woo_whistler
 		}
+		bypass = {
+			WHI = {  exists = no }
+		}
 		
 		completion_reward = {
 		BRK = { give_guarantee = WHI }
@@ -601,6 +617,9 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_protect_whistler
 		}
+		bypass = {
+			WHI = {  exists = no }
+		}
 		
 		completion_reward = {
 			country_event = { id = nf_event_brk.6 }
@@ -616,6 +635,9 @@ focus_tree = {
 
 		prerequisite = {
 			focus = brk_nf_frozen_shores
+		}
+		bypass = {
+			KAM = {  exists = no }
 		}
 		
 		completion_reward = {
@@ -633,6 +655,9 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_raid_kamlo
 		}
+		bypass = {
+			KAM = {  exists = no }
+		}
 		
 		completion_reward = {
 			country_event = { id = nf_event_brk.8 }
@@ -648,6 +673,9 @@ focus_tree = {
 
 		prerequisite = {
 			focus = brk_nf_break_kamlo
+		}
+		bypass = {
+			KAM = {  exists = no }
 		}
 		
 		completion_reward = {
