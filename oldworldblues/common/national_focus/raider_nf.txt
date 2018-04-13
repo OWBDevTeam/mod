@@ -253,40 +253,39 @@ focus_tree = {
 		}
 		x = 8
 		y = 4
-			available_if_capitulated = yes
-			completion_reward = {
-					random_owned_controlled_state = {
-							limit = {
+		available_if_capitulated = yes
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
 									free_building_slots = {
-											building = infrastructure
-											size > 0
-											include_locked = yes
-										}
-									OR = {
-											is_in_home_area = yes
-											NOT = {
-													owner = {
-															any_owned_state = {
-																	free_building_slots = {
-																			building = infrastructure
-																			size > 0
-																			include_locked = yes
-																		}
-																	is_in_home_area = yes
-																}
-														}
-												}
-										}
+										building = infrastructure
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
 								}
-							add_extra_state_shared_building_slots = 2
-							add_building_construction = {
-									type = infrastructure
-									level = 2
-									instant_build = yes
-								}
+							}
 						}
+					}
 				}
-
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+		    }
+		}
 	}
 	focus = {
 		id = incorporate_slavers
@@ -440,12 +439,11 @@ focus_tree = {
 		}
 		x = 14
 		y = 4
-			available_if_capitulated = yes
-			completion_reward = {
-					add_manpower = 500
-					add_stability = -0.05
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_manpower = 500
+			add_stability = -0.05
+		}
 	}
 	focus = {
 		id = establish_the_slave_trade
@@ -456,12 +454,11 @@ focus_tree = {
 		}
 		x = 14
 		y = 5
-			available_if_capitulated = yes
-			completion_reward = {
-					add_manpower = 500
-					add_stability = -0.1
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_manpower = 500
+			add_stability = -0.1
+		}
 	}
 	focus = {
 		id = drug_dealers
@@ -472,16 +469,15 @@ focus_tree = {
 		}
 		x = 14
 		y = 6
-			available_if_capitulated = yes
-			completion_reward = {
-					add_tech_bonus = {
-							name = drugdealers_bonus
-							bonus = 0.5
-							uses = 1
-							category = chem_tech
-					}
+		available_if_capitulated = yes
+		completion_reward = {
+			add_tech_bonus = {
+				name = drugdealers_bonus
+				bonus = 0.5
+				uses = 1
+				category = chem_tech
 			}
-
+		}
 	}
 	focus = {
 		id = raid_workshops
@@ -492,11 +488,10 @@ focus_tree = {
 		}
 		x = 14
 		y = 7
-			available_if_capitulated = yes
-			completion_reward = {
-					add_ideas = raider_raid_workshops
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_ideas = raider_raid_workshops
+		}
 	}
 	focus = {
 		id = supply_stashes
@@ -507,20 +502,19 @@ focus_tree = {
 		}
 		x = 14
 		y = 8
-			available_if_capitulated = yes
-			completion_reward = {
-					random_owned_controlled_state = {
-							add_resource = {
-									type = water
-									amount = 4
-								}
-							add_resource = {
-									type = metal
-									amount = 6
-								}
-						}
+		available_if_capitulated = yes
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_resource = {
+					type = water
+					amount = 4
 				}
-
+				add_resource = {
+					type = metal
+					amount = 6
+				}
+			}
+		}
 	}
 	focus = {
 		id = a_weapon_to_surpass_the_other_gang
@@ -534,13 +528,12 @@ focus_tree = {
 		}
 		x = 15
 		y = 10
-			available_if_capitulated = yes
-			completion_reward = {
-					set_technology = {
-							power_armour_raider = 1
-						}
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			set_technology = {
+				power_armour_raider = 1
+			}
+		}
 	}
 	focus = {
 		id = convert_metal_armour
@@ -568,16 +561,15 @@ focus_tree = {
 		}
 		x = 16
 		y = 5
-			available_if_capitulated = yes
-			completion_reward = {
-					add_tech_bonus = {
-							name = secret_bonus
-							bonus = 0.5
-							uses = 1
-							category = industry
-						}
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
 	}
 	focus = {
 		id = hideout_expansion
@@ -607,40 +599,39 @@ focus_tree = {
 		}
 		x = 16
 		y = 7
-			available_if_capitulated = yes
-			completion_reward = {
-					random_owned_controlled_state = {
-							limit = {
+		available_if_capitulated = yes
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
 									free_building_slots = {
-											building = industrial_complex
-											size > 0
-											include_locked = yes
-										}
-									OR = {
-											is_in_home_area = yes
-											NOT = {
-													owner = {
-															any_owned_state = {
-																	free_building_slots = {
-																			building = industrial_complex
-																			size > 0
-																			include_locked = yes
-																		}
-																	is_in_home_area = yes
-																}
-														}
-												}
-										}
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
 								}
-							add_extra_state_shared_building_slots = 3
-							add_building_construction = {
-									type = industrial_complex
-									level = 1
-									instant_build = yes
-								}
+							}
 						}
+					}
 				}
-
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = doped_soldiers
@@ -651,11 +642,10 @@ focus_tree = {
 		}
 		x = 21
 		y = 3
-			available_if_capitulated = yes
-			completion_reward = {
-					add_ideas = raider_doped_soldiers
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_ideas = raider_doped_soldiers
+		}
 	}
 	focus = {
 		id = lightning_raids
@@ -666,14 +656,13 @@ focus_tree = {
 		}
 		x = 20
 		y = 4
-			available_if_capitulated = yes
-			completion_reward = {
-               swap_ideas = {			
-					add_idea = raider_lightning_raids
-					remove_idea = raider_doped_soldiers
-				}	
-			}
-
+		available_if_capitulated = yes
+		completion_reward = {
+            swap_ideas = {			
+				add_idea = raider_lightning_raids
+				remove_idea = raider_doped_soldiers
+			}	
+		}
 	}
 	focus = {
 		id = blood_soaked_gender_equality
@@ -684,13 +673,13 @@ focus_tree = {
 		}
 		x = 20
 		y = 5
-			available_if_capitulated = yes
-			completion_reward = {
-			    swap_ideas = {
-					add_idea = raider_gender_equality
-					remove_idea = raider_lightning_raids
-				}	
-			}
+		available_if_capitulated = yes
+		completion_reward = {
+			swap_ideas = {
+				add_idea = raider_gender_equality
+				remove_idea = raider_lightning_raids
+			}	
+		}
 	}
 	focus = {
 		id = take_what_you_need
@@ -701,13 +690,13 @@ focus_tree = {
 		}
 		x = 20
 		y = 6
-			available_if_capitulated = yes
-			completion_reward = {
-			    swap_ideas = {
-					add_idea = raider_take_what_you_need
-					remove_idea = raider_gender_equality
-				}
+		available_if_capitulated = yes
+		completion_reward = {
+			swap_ideas = {
+				add_idea = raider_take_what_you_need
+				remove_idea = raider_gender_equality
 			}
+		}
 	}
 	focus = {
 		id = expand_the_garage
@@ -718,40 +707,39 @@ focus_tree = {
 		}
 		x = 20
 		y = 7
-			available_if_capitulated = yes
-			completion_reward = {
-					random_owned_controlled_state = {
-							limit = {
+		available_if_capitulated = yes
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
 									free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-									OR = {
-											is_in_home_area = yes
-											NOT = {
-													owner = {
-															any_owned_state = {
-																	free_building_slots = {
-																			building = arms_factory
-																			size > 0
-																			include_locked = yes
-																		}
-																	is_in_home_area = yes
-																}
-														}
-												}
-										}
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
 								}
-							add_extra_state_shared_building_slots = 2
-							add_building_construction = {
-									type = arms_factory
-									level = 2
-									instant_build = yes
-								}
+							}
 						}
+					}
 				}
-
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = chop_shop_shimmy
@@ -762,16 +750,15 @@ focus_tree = {
 		}
 		x = 17
 		y = 8
-			available_if_capitulated = yes
-			completion_reward = {
-					add_tech_bonus = {
-							name = raider_vehicle_bonus
-							bonus = 0.5
-							uses = 1
-							category = vehicle_tech
-						}
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_tech_bonus = {
+				name = raider_vehicle_bonus
+			    bonus = 0.5
+				uses = 1
+				category = vehicle_tech
+			}
+		}
 	}
 	focus = {
 		id = kings_of_the_roads
@@ -785,16 +772,15 @@ focus_tree = {
 		}
 		x = 19
 		y = 8
-			available_if_capitulated = yes
-			completion_reward = {
-					add_tech_bonus = {
-							name = raider_bike_bonus
-							bonus = 0.5
-							uses = 1
-							category = bike_tech
-						}
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_tech_bonus = {
+			    name = raider_bike_bonus
+			    bonus = 0.5
+				uses = 1
+				category = bike_tech
+			}
+		}
 	}
 	focus = {
 		id = custom_rides
@@ -805,11 +791,10 @@ focus_tree = {
 		}
 		x = 19
 		y = 9
-			available_if_capitulated = yes
-			completion_reward = {
-					add_ideas = raider_custom_rides
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_ideas = raider_custom_rides
+		}
 	}
 	focus = {
 		id = call_in_the_warboys
@@ -823,16 +808,15 @@ focus_tree = {
 		}
 		x = 21
 		y = 8
-			available_if_capitulated = yes
-			completion_reward = {
-					add_tech_bonus = {
-							name = raider_apc_bonus
-							bonus = 0.5
-							uses = 1
-							category = apc_tech
-						}
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_tech_bonus = {
+				name = raider_apc_bonus
+				bonus = 0.5
+				uses = 1
+				category = apc_tech
+			}
+		}
 	}
 	focus = {
 		id = metal_boxes
@@ -843,11 +827,10 @@ focus_tree = {
 		}
 		x = 21
 		y = 9
-			available_if_capitulated = yes
-			completion_reward = {
-					add_ideas = raider_metal_boxes
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_ideas = raider_metal_boxes
+		}
 	}
 	focus = {
 		id = roaring_machines
@@ -887,11 +870,10 @@ focus_tree = {
 		}
 		x = 22
 		y = 5
-			available_if_capitulated = yes
-			completion_reward = {
-					add_ideas = raider_brutal_hazing
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_ideas = raider_brutal_hazing
+		}
 	}
 	focus = {
 		id = recruit_them_young
@@ -902,11 +884,10 @@ focus_tree = {
 		}
 		x = 22
 		y = 6
-			available_if_capitulated = yes
-			completion_reward = {
-					add_ideas = raider_recruit_them_young
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_ideas = raider_recruit_them_young
+		}
 	}
 	focus = {
 		id = preparing_for_total_war
@@ -960,11 +941,10 @@ focus_tree = {
 		}
 		x = 6
 		y = 5
-			available_if_capitulated = yes
-			completion_reward = {
-					add_ideas = raider_dont_question_the_boss
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_ideas = raider_dont_question_the_boss
+		}
 	}
 	focus = {
 		id = draconian_recovery_methods
@@ -1045,10 +1025,10 @@ focus_tree = {
 		}
 		x = 10
 		y = 4
-			available_if_capitulated = yes
-			completion_reward = {
-				add_war_support = 0.05
-			}
+		available_if_capitulated = yes
+		completion_reward = {
+			add_war_support = 0.05
+		}
 	}
 	focus = {
 		id = territorial_reinforcement
@@ -1059,10 +1039,10 @@ focus_tree = {
 		}
 		x = 8
 		y = 5
-			available_if_capitulated = yes
-			completion_reward = {
-				add_ideas = territorial_reinforcement
-			}
+		available_if_capitulated = yes
+		completion_reward = {
+			add_ideas = territorial_reinforcement
+		}
 	}
 	focus = {
 		id = terrorise_the_locals
@@ -1073,12 +1053,11 @@ focus_tree = {
 		}
 		x = 10
 		y = 5
-			available_if_capitulated = yes
-			completion_reward = {
-					add_war_support = 0.05
-					add_political_power = 40
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_war_support = 0.05
+			add_political_power = 40
+		}
 	}
 	focus = {
 		id = raider_headquarters
@@ -1089,51 +1068,50 @@ focus_tree = {
 		}
 		x = 10
 		y = 6
-			available_if_capitulated = yes
-			completion_reward = {
-					random_owned_controlled_state = {
-							limit = {
+		available_if_capitulated = yes
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
 									free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-											building = industrial_complex
-											size > 0
-											include_locked = yes
-										}
-									OR = {
-											is_in_home_area = yes
-											NOT = {
-													owner = {
-															any_owned_state = {
-																	free_building_slots = {
-																			building = arms_factory
-																			size > 0
-																			include_locked = yes
-																			building = industrial_complex
-																			size > 0
-																			include_locked = yes
-																		}
-																	is_in_home_area = yes
-																}
-														}
-												}
-										}
+										building = arms_factory
+										size > 0
+										include_locked = yes
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
 								}
-							add_extra_state_shared_building_slots = 4
-							add_building_construction = {
-									type = arms_factory
-									level = 1
-									instant_build = yes
-								}
-							add_building_construction = {
-									type = industrial_complex
-									level = 2
-									instant_build = yes
-								}
+							}
 						}
+					}
 				}
-
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+				    type = arms_factory
+				    level = 1
+				    instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = territoriality
@@ -1144,11 +1122,10 @@ focus_tree = {
 		}
 		x = 10
 		y = 7
-			available_if_capitulated = yes
-			completion_reward = {
-					add_ideas = territoriality
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_ideas = territoriality
+		}
 	}
 	focus = {
 		id = manifest_destiny
@@ -1159,14 +1136,13 @@ focus_tree = {
 		}
 		x = 10
 		y = 8
-			available_if_capitulated = yes
-			completion_reward = {
-			   swap_ideas = {
-					add_idea = raider_manifest_destiny
-					remove_idea = territoriality
-				}
-				
-			}				
+		available_if_capitulated = yes
+		completion_reward = {
+			swap_ideas = {
+				add_idea = raider_manifest_destiny
+				remove_idea = territoriality
+			}
+		}				
 	}
 	focus = {
 		id = we_never_die
@@ -1177,11 +1153,10 @@ focus_tree = {
 		}
 		x = 8
 		y = 8
-			available_if_capitulated = yes
-			completion_reward = {
-					add_ideas = raider_we_never_die
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_ideas = raider_we_never_die
+		}
 	}
 	focus = {
 		id = guns_with_legs
@@ -1192,15 +1167,15 @@ focus_tree = {
 		}
 		x = 11
 		y = 10
-			available_if_capitulated = yes
-			completion_reward = {
-					add_tech_bonus = {
-							name = raider_robot_bonus
-							bonus = 0.5
-							uses = 1
-							category = robotics_tech
-						}
+		available_if_capitulated = yes
+		completion_reward = {
+			add_tech_bonus = {
+				name = raider_robot_bonus
+				bonus = 0.5
+				uses = 1
+				category = robotics_tech
 			}
+		}
 	}
 	focus = {
 		id = find_the_good_stuff
@@ -1211,16 +1186,15 @@ focus_tree = {
 		}
 		x = 11
 		y = 11
-			available_if_capitulated = yes
-			completion_reward = {
-					random_owned_controlled_state = {
-							add_resource = {
-									type = electronics
-									amount = 5
-								}
-						}
+		available_if_capitulated = yes
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_resource = {
+					type = electronics
+					amount = 5
+				}
 			}
-
+		}
 	}
 	focus = {
 		id = shitty_robots
@@ -1231,13 +1205,13 @@ focus_tree = {
 		}
 		x = 11
 		y = 12
-			available_if_capitulated = yes
-			completion_reward = {
-                    swap_ideas = {			
-					add_idea = raider_shitty_robots
-					remove_idea = raider_new_age_weaponry
-			    }
-            }
+		available_if_capitulated = yes
+		completion_reward = {
+            swap_ideas = {			
+				add_idea = raider_shitty_robots
+				remove_idea = raider_new_age_weaponry
+			}
+        }
 	}
 	focus = {
 		id = taking_the_best
@@ -1248,16 +1222,15 @@ focus_tree = {
 		}
 		x = 13
 		y = 12
-			available_if_capitulated = yes
-			completion_reward = {
-					random_owned_controlled_state = {
-							add_resource = {
-									type = advanced_technology
-									amount = 5
-							}
-						}
+		available_if_capitulated = yes
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_resource = {
+					type = advanced_technology
+					amount = 5
 				}
-
+			}
+		}
 	}
 	focus = {
 		id = power_armor_familiarity
@@ -1268,11 +1241,10 @@ focus_tree = {
 		}
 		x = 15
 		y = 12
-			available_if_capitulated = yes
-			completion_reward = {
-					add_ideas = raider_power_armour_familiarity
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_ideas = raider_power_armour_familiarity
+		}
 	}
 	focus = {
 		id = business_booms
@@ -1302,11 +1274,10 @@ focus_tree = {
 		}
 		x = 23
 		y = 8
-			available_if_capitulated = yes
-			completion_reward = {
-					add_ideas = raider_engineers
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_ideas = raider_engineers
+		}
 	}
 	focus = {
 		id = gear_head_slaves
@@ -1317,11 +1288,10 @@ focus_tree = {
 		}
 		x = 17
 		y = 9
-			available_if_capitulated = yes
-			completion_reward = {
-					add_ideas = raider_gearhead_slaves
-				}
-
+		available_if_capitulated = yes
+		completion_reward = {
+			add_ideas = raider_gearhead_slaves
+		}
 	}
 	focus = {
 		id = an_explosion_in_understanding
@@ -1351,15 +1321,14 @@ focus_tree = {
 		}
 		x = 17
 		y = 10
-			available_if_capitulated = yes
-			completion_reward = {
-					add_tech_bonus = {
-							name = raider_tank_bonus
-							bonus = 0.5
-							uses = 1
-							category = tank_tech
-					}
+		available_if_capitulated = yes
+		completion_reward = {
+			add_tech_bonus = {
+				name = raider_tank_bonus
+				bonus = 0.5
+				uses = 1
+				category = tank_tech
 			}
-
+		}
 	}
 }
