@@ -2181,18 +2181,16 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_open_the_lucky_38
 		}
+		available = {
+			owns_state = 211
+		}
 		x = 5
 		y = 19
 		completion_reward = {
-            if = {
-                limit = { owns_state = 211 }
-                set_capital = 211
-				211 = {
-					set_state_name = "Nova Roma"
-				}
-            }
-			
-            
+            set_capital = 211
+			211 = {
+				set_state_name = "Nova Roma"
+			}
 			add_ideas = legion_nf_nova_roma
 		}
 
