@@ -4,21 +4,19 @@ country_event = {
 	id = startup.1
 	title = startup.1.title
 	desc = startup.1.desc
-    #hidden = yes
-    is_triggered_only = yes
-    
-    trigger = {
-        NOT = { has_country_flag = setup_country_ideas }
-    }
+	#hidden = yes
+	is_triggered_only = yes
 	
-    immediate = {
-        set_country_flag = setup_country_ideas
-    }
-    
+	trigger = {
+		NOT = { has_country_flag = setup_country_ideas }
+	}
+	
+	immediate = {
+		set_country_flag = setup_country_ideas
+	}
+	
 	option = {
-		name = startup.1.option.a
-		
-        
+		name = startup.1.option.a 
 	}
 }
 
@@ -27,9 +25,9 @@ country_event = {
 	id = startup.2
 	title = startup.2.title
 	desc = startup.2.desc
-    	picture = GFX_event_CES_startup
-    is_triggered_only = yes
-    
+	picture = GFX_event_CES_startup
+	is_triggered_only = yes
+	
 	option = {
 		name = startup.2.option.a
 		NCR = { add_ideas = enhanced_legion_campaign }
@@ -43,13 +41,13 @@ country_event = {
 			add_ideas = enhanced_legion_campaign
 		}
 
-        ai_chance = {
+		ai_chance = {
 			factor = 0
 		}
 	}
 	option = {
 		name = startup.2.option.b
-        ai_chance = {
+		ai_chance = {
 			factor = 0
 		}
 		every_country = {
@@ -64,7 +62,7 @@ country_event = {
 	}
 	option = {
 		name = startup.2.option.c
-        ai_chance = {
+		ai_chance = {
 			factor = 100
 		}
 	}
@@ -75,9 +73,9 @@ country_event = {
 	id = startup.3
 	title = startup.3.title
 	desc = startup.3.desc
-    	picture = GFX_event_NCR_startup
-    is_triggered_only = yes
-    
+	picture = GFX_event_NCR_startup
+	is_triggered_only = yes
+	
 	option = {
 		name = startup.3.option.a
 		CES = { add_ideas = enhanced_ncr_campaign }
@@ -90,13 +88,13 @@ country_event = {
 			}
 			add_ideas = enhanced_ncr_campaign
 		}
-        ai_chance = {
+		ai_chance = {
 			factor = 0
 		}
 	}
 	option = {
 		name = startup.3.option.b
-        ai_chance = {
+		ai_chance = {
 			factor = 0
 		}
 		every_country = {
@@ -111,8 +109,59 @@ country_event = {
 	}
 	option = {
 		name = startup.3.option.c
-        ai_chance = {
+		ai_chance = {
 			factor = 100
 		}
+	}
+}
+
+# Country Regional Flags for Factions
+country_event = {
+	id = startup.4
+
+	is_triggered_only = yes
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = {
+				is_in_north_california = yes
+			}
+			set_country_flag = north_california_nation
+		}
+		if = {
+			limit = {
+				is_in_south_california = yes
+			}
+			set_country_flag = south_california_nation
+		}
+		if = {
+			limit = {
+				is_in_new_vegas = yes
+			}
+			set_country_flag = new_vegas_nation
+		}
+		if = {
+			limit = {
+				is_in_utah = yes
+			}
+			set_country_flag = utah_nation
+		}
+		if = {
+			limit = {
+				is_in_nevada = yes
+			}
+			set_country_flag = nevada_nation
+		}
+		if = {
+			limit = {
+				is_in_arizona_sonora = yes
+			}
+			set_country_flag = arizona_sonora_nation
+		}
+	}
+
+	option = {
+		name = startup.4.a
 	}
 }

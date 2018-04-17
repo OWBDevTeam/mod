@@ -291,6 +291,7 @@ country_event = {
 			load_oob = rapidstolegion
 		}
 		381 = {
+			add_extra_state_shared_building_slots = 3
 			add_building_construction = {
 				type = dockyard
 				level = 3
@@ -358,6 +359,7 @@ country_event = {
 			limit = {
 				is_ncr_founder_state = yes
 			}
+			add_extra_state_shared_building_slots = 2
 			add_building_construction = {
 				type = industrial_complex
 				level = 2
@@ -374,6 +376,7 @@ country_event = {
 			limit = {
 				is_ncr_founder_state = yes
 			}
+			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
 				type = arms_factory
 				level = 1
@@ -819,7 +822,7 @@ country_event = { #Legal Reform/New Industry
 	
 	option = {
 		name = nf_ncr.21.c
-	
+
 		63 = {
 			add_extra_state_shared_building_slots = 2
 			add_building_construction = {
@@ -925,6 +928,7 @@ country_event = { #Hub Crime
 		name = nf_ncr.24.a
 		
 		1 = {
+			add_extra_state_shared_building_slots = 2
 			add_building_construction = {
 				type = industrial_complex 
 				level = 2
@@ -940,6 +944,7 @@ country_event = { #Hub Crime
 		name = nf_ncr.24.b
 		
 		1 = {
+			add_extra_state_shared_building_slots = 2
 			add_building_construction = {
 				type = arms_factory
 				level = 2
@@ -975,21 +980,22 @@ country_event = { #Barons annex civil war created
 	picture = GFX_report_event_fascist_speech
 	hidden = yes
 	is_triggered_only = yes
-		immediate = {
-			every_country = {
-				limit = {
-					original_tag = NCR
-					has_government = elites
-				}
-				BAR = { annex_country = { target = PREV transfer_troops = yes } }
+	immediate = {
+		every_country = {
+			limit = {
+				original_tag = NCR
+				has_government = elites
 			}
+			BAR = { annex_country = { target = PREV transfer_troops = yes } }
 		}
+		BAR = { set_NCR_factions_technology_on_civil_war = yes }
+	}
 	option = {
 		name = nf_ncr.25.a
-		country_event = { days = 1 id = nf_ncr.26 }
+		country_event = { id = nf_ncr.26 }# days = 1
 	}	
 }
-country_event = { #allgood civil war firing
+country_event = { #Enclave civil war firing
 	id = nf_ncr.26
 	title = nf_ncr.26.t
 	desc = nf_ncr.26.d
@@ -997,7 +1003,72 @@ country_event = { #allgood civil war firing
 	hidden = yes
 	is_triggered_only = yes
 	immediate = {
-		# Barons
+		# Enclave
+		start_civil_war = {
+			ideology = intellectuals
+			size = 0.5
+			capital = 63
+			states = { 63 583 4 205 80 }
+			states_filter = {
+			
+			}
+			keep_unit_leaders = { 1522 }
+		}
+		random_country = {
+			limit = {
+				original_tag = NCR
+				has_government = intellectuals
+			}
+			set_cosmetic_tag = ENC
+			global_every_army_leader = {
+				limit = {
+					has_id = 1522
+				}
+				set_nationality = ENC
+			}
+		}
+		country_event = { id = nf_ncr.27 }#days = 1
+	}
+	option = {
+		name = nf_ncr.26.a
+	}	
+}
+country_event = { #Enclave annex civil war created
+	id = nf_ncr.27
+	title = nf_ncr.27.t
+	desc = nf_ncr.27.d
+	picture = GFX_report_event_fascist_speech
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		# Enclave
+		every_country = {
+			limit = {
+				original_tag = NCR
+				has_government = intellectuals
+			}
+			ENC = { annex_country = { target = PREV transfer_troops = yes } }
+		}
+		ENC = {
+			set_NCR_factions_technology_on_civil_war = yes
+			transfer_state = 63
+			set_capital = 63
+		}
+		country_event = { id = nf_ncr.28 }#days = 1
+	}
+	option = {
+		name = nf_ncr.27.a
+	}	
+}
+country_event = { #boneyard civil war created
+	id = nf_ncr.28
+	title = nf_ncr.28.t
+	desc = nf_ncr.28.d
+	picture = GFX_report_event_fascist_speech
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		#Boneyard
 		start_civil_war = {
 			ideology = ruler
 			size = 0.3
@@ -1015,73 +1086,14 @@ country_event = { #allgood civil war firing
 			}
 			set_cosmetic_tag = BON
 		}
-		country_event = { days = 1 id = nf_ncr.27 }
-	}
-	option = {
-		name = nf_ncr.26.a
-		
-		
-	}	
-}
-country_event = { #allgood annex civil war created
-	id = nf_ncr.27
-	title = nf_ncr.27.t
-	desc = nf_ncr.27.d
-	picture = GFX_report_event_fascist_speech
-	hidden = yes
-	is_triggered_only = yes
-	immediate = {
-		# Allgood
-		every_country = {
-			limit = {
-				original_tag = NCR
-				has_government = ruler
-			}
-			BON = { annex_country = { target = PREV transfer_troops = yes } }
-		}
-		country_event = { days = 1 id = nf_ncr.28 }
-	}
-	option = {
-		name = nf_ncr.27.a
-		
-	}	
-}
-country_event = { #enclave civil war created
-	id = nf_ncr.28
-	title = nf_ncr.28.t
-	desc = nf_ncr.28.d
-	picture = GFX_report_event_fascist_speech
-	hidden = yes
-	is_triggered_only = yes
-	immediate = {
-		# Enclave
-		# Enclave
-		start_civil_war = {
-			ideology = intellectuals
-			size = 0.5
-			capital = 63
-			states = { 63 583 4 205 80 }
-			states_filter = {
-			
-			}
-			keep_unit_leaders = { }
-		}
-		random_country = {
-			limit = {
-				original_tag = NCR
-				has_government = intellectuals
-			}
-			set_cosmetic_tag = ENC
-		}
-		country_event = { days = 1 id = nf_ncr.29 }
+		country_event = { id = nf_ncr.29 }#days = 1
 	}
 	option = {
 		name = nf_ncr.28.a
-		
-	}	
+	}
 }
 
-country_event = { #enclave civil war annexed, civil war starts
+country_event = { #boneyard civil war annexed, civil war starts
 	id = nf_ncr.29
 	title = nf_ncr.29.t
 	desc = nf_ncr.29.d
@@ -1093,16 +1105,12 @@ country_event = { #enclave civil war annexed, civil war starts
 		every_country = {
 			limit = {
 				original_tag = NCR
-				has_government = intellectuals
+				has_government = ruler
 			}
-			ENC = { annex_country = { target = PREV transfer_troops = yes } }
+			BON = { annex_country = { target = PREV transfer_troops = yes } }
 		}
 		hidden_effect = {
-			ENC = {
-				transfer_state = 63
-				set_capital = 63
-			}
-		
+			BON = { set_NCR_factions_technology_on_civil_war = yes }
 			every_country = {
 				limit = {
 					OR = {	
@@ -1174,7 +1182,6 @@ country_event = { #enclave civil war annexed, civil war starts
 	option = {
 		name = nf_ncr.29.a
 		custom_effect_tooltip = ncr_civil_war_starts
-		
 	}
 }
 

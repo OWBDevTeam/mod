@@ -98,7 +98,7 @@ fire_NCR_civil_war = {
 		set_cosmetic_tag = BAR
 	}
 	hidden_effect = {
-		NCR = { country_event =  { days = 1 id = nf_ncr.25 }  }
+		NCR = { country_event = { id = nf_ncr.25 } }#days = 1
 	}
 }
 
@@ -114,6 +114,11 @@ setup_NCR_enclave = {
 			limit = {
 				NEW = {
 					is_ai = yes
+				}
+			}
+			NEW = {
+				every_unit_leader = {
+					set_nationality = ENC
 				}
 			}
 			annex_country = { target = NEW transfer_troops = yes }
@@ -708,5 +713,3086 @@ transfer_ncr_ideas_civil_war = {
 			}
 		}
 		add_ideas = gunrunnerexpanded
+	}
+}
+
+set_NCR_factions_technology_on_civil_war = {
+	
+	#OWB Techs
+	if = {
+		limit = {
+			PREV = { has_tech = militia_training }
+		}
+		set_technology = { militia_training = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = warrior_training }
+		}
+		set_technology = { warrior_training = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = guerilla_tactics }
+		}
+		set_technology = { guerilla_tactics = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = platoon_training }
+		}
+		set_technology = { platoon_training = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_drill }
+		}
+		set_technology = { basic_drill = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = mechanized_training }
+		}
+		set_technology = { mechanized_training = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = shock_tactics }
+		}
+		set_technology = { shock_tactics = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = standard_weaponry_tech }
+		}
+		set_technology = { standard_weaponry_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_ballistic_weaponry }
+		}
+		set_technology = { basic_ballistic_weaponry = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = warrior_equipment }
+		}
+		set_technology = { warrior_equipment = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_laser_weaponry }
+		}
+		set_technology = { basic_laser_weaponry = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = improved_laser_weaponry }
+		}
+		set_technology = { improved_laser_weaponry = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = overcharged_ammunition }
+		}
+		set_technology = { overcharged_ammunition = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_laser_weaponry }
+		}
+		set_technology = { advanced_laser_weaponry = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = custom_built_capacitors }
+		}
+		set_technology = { custom_built_capacitors = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = improved_ballistic_weaponry }
+			NOT = { tag = ENC }
+		}
+		set_technology = { improved_ballistic_weaponry = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_infantry_equipment }
+			NOT = { tag = ENC }
+		}
+		set_technology = { basic_infantry_equipment = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_ballistic_weaponry }
+			NOT = { tag = ENC }
+		}
+		set_technology = { advanced_ballistic_weaponry = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = prewar_infantry_kit }
+			NOT = { tag = ENC }
+		}
+		set_technology = { prewar_infantry_kit = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = blunt_weaponry }
+		}
+		set_technology = { blunt_weaponry = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = slashing_weaponry }
+		}
+		set_technology = { slashing_weaponry = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = powered_weaponry }
+		}
+		set_technology = { powered_weaponry = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = leather_armour }
+		}
+		set_technology = { leather_armour = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = metal_armour }
+		}
+		set_technology = { metal_armour = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = combat_armour }
+		}
+		set_technology = { combat_armour = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_combat_armour }
+		}
+		set_technology = { advanced_combat_armour = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = binoculars }
+		}
+		set_technology = { binoculars = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = flare_guns }
+		}
+		set_technology = { flare_guns = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = portable_radio }
+		}
+		set_technology = { portable_radio = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = smoke_grenades }
+		}
+		set_technology = { smoke_grenades = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = automatic_distress_beacon }
+		}
+		set_technology = { automatic_distress_beacon = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = herbal_bandages }
+		}
+		set_technology = { herbal_bandages = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = sterile_medical_equipment }
+		}
+		set_technology = { sterile_medical_equipment = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = medic_bags }
+		}
+		set_technology = { medic_bags = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = med_x_auto_injectors }
+		}
+		set_technology = { med_x_auto_injectors = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = servo_motors }
+		}
+		set_technology = { servo_motors = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = mounted_cooler }
+		}
+		set_technology = { mounted_cooler = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = power_armour_t45d }
+		}
+		set_technology = { power_armour_t45d = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = reinforced_plating }
+		}
+		set_technology = { reinforced_plating = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = sensor_array }
+		}
+		set_technology = { sensor_array = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = power_armour_t51b }
+		}
+		set_technology = { power_armour_t51b = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = recon_sensors }
+		}
+		set_technology = { recon_sensors = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = tesla_coils }
+		}
+		set_technology = { tesla_coils = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = special_forces }
+		}
+		set_technology = { special_forces = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = marsh_training }
+		}
+		set_technology = { marsh_training = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = river_training }
+		}
+		set_technology = { river_training = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = amphibious_training }
+		}
+		set_technology = { amphibious_training = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = hills_training }
+		}
+		set_technology = { hills_training = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = urban_training }
+		}
+		set_technology = { urban_training = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = desert_training }
+		}
+		set_technology = { desert_training = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = plains_training }
+		}
+		set_technology = { plains_training = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = forest_training }
+		}
+		set_technology = { forest_training = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = mountain_training }
+		}
+		set_technology = { mountain_training = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = gauss_weaponry }
+		}
+		set_technology = { gauss_weaponry = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = recoil_compensating_grip }
+		}
+		set_technology = { recoil_compensating_grip = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = gauss_agitator }
+		}
+		set_technology = { gauss_agitator = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = tesla_weaponry }
+		}
+		set_technology = { tesla_weaponry = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = maximized_capacitor }
+		}
+		set_technology = { maximized_capacitor = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = tesla_exciter }
+		}
+		set_technology = { tesla_exciter = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = plasma_weaponry }
+		}
+		set_technology = { plasma_weaponry = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = beta_wave_tuner }
+		}
+		set_technology = { beta_wave_tuner = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = photon_agitator }
+		}
+		set_technology = { photon_agitator = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = super_mutant_melee_weapons }
+		}
+		set_technology = { super_mutant_melee_weapons = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = power_armour_legion }
+		}
+		set_technology = { power_armour_legion = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = salvaged_transport }
+		}
+		set_technology = { salvaged_transport = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = cargo_zeppelin }
+		}
+		set_technology = { cargo_zeppelin = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = scrap_fighter }
+		}
+		set_technology = { scrap_fighter = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = salvaged_fighter }
+		}
+		set_technology = { salvaged_fighter = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = nuclear_salvaged_fighter }
+		}
+		set_technology = { nuclear_salvaged_fighter = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = p80_nuclear }
+		}
+		set_technology = { p80_nuclear = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = scrap_divebomber }
+		}
+		set_technology = { scrap_divebomber = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = salvaged_divebomber }
+		}
+		set_technology = { salvaged_divebomber = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = armoured_zeppelin }
+		}
+		set_technology = { armoured_zeppelin = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = scrap_bomber }
+		}
+		set_technology = { scrap_bomber = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = salvaged_superfortress }
+		}
+		set_technology = { salvaged_superfortress = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = mortar_battery_zeppelin }
+		}
+		set_technology = { mortar_battery_zeppelin = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = howitzer_battery_zeppelin }
+		}
+		set_technology = { howitzer_battery_zeppelin = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = laser_battery_zeppelin }
+		}
+		set_technology = { laser_battery_zeppelin = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = xian_85_fighter }
+		}
+		set_technology = { xian_85_fighter = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = vertiberd_gunship }
+		}
+		set_technology = { vertiberd_gunship = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = vertiberd_transport1 }
+		}
+		set_technology = { vertiberd_transport1 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = air_superiority }
+		}
+		set_technology = { air_superiority = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = infrastructure_destruction }
+		}
+		set_technology = { infrastructure_destruction = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = home_defence }
+		}
+		set_technology = { home_defence = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = evasive_tactics }
+		}
+		set_technology = { evasive_tactics = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = fighter_sweeps }
+		}
+		set_technology = { fighter_sweeps = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = dogfighting_experience }
+		}
+		set_technology = { dogfighting_experience = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = multialtitude_flying }
+		}
+		set_technology = { multialtitude_flying = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = logistical_bombing }
+		}
+		set_technology = { logistical_bombing = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = night_bombing }
+		}
+		set_technology = { night_bombing = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = day_bombing }
+		}
+		set_technology = { day_bombing = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = massed_bomber_formations }
+		}
+		set_technology = { massed_bomber_formations = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = air_offense }
+		}
+		set_technology = { air_offense = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = flying_fortress }
+		}
+		set_technology = { flying_fortress = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = offensive_formations }
+		}
+		set_technology = { offensive_formations = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = mass_destruction }
+		}
+		set_technology = { mass_destruction = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = formation_flying }
+		}
+		set_technology = { formation_flying = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = dive_bombing }
+		}
+		set_technology = { dive_bombing = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = direct_ground_support }
+		}
+		set_technology = { direct_ground_support = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = formation_fighting }
+		}
+		set_technology = { formation_fighting = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = fighter_ace_initiative }
+		}
+		set_technology = { fighter_ace_initiative = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = hunt_and_destroy }
+		}
+		set_technology = { hunt_and_destroy = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = combat_unit_destruction }
+		}
+		set_technology = { combat_unit_destruction = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = battlefield_support }
+		}
+		set_technology = { battlefield_support = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = keypoint_bombing }
+		}
+		set_technology = { keypoint_bombing = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = ground_support_integration }
+		}
+		set_technology = { ground_support_integration = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = ground_targeting_tactics }
+		}
+		set_technology = { ground_targeting_tactics = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = strategic_destruction }
+		}
+		set_technology = { strategic_destruction = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = forward_interception }
+		}
+		set_technology = { forward_interception = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = force_rotation }
+		}
+		set_technology = { force_rotation = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = fighter_baiting }
+		}
+		set_technology = { fighter_baiting = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = low_echelon_support }
+		}
+		set_technology = { low_echelon_support = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = dispersed_fighting }
+		}
+		set_technology = { dispersed_fighting = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = operational_destruction }
+		}
+		set_technology = { operational_destruction = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = fighter_veteran_initiative }
+		}
+		set_technology = { fighter_veteran_initiative = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = cas_veteran_initiative }
+		}
+		set_technology = { cas_veteran_initiative = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = carousel_bombing }
+		}
+		set_technology = { carousel_bombing = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = infiltration_bombing }
+		}
+		set_technology = { infiltration_bombing = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = air_skirmish }
+		}
+		set_technology = { air_skirmish = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = high_level_bombing }
+		}
+		set_technology = { high_level_bombing = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = electronic_mechanical_engineering }
+		}
+		set_technology = { electronic_mechanical_engineering = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = radio }
+		}
+		set_technology = { radio = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = radio_detection }
+		}
+		set_technology = { radio_detection = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = decimetric_radar }
+		}
+		set_technology = { decimetric_radar = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = improved_decimetric_radar }
+		}
+		set_technology = { improved_decimetric_radar = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = centimetric_radar }
+		}
+		set_technology = { centimetric_radar = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = improved_centimetric_radar }
+		}
+		set_technology = { improved_centimetric_radar = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_centimetric_radar }
+		}
+		set_technology = { advanced_centimetric_radar = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = mechanical_computing }
+		}
+		set_technology = { mechanical_computing = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = computing_machine }
+		}
+		set_technology = { computing_machine = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = improved_computing_machine }
+		}
+		set_technology = { improved_computing_machine = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_computing_machine }
+		}
+		set_technology = { advanced_computing_machine = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_encryption }
+		}
+		set_technology = { basic_encryption = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = improved_encryption }
+		}
+		set_technology = { improved_encryption = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_encryption }
+		}
+		set_technology = { advanced_encryption = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_decryption }
+		}
+		set_technology = { basic_decryption = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = improved_decryption }
+		}
+		set_technology = { improved_decryption = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_decryption }
+		}
+		set_technology = { advanced_decryption = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = organised_tato_farming }
+		}
+		set_technology = { organised_tato_farming = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = brahmin_milking }
+		}
+		set_technology = { brahmin_milking = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = sharecropper_farms }
+		}
+		set_technology = { sharecropper_farms = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = brahmin_herding_equipment }
+		}
+		set_technology = { brahmin_herding_equipment = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = mechanized_agriculture }
+		}
+		set_technology = { mechanized_agriculture = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_forges }
+		}
+		set_technology = { basic_forges = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = primitive_workshops }
+		}
+		set_technology = { primitive_workshops = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = wasteland_workshops }
+		}
+		set_technology = { wasteland_workshops = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = pneumatic_presses }
+		}
+		set_technology = { pneumatic_presses = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = automated_production }
+		}
+		set_technology = { automated_production = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = oral_instruction }
+		}
+		set_technology = { oral_instruction = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = traditional_instruction }
+		}
+		set_technology = { traditional_instruction = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = physical_blueprints }
+		}
+		set_technology = { physical_blueprints = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = electronic_blueprints }
+		}
+		set_technology = { electronic_blueprints = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = robotic_helpers }
+		}
+		set_technology = { robotic_helpers = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = logging_camps }
+		}
+		set_technology = { logging_camps = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = quarry_picks }
+		}
+		set_technology = { quarry_picks = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = mining_equipment }
+		}
+		set_technology = { mining_equipment = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = industrial_machinery }
+		}
+		set_technology = { industrial_machinery = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = autonomous_industrial_machinery }
+		}
+		set_technology = { autonomous_industrial_machinery = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = woodworking }
+		}
+		set_technology = { woodworking = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = clay_working }
+		}
+		set_technology = { clay_working = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = metal_working }
+		}
+		set_technology = { metal_working = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = cement_pouring }
+		}
+		set_technology = { cement_pouring = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = old_world_design }
+		}
+		set_technology = { old_world_design = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = tribal_huts }
+		}
+		set_technology = { tribal_huts = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = adobe_housing }
+		}
+		set_technology = { adobe_housing = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = metal_shacks }
+		}
+		set_technology = { metal_shacks = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = brick_housing }
+		}
+		set_technology = { brick_housing = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = pre_war_housing }
+		}
+		set_technology = { pre_war_housing = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_well_pump }
+		}
+		set_technology = { basic_well_pump = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_well_pump }
+		}
+		set_technology = { advanced_well_pump = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_aquifer }
+		}
+		set_technology = { basic_aquifer = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_aquifer }
+		}
+		set_technology = { advanced_aquifer = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = purified_aquifer }
+		}
+		set_technology = { purified_aquifer = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_generator }
+		}
+		set_technology = { basic_generator = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_generator }
+		}
+		set_technology = { advanced_generator = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_power_plant }
+		}
+		set_technology = { basic_power_plant = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_power_plant }
+		}
+		set_technology = { advanced_power_plant = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = nuclear_reactor }
+		}
+		set_technology = { nuclear_reactor = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_smeltery }
+		}
+		set_technology = { basic_smeltery = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_smeltery }
+		}
+		set_technology = { advanced_smeltery = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_foundry }
+		}
+		set_technology = { basic_foundry = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_foundry }
+		}
+		set_technology = { advanced_foundry = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = autonomous_foundry }
+		}
+		set_technology = { autonomous_foundry = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_metal_well }
+		}
+		set_technology = { basic_metal_well = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_fuel_well }
+		}
+		set_technology = { advanced_fuel_well = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_fuel_refinery }
+		}
+		set_technology = { basic_fuel_refinery = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_fuel_refinery }
+		}
+		set_technology = { advanced_fuel_refinery = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = autonomous_refinery }
+		}
+		set_technology = { autonomous_refinery = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_laboratory }
+		}
+		set_technology = { basic_laboratory = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_laboratory }
+		}
+		set_technology = { advanced_laboratory = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_fabrication_centre }
+		}
+		set_technology = { basic_fabrication_centre = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_fabrication_centre }
+		}
+		set_technology = { advanced_fabrication_centre = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = autonomous_fabrication_centre }
+		}
+		set_technology = { autonomous_fabrication_centre = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_research_laboratory }
+		}
+		set_technology = { basic_research_laboratory = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_research_laboratory }
+		}
+		set_technology = { advanced_research_laboratory = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = basic_research_facility }
+		}
+		set_technology = { basic_research_facility = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_research_facility }
+		}
+		set_technology = { advanced_research_facility = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = autonomous_research_facility }
+		}
+		set_technology = { autonomous_research_facility = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = automated_warfare }
+		}
+		set_technology = { automated_warfare = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = combat_protocols }
+		}
+		set_technology = { combat_protocols = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_combat_protocols }
+		}
+		set_technology = { advanced_combat_protocols = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = automated_distribution }
+		}
+		set_technology = { automated_distribution = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = rushed_production }
+		}
+		set_technology = { rushed_production = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = self_replicating_machinery }
+		}
+		set_technology = { self_replicating_machinery = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = field_maintenance }
+		}
+		set_technology = { field_maintenance = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = the_flesh_is_weak }
+		}
+		set_technology = { the_flesh_is_weak = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = refined_construction }
+		}
+		set_technology = { refined_construction = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = combat_simulations }
+		}
+		set_technology = { combat_simulations = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = offensive_protocols_doctrine }
+		}
+		set_technology = { offensive_protocols_doctrine = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = iron_fist }
+		}
+		set_technology = { iron_fist = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = age_of_the_machine }
+		}
+		set_technology = { age_of_the_machine = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = standardised_blueprints }
+		}
+		set_technology = { standardised_blueprints = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = networked_ai }
+		}
+		set_technology = { networked_ai = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = internal_replicators }
+		}
+		set_technology = { internal_replicators = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = elite_army }
+		}
+		set_technology = { elite_army = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = concentration_of_force }
+		}
+		set_technology = { concentration_of_force = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = speed_of_movement }
+		}
+		set_technology = { speed_of_movement = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = intergrated_support_doctrine }
+		}
+		set_technology = { intergrated_support_doctrine = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = adaptive_chain_of_command }
+		}
+		set_technology = { adaptive_chain_of_command = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = walking_fire }
+		}
+		set_technology = { walking_fire = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = hit_and_run }
+		}
+		set_technology = { hit_and_run = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = walking_tanks }
+		}
+		set_technology = { walking_tanks = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = non_discriminatory_targeting }
+		}
+		set_technology = { non_discriminatory_targeting = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = airborne_assaults }
+		}
+		set_technology = { airborne_assaults = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = scorched_earth }
+		}
+		set_technology = { scorched_earth = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = shock_and_awe_doctrine }
+		}
+		set_technology = { shock_and_awe_doctrine = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = recon_in_depth }
+		}
+		set_technology = { recon_in_depth = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = warrior_code_doctrine }
+		}
+		set_technology = { warrior_code_doctrine = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = combined_arms_doctrine }
+		}
+		set_technology = { combined_arms_doctrine = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = brigades_of_steel }
+		}
+		set_technology = { brigades_of_steel = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = grand_army }
+		}
+		set_technology = { grand_army = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = grand_battle_plan_owb }
+		}
+		set_technology = { grand_battle_plan_owb = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = fortified_positions_doctrine }
+		}
+		set_technology = { fortified_positions_doctrine = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = grand_assault_doctrine }
+		}
+		set_technology = { grand_assault_doctrine = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = mechanized_offensive_doctrine }
+		}
+		set_technology = { mechanized_offensive_doctrine = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = assault_concentration_doctrine }
+		}
+		set_technology = { assault_concentration_doctrine = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = old_world_tactics }
+		}
+		set_technology = { old_world_tactics = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = old_world_thunder }
+		}
+		set_technology = { old_world_thunder = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = old_world_lightning }
+		}
+		set_technology = { old_world_lightning = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = mechanized_onslaught }
+		}
+		set_technology = { mechanized_onslaught = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = hold_the_line }
+		}
+		set_technology = { hold_the_line = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = concentration_of_firepower }
+		}
+		set_technology = { concentration_of_firepower = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = new_world_tactics }
+		}
+		set_technology = { new_world_tactics = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = send_in_the_next_wave }
+		}
+		set_technology = { send_in_the_next_wave = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = mass_conscription }
+		}
+		set_technology = { mass_conscription = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = ranger_infiltration }
+		}
+		set_technology = { ranger_infiltration = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = terror_tactics }
+		}
+		set_technology = { terror_tactics = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = pocket_defence_doctrine }
+		}
+		set_technology = { pocket_defence_doctrine = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = terror_tactics_actual }
+		}
+		set_technology = { terror_tactics_actual = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = decimato_doctrine }
+		}
+		set_technology = { decimato_doctrine = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = ego_gloriam_nominis }
+		}
+		set_technology = { ego_gloriam_nominis = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = prae_timore_mortis }
+		}
+		set_technology = { prae_timore_mortis = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = exitum }
+		}
+		set_technology = { exitum = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = invisibilia_mortem }
+		}
+		set_technology = { invisibilia_mortem = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = divide_et_vincet }
+		}
+		set_technology = { divide_et_vincet = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = summa_bellum }
+		}
+		set_technology = { summa_bellum = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = tribal_wisdom_doctrine }
+		}
+		set_technology = { tribal_wisdom_doctrine = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = the_dog_barks }
+		}
+		set_technology = { the_dog_barks = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = the_wolf_pack }
+		}
+		set_technology = { the_wolf_pack = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = the_mirelurk_pincer }
+		}
+		set_technology = { the_mirelurk_pincer = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = the_nightstalkers_bite }
+		}
+		set_technology = { the_nightstalkers_bite = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = the_cazadores_speed }
+		}
+		set_technology = { the_cazadores_speed = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = the_deathclaws_might }
+		}
+		set_technology = { the_deathclaws_might = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = outsider_warfare }
+		}
+		set_technology = { outsider_warfare = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = we_are_different }
+		}
+		set_technology = { we_are_different = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = we_are_special }
+		}
+		set_technology = { we_are_special = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = we_are_strong }
+		}
+		set_technology = { we_are_strong = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = we_are_smart }
+		}
+		set_technology = { we_are_smart = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = we_are_enduring }
+		}
+		set_technology = { we_are_enduring = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = we_are_fast }
+		}
+		set_technology = { we_are_fast = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = we_are_beautiful }
+		}
+		set_technology = { we_are_beautiful = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = we_are_perceptive }
+		}
+		set_technology = { we_are_perceptive = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = we_are_fortunate }
+		}
+		set_technology = { we_are_fortunate = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = the_chosen_ones }
+		}
+		set_technology = { the_chosen_ones = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = the_master_servant }
+		}
+		set_technology = { the_master_servant = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = ageless_experience }
+		}
+		set_technology = { ageless_experience = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = army_of_outsiders }
+		}
+		set_technology = { army_of_outsiders = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = mixed_army }
+		}
+		set_technology = { mixed_army = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = master_race }
+		}
+		set_technology = { master_race = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = destroyer_tech }
+		}
+		set_technology = { destroyer_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = destroyer_tech_2 }
+		}
+		set_technology = { destroyer_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = destroyer_tech_3 }
+		}
+		set_technology = { destroyer_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = destroyer_tech_4 }
+		}
+		set_technology = { destroyer_tech_4 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = destroyer_tech_5 }
+		}
+		set_technology = { destroyer_tech_5 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = destroyer_tech_6 }
+		}
+		set_technology = { destroyer_tech_6 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = cruiser_tech }
+		}
+		set_technology = { cruiser_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = cruiser_tech_2 }
+		}
+		set_technology = { cruiser_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = cruiser_tech_3 }
+		}
+		set_technology = { cruiser_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = cruiser_tech_4 }
+		}
+		set_technology = { cruiser_tech_4 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = cruiser_tech_5 }
+		}
+		set_technology = { cruiser_tech_5 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = cruiser_tech_6 }
+		}
+		set_technology = { cruiser_tech_6 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = battleship_tech }
+		}
+		set_technology = { battleship_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = battleship_tech_2 }
+		}
+		set_technology = { battleship_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = battleship_tech_3 }
+		}
+		set_technology = { battleship_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = heavy_cruiser_tech }
+		}
+		set_technology = { heavy_cruiser_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = heavy_cruiser_tech_2 }
+		}
+		set_technology = { heavy_cruiser_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = heavy_cruiser_tech_3 }
+		}
+		set_technology = { heavy_cruiser_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = heavy_cruiser_tech_4 }
+		}
+		set_technology = { heavy_cruiser_tech_4 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = heavy_cruiser_tech_5 }
+		}
+		set_technology = { heavy_cruiser_tech_5 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = heavy_cruiser_tech_6 }
+		}
+		set_technology = { heavy_cruiser_tech_6 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = carrier_tech }
+		}
+		set_technology = { carrier_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = carrier_tech_2 }
+		}
+		set_technology = { carrier_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = naval_invasion_tech }
+		}
+		set_technology = { naval_invasion_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = naval_invasion_tech_2 }
+		}
+		set_technology = { naval_invasion_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = naval_invasion_tech_3 }
+		}
+		set_technology = { naval_invasion_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = fleet_in_being }
+		}
+		set_technology = { fleet_in_being = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = battlefleet_concentration }
+		}
+		set_technology = { battlefleet_concentration = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = subsidiary_carrier_role }
+		}
+		set_technology = { subsidiary_carrier_role = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = hunter_killer_groups }
+		}
+		set_technology = { hunter_killer_groups = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = floating_fortress }
+		}
+		set_technology = { floating_fortress = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = floating_airfield }
+		}
+		set_technology = { floating_airfield = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = grand_battlefleet }
+		}
+		set_technology = { grand_battlefleet = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = convoy_sailing }
+		}
+		set_technology = { convoy_sailing = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = convoy_escorts }
+		}
+		set_technology = { convoy_escorts = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = escort_carriers }
+		}
+		set_technology = { escort_carriers = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = integrated_convoy_defence }
+		}
+		set_technology = { integrated_convoy_defence = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = submarine_operations }
+		}
+		set_technology = { submarine_operations = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = undersea_blockade }
+		}
+		set_technology = { undersea_blockade = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = convoy_interdiction }
+		}
+		set_technology = { convoy_interdiction = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = submarine_offensive }
+		}
+		set_technology = { submarine_offensive = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = trade_interdiction }
+		}
+		set_technology = { trade_interdiction = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = convoy_interdiction_ti }
+		}
+		set_technology = { convoy_interdiction_ti = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = unrestricted_submarine_warfare }
+		}
+		set_technology = { unrestricted_submarine_warfare = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = wolfpacks }
+		}
+		set_technology = { wolfpacks = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = advanced_submarine_warfare }
+		}
+		set_technology = { advanced_submarine_warfare = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = combined_operations_raiding }
+		}
+		set_technology = { combined_operations_raiding = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = raider_patrols }
+		}
+		set_technology = { raider_patrols = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = capital_ship_raiders }
+		}
+		set_technology = { capital_ship_raiders = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = battlefleet_concentration_ti }
+		}
+		set_technology = { battlefleet_concentration_ti = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = floating_fortress_ti }
+		}
+		set_technology = { floating_fortress_ti = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = floating_airfield_ti }
+		}
+		set_technology = { floating_airfield_ti = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = carrier_operations }
+		}
+		set_technology = { carrier_operations = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = convoy_sailing_ti }
+		}
+		set_technology = { convoy_sailing_ti = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = subsidiary_carrier_role_ti }
+		}
+		set_technology = { subsidiary_carrier_role_ti = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = naval_air_operations }
+		}
+		set_technology = { naval_air_operations = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = base_strike }
+		}
+		set_technology = { base_strike = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = carrier_primacy }
+		}
+		set_technology = { carrier_primacy = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = carrier_task_forces }
+		}
+		set_technology = { carrier_task_forces = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = floating_airfield_bs }
+		}
+		set_technology = { floating_airfield_bs = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = massed_strikes }
+		}
+		set_technology = { massed_strikes = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = floating_fortress_bs }
+		}
+		set_technology = { floating_fortress_bs = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = carrier_battlegroups }
+		}
+		set_technology = { carrier_battlegroups = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = submarine_operations_bs }
+		}
+		set_technology = { submarine_operations_bs = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = undersea_blockade_bs }
+		}
+		set_technology = { undersea_blockade_bs = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = convoy_interdiction_bs }
+		}
+		set_technology = { convoy_interdiction_bs = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = submarine_offensive_bs }
+		}
+		set_technology = { submarine_offensive_bs = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = convoy_escorts_bs }
+		}
+		set_technology = { convoy_escorts_bs = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = escort_patrols }
+		}
+		set_technology = { escort_patrols = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = convoy_sailing_bs }
+		}
+		set_technology = { convoy_sailing_bs = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = integrated_convoy_defence_bs }
+		}
+		set_technology = { integrated_convoy_defence_bs = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = commercial_protectron }
+		}
+		set_technology = { commercial_protectron = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = security_protectron_tech }
+		}
+		set_technology = { security_protectron_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = servo_maintenance_tech }
+		}
+		set_technology = { servo_maintenance_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = mr_handy_tech }
+		}
+		set_technology = { mr_handy_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = engine_adjustments_tech }
+		}
+		set_technology = { engine_adjustments_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = mr_gutsy_tech }
+		}
+		set_technology = { mr_gutsy_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = combat_protocol_upgrade_tech }
+		}
+		set_technology = { combat_protocol_upgrade_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = robo_brain_tech }
+		}
+		set_technology = { robo_brain_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = pre_war_targeting_systems_tech }
+		}
+		set_technology = { pre_war_targeting_systems_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = sentry_bot_tech }
+		}
+		set_technology = { sentry_bot_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = support_weaponry }
+		}
+		set_technology = { support_weaponry = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = maintenance_tech }
+		}
+		set_technology = { maintenance_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = maintenance_tech_2 }
+		}
+		set_technology = { maintenance_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = maintenance_tech_3 }
+		}
+		set_technology = { maintenance_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = maintenance_tech_4 }
+		}
+		set_technology = { maintenance_tech_4 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = logistics_tech }
+		}
+		set_technology = { logistics_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = logistics_tech_2 }
+		}
+		set_technology = { logistics_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = logistics_tech_3 }
+		}
+		set_technology = { logistics_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = logistics_tech_4 }
+		}
+		set_technology = { logistics_tech_4 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = signal_tech }
+		}
+		set_technology = { signal_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = signal_tech_2 }
+		}
+		set_technology = { signal_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = signal_tech_3 }
+		}
+		set_technology = { signal_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = signal_tech_4 }
+		}
+		set_technology = { signal_tech_4 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = recon_tech }
+		}
+		set_technology = { recon_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = recon_tech_2 }
+		}
+		set_technology = { recon_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = recon_tech_3 }
+		}
+		set_technology = { recon_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = recon_tech_4 }
+		}
+		set_technology = { recon_tech_4 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = explosive_tech }
+		}
+		set_technology = { explosive_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = explosive_tech_2 }
+		}
+		set_technology = { explosive_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = explosive_tech_3 }
+		}
+		set_technology = { explosive_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = explosive_tech_4 }
+		}
+		set_technology = { explosive_tech_4 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = explosive_tech_5 }
+		}
+		set_technology = { explosive_tech_5 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = explosive_tech_6 }
+		}
+		set_technology = { explosive_tech_6 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = flamer_tech }
+		}
+		set_technology = { flamer_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = flamer_tech_2 }
+		}
+		set_technology = { flamer_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = flamer_tech_3 }
+		}
+		set_technology = { flamer_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = flamer_tech_4 }
+		}
+		set_technology = { flamer_tech_4 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = flamer_tech_5 }
+		}
+		set_technology = { flamer_tech_5 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = flamer_tech_6 }
+		}
+		set_technology = { flamer_tech_6 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = laser_tech }
+		}
+		set_technology = { laser_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = laser_tech_2 }
+		}
+		set_technology = { laser_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = laser_tech_3 }
+		}
+		set_technology = { laser_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = laser_tech_4 }
+		}
+		set_technology = { laser_tech_4 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = laser_tech_5 }
+		}
+		set_technology = { laser_tech_5 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = laser_tech_6 }
+		}
+		set_technology = { laser_tech_6 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = anti_tank_tech }
+		}
+		set_technology = { anti_tank_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = anti_tank_tech_2 }
+		}
+		set_technology = { anti_tank_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = anti_tank_tech_3 }
+		}
+		set_technology = { anti_tank_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = anti_tank_tech_4 }
+		}
+		set_technology = { anti_tank_tech_4 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = anti_tank_tech_5 }
+		}
+		set_technology = { anti_tank_tech_5 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = anti_tank_tech_6 }
+		}
+		set_technology = { anti_tank_tech_6 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = anti_personnel_tech }
+		}
+		set_technology = { anti_personnel_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = anti_personnel_tech_2 }
+		}
+		set_technology = { anti_personnel_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = anti_personnel_tech_3 }
+		}
+		set_technology = { anti_personnel_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = anti_personnel_tech_4 }
+		}
+		set_technology = { anti_personnel_tech_4 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = anti_personnel_tech_5 }
+		}
+		set_technology = { anti_personnel_tech_5 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = anti_personnel_tech_6 }
+		}
+		set_technology = { anti_personnel_tech_6 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = dog_tech }
+		}
+		set_technology = { dog_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = dog_tech_2 }
+		}
+		set_technology = { dog_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = dog_tech_3 }
+		}
+		set_technology = { dog_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = dog_tech_4 }
+		}
+		set_technology = { dog_tech_4 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = dog_tech_5 }
+		}
+		set_technology = { dog_tech_5 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = dog_tech_6 }
+		}
+		set_technology = { dog_tech_6 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = healing_powder }
+		}
+		set_technology = { healing_powder = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = refined_mixture }
+		}
+		set_technology = { refined_mixture = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = stimpack }
+		}
+		set_technology = { stimpack = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = auto_injectors }
+		}
+		set_technology = { auto_injectors = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = bike_tech_1 }
+		}
+		set_technology = { bike_tech_1 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = bike_tech_2 }
+		}
+		set_technology = { bike_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = bike_tech_3 }
+		}
+		set_technology = { bike_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = car_tech_1 }
+		}
+		set_technology = { car_tech_1 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = car_tech_2 }
+		}
+		set_technology = { car_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = car_tech_3 }
+		}
+		set_technology = { car_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = tank_tech_1 }
+		}
+		set_technology = { tank_tech_1 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = tank_tech_2 }
+		}
+		set_technology = { tank_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = tank_tech_3 }
+		}
+		set_technology = { tank_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = truck_tech_1 }
+		}
+		set_technology = { truck_tech_1 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = truck_tech_2 }
+		}
+		set_technology = { truck_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = truck_tech_3 }
+		}
+		set_technology = { truck_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = truck_tech_4 }
+		}
+		set_technology = { truck_tech_4 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = apc_tech_1 }
+		}
+		set_technology = { apc_tech_1 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = apc_tech_2 }
+		}
+		set_technology = { apc_tech_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = apc_tech_3 }
+		}
+		set_technology = { apc_tech_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = eighties_warbikes }
+		}
+		set_technology = { eighties_warbikes = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = legion_motor_chariots }
+		}
+		set_technology = { legion_motor_chariots = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = ranger_motorbikes }
+		}
+		set_technology = { ranger_motorbikes = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = testudo_apc }
+		}
+		set_technology = { testudo_apc = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = super_mutant_battlewagons }
+		}
+		set_technology = { super_mutant_battlewagons = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = super_mutant_behemoth }
+		}
+		set_technology = { super_mutant_behemoth = 1 }
 	}
 }

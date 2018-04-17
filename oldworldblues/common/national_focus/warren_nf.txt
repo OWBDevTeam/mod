@@ -1677,27 +1677,26 @@ focus_tree = {
 
 	}
 	focus = {
-		id = drumswest
+		id = attackbreakers
 		icon = GFX_goal_generic_war_focus
-		cost = 8.6
+		cost = 4.3
 		prerequisite = {
 			focus = warrenstirs
 		}
-		x = 2
+		x = 1
 		y = 5
 		ai_will_do = {
-			factor = 10
+			factor = 3
+			modifier = {
+				factor = 0
+				has_annex_war_goal = MDT
+			}
 		}
-		will_lead_to_war_with = MDT
 		will_lead_to_war_with = RBT
 			completion_reward = {
 					create_wargoal = {
 							type = annex_everything
 							target = RBT
-						}
-					create_wargoal = {
-							type = annex_everything
-							target = MDT
 						}
 
 					if = {
@@ -1725,6 +1724,31 @@ focus_tree = {
 										}
 								}
 						}
+				}
+	}
+	focus = {
+		id = attackmarrow
+		icon = GFX_goal_generic_war_focus
+		cost = 4.3
+		prerequisite = {
+			focus = warrenstirs
+		}
+		x = 3
+		y = 5
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_annex_war_goal = RBT
+			}
+		}
+		will_lead_to_war_with = MDT
+			completion_reward = {
+					create_wargoal = {
+							type = annex_everything
+							target = MDT
+						}
+
 					if = {
 							limit = {
 									any_state = {
@@ -1740,25 +1764,24 @@ focus_tree = {
 									limit = {
 											any_owned_state = {
 													is_core_of = MDT
-												}
-										}
+											}
+									}
 									ROOT = {
 											create_wargoal = {
 													type = annex_everything
 													target = PREV
-												}
-										}
-								}
-						}
-				}
-
+											}
+									}
+							}
+					}
+			}
 	}
 	focus = {
 		id = breakingribs
 		icon = GFX_focus_generic_self_management
 		cost = 5.00
 		prerequisite = {
-			focus = drumswest
+			focus = attackbreakers
 		}
 		x = 1
 		y = 6
@@ -1797,7 +1820,7 @@ focus_tree = {
 		icon = GFX_focus_generic_self_management
 		cost = 5.00
 		prerequisite = {
-			focus = drumswest
+			focus = attackmarrow
 		}
 		ai_will_do = {
 			factor = 10

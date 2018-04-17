@@ -6,6 +6,24 @@ NCR_helios_category = {
 	picture = GFX_decision_cat_ncr_helios_one
 	
 	allowed = {
-		tag = NCR
+		original_tag = NCR
+	}
+}
+NCR_mojave_campaign = {
+	icon = infiltration
+	picture = GFX_decision_cat_mojave_campaign
+	allowed = {
+		original_tag = NCR
+	}
+	visible = {
+		AND = {
+			original_tag = NCR
+			any_owned_state = {
+				OR = {
+					is_core_of = MRA
+					is_core_of = SCR
+				}
+			}
+		}
 	}
 }
