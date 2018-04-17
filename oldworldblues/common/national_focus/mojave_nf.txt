@@ -8,64 +8,64 @@ focus_tree = {
 		}
 	}
 	default = no
-focus = {
-		id = WBH_our_founding
+	focus = {
+		id = MOJ_our_founding
 		icon = GFX_goal_bos_elder_recalled
 		cost = 10.00
 		x = 18
 		y = 0
 		
 		completion_reward = {
-		    country_event = { days = 1 id = nf_genericbos.1 }	
+			country_event = { days = 1 id = nf_genericbos.1 }	
 		}
 	}
 	focus = {
-		id = WBH_our_interim
+		id = MOJ_our_interim
 		icon = GFX_goal_bos_elder_recalled
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_our_founding
+			focus = MOJ_our_founding
 		}
 		x = 18
 		y = 1
 		
 		completion_reward = {
-		    country_event = { days = 1 id = nf_genericbos.2 }	
+			country_event = { days = 1 id = nf_genericbos.2 }	
 		}
 	}
 	focus = {
-		id = WBH_our_future
+		id = MOJ_our_future
 		icon = GFX_goal_bos_elder_recalled
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_our_interim
+			focus = MOJ_our_interim
 		}
 		x = 18
 		y = 2
 
 		completion_reward = {
-		    country_event = { days = 1 id = nf_genericbos.3 }	
+			country_event = { days = 1 id = nf_genericbos.3 }	
 		}
 	}
 	focus = {
-		id = WBH_water_operations
+		id = MOJ_water_operations
 		icon = GFX_goal_bos_steel_cage
 		cost = 10.00
 		available = {
-		    any_owned_state = { 
+			any_owned_state = { 
 				is_coastal = yes 
 			}
 		}
 		prerequisite = {
-			focus = WBH_our_future
+			focus = MOJ_our_future
 		}
 		x = 3
 		y = 3
 		
 		completion_reward = {
-		    any_owned_state = {
+			random_owned_state = {
 				limit = { 
-				    is_coastal = yes
+					is_coastal = yes
 					free_building_slots = {
 						building = dockyard
 						size > 2
@@ -95,14 +95,14 @@ focus = {
 				}
 			}
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_doctrine }
-	    }
+		}
 	}
 	focus = {
-		id = WBH_aerial_operations
+		id = MOJ_aerial_operations
 		icon = GFX_goal_bos_scourge_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_our_future
+			focus = MOJ_our_future
 		}
 		x = 7
 		y = 3
@@ -112,25 +112,25 @@ focus = {
 		}	
 	}
 	focus = {
-		id = WBH_from_the_skies
+		id = MOJ_from_the_skies
 		icon = GFX_goal_bos_scourge_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_aerial_operations
+			focus = MOJ_aerial_operations
 		}
 		x = 6
 		y = 4
 		
 		completion_reward = {
-		    add_tech_bonus = { bonus = 0.5 uses = 1 category = air_doctrine }
-	    }
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = air_doctrine }
+		}
 	}	
 	focus = {
-		id = WBH_staging_bases
+		id = MOJ_staging_bases
 		icon = GFX_goal_generic_military_industry_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_aerial_operations
+			focus = MOJ_aerial_operations
 		}
 		x = 8
 		y = 4
@@ -168,11 +168,11 @@ focus = {
 		}	
 	}
 	focus = {
-		id = WBH_our_right
+		id = MOJ_our_right
 		icon = GFX_goal_bos_generic_industrial
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_our_future
+			focus = MOJ_our_future
 		}
 		x = 12
 		y = 3
@@ -182,43 +182,43 @@ focus = {
 		}
 	}
 	focus = {
-		id = WBH_salvaged_metal
+		id = MOJ_salvaged_metal
 		icon = GFX_goal_generic_metal_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_our_right
+			focus = MOJ_our_right
 		}
 		x = 10
 		y = 4
 		
 		completion_reward = {
-		    capital_scope = {
-			    add_resource = { type = metal amount = 16 }    
+			capital_scope = {
+				add_resource = { type = metal amount = 16 }    
 			}
-     	}
+		}
 	}	
 	focus = {
-		id = WBH_salvaged_electronics
+		id = MOJ_salvaged_electronics
 		icon = GFX_goal_generic_electronics_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_our_right
+			focus = MOJ_our_right
 		}
 		x = 14
 		y = 4
 		
 		completion_reward = {
-		    capital_scope = {
-			    add_resource = { type = electronics amount = 16 }    
+			capital_scope = {
+				add_resource = { type = electronics amount = 16 }    
 			}
-     	}
+		}
 	}
 	focus = {
-		id = WBH_our_might
+		id = MOJ_our_might
 		icon = GFX_goal_bos_generic_infantry
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_our_future
+			focus = MOJ_our_future
 		}
 		x = 18
 		y = 3
@@ -228,66 +228,66 @@ focus = {
 		}
 	}
 	focus = {
-		id = WBH_steel_legions
+		id = MOJ_steel_legions
 		icon = GFX_goal_bos_victory_or_death
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_our_might
+			focus = MOJ_our_might
 		}
 		x = 17
 		y = 4
 		
 		completion_reward = {
-		    add_ideas = genericbossteellegions
+			add_ideas = genericbossteellegions
 		}
 
 	}
 	focus = {
-		id = WBH_wastelander_conscripts
+		id = MOJ_wastelander_conscripts
 		icon = GFX_goal_bos_wasteland_conscription
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_our_might
+			focus = MOJ_our_might
 		}
 		x = 19
 		y = 4
 		
 		completion_reward = {
-		    add_ideas = genericboswastelandconscripts
+			add_ideas = genericboswastelandconscripts
 		}
 	}
 	focus = {
-		id = WBH_flesh_before_steel
+		id = MOJ_flesh_before_steel
 		icon = GFX_goal_bos_outsider_recruitment
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_wastelander_conscripts
+			focus = MOJ_wastelander_conscripts
 		}
 		x = 19
 		y = 5
 		
 		completion_reward = {
-		    swap_ideas = {
-			    add_idea = genericbosfleshbeforesteel
+			swap_ideas = {
+				add_idea = genericbosfleshbeforesteel
 				remove_idea = genericboswastelandconscripts
 			}
 		}
 	}
 	focus = {
-		id = WBH_basic_arms_for_basic_people
+		id = MOJ_basic_arms_for_basic_people
 		icon = GFX_goal_generic_common_firearms_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_flesh_before_steel
+			focus = MOJ_flesh_before_steel
 		}
 		x = 19
 		y = 6
 		
 		completion_reward = {
-		    add_equipment_to_stockpile = { 
-			    type = energy_equipment_2 
-			    amount = 1000 
-			    producer = WBH 
+			add_equipment_to_stockpile = { 
+				type = energy_equipment_2 
+				amount = 1000 
+				producer = WBH 
 			}
 			random_owned_controlled_state = {
 					limit = {
@@ -322,11 +322,11 @@ focus = {
 		}
 	}
 	focus = {
-		id = WBH_doctrinal_thought
+		id = MOJ_doctrinal_thought
 		icon = GFX_goal_generic_land_doctrines_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_basic_arms_for_basic_people
+			focus = MOJ_basic_arms_for_basic_people
 		}
 		x = 19
 		y = 7
@@ -336,25 +336,25 @@ focus = {
 		}
 	}
 	focus = {
-		id = WBH_our_goal
+		id = MOJ_our_goal
 		icon = GFX_goal_BOS_generic
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_our_future
+			focus = MOJ_our_future
 		}
 		x = 23
 		y = 3
 		
 		completion_reward = {
-		    add_political_power = 100
+			add_political_power = 100
 		}	
 	}
 	focus = {
-		id = WBH_seek_technology
+		id = MOJ_seek_technology
 		icon = GFX_goal_bos_generic_research
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_our_goal
+			focus = MOJ_our_goal
 		}
 		x = 22
 		y = 4
@@ -364,41 +364,41 @@ focus = {
 		}
 	}
 	focus = {
-		id = WBH_scribe_research
+		id = MOJ_scribe_research
 		icon = GFX_goal_bos_the_mojave_signal
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_seek_technology
+			focus = MOJ_seek_technology
 		}
 		x = 22
 		y = 5
 		
 		completion_reward = {
-		    add_ideas = genericbosscriberesearch
+			add_ideas = genericbosscriberesearch
 		}	
 	}
 	focus = {
-		id = WBH_old_developments
+		id = MOJ_old_developments
 		icon = GFX_goal_bos_repconn_hq
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_scribe_research
+			focus = MOJ_scribe_research
 		}
 		x = 22
 		y = 6
 		
 		completion_reward = {
-		    capital_scope = {
-			    add_resource = { type = advanced_technology amount = 8 }    
+			capital_scope = {
+				add_resource = { type = advanced_technology amount = 8 }    
 			}
-     	}
+		}
 	}
 	focus = {
-		id = WBH_robotic_advancements
+		id = MOJ_robotic_advancements
 		icon = GFX_goal_generic_robots_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_old_developments
+			focus = MOJ_old_developments
 		}
 		x = 22
 		y = 7
@@ -408,40 +408,42 @@ focus = {
 		}
 	}
 	focus = {
-		id = WBH_bunker_thought
+		id = MOJ_bunker_thought
 		icon = GFX_goal_generic_bunkers_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_our_goal
+			focus = MOJ_our_goal
 		}
 		x = 24
 		y = 4
 		
 		completion_reward = {
-		    add_ideas = genericbosbunkerthought 
+			add_ideas = genericbosbunkerthought 
 		}
 	}
 	focus = {
-		id = WBH_surface_outposts
+		id = MOJ_surface_outposts
 		icon = GFX_goal_generic_building_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_bunker_thought
+			focus = MOJ_bunker_thought
 		}
 		x = 24
 		y = 5
 		
-		swap_ideas = {
-		    add_idea = genericbossurfaceoutposts
-		    remove_idea = genericbosbunkerthought
+		completion_reward = {
+			swap_ideas = {
+				add_idea = genericbossurfaceoutposts
+				remove_idea = genericbosbunkerthought
+			}
 		}
 	}
 	focus = {
-		id = WBH_underground_workshops
+		id = MOJ_underground_workshops
 		icon = GFX_goal_generic_military_industry_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_surface_outposts
+			focus = MOJ_surface_outposts
 		}
 		x = 24
 		y = 6
@@ -480,38 +482,38 @@ focus = {
 		}
 	}
 	focus = {
-		id = WBH_new_technology
+		id = MOJ_new_technology
 		icon = GFX_goal_bos_generic_research
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_underground_workshops
+			focus = MOJ_underground_workshops
 		}
 		x = 24
 		y = 7
 		
 		completion_reward = {
-		    add_ideas = genericbosnewtech
+			add_ideas = genericbosnewtech
 		}
 	}
 	focus = {
-		id = WBH_port_expansion
+		id = MOJ_port_expansion
 		icon = GFX_goal_generic_harbours_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_water_operations
+			focus = MOJ_water_operations
 		}
 		x = 3
 		y = 4
 		available = {
-		    any_owned_state = { 
+			any_owned_state = { 
 				is_coastal = yes 
 			}
 		}
 		
 		completion_reward = {
-		    any_owned_state = {
+			random_owned_state = {
 				limit = { 
-				    is_coastal = yes
+					is_coastal = yes
 				}
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -520,14 +522,14 @@ focus = {
 					instant_build = yes
 				}
 			}
-	    }
+		}
 	}	
 	focus = {
-		id = WBH_supporting_vessels
+		id = MOJ_supporting_vessels
 		icon = GFX_goal_generic_navy_cruiser
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_port_expansion
+			focus = MOJ_port_expansion
 		}
 		x = 2
 		y = 5
@@ -537,11 +539,11 @@ focus = {
 		}
 	}
 	focus = {
-		id = WBH_larger_vessels
+		id = MOJ_larger_vessels
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_port_expansion
+			focus = MOJ_port_expansion
 		}
 		x = 4
 		y = 5
@@ -551,14 +553,14 @@ focus = {
 		}
 	}
 	focus = {
-		id = WBH_reclaim_a_flagship
+		id = MOJ_reclaim_a_flagship
 		icon = GFX_goal_generic_navy_battleship
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_supporting_vessels
+			focus = MOJ_supporting_vessels
 		}
 		prerequisite = {
-			focus = WBH_larger_vessels
+			focus = MOJ_larger_vessels
 		}
 		x = 3
 		y = 6
@@ -568,105 +570,105 @@ focus = {
 		}
 	}
 	focus = {
-		id = WBH_aerial_supremacy
+		id = MOJ_aerial_supremacy
 		icon = GFX_goal_generic_air_doctrines_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_from_the_skies
+			focus = MOJ_from_the_skies
 		}
 		prerequisite = {
-			focus = WBH_staging_bases
+			focus = MOJ_staging_bases
 		}
 		x = 7
 		y = 5
 		
 		completion_reward = {
-		    add_ideas = genericbosaerialsupermacy
+			add_ideas = genericbosaerialsupermacy
 		}
 	}
 	focus = {
-		id = WBH_wastelander_auxs
+		id = MOJ_wastelander_auxs
 		icon = GFX_goal_generic_land_doctrines_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_aerial_supremacy
+			focus = MOJ_aerial_supremacy
 		}
 		x = 7
 		y = 6
 		
 		completion_reward = {
-		    add_ideas = genericboswastelanderauxs
+			add_ideas = genericboswastelanderauxs
 		}
 	}
 	focus = {
-		id = WBH_increase_power_production
+		id = MOJ_increase_power_production
 		icon = GFX_goal_generic_electricity_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_our_right
+			focus = MOJ_our_right
 		}
 		x = 12
 		y = 4
 		
 		completion_reward = {
-		    capital_scope = {
-			    add_resource = { type = electricity amount = 16 }    
+			capital_scope = {
+				add_resource = { type = electricity amount = 16 }    
 			}
-     	}
+		}
 	}
 	focus = {
-		id = WBH_advanced_tech
+		id = MOJ_advanced_tech
 		icon = GFX_goal_generic_advanced_technology_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_salvaged_metal
+			focus = MOJ_salvaged_metal
 		}
 		prerequisite = {
-			focus = WBH_increase_power_production
+			focus = MOJ_increase_power_production
 		}
 		prerequisite = {
-			focus = WBH_salvaged_electronics
+			focus = MOJ_salvaged_electronics
 		}
 		x = 11
 		y = 5
 		
 		completion_reward = {
-		    capital_scope = {
-			    add_resource = { type = advanced_technology amount = 8 }    
+			capital_scope = {
+				add_resource = { type = advanced_technology amount = 8 }    
 			}
-     	}
+		}
 	}
 	focus = {
-		id = WBH_fueling_our_rise
+		id = MOJ_fueling_our_rise
 		icon = GFX_goal_generic_fuel_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_increase_power_production
+			focus = MOJ_increase_power_production
 		}
 		prerequisite = {
-			focus = WBH_salvaged_electronics
+			focus = MOJ_salvaged_electronics
 		}
 		prerequisite = {
-			focus = WBH_salvaged_metal
+			focus = MOJ_salvaged_metal
 		}
 		x = 13
 		y = 5
 
 		completion_reward = {
-		    capital_scope = {
-			    add_resource = { type = fuel amount = 8 }    
+			capital_scope = {
+				add_resource = { type = fuel amount = 8 }    
 			}
-     	}
+		}
 	}
 	focus = {
-		id = WBH_arm_foundries
+		id = MOJ_arm_foundries
 		icon = GFX_goal_generic_common_energy_weapons_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_advanced_tech
+			focus = MOJ_advanced_tech
 		}
 		prerequisite = {
-			focus = WBH_fueling_our_rise
+			focus = MOJ_fueling_our_rise
 		}
 		x = 11
 		y = 6
@@ -705,11 +707,11 @@ focus = {
 		}
 	}
 	focus = {
-		id = WBH_civillian_workshops
+		id = MOJ_civillian_workshops
 		icon = GFX_goal_generic_large_scale_normal_industry_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_fueling_our_rise
+			focus = MOJ_fueling_our_rise
 		}
 		x = 13
 		y = 6
@@ -748,14 +750,14 @@ focus = {
 		}
 	}
 	focus = {
-		id = WBH_heavy_production
+		id = MOJ_heavy_production
 		icon = GFX_goal_legion_workshop
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_arm_foundries
+			focus = MOJ_arm_foundries
 		}
 		prerequisite = {
-			focus = WBH_civillian_workshops
+			focus = MOJ_civillian_workshops
 		}
 		x = 12
 		y = 7
@@ -822,7 +824,7 @@ focus = {
 					}
 			}
 			capital_scope = {
-			    add_building_construction = {
+				add_building_construction = {
 						type = infrastructure
 						level = 2
 						instant_build = yes
@@ -831,78 +833,78 @@ focus = {
 		}
 	}
 	focus = {
-		id = WBH_new_initiates
+		id = MOJ_new_initiates
 		icon = GFX_goal_generic_BoS_diplomatic_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_steel_legions
+			focus = MOJ_steel_legions
 		}
 		x = 17
 		y = 5
 		
 		completion_reward = {
-		    add_ideas = genericbosnewinitiates
+			add_ideas = genericbosnewinitiates
 		}
 	}
 	focus = {
-		id = WBH_t45d_production
+		id = MOJ_t45d_production
 		icon = GFX_goal_generic_t45d_power_armour_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_new_initiates
+			focus = MOJ_new_initiates
 		}
 		x = 17
 		y = 6
 		
 		completion_reward = {
-		    add_ideas = genericbost45d
+			add_ideas = genericbost45d
 		}
 
 	}
 	focus = {
-		id = WBH_t51b_production
+		id = MOJ_t51b_production
 		icon = GFX_goal_generic_t51b_power_armour_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_t45d_production
+			focus = MOJ_t45d_production
 		}
 		x = 17
 		y = 7
 
 		completion_reward = {
-		    add_ideas = genericbost51b
+			add_ideas = genericbost51b
 		}
 	}
 	focus = {
-		id = WBH_combined_operations
+		id = MOJ_combined_operations
 		icon = GFX_goal_VEG_Mojave_Alliance
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_t51b_production
+			focus = MOJ_t51b_production
 		}
 		prerequisite = {
-			focus = WBH_doctrinal_thought
+			focus = MOJ_doctrinal_thought
 		}
 		x = 18
 		y = 8
 
 		completion_reward = {
-		    add_ideas = genericboscombinedoperations
+			add_ideas = genericboscombinedoperations
 		}
 	}
 	focus = {
-		id = WBH_vertibird_schematics
+		id = MOJ_vertibird_schematics
 		icon = GFX_goal_bos_vertibird_schematics
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_robotic_advancements
+			focus = MOJ_robotic_advancements
 		}
 		x = 22
 		y = 8
 		
 		completion_reward = {
-		    set_technology = { 
-			    vertiberd_gunship = 1
+			set_technology = { 
+				vertiberd_gunship = 1
 				vertiberd_transport1 = 1
 			}
 			add_equipment_to_stockpile = { type = vb_gunship_equipment amount = 5 }
@@ -910,18 +912,18 @@ focus = {
 		}
 	}
 	focus = {
-		id = WBH_tesla_theory
+		id = MOJ_tesla_theory
 		icon = GFX_goal_generic_electricity_focus
 		cost = 10.00
 		prerequisite = {
-			focus = WBH_new_technology
+			focus = MOJ_new_technology
 		}
 		x = 24
 		y = 8
 
 		completion_reward = {
-		    set_technology = { 
-			    tesla_weaponry = 1
+			set_technology = { 
+				tesla_weaponry = 1
 			}
 		}
 	}
@@ -939,7 +941,7 @@ focus = {
 		y = 3
 		
 		completion_reward = {
-		    country_event = { id = nf_mojave.1 days = 1 }
+			country_event = { id = nf_mojave.1 days = 1 }
 		}
 	}
 	focus = {
@@ -953,7 +955,7 @@ focus = {
 		y = 4
 
 		completion_reward = {
-		    add_political_power = 50
+			add_political_power = 50
 		}
 	}
 	focus = {
@@ -967,7 +969,7 @@ focus = {
 		y = 5
 	
 		completion_reward = {
-		    add_ideas = mojave_scribal_thought
+			add_ideas = mojave_scribal_thought
 		}
 	}
 	focus = {
@@ -981,7 +983,7 @@ focus = {
 		y = 6
 
 		completion_reward = {
-		    country_event = { id = nf_mojave.2 days = 1 }
+			country_event = { id = nf_mojave.2 days = 1 }
 		}
 	}
 	focus = {
@@ -1017,7 +1019,7 @@ focus = {
 		y = 8
 
 		completion_reward = {
-		    country_event = { id = nf_mojave.3 days = 1 }
+			country_event = { id = nf_mojave.3 days = 1 }
 		}
 	}
 	focus = {
@@ -1031,7 +1033,7 @@ focus = {
 		y = 4
 
 		completion_reward = {
-		    add_political_power = 50
+			add_political_power = 50
 		}
 	}
 	focus = {
@@ -1045,7 +1047,7 @@ focus = {
 		y = 5
 
 		completion_reward = {
-		    load_oob = mojave_paladin_thought
+			load_oob = mojave_paladin_thought
 		}
 	}
 	focus = {
@@ -1059,7 +1061,7 @@ focus = {
 		y = 6
 
 		completion_reward = {
-		    add_stability = 0.1
+			add_stability = 0.1
 			add_war_support = 0.1
 		}
 	}
@@ -1074,7 +1076,7 @@ focus = {
 		y = 7
 
 		completion_reward = {
-		    country_event = { id = nf_mojave.4 days = 2 }
+			country_event = { id = nf_mojave.4 days = 2 }
 		}
 	}
 	focus = {
@@ -1088,7 +1090,7 @@ focus = {
 		y = 7
 
 		completion_reward = {
-		    country_event = { id = nf_mojave.5 days = 1 }
+			country_event = { id = nf_mojave.5 days = 1 }
 		}
 	}
 	focus = {
@@ -1102,7 +1104,7 @@ focus = {
 		y = 8
 
 		completion_reward = {
-		    country_event = { id = nf_mojave.8 days = 1 }
+			country_event = { id = nf_mojave.8 days = 1 }
 		}
 	}
 	focus = {
@@ -1116,7 +1118,7 @@ focus = {
 		y = 4
 
 		completion_reward = {
-		    add_political_power = 50
+			add_political_power = 50
 		}
 	}
 	focus = {
@@ -1130,7 +1132,7 @@ focus = {
 		y = 5
 
 		completion_reward = {
-		    load_oob = mojave_progressive_thought
+			load_oob = mojave_progressive_thought
 		}
 	}
 	focus = {
@@ -1144,7 +1146,7 @@ focus = {
 		y = 6
 
 		completion_reward = {
-		    country_event = { id = nf_mojave.12 days = 1 }
+			country_event = { id = nf_mojave.12 days = 1 }
 		}	
 	}
 	focus = {
@@ -1158,7 +1160,7 @@ focus = {
 		y = 7
 
 		completion_reward = {
-		    country_event = { id = nf_mojave.13 days = 1 }
+			country_event = { id = nf_mojave.13 days = 1 }
 		}
 	}
 	focus = {
@@ -1166,7 +1168,7 @@ focus = {
 		icon = GFX_goal_unknown
 		cost = 10.00
 		prerequisite = {
-			focus = MOJ_energy_boon
+			focus = MOJ_energy_boom
 		}
 		x = 27
 		y = 9
@@ -1183,9 +1185,9 @@ focus = {
 		y = 8
 
 		completion_reward = {
-		    capital_scope = {
+			capital_scope = {
 				add_resource = { 
-				    type = electricity 
+					type = electricity 
 					amount = 10  
 				}
 			}
@@ -1202,7 +1204,7 @@ focus = {
 		y = 9
 
 		completion_reward = {
-		    country_event = { id = nf_mojave.16 days = 1 }
+			country_event = { id = nf_mojave.16 days = 1 }
 		}
 	}
 	focus = {
@@ -1216,7 +1218,7 @@ focus = {
 		y = 8
 
 		completion_reward = {
-		    country_event = { id = nf_mojave.17 days = 1 }
+			country_event = { id = nf_mojave.17 days = 1 }
 		}
 	}
 	focus = {
@@ -1230,7 +1232,7 @@ focus = {
 		y = 9
 
 		completion_reward = {
-		    add_war_support = 7.5
+			add_war_support = 7.5
 		}
 	}
 	focus = {
@@ -1244,7 +1246,7 @@ focus = {
 		y = 9
 
 		completion_reward = {
-		    add_ideas = mojave_aggressive_policy
+			add_ideas = mojave_aggressive_policy
 		}
 	}
 	focus = {
@@ -1258,7 +1260,7 @@ focus = {
 		y = 8
 
 		completion_reward = {
-		    country_event = { id = nf_mojave.19 days = 1 }
+			country_event = { id = nf_mojave.19 days = 1 }
 		}
 	}
 	focus = {
@@ -1283,7 +1285,7 @@ focus = {
 		y = 7
 
 		completion_reward = {
-		    add_ideas = mojave_help
+			add_ideas = mojave_help
 		}
 	}
 	focus = {
@@ -1297,7 +1299,7 @@ focus = {
 		y = 8
 
 		completion_reward = {
-		    add_ideas = mojave_followers
+			add_ideas = mojave_followers
 		}
 	}
 	focus = {

@@ -16,7 +16,7 @@ focus_tree = {
 		y = 0
 		
 		completion_reward = {
-		    country_event = { days = 1 id = nf_genericbos.1 }	
+			country_event = { days = 1 id = nf_genericbos.1 }	
 		}
 	}
 	focus = {
@@ -30,7 +30,7 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-		    country_event = { days = 1 id = nf_genericbos.2 }	
+			country_event = { days = 1 id = nf_genericbos.2 }	
 		}
 	}
 	focus = {
@@ -44,7 +44,7 @@ focus_tree = {
 		y = 2
 
 		completion_reward = {
-		    country_event = { days = 1 id = nf_genericbos.3 }	
+			country_event = { days = 1 id = nf_genericbos.3 }	
 		}
 	}
 	focus = {
@@ -52,7 +52,7 @@ focus_tree = {
 		icon = GFX_goal_bos_steel_cage
 		cost = 10.00
 		available = {
-		    any_owned_state = { 
+			any_owned_state = { 
 				is_coastal = yes 
 			}
 		}
@@ -63,9 +63,9 @@ focus_tree = {
 		y = 3
 		
 		completion_reward = {
-		    any_owned_state = {
+			random_owned_state = {
 				limit = { 
-				    is_coastal = yes
+					is_coastal = yes
 					free_building_slots = {
 						building = dockyard
 						size > 2
@@ -95,7 +95,7 @@ focus_tree = {
 				}
 			}
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_doctrine }
-	    }
+		}
 	}
 	focus = {
 		id = WBH_aerial_operations
@@ -122,8 +122,8 @@ focus_tree = {
 		y = 4
 		
 		completion_reward = {
-		    add_tech_bonus = { bonus = 0.5 uses = 1 category = air_doctrine }
-	    }
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = air_doctrine }
+		}
 	}	
 	focus = {
 		id = WBH_staging_bases
@@ -192,10 +192,10 @@ focus_tree = {
 		y = 4
 		
 		completion_reward = {
-		    capital_scope = {
-			    add_resource = { type = metal amount = 16 }    
+			capital_scope = {
+				add_resource = { type = metal amount = 16 }    
 			}
-     	}
+		}
 	}	
 	focus = {
 		id = WBH_salvaged_electronics
@@ -208,10 +208,10 @@ focus_tree = {
 		y = 4
 		
 		completion_reward = {
-		    capital_scope = {
-			    add_resource = { type = electronics amount = 16 }    
+			capital_scope = {
+				add_resource = { type = electronics amount = 16 }    
 			}
-     	}
+		}
 	}
 	focus = {
 		id = WBH_our_might
@@ -238,7 +238,7 @@ focus_tree = {
 		y = 4
 		
 		completion_reward = {
-		    add_ideas = genericbossteellegions
+			add_ideas = genericbossteellegions
 		}
 
 	}
@@ -253,7 +253,7 @@ focus_tree = {
 		y = 4
 		
 		completion_reward = {
-		    add_ideas = genericboswastelandconscripts
+			add_ideas = genericboswastelandconscripts
 		}
 	}
 	focus = {
@@ -267,8 +267,8 @@ focus_tree = {
 		y = 5
 		
 		completion_reward = {
-		    swap_ideas = {
-			    add_idea = genericbosfleshbeforesteel
+			swap_ideas = {
+				add_idea = genericbosfleshbeforesteel
 				remove_idea = genericboswastelandconscripts
 			}
 		}
@@ -284,10 +284,10 @@ focus_tree = {
 		y = 6
 		
 		completion_reward = {
-		    add_equipment_to_stockpile = { 
-			    type = energy_equipment_2 
-			    amount = 1000 
-			    producer = WBH 
+			add_equipment_to_stockpile = { 
+				type = energy_equipment_2 
+				amount = 1000 
+				producer = WBH 
 			}
 			random_owned_controlled_state = {
 					limit = {
@@ -346,7 +346,7 @@ focus_tree = {
 		y = 3
 		
 		completion_reward = {
-		    add_political_power = 100
+			add_political_power = 100
 		}	
 	}
 	focus = {
@@ -374,7 +374,7 @@ focus_tree = {
 		y = 5
 		
 		completion_reward = {
-		    add_ideas = genericbosscriberesearch
+			add_ideas = genericbosscriberesearch
 		}	
 	}
 	focus = {
@@ -388,10 +388,10 @@ focus_tree = {
 		y = 6
 		
 		completion_reward = {
-		    capital_scope = {
-			    add_resource = { type = advanced_technology amount = 8 }    
+			capital_scope = {
+				add_resource = { type = advanced_technology amount = 8 }    
 			}
-     	}
+		}
 	}
 	focus = {
 		id = WBH_robotic_advancements
@@ -418,7 +418,7 @@ focus_tree = {
 		y = 4
 		
 		completion_reward = {
-		    add_ideas = genericbosbunkerthought 
+			add_ideas = genericbosbunkerthought 
 		}
 	}
 	focus = {
@@ -431,9 +431,11 @@ focus_tree = {
 		x = 24
 		y = 5
 		
-		swap_ideas = {
-		    add_idea = genericbossurfaceoutposts
-		    remove_idea = genericbosbunkerthought
+		completion_reward = {
+			swap_ideas = {
+				add_idea = genericbossurfaceoutposts
+				remove_idea = genericbosbunkerthought
+			}
 		}
 	}
 	focus = {
@@ -490,7 +492,7 @@ focus_tree = {
 		y = 7
 		
 		completion_reward = {
-		    add_ideas = genericbosnewtech
+			add_ideas = genericbosnewtech
 		}
 	}
 	focus = {
@@ -503,15 +505,15 @@ focus_tree = {
 		x = 3
 		y = 4
 		available = {
-		    any_owned_state = { 
+			any_owned_state = { 
 				is_coastal = yes 
 			}
 		}
 		
 		completion_reward = {
-		    any_owned_state = {
+			random_owned_state = {
 				limit = { 
-				    is_coastal = yes
+					is_coastal = yes
 				}
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -520,7 +522,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-	    }
+		}
 	}	
 	focus = {
 		id = WBH_supporting_vessels
@@ -581,7 +583,7 @@ focus_tree = {
 		y = 5
 		
 		completion_reward = {
-		    add_ideas = genericbosaerialsupermacy
+			add_ideas = genericbosaerialsupermacy
 		}
 	}
 	focus = {
@@ -595,7 +597,7 @@ focus_tree = {
 		y = 6
 		
 		completion_reward = {
-		    add_ideas = genericboswastelanderauxs
+			add_ideas = genericboswastelanderauxs
 		}
 	}
 	focus = {
@@ -609,10 +611,10 @@ focus_tree = {
 		y = 4
 		
 		completion_reward = {
-		    capital_scope = {
-			    add_resource = { type = electricity amount = 16 }    
+			capital_scope = {
+				add_resource = { type = electricity amount = 16 }    
 			}
-     	}
+		}
 	}
 	focus = {
 		id = WBH_advanced_tech
@@ -631,10 +633,10 @@ focus_tree = {
 		y = 5
 		
 		completion_reward = {
-		    capital_scope = {
-			    add_resource = { type = advanced_technology amount = 8 }    
+			capital_scope = {
+				add_resource = { type = advanced_technology amount = 8 }    
 			}
-     	}
+		}
 	}
 	focus = {
 		id = WBH_fueling_our_rise
@@ -653,10 +655,10 @@ focus_tree = {
 		y = 5
 
 		completion_reward = {
-		    capital_scope = {
-			    add_resource = { type = fuel amount = 8 }    
+			capital_scope = {
+				add_resource = { type = fuel amount = 8 }    
 			}
-     	}
+		}
 	}
 	focus = {
 		id = WBH_arm_foundries
@@ -822,7 +824,7 @@ focus_tree = {
 					}
 			}
 			capital_scope = {
-			    add_building_construction = {
+				add_building_construction = {
 						type = infrastructure
 						level = 2
 						instant_build = yes
@@ -841,7 +843,7 @@ focus_tree = {
 		y = 5
 		
 		completion_reward = {
-		    add_ideas = genericbosnewinitiates
+			add_ideas = genericbosnewinitiates
 		}
 	}
 	focus = {
@@ -855,7 +857,7 @@ focus_tree = {
 		y = 6
 		
 		completion_reward = {
-		    add_ideas = genericbost45d
+			add_ideas = genericbost45d
 		}
 
 	}
@@ -870,7 +872,7 @@ focus_tree = {
 		y = 7
 
 		completion_reward = {
-		    add_ideas = genericbost51b
+			add_ideas = genericbost51b
 		}
 	}
 	focus = {
@@ -887,7 +889,7 @@ focus_tree = {
 		y = 8
 
 		completion_reward = {
-		    add_ideas = genericboscombinedoperations
+			add_ideas = genericboscombinedoperations
 		}
 	}
 	focus = {
@@ -901,8 +903,8 @@ focus_tree = {
 		y = 8
 		
 		completion_reward = {
-		    set_technology = { 
-			    vertiberd_gunship = 1
+			set_technology = { 
+				vertiberd_gunship = 1
 				vertiberd_transport1 = 1
 			}
 			add_equipment_to_stockpile = { type = vb_gunship_equipment amount = 5 }
@@ -920,8 +922,8 @@ focus_tree = {
 		y = 8
 
 		completion_reward = {
-		    set_technology = { 
-			    tesla_weaponry = 1
+			set_technology = { 
+				tesla_weaponry = 1
 			}
 		}
 	}	
@@ -938,13 +940,13 @@ focus_tree = {
 		x = 28
 		y = 3
 		available = {
-		    NOT = {
-			    has_war = yes
+			NOT = {
+				has_war = yes
 			}
 		}	
 
 		completion_reward = {
-		    country_event = nf_washington.1
+			country_event = nf_washington.1
 		}
 	}
 	focus = {
@@ -955,12 +957,12 @@ focus_tree = {
 			focus = WBH_within_the_blizzard
 		}
 		mutually_exclusive = {
-		    focus = WBH_fellow_savages
+			focus = WBH_fellow_savages
 		}
 		x = 27
 		y = 4
 		completion_reward = {
-		    TOC = {
+			TOC = {
 			   country_event = { days = 1 id = nf_washington.2 }
 			}
 		}
@@ -973,12 +975,12 @@ focus_tree = {
 			focus = WBH_within_the_blizzard
 		}
 		mutually_exclusive = {
-		    focus = WBH_sinister_patriots
+			focus = WBH_sinister_patriots
 		}
 		x = 29
 		y = 4
 		completion_reward = {
-		    PMR = {
+			PMR = {
 			   country_event = { days = 1 id = nf_washington.3 }
 			}
 		}
@@ -994,7 +996,7 @@ focus_tree = {
 		x = 27
 		y = 5
 		completion_reward = {
-		     add_war_support = 0.15
+			 add_war_support = 0.15
 		}
 	}
 	focus = {
@@ -1008,7 +1010,7 @@ focus_tree = {
 		y = 6
 		
 		completion_reward = {
-		    add_ideas = genericboswashingtonenslaveweak
+			add_ideas = genericboswashingtonenslaveweak
 		}
 	}
 	focus = {
@@ -1022,7 +1024,7 @@ focus_tree = {
 		y = 7
 		
 		completion_reward = {
-		    add_ideas = genericboswashingtonexpandourdominion
+			add_ideas = genericboswashingtonexpandourdominion
 		}
 	}
 	focus = {
@@ -1034,24 +1036,16 @@ focus_tree = {
 		}
 		x = 27
 		y = 8
-		limit = { 
-		    if = {
-			    TRL = { 
-			        exists = yes
-			    }
-			}
-			will_lead_to_war_with = TRL
-		}
+		will_lead_to_war_with = TRL
+
 		completion_reward = {
-		    add_ideas = genericboswashingtoneradicatemutants
-		    limit = {
-		        if = {
-			        TRL = { 
-			            exists = yes
-			        }  
-			    }
+			add_ideas = genericboswashingtoneradicatemutants
+			if = {
+				limit = {
+					TRL = { exists = yes }
+				}
 				create_wargoal = { type = annex_everything target = TRL }
-		    }
+			}
 		}
 	}
 	focus = {
@@ -1066,7 +1060,7 @@ focus_tree = {
 		y = 5
 		
 		completion_reward = {
-		    load_oob = washingtonbosblackpaladins
+			load_oob = washingtonbosblackpaladins
 		}
 	}
 	focus = {
@@ -1080,7 +1074,7 @@ focus_tree = {
 		y = 6
 		
 		completion_reward = {
-		    add_ideas = genericbosdecimateanddespoil
+			add_ideas = genericbosdecimateanddespoil
 		}
 	}
 	focus = {
@@ -1094,18 +1088,18 @@ focus_tree = {
 		y = 7
 		
 		completion_reward = {
-		    capital_scope = {
-			    add_extra_state_shared_building_slots = 4
-			    add_building_construction = {
+			capital_scope = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
 						type = industrial_complex
 						level = 2
 						instant_build = yes
-			    }
+				}
 				add_building_construction = {
 						type = arms_factory
 						level = 2
 						instant_build = yes
-			    }
+				}
 			}
 			add_ideas = genericbosdarkfoundries
 		}
@@ -1121,7 +1115,7 @@ focus_tree = {
 		y = 8
 		
 		completion_reward = {
-		    add_stability = 0.1
+			add_stability = 0.1
 			add_war_support = 0.1
 		}
 	}
@@ -1136,9 +1130,9 @@ focus_tree = {
 			focus = WBH_death_or_glory
 		}
 		available = {
-		    WBH = {
-			    OR = {
-			       owns_state = 188		
+			WBH = {
+				OR = {
+				   owns_state = 188		
 				   owns_state = 356
 				   owns_state = 448
 				   owns_state = 299
@@ -1152,7 +1146,7 @@ focus_tree = {
 		y = 9
 		
 		completion_reward = {
-		    country_event = nf_washington.8
+			country_event = nf_washington.8
 		}
 	}
 }
