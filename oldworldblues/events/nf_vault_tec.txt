@@ -1,0 +1,117 @@
+add_namespace = nf_vault_tec
+
+country_event = {
+	id = nf_vault_tec.1
+	title = nf_vault_tec.1.t
+	desc = nf_vault_tec.1.d 
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_vault_tec.1.a
+		380 = {
+			add_resource = {
+				type = water
+				amount = 6
+			}
+		}
+	}
+	option = {
+		name = nf_vault_tec.1.b
+		add_state_core = 380
+		add_manpower = -1000
+		hidden_effect = {
+			load_oob = vault_3_security
+		}
+	}
+}
+country_event = {
+	id = nf_vault_tec.2
+	title = nf_vault_tec.2.t
+	desc = nf_vault_tec.2.d 
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_vault_tec.2.a
+		351 = {
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+	option = {
+		name = nf_vault_tec.2.b
+		add_state_core = 351
+		add_manpower = -700
+		hidden_effect = {
+			load_oob = vault_6_security
+		}
+	}
+}
+country_event = {
+	id = nf_vault_tec.3
+	title = nf_vault_tec.3.t
+	desc = nf_vault_tec.3.d 
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_vault_tec.3.a
+		151 = {
+			set_state_name = "Vault 13"
+		}
+		add_ideas = vault_geck_13
+	}
+	option = {
+		name = nf_vault_tec.3.b
+		add_state_core = 151
+		add_manpower = -300
+		151 = {
+			set_state_name = "Vault 13"
+		}
+		hidden_effect = {
+			load_oob = vault_13_security
+		}
+	}
+	option = {
+		name = nf_vault_tec.3.c
+		trigger = {
+			OR = {
+				ARR ={
+					is_puppet_of = VLT
+				}
+				owns_state = 2722
+			}
+		}
+		
+		add_state_core = 151
+		add_ideas = vault_geck_13
+		151 = {
+			set_state_name = "Vault Arroyo"
+		}
+		hidden_effect = {
+			load_oob = vault_13_arroyo
+		}
+	}
+}
+country_event = {
+	id = nf_vault_tec.4
+	title = nf_vault_tec.4.t
+	desc = nf_vault_tec.4.d 
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_vault_tec.4.a
+		
+	}
+	option = {
+		name = nf_vault_tec.4.b
+		
+	}
+}

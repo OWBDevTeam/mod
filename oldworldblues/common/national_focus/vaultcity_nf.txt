@@ -84,6 +84,7 @@ focus_tree = {
 		y = 4
 		completion_reward = {
 			add_political_power = 20
+			set_country_flag = vault_tec_calling
 		}
 
 	}
@@ -141,6 +142,7 @@ focus_tree = {
 			completion_reward = {
 					add_political_power = 60
 					add_ideas = molethumb
+					set_country_flag = vault_brain
 				}
 
 	}
@@ -1150,28 +1152,6 @@ focus_tree = {
 
 	}
 	focus = {
-		id = vault_flock_brain
-		icon = GFX_goal_bos_steel_giants
-		cost = 8.6
-		prerequisite = {
-			focus = vault_flock_filters
-		}
-		x = 0
-		y = 1
-		relative_position_id = vault_flock_filters
-		available = {
-			has_country_leader = {
-				id = 913
-				ruling_only = yes
-				name = "The Brain"
-				}
-			}
-		completion_reward = {
-			load_oob = vault_flock_brain
-		}
-
-	}
-	focus = {
 		id = vault_flock_help
 		icon = GFX_focus_generic_little_entente
 		cost = 2.00
@@ -1262,28 +1242,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-		}
-
-	}
-	focus = {
-		id = vault_cyclops_army
-		icon = GFX_goal_bos_steel_giants
-		cost = 8.6
-		prerequisite = {
-			focus = vault_cyclops_fort
-		}
-		x = 0
-		y = 1
-		relative_position_id = vault_cyclops_fort
-		available = {
-			has_country_leader = {
-				id = 913
-				ruling_only = yes
-				name = "The Brain"
-			}
-		}
-		completion_reward = {
-			load_oob = vault_cyclops_brain
 		}
 
 	}
