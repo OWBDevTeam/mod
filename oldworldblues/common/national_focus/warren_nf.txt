@@ -320,7 +320,7 @@ focus_tree = {
 					if = {
 							limit = {
 									TRL = {
-											has_tech = guerilla_tactics
+											has_tech = unit_training_tech_1
 										}
 									NOT = {
 											TRL = {
@@ -337,34 +337,34 @@ focus_tree = {
 					if = {
 							limit = {
 									TRL = {
-											has_tech = warrior_training
+											has_tech = unit_training_tech_2
 										}
 									NOT = {
 											TRL = {
-													has_tech = guerilla_tactics
+													has_tech = unit_training_tech_1
 												}
 										}
 								}
 							TRL = {
 									set_technology = {
-											guerilla_tactics = 1
+											unit_training_tech_1 = 1
 										}
 								}
 						}
 					if = {
 							limit = {
 									TRL = {
-											has_tech = militia_training
+											has_tech = unit_training_tech
 										}
 									NOT = {
 											TRL = {
-													has_tech = warrior_training
+													has_tech = unit_training_tech_2
 												}
 										}
 								}
 							TRL = {
 									set_technology = {
-											warrior_training = 1
+											unit_training_tech_2 = 1
 										}
 								}
 						}
@@ -372,30 +372,30 @@ focus_tree = {
 							limit = {
 									NOT = {
 											TRL = {
-													has_tech = militia_training
+													has_tech = unit_training_tech
 												}
 										}
 								}
 							TRL = {
 									set_technology = {
-											militia_training = 1
+											unit_training_tech = 1
 										}
 								}
 						}
 					if = {
 							limit = {
 									TRL = {
-											has_tech = traditional_instruction
+											has_tech = scavtool_engineering
 										}
 									NOT = {
 											TRL = {
-													has_tech = physical_blueprints
+													has_tech = scavtool_engineering_1
 												}
 										}
 								}
 							TRL = {
 									set_technology = {
-											physical_blueprints = 1
+											scavtool_engineering_1 = 1
 										}
 								}
 						}
@@ -406,25 +406,25 @@ focus_tree = {
 										}
 									NOT = {
 											TRL = {
-													has_tech = traditional_instruction
+													has_tech = scavtool_engineering
 												}
 										}
 								}
 							TRL = {
 									set_technology = {
-											traditional_instruction = 1
+											scavtool_engineering = 1
 										}
 								}
 						}
 					if = {
 							limit = {
 									NOT = {
-											has_tech = traditional_instruction
+											has_tech = scavtool_engineering
 										}
 								}
 							TRL = {
 									set_technology = {
-											traditional_instruction = 1
+											scavtool_engineering = 1
 										}
 								}
 						}
@@ -448,20 +448,20 @@ focus_tree = {
 										}
 									NOT = {
 											TRL = {
-													has_tech = basic_drill
+													has_tech = unit_training_tech_3
 												}
 										}
 								}
 							TRL = {
 									set_technology = {
-											basic_drill = 1
+											unit_training_tech_3 = 1
 										}
 								}
 						}
 					if = {
 							limit = {
 									TRL = {
-											has_tech = guerilla_tactics
+											has_tech = unit_training_tech_1
 										}
 									NOT = {
 											TRL = {
@@ -478,34 +478,34 @@ focus_tree = {
 					if = {
 							limit = {
 									TRL = {
-											has_tech = warrior_training
+											has_tech = unit_training_tech_2
 										}
 									NOT = {
 											TRL = {
-													has_tech = guerilla_tactics
+													has_tech = unit_training_tech_1
 												}
 										}
 								}
 							TRL = {
 									set_technology = {
-											guerilla_tactics = 1
+											unit_training_tech_1 = 1
 										}
 								}
 						}
 					if = {
 							limit = {
 									TRL = {
-											has_tech = militia_training
+											has_tech = unit_training_tech
 										}
 									NOT = {
 											TRL = {
-													has_tech = warrior_training
+													has_tech = unit_training_tech_2
 												}
 										}
 								}
 							TRL = {
 									set_technology = {
-											warrior_training = 1
+											unit_training_tech_2 = 1
 										}
 								}
 						}
@@ -513,95 +513,95 @@ focus_tree = {
 							limit = {
 									NOT = {
 											TRL = {
-													has_tech = militia_training
+													has_tech = unit_training_tech
 												}
 										}
 								}
 							TRL = {
 									set_technology = {
-											militia_training = 1
-										}
-								}
-						}
-					if = {
-							limit = {
-									TRL = {
-											has_tech = clay_working
-										}
-									NOT = {
-											TRL = {
-													has_tech = metal_working
-												}
-										}
-								}
-							TRL = {
-									set_technology = {
-											metal_working = 1
+											unit_training_tech = 1
 										}
 								}
 						}
 					if = {
 							limit = {
 									TRL = {
-											has_tech = woodworking
+											has_tech = construction_industry_tech_1
 										}
 									NOT = {
 											TRL = {
-													has_tech = clay_working
+													has_tech = construction_industry_tech_2
 												}
 										}
 								}
 							TRL = {
 									set_technology = {
-											clay_working = 1
-										}
-								}
-						}
-					if = {
-							limit = {
-									NOT = {
-											TRL = {
-													has_tech = woodworking
-												}
-										}
-								}
-							TRL = {
-									set_technology = {
-											woodworking = 1
+											construction_industry_tech_2 = 1
 										}
 								}
 						}
 					if = {
 							limit = {
 									TRL = {
-											has_tech = metal_armour
+											has_tech = construction_industry_tech
 										}
 									NOT = {
 											TRL = {
-													has_tech = combat_armour
+													has_tech = construction_industry_tech_1
 												}
 										}
 								}
 							TRL = {
 									set_technology = {
-											combat_armour = 1
+											construction_industry_tech_1 = 1
+										}
+								}
+						}
+					if = {
+							limit = {
+									NOT = {
+											TRL = {
+													has_tech = construction_industry_tech
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											construction_industry_tech = 1
 										}
 								}
 						}
 					if = {
 							limit = {
 									TRL = {
-											has_tech = leather_armour
+											has_tech = metal_armour_tech
 										}
 									NOT = {
 											TRL = {
-													has_tech = metal_armour
+													has_tech = combat_armour_tech
 												}
 										}
 								}
 							TRL = {
 									set_technology = {
-											metal_armour = 1
+											combat_armour_tech = 1
+										}
+								}
+						}
+					if = {
+							limit = {
+									TRL = {
+											has_tech = leather_armour_tech
+										}
+									NOT = {
+											TRL = {
+													has_tech = metal_armour_tech
+												}
+										}
+								}
+							TRL = {
+									set_technology = {
+											metal_armour_tech = 1
 										}
 								}
 						}
@@ -609,13 +609,13 @@ focus_tree = {
 							limit = {
 									NOT = {
 											TRL = {
-													has_tech = leather_armour
+													has_tech = leather_armour_tech
 												}
 										}
 								}
 							TRL = {
 									set_technology = {
-											leather_armour = 1
+											leather_armour_tech = 1
 										}
 								}
 						}
