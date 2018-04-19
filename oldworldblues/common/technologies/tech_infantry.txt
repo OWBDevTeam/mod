@@ -610,12 +610,17 @@ technologies = {
         dependencies = {
             scientific_civilization = 1
         }
+		
+		path = {
+			leads_to_tech = elite_laser_weaponry_tech
+			research_cost_coeff = 1
+		}
         
 		research_cost = 2.0
 		start_year = 2284
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_3 y = @Col_9  }
+			position = { x = @Row_3 y = @Col_8  }
 		}
 		
 		categories = {
@@ -640,6 +645,49 @@ technologies = {
 			modifier = {
 				factor = 5
 				date > "2285.1.6"
+			}
+		}
+	}
+	
+	elite_laser_weaponry_tech = {
+        enable_equipments = {
+            energy_equipment_4
+        }
+        
+        
+        
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 2.0
+		start_year = 2288
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = @Row_3 y = @Col_10  }
+		}
+		
+		categories = {
+			infantry_tech
+            		energy_weaponry_tech
+		}
+		
+		ai_will_do = {
+			factor = 0.8
+			
+			modifier = {
+				factor = 2
+				date > "2288.1.9"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "2289.1.1"
+			}
+			
+			modifier = {
+				factor = 5
+				date > "2290.1.6"
 			}
 		}
 	}
@@ -772,12 +820,17 @@ technologies = {
         dependencies = {
             scientific_civilization = 1
         }
+		
+		path = {
+			leads_to_tech = elite_ballistic_weaponry
+			research_cost_coeff = 1
+		}
         
 		research_cost = 2.0
 		start_year = 2285
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_5 y = @Col_9 }
+			position = { x = @Row_5 y = @Col_8 }
 		}
 		
 		categories = {
@@ -802,6 +855,48 @@ technologies = {
 			modifier = {
 				factor = 5
 				date > "2286.1.6"
+			}
+		}
+	}
+	
+	elite_ballistic_weaponry = {
+        enable_equipments = {
+            ballistic_equipment_4
+        }	
+        
+        dependencies = {
+            scientific_civilization = 1
+        }
+        
+		research_cost = 2.0
+		start_year = 2287
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = @Row_5 y = @Col_10 }
+		}
+		
+		categories = {
+			infantry_tech
+            ballistic_weaponry_tech
+			infantry_weapons
+		}
+		
+		ai_will_do = {
+			factor = 0.8
+			
+			modifier = {
+				factor = 2
+				date > "2287.1.9"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "2288.1.1"
+			}
+			
+			modifier = {
+				factor = 5
+				date > "2289.1.6"
 			}
 		}
 	}
@@ -904,11 +999,48 @@ technologies = {
 			leads_to_tech = warrior_equipment
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = elite_melee_weaponry_tech
+			research_cost_coeff = 1
+		}
+		
 		research_cost = 2.0
 		start_year = 2278
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_7 y = @Col_3 }
+		}
+		
+		categories = {
+			infantry_tech
+            		melee_weaponry_tech
+			infantry_weapons
+		}
+		
+		ai_will_do = {
+			factor = 10
+            
+            		modifier = {
+                		factor = 10
+               			tag = CES
+            		}
+		}
+	}
+	
+	elite_melee_weaponry_tech = {  
+        enable_equipments = {
+            melee_equipment_4
+        }
+        
+        dependencies = {
+            settled_civilization = 1
+        }
+        
+		research_cost = 2.0
+		start_year = 2280
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = @Row_7 y = @Col_5 }
 		}
 		
 		categories = {
