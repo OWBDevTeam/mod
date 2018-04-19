@@ -927,9 +927,16 @@ focus_tree = {
 				target = WHT
 				modifier = disloyal_tribe
 			}
-			
-			EHT = { 
-				country_event = { id = nf_legion.2 }
+			custom_effect_tooltip = EHT_is_alive_war
+			hidden_effect = {
+				if = {
+					limit = {
+						country_exists = EHT
+					}
+					EHT = { 
+						country_event = { id = nf_legion.2 }
+					}
+				}
 			}
 		}
 
