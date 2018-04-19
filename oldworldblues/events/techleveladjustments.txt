@@ -1,0 +1,38 @@
+﻿add_namespace = techleveleventnerf
+
+country_event = {
+	id = techleveleventnerf.0 
+    title = techleveleventnerf.0.t
+    desc = techleveleventnerf.0.d 
+	picture = GFX_report_event_election_vote 
+
+	is_triggered_only = yes
+	
+	trigger = {
+		is_ai = no
+		NOT = {
+			has_global_flag = scientific_event_happened
+		}
+	}
+	
+	hidden = no
+
+	fire_only_once = yes 
+	
+	option = {
+		name = techleveleventnerf.0.a
+		set_global_flag = scientific_event_happened
+		
+		every_country = {
+			limit = {
+				has_tech = scientific_civilization
+			}
+				add_ideas = scientific_spirit_mali
+		}
+	}
+	
+	option = {
+		name = techleveleventnerf.0.b
+		set_global_flag = scientific_event_happened
+	}
+}

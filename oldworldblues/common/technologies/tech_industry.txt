@@ -1,16 +1,16 @@
 technologies = {
 	@Col_1 = 8
-	@Col_2 = 12
-	@Col_3 = 16
-	@Col_4 = 20
-	@Col_5 = 24
-	@Col_6 = 28
-    @Col_7 = 32
-    @Col_8 = 36
-    @Col_9 = 40
-    @Col_10 = 44
-    @Col_11 = 48
-    @Col_12 = 52
+	@Col_2 = 10
+	@Col_3 = 12
+	@Col_4 = 14
+	@Col_5 = 16
+	@Col_6 = 18
+    @Col_7 = 20
+    @Col_8 = 22
+    @Col_9 = 24
+    @Col_10 = 26
+    @Col_11 = 28
+    @Col_12 = 30
     
     @Row_1 = 0
     @Row_2 = 2
@@ -32,408 +32,475 @@ technologies = {
     @Row_18 = 34
     @Row_19 = 36
     
-    #-------------------------
-    # Agarian Industry
-    #-------------------------
-    organised_tato_farming = {
-		global_building_slots_factor = 0.15
-        industrial_capacity_factory = 0.1
-        line_change_production_efficiency_factor = 0.05
-		production_factory_start_efficiency_factor = 0.05
-        conscription_factor = 0.02
-        
-        xor = { basic_forges }
-        
-		path = {
-			leads_to_tech = brahmin_milking
-			research_cost_coeff = 1
+	
+	# Improvised Tools
+	maketool_engineering = {
+		
+		XOR = {
+			scavtool_engineering
 		}
 
-		research_cost = 2.0
-		start_year = 2276
+	    production_factory_max_efficiency_factor = 0.07 
+		production_factory_efficiency_gain_factor = 0.025
+		
+		path = {
+			leads_to_tech = maketool_engineering_1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 2275
+		
 		folder = {
 			name = fallout_industry_folder
 			position = { x = @Row_1 y = @Col_1 }
 		}
 		
-		categories = {
-			industry
-		}
-		
 		ai_will_do = {
-			factor = 25
+			factor = 1
 			modifier = {
-				factor = 5
+				factor = 10
+				date > "2275.1.1"
+			}
+			modifier = {
+				factor = 10
 				date > "2276.1.1"
 			}
 			modifier = {
-				factor = 0
-				is_researching_technology = basic_forges
+				factor = 2
+				has_tech = settled_civilization
+			}
+			modifier = {
+				factor = 2
+				has_tech = scientific_civilization
 			}
 			modifier = {
 				factor = 0
-				has_tech = basic_forges
+				has_tech = scavtool_engineering
 			}
-		}
-		ai_research_weights = {
-			defensive = -1.0
-		}
-	}
-    
-    brahmin_milking = {
-		global_building_slots_factor = 0.15
-        industrial_capacity_factory = 0.1
-        line_change_production_efficiency_factor = 0.05
-		production_factory_start_efficiency_factor = 0.05
-        conscription_factor = 0.02
-        
-		path = {
-			leads_to_tech = sharecropper_farms
-			research_cost_coeff = 1
-		}
-        
-		research_cost = 2.0
-		start_year = 2278
-		folder = {
-			name = fallout_industry_folder
-			position = { x = @Row_1 y = @Col_2 }
+
 		}
 		
 		categories = {
 			industry
-		}
-		
-		ai_will_do = {
-			factor = 20
-			modifier = {
-				factor = 10
-				date > "2278.1.1"
-			}
-		}
-		ai_research_weights = {
-			defensive = -1.0
+			tool_tech
 		}
 	}
-    
-    sharecropper_farms = {
-		global_building_slots_factor = 0.15
-        industrial_capacity_factory = 0.10
-        line_change_production_efficiency_factor = 0.05
-		production_factory_start_efficiency_factor = 0.05
-        conscription_factor = 0.02
-        
+
+	# Basic Tools
+	maketool_engineering_1 = {
+
+	    production_factory_max_efficiency_factor = 0.07
+		production_factory_efficiency_gain_factor = 0.025
+		
 		path = {
-			leads_to_tech = brahmin_herding_equipment
+			leads_to_tech = maketool_engineering_2
 			research_cost_coeff = 1
 		}
-
-        dependencies = {
-            settled_civilization = 1
-        }
-        
-		research_cost = 2.0
-		start_year = 2280
+		
+		research_cost = 2
+		start_year = 2276
+		
 		folder = {
 			name = fallout_industry_folder
 			position = { x = @Row_1 y = @Col_3 }
 		}
 		
-		categories = {
-			industry
-		}
-		
 		ai_will_do = {
-			factor = 20
+			factor = 1
 			modifier = {
 				factor = 10
-				date > "2280.1.1"
+				date > "2276.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 2
+				has_tech = settled_civilization
+			}
+			modifier = {
+				factor = 2
+				has_tech = scientific_civilization
+			}
+			modifier = {
+				factor = 0
+				has_tech = scavtool_engineering
 			}
 		}
-		ai_research_weights = {
-			defensive = -1.0
+		
+		categories = {
+			industry
+			tool_tech
 		}
 	}
-    
-    brahmin_herding_equipment = {
-		global_building_slots_factor = 0.15
-		industrial_capacity_factory = 0.10
-        line_change_production_efficiency_factor = 0.05
-		production_factory_start_efficiency_factor = 0.05
-        conscription_factor = 0.02
-        
+	
+	# Manufactured Tools
+	maketool_engineering_2 = {
+
+	    production_factory_max_efficiency_factor = 0.07
+		production_factory_efficiency_gain_factor = 0.025
+		
+		dependencies = {
+			settled_civilization = 1
+        }		
+		
 		path = {
-			leads_to_tech = mechanized_agriculture
+			leads_to_tech = maketool_engineering_3
 			research_cost_coeff = 1
 		}
-
-        dependencies = {
-            settled_civilization = 1
-        }
-        
-		research_cost = 2.0
-		start_year = 2282
-		folder = {
-			name = fallout_industry_folder
-			position = { x = @Row_1 y = @Col_4 }
-		}
 		
-		categories = {
-			industry
-		}
+		research_cost = 2
+		start_year = 2277
 		
-		ai_will_do = {
-			factor = 20
-			modifier = {
-				factor = 10
-				date > "2282.1.1"
-			}
-		}
-		ai_research_weights = {
-			defensive = -1.0
-		}
-	}
-    
-    mechanized_agriculture = {
-		global_building_slots_factor = 0.15
-		industrial_capacity_factory = 0.2
-        line_change_production_efficiency_factor = 0.05
-		production_factory_start_efficiency_factor = 0.05
-        conscription_factor = 0.02
-        
-        dependencies = {
-            scientific_civilization = 1
-        }
-        
-		research_cost = 2.0
-		start_year = 2284
 		folder = {
 			name = fallout_industry_folder
 			position = { x = @Row_1 y = @Col_5 }
 		}
 		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 2
+				has_tech = settled_civilization
+			}
+			modifier = {
+				factor = 2
+				has_tech = scientific_civilization
+			}
+			modifier = {
+				factor = 0
+				has_tech = scavtool_engineering
+			}
+		}
+		
 		categories = {
 			industry
+			tool_tech
+		}
+	}
+
+	# Refined Tools
+	maketool_engineering_3 = {
+
+	    production_factory_max_efficiency_factor = 0.07
+		production_factory_efficiency_gain_factor = 0.025
+		
+		path = {
+			leads_to_tech = maketool_engineering_4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 2278
+		
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_1 y = @Col_6 }
 		}
 		
 		ai_will_do = {
-			factor = 20
+			factor = 1
 			modifier = {
 				factor = 10
-				date > "2284.1.1"
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 2
+				has_tech = settled_civilization
+			}
+			modifier = {
+				factor = 2
+				has_tech = scientific_civilization
+			}
+			modifier = {
+				factor = 0
+				has_tech = scavtool_engineering
 			}
 		}
-		ai_research_weights = {
-			defensive = -1.0
+		
+		categories = {
+			industry
+			tool_tech
 		}
 	}
-    
-    #-------------------------
-    # Manufactories
-    #-------------------------
-    basic_forges = {
-        industrial_capacity_factory = 0.2
-        global_building_slots_factor = 0.2
-		production_factory_max_efficiency_factor = 0.05
-		production_factory_efficiency_gain_factor = -0.05
-        equipment_conversion_speed = 0.1
-        
-        xor = { organised_tato_farming }
-        
-		path = {
-			leads_to_tech = primitive_workshops
+
+	# Advanced Tools
+	maketool_engineering_4 = {
+
+	    production_factory_max_efficiency_factor = 0.07
+		production_factory_efficiency_gain_factor = 0.025
+		
+		research_cost = 2
+		start_year = 2280
+		
+			path = {
+			leads_to_tech = maketool_engineering_5
 			research_cost_coeff = 1
 		}
+		
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_1 y = @Col_7 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 2
+				has_tech = settled_civilization
+			}
+			modifier = {
+				factor = 2
+				has_tech = scientific_civilization
+			}
+			modifier = {
+				factor = 0
+				has_tech = scavtool_engineering
+			}
+		}
+		
+		categories = {
+			industry
+			tool_tech
+		}
+	}
+	
+	# Power Tools
+	maketool_engineering_5 = {
 
-		research_cost = 2.0
-		start_year = 2276
+	    production_factory_max_efficiency_factor = 0.07
+		production_factory_efficiency_gain_factor = 0.025
+		
+		research_cost = 2
+		start_year = 2281
+		
+		dependencies = {
+			scientific_civilization = 1
+        }
+		
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_1 y = @Col_9 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 2
+				has_tech = settled_civilization
+			}
+			modifier = {
+				factor = 2
+				has_tech = scientific_civilization
+			}
+			modifier = {
+				factor = 0
+				has_tech = scavtool_engineering
+			}
+		}
+		
+		categories = {
+			industry
+			tool_tech
+		}
+	}
+
+	# Scavenged Tools
+	scavtool_engineering = {
+	
+		XOR = {
+			maketool_engineering
+		}
+
+	    production_factory_max_efficiency_factor = 0.10
+		production_factory_efficiency_gain_factor = 0.03
+		
+		path = {
+			leads_to_tech = scavtool_engineering_1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 2275
+		
 		folder = {
 			name = fallout_industry_folder
 			position = { x = @Row_2 y = @Col_1 }
 		}
 		
-		categories = {
-			industry
-		}
-		
 		ai_will_do = {
-			factor = 25
+			factor = 1
 			modifier = {
-				factor = 5
+				factor = 10
+				date > "2275.1.1"
+			}
+			modifier = {
+				factor = 10
 				date > "2276.1.1"
 			}
 			modifier = {
 				factor = 0
-				is_researching_technology = organised_tato_farming
+				has_tech = settled_civilization
 			}
 			modifier = {
 				factor = 0
-				has_tech = organised_tato_farming
+				has_tech = scientific_civilization
 			}
+			modifier = {
+				factor = 0
+				has_tech = maketool_engineering
+			}			
 		}
-		ai_research_weights = {
-			offensive = -1.0
+		
+		categories = {
+			industry
+			tool_tech
 		}
 	}
-    
-    primitive_workshops = {
-        industrial_capacity_factory = 0.2
-        global_building_slots_factor = 0.2
-		production_factory_max_efficiency_factor = 0.05
-		production_factory_efficiency_gain_factor = -0.05
-        equipment_conversion_speed = 0.1
-        
+
+	# Tracking Dogs
+	scavtool_engineering_1 = {
+
+	    production_factory_max_efficiency_factor = 0.10
+		production_factory_efficiency_gain_factor = 0.03
+		
 		path = {
-			leads_to_tech = wasteland_workshops
+			leads_to_tech = scavtool_engineering_2
 			research_cost_coeff = 1
 		}
-
-		research_cost = 2.0
-		start_year = 2278
+		
+		research_cost = 2
+		start_year = 2275
+		
 		folder = {
 			name = fallout_industry_folder
 			position = { x = @Row_2 y = @Col_2 }
 		}
 		
-		categories = {
-			industry
-		}
-		
 		ai_will_do = {
-			factor = 20
+			factor = 1
 			modifier = {
 				factor = 10
-				date > "2278.1.1"
+				date > "2276.1.1"
 			}
+			modifier = {
+				factor = 10
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 0
+				has_tech = settled_civilization
+			}
+			modifier = {
+				factor = 0
+				has_tech = scientific_civilization
+			}
+			modifier = {
+				factor = 0
+				has_tech = maketool_engineering
+			}			
 		}
-		ai_research_weights = {
-			offensive = -1.0
+		
+		categories = {
+			industry
+			tool_tech
 		}
 	}
-    
-    wasteland_workshops = {
-        industrial_capacity_factory = 0.2
-        global_building_slots_factor = 0.2
-		production_factory_max_efficiency_factor = 0.05
-		production_factory_efficiency_gain_factor = -0.05
-        equipment_conversion_speed = 0.1
-        
-		path = {
-			leads_to_tech = pneumatic_presses
-			research_cost_coeff = 1
-		}
 
-        dependencies = {
-            settled_civilization = 1
-        }
-        
-		research_cost = 2.0
-		start_year = 2280
+	# Search Patterns
+	scavtool_engineering_2 = {
+
+	    production_factory_max_efficiency_factor = 0.10
+		production_factory_efficiency_gain_factor = 0.03
+		
+		research_cost = 2
+		start_year = 2276
+		
 		folder = {
 			name = fallout_industry_folder
 			position = { x = @Row_2 y = @Col_3 }
 		}
 		
-		categories = {
-			industry
-		}
-		
 		ai_will_do = {
-			factor = 20
+			factor = 1
 			modifier = {
 				factor = 10
-				date > "2280.1.1"
+				date > "2277.1.1"
 			}
+			modifier = {
+				factor = 10
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 0
+				has_tech = settled_civilization
+			}
+			modifier = {
+				factor = 0
+				has_tech = scientific_civilization
+			}
+			modifier = {
+				factor = 0
+				has_tech = maketool_engineering
+			}			
 		}
-		ai_research_weights = {
-			offensive = -1.0
+		
+		categories = {
+			industry
+			tool_tech
 		}
 	}
-    
-    pneumatic_presses = {
-        industrial_capacity_factory = 0.2
-        global_building_slots_factor = 0.2
-		production_factory_max_efficiency_factor = 0.05
-		production_factory_efficiency_gain_factor = -0.05
-        equipment_conversion_speed = 0.1
-        
+	
+	
+	
+	
+	generalized_industry_tech = {
+		global_building_slots_factor = 0.15
+        industrial_capacity_factory = 0.1
+        line_change_production_efficiency_factor = 0.05
+		production_factory_start_efficiency_factor = 0.05
+        conscription_factor = 0.02
+		
+		XOR = {
+			specialized_industry_tech
+		}
+         
 		path = {
-			leads_to_tech = automated_production
+			leads_to_tech = generalized_industry_tech_1
 			research_cost_coeff = 1
 		}
 
-        dependencies = {
-            settled_civilization = 1
-        }
-        
 		research_cost = 2.0
-		start_year = 2282
-		folder = {
-			name = fallout_industry_folder
-			position = { x = @Row_2 y = @Col_4 }
-		}
-		
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 20
-			modifier = {
-				factor = 10
-				date > "2282.1.1"
-			}
-		}
-		ai_research_weights = {
-			offensive = -1.0
-		}
-	}
-    
-    automated_production = {
-        industrial_capacity_factory = 0.2
-        global_building_slots_factor = 0.2
-		production_factory_max_efficiency_factor = 0.05
-		production_factory_efficiency_gain_factor = -0.05
-        equipment_conversion_speed = 0.1
-        
-        dependencies = {
-            scientific_civilization = 1
-        }
-        
-		research_cost = 2.0
-		start_year = 2284
-		folder = {
-			name = fallout_industry_folder
-			position = { x = @Row_2 y = @Col_5 }
-		}
-		
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 20
-			modifier = {
-				factor = 10
-				date > "2284.1.1"
-			}
-		}
-		ai_research_weights = {
-			offensive = -1.0
-		}
-	}
-    
-    #-------------------------
-    # Organisation
-    #-------------------------
-    oral_instruction = {
-		production_factory_max_efficiency_factor = 0.05
-		production_factory_efficiency_gain_factor = 0.05
-		path = {
-			leads_to_tech = traditional_instruction
-			research_cost_coeff = 1
-		}
-
-		research_cost = 1.5
 		start_year = 2275
 		folder = {
 			name = fallout_industry_folder
@@ -445,58 +512,36 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 40
+			factor = 1
 			modifier = {
 				factor = 10
 				date > "2275.1.1"
 			}
-		}
-	}
-    
-    traditional_instruction = {
- 		production_factory_max_efficiency_factor = 0.05
-		production_factory_efficiency_gain_factor = 0.05
-        
-		path = {
-			leads_to_tech = physical_blueprints
-			research_cost_coeff = 1
-		}
-
-		research_cost = 2.0
-		start_year = 2277
-		folder = {
-			name = fallout_industry_folder
-			position = { x = @Row_3 y = @Col_2 }
-		}
-		
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 30
 			modifier = {
 				factor = 10
-				date > "2277.1.1"
+				date > "2276.1.1"
 			}
 		}
+		
+		ai_research_weights = {
+			defensive = -1.0
+		}
 	}
-    
-    physical_blueprints = {
-		production_factory_max_efficiency_factor = 0.05
-		production_factory_efficiency_gain_factor = 0.05
-   
+
+	generalized_industry_tech_1 = {
+		global_building_slots_factor = 0.15
+        industrial_capacity_factory = 0.1
+        line_change_production_efficiency_factor = 0.05
+		production_factory_start_efficiency_factor = 0.05
+        conscription_factor = 0.02
+         
 		path = {
-			leads_to_tech = electronic_blueprints
+			leads_to_tech = generalized_industry_tech_2
 			research_cost_coeff = 1
 		}
 
-        dependencies = {
-            settled_civilization = 1
-        }
-        
 		research_cost = 2.0
-		start_year = 2279
+		start_year = 2276
 		folder = {
 			name = fallout_industry_folder
 			position = { x = @Row_3 y = @Col_3 }
@@ -507,57 +552,40 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 30
+			factor = 1
 			modifier = {
 				factor = 10
-				date > "2279.1.1"
+				date > "2276.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2277.1.1"
 			}
 		}
+		
+		ai_research_weights = {
+			defensive = -1.0
+		}
 	}
-    
-    electronic_blueprints = {
-		production_factory_max_efficiency_factor = 0.05
-		production_factory_efficiency_gain_factor = 0.05
-        
+
+	generalized_industry_tech_2 = {
+		global_building_slots_factor = 0.15
+        industrial_capacity_factory = 0.1
+        line_change_production_efficiency_factor = 0.05
+		production_factory_start_efficiency_factor = 0.05
+        conscription_factor = 0.02
+         
 		path = {
-			leads_to_tech = robotic_helpers
+			leads_to_tech = generalized_industry_tech_3
 			research_cost_coeff = 1
 		}
+		
+		dependencies = {
+			settled_civilization = 1
+		}
 
-        dependencies = {
-            settled_civilization = 1
-        }
-        
 		research_cost = 2.0
-		start_year = 2281
-		folder = {
-			name = fallout_industry_folder
-			position = { x = @Row_3 y = @Col_4 }
-		}
-		
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 30
-			modifier = {
-				factor = 10
-				date > "2281.1.1"
-			}
-		}
-	}
-    
-    robotic_helpers = {
-		production_factory_max_efficiency_factor = 0.08
-		production_factory_efficiency_gain_factor = 0.08
-        
-        dependencies = {
-            scientific_civilization = 1
-        }
-        
-		research_cost = 2.0
-		start_year = 2283
+		start_year = 2277
 		folder = {
 			name = fallout_industry_folder
 			position = { x = @Row_3 y = @Col_5 }
@@ -565,23 +593,204 @@ technologies = {
 		
 		categories = {
 			industry
+			agriculture_tech
 		}
 		
 		ai_will_do = {
-			factor = 20
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2278.1.1"
+			}
+		}
+		
+		ai_research_weights = {
+			defensive = -1.0
+		}
+	}
+
+	generalized_industry_tech_3 = {
+		global_building_slots_factor = 0.15
+        industrial_capacity_factory = 0.1
+        line_change_production_efficiency_factor = 0.05
+		production_factory_start_efficiency_factor = 0.05
+        conscription_factor = 0.02
+         
+		path = {
+			leads_to_tech = generalized_industry_tech_4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.0
+		start_year = 2278
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_3 y = @Col_6 }
+		}
+		
+		categories = {
+			industry
+			agriculture_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2279.1.1"
+			}
+		}
+		
+		ai_research_weights = {
+			defensive = -1.0
+		}
+	}
+
+	generalized_industry_tech_4 = {
+		global_building_slots_factor = 0.15
+        industrial_capacity_factory = 0.1
+        line_change_production_efficiency_factor = 0.05
+		production_factory_start_efficiency_factor = 0.05
+        conscription_factor = 0.02
+         
+		path = {
+			leads_to_tech = generalized_industry_tech_5
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.0
+		start_year = 2280
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_3 y = @Col_7 }
+		}
+		
+		categories = {
+			industry
+			agriculture_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2281.1.1"
+			}
+		}
+		
+		ai_research_weights = {
+			defensive = -1.0
+		}
+	}	
+
+	generalized_industry_tech_5 = {
+		global_building_slots_factor = 0.15
+        industrial_capacity_factory = 0.1
+        line_change_production_efficiency_factor = 0.05
+		production_factory_start_efficiency_factor = 0.05
+        conscription_factor = 0.02
+         
+		path = {
+			leads_to_tech = generalized_industry_tech_6
+			research_cost_coeff = 1
+		}
+		
+		dependencies = {
+			scientific_civilization = 1
+		}
+
+		research_cost = 2.0
+		start_year = 2281
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_3 y = @Col_9 }
+		}
+		
+		categories = {
+			industry
+			agriculture_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2282.1.1"
+			}
+		}
+		
+		ai_research_weights = {
+			defensive = -1.0
+		}
+	}
+	
+	generalized_industry_tech_6 = {
+		global_building_slots_factor = 0.15
+        industrial_capacity_factory = 0.1
+        line_change_production_efficiency_factor = 0.05
+		production_factory_start_efficiency_factor = 0.05
+        conscription_factor = 0.02
+
+		research_cost = 2.0
+		start_year = 2282
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_3 y = @Col_11 }
+		}
+		
+		categories = {
+			industry
+			agriculture_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2282.1.1"
+			}
 			modifier = {
 				factor = 10
 				date > "2283.1.1"
 			}
 		}
+		
+		ai_research_weights = {
+			defensive = -1.0
+		}
 	}
-    
-    #-------------------------
-    # Extraction
-    #-------------------------
-    logging_camps = {
-        local_resources_factor = 0.1
+	
+	specialized_industry_tech = {
+        industrial_capacity_factory = 0.15
+        global_building_slots_factor = 0.2
+		production_factory_max_efficiency_factor = 0.03
+		production_factory_efficiency_gain_factor = -0.05
+		
+		XOR = {
+			generalized_industry_tech
+		}
         
+		path = {
+			leads_to_tech = specialized_industry_tech_1
+			research_cost_coeff = 1
+		}
+
 		research_cost = 2.0
 		start_year = 2275
 		folder = {
@@ -595,6 +804,284 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 10
+				date > "2275.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2276.1.1"
+			}
+		}
+		
+		ai_research_weights = {
+			offensive = -1.0
+		}
+	}
+	
+	specialized_industry_tech_1 = {
+        industrial_capacity_factory = 0.15
+        global_building_slots_factor = 0.2
+		production_factory_max_efficiency_factor = 0.03
+		production_factory_efficiency_gain_factor = -0.05
+        
+		path = {
+			leads_to_tech = specialized_industry_tech_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.0
+		start_year = 2276
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_4 y = @Col_3 }
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2276.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2277.1.1"
+			}
+		}
+		
+		ai_research_weights = {
+			offensive = -1.0
+		}
+	}
+	
+	specialized_industry_tech_2 = {
+        industrial_capacity_factory = 0.15
+        global_building_slots_factor = 0.2
+		production_factory_max_efficiency_factor = 0.03
+		production_factory_efficiency_gain_factor = -0.05
+
+		path = {
+			leads_to_tech = specialized_industry_tech_3
+			research_cost_coeff = 1
+		}
+		
+		dependencies = {
+			settled_civilization = 1
+		}
+
+		research_cost = 2.0
+		start_year = 2277
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_4 y = @Col_5 }
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2278.1.1"
+			}
+		}
+		
+		ai_research_weights = {
+			offensive = -1.0
+		}
+	}
+	
+	specialized_industry_tech_3 = {
+        industrial_capacity_factory = 0.15
+        global_building_slots_factor = 0.2
+		production_factory_max_efficiency_factor = 0.03
+		production_factory_efficiency_gain_factor = -0.05
+        
+		path = {
+			leads_to_tech = specialized_industry_tech_4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.0
+		start_year = 2278
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_4 y = @Col_6 }
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2279.1.1"
+			}
+		}
+		
+		ai_research_weights = {
+			offensive = -1.0
+		}
+	}
+	
+	specialized_industry_tech_4 = {
+        industrial_capacity_factory = 0.15
+        global_building_slots_factor = 0.2
+		production_factory_max_efficiency_factor = 0.03
+		production_factory_efficiency_gain_factor = -0.05
+
+		path = {
+			leads_to_tech = specialized_industry_tech_5
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.0
+		start_year = 2280
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_4 y = @Col_7 }
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2281.1.1"
+			}
+		}
+		
+		ai_research_weights = {
+			offensive = -1.0
+		}
+	}
+	
+	specialized_industry_tech_5 = {
+        industrial_capacity_factory = 0.15
+        global_building_slots_factor = 0.2
+		production_factory_max_efficiency_factor = 0.03
+		production_factory_efficiency_gain_factor = -0.05
+
+		path = {
+			leads_to_tech = specialized_industry_tech_6
+			research_cost_coeff = 1
+		}
+		
+		dependencies = {
+			scientific_civilization = 1
+		}
+
+		research_cost = 2.0
+		start_year = 2281
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_4 y = @Col_9 }
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2282.1.1"
+			}
+		}
+		
+		ai_research_weights = {
+			offensive = -1.0
+		}
+	}
+	
+	specialized_industry_tech_6 = {
+        industrial_capacity_factory = 0.15
+        global_building_slots_factor = 0.2
+		production_factory_max_efficiency_factor = 0.03
+		production_factory_efficiency_gain_factor = -0.05
+		
+		research_cost = 2.0
+		start_year = 2282
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_4 y = @Col_11 }
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2283.1.1"
+			}
+		}
+		
+		ai_research_weights = {
+			offensive = -1.0
+		}
+	}
+
+	extraction_industry_tech = {
+        local_resources_factor = 0.06
+        
+		research_cost = 2.0
+		start_year = 2275
+		
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_5 y = @Col_1 }
+		}
+		
+		path = {
+			leads_to_tech = extraction_industry_tech_1 
+			research_cost_coeff = 0.8
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				date < "2275.1.1"
+			}
 			modifier = {
 				factor = 5.0
 				OR = {
@@ -620,317 +1107,246 @@ technologies = {
 			}
 		}
 	}
-    
-    quarry_picks = {
-        local_resources_factor = 0.1
-        
-		research_cost = 2.0
-		start_year = 2278
-		folder = {
-			name = fallout_industry_folder
-			position = { x = @Row_4 y = @Col_2 }
-		}
-		
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 4
-		}
-	}
-    
-    mining_equipment = {
-        local_resources_factor = 0.1
-        
-        dependencies = {
-            settled_civilization = 1
-        }
-        
-		research_cost = 2.0
-		start_year = 2281
-		folder = {
-			name = fallout_industry_folder
-			position = { x = @Row_4 y = @Col_3 }
-		}
-		
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 4
-		}
-	}
-    
-    industrial_machinery = {
-        local_resources_factor = 0.1
-        
-        dependencies = {
-            settled_civilization = 1
-        }
-        
-		research_cost = 2.0
-		start_year = 2285
-		folder = {
-			name = fallout_industry_folder
-			position = { x = @Row_4 y = @Col_4 }
-		}
-		
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 4
-		}
-	}
-    
-    autonomous_industrial_machinery = {
-        local_resources_factor = 0.1
-        
-        dependencies = {
-            scientific_civilization = 1
-        }
-        
-		research_cost = 2.5
-		start_year = 2290
-		folder = {
-			name = fallout_industry_folder
-			position = { x = @Row_4 y = @Col_5 }
-		}
-		
-		categories = {
-			industry
-		}
-		ai_will_do = {
-			factor = 4
-		}
-	}
-    
-    #-------------------------
-    # Construction
-    #-------------------------
-    woodworking = {
-        production_speed_buildings_factor = 0.1
-        industry_repair_factor = 0.1
-        industry_air_damage_factor = -0.1
-        
-        path = {
-			leads_to_tech = logging_camps
-			research_cost_coeff = 1
-		}
-        path = {
-			leads_to_tech = tribal_huts
-			research_cost_coeff = 1
-		}
-        path = {
-			leads_to_tech = clay_working
-			research_cost_coeff = 1
-		}
-        
-		research_cost = 2.0
-		start_year = 2275
-		folder = {
-			name = fallout_industry_folder
-			position = { x = @Row_5 y = @Col_1 }
-		}
-		
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 50
-			modifier = {
-				factor = 5
-				date > "2275.1.1"
-			}
-		}
-	}
-    
-    clay_working = {
-        production_speed_buildings_factor = 0.1
-        industry_repair_factor = 0.1
-        industry_air_damage_factor = -0.1
-        
-        path = {
-			leads_to_tech = quarry_picks
-			research_cost_coeff = 1
-		}
-        path = {
-			leads_to_tech = adobe_housing
-			research_cost_coeff = 1
-		}
-        path = {
-			leads_to_tech = metal_working
-			research_cost_coeff = 1
-		}
+	
+	extraction_industry_tech_1 = {
+        local_resources_factor = 0.08
         
 		research_cost = 2.0
 		start_year = 2276
-		folder = {
-			name = fallout_industry_folder
-			position = { x = @Row_5 y = @Col_2 }
-		}
 		
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 4
-			modifier = {
-				factor = 10
-				date > "2276.1.1"
-			}
-		}
-	}
-    
-    metal_working = {
-        production_speed_buildings_factor = 0.1
-        industry_repair_factor = 0.1
-        industry_air_damage_factor = -0.1
-        
-        path = {
-			leads_to_tech = mining_equipment
-			research_cost_coeff = 1
-		}
-        path = {
-			leads_to_tech = metal_shacks
-			research_cost_coeff = 1
-		}
-        path = {
-			leads_to_tech = cement_pouring
-			research_cost_coeff = 1
-		}
-        
-        dependencies = {
-            settled_civilization = 1
-        }
-        
-		research_cost = 2.0
-		start_year = 2278
 		folder = {
 			name = fallout_industry_folder
 			position = { x = @Row_5 y = @Col_3 }
 		}
 		
+		path = {
+			leads_to_tech = extraction_industry_tech_2 
+			research_cost_coeff = 0.8
+		}
+		
+		dependencies = {
+			construction_industry_tech_1 = 1
+		}
+		
 		categories = {
 			industry
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 1
+			modifier = {
+				factor = 0
+				date < "2276.1.1"
+			}
+			modifier = {
+				factor = 5.0
+				OR = {
+					fuel > 4
+					metal > 4
+					water > 4
+					electricity > 4
+					electronics > 4
+					advanced_technology > 4
+				}
+			}
 			
 			modifier = {
 				factor = 1.5
-				has_war = yes
-			}
-			
-			modifier = {
-				factor = 0.5
-				NOT = { has_war = yes }
-			}
-			
-			modifier = {
-				factor = 3
-				date > "2279.1.1"
+				OR = {
+					fuel > 8
+					metal > 8
+					water > 8
+					electricity > 8
+					electronics > 8
+					advanced_technology > 8
+				}
 			}
 		}
 	}
-    
-    cement_pouring = {
-        production_speed_buildings_factor = 0.1
-        industry_repair_factor = 0.1
-        industry_air_damage_factor = -0.1
-        
-        path = {
-			leads_to_tech = industrial_machinery
-			research_cost_coeff = 1
-		}
-        path = {
-			leads_to_tech = old_world_design
-			research_cost_coeff = 1
-		}
-        path = {
-			leads_to_tech = brick_housing
-			research_cost_coeff = 1
-		}
-        
-        dependencies = {
-            settled_civilization = 1
-        }
+	
+	extraction_industry_tech_2 = {
+        local_resources_factor = 0.1
         
 		research_cost = 2.0
-		start_year = 2280
-		folder = {
-			name = fallout_industry_folder
-			position = { x = @Row_5 y = @Col_4 }
-		}
+		start_year = 2277
 		
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 4
-			
-			modifier = {
-				factor = 10
-				date > "2280.1.1"
-			}
-		}
-	}
-    
-    old_world_design = {
-        production_speed_buildings_factor = 0.1
-        industry_repair_factor = 0.1
-        industry_air_damage_factor = -0.1
-        
-        path = {
-			leads_to_tech = autonomous_industrial_machinery
-			research_cost_coeff = 1
-		}
-        path = {
-			leads_to_tech = pre_war_housing
-			research_cost_coeff = 1
-		}
-        
-        dependencies = {
-            scientific_civilization = 1
-        }
-        
-		research_cost = 2.5
-		start_year = 2282
 		folder = {
 			name = fallout_industry_folder
 			position = { x = @Row_5 y = @Col_5 }
 		}
 		
+		path = {
+			leads_to_tech = extraction_industry_tech_3 
+			research_cost_coeff = 0.8
+		}
+		
+		dependencies = {
+			settled_civilization = 1
+			construction_industry_tech_2 = 1
+		}
+		
 		categories = {
 			industry
 		}
 		
 		ai_will_do = {
-			factor = 4
+			factor = 1
+			modifier = {
+				factor = 0
+				date < "2277.1.1"
+			}
+			modifier = {
+				factor = 5.0
+				OR = {
+					fuel > 4
+					metal > 4
+					water > 4
+					electricity > 4
+					electronics > 4
+					advanced_technology > 4
+				}
+			}
 			
 			modifier = {
-				factor = 10
-				date > "2282.1.1"
+				factor = 1.5
+				OR = {
+					fuel > 8
+					metal > 8
+					water > 8
+					electricity > 8
+					electronics > 8
+					advanced_technology > 8
+				}
 			}
 		}
 	}
-    
-    #-------------------------
-    # Habitation
-    #-------------------------
-    tribal_huts = {
-        MONTHLY_POPULATION = 0.03
-        conversion_cost_mil_to_civ_factor = -0.1
-		conversion_cost_civ_to_mil_factor = -0.1
+	
+	extraction_industry_tech_3 = {
+        local_resources_factor = 0.12
+        
+		research_cost = 2.0
+		start_year = 2280
+		
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_5 y = @Col_7 }
+		}
+		
+		path = {
+			leads_to_tech = extraction_industry_tech_4 
+			research_cost_coeff = 0.8
+		}
+		
+		dependencies = {
+			construction_industry_tech_3 = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				date < "2280.1.1"
+			}
+			modifier = {
+				factor = 5.0
+				OR = {
+					fuel > 4
+					metal > 4
+					water > 4
+					electricity > 4
+					electronics > 4
+					advanced_technology > 4
+				}
+			}
+			
+			modifier = {
+				factor = 1.5
+				OR = {
+					fuel > 8
+					metal > 8
+					water > 8
+					electricity > 8
+					electronics > 8
+					advanced_technology > 8
+				}
+			}
+		}
+	}
+	
+	extraction_industry_tech_4 = {
+        local_resources_factor = 0.14
+        
+		research_cost = 2.0
+		start_year = 2281
+		
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_5 y = @Col_9 }
+		}
 
-		research_cost = 1.0
+		dependencies = {
+			construction_industry_tech_4 = 1
+			scientific_civilization = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				date < "2281.1.1"
+			}
+			modifier = {
+				factor = 5.0
+				OR = {
+					fuel > 4
+					metal > 4
+					water > 4
+					electricity > 4
+					electronics > 4
+					advanced_technology > 4
+				}
+			}
+			
+			modifier = {
+				factor = 1.5
+				OR = {
+					fuel > 8
+					metal > 8
+					water > 8
+					electricity > 8
+					electronics > 8
+					advanced_technology > 8
+				}
+			}
+		}
+	}
+
+	construction_industry_tech = {
+        production_speed_buildings_factor = 0.1
+        industry_repair_factor = 0.1
+        
+        path = {
+			leads_to_tech = extraction_industry_tech
+			research_cost_coeff = 1
+		}
+        path = {
+			leads_to_tech = habitation_industry_tech
+			research_cost_coeff = 1
+		}
+        path = {
+			leads_to_tech = construction_industry_tech_1
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_industry_folder
@@ -943,40 +1359,32 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 50
+				date > "2275.1.1"
+			}
 		}
 	}
-    
-    adobe_housing = {
-        MONTHLY_POPULATION = 0.03
-        conversion_cost_mil_to_civ_factor = -0.1
-        conversion_cost_civ_to_mil_factor = -0.1
-		research_cost = 1.0
+	
+	construction_industry_tech_1 = {
+        production_speed_buildings_factor = 0.1
+        industry_repair_factor = 0.1
+        
+        path = {
+			leads_to_tech = extraction_industry_tech_1
+			research_cost_coeff = 1
+		}
+        path = {
+			leads_to_tech = habitation_industry_tech_1
+			research_cost_coeff = 1
+		}
+        path = {
+			leads_to_tech = construction_industry_tech_2
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 2.0
 		start_year = 2276
-		folder = {
-			name = fallout_industry_folder
-			position = { x = @Row_6 y = @Col_2 }
-		}
-		
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-    
-    metal_shacks = {
-        MONTHLY_POPULATION = 0.03
-        conversion_cost_mil_to_civ_factor = -0.1
-		conversion_cost_civ_to_mil_factor = -0.1
-        
-        dependencies = {
-            settled_civilization = 1
-        }
-        
-		research_cost = 1.0
-		start_year = 2278
 		folder = {
 			name = fallout_industry_folder
 			position = { x = @Row_6 y = @Col_3 }
@@ -988,44 +1396,36 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 50
+				date > "2276.1.1"
+			}
 		}
 	}
-    
-    brick_housing = {
-        MONTHLY_POPULATION = 0.03
-        conversion_cost_mil_to_civ_factor = -0.1
-        conversion_cost_civ_to_mil_factor = -0.1
-        dependencies = {
-            settled_civilization = 1
-        }
+	
+	construction_industry_tech_2 = {
+        production_speed_buildings_factor = 0.1
+        industry_repair_factor = 0.1
         
-		research_cost = 1.0
-		start_year = 2280
-		folder = {
-			name = fallout_industry_folder
-			position = { x = @Row_6 y = @Col_4 }
+        path = {
+			leads_to_tech = extraction_industry_tech_2
+			research_cost_coeff = 1
+		}
+        path = {
+			leads_to_tech = habitation_industry_tech_2
+			research_cost_coeff = 1
+		}
+        path = {
+			leads_to_tech = construction_industry_tech_3
+			research_cost_coeff = 1
 		}
 		
-		categories = {
-			industry
+		dependencies = {
+			settled_civilization = 1
 		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-    
-    pre_war_housing = {
-        MONTHLY_POPULATION = 0.03
-        conversion_cost_mil_to_civ_factor = -0.1
-		conversion_cost_civ_to_mil_factor = -0.1
         
-        dependencies = {
-            scientific_civilization = 1
-        }
-        
-		research_cost = 1.0
-		start_year = 2282
+		research_cost = 2.0
+		start_year = 2277
 		folder = {
 			name = fallout_industry_folder
 			position = { x = @Row_6 y = @Col_5 }
@@ -1037,8 +1437,679 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 50
+				date > "2277.1.1"
+			}
 		}
 	}
+	
+	construction_industry_tech_3 = {
+        production_speed_buildings_factor = 0.1
+        industry_repair_factor = 0.1
+        
+        path = {
+			leads_to_tech = extraction_industry_tech_3
+			research_cost_coeff = 1
+		}
+        path = {
+			leads_to_tech = habitation_industry_tech_3
+			research_cost_coeff = 1
+		}
+        path = {
+			leads_to_tech = construction_industry_tech_4
+			research_cost_coeff = 1
+		}
+        
+		research_cost = 2.0
+		start_year = 2280
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_6 y = @Col_7 }
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 50
+				date > "2280.1.1"
+			}
+		}
+	}
+	
+	construction_industry_tech_4 = {
+        production_speed_buildings_factor = 0.1
+        industry_repair_factor = 0.1
+        
+        path = {
+			leads_to_tech = extraction_industry_tech_4
+			research_cost_coeff = 1
+		}
+        path = {
+			leads_to_tech = habitation_industry_tech_4
+			research_cost_coeff = 1
+		}
+        path = {
+			leads_to_tech = construction_industry_tech_5
+			research_cost_coeff = 1
+		}
+		
+		dependencies = {
+			scientific_civilization = 1
+		}
+        
+		research_cost = 2.0
+		start_year = 2281
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_6 y = @Col_9 }
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 50
+				date > "2281.1.1"
+			}
+		}
+	}
+
+	construction_industry_tech_5 = {
+        production_speed_buildings_factor = 0.1
+        industry_repair_factor = 0.1
+		
+		path = {
+			leads_to_tech = habitation_industry_tech_5
+			research_cost_coeff = 1
+		}
+		
+		dependencies = {
+			scientific_civilization = 1
+		}
+        
+		research_cost = 2.0
+		start_year = 2282
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_6 y = @Col_11 }
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 50
+				date > "2282.1.1"
+			}
+		}
+	}
+
+	habitation_industry_tech = {
+        conversion_cost_mil_to_civ_factor = -0.06
+		conversion_cost_civ_to_mil_factor = -0.06
+		industry_air_damage_factor = -0.04
+
+		research_cost = 1.0
+		start_year = 2275
+		
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_7 y = @Col_1 }
+		}
+		
+		path = {
+			leads_to_tech = habitation_industry_tech_1 
+			research_cost_coeff = 0.8
+		}
+		
+		dependencies = {
+			construction_industry_tech = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 5
+				date > "2275.1.1"
+			}
+		}
+	}
+	
+	habitation_industry_tech_1 = {
+        conversion_cost_mil_to_civ_factor = -0.08
+		conversion_cost_civ_to_mil_factor = -0.08
+		industry_air_damage_factor = -0.06
+
+		research_cost = 1.0
+		start_year = 2276
+		
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_7 y = @Col_3 }
+		}
+		
+		path = {
+			leads_to_tech = habitation_industry_tech_2 
+			research_cost_coeff = 0.8
+		}
+		
+		dependencies = {
+			construction_industry_tech_1 = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 5
+				date > "2276.1.1"
+			}
+		}
+	}
+	
+	habitation_industry_tech_2 = {
+        conversion_cost_mil_to_civ_factor = -0.1
+		conversion_cost_civ_to_mil_factor = -0.1
+		industry_air_damage_factor = -0.08
+
+		research_cost = 1.0
+		start_year = 2277
+		
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_7 y = @Col_5 }
+		}
+		
+		path = {
+			leads_to_tech = habitation_industry_tech_3 
+			research_cost_coeff = 0.8
+		}
+		
+		dependencies = {
+			construction_industry_tech_2 = 1
+			settled_civilization = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 5
+				date > "2277.1.1"
+			}
+		}
+	}
+	
+	habitation_industry_tech_3 = {
+        conversion_cost_mil_to_civ_factor = -0.12
+		conversion_cost_civ_to_mil_factor = -0.12
+		industry_air_damage_factor = -0.10
+
+		research_cost = 1.0
+		start_year = 2280
+		
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_7 y = @Col_7 }
+		}
+		
+		path = {
+			leads_to_tech = habitation_industry_tech_4 
+			research_cost_coeff = 0.8
+		}
+		
+		dependencies = {
+			construction_industry_tech_3 = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 5
+				date > "2280.1.1"
+			}
+		}
+	}
+	
+	habitation_industry_tech_4 = {
+        conversion_cost_mil_to_civ_factor = -0.14
+		conversion_cost_civ_to_mil_factor = -0.14
+		industry_air_damage_factor = -0.12
+
+		research_cost = 1.0
+		start_year = 2281
+		
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_7 y = @Col_9 }
+		}
+		
+		path = {
+			leads_to_tech = habitation_industry_tech_5 
+			research_cost_coeff = 0.8
+		}
+		
+		dependencies = {
+			construction_industry_tech_4 = 1
+			scientific_civilization = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 5
+				date > "2281.1.1"
+			}
+		}
+	}
+	
+	habitation_industry_tech_5 = {
+        conversion_cost_mil_to_civ_factor = -0.16
+		conversion_cost_civ_to_mil_factor = -0.16
+		industry_air_damage_factor = -0.14
+
+		research_cost = 1.0
+		start_year = 2282
+		
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_7 y = @Col_11 }
+		}
+		
+		dependencies = {
+			construction_industry_tech_5 = 1
+			scientific_civilization = 1
+		}
+		
+		categories = {
+			industry
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 5
+				date > "2282.1.1"
+			}
+		}
+	}
+	
+	agriculture_industry_tech = {
+	
+		MONTHLY_POPULATION = 0.03
+		conscription_factor = 0.01
+		
+		path = {
+			leads_to_tech = agriculture_industry_tech_1
+			research_cost_coeff = 1
+		}
+                
+		research_cost = 1
+		start_year = 2275
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_8 y = @Col_1 }
+		}
+		
+		categories = {
+			agriculture_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2275.1.1"
+			}
+		}
+	}
+	
+    agriculture_industry_tech_1 = {
+	
+		MONTHLY_POPULATION = 0.03
+		conscription_factor = 0.01
+		
+		path = {
+			leads_to_tech = agriculture_industry_tech_2
+			research_cost_coeff = 1
+		}
+                
+		research_cost = 1.25
+		start_year = 2276
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_8 y = @Col_3 }
+		}
+		
+		categories = {
+			agriculture_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+	}
+
+	agriculture_industry_tech_2 = {
+	
+		MONTHLY_POPULATION = 0.03
+		conscription_factor = 0.01
+		
+		path = {
+			leads_to_tech = agriculture_industry_tech_3
+			research_cost_coeff = 1
+		}
+		
+		dependencies = {
+			settled_civilization = 1
+		}
+                
+		research_cost = 1.5
+		start_year = 2277
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_8 y = @Col_5 }
+		}
+		
+		categories = {
+			agriculture_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2277.1.1"
+			}
+		}
+	}
+	
+    agriculture_industry_tech_3 = {
+	
+		MONTHLY_POPULATION = 0.03
+		conscription_factor = 0.01
+		
+		path = {
+			leads_to_tech = agriculture_industry_tech_4
+			research_cost_coeff = 1
+		}
+                
+		research_cost = 1.75
+		start_year = 2278
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_8 y = @Col_6 }
+		}
+		
+		categories = {
+			agriculture_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2278.1.1"
+			}
+		}
+	}
+	
+    agriculture_industry_tech_4 = {
+	
+		MONTHLY_POPULATION = 0.03
+		conscription_factor = 0.01
+		
+		path = {
+			leads_to_tech = agriculture_industry_tech_5
+			research_cost_coeff = 1
+		}
+		        
+		research_cost = 2.0
+		start_year = 2280
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_8 y = @Col_7 }
+		}
+		
+		categories = {
+			agriculture_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2280.1.1"
+			}
+		}
+	}
+
+	agriculture_industry_tech_5 = {
+	
+		MONTHLY_POPULATION = 0.03
+		conscription_factor = 0.01
+		        
+		research_cost = 2.0
+		start_year = 2281
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_8 y = @Col_9 }
+		}
+		
+		dependencies = {
+			scientific_civilization = 1
+		}
+		
+		categories = {
+			agriculture_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2281.1.1"
+			}
+		}
+	}
+	
+# Scavengers
+	recycling_engineering = {
+
+		equipment_conversion_speed = 0.1
+		
+		path = {
+			leads_to_tech = recycling_engineering_1 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 2275
+		
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_9 y = @Col_1 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2275.1.1"
+			}
+		}
+		
+		categories = {
+			industry
+			tool_tech
+		}
+	}	
+	
+	# Salvage techniques
+	recycling_engineering_1 = {
+
+		equipment_conversion_speed = 0.1
+
+		path = {
+			leads_to_tech = recycling_engineering_2 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 2275
+		
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_9 y = @Col_2 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2275.1.1"
+			}
+		}
+		
+		categories = {
+			industry
+			tool_tech
+		}
+	}
+	
+	# Thorough Salvage
+	recycling_engineering_2 = {
+
+		equipment_conversion_speed = 0.1
+		
+		path = {
+			leads_to_tech = recycling_engineering_3 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 2276
+		
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_9 y = @Col_3 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2276.1.1"
+			}
+		}
+		
+		categories = {
+			industry
+			tool_tech
+		}
+	}
+	
+	# Recycling
+	recycling_engineering_3 = {
+
+		equipment_conversion_speed = 0.1
+		
+		path = {
+			leads_to_tech = recycling_engineering_4
+			research_cost_coeff = 1
+		}
+		
+		dependencies = {
+			settled_civilization = 1
+        }
+		
+		research_cost = 2
+		start_year = 2277
+		
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_9 y = @Col_5 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2277.1.1"
+			}
+		}
+		
+		categories = {
+			industry
+			tool_tech
+		}
+	}
+	
+	# Advanced Recycling
+	recycling_engineering_4 = {
+
+		equipment_conversion_speed = 0.1
+		
+		dependencies = {
+			scientific_civilization = 1
+        }
+		
+		research_cost = 2
+		start_year = 2281
+		
+		folder = {
+			name = fallout_industry_folder
+			position = { x = @Row_9 y = @Col_9 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "2281.1.1"
+			}
+		}
+		
+		categories = {
+			industry
+			tool_tech
+			electronics
+		}
+	}
+    
 
     #-------------------------
     # Water
@@ -1058,7 +2129,7 @@ technologies = {
 		start_year = 2275
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_7 y = @Col_1 }
+			position = { x = @Row_10 y = @Col_1 }
 		}
 		
 		categories = {
@@ -1072,10 +2143,14 @@ technologies = {
 	}
     
     advanced_well_pump = {
-        enable_building = {
-            building = water_generator
-            level = 2
-        }
+  	
+		on_research_complete = {
+			modify_building_resources = {
+				building = water_generator
+				resource = water
+				amount = 2
+			}
+		}
         
         path = {
 			leads_to_tech = basic_aquifer
@@ -1086,7 +2161,7 @@ technologies = {
 		start_year = 2278
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_7 y = @Col_2 }
+			position = { x = @Row_10 y = @Col_3 }
 		}
 		
 		categories = {
@@ -1100,10 +2175,14 @@ technologies = {
 	}
     
     basic_aquifer = {
-        enable_building = {
-            building = water_generator
-            level = 3
-        }
+ 		
+		on_research_complete = {
+			modify_building_resources = {
+				building = water_generator
+				resource = water
+				amount = 2
+			}
+		}
         
         path = {
 			leads_to_tech = advanced_aquifer
@@ -1118,7 +2197,7 @@ technologies = {
 		start_year = 2281
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_7 y = @Col_3 }
+			position = { x = @Row_10 y = @Col_5 }
 		}
 		
 		categories = {
@@ -1132,10 +2211,14 @@ technologies = {
 	}
     
     advanced_aquifer = {
-        enable_building = {
-            building = water_generator
-            level = 4
-        }
+		
+		on_research_complete = {
+			modify_building_resources = {
+				building = water_generator
+				resource = water
+				amount = 2
+			}
+		}
         
         path = {
 			leads_to_tech = purified_aquifer
@@ -1147,10 +2230,10 @@ technologies = {
         }
         
 		research_cost = 2.0
-		start_year = 2285
+		start_year = 2284
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_7 y = @Col_4 }
+			position = { x = @Row_10 y = @Col_7 }
 		}
 		
 		categories = {
@@ -1164,20 +2247,24 @@ technologies = {
 	}
     
     purified_aquifer = {
-        enable_building = {
-            building = water_generator
-            level = 5
-        }
+		
+		on_research_complete = {
+			modify_building_resources = {
+				building = water_generator
+				resource = water
+				amount = 2
+			}
+		}
         
         dependencies = {
             scientific_civilization = 1
         }
         
 		research_cost = 2.0
-		start_year = 2290
+		start_year = 2287
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_7 y = @Col_5 }
+			position = { x = @Row_10 y = @Col_9 }
 		}
 		
 		categories = {
@@ -1208,7 +2295,7 @@ technologies = {
 		start_year = 2275
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_8 y = @Col_1 }
+			position = { x = @Row_11 y = @Col_1 }
 		}
 		
 		categories = {
@@ -1238,10 +2325,14 @@ technologies = {
 	}
     
     advanced_generator = {
-        enable_building = {
-            building = electricity_generator
-            level = 2
-        }
+		
+		on_research_complete = {
+			modify_building_resources = {
+				building = electricity_generator
+				resource = electricity
+				amount = 1
+			}
+		}
         
         path = {
 			leads_to_tech = basic_power_plant
@@ -1252,7 +2343,7 @@ technologies = {
 		start_year = 2278
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_8 y = @Col_2 }
+			position = { x = @Row_11 y = @Col_3 }
 		}
 		
 		categories = {
@@ -1282,10 +2373,14 @@ technologies = {
 	}
     
     basic_power_plant = {
-        enable_building = {
-            building = electricity_generator
-            level = 3
-        }
+		
+		on_research_complete = {
+			modify_building_resources = {
+				building = electricity_generator
+				resource = electricity
+				amount = 1
+			}
+		}
         
         path = {
 			leads_to_tech = advanced_power_plant
@@ -1300,7 +2395,7 @@ technologies = {
 		start_year = 2281
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_8 y = @Col_3 }
+			position = { x = @Row_11 y = @Col_5 }
 		}
 		
 		categories = {
@@ -1330,10 +2425,14 @@ technologies = {
 	}
     
     advanced_power_plant = {
-        enable_building = {
-            building = electricity_generator
-            level = 4
-        }
+    	
+		on_research_complete = {
+			modify_building_resources = {
+				building = electricity_generator
+				resource = electricity
+				amount = 1
+			}
+		}
         
         path = {
 			leads_to_tech = nuclear_reactor
@@ -1345,10 +2444,10 @@ technologies = {
         }
         
 		research_cost = 2.0
-		start_year = 2285
+		start_year = 2284
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_8 y = @Col_4 }
+			position = { x = @Row_11 y = @Col_7 }
 		}
 		
 		categories = {
@@ -1378,20 +2477,24 @@ technologies = {
 	}
     
     nuclear_reactor = {
-        enable_building = {
-            building = electricity_generator
-            level = 5
-        }
+       
+		on_research_complete = {
+			modify_building_resources = {
+				building = electricity_generator
+				resource = electricity
+				amount = 1
+			}
+		}
         
         dependencies = {
             scientific_civilization = 1
         }
         
 		research_cost = 2.0
-		start_year = 2290
+		start_year = 2287
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_8 y = @Col_5 }
+			position = { x = @Row_11 y = @Col_9 }
 		}
 		
 		categories = {
@@ -1423,12 +2526,15 @@ technologies = {
     #-------------------------
     # Metal
     #-------------------------
-    basic_smeltery = {
-        enable_building = {
-            building = metal_generator
-            level = 1
-        }
-        
+	basic_smeltery = {
+	on_research_complete = {
+			modify_building_resources = {
+				building = metal_generator
+				resource = metal
+				amount = 2
+			}
+		}
+	
         path = {
 			leads_to_tech = advanced_smeltery
 			research_cost_coeff = 1
@@ -1438,7 +2544,7 @@ technologies = {
 		start_year = 2275
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_9 y = @Col_1 }
+			position = { x = @Row_12 y = @Col_1 }
 		}
 		
 		categories = {
@@ -1468,10 +2574,14 @@ technologies = {
 	}
     
     advanced_smeltery = {
-        enable_building = {
-            building = metal_generator
-            level = 2
-        }
+		
+		on_research_complete = {
+			modify_building_resources = {
+				building = metal_generator
+				resource = metal
+				amount = 2
+			}
+		}
         
         path = {
 			leads_to_tech = basic_foundry
@@ -1482,7 +2592,7 @@ technologies = {
 		start_year = 2278
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_9 y = @Col_2 }
+			position = { x = @Row_12 y = @Col_3 }
 		}
 		
 		categories = {
@@ -1512,10 +2622,14 @@ technologies = {
 	}
     
     basic_foundry = {
-        enable_building = {
-            building = metal_generator
-            level = 3
-        }
+       
+		on_research_complete = {
+			modify_building_resources = {
+				building = metal_generator
+				resource = metal
+				amount = 2
+			}
+		}
         
         path = {
 			leads_to_tech = advanced_foundry
@@ -1530,7 +2644,7 @@ technologies = {
 		start_year = 2281
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_9 y = @Col_3 }
+			position = { x = @Row_12 y = @Col_5 }
 		}
 		
 		categories = {
@@ -1560,10 +2674,14 @@ technologies = {
 	}
     
     advanced_foundry = {
-        enable_building = {
-            building = metal_generator
-            level = 4
-        }
+        
+		on_research_complete = {
+			modify_building_resources = {
+				building = metal_generator
+				resource = metal
+				amount = 2
+			}
+		}
         
         path = {
 			leads_to_tech = autonomous_foundry
@@ -1575,10 +2693,10 @@ technologies = {
         }
         
 		research_cost = 2.0
-		start_year = 2285
+		start_year = 2284
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_9 y = @Col_4 }
+			position = { x = @Row_12 y = @Col_7 }
 		}
 		
 		categories = {
@@ -1608,20 +2726,24 @@ technologies = {
 	}
     
     autonomous_foundry = {
-        enable_building = {
-            building = metal_generator
-            level = 5
-        }
+        
+		on_research_complete = {
+			modify_building_resources = {
+				building = metal_generator
+				resource = metal
+				amount = 2
+			}
+		}
         
         dependencies = {
             scientific_civilization = 1
         }
         
 		research_cost = 2.0
-		start_year = 2290
+		start_year = 2287
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_9 y = @Col_5 }
+			position = { x = @Row_12 y = @Col_9 }
 		}
 		
 		categories = {
@@ -1668,7 +2790,7 @@ technologies = {
 		start_year = 2275
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_10 y = @Col_1 }
+			position = { x = @Row_13 y = @Col_1 }
 		}
 		
 		categories = {
@@ -1712,7 +2834,7 @@ technologies = {
 		start_year = 2278
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_10 y = @Col_2 }
+			position = { x = @Row_13 y = @Col_3 }
 		}
 		
 		categories = {
@@ -1721,8 +2843,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			#factor = 5
-			factor = 0
+			factor = 5
 			modifier = {
 				factor = 0.5
 				fuel > 10
@@ -1761,7 +2882,7 @@ technologies = {
 		start_year = 2281
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_10 y = @Col_3 }
+			position = { x = @Row_13 y = @Col_5 }
 		}
 		
 		categories = {
@@ -1770,8 +2891,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			#factor = 5
-			factor = 0
+			factor = 5
 			modifier = {
 				factor = 0.5
 				fuel > 10
@@ -1810,7 +2930,7 @@ technologies = {
 		start_year = 2285
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_10 y = @Col_4 }
+			position = { x = @Row_13 y = @Col_7 }
 		}
 		
 		categories = {
@@ -1819,7 +2939,8 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 0
+			factor = 5
+
 			modifier = {
 				factor = 0.5
 				fuel > 10
@@ -1853,7 +2974,7 @@ technologies = {
 		start_year = 2290
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_10 y = @Col_5 }
+			position = { x = @Row_13 y = @Col_9 }
 		}
 		
 		categories = {
@@ -1862,7 +2983,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 0
+			factor = 5
 			modifier = {
 				factor = 0.5
 				fuel > 10
@@ -1944,7 +3065,7 @@ technologies = {
 		start_year = 2278
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_11 y = @Col_2 }
+			position = { x = @Row_11 y = @Col_3 }
 		}
 		
 		categories = {
@@ -1953,7 +3074,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 0
+			factor = 5
 			modifier = {
 				factor = 0.5
 				electronics > 10
@@ -1992,7 +3113,7 @@ technologies = {
 		start_year = 2281
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_11 y = @Col_3 }
+			position = { x = @Row_11 y = @Col_5 }
 		}
 		
 		categories = {
@@ -2001,7 +3122,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 0
+			factor = 5
 			modifier = {
 				factor = 0.5
 				electronics > 10
@@ -2040,7 +3161,7 @@ technologies = {
 		start_year = 2285
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_11 y = @Col_4 }
+			position = { x = @Row_11 y = @Col_7 }
 		}
 		
 		categories = {
@@ -2049,7 +3170,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 0
+			factor = 5
 			modifier = {
 				factor = 0.5
 				electronics > 10
@@ -2083,7 +3204,7 @@ technologies = {
 		start_year = 2290
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_11 y = @Col_5 }
+			position = { x = @Row_11 y = @Col_9 }
 		}
 		
 		categories = {
@@ -2092,7 +3213,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 0
+			factor = 5
 			modifier = {
 				factor = 0.5
 				electronics > 10
@@ -2174,7 +3295,7 @@ technologies = {
 		start_year = 2278
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_12 y = @Col_2 }
+			position = { x = @Row_12 y = @Col_3 }
 		}
 		
 		categories = {
@@ -2183,7 +3304,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 0
+			factor = 5
 			modifier = {
 				factor = 0.5
 				advanced_technology  > 10
@@ -2222,7 +3343,7 @@ technologies = {
 		start_year = 2281
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_12 y = @Col_3 }
+			position = { x = @Row_12 y = @Col_5 }
 		}
 		
 		categories = {
@@ -2231,7 +3352,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 0
+			factor = 5
 			modifier = {
 				factor = 0.5
 				advanced_technology  > 10
@@ -2270,7 +3391,7 @@ technologies = {
 		start_year = 2285
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_12 y = @Col_4 }
+			position = { x = @Row_12 y = @Col_7 }
 		}
 		
 		categories = {
@@ -2279,7 +3400,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 0
+			factor = 5
 			modifier = {
 				factor = 0.5
 				advanced_technology  > 10
@@ -2313,7 +3434,7 @@ technologies = {
 		start_year = 2290
 		folder = {
 			name = fallout_industry_folder
-			position = { x = @Row_12 y = @Col_5 }
+			position = { x = @Row_12 y = @Col_9 }
 		}
 		
 		categories = {
@@ -2322,7 +3443,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 0
+			factor = 1
 			modifier = {
 				factor = 0.5
 				advanced_technology  > 10
