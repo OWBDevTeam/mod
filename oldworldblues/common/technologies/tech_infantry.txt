@@ -1619,7 +1619,6 @@ technologies = {
 		
 		dependencies = {
             scientific_civilization = 1
-			c_t45d_pa_tech = 1
         }
 		
 		ai_will_do = {
@@ -1720,6 +1719,7 @@ technologies = {
 		dependencies = {
             scientific_civilization = 1
 			c_t45d_pa_tech = 1
+			t51b_pa_tech = 1
         }
 		
 		categories = {
@@ -1779,6 +1779,10 @@ technologies = {
             scientific_civilization = 1
 			overcharged_ammunition = 1
         }
+		path = {
+			leads_to_tech = gauss_weaponry_1
+			research_cost_coeff = 1
+		}
         allow = {
 			always = no
 		}
@@ -1793,62 +1797,42 @@ technologies = {
 			infantry_tech
             gauss_weaponry_tech
 		}
-		
-        sub_technologies = {
-            recoil_compensating_grip
-            gauss_agitator
-        }
         
 		ai_will_do = {
 			factor = 10
 		}
 	}
-    
-    recoil_compensating_grip = {  
-        category_all_infantry = {
-            ap_attack = 0.1
+	
+	gauss_weaponry_1 = {
+        enable_equipments = {
+            gauss_equipment_2
         }
         
         dependencies = {
-            settled_civilization = 1
+            scientific_civilization = 1
         }
-        
+		
+        allow = {
+			always = no
+		}
+		
 		research_cost = 2.0
-		start_year = 2278
-
+		start_year = 2277
+		folder = {
+			name = fallout_infantry_folder
+			position = { x = @Row_5 y = @Col_11 }
+		}
+		
 		categories = {
 			infantry_tech
             gauss_weaponry_tech
 		}
-		
+        
 		ai_will_do = {
 			factor = 10
 		}
 	}
-    
-    gauss_agitator = {  
-        category_all_infantry = {
-            soft_attack = 0.1
-        }
-        
-        dependencies = {
-            settled_civilization = 1
-			advanced_laser_weaponry = 1
-        }
-        
-		research_cost = 2.0
-		start_year = 2279
 
-		categories = {
-			infantry_tech
-            gauss_weaponry_tech
-		}
-		
-		ai_will_do = {
-			factor = 10
-		}
-	}
-    
     tesla_weaponry = {
         enable_equipments = {
             tesla_equipment_1
@@ -1936,6 +1920,10 @@ technologies = {
         allow = {
 			always = no
 		}
+		path = {
+			leads_to_tech = plasma_weaponry_1
+			research_cost_coeff = 1
+		}
         dependencies = {
             scientific_civilization = 1
 			advanced_laser_weaponry = 1
@@ -1952,77 +1940,26 @@ technologies = {
 			infantry_tech
             plasma_weaponry_tech
 		}
-		
-        sub_technologies = {
-            beta_wave_tuner
-            photon_agitator
-        }
         
 		ai_will_do = {
 			factor = 10
 		}
 	}
-    
-    beta_wave_tuner = {  
-        category_all_infantry = {
-            soft_attack = 0.1
-        }
-        
-        dependencies = {
-            scientific_civilization = 1
-			advanced_laser_weaponry = 1
-        }
-        
-		research_cost = 2.0
-		start_year = 2292
-
-		categories = {
-			infantry_tech
-            tesla_weaponry_tech
-		}
-		
-		ai_will_do = {
-			factor = 10
-		}
-	}
-    
-    photon_agitator = {  
-        category_all_infantry = {
-            soft_attack = 0.1
-        }
-        
-        dependencies = {
-            scientific_civilization = 1
-			advanced_laser_weaponry = 1
-        }
-        
-		research_cost = 2.0
-		start_year = 2292
-
-		categories = {
-			infantry_tech
-            tesla_weaponry_tech
-		}
-		
-		ai_will_do = {
-			factor = 10
-		}
-	}
-    
-    super_mutant_melee_weapons = {
+	
+	plasma_weaponry_1 = {
         enable_equipments = {
-            super_mutant_melee_equipment_1
+            plasma_equipment_2
         }
         allow = {
 			always = no
 		}
-        
-        #dependencies = {
-        #    super_mutant_civilization = 1
-        #}
+        dependencies = {
+            scientific_civilization = 1
+			advanced_laser_weaponry = 1
+        }
         
 		research_cost = 2.0
-		start_year = 2275
+		start_year = 2290
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_3 y = @Col_12 }
@@ -2030,15 +1967,11 @@ technologies = {
 		
 		categories = {
 			infantry_tech
-            melee_weaponry_tech
+            plasma_weaponry_tech
 		}
-		
+        
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				tag = TRL
-				factor = 100
-			}
+			factor = 10
 		}
 	}
     
