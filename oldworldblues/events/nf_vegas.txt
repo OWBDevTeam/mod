@@ -45,13 +45,11 @@ country_event = {
 	
 	option = {
 		name = nf_vegas.2.a
-			
 		add_ideas = stableOS
 	}
 	
 	option = {
 		name = nf_vegas.2.b
-			
 		add_ideas = unstableOS
 	}
 	
@@ -67,10 +65,8 @@ country_event = {
 	
 	option = {
 		name = nf_vegas.3.a
-		
 		country_event = { id = nf_vegas.4 days = 1 }
 	}
-	
 }
 
 country_event = {
@@ -91,9 +87,7 @@ country_event = {
 				factor = 10
 			}
 		}
-		
 		add_ideas = omertas
-		
 		country_event = { id = nf_vegas.5 days = 1 }
 	}
 	
@@ -107,14 +101,10 @@ country_event = {
 				factor = 0
 			}
 		}
-		
 		FIE = {
 		   country_event = nf_vegas.41
 		}
-		
-		
 	}
-	
 }
 
 country_event = {
@@ -137,14 +127,11 @@ country_event = {
 		}
 		
 		add_ideas = chairmen
-		
 		country_event = { id = nf_vegas.6 days = 1 }
 	}
 	
 	option = {
 		name = nf_vegas.5.b
-		
-		add_ideas = kings
 		
 		ai_chance = {
 			factor = 1
@@ -154,9 +141,9 @@ country_event = {
 			}
 		}
 		
+		add_ideas = kings
 		country_event = { id = nf_vegas.6 days = 1 }
 	}
-	
 }
 
 country_event = {
@@ -179,7 +166,6 @@ country_event = {
 		}
 		
 		add_ideas = whitegloves
-		
 	}
 	
 	option = {
@@ -194,10 +180,9 @@ country_event = {
 		}
 		
 		KHA = {
-		country_event = nf_vegas.44
+			country_event = nf_vegas.44
 		}
 	}
-	
 }
 
 country_event = {
@@ -218,14 +203,12 @@ country_event = {
 				level = 2
 				instant_build = yes
 			}
-			
 			add_building_construction = {
 				type = arms_factory
 				level = 1
 				instant_build = yes
 			}
 		}
-		
 	}
 	
 	option = {
@@ -238,7 +221,6 @@ country_event = {
 				instant_build = yes
 			}
 		}
-		
 		344 = {
 			add_building_construction = {
 				type = infrastructure
@@ -246,7 +228,6 @@ country_event = {
 				instant_build = yes
 			}
 		}
-		
 		313 = {
 			add_building_construction = {
 				type = infrastructure
@@ -255,7 +236,6 @@ country_event = {
 			}
 		}
 	}
-	
 }
 
 country_event = {
@@ -270,7 +250,7 @@ country_event = {
 		name = nf_vegas.8.a
 		
 		VEG = {
-		country_event = nf_vegas.28
+			country_event = nf_vegas.28
 		}
 	}
 	
@@ -278,11 +258,9 @@ country_event = {
 		name = nf_vegas.8.b
 		
 		VEG = {
-		country_event = nf_vegas.29
+			country_event = nf_vegas.29
 		}
-			
 	}
-	
 }
 country_event = {
 	id = nf_vegas.9
@@ -322,21 +300,20 @@ country_event = {
 		name = nf_vegas.9.b
 		
 		211 = {
-				add_resource = {
-				   type = fuel
-				   amount = 10
-				}				
-				add_resource = {
-				   type = electronics
-				   amount = 20
-				}
-				add_resource = {
-				   type = advanced_technology
-				   amount = 5
-				}
+			add_resource = {
+			   type = fuel
+			   amount = 10
+			}				
+			add_resource = {
+			   type = electronics
+			   amount = 20
+			}
+			add_resource = {
+			   type = advanced_technology
+			   amount = 5
+			}
 		}
 	}
-	
 }
 country_event = {
 	id = nf_vegas.10
@@ -358,9 +335,8 @@ country_event = {
 			defense_skill = 4
 			planning_skill = 2
 			logistics_skill = 2
-			}
+		}
 	}
-	
 }
 country_event = {
 	id = nf_vegas.11
@@ -384,8 +360,7 @@ country_event = {
 			defense_skill = 1
 			planning_skill = 2
 			logistics_skill = 2
-			}
-		
+		}
 	}
 	option = {
 		name = nf_vegas.11.b
@@ -401,7 +376,7 @@ country_event = {
 			defense_skill = 1
 			planning_skill = 2
 			logistics_skill = 1
-			}
+		}
 	}
 }
 country_event = {
@@ -426,10 +401,8 @@ country_event = {
 			defense_skill = 1
 			planning_skill = 3
 			logistics_skill = 1
-			}
-		
+		}
 	}
-	
 }
 country_event = {
 	id = nf_vegas.13
@@ -511,13 +484,12 @@ country_event = {
 	
 	option = {
 		name = nf_vegas.16.b
-		
+
+		trigger = { BOS = { exists = yes } }
 		BOS = {
 			country_event = nf_vegas.20
 		}
-			
 	}
-	
 }
 country_event = {
 	id = nf_vegas.17
@@ -530,7 +502,6 @@ country_event = {
 	option = {
 		name = nf_vegas.17.a
 		
-		
 		if = {
 			limit = {
 				VEG = {
@@ -539,8 +510,6 @@ country_event = {
 			}
 			country_event = nf_vegas.23
 		}
-		
-		
 		if = {
 			limit = {
 				VEG = {
@@ -555,9 +524,7 @@ country_event = {
 		name = nf_vegas.17.b
 		
 		country_event = nf_vegas.25
-			
 	}
-	
 }
 country_event = {
 	id = nf_vegas.18
@@ -572,7 +539,6 @@ country_event = {
 		
 		add_ideas = vegasprime1
 		country_event = { id = nf_vegas.22 days = 370 }
-		
 	}
 	
 	option = {
@@ -580,7 +546,6 @@ country_event = {
 		
 		country_event = { id = nf_vegas.22 days = 740 }
 	}
-	
 }
 country_event = {
 	id = nf_vegas.19
@@ -603,7 +568,6 @@ country_event = {
 			}
 			swap_ideas = { remove_idea = unstableOS add_idea = platinumOS }	
 		}
-		
 		if = {
 			limit = {
 				VEG = {
@@ -683,7 +647,6 @@ country_event = {
 		name = nf_vegas.22.a
 
 		add_ideas = vegasprime2
-		
 		if = {
 			limit = {
 				VEG = { 
@@ -705,9 +668,8 @@ country_event = {
 	option = {
 		name = nf_vegas.23.a
 		
-	  random_list = { 50 = { country_event = nf_vegas.50 } 50 = { country_event = nf_vegas.27 } }    
+		random_list = { 50 = { country_event = nf_vegas.50 } 50 = { country_event = nf_vegas.27 } }    
 	}
-	
 }
 country_event = {
 	id = nf_vegas.24
@@ -719,10 +681,9 @@ country_event = {
 	
 	option = {
 		name = nf_vegas.24.a
-		
-	  random_list = { 70 = { country_event = nf_vegas.51 } 30 = { country_event = nf_vegas.27 } }    
+
+		random_list = { 70 = { country_event = nf_vegas.51 } 30 = { country_event = nf_vegas.27 } }    
 	}
-	
 }
 country_event = {
 	id = nf_vegas.25
@@ -741,7 +702,7 @@ country_event = {
 	option = {
 		name = nf_vegas.25.b
 		
-	  add_manpower = -1000
+		add_manpower = -1000
 		random_list = { 60 = { country_event = nf_vegas.26 } 40 = { country_event = nf_vegas.27 } }    
 	}
 	option = {
@@ -750,7 +711,6 @@ country_event = {
 		add_manpower = -500
 		random_list = { 30 = { country_event = nf_vegas.26 } 70 = { country_event = nf_vegas.27 } }    
 	}
-	
 }
 country_event = {
 	id = nf_vegas.26
@@ -763,10 +723,9 @@ country_event = {
 	option = {
 		name = nf_vegas.26.a
 			
-	  set_technology = { securitron_2_tech = 1 }
-	  load_oob = vegassecuritronarmy1
-	  add_ideas = securitron_vault
-	  
+		set_technology = { securitron_2_tech = 1 }
+		load_oob = vegassecuritronarmy1
+		add_ideas = securitron_vault
 		if = {
 			limit = {
 				VEG = {
@@ -793,12 +752,10 @@ country_event = {
 	
 	option = {
 		name = nf_vegas.27.a
-			
+		
 		set_technology = { securitron_2_tech = 1 }
 		load_oob = vegassecuritronarmy2
-	 
 	}
-	
 }
 country_event = {
 	id = nf_vegas.28
@@ -819,7 +776,6 @@ country_event = {
 			add_opinion_modifier = { target = VEG modifier = mojavepactjoined }
 		}
 	}
-	
 }
 country_event = {
 	id = nf_vegas.29
@@ -839,7 +795,6 @@ country_event = {
 			add_opinion_modifier = { target = VEG modifier = mojavepactrefused }
 		}
 	}
-	
 }
 country_event = {
 	id = nf_vegas.30
@@ -853,16 +808,13 @@ country_event = {
 		name = nf_vegas.30.a
 		
 		create_faction = nevada_pact
-		
 		DES = {
-		country_event = nf_vegas.31
+			country_event = nf_vegas.31
 		}
 		NEW = {
-		country_event = nf_vegas.34
+			country_event = nf_vegas.34
 		}
-		
 	}
-	
 }
 country_event = {
 	id = nf_vegas.31
@@ -876,21 +828,16 @@ country_event = {
 		name = nf_vegas.31.a
 		
 		VEG = {
-		country_event = nf_vegas.32
+			country_event = nf_vegas.32
 		}
-		
-		
 	}
 	option = {
 		name = nf_vegas.31.b
 		
 		VEG = {
-		country_event = nf_vegas.33
+			country_event = nf_vegas.33
 		}
-		
-		
 	}
-	
 }
 country_event = {
 	id = nf_vegas.32
@@ -904,17 +851,13 @@ country_event = {
 		name = nf_vegas.32.a
 		
 		VEG = {
-		add_to_faction = DES
-		add_opinion_modifier = { target = DES modifier = nevadapact }
+			add_to_faction = DES
+			add_opinion_modifier = { target = DES modifier = nevadapact }
 		}
-		
 		DES = {
-		add_opinion_modifier = { target = VEG modifier = nevadapact }
+			add_opinion_modifier = { target = VEG modifier = nevadapact }
 		}
-		
-		
 	}
-	
 }
 country_event = {
 	id = nf_vegas.33
@@ -928,11 +871,9 @@ country_event = {
 		name = nf_vegas.33.a
 		
 		VEG = {
-		add_opinion_modifier = { target = DES modifier = nevadapactrefused }
+			add_opinion_modifier = { target = DES modifier = nevadapactrefused }
 		}
-		
 	}
-	
 }
 country_event = {
 	id = nf_vegas.34
@@ -946,21 +887,16 @@ country_event = {
 		name = nf_vegas.34.a
 		
 		VEG = {
-		country_event = nf_vegas.35
+			country_event = nf_vegas.35
 		}
-		
-		
 	}
 	option = {
 		name = nf_vegas.34.b
 		
 		VEG = {
-		country_event = nf_vegas.36
+			country_event = nf_vegas.36
 		}
-		
-		
 	}
-	
 }
 country_event = {
 	id = nf_vegas.35
@@ -974,17 +910,14 @@ country_event = {
 		name = nf_vegas.35.a
 		
 		VEG = {
-		add_to_faction = NEW
-		add_opinion_modifier = { target = NEW modifier = nevadapact }
+			add_to_faction = NEW
+			add_opinion_modifier = { target = NEW modifier = nevadapact }
 		}
 		
 		NEW = {
-		add_opinion_modifier = { target = VEG modifier = nevadapact }
+			add_opinion_modifier = { target = VEG modifier = nevadapact }
 		}
-		
-		
 	}
-	
 }
 country_event = {
 	id = nf_vegas.36
@@ -1000,9 +933,7 @@ country_event = {
 		VEG = {
 		add_opinion_modifier = { target = NEW modifier = nevadapactrefused }
 		}
-		
 	}
-	
 }
 country_event = {
 	id = nf_vegas.37
@@ -1018,8 +949,6 @@ country_event = {
 		VEG = {
 			country_event = nf_vegas.38  
 		}
-		
-		
 	}
 	option = {
 		name = nf_vegas.37.b
@@ -1028,7 +957,6 @@ country_event = {
 			country_event = nf_vegas.39
 		}
 	}
-	
 }
 country_event = {
 	id = nf_vegas.38
@@ -1069,9 +997,7 @@ country_event = {
 				add_opinion_modifier = { target = VEG modifier = nevadapact }
 			}
 		}
-	
 	}
-	
 }
 country_event = {
 	id = nf_vegas.39
@@ -1104,9 +1030,7 @@ country_event = {
 				add_opinion_modifier = { target = NEW modifier = nevadapactrefused } 
 			}
 		}
-	
 	}
-	
 }
 country_event = {
 	id = nf_vegas.40
@@ -1131,8 +1055,7 @@ country_event = {
 			}
 			change_tag_from	= VEG
 		}
-	}	
-	
+	}
 }
 country_event = {
 	id = nf_vegas.41
@@ -1149,7 +1072,7 @@ country_event = {
 			factor = 1000
 		}
 		VEG = {
-		  country_event = nf_vegas.42 
+			country_event = nf_vegas.42 
 		}
 	}
 	
@@ -1173,10 +1096,10 @@ country_event = {
 		name = nf_vegas.42.a 
 		
 		VEG = {
-		  annex_country = { target = FIE }
-		  add_state_core = 380
-		  country_event = { id = nf_vegas.5 days = 1 }
-		  add_ideas = consigs
+			annex_country = { target = FIE }
+		 	add_state_core = 380
+			country_event = { id = nf_vegas.5 days = 1 }
+			add_ideas = consigs
 		}
 	}
 }
@@ -1192,8 +1115,8 @@ country_event = {
 		name = nf_vegas.43.a 
 		
 		VEG = {
-		  country_event = { id = nf_vegas.5 days = 1 }
-		  add_ideas = omertas
+			country_event = { id = nf_vegas.5 days = 1 }
+			add_ideas = omertas
 		}
 	}
 }
@@ -1212,7 +1135,7 @@ country_event = {
 			factor = 1000
 		}
 		VEG = {
-		  country_event = nf_vegas.45 
+			country_event = nf_vegas.45 
 		}
 	}
 
@@ -1220,7 +1143,7 @@ country_event = {
 		name = nf_vegas.44.b
 		
 		VEG = {
-		  country_event = nf_vegas.46
+			country_event = nf_vegas.46
 		}	
 	}
 }
@@ -1236,10 +1159,10 @@ country_event = {
 		name = nf_vegas.45.a 
 		
 		VEG = {
-		  annex_country = { target = KHA }
-		  add_state_core = 12
-		  add_state_core = 106
-		  add_ideas = khaganate
+			annex_country = { target = KHA }
+			add_state_core = 12
+			add_state_core = 106
+			add_ideas = khaganate
 		}
 	}
 }
@@ -1255,7 +1178,7 @@ country_event = {
 		name = nf_vegas.46.a
 		
 		VEG = {
-		  add_ideas = whitegloves
+			add_ideas = whitegloves
 		}
 	}
 }
@@ -1301,7 +1224,6 @@ country_event = {
 		set_technology = { securitron_2_tech = 1 }
 		load_oob = vegassecuritronarmy1
 		add_ideas = securitron_vault
-	  
 		if = {
 			limit = {
 				VEG = {
@@ -1329,10 +1251,9 @@ country_event = {
 	option = {
 		name = nf_vegas.50.a
 			
-	  set_technology = { securitron_2_tech = 1 }
-	  load_oob = vegassecuritronarmy1
-	  add_ideas = securitron_vault
-	  
+		set_technology = { securitron_2_tech = 1 }
+		load_oob = vegassecuritronarmy1
+		add_ideas = securitron_vault
 		if = {
 			limit = {
 				VEG = {
@@ -1363,7 +1284,6 @@ country_event = {
 		set_technology = { securitron_2_tech = 1 }
 		load_oob = vegassecuritronarmy1
 		add_ideas = securitron_vault
-	  
 		if = {
 			limit = {
 				VEG = {
@@ -1386,8 +1306,8 @@ country_event = {
 	desc = nf_vegas.52.d
 	picture = GFX_event_VEG_platinumchip
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.52.a
 		
@@ -1402,7 +1322,6 @@ country_event = {
 			}
 			swap_ideas = { remove_idea = unstableOS add_idea = platinumOS }	
 		}
-		
 		if = {
 			limit = {
 				VEG = {
@@ -1485,8 +1404,6 @@ country_event = {
 				}
 			}
 		}
-		
-			
 		NCR = {
 			every_owned_state = {
 				limit = {
@@ -1506,18 +1423,9 @@ country_event = {
 		NCR = {
 			add_to_faction = VEG 
 		}
-		
 	}
 	
 	option = {
 		name = nf_vegas.54.b
-		
 	}
 }
-
-			
-
-	
-
-	
-	
