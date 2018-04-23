@@ -22,37 +22,33 @@ equipments = {
         maximum_speed = 4
         
 		# Misc Abilities
-		reliability = 0.90
+		reliability = 0.75
 
 		# Defensive Abilities
-		breakthrough = 1
-		hardness = 0.2
+		breakthrough = 3
+		hardness = 0.3
 		armor_value = 15
 
 		build_cost_ic = 10
         
 		resources = {
-			metal = 2
-			electronics = 1
 		}
 	}
     
     # Stripped Power Armour
     power_armor_equipment_1 = {
 		archetype = power_armor_equipment
-		priority = 15
+		priority = 20
 		visual_level = 0
 		
-		breakthrough = 4
-		hardness = 0.2
+		breakthrough = 3
+		hardness = 0.3
 		armor_value = 30
         
-        reliability = 0.70
+        reliability = 0.75
 		
 		resources = {
-			metal = 2
-			electronics = 1
-			advanced_technology = 1
+			metal = 3
 		}
 		
     }
@@ -61,24 +57,24 @@ equipments = {
     power_armor_equipment_2 = {
 		archetype = power_armor_equipment
 		parent = power_armor_equipment_1
-		priority = 30
+		priority = 40
 		visual_level = 1
         
-        reliability = 0.80
+        reliability = 0.75
         
         maximum_speed = 4
         
 		# Defensive Abilities
-		breakthrough = 5
-        hardness = 0.3
-		armor_value = 34
-        
+		breakthrough = 6
+        hardness = 0.4
+		armor_value = 35
+        maximum_speed = 4.5
+		
 		build_cost_ic = 12
         
         resources = {
-			metal = 2
+			metal = 3
             electronics = 2
-            advanced_technology = 2
 		}
 	}
     
@@ -86,21 +82,23 @@ equipments = {
     power_armor_equipment_3 = {
 		archetype = power_armor_equipment
 		parent = power_armor_equipment_2
-		priority = 45
+		priority = 60
 		visual_level = 1
 
-		reliability = 0.75
+		reliability = 0.80
 		# Defensive Abilities
-		breakthrough = 8
-       	hardness = 0.4
+		breakthrough = 9
+       	hardness = 0.5
 		armor_value = 40
         
+		maximum_speed = 4.5
+		
 		build_cost_ic = 16
         
         resources = {
 			metal = 3
            	electronics = 3
-            advanced_technology = 3
+            advanced_technology = 2
 		}
 	}
 	
@@ -108,21 +106,23 @@ equipments = {
     power_armor_equipment_3_light = {
 		archetype = power_armor_equipment
 		parent = power_armor_equipment_3
-		priority = 45
+		priority = 50
 		visual_level = 1
 
-		reliability = 0.75
+		reliability = 0.85
 		# Defensive Abilities
 		breakthrough = 8
-       	hardness = 0.4
-		armor_value = 40
+       	hardness = 0.45
+		armor_value = 35
         
-		build_cost_ic = 16
+		maximum_speed = 5
+		
+		build_cost_ic = 14
         
         resources = {
-			metal = 3
+			metal = 2
            	electronics = 3
-            advanced_technology = 3
+            advanced_technology = 2
 		}
 	}
 	
@@ -130,16 +130,18 @@ equipments = {
     power_armor_equipment_4 = {
 		archetype = power_armor_equipment
 		parent = power_armor_equipment_3
-		priority = 45
+		priority = 80
 		visual_level = 1
 
-		reliability = 0.75
+		reliability = 0.85
 		# Defensive Abilities
-		breakthrough = 8
-       	hardness = 0.4
-		armor_value = 40
+		breakthrough = 12
+       	hardness = 0.6
+		armor_value = 50
+		
+		maximum_speed = 4.5
         
-		build_cost_ic = 16
+		build_cost_ic = 20
         
         resources = {
 			metal = 3
@@ -151,20 +153,22 @@ equipments = {
 	# T-51B Composite
     power_armor_equipment_4_light = {
 		archetype = power_armor_equipment
-		parent = power_armor_equipment_4
-		priority = 45
+		parent = power_armor_equipment_3_light
+		priority = 70
 		visual_level = 1
 
-		reliability = 0.75
+		reliability = 0.9
 		# Defensive Abilities
-		breakthrough = 8
-       	hardness = 0.4
-		armor_value = 40
+		breakthrough = 10
+       	hardness = 0.55
+		armor_value = 45
+		
+		maximum_speed = 5
         
-		build_cost_ic = 16
+		build_cost_ic = 18
         
         resources = {
-			metal = 3
+			metal = 2
            	electronics = 3
             advanced_technology = 3
 		}
@@ -174,19 +178,21 @@ equipments = {
     power_armor_equipment_5 = {
 		archetype = power_armor_equipment
 		parent = power_armor_equipment_4
-		priority = 45
+		priority = 100
 		visual_level = 1
 
-		reliability = 0.75
+		reliability = 0.85
 		# Defensive Abilities
-		breakthrough = 8
-       	hardness = 0.4
-		armor_value = 40
+		breakthrough = 15
+       	hardness = 0.7
+		armor_value = 60
+		
+		maximum_speed = 5
         
-		build_cost_ic = 16
+		build_cost_ic = 24
         
         resources = {
-			metal = 3
+			metal = 4
            	electronics = 3
             advanced_technology = 3
 		}
@@ -197,18 +203,21 @@ equipments = {
     #------------------------
     enclave_power_armour_equipment_1 = {
 		archetype = power_armor_equipment
-		priority = 100
+		priority = 125
 		visual_level = 1
 
+		reliability = 0.85
         # Defensive Abilities
-		breakthrough = 10
-       		hardness = 0.5
-		armor_value = 46
+		breakthrough = 15
+       	hardness = 0.6
+		armor_value = 60
+		
+		maximum_speed = 5
         
 		build_cost_ic = 20
         
         resources = {
-			metal = 3
+			metal = 4
             electronics = 3
             advanced_technology = 3
 		}
@@ -217,13 +226,16 @@ equipments = {
     enclave_power_armour_equipment_2 = {
 		archetype = power_armor_equipment
 		parent = enclave_power_armour_equipment_1
-		priority = 200
+		priority = 150
 		visual_level = 1
 
         # Defensive Abilities
-		breakthrough = 12
-        	hardness = 0.6
-		armor_value = 54
+		breakthrough = 18
+        hardness = 0.7
+		armor_value = 70
+		reliability = 0.85
+		
+		maximum_speed = 5
         
 		build_cost_ic = 24
         

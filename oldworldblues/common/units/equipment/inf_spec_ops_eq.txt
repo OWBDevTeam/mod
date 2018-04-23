@@ -1,6 +1,6 @@
 equipments = {
     #------------------------
-    # Power Armour
+    # special forces equipment
     #------------------------
     spec_ops_equipment = {
 		is_archetype = yes
@@ -11,29 +11,22 @@ equipments = {
 		interface_category = interface_category_land
 		
 		upgrades = {
-			pa_redundancy_upgrade
-			pa_production_upgrade
-			pa_servo_motion_upgrade
-			pa_plating_upgrade
-			pa_shock_upgrade
-			pa_visor_upgrade
+		
 		}
 
-        maximum_speed = 4
+        maximum_speed = 5
         
 		# Misc Abilities
-		reliability = 0.85
+		reliability = 0.9
 
 		# Defensive Abilities
+		hardness = 0.05
+		armor_value = 3
 		breakthrough = 1
-		hardness = 0.2
-		armor_value = 5
-
-		build_cost_ic = 10
+		
+		build_cost_ic = 5
         
 		resources = {
-			metal = 2
-			electronics = 1
 		}
 	}
 	
@@ -45,17 +38,16 @@ equipments = {
 		
 		maximum_speed = 5
 		
-		breakthrough = 3
-		hardness = 0.1
-		armor_value = 15
+		breakthrough = 1
+		hardness = 0.05
+		armor_value = 3
         
-        reliability = 0.8
+        reliability = 0.9
 		
 		build_cost_ic = 6
         
 		resources = {
-			metal = 2
-			electronics = 1
+			water = 2
 		}
     }
 	
@@ -68,17 +60,17 @@ equipments = {
 		
 		maximum_speed = 5
 		
-		breakthrough = 4
-		hardness = 0.2
-		armor_value = 18
+		breakthrough = 2
+		hardness = 0.1
+		armor_value = 10
         
-        reliability = 0.85
+        reliability = 0.9
 		
 		build_cost_ic = 8
         
 		resources = {
 			metal = 2
-			electronics = 1
+			water = 1
 		}
     }
 	
@@ -89,19 +81,19 @@ equipments = {
 		priority = 20
 		visual_level = 0
 		
-		maximum_speed = 5
+		maximum_speed = 6
 		
-		breakthrough = 4
-		hardness = 0.2
-		armor_value = 18
+		breakthrough = 3
+		hardness = 0.15
+		armor_value = 15
         
-        reliability = 0.85
+        reliability = 0.9
 		
-		build_cost_ic = 8
+		build_cost_ic = 10
         
 		resources = {
 			metal = 2
-			electronics = 1
+			water = 1
 		}
     }
 	
@@ -112,19 +104,20 @@ equipments = {
 		priority = 20
 		visual_level = 0
 		
-		maximum_speed = 5
+		maximum_speed = 6
 		
 		breakthrough = 4
 		hardness = 0.2
 		armor_value = 18
         
-        reliability = 0.85
+        reliability = 0.9
 		
-		build_cost_ic = 8
+		build_cost_ic = 12
         
 		resources = {
 			metal = 2
 			electronics = 1
+			water = 1
 		}
     }
 	
@@ -135,19 +128,20 @@ equipments = {
 		priority = 20
 		visual_level = 0
 		
-		maximum_speed = 5
+		maximum_speed = 6
 		
-		breakthrough = 4
-		hardness = 0.2
-		armor_value = 18
+		breakthrough = 5
+		hardness = 0.25
+		armor_value = 21
         
-        reliability = 0.85
+        reliability = 0.9
 		
-		build_cost_ic = 8
+		build_cost_ic = 15
         
 		resources = {
 			metal = 2
-			electronics = 1
+			water = 1
+			advanced_technology = 1
 		}
     }
 }
