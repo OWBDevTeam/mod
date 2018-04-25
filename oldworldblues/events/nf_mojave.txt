@@ -82,7 +82,7 @@ country_event = {
 	option = {
 		name = nf_mojave.4.option.a 
 		
-		add_equipment_to_stockpile = { type = improved_laser_weaponry amount = 300 producer = BOS }
+		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 300 producer = MOJ }
 	}
 }
 country_event = { 
@@ -131,15 +131,13 @@ country_event = {
     
 	option = {
 		name = nf_mojave.7.option.a 
-		# equipment is placeholder #
 		add_political_power = -50
-		add_equipment_to_stockpile = { type = improved_laser_weaponry amount = 300 producer = BOS }
+		reverse_add_opinion_modifier = { target = MOJ modifier = mojave_ncr_raids }
 	}
 	option = {
 		name = nf_mojave.7.option.b 
-		# equipment is placeholder #
 		add_political_power = -50
-		add_equipment_to_stockpile = { type = improved_laser_weaponry amount = 300 producer = BOS }
+		reverse_add_opinion_modifier = { target = MOJ modifier = mojave_ncr_raids }
 		# is supposed to start a border war, will be added later #
 	}
 }
@@ -326,7 +324,7 @@ country_event = {
 	option = {
 	    name = nf_mojave.18.option.a
 		
-		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 250 producer = BOS }
+		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 250 producer = MOJ }
 	}
 }
 country_event = { 
