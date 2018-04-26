@@ -33,7 +33,7 @@ guiTypes = {
 				name = "techtree_stripes"
 				position = { x= 0 y= 0 }
 				size = { 
-					width = 4000 height = 2000
+					width = 3500 height = 1400
 					min = { width = 100%% height = 100%% }
 				}
 				clipping = no
@@ -192,7 +192,7 @@ guiTypes = {
             containerWindowType = {
 				name = "tribal_tiled_research_bg"
 				position = { x = 460 y=0 }
-				size = { width = 835 height = 1700 }
+				size = { width = 835 height = 1400 }
 				clipping = no
 			
 				background = {
@@ -204,7 +204,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "civilized_tiled_research_bg"
 				position = { x = 1295 y=0 }
-				size = { width = 835 height = 1700 }
+				size = { width = 835 height = 1400 }
 				clipping = no
 			
 				background = {
@@ -216,7 +216,7 @@ guiTypes = {
             containerWindowType = {
 				name = "advanced_tiled_research_bg"
 				position = { x = 2130 y=0 }
-				size = { width = 1114 height = 1700 }
+				size = { width = 1114 height = 1400 }
 				clipping = no
 			
 				background = {
@@ -228,7 +228,7 @@ guiTypes = {
             containerWindowType = {
 				name = "unique_tiled_research_bg"
 				position = { x = 3244 y=0 }
-				size = { width = 571 height = 1700 }
+				size = { width = 571 height = 1400 }
 				clipping = no
 			
 				background = {
@@ -288,48 +288,14 @@ guiTypes = {
 			}
             
             gridboxtype = {
-				name = "super_mutant_melee_weapons_tree"
-				position = { x = 0 y = 150 }
-				slotsize = { width = 70 height = 70 }
-				format = "LEFT"
-			}
-            
-            gridboxtype = {
 				name = "power_armour_enclave1_tree"
 				position = { x = 0 y = 150 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
 			}
-            
-            gridboxtype = {
-				name = "power_armour_enclave2_tree"
-				position = { x = 0 y = 150 }
-				slotsize = { width = 70 height = 70 }
-				format = "LEFT"
-			}
-            
-            gridboxtype = {
-				name = "power_armour_bos_tree"
-				position = { x = 0 y = 150 }
-				slotsize = { width = 70 height = 70 }
-				format = "LEFT"
-			}
-            
-            gridboxtype = {
-				name = "power_armour_legion_tree"
-				position = { x = 0 y = 150 }
-				slotsize = { width = 70 height = 70 }
-				format = "LEFT"
-			}
-            
-            gridboxtype = {
-				name = "power_armour_raider_tree"
-				position = { x = 0 y = 150 }
-				slotsize = { width = 70 height = 70 }
-				format = "LEFT"
-			}
-		}
-        
+
+        }
+		
         #------------------------------------------
         # Support Folder
         #------------------------------------------
@@ -351,7 +317,7 @@ guiTypes = {
 				name = "techtree_stripes"
 				position = { x= 0 y= 0 }
 				size = { 
-					width = 3000 height = 2100
+					width = 2661 height = 1650
 					min = { width = 100%% height = 100%% }
 				}
 				clipping = no
@@ -417,7 +383,7 @@ guiTypes = {
                 
                 instantTextBoxType = {
 					name = "advanced_column_header"
-					position = { x = 2160 y = 20 }
+					position = { x = 1926 y = 20 }
 					font = "hoi_33"
 					borderSize = { x = 0 y = 0}
 					text = "ADVANCED_HEADER"
@@ -427,17 +393,6 @@ guiTypes = {
 					Orientation = "UPPER_LEFT"
 				}
 
-                instantTextBoxType = {
-					name = "unique_column_header"
-					position = { x = 2995 y = 20 }
-					font = "hoi_33"
-					borderSize = { x = 0 y = 0}
-					text = "SPECIAL_HEADER"
-					maxWidth = 200
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
 			}
 			
             # Containers
@@ -445,7 +400,7 @@ guiTypes = {
             containerWindowType = {
 				name = "tribal_tiled_research_bg"
 				position = { x = 460 y=0 }
-				size = { width = 835 height = 2000 }
+				size = { width = 835 height = 1650 }
 				clipping = no
 			
 				background = {
@@ -457,7 +412,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "civilized_tiled_research_bg"
 				position = { x = 1295 y=0 }
-				size = { width = 835 height = 2000 }
+				size = { width = 600 height = 1650 }
 				clipping = no
 			
 				background = {
@@ -468,8 +423,8 @@ guiTypes = {
             
             containerWindowType = {
 				name = "advanced_tiled_research_bg"
-				position = { x = 2130 y=0 }
-				size = { width = 835 height = 2000 }
+				position = { x = 1896 y=0 }
+				size = { width = 765 height = 1650 }
 				clipping = no
 			
 				background = {
@@ -548,8 +503,21 @@ guiTypes = {
 				}
 				
 				instantTextBoxType = {
+					name = "motorisation_upgrade_header"
+					position = { x = 50 y = 415 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "HEADER_UPGRADES"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				
+				instantTextBoxType = {
 					name = "mechanisation_header"
-					position = { x = 50 y = 420 }
+					position = { x = 50 y = 550 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
@@ -559,53 +527,27 @@ guiTypes = {
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
+				
+				instantTextBoxType = {
+					name = "mechanisation_upgrade_header"
+					position = { x = 50 y = 685 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "HEADER_UPGRADES"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
                 
                 instantTextBoxType = {
 					name = "tanks_header"
-					position = { x = 50 y = 550 }
+					position = { x = 50 y = 820 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
 					text = "HEADER_TANKS"
-					maxWidth = 600
-					maxHeight = 62
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-
-                instantTextBoxType = {
-					name = "tires_header"
-					position = { x = 50 y = 700 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 0}
-					text = "HEADER_TIRES"
-					maxWidth = 600
-					maxHeight = 62
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-                
-                instantTextBoxType = {
-					name = "engine_header"
-					position = { x = 50 y = 850 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 0}
-					text = "HEADER_ENGINE"
-					maxWidth = 600
-					maxHeight = 62
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-                
-                instantTextBoxType = {
-					name = "plating_header"
-					position = { x = 50 y = 980 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 0}
-					text = "HEADER_PLATING"
 					maxWidth = 600
 					maxHeight = 62
 					format = left
@@ -723,7 +665,7 @@ guiTypes = {
 				name = "techtree_stripes"
 				position = { x= 0 y= 0 }
 				size = { 
-					width = 2400 height = 1200
+					width = 2155 height = 930
 					min = { width = 100%% height = 100%% }
 				}
 				clipping = no
@@ -856,7 +798,7 @@ guiTypes = {
             containerWindowType = {
 				name = "civilized_tiled_research_bg"
 				position = { x = 460 y=0 }
-				size = { width = 825 height = 1000 }
+				size = { width = 825 height = 930 }
 				clipping = no
 			
 				background = {
@@ -868,7 +810,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "advanced_tiled_research_bg"
 				position = { x = 1285 y=0 }
-				size = { width = 550 height = 1000 }
+				size = { width = 550 height = 930 }
 				clipping = no
 			
 				background = {
@@ -880,7 +822,7 @@ guiTypes = {
             containerWindowType = {
 				name = "unique_tiled_research_bg"
 				position = { x = 1835 y=0 }
-				size = { width = 320 height = 1000 }
+				size = { width = 320 height = 930 }
 				clipping = no
 			
 				background = {
@@ -1171,7 +1113,7 @@ guiTypes = {
 				name = "techtree_stripes"
 				position = { x= 0 y= 0 }
 				size = { 
-					width = 2400 height = 2000
+					width = 2140 height = 1100
 					#width = 1400 height = 1275
 					min = { width = 100%% height = 100%% }
 				}
@@ -1319,7 +1261,7 @@ guiTypes = {
             containerWindowType = {
 				name = "tribal_tiled_research_bg"
 				position = { x = 460 y=0 }
-				size = { width = 550 height = 1850 }
+				size = { width = 550 height = 1100 }
 				clipping = no
 			
 				background = {
@@ -1331,7 +1273,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "civilized_tiled_research_bg"
 				position = { x = 1010 y=0 }
-				size = { width = 550 height = 1850 }
+				size = { width = 550 height = 1100 }
 				clipping = no
 			
 				background = {
@@ -1343,7 +1285,7 @@ guiTypes = {
             containerWindowType = {
 				name = "advanced_tiled_research_bg"
 				position = { x = 1560 y=0 }
-				size = { width = 580 height = 1850 }
+				size = { width = 580 height = 1100 }
 				clipping = no
 			
 				background = {
@@ -1403,7 +1345,7 @@ guiTypes = {
 				name = "techtree_stripes"
 				position = { x= 0 y= 0 }
 				size = { 
-					width = 2400 height = 2000
+					width = 2110 height = 1800
 					min = { width = 100%% height = 100%% }
 				}
 				clipping = no
@@ -1681,7 +1623,7 @@ guiTypes = {
             containerWindowType = {
 				name = "tribal_tiled_research_bg"
 				position = { x = 460 y=0 }
-				size = { width = 550 height = 1850 }
+				size = { width = 550 height = 1800 }
 				clipping = no
 			
 				background = {
@@ -1693,7 +1635,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "civilized_tiled_research_bg"
 				position = { x = 1010 y=0 }
-				size = { width = 550 height = 1850 }
+				size = { width = 550 height = 1800 }
 				clipping = no
 			
 				background = {
@@ -1705,7 +1647,7 @@ guiTypes = {
             containerWindowType = {
 				name = "advanced_tiled_research_bg"
 				position = { x = 1560 y=0 }
-				size = { width = 550 height = 1850 }
+				size = { width = 550 height = 1800 }
 				clipping = no
 			
 				background = {
@@ -1829,7 +1771,7 @@ guiTypes = {
 				name = "techtree_stripes"
 				position = { x= 0 y= 0 }
 				size = { 
-					width = 2400 height = 2000
+					width = 2110 height = 800
 					#width = 1400 height = 1275
 					min = { width = 100%% height = 100%% }
 				}
@@ -1951,7 +1893,7 @@ guiTypes = {
             containerWindowType = {
 				name = "tribal_tiled_research_bg"
 				position = { x = 460 y=0 }
-				size = { width = 550 height = 2100 }
+				size = { width = 550 height = 800 }
 				clipping = no
 			
 				background = {
@@ -1963,7 +1905,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "civilized_tiled_research_bg"
 				position = { x = 1010 y=0 }
-				size = { width = 550 height = 2100 }
+				size = { width = 550 height = 800 }
 				clipping = no
 			
 				background = {
@@ -1975,7 +1917,7 @@ guiTypes = {
             containerWindowType = {
 				name = "advanced_tiled_research_bg"
 				position = { x = 1560 y=0 }
-				size = { width = 550 height = 2100 }
+				size = { width = 550 height = 800 }
 				clipping = no
 			
 				background = {
@@ -2238,7 +2180,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "size_filler"
 				position = { x=0 y=0 }
-				size = { width = 2100 height = 2000 }
+				size = { width = 2100 height = 1430 }
 			}
 	
 	
@@ -2670,7 +2612,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "size_filler"
 				position = { x=0 y=0 }
-				size = { width = 1440 height = 2000 }	
+				size = { width = 1300 height = 1435 }	
 			}
 
 			iconType = {
