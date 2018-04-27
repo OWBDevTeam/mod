@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.77.0 commit date:2016-04-05, commit time:18:12, hash:abf6f08</authoring_tool>
+    </contributor>
+    <created>2018-04-27T15:01:51</created>
+    <modified>2018-04-27T15:01:51</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_effects/>
+  <library_animations>
+    <animation id="Armature_001_root_pose_matrix">
+      <source id="Armature_001_root_pose_matrix-input">
+        <float_array id="Armature_001_root_pose_matrix-input-array" count="1">0</float_array>
+        <technique_common>
+          <accessor source="#Armature_001_root_pose_matrix-input-array" count="1" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Armature_001_root_pose_matrix-output">
+        <float_array id="Armature_001_root_pose_matrix-output-array" count="16">7.54979e-8 0 1 -4.72287e-7 1 0 -7.54979e-8 -2.36634 0 1 0 2.221776 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#Armature_001_root_pose_matrix-output-array" count="1" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Armature_001_root_pose_matrix-interpolation">
+        <Name_array id="Armature_001_root_pose_matrix-interpolation-array" count="1">LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#Armature_001_root_pose_matrix-interpolation-array" count="1" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="Armature_001_root_pose_matrix-sampler">
+        <input semantic="INPUT" source="#Armature_001_root_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#Armature_001_root_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#Armature_001_root_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#Armature_001_root_pose_matrix-sampler" target="root/transform"/>
+    </animation>
+    <animation id="Armature_001_barrel_rotation_pose_matrix">
+      <source id="Armature_001_barrel_rotation_pose_matrix-input">
+        <float_array id="Armature_001_barrel_rotation_pose_matrix-input-array" count="1">0</float_array>
+        <technique_common>
+          <accessor source="#Armature_001_barrel_rotation_pose_matrix-input-array" count="1" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Armature_001_barrel_rotation_pose_matrix-output">
+        <float_array id="Armature_001_barrel_rotation_pose_matrix-output-array" count="16">1 8.41839e-8 7.51463e-8 5.009131 -2.83122e-7 0.6499422 0.7599835 -2.221776 1.9497e-8 -0.7599837 0.6499423 9.4108e-8 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#Armature_001_barrel_rotation_pose_matrix-output-array" count="1" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Armature_001_barrel_rotation_pose_matrix-interpolation">
+        <Name_array id="Armature_001_barrel_rotation_pose_matrix-interpolation-array" count="1">LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#Armature_001_barrel_rotation_pose_matrix-interpolation-array" count="1" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="Armature_001_barrel_rotation_pose_matrix-sampler">
+        <input semantic="INPUT" source="#Armature_001_barrel_rotation_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#Armature_001_barrel_rotation_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#Armature_001_barrel_rotation_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#Armature_001_barrel_rotation_pose_matrix-sampler" target="barrel_rotation/transform"/>
+    </animation>
+    <animation id="Armature_001_muzzle_particle_pose_matrix">
+      <source id="Armature_001_muzzle_particle_pose_matrix-input">
+        <float_array id="Armature_001_muzzle_particle_pose_matrix-input-array" count="1">0</float_array>
+        <technique_common>
+          <accessor source="#Armature_001_muzzle_particle_pose_matrix-input-array" count="1" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Armature_001_muzzle_particle_pose_matrix-output">
+        <float_array id="Armature_001_muzzle_particle_pose_matrix-output-array" count="16">0.9999998 -1.11825e-7 1.51376e-8 7.687788 1.60091e-7 0.6499422 -0.7599835 1.13687e-13 1.57198e-7 0.7599836 0.6499422 1.13687e-13 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#Armature_001_muzzle_particle_pose_matrix-output-array" count="1" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Armature_001_muzzle_particle_pose_matrix-interpolation">
+        <Name_array id="Armature_001_muzzle_particle_pose_matrix-interpolation-array" count="1">LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#Armature_001_muzzle_particle_pose_matrix-interpolation-array" count="1" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="Armature_001_muzzle_particle_pose_matrix-sampler">
+        <input semantic="INPUT" source="#Armature_001_muzzle_particle_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#Armature_001_muzzle_particle_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#Armature_001_muzzle_particle_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#Armature_001_muzzle_particle_pose_matrix-sampler" target="muzzle_particle/transform"/>
+    </animation>
+    <animation id="Armature_001_handle_pose_matrix">
+      <source id="Armature_001_handle_pose_matrix-input">
+        <float_array id="Armature_001_handle_pose_matrix-input-array" count="1">0</float_array>
+        <technique_common>
+          <accessor source="#Armature_001_handle_pose_matrix-input-array" count="1" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Armature_001_handle_pose_matrix-output">
+        <float_array id="Armature_001_handle_pose_matrix-output-array" count="16">1 0 0 8.869916 -5.96046e-8 1 -2.6054e-15 -3.38573 -7.10543e-15 0 1 -0.03492857 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#Armature_001_handle_pose_matrix-output-array" count="1" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Armature_001_handle_pose_matrix-interpolation">
+        <Name_array id="Armature_001_handle_pose_matrix-interpolation-array" count="1">LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#Armature_001_handle_pose_matrix-interpolation-array" count="1" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="Armature_001_handle_pose_matrix-sampler">
+        <input semantic="INPUT" source="#Armature_001_handle_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#Armature_001_handle_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#Armature_001_handle_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#Armature_001_handle_pose_matrix-sampler" target="handle/transform"/>
+    </animation>
+    <animation id="Armature_001_rotation_control_pose_matrix">
+      <source id="Armature_001_rotation_control_pose_matrix-input">
+        <float_array id="Armature_001_rotation_control_pose_matrix-input-array" count="1">0</float_array>
+        <technique_common>
+          <accessor source="#Armature_001_rotation_control_pose_matrix-input-array" count="1" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Armature_001_rotation_control_pose_matrix-output">
+        <float_array id="Armature_001_rotation_control_pose_matrix-output-array" count="16">0.979739 -0.1403113 0.1429138 -28382.06 0.1403113 -0.02832076 -0.9897023 -5738.277 0.1429138 0.9897023 -0.008059748 200219.3 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#Armature_001_rotation_control_pose_matrix-output-array" count="1" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Armature_001_rotation_control_pose_matrix-interpolation">
+        <Name_array id="Armature_001_rotation_control_pose_matrix-interpolation-array" count="1">LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#Armature_001_rotation_control_pose_matrix-interpolation-array" count="1" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="Armature_001_rotation_control_pose_matrix-sampler">
+        <input semantic="INPUT" source="#Armature_001_rotation_control_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#Armature_001_rotation_control_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#Armature_001_rotation_control_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#Armature_001_rotation_control_pose_matrix-sampler" target="rotation_control/transform"/>
+    </animation>
+  </library_animations>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Animation" name="Animation">
+      <node id="Armature_001" name="Armature_001" type="NODE">
+        <translate sid="location">0.1306071 -1.682562 1.272879</translate>
+        <rotate sid="rotationZ">0 0 1 -0.6989859</rotate>
+        <rotate sid="rotationY">0 1 0 -173.1229</rotate>
+        <rotate sid="rotationX">1 0 0 -84.18224</rotate>
+        <scale sid="scale">0.4947907 0.4947896 0.4947903</scale>
+        <node id="root" name="root" sid="root" type="JOINT">
+          <matrix sid="transform">7.54979e-8 0 1 -4.72287e-7 1 0 -7.54979e-8 -2.36634 0 1 0 2.221776 0 0 0 1</matrix>
+          <node id="barrel_rotation" name="barrel_rotation" sid="barrel_rotation" type="JOINT">
+            <matrix sid="transform">1 0 0 5.009131 -5.96046e-8 1 -2.6054e-15 -2.221776 -7.10543e-15 0 1 2.93633e-7 0 0 0 1</matrix>
+            <node id="muzzle_particle" name="muzzle_particle" sid="muzzle_particle" type="JOINT">
+              <matrix sid="transform">0.9999999 0 0 7.687785 0 1 0 0 0 0 1 1.87782e-14 0 0 0 1</matrix>
+            </node>
+          </node>
+          <node id="handle" name="handle" sid="handle" type="JOINT">
+            <matrix sid="transform">1 0 0 4.259153 -5.96046e-8 1 -2.6054e-15 0.01076341 -7.10543e-15 0 1 -1.04217e-8 0 0 0 1</matrix>
+          </node>
+        </node>
+        <node id="rotation_control" name="rotation_control" sid="rotation_control" type="JOINT">
+          <matrix sid="transform">0.979739 -0.1403113 0.1429138 0.9436762 0.1403113 -0.02832075 -0.9897023 -4.247147 0.1429138 0.9897023 -0.008059742 -0.6446531 0 0 0 1</matrix>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Animation"/>
+  </scene>
+</COLLADA>
