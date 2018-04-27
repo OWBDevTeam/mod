@@ -2361,7 +2361,7 @@ entity = {
 	default_state = "idle"
 	####state to use when attacking an enemy
 	###second attack state (shooting gun)
-	state = { name = "attack"			animation = "shoot" animation_blend_time = 0.0  animation_speed = 1.0 looping = no }
+	state = { name = "attack"			animation = "shoot" animation_blend_time = 0.0  animation_speed = 1.0 looping = yes }
 	###defensive state
 	state = { name = "defend"			animation="shoot" }
 	####supporting another attacking unit
@@ -2373,7 +2373,7 @@ entity = {
 	#### death state (despawns after this)
 	state = { name = "death"	animation="retreat"	}
 	###HIGH PRIORITY
-	state = { name = "idle" animation="idle1" chance = 6 looping=no}
+	state = { name = "idle" animation="idle1" chance = 6 }
 	state = { name = "idle" animation ="idle2" chance = 2 next_state="idle1"}
 	### training state, normally many of these
 	state = { name = "training"	 }
