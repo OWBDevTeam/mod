@@ -2164,6 +2164,30 @@ entity = {
 	}
 }
 #########################################################################################################
+####MINIGUN (SPECIAL)
+#########################################################################################################
+entity = {
+	name = "minigun_pa_entity"
+	pdxmesh = "minigun_pa_mesh"
+	locator = { name = muzzle position = { 0 0 -2.5 } }
+	scale = 0.75
+	###inheret state from attached objects
+	get_state_from_parent = yes
+	default_state = "idle"
+	state = { name = "idle" }
+	state = { name = "move"	}
+	
+	state = { name = "attack"
+		event = { time = 0.5 animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0  node = "muzzle"  node = muzzle particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack } life = 1 } 
+	}
+	state = { name = "defend"
+		event = { time = 0.5 animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0  node = "muzzle"   node = muzzle particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack } life = 1 } 
+	}
+	state = { name = "support_attack"
+		event = { time = 0.5 animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0  node = "muzzle"   node = muzzle particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack} life = 1 } 
+	}
+}
+#########################################################################################################
 ####ROBOTS
 #########################################################################################################
 entity = {
@@ -2336,21 +2360,8 @@ entity = {
 	###state to be in when nothing else is triggered
 	default_state = "idle"
 	####state to use when attacking an enemy
-	state = { name = "attack" 	
-		###animation = "" - animation inside gfx file (powerarmor_meshes.gfx)
-		animation = "attack" 
-		###How much animation blends between, transitions smoothly instead of jumping
-		animation_blend_time = 0.0  
-		###percentage speed, ex: 90 frames at 30fps is 3seconds*animation speed
-		animation_speed = 1.0 
-		###Does it loop while state is active
-		looping = no 
-		###State to go to after animation is complete
-		next_state = "attack" 
-		##random chance to occur, add all same named states chance, pick one. ex: 2+1 = 3, this has 2/3rds chance to happen
-		chance = 2 }
 	###second attack state (shooting gun)
-	state = { name = "attack"			animation = "attack2" animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack" chance = 1 }
+	state = { name = "attack"			animation = "shoot" animation_blend_time = 0.0  animation_speed = 1.0 looping = no }
 	###defensive state
 	state = { name = "defend"			animation="shoot" }
 	####supporting another attacking unit
@@ -2358,14 +2369,12 @@ entity = {
 	###movement on map with no enemies
 	state = { name = "move"				animation = "move" 	animation_blend_time = 0.0 animation_speed = 1.0}
 	###retreat "limp"
-	###PLACEHOLDER
-	state = { name = "retreat"		animation="move" }
+	state = { name = "retreat"		animation="retreat" }
 	#### death state (despawns after this)
-	state = { name = "death"		}
+	state = { name = "death"	animation="retreat"	}
 	###HIGH PRIORITY
 	state = { name = "idle" animation="idle1" chance = 6 looping=no}
-	state = { name = "idle" animation ="idle2" chance = 3 next_state="idle1"}
-	state = { name = "idle" animation ="idle3" chance = 1 next_state="idle1"}
+	state = { name = "idle" animation ="idle2" chance = 2 next_state="idle1"}
 	### training state, normally many of these
 	state = { name = "training"	 }
 	
@@ -2381,32 +2390,9 @@ entity = {
 entity = {
 	name = "NCR_power_armour_entity"
 	pdxmesh = "NCR_powerarmor_t51_mesh"
-
-	default_state = "idle"
-	state = { name = "attack" 	
-		animation = "attack" 
-		animation_blend_time = 0.0  
-		animation_speed = 1.0 
-		looping = no 
-		next_state = "attack" 
-		chance = 2 }
-
-	state = { name = "attack"			animation = "attack2" animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack" chance = 1 }
-	state = { name = "defend"			animation="shoot" }
-	state = { name = "support_attack"	animation="shoot"}
-	state = { name = "move"				animation = "move" 	animation_blend_time = 0.0 animation_speed = 1.0}
-	state = { name = "retreat"		animation="move" }
-	state = { name = "death"		}
-	state = { name = "idle" animation="idle1" chance = 6 looping=no}
-	state = { name = "idle" animation ="idle2" chance = 3 next_state="idle1"}
-	state = { name = "idle" animation ="idle3" chance = 1 next_state="idle1"}
-	state = { name = "training"	 }
+	clone = "power_armour_entity"
 	
-	####These attachments are called inside the state = {} to change the bone the weapon is attached to. ex: back, hands
-	#attach = { 	name = "rifle1"	Right_Hand_node = "laser_rifle_entity" }
-	#attach = { 	name = "rifle2"	hand_l = "laser_rifle_entity" }
-	attach = { 	name = "rifle2"	hand_l = "infantry_conventional_gun_entity" }
-	#attach = { 	name = "rifle3"	Root = "laser_rifle_entity" }
+	
 				
 }
 ####	ENC Power Armor		####
@@ -2414,32 +2400,8 @@ entity = {
 entity = {
 	name = "ENC_power_armour_entity"
 	pdxmesh = "ENC_powerarmor_t51_mesh"
+	clone = "power_armour_entity"
 	
-	default_state = "idle"
-	state = { name = "attack" 	
-		animation = "attack" 
-		animation_blend_time = 0.0  
-		animation_speed = 1.0 
-		looping = no 
-		next_state = "attack" 
-		chance = 2 }
-
-	state = { name = "attack"			animation = "attack2" animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack" chance = 1 }
-	state = { name = "defend"			animation="shoot" }
-	state = { name = "support_attack"	animation="shoot"}
-	state = { name = "move"				animation = "move" 	animation_blend_time = 0.0 animation_speed = 1.0}
-	state = { name = "retreat"		animation="move" }
-	state = { name = "death"		}
-	state = { name = "idle" animation="idle1" chance = 6 looping=no}
-	state = { name = "idle" animation ="idle2" chance = 3 next_state="idle1"}
-	state = { name = "idle" animation ="idle3" chance = 1 next_state="idle1"}
-	state = { name = "training"	 }
-	
-	####These attachments are called inside the state = {} to change the bone the weapon is attached to. ex: back, hands
-	#attach = { 	name = "rifle1"	Right_Hand_node = "laser_rifle_entity" }
-	#attach = { 	name = "rifle2"	hand_l = "laser_rifle_entity" }
-	attach = { 	name = "rifle2"	hand_l = "infantry_conventional_gun_entity" }
-	#attach = { 	name = "rifle3"	Root = "laser_rifle_entity" }
 				
 }
 ####	BOS Power Armor		####
@@ -2447,32 +2409,10 @@ entity = {
 entity = {
 	name = "BOS_power_armour_entity"
 	pdxmesh = "BOS_powerarmor_t51_mesh"
+	clone = "power_armour_entity"
 	
-	default_state = "idle"
-	state = { name = "attack" 	
-		animation = "attack" 
-		animation_blend_time = 0.0  
-		animation_speed = 1.0 
-		looping = no 
-		next_state = "attack" 
-		chance = 2 }
+	
 
-	state = { name = "attack"			animation = "attack2" animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack" chance = 1 }
-	state = { name = "defend"			animation="shoot" }
-	state = { name = "support_attack"	animation="shoot"}
-	state = { name = "move"				animation = "move" 	animation_blend_time = 0.0 animation_speed = 1.0}
-	state = { name = "retreat"		animation="move" }
-	state = { name = "death"		}
-	state = { name = "idle" animation="idle1" chance = 6 looping=no}
-	state = { name = "idle" animation ="idle2" chance = 3 next_state="idle1"}
-	state = { name = "idle" animation ="idle3" chance = 1 next_state="idle1"}
-	state = { name = "training"	 }
-	
-	####These attachments are called inside the state = {} to change the bone the weapon is attached to. ex: back, hands
-	#attach = { 	name = "rifle1"	Right_Hand_node = "laser_rifle_entity" }
-	#attach = { 	name = "rifle2"	hand_l = "laser_rifle_entity" }
-	attach = { 	name = "rifle2"	hand_l = "infantry_conventional_gun_entity" }
-	#attach = { 	name = "rifle3"	Root = "laser_rifle_entity" }
 				
 }
 ####	WBH Power Armor		####
@@ -2480,32 +2420,10 @@ entity = {
 entity = {
 	name = "WBH_power_armour_entity"
 	pdxmesh = "WBH_powerarmor_t51_mesh"
+	clone = "power_armour_entity"
 	
-	default_state = "idle"
-	state = { name = "attack" 	
-		animation = "attack" 
-		animation_blend_time = 0.0  
-		animation_speed = 1.0 
-		looping = no 
-		next_state = "attack" 
-		chance = 2 }
-
-	state = { name = "attack"			animation = "attack2" animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack" chance = 1 }
-	state = { name = "defend"			animation="shoot" }
-	state = { name = "support_attack"	animation="shoot"}
-	state = { name = "move"				animation = "move" 	animation_blend_time = 0.0 animation_speed = 1.0}
-	state = { name = "retreat"		animation="move" }
-	state = { name = "death"		}
-	state = { name = "idle" animation="idle1" chance = 6 looping=no}
-	state = { name = "idle" animation ="idle2" chance = 3 next_state="idle1"}
-	state = { name = "idle" animation ="idle3" chance = 1 next_state="idle1"}
-	state = { name = "training"	 }
 	
-	####These attachments are called inside the state = {} to change the bone the weapon is attached to. ex: back, hands
-	#attach = { 	name = "rifle1"	Right_Hand_node = "laser_rifle_entity" }
-	#attach = { 	name = "rifle2"	hand_l = "laser_rifle_entity" }
-	attach = { 	name = "rifle2"	hand_l = "infantry_conventional_gun_entity" }
-	#attach = { 	name = "rifle3"	Root = "laser_rifle_entity" }
+	
 				
 }
 ####	MOJ Power Armor		####
@@ -2513,32 +2431,10 @@ entity = {
 entity = {
 	name = "MOJ_power_armour_entity"
 	pdxmesh = "MOJ_powerarmor_t51_mesh"
+	clone = "power_armour_entity"
 	
-	default_state = "idle"
-	state = { name = "attack" 	
-		animation = "attack" 
-		animation_blend_time = 0.0  
-		animation_speed = 1.0 
-		looping = no 
-		next_state = "attack" 
-		chance = 2 }
-
-	state = { name = "attack"			animation = "attack2" animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack" chance = 1 }
-	state = { name = "defend"			animation="shoot" }
-	state = { name = "support_attack"	animation="shoot"}
-	state = { name = "move"				animation = "move" 	animation_blend_time = 0.0 animation_speed = 1.0}
-	state = { name = "retreat"		animation="move" }
-	state = { name = "death"		}
-	state = { name = "idle" animation="idle1" chance = 6 looping=no}
-	state = { name = "idle" animation ="idle2" chance = 3 next_state="idle1"}
-	state = { name = "idle" animation ="idle3" chance = 1 next_state="idle1"}
-	state = { name = "training"	 }
 	
-	####These attachments are called inside the state = {} to change the bone the weapon is attached to. ex: back, hands
-	#attach = { 	name = "rifle1"	Right_Hand_node = "laser_rifle_entity" }
-	#attach = { 	name = "rifle2"	hand_l = "laser_rifle_entity" }
-	attach = { 	name = "rifle2"	hand_l = "infantry_conventional_gun_entity" }
-	#attach = { 	name = "rifle3"	Root = "laser_rifle_entity" }
+	
 				
 }
 ####	CES Power Armor		####
@@ -2546,32 +2442,10 @@ entity = {
 entity = {
 	name = "CES_power_armour_entity"
 	pdxmesh = "CES_powerarmor_t51_mesh"
+	clone = "power_armour_entity"
 	
-	default_state = "idle"
-	state = { name = "attack" 	
-		animation = "attack" 
-		animation_blend_time = 0.0  
-		animation_speed = 1.0 
-		looping = no 
-		next_state = "attack" 
-		chance = 2 }
-
-	state = { name = "attack"			animation = "attack2" animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack" chance = 1 }
-	state = { name = "defend"			animation="shoot" }
-	state = { name = "support_attack"	animation="shoot"}
-	state = { name = "move"				animation = "move" 	animation_blend_time = 0.0 animation_speed = 1.0}
-	state = { name = "retreat"		animation="move" }
-	state = { name = "death"		}
-	state = { name = "idle" animation="idle1" chance = 6 looping=no}
-	state = { name = "idle" animation ="idle2" chance = 3 next_state="idle1"}
-	state = { name = "idle" animation ="idle3" chance = 1 next_state="idle1"}
-	state = { name = "training"	 }
 	
-	####These attachments are called inside the state = {} to change the bone the weapon is attached to. ex: back, hands
-	#attach = { 	name = "rifle1"	Right_Hand_node = "laser_rifle_entity" }
-	#attach = { 	name = "rifle2"	hand_l = "laser_rifle_entity" }
-	attach = { 	name = "rifle2"	hand_l = "infantry_conventional_gun_entity" }
-	#attach = { 	name = "rifle3"	Root = "laser_rifle_entity" }
+	
 				
 }
 ####	NCN Power Armor		####
@@ -2579,32 +2453,10 @@ entity = {
 entity = {
 	name = "NCN_power_armour_entity"
 	pdxmesh = "NCN_powerarmor_t51_mesh"
+	clone = "power_armour_entity"
 	
-	default_state = "idle"
-	state = { name = "attack" 	
-		animation = "attack" 
-		animation_blend_time = 0.0  
-		animation_speed = 1.0 
-		looping = no 
-		next_state = "attack" 
-		chance = 2 }
-
-	state = { name = "attack"			animation = "attack2" animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack" chance = 1 }
-	state = { name = "defend"			animation="shoot" }
-	state = { name = "support_attack"	animation="shoot"}
-	state = { name = "move"				animation = "move" 	animation_blend_time = 0.0 animation_speed = 1.0}
-	state = { name = "retreat"		animation="move" }
-	state = { name = "death"		}
-	state = { name = "idle" animation="idle1" chance = 6 looping=no}
-	state = { name = "idle" animation ="idle2" chance = 3 next_state="idle1"}
-	state = { name = "idle" animation ="idle3" chance = 1 next_state="idle1"}
-	state = { name = "training"	 }
 	
-	####These attachments are called inside the state = {} to change the bone the weapon is attached to. ex: back, hands
-	#attach = { 	name = "rifle1"	Right_Hand_node = "laser_rifle_entity" }
-	#attach = { 	name = "rifle2"	hand_l = "laser_rifle_entity" }
-	attach = { 	name = "rifle2"	hand_l = "infantry_conventional_gun_entity" }
-	#attach = { 	name = "rifle3"	Root = "laser_rifle_entity" }
+	
 				
 }
 ####	DES Power Armor		####
@@ -2612,65 +2464,39 @@ entity = {
 entity = {
 	name = "DES_power_armour_entity"
 	pdxmesh = "DES_powerarmor_t51_mesh"
+	clone = "power_armour_entity"
 	
-	default_state = "idle"
-	state = { name = "attack" 	
-		animation = "attack" 
-		animation_blend_time = 0.0  
-		animation_speed = 1.0 
-		looping = no 
-		next_state = "attack" 
-		chance = 2 }
+	
 
-	state = { name = "attack"			animation = "attack2" animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack" chance = 1 }
-	state = { name = "defend"			animation="shoot" }
-	state = { name = "support_attack"	animation="shoot"}
-	state = { name = "move"				animation = "move" 	animation_blend_time = 0.0 animation_speed = 1.0}
-	state = { name = "retreat"		animation="move" }
-	state = { name = "death"		}
-	state = { name = "idle" animation="idle1" chance = 6 looping=no}
-	state = { name = "idle" animation ="idle2" chance = 3 next_state="idle1"}
-	state = { name = "idle" animation ="idle3" chance = 1 next_state="idle1"}
-	state = { name = "training"	 }
-	
-	####These attachments are called inside the state = {} to change the bone the weapon is attached to. ex: back, hands
-	#attach = { 	name = "rifle1"	Right_Hand_node = "laser_rifle_entity" }
-	#attach = { 	name = "rifle2"	hand_l = "laser_rifle_entity" }
-	attach = { 	name = "rifle2"	hand_l = "infantry_conventional_gun_entity" }
-	#attach = { 	name = "rifle3"	Root = "laser_rifle_entity" }
 				
 }
 ##### ANIMATION
 ####declaring animations 
 animation = {
 	####internal reference name for .gfx
-	name = "fo4_t51_charge_shoot_anim"
+	name = "fo4_t51_fire_anim"
 	###path reletive to this file's location
-	file = "powerarmor/fo4_t51_charge_shoot_anim.anim"
+	file = "powerarmor/fo4_t51_m_fire_anim.anim"
 }
 animation = {
 	name = "fo4_t51_idel1_anim"
-	file = "powerarmor/fo4_t51_idel1_anim.anim"
+	file = "powerarmor/fo4_t51_m_idle_1_anim.anim"
 }
 animation = {
 	name = "fo4_t51_idel2_anim"
-	file = "powerarmor/fo4_t51_idel2_anim.anim"
+	file = "powerarmor/fo4_t51_m_idle_2_anim.anim"
 }
 animation = {
-	name = "fo4_t51_idel3_anim"
-	file = "powerarmor/fo4_t51_idel3_anim.anim"
-}
-animation = {
-	name = "fo4_t51_standingfire_anim"
-	file = "powerarmor/fo4_t51_standingfire_anim.anim"
+	name = "fo4_t51_retreat_anim"
+	file = "powerarmor/fo4_t51_m_retreat_anim.anim"
 }
 animation = {
 	name = "fo4_t51_running_anim"
-	file = "powerarmor/fo4_t51_running_anim.anim"
+	file = "powerarmor/fo4_t51_m_running_anim.anim"
 }
 animation = {
 	name = "fo4_t51_walk_anim"
-	file = "powerarmor/fo4_t51_walk_anim.anim"
+	file = "powerarmor/fo4_t51_m_walk_anim.anim"
 }
 animation = {
 	name = "protectron_walk_anim"
@@ -2692,3 +2518,8 @@ animation = {
 	name = "protectron_attack_anim"
 	file = "robots/protectron_attack_anim.anim"
 }
+animation = {
+	name = "minigun_attack_anim"
+	file = "guns/minigun_fire_bake_anim.anim"
+}
+
