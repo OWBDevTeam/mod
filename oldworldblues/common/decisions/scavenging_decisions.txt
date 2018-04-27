@@ -1,0 +1,991 @@
+#### Planning Section ####
+# Three rarities - common, rare and legendary
+# Later are only found in 'large' or 'legendary' events
+# First have decreasing rarity as SE increases
+# Second have increasing rarity as SE increases
+# Final only have a slight impact from SE
+
+### SE ###
+## Possible values ##
+# 90%
+# 100%
+# 110%
+# 120%
+# 130%
+# 140%
+# 150%
+## Modifiers ##
+# Tribal > -10%
+# Binoculars > 10%
+# Portable Radios > 10%
+# Radio Detection > 10%
+# Settler > 10%
+# BOS > 20%
+
+### Equipment ###
+## Common ##
+# Pipe Guns - infantry_equipment_1
+# Basic Firearms - ballistic_equipment_1
+# Basic Melee Weapons - melee_equipment_1
+# Slashing Melee Weapons - melee_equipment_2
+# Support Equipment - support_equipment
+# PMGs - anti_personnel_equipment
+# Dynamite - explosive_equipment
+## Rare ##
+# Laser Muskets - energy_equipment_1
+# Powered Weapons - melee_equipment_3
+# Common Energy Weapons - energy_equipment_2
+# Common Firearms - ballistic_equipment_2
+# Flamers - flamer_equipment
+# Mortars - explosive_equipment_2
+# Scavenged PA (on the rare side) - power_armor_equipment_1
+## Legendary ##
+# Advanced Energy Weapons - energy_equipment_3
+# Advanced Firearms - ballistic_equipment_3
+# T-45d PA - power_armor_equipment_2
+# Miniguns - anti_personnel_equipment_3
+# Missile Launcher - anti_tank_equipment_3
+# Gatling Laser - laser_equipment_3
+# Incinerator - flamer_equipment_3
+
+### Robots ###
+## Common ##
+# Protectron MK1 & 2 - light_robot_equipment_2 & 3
+## Rare ##
+# Mister Handy - medium_robot_equipment_2
+# Mr. Gutsy - medium_robot_equipment_3
+# Robobrain - heavy_robot_equipment_2
+## Legendary ##
+# Sentry Bot - heavy_robot_equipment_3
+
+### Vehicles ###
+## Common ##
+# Scarp Motorbikes - motorbike_equipment_1
+# Salvaged Motorbikes - motorbike_equipment_2
+# Scrap Car - car_equipment_1
+## Rare ##
+# Salvaged Car - car_equipment_2
+# Scrap Truck - truck_equipment_1
+# Wasteland Car - car_equipment_3
+# Salvaged Truck - truck_equipment_2
+## Legendary ##
+# Salvaged APC - apc_equipment_1
+# Scarp Tank - tank_equipment_2
+# Great War APC - apc_equipment_3
+
+scavenge_resources = {
+	begin_scavenging_program = {
+		available = {
+			has_scavenge_equipment = yes
+		}
+		visible = {
+			NOT = { has_country_flag = enabled_scavenging } # Helps testing
+		}
+		fire_only_once = yes
+		cost = 20
+		days_remove = 10
+
+		complete_effect = {
+			scavenge_equip_start = yes
+		}
+
+		remove_effect = {
+			set_country_flag = enabled_scavenging
+			add_manpower = 50
+			add_equipment_to_stockpile = {
+				type = melee_equipment_1
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 100
+			}
+			clr_country_flag = is_scavenging
+		}
+
+		complete_effect = {
+			set_variable = { var = scavenge_efficiency value = 100 }
+			custom_effect_tooltip = scavenging_set_to_100
+			if = {
+				limit = {
+					is_brotherhood_nation = yes
+				}
+				add_to_variable = { var = scavenge_efficiency value = 20 tooltip = scavenging_bos_efficiency }
+			}
+			if = {
+				limit = {
+					is_settler_nation = yes
+				}
+				add_to_variable = { var = scavenge_efficiency value = 10 tooltip = scavenging_settler_efficiency }
+			}
+			# Raiders and mutants have no effect
+			if = {
+				limit = {
+					is_tribal_nation = yes
+				}
+				subtract_from_variable = { var = scavenge_efficiency value = 10 tooltip = scavenging_tribal_efficiency }
+			}
+		}
+	}
+	## Main Scavenging Sets ##
+
+	# Scavenge for Equipment (Weapons, Support Equipment, PA) #
+	scavenge_equip = {
+		allowed = {
+			always = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_scavenging
+				NOT = { has_country_flag = is_scavenging }
+			}
+			has_scavenge_equipment = yes
+		}
+		visible = {
+			has_country_flag = enabled_scavenging
+			NOT = { has_country_flag = scavenge_sm_hidden }
+		}
+
+		cost = 10
+		days_remove = 60
+		days_re_enable = 60
+
+		complete_effect = {
+			scavenge_equip_start = yes
+			scavenge_equipment_randomiser = yes
+			set_country_flag = scavenge_normal
+		}
+
+		remove_effect = {
+			random_list = {
+				10 = { # Scavengers Killed
+					country_event = { id = scavenge.1 }
+				}
+				90 = { # A successful mission
+					country_event = { id = scavenge.2 }
+				}
+			}
+		}
+	}
+	scavenge_equip_pa = {
+		allowed = {
+			always = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_scavenging
+				NOT = { has_country_flag = is_scavenging }
+			}
+			has_scavenge_equipment = yes
+			has_scavenge_pa = yes
+		}
+		visible = {
+			has_country_flag = enabled_scavenging
+			has_country_flag = SE_pa_upgrade
+			NOT = { has_country_flag = scavenge_pa_hidden }
+		}
+
+		cost = 10
+		days_remove = 60
+		days_re_enable = 60
+
+		complete_effect = {
+			scavenge_equip_start = yes
+			scavenge_pa_start = yes
+			scavenge_equipment_randomiser = yes
+			set_country_flag = scavenge_pa
+		}
+
+		remove_effect = {
+			random_list = {
+				5 = { # Scavengers Killed
+					country_event = { id = scavenge.1 }
+				}
+				95 = { # A successful mission
+					country_event = { id = scavenge.2 }
+				}
+			}
+		}
+	}
+	scavenge_equip_motor = {
+		allowed = {
+			always = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_scavenging
+				NOT = { has_country_flag = is_scavenging }
+			}
+			has_scavenge_equipment = yes
+			has_scavenge_vehicle = yes
+		}
+		visible = {
+			has_country_flag = enabled_scavenging
+			has_country_flag = SE_mot_upgrade
+			NOT = { has_country_flag = scavenge_mot_hidden }
+		}
+
+		cost = 10
+		days_remove = 30
+		days_re_enable = 60
+
+		complete_effect = {
+			scavenge_equip_start = yes
+			scavenge_vehicle_start = yes
+			set_country_flag = scavenge_vroom_vroom
+		}
+
+		remove_effect = {
+			random_list = {
+				10 = { # Scavengers Killed
+					country_event = { id = scavenge.1 }
+				}
+				90 = { # A successful mission
+					country_event = { id = scavenge.2 }
+				}
+			}
+		}
+	}
+	scavenge_equip_fly = {
+		allowed = {
+			always = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_scavenging
+				NOT = { has_country_flag = is_scavenging }
+			}
+			has_scavenge_equipment = yes
+			has_scavenge_fly = yes
+		}
+		visible = {
+			has_country_flag = enabled_scavenging
+			has_country_flag = SE_fly_upgrade
+			NOT = { has_country_flag = scavenge_fly_hidden }
+		}
+
+		cost = 10
+		days_remove = 10
+		days_re_enable = 60
+
+		complete_effect = {
+			scavenge_equip_start = yes
+			scavenge_fly_start = yes
+			scavenge_equipment_randomiser = yes
+			set_country_flag = scavenge_fly
+		}
+
+		remove_effect = {
+			random_list = {
+				10 = { # Scavengers Killed
+					country_event = { id = scavenge.1 }
+				}
+				90 = { # A successful mission
+					country_event = { id = scavenge.2 }
+				}
+			}
+		}
+	}
+
+	# Scavenge for Robots #
+	scavenge_robots = {
+		allowed = {
+			always = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_scavenging
+				NOT = { has_country_flag = is_scavenging }
+			}
+			has_scavenge_equipment = yes
+		}
+		visible = {
+			has_country_flag = enabled_scavenging
+			NOT = { has_country_flag = scavenge_sm_hidden }
+		}
+
+		cost = 10
+		days_remove = 60
+		days_re_enable = 60
+
+		complete_effect = {
+			scavenge_equip_start = yes
+			scavenge_robots_randomiser = yes
+			set_country_flag = scavenge_normal
+		}
+
+		remove_effect = {
+			random_list = {
+				10 = { # Scavengers Killed
+					country_event = { id = scavenge.1 }
+				}
+				90 = { # A successful mission
+					country_event = { id = scavenge.3 }
+				}
+			}
+		}
+	}
+	scavenge_robots_pa = {
+		allowed = {
+			always = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_scavenging
+				NOT = { has_country_flag = is_scavenging }
+			}
+			has_scavenge_equipment = yes
+			has_scavenge_pa = yes
+		}
+		visible = {
+			has_country_flag = enabled_scavenging
+			has_country_flag = SE_pa_upgrade
+			NOT = { has_country_flag = scavenge_pa_hidden }
+		}
+
+		cost = 10
+		days_remove = 60
+		days_re_enable = 60
+
+		complete_effect = {
+			scavenge_equip_start = yes
+			scavenge_pa_start = yes
+			scavenge_robots_randomiser = yes
+			set_country_flag = scavenge_pa
+		}
+
+		remove_effect = {
+			random_list = {
+				5 = { # Scavengers Killed
+					country_event = { id = scavenge.1 }
+				}
+				95 = { # A successful mission
+					country_event = { id = scavenge.3 }
+				}
+			}
+		}
+	}
+	scavenge_robots_motor = {
+		allowed = {
+			always = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_scavenging
+				NOT = { has_country_flag = is_scavenging }
+			}
+			has_scavenge_equipment = yes
+			has_scavenge_vehicle = yes
+		}
+		visible = {
+			has_country_flag = enabled_scavenging
+			has_country_flag = SE_mot_upgrade
+			NOT = { has_country_flag = scavenge_mot_hidden }
+		}
+
+		cost = 10
+		days_remove = 30
+		days_re_enable = 60
+
+		complete_effect = {
+			scavenge_equip_start = yes
+			scavenge_vehicle_start = yes
+			scavenge_robots_randomiser = yes
+			set_country_flag = scavenge_vroom_vroom
+		}
+
+		remove_effect = {
+			random_list = {
+				10 = { # Scavengers Killed
+					country_event = { id = scavenge.1 }
+				}
+				90 = { # A successful mission
+					country_event = { id = scavenge.3 }
+				}
+			}
+		}
+	}
+	scavenge_robots_fly = {
+		allowed = {
+			always = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_scavenging
+				NOT = { has_country_flag = is_scavenging }
+			}
+			has_scavenge_equipment = yes
+			has_scavenge_fly = yes
+		}
+		visible = {
+			has_country_flag = enabled_scavenging
+			has_country_flag = SE_fly_upgrade
+			NOT = { has_country_flag = scavenge_fly_hidden }
+		}
+
+		cost = 10
+		days_remove = 10
+		days_re_enable = 60
+
+		complete_effect = {
+			scavenge_equip_start = yes
+			scavenge_fly_start = yes
+			scavenge_robots_randomiser = yes
+			set_country_flag = scavenge_fly
+		}
+
+		remove_effect = {
+			random_list = {
+				10 = { # Scavengers Killed
+					country_event = { id = scavenge.1 }
+				}
+				90 = { # A successful mission
+					country_event = { id = scavenge.3 }
+				}
+			}
+		}
+	}
+
+	# Scavenge for Vehicles #
+	scavenge_vehicles = {
+		allowed = {
+			always = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_scavenging
+				NOT = { has_country_flag = is_scavenging }
+			}
+			has_scavenge_equipment = yes
+		}
+		visible = {
+			has_country_flag = enabled_scavenging
+			NOT = { has_country_flag = scavenge_sm_hidden }
+		}
+
+		cost = 10
+		days_remove = 60
+		days_re_enable = 60
+
+		complete_effect = {
+			scavenge_equip_start = yes
+			scavenge_vehicles_randomiser = yes
+			set_country_flag = scavenge_normal
+		}
+
+		remove_effect = {
+			random_list = {
+				10 = { # Scavengers Killed
+					country_event = { id = scavenge.1 }
+				}
+				90 = { # A successful mission
+					country_event = { id = scavenge.4 }
+				}
+			}
+		}
+	}
+	scavenge_vehicles_pa = {
+		allowed = {
+			always = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_scavenging
+				NOT = { has_country_flag = is_scavenging }
+			}
+			has_scavenge_equipment = yes
+			has_scavenge_pa = yes
+		}
+		visible = {
+			has_country_flag = enabled_scavenging
+			has_country_flag = SE_pa_upgrade
+			NOT = { has_country_flag = scavenge_pa_hidden }
+		}
+
+		cost = 10
+		days_remove = 60
+		days_re_enable = 60
+
+		complete_effect = {
+			scavenge_equip_start = yes
+			scavenge_pa_start = yes
+			scavenge_vehicles_randomiser = yes
+			set_country_flag = scavenge_pa
+		}
+
+		remove_effect = {
+			random_list = {
+				5 = { # Scavengers Killed
+					country_event = { id = scavenge.1 }
+				}
+				95 = { # A successful mission
+					country_event = { id = scavenge.4 }
+				}
+			}
+		}
+	}
+	scavenge_vehicles_motor = {
+		allowed = {
+			always = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_scavenging
+				NOT = { has_country_flag = is_scavenging }
+			}
+			has_scavenge_equipment = yes
+			has_scavenge_vehicle = yes
+		}
+		visible = {
+			has_country_flag = enabled_scavenging
+			has_country_flag = SE_mot_upgrade
+			NOT = { has_country_flag = scavenge_mot_hidden }
+		}
+
+		cost = 10
+		days_remove = 30
+		days_re_enable = 60
+
+		complete_effect = {
+			scavenge_equip_start = yes
+			scavenge_vehicle_start = yes
+			scavenge_vehicles_randomiser = yes
+			set_country_flag = scavenge_vroom_vroom
+		}
+
+		remove_effect = {
+			random_list = {
+				10 = { # Scavengers Killed
+					country_event = { id = scavenge.1 }
+				}
+				90 = { # A successful mission
+					country_event = { id = scavenge.4 }
+				}
+			}
+		}
+	}
+	scavenge_vehicles_fly = {
+		allowed = {
+			always = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_scavenging
+				NOT = { has_country_flag = is_scavenging }
+			}
+			has_scavenge_equipment = yes
+			has_scavenge_fly = yes
+		}
+		visible = {
+			has_country_flag = enabled_scavenging
+			has_country_flag = SE_fly_upgrade
+			NOT = { has_country_flag = scavenge_fly_hidden }
+		}
+
+		cost = 10
+		days_remove = 10
+		days_re_enable = 60
+
+		complete_effect = {
+			scavenge_equip_start = yes
+			scavenge_fly_start = yes
+			scavenge_vehicles_randomiser = yes
+			set_country_flag = scavenge_fly
+		}
+
+		remove_effect = {
+			random_list = {
+				10 = { # Scavengers Killed
+					country_event = { id = scavenge.1 }
+				}
+				90 = { # A successful mission
+					country_event = { id = scavenge.4 }
+				}
+			}
+		}
+	}
+
+	# Scavenge for Old World Tech #
+	scavenge_owt = {
+		allowed = {
+			always = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_scavenging
+				NOT = { has_country_flag = is_scavenging }
+			}
+			hidden_trigger = {
+				is_brotherhood_nation = yes
+			}
+			has_scavenge_equipment = yes
+		}
+		visible = {
+			has_country_flag = enabled_scavenging
+			NOT = { has_country_flag = scavenge_sm_hidden }
+			hidden_trigger = {
+				is_brotherhood_nation = yes
+			}
+		}
+
+		cost = 10
+		days_remove = 60
+		days_re_enable = 60
+
+		complete_effect = {
+			scavenge_equip_start = yes
+			set_country_flag = scavenge_normal
+		}
+
+		remove_effect = {
+			random_list = {
+				5 = { # Scavengers Killed
+					country_event = { id = scavenge.1 }
+				}
+				95 = { # A successful mission
+					country_event = { id = scavenge.5 }
+				}
+			}
+		}
+	}
+	scavenge_owt_pa = {
+		allowed = {
+			always = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_scavenging
+				NOT = { has_country_flag = is_scavenging }
+			}
+			hidden_trigger = {
+				is_brotherhood_nation = yes
+			}
+			has_scavenge_equipment = yes
+			has_scavenge_pa = yes
+		}
+		visible = {
+			has_country_flag = enabled_scavenging
+			has_country_flag = SE_pa_upgrade
+			NOT = { has_country_flag = scavenge_pa_hidden }
+			hidden_trigger = {
+				is_brotherhood_nation = yes
+			}
+		}
+
+		cost = 10
+		days_remove = 60
+		days_re_enable = 60
+
+		complete_effect = {
+			scavenge_equip_start = yes
+			scavenge_pa_start = yes
+			set_country_flag = scavenge_pa
+		}
+
+		remove_effect = {
+			random_list = {
+				5 = { # Scavengers Killed
+					country_event = { id = scavenge.1 }
+				}
+				95 = { # A successful mission
+					country_event = { id = scavenge.5 }
+				}
+			}
+		}
+	}
+	scavenge_owt_motor = {
+		allowed = {
+			always = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_scavenging
+				NOT = { has_country_flag = is_scavenging }
+			}
+			hidden_trigger = {
+				is_brotherhood_nation = yes
+			}
+			has_scavenge_equipment = yes
+			has_scavenge_vehicle = yes
+		}
+		visible = {
+			has_country_flag = enabled_scavenging
+			has_country_flag = SE_mot_upgrade
+			NOT = { has_country_flag = scavenge_mot_hidden }
+			hidden_trigger = {
+				is_brotherhood_nation = yes
+			}
+		}
+
+		cost = 10
+		days_remove = 30
+		days_re_enable = 60
+
+		complete_effect = {
+			scavenge_equip_start = yes
+			scavenge_vehicle_start = yes
+			set_country_flag = scavenge_vroom_vroom
+		}
+
+		remove_effect = {
+			random_list = {
+				5 = { # Scavengers Killed
+					country_event = { id = scavenge.1 }
+				}
+				95 = { # A successful mission
+					country_event = { id = scavenge.5 }
+				}
+			}
+		}
+	}
+	scavenge_owt_fly = {
+		allowed = {
+			always = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = not_scavenging
+				NOT = { has_country_flag = is_scavenging }
+			}
+			hidden_trigger = {
+				is_brotherhood_nation = yes
+			}
+			has_scavenge_equipment = yes
+			has_scavenge_fly = yes
+		}
+		visible = {
+			has_country_flag = enabled_scavenging
+			has_country_flag = SE_fly_upgrade
+			NOT = { has_country_flag = scavenge_fly_hidden }
+			hidden_trigger = {
+				is_brotherhood_nation = yes
+			}
+		}
+
+		cost = 10
+		days_remove = 10
+		days_re_enable = 60
+
+		complete_effect = {
+			scavenge_equip_start = yes
+			scavenge_fly_start = yes
+			set_country_flag = scavenge_fly
+		}
+
+		remove_effect = {
+			random_list = {
+				5 = { # Scavengers Killed
+					country_event = { id = scavenge.1 }
+				}
+				95 = { # A successful mission
+					country_event = { id = scavenge.5 }
+				}
+			}
+		}
+	}
+
+	## Scavenging Upgrades / Options ##
+
+	# Roll out techs to scavengers - required to update the variable #
+	roll_out_tech = {
+		allowed = {
+			always = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SE_roll_out_tech
+				OR = {
+					AND = {
+						has_tech = binoculars
+						NOT = { has_country_flag = SE_binoculars_upgrade }
+					}
+					AND = {
+						has_tech = flare_guns
+						NOT = { has_country_flag = SE_flare_upgrade }
+					}
+					AND = {
+						has_tech = portable_radio
+						NOT = { has_country_flag = SE_radio_upgrade }
+					}
+					AND = {
+						has_tech = radio_detection
+						NOT = { has_country_flag = SE_radar_upgrade }
+					}
+					AND = {
+						OR = {
+							has_tech = power_armour
+							has_tech = power_armour_t45d
+							has_tech = power_armour_t51b
+							has_tech = power_armour_enclave1
+							has_tech = power_armour_enclave2
+							has_tech = power_armour_bos
+							has_tech = power_armour_legion
+							has_tech = power_armour_raider
+						}
+						NOT = { has_country_flag = SE_pa_upgrade }
+					}
+					AND = {
+						OR = {
+							has_tech = vertiberd_transport1
+						}
+						NOT = { has_country_flag = SE_fly_upgrade }
+					}
+					AND = {
+						has_tech = bike_tech_1
+						NOT = { has_country_flag = SE_mot_upgrade }
+					}
+				}
+			}
+		}
+		visible = {
+			OR = {
+				AND = {
+					has_tech = binoculars
+					NOT = { has_country_flag = SE_binoculars_upgrade }
+				}
+				AND = {
+					has_tech = portable_radio
+					NOT = { has_country_flag = SE_radio_upgrade }
+				}
+				AND = {
+					has_tech = radio_detection
+					NOT = { has_country_flag = SE_radar_upgrade }
+				}
+				AND = {
+					has_tech = flare_guns
+					NOT = { has_country_flag = SE_flare_upgrade }
+				}
+				AND = {
+					OR = {
+						has_tech = power_armour
+						has_tech = power_armour_t45d
+						has_tech = power_armour_t51b
+						has_tech = power_armour_enclave1
+						has_tech = power_armour_enclave2
+						has_tech = power_armour_bos
+						has_tech = power_armour_legion
+						has_tech = power_armour_raider
+					}
+					NOT = { has_country_flag = SE_pa_upgrade }
+				}
+				AND = {
+					OR = {
+						has_tech = vertiberd_transport1
+					}
+					NOT = { has_country_flag = SE_fly_upgrade }
+				}
+				AND = {
+					has_tech = bike_tech_1
+					NOT = { has_country_flag = SE_mot_upgrade }
+				}
+			}
+			has_country_flag = enabled_scavenging
+		}
+
+		cost = 10
+		days_remove = 30
+		days_re_enable = 30
+
+		remove_effect = {
+			if = {
+				limit = {
+					AND = {
+						has_tech = binoculars
+						NOT = { has_country_flag = SE_binoculars_upgrade }
+					}
+				}
+				add_to_variable = { var = scavenge_efficiency value = 10 tooltip = binoculars_upgrade }
+				set_country_flag = SE_binoculars_upgrade
+			}
+			if = {
+				limit = {
+					AND = {
+						has_tech = flare_guns
+						NOT = { has_country_flag = SE_flare_upgrade }
+					}
+				}
+				add_to_variable = { var = scavenge_efficiency value = 10 tooltip = flare_upgrade }
+				set_country_flag = SE_flare_upgrade
+			}
+			if = {
+				limit = {
+					AND = {
+						has_tech = portable_radio
+						NOT = { has_country_flag = SE_radio_upgrade }
+					}
+				}
+				add_to_variable = { var = scavenge_efficiency value = 10 tooltip = radio_upgrade }
+				set_country_flag = SE_radio_upgrade
+			}
+			if = {
+				limit = {
+					AND = {
+						has_tech = radio_detection
+						NOT = { has_country_flag = SE_radar_upgrade }
+					}
+				}
+				add_to_variable = { var = scavenge_efficiency value = 10 tooltip = radar_upgrade }
+				set_country_flag = SE_radar_upgrade
+			}
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_tech = power_armour
+							has_tech = power_armour_t45d
+							has_tech = power_armour_t51b
+							has_tech = power_armour_enclave1
+							has_tech = power_armour_enclave2
+							has_tech = power_armour_bos
+							has_tech = power_armour_legion
+							has_tech = power_armour_raider
+						}
+						NOT = { has_country_flag = SE_pa_upgrade }
+					}
+				}
+				custom_effect_tooltip = SE_pa_upgrade
+				set_country_flag = SE_pa_upgrade
+			}
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_tech = vertiberd_transport1
+						}
+						NOT = { has_country_flag = SE_fly_upgrade }
+					}
+				}
+				custom_effect_tooltip = SE_fly_upgrade
+				set_country_flag = SE_fly_upgrade
+			}
+			if = {
+				limit = {
+					AND = {
+						OR = {
+							has_tech = bike_tech_1
+						}
+						NOT = { has_country_flag = SE_fly_upgrade }
+					}
+				}
+				custom_effect_tooltip = SE_mot_upgrade
+				set_country_flag = SE_mot_upgrade
+			}
+		}
+	}
+	# Show / hide options #
+	scavenge_options = {
+		allowed = {
+			always = yes
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			has_country_flag = enabled_scavenging
+		}
+
+		complete_effect = {
+			country_event = { id = scavenge.6 }
+		}
+	}
+}

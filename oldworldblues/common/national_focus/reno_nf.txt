@@ -71,7 +71,7 @@ focus_tree = {
 	}
 	focus = {
 		id = new_police
-		icon = GFX_goal_bos_steel_giants
+		icon = GFX_goal_NEW_New_Reno_Police_Department
 		prerequisite = {
 			focus = new_speakeasies
 		}
@@ -145,6 +145,14 @@ focus_tree = {
 		prerequisite = {
 			focus = new_expansionism
 		}
+		available = {
+			ANT = { 
+				OR = {
+					exists = yes
+				}	
+			}
+		}
+		cancel_if_invalid = yes
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -168,7 +176,7 @@ focus_tree = {
 				target = ANT
 				type = annex_everything
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -202,9 +210,18 @@ focus_tree = {
 		x = 0
 		y = 6
 		cost = 8.6
+		available = {
+			NEW = {
+				owns_state = 382
+				owns_state = 126
+				owns_state = 585
+				
+			}
+		}
 		completion_reward = {
 			add_state_core = 382
 			add_state_core = 126
+			add_state_core = 585
 		}
 
 	}
@@ -217,6 +234,14 @@ focus_tree = {
 		x = 2
 		y = 5
 		cost = 8.6
+		available = {
+			NEW = {
+				owns_state = 382
+				owns_state = 126
+				owns_state = 585
+				
+			}
+		}
 		completion_reward = {
 			add_manpower = 500
 		}
@@ -228,6 +253,14 @@ focus_tree = {
 		prerequisite = {
 			focus = new_expansionism
 		}
+		available = {
+			YKZ = { 
+				OR = {
+					exists = yes
+				}	
+			}
+		}
+		cancel_if_invalid = yes
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -251,7 +284,7 @@ focus_tree = {
 				type = annex_everything
 				target = YKZ
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -284,6 +317,14 @@ focus_tree = {
 		}
 		x = 4
 		y = 5
+		available = {
+			NEW = {
+				owns_state = 160
+				owns_state = 284
+				owns_state = 475
+				
+			}
+		}
 		cost = 8.6
 		completion_reward = {
 			285 = {
@@ -308,6 +349,14 @@ focus_tree = {
 		x = 6
 		y = 6
 		cost = 8.6
+		available = {
+			NEW = {
+				owns_state = 160
+				owns_state = 284
+				owns_state = 475
+				
+			}
+		}
 		completion_reward = {
 			add_state_core = 160
 			add_state_core = 284
@@ -396,6 +445,10 @@ focus_tree = {
 				traits = {
 					
 				}
+				attack_skill = 4
+				defense_skill = 4
+				planning_skill = 3
+				logistics_skill = 4
 			}
 			
 			add_ideas = bishopbcfour
@@ -412,7 +465,7 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
-			add_national_unity = 0.05
+			add_stability = 0.05
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -507,7 +560,7 @@ focus_tree = {
 	}
 	focus = {
 		id = new_queen
-		icon = GFX_goal_focus_spy
+		icon = GFX_goal_NEW_Queen_to_f7
 		prerequisite = {
 			focus = new_f3
 		}
@@ -583,7 +636,7 @@ focus_tree = {
 	}
 	focus = {
 		id = new_jetbeta
-		icon = GFX_goal_generic_data_focus
+		icon = GFX_goal_NEW_Jet_Beta_is_finished
 		prerequisite = {
 			focus = new_myron
 		}
@@ -664,7 +717,8 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
-			add_national_unity = 0.05
+			add_war_support = 0.03
+			add_stability = 0.02
 		}
 
 	}
@@ -934,7 +988,7 @@ focus_tree = {
 	}
 	focus = {
 		id = new_mercmilitary
-		icon = GFX_goal_generic_land_doctrines_focus
+		icon = GFX_goal_NEW_Mercenary_Military
 		prerequisite = {
 			focus = new_renodeal
 		}
@@ -990,6 +1044,10 @@ focus_tree = {
 				traits = {
 					
 				}
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 3
 			}
 			
 			load_oob = roaringbears
@@ -1033,6 +1091,10 @@ focus_tree = {
 				traits = {
 					
 				}
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 2
 			}
 			
 			load_oob = hellhammers
@@ -1072,10 +1134,14 @@ focus_tree = {
 			create_corps_commander = {
 				name = "Thradd"
 				portrait_path = "gfx/leaders/NEW/Portrait_Thradd.dds"
-				skill = 3
+				skill = 4
 				traits = {
 					
 				}
+				attack_skill = 4
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 1
 			}
 			
 			hidden_effect = {
@@ -1099,7 +1165,7 @@ focus_tree = {
 	}
 	focus = {
 		id = new_capsforloyalty
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_goal_NEW_Caps_for_Loyalty
 		prerequisite = {
 			focus = new_mercmilitary
 		}
@@ -1127,7 +1193,7 @@ focus_tree = {
 	}
 	focus = {
 		id = new_enctech
-		icon = GFX_goal_generic_naval_doctrines_focus
+		icon = GFX_goal_NEW_Enclave_Technician
 		prerequisite = {
 			focus = new_councilfunding
 		}
@@ -1160,7 +1226,7 @@ focus_tree = {
 	}
 	focus = {
 		id = new_mutanttech
-		icon = GFX_focus_hun_assassinate_horthy
+		icon = GFX_goal_NEW_Super_Mutant_Technician
 		prerequisite = {
 			focus = new_councilfunding
 		}
@@ -1224,6 +1290,10 @@ focus_tree = {
 				traits = {
 					
 				}
+				attack_skill = 3
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 1
 			}
 
 			load_oob = vengefulsons
@@ -1252,6 +1322,10 @@ focus_tree = {
 				traits = {
 					
 				}
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 1
+				logistics_skill = 1
 			}
 			
 			load_oob = pabloconquistadors
@@ -1288,6 +1362,10 @@ focus_tree = {
 				traits = {
 					
 				}
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 2
 			}
 			
 			load_oob = junkcitygladiators
@@ -1324,6 +1402,10 @@ focus_tree = {
 				traits = {
 					
 				}
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 1
+				logistics_skill = 1
 			}
 			
 			load_oob = roadpsychos
@@ -1341,7 +1423,7 @@ focus_tree = {
 	}
 	focus = {
 		id = new_oldallies
-		icon = GFX_goal_bos_forbidden_secrets
+		icon = GFX_goal_NEW_Calling_in_Old_Allies
 		prerequisite = {
 			focus = new_bloodynight
 		}
@@ -1351,8 +1433,6 @@ focus_tree = {
 		completion_reward = {
 			hidden_effect = {
 				set_technology = { power_armour_enclave1 = 1 }
-				set_technology = { vertiberd_gunship = 1 }
-				set_technology = { vertiberd_transport1 = 1 }
 				if = {
 					limit = {
 						AND = {
@@ -1405,7 +1485,7 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
-			add_national_unity = 0.1
+			add_stability = 0.1
 			add_popularity = {
 				ideology = people
 				popularity = -0.2
@@ -1522,6 +1602,15 @@ focus_tree = {
 		prerequisite = {
 			focus = new_expansionism
 		}
+		available = {
+			KLA = { 
+				AND = {
+					exists = yes
+					is_puppet = no
+				}	
+			}
+		}
+		cancel_if_invalid = yes
 		x = 3
 		y = 7
 		cost = 8.6
@@ -1539,8 +1628,17 @@ focus_tree = {
 			focus = new_klamathdeal
 		}
 		 mutually_exclusive = {
-            focus = new_takedown
-        }
+			focus = new_takedown
+		}
+		available = {
+			KLA = { 
+				OR = {
+					exists = yes
+					is_puppet = no
+				}	
+			}
+		}
+		cancel_if_invalid = yes
 		x = 4
 		y = 8
 		cost = 8.6
@@ -1603,8 +1701,8 @@ focus_tree = {
 		}
 		will_lead_to_war_with = KLA
 		 mutually_exclusive = {
-            focus = new_klamathagreements
-        }
+			focus = new_klamathagreements
+		}
 		x = 2
 		y = 8
 		cost = 8.6
@@ -1613,7 +1711,7 @@ focus_tree = {
 				type = puppet_wargoal_focus
 				target = KLA
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -1644,6 +1742,14 @@ focus_tree = {
 		prerequisite = {
 			focus = new_takedown
 		}
+		available = {
+			NEW = { 
+				owns_state = 57
+				owns_state = 59
+				owns_state = 454
+				owns_state = 467 
+			}
+		}
 		x = 2
 		y = 9
 		cost = 8.6
@@ -1651,6 +1757,7 @@ focus_tree = {
 			add_state_core = 57
 			add_state_core = 59
 			add_state_core = 454
+			add_state_core = 467
 		}
 
 	}
@@ -1754,10 +1861,14 @@ focus_tree = {
 			create_corps_commander = {
 				name = "Sgt. Granite"
 				portrait_path = "gfx/leaders/ENC/Portrait_Enclave_Generic.dds"
-				skill = 4
+				skill = 5
 				traits = {
 					
 				}
+				attack_skill = 2
+				defense_skill = 4
+				planning_skill = 2
+				logistics_skill = 3
 			}
 			
 			hidden_effect = {
@@ -1782,4 +1893,621 @@ focus_tree = {
 		}
 
 	}
+	focus = {
+		id = new_american_pmc
+		icon = GFX_goal_NEW_american_pmc
+		available = {
+			has_country_leader = { id = 791 }
+		}
+		x = 8
+		y = 9
+		cost = 8.6
+		completion_reward = {
+			load_oob = enclavepmc
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = new_oldworld
+		icon = GFX_goal_NEW_the_old_world
+		prerequisite = {
+			focus = new_american_pmc
+		}
+		x = 6
+		y = 10
+		cost = 8.6
+		completion_reward = {
+			add_ideas = guardiansnewworld
+		}
+	}
+	focus = {
+		id = new_old_newworld
+		icon = GFX_goal_NEW_new_world_old_ideas
+		prerequisite = {
+			focus = new_american_pmc
+		}
+		bypass = {
+			VLT = {
+				exists = no
+			}
+		}
+		x = 8
+		y = 10
+		cost = 8.6
+		completion_reward = {
+			VLT = {
+				country_event = { id = nf_reno.16 }
+			}
+		}
+	}
+	focus = {
+		id = new_newworld
+		icon = GFX_goal_NEW_new_world
+		prerequisite = {
+			focus = new_american_pmc
+		}
+		x = 10
+		y = 10
+		cost = 8.6
+		completion_reward = {
+			add_ideas = tamenewworld
+		}
+	}
+	focus = {
+		id = new_bio_med
+		icon = GFX_goal_NEW_bio_med_gel_experiments
+		prerequisite = {
+			focus = new_oldworld
+		}
+		x = 5
+		y = 11
+		cost = 8.6
+		completion_reward = {
+			create_field_marshal = {
+				name = "Arch Dornan"
+				desc = "Dornan_DESC"
+				picture = "Portrait_New_Reno_Arch_Dornan.dds"
+				skill = 6
+				attack_skill = 4
+				defense_skill = 3
+				planning_skill = 4
+				logistics_skill = 4
+			}
+			load_oob = biomedenclave
+		}
+	}
+	focus = {
+		id = new_sierra_depot
+		icon = GFX_goal_NEW_Sierra_Army_Depot
+		prerequisite = {
+			focus = new_oldworld
+		}
+		x = 7
+		y = 11
+		cost = 8.6
+		completion_reward = {
+			614 = {
+			If = {
+			limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+									}
+								is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}	
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = arms_factory
+				level = 3
+				instant_build = yes
+				}	
+			}
+		}
+	 }
+	}
+	focus = {
+		id = new_vertibird
+		icon = GFX_goal_bos_vertibird_schematics
+		prerequisite = {
+			focus = new_newworld
+		}
+		x = 9
+		y = 11
+		cost = 8.6
+		completion_reward = {
+			set_technology = {
+				vertiberd_gunship = 1
+				vertiberd_transport1 = 1
+			}
+		}
+	}
+	focus = {
+		id = new_newcapitol
+		icon = GFX_goal_NEW_new_capital
+		prerequisite = {
+			focus = new_newworld
+		}
+		x = 11
+		y = 11
+		cost = 8.6
+		completion_reward = {
+			285 = {
+				If = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+										is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}	
+					add_building_construction = {
+						type = bunker 
+						level = 2
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						instant_build = yes
+					}
+				}
+			}
+		}	
+	}
+	focus = {
+		id = new_reclaimnevada
+		icon = GFX_goal_NEW_retaking_neveda
+		prerequisite = {
+			focus = new_bio_med
+		}
+		prerequisite = {
+			focus = new_sierra_depot
+		}
+		prerequisite = {
+			focus = new_vertibird
+		}
+		prerequisite = {
+			focus = new_newcapitol
+		}
+		x = 8
+		y = 12
+		cost = 8.6
+		completion_reward = {
+			add_state_core = 426
+			add_state_core = 126
+			add_state_core = 580
+			add_state_core = 382
+			add_state_core = 536
+			add_state_core = 480
+			add_state_core = 612
+			add_state_core = 406
+			add_state_core = 121
+			add_state_core = 363
+			add_state_core = 100
+			add_state_core = 447
+			add_state_core = 304
+			add_state_core = 8
+			add_state_core = 129
+			add_state_core = 367
+			add_state_core = 567
+			add_state_core = 73
+			add_state_core = 263
+			add_state_core = 339
+			add_state_core = 375
+			add_state_core = 585
+			add_state_core = 291
+			add_state_core = 336
+			add_state_core = 261
+			add_state_core = 475
+			add_state_core = 284
+			add_state_core = 160
+			add_state_core = 223
+			add_state_core = 512
+			add_state_core = 458
+			add_state_core = 598
+			add_state_core = 327
+			add_state_core = 476
+			add_state_core = 462
+			add_state_core = 328
+			add_state_core = 183
+			add_state_core = 485
+			add_state_core = 219
+			add_state_core = 237
+			add_state_core = 521
+			add_state_core = 286
+			add_state_core = 171
+			add_state_core = 161
+			add_state_core = 226
+			add_state_core = 165
+			add_state_core = 307
+			add_state_core = 329
+			add_state_core = 371
+			add_state_core = 54
+			add_state_core = 11
+			add_state_core = 68
+			add_state_core = 92
+			add_state_core = 187
+			add_state_core = 329
+			add_state_core = 220
+			add_state_core = 425
+			add_state_core = 389
+			add_state_core = 201
+			add_state_core = 333
+			add_state_core = 463
+			add_state_core = 344
+			add_state_core = 154
+			add_state_core = 313
+			add_state_core = 211
+			add_state_core = 380
+			add_state_core = 613
+			add_state_core = 573
+			add_state_core = 562
+			add_state_core = 417
+			add_state_core = 137
+			add_state_core = 46
+			add_state_core = 272
+			add_state_core = 181
+			add_state_core = 552
+			add_state_core = 419
+			add_state_core = 206
+			add_state_core = 47
+			add_state_core = 77
+			add_state_core = 620
+			add_state_core = 173
+		}
+	}
+	focus = {
+		id = new_thradd_army
+		icon = GFX_goal_NEW_thradd_empire
+		available = {
+				has_country_leader = { id = 792 }
+		}
+		x = 16
+		y = 9
+		cost = 8.6
+		completion_reward = {
+			add_ideas = mastersnewarmy
+		}
+	}
+	focus = {
+		id = new_ode_to_rats
+		icon = GFX_goal_NEW_an_ode_rats
+		prerequisite = {
+			focus = new_thradd_army
+		}
+		bypass = {
+			VLT = {
+				has_country_leader = {
+					id = 910
+				}
+				has_country_leader = {
+					id = 911
+				}
+				has_country_leader = {
+					id = 912
+				}
+			}
+		}
+		x = 14
+		y = 10
+		cost = 8.6
+		completion_reward = {
+			VLT = {
+				country_event = { id = nf_reno.12 }
+			}
+		}
+	}
+	focus = {
+		id = new_rebuild_cult
+		icon = GFX_goal_NEW_rebuild_cult
+		available = {
+			
+		}
+		prerequisite = {
+			focus = new_thradd_army
+		}
+		x = 16
+		y = 10
+		cost = 8.6
+		completion_reward = {
+			country_event = { id = nf_reno.15 }
+		}
+	}
+	focus = {
+		id = new_stir_the_giants
+		icon = GFX_goal_NEW_stirring_giants
+		available = {
+			TRL = {
+				exists = yes
+			}
+		}
+		prerequisite = {
+			focus = new_thradd_army
+		}
+		bypass = {
+			TRL = {
+				exists = no
+			}
+		}
+		x = 18
+		y = 10
+		cost = 8.6
+		completion_reward = {
+			TRL = {
+				country_event = { id = nf_reno.9 }
+			}
+		}
+	}
+	focus = {
+		id = new_scheming_rats
+		icon = GFX_goal_NEW_scheming_with_rats
+		available = {
+			VLT = {
+				OR = {
+					has_country_leader = { id = 913 }
+					is_puppet_of = NEW
+					}
+			}
+		}
+		prerequisite = {
+			focus = new_ode_to_rats
+		}
+		mutually_exclusive = { focus = new_conquer_vault }
+		x = 13
+		y = 11
+		cost = 8.6
+		completion_reward = {
+			add_research_slot = 1
+			
+			VLT = {
+				add_manpower = 1500
+			}
+		}
+	}
+	focus = {
+		id = new_conquer_vault
+		icon = GFX_goal_NEW_counquering_vault
+		available = {
+			VLT = {
+				exists = no
+			}
+		}
+		prerequisite = {
+			focus = new_ode_to_rats
+		}
+		mutually_exclusive = { focus = new_scheming_rats }
+		x = 15
+		y = 11
+		cost = 8.6
+		completion_reward = {
+			add_state_core = 261
+			add_state_core = 339
+			add_state_core = 336
+			add_state_core = 291
+		}
+	}
+	focus = {
+		id = new_enslaving_warren
+		icon = GFX_goal_NEW_enslave_warren
+		available = {
+			TRL = {
+				exists = no 
+			}
+		}
+		prerequisite = {
+			focus = new_stir_the_giants
+		}
+		mutually_exclusive = { focus = new_honorable_allies }
+		x = 17
+		y = 11
+		cost = 8.6
+		completion_reward = {
+			add_state_core = 166
+			add_state_core = 437
+			add_state_core = 235
+		}
+	}
+	focus = {
+		id = new_honorable_allies
+		icon = GFX_goal_NEW_honorable_allies
+		available = {
+			TRL = {
+				exists = yes
+						OR = {
+									is_in_faction_with = NEW
+									is_puppet_of = NEW
+					}
+			}
+		}
+		prerequisite = {
+			focus = new_stir_the_giants
+		}
+		mutually_exclusive = { focus = new_enslaving_warren }
+		x = 19
+		y = 11
+		cost = 8.6
+		completion_reward = {
+			NEW = {
+				285 = {
+			If = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+										}
+									is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}	
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+					}	
+				}
+			}
+			TRL = {
+				235 = {
+			If = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+										}
+									is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}	
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+					}	
+				}
+			}
+		}
+	  }
+	} 
+  }
+	focus = {
+		id = new_for_master
+		icon = GFX_goal_NEW_for_the_master
+		available = {
+			
+		}
+		prerequisite = {
+			focus = new_scheming_rats
+			focus = new_conquer_vault
+		}
+		prerequisite = {
+			focus = new_enslaving_warren
+			focus = new_honorable_allies
+		}
+		x = 16
+		y = 12
+		cost = 8.6
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = NCR
+			}
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = NCR
+							NOT = { is_controlled_by = NCR }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = NCR
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = BOS
+			}
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = BOS
+							NOT = { is_controlled_by = BOS }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = BOS
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
+			}
+		}
+	}
 }
+

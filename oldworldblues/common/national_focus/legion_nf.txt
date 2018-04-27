@@ -78,10 +78,10 @@ focus_tree = {
 		}
 
 	}
-    
-    #---------------------------
-    # Alea Iacta Est Sub-tree
-    #---------------------------
+	
+	#---------------------------
+	# Alea Iacta Est Sub-tree
+	#---------------------------
 	focus = {
 		id = ces_the_hangdogs
 		icon = GFX_goal_generic_war_focus
@@ -101,19 +101,19 @@ focus_tree = {
 		}
 		completion_reward = {
 			# Normal
-            if = {
-                limit = { country_exists = HAN }
-                create_wargoal = {
-                    type = annex_everything
-                    target = HAN
-                }
-                HAN = {
-                    every_owned_state = { 
-                        add_core_of = ROOT
-                    }
-                }	
-            }
-                        # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = { country_exists = HAN }
+				create_wargoal = {
+					type = annex_everything
+					target = HAN
+				}
+				HAN = {
+					every_owned_state = { 
+						add_core_of = ROOT
+					}
+				}	
+			}
+						# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -160,8 +160,8 @@ focus_tree = {
 		x = 2
 		y = 6
 		completion_reward = {
-			add_national_unity = -0.1
-            add_ideas = legion_nf_shottol_god_of_dogs
+			add_stability = -0.05
+			add_ideas = legion_nf_shottol_god_of_dogs
 		}
 
 	}
@@ -204,19 +204,19 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-            # Normal
-            if = {
-                limit = { country_exists = TTM }
-                create_wargoal = {
-                    type = annex_everything
-                    target = TTM
-                }
-                TTM = {
-                    every_owned_state = { 
-                        add_core_of = ROOT
-                    }
-                }	
-            }
+			# Normal
+			if = {
+				limit = { country_exists = TTM }
+				create_wargoal = {
+					type = annex_everything
+					target = TTM
+				}
+				TTM = {
+					every_owned_state = { 
+						add_core_of = ROOT
+					}
+				}	
+			}
 						# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
@@ -263,8 +263,8 @@ focus_tree = {
 		x = 6
 		y = 6
 		completion_reward = {
-			add_national_unity = -0.1
-            add_ideas = legion_nf_goddess_diana
+			add_stability = -0.05
+			add_ideas = legion_nf_goddess_diana
 			hidden_effect = {
 				set_country_flag = caesarlives
 			}
@@ -287,8 +287,9 @@ focus_tree = {
 		x = 8
 		y = 6
 		completion_reward = {
-			add_national_unity = 0.1
-            add_ideas = legion_nf_caesar_the_godslayer
+			add_war_support = 0.025
+			add_stability = 0.025
+			add_ideas = legion_nf_caesar_the_godslayer
 		}
 	}
 	focus = {
@@ -309,21 +310,21 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-            # Normal
-            if = {
-                limit = { country_exists = TWO }
-                create_wargoal = {
-                    type = annex_everything
-                    target = TWO
-                }
-                TWO = {
-                    every_owned_state = { 
-                        add_core_of = ROOT
-                    }
-                }	
-            }
-            # Safety
-            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# Normal
+			if = {
+				limit = { country_exists = TWO }
+				create_wargoal = {
+					type = annex_everything
+					target = TWO
+				}
+				TWO = {
+					every_owned_state = { 
+						add_core_of = ROOT
+					}
+				}	
+			}
+			# Safety
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -369,9 +370,10 @@ focus_tree = {
 		x = 12
 		y = 6
 		completion_reward = {
-			add_national_unity = -0.1
-            add_ideas = legion_nf_cult_of_nas
-            custom_effect_tooltip = cult_of_nas_tt
+			add_stability = -0.05
+			add_war_support = -0.025
+			add_ideas = legion_nf_cult_of_nas
+			custom_effect_tooltip = cult_of_nas_tt
 			hidden_effect = {
 				load_oob = cult_of_nas
 			}
@@ -394,8 +396,8 @@ focus_tree = {
 		x = 10
 		y = 6
 		completion_reward = {
-            add_ideas = legion_nf_cult_of_nas_minor
-            custom_effect_tooltip = cult_of_nas_tt
+			add_ideas = legion_nf_cult_of_nas_minor
+			custom_effect_tooltip = cult_of_nas_tt
 			hidden_effect = {
 				load_oob = cult_of_nas
 			}
@@ -420,20 +422,20 @@ focus_tree = {
 		x = 15
 		y = 5
 		completion_reward = {
-            # Normal
-            if = {
-                limit = { country_exists = COW }
-                create_wargoal = {
-                    type = annex_everything
-                    target = COW
-                }
-                COW = {
-                    every_owned_state = { 
-                        add_core_of = ROOT
-                    }
-                }	
-            }
-            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# Normal
+			if = {
+				limit = { country_exists = COW }
+				create_wargoal = {
+					type = annex_everything
+					target = COW
+				}
+				COW = {
+					every_owned_state = { 
+						add_core_of = ROOT
+					}
+				}	
+			}
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -479,7 +481,8 @@ focus_tree = {
 		x = 16
 		y = 6
 		completion_reward = {
-			add_national_unity = -0.1
+			add_stability = -0.05
+			add_war_support = -0.025
 			add_ideas = legion_nf_wyatt_the_demon
 		}
 	}
@@ -512,33 +515,33 @@ focus_tree = {
 		x = 2
 		y = 7
 		completion_reward = {
-            if = {
-                limit = {
-                    NOT = { any_owned_state = { is_core_of = HAN } }
-                }
-                custom_effect_tooltip = legion_must_own_hangdog_territory
-            }
-        
-            525 = {
-                add_building_construction = {
+			if = {
+				limit = {
+					NOT = { any_owned_state = { is_core_of = HAN } }
+				}
+				custom_effect_tooltip = legion_must_own_hangdog_territory
+			}
+		
+			525 = {
+				add_building_construction = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
 				}
-                add_building_construction = {
+				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
-                add_building_construction = {
+				add_building_construction = {
 					type = bunker
 					level = 1
 					instant_build = yes
-                    province = {
-                        all_provinces = yes
-                    }
+					province = {
+						all_provinces = yes
+					}
 				}
-            }
+			}
 		}
 	}
 	focus = {
@@ -552,23 +555,23 @@ focus_tree = {
 		y = 7
 		completion_reward = {
 			if = {
-                limit = {
-                    NOT = { any_owned_state = { is_core_of = TTM } }
-                }
-                custom_effect_tooltip = legion_must_own_twin_mothers_territory
-            }
-        
-            every_owned_state = {
-                limit = {
-                    is_core_of = TTM
-                }
-                add_building_construction = {
+				limit = {
+					NOT = { any_owned_state = { is_core_of = TTM } }
+				}
+				custom_effect_tooltip = legion_must_own_twin_mothers_territory
+			}
+		
+			every_owned_state = {
+				limit = {
+					is_core_of = TTM
+				}
+				add_building_construction = {
 					type = industrial_complex
 					level = 2
 					instant_build = yes
 				}
-            }
-            add_ideas = legion_nf_the_twin_temples
+			}
+			add_ideas = legion_nf_the_twin_temples
 		}
 
 	}
@@ -582,23 +585,23 @@ focus_tree = {
 		x = 12
 		y = 7
 		completion_reward = {
-            if = {
-                limit = {
-                    NOT = { any_owned_state = { is_core_of = TWO } }
-                }
-                custom_effect_tooltip = legion_must_own_two_sun_territory
-            }
-            
+			if = {
+				limit = {
+					NOT = { any_owned_state = { is_core_of = TWO } }
+				}
+				custom_effect_tooltip = legion_must_own_two_sun_territory
+			}
+			
 			every_owned_state = {
-                limit = {
-                    is_core_of = TWO
-                }
-                add_building_construction = {
+				limit = {
+					is_core_of = TWO
+				}
+				add_building_construction = {
 					type = arms_factory
 					level = 2
 					instant_build = yes
 				}
-            }
+			}
 			add_ideas = legion_nf_nas_scriptures
 		}
 
@@ -613,18 +616,18 @@ focus_tree = {
 		x = 16
 		y = 7
 		completion_reward = {
-            custom_effect_tooltip = demon_servants_tt
+			custom_effect_tooltip = demon_servants_tt
 			hidden_effect = {
 				load_oob = demon_servants
 			}
 		}
 
 	}
-    
-    #---------------------------
-    # Conqueror of the 86 Sub-tree
-    #---------------------------
-    focus = {
+	
+	#---------------------------
+	# Conqueror of the 86 Sub-tree
+	#---------------------------
+	focus = {
 		id = ces_conqueror_of_the_86
 		icon = GFX_goal_attack_legion
 		cost = 1
@@ -654,9 +657,9 @@ focus_tree = {
 		}
 
 	}
-    #---------------------------
-    # Brotherhood sub-tree
-    #---------------------------
+	#---------------------------
+	# Brotherhood sub-tree
+	#---------------------------
 	focus = {
 		id = ces_the_brotherhood_of_steel
 		icon = GFX_goal_generic_occupy_states_ongoing_war
@@ -682,7 +685,7 @@ focus_tree = {
 			add_political_power = 60
 		}
 	}
-    focus = {
+	focus = {
 		id = ces_smoke_out_the_rats
 		icon = GFX_goal_legion_bos_war
 		cost = 8.6
@@ -694,12 +697,12 @@ focus_tree = {
 		y = 9
 		completion_reward = {
 			if = {
-                limit = { country_exists = MOJ }
-                create_wargoal = {
-                    type = annex_everything
-                    target = MOJ
-                }	
-            }
+				limit = { country_exists = MOJ }
+				create_wargoal = {
+					type = annex_everything
+					target = MOJ
+				}	
+			}
 		}
 	}
 	focus = {
@@ -713,13 +716,13 @@ focus_tree = {
 		y = 10
 		completion_reward = {
 			if = {
-                limit = { country_exists = MOJ }
-                MOJ = {
-                    every_owned_state = { 
-                        add_core_of = ROOT
-                    }
-                }	
-            }
+				limit = { country_exists = MOJ }
+				MOJ = {
+					every_owned_state = { 
+						add_core_of = ROOT
+					}
+				}	
+			}
 		}
 	}
 	focus = {
@@ -771,7 +774,7 @@ focus_tree = {
 		}
 
 	}
-    focus = {
+	focus = {
 		id = ces_deconstructing_perfection
 		icon = GFX_goal_generic_t45d_power_armour_focus
 		cost = 1
@@ -785,7 +788,7 @@ focus_tree = {
 		}
 
 	}
-    
+	
 	focus = {
 		id = ces_honour_the_steelbreakers
 		icon = GFX_goal_power_armor
@@ -804,9 +807,9 @@ focus_tree = {
 		}
 
 	}
-    #---------------------------
-    # Tribals sub-tree
-    #---------------------------
+	#---------------------------
+	# Tribals sub-tree
+	#---------------------------
 	focus = {
 		id = ces_new_judea
 		icon = GFX_goal_generic_occupy_states_ongoing_war
@@ -816,7 +819,7 @@ focus_tree = {
 		}
 		available = {
 			has_completed_focus = ces_war_for_hoover_dam
-        }
+		}
 		x = 5
 		y = 8
 		completion_reward = {
@@ -824,8 +827,8 @@ focus_tree = {
 		}
 
 	}
-    
-    focus = {
+	
+	focus = {
 		id = ces_the_white_leg_petition
 		icon = GFX_goal_legion_diplomatic
 		cost = 8.6
@@ -837,24 +840,24 @@ focus_tree = {
 				country_exists = WHT
 			}
 		}
-        available = {
-            country_exists = WHT
+		available = {
+			country_exists = WHT
 			OR = {
 				has_completed_focus = ces_the_burned_man
 				has_completed_focus = ces_triumph_at_the_dam	
 			}
-        }
+		}
 		x = 5
 		y = 9
 		completion_reward = {
-            if = {
-                limit = {
-                    country_exists = WHT
-                }
-                WHT = { 
-                    country_event = { id = nf_legion.1 } # Petition To White Legs
-                }
-            }
+			if = {
+				limit = {
+					country_exists = WHT
+				}
+				WHT = { 
+					country_event = { id = nf_legion.1 } # Petition To White Legs
+				}
+			}
 		}
 
 	}
@@ -865,17 +868,17 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_the_white_leg_petition
 		}
-        bypass = {
+		bypass = {
 			NOT = {
 				country_exists = WHT
 			}
 		}
-        available = {
-            country_exists = WHT
-            WHT = {
-                has_country_flag = accepted_petition
-            }
-        }
+		available = {
+			country_exists = WHT
+			WHT = {
+				has_country_flag = accepted_petition
+			}
+		}
 		mutually_exclusive = {
 			focus = ces_white_legs_refuse
 		}
@@ -883,13 +886,13 @@ focus_tree = {
 		y = 10
 		completion_reward = {
 			add_opinion_modifier = { 
-                target = WHT 
-                modifier = loyal_tribe
-            }
-            reverse_add_opinion_modifier = { 
-                target = WHT
-                modifier = loyal_tribe
-            }
+				target = WHT 
+				modifier = loyal_tribe
+			}
+			reverse_add_opinion_modifier = { 
+				target = WHT
+				modifier = loyal_tribe
+			}
 		}
 	}
 	focus = {
@@ -904,29 +907,36 @@ focus_tree = {
 				country_exists = WHT
 			}
 		}
-        available = {
-            country_exists = WHT
-            WHT = {
-                has_country_flag = refused_petition
-            }
-        }
+		available = {
+			country_exists = WHT
+			WHT = {
+				has_country_flag = refused_petition
+			}
+		}
 		mutually_exclusive = {
 			focus = ces_white_legs_accept
 		}
 		x = 6
 		y = 10
 		completion_reward = {
-            add_opinion_modifier = { 
-                target = WHT 
-                modifier = disloyal_tribe
-            }   
-            reverse_add_opinion_modifier = { 
-                target = WHT
-                modifier = disloyal_tribe
-            }
-            
-			EHT = { 
-				country_event = { id = nf_legion.2 }
+			add_opinion_modifier = { 
+				target = WHT 
+				modifier = disloyal_tribe
+			}   
+			reverse_add_opinion_modifier = { 
+				target = WHT
+				modifier = disloyal_tribe
+			}
+			custom_effect_tooltip = EHT_is_alive_war
+			hidden_effect = {
+				if = {
+					limit = {
+						country_exists = EHT
+					}
+					EHT = { 
+						country_event = { id = nf_legion.2 }
+					}
+				}
 			}
 		}
 
@@ -959,8 +969,8 @@ focus_tree = {
 				}
 			}
 		}
-        available = {
-            OR = {
+		available = {
+			OR = {
 				EHT = { 
 					has_opinion_modifier = loyal_tribe
 				}
@@ -968,7 +978,7 @@ focus_tree = {
 					has_opinion_modifier = loyal_tribe
 				}
 			}
-        }
+		}
 		x = 5
 		y = 11
 		completion_reward = {
@@ -1009,16 +1019,16 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
-                limit = {
-                    is_valid_state_for_arms_factory = yes
-                }
-                add_extra_state_shared_building_slots = 1
-                add_building_construction = {
-                    type = arms_factory
-                    level = 1
-                    instant_build = yes
-                }
-            }
+				limit = {
+					is_valid_state_for_arms_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -1029,19 +1039,19 @@ focus_tree = {
 			focus = ces_weapons_of_war
 		}
 		available = {
-            NOT = { country_exists = NCN }
+			NOT = { country_exists = NCN }
 		}
 		x = 5
 		y = 12
 		completion_reward = {
-            if = {
-                limit = {
-                    has_idea = legion_nf_burned_man_rumours
-                }
-                remove_ideas = legion_nf_burned_man_rumours
-            }
-            add_political_power = 50
-        }
+			if = {
+				limit = {
+					has_idea = legion_nf_burned_man_rumours
+				}
+				remove_ideas = legion_nf_burned_man_rumours
+			}
+			add_political_power = 50
+		}
 	}
 	
 	focus = {
@@ -1064,11 +1074,11 @@ focus_tree = {
 			add_to_faction = EHT
 			
 			every_state = {
-                limit = {
-                    is_utah_state = yes
-                }
-                add_core_of = EHT
-            }
+				limit = {
+					is_utah_state = yes
+				}
+				add_core_of = EHT
+			}
 		}
 
 	}
@@ -1092,16 +1102,16 @@ focus_tree = {
 			add_to_faction = WHT
 			
 			every_state = {
-                limit = {
-                    is_utah_state = yes
-                }
-                add_core_of = WHT
-            }
+				limit = {
+					is_utah_state = yes
+				}
+				add_core_of = WHT
+			}
 		}
 
 	}
-    
-    focus = {
+	
+	focus = {
 		id = ces_legionary_utah
 		icon = GFX_goal_legion_generic_focus
 		cost = 8.6
@@ -1116,18 +1126,18 @@ focus_tree = {
 		y = 14
 		completion_reward = {
 			every_state = {
-                limit = {
-                    is_utah_state = yes
-                }
-                add_core_of = CES
-            }
+				limit = {
+					is_utah_state = yes
+				}
+				add_core_of = CES
+			}
 		}
 
 	}
-    
-    #---------------------------
-    # NCR sub-tree
-    #---------------------------
+	
+	#---------------------------
+	# NCR sub-tree
+	#---------------------------
 	focus = {
 		id = ces_crossing_the_rubicon
 		icon = GFX_goal_generic_occupy_states_ongoing_war
@@ -1175,12 +1185,10 @@ focus_tree = {
 					}
 				}
 			}
-					
 		}
-
 	}
-    
-    focus = {
+	
+	focus = {
 		id = ces_war_for_hoover_dam
 		icon = GFX_goal_generic_war_focus
 		cost = 8.6
@@ -1203,7 +1211,7 @@ focus_tree = {
 			country_event = { id = hooverdam.2 }
 		}
 	}
-    
+	
 	focus = {
 		id = ces_the_burned_man
 		icon = GFX_goal_generic_attack_allies
@@ -1214,9 +1222,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = ces_triumph_at_the_dam
 		}
-        available = {
-            has_country_flag = hoover_dam_lost
-        }
+		available = {
+			has_country_flag = hoover_dam_lost
+		}
 		ai_will_do = {
 			factor = 100
 		}
@@ -1234,8 +1242,12 @@ focus_tree = {
 				skill = 5
 				id = 1004
 				traits = {
-					
+					conqueror
 				}
+				attack_skill = 5
+				defense_skill = 3
+				planning_skill = 2
+				logistics_skill = 2
 			}
 			
 		}
@@ -1248,9 +1260,9 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_war_for_hoover_dam
 		}
-        available = {
-            has_country_flag = hoover_dam_won
-        }
+		available = {
+			has_country_flag = hoover_dam_won
+		}
 		mutually_exclusive = {
 			focus = ces_the_burned_man
 		}
@@ -1271,8 +1283,12 @@ focus_tree = {
 				skill = 5
 				id = 1004
 				traits = {
-					
+					conqueror
 				}
+				attack_skill = 3
+				defense_skill = 5
+				planning_skill = 2
+				logistics_skill = 2
 			}
 		}
 
@@ -1304,9 +1320,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-        available = {
-            owns_state = 252
-        }
+		available = {
+			owns_state = 252
+		}
 		x = 10
 		y = 11
 		completion_reward = {
@@ -1317,15 +1333,15 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
-                add_building_construction = {
+				add_building_construction = {
 					type = bunker
 					level = 2
 					province = {
-                        all_provinces = yes
-                    }
-                    instant_build = yes
-                }
-            }
+						all_provinces = yes
+					}
+					instant_build = yes
+				}
+			}
 		}
 
 	}
@@ -1435,25 +1451,25 @@ focus_tree = {
 			add_manpower = -200
 			transfer_state = 99
 			set_state_controller = 99
-            99 = {    
+			99 = {    
 				set_state_name = "Caesar's Landing"
 				add_extra_state_shared_building_slots = 3
-                add_building_construction = {
-                    type = dockyard
-                    level = 3
-                    instant_build = yes
-                }
 				add_building_construction = {
-                    type = naval_base
-                    level = 6
-                    instant_build = yes
-                }
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
 				add_building_construction = {
-                    type = bunker
-                    level = 3
-                    instant_build = yes
-                }
-            }
+					type = naval_base
+					level = 6
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+				}
+			}
 			hidden_effect = { load_oob = CES_crossing_party }
 			custom_effect_tooltip = load_CES_crossing_party
 		}
@@ -1478,19 +1494,19 @@ focus_tree = {
 			
 			transfer_state = 99
 			
-            99 = {    
+			99 = {    
 				set_state_name = "Caesar's Landing"
-                add_building_construction = {
-                    type = dockyard
-                    level = 2
-                    instant_build = yes
-                }
 				add_building_construction = {
-                    type = naval_base
-                    level = 2
-                    instant_build = yes
-                }
-            }
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 
 	}
@@ -1509,28 +1525,28 @@ focus_tree = {
 		completion_reward = {
 			252 = {
 				add_resource = {
-                    type = electricity
-                    amount = -30
-                }
+					type = electricity
+					amount = -30
+				}
 				add_resource = {
-                    type = electronics
-                    amount = -5
-                }
+					type = electronics
+					amount = -5
+				}
 			}
 			capital_scope = {
-                add_resource = {
-                    type = electricity
-                    amount = 30
-                }
 				add_resource = {
-                    type = electronics
-                    amount = 5
-                }
-            }
+					type = electricity
+					amount = 30
+				}
+				add_resource = {
+					type = electronics
+					amount = 5
+				}
+			}
 		}
 	}
-    
-    focus = {
+	
+	focus = {
 		id = ces_poking_the_bear
 		icon = GFX_goal_attack_legion
 		cost = 1
@@ -1538,12 +1554,12 @@ focus_tree = {
 			focus = ces_crossing_the_colorado
 			focus = ces_to_the_victor_go_the_spoils
 		}
-        available = {
-            country_exists = NCR
-        }
-        bypass = {
-            NOT = { country_exists = NCR }
-        }
+		available = {
+			country_exists = NCR
+		}
+		bypass = {
+			NOT = { country_exists = NCR }
+		}
 		ai_will_do = {
 			factor = 10
 			modifier = {
@@ -1561,9 +1577,9 @@ focus_tree = {
 			#country_event = { id = nf_legion.5 } # Caesar's Illness
 		}
 	}
-    #---------------------------
-    # Mexico sub-tree
-    #---------------------------
+	#---------------------------
+	# Mexico sub-tree
+	#---------------------------
 	focus = {
 		id = ces_mexico_expansion
 		icon = GFX_goal_generic_occupy_states_ongoing_war
@@ -1578,8 +1594,8 @@ focus_tree = {
 		}
 
 	}
-    
-    focus = {
+	
+	focus = {
 		id = ces_baudelio_ranchers
 		icon = GFX_goal_generic_war_focus
 		cost = 8.6
@@ -1597,14 +1613,14 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-            if = {
-                limit = { country_exists = RBD }
-                create_wargoal = {
-                    type = annex_everything
-                    target = RBD
-                }
-            }
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			if = {
+				limit = { country_exists = RBD }
+				create_wargoal = {
+					type = annex_everything
+					target = RBD
+				}
+			}
+						# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -1629,8 +1645,8 @@ focus_tree = {
 		}
 
 	}
-    
-    focus = {
+	
+	focus = {
 		id = ces_enslave_the_ranchers
 		icon = GFX_goal_legion_slaves
 		cost = 8.6
@@ -1645,30 +1661,30 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-            add_political_power = -50
-            
-            if = {
-                limit = {
-                    NOT = {
-                        any_owned_state = {
-                            is_baudelio_state = yes
-                        }
-                    }
-                }
-                custom_effect_tooltip = legion_must_own_baudelio_territory 
-            }
-            
-            every_owned_state = {
-                limit = {
-                    is_baudelio_state = yes
-                }
-                add_extra_state_shared_building_slots = 2
+			add_political_power = -50
+			
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							is_baudelio_state = yes
+						}
+					}
+				}
+				custom_effect_tooltip = legion_must_own_baudelio_territory 
+			}
+			
+			every_owned_state = {
+				limit = {
+					is_baudelio_state = yes
+				}
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
 					instant_build = yes
-                }
-            }
+				}
+			}
 		}
 
 	}
@@ -1687,31 +1703,31 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-            if = {
-                limit = {
-                    NOT = {
-                        any_owned_state = {
-                            is_baudelio_state = yes
-                        }
-                    }
-                }
-                custom_effect_tooltip = legion_must_own_baudelio_territory 
-            }
-            
-            random_owned_state = {
-                limit = {
-                    is_baudelio_state = yes
-                }
-                add_resource = {
-                    type = water
-                    amount = 6
-                }
-            }
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							is_baudelio_state = yes
+						}
+					}
+				}
+				custom_effect_tooltip = legion_must_own_baudelio_territory 
+			}
+			
+			random_owned_state = {
+				limit = {
+					is_baudelio_state = yes
+				}
+				add_resource = {
+					type = water
+					amount = 6
+				}
+			}
 		}
 
 	}
-    
-    focus = {
+	
+	focus = {
 		id = ces_reorganise_the_ranches
 		icon = GFX_goal_legion_generic_infantry
 		cost = 8.6
@@ -1729,13 +1745,13 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-            every_state = { 
-                limit = { is_baudelio_state = yes }
-                add_core_of = ROOT
-            }	
+			every_state = { 
+				limit = { is_baudelio_state = yes }
+				add_core_of = ROOT
+			}	
 		}
 	}
-    
+	
 	focus = {
 		id = ces_pecos_colonists
 		icon = GFX_goal_generic_war_focus
@@ -1755,13 +1771,13 @@ focus_tree = {
 		}
 		completion_reward = {
 			if = {
-                limit = { country_exists = PEC }
-                create_wargoal = {
-                    type = annex_everything
-                    target = PEC
-                }
-            }
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+				limit = { country_exists = PEC }
+				create_wargoal = {
+					type = annex_everything
+					target = PEC
+				}
+			}
+						# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -1797,29 +1813,29 @@ focus_tree = {
 		y = 10
 		completion_reward = {
 			add_political_power = -50
-            
-            if = {
-                limit = {
-                    NOT = {
-                        any_owned_state = {
-                            is_pecos_state = yes
-                        }
-                    }
-                }
-                custom_effect_tooltip = legion_must_own_pecos_territory 
-            }
-            
-            every_owned_state = {
-                limit = {
-                    is_pecos_state = yes
-                }
-                add_extra_state_shared_building_slots = 2
+			
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							is_pecos_state = yes
+						}
+					}
+				}
+				custom_effect_tooltip = legion_must_own_pecos_territory 
+			}
+			
+			every_owned_state = {
+				limit = {
+					is_pecos_state = yes
+				}
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
 					instant_build = yes
-                }
-            }
+				}
+			}
 		}
 
 	}
@@ -1839,25 +1855,25 @@ focus_tree = {
 		}
 		completion_reward = {
 			if = {
-                limit = {
-                    NOT = {
-                        any_owned_state = {
-                            is_pecos_state = yes
-                        }
-                    }
-                }
-                custom_effect_tooltip = legion_must_own_pecos_territory 
-            }
-            
-            random_owned_state = {
-                limit = {
-                    is_pecos_state = yes
-                }
-                add_resource = {
-                    type = fuel
-                    amount = 6
-                }
-            }
+				limit = {
+					NOT = {
+						any_owned_state = {
+							is_pecos_state = yes
+						}
+					}
+				}
+				custom_effect_tooltip = legion_must_own_pecos_territory 
+			}
+			
+			random_owned_state = {
+				limit = {
+					is_pecos_state = yes
+				}
+				add_resource = {
+					type = fuel
+					amount = 6
+				}
+			}
 		}
 
 	}
@@ -1876,18 +1892,18 @@ focus_tree = {
 		y = 11
 		completion_reward = {
 			every_state = { 
-                limit = { is_pecos_state = yes }
-                add_core_of = ROOT
-            }	
+				limit = { is_pecos_state = yes }
+				add_core_of = ROOT
+			}	
 		}
 
 	}
-    
-    #---------------------------
-    # Post-NCR sub-tree
-    #---------------------------
-    # Vegas
-    focus = {
+	
+	#---------------------------
+	# Post-NCR sub-tree
+	#---------------------------
+	# Vegas
+	focus = {
 		id = ces_the_lights_of_vegas
 		icon = GFX_goal_generic_war_focus
 		cost = 8.6
@@ -1895,8 +1911,8 @@ focus_tree = {
 		#	focus = ces_poking_the_bear
 		#}
 		available = {
-			VEG = {
-				is_neighbor_of = CES
+			613 = {
+				is_fully_controlled_by = CES
 			}
 		}
 		bypass = {
@@ -1904,23 +1920,32 @@ focus_tree = {
 				country_exists = VEG
 			}
 		}
+		ai_will_do = {
+			modifier = {
+				CES = {
+					has_war_with = NCR
+				}
+				factor = 0
+			}
+			factor = 6
+		}
 		will_lead_to_war_with = VEG
 		x = 5
 		y = 15
 		completion_reward = {
 			if = {
-                limit = { country_exists = VEG }
-                create_wargoal = {
-                    type = annex_everything
-                    target = VEG
-                }
-                VEG = {
-                    every_owned_state = { 
-                        limit = { is_new_vegas = yes }
-                        add_core_of = ROOT
-                    }
-                }
-				            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+				limit = { country_exists = VEG }
+				create_wargoal = {
+					type = annex_everything
+					target = VEG
+				}
+				VEG = {
+					every_owned_state = { 
+						limit = { is_new_vegas = yes }
+						add_core_of = ROOT
+					}
+				}
+							# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 				if = {
 					limit = {
 						any_state = {
@@ -1948,11 +1973,11 @@ focus_tree = {
 						}
 					}
 				}
-            }
+			}
 		}
 
 	}
-    focus = {
+	focus = {
 		id = ces_the_eternal_city
 		icon = GFX_goal_generic_slums_focus
 		cost = 4.4
@@ -1962,28 +1987,28 @@ focus_tree = {
 		x = 4
 		y = 16
 		completion_reward = {
-            if = {
-                limit = {
-                    NOT = {
-                        any_owned_state = {
-                            is_new_vegas = yes
-                        }
-                    }
-                }
-                custom_effect_tooltip = legion_must_own_vegas_territory 
-            }
-            
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							is_new_vegas = yes
+						}
+					}
+				}
+				custom_effect_tooltip = legion_must_own_vegas_territory 
+			}
+			
 			every_owned_state = {
-                limit = {
-                    is_new_vegas = yes
-                }
-                add_extra_state_shared_building_slots = 2
+				limit = {
+					is_new_vegas = yes
+				}
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
 					instant_build = yes
-                }
-            }
+				}
+			}
 		}
 
 	}
@@ -1997,35 +2022,35 @@ focus_tree = {
 		x = 4
 		y = 17
 		completion_reward = {
-            if = {
-                limit = {
-                    NOT = {
-                        any_owned_state = {
-                            is_new_vegas = yes
-                        }
-                    }
-                }
-                custom_effect_tooltip = legion_must_own_vegas_territory 
-            }
-            
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							is_new_vegas = yes
+						}
+					}
+				}
+				custom_effect_tooltip = legion_must_own_vegas_territory 
+			}
+			
 			every_owned_state = {
-                limit = {
-                    is_new_vegas = yes
-                }
-                add_building_construction = {
+				limit = {
+					is_new_vegas = yes
+				}
+				add_building_construction = {
 					type = arms_factory
 					level = 3
 					instant_build = yes
 				}
-                add_building_construction = {
+				add_building_construction = {
 					type = bunker
 					level = 2
 					instant_build = yes
-                    province = {
-                        all_provinces = yes
-                    }
+					province = {
+						all_provinces = yes
+					}
 				}
-            }
+			}
 		}
 
 	}
@@ -2039,32 +2064,33 @@ focus_tree = {
 		x = 4
 		y = 18
 		completion_reward = {
-            add_national_unity = 0.05
-            
+			add_stability = 0.05
+			add_war_support = 0.025
+			
 			if = {
-                limit = {
-                    NOT = {
-                        any_owned_state = {
-                            is_new_vegas = yes
-                        }
-                    }
-                }
-                custom_effect_tooltip = legion_must_own_vegas_territory 
-            }
-            
+				limit = {
+					NOT = {
+						any_owned_state = {
+							is_new_vegas = yes
+						}
+					}
+				}
+				custom_effect_tooltip = legion_must_own_vegas_territory 
+			}
+			
 			every_owned_state = {
-                limit = {
-                    is_new_vegas = yes
-                }
-                add_building_construction = {
+				limit = {
+					is_new_vegas = yes
+				}
+				add_building_construction = {
 					type = bunker
 					level = 2
 					instant_build = yes
-                    province = {
-                        all_provinces = yes
-                    }
+					province = {
+						all_provinces = yes
+					}
 				}
-            }
+			}
 		}
 
 	}
@@ -2078,27 +2104,27 @@ focus_tree = {
 		x = 6
 		y = 16
 		completion_reward = {
-            if = {
-                limit = {
-                    NOT = {
-                        any_owned_state = {
-                            is_new_vegas = yes
-                        }
-                    }
-                }
-                custom_effect_tooltip = legion_must_own_vegas_territory 
-            }
-            
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							is_new_vegas = yes
+						}
+					}
+				}
+				custom_effect_tooltip = legion_must_own_vegas_territory 
+			}
+			
 			every_owned_state = {
-                limit = {
-                    is_new_vegas = yes
-                }
-                add_building_construction = {
+				limit = {
+					is_new_vegas = yes
+				}
+				add_building_construction = {
 					type = infrastructure
 					level = 3
 					instant_build = yes
 				}
-            }
+			}
 		}
 	}
 	focus = {
@@ -2111,27 +2137,27 @@ focus_tree = {
 		x = 6
 		y = 17
 		completion_reward = {
-            if = {
-                limit = {
-                    NOT = {
-                        any_owned_state = {
-                            is_new_vegas = yes
-                        }
-                    }
-                }
-                custom_effect_tooltip = legion_must_own_vegas_territory 
-            }
-            
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							is_new_vegas = yes
+						}
+					}
+				}
+				custom_effect_tooltip = legion_must_own_vegas_territory 
+			}
+			
 			every_owned_state = {
-                limit = {
-                    is_new_vegas = yes
-                }
-                add_building_construction = {
+				limit = {
+					is_new_vegas = yes
+				}
+				add_building_construction = {
 					type = air_base
 					level = 2
 					instant_build = yes
 				}
-            }
+			}
 		}
 
 	}
@@ -2149,8 +2175,8 @@ focus_tree = {
 		}
 
 	}
-    
-    focus = {
+	
+	focus = {
 		id = ces_nova_roma
 		icon = GFX_goal_generic_cities_focus
 		cost = 4.4
@@ -2160,25 +2186,23 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_open_the_lucky_38
 		}
+		available = {
+			owns_state = 211
+		}
 		x = 5
 		y = 19
 		completion_reward = {
-            if = {
-                limit = { owns_state = 211 }
-                set_capital = 211
-				211 = {
-					set_state_name = "Nova Roma"
-				}
-            }
-			
-            
+			set_capital = 211
+			211 = {
+				set_state_name = "Nova Roma"
+			}
 			add_ideas = legion_nf_nova_roma
 		}
 
 	}
-    
-    # Worthy
-    focus = {
+	
+	# Worthy
+	focus = {
 		id = ces_a_worthy_foe
 		icon = GFX_goal_generic_war_focus
 		cost = 8.6
@@ -2194,12 +2218,12 @@ focus_tree = {
 				has_war = no
 				date > 1.1.2279
 			}
-			modifier = {
-				NOT = {
-					has_country_flag = legion_had_civil_war
-				}
-				factor = 0
-			}
+			#modifier = {
+			#	NOT = {
+			#		has_country_flag = legion_had_civil_war
+			#	}
+			#	factor = 0
+			#}
 		}
 		will_lead_to_war_with = NCR
 		completion_reward = {
@@ -2212,31 +2236,31 @@ focus_tree = {
 		}
 
 	}
-    
-    focus = {
+	
+	focus = {
 		id = ces_divide_et_impera
 		icon = GFX_goal_generic_attack_allies
 		cost = 4.4
 		prerequisite = {
 			focus = ces_a_worthy_foe
 		}
-        bypass = {
-            NOT = { country_exists = NCR }
-        }
+		bypass = {
+			NOT = { country_exists = NCR }
+		}
 		x = 8
 		y = 16
 		completion_reward = {
-            if = {
-                limit = { 
-                    country_exists = NCR
-                }
-                NCR = {
-                    add_timed_idea = {
-                        idea = legion_nf_overextension
-                        days = 720
-                    }
-                }
-            }
+			if = {
+				limit = { 
+					country_exists = NCR
+				}
+				NCR = {
+					add_timed_idea = {
+						idea = legion_nf_overextension
+						days = 720
+					}
+				}
+			}
 		}
 	}
 	focus = {
@@ -2249,36 +2273,36 @@ focus_tree = {
 		x = 10
 		y = 16
 		completion_reward = {
-            every_country = {
-                limit = {
-                    OR = {
-                        AND = {
-                            NOT = { has_tech = scientific_civilization }
-                            NOT = { tag = NCR }
-                            NOT = { is_subject_of = NCR }
-                            NOT = { is_in_faction_with = NCR }
-                            is_neighbor_of = CES
-                            NOT = {
-                                has_opinion = {                         
-                                    value = 0
-                                    target = NCR
-                                }
-                            }
-                        }
-                        tag = KHA
-                        tag = BVC
-                        tag = BLP
-                    }
-                }
-                add_opinion_modifier = { 
-                    target = CES 
-                    modifier = renderuntocaesar 
-                }
-                reverse_add_opinion_modifier = { 
-                    target = CES 
-                    modifier = renderuntocaesar 
-                }
-            }
+			every_country = {
+				limit = {
+					OR = {
+						AND = {
+							NOT = { has_tech = scientific_civilization }
+							NOT = { tag = NCR }
+							NOT = { is_subject_of = NCR }
+							NOT = { is_in_faction_with = NCR }
+							is_neighbor_of = CES
+							NOT = {
+								has_opinion = {                         
+									value = 0
+									target = NCR
+								}
+							}
+						}
+						tag = KHA
+						tag = BVC
+						tag = BLP
+					}
+				}
+				add_opinion_modifier = { 
+					target = CES 
+					modifier = renderuntocaesar 
+				}
+				reverse_add_opinion_modifier = { 
+					target = CES 
+					modifier = renderuntocaesar 
+				}
+			}
 		}
 	}
 	focus = {
@@ -2335,6 +2359,15 @@ focus_tree = {
 				}
 				
 				BLP = {
+					transfer_state = 97
+					transfer_state = 325
+					transfer_state = 176
+					add_to_war = {
+						targeted_alliance = CES
+						enemy = NCR
+					}				
+				}
+				BVC = {
 					transfer_state = 651
 					transfer_state = 650
 					transfer_state = 41
@@ -2342,15 +2375,6 @@ focus_tree = {
 					transfer_state = 158
 					transfer_state = 136
 					transfer_state = 481
-					add_to_war = {
-						targeted_alliance = CES
-						enemy = NCR
-					}				
-				}
-				BVC = {
-					transfer_state = 97
-					transfer_state = 325
-					transfer_state = 176
 					add_to_war = {
 						targeted_alliance = CES
 						enemy = NCR
@@ -2400,7 +2424,10 @@ focus_tree = {
 		x = 8
 		y = 17
 		completion_reward = {
-			NCR = { add_national_unity = -0.05 }
+			NCR = { 
+				add_stability = -0.05
+				add_war_support = 0.025
+			}
 		}
 
 	}
@@ -2420,34 +2447,34 @@ focus_tree = {
 				controls_state = 317
 			}
 		}
-        bypass = {
-            owns_state = 533
-        }
+		bypass = {
+			owns_state = 533
+		}
 		x = 8
 		y = 18
 		completion_reward = {
 			add_manpower = -200
 			transfer_state = 533
 			set_state_controller = 533
-            533 = {    
+			533 = {    
 				set_state_name = "Caesar's Landing"
 				add_extra_state_shared_building_slots = 3
-                add_building_construction = {
-                    type = dockyard
-                    level = 3
-                    instant_build = yes
-                }
 				add_building_construction = {
-                    type = naval_base
-                    level = 6
-                    instant_build = yes
-                }
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
 				add_building_construction = {
-                    type = bunker
-                    level = 3
-                    instant_build = yes
-                }
-            }
+					type = naval_base
+					level = 6
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+				}
+			}
 			hidden_effect = { load_oob = CES_crossing_party_nelson }
 			custom_effect_tooltip = load_CES_crossing_party_nelson
 		}
@@ -2474,7 +2501,7 @@ focus_tree = {
 	#	}
 	#
 	#}
-    
+	
 	focus = {
 		id = ces_augustus
 		icon = GFX_goal_generic_ideological_fury_focus
@@ -2493,14 +2520,14 @@ focus_tree = {
 
 	}
 	
-    focus = {
+	focus = {
 		id = ces_thesis
 		icon = GFX_goal_legion_new_thesis
 		cost = 8.6
 		prerequisite = {
 			focus = ces_augustus
 		}
-        available = {
+		available = {
 			has_country_leader = { id = 1000 } # Caesar
 		}
 		mutually_exclusive = {
@@ -2537,7 +2564,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_augustus
 		}
-        available = {
+		available = {
 			has_country_leader = { id = 1006 } # Lucius
 		}
 		mutually_exclusive = {
@@ -2599,13 +2626,13 @@ focus_tree = {
 		}
 		x = 12
 		y = 16
-        completion_reward = {
-            add_ideas = legion_nf_spqr
+		completion_reward = {
+			add_ideas = legion_nf_spqr
 			add_popularity = {
 				ideology = ruler
 				popularity = 0.2
 			}
-        }
+		}
 	}
 	focus = {
 		id = ces_peace
@@ -2625,9 +2652,9 @@ focus_tree = {
 
 	}
 
-    #---------------------------
-    # Production sub-tree
-    #---------------------------
+	#---------------------------
+	# Production sub-tree
+	#---------------------------
 	focus = {
 		id = ces_denarius
 		icon = GFX_goal_legion_denarius
@@ -2642,7 +2669,7 @@ focus_tree = {
 		}
 
 	}
-    
+	
 	focus = {
 		id = ces_tame_dog_city
 		icon = GFX_goal_legion_workshop
@@ -2658,14 +2685,14 @@ focus_tree = {
 		y = 5
 		completion_reward = {
 			525 = {
-                add_extra_state_shared_building_slots = 2
-                add_building_construction = {
-                    type = industrial_complex
-                    level = 2
-                    instant_build = yes
-                }
-            }
-        }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = ces_legion_salvagers
@@ -2674,7 +2701,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_tame_dog_city
 		}
-        available = {
+		available = {
 			owns_state = 525
 			controls_state = 525
 		}
@@ -2682,13 +2709,13 @@ focus_tree = {
 		y = 6
 		completion_reward = {
 			525 = {
-                add_extra_state_shared_building_slots = 2
-                add_building_construction = {
-                    type = arms_factory
-                    level = 2
-                    instant_build = yes
-                }
-            }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 
 	}
@@ -2699,7 +2726,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_legion_salvagers
 		}
-        available = {
+		available = {
 			owns_state = 525
 		}
 		x = 20
@@ -2716,7 +2743,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_denarius
 		}
-        available = {
+		available = {
 			owns_state = 520
 			controls_state = 520
 		}
@@ -2724,13 +2751,13 @@ focus_tree = {
 		y = 5
 		completion_reward = {
 			520 = {
-                add_extra_state_shared_building_slots = 2
-                add_building_construction = {
-                    type = industrial_complex
-                    level = 2
-                    instant_build = yes
-                }
-            }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 
 	}
@@ -2741,7 +2768,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_the_capital
 		}
-        available = {
+		available = {
 			owns_state = 520
 			controls_state = 520
 		}
@@ -2749,13 +2776,13 @@ focus_tree = {
 		y = 6
 		completion_reward = {
 			520 = {
-                add_extra_state_shared_building_slots = 2
-                add_building_construction = {
-                    type = arms_factory
-                    level = 2
-                    instant_build = yes
-                }
-            }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 
 	}
@@ -2766,7 +2793,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_flagstaff_fort
 		}
-        available = {
+		available = {
 			owns_state = 520
 		}
 		x = 22
@@ -2783,21 +2810,21 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_denarius
 		}
-        available = {
+		available = {
 			owns_state = 518
 			controls_state = 518
 		}
 		x = 24
 		y = 5
 		completion_reward = {
-            518 = {
-                add_extra_state_shared_building_slots = 2
-                add_building_construction = {
-                    type = industrial_complex
-                    level = 2
-                    instant_build = yes
-                }
-            }
+			518 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 
 	}
@@ -2808,7 +2835,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_settlers_in_phoenix
 		}
-        available = {
+		available = {
 			owns_state = 518
 			controls_state = 518
 		}
@@ -2816,13 +2843,13 @@ focus_tree = {
 		y = 6
 		completion_reward = {
 			518 = {
-                add_extra_state_shared_building_slots = 2
-                add_building_construction = {
-                    type = industrial_complex
-                    level = 2
-                    instant_build = yes
-                }
-            }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 
 	}
@@ -2833,7 +2860,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_phoenix_outpost
 		}
-        available = {
+		available = {
 			owns_state = 518
 		}
 		x = 24
@@ -2850,7 +2877,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_denarius
 		}
-        available = {
+		available = {
 			owns_state = 516
 			controls_state = 516
 		}
@@ -2858,13 +2885,13 @@ focus_tree = {
 		y = 5
 		completion_reward = {
 			516 = {
-                add_extra_state_shared_building_slots = 2
-                add_building_construction = {
-                    type = industrial_complex
-                    level = 2
-                    instant_build = yes
-                }
-            }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 
 	}
@@ -2875,7 +2902,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_two_sun_tribute
 		}
-        available = {
+		available = {
 			owns_state = 516
 			controls_state = 516
 		}
@@ -2883,13 +2910,13 @@ focus_tree = {
 		y = 6
 		completion_reward = {
 			516 = {
-                add_extra_state_shared_building_slots = 2
-                add_building_construction = {
-                    type = industrial_complex
-                    level = 2
-                    instant_build = yes
-                }
-            }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 
 	}
@@ -2900,7 +2927,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_two_sun_warcamp
 		}
-        available = {
+		available = {
 			owns_state = 516
 		}
 		x = 26
@@ -2982,46 +3009,46 @@ focus_tree = {
 		y = 8
 		available = {
 			if = {
-                limit = {
-                    NOT = {
-                        any_owned_state = {
-                            is_arizona_state = yes
-                        }
-                    }
-                }
-                always = no
-            }
+				limit = {
+					NOT = {
+						any_owned_state = {
+							is_arizona_state = yes
+						}
+					}
+				}
+				always = no
+			}
 			#if = {
-            #   limit = {
-            #        NOT = {
-            #            any_owned_state = {
-            #                is_arizona_state = yes
-            #            }
-            #        }
-            #    }
-            #    always = yes
-            #}
+			#   limit = {
+			#        NOT = {
+			#            any_owned_state = {
+			#                is_arizona_state = yes
+			#            }
+			#        }
+			#    }
+			#    always = yes
+			#}
 		}
 		completion_reward = {	    
-            if = {
-                limit = {
-                    NOT = {
-                        any_owned_state = {
-                            is_arizona_state = yes
-                        }
-                    }
-                }
-                custom_effect_tooltip = legion_must_own_arizona_territory 
-            }
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							is_arizona_state = yes
+						}
+					}
+				}
+				custom_effect_tooltip = legion_must_own_arizona_territory 
+			}
 			every_owned_state = {
-                limit = { is_arizona_state = yes }
-                add_extra_state_shared_building_slots = 1
-                add_building_construction = {
-                    type = infrastructure
-                    level = 2
-                    instant_build = yes
-                }
-            }			
+				limit = { is_arizona_state = yes }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}			
 		}
 
 	}
@@ -3036,36 +3063,36 @@ focus_tree = {
 		y = 9
 		available = {
 			if = {
-                limit = {
-                    NOT = {
-                        any_owned_state = {
-                            is_new_mexico_state = yes
-                        }
-                    }
-                }
-                always = no
-            }
+				limit = {
+					NOT = {
+						any_owned_state = {
+							is_new_mexico_state = yes
+						}
+					}
+				}
+				always = no
+			}
 		}
 		completion_reward = {
-            if = {
-                limit = {
-                    NOT = {
-                        any_owned_state = {
-                            is_new_mexico_state = yes
-                        }
-                    }
-                }
-                custom_effect_tooltip = legion_must_own_new_mexico_territory 
-            }
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							is_new_mexico_state = yes
+						}
+					}
+				}
+				custom_effect_tooltip = legion_must_own_new_mexico_territory 
+			}
 			every_owned_state = {
-                limit = { is_new_mexico_state = yes }
-                add_extra_state_shared_building_slots = 1
-                add_building_construction = {
-                    type = infrastructure
-                    level = 2
-                    instant_build = yes
-                }
-            }
+				limit = { is_new_mexico_state = yes }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 
 	}
@@ -3080,41 +3107,41 @@ focus_tree = {
 		y = 9
 		available = {
 			if = {
-                limit = {
-                    NOT = {
-                        any_owned_state = {
-                            is_colorado_state = yes
-                        }
-                    }
-                }
-                always = no
-            }
+				limit = {
+					NOT = {
+						any_owned_state = {
+							is_colorado_state = yes
+						}
+					}
+				}
+				always = no
+			}
 		}
 		completion_reward = {
-            if = {
-                limit = {
-                    NOT = {
-                        any_owned_state = {
-                            is_colorado_state = yes
-                        }
-                    }
-                }
-                custom_effect_tooltip = legion_must_own_colorado_territory 
-            }
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							is_colorado_state = yes
+						}
+					}
+				}
+				custom_effect_tooltip = legion_must_own_colorado_territory 
+			}
 			every_owned_state = {
-                limit = { is_colorado_state = yes }
-                add_extra_state_shared_building_slots = 2
-                add_building_construction = {
-                    type = infrastructure
-                    level = 2
-                    instant_build = yes
-                }
-            }
+				limit = { is_colorado_state = yes }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 
 	}
-    
-    focus = {
+	
+	focus = {
 		id = ces_pax_romana
 		icon = GFX_goal_generic_propaganda
 		cost = 8.6
@@ -3124,13 +3151,13 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_the_road_eastwards
 		}
-        available = {
-            has_manpower > 1000
-        }
+		available = {
+			has_manpower > 1000
+		}
 		x = 25
 		y = 10
 		completion_reward = {
-            add_manpower = -1000
+			add_manpower = -1000
 			add_ideas = legion_nf_pax_romana
 		}
 
@@ -3175,19 +3202,19 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_pax_romana
 		}
-        available = {
-            owns_state = 613
+		available = {
+			owns_state = 613
 			controls_state = 613
-        }
+		}
 		x = 23
 		y = 11
 		completion_reward = {
-            613 = {
-                add_resource = {
-                    type = metal
-                    amount = 32
-                }
-            }
+			613 = {
+				add_resource = {
+					type = metal
+					amount = 32
+				}
+			}
 		}
 	}
 	focus = {
@@ -3211,19 +3238,19 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_boulder_city_salvage
 		}
-        available = {
-            owns_state = 525
+		available = {
+			owns_state = 525
 			controls_state = 525
-        }
+		}
 		x = 21
 		y = 12
 		completion_reward = {
 			525 = {
-                add_resource = {
-                    type = metal
-                    amount = 16
-                }
-            }
+				add_resource = {
+					type = metal
+					amount = 16
+				}
+			}
 		}
 
 	}
@@ -3234,19 +3261,19 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_boulder_city_salvage
 		}
-        available = {
-            owns_state = 518
+		available = {
+			owns_state = 518
 			controls_state = 518
-        }
+		}
 		x = 25
 		y = 12
 		completion_reward = {
 			518 = {
-                add_resource = {
-                    type = metal
-                    amount = 16
-                }
-            }
+				add_resource = {
+					type = metal
+					amount = 16
+				}
+			}
 		}
 
 	}
@@ -3257,23 +3284,23 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_old_world_discoveries
 		}
-        available = {
-            owns_state = 359
+		available = {
+			owns_state = 359
 			controls_state = 359
-        }
+		}
 		x = 23
 		y = 13
 		completion_reward = {
-            359 = {
-                add_building_construction = {
+			359 = {
+				add_building_construction = {
 					type = bunker2
 					level = 4
 					instant_build = yes
-                    province = {
-                        all_provinces = yes
-                    }
+					province = {
+						all_provinces = yes
+					}
 				}
-            }
+			}
 		}
 
 	}
@@ -3286,6 +3313,10 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = ces_follower_slaves
+		}
+		available = {
+			owns_state = 46
+			controls_state = 46
 		}
 		x = 24
 		y = 14
@@ -3316,10 +3347,10 @@ focus_tree = {
 		}
 
 	}
-    
-    #---------------------------
-    # Old World Lessons sub-tree
-    #---------------------------
+	
+	#---------------------------
+	# Old World Lessons sub-tree
+	#---------------------------
 	focus = {
 		id = ces_lessons_of_the_old_world
 		icon = GFX_goal_legion_generic_infantry
@@ -3354,7 +3385,8 @@ focus_tree = {
 		x = 29
 		y = 5
 		completion_reward = {
-			add_national_unity = -0.05
+			add_stability = -0.05
+			add_war_support = -0.025
 			add_ideas = legion_nf_numeri 
 		}
 	}
@@ -3415,6 +3447,10 @@ focus_tree = {
 				traits = {
 					conqueror
 				}
+				attack_skill = 3
+				defense_skill = 1
+				planning_skill = 3
+				logistics_skill = 1
 			}
 		}
 	}
@@ -3495,6 +3531,10 @@ focus_tree = {
 				traits = {
 					loyalty
 				}
+				attack_skill = 2
+				defense_skill = 3
+				planning_skill = 1
+				logistics_skill = 1
 			}
 		}
 
@@ -3570,12 +3610,16 @@ focus_tree = {
 		y = 9
 		completion_reward = {
 			create_corps_commander = {
-				name = "Aurelius Of Phoenix"
+				name = "Aurelius of Phoenix"
 				portrait_path = "gfx/leaders/CES/Portrait_Phoenix.dds"
 				skill = 3
 				traits = {
 					slavemaster
 				}
+				attack_skill = 1
+				defense_skill = 4
+				planning_skill = 1
+				logistics_skill = 1
 			}
 		}
 
@@ -3589,7 +3633,7 @@ focus_tree = {
 			focus = ces_general_silus
 			focus = ces_general_aurelius_of_phoenix
 		}
-        available = {
+		available = {
 			has_country_leader = { id = 1006 } # Lucius
 		}
 		x = 31

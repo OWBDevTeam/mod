@@ -100,7 +100,7 @@ focus_tree = {
 		icon = GFX_goal_VEG_The_King
 		cost = 8.6
 		available = {
-		has_idea = kings
+		    has_idea = kings
 		}
 		prerequisite = {
 			focus = veg_newmanagement
@@ -159,9 +159,11 @@ focus_tree = {
 				name = "Arcade Gannon"
 				portrait_path = "gfx/leaders/VEG/Portrait_Arcade.dds"
 				skill = 4
-				traits = {
-					
-				}
+				traits = { }
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 4
+				logistics_skill = 5
 			}
 		}
 
@@ -171,7 +173,7 @@ focus_tree = {
 		icon = GFX_goal_VEG_The_Joker
 		cost = 8.6
 		available = {
-		has_idea = chairmen
+		    has_idea = chairmen
 		}
 		prerequisite = {
 			focus = veg_newmanagement
@@ -414,6 +416,14 @@ focus_tree = {
 			#show_ideas_tooltip = marjorie'
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = majorie 
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					add_ideas = majorie
+				}
+			}
 		}
 
 	}
@@ -495,6 +505,14 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = available_army_chief
 			show_ideas_tooltip = papa_khan
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					add_ideas = papa_khan
+				}
+			}
 		}
 
 	}
@@ -571,6 +589,14 @@ focus_tree = {
 			#show_ideas_tooltip = benny
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = benny 
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					add_ideas = benny
+				}
+			}
 		}
 	}
 	focus = {
@@ -629,7 +655,15 @@ focus_tree = {
 		completion_reward = {
 			#show_ideas_tooltip = theking
 			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = the_king 
+			show_ideas_tooltip = the_king
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					add_ideas = the_king
+				}
+			}
 		}
 
 	}
@@ -741,6 +775,14 @@ focus_tree = {
 			#show_ideas_tooltip = motorunner
 			custom_effect_tooltip = available_high_command
 			show_ideas_tooltip = motor_runner
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					add_ideas = motor_runner
+				}
+			}
 		}
 
 	}
@@ -836,6 +878,17 @@ focus_tree = {
 		prerequisite = {
 			focus = veg_house
 		}
+		available = {
+			OR = {
+				controls_state = 252
+				252 = {
+					is_controlled_by = NCR
+				}
+				252 = {
+					is_controlled_by = CES
+				}
+			}
+		}
 		x = 4
 		y = 7
 		completion_reward = {
@@ -847,6 +900,10 @@ focus_tree = {
 		id = veg_vault
 		icon = GFX_goal_VEG_The_Vault
 		cost = 8.6
+		available = {
+			has_country_flag = veg_chip_delivered
+			has_idea = platinumOS
+		}
 		prerequisite = {
 			focus = veg_platinumchip
 		}
@@ -1026,7 +1083,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = veg_frisco
+		id = veg_hopeville
 		icon = GFX_goal_generic_ammo_boxes_focus
 		cost = 8.6
 		prerequisite = {
@@ -1034,31 +1091,40 @@ focus_tree = {
 		}
 		x = 2
 		y = 9
-		will_lead_to_war_with = FRI
+		will_lead_to_war_with = HOP
 		bypass = {
-			FRI = {
+			HOP = {
 				exists = no
 			}
 		}
 		completion_reward = {
 			create_wargoal = {
-				target = FRI
+				target = HOP
 				type = annex_everything
 			}
 		}
 
 	}
 	focus = {
-		id = veg_silver
+		id = veg_ashton
 		icon = GFX_goal_generic_metal_focus
 		cost = 8.6
 		prerequisite = {
-			focus = veg_frisco
+			focus = veg_hopeville
 		}
 		x = 2
 		y = 10
+		will_lead_to_war_with = ASH
+		bypass = {
+			ASH = {
+				exists = no
+			}
+		}
 		completion_reward = {
-			add_ideas = robcosilver
+			create_wargoal = {
+				target = ASH
+				type = annex_everything
+			}
 		}
 
 	}
@@ -1068,7 +1134,7 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = veg_reborn
-			focus = veg_silver
+			focus = veg_ashton
 		}
 		x = 1
 		y = 11
@@ -1078,28 +1144,48 @@ focus_tree = {
 
 	}
 	focus = {
-		id = veg_foreigninvest
+		id = veg_newvegastreaty
 		icon = GFX_goal_generic_supplies_focus
 		cost = 8.6
 		prerequisite = {
 			focus = veg_economy
 		}
+		available = {
+			NCR = {
+				owns_state = 252
+			}
+		}
 		x = 6
 		y = 7
 		completion_reward = {
-			swap_ideas = {
-				add_idea = goodbusiness2
-				remove_idea = goodbusiness
+			253 = {
+				add_resource = {
+					type = electricity
+					amount = 20
+				}
 			}
+			211 = {
+				add_resource = {
+					type = electricity
+					amount = 5
+				}
+			}
+			NCR = {
+				give_guarantee = VEG
+			}
+			VEG = {
+				give_military_access = NCR
+			}
+			
 		}
 
 	}
 	focus = {
-		id = veg_ncrembassy
+		id = veg_ncrtradedeal
 		icon = GFX_goal_generic_NCR_diplomatic_focus
 		cost = 8.6
 		prerequisite = {
-			focus = veg_foreigninvest
+			focus = veg_newvegastreaty
 		}
 		x = 6
 		y = 8
@@ -1109,17 +1195,19 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			add_opinion_modifier = { target = NCR modifier = ncrembassy }
-			reverse_add_opinion_modifier = { target = NCR modifier = ncrembassy }
+			swap_ideas = {
+				remove_idea = goodbusiness
+				add_idea = goodbusiness2
+			}
 		}
 
 	}
 	focus = {
-		id = veg_jointscavenge
+		id = veg_ncrrail
 		icon = GFX_goal_generic_metal_focus
 		cost = 8.6
 		prerequisite = {
-			focus = veg_ncrembassy
+			focus = veg_ncrtradedeal
 		}
 		x = 6
 		y = 9
@@ -1137,11 +1225,11 @@ focus_tree = {
 
 	}
 	focus = {
-		id = veg_ncrrail
+		id = veg_ncrembassy
 		icon = GFX_goal_generic_construct_infrastructure
 		cost = 8.6
 		prerequisite = {
-			focus = veg_jointscavenge
+			focus = veg_ncrrail
 		}
 		available = {
 			419 = {
@@ -1152,24 +1240,23 @@ focus_tree = {
 		x = 6
 		y = 10
 		completion_reward = {
-			every_state = {
-				limit = {
-					is_new_vegas_state = yes
-				}
+			211 = {
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = infrastructure
-					level = 1
+					type = industrial_complex 
+					level = 2
+					instant_build = yes
 				}
 			}
 		}
 
 	}
 	focus = {
-		id = veg_ncrdeal
+		id = veg_ncrstatehood
 		icon = GFX_goal_generic_NCR_diplomatic_focus
 		cost = 8.6
 		prerequisite = {
-			focus = veg_ncrrail
+			focus = veg_ncrembassy
 		}
 		x = 6
 		y = 11
@@ -1177,12 +1264,10 @@ focus_tree = {
 			NCR = { exists = no }
 		}
 		completion_reward = {
-			swap_ideas = {
-				add_idea = goodbusiness3
-				remove_idea = goodbusiness2
+			NCR = {
+				country_event = nf_vegas.53
+
 			}
-			add_opinion_modifier = { target = NCR modifier = ncrtradedeal }
-			reverse_add_opinion_modifier = { target = NCR modifier = ncrtradedeal }
 		}
 
 	}
@@ -1802,6 +1887,14 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = nero
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+					}
+					add_ideas = nero
+				}
+			}
 		}
 	}
 	focus = {

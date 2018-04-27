@@ -1,19 +1,38 @@
 ﻿division_template = {
 	name = "Gamma Core"
+	is_locked = yes
+	
 	regiments = {
-		spec_ops = { x = 0 y = 0 }
-		spec_ops = { x = 0 y = 1 }
-		spec_ops = { x = 1 y = 0 }
-		spec_ops = { x = 1 y = 1 }
-		spec_ops = { x = 2 y = 0 }
-		spec_ops = { x = 2 y = 1 }	
+		super_mutant_infantry = { x = 0 y = 0 }
+		ghoul_paratroopers = { x = 0 y = 1 }
+		super_mutant_infantry = { x = 1 y = 0 }
+		ghoul_paratroopers = { x = 1 y = 1 }
+		super_mutant_infantry = { x = 2 y = 0 }
+		ghoul_paratroopers = { x = 2 y = 1 }
+		super_mutant_infantry = { x = 3 y = 0 }
+		ghoul_paratroopers = { x = 3 y = 1 }
+	}
+	support = {
+		signal_company = { x = 0 y = 0 }
+		anti_tank_company = { x = 0 y = 1 }
+		recon_company = { x = 0 y = 2 }
 	}
 }
-
-division = { 
-	name = "The Gamma Core"
+units = {
+	division = { 
+	name = "1st Gamma Core"
 	location = 8814
 	division_template = "Gamma Core"
-	start_experience_factor = 1.0
+	start_experience_factor = 0.75
 	start_equipment_factor = 1.0
+	}
+	
+	division = { 
+	name = "2nd Gamma Core"
+	location = 8814
+	division_template = "Gamma Core"
+	start_experience_factor = 0.75
+	start_equipment_factor = 1.0
+	}
+	
 }

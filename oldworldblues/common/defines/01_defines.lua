@@ -3,8 +3,6 @@
 NDefines.NGame.START_DATE = "2275.1.1.12"
 NDefines.NGame.END_DATE = "2400.1.1.1"
 NDefines.NDiplomacy.VOLUNTEERS_DIVISIONS_REQUIRED = 8 		-- Vanilla is 30
-NDefines.NAI.GENERATE_WARGOAL_THREAT_BASELINE = 0.0
-NDefines.NAI.DIPLOMACY_SEND_MAX_FACTION = 0.5
 NDefines.NDiplomacy.TENSION_TIME_SCALE_START_DATE = "2275.1.1.12"	-- Starting at this date, the tension values will be scaled down (will be equal to 1 before that)
 
 -- NCountry
@@ -47,7 +45,7 @@ NDefines.NAI.STOP_TRAINING_EQUIPMENT_LEVEL = 0.8                                
 NDefines.NAI.DEPLOY_MIN_EQUIPMENT_PEACE_FACTOR = 0.95	-- Required percentage of equipment (1.0 = 100%) for AI to deploy unit in peacetime
 NDefines.NAI.DEPLOY_MIN_EQUIPMENT_WAR_FACTOR = 0.90		-- Required percentage of equipment (1.0 = 100%) for AI to deploy unit in wartime
 
-NDefines.NAI.NEW_LEADER_EXTRA_PP_FACTOR = 5.0
+--NDefines.NAI.NEW_LEADER_EXTRA_PP_FACTOR = 5.0
 NDefines.NAI.DIPLOMACY_IMPROVE_RELATION_COST_FACTOR = 7.0                       -- Desire to boost relations subtracts the cost multiplied by this
 NDefines.NAI.TRADEABLE_FACTORIES_FRACTION = 1
 -- Naval invasion stuffs
@@ -59,14 +57,18 @@ NDefines.NAI.MICRO_POCKET_SIZE = 10						-- Pockets with a size equal to or lowe
 NDefines.NAI.MAX_MICRO_ATTACKS_PER_ORDER = 32
 
 -- AI Diplomacy
+NDefines.NAI.GENERATE_WARGOAL_THREAT_BASELINE = 0.0
+NDefines.NAI.DIPLOMACY_SEND_MAX_FACTION = 0.5
 NDefines.NAI.FORCE_FACTOR_AGAINST_EXTRA_MINOR = 0.4			-- AI considers generating wargoals against minors below this % of force compared to themselves to get at a bigger enemy.
 NDefines.NAI.MAX_EXTRA_WARGOAL_GENERATION = 2				-- AI may want to generate wargoals against weak minors to get at larger enemy, but never more that this at any given time.
 NDefines.NAI.WARGOAL_GENERATION_STRENGTH_FACTOR = 1.5	-- Desire to generate wargoal effected negatevely if actor strength is less than this factor of target strength
 NDefines.NAI.DECLARE_WAR_RELATIVE_FORCE_FACTOR = 0.4	-- Weight of relative force between nations that consider going to war
 NDefines.NAI.DECLARE_WAR_NOT_NEIGHBOR_FACTOR = 0.25		-- Multiplier applied before force factor if country is not neighbor with the one it is considering going to war
-NDefines.NAI.FASCISTS_ANTAGONIZE_FASCISTS = 100
-NDefines.NAI.FASCISTS_ANTAGONIZE_DEMOCRACIES = 170
-NDefines.NAI.FASCISTS_ANTAGONIZE_COMMUNISTS = 170
+NDefines.NAI.DIPLOMACY_CREATE_FACTION_FACTOR = 0.95
+NDefines.NAI.CALL_ALLY_DEMOCRATIC_DESIRE = 25
+NDefines.NAI.FASCISTS_ANTAGONIZE_FASCISTS = 50
+NDefines.NAI.FASCISTS_ANTAGONIZE_DEMOCRACIES = 120
+NDefines.NAI.FASCISTS_ANTAGONIZE_COMMUNISTS = 120
 NDefines.NAI.MIN_ANTAGONIZE_FOR_WARGOAL_JUSTIFICATION = -1000	-- AI countries will not fabricate claims against countries with an antagonization value lower than this.
 NDefines.NDiplomacy.DIPLOMACY_ACCEPT_VOLUNTEERS_BASE = 400	-- Base value of volunteer acceptance (help is welcome)
 NDefines.NMilitary.EXPERIENCE_LOSS_FACTOR = 4.0  -- Scale to smaller unit sizes

@@ -15,7 +15,7 @@ country_event = {
 
 	trigger = {
 		has_government = elites
-		FROM = { has_government = neutrality }
+		FROM = { has_government = ruler }
 		NOT = { has_country_flag = war_justification_last_event_political }
 	}
 	
@@ -835,7 +835,7 @@ country_event = {
 		name = war_justification.301.a
 		trigger = { has_government = people }
 		add_political_power = -30
-		add_national_unity = -0.03
+		add_war_support = -0.03
 		add_popularity = {
 			ideology = people
 			popularity = -0.05
@@ -846,7 +846,7 @@ country_event = {
 		name = war_justification.301.b
 		trigger = { has_government = intellectuals }
 		add_political_power = -30
-		add_national_unity = -0.03
+		add_war_support = -0.03
 		add_popularity = {
 			ideology = intellectuals
 			popularity = -0.05
@@ -862,7 +862,7 @@ country_event = {
 			}
 		}
 		add_political_power = -30
-		add_national_unity = -0.03
+		add_war_support = -0.03
 		add_popularity = {
 			ideology = elites
 			popularity = -0.05

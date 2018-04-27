@@ -100,7 +100,8 @@ ideas = {
 			removal_cost = -1
 		
 			modifier = {
-				unity_factor = 0.05
+				war_support_factor = 0.03
+				stability_factor = 0.02
 				conscription = 0.03
 				training_time_army_factor = -0.1
 			}
@@ -158,7 +159,8 @@ ideas = {
 		
 			modifier = {
 				enemy_justify_war_goal_time = 0.2
-				unity_factor = 0.05
+				stability_factor = 0.03
+				war_support_factor = 0.02
 			}
 		}
 		
@@ -233,7 +235,7 @@ ideas = {
 		
 			modifier = {
 				conscription = 0.02
-				unity_factor = -0.05
+				stability_factor = -0.05
 			}
 			
 		}
@@ -278,7 +280,7 @@ ideas = {
 			removal_cost = -1
 		
 			modifier = {
-				unity_factor = 0.05
+				war_support_factor = 0.05
 				justify_war_goal_time = -0.15
 			}
 			
@@ -301,7 +303,7 @@ ideas = {
 		
 			modifier = {
 				research_time_factor = -0.05
-				unity_factor = 0.1
+				stability_factor = 0.05
 			}
 			
 		}
@@ -317,7 +319,7 @@ ideas = {
 		
 			modifier = {
 				consumer_goods_factor = -0.05
-				unity_factor = 0.05
+				stability_factor = 0.03
 			}
 			
 		}
@@ -656,5 +658,67 @@ ideas = {
 			
 		}
 		
+		mastersnewarmy = {
+			
+			picture = G
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				non_core_manpower = 0.2
+			}
+			
+			equipment_bonus = {
+				category_super_mutants = {
+					soft_attack = 0.05
+					hard_attack = 0.05
+					defense = 0.05
+				}
+			}
+			
+		}
+		
+		cultmutants = {
+			
+			picture = G
+			
+			allowed = {
+			}
+		
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.01
+			}
+			
+		}
+		guardiansnewworld = {
+			
+			picture = G
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.015
+			}
+		}
+		tamenewworld = {
+			picture = G
+			
+			allowed = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				justify_war_goal_time = -0.2
+			}
+		}
 	}
 }

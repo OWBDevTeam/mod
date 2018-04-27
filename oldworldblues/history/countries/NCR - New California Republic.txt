@@ -2,7 +2,8 @@
 oob = "NCR_2265"
 
 set_technology = {
-    standard_weaponry_tech = 1
+	grand_army = 1
+	standard_weaponry_tech = 1
 	blunt_weaponry = 1
 	basic_ballistic_weaponry = 1
 	support_weaponry = 1
@@ -18,9 +19,11 @@ set_technology = {
 	truck_tech_1 = 1
 	anti_tank_tech = 1
 	special_forces = 1
+	naval_invasion_tech = 1
 }
 
-add_national_unity = -0.15
+set_stability = 0.55
+set_war_support = 0.20
 
 set_research_slots = 4
 set_politics = {
@@ -35,9 +38,9 @@ set_politics = {
 }
 
 add_ideas = { 
-undisturbed_isolation
-brahminbarons
-ncrguns
+	undisturbed_isolation
+	brahminbarons
+	ncrguns
 }
 
 create_country_leader = {
@@ -95,14 +98,22 @@ create_corps_commander = {
     skill = 4
     traits = {
     }
+	attack_skill = 3
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 
 create_corps_commander = {
     name = "Lt. Gorobets"
     portrait_path = "gfx/leaders/NCR/Portrait_Gorobets.dds"
-    skill = 3
+    skill = 2
     traits = {
     }
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 
 create_corps_commander = {
@@ -111,14 +122,22 @@ create_corps_commander = {
     skill = 2
     traits = {
     }
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 2
 }
 
-create_corps_commander = {
+create_field_marshal = {
     name = "Col. James Hsu"
     portrait_path = "gfx/leaders/NCR/Portrait_Hsu.dds"
-    skill = 2
+    skill = 3
     traits = {
     }
+	attack_skill = 1
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 2
 }
 
 create_faction = NCR

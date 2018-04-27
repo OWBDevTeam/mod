@@ -26,13 +26,13 @@ ideas = {
 			
 			removal_cost = -1
 		
-			#category_all_infantry = {
-			#	urban = {
-			#		attack = 0.1
-			#		defence = 0.1
-			#	}
-			#}
-			#
+			
+			equipment_bonus = {
+				motorized_equipment = {
+					hardness = 0.2
+					instant = yes
+				}
+			}
 			modifier = {
 				enemy_partisan_effect = -0.15
 			}
@@ -49,7 +49,7 @@ ideas = {
 			
 			modifier = {
 				conscription_factor = 0.01
-				unity_factor = 0.05
+				war_support_factor = 0.05
 			}
 		}
 		
@@ -249,7 +249,8 @@ ideas = {
 			removal_cost = -1
 				
 			modifier = {
-				unity_factor = -0.05
+				stability_factor = -0.03
+				war_support_factor = -0.02
 			}
 			
 			equipment_bonus = {
@@ -271,7 +272,8 @@ ideas = {
 			removal_cost = -1
 				
 			modifier = {
-				unity_factor = -0.05
+				stability_factor = -0.03
+				war_support_factor = -0.02
 			}
 			
 			equipment_bonus = {
@@ -343,7 +345,7 @@ ideas = {
 		
 		onlythebest = {
 			
-			picture = generic_morale_bonus
+			picture = ncr_ranger_idea
 			
 			allowed = {
 			}
@@ -555,7 +557,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				unity_factor = 0.15
+				stability_factor = 0.1
+				war_support_factor = 0.05
 			}
 		}
 		
@@ -569,13 +572,15 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				unity_factor = 0.05
+				war_support_factor = 0.03
+				stability_factor = 0.02
 			}
 			equipment_bonus = {
 				spec_ops = {
 					soft_attack = 0.05
 					hard_attack = 0.05
 					defense = 0.05
+					instant = yes
 				}
 			}
 		}
@@ -591,7 +596,7 @@ ideas = {
 			
 			modifier = {
 				political_power_gain = 0.25
-				unity_factor = 0.05
+				stability_factor = 0.05
 			}
 		}
 		
@@ -605,7 +610,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				unity_factor = -0.05
+				stability_factor = -0.03
+				war_support_factor = -0.02
 				consumer_goods_factor = 0.2
 				monthly_population = -0.10
 			}
@@ -621,7 +627,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				unity_factor = -0.05
+				stability_factor = -0.05
 				consumer_goods_factor = 0.2
 				monthly_population = -0.10
 			}
@@ -652,7 +658,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				unity_factor = -0.05
+				stability_factor = -0.03
+				war_support_factor = -0.02
 				production_speed_buildings_factor = 0.05
 			}
 			
@@ -696,7 +703,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				unity_factor = 0.05
+				stability_factor = 0.05
 			}
 		
 		}
@@ -827,7 +834,7 @@ ideas = {
 			
 			modifier = {
 				monthly_population = 0.1
-				unity_factor = -0.05
+				war_support_factor = -0.05
 			}
 		
 		}
@@ -842,7 +849,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				unity_factor = 0.025
+				stability_factor = 0.025
 			}
 		
 		}
@@ -857,7 +864,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				unity_factor = 0.025
+				war_support_factor = 0.025
 				elites_drift = 0.05
 				
 			}
@@ -875,7 +882,7 @@ ideas = {
 			
 			modifier = {
 				conscription = 0.02
-				unity_factor = -0.1
+				stability_factor = -0.1
 			}
 		
 		}
@@ -912,7 +919,7 @@ ideas = {
 		
 		reorgranger = {
 			
-			picture = generic_infantry_bonus
+			picture = ncr_ranger_idea
 			
 			allowed = {
 			}
@@ -930,7 +937,7 @@ ideas = {
 		
 		rangercore = {
 			
-			picture = generic_infantry_bonus
+			picture = ncr_ranger_idea
 			
 			allowed = {
 			}
@@ -947,7 +954,7 @@ ideas = {
 		
 		rangerlead = {
 			
-			picture = generic_infantry_bonus
+			picture = ncr_ranger_idea
 			
 			allowed = {
 			}
@@ -963,7 +970,7 @@ ideas = {
 		
 		rangercanopeners = {
 			
-			picture = generic_infantry_bonus
+			picture = ncr_ranger_idea
 			
 			allowed = {
 			}
@@ -1003,7 +1010,8 @@ ideas = {
 			
 			modifier = {
 				conscription = 0.02
-				unity_factor = 0.05
+				war_support_factor = 0.03
+				stability_factor = 0.02
 			}
 		}
 
@@ -1039,7 +1047,7 @@ ideas = {
 		
 		rangergenmossman = {
 			
-			picture = generic_infantry_bonus
+			picture = ncr_ranger_idea
 			
 			allowed = {
 			}
@@ -1053,7 +1061,7 @@ ideas = {
 		
 		ncrrangerprop = {
 		
-			picture = generic_manpower_bonus
+			picture = ncr_ranger_idea
 			
 			allowed = {
 			}
@@ -1184,113 +1192,5 @@ ideas = {
 					
 				traits = { armaments_organizer }
 			}	
-		alice_mclafferty = {
-					
-				picture = generic_political_advisor_europe_2
-					
-				allowed = {
-					original_tag = NCR
-				}
-					
-				traits = { war_industrialist }
-			}	
-	}
-	
-	high_command = {
-		
-		colonel_hsu = {
-			
-			picture = generic_political_advisor_europe_3
-			
-			allowed = {
-				original_tag = NCR
-			}
-			
-			traits = { army_chief_offensive_3 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-		
-		colonel_moore = {
-
-			picture = generic_political_advisor_europe_1
-			
-			allowed = {
-				original_tag = NCR
-			}
-			
-			traits = { army_chief_defensive_3 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-		
-		chief_hanlon = {
-			
-			picture = generic_political_advisor_europe_2
-			
-			allowed = {
-				original_tag = NCR
-			}
-			
-			traits = { army_chief_drill_3 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-		
-		col_royez = {
-			
-			picture = generic_political_advisor_europe_3
-			
-			allowed = {
-				original_tag = NCR
-			}
-			
-			traits = { army_chief_organizational_3 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-	}
-	
-	army_chief = {
-		chief_lee_oliver = {
-			
-			picture = generic_political_advisor_europe_1
-			
-			allowed = {
-				original_tag = NCR
-			}
-			
-
-			
-			traits = { army_logistics_3  }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-		al_chestbreach = {
-			
-			picture = generic_political_advisor_europe_2
-			
-			allowed = {
-				original_tag = NCR
-			}
-			
-
-			
-			traits = { army_regrouping_3 }
-			
-			ai_will_do = {
-				factor = 0
-			}
-		}
 	}
 }

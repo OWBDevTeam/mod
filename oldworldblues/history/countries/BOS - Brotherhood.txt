@@ -2,11 +2,12 @@
 oob = "BOS_2265"
 
 set_technology = {
-    standard_weaponry_tech = 1
+	elite_army = 1
+	standard_weaponry_tech = 1
 	blunt_weaponry = 1
-    tribal_civilization = 1
-    settled_civilization = 1
-    scientific_civilization = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	scientific_civilization = 1
 	destroyer_tech = 1
 	cruiser_tech = 1
 	heavy_cruiser_tech = 1
@@ -14,6 +15,9 @@ set_technology = {
 	improved_laser_weaponry  = 1
 	power_armour = 1
 }
+
+set_stability = 0.7
+set_war_support = 0.35
 
 set_research_slots = 4
 set_politics = {
@@ -32,6 +36,11 @@ add_ideas = {
 	oldguard
 }
 
+#Mutant Opinion Modifiers to keep them from joining the BOS faction also an opinion modifier for the Washington state BOS
+
+add_opinion_modifier = { target = TRL modifier = boshatesmutants }
+add_opinion_modifier = { target = WBH modifier = boshateswashingtonstatebos }
+
 create_country_leader  = {
     name = "Mari Törni"
     desc = "MARI_TORNI_DESC"
@@ -45,20 +54,28 @@ create_country_leader  = {
     }
 }
 
-create_corps_commander = {
-    name = "Head Paladin"
-    portrait_path = "gfx/leaders/BOS/Portrait_Generic.dds"
+create_field_marshal = {
+    name = "Head Paladin Cannon"
+    portrait_path = "gfx/leaders/BOS/Portrait_Cannon.dds"
     skill = 4
     traits = {
     }
+	attack_skill = 4
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 3
 }
 
 create_corps_commander = {
-    name = "Paladin"
+    name = "Paladin Miller"
     portrait_path = "gfx/leaders/BOS/Portrait_Generic.dds"
     skill = 3
     traits = {
     }
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 1
 }
 
 create_faction = BrotherhoodOfSteel

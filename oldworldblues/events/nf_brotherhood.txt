@@ -233,7 +233,7 @@ country_event = {
 		name = nf_brotherhood.9.a
 		
 		load_oob = sanfranmobsters
-		add_national_unity = -0.05
+		add_war_support = -0.05
         
 	}
 	
@@ -247,7 +247,7 @@ country_event = {
 			}
 		}
 		
-		add_national_unity = 0.05
+		add_war_support = 0.05
         
 	}
 	
@@ -833,9 +833,13 @@ country_event = {
 		load_oob = maxsongarrison
 		
 		create_corps_commander = {
-				name = "Lieutant Smith"
-				portrait_path = "gfx/leaders/BOS/Portrait_Generic.dds"
+				name = "Lieutenant Smith"
+				portrait_path = "gfx/leaders/BOS/Portrait_Smith.dds"
 				skill = 3
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 3
+				logistics_skill = 2
 		}
 	}
 }
@@ -853,8 +857,12 @@ country_event = {
 		
 		create_corps_commander = {
 				name = "A. Ron Meyers"
-				portrait_path = "gfx/leaders/BOS/Portrait_Generic.dds"
+				portrait_path = "gfx/leaders/BOS/Portrait_Meyers.dds"
 				skill = 4
+				attack_skill = 2
+				defense_skill = 4
+				planning_skill = 2
+				logistics_skill = 2
 		}
 		load_oob = thevagrants
 		
@@ -923,9 +931,7 @@ country_event = {
 
 		BOS = {add_opinion_modifier = { target = NCR modifier = ncrassault }
 	}
-	
-	
-}	
+  }	
 }
-}
+
 

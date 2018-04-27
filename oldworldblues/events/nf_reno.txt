@@ -64,14 +64,11 @@ country_event = {
 		ai_chance = {
 			factor = 10
 		}
-		
 		country_event = { id = factionevent.1 }
 	}
 	
 	option = {
 		name = nf_reno.2.b
-		
-		
 	}
 	
 	option = {
@@ -95,9 +92,7 @@ country_event = {
 		NCR = {
 			add_to_faction = NEW
 		}
-		
 	}
-
 }
 
 country_event = {
@@ -113,10 +108,10 @@ country_event = {
 		
 		set_cosmetic_tag = ENC
 		create_country_leader = {
-			name = "Sergeant Dornan"
+			name = "Governor Arch Dornan"
 			id = 791
 			desc = "Dornan_DESC"
-			picture = "gfx/leaders/ENC/Portrait_Enclave_Generic.dds"
+			picture = "gfx/leaders/NEW/Portrait_New_Reno_Arch_Dornan.dds"
 			expire = "3000.1.1"
 			ideology = militarist_technocracy
 			
@@ -134,14 +129,15 @@ country_event = {
 			ruling_party = elites
 			elections_allowed = no
 		}
+		
+		create_faction = "Nevada Enclave"
+		
 		hidden_effect = {
 			set_technology = {
 				power_armour_enclave1 = 1
 				tesla_weaponry = 1
-				vertiberd_gunship = 1 
 				settled_civilization = 1
 				scientific_civilization = 1
-				vertiberd_transport1 = 1 
 			}
 			load_oob = renoenclave
 		}
@@ -160,20 +156,29 @@ country_event = {
 	option = {
 		name = nf_reno.4.a
 		
-		THR = {
+		NEW = {
 			create_country_leader = {
 				name = "Thradd the Immortal"
 				desc = "Thradd_DESC"
 				picture = "Portrait_Thradd.dds"
 				expire = "3000.1.1"
 				ideology = warlordship
-				
+				id = 792
+
 				traits = {
 					
 				}
 			}
 			
-			create_faction = masters_army
+			set_party_name = { 
+			ideology = ruler 
+			long_name = "Warlord Thradd"
+			name = "Warlord Thradd" 
+			}
+			
+			set_cosmetic_tag = THR
+			
+			create_faction = "Master's New Army"
 			
 			set_politics = {
 				parties = {
@@ -185,36 +190,7 @@ country_event = {
 				ruling_party = ruler
 				elections_allowed = no
 			}
-			THR = {
-			    country_event = { days = 5 id = nf_reno.15 }
-			}
-			hidden_effect = {
-				annex_country = { target = NEW transfer_troops = no }
-				change_tag_from = NEW
-		    }
 		}
-			if = {
-				limit = {
-					TRL = {
-						exists = yes
-					}	
-				}
-				TRL = {
-				    country_event = nf_reno.9
-				}
-			}
-				if = {
-					limit = {
-						VLT = {
-							has_country_leader = {
-								id = 913
-							}
-						}
-					}
-					VLT = {
-					    country_event = nf_reno.12
-					}
-				}
 	}	
 }
 country_event = {
@@ -245,7 +221,7 @@ country_event = {
 	option = {
 		name = nf_reno.5.b
         
-		add_national_unity = 0.05
+		add_war_support = 0.05
 		
 		285 = {
 			add_extra_state_shared_building_slots = 5
@@ -431,7 +407,7 @@ country_event = {
 	     
 		name = nf_reno.9.a
 		
-        THR = {
+        NEW = {
 		country_event = nf_reno.10
 		}		
 	}
@@ -440,7 +416,7 @@ country_event = {
 
 		name = nf_reno.9.b
 		
-        THR = {
+        NEW = {
 		country_event = nf_reno.11
 		}
 	}
@@ -470,7 +446,7 @@ country_event = {
 	option = {
 	     
 		name = nf_reno.11.a
-		THR = {
+		NEW = {
 		create_wargoal = {
         type = annex_everything
         target = TRL
@@ -490,7 +466,7 @@ country_event = {
 	     
 		name = nf_reno.12.a
 		
-        THR = {
+        NEW = {
 		country_event = nf_reno.13
 		}		
 	}
@@ -499,7 +475,7 @@ country_event = {
 
 		name = nf_reno.12.b
 		
-        THR = {
+        NEW = {
 		country_event = nf_reno.14
 		}
 	}
@@ -518,7 +494,8 @@ country_event = {
 		add_to_faction = VLT
 	}
 }
-country_event = {
+
+country_event = { #Vault City declines our invitation#
 	id = nf_reno.14 
 	title = nf_reno.14.t
 	desc = nf_reno.14.d
@@ -529,7 +506,7 @@ country_event = {
 	option = {
 	     
 		name = nf_reno.14.a
-		THR = {
+		NEW = {
 		    create_wargoal = {
                 type = annex_everything
                 target = VLT
@@ -537,8 +514,9 @@ country_event = {
 		}
 	}
 }
+
 country_event = {
-	id = nf_reno.15
+	id = nf_reno.15 #Cult of Unity#
 	title = nf_reno.15.t
 	desc = nf_reno.15.d
 	picture = GFX_report_event_fascist_speech
@@ -549,46 +527,88 @@ country_event = {
 	     
 		name = nf_reno.15.a
 		
-		random_owned_controlled_state = {
-							limit = {
-									free_building_slots = {
-											building = industrial_complex
-											size > 0
-											include_locked = yes
-										}
-									OR = {
-											is_in_home_area = yes
-											NOT = {
-													owner = {
-															any_owned_state = {
-																	free_building_slots = {
-																			building = industrial_complex
-																			size > 0
-																			include_locked = yes
-																		}
-																	is_in_home_area = yes
-																}
-														}
-											}
-									}
-							}
-							add_extra_state_shared_building_slots = 6
-							add_building_construction = {
-									type = industrial_complex
-									level = 6
-									instant_build = yes
-							}
-						}
-						
-        every_state = {
-            limit = {
-                is_core_of = NEW
-            }
-            add_core_of = THR
-           }
-		load_oob = thraddlegion   
+        NEW = {
+			add_war_support = 0.10
+		}		
+	}
+	
+	option = {
+
+		name = nf_reno.15.b
+		
+        NEW = {
+		load_oob = thraddunity
+		}
+		NEW = {
+			add_ideas = cultmutants
+		}
 	}
 }
 
+country_event = {
+	id = nf_reno.16 #Mission to Vault City, Enclave#
+	title = nf_reno.16.t
+	desc = nf_reno.16.d
+	picture = GFX_report_event_fascist_speech
 	
+	is_triggered_only = yes
+	
+	option = { #Say Yes#
+		
+		name = nf_reno.16.a
+		
+		NEW = {
+		country_event = nf_reno.17
+		}
+		
+	}
+	
+	option = { #Say No#
+		
+		name = nf_reno.16.b
+		
+		NEW = { 
+		country_event = nf_reno.18
+		}
+		
+	}
+}
+
+country_event = {
+	id = nf_reno.17 #Vault City Accepts Our Offer#
+	title = nf_reno.17.t
+	desc = nf_reno.17.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+	option = {
+	     
+		name = nf_reno.17.a
+		
+		add_to_faction = VLT
+		
+		reverse_add_opinion_modifier = { target = VLT
+		modifier = intellectualallies
+		}
+	}
+}
+
+country_event = {
+	id = nf_reno.18 #Vault City Rejects Our Offer#
+	title = nf_reno.18.t
+	desc = nf_reno.18.d
+	picture = GFX_report_event_fascist_speech
+
+    is_triggered_only = yes
+	option = {
+	     
+		name = nf_reno.18.a
+		
+		NEW = {
+			create_wargoal = {
+				type = annex_everything
+				target = VLT
+			}
+		}
+	}
 }

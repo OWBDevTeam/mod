@@ -80,7 +80,7 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_gecko
 		}
-		x = 6
+		x = 8
 		y = 4
 		completion_reward = {
 			add_political_power = 20
@@ -444,13 +444,13 @@ focus_tree = {
 					type = bunker
 					level = 1
 					instant_build = yes
-					province = 8915
+					province = 9197
 				}
 				add_building_construction = {
 					type = bunker
 					level = 1
 					instant_build = yes
-					province = 8913
+					province = 9197
 				}
 			}
 		}
@@ -469,25 +469,43 @@ focus_tree = {
 			336 = {
 				add_building_construction = {
 					type = bunker
-						level = 3
+						level = 2
 						instant_build = yes
-						province = 8911
+						province = 2695
+					}
+				add_building_construction = {
+					type = bunker
+						level = 2
+						instant_build = yes
+						province = 2703
 					}
 				}
 			339 = {
 				add_building_construction = {
 					type = bunker
-					level = 3
+					level = 2
 					instant_build = yes
-					province = 8912
+					province = 3540
 				}
-			}
-			375 = {
 				add_building_construction = {
 					type = bunker
-					level = 3
+					level = 2
 					instant_build = yes
-					province = 3313
+					province = 3539
+				}
+			}
+			261 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 3337
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 1207
 				}
 			}
 		}
@@ -1024,115 +1042,14 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_flock
 		available = {
-			controls_state = 223
-			controls_state = 458
+			PAL = {
+				exists = no
+			}
 		}
 		completion_reward = {
 			add_state_core = 223
 			add_state_core = 458
-		}
-
-	}
-	focus = {
-		id = vault_80s
-		text = vault_80s
-		icon = GFX_goal_80
-		cost = 5
-		prerequisite = {
-			focus = vault_tribals
-		}
-		x = 2
-		y = 5
-		available = {
-			NOT = {
-				has_country_leader = {
-					id = 913
-					ruling_only = yes
-					name = "The Brain"
-				}
-			}
-		}
-		bypass = {
-			has_country_leader = {
-				id = 913
-				ruling_only = yes
-				name = "The Brain"
-			}
-		}
-		completion_reward = {
-			add_political_power = 80
-			country_event = {
-				id = nf_vault_city.9
-			}
-		}
-
-	}
-	focus = {
-		id = vault_80s_roam
-		text = vault_80s_roam
-		icon = GFX_goal_generic_generic_diplomatic_focus
-		cost = 5
-		prerequisite = {
-			focus = vault_80s
-		}
-		mutually_exclusive = {
-			focus = vault_80s_blockade
-		}
-		x = 1
-		y = 6
-		available = {
-			NOT = {
-				has_country_leader = {
-					id = 913
-					ruling_only = yes
-					name = "The Brain"
-				}
-			}
-			if = {
-				has_country_flag = roam80s
-			}
-		}
-		completion_reward = {
-			give_military_access = EHT
-			diplomatic_relation = {
-				country = EHT
-				relation = non_aggression_pact
-			}
-		}
-
-	}
-	focus = {
-		id = vault_80s_blockade
-		icon = GFX_goal_generic_bunkers_focus
-		cost = 2.00
-		prerequisite = {
-			focus = vault_80s
-		}
-		mutually_exclusive = {
-			focus = vault_80s_roam
-		}
-		available = {
-			or = {
-				has_country_flag = blockade80s
-				has_country_leader = {
-					id = 913
-					ruling_only = yes
-					name = "The Brain"
-				}
-			}
-		}
-		x = 3
-		y = 6
-		completion_reward = {
-			375 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 3459
-				}
-			}
+			add_state_core = 273
 		}
 
 	}
@@ -1155,9 +1072,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_cyclops
 		completion_reward = {
-			add_state_core = 367
-			add_state_core = 567
-			add_state_core = 73
+			add_state_core = 612
+			add_state_core = 363
+			add_state_core = 100
+			add_state_core = 129
 		}
 
 	}
@@ -1254,109 +1172,6 @@ focus_tree = {
 
 	}
 	focus = {
-		id = vault_80s_def
-		icon = GFX_goal_generic_laser_muskets_focus
-		cost = 8.6
-		prerequisite = {
-			focus = vault_80s_blockade
-		}
-		x = 0
-		y = 1
-		relative_position_id = vault_80s_blockade
-		completion_reward = {
-			add_ideas = def80s
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-
-	}
-	focus = {
-		id = vault_80s_gift
-		icon = GFX_goal_generic_ammo_boxes_focus
-		cost = 8.6
-		prerequisite = {
-			focus = vault_80s_roam
-		}
-		x = 0
-		y = 1
-		relative_position_id = vault_80s_roam
-		completion_reward = {
-			add_resource = {
-				type = fuel
-				amount = 10
-				state = 291
-			}
-			add_ideas = gift80s
-		}
-
-	}
-	focus = {
-		id = vault_i80
-		icon = GFX_goal_legion_via_militaris
-		cost = 8.6
-		prerequisite = {
-			focus = vault_80s_gift
-		}
-		x = 0
-		y = 1
-		relative_position_id = vault_80s_gift
-		completion_reward = {
-			EHT = {
-				country_event = {
-					id = nf_80s.1
-				}
-			}
-		}
-
-	}
-	focus = {
-		id = vault_80s_violence
-		icon = GFX_goal_generic_war_focus
-		cost = 8.6
-		prerequisite = {
-			focus = vault_80s_def
-		}
-		x = 0
-		y = 1
-		relative_position_id = vault_80s_def
-		completion_reward = {
-			create_wargoal = {
-				type = puppet_wargoal_focus
-				target = EHT
-			}
-			
-		}
-		will_lead_to_war_with = EHT
-
-	}
-	focus = {
-		id = vault_80s_help
-		icon = GFX_goal_generic_communcation_focus
-		cost = 2.00
-		prerequisite = {
-			focus = vault_i80
-		}
-		x = 0
-		y = 1
-		relative_position_id = vault_i80
-		available = {
-			has_war = yes
-		}
-		completion_reward = {
-			custom_effect_tooltip = help80s
-			hidden_effect = {
-				load_oob = vault_80s
-			}
-		}
-
-	}
-	focus = {
 		id = vault_flock_help
 		icon = GFX_focus_generic_little_entente
 		cost = 2.00
@@ -1415,6 +1230,10 @@ focus_tree = {
 					settlement_protector
 				}
 				skill = 5
+				attack_skill = 1
+				defense_skill = 4
+				planning_skill = 2
+				logistics_skill = 2
 			}
 		}
 
@@ -1433,9 +1252,9 @@ focus_tree = {
 			add_resource = {
 				type = metal
 				amount = 10
-				state = 73
+				state = 612
 			}
-			73 = {
+			612 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory

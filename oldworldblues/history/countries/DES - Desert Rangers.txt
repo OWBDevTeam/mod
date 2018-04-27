@@ -13,14 +13,17 @@ set_technology = {
 	special_forces = 1
 }
 
+set_stability = 0.45
+set_war_support = 0.30
+
 set_politics = {
     parties = {
-        people = { popularity = 100 }
+        people = { popularity = 30 }
         elites = { popularity = 0 }
-        intellectuals = { popularity = 0 }
-        ruler = { popularity = 0 }
+        intellectuals = { popularity = 30 }
+        ruler = { popularity = 40 }
     }
-    ruling_party = people
+    ruling_party = ruler
     elections_allowed = no
 }
 
@@ -35,7 +38,7 @@ create_country_leader  = {
     desc = "SNAKE_VARGAS_DESC"
     picture = "Portrait_DES_Leader.dds"
     expire = "3000.1.1"
-    ideology = peoples_militia
+    ideology = benevolent_dictatorship
     traits = {
     }
 	id = 992

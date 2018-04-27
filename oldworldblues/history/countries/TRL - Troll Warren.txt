@@ -2,14 +2,17 @@
 oob = "TRL_2265"
 
 set_technology = {
-    standard_weaponry_tech = 1
+	standard_weaponry_tech = 1
 	blunt_weaponry = 1
-    tribal_civilization = 1
-    super_mutant_civilization = 1
+	tribal_civilization = 1
+	super_mutant_civilization = 1
 	mutant_access = 1
 	super_mutant_behemoth = 1
 	super_mutant_melee_weapons = 1
 }
+
+set_stability = 0.35
+set_war_support = 0.60
 
 set_politics = {
     parties = {
@@ -24,13 +27,16 @@ set_politics = {
 
 add_ideas = { }
 
+add_opinion_modifier = { target = BOS modifier = mutantshatebos }
+add_opinion_modifier = { target = WBH modifier = mutantshatebos }
+
 create_country_leader  = {
     name = "The First"
     desc = "First_DESC"
     picture = "Portrait_First.dds"
     expire = "3000.1.1"
     ideology = warlordship
-    id = 973
+    id = 982
     traits = {
     }
 }
@@ -75,24 +81,32 @@ create_corps_commander = {
 	traits = {
 	fortress_buster
 	}
+	attack_skill = 3
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Bonesnarl"
 	id = 978
 	portrait_path = "gfx/leaders/TRL/bonesnarl.dds"
 	skill = 2
-	traits = {
-	trickster
-	}
+	traits = { trickster }
+	attack_skill = 1
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Pittman"
 	id = 979
 	portrait_path = "gfx/leaders/TRL/pittman.dds"
 	skill = 3
-	traits = {
-	commando
-	}
+	traits = { commando }
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 3
 }
 	
 
