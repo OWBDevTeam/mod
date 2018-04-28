@@ -1,4 +1,5 @@
 sub_units = {
+
 	anti_personnel_company = {
 		sprite = infantry
 		map_icon_category = infantry
@@ -26,17 +27,15 @@ sub_units = {
 		default_morale = 0.3
 		manpower = 25 # 500
 		training_time = 120
+		suppression_factor = 0.1
 
 		#Misc Abilities
 		weight = 0.1
 		supply_consumption = 0.02
 
-
 		urban = {
 			defence = 0.2
-
 		}
-
 		marsh = {
 			defence = 0.2
 		}
@@ -44,19 +43,17 @@ sub_units = {
 		plains = {
 			defence = 0.2
 		}
-        	fort = {
-            		defence = 0.2
+        
+		fort = {
+            defence = 0.2
 		}
-        suppression_factor = 0.1
         
 		essential = {
            		 anti_personnel_equipment
 		}
-
 		need = {
             anti_personnel_equipment = 25
 		}
-
 		can_be_parachuted = yes
 	}
 }
