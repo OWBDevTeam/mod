@@ -281,16 +281,143 @@
 				}
 			}
 		}
+		
+		destroyer_decision_research = {
+		
+			fire_only_once = yes
+			visible = { 
+				has_tech = destroyer_tech_2 
+				NOT = { has_tech = destroyer_tech_3 }
+			}
+			available = { 
+				has_tech = destroyer_tech_2
+				NOT = { has_tech = destroyer_tech_3 }
+			}
+			custom_cost_text = navy_xp_more_than_60
+			custom_cost_trigger = {
+				has_navy_experience > 60
+			}
+			complete_effect = {
+				hidden_effect = { navy_experience = -60 }
+				set_technology = { destroyer_tech_3 = 1 } 
+				if = {
+					limit = {
+						has_idea = research_decision_malus
+					}
+					modify_timed_idea = { idea = research_decision_malus days = 30 } 
+				}
+				
+				if = {
+					limit = {
+						NOT = { has_idea = research_decision_malus }
+					}
+					add_timed_idea = { idea = research_decision_malus days = 30 }
+				}
+			}
+		}
+		
+		destroyer_1_decision_research = {
+		
+			fire_only_once = yes
+			visible = { 
+				has_tech = destroyer_tech_4 
+				NOT = { has_tech = destroyer_tech_5 }
+			}
+			available = { 
+				has_tech = destroyer_tech_4
+				NOT = { has_tech = destroyer_tech_5 }
+			}
+			custom_cost_text = navy_xp_more_than_60
+			custom_cost_trigger = {
+				has_navy_experience > 60
+			}
+			complete_effect = {
+				hidden_effect = { navy_experience = -60 }
+				set_technology = { destroyer_tech_5 = 1 } 
+				if = {
+					limit = {
+						has_idea = research_decision_malus
+					}
+					modify_timed_idea = { idea = research_decision_malus days = 30 } 
+				}
+				
+				if = {
+					limit = {
+						NOT = { has_idea = research_decision_malus }
+					}
+					add_timed_idea = { idea = research_decision_malus days = 30 }
+				}
+			}
+		}
 
+		cruiser_decision_research = {
 		
+			fire_only_once = yes
+			visible = { 
+				has_tech = cruiser_tech_2 
+				NOT = { has_tech = cruiser_tech_3 }
+			}
+			available = { 
+				has_tech = cruiser_tech_2
+				NOT = { has_tech = cruiser_tech_3 }
+			}
+			custom_cost_text = navy_xp_more_than_60
+			custom_cost_trigger = {
+				has_navy_experience > 60
+			}
+			complete_effect = {
+				hidden_effect = { navy_experience = -60 }
+				set_technology = { cruiser_tech_3 = 1 } 
+				if = {
+					limit = {
+						has_idea = research_decision_malus
+					}
+					modify_timed_idea = { idea = research_decision_malus days = 30 } 
+				}
+				
+				if = {
+					limit = {
+						NOT = { has_idea = research_decision_malus }
+					}
+					add_timed_idea = { idea = research_decision_malus days = 30 }
+				}
+			}
+		}
 		
+		cruiser_1_decision_research = {
 		
-		
-		
-		
-		
-		
-		
+			fire_only_once = yes
+			visible = { 
+				has_tech = cruiser_tech_4 
+				NOT = { has_tech = cruiser_tech_5 }
+			}
+			available = { 
+				has_tech = cruiser_tech_4
+				NOT = { has_tech = cruiser_tech_5 }
+			}
+			custom_cost_text = navy_xp_more_than_60
+			custom_cost_trigger = {
+				has_navy_experience > 60
+			}
+			complete_effect = {
+				hidden_effect = { navy_experience = -60 }
+				set_technology = { cruiser_tech_5 = 1 } 
+				if = {
+					limit = {
+						has_idea = research_decision_malus
+					}
+					modify_timed_idea = { idea = research_decision_malus days = 30 } 
+				}
+				
+				if = {
+					limit = {
+						NOT = { has_idea = research_decision_malus }
+					}
+					add_timed_idea = { idea = research_decision_malus days = 30 }
+				}
+			}
+		}
+
 	}
 	
 	
