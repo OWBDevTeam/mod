@@ -2178,13 +2178,16 @@ entity = {
 	state = { name = "move"	}
 	
 	state = { name = "attack"
-		event = { time = 0.0 animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0  node = "muzzle"  node = muzzle particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack } life = 1 } 
+		animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0
+		event = { time = 0.0  node = "muzzle"  node = muzzle particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack } life = 1 } 
 	}
 	state = { name = "defend"
-		event = { time = 0.0 animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0  node = "muzzle"   node = muzzle particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack } life = 1 } 
+		animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0
+		event = { time = 0.0  node = "muzzle"   node = muzzle particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack } life = 1 } 
 	}
 	state = { name = "support_attack"
-		event = { time = 0.0 animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0  node = "muzzle"   node = muzzle particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack} life = 1 } 
+		animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0
+		event = { time = 0.0 node = "muzzle"   node = muzzle particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack} life = 1 } 
 	}
 }
 #########################################################################################################
@@ -2198,9 +2201,9 @@ entity = {
 	state = { name = "attack_fire"			animation = "attack"  looping = no next_state = "attack" animation_blend_time = 0.0
 		
 	}
-	state = { name = "attack"			animation = "move" chance = 3 looping = no next_state = "attack" animation_blend_time = 0.0
+	state = { name = "attack"			animation = "move" chance = 1 looping = no next_state = "attack" animation_blend_time = 0.0
 	}
-	state = { name = "attack"			animation = "move" chance = 1 looping = no next_state = "attack_fire" animation_blend_time = 0.0
+	state = { name = "attack"			animation = "move" chance = 10 looping = no next_state = "attack_fire" animation_blend_time = 0.0
 	}
 	###TO DO
 	state = { name = "defend"			animation = "attack" 			animation_blend_time = 0.0  animation_speed = 1.0 
@@ -2226,13 +2229,13 @@ entity = {
 	locator = { name = muzzle position = { 0 0 0 } }
 	get_state_from_parent = yes
 	state = { name = "attack_fire"
-		event = { time = 0.35 node = "muzzle"  entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_laser_rifle_attack } life = 1 } 
+		event = { time = 0.35 node = "muzzle"  entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_laser_rifle_attack } life = 50 } 
 	}
 	state = { name = "defend"
-		event = { time = 0.35 node = "muzzle"  entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_laser_rifle_attack } life = 1 } 
+		event = { time = 0.35 node = "muzzle"  entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_laser_rifle_attack } life = 50 } 
 	}
 	state = { name = "support_attack"
-		event = { time = 0.35 node = "muzzle"  entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_laser_rifle_attack } life = 1 } 
+		event = { time = 0.35 node = "muzzle"  entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_laser_rifle_attack } life = 50 } 
 	}
 }
 entity = {
@@ -2241,13 +2244,13 @@ entity = {
 	locator = { name = muzzle position = { 0 0 0 } }
 	get_state_from_parent = yes
 	state = { name = "attack_fire"
-		event = { time = 0.42 node = "muzzle"  entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_laser_rifle_attack } life = 1 } 
+		event = { time = 0.42 node = "muzzle"  entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_laser_rifle_attack }  } 
 	}
 	state = { name = "defend"
-		event = { time = 0.42 node = "muzzle"  entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_laser_rifle_attack } life = 1 } 
+		event = { time = 0.42 node = "muzzle"  entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_laser_rifle_attack }  } 
 	}
 	state = { name = "support_attack"
-		event = { time = 0.42 node = "muzzle"  entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_laser_rifle_attack } life = 1 } 
+		event = { time = 0.42 node = "muzzle"  entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_laser_rifle_attack }  } 
 	}
 }
 ####	ENC ROBOTS
@@ -2255,27 +2258,8 @@ entity = {
 entity = {
 	name = "ENC_light_robot_entity"
 	pdxmesh = "ENC_protectron_mesh"
+	clone = "light_robot_entity"
 	
-	default_state = "idle"
-	state = { name = "attack_fire"			animation = "attack"  looping = no next_state = "attack" animation_blend_time = 0.0
-		
-	}
-	state = { name = "attack"			animation = "move" chance = 3 looping = no next_state = "attack" animation_blend_time = 0.0
-	}
-	state = { name = "attack"			animation = "move" chance = 1 looping = no next_state = "attack_fire" animation_blend_time = 0.0
-	}
-	###TO DO
-	state = { name = "defend"			animation = "attack" 			animation_blend_time = 0.0  animation_speed = 1.0 
-		
-	}
-	state = { name = "support_attack"	animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0 
-		
-	}
-	
-	state = { name = "move"				animation = "move" 		 		animation_blend_time = 0.3 animation_speed = 1.0 }
-	state = { name = "retreat"			animation = "retreat" 	 		animation_blend_time = 0.3 animation_speed = 1.0 }
-	state = { name = "idle"				animation = "idle"       		animation_speed = 1.0 chance = 5 looping = no }
-	state = { name = "idle"				animation = "idle2"       		animation_speed = 1.0 chance = 1 looping = no }
 	
 	attach = { 	name = "rifle2"	Right_Hand_node = "protectron_laser_gun_r" }	
 	attach = { 	name = "rifle1"	Left_Hand_node = "protectron_laser_gun_l" }	
@@ -2287,27 +2271,8 @@ entity = {
 entity = {
 	name = "VLT_light_robot_entity"
 	pdxmesh = "VLT_protectron_mesh"
+	clone = "light_robot_entity"
 	
-	default_state = "idle"
-	state = { name = "attack_fire"			animation = "attack"  looping = no next_state = "attack" animation_blend_time = 0.0
-		
-	}
-	state = { name = "attack"			animation = "move" chance = 3 looping = no next_state = "attack" animation_blend_time = 0.0
-	}
-	state = { name = "attack"			animation = "move" chance = 1 looping = no next_state = "attack_fire" animation_blend_time = 0.0
-	}
-	###TO DO
-	state = { name = "defend"			animation = "attack" 			animation_blend_time = 0.0  animation_speed = 1.0 
-		
-	}
-	state = { name = "support_attack"	animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0 
-		
-	}
-	
-	state = { name = "move"				animation = "move" 		 		animation_blend_time = 0.3 animation_speed = 1.0 }
-	state = { name = "retreat"			animation = "retreat" 	 		animation_blend_time = 0.3 animation_speed = 1.0 }
-	state = { name = "idle"				animation = "idle"       		animation_speed = 1.0 chance = 5 looping = no }
-	state = { name = "idle"				animation = "idle2"       		animation_speed = 1.0 chance = 1 looping = no }
 	
 	attach = { 	name = "rifle2"	Right_Hand_node = "protectron_laser_gun_r" }	
 	attach = { 	name = "rifle1"	Left_Hand_node = "protectron_laser_gun_l" }	
@@ -2319,27 +2284,8 @@ entity = {
 entity = {
 	name = "BOS_light_robot_entity"
 	pdxmesh = "BOS_protectron_mesh"
+	clone = "light_robot_entity"
 	
-	default_state = "idle"
-	state = { name = "attack_fire"			animation = "attack"  looping = no next_state = "attack" animation_blend_time = 0.0
-		
-	}
-	state = { name = "attack"			animation = "move" chance = 3 looping = no next_state = "attack" animation_blend_time = 0.0
-	}
-	state = { name = "attack"			animation = "move" chance = 1 looping = no next_state = "attack_fire" animation_blend_time = 0.0
-	}
-	###TO DO
-	state = { name = "defend"			animation = "attack" 			animation_blend_time = 0.0  animation_speed = 1.0 
-		
-	}
-	state = { name = "support_attack"	animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0 
-		
-	}
-	
-	state = { name = "move"				animation = "move" 		 		animation_blend_time = 0.3 animation_speed = 1.0 }
-	state = { name = "retreat"			animation = "retreat" 	 		animation_blend_time = 0.3 animation_speed = 1.0 }
-	state = { name = "idle"				animation = "idle"       		animation_speed = 1.0 chance = 5 looping = no }
-	state = { name = "idle"				animation = "idle2"       		animation_speed = 1.0 chance = 1 looping = no }
 	
 	attach = { 	name = "rifle2"	Right_Hand_node = "protectron_laser_gun_r" }	
 	attach = { 	name = "rifle1"	Left_Hand_node = "protectron_laser_gun_l" }	
