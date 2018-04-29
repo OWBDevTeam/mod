@@ -1,0 +1,297 @@
+
+	research_decisions = {
+	
+	
+		land_doctrine_decision_research = {
+		
+			days_re_enable = 30
+			visible = {}
+			available = {}
+			complete_effect = {
+				hidden_effect = { army_experience = -30 }
+				if = {
+					limit = {
+						has_idea = research_decision_malus
+					}
+					modify_timed_idea = { idea = research_decision_malus days = 30 } 
+				}
+				
+				if = {
+					limit = {
+						NOT = { has_idea = research_decision_malus }
+					}
+					add_timed_idea = { idea = research_decision_malus days = 30 }
+				}
+			}
+			modifier = {}
+			custom_cost_text = army_xp_more_than_30
+			custom_cost_trigger = {
+				has_army_experience > 30
+			}
+			remove_effect = {
+				add_tech_bonus = {
+					name = land_doctrine_bonus
+					bonus = 0.5
+					uses = 1
+					category = land_doctrine
+				}
+			}
+		}
+		
+		air_doctrine_decision_research = {
+		
+			days_re_enable = 30
+			visible = {}
+			available = {}
+			complete_effect = {
+				hidden_effect = { air_experience = -30 }
+				if = {
+					limit = {
+						has_idea = research_decision_malus
+					}
+					modify_timed_idea = { idea = research_decision_malus days = 30 } 
+				}
+				
+				if = {
+					limit = {
+						NOT = { has_idea = research_decision_malus }
+					}
+					add_timed_idea = { idea = research_decision_malus days = 30 }
+				}
+			}
+			modifier = {}
+			custom_cost_text = air_xp_more_than_30
+			custom_cost_trigger = {
+				has_air_experience > 30
+			}
+			remove_effect = {
+				add_tech_bonus = {
+					name = air_doctrine_bonus
+					bonus = 0.5
+					uses = 1
+					category = air_doctrine
+				}
+			}
+		}
+		
+		navy_doctrine_decision_research = {
+		
+			days_re_enable = 30
+			visible = {}
+			available = {}
+			complete_effect = {
+				hidden_effect = { navy_experience = -30 }
+				if = {
+					limit = {
+						has_idea = research_decision_malus
+					}
+					modify_timed_idea = { idea = research_decision_malus days = 30 } 
+				}
+				
+				if = {
+					limit = {
+						NOT = { has_idea = research_decision_malus }
+					}
+					add_timed_idea = { idea = research_decision_malus days = 30 }
+				}
+			}
+			modifier = {}
+			custom_cost_text = navy_xp_more_than_30
+			custom_cost_trigger = {
+				has_navy_experience > 30
+			}
+			remove_effect = {
+				add_tech_bonus = {
+					name = naval_doctrine_bonus
+					bonus = 0.5
+					uses = 1
+					category = naval_doctrine
+				}
+			}
+		}
+
+		elite_melee_decision_research = {
+		
+			fire_only_once = yes
+			visible = { 
+				has_tech = powered_weaponry 
+				NOT = { has_tech = elite_melee_weaponry_tech }
+			}
+			available = { 
+				has_tech = powered_weaponry
+				NOT = { has_tech = elite_melee_weaponry_tech }
+			}
+			custom_cost_text = army_xp_more_than_60
+			custom_cost_trigger = {
+				has_army_experience > 60
+			}
+			complete_effect = {
+				hidden_effect = { army_experience = -60 }
+				set_technology = { elite_melee_weaponry_tech = 1 } 
+				if = {
+					limit = {
+						has_idea = research_decision_malus
+					}
+					modify_timed_idea = { idea = research_decision_malus days = 30 } 
+				}
+				
+				if = {
+					limit = {
+						NOT = { has_idea = research_decision_malus }
+					}
+					add_timed_idea = { idea = research_decision_malus days = 30 }
+				}
+			}
+		}
+		
+		improved_laser_weaponry_decision_research = {
+		
+			fire_only_once = yes
+			visible = { 
+				has_tech = basic_laser_weaponry 
+				NOT = { has_tech = improved_laser_weaponry }
+			}
+			available = { 
+				has_tech = basic_laser_weaponry 
+				NOT = { has_tech = improved_laser_weaponry }
+			}
+			custom_cost_text = army_xp_more_than_60
+			custom_cost_trigger = {
+				has_army_experience > 60
+			}
+			complete_effect = {
+				hidden_effect = { army_experience = -60 }
+				set_technology = { improved_laser_weaponry = 1 } 
+				if = {
+					limit = {
+						has_idea = research_decision_malus
+					}
+					modify_timed_idea = { idea = research_decision_malus days = 30 } 
+				}
+				
+				if = {
+					limit = {
+						NOT = { has_idea = research_decision_malus }
+					}
+					add_timed_idea = { idea = research_decision_malus days = 30 }
+				}
+			}
+		}
+		
+		improved_ballistic_decision_research = {
+		
+			fire_only_once = yes
+			visible = { 
+				has_tech = basic_ballistic_weaponry
+				has_tech = warrior_equipment
+				NOT = { has_tech = improved_ballistic_weaponry }
+			}
+			available = { 
+				has_tech = basic_ballistic_weaponry
+				has_tech = warrior_equipment
+				NOT = { has_tech = improved_ballistic_weaponry }
+			}
+			custom_cost_text = army_xp_more_than_60
+			custom_cost_trigger = {
+				has_army_experience > 60
+			}
+			complete_effect = {
+				hidden_effect = { army_experience = -60 }
+				set_technology = { improved_ballistic_weaponry = 1 } 
+				if = {
+					limit = {
+						has_idea = research_decision_malus
+					}
+					modify_timed_idea = { idea = research_decision_malus days = 30 } 
+				}
+				
+				if = {
+					limit = {
+						NOT = { has_idea = research_decision_malus }
+					}
+					add_timed_idea = { idea = research_decision_malus days = 30 }
+				}
+			}
+		}
+		
+		unit_training_1_decision_research = {
+		
+			fire_only_once = yes
+			visible = { 
+				has_tech = unit_training_tech_2 
+				NOT = { has_tech = unit_training_tech_3 }
+			}
+			available = { 
+				has_tech = unit_training_tech_2
+				NOT = { has_tech = unit_training_tech_3 }
+			}
+			custom_cost_text = army_xp_more_than_60
+			custom_cost_trigger = {
+				has_army_experience > 60
+			}
+			complete_effect = {
+				hidden_effect = { army_experience = -60 }
+				set_technology = { unit_training_tech_3 = 1 } 
+				if = {
+					limit = {
+						has_idea = research_decision_malus
+					}
+					modify_timed_idea = { idea = research_decision_malus days = 30 } 
+				}
+				
+				if = {
+					limit = {
+						NOT = { has_idea = research_decision_malus }
+					}
+					add_timed_idea = { idea = research_decision_malus days = 30 }
+				}
+			}
+		}
+		
+		unit_training_2_decision_research = {
+		
+			fire_only_once = yes
+			visible = { 
+				has_tech = unit_training_tech_5 
+				NOT = { has_tech = unit_training_tech_6 }
+			}
+			available = { 
+				has_tech = unit_training_tech_5
+				NOT = { has_tech = unit_training_tech_6 }
+			}
+			custom_cost_text = army_xp_more_than_60
+			custom_cost_trigger = {
+				has_army_experience > 60
+			}
+			complete_effect = {
+				hidden_effect = { army_experience = -60 }
+				set_technology = { unit_training_tech_6 = 1 } 
+				if = {
+					limit = {
+						has_idea = research_decision_malus
+					}
+					modify_timed_idea = { idea = research_decision_malus days = 30 } 
+				}
+				
+				if = {
+					limit = {
+						NOT = { has_idea = research_decision_malus }
+					}
+					add_timed_idea = { idea = research_decision_malus days = 30 }
+				}
+			}
+		}
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
