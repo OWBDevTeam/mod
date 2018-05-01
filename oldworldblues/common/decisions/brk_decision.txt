@@ -1,0 +1,30 @@
+	
+	
+brk_decisions = {	
+	
+	brk_decision_build_the_fleet = {
+		
+			fire_only_once = yes
+			days_remove = 60
+			visible = { has_completed_focus = brk_nf_elites_pol_side_1 }
+			available = { has_completed_focus = brk_nf_elites_pol_side_1 }
+			modifier = { civilian_factory_use = 5 }
+			remove_effect = {
+				set_technology = { cruiser_tech_2 = 1 }
+				load_oob = BRK_raiding_fleet
+			}
+		}
+		
+	brk_decision_build_graven_ship = {
+		
+			fire_only_once = yes
+			days_remove = 60
+			visible = { has_completed_focus = brk_nf_ruler_pol_side_1 }
+			available = { has_completed_focus = brk_nf_ruler_pol_side_1 }
+			modifier = { civilian_factory_use = 5 }
+			remove_effect = {
+				set_technology = { battleship_tech_2 = 1 }
+				load_oob = BRK_graven_boat
+			}
+		}
+	}
