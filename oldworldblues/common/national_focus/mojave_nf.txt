@@ -1001,6 +1001,25 @@ focus_tree = {
 
 	}
 	focus = {
+		id = MOJ_energy_boom # Increase Energy production at Helios One
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = MOJ_helios_one
+		}
+		x = 27
+		y = 8
+
+		completion_reward = {
+			capital_scope = {
+				add_resource = { 
+					type = electricity 
+					amount = 10  
+				}
+			}
+		}	
+	}
+	focus = {
 		id = MOJ_sierra_madre # Unlocks Decision to send expeditions to Sierra Madre
 		icon = GFX_goal_unknown
 		cost = 10.00
@@ -1024,6 +1043,31 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_mojave.3 days = 1 }
 		}
+	}
+	focus = {
+		id = MOJ_what_remains #Event for either 10% Energy Weapon Buff (Holorifles) or 10% Factory Output (Matter Replicators)
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = MOJ_a_forgotten_hellscape
+		}
+		x = 29
+		y = 9
+
+		completion_reward = {
+			country_event = { id = nf_mojave.16 days = 1 }
+		}
+	}
+	focus = {
+		id = MOJ_a_forgotten_weapon # Not sure really
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = MOJ_energy_boom
+		}
+		x = 27
+		y = 9
+
 	}
 	focus = {
 		id = MOJ_hardin # Set Hardin as Country Leader
@@ -1072,20 +1116,6 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = MOJ_closedown_van_graffs # Event to attack van graffs and steal energy weapon supplies
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = MOJ_know_our_name
-		}
-		x = 31
-		y = 7
-
-		completion_reward = {
-			country_event = { id = nf_mojave.4 days = 2 }
-		}
-	}
-	focus = {
 		id = MOJ_ncr_raids # Event to attack NCR convoys and steal weapons, can trigger a border war in response
 		icon = GFX_goal_unknown
 		cost = 10.00
@@ -1103,6 +1133,48 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = MOJ_closedown_van_graffs # Event to attack van graffs and steal energy weapon supplies
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = MOJ_know_our_name
+		}
+		x = 31
+		y = 7
+
+		completion_reward = {
+			country_event = { id = nf_mojave.4 days = 2 }
+		}
+	}
+	focus = {
+		id = MOJ_gun_runner_caravan_raids 
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = MOJ_closedown_van_graffs
+		}
+		x = 31
+		y = 8
+
+		completion_reward = {
+			country_event = { id = nf_mojave.17 days = 1 }
+		}
+	}
+	focus = {
+		id = MOJ_terror_raids 
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = MOJ_gun_runner_caravan_raids
+		}
+		x = 31
+		y = 9
+
+		completion_reward = {
+			add_war_support = 0.075
+		}
+	}
+	focus = {
 		id = MOJ_contact_the_west # Event seeking support from the Western Brotherhood I.e faction Joining
 		icon = GFX_goal_unknown
 		cost = 10.00
@@ -1114,6 +1186,20 @@ focus_tree = {
 
 		completion_reward = {
 			country_event = { id = nf_mojave.8 days = 1 }
+		}
+	}
+	focus = {
+		id = MOJ_aggressive_policy # Div Attack bonus and weapons research bonus
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = MOJ_contact_the_west
+		}
+		x = 33
+		y = 9
+
+		completion_reward = {
+			add_ideas = mojave_aggressive_policy
 		}
 	}
 	focus = {
@@ -1173,92 +1259,6 @@ focus_tree = {
 
 		completion_reward = {
 			country_event = { id = nf_mojave.13 days = 1 }
-		}
-	}
-	focus = {
-		id = MOJ_a_forgotten_weapon # Not sure really
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = MOJ_energy_boom
-		}
-		x = 27
-		y = 9
-
-	}
-	focus = {
-		id = MOJ_energy_boom # Increase Energy production at Helios One
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = MOJ_helios_one
-		}
-		x = 27
-		y = 8
-
-		completion_reward = {
-			capital_scope = {
-				add_resource = { 
-					type = electricity 
-					amount = 10  
-				}
-			}
-		}	
-	}
-	focus = {
-		id = MOJ_what_remains #Event for either 10% Energy Weapon Buff (Holorifles) or 10% Factory Output (Matter Replicators)
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = MOJ_a_forgotten_hellscape
-		}
-		x = 29
-		y = 9
-
-		completion_reward = {
-			country_event = { id = nf_mojave.16 days = 1 }
-		}
-	}
-	focus = {
-		id = MOJ_gun_runner_caravan_raids # Event raid of Gun Runners Arsenal stealing weapons and causing negative relations with controller of new vegas
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = MOJ_closedown_van_graffs
-		}
-		x = 31
-		y = 8
-
-		completion_reward = {
-			country_event = { id = nf_mojave.17 days = 1 }
-		}
-	}
-	focus = {
-		id = MOJ_terror_raids # Idea granting shorter war justification time and 10% war support
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = MOJ_gun_runner_caravan_raids
-		}
-		x = 31
-		y = 9
-
-		completion_reward = {
-			add_war_support = 0.075
-		}
-	}
-	focus = {
-		id = MOJ_aggressive_policy # Div Attack bonus and weapons research bonus
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = MOJ_contact_the_west
-		}
-		x = 33
-		y = 9
-
-		completion_reward = {
-			add_ideas = mojave_aggressive_policy
 		}
 	}
 	focus = {
