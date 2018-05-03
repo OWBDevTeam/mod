@@ -1,137 +1,619 @@
 ideas = {
 	country = {
-        
-        # Raider National Focuses
+		# Raider National Focuses
 		raider_nation = {
-            
-			picture = generic_morale_bonus
-            
-            
-            removal_cost = -1
-            
-            modifier = {
-                training_time_factor = 0.15
-				production_speed_buildings_factor = -0.1
-            }
 			
-        }
-        
-        reckless_aggression = {
-             picture = generic_infantry_bonus
-            
-            allowed = {
-                is_raider_nation = yes
-            }
-            removal_cost = -1
-            
-            equipment_bonus = {
-                category_all_infantry = {
-                    soft_attack = 0.1
-                    defense = -0.1
-                    breakthrough = 0.05
-                    instant = yes
-                }
-            }
-        }
-        
-        roaring_machines = {
-             picture = generic_armor
-            
-            allowed = {
-                is_raider_nation = yes
-            }
-            removal_cost = -1
-            
-            equipment_bonus = {
-                motorbike_equipment = {
-                    maximum_speed = 0.1
-                    instant = yes
-                }
-                buggy_equipment = {
-                    maximum_speed = 0.1
-                    instant = yes
-                }
-                car_equipment = {
-                    maximum_speed = 0.1
-                    instant = yes
-                }
-            }
-        }
-		idea_former_tribal = {
-		    picture = GFX_idea_vault_open_bonus
-            
-            allowed = {
-                is_raider_nation = yes
-            }
-            removal_cost = -1
+			picture = generic_morale_bonus
+			
+			removal_cost = -1
+			
 			modifier = {
-				army_speed_factor = 0.10
+				training_time_factor = 0.15
+				production_speed_buildings_factor = -0.1
 			}
-        }
+		}
+		
+		reckless_aggression = {
+			picture = generic_infantry_bonus
+			
+			allowed = {
+				is_raider_nation = yes
+			}
+			removal_cost = -1
+			
+			equipment_bonus = {
+				infantry = {#category_all_infantry
+					soft_attack = 0.1
+					defense = -0.1
+					breakthrough = 0.05
+					instant = yes
+				}
+			}
+		}
+		
+		roaring_machines = {
+			picture = generic_armor
+			
+			allowed = {
+				is_raider_nation = yes
+			}
+			removal_cost = -1
+			
+			equipment_bonus = {
+				motorized_equipment = {
+					maximum_speed = 0.1
+					instant = yes
+				}
+				#buggy_equipment = {#doesn't exist
+				#	maximum_speed = 0.1
+				#	instant = yes
+				#}
+			}
+		}
+
+		idea_former_tribal = {
+			picture = GFX_idea_vault_open_bonus
+			
+			allowed = {
+				is_raider_nation = yes
+			}
+			removal_cost = -1
+			modifier = {
+				attrition = -0.05
+			}
+		}
+
 		idea_old_world_criminals = {
-		    picture = GFX_idea_vault_open_bonus
-            
-            allowed = {
-                is_raider_nation = yes
-            }
-            removal_cost = -1
+			picture = GFX_idea_vault_open_bonus
+			
+			allowed = {
+				is_raider_nation = yes
+			}
+			removal_cost = -1
 			modifier = {
 				army_org_factor = 0.05
 			}
-        }
+		}
+
 		idea_vault_dwellers_gone_bad = {
-            picture = GFX_idea_vault_open_bonus
-            
-            allowed = {
-                is_raider_nation = yes
-            }
-            removal_cost = -1
+			picture = GFX_idea_vault_open_bonus
+			
+			allowed = {
+				is_raider_nation = yes
+			}
+			removal_cost = -1
 			modifier = {
 				production_factory_max_efficiency_factor = 0.05
 				line_change_production_efficiency_factor = 0.05
 			}
-        }
+		}
+
 		idea_drug_runner_gang = {
 			picture = new_deal
-            allowed = {
-                is_raider_nation = yes
-            }
-            removal_cost = -1
-			modifier = {
-				army_speed_factor = 0.10
-				consumer_goods_factor = -0.02
+			allowed = {
+				is_raider_nation = yes
 			}
-		}
-		raider_idea_conflict = {
-						picture = new_deal
-            allowed = {
-                is_raider_nation = yes
-            }
-            removal_cost = -1
+			removal_cost = -1
 			modifier = {
-				production_factory_max_efficiency_factor = 0.05
-				line_change_production_efficiency_factor = 0.05
-			}
-		}
-		raider_idea_slaves = {
-			picture = new_deal
-            allowed = {
-                is_raider_nation = yes
-            }
-            removal_cost = -1
-			modifier = {
-				non_core_manpower = 0.10
 				consumer_goods_factor = -0.05
 			}
 		}
+
+		raider_idea_conflict = {
+			picture = new_deal
+			allowed = {
+				is_raider_nation = yes
+			}
+			removal_cost = -1
+			modifier = {
+				justify_war_goal_time = -0.15
+			}
+		}
+
+		raider_idea_slaves = {
+			picture = new_deal
+			allowed = {
+				is_raider_nation = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+		}
+
 		raider_idea_respect = {
 			picture = new_deal
-            allowed = {
-                is_raider_nation = yes
-            }
-            removal_cost = -1
+			allowed = {
+				is_raider_nation = yes
+			}
+			removal_cost = -1
 			modifier = {
-				army_org_factor = 0.05
+				political_power_gain = 0.1
+			}
+		}
+
+		raider_road_hogs = {
+			picture = new_deal
+			allowed = {
+				is_raider_nation = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_speed_factor = 0.10
+			}
+		}
+
+		 preparing_for_total_war = {
+			name = preparing_for_total_war
+			picture = generic_morale_bonus
+			
+			modifier = {
+				conscription = 0.02
+			}
+		}
+
+		draconian_recovery_methods= {
+			name = draconian_recovery_methods
+			picture = generic_morale_bonus
+
+			modifier = {
+				army_morale_factor = 0.2
+				conscription = 0.02
+			}
+		}
+
+		critical_thinking = {
+			name = critical_thinking
+			picture = generic_morale_bonus
+			
+			modifier = {
+				planning_speed = 0.1
+			}
+		}
+
+		master_plan = {
+			name = master_plan
+			picture = generic_morale_bonus
+			
+			modifier = {
+				max_planning = 0.1
+				planning_speed = 0.1
+			}
+		}
+
+		iron_grip = {
+			name = iron_grip
+			picture = generic_morale_bonus
+			modifier = {
+				industrial_capacity_factory = 0.1
+				attrition = -0.1
+			}
+		}
+		
+		territorial_reinforcement = {
+			name = territorial_reinforcement
+			picture = generic_morale_bonus
+			modifier = {
+				production_speed_bunker_factor = 0.1
+			}
+		}
+		
+		territoriality = {
+			name = territoriality
+			picture = generic_morale_bonus
+			modifier = {
+				army_core_attack_factor = 0.1
+				army_core_defence_factor  = 0.1
+			}
+		}
+		
+		slave_labour = {
+			name = slave_labour
+			picture = generic_morale_bonus
+			modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		
+		forced_labour = {
+			name = slave_labour
+			picture = generic_morale_bonus
+			modifier = {
+				production_speed_infrastructure_factor  = 0.1
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		
+		slave_researchers = {
+			name = slave_researchers
+			picture = generic_morale_bonus
+			modifier = {
+				research_time_factor = -0.03
+				production_speed_infrastructure_factor  = 0.1
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		
+		slaver_settlement = {
+			name = slaver_settlement
+			picture = generic_morale_bonus
+			modifier = {
+				MONTHLY_POPULATION = 0.05
+			}
+		}
+
+		raider_we_never_die = {
+			picture = generic_secret_police
+			allowed = {}
+			removal_cost = -1
+			modifier = {
+				MONTHLY_POPULATION = 0.1
+			}
+		}
+
+		raider_raid_workshops = {
+		
+			picture = generic_research_bonus
+			
+			allowed = {}
+			
+			removal_cost = -1
+	
+			equipment_bonus = {
+				support_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
+
+		raider_new_age_weaponry = {
+		
+			picture = generic_research_bonus
+			
+			allowed = {}
+			
+			removal_cost = -1
+	
+			equipment_bonus = {
+				energy_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+
+		raider_sadists = {
+		
+			picture = Hungarian_Monarchy
+			
+			allowed = {}
+			
+			removal_cost = -1
+		
+			modifier = {
+				elites_drift = 0.5
+			}
+		}
+
+		raider_eggheads = {
+		
+			picture = Hungarian_Monarchy
+			
+			allowed = {}
+			
+			removal_cost = -1
+		
+			modifier = {
+				intellectuals_drift = 0.05
+			}
+		}
+
+		raider_grunts = {
+		
+			picture = Hungarian_Monarchy
+			
+			allowed = {}
+			
+			removal_cost = -1
+		
+			modifier = {
+				people_drift = 0.05
+			}
+		}
+
+		raider_boss = {
+		
+			picture = Hungarian_Monarchy
+			
+			allowed = {}
+			
+			removal_cost = -1
+		
+			modifier = {
+				ruler_drift = 0.05
+			}
+		}
+
+		raider_terminals_for_all = {	
+			
+			picture = SOV_scientist_defect
+			
+			allowed = {}
+
+			removal_cost = -1
+			
+			modifier = {
+				research_time_factor = -0.06
+				production_speed_infrastructure_factor  = 0.1
+				production_speed_buildings_factor = 0.1
+			}
+		}
+
+		raider_raider_computer_logs = {
+		
+			picture = Hungarian_Monarchy
+			
+			allowed = {}
+			
+			removal_cost = -1
+		
+			modifier = {
+				max_planning = 0.05
+				research_time_factor = -0.06
+				production_speed_infrastructure_factor  = 0.1
+				production_speed_buildings_factor = 0.1
+			}
+		}
+
+		raider_shitty_robots = {
+		
+			picture = generic_research_bonus
+			
+			allowed = {}
+			
+			removal_cost = -1
+
+			equipment_bonus = {
+				energy_equipment = {
+					build_cost_ic = -0.1	
+					instant = yes
+				}
+				medium_robot_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				light_robot_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+
+		raider_power_armour_familiarity = {	
+		
+			picture = generic_research_bonus
+			
+			allowed = {}
+			
+			removal_cost = -1
+	
+			equipment_bonus = {
+				power_armor_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+
+		raider_prove_yourself = {
+		
+			picture = generic_research_bonus
+			
+			allowed = {}
+			
+			removal_cost = -1
+	
+			modifier = {
+				military_leader_cost_factor = -0.25
+			}	
+		}
+
+		raider_lightning_raids = {	
+		
+			picture = Hungarian_Monarchy
+			
+			allowed = {}
+			
+			removal_cost = -1
+		
+			modifier = {
+				planning_speed = 0.10
+				army_speed_factor = 0.1
+			}
+		}
+
+		raider_brutal_hazing = {
+		
+			picture = Hungarian_Monarchy
+			
+			allowed = {}
+			
+			removal_cost = -1
+		
+			modifier = {
+				training_time_army_factor = -0.05
+			}
+		}
+
+		raider_engineers = {
+		
+			picture = generic_research_bonus
+			
+			allowed = {}
+			
+			removal_cost = -1
+	
+			equipment_bonus = {
+				explosive_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+
+		raider_custom_rides = {
+		
+			picture = generic_research_bonus
+			
+			allowed = {}
+			
+			removal_cost = -1
+	
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+
+		raider_metal_boxes = { 
+		
+			picture = generic_research_bonus
+			
+			allowed = {}
+			
+			removal_cost = -1
+	
+			equipment_bonus = {
+				apc_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+
+		raider_roaring_machines = {
+		
+			picture = generic_research_bonus
+			
+			allowed = {}
+			
+			removal_cost = -1
+			modifier = {
+				army_armor_speed_factor = 0.05
+			}
+		}
+
+		raider_gender_equality = {
+		
+			picture = generic_research_bonus
+			
+			allowed = {}
+			
+			removal_cost = -1
+			modifier = { 
+			   conscription = 0.02
+			   planning_speed = 0.10
+			   army_speed_factor = 0.1
+			}
+		}
+
+		raider_recruit_them_young = {
+		
+			picture = generic_research_bonus
+			
+			allowed = {}
+			
+			removal_cost = -1
+			modifier = {
+				conscription = 0.03
+			}
+		}
+
+		raider_gearhead_slaves = { 
+		
+			picture = generic_research_bonus
+			
+			allowed = {}
+			
+			removal_cost = -1
+			equipment_bonus = {
+				motorized_equipment = {
+					reliability_factor = 0.10
+					instant = yes
+				}
+			}
+		}
+
+		raider_doped_soldiers = {	
+				
+		
+			picture = Hungarian_Monarchy
+			
+			allowed = {}
+			
+			removal_cost = -1
+		
+			modifier = {
+				army_speed_factor = 0.1
+			}
+		}
+
+		raider_manifest_destiny = {
+		
+			picture = Hungarian_Monarchy
+			
+			allowed = {}
+			
+			removal_cost = -1
+		
+			modifier = {
+				justify_war_goal_time = -0.15
+				army_core_attack_factor = 0.1
+				army_core_defence_factor  = 0.1
+			}
+		}
+
+		raider_take_what_you_need = {
+		
+			picture = Hungarian_Monarchy
+			
+			allowed = {}
+			
+			removal_cost = -1
+		
+			modifier = {
+				no_supply_grace = 24
+				conscription = 0.02
+				planning_speed = 0.10
+				army_speed_factor = 0.1
+			}
+		}
+
+		raider_dont_question_the_boss = {
+		
+			picture = generic_research_bonus
+			
+			allowed = {}
+			
+			removal_cost = -1
+			modifier = {
+				attrition = -0.1
+			}
+		}
+		
+		raider_everyone_works = {
+		
+			picture = Hungarian_Monarchy
+			
+			allowed = {}
+			
+			removal_cost = -1
+		
+			modifier = {
+				production_speed_buildings_factor = 0.1
 			}
 		}
 	}

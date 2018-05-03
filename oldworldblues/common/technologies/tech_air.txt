@@ -5,53 +5,51 @@ technologies = {
 	@Col_4 = 20
 	@Col_5 = 24
 	@Col_6 = 28
-    @Col_7 = 32
-    @Col_8 = 36
-    @Col_9 = 40
-    @Col_10 = 44
-    @Col_11 = 48
-    @Col_12 = 52
-    
-    @Row_1 = 0
-    @Row_2 = 2
-    @Row_3 = 4
-    @Row_4 = 6
-    @Row_5 = 8
-    @Row_6 = 10
-    @Row_7 = 12
-    @Row_8 = 14
-    @Row_9 = 16
-    @Row_10 = 18
-    @Row_11 = 20
-    @Row_12 = 22
-    @Row_13 = 24
-    @Row_14 = 26
-    @Row_15 = 28
-    @Row_16 = 30
-    @Row_17 = 32
-    @Row_18 = 34
-    @Row_19 = 36
-    
-    
-    #-------------------------------
-    # Transport
-    #-------------------------------
-    salvaged_transport = {
-        enable_equipments = {
-            transport_plane_equipment_1
-        }
-        
+	@Col_7 = 32
+	@Col_8 = 36
+	@Col_9 = 40
+	@Col_10 = 44
+	@Col_11 = 48
+	@Col_12 = 52
+	
+	@Row_1 = 0
+	@Row_2 = 2
+	@Row_3 = 4
+	@Row_4 = 6
+	@Row_5 = 8
+	@Row_6 = 10
+	@Row_7 = 12
+	@Row_8 = 14
+	@Row_9 = 16
+	@Row_10 = 18
+	@Row_11 = 20
+	@Row_12 = 22
+	@Row_13 = 24
+	@Row_14 = 26
+	@Row_15 = 28
+	@Row_16 = 30
+	@Row_17 = 32
+	@Row_18 = 34
+	@Row_19 = 36
+	
+	
+	#-------------------------------
+	# Transport
+	#-------------------------------
+	salvaged_transport = {
+		enable_equipments = {
+			transport_plane_equipment_1
+		}
+		
 		path = {
 			leads_to_tech = cargo_zeppelin
 			research_cost_coeff = 1
 		}
 		
-        dependencies = {
-            settled_civilization = 1
-            
-            
-        }
-        
+		dependencies = {
+			settled_civilization = 1
+		}
+		
 		research_cost = 1.8
 		start_year = 2275
 		folder = {
@@ -61,25 +59,25 @@ technologies = {
 		
 		categories = {
 			medium_air
-            		air_equipment
+					air_equipment
 		}
 		
 		ai_will_do = {
 			factor = 0
 		}
 	}
-    
-    cargo_zeppelin = {
-        enable_equipments = {
-            transport_plane_equipment_2
-        }
-        
-        dependencies = {
-            scientific_civilization = 1
-            
-            
-        }
-        
+	
+	cargo_zeppelin = {
+		enable_equipments = {
+			transport_plane_equipment_2
+		}
+		
+		dependencies = {
+			scientific_civilization = 1
+			
+			
+		}
+		
 		research_cost = 1.8
 		start_year = 2275
 		folder = {
@@ -89,38 +87,38 @@ technologies = {
 		
 		categories = {
 			medium_air
-            		air_equipment
+					air_equipment
 		}
 		
 		ai_will_do = {
 			factor = 0
 		}
 	}
-    
-    #-------------------------------
-    # Fighter
-    #-------------------------------
-    scrap_fighter = {
-        enable_equipments = {
-            fighter_equipment_1
-        }
-        
+	
+	#-------------------------------
+	# Fighter
+	#-------------------------------
+	scrap_fighter = {
+		enable_equipments = {
+			fighter_equipment_1
+		}
+		
 		path = {
 			leads_to_tech = salvaged_fighter
 			research_cost_coeff = 1
 		}
 		
-        path = {
+		path = {
 			leads_to_tech = scrap_divebomber
 			research_cost_coeff = 1
 		}
-        
-        dependencies = {
-            settled_civilization = 1
-            
-            
-        }
-        
+		
+		dependencies = {
+			settled_civilization = 1
+			
+			
+		}
+		
 		research_cost = 1.8
 		start_year = 2275
 		folder = {
@@ -163,28 +161,28 @@ technologies = {
 			}
 		}
 	}
-    
-    salvaged_fighter = {
-        enable_equipments = {
-            fighter_equipment_2
-        }
-        
+	
+	salvaged_fighter = {
+		enable_equipments = {
+			fighter_equipment_2
+		}
+		
 		path = {
 			leads_to_tech = nuclear_salvaged_fighter
 			research_cost_coeff = 1
 		}
 		
-        path = {
+		path = {
 			leads_to_tech = salvaged_transport
 			research_cost_coeff = 1
 		}
-        
-        dependencies = {
-            settled_civilization = 1
-            
-            
-        }
-        
+		
+		dependencies = {
+			settled_civilization = 1
+			
+			
+		}
+		
 		research_cost = 1.8
 		start_year = 2278
 		folder = {
@@ -227,23 +225,23 @@ technologies = {
 			}
 		}
 	}
-    
-    nuclear_salvaged_fighter = {
-        enable_equipments = {
-            fighter_equipment_3
-        }
-        
+	
+	nuclear_salvaged_fighter = {
+		enable_equipments = {
+			fighter_equipment_3
+		}
+		
 		path = {
 			leads_to_tech = p80_nuclear
 			research_cost_coeff = 1
 		}
 		
-        dependencies = {
-            settled_civilization = 1
-            
-            
-        }
-        
+		dependencies = {
+			settled_civilization = 1
+			
+			
+		}
+		
 		research_cost = 1.8
 		start_year = 2281
 		folder = {
@@ -286,18 +284,18 @@ technologies = {
 			}
 		}
 	}
-    
-    p80_nuclear = {
-        enable_equipments = {
-            fighter_equipment_4
-        }
-        
-        dependencies = {
-            scientific_civilization = 1
-            
-            
-        }
-        
+	
+	p80_nuclear = {
+		enable_equipments = {
+			fighter_equipment_4
+		}
+		
+		dependencies = {
+			scientific_civilization = 1
+			
+			
+		}
+		
 		research_cost = 1.8
 		start_year = 2284
 		folder = {
@@ -340,31 +338,31 @@ technologies = {
 			}
 		}
 	}
-    
-    #-------------------------------
-    # Air Support
-    #-------------------------------
-    scrap_divebomber = {
-        enable_equipments = {
-            cas_equipment_1
-        }
-        
+	
+	#-------------------------------
+	# Air Support
+	#-------------------------------
+	scrap_divebomber = {
+		enable_equipments = {
+			cas_equipment_1
+		}
+		
 		path = {
 			leads_to_tech = salvaged_divebomber
 			research_cost_coeff = 1
 		}
-        
-        path = {
+		
+		path = {
 			leads_to_tech = scrap_bomber
 			research_cost_coeff = 1
 		}
 		
-        dependencies = {
-            settled_civilization = 1
-            
-            
-        }
-        
+		dependencies = {
+			settled_civilization = 1
+			
+			
+		}
+		
 		research_cost = 1.8
 		start_year = 2275
 		folder = {
@@ -374,8 +372,8 @@ technologies = {
 		
 		categories = {
 			light_air
-            cas_bomber
-            air_equipment
+			cas_bomber
+			air_equipment
 		}
 		
 		ai_will_do = {
@@ -392,23 +390,23 @@ technologies = {
 			}
 		}
 	}
-    
-    salvaged_divebomber = {
-        enable_equipments = {
-            cas_equipment_2
-        }
-        
+	
+	salvaged_divebomber = {
+		enable_equipments = {
+			cas_equipment_2
+		}
+		
 		path = {
 			leads_to_tech = armoured_zeppelin
 			research_cost_coeff = 1
 		}
 		
-        dependencies = {
-            settled_civilization = 1
-            
-            
-        }
-        
+		dependencies = {
+			settled_civilization = 1
+			
+			
+		}
+		
 		research_cost = 1.8
 		start_year = 2279
 		folder = {
@@ -418,8 +416,8 @@ technologies = {
 		
 		categories = {
 			light_air
-            cas_bomber
-            air_equipment
+			cas_bomber
+			air_equipment
 		}
 		
 		ai_will_do = {
@@ -436,18 +434,18 @@ technologies = {
 			}
 		}
 	}
-    
-    armoured_zeppelin = {
-        enable_equipments = {
-            cas_equipment_3
-        }
-        
-        dependencies = {
-            scientific_civilization = 1
-            
-            
-        }
-        
+	
+	armoured_zeppelin = {
+		enable_equipments = {
+			cas_equipment_3
+		}
+		
+		dependencies = {
+			scientific_civilization = 1
+			
+			
+		}
+		
 		research_cost = 1.8
 		start_year = 2282
 		folder = {
@@ -457,8 +455,8 @@ technologies = {
 		
 		categories = {
 			medium_air
-            cas_bomber
-            air_equipment
+			cas_bomber
+			air_equipment
 		}
 		
 		ai_will_do = {
@@ -475,36 +473,36 @@ technologies = {
 			}
 		}
 	}
-    
-    #-------------------------------
-    # Strategic Bomber
-    #-------------------------------
-    scrap_bomber = {
-        enable_equipments = {
-            strategic_bomber_equipment_1
-        }
-        
+	
+	#-------------------------------
+	# Strategic Bomber
+	#-------------------------------
+	scrap_bomber = {
+		enable_equipments = {
+			strategic_bomber_equipment_1
+		}
+		
 		path = {
 			leads_to_tech = salvaged_superfortress
 			research_cost_coeff = 1
 		}
 		
-        path = {
+		path = {
 			leads_to_tech = salvaged_divebomber
 			research_cost_coeff = 0.5
 		}
-        
-        path = {
+		
+		path = {
 			leads_to_tech = mortar_battery_zeppelin
 			research_cost_coeff = 1
 		}
-        
-        dependencies = {
-            settled_civilization = 1
-            
-            
-        }
-        
+		
+		dependencies = {
+			settled_civilization = 1
+			
+			
+		}
+		
 		research_cost = 1.8
 		start_year = 2277
 		folder = {
@@ -514,8 +512,8 @@ technologies = {
 		
 		categories = {
 			heavy_air
-            		air_equipment
-            		cat_strategic_bomber
+					air_equipment
+					cat_strategic_bomber
 		}
 		
 		ai_will_do = {
@@ -534,23 +532,23 @@ technologies = {
 			}
 		}
 	}
-    
-    salvaged_superfortress = {
-        enable_equipments = {
-            strategic_bomber_equipment_2
-        }
-        
+	
+	salvaged_superfortress = {
+		enable_equipments = {
+			strategic_bomber_equipment_2
+		}
+		
 		path = {
 			leads_to_tech = zeppelin_superfortress
 			research_cost_coeff = 1
 		}
 		
-        dependencies = {
-            scientific_civilization = 1
-            
-            
-        }
-        
+		dependencies = {
+			scientific_civilization = 1
+			
+			
+		}
+		
 		research_cost = 1.8
 		start_year = 2280
 		folder = {
@@ -560,8 +558,8 @@ technologies = {
 		
 		categories = {
 			heavy_air
-            		air_equipment
-            		cat_strategic_bomber
+					air_equipment
+					cat_strategic_bomber
 		}
 		
 		ai_will_do = {
@@ -581,23 +579,23 @@ technologies = {
 		}
 	}
 
-    #-------------------------------
-    # Tactical Bombers
-    #-------------------------------
-    mortar_battery_zeppelin = {
-        enable_equipments = {
-            tactical_bomber_equipment_1
-        }
-        
+	#-------------------------------
+	# Tactical Bombers
+	#-------------------------------
+	mortar_battery_zeppelin = {
+		enable_equipments = {
+			tactical_bomber_equipment_1
+		}
+		
 		path = {
 			leads_to_tech = howitzer_battery_zeppelin
 			research_cost_coeff = 1
 		}
 		
-        dependencies = {
-            settled_civilization = 1
-        }
-        
+		dependencies = {
+			settled_civilization = 1
+		}
+		
 		research_cost = 1.8
 		start_year = 2277
 		folder = {
@@ -607,8 +605,8 @@ technologies = {
 		
 		categories = {
 			heavy_air
-            air_equipment
-            tactical_bomber
+			air_equipment
+			tactical_bomber
 		}
 		
 		ai_will_do = {
@@ -626,24 +624,24 @@ technologies = {
 				date > "2278.1.1"
 			}
 		}
-    }
-    
-    howitzer_battery_zeppelin = {
-        enable_equipments = {
-            tactical_bomber_equipment_2
-        }
-        
+	}
+	
+	howitzer_battery_zeppelin = {
+		enable_equipments = {
+			tactical_bomber_equipment_2
+		}
+		
 		path = {
 			leads_to_tech = laser_battery_zeppelin
 			research_cost_coeff = 1
 		}
 		
-        dependencies = {
-            scientific_civilization = 1
-            
-            
-        }
-        
+		dependencies = {
+			scientific_civilization = 1
+			
+			
+		}
+		
 		research_cost = 1.8
 		start_year = 2279
 		folder = {
@@ -653,8 +651,8 @@ technologies = {
 		
 		categories = {
 			heavy_air
-            air_equipment
-            tactical_bomber
+			air_equipment
+			tactical_bomber
 		}
 		
 		ai_will_do = {
@@ -672,19 +670,17 @@ technologies = {
 				date > "2280.1.1"
 			}
 		}
-    }
-    
-    laser_battery_zeppelin = {
-        enable_equipments = {
-            tactical_bomber_equipment_3
-        }
-        
-        dependencies = {
-            scientific_civilization = 1
-            
-            
-        }
-        
+	}
+	
+	laser_battery_zeppelin = {
+		enable_equipments = {
+			tactical_bomber_equipment_3
+		}
+		
+		dependencies = {
+			scientific_civilization = 1
+		}
+		
 		research_cost = 1.8
 		start_year = 2283
 		folder = {
@@ -694,8 +690,8 @@ technologies = {
 		
 		categories = {
 			heavy_air
-            air_equipment
-            tactical_bomber
+			air_equipment
+			tactical_bomber
 		}
 		
 		ai_will_do = {
@@ -713,24 +709,22 @@ technologies = {
 				date > "2284.1.1"
 			}
 		}
-    }
-    
-    #-------------------------------
-    # Uniques
-    #-------------------------------
-    xian_85_fighter = {
-        enable_equipments = {
-            xian_85_fighter_equipment
-        }
-        allow = {
-		tag = SHI
 	}
-        dependencies = {
-            scientific_civilization = 1
-            
-            
-        }
-        
+	
+	#-------------------------------
+	# Uniques
+	#-------------------------------
+	xian_85_fighter = {
+		enable_equipments = {
+			xian_85_fighter_equipment
+		}
+		allow = {
+			tag = SHI
+		}
+		dependencies = {
+			scientific_civilization = 1
+		}
+		
 		research_cost = 1.8
 		start_year = 2275
 		folder = {
@@ -749,22 +743,22 @@ technologies = {
 		}
 	}
 
-    vertiberd_gunship = {
-        enable_equipments = {
-            vb_gunship_equipment
-        }
-       	allow = {
+	vertiberd_gunship = {
+		enable_equipments = {
+			vb_gunship_equipment
+		}
+		allow = {
 		OR = {
 			is_brotherhood_nation = yes
 			tag = ENC
 		}
 	}
-        dependencies = {
-            scientific_civilization = 1
-            
-            
-        }
-        
+		dependencies = {
+			scientific_civilization = 1
+			
+			
+		}
+		
 		research_cost = 1.8
 		start_year = 2275
 		folder = {
@@ -774,37 +768,37 @@ technologies = {
 		
 		categories = {
 			medium_air
-            cas_bomber
-            air_equipment
+			cas_bomber
+			air_equipment
 		}
 		
 		ai_will_do = {
 			factor = 100
 		}
 	}
-    
-    # VB Transport
-    vertiberd_transport1 = {
-        enable_equipments = {
-            vb_transport_plane_equipment
-        }
-        allow = {
+	
+	# VB Transport
+	vertiberd_transport1 = {
+		enable_equipments = {
+			vb_transport_plane_equipment
+		}
+		allow = {
 		OR = {
 			is_brotherhood_nation = yes
 			tag = ENC
 		}
 	}
-        path = {
+		path = {
 			leads_to_tech = vertiberd_transport2
 			research_cost_coeff = 1
 		}
-        
-        dependencies = {
-            scientific_civilization = 1
-            
-            
-        }
-        
+		
+		dependencies = {
+			scientific_civilization = 1
+			
+			
+		}
+		
 		research_cost = 1.8
 		start_year = 2275
 		folder = {
@@ -814,7 +808,7 @@ technologies = {
 		
 		categories = {
 			medium_air
-            air_equipment
+			air_equipment
 		}
 		
 		ai_will_do = {
