@@ -39,7 +39,7 @@ focus_tree = {
 	}	
 	
 	focus = {
-		id = hea_nf_economy
+		id = hea_nf_lost_hope
 		icon = GFX_goal_generic_building_focus
 		cost = 1.00
 		x = 9
@@ -55,15 +55,71 @@ focus_tree = {
 	}
 	
 	focus = {
+		id = hea_nf_pol_action
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		x = 19
+		y = 4
+
+		prerequisite = {
+			focus = hea_nf_lost_hope
+		}
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = hea_nf_embrace_elite
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		x = 18
+		y = 5
+
+		prerequisite = {
+			focus = hea_nf_pol_action
+		}
+		
+		mutually_exclusive = {
+			focus = hea_nf_reject_elite
+		}
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = hea_nf_reject_elite
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		x = 20
+		y = 5
+
+		prerequisite = {
+			focus = hea_nf_pol_action
+		}
+		
+		mutually_exclusive = {
+			focus = hea_nf_embrace_elite
+		}
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
 		id = hea_nf_consolidate_pol
 		icon = GFX_goal_generic_political_pressure
 		cost = 8.6
 		x = 19
-		y = 8
+		y = 6
 
 		prerequisite = {
-			focus = hea_nf_elite_pol_2
-			focus = hea_nf_ruler_pol_2
+			focus = hea_nf_reject_elite
+			focus = hea_nf_embrace_elite
 		}
 		
 		completion_reward = {
@@ -76,10 +132,99 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 8.6
 		x = 19
-		y = 9
+		y = 7
 
 		prerequisite = {
 			focus = hea_nf_consolidate_pol
+		}
+		
+		completion_reward = {
+			add_ideas = hin_reichstag
+			country_event = { id = nf_event_hin.4 }
+		}
+	}
+	
+	focus = {
+		id = hea_nf_lost_hope_deal
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		x = 19
+		y = 9
+		
+		completion_reward = {
+			add_ideas = hin_reichstag
+			country_event = { id = nf_event_hin.4 }
+		}
+	}
+	
+	focus = {
+		id = hea_nf_forgive_sins
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		x = 18
+		y = 10
+		
+		prerequisite = {
+			focus = hea_nf_lost_hope_deal
+		}
+		
+		mutually_exclusive = {
+			focus = hea_nf_vengance
+		}
+		
+		completion_reward = {
+			add_ideas = hin_reichstag
+			country_event = { id = nf_event_hin.4 }
+		}
+	}
+	
+	focus = {
+		id = hea_nf_fog_of_mercy
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		x = 18
+		y = 11
+		
+		prerequisite = {
+			focus = hea_nf_forgive_sins
+		}
+		
+		completion_reward = {
+			add_ideas = hin_reichstag
+			country_event = { id = nf_event_hin.4 }
+		}
+	}
+	
+	focus = {
+		id = hea_nf_vengance
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		x = 20
+		y = 10
+		
+		prerequisite = {
+			focus = hea_nf_lost_hope_deal
+		}
+		
+		mutually_exclusive = {
+			focus = hea_nf_forgive_sins
+		}
+		
+		completion_reward = {
+			add_ideas = hin_reichstag
+			country_event = { id = nf_event_hin.4 }
+		}
+	}
+	
+	focus = {
+		id = hea_nf_boilers_of_justice
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		x = 20
+		y = 11
+		
+		prerequisite = {
+			focus = hea_nf_vengance
 		}
 		
 		completion_reward = {
@@ -96,7 +241,7 @@ focus_tree = {
 		y = 4
 		
 		prerequisite = {
-			focus = hea_nf_economy
+			focus = hea_nf_lost_hope
 		}
 		
 		completion_reward = {
@@ -318,7 +463,7 @@ focus_tree = {
 		y = 5
 		
 		prerequisite = {
-			focus = hea_nf_economy
+			focus = hea_nf_lost_hope
 		}
 		
 		completion_reward = {
@@ -502,7 +647,7 @@ focus_tree = {
 		y = 4
 		
 		prerequisite = {
-			focus = hea_nf_economy
+			focus = hea_nf_lost_hope
 		}
 		
 		completion_reward = {
@@ -760,162 +905,7 @@ focus_tree = {
 		}
 	}
 	
-	focus = {
-		id = hea_nf_open_pol
-		icon = GFX_goal_generic_political_pressure
-		cost = 8.6
-		x = 19
-		y = 4
-
-		prerequisite = {
-			focus = hea_nf_economy
-		}
-		
-		completion_reward = {
-			add_political_power = 100
-		}
-	}		
 	
-	focus = {
-		id = hea_nf_ruler_pol
-		icon = GFX_focus_rom_royal_dictatorship
-		cost = 8.6
-		x = 18
-		y = 5
-		
-		mutually_exclusive = {
-			focus = hea_nf_elite_pol
-		}
-
-		prerequisite = {
-			focus = hea_nf_open_pol
-		}
-		
-		completion_reward = {
-			add_ideas = hin_ruler
-			add_popularity = {
-				ideology = rules
-				popularity = 0.1
-			}
-		}
-	}
-
-	focus = {
-		id = hea_nf_ruler_pol_1
-		icon = GFX_focus_generic_home_defense
-		cost = 8.6
-		x = 18
-		y = 6
-		
-		prerequisite = {
-			focus = hea_nf_ruler_pol
-		}
-		
-		completion_reward = {
-			swap_ideas = {
-				add_idea = hin_ruler_1
-				remove_idea = hin_ruler
-		   }
-		   add_popularity = {
-				ideology = ruler
-				popularity = 0.2
-			}
-		}
-	}
-	
-	focus = {
-		id = hea_nf_ruler_pol_2
-		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-		cost = 8.6
-		x = 18
-		y = 7
-		
-		prerequisite = {
-			focus = hea_nf_ruler_pol_1
-		}
-		
-		completion_reward = {
-			swap_ideas = {
-				add_idea = hin_ruler_2
-				remove_idea = hin_ruler_1
-		   }
-		   add_popularity = {
-				ideology = ruler
-				popularity = 0.3
-			}
-		}
-	}
-	
-	focus = {
-		id = hea_nf_elite_pol
-		icon = GFX_focus_rom_parties_end
-		cost = 8.6
-		x = 20
-		y = 5
-
-		mutually_exclusive = {
-			focus = hea_nf_ruler_pol
-		}
-		
-		prerequisite = {
-			focus = hea_nf_open_pol
-		}
-		
-		completion_reward = {
-			add_ideas = hin_elite
-			add_popularity = {
-				ideology = elites
-				popularity = 0.1
-			}
-		}
-	}
-
-	focus = {
-		id = hea_nf_elite_pol_1
-		icon = GFX_goal_generic_military_deal
-		cost = 8.6
-		x = 20
-		y = 6
-		
-		prerequisite = {
-			focus = hea_nf_elite_pol
-		}
-		
-		completion_reward = {
-			swap_ideas = {
-				add_idea = hin_elite_1
-				remove_idea = hin_elite
-		   }
-		   add_popularity = {
-				ideology = elites
-				popularity = 0.2
-			}
-		}
-	}	
-	
-	focus = {
-		id = hea_nf_elite_pol_2
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 20
-		y = 7
-		
-		prerequisite = {
-			focus = hea_nf_elite_pol_1
-		}
-		
-		completion_reward = {
-			swap_ideas = {
-				add_idea = hin_elite_2
-				remove_idea = hin_elite_1
-		   }
-		   add_popularity = {
-				ideology = elites
-				popularity = 0.3
-			}
-		   set_politics = { ruling_party = elites elections_allowed = yes }
-		}
-	}
 	
 	focus = {
 		id = hea_nf_foreign_ministry
@@ -925,7 +915,7 @@ focus_tree = {
 		y = 4
 		
 		prerequisite = {
-			focus = hea_nf_economy
+			focus = hea_nf_lost_hope
 		}
 				
 		completion_reward = {
