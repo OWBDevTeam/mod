@@ -7,118 +7,16 @@ country_event = {
 	title = NCR_MOJ_border_war.1.t
 	desc = NCR_MOJ_border_war.1.d
 	picture = GFX_event_NCR_mojave_outpost
-
+	is_triggered_only = yes
 	fire_only_once = yes
 
-	mean_time_to_happen = {
-		days = 10
-	}
+	#mean_time_to_happen = {
+	#	days = 10
+	#}
 
-	trigger = {
-		tag = NCR
-		NOT = { has_war_with = MOJ }
-		any_neighbor_country = {
-			tag = MOJ
-			##has_opinion_modifier = hostile_status
-		}
-		MOJ = {
-			OR = {
-				# Route 95
-				AND = {
-					137 = { is_border_conflict = no }
-					has_full_control_of_state = 137
-					divisions_in_state = {
-						state = 137
-						size > 0
-					}
-					# checking if any neighbor states are valid for the NCR
-					OR = {
-						NCR = {
-							# Nelson
-							divisions_in_state = {
-								state = 533
-								size > 0
-							}
-							# Novac
-							divisions_in_state = {
-								state = 181
-								size > 0
-							}
-						}
-					}
-				}
-				# Helios One
-				AND = {
-					417 = { is_border_conflict = no }
-					has_full_control_of_state = 417
-					divisions_in_state = {
-						state = 417
-						size > 0
-					}
-					OR = {
-						NCR = {
-							# Route 95
-							divisions_in_state = {
-								state = 137
-								size > 0
-							}
-							# Black Mountain
-							divisions_in_state = {
-								state = 573
-								size > 0
-							}
-						}
-					}
-				}
-				# Black Mountain
-				AND = {
-					573 = { is_border_conflict = no }
-					has_full_control_of_state = 573
-					divisions_in_state = {
-						state = 573
-						size > 0
-					}
-					OR = {
-						NCR = {
-							# Route 95
-							divisions_in_state = {
-								state = 137
-								size > 0
-							}
-							# Sloan
-							divisions_in_state = {
-								state = 562
-								size > 0
-							}
-						}
-					}
-				}
-				# Sloan
-				AND = {
-					562 = { is_border_conflict = no }
-					has_full_control_of_state = 562
-					divisions_in_state = {
-						state = 562
-						size > 0
-					}
-					OR = {
-						NCR = {
-							# Goodsprings
-							divisions_in_state = {
-								state = 552
-								size > 0
-							}
-							# Primm
-							divisions_in_state = {
-								state = 419
-								size > 0
-							}
-						}
-					}
-				}	
-			}
-		}
-	}
+	#trigger = {
+	#	always = no
+	#}
 
 	immediate = { set_country_flag = MOJ_offensive_executed }
 
