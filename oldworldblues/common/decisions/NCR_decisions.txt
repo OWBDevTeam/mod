@@ -6,8 +6,8 @@
 		icon = generic_oppression
 		
 		available = {
-			NCR = { owns_state = 417 }
-			NCR = { controls_state = 417 }
+		NCR = { owns_state = 417 }
+		NCR = { controls_state = 417 }
 		}
 
 		highlight_states = {
@@ -39,14 +39,14 @@
 					level = 5
 					instant_build = yes
 				}	
-				add_resource = {
-					type = fuel
-					amount = 15
-				}	
-				add_resource = {
-					type = electricity
-					amount = 15
-				}				  
+			   add_resource = {
+						type = fuel
+						amount = 15
+			  }	
+               add_resource = {
+						type = electricity
+						amount = 15
+			  }				  
 			}
 		}
 	}
@@ -56,8 +56,8 @@
 		icon = generic_oppression
 		
 		available = {
-			NCR = { owns_state = 417 }
-			NCR = { controls_state = 417 }
+		NCR = { owns_state = 417 }
+		NCR = { controls_state = 417 }
 		}
 
 		highlight_states = {
@@ -82,72 +82,72 @@
 		complete_effect = {
 			set_country_flag = NCR_helios_followers
 			417 = {
-				add_extra_state_shared_building_slots = 5
-				add_building_construction = {
-						type = electricity_generator
-						level = 5
-						instant_build = yes
-					}	
-				add_resource = {
-					type = fuel
-					amount = 20
-				}
-				add_resource = {
-					type = electricity
-					amount = 20
-				}
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+					type = electricity_generator
+					level = 5
+					instant_build = yes
+				}	
+			  add_resource = {
+						type = fuel
+						amount = 20
+			 }
+              add_resource = {
+						type = electricity
+						amount = 20
+			  }						 
 			}
 			custom_effect_tooltip = repair_helios_vegas_tt
 			hidden_effect = {
-				VEG = { add_opinion_modifier = { target = NCR modifier = repairedhelios }}
-				KHA = { add_opinion_modifier = { target = NCR modifier = repairedhelios }} 
-				NCR = { add_opinion_modifier = { target = KHA modifier = repairedhelios }}
-				NCR = { add_opinion_modifier = { target = VEG modifier = repairedhelios }}
-				480 = {
-					add_resource = {
+			VEG = {add_opinion_modifier = { target = NCR modifier = repairedhelios }}
+			KHA = {add_opinion_modifier = { target = NCR modifier = repairedhelios }} 
+			NCR = {add_opinion_modifier = { target = KHA modifier = repairedhelios }}
+			NCR = {add_opinion_modifier = { target = VEG modifier = repairedhelios }}
+			480 = {
+			add_resource = {
 						type = electricity
 						amount = 5
-					}	
-					add_resource = {
+			}	
+			add_resource = {
 						type = fuel
 						amount = 5
-					}
-				}
-				
-				46 = {
-					add_resource = {
-								type = electricity
-								amount = 5
-					}
-					add_resource = {
-								type = fuel
-								amount = 5
-					}		
-				}
-				
-				211 = {
-					add_resource = {
-						type = electricity
-						amount = 5
-					}
-					add_resource = {
-						type = fuel
-						amount = 5
-					}
-				}
-				
-				106 = {
-					add_resource = {
-						type = electricity
-						amount = 5
-					}
-					add_resource = {
-						type = fuel
-						amount = 5
-					}
-				}
+			 }		
 			}
-		}
+			
+			46 = {
+			add_resource = {
+						type = electricity
+						amount = 5
+			}	
+			add_resource = {
+						type = fuel
+						amount = 5
+			 }		
+			}
+			
+			211 = {
+			add_resource = {
+						type = electricity
+						amount = 5
+			}	
+			add_resource = {
+						type = fuel
+						amount = 5
+		 	 }		
+			}
+			
+			106 = {
+			add_resource = {
+						type = electricity
+						amount = 5
+			}	
+			add_resource = {
+						type = fuel
+						amount = 5
+		 	  }		
+			}
+		 }
+	  }
 	}
 	
 	NCR_repair_helios_brotherhood = {
@@ -155,9 +155,9 @@
 		icon = generic_oppression
 		
 		available = {
-			NCR = { owns_state = 417 }
-			NCR = { controls_state = 417 }
-			MOJ = { exists = yes }
+		NCR = { owns_state = 417 }
+		NCR = { controls_state = 417 }
+		MOJ = { exists = yes }
 		}
 
 		highlight_states = {
@@ -183,33 +183,33 @@
 		complete_effect = {
 			set_country_flag = NCR_helios_brotherhood
 			417 = {
-				add_extra_state_shared_building_slots = 5
-				add_building_construction = {
-						type = electricity_generator
-						level = 5
-						instant_build = yes
-					}
-				add_resource = {
-					type = fuel
-					amount = 35
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+					type = electricity_generator
+					level = 5
+					instant_build = yes
 				}
-				add_resource = {
-					type = electricity
-					amount = 35
-				}
+			add_resource = {
+						type = fuel
+						amount = 35
+			 }
+			 add_resource = {
+						type = electricity
+						amount = 35
+			 }
 			}
 			custom_effect_tooltip = NCR_coup_tt
 			hidden_effect = {
 				random_list = {
-					50 = {
-						country_event = ncr_helios_event.21
-						MOJ = {country_event = ncr_helios_event.23}
-					}
-					50 = {
-						country_event = ncr_helios_event.22
-					}
+				50 = {
+					country_event = ncr_helios_event.21
+					MOJ = {country_event = ncr_helios_event.23}
+				}
+				50 = {
+					country_event = ncr_helios_event.22
 				}
 			}
+		   }
 		}
 	}
 }

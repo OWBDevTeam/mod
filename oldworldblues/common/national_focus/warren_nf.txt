@@ -1686,23 +1686,10 @@ focus_tree = {
 		x = 1
 		y = 5
 		ai_will_do = {
-			factor = 11
+			factor = 10
 		}
-		available = {
-			hidden_trigger = {
-				OR = {
-					is_ai = no
-					AND = {
-						NOT = { has_country_flag = TRL_restrict_wargoals }
-						is_ai = yes
-					}
-				}
-			}
-		}
-		cancel_if_invalid = yes
 		will_lead_to_war_with = RBT
 			completion_reward = {
-					set_country_flag = TRL_restrict_wargoals
 					create_wargoal = {
 							type = annex_everything
 							target = RBT
@@ -1745,23 +1732,10 @@ focus_tree = {
 		x = 3
 		y = 5
 		ai_will_do = {
-			factor = 11
+			factor = 10
 		}
-		available = {
-			hidden_trigger = {
-				OR = {
-					is_ai = no
-					AND = {
-						NOT = { has_country_flag = TRL_restrict_wargoals }
-						is_ai = yes
-					}
-				}
-			}
-		}
-		cancel_if_invalid = yes
 		will_lead_to_war_with = MDT
 			completion_reward = {
-					set_country_flag = TRL_restrict_wargoals
 					create_wargoal = {
 							type = annex_everything
 							target = MDT
@@ -1804,7 +1778,7 @@ focus_tree = {
 		x = 1
 		y = 6
 		ai_will_do = {
-			factor = 12
+			factor = 10
 		}
 		available = {
 				or = {
@@ -1825,7 +1799,6 @@ focus_tree = {
 				}
 		}
 			completion_reward = {
-					clr_country_flag = TRL_restrict_wargoals
 					add_state_core = 587
 					add_state_core = 506
 					add_state_core = 450
@@ -1842,7 +1815,7 @@ focus_tree = {
 			focus = attackmarrow
 		}
 		ai_will_do = {
-			factor = 12
+			factor = 10
 		}
 		x = 3
 		y = 6
@@ -1863,7 +1836,6 @@ focus_tree = {
 						}
 				}
 			completion_reward = {
-					clr_country_flag = TRL_restrict_wargoals
 					add_state_core = 268
 					add_state_core = 113
 					add_state_core = 231

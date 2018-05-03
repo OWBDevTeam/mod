@@ -55,14 +55,54 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hea_nf_our_path
+		id = hea_nf_pol_action
 		icon = GFX_goal_generic_political_pressure
 		cost = 8.6
 		x = 19
-		y = 5
+		y = 4
 
 		prerequisite = {
 			focus = hea_nf_lost_hope
+		}
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = hea_nf_embrace_elite
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		x = 18
+		y = 5
+
+		prerequisite = {
+			focus = hea_nf_pol_action
+		}
+		
+		mutually_exclusive = {
+			focus = hea_nf_reject_elite
+		}
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = hea_nf_reject_elite
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		x = 20
+		y = 5
+
+		prerequisite = {
+			focus = hea_nf_pol_action
+		}
+		
+		mutually_exclusive = {
+			focus = hea_nf_embrace_elite
 		}
 		
 		completion_reward = {
@@ -75,10 +115,11 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 8.6
 		x = 19
-		y = 8
+		y = 6
 
 		prerequisite = {
-			hea_nf_our_path
+			focus = hea_nf_reject_elite
+			focus = hea_nf_embrace_elite
 		}
 		
 		completion_reward = {
@@ -91,10 +132,99 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 8.6
 		x = 19
-		y = 9
+		y = 7
 
 		prerequisite = {
 			focus = hea_nf_consolidate_pol
+		}
+		
+		completion_reward = {
+			add_ideas = hin_reichstag
+			country_event = { id = nf_event_hin.4 }
+		}
+	}
+	
+	focus = {
+		id = hea_nf_lost_hope_deal
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		x = 19
+		y = 9
+		
+		completion_reward = {
+			add_ideas = hin_reichstag
+			country_event = { id = nf_event_hin.4 }
+		}
+	}
+	
+	focus = {
+		id = hea_nf_forgive_sins
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		x = 18
+		y = 10
+		
+		prerequisite = {
+			focus = hea_nf_lost_hope_deal
+		}
+		
+		mutually_exclusive = {
+			focus = hea_nf_vengance
+		}
+		
+		completion_reward = {
+			add_ideas = hin_reichstag
+			country_event = { id = nf_event_hin.4 }
+		}
+	}
+	
+	focus = {
+		id = hea_nf_fog_of_mercy
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		x = 18
+		y = 11
+		
+		prerequisite = {
+			focus = hea_nf_forgive_sins
+		}
+		
+		completion_reward = {
+			add_ideas = hin_reichstag
+			country_event = { id = nf_event_hin.4 }
+		}
+	}
+	
+	focus = {
+		id = hea_nf_vengance
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		x = 20
+		y = 10
+		
+		prerequisite = {
+			focus = hea_nf_lost_hope_deal
+		}
+		
+		mutually_exclusive = {
+			focus = hea_nf_forgive_sins
+		}
+		
+		completion_reward = {
+			add_ideas = hin_reichstag
+			country_event = { id = nf_event_hin.4 }
+		}
+	}
+	
+	focus = {
+		id = hea_nf_boilers_of_justice
+		icon = GFX_goal_generic_political_pressure
+		cost = 8.6
+		x = 20
+		y = 11
+		
+		prerequisite = {
+			focus = hea_nf_vengance
 		}
 		
 		completion_reward = {
@@ -774,6 +904,8 @@ focus_tree = {
 			}
 		}
 	}
+	
+	
 	
 	focus = {
 		id = hea_nf_foreign_ministry

@@ -88,7 +88,6 @@ leader_traits = {
 		
 		modifier = {
 			planning_speed = -0.20
-			wounded_chance_factor = -0.5
 		}
 		
 		defense_skill_factor = 1
@@ -101,7 +100,7 @@ leader_traits = {
 		
 		modifier = {
 			planning_speed = 0.20
-			wounded_chance_factor = 0.5  # +50% chance to get wounded
+			wounded_chance_factor = 1  # +100% chance to get wounded
 		}
 		
 		attack_skill_factor = 1
@@ -600,11 +599,8 @@ leader_traits = {
 	panzer_leader = {
  		type = corps_commander
 		gain_xp = {
-			set_temp_variable = { temp = num_units }
-			multiply_temp_variable = { temp = 0.4 }
-			check_variable = { num_armored > temp }
+			hardness > 0.4
 		}
-		custom_gain_xp_trigger_tooltip = armored_ratio_over_40
 		cost = 700
 		modifier = {
 			army_armor_speed_factor = 0.05 
@@ -624,8 +620,8 @@ leader_traits = {
  		type = corps_commander
 		gain_xp = {
 			OR = {
-				temperature < -15
-				temperature > 27
+				temperature < -10
+				temperature > 40
 				has_combat_modifier = paradrop
 				has_combat_modifier = amphibious_attack
 			}
@@ -646,7 +642,7 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = desert
 		}
-		cost = 700
+		cost = 1050
 		modifier = {
 			desert = {
 				movement = 0.05
@@ -688,7 +684,7 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = mountain
 		}
-		cost = 700
+		cost = 1120
 		modifier = {
 			mountain = {
 				movement = 0.05
@@ -709,7 +705,7 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = hills
 		}
-		cost = 700
+		cost = 800
 		modifier = {
 			hills = {
 				movement = 0.05
@@ -772,7 +768,7 @@ leader_traits = {
 		gain_xp = {
 			is_fighting_in_terrain = urban
 		}
-		cost = 500
+		cost = 1000
 		modifier = {
 			urban = {
 				movement = 0.05
@@ -923,7 +919,7 @@ leader_traits = {
 		}
 		cost = 500
 		modifier = {
-			equipment_capture = 0.03
+			equipment_capture_factor = 0.10
 		}
 		
 		ai_will_do = {
@@ -1359,7 +1355,7 @@ leader_traits = {
 		trait_type = status_trait
 	}
 	
-	recently_promoted = {
+	recently_promoted = {  #TODO_WTT_ART icon
 		type = all
 		trait_type = status_trait
 		

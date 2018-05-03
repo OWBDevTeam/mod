@@ -64,11 +64,14 @@ country_event = {
 		ai_chance = {
 			factor = 10
 		}
+		
 		country_event = { id = factionevent.1 }
 	}
 	
 	option = {
 		name = nf_reno.2.b
+		
+		
 	}
 	
 	option = {
@@ -92,7 +95,9 @@ country_event = {
 		NCR = {
 			add_to_faction = NEW
 		}
+		
 	}
+
 }
 
 country_event = {
@@ -122,14 +127,13 @@ country_event = {
 		set_politics = {
 			parties = {
 				people = { popularity = 0 }
-				elites = { popularity = 100 }
-				intellectuals = { popularity = 0 }
+				elites = { popularity = 80 }
+				intellectuals = { popularity = 20 }
 				ruler = { popularity = 0 }
 			}
 			ruling_party = elites
 			elections_allowed = no
 		}
-		set_party_name = { ideology = elites long_name = NEW_enclave_party_long name = NEW_enclave_party }
 		
 		create_faction = "Nevada Enclave"
 		
