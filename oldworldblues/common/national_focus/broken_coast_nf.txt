@@ -79,6 +79,10 @@ focus_tree = {
 			focus = brk_nf_grand_moot
 		}
 		
+		ai_will_do = {
+			factor = 0
+		}
+		
 		available = { 
 				BRK = { has_completed_focus = brk_nf_master_smith}
 				BRK = { has_completed_focus = brk_nf_manufacturing_drive_2}
@@ -475,6 +479,18 @@ focus_tree = {
 			WHI = {  exists = no }
 		}
 		
+		ai_will_do = {
+			factor = 5
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+				modifier = {
+					factor = 0
+					WHI = { alliance_strength_ratio < 0.5}
+				}
+			}
+		
 		completion_reward = {
 			country_event = { id = nf_event_brk.4 }
 		}
@@ -492,6 +508,14 @@ focus_tree = {
 		}
 		bypass = {
 			WHI = {  exists = no }
+		}
+		
+		ai_will_do = {
+			factor = 5
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
 		}
 		
 		completion_reward = {
@@ -573,6 +597,18 @@ focus_tree = {
 			WHI = {  exists = no }
 		}
 		
+		ai_will_do = {
+			factor = 5
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+				modifier = {
+					factor = 0
+					WHI = { alliance_strength_ratio > 0.5}
+				}
+			}
+		
 		completion_reward = {
 		
 			WHI = {
@@ -641,6 +677,14 @@ focus_tree = {
 			KAM = {  exists = no }
 		}
 		
+		ai_will_do = {
+			factor = 5
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+		}
+		
 		completion_reward = {
 			country_event = { id = nf_event_brk.7}
 		}
@@ -660,6 +704,14 @@ focus_tree = {
 			KAM = {  exists = no }
 		}
 		
+		ai_will_do = {
+			factor = 5
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+		}
+		
 		completion_reward = {
 			country_event = { id = nf_event_brk.8 }
 		}
@@ -677,6 +729,14 @@ focus_tree = {
 		}
 		bypass = {
 			KAM = {  exists = no }
+		}
+		
+		ai_will_do = {
+			factor = 5
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
 		}
 		
 		completion_reward = {
@@ -1453,6 +1513,14 @@ focus_tree = {
 			focus = brk_nf_integrate_enemies
 		}
 		
+		ai_will_do = {
+			factor = 5
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
+		}
+		
 		completion_reward = {
 			create_wargoal = {
 				type = annex_everything
@@ -1470,6 +1538,14 @@ focus_tree = {
 
 		prerequisite = {
 			focus = brk_nf_integrate_enemies
+		}
+		
+		ai_will_do = {
+			factor = 5
+				modifier = {
+					factor = 0
+					has_war = yes
+				}
 		}
 		
 		completion_reward = {
