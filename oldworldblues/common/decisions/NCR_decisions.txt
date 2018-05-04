@@ -1,7 +1,6 @@
+NCR_helios_category = {
 
- NCR_helios_category = {
-
-  NCR_repair_helios_fantastic = {
+	NCR_repair_helios_fantastic = {
 
 		icon = generic_oppression
 		
@@ -116,13 +115,13 @@
 				
 				46 = {
 					add_resource = {
-								type = electricity
-								amount = 5
+						type = electricity
+						amount = 5
 					}
 					add_resource = {
-								type = fuel
-								amount = 5
-					}		
+						type = fuel
+						amount = 5
+					}
 				}
 				
 				211 = {
@@ -210,6 +209,39 @@
 					}
 				}
 			}
+		}
+	}
+}
+
+NCR_heavytroops_focus_category = {
+	NCR_heavytroops_focus = {
+		icon = generic_oppression
+		
+		available = {
+			NCR = { owns_state = 253 }
+			NCR = { controls_state = 253 }
+		}
+
+		highlight_states = {
+			state = 253
+		}
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		visible = {
+			NCR = { owns_state = 253 }
+			NCR = { has_completed_focus = ncr_armourexperiment }
+		}
+
+		is_good = yes
+
+		complete_effect = {
+			custom_effect_tooltip = load_ncrheavytroops
+			hidden_effect = { load_oob = ncrheavytroops }
 		}
 	}
 }
