@@ -2,7 +2,7 @@ ideas = {
 
 	country = {
 		
-		hea_nf_divided_leadership = {
+		hea_divided_leadership = {
 			
 			picture = bunker_blues
 			
@@ -17,7 +17,7 @@ ideas = {
 			}
 		}
 		
-		hea_nf_steam_power = {
+		hea_steam_power = {
 			
 			picture = bunker_blues
 			
@@ -34,7 +34,7 @@ ideas = {
 			}
 		}
 		
-		hea_nf_theocratic_elite = {
+		hea_theocratic_elite = {
 			
 			picture = bunker_blues
 			
@@ -45,13 +45,13 @@ ideas = {
 			
 			modifier = {
 				consumer_goods_factor = 0.05
-				stability_weekly = 0.005
-				war_support_weekly = -0.005
+				stability_factor = 0.2
+				war_support_factor = -0.2
 				political_power_gain = -0.2
 			}
 		}
 		
-		hea_nf_theocratic_elite_good = {
+		hea_theocratic_elite_good = {
 			
 			picture = bunker_blues
 			
@@ -62,12 +62,12 @@ ideas = {
 			
 			modifier = {
 				consumer_goods_factor = 0.05
-				stability_weekly = 0.005
-				war_support_weekly = -0.005
+				stability_factor = 0.2
+				war_support_factor = -0.15
 			}
 		}
 		
-		hea_nf_theocratic_elite_good_1 = {
+		hea_theocratic_elite_good_1 = {
 			
 			picture = bunker_blues
 			
@@ -78,13 +78,13 @@ ideas = {
 			
 			modifier = {
 				consumer_goods_factor = 0.05
-				stability_weekly = 0.005
-				war_support_weekly = -0.002
+				stability_factor = 0.2
+				war_support_factor = -0.1
 				political_power_gain = 0.2
 			}
 		}
 		
-		hea_nf_theocratic_elite_contested = {
+		hea_theocratic_elite_contested = {
 			
 			picture = bunker_blues
 			
@@ -100,7 +100,7 @@ ideas = {
 			}
 		}
 		
-		hea_nf_theocratic_elite_marginalized = {
+		hea_theocratic_elite_marginalized = {
 			
 			picture = bunker_blues
 			
@@ -111,11 +111,28 @@ ideas = {
 			
 			modifier = {
 				political_power_gain = -0.1
-				war_support_weekly = 0.005
+				war_support_factor = 0.1
 			}
 		}
 		
-		hea_nf_innocence_lost_idea = {
+		hea_one_prophet = {
+			
+		picture = bunker_blues
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = 0.1
+				war_support_factor = 0.1
+				stability_factor = 0.1
+			}
+		
+		}
+		
+		hea_innocence_lost_idea = {
 		
 			picture = bunker_blues
 			
@@ -132,7 +149,7 @@ ideas = {
 		
 		}
 		
-		hea_nf_rampant_militarism = {
+		hea_rampant_militarism = {
 			
 			picture = bunker_blues
 			
@@ -142,12 +159,12 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				stability_weekly = -0.005
-				war_support_weekly = 0.005
+				stability_factor = -0.1
+				war_support_factor = 0.1
 			}
 		}
 		
-		hea_nf_rampant_militarism_1 = {
+		hea_rampant_militarism_1 = {
 			
 			picture = bunker_blues
 			
@@ -157,12 +174,12 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				stability_weekly = -0.002
-				war_support_weekly = 0.005
+				stability_factor = -0.1
+				war_support_factor = 0.15
 			}
 		}
 		
-		hea_nf_rampant_militarism_2 = {
+		hea_rampant_militarism_2 = {
 			
 			picture = bunker_blues
 			
@@ -172,11 +189,13 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				war_support_weekly = 0.005
+				stability_factor = -0.1
+				war_support_factor = 0.2
+				conscription = 0.05
 			}
 		}
 		
-		hea_nf_rampant_fright = {
+		hea_rampant_fright = {
 			
 			picture = bunker_blues
 			
@@ -186,18 +205,185 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				conscription_factor = -0.02
+				stability_factor = -0.03
+			}
+		}
+		
+		hea_reconcilliation = {
+			
+			picture = bunker_blues
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				non_core_manpower = 0.05
+				encryption_factor -0.25
+				decryption_factor = 0.25
 			}
 		}
 		
 		
+		hea_reconcilliation_1 = {
+			
+			picture = bunker_blues
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				non_core_manpower = 0.1
+				encryption_factor -0.25
+				decryption_factor = 0.25
+			}
+		}
 		
+		hea_school_of_steam = {
+			
+			picture = bunker_blues
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				non_core_manpower = 0.1
+				encryption_factor -0.25
+				decryption_factor = 0.25
+			}
+		}
 		
+		hea_air_knight = {
+			
+			picture = bunker_blues
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				non_core_manpower = 0.1
+				encryption_factor -0.25
+				decryption_factor = 0.25
+			}
+		}
 		
+		hea_air_peasant = {
+			
+			picture = bunker_blues
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				non_core_manpower = 0.1
+				encryption_factor -0.25
+				decryption_factor = 0.25
+			}
+		}
 		
+		hea_general_staff = {
+			
+			picture = bunker_blues
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				non_core_manpower = 0.1
+				encryption_factor -0.25
+				decryption_factor = 0.25
+			}
+		}
 		
+		hea_mobility = {
+			
+			picture = bunker_blues
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				non_core_manpower = 0.1
+				encryption_factor -0.25
+				decryption_factor = 0.25
+			}
+		}
 		
+		hea_age_of_steam_idea = {
+			
+			picture = bunker_blues
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				non_core_manpower = 0.1
+				encryption_factor -0.25
+				decryption_factor = 0.25
+			}
+		}
 		
+		hea_conscription = {
+			
+			picture = bunker_blues
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				non_core_manpower = 0.1
+				encryption_factor -0.25
+				decryption_factor = 0.25
+			}
+		}
 		
+		hea_crusaders = {
+			
+			picture = bunker_blues
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				non_core_manpower = 0.1
+				encryption_factor -0.25
+				decryption_factor = 0.25
+			}
+		}
+		
+		hea_grand_cathedral = {
+			
+			picture = bunker_blues
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				non_core_manpower = 0.1
+				encryption_factor -0.25
+				decryption_factor = 0.25
+			}
+		}
 	}
 }

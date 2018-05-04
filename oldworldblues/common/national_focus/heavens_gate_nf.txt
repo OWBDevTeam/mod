@@ -1,5 +1,5 @@
 focus_tree = {
-	id = hinterland_nf
+	id = heavens_gate_nf
 	country = {
 		factor = 0
 		modifier = {
@@ -110,8 +110,8 @@ focus_tree = {
 		
 		completion_reward = {
 			swap_ideas = {
-				add_idea = hea_nf_theocratic_elite_good
-				remove_idea = hea_nf_theocratic_elite
+				add_idea = hea_theocratic_elite_good
+				remove_idea = hea_theocratic_elite
 		   }
 		}
 	}
@@ -129,8 +129,8 @@ focus_tree = {
 		
 		completion_reward = {
 			swap_ideas = {
-				add_idea = hea_nf_theocratic_elite_good_1
-				remove_idea = hea_nf_theocratic_elite_good
+				add_idea = hea_theocratic_elite_good_1
+				remove_idea = hea_theocratic_elite_good
 		   }
 		}
 	}
@@ -159,8 +159,8 @@ focus_tree = {
 		
 		completion_reward = {
 			swap_ideas = {
-				add_idea = hea_nf_theocratic_elite_contested
-				remove_idea = hea_nf_theocratic_elite
+				add_idea = hea_theocratic_elite_contested
+				remove_idea = hea_theocratic_elite
 		   }
 		}
 	}
@@ -177,9 +177,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			add_idea = hea_one_prophet
 			swap_ideas = {
-				add_idea = hea_nf_theocratic_elite_marginalized
-				remove_idea = hea_nf_theocratic_elite_contested
+				add_idea = hea_theocratic_elite_marginalized
+				remove_idea = hea_theocratic_elite_contested
 		   }
 		}
 	}
@@ -197,7 +198,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			remove_idea = hea_nf_divided_leadership
+			remove_idea = hea_divided_leadership
 			add_political_power = 100
 		}
 	}
@@ -214,6 +215,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			add_ideas = hea_grand_cathedral
 		}
 	}
 	
@@ -225,7 +227,7 @@ focus_tree = {
 		y = 10
 		
 		available = {
-			has_idea = hea_nf_innocence_lost_idea
+			has_idea = hea_innocence_lost_idea
 		}
 		
 		completion_reward = {
@@ -300,6 +302,8 @@ focus_tree = {
 		}
 	}
 	
+	
+	# militarism fix
 	focus = {
 		id = hea_nf_addres_militarism
 		icon = GFX_goal_generic_political_pressure
@@ -309,7 +313,7 @@ focus_tree = {
 		
 		available = {
 			has_completed_focus = hea_nf_consolidate_pol
-			has_idea = hea_nf_rampant_militarism
+			has_idea = hea_rampant_militarism
 		}
 		
 		completion_reward = {
@@ -334,6 +338,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			swap_ideas = {
+				add_idea = hea_rampant_militarism_1
+				remove_idea = hea_rampant_militarism
+		   }
 		}
 	}
 	
@@ -349,6 +357,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			swap_ideas = {
+				add_idea = hea_rampant_militarism_2
+				remove_idea = hea_rampant_militarism_1
+		   }
 		}
 	}
 	
@@ -368,6 +380,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			swap_ideas = {
+				add_idea = hea_reconcilliation
+				remove_idea = hea_rampant_militarism
+		   }
 		}
 	}
 	
@@ -383,6 +399,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			swap_ideas = {
+				add_idea = hea_reconcilliation_1
+				remove_idea = hea_reconcilliation
+		   }
 		}
 	}
 	
@@ -445,8 +465,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_ideas = hin_conscription
-
+			add_ideas = hea_conscription
 		}
 	}
 	
@@ -465,7 +484,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_ideas = hin_crusaders
+			add_ideas = hea_crusaders
 		}
 	}
 	
@@ -528,7 +547,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_ideas = hin_air_knight
+			add_ideas = hea_air_knight
 		}
 	}
 	
@@ -547,7 +566,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_ideas = hin_air_peasant
+			add_ideas = hea_air_peasant
 		}
 	}
 	
@@ -588,7 +607,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_ideas = hin_general_staff
+			add_ideas = hea_general_staff
 		}
 	}
 	
@@ -604,7 +623,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_ideas = hin_mobility
+			add_ideas = hea_mobility
 		}
 	}
 	
@@ -622,7 +641,7 @@ focus_tree = {
 		completion_reward = {
 			every_owned_state = {
 			       limit = {
-				is_core_of = HIN 
+				is_core_of = HEA 
 				}				
 				add_extra_state_shared_building_slots = 2
 			}
@@ -644,7 +663,7 @@ focus_tree = {
 			
 			every_owned_state = {
 			       limit = {
-				is_core_of = HIN 
+				is_core_of = HEA 
 				}				
 				add_building_construction = {
 					type = infrastructure
@@ -669,7 +688,7 @@ focus_tree = {
 				
 		completion_reward = {
 			add_research_slot = 1
-			add_ideas = hin_school_of_steam
+			add_ideas = hea_school_of_steam
 		}
 	}
 	
@@ -806,13 +825,7 @@ focus_tree = {
 		}
 				
 		completion_reward = {
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 0.5
-				uses = 1
-				category = power_armor_tech
-			}
-
+			add_ideas = hea_age_of_steam_idea
 		}
 	}
 	
@@ -1116,10 +1129,10 @@ focus_tree = {
 				
 		completion_reward = {
 			MUR = {
-				add_opinion_modifier = { target = HIN modifier = has_embassy }
+				add_opinion_modifier = { target = HEA modifier = has_embassy }
 			}
 			IRE = {
-				add_opinion_modifier = { target = HIN modifier = enemy_embassy }
+				add_opinion_modifier = { target = HEA modifier = enemy_embassy }
 			}
 		}
 	}
@@ -1175,10 +1188,10 @@ focus_tree = {
 				
 		completion_reward = {
 			IRE = {
-				add_opinion_modifier = { target = HIN modifier = has_embassy }
+				add_opinion_modifier = { target = HEA modifier = has_embassy }
 			}
 			MUR = {
-				add_opinion_modifier = { target = HIN modifier = enemy_embassy }
+				add_opinion_modifier = { target = HEA modifier = enemy_embassy }
 			}
 
 		}
@@ -1230,7 +1243,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_ideas = hin_gods_militia
+			add_ideas = hea_gods_militia
 		}
 	}
 	
@@ -1247,8 +1260,8 @@ focus_tree = {
 		
 		completion_reward = {
 			swap_ideas = {
-				add_idea = hin_gods_militia_1
-				remove_idea = hin_gods_militia
+				add_idea = hea_gods_militia_1
+				remove_idea = hea_gods_militia
 		   }
 		}
 	}
@@ -1266,8 +1279,8 @@ focus_tree = {
 		
 		completion_reward = {
 			swap_ideas = {
-				add_idea = hin_gods_militia_2
-				remove_idea = hin_gods_militia_1
+				add_idea = hea_gods_militia_2
+				remove_idea = hea_gods_militia_1
 		   }
 		}
 	}
@@ -1285,7 +1298,7 @@ focus_tree = {
 				
 		completion_reward = {
 			LON = {
-				add_opinion_modifier = { target = HIN modifier = has_embassy }
+				add_opinion_modifier = { target = HEA modifier = has_embassy }
 			}
 		}
 	}
