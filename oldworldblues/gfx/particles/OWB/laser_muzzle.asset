@@ -1,7 +1,7 @@
 entity = {
 	name = "laser_muzzle_effect_entity"
 	pdxmesh = "laser_beam_mesh"
-	scale = 1.0
+	scale = 0.55
 	locator = { name = "beam_1" position = { 0 0 -1.5 } }
 	locator = { name = "beam_2" position = { 0 0 -3 } }
 	locator = { name = "beam_3" position = { 0 0 -4.5 } }
@@ -15,15 +15,15 @@ entity = {
 	get_state_from_parent = no
 	state = {
 		name = "attack" looping = no state_time = 0.2
-		event = { time = 0.0  node = beam_9 particle = "laser_beam_effect" trigger_once = yes keep_particle = no }
-		event = { time = 0.0  node = beam_8 particle = "laser_beam_effect" trigger_once = yes keep_particle = no }
-		event = { time = 0.0  node = beam_7 particle = "laser_beam_effect" trigger_once = yes keep_particle = no }
-		event = { time = 0.0  node = beam_6 particle = "laser_beam_effect" trigger_once = yes keep_particle = no }
-		event = { time = 0.0  node = beam_5 particle = "laser_beam_effect" trigger_once = yes keep_particle = no }
-		event = { time = 0.0  node = beam_4 particle = "laser_beam_effect" trigger_once = yes keep_particle = no }
-		event = { time = 0.0  node = beam_3 particle = "laser_beam_effect" trigger_once = yes keep_particle = no }
-		event = { time = 0.0  node = beam_2 particle = "laser_beam_effect" trigger_once = yes keep_particle = no }
-		event = { time = 0.0  node = beam_1 particle = "laser_beam_effect" trigger_once = yes keep_particle = no }
+		event = { time = 0.0  node = beam_9 particle = "laser_beam_effect"  keep_particle = no }
+		event = { time = 0.0  node = beam_8 particle = "laser_beam_effect"  keep_particle = no }
+		event = { time = 0.0  node = beam_7 particle = "laser_beam_effect"  keep_particle = no }
+		event = { time = 0.0  node = beam_6 particle = "laser_beam_effect"  keep_particle = no }
+		event = { time = 0.0  node = beam_5 particle = "laser_beam_effect"  keep_particle = no }
+		event = { time = 0.0  node = beam_4 particle = "laser_beam_effect"  keep_particle = no }
+		event = { time = 0.0  node = beam_3 particle = "laser_beam_effect"  keep_particle = no }
+		event = { time = 0.0  node = beam_2 particle = "laser_beam_effect"  keep_particle = no }
+		event = { time = 0.0  node = beam_1 particle = "laser_beam_effect"  keep_particle = no }
 		
 		#event = { time = 0.0 use_parent_nodes = yes node = muzzle particle = "laser_beam_effect" trigger_once = yes keep_particle = no }
 	}
@@ -39,7 +39,7 @@ particle = {
 		# always local time
 		
 		# fixed values, cannot be curves, cannot add variation
-		max_amount = 1
+		max_amount = 20
 		invert=no
 		trail=no
 		local_space=yes
