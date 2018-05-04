@@ -2172,23 +2172,20 @@ entity = {
 	#locator = { name = muzzle position = { 0 0 -2.5 } }
 	scale = 0.3
 	###inheret state from attached objects
-	get_state_from_parent = yes
-	default_state = "idle"
-	#state = { name = "idle" }
-	#state = { name = "move"	}
-	
-	state = { name = "attack"
-		animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0
-		event = { time = 0.0  node = "muzzle"  node = muzzle_particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack } life = 1 } 
-	}
-	state = { name = "defend"
-		animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0
-		event = { time = 0.0  node = "muzzle"   node = muzzle_particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack } life = 1 } 
-	}
-	state = { name = "support_attack"
-		animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0
-		event = { time = 0.0 node = "muzzle"   node = muzzle_particle particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack} life = 1 } 
-	}
+	#get_state_from_parent = yes
+
+	#state = { name = "attack"
+	#	animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0
+		#event = { time = 0.0    node = "muzzle" particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack } life = 1 } 
+	#}
+	#state = { name = "defend"
+	#	animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0
+	#	#event = { time = 0.0     node = "muzzle" particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack } life = 1 } 
+	#}
+	#state = { name = "support_attack"
+	#	animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0
+	#	#event = { time = 0.0  node = "muzzle" particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack} life = 1 } 
+	#}
 }
 #########################################################################################################
 ####ROBOTS
@@ -2307,11 +2304,11 @@ entity = {
 	default_state = "idle"
 	####state to use when attacking an enemy
 	###second attack state (shooting gun)
-	state = { name = "attack"			animation = "shoot" animation_blend_time = 0.0  animation_speed = 1.0 looping = yes }
+	state = { name = "attack"			animation = "shoot" animation_blend_time = 0.0  animation_speed = 1.0 looping = yes  }
 	###defensive state
-	state = { name = "defend"			animation="shoot" }
+	state = { name = "defend"			animation="shoot"  }
 	####supporting another attacking unit
-	state = { name = "support_attack"	animation="shoot"}
+	state = { name = "support_attack"	animation="shoot"  }
 	###movement on map with no enemies
 	state = { name = "move"				animation = "move" 	animation_blend_time = 0.0 animation_speed = 1.0}
 	###retreat "limp"
@@ -2325,8 +2322,8 @@ entity = {
 	state = { name = "training"	 }
 	
 	####These attachments are called inside the state = {} to change the bone the weapon is attached to. ex: back, hands
-	attach = { 	name = "rifle1"	Right_Hand_Node = "minigun_pa_entity" }	
-	#attach = { 	name = "rifle1"	hand_r = "minigun_pa_entity" }	
+	#attach = { 	name = "rifle1"	Right_Hand_Node = "minigun_pa_entity" }	
+	attach = { 	name = "rifle1"	hand_r = "minigun_pa_entity" }	
 	#attach = { 	name = "rifle2"	hand_l = "laser_rifle_entity" }	
 	#attach = { 	name = "rifle2"	hand_l = "minigun_pa_entity" }	
 	#attach = { 	name = "rifle3"	Root = "laser_rifle_entity" }
