@@ -71,6 +71,13 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_oldamerica
 		}
+		available = {
+			AND = {
+				BOS = { owns_state = 157 }
+				BOS = { owns_state = 548 }
+				BOS = { owns_state = 473 }
+			}
+		}
 		x = 1
 		y = 4
 		completion_reward = {
@@ -105,6 +112,13 @@ focus_tree = {
 		mutually_exclusive = { focus = bos_hangars }
 		prerequisite = {
 			focus = bos_oldamerica
+		}
+		available = {
+			AND = {
+				BOS = { owns_state = 104 }
+				BOS = { owns_state = 474 }
+				BOS = { owns_state = 473 }
+			}
 		}
 		x = 5
 		y = 4
@@ -2205,6 +2219,9 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_shisecrets
 		}
+		available = {
+			SHI = { exists = no }
+		}
 		x = 16
 		y = 14
 		completion_reward = {
@@ -2242,8 +2259,7 @@ focus_tree = {
 				remove_idea = foodforservice
 				add_idea = securitronsoftware
 			}
-
-	}
+		}
 	}
 	focus = {
 		id = bos_hardware
@@ -2256,7 +2272,7 @@ focus_tree = {
 		y = 8
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = foodforservice
+				remove_idea = securitronsoftware
 				add_idea = securitronhardware
 			}
 		}

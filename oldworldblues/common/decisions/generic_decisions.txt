@@ -1,0 +1,459 @@
+# Generic Stability Stuff #
+political_actions = {
+	produce_consumer_goods = { # Baisc decision settler / bos version
+		available = {
+			num_of_civilian_factories_available_for_projects > 4
+			has_stability < 0.85
+		}
+		visible = {
+			OR = {
+				is_settler_nation = yes
+				tag = NCR
+				tag = CES
+				is_brotherhood_nation = yes
+			}
+		}
+
+		cost = 50
+		days_remove = 50
+		days_re_enable = 100
+
+		modifier = {
+			civilian_factory_use = 5
+			stability_weekly = 0.01
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 9
+				has_stability < 0.4
+			}
+		}
+	}
+	prioritise_living_standards = { # Basic decision otehr version
+		available = {
+			num_of_civilian_factories_available_for_projects > 3
+			has_stability < 0.85
+		}
+		visible = {
+			OR = {
+				is_tribal_nation = yes
+				is_raider_nation = yes
+				is_super_mutant = yes
+			}
+		}
+
+		cost = 50
+		days_remove = 100
+		days_re_enable = 200
+
+		modifier = {
+			civilian_factory_use = 4
+			stability_weekly = 0.005
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 9
+				has_stability < 0.4
+			}
+		}
+	}
+	research_consumer_tech = { # Consumer research settler / bos version
+		available = {
+			has_war_support > 0.2
+			has_stability < 0.85
+		}
+		visible = {
+			OR = {
+				is_settler_nation = yes
+				tag = NCR
+				tag = CES
+				is_brotherhood_nation = yes
+			}
+		}
+
+		cost = 50
+		days_remove = 50
+		days_re_enable = 150
+
+		modifier = {
+			research_time_factor = -0.10
+			stability_weekly = 0.02
+			war_support_weekly = -0.005
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 9
+				has_stability < 0.4
+				has_war_support > 0.4
+			}
+		}
+	}
+	basic_hygiene_education = { # Consumer focus other version
+		available = {
+			has_war_support > 0.2
+			has_stability < 0.85
+		}
+		visible = {
+			OR = {
+				is_tribal_nation = yes
+				is_raider_nation = yes
+				is_super_mutant = yes
+			}
+		}
+
+		cost = 50
+		days_remove = 50
+		days_re_enable = 150
+
+		modifier = {
+			research_time_factor = -0.05
+			stability_weekly = 0.01
+			war_support_weekly = -0.005
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 9
+				has_stability < 0.4
+				has_war_support > 0.4
+			}
+		}
+	}
+	focus_on_internal = {
+		available = {
+			has_war_support > 0.2
+			has_stability < 0.85
+		}
+
+		cost = 50
+		days_remove = 50
+		days_re_enable = 150
+
+		modifier = {
+			stability_weekly = 0.02
+			war_support_weekly = -0.01
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 9
+				has_stability < 0.4
+				has_war_support > 0.4
+			}
+		}
+	}
+	purge_elites = { # Purge the Ruling Class
+		visible = {
+			OR = {
+				has_government = elites
+				has_government = ruler
+			}
+		}
+		available = {
+			has_stability > 0.30
+			has_stability < 0.80
+		}
+
+		cost = 100
+		days_remove = 50
+		days_re_enable = 150
+
+		modifier = {
+			stability_weekly = 0.015
+			political_power_factor = -0.20
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 9
+				has_stability < 0.4
+			}
+		}
+	}
+}
+# Generic War Support Stuff #
+propaganda_efforts = {
+	war_propaganda = {
+		icon = GFX_decision_generic_civil_support
+		available = {
+			OR = {
+				any_country = {
+					has_added_tension_amount > 25
+				}
+				has_war = yes
+			}
+			has_war_support < 0.9
+		}
+		visible = {
+			OR = {
+				any_country = {
+					has_added_tension_amount > 10
+				}
+				has_war = yes
+			}
+			OR = {
+				is_settler_nation = yes
+				tag = NCR
+				tag = CES
+				is_brotherhood_nation = yes
+			}
+		}
+		cost = 50
+		days_remove = 70
+		days_re_enable = 200
+		modifier = {
+			war_support_weekly = 0.01
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 9
+				has_war_support < 0.4
+			}
+		}
+	}
+	promise_of_loot = {
+		icon = GFX_decision_generic_civil_support
+		visible = {
+			OR = {
+				is_tribal_nation = yes
+				is_raider_nation = yes
+				is_super_mutant = yes
+			}
+			OR = {
+				any_country = {
+					has_added_tension_amount > 10
+				}
+				has_war = yes
+			}
+		}
+		available = {
+			OR = {
+				any_country = {
+					has_added_tension_amount > 20
+				}
+				has_war = yes
+			}
+			has_war_support < 0.8
+		}
+		cost = 50
+		days_remove = 40
+		days_re_enable = 110
+		modifier = {
+			war_support_weekly = 0.02
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 9
+				has_war_support < 0.4
+			}
+		}
+	}
+	militarized_society = {
+		icon = GFX_decision_generic_civil_support
+		visible = {
+			AND = {
+				OR = {
+					any_country = {
+						has_added_tension_amount > 10
+					}
+					has_war = yes
+				}
+			}
+		}
+		available = {
+			has_war_support > 0.2
+			has_war_support < 0.9
+			has_stability > 0.2
+		}
+		custom_cost_trigger = {
+    		has_army_experience > 10
+		}
+		custom_cost_text = army_xp_more_than_10
+		days_remove = 50
+		days_re_enable = 100
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+			}
+		}
+		modifier = {
+			war_support_weekly = 0.015
+			stability_weekly = -0.01
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 9
+				has_war_support < 0.4
+				has_stability > 0.4
+			}
+		}
+	}
+	mobalise_people = {
+		icon = GFX_decision_generic_civil_support
+		visible = {
+			has_war = yes
+		}
+		available = {
+			has_war_support > 0.2
+		}
+
+		cost = 50
+		days_remove = 100
+		days_re_enable = 100
+
+		modifier = {
+			mobilization_speed = 0.5 # 50% increase
+			war_support_weekly = -0.005
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 9
+				has_war_support > 0.4
+			}
+		}
+	}
+}
+# Generic War Measures Stuff #
+war_measures = {
+	patriotic_boost = {
+		icon = GFX_decision_generic_form_nation
+		visible = {
+			has_war = yes
+		}
+		available = {
+			has_war_support < 0.80
+		}
+
+		cost = 50
+		days_remove = 100
+		fire_only_once = yes
+
+		complete_effect = {
+			add_war_support = 0.2
+		}
+
+		modifier = {
+			war_support_weekly = -0.015 # Slight net loss
+			mobilization_speed = 0.2 # 20% increase
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 9
+				has_war_support > 0.4
+			}
+		}
+	}
+	focus_mil_research = {
+		icon = GFX_decision_generic_research
+		visible = {
+			has_war = yes
+			OR = { 
+				is_settler_nation = yes
+				tag = NCR
+				tag = CES
+				is_brotherhood_nation = yes
+			}
+		}
+		available = {
+			has_stability > 0.2
+		}
+
+		cost = 50
+		days_remove = 100
+		days_re_enable = 200
+
+		modifier = {
+			research_time_factor = -0.10
+			intellectuals_drift = 0.01
+			stability_weekly = -0.005
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_stability > 0.4
+			}
+		}
+	}
+	extend_mil_production = { # Mil production settler / bos version
+		icon = GFX_decision_ger_military_buildup
+		visible = {
+			has_war = yes
+			OR = { 
+				is_settler_nation = yes
+				tag = NCR
+				tag = CES
+				is_brotherhood_nation = yes
+			}
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+			has_stability > 0.2
+		}
+
+		cost = 100
+		days_remove = 100
+		days_re_enable = 200
+
+		modifier = {
+			consumer_goods_factor = 0.10
+			industrial_capacity_factory = 0.15
+			industrial_capacity_dockyard = 0.05
+			stability_weekly = -0.005
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 9
+				has_stability > 0.4
+			}
+		}
+	}
+	encourage_weapon_production = { # Mil production other version
+		icon = GFX_decision_ger_military_buildup
+		visible = {
+			has_war = yes
+			OR = {
+				is_tribal_nation = yes
+				is_raider_nation = yes
+				is_super_mutant = yes
+			}
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+			has_stability > 0.2
+		}
+
+		cost = 100
+		days_remove = 100
+		days_re_enable = 200
+
+		complete_effect = {
+			add_offsite_building = { type = arms_factory level = 2 }
+		}
+		remove_effect = {
+			add_offsite_building = { type = arms_factory level = -2 }
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.05
+			industrial_capacity_factory = 0.1
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 9
+				has_stability > 0.4
+			}
+		}
+	}
+}
