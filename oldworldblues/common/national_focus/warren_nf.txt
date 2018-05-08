@@ -161,9 +161,7 @@ focus_tree = {
 			focus = cannibalmutants
 		}
 		available = {
-			TRL = {
-				owns_state = 235
-			}
+			235 = { is_owned_and_controlled_by = TRL }
 		}
 		x = 11
 		y = 7
@@ -192,9 +190,7 @@ focus_tree = {
 			focus = preparingthewarren
 		}
 		available = {
-			TRL = {
-				owns_state = 235
-			}
+			235 = { is_owned_and_controlled_by = TRL }
 		}
 		x = 10
 		y = 8
@@ -752,9 +748,7 @@ focus_tree = {
 			focus = causeoftrouble
 		}
 		available = {
-			TRL = {
-				owns_state = 351
-			}
+			351 = { is_owned_and_controlled_by = TRL }
 		}
 		x = 16
 		y = 8
@@ -843,11 +837,9 @@ focus_tree = {
 			focus = forceddigging
 		}
 		available = {
-			TRL = {
-				owns_state = 235
-				owns_state = 437
-				owns_state = 166
-			}
+			235 = { is_owned_and_controlled_by = TRL }
+			437 = { is_owned_and_controlled_by = TRL }
+			166 = { is_owned_and_controlled_by = TRL }
 		}
 		x = 20
 		y = 6
@@ -959,9 +951,7 @@ focus_tree = {
 			focus = readyforwar
 		}
 		available = {
-			TRL = {
-				owns_state = 235
-			}
+			235 = { is_owned_and_controlled_by = TRL }
 		}
 		x = 24
 		y = 6
@@ -1004,9 +994,7 @@ focus_tree = {
 			focus = rewardsofvictory
 		}
 		available = {
-			TRL = {
-				owns_state = 235
-			}
+			235 = { is_owned_and_controlled_by = TRL }
 		}
 		x = 26
 		y = 7
@@ -1044,9 +1032,7 @@ focus_tree = {
 			focus = defendingthewarren
 		}
 		available = {
-			TRL = {
-				owns_state = 437
-			}
+			437= { is_owned_and_controlled_by = TRL }
 		}
 		x = 28
 		y = 8
@@ -1393,9 +1379,7 @@ focus_tree = {
 			focus = memories_of_ages
 		}
 		available = {
-			TRL = {
-				owns_state = 235
-			}
+			235 = { is_owned_and_controlled_by = TRL }
 		}
 		x = 39
 		y = 5
@@ -1634,28 +1618,24 @@ focus_tree = {
 		}
 		x = 6
 		y = 8
-			available = {
-					or = {
-							if = {
-									ARR = {
-											is_puppet_of = TRL
-										}
-								}
-							if = {
-									ARR = {
-											exists = no
-										}
-									TRL = {
-											owns_state = 337
-											owns_state = 96
-											owns_state = 32
-										}
-								}
-						}
+		available = {
+			or = {
+				if = {
+					ARR = {
+						is_puppet_of = TRL
+					}
 				}
-			completion_reward = {
-					add_ideas = pittman2
+				if = {
+					ARR = {
+						exists = no
+					}
+					337 = { is_owned_and_controlled_by = TRL }
+					92 = { is_owned_and_controlled_by = TRL }
+					32 = { is_owned_and_controlled_by = TRL }
 				}
+		completion_reward = {
+			add_ideas = pittman2
+		}
 
 	}
 	focus = {
@@ -1678,11 +1658,9 @@ focus_tree = {
 									KLA = {
 											exists = no
 										}
-									TRL = {
-											owns_state = 57
-											owns_state = 59
-											owns_state = 454
-										}
+									57 = { is_owned_and_controlled_by = TRL }
+									59 = { is_owned_and_controlled_by = TRL }
+									454 = { is_owned_and_controlled_by = TRL }
 								}
 						}
 				}
@@ -1704,9 +1682,7 @@ focus_tree = {
 		x = 7
 		y = 9
 			available = {
-					TRL = {
-							owns_state = 351
-						}
+					351 = { is_owned_and_controlled_by = TRL }
 				}
 			completion_reward = {
 					remove_ideas = pittman1
@@ -1854,13 +1830,11 @@ focus_tree = {
 								}
 							}
 						if = {
-								TRL = {
-										owns_state = 587
-										owns_state = 506
-										owns_state = 449
-										owns_state = 450
-										owns_state = 493
-								}
+							587 = { is_owned_and_controlled_by = TRL }
+							506 = { is_owned_and_controlled_by = TRL }
+							449 = { is_owned_and_controlled_by = TRL }
+							450 = { is_owned_and_controlled_by = TRL }
+							493 = { is_owned_and_controlled_by = TRL }
 						}
 				}
 		}
@@ -1894,12 +1868,10 @@ focus_tree = {
 										}
 								}
 							if = {
-									TRL = {
-											owns_state = 268
-											owns_state = 113
-											owns_state = 231
-										}
-								}
+								268 = { is_owned_and_controlled_by = TRL }
+								113 = { is_owned_and_controlled_by = TRL }
+								231 = { is_owned_and_controlled_by = TRL }
+							}
 						}
 				}
 			completion_reward = {
@@ -1938,18 +1910,13 @@ focus_tree = {
 			focus = breakingribs
 		}
 		available = {
-			TRL = {
-				owns_state = 493
-			}
+			483  = { is_owned_and_controlled_by = TRL }
 		}
 		ai_will_do = {
 			factor = 10
 		}
 		x = 0
 		y = 7
-			available = {
-					owns_state = 493
-				}
 			completion_reward = {
 					493 = {
 							add_extra_state_shared_building_slots = 2
@@ -2146,12 +2113,10 @@ focus_tree = {
 										}
 								}
 							if = {
-									TRL = {
-											owns_state = 251
-											owns_state = 600
-											owns_state = 150
-											owns_state = 86
-										}
+									251 = { is_owned_and_controlled_by = TRL }
+									600 = { is_owned_and_controlled_by = TRL }
+									150 = { is_owned_and_controlled_by = TRL }
+									86 = { is_owned_and_controlled_by = TRL }
 								}
 						}
 				}
@@ -2183,14 +2148,12 @@ focus_tree = {
 										}
 								}
 							if = {
-									TRL = {
-											owns_state = 426
-											owns_state = 580
-											owns_state = 480
-											owns_state = 121
-											owns_state = 536
-										}
-								}
+								426 = { is_owned_and_controlled_by = TRL }
+								580 = { is_owned_and_controlled_by = TRL }
+								480 = { is_owned_and_controlled_by = TRL }
+								121 = { is_owned_and_controlled_by = TRL }
+								536 = { is_owned_and_controlled_by = TRL }
+							}
 						}
 				}
 			completion_reward = {
@@ -2239,13 +2202,11 @@ focus_tree = {
 										}
 								}
 							if = {
-									TRL = {
-											owns_state = 251
-											owns_state = 600
-											owns_state = 150
-											owns_state = 86
-										}
-								}
+								251 = { is_owned_and_controlled_by = TRL }
+								600 = { is_owned_and_controlled_by = TRL }
+								150 = { is_owned_and_controlled_by = TRL }
+								86 = { is_owned_and_controlled_by = TRL }
+							}
 						}
 				}
 			completion_reward = {
@@ -2294,14 +2255,13 @@ focus_tree = {
 							if = {
 									CHE = {
 											is_puppet_of = TRL
-											owns_state = 580
+											
 										}
+									580 = { is_owned_and_controlled_by = CHE }
 								}
 							if = {
-									TRL = {
-											owns_state = 580
-										}
-								}
+								580 = { is_owned_and_controlled_by = TRL }
+							}
 						}
 				}
 			completion_reward = {
@@ -2509,11 +2469,9 @@ focus_tree = {
 										}
 								}
 							if = {
-									TRL = {
-											owns_state = 451
-											owns_state = 358
-										}
-								}
+								451 = { is_owned_and_controlled_by = TRL }
+								358 = { is_owned_and_controlled_by = TRL }
+							}
 						}
 				}
 			completion_reward = {
@@ -2542,15 +2500,13 @@ focus_tree = {
 										}
 								}
 							if = {
-									TRL = {
-											owns_state = 343
-											owns_state = 298
-											owns_state = 155
-											owns_state = 71
-											owns_state = 323
-											owns_state = 29
-										}
-								}
+								343 = { is_owned_and_controlled_by = TRL }
+								298 = { is_owned_and_controlled_by = TRL }
+								155 = { is_owned_and_controlled_by = TRL }
+								71 = { is_owned_and_controlled_by = TRL }
+								323 = { is_owned_and_controlled_by = TRL }
+								29 = { is_owned_and_controlled_by = TRL }
+							}
 						}
 				}
 			completion_reward = {
@@ -2704,9 +2660,7 @@ focus_tree = {
 			focus = slavemutanthouse
 		}
 		available = {
-			TRL = {
-				owns_state = 235
-			}
+			235 = { is_owned_and_controlled_by = TRL }
 		}
 		x = 18
 		y = 8

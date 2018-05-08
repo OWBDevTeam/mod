@@ -384,9 +384,7 @@ focus_tree = {
 			focus = veg_newvegas
 		}
 		available = {
-			VEG = {
-				owns_state = 211
-			}
+			211 = { is_owned_and_controlled_by = VEG }
 		}
 		x = 28
 		y = 4
@@ -566,9 +564,7 @@ focus_tree = {
 			focus = veg_newvegas
 		}
 		available = {
-			VEG = {
-				owns_state = 211
-			}
+			211 = { is_owned_and_controlled_by = VEG }
 		}
 		x = 32
 		y = 4
@@ -1074,8 +1070,7 @@ focus_tree = {
 		x = 0
 		y = 10
 		available = {
-			owns_state = 46
-			controls_state = 46
+			46 = { is_owned_and_controlled_by = VEG }
 		}
 		completion_reward = {
 			46 = {
@@ -1161,9 +1156,7 @@ focus_tree = {
 			focus = veg_economy
 		}
 		available = {
-			NCR = {
-				owns_state = 252
-			}
+			252 = { is_owned_and_controlled_by = VEG }
 		}
 		x = 6
 		y = 7
@@ -1242,11 +1235,8 @@ focus_tree = {
 			focus = veg_ncrrail
 		}
 		available = {
-			419 = {
-				is_owned_by = NCR
-				is_controlled_by = NCR
-			}
-			VEG = { owns_state = 211 }
+			419 = { is_owned_and_controlled_by = NCR }
+			211 = { is_owned_and_controlled_by = VEG }
 		}
 		x = 6
 		y = 10
