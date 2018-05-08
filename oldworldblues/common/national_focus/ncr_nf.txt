@@ -511,7 +511,7 @@ focus_tree = {
 		x = 2
 		y = 11
 		completion_reward = {
-			BOS = { give_military_access = NCR }
+			NCR = { give_military_access = BOS }
 			remove_ideas = baronswar
 		}
 
@@ -658,6 +658,12 @@ focus_tree = {
 		cost = 4.3
 		prerequisite = {
 			focus = ncr_exodus
+		}
+		available = {
+			any_state = {
+				is_owned_by = NCR
+				is_baron_state = yes
+			}
 		}
 		x = 4
 		y = 10
@@ -996,13 +1002,17 @@ focus_tree = {
 		x = 8
 		y = 9
 		available = {
-			any_country = {
-				AND = {
-					is_in_faction_with = NCR
-					owns_state = 47
-					controls_state = 47
+			OR = {
+				any_country = {
+					AND = {
+						is_in_faction_with = NCR
+						owns_state = 47
+						controls_state = 47
+					}
 				}
-				
+				NCR = {
+					has_full_control_of_state = 47
+				}
 			}
 		}
 		completion_reward = {
@@ -2423,6 +2433,8 @@ focus_tree = {
 		}
 		available = {
 			has_country_flag = hoover_dam_lost
+			533 = { is_owned_and_controlled_by = NCR }
+			272 = { is_owned_and_controlled_by = NCR }
 		}
 		ai_will_do = {
 			factor = 10

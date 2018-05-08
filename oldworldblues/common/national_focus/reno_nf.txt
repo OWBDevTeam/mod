@@ -239,7 +239,6 @@ focus_tree = {
 				owns_state = 382
 				owns_state = 126
 				owns_state = 585
-				
 			}
 		}
 		completion_reward = {
@@ -322,7 +321,6 @@ focus_tree = {
 				owns_state = 160
 				owns_state = 284
 				owns_state = 475
-				
 			}
 		}
 		cost = 8.6
@@ -665,6 +663,12 @@ focus_tree = {
 		prerequisite = {
 			focus = new_renodeal
 		}
+		available = {
+			NEW = {
+				owns_state = 285
+				owns_state = 295
+			}
+		}
 		x = 20
 		y = 3
 		cost = 8.6
@@ -691,6 +695,11 @@ focus_tree = {
 		icon = GFX_goal_generic_large_scale_normal_industry_focus
 		prerequisite = {
 			focus = new_allroads
+		}
+		available = {
+			NEW = {
+				owns_state = 285
+			}
 		}
 		x = 18
 		y = 4
@@ -728,6 +737,11 @@ focus_tree = {
 		prerequisite = {
 			focus = new_sharkclub
 		}
+		available = {
+			NEW = {
+				owns_state = 285
+			}
+		}
 		x = 18
 		y = 5
 		cost = 8.6
@@ -748,6 +762,11 @@ focus_tree = {
 		icon = GFX_goal_generic_cities_focus
 		prerequisite = {
 			focus = new_desperado
+		}
+		available = {
+			NEW = {
+				owns_state = 285
+			}
 		}
 		x = 18
 		y = 6
@@ -770,6 +789,11 @@ focus_tree = {
 		prerequisite = {
 			focus = new_distillery
 		}
+		available = {
+			NEW = {
+				owns_state = 285
+			}
+		}
 		x = 18
 		y = 7
 		cost = 8.6
@@ -790,6 +814,11 @@ focus_tree = {
 		icon = GFX_goal_generic_walls_focus
 		prerequisite = {
 			focus = new_allroads
+		}
+		available = {
+			NEW = {
+				owns_state = 285
+			}
 		}
 		x = 20
 		y = 4
@@ -813,6 +842,11 @@ focus_tree = {
 		icon = GFX_goal_generic_communcation_focus
 		prerequisite = {
 			focus = new_precautions
+		}
+		available = {
+			NEW = {
+				owns_state = 285
+			}
 		}
 		x = 20
 		y = 5
@@ -862,6 +896,11 @@ focus_tree = {
 		prerequisite = {
 			focus = new_farmsteads
 		}
+		available = {
+			NEW = {
+				owns_state = 285
+			}
+		}
 		x = 22
 		y = 5
 		cost = 8.6
@@ -895,6 +934,11 @@ focus_tree = {
 		icon = GFX_goal_generic_military_industry_focus
 		prerequisite = {
 			focus = new_contracts
+		}
+		available = {
+			NEW = {
+				owns_state = 285
+			}
 		}
 		x = 22
 		y = 7
@@ -1499,6 +1543,13 @@ focus_tree = {
 		prerequisite = {
 			focus = new_spoils
 		}
+		available = {
+			NEW = {
+				owns_state = 160
+				owns_state = 284
+				owns_state = 475
+			}
+		}
 		x = 4
 		y = 6
 		cost = 8.6
@@ -1544,6 +1595,13 @@ focus_tree = {
 		icon = GFX_goal_generic_bunkers_focus
 		prerequisite = {
 			focus = new_slavery
+		}
+		available = {
+			NEW = {
+				owns_state = 382
+				owns_state = 126
+				owns_state = 585
+			}
 		}
 		x = 2
 		y = 6
@@ -1607,7 +1665,7 @@ focus_tree = {
 				AND = {
 					exists = yes
 					is_puppet = no
-				}	
+				}
 			}
 		}
 		cancel_if_invalid = yes
@@ -1635,7 +1693,8 @@ focus_tree = {
 				OR = {
 					exists = yes
 					is_puppet = no
-				}	
+				}
+				owns_state = 57
 			}
 		}
 		cancel_if_invalid = yes

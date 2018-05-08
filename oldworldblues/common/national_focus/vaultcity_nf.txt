@@ -236,6 +236,11 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_gecko
 		}
+		available = {
+			VLT = {
+				owns_state = 291
+			}
+		}
 		x = 33
 		y = 4
 		completion_reward = {
@@ -383,6 +388,11 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_utopia
 		}
+		available = {
+			VLT = {
+				owns_state = 336
+			}
+		}
 		x = 35
 		y = 5
 		completion_reward = {
@@ -403,6 +413,11 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = vault_downtown
+		}
+		available = {
+			VLT = {
+				owns_state = 336
+			}
 		}
 		x = 35
 		y = 6
@@ -429,6 +444,11 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = vault_courtyard
+		}
+		available = {
+			VLT = {
+				owns_state = 291
+			}
 		}
 		x = 35
 		y = 7
@@ -462,6 +482,13 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = vault_sec_station
+		}
+		available = {
+			VLT = {
+				owns_state = 336
+				owns_state = 339
+				owns_state = 261
+			}
 		}
 		x = 35
 		y = 8
@@ -647,6 +674,11 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = vault_first_4b
 		}
+		available = {
+			VLT = {
+				owns_state = 291
+			}
+		}
 		x = -1
 		y = 1
 		relative_position_id = vault_first_3
@@ -673,6 +705,11 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = vault_first_4a
+		}
+		available = {
+			VLT = {
+				owns_state = 291
+			}
 		}
 		x = 1
 		y = 1
@@ -787,6 +824,11 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = vault_festus_2
+		}
+		available = {
+			VLT = {
+				owns_state = 339
+			}
 		}
 		x = 0
 		y = 1
@@ -1128,22 +1170,25 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_flock_annex
 		}
+		available = {
+			VLT = {
+				owns_state = 223
+			}
+		}
 		x = 7
 		y = 7
 		completion_reward = {
-			PAL = {
-				add_resource = {
-					type = water
-					amount = 10
-					state = 223
-				}
-				223 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
+			add_resource = {
+				type = water
+				amount = 10
+				state = 223
+			}
+			223 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
 				}
 			}
 		}
@@ -1245,6 +1290,11 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_cyclops_serve
 		}
+		available = {
+			VLT = {
+				owns_state = 621
+			}
+		}
 		x = 0
 		y = 1
 		relative_position_id = vault_cyclops_serve
@@ -1296,6 +1346,11 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = vault_wall
+		}
+		available = {
+			VLT = {
+				owns_state = 291
+			}
 		}
 		x = 33
 		y = 9
