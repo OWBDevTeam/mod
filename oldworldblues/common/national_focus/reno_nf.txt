@@ -1647,6 +1647,7 @@ focus_tree = {
 		}
 
 	}
+	
 	focus = {
 		id = new_klamathagreements
 		icon = GFX_goal_generic_intelligence_exchange
@@ -1661,8 +1662,9 @@ focus_tree = {
 				OR = {
 					exists = yes
 					is_puppet = no
-			}
+				}
 			57 = { is_owned_and_controlled_by = KLA }
+				}
 		}
 		cancel_if_invalid = yes
 		x = 4
@@ -1700,11 +1702,12 @@ focus_tree = {
 				}
 				KLA = { 
 					country_event = { id = nf_reno.8 }
+					}
 				}
 			}
-
 		}
 	}
+	
 	focus = {
 		id = new_takedown
 		icon = GFX_goal_generic_major_war
