@@ -513,11 +513,11 @@ guiTypes = {
 				format = "LEFT"
 			}
 		}
-		
-		#------------------------------------------
-		# Vehicle Folder
-		#------------------------------------------
-		containerWindowType = {
+        
+        #------------------------------------------
+        # Vehicle Folder
+        #------------------------------------------
+        containerWindowType = {
 			name = "fallout_vehicle_folder"
 			position = { x=0 y=47 }
 			size = { width = 100%% height = 100%% }
@@ -535,7 +535,7 @@ guiTypes = {
 				name = "techtree_stripes"
 				position = { x= 0 y= 0 }
 				size = { 
-					width = 2000 height = 1200
+					width = 2000 height = 950
 					min = { width = 100%% height = 100%% }
 				}
 				clipping = no
@@ -547,8 +547,8 @@ guiTypes = {
 					allwaystransparent = yes
 				}
 				
-				# Row Headers
-				instantTextBoxType = {
+                # Row Headers
+                instantTextBoxType = {
 					name = "requirements_header"
 					position = { x = 50 y = 130 }
 					textureFile = ""
@@ -560,14 +560,14 @@ guiTypes = {
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
-				
+                
 				instantTextBoxType = {
-					name = "motorcycles_header"
+					name = "motorisation_header"
 					position = { x = 50 y = 260 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
-					text = "HEADER_MOTORCYCLES"
+					text = "HEADER_MOTORIZATION"
 					maxWidth = 600
 					maxHeight = 62
 					format = left
@@ -588,12 +588,25 @@ guiTypes = {
 				#}
 				
 				instantTextBoxType = {
-					name = "cars_header"
+					name = "motorisation_upgrade_header"
+					position = { x = 50 y = 415 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "HEADER_UPGRADES"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				
+				instantTextBoxType = {
+					name = "mechanisation_header"
 					position = { x = 50 y = 550 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
-					text = "HEADER_CARS"
+					text = "HEADER_MECHANISATION"
 					maxWidth = 600
 					maxHeight = 62
 					format = left
@@ -601,21 +614,21 @@ guiTypes = {
 				}
 				
 				instantTextBoxType = {
-					name = "buses_header"
-					position = { x = 50 y = 420 }
+					name = "mechanisation_upgrade_header"
+					position = { x = 50 y = 685 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
-					text = "HEADER_BUSES"
+					text = "HEADER_UPGRADES"
 					maxWidth = 600
 					maxHeight = 62
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
-				
-				instantTextBoxType = {
+                
+                instantTextBoxType = {
 					name = "tanks_header"
-					position = { x = 50 y = 700 }
+					position = { x = 50 y = 820 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
@@ -625,34 +638,8 @@ guiTypes = {
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
-				
-				instantTextBoxType = {
-					name = "apcs_header"
-					position = { x = 50 y = 850 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 0}
-					text = "HEADER_APCS"
-					maxWidth = 600
-					maxHeight = 62
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				
-				instantTextBoxType = {
-					name = "trucks_header"
-					position = { x = 50 y = 980 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 0}
-					text = "HEADER_TRUCKS"
-					maxWidth = 600
-					maxHeight = 62
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
-				
-				# Column Headers
+                
+                # Column Headers
 				instantTextBoxType = {
 					name = "civilized_column_header"
 					position = { x = 490 y = 20 }
@@ -665,7 +652,7 @@ guiTypes = {
 					Orientation = "UPPER_LEFT"
 				}			
 
-				instantTextBoxType = {
+                instantTextBoxType = {
 					name = "advanced_column_header"
 					position = { x = 1600 y = 20 }
 					font = "hoi_33"
@@ -676,26 +663,15 @@ guiTypes = {
 					format = left
 					Orientation = "UPPER_LEFT"
 				}	
-				
-				instantTextBoxType = {
-					name = "unique_column_header"
-					position = { x = 1885 y = 20 }
-					font = "hoi_33"
-					borderSize = { x = 0 y = 0}
-					text = "SPECIAL_HEADER"
-					maxWidth = 200
-					maxHeight = 32
-					format = left
-					Orientation = "UPPER_LEFT"
-				}
+
 			}
 			
-			# Containers
-			# Each 'column' is 275
-			containerWindowType = {
+            # Containers
+            # Each 'column' is 275
+            containerWindowType = {
 				name = "civilized_tiled_research_bg"
 				position = { x = 460 y=0 }
-				size = { width = 1110 height = 1260 }
+				size = { width = 1110 height = 950 }
 				clipping = no
 			
 				background = {
@@ -707,7 +683,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "advanced_tiled_research_bg"
 				position = { x = 1570 y=0 }
-				size = { width = 285 height = 1260 }
+				size = { width = 570 height = 950 }
 				clipping = no
 			
 				background = {
@@ -715,105 +691,37 @@ guiTypes = {
 					quadTextureSprite ="GFX_blue_tiled_research_bg"
 				}			
 			}
-			
-			containerWindowType = {
-				name = "unique_tiled_research_bg"
-				position = { x = 1855 y=0 }
-				size = { width = 600 height = 1260 }
-				clipping = no
-			
-				background = {
-					name = "Background"
-					quadTextureSprite ="GFX_purple_tiled_research_bg"
-				}			
-			}
-			
-			# Trees
-			gridboxtype = {
+            
+            # Trees
+            gridboxtype = {
 				name = "bike_tech_1_tree"
 				position = { x = 0 y = 150 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
 			}
-			
-			#gridboxtype = {
-			#	name = "buggy_tech_1_tree"
-			#	position = { x = 0 y = 150 }
-			#	slotsize = { width = 70 height = 70 }
-			#	format = "LEFT"
-			#}
-			
-			gridboxtype = {
-				name = "car_tech_1_tree"
+            
+            gridboxtype = {
+				name = "tire_vehicle_tech_tree"
 				position = { x = 0 y = 150 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
 			}
 			
 			gridboxtype = {
-				name = "bus_tech_1_tree"
+				name = "engine_vehicle_tech_tree"
 				position = { x = 0 y = 150 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
 			}
 			
 			gridboxtype = {
-				name = "tank_tech_1_tree"
+				name = "plating_vehicle_tech_tree"
 				position = { x = 0 y = 150 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
 			}
-			
-			gridboxtype = {
-				name = "truck_tech_1_tree"
-				position = { x = 0 y = 150 }
-				slotsize = { width = 70 height = 70 }
-				format = "LEFT"
-			}
-			
-			gridboxtype = {
-				name = "apc_tech_1_tree"
-				position = { x = 0 y = 150 }
-				slotsize = { width = 70 height = 70 }
-				format = "LEFT"
-			}
-			
-			gridboxtype = {
-				name = "eighties_warbikes_tree"
-				position = { x = 0 y = 150 }
-				slotsize = { width = 70 height = 70 }
-				format = "LEFT"
-			}
-			
-			gridboxtype = {
-				name = "legion_motor_chariots_tree"
-				position = { x = 0 y = 150 }
-				slotsize = { width = 70 height = 70 }
-				format = "LEFT"
-			}
-			
-			gridboxtype = {
-				name = "ranger_motorbikes_tree"
-				position = { x = 0 y = 150 }
-				slotsize = { width = 70 height = 70 }
-				format = "LEFT"
-			}
-			
-			gridboxtype = {
-				name = "testudo_apc_tree"
-				position = { x = 0 y = 150 }
-				slotsize = { width = 70 height = 70 }
-				format = "LEFT"
-			}
-			
-			gridboxtype = {
-				name = "super_mutant_battlewagons_tree"
-				position = { x = 0 y = 150 }
-				slotsize = { width = 70 height = 70 }
-				format = "LEFT"
-			}
-			
-			gridboxtype = {
+            
+            gridboxtype = {
 				name = "super_mutant_behemoth_tree"
 				position = { x = 0 y = 150 }
 				slotsize = { width = 70 height = 70 }
@@ -3260,9 +3168,10 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=8 y=3 }
+			position = { x=36 y=36 }
 			spriteType = "GFX_technology_medium"
 			alwaystransparent = yes
+			centerposition = yes
 		}	
 		
 		iconType = {
