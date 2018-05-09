@@ -414,32 +414,27 @@ country_event = {
 }
 #Surplus of Lasers
 country_event = {
-
 	id = nf_brotherhood.17
 	title = nf_brotherhood.17.t
 	desc = nf_brotherhood.17.desc
 	picture = GFX_event_BOS_bunker_door
 
-	
     is_triggered_only = yes
     
 	option = {
 		name = nf_brotherhood.17.a
 		
 		add_manpower = -1600
-		
 		country_event = { id = nf_brotherhood.18 }
 	}
 	
 	option = {
 		name = nf_brotherhood.17.b
 		
-	
 		BOS = {
 			country_event = { id = nf_brotherhood.19 }
 		}
 	}
-
 }
 #Lasers Arrive	
 country_event = {
@@ -454,14 +449,13 @@ country_event = {
 	option = {
 		name = nf_brotherhood.18.a
 		DES = {
-		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 1000 producer = BOS }
+			add_equipment_to_stockpile = { type = energy_equipment_2 amount = 1000 producer = BOS }
 		}
 		
 		BOS = {
 			country_event = { id = nf_brotherhood.20 }
 		}
 	}
-	
 }
 #Refused Shipments
 country_event = {

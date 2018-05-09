@@ -211,12 +211,9 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		available = {
-			NEW = {
-				owns_state = 382
-				owns_state = 126
-				owns_state = 585
-				
-			}
+			382 = { is_owned_and_controlled_by = NEW }
+			126 = { is_owned_and_controlled_by = NEW }
+			585 = { is_owned_and_controlled_by = NEW }
 		}
 		completion_reward = {
 			add_state_core = 382
@@ -235,12 +232,9 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		available = {
-			NEW = {
-				owns_state = 382
-				owns_state = 126
-				owns_state = 585
-				
-			}
+			382 = { is_owned_and_controlled_by = NEW }
+			126 = { is_owned_and_controlled_by = NEW }
+			585 = { is_owned_and_controlled_by = NEW }
 		}
 		completion_reward = {
 			add_manpower = 500
@@ -318,12 +312,9 @@ focus_tree = {
 		x = 4
 		y = 5
 		available = {
-			NEW = {
-				owns_state = 160
-				owns_state = 284
-				owns_state = 475
-				
-			}
+			160 = { is_owned_and_controlled_by = NEW }
+			284 = { is_owned_and_controlled_by = NEW }
+			475 = { is_owned_and_controlled_by = NEW }
 		}
 		cost = 8.6
 		completion_reward = {
@@ -350,12 +341,9 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		available = {
-			NEW = {
-				owns_state = 160
-				owns_state = 284
-				owns_state = 475
-				
-			}
+			160 = { is_owned_and_controlled_by = NEW }
+			284 = { is_owned_and_controlled_by = NEW }
+			475 = { is_owned_and_controlled_by = NEW }
 		}
 		completion_reward = {
 			add_state_core = 160
@@ -665,6 +653,10 @@ focus_tree = {
 		prerequisite = {
 			focus = new_renodeal
 		}
+		available = {
+			285 = { is_owned_and_controlled_by = NEW }
+			295 = { is_owned_and_controlled_by = NEW }
+		}
 		x = 20
 		y = 3
 		cost = 8.6
@@ -691,6 +683,9 @@ focus_tree = {
 		icon = GFX_goal_generic_large_scale_normal_industry_focus
 		prerequisite = {
 			focus = new_allroads
+		}
+		available = {
+			285 = { is_owned_and_controlled_by = NEW }
 		}
 		x = 18
 		y = 4
@@ -728,6 +723,9 @@ focus_tree = {
 		prerequisite = {
 			focus = new_sharkclub
 		}
+		available = {
+			285 = { is_owned_and_controlled_by = NEW }
+		}
 		x = 18
 		y = 5
 		cost = 8.6
@@ -748,6 +746,9 @@ focus_tree = {
 		icon = GFX_goal_generic_cities_focus
 		prerequisite = {
 			focus = new_desperado
+		}
+		available = {
+			285 = { is_owned_and_controlled_by = NEW }
 		}
 		x = 18
 		y = 6
@@ -770,6 +771,9 @@ focus_tree = {
 		prerequisite = {
 			focus = new_distillery
 		}
+		available = {
+			285 = { is_owned_and_controlled_by = NEW }
+		}
 		x = 18
 		y = 7
 		cost = 8.6
@@ -790,6 +794,9 @@ focus_tree = {
 		icon = GFX_goal_generic_walls_focus
 		prerequisite = {
 			focus = new_allroads
+		}
+		available = {
+			285 = { is_owned_and_controlled_by = NEW }
 		}
 		x = 20
 		y = 4
@@ -813,6 +820,9 @@ focus_tree = {
 		icon = GFX_goal_generic_communcation_focus
 		prerequisite = {
 			focus = new_precautions
+		}
+		available = {
+			285 = { is_owned_and_controlled_by = NEW }
 		}
 		x = 20
 		y = 5
@@ -862,6 +872,9 @@ focus_tree = {
 		prerequisite = {
 			focus = new_farmsteads
 		}
+		available = {
+			285 = { is_owned_and_controlled_by = NEW }
+		}
 		x = 22
 		y = 5
 		cost = 8.6
@@ -895,6 +908,9 @@ focus_tree = {
 		icon = GFX_goal_generic_military_industry_focus
 		prerequisite = {
 			focus = new_contracts
+		}
+		available = {
+			285 = { is_owned_and_controlled_by = NEW }
 		}
 		x = 22
 		y = 7
@@ -1499,6 +1515,11 @@ focus_tree = {
 		prerequisite = {
 			focus = new_spoils
 		}
+		available = {
+			160 = { is_owned_and_controlled_by = NEW }
+			284 = { is_owned_and_controlled_by = NEW }
+			475 = { is_owned_and_controlled_by = NEW }
+		}
 		x = 4
 		y = 6
 		cost = 8.6
@@ -1544,6 +1565,11 @@ focus_tree = {
 		icon = GFX_goal_generic_bunkers_focus
 		prerequisite = {
 			focus = new_slavery
+		}
+		available = {
+			382 = { is_owned_and_controlled_by = NEW }
+			126 = { is_owned_and_controlled_by = NEW }
+			585 = { is_owned_and_controlled_by = NEW }
 		}
 		x = 2
 		y = 6
@@ -1607,7 +1633,7 @@ focus_tree = {
 				AND = {
 					exists = yes
 					is_puppet = no
-				}	
+				}
 			}
 		}
 		cancel_if_invalid = yes
@@ -1631,11 +1657,12 @@ focus_tree = {
 			focus = new_takedown
 		}
 		available = {
-			KLA = { 
+			KLA = {
 				OR = {
 					exists = yes
 					is_puppet = no
-				}	
+				}
+				57 = { is_owned_and_controlled_by = KLA }
 			}
 		}
 		cancel_if_invalid = yes
@@ -1676,7 +1703,6 @@ focus_tree = {
 					country_event = { id = nf_reno.8 }
 				}
 			}
-
 		}
 	}
 	focus = {
@@ -1743,12 +1769,10 @@ focus_tree = {
 			focus = new_takedown
 		}
 		available = {
-			NEW = { 
-				owns_state = 57
-				owns_state = 59
-				owns_state = 454
-				owns_state = 467 
-			}
+			57 = { is_owned_and_controlled_by = NEW }
+			59 = { is_owned_and_controlled_by = NEW }
+			454 = { is_owned_and_controlled_by = NEW }
+			467 = { is_owned_and_controlled_by = NEW }
 		}
 		x = 2
 		y = 9

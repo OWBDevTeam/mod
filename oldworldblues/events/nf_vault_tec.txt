@@ -1,0 +1,302 @@
+add_namespace = nf_vault_tec
+
+country_event = {
+	id = nf_vault_tec.1
+	title = nf_vault_tec.1.t
+	desc = nf_vault_tec.1.d 
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_vault_tec.1.a
+		add_resource = {
+			type = water
+			amount = 6
+			state = 380
+		}
+	}
+	option = {
+		name = nf_vault_tec.1.b
+		add_state_core = 380
+		add_manpower = -400
+		hidden_effect = {
+			load_oob = vault_3_security
+		}
+	}
+}
+country_event = {
+	id = nf_vault_tec.2
+	title = nf_vault_tec.2.t
+	desc = nf_vault_tec.2.d 
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_vault_tec.2.a
+		351 = {
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+	option = {
+		name = nf_vault_tec.2.b
+		add_state_core = 351
+		add_manpower = -350
+		hidden_effect = {
+			load_oob = vault_6_security
+		}
+	}
+}
+country_event = {
+	id = nf_vault_tec.3
+	title = nf_vault_tec.3.t
+	desc = nf_vault_tec.3.d 
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_vault_tec.3.a
+		151 = {
+			set_state_name = "Vault 13"
+		}
+		add_ideas = vault_geck_13
+	}
+	option = {
+		name = nf_vault_tec.3.b
+		add_state_core = 151
+		add_manpower = -300
+		151 = {
+			set_state_name = "Vault 13"
+		}
+		hidden_effect = {
+			load_oob = vault_13_security
+		}
+	}
+	option = {
+		name = nf_vault_tec.3.c
+		trigger = {
+			OR = {
+				ARR ={
+					is_puppet_of = VLT
+				}
+				owns_state = 2722
+			}
+		}
+		
+		add_state_core = 151
+		add_ideas = vault_geck_13
+		151 = {
+			set_state_name = "Vault Arroyo"
+		}
+		hidden_effect = {
+			load_oob = vault_13_arroyo
+		}
+	}
+}
+country_event = {
+	id = nf_vault_tec.4
+	title = nf_vault_tec.4.t
+	desc = nf_vault_tec.4.d 
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_vault_tec.4.a
+		add_ideas =	vault_15_heritage
+	}
+	option = {
+		name = nf_vault_tec.4.b
+		add_manpower = -900
+		add_timed_idea = {
+			idea = vault_rebuilding
+			days = 180
+		}
+		add_state_core = 253
+		hidden_effect = {
+			load_oob = vault_15_security
+		}
+	}
+}
+country_event = {
+	id = nf_vault_tec.5
+	title = nf_vault_tec.5.t
+	desc = nf_vault_tec.5.d 
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_vault_tec.5.a
+		if = {
+			limit = {
+				has_tech = explosive_tech_3
+				NOT = {
+					has_tech = explosive_tech_4
+				}
+			}
+			set_technology = {
+				explosive_tech_4 = 1
+			}
+		}
+		if = {
+			limit = {
+				has_tech = explosive_tech_2
+				NOT = {
+					has_tech = explosive_tech_3
+				}
+			}
+			set_technology = {
+				explosive_tech_3 = 1
+			}
+		}
+		if = {
+			limit = {
+				has_tech = explosive_tech
+				NOT = {
+					has_tech = explosive_tech_2
+				}
+			}
+			set_technology = {
+				explosive_tech_2 = 1
+			}
+		}
+		if = {
+			limit = {
+				has_tech = support_weaponry
+				NOT = {
+					has_tech = explosive_tech
+				}
+			}
+			set_technology = {
+				explosive_tech = 1
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_tech = support_weaponry
+				}
+			}
+			set_technology = {
+				support_weaponry = 1
+				explosive_tech = 1
+			}
+		}
+		add_resource = {
+			type = metal
+			amount = 5
+			state = 313
+		}
+	}
+	option = {
+		name = nf_vault_tec.5.b
+		add_state_core = 313
+		add_manpower = -200
+		hidden_effect = {
+			load_oob = vault_19_security
+		}
+		add_timed_idea = {
+			idea = vault_rebuilding
+			days = 180
+		}
+	}
+}
+country_event = {
+	id = nf_vault_tec.6
+	title = nf_vault_tec.6.t
+	desc = nf_vault_tec.6.d 
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_vault_tec.6.a
+		add_ideas = vault_21_economy
+	}
+	option = {
+		name = nf_vault_tec.6.b
+		hidden_effect = {
+			load_oob = vault_21_security
+		}
+		add_manpower = -600
+		add_state_core = 211
+		
+	}
+}
+country_event = {
+	id = nf_vault_tec.7
+	title = nf_vault_tec.7.t
+	desc = nf_vault_tec.7.d 
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_vault_tec.7.a
+		add_ideas = vault_22_research
+	}
+	option = {
+		name = nf_vault_tec.7.b
+		hidden_effect = {
+			news_event = {
+				id = nf_vault_tec.10
+				days = 10
+			}
+			load_oob = vault_22_security
+		}
+		add_manpower = -600
+		add_state_core = 344
+		
+	}
+	option = {
+		name = nf_vault_tec.7.c
+		trigger = {
+			has_tech = flamer_tech_3
+		}
+		add_manpower = -300
+		hidden_effect = {
+			load_oob = vault_22_clearance
+			load_oob = vault_22_security
+		}
+	}
+}
+country_event = {
+	id = nf_vault_tec.8
+	title = nf_vault_tec.8.t
+	desc = nf_vault_tec.8.d 
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_vault_tec.8.a
+		
+	}
+	option = {
+		name = nf_vault_tec.8.b
+		
+	}
+}
+country_event = {
+	id = nf_vault_tec.9
+	title = nf_vault_tec.9.t
+	desc = nf_vault_tec.9.d 
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_vault_tec.9.a
+		
+	}
+	option = {
+		name = nf_vault_tec.9.b
+		
+	}
+}
+news_event = {
+	id = nf_vault_tec.10
+	title = nf_vault_tec.10.t
+	desc = nf_vault_tec.10.d 
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = nf_vault_tec.10.a 
+	}
+}
+	

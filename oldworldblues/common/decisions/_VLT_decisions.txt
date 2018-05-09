@@ -1,0 +1,343 @@
+vault_tec_calling_category = {
+
+	vault_raise_flock = {
+		
+		icon = generic_independence
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		
+		available = {
+			has_country_flag = vault_tec_calling
+			PAL = {
+				is_puppet_of = VLT
+			}
+		}
+		visible = {
+			has_country_flag = vault_tec_calling
+			PAL = {
+				is_puppet_of = VLT
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = helpflock
+			hidden_effect = {
+				load_oob = vault_flock
+			}
+		}
+	}
+	vault_polyphemus = {
+		icon = generic_independence
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 20
+		}
+		
+		available = {
+			has_country_flag = vault_tec_calling
+			CYC = {
+				is_puppet_of = VLT
+			}
+		}
+		visible = {
+			has_country_flag = vault_tec_calling
+			CYC = {
+				is_puppet_of = VLT
+			}
+		}
+		complete_effect = {
+			create_corps_commander = {
+				name = "Polyphemus"
+				id = 950
+				gfx = "gfx/leaders/VLT/Portrait_security_chief.dds"
+				traits = { 
+					settlement_protector
+				}
+				skill = 5
+				attack_skill = 1
+				defense_skill = 4
+				planning_skill = 2
+				logistics_skill = 2
+			}
+		}
+	}
+		
+		
+
+	#Vault Decisions
+	vault_3 = {
+
+		icon = generic_independence
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			has_country_flag = vault_tec_calling
+		    owns_state = 380
+		}
+		visible = {
+			has_country_flag = vault_tec_calling
+		}
+		complete_effect = {
+			country_event = nf_vault_tec.1
+		}
+		
+	}
+	vault_6 = {
+
+		icon = generic_independence
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			has_country_flag = vault_tec_calling
+		    owns_state = 351
+		}
+		visible = {
+			has_country_flag = vault_tec_calling
+		}
+		complete_effect = {
+			country_event = nf_vault_tec.2
+			add_manpower = -300
+		}
+		
+	}
+	vault_13 = {
+
+		icon = generic_independence
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			has_country_flag = vault_tec_calling
+		    owns_state = 151
+		}
+		visible = {
+			has_country_flag = vault_tec_calling
+		}
+		complete_effect = {
+			country_event = nf_vault_tec.3
+		}
+		
+	}
+	vault_15 = {
+
+		icon = generic_independence
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			has_country_flag = vault_tec_calling
+		    owns_state = 253
+		}
+		visible = {
+			has_country_flag = vault_tec_calling
+		}
+		complete_effect = {
+			country_event = nf_vault_tec.4
+			253 = {
+				set_state_name = "Vault 15"
+			}
+		}
+		
+	}
+	vault_19 = {
+
+		icon = generic_independence
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			has_country_flag = vault_tec_calling
+		    owns_state = 313
+		}
+		visible = {
+			has_country_flag = vault_tec_calling
+		}
+		complete_effect = {
+			country_event = nf_vault_tec.5
+			313 = {
+				set_state_name = "Vault 19"
+			}
+		}
+		
+	}
+	vault_21 = {
+
+		icon = generic_independence
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			has_country_flag = vault_tec_calling
+		    owns_state = 211
+		}
+		visible = {
+			has_country_flag = vault_tec_calling
+		}
+		complete_effect = {
+			country_event = nf_vault_tec.6
+			211 = {
+				set_state_name = "Vault 21"
+			}
+		}
+		
+	}
+	vault_22 = {
+
+		icon = generic_independence
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			has_country_flag = vault_tec_calling
+		    owns_state = 344
+		}
+		visible = {
+			has_country_flag = vault_tec_calling
+		}
+		complete_effect = {
+			country_event = nf_vault_tec.7
+			344 = {
+				set_state_name = "Vault 22"
+			}
+		}
+		
+	}
+	vault_34 = {
+
+		icon = generic_independence
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			has_country_flag = vault_tec_calling
+		    owns_state = 154
+		}
+		visible = {
+			has_country_flag = vault_tec_calling
+		}
+		complete_effect = {
+			country_event = nf_vault_tec.8
+			154 = {
+				set_state_name = "Vault 34"
+			}
+			set_country_flag = vault_34
+		}
+		
+	}
+	vault_70 = {
+
+		icon = generic_independence
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			has_country_flag = vault_tec_calling
+		    owns_state = 551
+		}
+		visible = {
+			has_country_flag = vault_tec_calling
+		}
+		complete_effect = {
+			country_event = nf_vault_tec.9
+			551 = {
+				set_state_name = "Vault 70"
+			}
+		}
+		
+	}
+}
+
+
+
+vault_brain_category = {
+	vault_dip_cyclops = {
+
+		icon = generic_independence
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			has_country_flag = vault_brain
+		    owns_state = 612
+		}
+		visible = {
+			has_country_flag = vault_brain
+		}
+		complete_effect = {
+			hidden_effect = {
+				load_oob = vault_cyclops_brain
+			}
+		}
+		
+	}
+	vault_dip_pale = {
+
+		icon = generic_independence
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			has_country_flag = vault_brain
+		    owns_state = 223
+		}
+		visible = {
+			has_country_flag = vault_brain
+		}
+		complete_effect = {
+			hidden_effect = {
+				load_oob = vault_flock_brain
+			}
+		}
+		
+	}
+	vault_dip_yakuza = {
+
+		icon = generic_independence
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 45
+		}
+		available = {
+			has_country_flag = vault_brain
+		    owns_state = 160
+		}
+		visible = {
+			has_country_flag = vault_brain
+		}
+		complete_effect = {
+			hidden_effect = {
+				load_oob = vault_yakuza_brain
+			}
+		}
+		
+	}
+
+}
