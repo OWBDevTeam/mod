@@ -84,9 +84,12 @@ focus_tree = {
 		y = 4
 		completion_reward = {
 			add_political_power = 20
+			set_country_flag = vault_tec_calling
 		}
 
 	}
+	
+	#Cyclops
 	focus = {
 		id = vault_cyclops
 		icon = GFX_goal_generic_war_focus
@@ -104,8 +107,216 @@ focus_tree = {
 			}
 			
 		}
+	}
+	focus = {
+		id = vault_cyclops_serve
+		icon = GFX_focus_generic_self_management
+		cost = 8.6
+		prerequisite = {
+			focus = vault_cyclops
+		}
+		mutually_exclusive = {
+			focus = vault_cyclops_eager
+		}
+		available = {
+			CYC = {
+				exists = no
+			}
+		}
+		x = 1
+		y = 1
+		relative_position_id = vault_cyclops
+		completion_reward = {
+			add_state_core = 612
+			add_state_core = 363
+			add_state_core = 100
+			add_state_core = 129
+		}
 
 	}
+	focus = {
+		id = vault_cyclops_fort
+		icon = GFX_goal_generic_walls_focus
+		cost = 8.6
+		prerequisite = {
+			focus = vault_cyclops_serve
+		}
+		x = 0
+		y = 1
+		relative_position_id = vault_cyclops_serve
+		completion_reward = {
+			add_resource = {
+				type = metal
+				amount = 10
+				state = 612
+			}
+			612 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = vault_cyclops_eager
+		icon = GFX_goal_generic_common_firearms_focus
+		cost = 8.6
+		prerequisite = {
+			focus = vault_cyclops
+		}
+		mutually_exclusive = {
+			focus = vault_cyclops_serve
+		}
+		available = {
+			CYC = {
+				is_puppet_of = VLT
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = vault_cyclops
+		completion_reward = {
+			CYC = {
+				add_ideas = eagercyclops
+			}
+		}
+
+	}
+	focus = {
+		id = vault_cyclops_hounds
+		icon = GFX_goal_generic_recruitment_focus
+		cost = 8.6
+		prerequisite = {
+			focus = vault_cyclops_eager
+		}
+		x = 0
+		y = 1
+		relative_position_id = vault_cyclops_eager
+		completion_reward = {
+			CYC = {
+				add_ideas = houndsnorth
+			}
+		}
+	}
+	
+	#Flock
+	focus = {
+		id = vault_flock
+		icon = GFX_goal_generic_war_focus
+		cost = 8.6
+		prerequisite = {
+			focus = vault_tribals
+		}
+		x = 6
+		y = 5
+		completion_reward = {
+			add_political_power = 60
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = PAL
+			}
+			
+		}
+		will_lead_to_war_with = PAL
+
+	}
+	focus = {
+		id = vault_flock_diagnose
+		icon = GFX_focus_research
+		cost = 8.6
+		prerequisite = {
+			focus = vault_flock
+		}
+		mutually_exclusive = {
+			focus = vault_flock_annex
+		}
+		available = {
+			PAL = {
+				is_puppet_of = VLT
+			}
+		}
+		x = -1
+		y = 1
+		relative_position_id = vault_flock
+		completion_reward = {
+			add_ideas = flockdoc
+		}
+
+	}
+	focus = {
+		id = vault_flock_annex
+		icon = GFX_focus_generic_self_management
+		cost = 8.6
+		prerequisite = {
+			focus = vault_flock
+		}
+		mutually_exclusive = {
+			focus = vault_flock_diagnose
+		}
+		x = 1
+		y = 1
+		relative_position_id = vault_flock
+		available = {
+			PAL = {
+				exists = no
+			}
+		}
+		completion_reward = {
+			add_state_core = 223
+			add_state_core = 458
+			add_state_core = 273
+		}
+
+	}
+	
+	focus = {
+		id = vault_flock_goggles
+		icon = GFX_goal_generic_air_doctrines_focus
+		cost = 8.6
+		prerequisite = {
+			focus = vault_flock_diagnose
+		}
+		x = 0
+		y = 1
+		relative_position_id = vault_flock_diagnose
+		completion_reward = {
+			PAL = {
+				add_ideas = flockgoggles
+			}
+		}
+
+	}
+	focus = {
+		id = vault_flock_filters
+		icon = GFX_goal_generic_food_focus
+		cost = 8.6
+		prerequisite = {
+			focus = vault_flock_annex
+		}
+		x = 7
+		y = 7
+		completion_reward = {
+			add_resource = {
+				type = water
+				amount = 10
+				state = 223
+			}
+			223 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+	
 	focus = {
 		id = vault_politics
 		text = vault_politics
@@ -141,6 +352,7 @@ focus_tree = {
 			completion_reward = {
 					add_political_power = 60
 					add_ideas = molethumb
+					set_country_flag = vault_brain
 				}
 
 	}
@@ -235,9 +447,6 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = vault_gecko
-		}
-		available = {
-			291 = { is_owned_and_controlled_by = VLT }
 		}
 		x = 33
 		y = 4
@@ -386,9 +595,6 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_utopia
 		}
-		available = {
-			336 = { is_owned_and_controlled_by = VLT }
-		}
 		x = 35
 		y = 5
 		completion_reward = {
@@ -409,9 +615,6 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = vault_downtown
-		}
-		available = {
-			336 = { is_owned_and_controlled_by = VLT }
 		}
 		x = 35
 		y = 6
@@ -438,9 +641,6 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = vault_courtyard
-		}
-		available = {
-			291 = { is_owned_and_controlled_by = VLT }
 		}
 		x = 35
 		y = 7
@@ -474,11 +674,6 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = vault_sec_station
-		}
-		available = {
-			336 = { is_owned_and_controlled_by = VLT }
-			339 = { is_owned_and_controlled_by = VLT }
-			261 = { is_owned_and_controlled_by = VLT }
 		}
 		x = 35
 		y = 8
@@ -542,26 +737,7 @@ focus_tree = {
 		}
 
 	}
-	focus = {
-		id = vault_flock
-		icon = GFX_goal_generic_war_focus
-		cost = 8.6
-		prerequisite = {
-			focus = vault_tribals
-		}
-		x = 6
-		y = 5
-		completion_reward = {
-			add_political_power = 60
-			create_wargoal = {
-				type = puppet_wargoal_focus
-				target = PAL
-			}
-			
-		}
-		will_lead_to_war_with = PAL
-
-	}
+	
 	focus = {
 		id = vault_first_2
 		text = vault_first_2
@@ -664,9 +840,6 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = vault_first_4b
 		}
-		available = {
-			291 = { is_owned_and_controlled_by = VLT }
-		}
 		x = -1
 		y = 1
 		relative_position_id = vault_first_3
@@ -693,9 +866,6 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = vault_first_4a
-		}
-		available = {
-			291 = { is_owned_and_controlled_by = VLT }
 		}
 		x = 1
 		y = 1
@@ -810,9 +980,6 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = vault_festus_2
-		}
-		available = {
-			339 = { is_owned_and_controlled_by = VLT }
 		}
 		x = 0
 		y = 1
@@ -1031,292 +1198,49 @@ focus_tree = {
 		}
 
 	}
+	
 	focus = {
-		id = vault_flock_diagnose
-		icon = GFX_focus_research
-		cost = 8.6
-		prerequisite = {
-			focus = vault_flock
-		}
-		mutually_exclusive = {
-			focus = vault_flock_annex
-		}
-		available = {
-			PAL = {
-				is_puppet_of = VLT
-			}
-		}
-		x = -1
-		y = 1
-		relative_position_id = vault_flock
-		completion_reward = {
-			add_ideas = flockdoc
-		}
-
-	}
-	focus = {
-		id = vault_flock_annex
-		icon = GFX_focus_generic_self_management
-		cost = 8.6
-		prerequisite = {
-			focus = vault_flock
-		}
-		mutually_exclusive = {
-			focus = vault_flock_diagnose
-		}
-		x = 1
-		y = 1
-		relative_position_id = vault_flock
-		available = {
-			PAL = {
-				exists = no
-			}
-		}
-		completion_reward = {
-			add_state_core = 223
-			add_state_core = 458
-			add_state_core = 273
-		}
-
-	}
-	focus = {
-		id = vault_cyclops_serve
-		icon = GFX_focus_generic_self_management
-		cost = 8.6
-		prerequisite = {
-			focus = vault_cyclops
-		}
-		mutually_exclusive = {
-			focus = vault_cyclops_eager
-		}
-		available = {
-			CYC = {
-				exists = no
-			}
-		}
-		x = 1
-		y = 1
-		relative_position_id = vault_cyclops
-		completion_reward = {
-			add_state_core = 612
-			add_state_core = 363
-			add_state_core = 100
-			add_state_core = 129
-		}
-
-	}
-	focus = {
-		id = vault_cyclops_eager
-		icon = GFX_goal_generic_common_firearms_focus
-		cost = 8.6
-		prerequisite = {
-			focus = vault_cyclops
-		}
-		mutually_exclusive = {
-			focus = vault_cyclops_serve
-		}
-		available = {
-			CYC = {
-				is_puppet_of = VLT
-			}
-		}
-		x = -1
-		y = 1
-		relative_position_id = vault_cyclops
-		completion_reward = {
-			CYC = {
-				add_ideas = eagercyclops
-			}
-		}
-
-	}
-	focus = {
-		id = vault_flock_goggles
-		icon = GFX_goal_generic_air_doctrines_focus
-		cost = 8.6
-		prerequisite = {
-			focus = vault_flock_diagnose
-		}
-		x = 0
-		y = 1
-		relative_position_id = vault_flock_diagnose
-		completion_reward = {
-			PAL = {
-				add_ideas = flockgoggles
-			}
-		}
-
-	}
-	focus = {
-		id = vault_flock_filters
-		icon = GFX_goal_generic_food_focus
-		cost = 8.6
-		prerequisite = {
-			focus = vault_flock_annex
-		}
-		available = {
-			223 = { is_owned_and_controlled_by = VLT }
-		}
-		x = 7
-		y = 7
-		completion_reward = {
-			add_resource = {
-				type = water
-				amount = 10
-				state = 223
-			}
-			223 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-
-	}
-	focus = {
-		id = vault_flock_brain
-		icon = GFX_goal_bos_steel_giants
-		cost = 8.6
-		prerequisite = {
-			focus = vault_flock_filters
-		}
-		x = 0
-		y = 1
-		relative_position_id = vault_flock_filters
-		available = {
-			has_country_leader = {
-				id = 913
-				ruling_only = yes
-				name = "The Brain"
-				}
-			}
-		completion_reward = {
-			load_oob = vault_flock_brain
-		}
-
-	}
-	focus = {
-		id = vault_flock_help
-		icon = GFX_focus_generic_little_entente
+		id = vault_riperult
+		icon = GFX_goal_generic_war_focus
 		cost = 2.00
 		prerequisite = {
 			focus = vault_flock_goggles
+			focus = vault_flock_filters
 		}
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = vault_flock_goggles
-		available = {
-			has_war = yes
-		}
+		will_lead_to_war_with = RIP
 		completion_reward = {
-			custom_effect_tooltip = helpflock
-			hidden_effect = {
-				load_oob = vault_flock
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = RIP
 			}
+			
 		}
 
 	}
+	
 	focus = {
-		id = vault_cyclops_hounds
-		icon = GFX_goal_generic_recruitment_focus
-		cost = 8.6
-		prerequisite = {
-			focus = vault_cyclops_eager
-		}
-		x = 0
-		y = 1
-		relative_position_id = vault_cyclops_eager
-		completion_reward = {
-			CYC = {
-				add_ideas = houndsnorth
-			}
-		}
-	}
-	focus = {
-		id = vault_cyclops_help
-		icon = GFX_goal_generic_land_doctrines_focus
+		id = vault_shoshone
+		icon = GFX_goal_generic_war_focus
 		cost = 2.00
 		prerequisite = {
 			focus = vault_cyclops_hounds
-		}
-		x = 0
-		y = 1
-		relative_position_id = vault_cyclops_hounds
-		available = {
-			has_war = yes
-		}
-		completion_reward = {
-			create_corps_commander = {
-				name = "Polyphemus"
-				id = 950
-				gfx = "gfx/leaders/VLT/Portrait_security_chief.dds"
-				traits = { 
-					settlement_protector
-				}
-				skill = 5
-				attack_skill = 1
-				defense_skill = 4
-				planning_skill = 2
-				logistics_skill = 2
-			}
-		}
-
-	}
-	focus = {
-		id = vault_cyclops_fort
-		icon = GFX_goal_generic_walls_focus
-		cost = 8.6
-		prerequisite = {
-			focus = vault_cyclops_serve
-		}
-		available = {
-			261 = { is_owned_and_controlled_by = VLT }
-		}
-		x = 0
-		y = 1
-		relative_position_id = vault_cyclops_serve
-		completion_reward = {
-			add_resource = {
-				type = metal
-				amount = 10
-				state = 612
-			}
-			612 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-
-	}
-	focus = {
-		id = vault_cyclops_army
-		icon = GFX_goal_bos_steel_giants
-		cost = 8.6
-		prerequisite = {
 			focus = vault_cyclops_fort
 		}
-		x = 0
+		x = 1
 		y = 1
-		relative_position_id = vault_cyclops_fort
-		available = {
-			has_country_leader = {
-				id = 913
-				ruling_only = yes
-				name = "The Brain"
-			}
-		}
+		relative_position_id = vault_cyclops_hounds
 		completion_reward = {
-			load_oob = vault_cyclops_brain
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = RIP
+			}
 		}
 
 	}
+	
 	focus = {
 		id = vault_gem
 		icon = GFX_goal_generic_cities_focus
@@ -1326,9 +1250,6 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = vault_wall
-		}
-		available = {
-			291 = { is_owned_and_controlled_by = VLT }
 		}
 		x = 33
 		y = 9
