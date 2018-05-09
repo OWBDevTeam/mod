@@ -1199,10 +1199,12 @@ focus_tree = {
 
 	}
 	
+	#Riperult
+	
 	focus = {
 		id = vault_riperult
 		icon = GFX_goal_generic_war_focus
-		cost = 2.00
+		cost = 8.6
 		prerequisite = {
 			focus = vault_flock_goggles
 			focus = vault_flock_filters
@@ -1220,11 +1222,87 @@ focus_tree = {
 		}
 
 	}
+	focus = {
+		id = vault_rip_puppet
+		icon = GFX_goal_anschluss
+		cost = 8.6
+		prerequisite = {
+			focus = vault_riperult
+		}
+		x = -1
+		y = 1
+		relative_position_id = vault_riperult
+		completion_reward = {
+			
+		}
+				
+		
+	}
+	focus = {
+		id = vault_rip_pop
+		icon = GFX_goal_anschluss
+		cost = 8.6
+		prerequisite = {
+			focus = vault_rip_puppet
+		}
+		x = 0
+		y = 1
+		relative_position_id = vault_rip_puppet
+		completion_reward = {
+			
+		}
+				
+		
+	}
+	focus = {
+		id = vault_rip_crescent
+		icon = GFX_goal_anschluss
+		cost = 8.6
+		prerequisite = {
+			focus = vault_riperult
+		}
+		x = 1
+		y = 1
+		relative_position_id = vault_riperult
+		completion_reward = {
+			add_state_core = 426
+			add_state_core = 183
+			add_state_core = 485
+			add_state_core = 328
+			add_state_core = 219
+			
+		}
+				
+		
+	}
+	focus = {
+		id = vault_rip_water
+		icon = GFX_goal_anschluss
+		cost = 8.6
+		prerequisite = {
+			focus = vault_rip_crescent
+		}
+		x = 0
+		y = 1
+		relative_position_id = vault_rip_crescent
+		completion_reward = {
+			add_resource = {
+				type = water
+				amount = 8
+				state = 426
+			}
+			
+		}
+				
+		
+	}
+	
+	#Shoshone
 	
 	focus = {
 		id = vault_shoshone
 		icon = GFX_goal_generic_war_focus
-		cost = 2.00
+		cost = 8.6
 		prerequisite = {
 			focus = vault_cyclops_hounds
 			focus = vault_cyclops_fort
@@ -1235,10 +1313,80 @@ focus_tree = {
 		completion_reward = {
 			create_wargoal = {
 				type = puppet_wargoal_focus
-				target = RIP
+				target = EAS
 			}
 		}
 
+	}
+	focus = {
+		id = vault_sho_puppet
+		icon = GFX_goal_anschluss
+		cost = 8.6
+		prerequisite = {
+			focus = vault_shoshone
+		}
+		x = -1
+		y = 1
+		relative_position_id = vault_shoshone
+		completion_reward = {
+			
+		}
+				
+		
+	}
+	focus = {
+		id = vault_sho_pop
+		icon = GFX_goal_anschluss
+		cost = 8.6
+		prerequisite = {
+			focus = vault_sho_puppet
+		}
+		x = 0
+		y = 1
+		relative_position_id = vault_sho_puppet
+		completion_reward = {
+			
+		}
+				
+		
+	}
+	focus = {
+		id = vault_sho_core
+		icon = GFX_goal_anschluss
+		cost = 8.6
+		prerequisite = {
+			focus = vault_shoshone
+		}
+		x = 1
+		y = 1
+		relative_position_id = vault_shoshone
+		completion_reward = {
+			add_state_core = 
+			add_state_core = 
+			add_state_core = 
+			add_state_core = 
+			add_state_core = 
+			
+		}
+				
+		
+	}
+	focus = {
+		id = vault_sho_bonus
+		icon = GFX_goal_anschluss
+		cost = 8.6
+		prerequisite = {
+			focus = vault_sho_core
+		}
+		x = 0
+		y = 1
+		relative_position_id = vault_sho_core
+		completion_reward = {
+			
+			
+		}
+				
+		
 	}
 	
 	focus = {
