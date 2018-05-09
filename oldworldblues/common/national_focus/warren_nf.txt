@@ -1619,7 +1619,7 @@ focus_tree = {
 		x = 6
 		y = 8
 		available = {
-			or = {
+			OR = {
 				if = {
 					ARR = {
 						is_puppet_of = TRL
@@ -2251,24 +2251,22 @@ focus_tree = {
 		}
 		x = 4
 		y = 10
-			available = {
-					or = {
-							if = {
-									CHE = {
-											is_puppet_of = TRL
-											
-										}
-									580 = { is_owned_and_controlled_by = CHE }
-								}
-							if = {
-								580 = { is_owned_and_controlled_by = TRL }
-							}
-						}
+		available = {
+			or = {
+				if = {
+					CHE = {
+						is_puppet_of = TRL
+					}
+					580 = { is_owned_and_controlled_by = CHE }
 				}
-			completion_reward = {
-					add_ideas = warren_chemult_armory
+				if = {
+					580 = { is_owned_and_controlled_by = TRL }
 				}
-
+			}
+		}
+		completion_reward = {
+			add_ideas = warren_chemult_armory
+		}
 	}
 	focus = {
 		id = greattribes
