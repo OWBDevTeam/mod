@@ -1,6 +1,5 @@
 # For Determining Nation Categories in Script
 # EX: National focuses, technologies etc.
-# If tags get removed altogether from any catagories the generic_decisions need to be updated to reflect that
 is_tribal_nation = {
     OR = {
         original_tag = ANT
@@ -32,6 +31,8 @@ is_tribal_nation = {
         original_tag = UIN
         original_tag = YAK
         original_tag = YMP
+	original_tag = ATE
+	original_tag = CIR
 		original_tag = WHT # temp
 		has_country_flag = is_tribal_nation
     }
@@ -65,6 +66,11 @@ is_raider_nation = {
 		original_tag = THO
         original_tag = VIP
         original_tag = YKZ
+	original_tag = KAM
+	original_tag = SIN
+	original_tag = WHD
+	original_tag = WHI
+	original_tag = HEA
 		has_country_flag = is_raider_nation
     }
 }
@@ -98,6 +104,10 @@ is_settler_nation = {
 		original_tag = TWO
 		original_tag = SHI
 		original_tag = TOC
+		original_tag = ARM
+		original_tag = BLO
+		original_tag = RRG
+		original_tag = FFI
 		has_country_flag = is_settler_nation
     }
 }
@@ -114,6 +124,12 @@ is_super_mutant = {
         original_tag = TRL
 		has_country_flag = is_super_mutant
     }
+}
+is_ghoul_nation = {
+	OR = {
+		original_tag = TOC
+		has_country_flag = is_ghoul_nation
+	}
 }
 is_brotherhood_nation = {
 	OR = {
