@@ -28,13 +28,19 @@ Supermutant
 Each of these categories has associated portraits, voice files, and database entries which you must add for your nation to have these features enabled for your nation. If you are working on the Old World Blues team, all of the following still works, just put it into existing files rather than creating new ones.
 
 
+
+
 Portraits:
 Found in the oldworldblues/portraits. You will see our existing categories setup in there, it’s recommended that you create your own file rather than modifying our existing one, it can be called anything just put it into the same portraits folder. Each set of portraits is defined by the unique 3 letter TAG for your nation with separators in between them. Find the category you want to use and then copy from the start of any nation within denoted by “TAG = {“ to the end with the last curly brace. Paste that into your newly created file and change the TAG to your nation. Your nation will now generate generic portraits from this category.
 TIP: if you want to use any of these portraits for leader portraits, for commanders you can use “portrait_path = “ or for country leaders “portrait = “ when generating leaders.
+Names: 
+        Similar to portrait files and not necessarily related just to nation categories, this one is optional and only for stuff like tribals in our mod. In common/names, add a new text file, inside you might spot a category you want to use, similar to portraits just copy paste a section and replace their TAG with your own. Otherwise you can add your own names and such, these are used for things like generated ace pilots, country leaders, commanders etc.
 
 
 Voice Files:
-        Similar to portrait files, you can find the voice files in oldworldblues/sound. In there you will see files called “vo_nationcategory”, E.X “vo_ghoul” for ghoul voices. Even though these are called “.asset” files they are essentially just normal text files, you can read them and save them with any text editor. Create a new .asset file, or copy an existing one and change its name. Copy the whole top section, which starts with “category = “. Once you have that top section, copy over one of the existing sections for a nation. Each one should have a comment showing the top of it, I.E “########## BRK”, copy all of this section until another nation’s section or the sound files section. In your new file, you should now have a top section which says “category =” and a bunch of sections saying “sound effect =”. Inside your file, for the top “category =” section, it has a “sound effects =” section inside it, remove all of entries with other tags except for the nation you copied the other section (“sound effect =”) from. Now just simply replace all instances of the 3 letter TAG you copied from to your new/modified nation, and then in game your nation will have the voices for that category of nation.
+        Again, similar to portrait files, you can find the voice files in oldworldblues/sound. In there you will see files called “vo_nationcategory”, E.X “vo_ghoul” for ghoul voices. Even though these are called “.asset” files they are essentially just normal text files, you can read them and save them with any text editor. Create a new .asset file, or copy an existing one and change its name. Copy the whole top section, which starts with “category = “. Once you have that top section, copy over one of the existing sections for a nation. Each one should have a comment showing the top of it, I.E “########## BRK”, copy all of this section until another nation’s section or the sound files section. In your new file, you should now have a top section which says “category =” and a bunch of sections saying “sound effect =”. Inside your file, for the top “category =” section, it has a “sound effects =” section inside it, remove all of entries with other tags except for the nation you copied the other section (“sound effect =”) from. Now just simply replace all instances of the 3 letter TAG you copied from to your new/modified nation, and then in game your nation will have the voices for that category of nation.
+
+
 
 
 Database Entries: 
