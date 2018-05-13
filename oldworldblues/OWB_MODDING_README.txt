@@ -143,6 +143,11 @@ In order to remove this protection:
 This can be either in an effect for an event, or just as a line in their history file.
 
 
+If you for whatever reason want to make your nation a huge warmonger, use:
+“set_country_flag = hyper_aggressive_ai”
+This will make it justify war 10x more often than it normally would.
+
+
 NOTE: any claims given before this flag was added will still allow them to be justified on, and normal wargoals against them still work, this just excludes the AI from then on gaining any more claims to justify.
 
 
