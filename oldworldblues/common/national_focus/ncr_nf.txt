@@ -2608,6 +2608,12 @@ focus_tree = {
 			focus = ncr_powertopeople
 			focus = ncr_heavytroops
 		}
+		bypass = {
+			OR = {
+				has_war_with = CES
+				NOT = { country_exists = CES }
+			}
+		}
 		will_lead_to_war_with = CES
 		available = {
 			date > 2279.1.1
