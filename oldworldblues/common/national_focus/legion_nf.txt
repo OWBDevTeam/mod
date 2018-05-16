@@ -2205,6 +2205,12 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_poking_the_bear
 		}
+		bypass = {
+			OR = {
+				has_war_with = NCR
+				NOT = { country_exists = NCR }
+			}
+		}
 		x = 9
 		y = 15
 		ai_will_do = {
