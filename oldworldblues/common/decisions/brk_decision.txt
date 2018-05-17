@@ -24,12 +24,14 @@ brk_decisions = {
 	}
 }
 
+# Setting variables for the below #
 @border_incident_escalation_countdown = 30
 @border_conflict_incident_forgotten_timer = 30
 @border_conflict_escalate_to_war_countdown = 45
 @border_conflict_time_until_cancelled = 360
 
 brk_raiding = {
+	## GENERIC RAIDING SEGMENT ##
 	# Initiation Decision #
 	brk_raid_borders_initial_raid = {
 		icon = border_war
@@ -51,15 +53,20 @@ brk_raiding = {
 						set_temp_variable = { var:defender_state_temp = id } # ID of the target state is set to a temp variable
 					}
 				}
-				custom_trigger_tooltip = {
-					tooltip = brk_can_raid_vic_or_hai
-					OR = {
-						FROM = { tag = VIC }
-						FROM = { tag = HAI }
-					}
-				}
+				# 
+				#custom_trigger_tooltip = {
+				#	tooltip = brk_can_raid_vic_or_hai
+				#	OR = {
+				#		FROM = { tag = VIC }
+				#		FROM = { tag = HAI }
+				#	}
+				#}
 			}
 			NOT = { has_non_aggression_pact_with = FROM }
+			custom_trigger_tooltip = {
+				tooltip = BRK_prelim_raid
+				NOT = { has_country_flag = BRK_prelim_raid }
+			}
 		}
 
 		visible = {
@@ -228,18 +235,19 @@ brk_raiding = {
 				hidden_effect = {
 					scavenge_equipment_randomiser = yes
 				}
+				clr_country_flag = raid_backed_down
 				country_event = { id = nf_event_brk.10 }
 				FROM = { country_event = { id = nf_event_brk.12 } }
-				clr_country_flag = raid_backed_down
 			}
 			if = {
 				limit = {
 					has_country_flag = raid_stood_up
 				}
-				country_event = { id = nf_event_brk.11 }
 				clr_country_flag = raid_stood_up
+				country_event = { id = nf_event_brk.11 }
 				activate_targeted_decision = { target = FROM decision = brk_light_border_escalate } # Activates a decision for them to escalate the incident
 			}
+			clr_country_flag = BRK_prelim_raid
 		}
 	}
 
