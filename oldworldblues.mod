@@ -1,4 +1,4 @@
-name="Old World Blues(dev)"
+name="Old World Blues"
 path="mod/oldworldblues/"
 tags={
 	"Alternative History"
