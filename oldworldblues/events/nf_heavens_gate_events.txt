@@ -10,26 +10,18 @@ country_event = {
     
 	option = {
 		name = nf_event_hea.1.a
-		add_ideas = brk_startup_natives
+		add_ideas = hea_startup_militant
 		
 		ai_chance = {
-			base = 33
+			base = 50
 		}
 	}
     option = {
 		name = nf_event_hea.1.b
-		add_ideas = brk_startup_marines
+		add_ideas = hea_startup_agriculture
 		
 		ai_chance = {
-			base = 33
-		}
-	}
-	option = {
-		name = nf_event_hea.1.c
-		add_ideas = brk_startup_sailors
-		
-		ai_chance = {
-			base = 33
+			base = 50
 		}
 	}
 }
@@ -44,27 +36,18 @@ country_event = {
     
 	option = {
 		name = nf_event_hea.2.a
-		add_ideas = brk_startup_fled
+		add_ideas = hea_startup_stationary_pilgrims
 		
 		ai_chance = {
-			base = 33
+			base = 50
 		}
 	}
     option = {
 		name = nf_event_hea.2.b
-		add_ideas = brk_startup_sheltered
+		add_ideas = hea_startup_traveling_pilgrims
 		
 		ai_chance = {
-			base = 33
-		}
-	}
-	
-	option = {
-		name = nf_event_hea.2.c
-		add_ideas = brk_startup_weathered
-		
-		ai_chance = {
-			base = 33
+			base = 50
 		}
 	}
 }
@@ -79,7 +62,7 @@ country_event = {
     
 	option = {
 		name = nf_event_hea.3.a
-		add_ideas = brk_startup_slaves
+		add_ideas = hea_startup_let_them_in
 		
 		ai_chance = {
 			base = 50
@@ -87,7 +70,87 @@ country_event = {
 	}
     option = {
 		name = nf_event_hea.3.b
-		add_ideas = brk_startup_riches
+		add_ideas = hea_startup_better_be_careful
+		
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+country_event = {
+	id = nf_event_hea.4
+	title = nf_event_hea.4.t
+	desc = nf_event_hea.4.d
+	picture = GFX_event_NCR_settlers
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_event_hea.4.a
+		
+		if = {
+			limit = { has_idea = hea_startup_let_them_in }
+			add_ideas = hea_innocence_lost_idea
+		}
+		
+		if = {
+			limit = { has_idea = hea_startup_better_be_careful }
+			add_ideas = hea_innocence_lost_idea_lessend
+		}
+		
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+
+country_event = {
+	id = nf_event_hea.5
+	title = nf_event_hea.5.t
+	desc = nf_event_hea.5.d
+	picture = GFX_event_NCR_settlers
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_event_hea.5.a
+		LON = { country_event = { id = nf_event_hea.50 }}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+}
+
+country_event = {
+	id = nf_event_hea.50
+	title = nf_event_hea.50.t
+	desc = nf_event_hea.50.d
+	picture = GFX_event_NCR_settlers
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_event_hea.50.a
+		
+		HEA = { 
+			annex_country = { target = LON } 
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = {
+		name = nf_event_hea.50.b
+		
+		HEA = {
+			create_wargoal = {
+				type = annex_everything
+				target = LON
+			}
+		}
 		
 		ai_chance = {
 			base = 50

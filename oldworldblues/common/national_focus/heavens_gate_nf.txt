@@ -34,12 +34,12 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			country_event = { id = nf_event_hea.1 }
+			country_event = { id = nf_event_hea.2 }
 		}
 	}
 	
 	focus = {
-		id = hea_nf_ritual
+		id = hea_nf_tribals
 		icon = GFX_goal_generic_building_focus
 		cost = 1.00
 		x = 14
@@ -50,7 +50,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			country_event = { id = nf_event_hea.2 }
+			country_event = { id = nf_event_hea.3 }
 		}
 	}	
 	
@@ -62,11 +62,11 @@ focus_tree = {
 		y = 3
 
 		prerequisite = {
-			focus = hea_nf_ritual
+			focus = hea_nf_tribals
 		}
 		
 		completion_reward = {
-			country_event = { id = nf_event_hea.3 }
+			country_event = { id = nf_event_hea.4 }
 		}
 	}
 	
@@ -99,6 +99,7 @@ focus_tree = {
 		
 		available = {
 			OR = {
+				has_idea = hea_innocence_lost_idea_lessend
 				has_completed_focus = hea_nf_fog_of_mercy
 				has_completed_focus = hea_nf_boilers_of_justice
 			}
@@ -144,6 +145,7 @@ focus_tree = {
 		
 		available = {
 			OR = {
+				has_idea = hea_innocence_lost_idea_lessend
 				has_completed_focus = hea_nf_fog_of_mercy
 				has_completed_focus = hea_nf_boilers_of_justice
 			}
@@ -231,6 +233,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			add_political_power = 50
 		}
 	}
 	
@@ -250,6 +253,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			add_manpower = 500
 		}
 	}
 	
@@ -265,6 +269,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			swap_ideas = {
+				add_idea = hea_innocence_lost_idea_lessend
+				remove_idea = hea_innocence_lost_idea
+		   }
 		}
 	}
 	
@@ -284,6 +292,10 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			swap_ideas = {
+				add_idea = hea_rampant_militarism
+				remove_idea = hea_innocence_lost_idea
+		   }
 		}
 	}
 	
@@ -299,6 +311,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			add_ideas = hea_boilers_of_justice
 		}
 	}
 	
@@ -317,8 +330,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-		
-		
+			add_political_power = 50
 		}
 	}
 	
@@ -825,7 +837,10 @@ focus_tree = {
 		}
 				
 		completion_reward = {
-			add_ideas = hea_age_of_steam_idea
+			swap_ideas = {
+				add_idea = hea_age_of_steam_idea
+				remove_idea = hea_steam_power
+		   }
 		}
 	}
 	
@@ -1107,6 +1122,10 @@ focus_tree = {
 		prerequisite = {
 			focus = hea_nf_innocence_lost
 		}
+		
+		available = {
+			has_completed_focus = hea_nf_consolidate_pol
+		}
 				
 		completion_reward = {
 
@@ -1149,6 +1168,7 @@ focus_tree = {
 		}
 				
 		completion_reward = {
+			country_event = { id = nf_event_hea.6 }
 		}
 	}
 	
@@ -1209,6 +1229,7 @@ focus_tree = {
 		}
 				
 		completion_reward = {
+			country_event = { id = nf_event_hea.7 }
 		}
 	}
 	
@@ -1232,64 +1253,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hea_nf_gods_militia
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 27
-		y = 5
-		
-		prerequisite = {
-			focus = hea_nf_foreign_ministry
-		}
-		
-		completion_reward = {
-			add_ideas = hea_gods_militia
-		}
-	}
-	
-	focus = {
-		id = hea_nf_gods_militia_1
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 27
-		y = 6
-		
-		prerequisite = {
-			focus = hea_nf_gods_militia
-		}
-		
-		completion_reward = {
-			swap_ideas = {
-				add_idea = hea_gods_militia_1
-				remove_idea = hea_gods_militia
-		   }
-		}
-	}
-	
-	focus = {
-		id = hea_nf_gods_militia_2
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 27
-		y = 7
-		
-		prerequisite = {
-			focus = hea_nf_gods_militia_1
-		}
-		
-		completion_reward = {
-			swap_ideas = {
-				add_idea = hea_gods_militia_2
-				remove_idea = hea_gods_militia_1
-		   }
-		}
-	}
-	
-	focus = {
 		id = hea_nf_embassy_lonetree
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 29
+		x = 27
 		y = 5
 		
 		prerequisite = {
@@ -1307,7 +1274,7 @@ focus_tree = {
 		id = hea_nf_demand_submission_lonetree
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 29
+		x = 27
 		y = 6
 		
 		prerequisite = {
@@ -1315,6 +1282,7 @@ focus_tree = {
 		}
 				
 		completion_reward = {
+			country_event = { id = nf_event_hea.5 }
 		}
 	}
 }
