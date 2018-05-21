@@ -25,7 +25,7 @@ country_event = {
 		    traits = {
 			    dislikes_legion
 			}
-			id = 983
+			id = 990
 		}	
 	}
 	option = {
@@ -41,7 +41,7 @@ country_event = {
             traits = {
                 dislikes_legion
             }
-	        id = 982
+	        id = 990
         }	
 	}
 }
@@ -324,7 +324,7 @@ country_event = {
 	option = {
 	    name = nf_mojave.18.option.a
 		
-		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 250 producer = MOJ }
+		add_tech_bonus = { bonus = 0.75 uses = 1 category = energy_weaponry_tech }
 	}
 }
 country_event = { 
@@ -390,10 +390,13 @@ country_event = {
     
 	option = {
 	    name = nf_mojave.22.option.a
-		random_list = {
-		    50 = { country_event = { id = nf_mojave.23 days = 115 } }
-			50 = { country_event = { id = nf_mojave.24 days = 115 } }
-		}
+		
+		hidden_effect = {
+		    random_list = {
+		        50 = { country_event = { id = nf_mojave.23 days = 115 } }
+			    50 = { country_event = { id = nf_mojave.24 days = 115 } }
+		    }
+		}	
 		set_country_flag = { flag = MOJ_Elijah_Expedition days = 120 value = 1 }
 	}
 }
@@ -425,5 +428,22 @@ country_event = {
 		
 		add_ideas = mojave_holograms 
 		clr_country_flag = MOJ_Elijah_Expedition
+	}
+}
+country_event = { 
+	id = nf_mojave.25
+	title = nf_mojave.25.t
+	desc = nf_mojave.25.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+	    name = nf_mojave.25.option.a
+		
+		MOJ = {
+			set_state_owner = 417
+			set_state_controller = 417
+		}
 	}
 }
