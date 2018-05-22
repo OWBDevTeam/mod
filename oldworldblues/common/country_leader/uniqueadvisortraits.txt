@@ -807,8 +807,13 @@ leader_traits = {
 
 	warren_hunter = {
 		random = no
-		#soft_attack = 0.05#needs to be applied see war_dog for example
-		#defense = 0.05
+		equipment_bonus = {
+			infantry_equipment = {
+				instant = yes
+				breakthrough = 0.15
+				soft_attack = 0.15
+			}
+		}
 		
 		ai_will_do = {
 			factor = 1
