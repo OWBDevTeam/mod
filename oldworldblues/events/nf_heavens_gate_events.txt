@@ -157,3 +157,116 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = nf_event_hea.6 
+	title = nf_event_hea.6.t
+	desc = nf_event_hea.6.d
+	picture = GFX_event_NCR_settlers
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_event_hea.6.a
+		trigger = {
+			MUR = { is_ai = yes } #Ai will always say yes
+		}
+		
+		IF = { limit = { is_in_faction = no }
+			create_faction = "defensive_league"
+		} 
+		
+		add_to_faction = MUR
+        
+	}
+	
+	option = {
+		name = nf_event_hea.6.b
+		trigger = {
+			MUR = { is_ai = no } #Player gets to say no
+		}
+	
+		MUR = {
+			country_event = { id = nf_event_hea.60 }
+		}
+		
+	}
+	
+}
+
+country_event = { 
+	id = nf_event_hea.60
+	title = nf_event_hea.60.t
+	desc = nf_event_hea.60.d
+	picture = GFX_event_NCR_settlers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_event_hea.60.a
+		
+		HEA = {
+			add_to_faction = MUR 
+			}
+		}
+	option = {
+		name  = nf_event_hea.60.b
+			}
+}
+
+country_event = {
+	id = nf_event_hea.7 
+	title = nf_event_hea.7.t
+	desc = nf_event_hea.7.d
+	picture = GFX_event_NCR_settlers
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_event_hea.7.a
+		trigger = {
+			IRE = { is_ai = yes } #Ai will always say yes
+		}
+		
+		IF = { limit = { is_in_faction = no }
+			create_faction = "defensive_pact"
+		} 
+		
+		add_to_faction = IRE
+        
+	}
+	
+	option = {
+		name = nf_event_hea.7.b
+		trigger = {
+			IRE = { is_ai = no } #Player gets to say no
+		}
+	
+		IRE = {
+			country_event = { id = nf_event_hea.70 }
+		}
+		
+	}
+	
+}
+
+country_event = { 
+	id = nf_event_hea.70
+	title = nf_event_hea.70.t
+	desc = nf_event_hea.70.d
+	picture = GFX_event_NCR_settlers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_event_hea.70.a
+		
+		HEA = {
+			add_to_faction = IRE 
+			}
+		}
+	option = {
+		name  = nf_event_hea.70.b
+			}
+}
+

@@ -501,7 +501,7 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = hea_nf_army_3
+		id = hea_nf_army_2
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
 		x = 5
@@ -1084,7 +1084,7 @@ focus_tree = {
 	focus = {
 		id = hea_nf_industry_5
 		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
+		cost = 17.2
 		x = 14
 		y = 10
 		
@@ -1145,13 +1145,17 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = hea_nf_embassy_ires
 		}
+		
+		available = {
+			country_exists = MUR
+		}
 				
 		completion_reward = {
 			MUR = {
-				add_opinion_modifier = { target = HEA modifier = has_embassy }
+				add_opinion_modifier = { target = HEA modifier = hea_has_embassy }
 			}
 			IRE = {
-				add_opinion_modifier = { target = HEA modifier = enemy_embassy }
+				add_opinion_modifier = { target = HEA modifier = hea_enemy_embassy }
 			}
 		}
 	}
@@ -1165,6 +1169,10 @@ focus_tree = {
 		
 		prerequisite = {
 			focus = hea_nf_embassy_murtaugh
+		}
+		
+		available = {
+			country_exists = MUR
 		}
 				
 		completion_reward = {
@@ -1181,6 +1189,10 @@ focus_tree = {
 		
 		prerequisite = {
 			focus = hea_nf_defensive_league
+		}
+		
+		available = {
+			country_exists = IRE
 		}
 				
 		completion_reward = {
@@ -1205,13 +1217,17 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = hea_nf_embassy_murtaugh
 		}
+		
+		available = {
+			country_exists = IRE
+		}
 				
 		completion_reward = {
 			IRE = {
-				add_opinion_modifier = { target = HEA modifier = has_embassy }
+				add_opinion_modifier = { target = HEA modifier = hea_has_embassy }
 			}
 			MUR = {
-				add_opinion_modifier = { target = HEA modifier = enemy_embassy }
+				add_opinion_modifier = { target = HEA modifier = hea_enemy_embassy }
 			}
 
 		}
@@ -1226,6 +1242,10 @@ focus_tree = {
 		
 		prerequisite = {
 			focus = hea_nf_embassy_ires
+		}
+		
+		available = {
+			country_exists = IRE
 		}
 				
 		completion_reward = {
@@ -1242,6 +1262,10 @@ focus_tree = {
 		
 		prerequisite = {
 			focus = hea_nf_defensive_pact
+		}
+		
+		available = {
+			country_exists = MUR
 		}
 				
 		completion_reward = {
@@ -1262,6 +1286,10 @@ focus_tree = {
 		prerequisite = {
 			focus = hea_nf_foreign_ministry
 		}
+		
+		available = {
+			country_exists = LON
+		}
 				
 		completion_reward = {
 			LON = {
@@ -1279,6 +1307,10 @@ focus_tree = {
 		
 		prerequisite = {
 			focus = hea_nf_embassy_lonetree
+		}
+		
+		available = {
+			country_exists = LON
 		}
 				
 		completion_reward = {
