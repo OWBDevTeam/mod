@@ -228,7 +228,6 @@ country_event = {
 		}
 	}
 }
-#Alaskan Expedition#
 country_event = { 
 	id = nf_washington.8
 	title = nf_washington.8.t
@@ -239,5 +238,23 @@ country_event = {
     
 	option = {
 		name = nf_washington.8.option.a
+		
+		hidden_effect = {
+		    country_event = { id = nf_washington.9 days = 50 }
+		}
+	}
+}
+country_event = { 
+	id = nf_washington.9
+	title = nf_washington.9.t
+	desc = nf_washington.9.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+		name = nf_washington.9.option.a
+		
+		add_ideas = washington_alaskan_tech
 	}
 }
