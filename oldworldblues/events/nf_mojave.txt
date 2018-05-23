@@ -256,6 +256,10 @@ country_event = {
     
 	option = {
 	    name = nf_mojave.14.option.a
+		
+		ai_will_do = {
+		    factor = 25
+		}
 	    MOJ = {
 		    country_event = { id = nf_mojave.15 days = 1 }
 		}
@@ -263,8 +267,8 @@ country_event = {
 	option = {
 	    name = nf_mojave.14.option.b
 	    MOJ = {
-		    country_event = { id = nf_mojave.16 days = 1 }
-		}	
+		    country_event = { id = nf_mojave.26 days = 1 }
+		}
 	}
 }
 country_event = { 
@@ -277,7 +281,15 @@ country_event = {
     
 	option = {
 	    name = nf_mojave.15.option.a
-	    diplomatic_relation = { country = NCR relation = non_aggression_pact }
+	    
+		hidden_effect = {
+		    MOJ = {
+				give_military_access = NCR
+			}
+			NCR = {
+				give_military_access = MOJ
+			}
+		}
 	}
 }
 country_event = { 
@@ -445,5 +457,84 @@ country_event = {
 			set_state_owner = 417
 			set_state_controller = 417
 		}
+	}
+}
+country_event = { 
+	id = nf_mojave.26
+	title = nf_mojave.26.t
+	desc = nf_mojave.26.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+	    name = nf_mojave.26.option.a
+		
+	}
+}
+country_event = { 
+	id = nf_mojave.27
+	title = nf_mojave.27.t
+	desc = nf_mojave.27.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+	    name = nf_mojave.27.option.a
+		
+		NCR = {
+		    country_event = { id = nf_mojave.28 days = 1 }
+		}
+	}
+}
+country_event = { 
+	id = nf_mojave.28
+	title = nf_mojave.28.t
+	desc = nf_mojave.28.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+	    name = nf_mojave.28.option.a
+		
+		MOJ = {
+		    country_event = { id = nf_mojave.29 days = 1 }
+		}
+	}
+	option = {
+	    name = nf_mojave.28.option.b
+		
+		MOJ = {
+		    country_event = { id = nf_mojave.30 days = 1 }
+		}
+	}
+}
+country_event = { 
+	id = nf_mojave.29
+	title = nf_mojave.29.t
+	desc = nf_mojave.29.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+	    name = nf_mojave.29.option.a
+		
+		diplomatic_relation = { country = NCR relation = non_aggression_pact }
+	}
+}
+country_event = { 
+	id = nf_mojave.30
+	title = nf_mojave.30.t
+	desc = nf_mojave.30.d
+	picture = GFX_event_generic_settlement_2
+
+    is_triggered_only = yes
+    
+	option = {
+	    name = nf_mojave.30.option.a
+		
 	}
 }
