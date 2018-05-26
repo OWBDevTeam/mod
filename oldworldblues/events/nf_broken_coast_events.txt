@@ -619,3 +619,290 @@ country_event = { # Border Conflict Escalation
 		name = nf_event_brk.20.a
 	}	
 }
+
+# BRK / VIC raiding events #
+
+country_event = { # Event for HAI / (Practice) Raid Underway
+	id = nf_event_brk.21
+	title = nf_event_brk.21.t
+	desc = nf_event_brk.21.d
+
+	#picture = 
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_brk.21.a
+		add_war_support = 0.05
+	}
+}
+
+country_event = { # BRK / Raid Success
+	id = nf_event_brk.22
+	title = nf_event_brk.22.t
+	desc = nf_event_brk.22.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_brk.22.a
+		army_experience = 10
+		add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+	}
+}
+
+country_event = { # HAI / Failed Defence
+	id = nf_event_brk.23
+	title = nf_event_brk.23.t
+	desc = nf_event_brk.23.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_brk.23.a
+		decimate_half_all_industry = yes
+		army_experience = 5
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
+	}
+}
+
+country_event = { # BRK / Raid Failure
+	id = nf_event_brk.24
+	title = nf_event_brk.24.t
+	desc = nf_event_brk.24.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_brk.24.a
+		army_experience = 5
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
+	}
+}
+
+country_event = { # HAI / Defence Success
+	id = nf_event_brk.25
+	title = nf_event_brk.25.t
+	desc = nf_event_brk.25.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_brk.25.a
+		army_experience = 10
+		add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+	}
+}
+
+country_event = { # VIC / BRK raiding coasts
+	id = nf_event_brk.26
+	title = nf_event_brk.26.t
+	desc = nf_event_brk.26.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_brk.26.a
+	}
+}
+
+country_event = { # BRK / Raiding Success v VIC coast
+	id = nf_event_brk.27
+	title = nf_event_brk.27.t
+	desc = nf_event_brk.27.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_brk.27.a
+		army_experience = 10
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = naval_tech }
+	}
+}
+
+country_event = { # BRK / Raiding Success v VIC coast
+	id = nf_event_brk.28
+	title = nf_event_brk.28.t
+	desc = nf_event_brk.28.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_brk.28.a
+		army_experience = 5
+	}
+}
+
+country_event = { # VIC / BRK raiding ports
+	id = nf_event_brk.29
+	title = nf_event_brk.29.t
+	desc = nf_event_brk.29.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_brk.29.a
+	}
+}
+
+country_event = { # BRK / Raid Success
+	id = nf_event_brk.30
+	title = nf_event_brk.30.t
+	desc = nf_event_brk.30.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_brk.30.a
+		army_experience = 10
+		add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+	}
+}
+
+country_event = { # VIC / Failed Defence
+	id = nf_event_brk.31
+	title = nf_event_brk.31.t
+	desc = nf_event_brk.31.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_brk.31.a
+		decimate_half_naval_industry = yes
+		army_experience = 5
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
+	}
+}
+
+country_event = { # BRK / Raid Failure
+	id = nf_event_brk.32
+	title = nf_event_brk.32.t
+	desc = nf_event_brk.32.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_brk.32.a
+		army_experience = 5
+		add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
+	}
+}
+
+country_event = { # VIC / Defence Success
+	id = nf_event_brk.33
+	title = nf_event_brk.33.t
+	desc = nf_event_brk.33.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_brk.33.a
+		army_experience = 10
+		add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+	}
+}
+
+country_event = { # BRK / Winter Harbour Plan selection
+	id = nf_event_brk.34
+	title = nf_event_brk.34
+	desc = nf_event_brk.34
+
+	is_triggered_only = yes
+
+	option = {
+		ai_chance = { base = 3 }
+		name = nf_event_brk.34.a
+		custom_effect_tooltip = brk_vic_plan_1_tt
+		set_country_flag = brk_vic_plan_1
+	}
+
+	option = {
+		ai_chance = { base = 5 }
+		name = nf_event_brk.34.b
+		custom_effect_tooltip = brk_vic_plan_2_tt
+		set_country_flag = brk_vic_plan_2
+	}
+
+	option = {
+		ai_chance = { base = 2 }
+		name = nf_event_brk.34.c
+		custom_effect_tooltip = brk_vic_plan_3_tt
+		set_country_flag = brk_vic_plan_3
+	}
+}
+
+country_event = { # VIC / Raiders seize Winter Harbour and war
+	id = nf_event_brk.35
+	title = nf_event_brk.35.t
+	desc = nf_event_brk.35.d
+
+	is_triggered_only = yes
+
+	option = { # fight for our homeland
+		name = nf_event_brk.35.a
+		add_ideas = brk_vic_patriotic_defence
+	}
+}
+
+country_event = { # VIC / Raiders seize Winter Harbour (no war)
+	id = nf_event_brk.36
+	title = nf_event_brk.36.t
+	desc = nf_event_brk.36.d
+
+	is_triggered_only = yes
+
+	option = {
+		ai_chance = { base = 1 }
+		name = nf_event_brk.36.a
+		add_stability = -0.1
+	}
+
+	option = {
+		ai_chance = { base = 9 }
+		name = nf_event_brk.36.b
+		declare_war_on = { target = BRK type = annex_everything }
+		add_ideas = brk_vic_patriotic_defence
+	}
+}
+
+country_event = { # VIC / Raiders raid Winter Harbour
+	id = nf_event_brk.37
+	title = nf_event_brk.37.t
+	desc = nf_event_brk.37.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_brk.37.a
+		add_stability = -0.1
+		461 = { decimate_half_all_industry = yes }
+	}
+}
+
+country_event = { # BRK / Show of Strength
+	id = nf_event_brk.38
+	title = nf_event_brk.38.t
+	desc = nf_event_brk.38.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_event_brk.38.a
+		add_war_support = 0.05
+		army_experience = 10
+	}
+}
+
+country_event = { # VIC / Raiders declare war
+	id = nf_event_brk.39
+	title = nf_event_brk.39.t
+	desc = nf_event_brk.39.d
+
+	is_triggered_only = yes
+
+	option = { # fight for our homeland
+		name = nf_event_brk.39.a
+		add_ideas = brk_vic_patriotic_defence
+	}
+}

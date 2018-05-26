@@ -30,7 +30,292 @@ brk_decisions = {
 @border_conflict_escalate_to_war_countdown = 45
 @border_conflict_time_until_cancelled = 360
 
+brk_raiding_vic = {
+	## Victoria Raid Chain ##
+
+	# The Practice Raid #
+	brk_vic_practice_raid = {
+		icon = infiltrate_state
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = brk_vic_raid_underway_tt
+				NOT = { has_country_flag = brk_vic_raid_underway }
+			}
+		}
+		visible = {
+			NOT = { has_country_flag = brk_vic_first_raid }
+			NOT = { has_country_flag = brk_vic_practice_raid }
+			HAI = { exists = yes } # The target exists - handy
+			NOT = { has_war_with = HAI } # We aren't at war with the target
+			HAI = {
+				NOT = {
+					is_subject_of = BRK # They aren't a subject of us
+				}
+				NOT = {
+					is_in_faction_with = BRK # We aren't in a faction with them
+				}
+			}
+			NOT = {
+				is_subject_of = HAI # We aren't their subject
+			}
+			NOT = { has_non_aggression_pact_with = HAI }
+		}
+
+		days_remove = 40
+		days_re_enable = 60
+		cost = 50
+
+		complete_effect = {
+			HAI = {
+				country_event = { id = nf_event_brk.21 hours = 1 } # The target gets an event warning them about their impending doom
+			}
+			set_country_flag = brk_vic_raid_underway
+		}
+
+		remove_effect = {
+			clr_country_flag = brk_vic_raid_underway
+			random_list = {
+				80 = {
+					set_country_flag = brk_vic_practice_raid
+					custom_effect_tooltip = brk_vic_success_tt
+					country_event = { id = nf_event_brk.22 }
+					HAI = { country_event = { id = nf_event_brk.23 } }
+				}
+				20 = {
+					custom_effect_tooltip = brk_vic_failure_tt
+					country_event = { id = nf_event_brk.24 }
+					HAI = { country_event = { id = nf_event_brk.25 } }
+				}
+			}
+		}
+	}
+
+	# Raiding the Coats #
+
+	brk_vic_raid_the_coasts = {
+		icon = infiltrate_state
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = brk_vic_raid_underway_tt
+				NOT = { has_country_flag = brk_vic_raid_underway }
+			}
+		}
+
+		days_remove = 40
+		days_re_enable = 80
+		cost = 50
+
+		complete_effect = {
+			set_country_flag = brk_vic_raid_underway
+			VIC = { country_event = { id = nf_event_brk.26 } }
+		}
+		remove_effect = {
+			clr_country_flag = brk_vic_raid_underway
+			if = {
+				limit = { has_country_flag = brk_vic_practice_raid }
+				random_list = {
+					80 = {
+						set_country_flag = brk_vic_first_raid
+						custom_effect_tooltip = brk_vic_success_tt
+						country_event = { id = nf_event_brk.27 } # Next Decsion activation handeled in this event
+						VIC = { country_event = { id = nf_event_brk.23 } } # Intentionally the same event as practice raid
+					}
+					20 = {
+						custom_effect_tooltip = brk_vic_failure_tt
+						country_event = { id = nf_event_brk.28 }
+						HAI = { country_event = { id = nf_event_brk.25 } } # Intentionally the same event as practice raid
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = brk_vic_practice_raid }
+				}
+				random_list = {
+					60 = {
+						set_country_flag = brk_vic_first_raid
+						custom_effect_tooltip = brk_vic_success_tt
+						country_event = { id = nf_event_brk.27 } # Next Decsion activation handeled in this event
+						VIC = { country_event = { id = nf_event_brk.23 } } # Intentionally the same event as practice raid
+					}
+					40 = {
+						custom_effect_tooltip = brk_vic_failure_tt
+						country_event = { id = nf_event_brk.28 }
+						HAI = { country_event = { id = nf_event_brk.25 } } # Intentionally the same event as practice raid
+					}
+				}
+				custom_effect_tooltip = brk_vic_improve_odd_tt
+			}
+		}
+	}
+
+	# Raiding the Ports #
+
+	brk_vic_raid_the_ports = {
+		icon = infiltrate_state
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = brk_vic_raid_underway_tt
+				NOT = { has_country_flag = brk_vic_raid_underway }
+			}
+			custom_trigger_tooltip = {
+				tooltip = brk_vic_coast_raid_tt
+				has_country_flag = brk_vic_first_raid
+			}
+		}
+
+		days_remove = 60
+		days_re_enable = 100
+		cost = 50
+
+		complete_effect = {
+			set_country_flag = brk_vic_raid_underway
+			VIC = { country_event = { id = nf_event_brk.29 } }
+		}
+		remove_effect = {
+			clr_country_flag = brk_vic_raid_underway
+			if = {
+				limit = { has_country_flag = brk_vic_practice_raid }
+				random_list = {
+					70 = {
+						set_country_flag = brk_vic_port_raid
+						custom_effect_tooltip = brk_vic_success_tt
+						country_event = { id = nf_event_brk.30 } # Next Decsion activation handeled in this event
+						VIC = { country_event = { id = nf_event_brk.31 } } # Intentionally the same event as practice raid
+					}
+					30 = {
+						custom_effect_tooltip = brk_vic_failure_tt
+						country_event = { id = nf_event_brk.32 }
+						HAI = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = brk_vic_practice_raid }
+				}
+				random_list = {
+					50 = {
+						set_country_flag = brk_vic_port_raid
+						custom_effect_tooltip = brk_vic_success_tt
+						country_event = { id = nf_event_brk.30 } # Next Decsion activation handeled in this event
+						VIC = { country_event = { id = nf_event_brk.31 } } # Intentionally the same event as practice raid
+					}
+					50 = {
+						custom_effect_tooltip = brk_vic_failure_tt
+						country_event = { id = nf_event_brk.32 }
+						HAI = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
+					}
+				}
+				custom_effect_tooltip = brk_vic_improve_odd_tt
+			}
+		}
+
+	}
+
+	# Seize the Winter Harbour #
+
+	brk_vic_seize_winter_harbour = {
+		icon = generic_ignite_civil_war
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = brk_vic_raid_underway_tt
+				NOT = { has_country_flag = brk_vic_raid_underway }
+			}
+			custom_trigger_tooltip = {
+				tooltip = brk_vic_port_raid_tt
+				has_country_flag = brk_vic_port_raid
+			}
+		}
+
+		war_with_on_remove = VIC
+		days_remove = 100
+		cost = 50
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = { id = nf_event_brk.34 }
+			#add_state_claim = 
+		}
+
+		modifier = {
+			planning_speed = -0.2
+			invasion_preparation = -0.1
+		}
+
+		highlight_states = {
+			state = 461
+		}
+
+		remove_effect = {
+			set_country_flag = brk_vic_harbour_seized
+			if = { # Plan 1 - War Plan
+				limit = {
+					has_country_flag = brk_vic_plan_1
+				}
+				declare_war_on = { target = VIC type = annex_everything }
+				custom_effect_tooltip = brk_vic_plan_1_tt
+				hidden_effect = { load_oob = BRK_VIC_plan_1}
+				VIC = { country_event = { id = brk_nf_event.35 } }
+			}
+			if = { # Plan 2 - Catch and Hold
+				limit = { has_country_flag = brk_vic_plan_2 }
+				hidden_effect = { transfer_state = 461 }
+				custom_effect_tooltip = brk_vic_plan_2_tt
+				hidden_effect = { load_oob = BRK_VIC_plan_2 }
+				VIC = { country_event = { id = brk_nf_event.36 } }
+			}
+			if = { # Plan 3 - Show of Strength
+				limit = { has_country_flag = brk_vic_plan_3 }
+				custom_effect_tooltip = brk_vic_plan_3_tt
+				country_event = { id = brk_nf_event.38 }
+				VIC = { country_event = { id = brk_nf_event.37 } }
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_country_flag = brk_vic_plan_1
+							has_country_flag = brk_vic_plan_2
+							has_country_flag = brk_vic_plan_3
+						}
+					}
+				}
+				custom_effect_tooltip = brk_vic_choose_plan_tt
+			}
+		}
+	}
+
+	# War for New Victoria #
+	brk_vic_wartime = {
+		icon = oppression
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = brk_vic_raid_underway_tt
+				NOT = { has_country_flag = brk_vic_raid_underway }
+			}
+			custom_trigger_tooltip = {
+				tooltip = brk_vic_port_seized_tt
+				has_country_flag = brk_vic_harbour_seized
+			}
+			NOT = { has_war_with = VIC }
+		}
+
+		war_with_on_remove = VIC
+		days_remove = 10
+		cost = 10
+		fire_only_once = yes
+
+		remove_effect = {
+			declare_war_on = { target = VIC type = annex_everything }
+			add_war_support = 0.
+			VIC = { country_event = { id = nf_event_brk.39 } }
+		}
+	}
+}
+
 brk_raiding = {
+
 	## GENERIC RAIDING SEGMENT ##
 	# Initiation Decision #
 	brk_raid_borders_initial_raid = {
@@ -103,18 +388,6 @@ brk_raiding = {
 				FROM = {
 					is_neighbor_of = BRK
 				}
-				AND = {
-					FROM = { tag = HAI }
-					HAI = {
-						exists = yes
-					}
-				}
-				AND = {
-					FROM = { tag = VIC }
-					VIC = {
-						exists = yes
-					}
-				}
 			}
 		}
 
@@ -140,7 +413,7 @@ brk_raiding = {
 			}
 		}
 
-		cost = 100 # Cost
+		cost = 50 # Cost
 
 		fire_only_once = no # Does it fire only once?
 

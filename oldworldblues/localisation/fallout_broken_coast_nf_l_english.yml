@@ -164,9 +164,9 @@
  nf_event_brk.5.t:0 "Breaking Whistler"
  nf_event_brk.5.d:0 "They know they are no match for us. We will make them bow to us! We will demand their surrender and annexation into the Coast."
  nf_event_brk.5.a:0 "Send the Demand"
- nf_event_brk.5.t:0 ""
- nf_event_brk.5.d:0 ""
- nf_event_brk.5.a:0 "Submit"
+ nf_event_brk.50.t:0 ""
+ nf_event_brk.50.d:0 ""
+ nf_event_brk.50.a:0 "Submit"
  nf_event_brk.50.b:0 "Refuse"
  nf_event_brk.6.t:0 "Annex Whistler"
  nf_event_brk.6.d:0 ""
@@ -215,7 +215,10 @@
  nf_event_brk.19.a:0 "Wonderful"
  nf_event_brk.20.t:0 "Border Conflict is Escalating!"
  nf_event_brk.20.d:0 "Our recent clashes with the enemey have been inconclusive. Some ground has been won, some has been lost. A few border villages have been reduced to flaming ruins. Other than that, nothing has changed. The enemy knows this as well as we do, and appears to be taking action to overcome this sticking point. They appear to be mobalising more troops to send against our own - we must prepare to repell them too."
-
+ nf_event_brk.21.t:0 "Raiders on our Coastlines"
+ nf_event_brk.21.d:0 "Previously raids came infrequently. They used to be carried out by small groups, usually in the night. The ships landed in isolated stretches of the coastline - never our villages or our towns. All that has changed recently. Co-ordinated raid groups have attacked our villages and towns, doing unimaginable distruction before we could react. In response, militias have mobalised and are ready to defend our islands. Only time will tell how well they do..."
+ nf_event_brk.21.a:0 "Resist!"
+ nf_event_brk.22.t:0 "Successful Raid against the [HAI.GetName]"
  # ideas
  brk_startup_natives:0 "Native Settler Heritage"
  brk_startup_natives_desc:0 ""
@@ -287,7 +290,8 @@
  brk_coastal_terror_desc:0 ""
  brk_raider_society:0 "Society or Raiders"
  brk_raider_society_desc:0 ""
- 
+ brk_vic_patriotic_defence:0 "Patriotic Defense"
+ brk_vic_patriotic_defence_desc:0 "Raiders threaten our country. The situation has escalated past coastal raids and past port raids. The raiders now occupy parts of our island with the sole purpose of making us their slaves. We can't allow this to happen - we must fight back."
  
  # opinion mods
  brk_raid:0 "Raiders from the Coast"
@@ -322,8 +326,33 @@
 
  brk_back_out_of_conflict:0 "Back Down from the Border COnflict with [FROM.GetNameDef]"
 
+ brk_raiding_vic:0 "Lights across the Water"
+ brk_raiding_vic_desc:0 "The lights of New Victoria dazzle across the water, whispering of fortune and fame. The time has come for us to grasp the fortunes and fame for ourselves - it is time to raid [VIC.GetNameDef]."
+ brk_vic_practice_raid:0 "The Practice Raid"
+ brk_vic_practice_raid_desc:0 "Raiding is simple - you point a gun at some defenceless person and make them hand over their valuables. Raiding over water against a hostile nation? That's not quite as easy. Fortunately we have a small, relatively weak nation in the former of the [HAI.GetName] just off our coast - let us practice our raiding arts on them to give us a better shot in our raids against [VIC.GetNameDef]"
+ brk_vic_raid_the_coasts:0 "Raid the Coasts"
+ brk_vic_raid_the_coasts_desc:0 "The people of [VIC.GetNameDef] have lived in relative saftey compared to those in the borderlands. They do not fear our flag, nor the sight of our boats. We must teach them to fear us before we can lord over them. The coastlines are vast - far too vast for any army [VIC.GetNameDef] might have to effectively protect. This makes them the perfect starting place for our campaign of terror."
+ brk_vic_raid_the_ports:0 "Raid the Ports"
+ brk_vic_raid_the_ports_desc:0 "Now that we have terrorised the coastlines, it is time to intensify our campaign against the more defensible areas - the ports and the towns. It will be harder to pull off a good raid here, because of a higher military presence."
+ brk_vic_seize_winter_harbour:0 "Seize the Winter Harbour"
+ brk_vic_seize_winter_harbour_desc:0 "The Winter Harbour is far from Victoria city, isolated and rich. It sits ripe for the taking by a coordinated invasion, but the question is - how should we do it? There are three plans..."
+ brk_vic_wartime:0 "War for Victoria"
+ brk_vic_wartime_desc:0 "Previously the prospect of looting the great city of Victoria seemed like a dream. Now the dream is close to reality. It is time for war."
+
  # tooltips
  brk_can_raid_vic_or_hai:0 "The target is §H[VIC.GetNameDef]§! or §H[HAI.GetNameDef]§!, as we can launch naval raids against these two.\n"
  brk_raid_decisions:0 "The removal effect of this decision depends on the reaction of [From.GetNameDef] to our raid!\n"
  brk_activate_escalation_decision:0 "A decision has been made visible to allow us to escalate this raid to a border conflict between our armies.\n"
  BRK_prelim_raid:0 "We are not currently raiding a different country (border wars are allowed, however).\n"
+ brk_vic_decision_chain_tt:0 "Completing the focus will unlock a §Hdecision chain§! to raid, invade and then go to war with §H[VIC.GetNameDef]§!\n"
+ brk_vic_success_tt:0 "§HSuccess!§!\n"
+ brk_vic_failure_tt:0 "§RFailure!§!\n"
+ brk_vic_raid_underway_tt:0 "We do not currently have a raid against §H[VIC.GetNameDef]§! or §H[HAI.GetNameDef]§! ongoing.\n"
+ brk_vic_improve_odd_tt:0 "§RWe can improve our odds by successfully carying out a practice raid against the [HAI.GetNameDef]§!"
+ brk_vic_coast_raid_tt:0 "We have successfully raided the coasts at least once\n"
+ brk_vic_port_raid_tt:0 "We have successfully raided the ports at least once\n"
+ brk_vic_port_seized_tt:0 "We have successfully executed one of the three plans for seizing the Winter Harbour\n"
+ brk_vic_plan_1_tt:0 "Three raider divisions seize the §HWither Harbour§!, and one lands in the northern port of the §HGolden Heights§! state. We shall §Rdeclare war§! on §HNew Victoria§!.\n"
+ brk_vic_plan_2_tt:0 "Two raider divisions seize the §HWinter Harbour§!.\n"
+ brk_vic_plan_3_tt:0 "We seize, loot and leave the §HWinter Harbour§! to show our strength.\n"
+ brk_vic_choose_plan_tt:0 "We will have the choice of one of three plans in the planning event.\n"

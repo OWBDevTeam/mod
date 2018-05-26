@@ -1,6 +1,27 @@
 brk_decisions = {
 	allowed = { tag = BRK }
 }
+brk_raiding_vic = {
+	icon = generic_economy
+	allowed = { tag = BRK }
+	visible = {
+		has_completed_focus = brk_nf_new_victoria
+		VIC = { exists = yes } # The target exists - handy
+		NOT = { has_war_with = VIC } # We aren't at war with the target
+		VIC = {
+			NOT = {
+				is_subject_of = BRK # They aren't a subject of us
+			}
+			NOT = {
+				is_in_faction_with = BRK # We aren't in a faction with them
+			}
+		}
+		NOT = {
+			is_subject_of = VIC # We aren't their subject
+		}
+		NOT = { has_non_aggression_pact_with = VIC }
+	}
+}
 brk_raiding = {
 	
 }
