@@ -2295,18 +2295,21 @@ entity = {
 	locator = { name = muzzle position = { 0 0 -2.5 } }
 	scale = 0.3
 	###inheret state from attached objects
-	#get_state_from_parent = yes
-
+	get_state_from_parent = yes
+	default_state = "idle"
+	state = { name = "idle"
+	event = { time = 0.0    node = "muzzle" particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack } life = 1 } 
+	}
 	state = { name = "attack"
-		#animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0
+		animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0
 		event = { time = 0.0    node = "muzzle" particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack } life = 1 } 
 	}
 	state = { name = "defend"
-		#animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0
+		animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0
 		event = { time = 0.0     node = "muzzle" particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack } life = 1 } 
 	}
 	state = { name = "support_attack"
-		#animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0
+		animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0
 		event = { time = 0.0  node = "muzzle" particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack} life = 1 } 
 	}
 }
@@ -2445,7 +2448,7 @@ entity = {
 	state = { name = "training"	 }
 	
 	####These attachments are called inside the state = {} to change the bone the weapon is attached to. ex: back, hands
-	attach = { 	name = "rifle1"	Right_Hand_node = "minigun_pa_entity" }	
+	attach = { 	name = "rifle1"	Right_Hand_Node = "minigun_pa_entity" }	
 	#attach = { 	name = "rifle1"	hand_r = "minigun_pa_entity" }	
 	#attach = { 	name = "rifle2"	hand_l = "laser_rifle_entity" }	
 	#attach = { 	name = "rifle2"	hand_l = "minigun_pa_entity" }	
