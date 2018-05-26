@@ -2205,6 +2205,12 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_poking_the_bear
 		}
+		bypass = {
+			OR = {
+				has_war_with = NCR
+				NOT = { country_exists = NCR }
+			}
+		}
 		x = 9
 		y = 15
 		ai_will_do = {
@@ -3356,7 +3362,10 @@ focus_tree = {
 		x = 29
 		y = 6
 		completion_reward = {
-			add_ideas = legion_nf_centurions 
+			add_ideas = legion_nf_centurions
+			hidden_effect = {
+				set_technology = { legion_centurions_tech = 1 }
+			}
 		}
 	}
 	focus = {
@@ -3450,6 +3459,9 @@ focus_tree = {
 		y = 7
 		completion_reward = {
 			add_ideas = legion_nf_vexillarius
+			hidden_effect = {
+				set_technology = { legion_vexillarius_tech = 1 }
+			}
 		}
 	}
 	focus = {
@@ -3638,6 +3650,9 @@ focus_tree = {
 		y = 12
 		completion_reward = {
 			add_ideas = legion_nf_warriors_of_mars
+			hidden_effect = {
+				set_technology = { legion_warriors_of_mars_tech = 1 }
+			}
 		}
 	}
 }

@@ -41,7 +41,6 @@ leader_traits = {
 			factor = 1
 		}
 	}
-	
 	warmonger = {
 		random = no
 		ai_focus_aggressive_factor = 0.6
@@ -50,7 +49,14 @@ leader_traits = {
 			factor = 1
 		}
 	}
-	
+	ineffective = {
+		random = no
+		political_power_factor = -0.5
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	stout_defender = { # This particular trait will make the AI heavily prioritize defensive warfare, rarely, if ever, attacking out of fortified locations
 		random = no
 		ai_focus_defense_factor = 0.5

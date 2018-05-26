@@ -458,7 +458,10 @@ focus_tree = {
 		x = 11
 		y = 5
 		completion_reward = {
-		   add_ideas = caravanmilitia
+			add_ideas = caravanmilitia
+			hidden_effect = {
+				set_technology = { settler_caravanmilitia = 1 }
+			}
 		   add_manpower = 250
 		}
 
@@ -522,10 +525,10 @@ focus_tree = {
 		x = 11
 		y = 7
 		completion_reward = {
-		   swap_ideas = {
-			add_idea = settler_subsidized_weapon_manufacturers
-			remove_idea = caravanmilitia
-		   }
+			Swap_ideas = {
+				add_idea = settler_subsidized_weapon_manufacturers
+				remove_idea = caravanmilitia
+			}
 		}
 	}
 	focus = {

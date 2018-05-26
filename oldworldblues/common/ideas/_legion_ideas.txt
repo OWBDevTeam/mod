@@ -45,18 +45,18 @@ ideas = {
 				non_core_manpower = 0.1
 				army_speed_factor = 0.05
 				attrition = -0.1
-
 			}
-            
-            equipment_bonus = {
-                category_melee = {
-                    soft_attack = 0.05
-                }
-            }
+			
+			equipment_bonus = {
+				infantry = {
+					instant = yes
+					soft_attack = 0.05
+				}
+			}
 		}
-        
-        # National Focus
-        legion_nf_shottol_god_of_dogs = {
+		
+		# National Focus
+		legion_nf_shottol_god_of_dogs = {
 			
 			removal_cost = -1
 			
@@ -70,13 +70,14 @@ ideas = {
 			picture = shottol
 			
 			equipment_bonus = {
-				dog_company = {
-                    soft_attack = 0.1
-                }
+				dogs_equipment = {
+					soft_attack = 0.1
+					instant = yes
+				}
 			}
 		}
-        
-        legion_nf_goddess_diana = {
+		
+		legion_nf_goddess_diana = {
 			
 			removal_cost = -1
 			
@@ -93,8 +94,8 @@ ideas = {
 				land_reinforce_rate = 0.05
 			}
 		}
-        
-        legion_nf_caesar_the_godslayer = {
+		
+		legion_nf_caesar_the_godslayer = {
 			
 			removal_cost = -1
 			
@@ -111,8 +112,8 @@ ideas = {
 				land_reinforce_rate = 0.05
 			}
 		}
-        
-        legion_nf_cult_of_nas = {
+		
+		legion_nf_cult_of_nas = {
 			
 			removal_cost = -1
 			
@@ -126,14 +127,20 @@ ideas = {
 			picture = cult_of_nas
 			
 			equipment_bonus = {
-				category_vehicles = {
-                    soft_attack = 0.05
-                    breakthrough = 0.1
-                }
+				apc_equipment = {
+					soft_attack = 0.05
+					breakthrough = 0.1
+					instant = yes
+				}
+				motorized_equipment = {
+					soft_attack = 0.05
+					breakthrough = 0.1
+					instant = yes
+				}
 			}
 		}
-        
-        legion_nf_cult_of_nas_minor = {
+		
+		legion_nf_cult_of_nas_minor = {
 			
 			removal_cost = -1
 			
@@ -147,13 +154,18 @@ ideas = {
 			picture = cult_of_nas
 			
 			equipment_bonus = {
-				category_vehicles = {
-                    breakthrough = 0.05
-                }
+				apc_equipment = {
+					breakthrough = 0.05
+					instant = yes
+				}
+				motorized_equipment = {
+					breakthrough = 0.05
+					instant = yes
+				}
 			}
 		}
-        
-        legion_nf_wyatt_the_demon = {
+		
+		legion_nf_wyatt_the_demon = {
 			
 			removal_cost = -1
 			
@@ -171,8 +183,8 @@ ideas = {
 			}
 			
 		}
-        
-        legion_nf_legion_outlaws = {
+		
+		legion_nf_legion_outlaws = {
 			
 			removal_cost = -1
 			
@@ -190,7 +202,7 @@ ideas = {
 			}
 			
 		}
-        
+		
 		legion_nf_the_twin_temples = {
 			
 			removal_cost = -1
@@ -222,7 +234,7 @@ ideas = {
 			equipment_bonus = {
 				motorized_equipment = {
 					build_cost_ic = -0.10 
-                    instant = yes
+					instant = yes
 				}
 			}
 		}
@@ -296,12 +308,12 @@ ideas = {
 			equipment_bonus = {
 				infantry_equipment = {
 					build_cost_ic = -0.10 
-                    instant = yes
+					instant = yes
 				}
 			}
 		}
 		
-        legion_nf_homestead_slaves = {
+		legion_nf_homestead_slaves = {
 		
 			picture = generic_manpower_bonus
 			
@@ -315,7 +327,7 @@ ideas = {
 			}	
 		
 		}
-        
+		
 		legion_nf_numeri = {
 		
 			allowed = {
@@ -331,7 +343,7 @@ ideas = {
 			}	
 		}
 		
-        legion_nf_centurions = {
+		legion_nf_centurions = {
 		
 			allowed = {
 				always = no
@@ -340,14 +352,8 @@ ideas = {
 			removal_cost = -1
 
 			picture = centurions
-	
-			equipment_bonus = {
-                category_all_infantry = {
-                    max_organisation = 0.05
-                }
-            }	
 		}
-        
+		
 		legion_nf_lay_of_the_land = {
 		
 			allowed = {
@@ -365,7 +371,7 @@ ideas = {
 			}	
 		}
 		
-        legion_nf_legionary_grit = {
+		legion_nf_legionary_grit = {
 		
 			allowed = {
 				always = no
@@ -379,7 +385,7 @@ ideas = {
 				no_supply_grace = 48
 			}	
 		}
-        
+		
 		legion_nf_praetorian = {
 		
 			allowed = {
@@ -396,7 +402,7 @@ ideas = {
 			}	
 		}
 		
-        legion_nf_vexillarius = {
+		legion_nf_vexillarius = {
 		
 			allowed = {
 				always = no
@@ -405,14 +411,8 @@ ideas = {
 			removal_cost = -1
 
 			picture = vexillarius
-	
-			equipment_bonus = {
-                category_all_infantry = {
-                    initiative = 0.07
-                }
-            }	
 		}
-        
+		
 		legion_nf_meritocracy = {
 			
 			picture = generic_manpower_bonus
@@ -496,7 +496,7 @@ ideas = {
 			equipment_bonus = {
 				power_armor_equipment = {
 					build_cost_ic = -0.2 
-                    instant = yes
+					instant = yes
 				}
 			}
 		}
@@ -663,8 +663,8 @@ ideas = {
 
 		}
 		
-        legion_nf_pax_romana = {
-            
+		legion_nf_pax_romana = {
+			
 			picture = free_trade
 
 			removal_cost = -1
@@ -676,8 +676,8 @@ ideas = {
 			modifier = {
 				production_factory_max_efficiency_factor = 0.1
 			}
-        }
-        
+		}
+		
 		legion_nf_fort_focus = {
 
 			picture = generic_fortify_the_borders
@@ -785,26 +785,26 @@ ideas = {
 			removal_cost = -1
 		
 			equipment_bonus = {
-				robot_equipment = {
-					build_cost_ic = -0.15 
-                    instant = yes
+				medium_robot_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
 				}
-				motorbike_equipment = {
-					build_cost_ic = -0.10 
-                    instant = yes
+				light_robot_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
 				}
-                car_equipment = {
-					build_cost_ic = -0.10 
-                    instant = yes
+				heavy_robot_equipment = {
+					build_cost_ic = -0.15
+					instant = yes
 				}
-                bus_equipment = {
-					build_cost_ic = -0.10 
-                    instant = yes
+				motorized_equipment = {
+					build_cost_ic = -0.10
+					instant = yes
 				}
-                truck_equipment = {
-					build_cost_ic = -0.10 
-                    instant = yes
-				}
+				#bus_equipment = {#doesn't exist
+				#	build_cost_ic = -0.10 
+				#	instant = yes
+				#}
 			}
 		}
 		
@@ -823,7 +823,7 @@ ideas = {
 		
 		}
 		
-        legion_nf_child_soldiers = {
+		legion_nf_child_soldiers = {
 			
 			picture = generic_manpower_bonus 
 			
@@ -834,12 +834,22 @@ ideas = {
 			
 			modifier = {
 				conscription = 0.02
-                army_attack_factor = -0.1
+				army_attack_factor = -0.1
 			}
 		
 		}
-        
-        legion_nf_warriors_of_mars = {
+		
+		legion_nf_warriors_of_mars = {
+			
+			picture = generic_manpower_bonus 
+			
+			allowed = {
+			}
+
+			removal_cost = -1
+		}
+		
+		legion_nf_hoover_dam = {
 			
 			picture = generic_manpower_bonus 
 			
@@ -848,16 +858,13 @@ ideas = {
 
 			removal_cost = -1
 			
-			equipment_bonus = {
-                category_power_armor = {
-                    soft_attack = 0.1
-                    breakthrough = 0.25
-                }
-            }
+			modifier = {
+				industrial_capacity_factory = 0.25
+				industrial_capacity_dockyard = 0.25
+			}
 		}
-        
-        legion_nf_hoover_dam = {
-			
+		
+		legion_nf_rubicon_crossed = {
 			picture = generic_manpower_bonus 
 			
 			allowed = {
@@ -866,27 +873,13 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-                industrial_capacity_factory = 0.25
-                industrial_capacity_dockyard = 0.25
-            }
+				training_time_army_factor = -0.1
+				minimum_training_level = -0.05
+			}
 		}
-        
-        legion_nf_rubicon_crossed = {
-            picture = generic_manpower_bonus 
-			
-			allowed = {
-			}
-
-			removal_cost = -1
-			
-			modifier = {
-                training_time_army_factor = -0.1
-                minimum_training_level = -0.05
-            }
-        }
-        
-        legion_nf_weapon_maintenance = {
-            picture = generic_manpower_bonus 
+		
+		legion_nf_weapon_maintenance = {
+			picture = generic_manpower_bonus 
 			
 			allowed = {
 			}
@@ -894,15 +887,15 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-                infantry_equipment = {
-                    reliability = 0.1
-                    instant = yes
-                }
-            }
-        }
-        
-        legion_nf_unit_tactics = {
-            picture = legionary_unit_tactics 
+				infantry_equipment = {
+					reliability = 0.1
+					instant = yes
+				}
+			}
+		}
+		
+		legion_nf_unit_tactics = {
+			picture = legionary_unit_tactics 
 			
 			allowed = {
 			}
@@ -910,12 +903,12 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-                army_org_factor = 0.1
-            }
-        }
-        
-        legion_nf_explosives_creation = {
-            picture = generic_manpower_bonus 
+				army_org_factor = 0.1
+			}
+		}
+		
+		legion_nf_explosives_creation = {
+			picture = generic_manpower_bonus 
 			
 			allowed = {
 			}
@@ -923,15 +916,15 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-                explosive_equipment = {
-                    build_cost_ic = -0.1
-                    instant = yes
-                }
-            }
-        }
-        
-        legion_nf_ridgers_pyre = {
-            picture = generic_manpower_bonus 
+				explosive_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+		
+		legion_nf_ridgers_pyre = {
+			picture = generic_manpower_bonus 
 			
 			allowed = {
 			}
@@ -939,13 +932,13 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-                stability_factor = 0.05
+				stability_factor = 0.05
 				war_support_factor = 0.025
-            }
-        }
-        
-        legion_nf_kaibab_crucifiction = {
-            picture = generic_manpower_bonus 
+			}
+		}
+		
+		legion_nf_kaibab_crucifiction = {
+			picture = generic_manpower_bonus 
 			
 			allowed = {
 			}
@@ -953,12 +946,12 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-                army_morale_factor = 0.05
-            }
-        }
-        
-        legion_nf_fredonian_arena = {
-            picture = generic_manpower_bonus 
+				army_morale_factor = 0.05
+			}
+		}
+		
+		legion_nf_fredonian_arena = {
+			picture = generic_manpower_bonus 
 			
 			allowed = {
 			}
@@ -966,12 +959,12 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-                training_time_army_factor = -0.1
-            }
-        }
-        
-        legion_nf_profligate_destruction = {
-            picture = generic_manpower_bonus 
+				training_time_army_factor = -0.1
+			}
+		}
+		
+		legion_nf_profligate_destruction = {
+			picture = generic_manpower_bonus 
 			
 			allowed = {
 			}
@@ -979,12 +972,12 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-                enemy_partisan_effect = -0.2
-            }
-        }
-        
-        legion_nf_divide_et_impera = {
-            picture = generic_manpower_bonus 
+				enemy_partisan_effect = -0.2
+			}
+		}
+		
+		legion_nf_divide_et_impera = {
+			picture = generic_manpower_bonus 
 			
 			allowed = {
 			}
@@ -992,12 +985,12 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-                org_loss_when_moving = -0.1
-            }
-        }
-        
-        legion_nf_decimatio = {
-            picture = generic_manpower_bonus 
+				org_loss_when_moving = -0.1
+			}
+		}
+		
+		legion_nf_decimatio = {
+			picture = generic_manpower_bonus 
 			
 			allowed = {
 			}
@@ -1005,9 +998,9 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-                conscription = -0.01
-                military_leader_cost_factor = -0.1
-            }
-        }
+				conscription = -0.01
+				military_leader_cost_factor = -0.1
+			}
+		}
 	}
 }

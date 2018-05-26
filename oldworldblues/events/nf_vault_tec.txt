@@ -1,4 +1,4 @@
-add_namespace = nf_vault_tec
+﻿add_namespace = nf_vault_tec
 
 country_event = {
 	id = nf_vault_tec.1
@@ -21,6 +21,7 @@ country_event = {
 		hidden_effect = {
 			load_oob = vault_3_security
 		}
+		custom_effect_tooltip = vault_security
 	}
 }
 country_event = {
@@ -52,6 +53,7 @@ country_event = {
 		hidden_effect = {
 			load_oob = vault_6_security
 		}
+		custom_effect_tooltip = vault_security
 	}
 }
 country_event = {
@@ -77,6 +79,7 @@ country_event = {
 		hidden_effect = {
 			load_oob = vault_13_security
 		}
+		custom_effect_tooltip = vault_security
 	}
 	option = {
 		name = nf_vault_tec.3.c
@@ -97,6 +100,7 @@ country_event = {
 		hidden_effect = {
 			load_oob = vault_13_arroyo
 		}
+		custom_effect_tooltip = vault_security
 	}
 }
 country_event = {
@@ -120,6 +124,7 @@ country_event = {
 		hidden_effect = {
 			load_oob = vault_15_security
 		}
+		custom_effect_tooltip = vault_security
 	}
 }
 country_event = {
@@ -198,6 +203,7 @@ country_event = {
 		hidden_effect = {
 			load_oob = vault_19_security
 		}
+		custom_effect_tooltip = vault_security
 		add_timed_idea = {
 			idea = vault_rebuilding
 			days = 180
@@ -221,7 +227,7 @@ country_event = {
 		}
 		add_manpower = -600
 		add_state_core = 211
-		
+		custom_effect_tooltip = vault_security
 	}
 }
 country_event = {
@@ -243,6 +249,7 @@ country_event = {
 			}
 			load_oob = vault_22_security
 		}
+		custom_effect_tooltip = vault_security
 		add_manpower = -600
 		add_state_core = 344
 		
@@ -253,10 +260,12 @@ country_event = {
 			has_tech = flamer_tech_3
 		}
 		add_manpower = -300
+		add_state_core = 344
 		hidden_effect = {
 			load_oob = vault_22_clearance
 			load_oob = vault_22_security
 		}
+		custom_effect_tooltip = vault_security
 	}
 }
 country_event = {
@@ -267,11 +276,45 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = nf_vault_tec.8.a
-		
+		add_manpower = -700
+		add_state_core = 154
+		hidden_effect = {
+			load_oob = vault_34_security
+		}
+		custom_effect_tooltip = vault_security
 	}
 	option = {
 		name = nf_vault_tec.8.b
-		
+		BOO = {
+			transfer_state = 154
+			every_state = {
+				limit = {
+					is_core_of = VEG
+				}
+				add_core_of = BOO
+			}
+			
+			if = {
+				limit = {
+					VLT = {
+						owns_state = 380
+					}
+				}
+				BOO = {
+					add_state_core = 380
+					transfer_state = 380
+				}
+			}
+				
+		}
+		VLT = {
+			puppet = BOO
+		}
+		hidden_effect = {
+			BOO = {
+				load_oob = vault_boomers
+			}
+		}
 	}
 }
 country_event = {
@@ -282,7 +325,16 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = nf_vault_tec.9.a
-		
+		add_state_core = 551
+		add_manpower = -300
+		add_timed_idea = {
+			idea = vault_rebuilding
+			days = 180
+		}
+		hidden_effect = {
+			load_oob = vault_70_security
+		}
+		custom_effect_tooltip = vault_security
 	}
 	option = {
 		name = nf_vault_tec.9.b

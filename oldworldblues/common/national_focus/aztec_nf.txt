@@ -1,0 +1,88 @@
+focus_tree = {
+	id = nf_aztec
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ATE
+		}
+	}
+	default = no
+	focus = {
+		id = ate_founding
+		icon = ""
+		cost = 1
+		prerequisite = {
+		}
+		x = 10
+		y = 0
+		completion_reward = {
+			country_event = { id = nf_aztec.0 }
+		}
+	}
+	focus = {
+		id = ate_pantheon
+		icon = ""
+		cost = 1
+		prerequisite = {
+		    focus = ate_founding
+		}
+		x = 10
+		y = 1
+		completion_reward = {
+			country_event = { id = nf_aztec.1 }
+		}
+	}
+	focus = {
+		id = ate_future
+		icon = ""
+		cost = 1
+		prerequisite = {
+		    focus = ate_pantheon
+		}
+		x = 10
+		y = 2
+		completion_reward = {
+			country_event = { id = nf_aztec.4 }
+		}
+	}
+	focus = {
+		id = ate_succession
+		icon = ""
+		cost = 1
+		prerequisite = {
+		    focus = ate_future
+		}
+		x = 10
+		y = 3
+		completion_reward = {
+			country_event = { id = nf_aztec.5 }
+		}
+	}
+	focus = {
+		id = ate_itzcoatl
+		icon = ""
+		cost = 1
+		prerequisite = {
+		    focus = ate_succession
+		}
+		x = 8
+		y = 4
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = ate_montezuma
+		icon = ""
+		cost = 1
+		prerequisite = {
+		    focus = ate_succession
+		}
+		x = 12
+		y = 4
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	

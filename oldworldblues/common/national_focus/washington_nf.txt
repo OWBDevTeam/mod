@@ -1,0 +1,1139 @@
+focus_tree = {
+	id = washington_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 100
+			tag = WBH
+		}
+	}
+	default = no
+	focus = {
+		id = WBH_our_founding
+		icon = GFX_goal_bos_elder_recalled
+		cost = 1.00
+		x = 18
+		y = 0
+		
+		completion_reward = {
+			country_event = { id = nf_genericbos.1 }	
+		}
+	}
+	focus = {
+		id = WBH_our_interim
+		icon = GFX_goal_bos_elder_recalled
+		cost = 1.00
+		prerequisite = {
+			focus = WBH_our_founding
+		}
+		x = 18
+		y = 1
+		
+		completion_reward = {
+			country_event = { id = nf_genericbos.2 }	
+		}
+	}
+	focus = {
+		id = WBH_our_future
+		icon = GFX_goal_bos_elder_recalled
+		cost = 1.00
+		prerequisite = {
+			focus = WBH_our_interim
+		}
+		x = 18
+		y = 2
+
+		completion_reward = {
+			country_event = { id = nf_genericbos.3 }	
+		}
+	}
+	focus = {
+		id = WBH_water_operations
+		icon = GFX_goal_bos_steel_cage
+		cost = 10.00
+		available = {
+			any_owned_state = { 
+				is_coastal = yes 
+			}
+		}
+		prerequisite = {
+			focus = WBH_our_future
+		}
+		x = 3
+		y = 3
+		
+		completion_reward = {
+			random_owned_state = {
+				limit = { 
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 2
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_doctrine }
+		}
+	}
+	focus = {
+		id = WBH_aerial_operations
+		icon = GFX_goal_bos_scourge_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_our_future
+		}
+		x = 7
+		y = 3
+		
+		completion_reward = {
+			air_experience = 25
+		}	
+	}
+	focus = {
+		id = WBH_from_the_skies
+		icon = GFX_goal_bos_scourge_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_aerial_operations
+		}
+		x = 6
+		y = 4
+		
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = air_doctrine }
+		}
+	}	
+	focus = {
+		id = WBH_staging_bases
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_aerial_operations
+		}
+		x = 8
+		y = 4
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 0
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+										any_owned_state = {
+											free_building_slots = {
+												building = air_base
+												size > 0
+												include_locked = yes
+											}
+											is_in_home_area = yes
+										}
+								}
+							}
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+			}
+		}	
+	}
+	focus = {
+		id = WBH_our_right
+		icon = GFX_goal_bos_generic_industrial
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_our_future
+		}
+		x = 12
+		y = 3
+		
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = industry }
+		}
+	}
+	focus = {
+		id = WBH_salvaged_metal
+		icon = GFX_goal_generic_metal_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_our_right
+		}
+		x = 10
+		y = 4
+		
+		completion_reward = {
+			capital_scope = {
+				add_resource = { type = metal amount = 16 }    
+			}
+		}
+	}	
+	focus = {
+		id = WBH_salvaged_electronics
+		icon = GFX_goal_generic_electronics_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_our_right
+		}
+		x = 14
+		y = 4
+		
+		completion_reward = {
+			capital_scope = {
+				add_resource = { type = electronics amount = 16 }    
+			}
+		}
+	}
+	focus = {
+		id = WBH_our_might
+		icon = GFX_goal_bos_generic_infantry
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_our_future
+		}
+		x = 18
+		y = 3
+		
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+		}
+	}
+	focus = {
+		id = WBH_steel_legions
+		icon = GFX_goal_bos_victory_or_death
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_our_might
+		}
+		x = 17
+		y = 4
+		
+		completion_reward = {
+			add_ideas = genericbossteellegions
+		}
+
+	}
+	focus = {
+		id = WBH_wastelander_conscripts
+		icon = GFX_goal_bos_wasteland_conscription
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_our_might
+		}
+		x = 19
+		y = 4
+		
+		completion_reward = {
+			add_ideas = genericboswastelandconscripts
+		}
+	}
+	focus = {
+		id = WBH_flesh_before_steel
+		icon = GFX_goal_bos_outsider_recruitment
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_wastelander_conscripts
+		}
+		x = 19
+		y = 5
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = genericbosfleshbeforesteel
+				remove_idea = genericboswastelandconscripts
+			}
+		}
+	}
+	focus = {
+		id = WBH_basic_arms_for_basic_people
+		icon = GFX_goal_generic_common_firearms_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_flesh_before_steel
+		}
+		x = 19
+		y = 6
+		
+		completion_reward = {
+			add_equipment_to_stockpile = { 
+				type = energy_equipment_2 
+				amount = 1000 
+				producer = WBH 
+			}
+			random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+										any_owned_state = {
+											free_building_slots = {
+												building = arms_factory
+												size > 0
+												include_locked = yes
+											}
+											is_in_home_area = yes
+										}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+			}
+		}
+	}
+	focus = {
+		id = WBH_doctrinal_thought
+		icon = GFX_goal_generic_land_doctrines_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_basic_arms_for_basic_people
+		}
+		x = 19
+		y = 7
+		
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.5 uses = 2 category = land_doctrine }
+		}
+	}
+	focus = {
+		id = WBH_our_goal
+		icon = GFX_goal_BOS_generic
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_our_future
+		}
+		x = 23
+		y = 3
+		
+		completion_reward = {
+			add_political_power = 100
+		}	
+	}
+	focus = {
+		id = WBH_seek_technology
+		icon = GFX_goal_bos_generic_research
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_our_goal
+		}
+		x = 22
+		y = 4
+		
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = electronics }
+		}
+	}
+	focus = {
+		id = WBH_scribe_research
+		icon = GFX_goal_bos_the_mojave_signal
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_seek_technology
+		}
+		x = 22
+		y = 5
+		
+		completion_reward = {
+			add_ideas = genericbosscriberesearch
+		}	
+	}
+	focus = {
+		id = WBH_old_developments
+		icon = GFX_goal_bos_repconn_hq
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_scribe_research
+		}
+		x = 22
+		y = 6
+		
+		completion_reward = {
+			capital_scope = {
+				add_resource = { type = advanced_technology amount = 8 }    
+			}
+		}
+	}
+	focus = {
+		id = WBH_robotic_advancements
+		icon = GFX_goal_generic_robots_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_old_developments
+		}
+		x = 22
+		y = 7
+		
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = robotics_tech }
+		}
+	}
+	focus = {
+		id = WBH_bunker_thought
+		icon = GFX_goal_generic_bunkers_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_our_goal
+		}
+		x = 24
+		y = 4
+		
+		completion_reward = {
+			add_ideas = genericbosbunkerthought 
+		}
+	}
+	focus = {
+		id = WBH_surface_outposts
+		icon = GFX_goal_generic_building_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_bunker_thought
+		}
+		x = 24
+		y = 5
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = genericbossurfaceoutposts
+				remove_idea = genericbosbunkerthought
+			}
+		}
+	}
+	focus = {
+		id = WBH_underground_workshops
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_surface_outposts
+		}
+		x = 24
+		y = 6
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+										any_owned_state = {
+											free_building_slots = {
+												building = industrial_complex
+												size > 0
+												include_locked = yes
+											}
+											is_in_home_area = yes
+										}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+			}
+		}
+	}
+	focus = {
+		id = WBH_new_technology
+		icon = GFX_goal_bos_generic_research
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_underground_workshops
+		}
+		x = 24
+		y = 7
+		
+		completion_reward = {
+			add_ideas = genericbosnewtech
+		}
+	}
+	focus = {
+		id = WBH_port_expansion
+		icon = GFX_goal_generic_harbours_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_water_operations
+		}
+		x = 3
+		y = 4
+		available = {
+			any_owned_state = { 
+				is_coastal = yes 
+			}
+		}
+		
+		completion_reward = {
+			random_owned_state = {
+				limit = { 
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}	
+	focus = {
+		id = WBH_supporting_vessels
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_port_expansion
+		}
+		x = 2
+		y = 5
+		
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = ship_destroyer_tech }
+		}
+	}
+	focus = {
+		id = WBH_larger_vessels
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_port_expansion
+		}
+		x = 4
+		y = 5
+		
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = ship_heavy_cruiser_tech }
+		}
+	}
+	focus = {
+		id = WBH_reclaim_a_flagship
+		icon = GFX_goal_generic_navy_battleship
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_supporting_vessels
+		}
+		prerequisite = {
+			focus = WBH_larger_vessels
+		}
+		x = 3
+		y = 6
+		
+		completion_reward = {
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = ship_battleship_tech }
+		}
+	}
+	focus = {
+		id = WBH_aerial_supremacy
+		icon = GFX_goal_generic_air_doctrines_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_from_the_skies
+		}
+		prerequisite = {
+			focus = WBH_staging_bases
+		}
+		x = 7
+		y = 5
+		
+		completion_reward = {
+			add_ideas = genericbosaerialsupermacy
+		}
+	}
+	focus = {
+		id = WBH_wastelander_auxs
+		icon = GFX_goal_generic_land_doctrines_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_aerial_supremacy
+		}
+		x = 7
+		y = 6
+		
+		completion_reward = {
+			add_ideas = genericboswastelanderauxs
+		}
+	}
+	focus = {
+		id = WBH_increase_power_production
+		icon = GFX_goal_generic_electricity_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_our_right
+		}
+		x = 12
+		y = 4
+		
+		completion_reward = {
+			capital_scope = {
+				add_resource = { type = electricity amount = 16 }    
+			}
+		}
+	}
+	focus = {
+		id = WBH_advanced_tech
+		icon = GFX_goal_generic_advanced_technology_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_salvaged_metal
+		}
+		prerequisite = {
+			focus = WBH_increase_power_production
+		}
+		prerequisite = {
+			focus = WBH_salvaged_electronics
+		}
+		x = 11
+		y = 5
+		
+		completion_reward = {
+			capital_scope = {
+				add_resource = { type = advanced_technology amount = 8 }    
+			}
+		}
+	}
+	focus = {
+		id = WBH_fueling_our_rise
+		icon = GFX_goal_generic_fuel_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_increase_power_production
+		}
+		prerequisite = {
+			focus = WBH_salvaged_electronics
+		}
+		prerequisite = {
+			focus = WBH_salvaged_metal
+		}
+		x = 13
+		y = 5
+
+		completion_reward = {
+			capital_scope = {
+				add_resource = { type = fuel amount = 8 }    
+			}
+		}
+	}
+	focus = {
+		id = WBH_arm_foundries
+		icon = GFX_goal_generic_common_energy_weapons_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_advanced_tech
+		}
+		prerequisite = {
+			focus = WBH_fueling_our_rise
+		}
+		x = 11
+		y = 6
+
+		completion_reward = {
+			random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+										any_owned_state = {
+											free_building_slots = {
+												building = arms_factory
+												size > 0
+												include_locked = yes
+											}
+											is_in_home_area = yes
+										}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+			}
+		}
+	}
+	focus = {
+		id = WBH_civillian_workshops
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_fueling_our_rise
+		}
+		x = 13
+		y = 6
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+										any_owned_state = {
+											free_building_slots = {
+												building = industrial_complex
+												size > 0
+												include_locked = yes
+											}
+											is_in_home_area = yes
+										}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+			}
+		}
+	}
+	focus = {
+		id = WBH_heavy_production
+		icon = GFX_goal_legion_workshop
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_arm_foundries
+		}
+		prerequisite = {
+			focus = WBH_civillian_workshops
+		}
+		x = 12
+		y = 7
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+										any_owned_state = {
+											free_building_slots = {
+												building = arms_factory
+												size > 0
+												include_locked = yes
+											}
+											is_in_home_area = yes
+										}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+			}
+			random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+										any_owned_state = {
+											free_building_slots = {
+												building = industrial_complex
+												size > 0
+												include_locked = yes
+											}
+											is_in_home_area = yes
+										}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+			}
+			capital_scope = {
+				add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = WBH_new_initiates
+		icon = GFX_goal_generic_BoS_diplomatic_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_steel_legions
+		}
+		x = 17
+		y = 5
+		
+		completion_reward = {
+			add_ideas = genericbosnewinitiates
+		}
+	}
+	focus = {
+		id = WBH_t45d_production
+		icon = GFX_goal_generic_t45d_power_armour_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_new_initiates
+		}
+		x = 17
+		y = 6
+		
+		completion_reward = {
+			add_ideas = genericbost45d
+		}
+
+	}
+	focus = {
+		id = WBH_t51b_production
+		icon = GFX_goal_generic_t51b_power_armour_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_t45d_production
+		}
+		x = 17
+		y = 7
+
+		completion_reward = {
+			add_ideas = genericbost51b
+		}
+	}
+	focus = {
+		id = WBH_combined_operations
+		icon = GFX_goal_VEG_Mojave_Alliance
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_t51b_production
+		}
+		prerequisite = {
+			focus = WBH_doctrinal_thought
+		}
+		x = 18
+		y = 8
+
+		completion_reward = {
+			add_ideas = genericboscombinedoperations
+		}
+	}
+	focus = {
+		id = WBH_vertibird_schematics
+		icon = GFX_goal_bos_vertibird_schematics
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_robotic_advancements
+		}
+		x = 22
+		y = 8
+		
+		completion_reward = {
+			set_technology = { 
+				vertiberd_gunship = 1
+				vertiberd_transport1 = 1
+			}
+			add_equipment_to_stockpile = { type = vb_gunship_equipment amount = 5 }
+			add_equipment_to_stockpile = { type = vb_transport_plane_equipment amount = 5 }
+		}
+	}
+	focus = {
+		id = WBH_tesla_theory
+		icon = GFX_goal_generic_electricity_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_new_technology
+		}
+		x = 24
+		y = 8
+
+		completion_reward = {
+			set_technology = { 
+				tesla_weaponry = 1
+			}
+		}
+	}	
+	
+	# Washington Brotherhood Path #
+	
+	focus = {
+		id = WBH_within_the_blizzard
+		icon = GFX_goal_wbh_within_the_blizzard
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_our_future
+		}
+		x = 28
+		y = 3
+		available = {
+			NOT = {
+				has_war = yes
+			}
+		}	
+
+		completion_reward = {
+			country_event = nf_washington.1
+		}
+	}
+	focus = {
+		id = WBH_sinister_patriots
+		icon = GFX_goal_focus_power_armor
+		cost = 10.00	
+		prerequisite = {
+			focus = WBH_within_the_blizzard
+		}
+		mutually_exclusive = {
+			focus = WBH_fellow_savages
+		}
+		x = 27
+		y = 4
+		completion_reward = {
+			TOC = {
+			   country_event = { days = 1 id = nf_washington.2 }
+			}
+		}
+	}
+	focus = {
+		id = WBH_fellow_savages
+		icon = GFX_goal_focus_power_armor
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_within_the_blizzard
+		}
+		mutually_exclusive = {
+			focus = WBH_sinister_patriots
+		}
+		x = 29
+		y = 4
+		completion_reward = {
+			PMR = {
+			   country_event = { days = 1 id = nf_washington.3 }
+			}
+		}
+	}
+	focus = {
+		id = WBH_dark_ambitions
+		icon = GFX_goal_wbh_immortal
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_fellow_savages
+			focus = WBH_sinister_patriots
+		}
+		x = 27
+		y = 5
+		completion_reward = {
+			 add_war_support = 0.15
+		}
+	}
+	focus = {
+		id = WBH_enslave_the_weak
+		icon = GFX_goal_legion_slaves
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_dark_ambitions
+		}
+		x = 27
+		y = 6
+		
+		completion_reward = {
+			add_ideas = genericboswashingtonenslaveweak
+		}
+	}
+	focus = {
+		id = WBH_expand_our_dominion
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_enslave_the_weak
+		}
+		x = 27
+		y = 7
+		
+		completion_reward = {
+			add_ideas = genericboswashingtonexpandourdominion
+		}
+	}
+	focus = {
+		id = WBH_eradicate_the_mutants
+		icon = GFX_goal_wbh_mutant_purge
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_expand_our_dominion
+		}
+		x = 27
+		y = 8
+		will_lead_to_war_with = TRL
+
+		completion_reward = {
+			add_ideas = genericboswashingtoneradicatemutants
+			if = {
+				limit = {
+					TRL = { exists = yes }
+				}
+				create_wargoal = { type = annex_everything target = TRL }
+			}
+		}
+	}
+	focus = {
+		id = WBH_black_paladins
+		icon = GFX_goal_bos_victory_or_death
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_fellow_savages
+			focus = WBH_sinister_patriots
+		}
+		x = 29
+		y = 5
+		
+		completion_reward = {
+			load_oob = washingtonbosblackpaladins
+		}
+	}
+	focus = {
+		id = WBH_decimate_and_despoil
+		icon = GFX_goal_generic_war_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_black_paladins
+		}
+		x = 29
+		y = 6
+		
+		completion_reward = {
+			add_ideas = genericbosdecimateanddespoil
+		}
+	}
+	focus = {
+		id = WBH_dark_foundries
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_decimate_and_despoil
+		}
+		x = 29
+		y = 7
+		
+		completion_reward = {
+			capital_scope = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+				}
+				add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+				}
+			}
+			add_ideas = genericbosdarkfoundries
+		}
+	}
+	focus = {
+		id = WBH_death_or_glory
+		icon = GFX_goal_bos_scourge_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_dark_foundries
+		}
+		x = 29
+		y = 8
+		
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.1
+		}
+	}
+	focus = {
+		id = WBH_alaskan_expedition
+		icon = GFX_goal_bos_scourge_focus
+		cost = 10.00
+		prerequisite = {
+			focus = WBH_eradicate_the_mutants
+		}
+		prerequisite = {
+			focus = WBH_death_or_glory
+		}
+		x = 28
+		y = 9
+		
+		completion_reward = {
+			country_event = { id = nf_washington.8 days = 1 }
+		}
+	}
+}

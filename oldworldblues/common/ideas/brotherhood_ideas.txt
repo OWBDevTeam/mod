@@ -17,8 +17,6 @@ ideas = {
 				foreign_subversive_activites = -0.75
 				enemy_partisan_effect = -0.3
 			}
-			
-			
 		}
 		
 		bosdigin = {
@@ -34,16 +32,6 @@ ideas = {
 				conscription = 0.01
 				war_support_factor = 0.05
 			}
-			
-			equipment_bonus = {
-				category_all_infantry = {
-					soft_attack = 0.1
-					hard_attack = 0.1
-					defense = 0.1
-				}
-			}
-		
-		
 		}
 		
 		bunkerblues2 = {
@@ -61,8 +49,6 @@ ideas = {
 				foreign_subversive_activites = -0.8
 				enemy_partisan_effect = -0.4
 			}
-			
-			
 		}
 		
 		roomtogrow = {
@@ -77,7 +63,6 @@ ideas = {
 			modifier = {
 				monthly_population = 0.01
 			}
-		
 		}
 		
 		scribecouncil = {
@@ -93,7 +78,6 @@ ideas = {
 				max_planning = 0.25
 				planning_speed = -0.25
 			}
-		
 		}
 		
 		paladincouncil = {
@@ -109,7 +93,6 @@ ideas = {
 				max_planning = -0.25
 				planning_speed = 0.25
 			}
-		
 		}
 		
 		discoveryknights = {
@@ -128,8 +111,6 @@ ideas = {
 			research_bonus = {
 				land_doctrine = 0.1
 			}
-			
-		
 		}
 		
 		certaintyknights = {
@@ -145,10 +126,6 @@ ideas = {
 				max_planning = 0.15
 				political_power_gain = -0.2
 			}
-			
-			
-			
-		
 		}
 		
 		bosspineless = {	
@@ -161,10 +138,9 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-					training_time_factor = -0.1
-					army_core_defence_factor = 0.1
+				training_time_factor = -0.1
+				army_core_defence_factor = 0.1
 			}
-			
 		}
 		
 		bosvengeful = {
@@ -178,9 +154,8 @@ ideas = {
 			
 			modifier = {
 				army_core_attack_factor = 0.1
-					army_speed_factor = 0.1
+				army_speed_factor = 0.1
 			}
-			
 		}
 		
 		steelconquerors = {
@@ -197,8 +172,8 @@ ideas = {
 			}
 
 			equipment_bonus = {
-				power_armor_equipment_3 = {
-					build_cost_ic = -0.25
+				power_armor_equipment = {
+					build_cost_ic = -0.10
 					instant = yes
 				}
 			}
@@ -215,11 +190,8 @@ ideas = {
 			
 			modifier = {
 				army_defence_factor = 0.1
-					max_dig_in = 0.1
+				max_dig_in = 0.1
 			}
-			
-		
-		
 		}
 		
 		bosdevelopedslums = {
@@ -234,7 +206,6 @@ ideas = {
 			modifier = {
 				monthly_population = 0.05
 			}
-		
 		}
 	
 		elijahgenius = {
@@ -249,7 +220,6 @@ ideas = {
 			modifier = {
 				research_time_factor = -0.05
 			}
-			
 		}
 		
 		hardintactics = {
@@ -265,6 +235,7 @@ ideas = {
 				land_doctrine = 0.1
 			}
 		}
+
 		bosmojaveequip = {
 			
 			picture = generic_infantry_bonus
@@ -278,8 +249,6 @@ ideas = {
 				heat_attrition_factor = -0.10
 				army_morale_factor = 0.10
 		    }
-			
-			
 		}
 		
 		boslogistictech = {
@@ -296,8 +265,6 @@ ideas = {
 			   	army_morale_factor = 0.10
 				supply_consumption_factor = -0.05
 			}
-			
-		
 		}
 		
 		losthillsdatabase = {
@@ -312,7 +279,6 @@ ideas = {
 			research_bonus = {
 				support_tech = 0.1
 			}
-		
 		}
 		
 		laserfocusfoundry = {
@@ -325,14 +291,11 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-				
-				energy_equipment_2 = {
-					build_cost_ic = -0.15
+				infantry_equipment = {
+					build_cost_ic = -0.10
 					instant = yes
 				}
-			
 			}
-			
 		}
 		
 		bosoldworldfocuses = {
@@ -345,18 +308,12 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-			
-				energy_equipment_2 = {
-					build_cost_ic = -0.15
+				infantry_equipment = {
+					build_cost_ic = -0.10
+					reliability = 0.05
 					instant = yes
 				}
-				advanced_laser_weaponry = {
-					build_cost_ic = -0.15
-					instant = yes
-				}
-			
 			}
-			
 		}
 		
 		bossimpledesigns = {
@@ -369,14 +326,11 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-				
-				energy_equipment_2 = {
-					build_cost_ic = -0.30
+				infantry_equipment = {
+					build_cost_ic = -0.15
 					instant = yes
 				}
-			
 			}
-			
 		}
 		
 		cellsinone = {
@@ -389,12 +343,10 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-				
-				energy_equipment_2 = {
+				infantry_equipment = {
 					build_cost_ic = -0.30
 					instant = yes
 				}
-			
 			}
 		}
 		
@@ -407,12 +359,19 @@ ideas = {
 
 			removal_cost = -1
 			
-			equipment_bonus = {	
-				sentrybot_equipment = {
-					soft_attack = 0.1
-					hard_attack = 0.1
+			equipment_bonus = {
+				heavy_robot_equipment = {
+					reliability = 0.10
+					instant = yes
 				}
-			
+				light_robot_equipment = {
+					reliability = 0.10
+					instant = yes
+				}
+				medium_robot_equipment = {
+					reliability = 0.10
+					instant = yes
+				}
 			}
 		}
 		
@@ -426,14 +385,11 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-				
-				power_armor_equipment_2 = {
-					build_cost_ic = -0.15
+				power_armor_equipment = {
+					build_cost_ic = -0.10
 					instant = yes
 				}
-			
 			}
-			
 		}
 		
 		superioralloys = {
@@ -446,14 +402,12 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-				
-				power_armor_equipment_2 = {
-					build_cost_ic = -0.30
+				power_armor_equipment = {
+					build_cost_ic = -0.15
+					reliability = 0.10
 					instant = yes
 				}
-			
 			}
-			
 		}
 		
 		armingmaxson = {
@@ -466,7 +420,7 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-				ballistic_equipment_2 = {
+				infantry_equipment = {
 					build_cost_ic = -0.25
 					instant = yes
 				}
@@ -483,7 +437,7 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-				ballistic_equipment_2 = {
+				infantry_equipment = {
 					build_cost_ic = -0.25
 					instant = yes
 				}
@@ -502,7 +456,6 @@ ideas = {
 			modifier = {
 				conscription = 0.02
 			}
-			
 		}
 		
 		brotherhoodtacticslexicon = {
@@ -517,7 +470,6 @@ ideas = {
 			research_bonus = {
 				land_doctrine = 0.05
 			}
-			
 		}
 		
 		bosprewarindustry = {
@@ -532,7 +484,6 @@ ideas = {
 			modifier = {
 				production_speed_buildings_factor = 0.1
 			}
-			
 		}
 		
 		bossalvagedindustry = {
@@ -547,7 +498,6 @@ ideas = {
 			modifier = {
 				production_speed_buildings_factor = 0.05
 			}
-			
 		}
 		
 		vandenbergidea = {
@@ -563,7 +513,6 @@ ideas = {
 				production_speed_buildings_factor = 0.1
 				industrial_capacity_factory = 0.1
 			}
-			
 		}
 		
 		navarroscribes = {
@@ -590,16 +539,15 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-				vb_gunship_equipment = {
+				cas_equipment = {#vb_gunship_equipment
 					build_cost_ic = -0.3
 					instant = yes
 				}
-				vb_transport_plane_equipment = {
+				transport_plane_equipment = {#vb_transport_plane_equipment
 					build_cost_ic = -0.3
 					instant = yes
 				}
 			}
-			
 		}
 		
 		shisecrets = {
@@ -614,7 +562,6 @@ ideas = {
 			modifier = {
 				production_speed_buildings_factor = 0.05
 			}
-			
 		}
 		
 		vertibirdrepairs = {
@@ -627,14 +574,15 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-				vb_gunship_equipment = {
+				cas_equipment = {#vb_gunship_equipment
 					reliability = 0.1
+					instant = yes
 				}
-				vb_transport_plane_equipment = {
+				transport_plane_equipment = {#vb_transport_plane_equipment
 					reliability = 0.1
+					instant = yes
 				}
 			}
-		
 		}
 		
 		vertibirdequip = {
@@ -647,16 +595,15 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-				vb_gunship_equipment = {
+				cas_equipment = {#vb_gunship_equipment
 					build_cost_ic = -0.2
 					instant = yes
 				}
-				vb_transport_plane_equipment = {
+				transport_plane_equipment = {#vb_transport_plane_equipment
 					build_cost_ic = -0.2
 					instant = yes
 				}
 			}
-			
 		}
 		
 		powerarmourdevelopment = {
@@ -671,7 +618,6 @@ ideas = {
 			modifier = {
 				industrial_capacity_factory = 0.1
 			}
-			
 		}
 		
 		zeppelinfoundry = {
@@ -689,7 +635,6 @@ ideas = {
 					instant = yes
 				}
 			}
-		
 		}
 		
 		forbiddensecrets = {
@@ -702,16 +647,11 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-				enclave_power_armour_equipment_1 = {
-					build_cost_ic = -0.25
-					instant = yes
-				}
-				enclave_power_armour_equipment_2 = {
+				power_armor_equipment = {
 					build_cost_ic = -0.25
 					instant = yes
 				}
 			}
-		
 		}
 		
 		forbiddenweapons = {
@@ -724,13 +664,11 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-				plasma_equipment_1 = {
+				infantry_equipment = {
 					build_cost_ic = -0.3
 					instant = yes
 				}
 			}
-		
-		
 		}
 		
 		shi_secrets = {
@@ -745,7 +683,6 @@ ideas = {
 			modifier = {
 				industrial_capacity_factory = 0.05
 			}
-		
 		}
 		
 		armyknowledge = {
@@ -758,20 +695,16 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-				power_armor_equipment_3 = {
+				power_armor_equipment = {
 					build_cost_ic = -0.25
 					instant = yes
 				}
-				energy_equipment_3 = {
+				infantry_equipment = {
 					build_cost_ic = -0.25
 					instant = yes
 				}
 			}
-			
-		
-		
 		}
-		
 		
 		bosdrillsergeants = {
 		
@@ -785,7 +718,6 @@ ideas = {
 			modifier = {
 				training_time_army_factor = -0.1
 			}
-		
 		}
 		
 		siliconvalley = {
@@ -810,13 +742,6 @@ ideas = {
 			}
 			
 			removal_cost = -1
-			
-			equipment_bonus = {
-				category_all_infantry = {
-					breakthrough = 0.07
-				}
-			}
-		
 		}
 		
 		scribecontractors = {
@@ -826,20 +751,18 @@ ideas = {
 			allowed = {
 			}
 		
-		
 			removal_cost = -1
 			
 			equipment_bonus = {
-				energy_equipment_2 = {
+				infantry_equipment = {
 					build_cost_ic = -0.3
 					instant = yes
 				}
-				power_armor_equipment_2 = {
+				power_armor_equipment = {
 					build_cost_ic = -0.25
 					instant = yes
 				}
 			}
-			
 		}
 		
 		foodforservice = {
@@ -855,7 +778,6 @@ ideas = {
 				conscription = 0.01
 				research_time_factor = -0.05
 			}
-		
 		}
 		
 		drawnsword = {
@@ -870,7 +792,6 @@ ideas = {
 			modifier = {
 				conscription = 0.01
 			}
-		
 		}
 		
 		navarroornothing = {
@@ -886,7 +807,6 @@ ideas = {
 				army_core_attack_factor = 0.1
 				army_core_defence_factor = 0.1
 			}
-		
 		}
 		
 		steelcitadel = {
@@ -904,9 +824,9 @@ ideas = {
 					hard_attack = 0.05
 					defense = 0.05
 					breakthrough = 0.05
+					instant = yes
 				}
 			}
-		
 		}
 		
 		newsteel = {
@@ -924,7 +844,6 @@ ideas = {
 					instant = yes
 				}
 			}
-		
 		}
 		
 		ghoulrecruitment = {
@@ -941,7 +860,6 @@ ideas = {
 				war_support_factor = -0.05
 				stability_factor = -0.03
 			}
-		
 		}
 		
 		newtactics = {
@@ -952,16 +870,6 @@ ideas = {
 			}
 			
 			removal_cost = -1
-			
-			equipment_bonus = {
-				category_super_mutants = {
-					soft_attack = 0.05
-					hard_attack = 0.05
-					defense = 0.05
-					breakthrough = 0.05
-				}
-			}
-		
 		}
 		
 		arizonanweapons = {
@@ -974,7 +882,7 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-				melee_equipment_3 = {
+				infantry_equipment = {
 					build_cost_ic = -0.1
 					instant = yes 
 				}
@@ -993,7 +901,6 @@ ideas = {
 			modifier = {
 				conscription = 0.01
 			}
-		
 		}
 		
 		brotherhoodlogistics = {
@@ -1004,8 +911,8 @@ ideas = {
 			}
 			
 			removal_cost = -1
-			
-			
+
+			modifier = {}
 		}
 		
 		advancedcommunications = {
@@ -1020,7 +927,6 @@ ideas = {
 			modifier = {
 				encryption_factor = 0.2
 			}
-		
 		}
 		
 		securitronsoftware = {
@@ -1036,13 +942,27 @@ ideas = {
 				research_time_factor = -0.05
 			}
 			equipment_bonus = {
-				robot_equipment = {
+				heavy_robot_equipment = {
 					soft_attack = 0.05
 					hard_attack = 0.05
+					instant = yes
 				}
-			
+				light_robot_equipment = {
+					soft_attack = 0.05
+					hard_attack = 0.05
+					instant = yes
+				}
+				medium_robot_equipment = {
+					soft_attack = 0.05
+					hard_attack = 0.05
+					instant = yes
+				}
+				#robot_equipment = {
+				#	soft_attack = 0.05
+				#	hard_attack = 0.05
+				#	instant = yes
+				#}
 			}
-		
 		}
 		
 		securitronhardware = {
@@ -1058,12 +978,23 @@ ideas = {
 				research_time_factor = -0.05
 			}
 			equipment_bonus = {
-				robot_equipment = {
+				heavy_robot_equipment = {
 					defense = 0.05
+					instant = yes
 				}
-			
+				light_robot_equipment = {
+					defense = 0.05
+					instant = yes
+				}
+				medium_robot_equipment = {
+					defense = 0.05
+					instant = yes
+				}
+				#robot_equipment = {
+				#	defense = 0.05
+				#	instant = yes
+				#}
 			}
-		
 		}
 		
 		repconnencryption = {
@@ -1078,7 +1009,6 @@ ideas = {
 			modifier = {
 				research_time_factor = -0.03
 			}
-			
 		}
 		
 		robcoprototypes = {
@@ -1093,7 +1023,6 @@ ideas = {
 			modifier = {
 				research_time_factor = -0.03
 			}
-			
 		}
 		
 		robcorockets = {
@@ -1107,7 +1036,6 @@ ideas = {
 			modifier = {
 				production_speed_buildings_factor = 0.05
 			}
-		
 		}
 		
 		robcodesign = {
@@ -1120,10 +1048,22 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-				robot_equipment = {
+				heavy_robot_equipment = {
 					build_cost_ic = -0.1
 					instant = yes
 				}
+				light_robot_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				medium_robot_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				#robot_equipment = {
+				#	build_cost_ic = -0.1
+				#	instant = yes
+				#}
 			}
 		}
 		
@@ -1139,7 +1079,6 @@ ideas = {
 			research_bonus = {
 				plasma_weaponry = 0.03
 			}
-			
 		}
 		
 		robotsalvage = {
@@ -1152,11 +1091,19 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-				robot_equipment = {
+				heavy_robot_equipment = {
 					reliability = 0.15
+					instant = yes
+				}
+				light_robot_equipment = {
+					reliability = 0.15
+					instant = yes
+				}
+				medium_robot_equipment = {
+					reliability = 0.15
+					instant = yes
 				}
 			}
-		
 		}
 		
 		scraprefinement = {
@@ -1169,16 +1116,11 @@ ideas = {
 			removal_cost = -1
 		
 			equipment_bonus = {
-			power_armor_equipment_2 = {
-						build_cost_ic = -0.15
-						instant = yes
-				}
-				power_armor_equipment_3 = {
-						build_cost_ic = -0.15
-						instant = yes
+				power_armor_equipment = {
+					build_cost_ic = -0.30
+					instant = yes
 				}
 			}
-		
 		}
 		
 		industrialservos = {
@@ -1191,12 +1133,11 @@ ideas = {
 			removal_cost = -1
 			
 			equipment_bonus = {
-				power_armor_equipment_2 = {
+				power_armor_equipment = {
 					build_cost_ic = -0.25
 					instant = yes
 				}
 			}
-		
 		}
 		
 		alloyconstruct	= {
@@ -1209,11 +1150,19 @@ ideas = {
 			removal_cost = -1
 		
 			equipment_bonus = {
-				sentrybot_equipment = {
-					reliability = 0.1
+				light_robot_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				medium_robot_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				heavy_robot_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
 				}
 			}
-		
 		}
 		
 		losthillsrefurb = {
@@ -1228,7 +1177,6 @@ ideas = {
 			modifier = {
 				production_speed_buildings_factor = 0.1
 			}
-		
 		}
 		shiclosethedoors = {
 		
@@ -1238,8 +1186,8 @@ ideas = {
 			}
 			
 			removal_cost = -1
-			
-		
+
+			modifier = {}
 		}
 		steelcivilians = {
 		
@@ -1253,8 +1201,6 @@ ideas = {
 			modifier = {
 			   conscription = 0.015
 		    }
-			
-		
 		}
 		steelmilitia = {
 		
@@ -1268,8 +1214,6 @@ ideas = {
 			modifier = {
 			   conscription = 0.015
 		    }
-			
-		
 		}
 		bosdrills = {
 		
@@ -1282,17 +1226,12 @@ ideas = {
 			
 			modifier = {
 			   	army_morale_factor = 0.10
-				
 		    }
 			
 			research_bonus = { 
 				land_doctrine = 0.1 
 			}
-		
 		}
-		
-		
-		
 	}
 	
 	mobilization_laws = { 
@@ -1312,8 +1251,8 @@ ideas = {
 
 			available = {
 				original_tag = BOS
-				NOT = { has_idea = outsider_recruitment }
-				NOT = { has_idea = wasteland_conscripts }
+				BOS = { NOT = { has_idea = outsider_recruitment } }
+				BOS  = { NOT = { has_idea = wasteland_conscripts } }
 			}
 
 			modifier = {
@@ -1370,4 +1309,5 @@ ideas = {
 			
 			cancel_if_invalid = no
 		}
+	}
 }
