@@ -47,7 +47,11 @@ default_peace = {
 
 	# ROOT = Taker, FROM = State
 	take_states = {
-		add = 5000 #always take anything happily
+		factor = 1 #always take anything happily
+		modifier = {
+			add = 5000
+			always = yes
+		}
 		modifier = { #very good to take controlled states
 			add = 5000
 			FROM = {
@@ -229,6 +233,7 @@ default_peace = {
 				}
 			}
 		}
+		
 		modifier = { #much better to take states that expands home area
 			add = 25000
 			FROM = {
@@ -243,50 +248,61 @@ default_peace = {
 							is_in_home_area = yes
 						}
 					}
-					any_neighbor_state = {
-						any_neighbor_state = {
-							any_neighbor_state = {
-								is_owned_by = ROOT
-								is_in_home_area = yes
-							}
-						}
-					}
-					any_neighbor_state = {
-						any_neighbor_state = {
-							any_neighbor_state = {
-								any_neighbor_state = {
-									is_owned_by = ROOT
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-					any_neighbor_state = {
-						any_neighbor_state = {
-							any_neighbor_state = {
-								any_neighbor_state = {
-									any_neighbor_state = {
-										is_owned_by = ROOT
-										is_in_home_area = yes
-									}
-								}
-							}
-						}
-					}
-					any_neighbor_state = {
-						any_neighbor_state = {
-							any_neighbor_state = {
-								any_neighbor_state = {
-									any_neighbor_state = {
-										any_neighbor_state = {
-											is_owned_by = ROOT
-											is_in_home_area = yes
-										}
-									}
-								}
-							}
-						}
-					}
+				}
+			}
+		}
+		modifier = { # very good to take core/claim territory (cheaper and more useful)
+			add = 10000
+
+			FROM = {
+				OR = {
+					is_claimed_by = ROOT
+					is_core_of = ROOT
+				}
+			}
+		}
+
+		# close to capital = better
+		modifier = {
+			add = 2000
+
+			capital_scope = {
+				distance_to = {
+					target = FROM
+					value < 100
+				}
+			}
+		}
+
+		modifier = {
+			add = 2000
+
+			capital_scope = {
+				distance_to = {
+					target = FROM
+					value < 200
+				}
+			}
+		}
+
+		modifier = {
+			add = 2000
+
+			capital_scope = {
+				distance_to = {
+					target = FROM
+					value < 300
+				}
+			}
+		}
+
+		modifier = {
+			add = 2000
+
+			capital_scope = {
+				distance_to = {
+					target = FROM
+					value < 400
 				}
 			}
 		}
