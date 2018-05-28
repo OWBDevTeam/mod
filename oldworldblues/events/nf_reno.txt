@@ -151,7 +151,17 @@ country_event = {
 	id = nf_reno.4 #Mutant Takeover
 	title = nf_reno.4.t
 	desc = nf_reno.4.d
-	
+	immediate = {
+	    BOS = {
+	        add_opinion_modifier = { target = NEW modifier = boshatesmutants }
+		}
+		MOJ = {
+		    add_opinion_modifier = { target = NEW modifier = boshatesmutants }
+		}
+		WBH = {
+		    add_opinion_modifier = { target = NEW modifier = boshatesmutants }
+		}
+	}
 	is_triggered_only = yes 
 	
 	option = {
