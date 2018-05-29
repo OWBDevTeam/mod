@@ -2422,11 +2422,11 @@ entity = {
 	####state to use when attacking an enemy
 	###second attack state (shooting gun)
 	state = { name = "attack"			animation = "attack" animation_blend_time = 0.0  animation_speed = 1.0 looping = no  next_state = "attack" chance = 3 }
-	state = { name = "attack" animation = "move" animation_blend_time = 0.1 animation_speed = 1.0 looping = no chance = 1 propagate_state = { rifle1 = "attack" } }
+	state = { name = "attack" animation = "attack" animation_blend_time = 0.1 animation_speed = 1.0 looping = no chance = 1 propagate_state = { rifle1 = "attack" } }
 	###defensive state
-	state = { name = "defend"			animation="move"  propagate_state = { rifle1 = "attack" } }
+	state = { name = "defend"			animation="attack"  propagate_state = { rifle1 = "attack" } }
 	####supporting another attacking unit
-	state = { name = "support_attack"	animation="move"  }
+	state = { name = "support_attack"	animation="attack"  }
 	###movement on map with no enemies
 	state = { name = "move"				animation = "attack" 	animation_blend_time = 0.0 animation_speed = 1.0 }
 	###retreat "limp"
