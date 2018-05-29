@@ -18,152 +18,13 @@ equipments = {
 			electricity = 1
 		}
 	}
-
-    # Scrap Trucks
-	truck_equipment_1 = {
-		archetype = motorized_equipment
-		priority = 10
-		visual_level = 0
-		type = motorized
-		
-		maximum_speed = 8
-		reliability = 0.8
-		
-		#Defensive Abilities
-		defense = 26
-		breakthrough = 6
-		hardness = 0.15
-		armor_value = 2
-
-		#Offensive Abilities
-		ap_attack = 1
-		air_attack = 1
-		soft_attack = 2
-		hard_attack = 0.75
-
-		#Space taken in convoy
-		lend_lease_cost = 5
-
-		build_cost_ic = 8
-		resources = {
-			metal = 1
-			electricity = 1
-		}
-	}
-
-    # Salvaged Trucks
-	truck_equipment_2 = {
-		archetype = motorized_equipment
-        parent = truck_equipment_1	
-		priority = 50
-		visual_level = 1
-
-		maximum_speed = 9
-
-		#Defensive Abilities
-		defense = 30
-		breakthrough = 8
-		armor_value = 5
-		hardness = 0.2
-
-		#Offensive Abilities
-		ap_attack = 2
-		air_attack = 2
-		soft_attack = 6
-		hard_attack = 1
-		
-		build_cost_ic = 12
-		resources = {
-			metal = 3
-			electricity = 1
-		}
-	}
-    
-    # Wasteland Truck
-    truck_equipment_3 = {
-		archetype = motorized_equipment
-        parent = truck_equipment_2
-		priority = 60
-		visual_level = 2
-		
-		maximum_speed = 10
-
-		#Defensive Abilities
-		defense = 34
-		breakthrough = 10
-		armor_value = 8
-		hardness = 0.25
-
-		#Offensive Abilities
-		ap_attack = 3
-		air_attack = 4
-		soft_attack = 8
-		hard_attack = 1.2
-		
-		build_cost_ic = 16
-	}
-    
-    # Great War Truck
-    truck_equipment_4 = {
-		archetype = motorized_equipment
-        parent = truck_equipment_3
-		priority = 70
-		visual_level = 3
-		
-		maximum_speed = 11
-
-		#Defensive Abilities
-		defense = 38
-		breakthrough = 14
-		armor_value = 12
-		hardness = 0.3
-
-		#Offensive Abilities
-		ap_attack = 4
-		air_attack = 5
-		soft_attack = 12
-		hard_attack = 2
-		
-		build_cost_ic = 22
-		resources = {
-			metal = 2
-			electricity = 1
-		}	
-	}
-    
-    # Super Mutant Battlewagons
-    super_mutant_battlewagons_equipment = {
-		parent = truck_equipment_4
-		archetype = motorized_equipment
-		priority = 70
-		visual_level = 4
-		
-		maximum_speed = 10
-
-		#Defensive Abilities
-		defense = 38
-		breakthrough = 7
-		armor_value = 4
-
-		#Offensive Abilities
-		ap_attack = 2
-		air_attack = 2
-		soft_attack = 10
-		hard_attack = 10
-		
-		build_cost_ic = 22
-		resources = {
-			metal = 2
-			electricity = 1
-		}	
-	}
 	
 	# Motorcycles
 	motorbike_equipment_1 = {
 		archetype = motorized_equipment
-		priority = 30			
-		maximum_speed = 10
-		reliability = 0.8
+		priority = 10			
+		maximum_speed = 8
+		reliability = 0.7
 		hardness = 0.1
 
 		#Space taken in convoy
@@ -181,10 +42,10 @@ equipments = {
 	motorbike_equipment_2 = {
 		archetype = motorized_equipment
         parent = motorbike_equipment_1
-		priority = 40	
+		priority = 30	
 
-		maximum_speed = 12
-		reliability = 0.9
+		maximum_speed = 10
+		reliability = 0.75
 		build_cost_ic = 3
         
 		resources = {
@@ -193,87 +54,20 @@ equipments = {
 			electronics = 1
 		}	
 	}
-    
-    # Wasteland Motorcycles
-	motorbike_equipment_3 = {
-		archetype = motorized_equipment
-        parent = motorbike_equipment_2
-		priority = 50	
-        
-		maximum_speed = 14
-		reliability = 0.95
-		build_cost_ic = 5
-        
-		resources = {
-			fuel = 2
-			metal = 2
-			electronics = 2
-		}	
-	}
-    
-    # Uniques
-    eighties_warbikes = {
-		archetype = motorized_equipment
-        parent = motorbike_equipment_3
-		priority = 100	
-
-        maximum_speed = 15
-		reliability = 0.95
-		build_cost_ic = 4
-        
-		resources = {
-			fuel = 1
-			metal = 2
-			electronics = 1
-		}
-	}
-    
-    legion_motor_chariots = {
-		archetype = motorized_equipment
-        parent = motorbike_equipment_3
-		priority = 100		
-
-        maximum_speed = 12
-		reliability = 0.95
-		build_cost_ic = 6
-        
-        soft_attack = 0.1
-        
-        resources = {
-			fuel = 2
-			metal = 2
-			electronics = 2
-		}
-	}
-    
-    ranger_harley_davisons = {
-		archetype = motorized_equipment
-        parent = motorbike_equipment_3
-		priority = 100			
-        
-        maximum_speed = 10
-		reliability = 0.98
-		build_cost_ic = 6
-        
-        resources = {
-			fuel = 1
-			metal = 2
-			electronics = 1
-		}
-	}
 	
 	 # Scrap Car
 	car_equipment_1 = {
 		archetype = motorized_equipment
-		priority = 30			
-		maximum_speed = 9
+		parent = motorbike_equipment_2
+		priority = 50			
+		maximum_speed = 10
 		reliability = 0.8
 		hardness = 0.1
 
 		#Space taken in convoy
 		lend_lease_cost = 5
 
-		build_cost_ic = 4
+		build_cost_ic = 5
 		resources = {
 			
 			metal = 1
@@ -285,11 +79,12 @@ equipments = {
 	car_equipment_2 = {
 		archetype = motorized_equipment
         parent = car_equipment_1
-		priority = 40	
+		priority = 70	
         
-		maximum_speed = 10
-		reliability = 0.9
+		maximum_speed = 11
+		reliability = 0.85
 		build_cost_ic = 5
+		hardness = 0.1
         
 		resources = {
 			fuel = 1
@@ -302,11 +97,12 @@ equipments = {
     car_equipment_3 = {
 		archetype = motorized_equipment
         parent = car_equipment_2
-		priority = 50	
+		priority = 90	
         
-		maximum_speed = 10
+		maximum_speed = 12
 		reliability = 0.9
 		build_cost_ic = 6
+		hardness = 0.15
         
 		resources = {
 			fuel = 1
