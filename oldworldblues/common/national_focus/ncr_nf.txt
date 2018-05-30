@@ -214,7 +214,6 @@ focus_tree = {
 				country_event = { id = nf_ncr.7 }
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_retake
@@ -231,7 +230,7 @@ focus_tree = {
 				type = annex_everything
 				target = BVC
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -257,13 +256,12 @@ focus_tree = {
 				create_faction = fantasma_cartel
 				add_to_faction = BVC
 				add_to_war = {
-					targeted_alliance = BVP
+					targeted_alliance = BVC
 					enemy = NCR
+					hostility_reason = ally
 				}				
 			}
-			
 		}
-
 	}
 	focus = {
 		id = ncr_buyout
@@ -927,7 +925,7 @@ focus_tree = {
 				type = annex_everything
 				target = SCR
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -1056,7 +1054,7 @@ focus_tree = {
 				type = annex_everything
 				target = RAP
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -2285,7 +2283,7 @@ focus_tree = {
 				type = annex_everything
 				target = MRA
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -2579,24 +2577,24 @@ focus_tree = {
 		completion_reward = {
 			252 = {
 				add_resource = {
-                    type = electricity
-                    amount = -30
-                }
+					type = electricity
+					amount = -30
+				}
 				add_resource = {
-                    type = electronics
-                    amount = -5
-                }
+					type = electronics
+					amount = -5
+				}
 			}
 			capital_scope = {
-                add_resource = {
-                    type = electricity
-                    amount = 30
-                }
 				add_resource = {
-                    type = electronics
-                    amount = 5
-                }
-            }
+					type = electricity
+					amount = 30
+				}
+				add_resource = {
+					type = electronics
+					amount = 5
+				}
+			}
 		}
 
 	}
