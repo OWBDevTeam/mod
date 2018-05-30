@@ -220,6 +220,7 @@ NCR_heavytroops_focus_category = {
 		available = {
 			NCR = { owns_state = 253 }
 			NCR = { controls_state = 253 }
+			hidden_trigger = { NCR = { NOT = { has_country_flag = ncr_spawned_armorexperiment } } }
 		}
 
 		highlight_states = {
@@ -241,7 +242,10 @@ NCR_heavytroops_focus_category = {
 
 		complete_effect = {
 			custom_effect_tooltip = load_ncrheavytroops
-			hidden_effect = { load_oob = ncrheavytroops }
+			hidden_effect = {
+				load_oob = ncrheavytroops
+				set_country_flag = ncr_spawned_armorexperiment
+			}
 		}
 	}
 	NCR_protege_focus = {
@@ -250,6 +254,7 @@ NCR_heavytroops_focus_category = {
 		available = {
 			NCR = { owns_state = 253 }
 			NCR = { controls_state = 253 }
+			hidden_trigger = { NCR = { NOT = { has_country_flag = ncr_spawned_protege } } }
 		}
 
 		highlight_states = {
@@ -271,7 +276,10 @@ NCR_heavytroops_focus_category = {
 
 		complete_effect = {
 			custom_effect_tooltip = load_ncrheavytroops
-			hidden_effect = { load_oob = ncrheavytroops }
+			hidden_effect = {
+				load_oob = ncrheavytroops
+				set_country_flag = ncr_spawned_protege
+			}
 		}
 	}
 	NCR_heavytroops_focus = {
@@ -280,6 +288,7 @@ NCR_heavytroops_focus_category = {
 		available = {
 			NCR = { owns_state = 253 }
 			NCR = { controls_state = 253 }
+			hidden_trigger = { NCR = { NOT = { has_country_flag = ncr_spawned_heavytroops } } }
 		}
 
 		highlight_states = {
@@ -301,7 +310,10 @@ NCR_heavytroops_focus_category = {
 
 		complete_effect = {
 			custom_effect_tooltip = load_ncrheavytroops
-			hidden_effect = { load_oob = ncrheavytroops }
+			hidden_effect = {
+				load_oob = ncrheavytroops
+				set_country_flag = ncr_spawned_heavytroops
+			}
 		}
 	}
 }
