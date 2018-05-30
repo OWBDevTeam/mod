@@ -545,7 +545,7 @@ focus_tree = {
 				name = air_bonus
 				bonus = 0.5
 				uses = 1
-				category =  air_doctrine
+				category =  air_equipment
 			}
 		}
 	}
@@ -560,6 +560,11 @@ focus_tree = {
 		prerequisite = {
 			focus = hea_nf_air
 		}
+		
+		available = {
+			has_tech = scrap_fighter 
+		}
+		
 		mutually_exclusive = {
 			focus = hea_nf_air_peasant
 		}
@@ -579,12 +584,17 @@ focus_tree = {
 		prerequisite = {
 			focus = hea_nf_air
 		}
+		
+		available = {
+			has_tech = scrap_fighter 
+		}
+		
 		mutually_exclusive = {
 			focus = hea_nf_air_knight
 		}
 		
 		completion_reward = {
-			add_ideas = hea_air_peasant
+			add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 30 producer = HEA }
 		}
 	}
 	
