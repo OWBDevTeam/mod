@@ -114,6 +114,7 @@ setup_NCR_enclave = {
 			limit = {
 				NEW = {
 					is_ai = yes
+					is_in_faction = no
 				}
 			}
 			NEW = {
@@ -122,9 +123,37 @@ setup_NCR_enclave = {
 				}
 			}
 			annex_country = { target = NEW transfer_troops = yes }
-			else = {
-				create_faction = western_enclave
-				add_to_faction = NEW
+		}
+		else_if = {
+			limit = {
+				NEW = {
+					is_ai = yes
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+			}
+			remove_from_faction = NEW
+			add_to_faction = NEW
+		}
+		else_if = {
+			limit = {
+				NEW = {
+					is_ai = yes
+					is_in_faction = yes
+					is_faction_leader = yes
+				}
+			}
+			create_faction = western_enclave
+			remove_from_faction = NEW
+			add_to_faction = NEW
+			every_other_country = {
+				limit = {
+					is_puppet_of = NEW
+				}
+				remove_from_faction = PREV
+				ENC = {
+					add_to_faction = PREV
+				}
 			}
 		}
 	}
