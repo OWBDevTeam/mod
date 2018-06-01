@@ -100,6 +100,7 @@ brk_raiding_vic = {
 				NOT = { has_country_flag = brk_vic_raid_underway }
 			}
 		}
+		visible = { NOT = { has_country_flag = brk_vic_first_raid } }
 
 		days_remove = 40
 		days_re_enable = 80
@@ -123,7 +124,7 @@ brk_raiding_vic = {
 					20 = {
 						custom_effect_tooltip = brk_vic_failure_tt
 						country_event = { id = nf_event_brk.28 }
-						HAI = { country_event = { id = nf_event_brk.25 } } # Intentionally the same event as practice raid
+						VIC = { country_event = { id = nf_event_brk.25 } } # Intentionally the same event as practice raid
 					}
 				}
 			}
@@ -141,7 +142,7 @@ brk_raiding_vic = {
 					40 = {
 						custom_effect_tooltip = brk_vic_failure_tt
 						country_event = { id = nf_event_brk.28 }
-						HAI = { country_event = { id = nf_event_brk.25 } } # Intentionally the same event as practice raid
+						VIC = { country_event = { id = nf_event_brk.25 } } # Intentionally the same event as practice raid
 					}
 				}
 				custom_effect_tooltip = brk_vic_improve_odd_tt
@@ -163,6 +164,7 @@ brk_raiding_vic = {
 				has_country_flag = brk_vic_first_raid
 			}
 		}
+		visible = { NOT = { has_country_flag = brk_vic_port_raid } }
 
 		days_remove = 60
 		days_re_enable = 100
@@ -227,6 +229,7 @@ brk_raiding_vic = {
 				has_country_flag = brk_vic_port_raid
 			}
 		}
+		visible = { NOT = { has_country_flag = brk_vic_harbour_seized } }
 
 		war_with_on_remove = VIC
 		days_remove = 100
@@ -235,7 +238,7 @@ brk_raiding_vic = {
 
 		complete_effect = {
 			country_event = { id = nf_event_brk.34 }
-			#add_state_claim = 
+			add_state_claim = 461
 		}
 
 		modifier = {
@@ -256,20 +259,20 @@ brk_raiding_vic = {
 				declare_war_on = { target = VIC type = annex_everything }
 				custom_effect_tooltip = brk_vic_plan_1_tt
 				hidden_effect = { load_oob = BRK_VIC_plan_1}
-				VIC = { country_event = { id = brk_nf_event.35 } }
+				VIC = { country_event = { id = nf_event_brk.35 } }
 			}
 			if = { # Plan 2 - Catch and Hold
 				limit = { has_country_flag = brk_vic_plan_2 }
 				hidden_effect = { transfer_state = 461 }
 				custom_effect_tooltip = brk_vic_plan_2_tt
 				hidden_effect = { load_oob = BRK_VIC_plan_2 }
-				VIC = { country_event = { id = brk_nf_event.36 } }
+				VIC = { country_event = { id = nf_event_brk.36 } }
 			}
 			if = { # Plan 3 - Show of Strength
 				limit = { has_country_flag = brk_vic_plan_3 }
 				custom_effect_tooltip = brk_vic_plan_3_tt
-				country_event = { id = brk_nf_event.38 }
-				VIC = { country_event = { id = brk_nf_event.37 } }
+				country_event = { id = nf_event_brk.38 }
+				VIC = { country_event = { id = nf_event_brk.37 } }
 			}
 			if = {
 				limit = {
@@ -308,7 +311,7 @@ brk_raiding_vic = {
 
 		remove_effect = {
 			declare_war_on = { target = VIC type = annex_everything }
-			add_war_support = 0.
+			add_war_support = 0.05
 			VIC = { country_event = { id = nf_event_brk.39 } }
 		}
 	}

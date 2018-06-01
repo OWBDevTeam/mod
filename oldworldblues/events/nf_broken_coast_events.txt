@@ -659,7 +659,9 @@ country_event = { # HAI / Failed Defence
 
 	option = {
 		name = nf_event_brk.23.a
-		decimate_half_all_industry = yes
+		every_owned_state = {
+			decimate_half_all_industry = yes
+		}
 		army_experience = 5
 		add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
 	}
@@ -768,7 +770,9 @@ country_event = { # VIC / Failed Defence
 
 	option = {
 		name = nf_event_brk.31.a
-		decimate_half_naval_industry = yes
+		every_owned_state = {
+			decimate_half_naval_industry = yes
+		}
 		army_experience = 5
 		add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
 	}
