@@ -59,6 +59,7 @@ brk_raiding_vic = {
 				is_subject_of = HAI # We aren't their subject
 			}
 			NOT = { has_non_aggression_pact_with = HAI }
+			brk_vic_raid_available = yes
 		}
 
 		days_remove = 40
@@ -100,7 +101,10 @@ brk_raiding_vic = {
 				NOT = { has_country_flag = brk_vic_raid_underway }
 			}
 		}
-		visible = { NOT = { has_country_flag = brk_vic_first_raid } }
+		visible = {
+			NOT = { has_country_flag = brk_vic_first_raid }
+			brk_vic_raid_available = yes
+		}
 
 		days_remove = 40
 		days_re_enable = 80
@@ -164,7 +168,10 @@ brk_raiding_vic = {
 				has_country_flag = brk_vic_first_raid
 			}
 		}
-		visible = { NOT = { has_country_flag = brk_vic_port_raid } }
+		visible = {
+			NOT = { has_country_flag = brk_vic_port_raid }
+			brk_vic_raid_available = yes
+		}
 
 		days_remove = 60
 		days_re_enable = 100
@@ -188,7 +195,7 @@ brk_raiding_vic = {
 					30 = {
 						custom_effect_tooltip = brk_vic_failure_tt
 						country_event = { id = nf_event_brk.32 }
-						HAI = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
+						VIC = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
 					}
 				}
 			}
@@ -206,7 +213,7 @@ brk_raiding_vic = {
 					50 = {
 						custom_effect_tooltip = brk_vic_failure_tt
 						country_event = { id = nf_event_brk.32 }
-						HAI = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
+						VIC = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
 					}
 				}
 				custom_effect_tooltip = brk_vic_improve_odd_tt
@@ -229,7 +236,10 @@ brk_raiding_vic = {
 				has_country_flag = brk_vic_port_raid
 			}
 		}
-		visible = { NOT = { has_country_flag = brk_vic_harbour_seized } }
+		visible = {
+			NOT = { has_country_flag = brk_vic_harbour_seized }
+			brk_vic_raid_available = yes
+		}
 
 		war_with_on_remove = VIC
 		days_remove = 100
@@ -303,6 +313,9 @@ brk_raiding_vic = {
 			}
 			NOT = { has_war_with = VIC }
 		}
+		visible = {
+			brk_vic_raid_available = yes
+		}
 
 		war_with_on_remove = VIC
 		days_remove = 10
@@ -313,6 +326,63 @@ brk_raiding_vic = {
 			declare_war_on = { target = VIC type = annex_everything }
 			add_war_support = 0.05
 			VIC = { country_event = { id = nf_event_brk.39 } }
+		}
+	}
+
+	# Reign of Terror #
+	brk_vic_terror = {
+		icon = revolt
+		available = {
+			owns_state = 461
+			owns_state = 28
+			owns_state = 370
+			owns_state = 607
+			owns_state = 514
+			owns_state = 420
+			owns_state = 738
+		}
+
+		visible = {
+			has_completed_focus = brk_nf_new_victoria
+		}
+
+		days_remove = 100
+		cost = 100
+		fire_only_once = yes
+
+		modifier = {
+			monthly_population = -0.4
+		}
+
+		remove_effect = {
+			add_state_core = 461
+			461 = {
+				add_manpower = -574
+			}
+			add_state_core = 28
+			28 = {
+				add_manpower = -284
+			}
+			add_state_core = 370
+			370 = {
+				add_manpower = -242
+			}
+			add_state_core = 607
+			607 = {
+				add_manpower = -281
+			}
+			add_state_core = 514
+			514 = {
+				add_manpower = -253
+			}
+			add_state_core = 420
+			420 = {
+				add_manpower = -1902
+			}
+			add_state_core = 738
+			738 = {
+				add_manpower = -560
+			}
 		}
 	}
 }
