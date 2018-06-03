@@ -1,5 +1,5 @@
 equipments = {
-    infantry_equipment = { # pipe guns
+	infantry_equipment = { # pipe guns
 		is_archetype = yes
 		is_buildable = no
 		type = infantry
@@ -13,7 +13,7 @@ equipments = {
 
 		build_cost_ic = 2.5
 		
-        # Defensive Abilities
+		# Defensive Abilities
 		defense = 18
 		breakthrough = 2
 
@@ -32,13 +32,13 @@ equipments = {
 		archetype = infantry_equipment
 		priority = 5	
 		reliability = 0.9
-		visual_level = 0
+		visual_level = 3
 		#Space taken in convoy
 		lend_lease_cost = 1
 
 		build_cost_ic = 2.5
 		
-        # Defensive Abilities
+		# Defensive Abilities
 		defense = 15
 		breakthrough = 2
 
@@ -48,16 +48,16 @@ equipments = {
 		ap_attack = 1
 		air_attack = 0
 	}
-    
-    # Basic Firearms
+	
+	# Basic Firearms
 	ballistic_equipment_1 = {
 		archetype = infantry_equipment
-        parent = infantry_equipment_1
+		parent = infantry_equipment_1
 		priority = 8
-		visual_level = 1
-        
-        	reliability = 0.9
-        
+		visual_level = 4
+		
+		reliability = 0.9
+		
 		# Defensive Abilities
 		defense = 18
 		breakthrough = 2
@@ -69,8 +69,8 @@ equipments = {
 		air_attack = 0
 
 		build_cost_ic = 3.2
-        
-        resources = {
+		
+		resources = {
 			metal = 2
 		}
 	}
@@ -80,7 +80,7 @@ equipments = {
 		archetype = infantry_equipment
 		parent = ballistic_equipment_1
 		priority = 18
-		visual_level = 2
+		visual_level = 6
 		
 		#Defensive Abilities
 		defense = 28
@@ -93,21 +93,21 @@ equipments = {
 		air_attack = 0
 		
 		build_cost_ic = 3.75
-        
-        resources = {
+		
+		resources = {
 			metal = 3
 		}
 	}
-    
-    # Advanced Firearms
+	
+	# Advanced Firearms
 	ballistic_equipment_3 = {
 		archetype = infantry_equipment
 		parent = ballistic_equipment_2
 		priority = 28
-		visual_level = 3
+		visual_level = 8
 		
-        	reliability = 0.92
-        
+		reliability = 0.92
+		
 		#Defensive Abilities
 		defense = 34
 		breakthrough = 5
@@ -120,18 +120,18 @@ equipments = {
 		
 		#reliability = 0.8
 		build_cost_ic = 4.5
-        
-        resources = {
+		
+		resources = {
 			metal = 4
 		}
 	}
-    
-    # Laser Muskets
-    energy_equipment_1 = {
+	
+	# Laser Muskets
+	energy_equipment_1 = {
 		archetype = infantry_equipment
-        parent = infantry_equipment_1
-        	visual_level = 4
-        # Misc Abilities
+		parent = infantry_equipment_1
+		visual_level = 5
+		# Misc Abilities
 		reliability = 0.95
 		maximum_speed = 4
 		
@@ -150,21 +150,21 @@ equipments = {
 		lend_lease_cost = 1
 		
 		build_cost_ic = 3.75
-        
+		
 		priority = 05
 		visual_level = 0
 		resources = {
 			metal = 2
-            		electricity = 2
+			electricity = 2
 		}
 	}
-    
-    # Common Energy Weapons
-    energy_equipment_2 = {
+	
+	# Common Energy Weapons
+	energy_equipment_2 = {
 		archetype = infantry_equipment
 		parent = energy_equipment_1
 		priority = 20
-		visual_level = 5
+		visual_level = 7
 		
 		# Defensive Abilities
 		defense = 29
@@ -177,19 +177,19 @@ equipments = {
 		air_attack = 0
 
 		build_cost_ic = 4.5
-        
-        resources = {
+		
+		resources = {
 			metal = 2
-            		electricity = 2
+			electricity = 2
 		}
 	}
-    
-    # Advanced Energy Weapons
-    energy_equipment_3 = {
+	
+	# Advanced Energy Weapons
+	energy_equipment_3 = {
 		archetype = infantry_equipment
 		parent = energy_equipment_2
 		priority = 30
-		visual_level = 6
+		visual_level = 9
 
 		# Defensive Abilities
 		defense = 34
@@ -202,18 +202,18 @@ equipments = {
 		air_attack = 0
 
 		build_cost_ic = 5.5
-        
-        resources = {
+		
+		resources = {
 			metal = 3
-            		electricity = 3
+			electricity = 3
 		}
 	}
-    
-    # Basic Melee Weapons
-    melee_equipment_1 = {
+	
+	# Basic Melee Weapons
+	melee_equipment_1 = {
 		archetype = infantry_equipment
-        	visual_level = 7
-        	# Misc Abilities
+		visual_level = 0
+		# Misc Abilities
 		reliability = 0.85
 		maximum_speed = 4.5
 
@@ -232,19 +232,19 @@ equipments = {
 		lend_lease_cost = 1
 		
 		build_cost_ic = 2.5
-        
+		
 		priority = 5
 		visual_level = 0
 	}
-    
-    # Slashing Melee Weapons
-    melee_equipment_2 = {
+	
+	# Slashing Melee Weapons
+	melee_equipment_2 = {
 		archetype = infantry_equipment
 		parent = melee_equipment_1
 		priority = 15
-		visual_level = 8
+		visual_level = 1
 
-        # Misc Abilities
+		# Misc Abilities
 		reliability = 0.85
 		maximum_speed = 5
 
@@ -259,20 +259,20 @@ equipments = {
 		air_attack = 0
 
 		build_cost_ic = 3.2
-        
-        resources = {
+		
+		resources = {
 			metal = 2
 		}
 	}
-    
-    # Powered Weapons
-    melee_equipment_3 = {
+	
+	# Powered Weapons
+	melee_equipment_3 = {
 		archetype = infantry_equipment
 		parent = melee_equipment_2
 		priority = 25
-		visual_level = 9
+		visual_level = 2
 
-        # Misc Abilities
+		# Misc Abilities
 		reliability = 0.85
 		maximum_speed = 5.5
 
@@ -287,14 +287,14 @@ equipments = {
 		air_attack = 0
 
 		build_cost_ic = 3.75
-        
-        resources = {
+		
+		resources = {
 			metal = 3
-            electricity = 1
+			electricity = 1
 		}
 	}
-    
-    gauss_equipment_1 = {
+	
+	gauss_equipment_1 = {
 		archetype = infantry_equipment
 		# Misc Abilities
 		reliability = 0.90
@@ -315,22 +315,22 @@ equipments = {
 		lend_lease_cost = 1
 		
 		build_cost_ic = 8.0
-        
-        resources = {
-		metal = 2
-            	electricity = 3
-            	advanced_technology = 2
-            	electronics = 2
+		
+		resources = {
+			metal = 2
+			electricity = 3
+			advanced_technology = 2
+			electronics = 2
 		}
-        
+		
 		priority = 35
-		visual_level = 1
+		visual_level = 10
 	}
-    
-    tesla_equipment_1 = {
+	
+	tesla_equipment_1 = {
 		archetype = infantry_equipment
 
-        # Misc Abilities
+		# Misc Abilities
 		reliability = 0.90
 		maximum_speed = 4
 
@@ -349,22 +349,22 @@ equipments = {
 		lend_lease_cost = 1
 		
 		build_cost_ic = 8.0
-        
-        resources = {
-		metal = 2
-            	electricity = 5
-            	advanced_technology = 2
-            	electronics = 2
+		
+		resources = {
+			metal = 2
+			electricity = 5
+			advanced_technology = 2
+			electronics = 2
 		}
-        
+		
 		priority = 35
-		visual_level = 1
+		visual_level = 11
 	}
-    
-    plasma_equipment_1 = {
+	
+	plasma_equipment_1 = {
 		archetype = infantry_equipment
 
-        # Misc Abilities
+		# Misc Abilities
 		reliability = 0.90
 		maximum_speed = 4
 
@@ -383,21 +383,21 @@ equipments = {
 		lend_lease_cost = 1
 		
 		build_cost_ic = 8.0
-        
-        resources = {
+		
+		resources = {
 			metal = 2
-            electricity = 4
-            advanced_technology = 2
-            electronics = 2
+			electricity = 4
+			advanced_technology = 2
+			electronics = 2
 		}
-        
+		
 		priority = 40
-		visual_level = 1
+		visual_level = 12
 	}
-    
-    super_mutant_melee_equipment_1 = {
+	
+	super_mutant_melee_equipment_1 = {
 		archetype = infantry_equipment
-        # Misc Abilities
+		# Misc Abilities
 		reliability = 0.8
 		maximum_speed = 5.5
 
@@ -416,12 +416,12 @@ equipments = {
 		lend_lease_cost = 1
 		
 		build_cost_ic = 4.0
-        
+		
 		resources = {
 			metal = 3
 		}
-        
+		
 		priority = 30
-		visual_level = 0
+		visual_level = 13
 	}
 }
