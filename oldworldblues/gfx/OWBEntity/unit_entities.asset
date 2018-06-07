@@ -2300,7 +2300,13 @@ entity = {
 	state = { name = "idle" }
 	#event = { time = 0.0    node = "muzzle" particle = "minigun_muzzle_flash" sound = { soundeffect = infantry_minigun_attack } life = 1 } 
 	#}
-	state = { name = "fire"
+	state = { name = "attack"
+		event = { time = 0    node = "muzzle" particle = "minigun_muzzle_flash" light = "mg_muzzle_flash" sound = { soundeffect = infantry_minigun_attack } keep_particle = yes } 
+	}
+	state = { name = "defend"
+		event = { time = 0    node = "muzzle" particle = "minigun_muzzle_flash" light = "mg_muzzle_flash" sound = { soundeffect = infantry_minigun_attack } keep_particle = yes } 
+	}
+	state = { name = "support_attack"
 		event = { time = 0    node = "muzzle" particle = "minigun_muzzle_flash" light = "mg_muzzle_flash" sound = { soundeffect = infantry_minigun_attack } keep_particle = yes } 
 	}
 }
@@ -2367,6 +2373,37 @@ entity = {
 		event = { time = 0.42 node = "muzzle"  entity = "laser_muzzle_effect_entity" sound = { soundeffect = infantry_laser_rifle_attack }   } 
 	}
 }
+entity = {
+	name = "medium_robot_entity"
+	pdxmesh = "securitron_mesh"
+	
+	default_state = "idle"
+
+	state = { name = "attack"			animation = "move" chance = 3 looping = no next_state = "attack" animation_blend_time = 0.2
+	propagate_state = { machine_gun = "idle" }
+	}
+	state = { name = "attack"			animation = "attack" chance = 1 looping = no next_state = "attack" animation_blend_time = 0.0 
+	
+	}
+	state = { name = "defend"			animation = "defend" 			animation_blend_time = 0.0  animation_speed = 1.0 
+		
+	}
+	state = { name = "support_attack"	animation = "support" 	animation_blend_time = 0.0 animation_speed = 1.0 
+		
+	}
+	
+	state = { name = "move"				animation = "move" 		 		animation_blend_time = 0.2 animation_speed = 1.0 propagate_state = { grenade = "idle" } propagate_state = { machine_gun = "idle" } }
+	state = { name = "retreat"			animation = "move" 	 		animation_blend_time = 0.2 animation_speed = 1.0 propagate_state = { grenade = "idle" } propagate_state = { machine_gun = "idle" } }
+	state = { name = "idle"				animation = "idle"       		animation_speed = 1.0 chance = 5 looping = no propagate_state = { machine_gun = "idle" } propagate_state = { grenade = "idle" } }
+	state = { name = "idle"				animation = "idle2"       		animation_speed = 1.0 chance = 1 looping = no propagate_state = { machine_gun = "idle" } propagate_state = { grenade = "idle" } }
+	state = { name = "idle"				animation = "idle3"       		animation_speed = 1.0 chance = 1 looping = no propagate_state = { machine_gun = "idle" } propagate_state = { grenade = "idle" } }
+	state = { name = "idle"				animation = "idle4"       		animation_speed = 1.0 chance = 5 looping = no propagate_state = { machine_gun = "idle" } propagate_state = { grenade = "idle" } }
+	
+	attach = { 	name = "machine_gun"	right_hand_node = "protectron_laser_gun_r" }	
+	attach = { 	name = "grenade"	left_hand_node = "protectron_laser_gun_l" }	
+	
+				
+}
 ####	ENC ROBOTS
 #########################################################################################################
 entity = {
@@ -2424,16 +2461,16 @@ entity = {
 	state = { name = "attack"			animation = "attack" animation_blend_time = 0.0  animation_speed = 1.0  looping = no chance = 3 next_state = "attack" propagate_state = { rifle1 = "idle" } }
 	state = { name = "attack"			animation = "shoot" animation_blend_time = 0.0  animation_speed = 1.0 looping = no chance = 1 next_state = "attack" }
 	###defensive state
-	state = { name = "defend"			 }
+	state = { name = "defend"			animation = "shoot" animation_blend_time = 0.0  animation_speed = 1.0 }
 	####supporting another attacking unit
-	state = { name = "support_attack"	 }
+	state = { name = "support_attack"	animation = "shoot" animation_blend_time = 0.0  animation_speed = 1.0 }
 	###movement on map with no enemies
 	state = { name = "move"				animation = "move" 	animation_blend_time = 0.0 animation_speed = 1.0 propagate_state = { rifle1 = "idle" } }
 	###retreat "limp"
 	state = { name = "retreat"		animation="retreat" }
 	#### death state (despawns after this)
 	state = { name = "death"	animation="retreat"	}
-	###HIGH PRIORITY
+	
 	state = { name = "idle" animation="idle1" chance = 6 propagate_state = { rifle1 = "idle" } }
 	state = { name = "idle" animation ="idle2" chance = 2 next_state="idle1" propagate_state = { rifle1 = "idle" } }
 	### training state, normally many of these
@@ -2582,4 +2619,35 @@ animation = {
 	file = "robots/protectron_attack_anim.anim"
 }
 
-
+animation = {
+	name = "securitron_idle_anim"
+	file = "robots/securitron_idle1_animation_anim.anim"
+}
+animation = {
+	name = "securitron_idle_2_anim"
+	file = "robots/securitron_idle2_animation_anim.anim"
+}
+animation = {
+	name = "securitron_idle_3_anim"
+	file = "robots/securitron_idle3_animation_anim.anim"
+}
+animation = {
+	name = "securitron_idle_4_anim"
+	file = "robots/securitron_idle4_animation_anim.anim"
+}
+animation = {
+	name = "securitron_attack_anim"
+	file = "robots/securitron_attack_animation_anim.anim"
+}
+animation = {
+	name = "securitron_move_anim"
+	file = "robots/securitron_move_animation_anim.anim"
+}
+animation = {
+	name = "securitron_defend_anim"
+	file = "robots/securitron_defend_animation_anim.anim"
+}
+animation = {
+	name = "securitron_support_anim"
+	file = "robots/securitron_support_animation_anim.anim"
+}

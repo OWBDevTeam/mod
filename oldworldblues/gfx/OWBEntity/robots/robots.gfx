@@ -92,20 +92,22 @@ objectTypes = {
 		
 		animation = { id = "idle"			type = "securitron_idle_anim" }
 		animation = { id = "idle2"			type = "securitron_idle_2_anim" }
-		animation = { id = "idle2"			type = "securitron_idle_3_anim" }
-		animation = { id = "idle2"			type = "securitron_idle_4_anim" }
+		animation = { id = "idle3"			type = "securitron_idle_3_anim" }
+		animation = { id = "idle4"			type = "securitron_idle_4_anim" }
 		animation = { id = "attack"			type = "securitron_attack_anim" }
 		animation = { id = "move"			type = "securitron_move_anim" }
-		animation = { id = "retreat"		type = "securitron_defend_anim" }
-		animation = { id = "retreat"		type = "securitron_support_anim" }
+		animation = { id = "defend"		type = "securitron_defend_anim" }
+		animation = { id = "support"		type = "securitron_support_anim" }
 		
 		
 		meshsettings = {
 			name = "jorodoxShape"
 			index = 0
 			texture_diffuse = "securitron_diffuse.dds"
-			texture_normal = "securitron_normal.dds"
-			texture_specular = "securitron_specular.dds"
+			texture_normal = "securitron_diffuse.dds"
+			texture_specular = "securitron_diffuse.dds"
+			#texture_normal = "securitron_normal.dds"
+			#texture_specular = "securitron_specular.dds"
 			shader = PdxMeshAdvanced
 		}
 	}
