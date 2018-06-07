@@ -2399,10 +2399,43 @@ entity = {
 	state = { name = "idle"				animation = "idle3"       		animation_speed = 1.0 chance = 1 looping = no propagate_state = { machine_gun = "idle" } propagate_state = { grenade = "idle" } }
 	state = { name = "idle"				animation = "idle4"       		animation_speed = 1.0 chance = 5 looping = no propagate_state = { machine_gun = "idle" } propagate_state = { grenade = "idle" } }
 	
-	attach = { 	name = "machine_gun"	right_hand_node = "protectron_laser_gun_r" }	
-	attach = { 	name = "grenade"	left_hand_node = "protectron_laser_gun_l" }	
+	attach = { 	name = "machine_gun"	left_hand_node = "securitron_machine_gun_entity" }	
+	attach = { 	name = "grenade"	right_hand_node = "securitron_grenade_entity" }	
 	
 				
+}
+entity = {
+	name = "securitron_machine_gun_entity"
+	pdxmesh = "laser_beam_mesh"
+	locator = { name = muzzle position = { 0 0 0 } }
+	get_state_from_parent = yes
+	state = { name = "attack"
+		event = { time = 0.73 node = "muzzle"  entity = "rifle_muzzle_particle" light = "mg_muzzle_flash" keep_particle = yes sound = { soundeffect = infantry_mg_attack  }  } 
+		event = { time = 1.03 node = "muzzle"  entity = "rifle_muzzle_particle" light = "mg_muzzle_flash" keep_particle = yes sound = { soundeffect = infantry_mg_attack  }  }
+	}
+	state = { name = "defend"
+		event = { time = 0.33 node = "muzzle"  entity = "rifle_muzzle_particle" light = "mg_muzzle_flash" keep_particle = yes sound = { soundeffect = infantry_mg_attack  }   } 
+		event = { time = 0.63 node = "muzzle"  entity = "rifle_muzzle_particle" light = "mg_muzzle_flash" keep_particle = yes sound = { soundeffect = infantry_mg_attack  }   } 
+		event = { time = 1.03 node = "muzzle"  entity = "rifle_muzzle_particle" light = "mg_muzzle_flash" keep_particle = yes sound = { soundeffect = infantry_mg_attack  }   } 
+	}
+	state = { name = "support_attack"
+		
+	}
+}
+entity = {
+	name = "securitron_grenade_entity"
+	pdxmesh = "laser_beam_mesh"
+	locator = { name = muzzle position = { 0 0 0 } }
+	get_state_from_parent = yes
+	state = { name = "attack"
+		event = { time = 0.33 node = "muzzle"  entity = "heavy_tank_attack_barrel_particle" light = "mg_muzzle_flash" keep_particle = yes sound = { soundeffect = heavy_armour_fire  }  } 
+	}
+	state = { name = "defend"
+	}
+	state = { name = "support_attack"
+		event = { time = 1.06 node = "muzzle"  entity = "heavy_tank_attack_barrel_particle" light = "mg_muzzle_flash" keep_particle = yes sound = { soundeffect = heavy_armour_fire  }  } 
+		event = { time = 1.6 node = "muzzle"  entity = "heavy_tank_attack_barrel_particle" light = "mg_muzzle_flash" keep_particle = yes sound = { soundeffect = heavy_armour_fire  }  } 
+	}
 }
 ####	ENC ROBOTS
 #########################################################################################################
