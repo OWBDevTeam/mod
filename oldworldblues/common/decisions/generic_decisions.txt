@@ -1,3 +1,8 @@
+#############################################################################################
+#                               Generic Decisions by HappyNTH                               #
+# To disable generic decisions for a tag, set the country flag "generic_decisions_disabled" #
+#############################################################################################
+
 # Generic Stability Stuff #
 political_actions = {
 	produce_consumer_goods = { # Baisc decision settler / bos version
@@ -12,6 +17,7 @@ political_actions = {
 				tag = CES
 				is_brotherhood_nation = yes
 			}
+			NOT = { has_country_flag = generic_decisions_disabled }
 		}
 
 		cost = 50
@@ -42,6 +48,7 @@ political_actions = {
 				is_raider_nation = yes
 				is_super_mutant = yes
 			}
+			NOT = { has_country_flag = generic_decisions_disabled }
 		}
 
 		cost = 50
@@ -73,6 +80,7 @@ political_actions = {
 				tag = CES
 				is_brotherhood_nation = yes
 			}
+			NOT = { has_country_flag = generic_decisions_disabled }
 		}
 
 		cost = 50
@@ -104,6 +112,7 @@ political_actions = {
 				is_raider_nation = yes
 				is_super_mutant = yes
 			}
+			NOT = { has_country_flag = generic_decisions_disabled }
 		}
 
 		cost = 50
@@ -129,6 +138,7 @@ political_actions = {
 			has_war_support > 0.2
 			has_stability < 0.85
 		}
+		visible = { NOT = { has_country_flag = generic_decisions_disabled } }
 
 		cost = 50
 		days_remove = 50
@@ -153,6 +163,7 @@ political_actions = {
 				has_government = elites
 				has_government = ruler
 			}
+			NOT = { has_country_flag = generic_decisions_disabled }
 		}
 		available = {
 			has_stability > 0.30
@@ -202,6 +213,7 @@ propaganda_efforts = {
 				tag = CES
 				is_brotherhood_nation = yes
 			}
+			NOT = { has_country_flag = generic_decisions_disabled }
 		}
 		cost = 50
 		days_remove = 70
@@ -231,6 +243,7 @@ propaganda_efforts = {
 				}
 				has_war = yes
 			}
+			NOT = { has_country_flag = generic_decisions_disabled }
 		}
 		available = {
 			OR = {
@@ -266,6 +279,7 @@ propaganda_efforts = {
 					has_war = yes
 				}
 			}
+			NOT = { has_country_flag = generic_decisions_disabled }
 		}
 		available = {
 			has_war_support > 0.2
@@ -300,6 +314,7 @@ propaganda_efforts = {
 		icon = GFX_decision_generic_civil_support
 		visible = {
 			has_war = yes
+			NOT = { has_country_flag = generic_decisions_disabled }
 		}
 		available = {
 			has_war_support > 0.2
@@ -328,6 +343,7 @@ war_measures = {
 		icon = GFX_decision_generic_form_nation
 		visible = {
 			has_war = yes
+			NOT = { has_country_flag = generic_decisions_disabled }
 		}
 		available = {
 			has_war_support < 0.80
@@ -363,6 +379,7 @@ war_measures = {
 				tag = CES
 				is_brotherhood_nation = yes
 			}
+			NOT = { has_country_flag = generic_decisions_disabled }
 		}
 		available = {
 			has_stability > 0.2
@@ -394,6 +411,7 @@ war_measures = {
 				tag = CES
 				is_brotherhood_nation = yes
 			}
+			NOT = { has_country_flag = generic_decisions_disabled }
 		}
 		available = {
 			num_of_civilian_factories_available_for_projects > 1
@@ -427,6 +445,7 @@ war_measures = {
 				is_raider_nation = yes
 				is_super_mutant = yes
 			}
+			NOT = { has_country_flag = generic_decisions_disabled }
 		}
 		available = {
 			num_of_civilian_factories_available_for_projects > 1
