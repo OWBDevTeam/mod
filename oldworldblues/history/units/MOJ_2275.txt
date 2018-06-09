@@ -1,0 +1,77 @@
+﻿division_template = {
+	name = "Mojave Expeditionary"
+
+	regiments = {
+		power_armour = { x = 0 y = 0 }
+		power_armour = { x = 0 y = 1 }
+		power_armour = { x = 0 y = 2 }
+		power_armour = { x = 1 y = 0 }
+		power_armour = { x = 1 y = 1 }
+		power_armour = { x = 1 y = 2 }
+		power_armour = { x = 2 y = 0 }
+		power_armour = { x = 2 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Militia Force"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+units = {
+
+	division {
+		name = "1. Mojave Expeditionary"
+		location = 6987
+		division_template = "Mojave Expeditionary"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.9
+	}
+}
+units = {
+
+	division {
+		name = "2. Mojave Expeditionary"
+		location = 3235
+		division_template = "Mojave Expeditionary"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.86
+	}
+}
+units = {
+
+	division {
+		name = "3. Mojave Expeditionary"
+		location = 3199
+		division_template = "Mojave Expeditionary"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.95
+	}
+}
+units = {
+
+	division {
+		name = "4. Mojave Expeditionary"
+		location = 6990
+		division_template = "Mojave Expeditionary"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.80
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = energy_equipment_2
+			creator = "MOJ"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

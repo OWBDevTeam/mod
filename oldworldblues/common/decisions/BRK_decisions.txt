@@ -1,0 +1,1008 @@
+brk_decisions = {	
+	brk_decision_build_the_fleet = {
+		fire_only_once = yes
+		days_remove = 60
+		visible = { has_completed_focus = brk_nf_elites_pol_side_1 }
+		available = { has_completed_focus = brk_nf_elites_pol_side_1 }
+		modifier = { civilian_factory_use = 5 }
+		remove_effect = {
+			set_technology = { cruiser_tech_2 = 1 }
+			load_oob = BRK_raiding_fleet
+		}
+	}
+		
+	brk_decision_build_graven_ship = {
+		fire_only_once = yes
+		days_remove = 60
+		visible = { has_completed_focus = brk_nf_ruler_pol_side_1 }
+		available = { has_completed_focus = brk_nf_ruler_pol_side_1 }
+		modifier = { civilian_factory_use = 5 }
+		remove_effect = {
+			set_technology = { battleship_tech_2 = 1 }
+			load_oob = BRK_graven_boat
+		}
+	}
+}
+
+# Setting variables for the below #
+@border_incident_escalation_countdown = 30
+@border_conflict_incident_forgotten_timer = 30
+@border_conflict_escalate_to_war_countdown = 45
+@border_conflict_time_until_cancelled = 360
+
+brk_raiding_vic = {
+	## Victoria Raid Chain ##
+
+	# The Practice Raid #
+	brk_vic_practice_raid = {
+		icon = infiltrate_state
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = brk_vic_raid_underway_tt
+				NOT = { has_country_flag = brk_vic_raid_underway }
+			}
+		}
+		visible = {
+			NOT = { has_country_flag = brk_vic_first_raid }
+			NOT = { has_country_flag = brk_vic_practice_raid }
+			HAI = { exists = yes } # The target exists - handy
+			NOT = { has_war_with = HAI } # We aren't at war with the target
+			HAI = {
+				NOT = {
+					is_subject_of = BRK # They aren't a subject of us
+				}
+				NOT = {
+					is_in_faction_with = BRK # We aren't in a faction with them
+				}
+			}
+			NOT = {
+				is_subject_of = HAI # We aren't their subject
+			}
+			NOT = { has_non_aggression_pact_with = HAI }
+			brk_vic_raid_available = yes
+		}
+
+		days_remove = 40
+		days_re_enable = 60
+		cost = 50
+
+		complete_effect = {
+			HAI = {
+				country_event = { id = nf_event_brk.21 hours = 1 } # The target gets an event warning them about their impending doom
+			}
+			set_country_flag = brk_vic_raid_underway
+		}
+
+		remove_effect = {
+			clr_country_flag = brk_vic_raid_underway
+			random_list = {
+				80 = {
+					set_country_flag = brk_vic_practice_raid
+					custom_effect_tooltip = brk_vic_success_tt
+					country_event = { id = nf_event_brk.22 }
+					HAI = { country_event = { id = nf_event_brk.23 } }
+				}
+				20 = {
+					custom_effect_tooltip = brk_vic_failure_tt
+					country_event = { id = nf_event_brk.24 }
+					HAI = { country_event = { id = nf_event_brk.25 } }
+				}
+			}
+		}
+	}
+
+	# Raiding the Coats #
+
+	brk_vic_raid_the_coasts = {
+		icon = infiltrate_state
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = brk_vic_raid_underway_tt
+				NOT = { has_country_flag = brk_vic_raid_underway }
+			}
+		}
+		visible = {
+			NOT = { has_country_flag = brk_vic_first_raid }
+			brk_vic_raid_available = yes
+		}
+
+		days_remove = 40
+		days_re_enable = 80
+		cost = 50
+
+		complete_effect = {
+			set_country_flag = brk_vic_raid_underway
+			VIC = { country_event = { id = nf_event_brk.26 } }
+		}
+		remove_effect = {
+			clr_country_flag = brk_vic_raid_underway
+			if = {
+				limit = { has_country_flag = brk_vic_practice_raid }
+				random_list = {
+					80 = {
+						set_country_flag = brk_vic_first_raid
+						custom_effect_tooltip = brk_vic_success_tt
+						country_event = { id = nf_event_brk.27 } # Next Decsion activation handeled in this event
+						VIC = { country_event = { id = nf_event_brk.23 } } # Intentionally the same event as practice raid
+					}
+					20 = {
+						custom_effect_tooltip = brk_vic_failure_tt
+						country_event = { id = nf_event_brk.28 }
+						VIC = { country_event = { id = nf_event_brk.25 } } # Intentionally the same event as practice raid
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = brk_vic_practice_raid }
+				}
+				random_list = {
+					60 = {
+						set_country_flag = brk_vic_first_raid
+						custom_effect_tooltip = brk_vic_success_tt
+						country_event = { id = nf_event_brk.27 } # Next Decsion activation handeled in this event
+						VIC = { country_event = { id = nf_event_brk.23 } } # Intentionally the same event as practice raid
+					}
+					40 = {
+						custom_effect_tooltip = brk_vic_failure_tt
+						country_event = { id = nf_event_brk.28 }
+						VIC = { country_event = { id = nf_event_brk.25 } } # Intentionally the same event as practice raid
+					}
+				}
+				custom_effect_tooltip = brk_vic_improve_odd_tt
+			}
+		}
+	}
+
+	# Raiding the Ports #
+
+	brk_vic_raid_the_ports = {
+		icon = infiltrate_state
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = brk_vic_raid_underway_tt
+				NOT = { has_country_flag = brk_vic_raid_underway }
+			}
+			custom_trigger_tooltip = {
+				tooltip = brk_vic_coast_raid_tt
+				has_country_flag = brk_vic_first_raid
+			}
+		}
+		visible = {
+			NOT = { has_country_flag = brk_vic_port_raid }
+			brk_vic_raid_available = yes
+		}
+
+		days_remove = 60
+		days_re_enable = 100
+		cost = 50
+
+		complete_effect = {
+			set_country_flag = brk_vic_raid_underway
+			VIC = { country_event = { id = nf_event_brk.29 } }
+		}
+		remove_effect = {
+			clr_country_flag = brk_vic_raid_underway
+			if = {
+				limit = { has_country_flag = brk_vic_practice_raid }
+				random_list = {
+					70 = {
+						set_country_flag = brk_vic_port_raid
+						custom_effect_tooltip = brk_vic_success_tt
+						country_event = { id = nf_event_brk.30 } # Next Decsion activation handeled in this event
+						VIC = { country_event = { id = nf_event_brk.31 } } # Intentionally the same event as practice raid
+					}
+					30 = {
+						custom_effect_tooltip = brk_vic_failure_tt
+						country_event = { id = nf_event_brk.32 }
+						VIC = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = brk_vic_practice_raid }
+				}
+				random_list = {
+					50 = {
+						set_country_flag = brk_vic_port_raid
+						custom_effect_tooltip = brk_vic_success_tt
+						country_event = { id = nf_event_brk.30 } # Next Decsion activation handeled in this event
+						VIC = { country_event = { id = nf_event_brk.31 } } # Intentionally the same event as practice raid
+					}
+					50 = {
+						custom_effect_tooltip = brk_vic_failure_tt
+						country_event = { id = nf_event_brk.32 }
+						VIC = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
+					}
+				}
+				custom_effect_tooltip = brk_vic_improve_odd_tt
+			}
+		}
+
+	}
+
+	# Seize the Winter Harbour #
+
+	brk_vic_seize_winter_harbour = {
+		icon = generic_ignite_civil_war
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = brk_vic_raid_underway_tt
+				NOT = { has_country_flag = brk_vic_raid_underway }
+			}
+			custom_trigger_tooltip = {
+				tooltip = brk_vic_port_raid_tt
+				has_country_flag = brk_vic_port_raid
+			}
+		}
+		visible = {
+			NOT = { has_country_flag = brk_vic_harbour_seized }
+			brk_vic_raid_available = yes
+		}
+
+		war_with_on_remove = VIC
+		days_remove = 100
+		cost = 50
+		fire_only_once = yes
+
+		complete_effect = {
+			country_event = { id = nf_event_brk.34 }
+			add_state_claim = 461
+		}
+
+		modifier = {
+			planning_speed = -0.2
+			invasion_preparation = -0.1
+		}
+
+		highlight_states = {
+			state = 461
+		}
+
+		remove_effect = {
+			set_country_flag = brk_vic_harbour_seized
+			if = { # Plan 1 - War Plan
+				limit = {
+					has_country_flag = brk_vic_plan_1
+				}
+				declare_war_on = { target = VIC type = annex_everything }
+				custom_effect_tooltip = brk_vic_plan_1_tt
+				hidden_effect = { load_oob = BRK_VIC_plan_1}
+				VIC = { country_event = { id = nf_event_brk.35 } }
+			}
+			if = { # Plan 2 - Catch and Hold
+				limit = { has_country_flag = brk_vic_plan_2 }
+				hidden_effect = { transfer_state = 461 }
+				custom_effect_tooltip = brk_vic_plan_2_tt
+				hidden_effect = { load_oob = BRK_VIC_plan_2 }
+				VIC = { country_event = { id = nf_event_brk.36 } }
+			}
+			if = { # Plan 3 - Show of Strength
+				limit = { has_country_flag = brk_vic_plan_3 }
+				custom_effect_tooltip = brk_vic_plan_3_tt
+				country_event = { id = nf_event_brk.38 }
+				VIC = { country_event = { id = nf_event_brk.37 } }
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_country_flag = brk_vic_plan_1
+							has_country_flag = brk_vic_plan_2
+							has_country_flag = brk_vic_plan_3
+						}
+					}
+				}
+				custom_effect_tooltip = brk_vic_choose_plan_tt
+			}
+		}
+	}
+
+	# War for New Victoria #
+	brk_vic_wartime = {
+		icon = oppression
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = brk_vic_raid_underway_tt
+				NOT = { has_country_flag = brk_vic_raid_underway }
+			}
+			custom_trigger_tooltip = {
+				tooltip = brk_vic_port_seized_tt
+				has_country_flag = brk_vic_harbour_seized
+			}
+			NOT = { has_war_with = VIC }
+		}
+		visible = {
+			brk_vic_raid_available = yes
+		}
+
+		war_with_on_remove = VIC
+		days_remove = 10
+		cost = 10
+		fire_only_once = yes
+
+		remove_effect = {
+			declare_war_on = { target = VIC type = annex_everything }
+			add_war_support = 0.05
+			VIC = { country_event = { id = nf_event_brk.39 } }
+		}
+	}
+
+	# Reign of Terror #
+	brk_vic_terror = {
+		icon = revolt
+		available = {
+			owns_state = 461
+			owns_state = 28
+			owns_state = 370
+			owns_state = 607
+			owns_state = 514
+			owns_state = 420
+			owns_state = 738
+		}
+
+		visible = {
+			has_completed_focus = brk_nf_new_victoria
+		}
+
+		days_remove = 100
+		cost = 100
+		fire_only_once = yes
+
+		modifier = {
+			monthly_population = -0.4
+		}
+
+		remove_effect = {
+			add_state_core = 461
+			461 = {
+				add_manpower = -574
+			}
+			add_state_core = 28
+			28 = {
+				add_manpower = -284
+			}
+			add_state_core = 370
+			370 = {
+				add_manpower = -242
+			}
+			add_state_core = 607
+			607 = {
+				add_manpower = -281
+			}
+			add_state_core = 514
+			514 = {
+				add_manpower = -253
+			}
+			add_state_core = 420
+			420 = {
+				add_manpower = -1902
+			}
+			add_state_core = 738
+			738 = {
+				add_manpower = -560
+			}
+		}
+	}
+}
+
+brk_raiding = {
+
+	## GENERIC RAIDING SEGMENT ##
+	# Initiation Decision #
+	brk_raid_borders_initial_raid = {
+		icon = border_war
+		allowed = {
+			tag = BRK
+		}
+		available = {
+			OR = {
+				AND = {
+					any_state = {
+						is_owned_and_controlled_by = FROM
+						any_neighbor_state = { # Any border state of the target
+							is_fully_controlled_by = ROOT # is controlled by us
+							set_temp_variable = { var:attacker_state_temp = id } # ID of our state is set to a temp variable
+							has_ROOT_at_least_1_div_in_current_state_scope = yes # Custom trigger - we have at least 1 division on the border
+							hidden_trigger = { NOT = { has_state_flag = border_incident_active } } # The state we own isn't already in a border conflict
+						}
+						NOT = { has_state_flag = border_incident_active } # The target state isn't already in a border conflict
+						set_temp_variable = { var:defender_state_temp = id } # ID of the target state is set to a temp variable
+					}
+				}
+				# 
+				#custom_trigger_tooltip = {
+				#	tooltip = brk_can_raid_vic_or_hai
+				#	OR = {
+				#		FROM = { tag = VIC }
+				#		FROM = { tag = HAI }
+				#	}
+				#}
+			}
+			NOT = { has_non_aggression_pact_with = FROM }
+			custom_trigger_tooltip = {
+				tooltip = BRK_prelim_raid
+				NOT = { has_country_flag = BRK_prelim_raid }
+			}
+		}
+
+		visible = {
+			FROM = { exists = yes } # The target exists - handy
+			NOT = { has_war_with = FROM } # We aren't at war with the target
+			FROM = { has_not_initiated_border_incident_with_ROOT = yes } # Custom Trigger - we haven't already initiated a raid against the target
+			FROM = {
+				NOT = {
+					is_subject_of = ROOT # They aren't a subject of us
+				}
+				NOT = {
+					is_in_faction_with = ROOT # We aren't in a faction with them
+				}
+			}
+			NOT = {
+				is_subject_of = FROM # We aren't their subject
+			}
+
+			OR = {
+				NOT = { has_border_war_with = FROM } # We don't have any border wars with them
+				any_state = {
+					is_owned_and_controlled_by = FROM # Is owned by them
+					hidden_trigger = { NOT = { has_state_flag = border_incident_active } } # and doesn't have a border incident
+					any_neighbor_state = {
+						hidden_trigger = { NOT = { has_state_flag = border_incident_active } } # and any state adjacent to one they own doesn't have a border incident active
+						is_fully_controlled_by = ROOT # and belongs to us
+					}
+				}
+			}
+		}
+
+		target_trigger = {
+			OR = {
+				FROM = {
+					is_neighbor_of = BRK
+				}
+			}
+		}
+
+		highlight_states = { # Highlights the target state
+			OR = {
+				state = FROM.defender_state_vs_@ROOT
+				AND = {
+					is_owned_and_controlled_by = FROM
+					hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+					any_neighbor_state = {
+						hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+						has_ROOT_at_least_1_div_in_current_state_scope = yes
+						is_fully_controlled_by = ROOT
+					}
+				}
+			}
+		}
+
+		ai_will_do = { # AI modifier shit
+			base = 1
+			modifier = {
+				
+			}
+		}
+
+		cost = 50 # Cost
+
+		fire_only_once = no # Does it fire only once?
+
+		days_remove = @border_incident_escalation_countdown # How long it takes to initiate 
+		days_re_enable = 180 # How long until it comes back
+
+		war_with_target_on_remove = yes
+
+		complete_effect = { # Effect WHEN CLICKED
+			hidden_effect = { # is hidden. shh - I'm not here.
+				random_state = {
+					limit = { # a random state that is owned by the target, doesn't have an active incident and is bordered by any state we have one division in and fully control:
+						is_owned_and_controlled_by = FROM
+						hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+						any_neighbor_state = {
+							hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+							has_ROOT_at_least_1_div_in_current_state_scope = yes
+							is_fully_controlled_by = ROOT
+						}
+					}
+					save_event_target_as = defender_state # Is saved as the defender state
+					set_variable = { FROM.defender_state_vs_@ROOT = id } # The ID of the state is saved in a variable specific to the target
+					set_temp_variable = { defender_state_temp = id } # and a temp variable 
+					set_state_flag = border_incident_active # and gets the state flag indicating it has a border incident
+				}
+				random_state = {
+					limit = { # a random state we fully own that doesn't have an incident active and borders the state we specified previously:
+						is_fully_controlled_by = ROOT
+						hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+						has_ROOT_at_least_1_div_in_current_state_scope = yes
+						any_neighbor_state = {
+							state = var:FROM.defender_state_vs_@ROOT
+						}
+					}
+					save_event_target_as = attacker_state # Is saved as the attacker state
+					set_variable = { FROM.attacker_state_vs_@ROOT = id } # The ID of the state is saved
+					set_temp_variable = { attacker_state_temp = id } # and again in a temp variable
+					set_state_flag = border_incident_active # and gets a fancy state flag. Oooh!
+				}
+			}
+			custom_effect_tooltip = WTT_border_incident_delay_until_new_incident_180 # tooltip here
+			FROM = {
+				country_event = { id = nf_event_brk.9 hours = 1 } # The target gets an event warning them about their impending doom
+				activate_targeted_decision = { target = ROOT decision = brk_light_border_raid_defender_warning }	# Activates a mission for them visualising how long the have to move their sorry troops to the border
+			}
+		}
+		remove_effect = { # Effect ON TIMEOUT
+			hidden_effect = { # i'm hidden again. and losing my mind. help.
+				var:FROM.defender_state_vs_@ROOT = { # The defending state and attacking state are saved again as event targets, for some reason
+					save_event_target_as = defender_state 
+				}
+				var:FROM.attacker_state_vs_@ROOT = {
+					save_event_target_as = attacker_state 
+				}
+				random_state = {
+					limit = { # Temp variable setting again?
+						is_owned_and_controlled_by = FROM
+						hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+						any_neighbor_state = {
+							is_fully_controlled_by = ROOT
+							has_ROOT_at_least_1_div_in_current_state_scope = yes
+							hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+						}
+					}
+					set_temp_variable = { defender_state_temp = id }
+				}
+				random_state = {
+					limit = { # Temp variable setting again?
+						is_fully_controlled_by = ROOT
+						hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+						has_ROOT_at_least_1_div_in_current_state_scope = yes
+						any_neighbor_state = {
+							state = var:FROM.defender_state_vs_@ROOT
+						}
+					}
+					set_temp_variable = { attacker_state_temp = id }
+				}
+			}
+			if = {
+				limit = {
+					OR = { 
+						NOT = { has_country_flag = raid_backed_down }
+						NOT = { has_country_flag = raid_stood_up }
+					}
+				}
+				custom_effect_tooltip = brk_raid_decisions
+			}
+			if = {
+				limit = {
+					has_country_flag = raid_backed_down
+				}
+				hidden_effect = {
+					scavenge_equipment_randomiser = yes
+				}
+				clr_country_flag = raid_backed_down
+				country_event = { id = nf_event_brk.10 }
+				FROM = { country_event = { id = nf_event_brk.12 } }
+			}
+			if = {
+				limit = {
+					has_country_flag = raid_stood_up
+				}
+				clr_country_flag = raid_stood_up
+				country_event = { id = nf_event_brk.11 }
+				activate_targeted_decision = { target = FROM decision = brk_light_border_escalate } # Activates a decision for them to escalate the incident
+			}
+			clr_country_flag = BRK_prelim_raid
+		}
+	}
+
+	# This mission visualises the time they defender has whilst the initial raid is ongoing
+	brk_light_border_raid_defender_warning = {
+
+		icon = border_war
+
+		allowed = { always = no } #Activated from effect of the inititation event
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		war_with_target_on_timeout = yes # Lies to the AI by saying this will lead to war so they mobalise every last person to the border to defend it
+		ai_will_do = { # AI shit 2: Electric Boogaloo 
+			base = 0
+			modifier = {
+				
+			}
+		}
+
+		days_mission_timeout = @border_incident_escalation_countdown # Somehow syncs up with the previous
+
+		fire_only_once = yes
+
+		is_good = no # Makes it red and atmospheric
+		
+		timeout_effect = { # What happens on timeout
+			custom_effect_tooltip = escalation_possible_tooltip_for_defender # It can escalate
+			custom_effect_tooltip = effects_if_border_conflict_is_lost # What happens if we lose?
+			effect_tooltip = { # This stuff would happen if we lost:
+				add_political_power = -100
+				var:ROOT.defender_state_vs_@FROM = { FROM = { transfer_state = PREV } } # State gets transfered
+			}
+			hidden_effect = {
+				remove_targeted_decision = { target = FROM decision = brk_light_border_raid_defender_warning } # Removes this mission
+				activate_targeted_decision = { target = FROM decision = brk_light_border_escalate_raid_defender_warning } # Adds a decision to warn the target we could start a border war at any time
+			}
+		}
+	}
+
+	# Mission for defender warning the target we could start a border war at any time
+	brk_light_border_escalate_raid_defender_warning = {
+		icon = border_war
+		allowed = { always = no }
+		available = { hidden_trigger = { always = no } }
+		highlight_states = { # Highlights the involved state again
+			OR = {
+				state = var:defender_state_temp
+				state = var:ROOT.defender_state_vs_@FROM
+			}
+		}
+
+		war_with_target_on_timeout = yes # Reminds the AI it might lead to war and so they should keep their troops on the border
+		ai_will_do = {
+			base = 0
+			modifier = {
+				
+			}
+		}
+
+		days_mission_timeout = @border_conflict_incident_forgotten_timer
+
+		fire_only_once = yes
+
+		is_good = no
+
+		timeout_effect = { # Just tells the target that we (the attacker) can start the border war, and reminds them what will happen if they fail 
+			custom_effect_tooltip = from_cannot_escalate
+			custom_effect_tooltip = effects_if_border_conflict_is_lost
+			effect_tooltip = {
+				add_political_power = -100
+				var:ROOT.defender_state_vs_@FROM = { FROM = { transfer_state = PREV } } # State gets transfered
+			}
+		}		
+	}
+
+	#Mission for attacker to escalate or incident is forgotten and the decision to escalate incident on border with the target to border conflict
+	brk_light_border_escalate = {
+
+		icon = border_war
+
+		allowed = { always = no } #Activated from effect
+
+		available = { # We can only select the trigger if the attacker state is still fully controlled by us and we have a division in the state
+			var:FROM.attacker_state_vs_@ROOT = {
+				is_fully_controlled_by = ROOT
+			}
+			divisions_in_border_state = {
+				state = var:FROM.attacker_state_vs_@ROOT
+				border_state = var:FROM.defender_state_vs_@ROOT
+				size > 0
+			}
+		}
+
+		highlight_states = { # Highlights our state
+			state = var:FROM.attacker_state_vs_@ROOT			
+		}
+
+		ai_will_do = { # I'm giving up on commenting this now
+			base = 0
+			modifier = {
+				
+			}
+		}
+
+		cancel_trigger = { # The mission will bugger off if we are suddenly in a faction with them
+			is_in_faction_with = FROM
+		}
+
+		selectable_mission = yes # We can click it!
+
+		fire_only_once = yes #Reactivation handled in effect
+
+		days_mission_timeout = @border_conflict_incident_forgotten_timer # Syncs up with how many days until the incident is forgotten
+
+		timeout_effect = { # IF WE LET THE MISSION GO (BACK DOWN)
+			custom_effect_tooltip = WTT_border_incident_delay_until_new_incident_120 # Some tooltip
+			hidden_effect = {
+				FROM = { remove_targeted_decision = { target = ROOT decision = brk_light_border_escalate_raid_defender_warning } } # Stops warning the target of an escalation
+				FROM = { # Clears the state flags and variables - no more incident may happen
+					var:attacker_state_vs_@ROOT = {
+						clr_state_flag = border_incident_active
+					}
+					var:defender_state_vs_@ROOT = {
+						clr_state_flag = border_incident_active
+					}
+					clear_variable = attacker_state_vs_@ROOT
+					clear_variable = defender_state_vs_@ROOT
+				}
+			}
+		}
+
+		complete_effect = { # IF WE CLICK IT
+			start_border_war = { # A border war is started
+				change_state_after_war = no # that won't lead to the state being exchanged
+				attacker = { # Stuff for the attacker
+					state = var:FROM.attacker_state_vs_@ROOT
+					num_provinces = 4 # Only 4 provinces can be involved
+					on_win = nf_event_brk.14 # If we win, this event happens for us
+					on_lose = nf_event_brk.16 # If we lose, this event happens for us
+					on_cancel = nf_event_brk.18 # If the conflict is cancelled, this event happens for us
+				}
+				
+				defender = { # Stuff for the attacker
+					state = var:FROM.defender_state_vs_@ROOT
+					num_provinces = 4 
+					on_win = nf_event_brk.14
+					on_lose = nf_event_brk.17
+					on_cancel = nf_event_brk.19
+				}
+			}
+			FROM = { # The target gets two decisions:
+				activate_targeted_decision = { target = ROOT decision = brk_escalate_conflict } # This one lets them escalate if they want
+				activate_targeted_decision = { target = ROOT decision = WTT_border_conflict_time_until_cancelled } # This shows them how long until everyone gives up and goes home
+			}
+			# The same then happens for us
+			activate_targeted_decision = { target = FROM decision = brk_escalate_conflict }
+			activate_targeted_decision = { target = FROM decision = WTT_border_conflict_time_until_cancelled }
+		}
+	}
+
+	# Mission showing both us and the target that if we don't win in howevermany days we'll pack up and go home
+	WTT_border_conflict_time_until_cancelled = {
+
+		icon = border_war
+
+		allowed = { always = no } #Activated from effect
+
+		available = {
+			var:FROM.defender_state_vs_@ROOT = { has_border_war = no }
+			var:FROM.attacker_state_vs_@ROOT = { has_border_war = no }
+		}
+		
+		highlight_states = {
+			OR = {
+				state = var:defender_state_temp
+				state = var:FROM.defender_state_vs_@ROOT
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				
+			}
+		}
+
+		days_mission_timeout = @border_conflict_time_until_cancelled
+		is_good = no
+
+		fire_only_once = yes #Reactivation handled in effect
+
+		complete_effect = {
+
+		}
+
+		timeout_effect = { # This bit makes us pack up and go home
+			if = {
+				limit = { is_border_conflict_defender_vs_FROM = yes }
+				cancel_border_war = {
+					defender = var:defender_state_vs_@FROM
+					attacker = var:attacker_state_vs_@FROM
+				}
+			}
+			else = {
+				cancel_border_war = {
+					defender = var:FROM.defender_state_vs_@ROOT
+					attacker = var:FROM.attacker_state_vs_@ROOT
+				}
+			}
+			hidden_effect = {
+				remove_targeted_decision = { target = FROM decision = brk_escalate_conflict } # Removes the decision for the target to escalate the conflict
+			}
+		}
+	}
+
+	# Decision to escalate conflict further
+	brk_escalate_conflict = {
+
+		icon = decision_generic_ignite_civil_war
+
+		allowed = { always = no } #Activated from effect
+
+		visible = {
+			has_border_war_with = FROM
+		}
+
+		highlight_states = {
+			OR = {
+				state = var:FROM.attacker_state_vs_@ROOT
+				state = var:ROOT.defender_state_vs_@FROM
+			}
+		}
+
+		cost = 200
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				
+			}
+		}
+
+		fire_only_once = yes #Reactivation handled in effect
+
+		complete_effect = {
+			if = {
+				limit = { is_border_conflict_defender_vs_FROM = yes }
+				set_border_war_data = { # Updates the border war
+					attacker = var:ROOT.defender_state_vs_@FROM
+					defender = var:ROOT.defender_state_vs_@FROM
+					defender_modifier = 0.15
+					combat_width = 100
+				}
+			}
+			else = {
+				set_border_war_data = { # Updates the border war
+					attacker = var:FROM.defender_state_vs_@ROOT
+					defender = var:FROM.defender_state_vs_@ROOT
+					attacker_modifier = 0.15
+					combat_width = 100
+				}
+			}
+			FROM = {
+				set_country_flag = { # Sets a country flag after the escalation countdown is complete for the target
+					flag = brk_escalate_conflict_to_war_cooldown_@ROOT
+					days = @border_conflict_escalate_to_war_countdown
+					value = 1
+				}
+				remove_targeted_decision = { target = ROOT decision = brk_escalate_conflict }
+			}
+			set_country_flag = { # Sets a similar flag for us
+				flag = brk_escalate_conflict_to_war_cooldown_@FROM
+				days = @border_conflict_escalate_to_war_countdown
+				value = 1
+			}
+			custom_effect_tooltip = in_45_days # Tooltip 
+			activate_targeted_decision = { target = FROM decision = brk_escalate_conflict_to_war } # Activates the escalate to war decision
+		}
+	}
+
+	# Decision to escalate conflict further to WAR!
+	brk_escalate_conflict_to_war = {
+
+		icon = decision_generic_ignite_civil_war
+
+		allowed = { always = no } #Activated from effect
+
+		visible = {
+			NOT = { has_country_flag = brk_escalate_conflict_to_war_cooldown_@FROM }
+			has_border_war_with = FROM
+		}
+
+		highlight_states = {
+			OR = {
+				state = var:FROM.defender_state_vs_@ROOT
+				state = var:ROOT.attacker_state_vs_@FROM
+			}
+		}
+
+		cost = 150
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				
+			}
+		}
+
+		days_remove = 15
+
+		fire_only_once = yes #Reactivation handled in effect
+
+		war_with_target_on_remove = yes
+
+		complete_effect = { # When we select the decision
+			if = {
+				limit = { is_border_conflict_defender_vs_FROM = yes }
+				var:ROOT.defender_state_vs_@FROM = { save_event_target_as = their_state }
+				var:ROOT.attacker_state_vs_@FROM = { save_event_target_as = our_state }
+			}
+			else = {
+				var:FROM.defender_state_vs_@ROOT = { save_event_target_as = our_state }
+				var:FROM.attacker_state_vs_@ROOT = { save_event_target_as = their_state }
+			}
+			FROM = { # Fires an event for the target
+				country_event = { id = nf_event_brk.13 }
+				hidden_effect = {
+					remove_targeted_decision = { target = ROOT decision = brk_escalate_conflict_to_war } # Removes the option for them to escalate to war because we're doing it
+				}
+		 	}
+		}
+
+		remove_effect = { # When the decision ends
+			cancel_border_war = { # The border war ends without firing cancel events
+				dont_fire_events = yes
+				defender = var:FROM.defender_state_vs_@ROOT
+				attacker = var:FROM.attacker_state_vs_@ROOT
+			}
+			declare_war_on = { target = FROM type = annex_everything } # Declares war on the opponent
+			if = { # Clears variables
+				limit = { is_border_conflict_defender_vs_FROM = yes }
+				var:attacker_state_vs_@FROM = {
+					clr_state_flag = border_incident_active
+				}
+				var:defender_state_vs_@FROM = {
+					clr_state_flag = border_incident_active
+				}
+				clear_variable = attacker_state_vs_@FROM
+				clear_variable = defender_state_vs_@FROM
+			}
+			else = {
+				FROM = {
+					var:attacker_state_vs_@ROOT = {
+						clr_state_flag = border_incident_active
+					}
+					var:defender_state_vs_@ROOT = {
+						clr_state_flag = border_incident_active
+					}
+					clear_variable = attacker_state_vs_@ROOT
+					clear_variable = defender_state_vs_@ROOT
+				}
+			}
+		}
+	}
+
+	# Decision to back down from conflict if we're cowards
+	brk_back_out_of_conflict = {
+
+		allowed = { always = no } #Activated from effect
+
+		visible = {
+			has_border_war_with = FROM
+		}
+
+		highlight_states = {
+			OR = {
+				state = var:FROM.attacker_state_vs_@ROOT
+				state = var:ROOT.defender_state_vs_@FROM
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				
+			}
+		}
+
+		fire_only_once = yes #Reactivation handled in effect
+
+		complete_effect = {
+			if = { # Finishes the border war, so the side who back down loses
+				limit = { is_border_conflict_defender_vs_FROM = yes }
+				finalize_border_war = {
+					attacker_win = yes
+					attacker = ROOT.attacker_state_vs_@FROM
+					defender = ROOT.attacker_state_vs_@FROM
+				}
+			}
+			else = {
+				finalize_border_war = {
+					attacker = FROM.attacker_state_vs_@ROOT
+					defender = FROM.attacker_state_vs_@ROOT
+					defender_win = yes
+				}
+			}
+		}
+	}
+}

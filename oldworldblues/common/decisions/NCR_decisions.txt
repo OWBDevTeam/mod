@@ -220,6 +220,7 @@ NCR_heavytroops_focus_category = {
 		available = {
 			NCR = { owns_state = 253 }
 			NCR = { controls_state = 253 }
+			hidden_trigger = { NCR = { NOT = { has_country_flag = ncr_spawned_armorexperiment } } }
 		}
 
 		highlight_states = {
@@ -235,13 +236,17 @@ NCR_heavytroops_focus_category = {
 		visible = {
 			NCR = { owns_state = 253 }
 			NCR = { has_completed_focus = ncr_armourexperiment }
+			hidden_trigger = { NCR = { NOT = { has_country_flag = ncr_spawned_armorexperiment } } }
 		}
 
 		is_good = yes
 
 		complete_effect = {
 			custom_effect_tooltip = load_ncrheavytroops
-			hidden_effect = { load_oob = ncrheavytroops }
+			hidden_effect = {
+				load_oob = ncrheavytroops
+				set_country_flag = ncr_spawned_armorexperiment
+			}
 		}
 	}
 	NCR_protege_focus = {
@@ -250,6 +255,7 @@ NCR_heavytroops_focus_category = {
 		available = {
 			NCR = { owns_state = 253 }
 			NCR = { controls_state = 253 }
+			hidden_trigger = { NCR = { NOT = { has_country_flag = ncr_spawned_protege } } }
 		}
 
 		highlight_states = {
@@ -265,13 +271,17 @@ NCR_heavytroops_focus_category = {
 		visible = {
 			NCR = { owns_state = 253 }
 			NCR = { has_completed_focus = ncr_protege }
+			hidden_trigger = { NCR = { NOT = { has_country_flag = ncr_spawned_protege } } }
 		}
 
 		is_good = yes
 
 		complete_effect = {
 			custom_effect_tooltip = load_ncrheavytroops
-			hidden_effect = { load_oob = ncrheavytroops }
+			hidden_effect = {
+				load_oob = ncrheavytroops
+				set_country_flag = ncr_spawned_protege
+			}
 		}
 	}
 	NCR_heavytroops_focus = {
@@ -280,6 +290,7 @@ NCR_heavytroops_focus_category = {
 		available = {
 			NCR = { owns_state = 253 }
 			NCR = { controls_state = 253 }
+			hidden_trigger = { NCR = { NOT = { has_country_flag = ncr_spawned_heavytroops } } }
 		}
 
 		highlight_states = {
@@ -295,13 +306,17 @@ NCR_heavytroops_focus_category = {
 		visible = {
 			NCR = { owns_state = 253 }
 			NCR = { has_completed_focus = ncr_heavytroops }
+			hidden_trigger = { NCR = { NOT = { has_country_flag = ncr_spawned_heavytroops } } }
 		}
 
 		is_good = yes
 
 		complete_effect = {
 			custom_effect_tooltip = load_ncrheavytroops
-			hidden_effect = { load_oob = ncrheavytroops }
+			hidden_effect = {
+				load_oob = ncrheavytroops
+				set_country_flag = ncr_spawned_heavytroops
+			}
 		}
 	}
 }

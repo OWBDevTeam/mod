@@ -40,13 +40,6 @@ lend_lease_BEL = {
 	ai_strategy = { type = support id = "BEL" value = 200 }
 }
 
-lend_lease_BLK = {
-	enable = { elgible_volunteers_sender = yes BLK = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } BLK = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "BLK" value = 200 }
-	ai_strategy = { type = support id = "BLK" value = 200 }
-}
-
 lend_lease_BLP = {
 	enable = { elgible_volunteers_sender = yes BLP = { eligible_volunteers_receiver = yes } }
 	abort = { OR = { NOT = { elgible_volunteers_sender = yes } BLP = { NOT = {  eligible_volunteers_receiver = yes } } } }
@@ -243,13 +236,6 @@ lend_lease_HGH = {
 	ai_strategy = { type = support id = "HGH" value = 200 }
 }
 
-lend_lease_HIN = {
-	enable = { elgible_volunteers_sender = yes HIN = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } HIN = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "HIN" value = 200 }
-	ai_strategy = { type = support id = "HIN" value = 200 }
-}
-
 lend_lease_HOP = {
 	enable = { elgible_volunteers_sender = yes HOP = { eligible_volunteers_receiver = yes } }
 	abort = { OR = { NOT = { elgible_volunteers_sender = yes } HOP = { NOT = {  eligible_volunteers_receiver = yes } } } }
@@ -353,13 +339,6 @@ lend_lease_NAV = {
 	abort = { OR = { NOT = { elgible_volunteers_sender = yes } NAV = { NOT = {  eligible_volunteers_receiver = yes } } } }
 	ai_strategy = { type = send_volunteers_desire id = "NAV" value = 200 }
 	ai_strategy = { type = support id = "NAV" value = 200 }
-}
-
-lend_lease_NBM = {
-	enable = { elgible_volunteers_sender = yes NBM = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } NBM = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "NBM" value = 200 }
-	ai_strategy = { type = support id = "NBM" value = 200 }
 }
 
 lend_lease_NCN = {
@@ -556,13 +535,6 @@ lend_lease_TTM = {
 	abort = { OR = { NOT = { elgible_volunteers_sender = yes } TTM = { NOT = {  eligible_volunteers_receiver = yes } } } }
 	ai_strategy = { type = send_volunteers_desire id = "TTM" value = 200 }
 	ai_strategy = { type = support id = "TTM" value = 200 }
-}
-
-lend_lease_TUR = {
-	enable = { elgible_volunteers_sender = yes TUR = { eligible_volunteers_receiver = yes } }
-	abort = { OR = { NOT = { elgible_volunteers_sender = yes } TUR = { NOT = {  eligible_volunteers_receiver = yes } } } }
-	ai_strategy = { type = send_volunteers_desire id = "TUR" value = 200 }
-	ai_strategy = { type = support id = "TUR" value = 200 }
 }
 
 lend_lease_TWI = {

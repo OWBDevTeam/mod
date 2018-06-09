@@ -1,0 +1,146 @@
+﻿division_template = {
+	name = "PA Company"
+
+	regiments = {
+		power_armour = { x = 0 y = 0 }
+		power_armour = { x = 0 y = 1 }
+		power_armour = { x = 0 y = 2 }
+		power_armour = { x = 1 y = 0 }
+		power_armour = { x = 1 y = 1 }
+		power_armour = { x = 1 y = 2 }
+		power_armour = { x = 2 y = 0 }
+		power_armour = { x = 2 y = 1 }
+	}
+}
+units = {
+
+	division {
+		name = "Lost Hills Paladins"
+		location = 3418
+		division_template = "PA Company"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+units = {
+
+	division {
+		name = "Lost Hills Knights"
+		location = 3418
+		division_template = "PA Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+}
+units = {
+
+	division {
+		name = "Maxson's Knights"
+		location = 3424
+		division_template = "PA Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+}
+units = {
+
+	division {
+		name = "Blackwell Knights"
+		location = 2263
+		division_template = "PA Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+}
+units = {
+
+	division {
+		name = "Silicon Valley Paladins"
+		location = 2419
+		division_template = "PA Company"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+units = {
+
+	division {
+		name = "Silicon Valley Knights"
+		location = 2419
+		division_template = "PA Company"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+units = {
+
+	division {
+		name = "Berkeley Knights"
+		location = 4613
+		division_template = "PA Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+}
+units = {
+
+	division {
+		name = "Golden Gate Knights"
+		location = 5035
+		division_template = "PA Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+}
+units = {
+
+	division {
+		name = "Navarro Paladins"
+		location = 3434
+		division_template = "PA Company"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+units = {
+
+	division {
+		name = "Navarro Knights"
+		location = 3434
+		division_template = "PA Company"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}
+units = {
+
+	division {
+		name = "Concord Knights"
+		location = 2416
+		division_template = "PA Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+}
+units = {
+
+	division {
+		name = "Bakersfield Knights"
+		location = 4635
+		division_template = "PA Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+}
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = energy_equipment_2
+			creator = "BOS"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

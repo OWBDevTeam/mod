@@ -1,0 +1,84 @@
+﻿division_template = {
+	name = "Clergymen"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Nonbelievers"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+units = {
+	division {
+		name = "Gabriel's Sons"
+		location = 1945
+		division_template = "Clergymen"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Raphael's Warriors"
+		location = 4059
+		division_template = "Clergymen"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Uriel's Chosen"
+		location = 7188
+		division_template = "Clergymen"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Selaphiel's Devotees"
+		location = 4497
+		division_template = "Clergymen"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+division {
+		name = "Raguel's Flock"
+		location = 4567
+		division_template = "Clergymen"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+division {
+		name = "Raguel's Flock"
+		location = 4562
+		division_template = "Clergymen"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+division {
+		name = "Lucifer's Own"
+		location = 4075
+		division_template = "Nonbelievers"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "HEA"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

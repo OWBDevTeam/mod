@@ -870,11 +870,6 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_the_white_leg_petition
 		}
-		bypass = {
-			NOT = {
-				country_exists = WHT
-			}
-		}
 		available = {
 			country_exists = WHT
 			WHT = {
@@ -904,15 +899,15 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_the_white_leg_petition
 		}
-		bypass = {
-			NOT = {
-				country_exists = WHT
-			}
-		}
 		available = {
-			country_exists = WHT
-			WHT = {
-				has_country_flag = refused_petition
+			OR = {
+				NOT = { country_exists = WHT }
+				AND = {
+					country_exists = WHT
+					WHT = {
+						has_country_flag = refused_petition
+					}
+				}
 			}
 		}
 		mutually_exclusive = {
@@ -2394,7 +2389,7 @@ focus_tree = {
 						enemy = NCR
 					}
 					hidden_effect = {
-						load_oob = BVC_2265
+						load_oob = BVC_2275
 					}					
 				}
 			}
@@ -2408,7 +2403,7 @@ focus_tree = {
 						enemy = NCR
 					}
 					hidden_effect = {
-						load_oob = BLP_2265
+						load_oob = BLP_2275
 					}
 				}
 			}

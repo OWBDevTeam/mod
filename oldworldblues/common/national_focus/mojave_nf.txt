@@ -939,7 +939,9 @@ focus_tree = {
 		}
 		x = 32
 		y = 3
-		
+		ai_will_do = {
+		   factor = 10
+		}
 		completion_reward = {
 			country_event = { id = nf_mojave.1 }
 		}
@@ -952,7 +954,8 @@ focus_tree = {
 			focus = MOJ_chapter_leadership
 		}
 		available = {
-		    has_country_leader = { id = 981 ruling_only = yes name = "Elijah" }
+			has_country_leader = { id = 981 ruling_only = yes name = "Elijah" }
+			has_country_flag = mojave_chapter_chose_leader
 		}
 		x = 28
 		y = 4
@@ -1089,7 +1092,8 @@ focus_tree = {
 			focus = MOJ_chapter_leadership
 		}
 		available = {
-		    has_country_leader = { id = 9371 ruling_only = yes name = "Edgar Hardin" }
+			has_country_leader = { id = 9371 ruling_only = yes name = "Edgar Hardin" }
+			has_country_flag = mojave_chapter_chose_leader
 		}
 		x = 32
 		y = 4
@@ -1222,7 +1226,8 @@ focus_tree = {
 			focus = MOJ_chapter_leadership
 		}
 		available = {
-		    has_country_leader = { id = 983 ruling_only = yes name = "Nolan McNamara" }
+			has_country_leader = { id = 983 ruling_only = yes name = "Nolan McNamara" }
+			has_country_flag = mojave_chapter_chose_leader
 		}
 		x = 36
 		y = 4
@@ -1338,6 +1343,5 @@ focus_tree = {
 		}
 		x = 37
 		y = 9
-
 	}
 }

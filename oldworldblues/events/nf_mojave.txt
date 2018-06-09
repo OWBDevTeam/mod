@@ -11,6 +11,7 @@ country_event = {
 	option = {
 		name = nf_mojave.1.option.a 
 		
+		set_country_flag = mojave_chapter_chose_leader
 	}
 	option = {
 		name = nf_mojave.1.option.b
@@ -26,23 +27,25 @@ country_event = {
 			    dislikes_legion
 			}
 			id = 990
-		}	
+		}
+		set_country_flag = mojave_chapter_chose_leader	
 	}
 	option = {
 		name = nf_mojave.1.option.c
 		
 		retire_country_leader = yes
 		create_country_leader  = {
-            name = "Edgar Hardin"
-            desc = "Edgar Hardin_DESC"
-            picture = "Portrait_Hardin.dds"
-            expire = "3000.1.1"
-            ideology = technocracy
-            traits = {
-                dislikes_legion
-            }
-	        id = 9371
-        }	
+			name = "Edgar Hardin"
+			desc = "Edgar Hardin_DESC"
+			picture = "Portrait_Hardin.dds"
+			expire = "3000.1.1"
+			ideology = technocracy
+			traits = {
+				dislikes_legion
+			}
+			id = 9371
+		}
+		set_country_flag = mojave_chapter_chose_leader	
 	}
 }
 country_event = { 
@@ -257,7 +260,7 @@ country_event = {
 	option = {
 	    name = nf_mojave.14.option.a
 		
-		ai_will_do = {
+		ai_chance = {
 		    factor = 25
 		}
 	    MOJ = {

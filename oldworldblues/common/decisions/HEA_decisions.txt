@@ -1,0 +1,137 @@
+# HEA ---> Heaven's Gate
+# PHA ---> Pharohs
+hea_conversion = { # Conversion decisions
+	hea_slow_conversion = { # Converts provinces one by one
+		visible = {
+			has_completed_focus = hea_nf_forgive_sins
+		}
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = PHA
+					# To add extra targets just use tag = TAG here and in the binding decision
+				}
+			}
+		}
+		available = {
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = hea_converted_all_tt
+					FROM = {
+						all_owned_state = {
+							has_state_flag = hea_converted
+						}
+					}
+				}
+			}
+		}
+
+		days_remove = 100
+		cost = 40
+
+		remove_effect = {
+			FROM = {
+				random_owned_state = {
+					limit = {
+						any_neighbor_state = {
+							OR = {
+								has_state_flag = hea_converted
+								is_owned_and_controlled_by = HEA
+							}
+						}
+						NOT = { has_state_flag = hea_converted }
+					}
+					set_state_flag = hea_converted
+					custom_effect_tooltip = hea_converted_state_tt
+				}
+				#country_event = { id = }
+			}
+		}
+	}
+
+	hea_inquisition =  {
+		visible = {
+			has_completed_focus = hea_nf_vengance
+		}
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = PHA
+					# To add extra targets just use tag = TAG here and in the binding decision
+				}
+			}
+		}
+		available = {
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = hea_converted_all_tt
+					FROM = {
+						all_owned_state = {
+							has_state_flag = hea_converted
+						}
+					}
+				}
+			}
+		}
+
+		days_remove = 20
+		cost = 20
+
+		complete_effect = {
+			add_manpower = -50
+		}
+
+		remove_effect = {
+			FROM = {
+				random_owned_state = {
+					limit = {
+						any_neighbor_state = {
+							OR = {
+								has_state_flag = hea_converted
+								is_owned_and_controlled_by = HEA
+							}
+						}
+						NOT = { has_state_flag = hea_converted }
+					}
+					set_state_flag = hea_converted
+					custom_effect_tooltip = hea_converted_state_tt
+				}
+				#country_event = { id = }
+			}
+		}
+	}
+
+	hea_bind_to_us = { # Puppets a country when all the provinces are conquered
+		visible = {
+			OR = {
+				has_completed_focus = hea_nf_forgive_sins
+				has_completed_focus = hea_nf_vengance
+			}
+		}
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = PHA
+					# To add extra targets just use tag = TAG here and in the convertion decision
+				}
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = hea_converted_all_tt
+				FROM = {
+					all_owned_state = {
+						has_state_flag = hea_converted
+					}
+				}
+			}
+		}
+
+		days_remove = 50
+		cost = 60
+
+		remove_effect = {
+			puppet = FROM
+		}
+	}
+}

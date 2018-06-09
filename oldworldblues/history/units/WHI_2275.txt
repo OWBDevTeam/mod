@@ -1,0 +1,62 @@
+﻿division_template = {
+	name = "Whistler Pathfinders"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 2 y = 0 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+division_template = {
+	name = "Forest Tribals"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+units = {
+	division {
+		name = "Pathfinder's Followers"
+		location = 3969
+		division_template = "Whistler Pathfinders"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Hixon Roamers"
+		location = 7216
+		division_template = "Whistler Pathfinders"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Koover Stalkers"
+		location = 2097
+		division_template = "Whistler Pathfinders"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Silverthrone Heroes"
+		location = 2123
+		division_template = "Whistler Pathfinders"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "WHI"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}
