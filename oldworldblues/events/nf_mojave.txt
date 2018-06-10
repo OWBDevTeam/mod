@@ -26,7 +26,7 @@ country_event = {
 		    traits = {
 			    dislikes_legion
 			}
-			id = 990
+			id = 2007
 		}
 		set_country_flag = mojave_chapter_chose_leader	
 	}
@@ -456,10 +456,10 @@ country_event = {
 	option = {
 	    name = nf_mojave.25.option.a
 		
-		MOJ = {
-			set_state_owner = 417
-			set_state_controller = 417
-		}
+		news_event = {
+            id = mojave_helios_one_news.0
+            hours = 10
+        }
 	}
 }
 country_event = { 
@@ -539,5 +539,24 @@ country_event = {
 	option = {
 	    name = nf_mojave.30.option.a
 		
+	}
+}
+news_event = {
+	id = mojave_helios_one_news.0
+	picture = GFX_event_generic_ruins_3
+	major = yes 
+	is_triggered_only = yes
+
+	fire_only_once = yes 
+
+	immediate = { 
+		MOJ = {
+		    set_state_owner = 417
+			set_state_controller = 417
+		}
+	}
+	
+	option = { 
+		name = mojave_helios_one_news.1.option.a 
 	}
 }
