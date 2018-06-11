@@ -11,7 +11,7 @@ technologies = {
     @Col_10 = 44
     @Col_11 = 48
     @Col_12 = 52
-    
+
     @Row_1 = 0
     @Row_2 = 2
     @Row_3 = 4
@@ -31,12 +31,12 @@ technologies = {
     @Row_17 = 32
     @Row_18 = 34
     @Row_19 = 36
-    
+
     support_weaponry = {
         enable_equipments = {
             support_equipment_1
         }
-		
+
 		path = {
 			leads_to_tech = maintenance_tech
 			research_cost_coeff = 1
@@ -81,23 +81,23 @@ technologies = {
 			leads_to_tech = healing_powder
 			research_cost_coeff = 1
 		}
-        
+
 		research_cost = 1.0
 		start_year = 2275
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_1 y = @Col_1 }
 		}
-		
+
 		categories = {
 			support_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 10
 		}
 	}
-    
+
     #-------------------------
     # Support Companies
     #-------------------------
@@ -105,29 +105,29 @@ technologies = {
         enable_subunits = {
             maintenance_company
         }
-		
+
 		path = {
 			leads_to_tech = maintenance_tech_2
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2275
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_1 y = @Col_2 }
 		}
-		
+
 		categories = {
 			support_tech
 			maintenance_company_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-    
+
     maintenance_tech_2 = {
 		maintenance_company = {
             reliability_factor = 0.1
@@ -136,24 +136,24 @@ technologies = {
 			leads_to_tech = maintenance_tech_3
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2279
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_1 y = @Col_3 }
 		}
-		
+
 		categories = {
 			support_tech
 			maintenance_company_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-    
+
     maintenance_tech_3 = {
 		maintenance_company = {
             reliability_factor = 0.1
@@ -162,77 +162,77 @@ technologies = {
 			leads_to_tech = maintenance_tech_4
 			research_cost_coeff = 1
 		}
-		
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2283
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_1 y = @Col_4 }
 		}
-		
+
 		categories = {
 			support_tech
 			maintenance_company_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-    
+
     maintenance_tech_4 = {
         maintenance_company = {
             reliability_factor = 0.1
         }
-        
+
         dependencies = {
             settled_civilization = 1
         }
-		
+
 		research_cost = 1.0
 		start_year = 2287
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_1 y = @Col_5 }
 		}
-		
+
 		categories = {
 			support_tech
 			maintenance_company_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-    
+
     # Logistics
     logistics_tech = {
         enable_subunits = {
             logistics_company
         }
-		
+
 		path = {
 			leads_to_tech = logistics_tech_2
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2275
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_2 y = @Col_2 }
 		}
-		
+
 		categories = {
 			support_tech
 			logistics_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -247,19 +247,19 @@ technologies = {
 				factor = 1.2
 				date > "2279.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2280.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2281.1.1"
 			}
 		}
 	}
-    
+
     logistics_tech_2 = {
 		logistics_company = {
             supply_consumption_factor = -0.1
@@ -268,19 +268,19 @@ technologies = {
 			leads_to_tech = logistics_tech_3
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2279
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_2 y = @Col_3 }
 		}
-		
+
 		categories = {
 			support_tech
 			logistics_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -291,19 +291,19 @@ technologies = {
 				factor = 1.2
 				date > "2279.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2280.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2281.1.1"
 			}
 		}
 	}
-    
+
     logistics_tech_3 = {
 		logistics_company = {
             supply_consumption_factor = -0.1
@@ -312,23 +312,23 @@ technologies = {
 			leads_to_tech = logistics_tech_4
 			research_cost_coeff = 1
 		}
-		
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2283
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_2 y = @Col_4 }
 		}
-		
+
 		categories = {
 			support_tech
 			logistics_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -339,40 +339,40 @@ technologies = {
 				factor = 1.2
 				date > "2283.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2284.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2285.1.1"
 			}
 		}
 	}
-    
+
     logistics_tech_4 = {
         logistics_company = {
             supply_consumption_factor = -0.1
         }
-        
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2287
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_2 y = @Col_5 }
 		}
-		
+
 		categories = {
 			support_tech
 			logistics_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -383,42 +383,42 @@ technologies = {
 				factor = 1.2
 				date > "2287.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2288.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2289.1.1"
 			}
 		}
 	}
-    
+
     # Signal
     signal_tech = {
         enable_subunits = {
             signal_company
         }
-		
+
 		path = {
 			leads_to_tech = signal_tech_2
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2275
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_3 y = @Col_2 }
 		}
-		
+
 		categories = {
 			support_tech
 			signal_company_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 			modifier = {
@@ -427,7 +427,7 @@ technologies = {
 			}
 		}
 	}
-    
+
     signal_tech_2 = {
 		signal_company = {
             initiative = 0.1
@@ -436,109 +436,109 @@ technologies = {
 			leads_to_tech = signal_tech_3
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2279
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_3 y = @Col_3 }
 		}
-		
+
 		categories = {
 			support_tech
 			signal_company_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 4
 		}
 	}
-    
+
     signal_tech_3 = {
 		signal_company = {
             initiative = 0.1
         }
-        
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		path = {
 			leads_to_tech = signal_tech_4
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2283
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_3 y = @Col_4 }
 		}
-		
+
 		categories = {
 			support_tech
 			signal_company_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 4
 		}
 	}
-    
+
     signal_tech_4 = {
         signal_company = {
             initiative = 0.1
         }
-        
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2287
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_3 y = @Col_5 }
 		}
-		
+
 		categories = {
 			support_tech
 			signal_company_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 4
 		}
 	}
-    
+
     # Recon
     recon_tech = {
         enable_subunits = {
             recon_company
         }
-		
+
 		path = {
 			leads_to_tech = recon_tech_2
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2275
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_4 y = @Col_2 }
 		}
-		
+
 		categories = {
 			support_tech
 			recon_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
 	}
-    
+
     recon_tech_2 = {
 		recon_company = {
             recon = 1
@@ -547,43 +547,43 @@ technologies = {
 			leads_to_tech = recon_tech_3
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2279
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_4 y = @Col_3 }
 		}
-		
+
 		categories = {
 			support_tech
 			recon_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
 				factor = 2
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2280.1.1"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2281.1.1"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2282.1.1"
 			}
 		}
 	}
-    
+
     recon_tech_3 = {
 		recon_company = {
             recon = 1
@@ -592,83 +592,83 @@ technologies = {
 			leads_to_tech = recon_tech_4
 			research_cost_coeff = 1
 		}
-		
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2281
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_4 y = @Col_4 }
 		}
-		
+
 		categories = {
 			support_tech
 			recon_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
 				factor = 1.2
 				date > "2281.1.1"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2282.1.1"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2283.1.1"
 			}
 		}
 	}
-    
+
     recon_tech_4 = {
         recon_company = {
             recon = 1
         }
-        
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2284
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_4 y = @Col_5 }
 		}
-		
+
 		categories = {
 			support_tech
 			recon_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2285.1.1"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2286.1.1"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2287.1.1"
 			}
 		}
 	}
-    
+
     # Explosive
     explosive_tech = {
 	enable_subunits = {
@@ -677,26 +677,26 @@ technologies = {
         enable_equipments = {
             explosive_equipment_1
         }
-	
-		
+
+
 		path = {
 			leads_to_tech = explosive_tech_2
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2275
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_5 y = @Col_2 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			explosive_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
 			modifier = {
@@ -707,19 +707,19 @@ technologies = {
 				factor = 2
 				date > "2276.1.1"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2277.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2278.1.1"
 			}
 		}
 	}
-    
+
     explosive_tech_2 = {
 		explosive_company = {
             soft_attack = 0.1
@@ -728,85 +728,85 @@ technologies = {
 			leads_to_tech = explosive_tech_3
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2277
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_5 y = @Col_3 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			explosive_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
 			modifier = {
 				factor = 2
 				date > "2278.1.9"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2279.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2280.1.6"
 			}
 		}
 	}
-    
+
     explosive_tech_3 = {
 		enable_equipments = {
             explosive_equipment_2
         }
-        
+
 		path = {
 			leads_to_tech = explosive_tech_4
 			research_cost_coeff = 1
 		}
-		
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2279
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_5 y = @Col_4 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			explosive_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
 			modifier = {
 				factor = 2
 				date > "2280.1.6"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2281.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2282.1.1"
 			}
 		}
 	}
-    
+
     explosive_tech_4 = {
         explosive_company = {
             soft_attack = 0.1
@@ -815,128 +815,128 @@ technologies = {
 			leads_to_tech = explosive_tech_5
 			research_cost_coeff = 1
 		}
-        
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2281
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_5 y = @Col_5 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			explosive_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
-			
+
 			modifier = {
 				factor = 2
 				date > "2281.1.6"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2282.1.1"
 			}
 		}
 	}
-    
+
     explosive_tech_5 = {
 		enable_equipments = {
             explosive_equipment_3
         }
-        
+
 		path = {
 			leads_to_tech = explosive_tech_6
 			research_cost_coeff = 1
 		}
-		
+
         dependencies = {
             scientific_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2283
 		folder = {
 			name = fallout_support_folder
-			position = { x = @Row_5 y = @Col_7 }
+			position = { x = @Row_5 y = @Col_6 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			explosive_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
-			
+
 			modifier = {
 				factor = 2
 				date > "2283.1.9"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2284.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2284.1.6"
 			}
 		}
 	}
-    
+
     explosive_tech_6 = {
 		explosive_company = {
             soft_attack = 0.1
         }
-        
+
         dependencies = {
             scientific_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2285
 		folder = {
 			name = fallout_support_folder
-			position = { x = @Row_5 y = @Col_8 }
+			position = { x = @Row_5 y = @Col_7 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			explosive_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
-			
+
 			modifier = {
 				factor = 2
 				date > "2285.1.6"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2286.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2287.1.1"
 			}
 		}
 	}
-    
+
     # Flamer
     flamer_tech = {
 	enable_subunits = {
@@ -945,29 +945,29 @@ technologies = {
         enable_equipments = {
             flamer_equipment_1
         }
-		
+
 		path = {
 			leads_to_tech = flamer_tech_2
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2275
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_6 y = @Col_2 }
 		}
-		
+
 		categories = {
 			support_tech
 			flamer_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-    
+
     flamer_tech_2 = {
 		flamer_company = {
             breakthrough = 0.2
@@ -976,83 +976,83 @@ technologies = {
 			leads_to_tech = flamer_tech_3
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2277
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_6 y = @Col_3 }
 		}
-		
+
 		categories = {
 			support_tech
 			flamer_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
 			modifier = {
 				factor = 2
 				date > "2278.1.9"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2279.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2280.1.6"
 			}
 		}
 	}
-    
+
     flamer_tech_3 = {
 		enable_equipments = {
             flamer_equipment_2
         }
-        
+
 		path = {
 			leads_to_tech = flamer_tech_4
 			research_cost_coeff = 1
 		}
-		
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2279
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_6 y = @Col_4 }
 		}
-		
+
 		categories = {
 			support_tech
 			flamer_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
 			modifier = {
 				factor = 2
 				date > "2280.1.6"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2281.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2282.1.1"
 			}
 		}
 	}
-    
+
     flamer_tech_4 = {
         flamer_company = {
             breakthrough = 0.2
@@ -1061,38 +1061,38 @@ technologies = {
 			leads_to_tech = flamer_tech_5
 			research_cost_coeff = 1
 		}
-        
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2281
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_6 y = @Col_5 }
 		}
-		
+
 		categories = {
 			support_tech
 			flamer_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
-			
+
 			modifier = {
 				factor = 2
 				date > "2281.1.6"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2282.1.1"
 			}
 		}
 	}
-    
+
     flamer_tech_5 = {
 		enable_equipments = {
             flamer_equipment_3
@@ -1101,93 +1101,93 @@ technologies = {
 			leads_to_tech = flamer_tech_6
 			research_cost_coeff = 1
 		}
-		
+
         dependencies = {
             scientific_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2283
 		folder = {
 			name = fallout_support_folder
-			position = { x = @Row_6 y = @Col_7 }
+			position = { x = @Row_6 y = @Col_6 }
 		}
-		
+
 		categories = {
 			support_tech
 			flamer_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
-			
+
 			modifier = {
 				factor = 2
 				date > "2282.1.9"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2283.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2283.1.6"
 			}
 		}
 	}
-    
+
     flamer_tech_6 = {
 		flamer_company = {
             breakthrough = 0.2
         }
-        
+
         dependencies = {
             scientific_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2285
 		folder = {
 			name = fallout_support_folder
-			position = { x = @Row_6 y = @Col_8 }
+			position = { x = @Row_6 y = @Col_7 }
 		}
-		
+
 		categories = {
 			support_tech
 			flamer_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
-			
+
 			modifier = {
 				factor = 2
 				date > "2285.1.6"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2286.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2287.1.1"
 			}
 		}
 	}
-    
+
     # Laser
     laser_tech = {
 	enable_subunits = {
             laser_company
-        }	
+        }
         enable_equipments = {
             laser_equipment_1
         }
-	
+
 		path = {
 			leads_to_tech = laser_tech_2
 			research_cost_coeff = 1
@@ -1198,13 +1198,13 @@ technologies = {
 			name = fallout_support_folder
 			position = { x = @Row_7 y = @Col_2 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			laser_battery_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1218,7 +1218,7 @@ technologies = {
 			}
 		}
 	}
-    
+
     laser_tech_2 = {
 		laser_company = {
             hard_attack = 0.1
@@ -1233,32 +1233,32 @@ technologies = {
 			name = fallout_support_folder
 			position = { x = @Row_7 y = @Col_3 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			laser_battery_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
 			modifier = {
 				factor = 2
 				date > "2279.1.9"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2280.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2281.1.6"
 			}
 		}
 	}
-    
+
     laser_tech_3 = {
 		enable_equipments = {
             laser_equipment_2
@@ -1267,43 +1267,43 @@ technologies = {
 			leads_to_tech = laser_tech_4
 			research_cost_coeff = 1
 		}
-		
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2280
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_7 y = @Col_4 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			laser_battery_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
 			modifier = {
 				factor = 2
 				date > "2281.1.6"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2282.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2283.1.1"
 			}
 		}
 	}
-    
+
     laser_tech_4 = {
         laser_company = {
             hard_attack = 0.1
@@ -1312,39 +1312,39 @@ technologies = {
 			leads_to_tech = laser_tech_5
 			research_cost_coeff = 1
 		}
-        
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2282
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_7 y = @Col_5 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			laser_battery_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
-			
+
 			modifier = {
 				factor = 2
 				date > "2282.1.6"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2283.1.1"
 			}
 		}
 	}
-    
+
     laser_tech_5 = {
 		enable_equipments = {
             laser_equipment_3
@@ -1353,113 +1353,113 @@ technologies = {
 			leads_to_tech = laser_tech_6
 			research_cost_coeff = 1
 		}
-		
+
         dependencies = {
             scientific_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2284
 		folder = {
 			name = fallout_support_folder
-			position = { x = @Row_7 y = @Col_7 }
+			position = { x = @Row_7 y = @Col_6 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			laser_battery_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
-			
+
 			modifier = {
 				factor = 2
 				date > "2284.1.9"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2285.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2285.1.6"
 			}
 		}
 	}
-    
+
     laser_tech_6 = {
 		laser_company = {
             hard_attack = 0.1
         }
-        
+
         dependencies = {
             scientific_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2286
 		folder = {
 			name = fallout_support_folder
-			position = { x = @Row_7 y = @Col_8 }
+			position = { x = @Row_7 y = @Col_7 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			laser_battery_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
-			
+
 			modifier = {
 				factor = 2
 				date > "2286.1.6"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2287.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2288.1.1"
 			}
 		}
 	}
-    
+
     # Anti-tank
     anti_tank_tech = {
 	enable_subunits = {
             anti_tank_company
-        }	
+        }
         enable_equipments = {
             anti_tank_equipment_1
         }
-		
+
 		path = {
 			leads_to_tech = anti_tank_tech_2
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2275
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_8 y = @Col_2 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			anti_tank_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1513,7 +1513,7 @@ technologies = {
 			}
 		}
 	}
-    
+
     anti_tank_tech_2 = {
 		anti_tank_company = {
             ap_attack = 0.1
@@ -1522,20 +1522,20 @@ technologies = {
 			leads_to_tech = anti_tank_tech_3
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2277
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_8 y = @Col_3 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			anti_tank_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1563,34 +1563,34 @@ technologies = {
 			}
 		}
 	}
-    
+
     anti_tank_tech_3 = {
 		enable_equipments = {
             anti_tank_equipment_2
         }
-        
+
 		path = {
 			leads_to_tech = anti_tank_tech_4
 			research_cost_coeff = 1
 		}
-		
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2278
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_8 y = @Col_4 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			anti_tank_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1608,19 +1608,19 @@ technologies = {
 				factor = 2
 				date > "2278.1.6"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2279.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2280.1.1"
 			}
 		}
 	}
-    
+
     anti_tank_tech_4 = {
         anti_tank_company = {
             ap_attack = 0.1
@@ -1629,24 +1629,24 @@ technologies = {
 			leads_to_tech = anti_tank_tech_5
 			research_cost_coeff = 1
 		}
-        
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2279
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_8 y = @Col_5 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			anti_tank_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1664,14 +1664,14 @@ technologies = {
 				factor = 2
 				date > "2279.1.6"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2280.1.1"
 			}
 		}
 	}
-    
+
     anti_tank_tech_5 = {
 		enable_equipments = {
             anti_tank_equipment_3
@@ -1680,24 +1680,24 @@ technologies = {
 			leads_to_tech = anti_tank_tech_6
 			research_cost_coeff = 1
 		}
-		
+
         dependencies = {
             scientific_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2280
 		folder = {
 			name = fallout_support_folder
-			position = { x = @Row_8 y = @Col_7 }
+			position = { x = @Row_8 y = @Col_6 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			anti_tank_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1715,36 +1715,36 @@ technologies = {
 				factor = 2
 				date > "2280.1.6"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2281.1.1"
 			}
 		}
 	}
-    
+
     anti_tank_tech_6 = {
 		anti_tank_company = {
             ap_attack = 0.1
         }
-        
+
         dependencies = {
             scientific_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2281
 		folder = {
 			name = fallout_support_folder
-			position = { x = @Row_8 y = @Col_8 }
+			position = { x = @Row_8 y = @Col_7 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			anti_tank_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1762,66 +1762,66 @@ technologies = {
 				factor = 2
 				date > "2281.1.9"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2282.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2283.1.6"
 			}
 		}
 	}
-    
+
     # Anti-personnel
     anti_personnel_tech = {
 	enable_subunits = {
 	    anti_personnel_brigade
             anti_personnel_company
-        }	
+        }
         enable_equipments = {
             anti_personnel_equipment_1
         }
-		
+
 		path = {
 			leads_to_tech = anti_personnel_tech_2
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2275
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_9 y = @Col_2 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			anti_personnel_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
 			modifier = {
 				factor = 2
 				date > "2276.1.1"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2277.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2278.1.1"
 			}
 		}
 	}
-    
+
     anti_personnel_tech_2 = {
 		anti_personnel_company = {
             defense = 0.05
@@ -1835,39 +1835,39 @@ technologies = {
 			leads_to_tech = anti_personnel_tech_3
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2277
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_9 y = @Col_3 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			anti_personnel_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
 			modifier = {
 				factor = 2
 				date > "2278.1.9"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2279.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2280.1.6"
 			}
 		}
 	}
-    
+
     anti_personnel_tech_3 = {
 		enable_equipments = {
             anti_personnel_equipment_2
@@ -1876,43 +1876,43 @@ technologies = {
 			leads_to_tech = anti_personnel_tech_4
 			research_cost_coeff = 1
 		}
-		
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2279
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_9 y = @Col_4 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			anti_personnel_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
 			modifier = {
 				factor = 2
 				date > "2280.1.6"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2281.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2282.1.1"
 			}
 		}
 	}
-    
+
     anti_personnel_tech_4 = {
         anti_personnel_company = {
             defense = 0.05
@@ -1926,39 +1926,39 @@ technologies = {
 			leads_to_tech = anti_personnel_tech_5
 			research_cost_coeff = 1
 		}
-        
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2281
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_9 y = @Col_5 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			anti_personnel_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
-			
+
 			modifier = {
 				factor = 2
 				date > "2281.1.6"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2282.1.1"
 			}
 		}
 	}
-    
+
     anti_personnel_tech_5 = {
 		enable_equipments = {
             anti_personnel_equipment_3
@@ -1967,44 +1967,44 @@ technologies = {
 			leads_to_tech = anti_personnel_tech_6
 			research_cost_coeff = 1
 		}
-		
+
         dependencies = {
             scientific_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2283
 		folder = {
 			name = fallout_support_folder
-			position = { x = @Row_9 y = @Col_7 }
+			position = { x = @Row_9 y = @Col_6 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			anti_personnel_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
-			
+
 			modifier = {
 				factor = 2
 				date > "2283.1.9"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2284.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2284.1.6"
 			}
 		}
 	}
-    
+
     anti_personnel_tech_6 = {
 		anti_personnel_company = {
             defense = 0.05
@@ -2014,75 +2014,75 @@ technologies = {
             defense = 0.05
 			breakthrough = 0.05
         }
-        
+
         dependencies = {
             scientific_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2285
 		folder = {
 			name = fallout_support_folder
-			position = { x = @Row_9 y = @Col_8 }
+			position = { x = @Row_9 y = @Col_7 }
 		}
-		
+
 		categories = {
 			support_tech
 			artillery
 			anti_personnel_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
-			
+
 			modifier = {
 				factor = 2
 				date > "2285.1.6"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2286.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2287.1.1"
 			}
 		}
 	}
-    
+
     # Dog
     dog_tech = {
 	enable_subunits = {
 	    dog_company
-        }	
+        }
         enable_equipments = {
             dogs_equipment_1
         }
-        
+
 		path = {
 			leads_to_tech = dog_tech_2
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2275
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_10 y = @Col_2 }
 		}
-		
+
 		categories = {
 			support_tech
 			dog_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
 	}
-    
+
     dog_tech_2 = {
 		dog_company = {
             soft_attack = 0.1
@@ -2091,55 +2091,55 @@ technologies = {
 			leads_to_tech = dog_tech_3
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.0
 		start_year = 2277
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_10 y = @Col_3 }
 		}
-		
+
 		categories = {
 			support_tech
 			dog_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
 	}
-    
+
     dog_tech_3 = {
 		enable_equipments = {
             dogs_equipment_2
         }
-        
+
 		path = {
 			leads_to_tech = dog_tech_4
 			research_cost_coeff = 1
 		}
-		
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2279
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_10 y = @Col_4 }
 		}
-		
+
 		categories = {
 			support_tech
 			dog_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
 	}
-    
+
     dog_tech_4 = {
         dog_company = {
             soft_attack = 0.1
@@ -2148,95 +2148,95 @@ technologies = {
 			leads_to_tech = dog_tech_5
 			research_cost_coeff = 1
 		}
-        
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2281
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_10 y = @Col_5 }
 		}
-		
+
 		categories = {
 			support_tech
 			dog_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
 	}
-    
+
     dog_tech_5 = {
 		enable_equipments = {
             dogs_equipment_3
         }
-        
+
 		path = {
 			leads_to_tech = dog_tech_6
 			research_cost_coeff = 1
 		}
-		
+
         dependencies = {
             scientific_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2283
 		folder = {
 			name = fallout_support_folder
-			position = { x = @Row_10 y = @Col_7 }
+			position = { x = @Row_10 y = @Col_6 }
 		}
-		
+
 		categories = {
 			support_tech
 			dog_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
 	}
-    
+
     dog_tech_6 = {
 		dog_company = {
             soft_attack = 0.1
         }
-        
+
         dependencies = {
             scientific_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2285
 		folder = {
 			name = fallout_support_folder
-			position = { x = @Row_10 y = @Col_8 }
+			position = { x = @Row_10 y = @Col_7 }
 		}
-		
+
 		categories = {
 			support_tech
 			dog_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
 	}
-    
+
     #-------------------------
     # Chem Studies
     #-------------------------
-    
+
     # Healing
     healing_powder = {
         enable_subunits = {
             medical_chem_company
         }
-        
+
         path = {
 			leads_to_tech = refined_mixture
 			research_cost_coeff = 1
@@ -2248,13 +2248,13 @@ technologies = {
 			name = fallout_support_folder
 			position = { x = @Row_11 y = @Col_2 }
 		}
-		
+
 		categories = {
 			support_tech
             chem_tech
 			hospital_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -2267,19 +2267,19 @@ technologies = {
 				factor = 1.2
 				date > "2276.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2277.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2278.1.1"
 			}
 		}
 	}
-    
+
     refined_mixture = {
         medical_chem_company = {
             casualty_trickleback = 0.05
@@ -2288,124 +2288,124 @@ technologies = {
 			leads_to_tech = stimpack
 			research_cost_coeff = 1
 		}
-        
+
 		research_cost = 1.0
 		start_year = 2278
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_11 y = @Col_3 }
 		}
-		
+
 		categories = {
 			support_tech
             chem_tech
 			hospital_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2279.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2280.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2281.1.1"
 			}
 		}
 	}
-    
+
     stimpack = {
         medical_chem_company = {
             casualty_trickleback = 0.1
             experience_loss_factor = -0.1
         }
-        
+
         path = {
 			leads_to_tech = auto_injectors
 			research_cost_coeff = 1
 		}
-        
+
         dependencies = {
             settled_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2281
 		folder = {
 			name = fallout_support_folder
 			position = { x = @Row_11 y = @Col_4 }
 		}
-		
+
 		categories = {
 			support_tech
             chem_tech
 			hospital_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2282.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2283.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2284.1.1"
 			}
 		}
 	}
-    
+
     auto_injectors = {
         medical_chem_company = {
             casualty_trickleback = 0.1
             experience_loss_factor = -0.1
         }
-        
+
         dependencies = {
             scientific_civilization = 1
         }
-        
+
 		research_cost = 1.0
 		start_year = 2284
 		folder = {
 			name = fallout_support_folder
-			position = { x = @Row_11 y = @Col_7 }
+			position = { x = @Row_11 y = @Col_6 }
 		}
-		
+
 		categories = {
 			support_tech
             chem_tech
 			hospital_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 2
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2285.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2286.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2287.1.1"

@@ -29,9 +29,9 @@ technologies = {
 	@Col_28 =
 	@Col_29 =
 	@Col_30 =
-	
-	
-	
+
+
+
     @Row_1 = 0
     @Row_2 = 2
     @Row_3 = 4
@@ -53,7 +53,7 @@ technologies = {
     @Row_19 = 36
 
 
-    
+
     # Scrap Motorcycles
     bike_tech_1 = {
         enable_equipments = {
@@ -63,22 +63,22 @@ technologies = {
             motorized
             motorized_support
         }
-		
+
 		path = {
 			leads_to_tech = bike_tech_2
 			research_cost_coeff = 1
 		}
-		
+
 		path = {
 			leads_to_tech = tires_vehicle_tech
 			research_cost_coeff = 1
 		}
-        
+
         dependencies = {
             settled_civilization = 1
-            
+
         }
-        
+
         on_research_complete = {
 			limit = {
 				NOT = {
@@ -87,50 +87,50 @@ technologies = {
 			}
 			hidden_effect = {
 				load_oob = "unlock_motorized"
-			}			
+			}
 			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
 		}
-        
+
 		research_cost = 1.0
 		start_year = 2275
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_2 y = @Col_1 }
+			position = { x = @Row_1 y = @Col_1 }
 		}
-		
+
 		categories = {
             vehicle_tech
 			motorized_equipment
 			bike_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2276.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2277.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2278.1.1"
 			}
 		}
 	}
-	
+
 	tires_vehicle_tech = {
-	
+
 		category_vehicles = {
 			maximum_speed = 0.05
 		}
@@ -138,14 +138,70 @@ technologies = {
         dependencies = {
             settled_civilization = 1
         }
-		
+
 		path = {
 			leads_to_tech = tires_vehicle_tech_1
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2276
+		folder = {
+			name = fallout_vehicle_folder
+			position = { x = @Row_2 y = @Col_1 }
+		}
+
+		categories = {
+            vehicle_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "2277.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "2278.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "2279.1.1"
+			}
+		}
+	}
+
+	tires_vehicle_tech_1 = {
+
+		category_vehicles = {
+			maximum_speed = 0.05
+		}
+
+        dependencies = {
+            settled_civilization = 1
+        }
+
+		path = {
+			leads_to_tech = tracks_vehicle_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = truck_tech_1
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.0
+		start_year = 2277
 		folder = {
 			name = fallout_vehicle_folder
 			position = { x = @Row_3 y = @Col_1 }
@@ -154,54 +210,49 @@ technologies = {
 		categories = {
             vehicle_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				is_major = yes
 			}
-			
-			modifier = {
-				factor = 1.2
-				date > "2277.1.1"
-			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2278.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2279.1.1"
 			}
+
+			modifier = {
+				factor = 1.2
+				date > "2280.1.1"
+			}
 		}
 	}
-	
-	tires_vehicle_tech_1 = {
-	
-		category_vehicles = {
-			maximum_speed = 0.05
+
+	tracks_vehicle_tech = {
+
+		category_tanks = {
+			reliability = 0.02
 		}
-	
+
         dependencies = {
             settled_civilization = 1
         }
-		
+
 		path = {
-			leads_to_tech = tracks_vehicle_tech
+			leads_to_tech = tracks_vehicle_tech_1
 			research_cost_coeff = 1
 		}
-		
-		path = {
-			leads_to_tech = truck_tech_1
-			research_cost_coeff = 1
-		}
-		
+
 		research_cost = 2.0
-		start_year = 2277
+		start_year = 2278
 		folder = {
 			name = fallout_vehicle_folder
 			position = { x = @Row_4 y = @Col_1 }
@@ -210,49 +261,49 @@ technologies = {
 		categories = {
             vehicle_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				is_major = yes
 			}
-			
-			modifier = {
-				factor = 1.2
-				date > "2278.1.1"
-			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2279.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2280.1.1"
 			}
+
+			modifier = {
+				factor = 1.2
+				date > "2281.1.1"
+			}
 		}
 	}
-	
-	tracks_vehicle_tech = {
-	
+
+	tracks_vehicle_tech_1 = {
+
 		category_tanks = {
-			reliability = 0.02
+			reliability = 0.03
 		}
-	
+
         dependencies = {
             settled_civilization = 1
         }
-		
+
 		path = {
-			leads_to_tech = tracks_vehicle_tech_1
+			leads_to_tech = tank_tech_1
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 2.0
-		start_year = 2278
+		start_year = 2280
 		folder = {
 			name = fallout_vehicle_folder
 			position = { x = @Row_5 y = @Col_1 }
@@ -261,143 +312,92 @@ technologies = {
 		categories = {
             vehicle_tech
 		}
-		
-		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				is_major = yes
-			}
-			
-			modifier = {
-				factor = 1.2
-				date > "2279.1.1"
-			}
-			
-			modifier = {
-				factor = 1.2
-				date > "2280.1.1"
-			}
-			
-			modifier = {
-				factor = 1.2
-				date > "2281.1.1"
-			}
-		}
-	}
-	
-	tracks_vehicle_tech_1 = {
-	
-		category_tanks = {
-			reliability = 0.03
-		}
-	
-        dependencies = {
-            settled_civilization = 1
-        }
-		
-		path = {
-			leads_to_tech = tank_tech_1
-			research_cost_coeff = 1
-		}
-		
-		research_cost = 2.0
-		start_year = 2280
-		folder = {
-			name = fallout_vehicle_folder
-			position = { x = @Row_6 y = @Col_1 }
-		}
 
-		categories = {
-            vehicle_tech
-		}
-		
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2280.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2281.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2282.1.1"
 			}
 		}
 	}
-    
+
     # Salvaged Motorcycles
     bike_tech_2 = {
         enable_equipments = {
             motorbike_equipment_2
         }
-		
+
 		path = {
 			leads_to_tech = car_tech_1
 			research_cost_coeff = 1
 		}
-		
+
 		path = {
 			leads_to_tech = plating_vehicle_tech
 			research_cost_coeff = 1
 		}
-        
+
         dependencies = {
-            settled_civilization = 1  
+            settled_civilization = 1
         }
-        
+
 		research_cost = 2.0
 		start_year = 2276
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_2 y = @Col_3 }
+			position = { x = @Row_1 y = @Col_3 }
 		}
-		
+
 		categories = {
             vehicle_tech
 			motorized_equipment
 			bike_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2277.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2278.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2279.1.1"
 			}
 		}
 	}
-	
+
 	plating_vehicle_tech = {
-	
+
 		category_vehicles = {
 			maximum_speed = -0.02
 			armor_value = 0.05
@@ -406,32 +406,32 @@ technologies = {
 			maximum_speed = -0.02
 			armor_value = 0.05
 		}
-	
+
         dependencies = {
             settled_civilization = 1
         }
-		
+
 		path = {
 			leads_to_tech = truck_tech_1
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2277
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_3 y = @Col_3 }
+			position = { x = @Row_2 y = @Col_3 }
 		}
-		
+
 		categories = {
             vehicle_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-    
+
     # salvaged Car
     car_tech_1 = {
         enable_equipments = {
@@ -442,57 +442,57 @@ technologies = {
 			leads_to_tech = car_tech_2
 			research_cost_coeff = 1
 		}
-		
+
 		path = {
 			leads_to_tech = bumper_vehicle_tech
 			research_cost_coeff = 1
 		}
-		
+
         dependencies = {
             settled_civilization = 1
-            
+
         }
-        
+
 		research_cost = 2.0
 		start_year = 2278
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_2 y = @Col_5 }
+			position = { x = @Row_1 y = @Col_5 }
 		}
-		
+
 		categories = {
             vehicle_tech
 			motorized_equipment
 			car_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2279.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2280.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2281.1.1"
 			}
 		}
 	}
-	
+
 	bumper_vehicle_tech = {
-	
+
 		category_vehicles = {
 			breakthrough = 0.05
 			maximum_speed = -0.02
@@ -501,34 +501,34 @@ technologies = {
 			breakthrough = 0.05
 			maximum_speed = -0.02
 		}
-	
+
         dependencies = {
             settled_civilization = 1
         }
-		
+
 		research_cost = 2.0
 		start_year = 2279
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_3 y = @Col_5 }
+			position = { x = @Row_2 y = @Col_5 }
 		}
-		
+
 		categories = {
             vehicle_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-    
+
     # wasteland Car
     car_tech_2 = {
-	
+
         enable_equipments = {
             car_equipment_2
         }
-        
+
 		path = {
 			leads_to_tech = car_tech_3
 			research_cost_coeff = 1
@@ -538,52 +538,52 @@ technologies = {
 			leads_to_tech = gasoline_vehicle_tech
 			research_cost_coeff = 1
 		}
-		
+
         dependencies = {
             settled_civilization = 1
-            
+
         }
-        
+
 		research_cost = 2.0
 		start_year = 2280
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_2 y = @Col_7 }
+			position = { x = @Row_1 y = @Col_7 }
 		}
-		
+
 		categories = {
             vehicle_tech
 			motorized_equipment
 			car_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2281.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2282.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2283.1.1"
 			}
 		}
 	}
-	
+
 	gasoline_vehicle_tech = {
-	
+
 		category_vehicles = {
 			maximum_speed = 0.1
 			reliability = -0.05
@@ -592,27 +592,27 @@ technologies = {
 			maximum_speed = 0.1
 			reliability = -0.05
 		}
-	
+
         dependencies = {
             settled_civilization = 1
         }
-		
+
 		research_cost = 2.0
 		start_year = 2281
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_3 y = @Col_7 }
+			position = { x = @Row_2 y = @Col_7 }
 		}
-		
+
 		categories = {
             vehicle_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-    
+
     # military Car
     car_tech_3 = {
         enable_equipments = {
@@ -621,59 +621,59 @@ technologies = {
 
         dependencies = {
             scientific_civilization = 1
-            
+
         }
-		
+
 		path = {
 			leads_to_tech = armoured_vehicle_tech
 			research_cost_coeff = 1
 		}
-		
+
 		path = {
 			leads_to_tech = sealed_vehicle_tech
 			research_cost_coeff = 1
 		}
-        
+
 		research_cost = 2.0
 		start_year = 2282
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_2 y = @Col_9 }
+			position = { x = @Row_1 y = @Col_9 }
 		}
-		
+
 		categories = {
             vehicle_tech
 			motorized_equipment
 			car_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2283.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2284.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2285.1.1"
 			}
 		}
 	}
-	
+
 	sealed_vehicle_tech = {
-	
+
 		category_vehicles = {
 			maximum_speed = -0.05
 			default_morale = 0.05
@@ -682,50 +682,50 @@ technologies = {
 			maximum_speed = -0.05
 			default_morale = 0.05
 		}
-	
+
         dependencies = {
             scientific_civilization = 1
         }
-		
+
 		research_cost = 2.0
 		start_year = 2283
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_3 y = @Col_9 }
+			position = { x = @Row_2 y = @Col_9 }
 		}
-		
+
 		categories = {
             vehicle_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-	
+
 	armoured_vehicle_tech = {
-	
+
 		category_vehicles = {
 			maximum_speed = -0.1
 			hardness = 0.05
 			armor_value = 0.05
 		}
-	
+
         dependencies = {
             scientific_civilization = 1
         }
-		
+
 		research_cost = 2.0
 		start_year = 2284
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_2 y = @Col_11 }
+			position = { x = @Row_1 y = @Col_11 }
 		}
-		
+
 		categories = {
             vehicle_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
@@ -736,26 +736,26 @@ technologies = {
         enable_equipments = {
             truck_equipment_1
         }
-		
+
 		enable_subunits = {
             apc
         }
-        
+
         dependencies = {
             settled_civilization = 1
             bike_tech_2 = 1
         }
-        
+
         path = {
 			leads_to_tech = truck_tech_2
 			research_cost_coeff = 1
 		}
-		
+
 		path = {
 			leads_to_tech = storage_vehicle_tech
 			research_cost_coeff = 1
 		}
-        
+
         on_research_complete = {
 			limit = {
 				NOT = {
@@ -764,135 +764,135 @@ technologies = {
 			}
 			hidden_effect = {
 				load_oob = "unlock_apc"
-			}			
+			}
 			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
 		}
-        
+
 		research_cost = 2.0
 		start_year = 2277
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_4 y = @Col_3 }
+			position = { x = @Row_3 y = @Col_3 }
 		}
-		
+
 		categories = {
             vehicle_tech
 			motorized_equipment
 			truck_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2278.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2279.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2280.1.1"
 			}
 		}
 	}
-	
+
 	storage_vehicle_tech = {
-	
+
 		category_vehicles = {
 			supply_consumption = -0.02
 		}
-	
+
         dependencies = {
             settled_civilization = 1
         }
-		
+
 		research_cost = 2.0
 		start_year = 2278
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_5 y = @Col_3 }
+			position = { x = @Row_4 y = @Col_3 }
 		}
-		
+
 		categories = {
             vehicle_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-    
+
     # Salvaged Truck
     truck_tech_2 = {
         enable_equipments = {
             truck_equipment_2
         }
-        
+
         dependencies = {
             settled_civilization = 1
-            
+
         }
-     
+
 		path = {
 			leads_to_tech = apc_tech_1
 			research_cost_coeff = 1
 		}
-		
+
 		path = {
 			leads_to_tech = overclock_vehicle_tech
 			research_cost_coeff = 1
 		}
-        
+
 		research_cost = 2.0
 		start_year = 2279
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_4 y = @Col_5 }
+			position = { x = @Row_3 y = @Col_5 }
 		}
-		
+
 		categories = {
             vehicle_tech
 			motorized_equipment
 			truck_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2280.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2281.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2282.1.1"
 			}
 		}
 	}
-    
+
 	overclock_vehicle_tech = {
-	
+
 		category_vehicles = {
 			maximum_speed = 0.1
 			reliability = -0.1
@@ -901,27 +901,27 @@ technologies = {
 			maximum_speed = 0.1
 			reliability = -0.1
 		}
-	
+
         dependencies = {
             settled_civilization = 1
         }
-		
+
 		research_cost = 2.0
 		start_year = 2280
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_5 y = @Col_5 }
+			position = { x = @Row_4 y = @Col_5 }
 		}
-		
+
 		categories = {
             vehicle_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-    
+
     # Salvaged APC
     apc_tech_1 = {
          enable_equipments = {
@@ -930,232 +930,232 @@ technologies = {
 
         dependencies = {
             settled_civilization = 1
-            
+
         }
-        
+
         path = {
 			leads_to_tech = apc_tech_2
 			research_cost_coeff = 1
 		}
-		
+
 		path = {
 			leads_to_tech = tank_tech_1
 			research_cost_coeff = 1
 		}
-        
+
 		research_cost = 2.0
 		start_year = 2281
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_4 y = @Col_7 }
+			position = { x = @Row_3 y = @Col_7 }
 		}
-		
+
 		categories = {
             vehicle_tech
 			motorized_equipment
 			apc_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2282.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2283.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2284.1.1"
 			}
 		}
 	}
-    
+
     # Wasteland APC
     apc_tech_2 = {
          enable_equipments = {
             apc_equipment_2
         }
-        
+
         dependencies = {
             scientific_civilization = 1
-            
+
         }
-        
+
         path = {
 			leads_to_tech = apc_tech_3
 			research_cost_coeff = 1
 		}
-		
+
 		path = {
 			leads_to_tech = gunport_vehicle_tech
 			research_cost_coeff = 1
 		}
-        
+
 		research_cost = 2.0
 		start_year = 2283
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_4 y = @Col_9 }
+			position = { x = @Row_3 y = @Col_9 }
 		}
-		
+
 		categories = {
             		vehicle_tech
 			motorized_equipment
 			apc_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2284.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2285.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2286.1.1"
 			}
 		}
 	}
-	
+
 	gunport_vehicle_tech = {
-	
+
 		category_vehicles = {
 			maximum_speed = -0.05
 			soft_attack = 0.05
 			hard_attack = 0.05
 		}
-	
+
         dependencies = {
             scientific_civilization = 1
         }
-		
+
 		research_cost = 2.0
 		start_year = 2284
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_5 y = @Col_9 }
+			position = { x = @Row_4 y = @Col_9 }
 		}
-		
+
 		categories = {
             vehicle_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-    
+
     # Great War APC
     apc_tech_3 = {
         enable_equipments = {
             apc_equipment_3
         }
-        
+
         dependencies = {
             scientific_civilization = 1
-            
+
         }
-        
+
         path = {
 			leads_to_tech = apc_tech_3
 			research_cost_coeff = 1
 		}
-		
+
 		path = {
 			leads_to_tech = high_tech_fuel_vehicle_tech
 			research_cost_coeff = 1
 		}
-        
+
 		research_cost = 2.0
 		start_year = 2285
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_4 y = @Col_11 }
+			position = { x = @Row_3 y = @Col_11 }
 		}
-		
+
 		categories = {
             vehicle_tech
 			motorized_equipment
 			apc_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2286.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2287.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2288.1.1"
 			}
 		}
 	}
-	
+
 	high_tech_fuel_vehicle_tech = {
-	
+
 		category_vehicles = {
 			reliability = 0.1
 		}
 		category_tanks = {
 			reliability = 0.1
 		}
-	
+
         dependencies = {
             scientific_civilization = 1
         }
-		
+
 		research_cost = 2.0
 		start_year = 2286
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_5 y = @Col_11 }
+			position = { x = @Row_4 y = @Col_11 }
 		}
-		
+
 		categories = {
             vehicle_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-	
+
 	# Scrap Tank
     tank_tech_1 = {
 		enable_subunits = {
@@ -1164,7 +1164,7 @@ technologies = {
         enable_equipments = {
             tank_equipment_1
         }
-        
+
         path = {
 			leads_to_tech = tank_tech_2
 			research_cost_coeff = 1
@@ -1174,7 +1174,7 @@ technologies = {
             tracks_vehicle_tech_1 = 1
 			apc_tech_1 = 1
         }
-        
+
         on_research_complete = {
 			limit = {
 				NOT = {
@@ -1183,102 +1183,102 @@ technologies = {
 			}
 			hidden_effect = {
 				load_oob = "unlock_tank"
-			}			
+			}
 			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
 		}
-        
+
 		research_cost = 2.0
 		start_year = 2282
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_6 y = @Col_7 }
+			position = { x = @Row_5 y = @Col_7 }
 		}
-		
+
 		categories = {
             vehicle_tech
 			motorized_equipment
 			tank_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2283.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2284.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2285.1.1"
 			}
 		}
 	}
-    
+
     # Wasteland Tank
     tank_tech_2 = {
         enable_equipments = {
             tank_equipment_2
         }
-        
+
         dependencies = {
             scientific_civilization = 1
-            
+
         }
-        
+
         path = {
 			leads_to_tech = tank_tech_3
 			research_cost_coeff = 1
 		}
-        
+
 		research_cost = 2.0
 		start_year = 2284
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_6 y = @Col_9 }
+			position = { x = @Row_5 y = @Col_9 }
 		}
-		
+
 		categories = {
             		vehicle_tech
 			motorized_equipment
 			tank_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2285.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2286.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2287.1.1"
 			}
 		}
 	}
-    
+
     # Great War Tank
     tank_tech_3 = {
         enable_equipments = {
@@ -1291,33 +1291,33 @@ technologies = {
 		start_year = 2286
 		folder = {
 			name = fallout_vehicle_folder
-			position = { x = @Row_6 y = @Col_11 }
+			position = { x = @Row_5 y = @Col_11 }
 		}
-		
+
 		categories = {
             		vehicle_tech
 			motorized_equipment
 			tank_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2287.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2288.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2289.1.1"

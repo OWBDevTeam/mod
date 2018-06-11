@@ -11,7 +11,7 @@ technologies = {
 	@Col_10 = 44
 	@Col_11 = 48
 	@Col_12 = 52
-	
+
 	@Row_1 = 0
 	@Row_2 = 2
 	@Row_3 = 4
@@ -31,8 +31,8 @@ technologies = {
 	@Row_17 = 32
 	@Row_18 = 34
 	@Row_19 = 36
-	
-	
+
+
 	#-------------------------------
 	# Transport
 	#-------------------------------
@@ -40,61 +40,61 @@ technologies = {
 		enable_equipments = {
 			transport_plane_equipment_1
 		}
-		
+
 		path = {
 			leads_to_tech = cargo_zeppelin
 			research_cost_coeff = 1
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 1.8
 		start_year = 2275
 		folder = {
 			name = fallout_air_folder
-			position = { x = @Row_2 y = @Col_2 }
+			position = { x = @Row_1 y = @Col_2 }
 		}
-		
+
 		categories = {
 			medium_air
 					air_equipment
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-	
+
 	cargo_zeppelin = {
 		enable_equipments = {
 			transport_plane_equipment_2
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
-			
-			
+
+
 		}
-		
+
 		research_cost = 1.8
 		start_year = 2275
 		folder = {
 			name = fallout_air_folder
-			position = { x = @Row_2 y = @Col_5 }
+			position = { x = @Row_1 y = @Col_5 }
 		}
-		
+
 		categories = {
 			medium_air
 					air_equipment
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-	
+
 	#-------------------------------
 	# Fighter
 	#-------------------------------
@@ -102,243 +102,243 @@ technologies = {
 		enable_equipments = {
 			fighter_equipment_1
 		}
-		
+
 		path = {
 			leads_to_tech = salvaged_fighter
 			research_cost_coeff = 1
 		}
-		
+
 		path = {
 			leads_to_tech = scrap_divebomber
 			research_cost_coeff = 1
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
-			
-			
+
+
 		}
-		
+
 		research_cost = 1.8
 		start_year = 2275
 		folder = {
 			name = fallout_air_folder
-			position = { x = @Row_3 y = @Col_1 }
+			position = { x = @Row_2 y = @Col_1 }
 		}
-		
+
 		categories = {
 			light_air
 			light_fighter
 			air_equipment
 		}
-		
+
 		ai_will_do = {
 			factor = 4
-			
+
 			modifier = {
 				factor = 2
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2276.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2277.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2278.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2279.1.1"
 			}
 		}
 	}
-	
+
 	salvaged_fighter = {
 		enable_equipments = {
 			fighter_equipment_2
 		}
-		
+
 		path = {
 			leads_to_tech = nuclear_salvaged_fighter
 			research_cost_coeff = 1
 		}
-		
+
 		path = {
 			leads_to_tech = salvaged_transport
 			research_cost_coeff = 1
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
-			
-			
+
+
 		}
-		
+
 		research_cost = 1.8
 		start_year = 2278
 		folder = {
 			name = fallout_air_folder
-			position = { x = @Row_3 y = @Col_2 }
+			position = { x = @Row_2 y = @Col_2 }
 		}
-		
+
 		categories = {
 			light_air
 			light_fighter
 			air_equipment
 		}
-		
+
 		ai_will_do = {
 			factor = 4
-			
+
 			modifier = {
 				factor = 4
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2279.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2280.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2281.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2282.1.1"
 			}
 		}
 	}
-	
+
 	nuclear_salvaged_fighter = {
 		enable_equipments = {
 			fighter_equipment_3
 		}
-		
+
 		path = {
 			leads_to_tech = p80_nuclear
 			research_cost_coeff = 1
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
-			
-			
+
+
 		}
-		
+
 		research_cost = 1.8
 		start_year = 2281
 		folder = {
 			name = fallout_air_folder
-			position = { x = @Row_3 y = @Col_4 }
+			position = { x = @Row_2 y = @Col_4 }
 		}
-		
+
 		categories = {
 			light_air
 			light_fighter
 			air_equipment
 		}
-		
+
 		ai_will_do = {
 			factor = 4
-			
+
 			modifier = {
 				factor = 4
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2282.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2283.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2284.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2285.1.1"
 			}
 		}
 	}
-	
+
 	p80_nuclear = {
 		enable_equipments = {
 			fighter_equipment_4
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
-			
-			
+
+
 		}
-		
+
 		research_cost = 1.8
 		start_year = 2284
 		folder = {
 			name = fallout_air_folder
-			position = { x = @Row_3 y = @Col_5 }
+			position = { x = @Row_2 y = @Col_5 }
 		}
-		
+
 		categories = {
 			light_air
 			light_fighter
 			air_equipment
 		}
-		
+
 		ai_will_do = {
 			factor = 4
-			
+
 			modifier = {
 				factor = 4
 				is_major = yes
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2285.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2286.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				date > "2287.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2288.1.1"
 			}
 		}
 	}
-	
+
 	#-------------------------------
 	# Air Support
 	#-------------------------------
@@ -346,134 +346,134 @@ technologies = {
 		enable_equipments = {
 			cas_equipment_1
 		}
-		
+
 		path = {
 			leads_to_tech = salvaged_divebomber
 			research_cost_coeff = 1
 		}
-		
+
 		path = {
 			leads_to_tech = scrap_bomber
 			research_cost_coeff = 1
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
-			
-			
+
+
 		}
-		
+
 		research_cost = 1.8
 		start_year = 2275
 		folder = {
 			name = fallout_air_folder
-			position = { x = @Row_4 y = @Col_2 }
+			position = { x = @Row_3 y = @Col_2 }
 		}
-		
+
 		categories = {
 			light_air
 			cas_bomber
 			air_equipment
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				tag = NCR
 			}
-			
+
 			modifier = {
 				factor = 2
 				tag = BOS
 			}
 		}
 	}
-	
+
 	salvaged_divebomber = {
 		enable_equipments = {
 			cas_equipment_2
 		}
-		
+
 		path = {
 			leads_to_tech = armoured_zeppelin
 			research_cost_coeff = 1
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
-			
-			
+
+
 		}
-		
+
 		research_cost = 1.8
 		start_year = 2279
 		folder = {
 			name = fallout_air_folder
-			position = { x = @Row_4 y = @Col_3 }
+			position = { x = @Row_3 y = @Col_3 }
 		}
-		
+
 		categories = {
 			light_air
 			cas_bomber
 			air_equipment
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				tag = NCR
 			}
-			
+
 			modifier = {
 				factor = 2
 				tag = BOS
 			}
 		}
 	}
-	
+
 	armoured_zeppelin = {
 		enable_equipments = {
 			cas_equipment_3
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
-			
-			
+
+
 		}
-		
+
 		research_cost = 1.8
 		start_year = 2282
 		folder = {
 			name = fallout_air_folder
-			position = { x = @Row_4 y = @Col_5 }
+			position = { x = @Row_3 y = @Col_5 }
 		}
-		
+
 		categories = {
 			medium_air
 			cas_bomber
 			air_equipment
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 2
 				tag = NCR
 			}
-			
+
 			modifier = {
 				factor = 2
 				tag = BOS
 			}
 		}
 	}
-	
+
 	#-------------------------------
 	# Strategic Bomber
 	#-------------------------------
@@ -481,50 +481,50 @@ technologies = {
 		enable_equipments = {
 			strategic_bomber_equipment_1
 		}
-		
+
 		path = {
 			leads_to_tech = salvaged_superfortress
 			research_cost_coeff = 1
 		}
-		
+
 		path = {
 			leads_to_tech = salvaged_divebomber
 			research_cost_coeff = 0.5
 		}
-		
+
 		path = {
 			leads_to_tech = mortar_battery_zeppelin
 			research_cost_coeff = 1
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
-			
-			
+
+
 		}
-		
+
 		research_cost = 1.8
 		start_year = 2277
 		folder = {
 			name = fallout_air_folder
-			position = { x = @Row_5 y = @Col_3 }
+			position = { x = @Row_4 y = @Col_3 }
 		}
-		
+
 		categories = {
 			heavy_air
 					air_equipment
 					cat_strategic_bomber
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 1.2
 				is_major = yes
 				date > "2277.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				is_major = yes
@@ -532,45 +532,45 @@ technologies = {
 			}
 		}
 	}
-	
+
 	salvaged_superfortress = {
 		enable_equipments = {
 			strategic_bomber_equipment_2
 		}
-		
+
 		path = {
 			leads_to_tech = zeppelin_superfortress
 			research_cost_coeff = 1
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
-			
-			
+
+
 		}
-		
+
 		research_cost = 1.8
 		start_year = 2280
 		folder = {
 			name = fallout_air_folder
-			position = { x = @Row_5 y = @Col_5 }
+			position = { x = @Row_4 y = @Col_5 }
 		}
-		
+
 		categories = {
 			heavy_air
 					air_equipment
 					cat_strategic_bomber
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 1.2
 				is_major = yes
 				date > "2280.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				is_major = yes
@@ -586,38 +586,38 @@ technologies = {
 		enable_equipments = {
 			tactical_bomber_equipment_1
 		}
-		
+
 		path = {
 			leads_to_tech = howitzer_battery_zeppelin
 			research_cost_coeff = 1
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 1.8
 		start_year = 2277
 		folder = {
 			name = fallout_air_folder
-			position = { x = @Row_6 y = @Col_4 }
+			position = { x = @Row_5 y = @Col_4 }
 		}
-		
+
 		categories = {
 			heavy_air
 			air_equipment
 			tactical_bomber
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 1.2
 				is_major = yes
 				date > "2277.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				is_major = yes
@@ -625,45 +625,45 @@ technologies = {
 			}
 		}
 	}
-	
+
 	howitzer_battery_zeppelin = {
 		enable_equipments = {
 			tactical_bomber_equipment_2
 		}
-		
+
 		path = {
 			leads_to_tech = laser_battery_zeppelin
 			research_cost_coeff = 1
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
-			
-			
+
+
 		}
-		
+
 		research_cost = 1.8
 		start_year = 2279
 		folder = {
 			name = fallout_air_folder
-			position = { x = @Row_6 y = @Col_5 }
+			position = { x = @Row_5 y = @Col_5 }
 		}
-		
+
 		categories = {
 			heavy_air
 			air_equipment
 			tactical_bomber
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 1.2
 				is_major = yes
 				date > "2279.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				is_major = yes
@@ -671,38 +671,38 @@ technologies = {
 			}
 		}
 	}
-	
+
 	laser_battery_zeppelin = {
 		enable_equipments = {
 			tactical_bomber_equipment_3
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
 		}
-		
+
 		research_cost = 1.8
 		start_year = 2283
 		folder = {
 			name = fallout_air_folder
-			position = { x = @Row_6 y = @Col_6 }
+			position = { x = @Row_5 y = @Col_6 }
 		}
-		
+
 		categories = {
 			heavy_air
 			air_equipment
 			tactical_bomber
 		}
-		
+
 		ai_will_do = {
 			factor = 1
-			
+
 			modifier = {
 				factor = 1.2
 				is_major = yes
 				date > "2283.1.1"
 			}
-			
+
 			modifier = {
 				factor = 1.2
 				is_major = yes
@@ -710,7 +710,7 @@ technologies = {
 			}
 		}
 	}
-	
+
 	#-------------------------------
 	# Uniques
 	#-------------------------------
@@ -724,20 +724,20 @@ technologies = {
 		dependencies = {
 			scientific_civilization = 1
 		}
-		
+
 		research_cost = 1.8
 		start_year = 2275
 		folder = {
 			name = fallout_air_folder
 			position = { x = @Row_1 y = @Col_7 }
 		}
-		
+
 		categories = {
 			light_air
 			light_fighter
 			air_equipment
 		}
-		
+
 		ai_will_do = {
 			factor = 100
 		}
@@ -755,28 +755,28 @@ technologies = {
 		}
 		dependencies = {
 			scientific_civilization = 1
-			
-			
+
+
 		}
-		
+
 		research_cost = 1.8
 		start_year = 2275
 		folder = {
 			name = fallout_air_folder
 			position = { x = @Row_2 y = @Col_7 }
 		}
-		
+
 		categories = {
 			medium_air
 			cas_bomber
 			air_equipment
 		}
-		
+
 		ai_will_do = {
 			factor = 100
 		}
 	}
-	
+
 	# VB Transport
 	vertiberd_transport1 = {
 		enable_equipments = {
@@ -792,25 +792,25 @@ technologies = {
 			leads_to_tech = vertiberd_transport2
 			research_cost_coeff = 1
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
-			
-			
+
+
 		}
-		
+
 		research_cost = 1.8
 		start_year = 2275
 		folder = {
 			name = fallout_air_folder
 			position = { x = @Row_3 y = @Col_7 }
 		}
-		
+
 		categories = {
 			medium_air
 			air_equipment
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
