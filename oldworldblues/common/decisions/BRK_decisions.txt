@@ -2,6 +2,7 @@ brk_decisions = {
 	brk_decision_build_the_fleet = {
 		fire_only_once = yes
 		days_remove = 60
+		ai_will_do = { factor = 10 }
 		visible = { has_completed_focus = brk_nf_elites_pol_side_1 }
 		available = { has_completed_focus = brk_nf_elites_pol_side_1 }
 		modifier = { civilian_factory_use = 5 }
@@ -14,6 +15,7 @@ brk_decisions = {
 	brk_decision_build_graven_ship = {
 		fire_only_once = yes
 		days_remove = 60
+		ai_will_do = { factor = 10 }
 		visible = { has_completed_focus = brk_nf_ruler_pol_side_1 }
 		available = { has_completed_focus = brk_nf_ruler_pol_side_1 }
 		modifier = { civilian_factory_use = 5 }
@@ -65,6 +67,9 @@ brk_raiding_vic = {
 		days_remove = 40
 		days_re_enable = 60
 		cost = 50
+		ai_will_do = {
+			factor = 10
+		}
 
 		complete_effect = {
 			HAI = {
@@ -109,6 +114,9 @@ brk_raiding_vic = {
 		days_remove = 40
 		days_re_enable = 80
 		cost = 50
+		ai_will_do = {
+			factor = 10
+		}
 
 		complete_effect = {
 			set_country_flag = brk_vic_raid_underway
@@ -176,6 +184,9 @@ brk_raiding_vic = {
 		days_remove = 60
 		days_re_enable = 100
 		cost = 50
+		ai_will_do = {
+			factor = 10
+		}
 
 		complete_effect = {
 			set_country_flag = brk_vic_raid_underway
@@ -245,6 +256,13 @@ brk_raiding_vic = {
 		days_remove = 100
 		cost = 50
 		fire_only_once = yes
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
 
 		complete_effect = {
 			country_event = { id = nf_event_brk.34 }
@@ -321,6 +339,13 @@ brk_raiding_vic = {
 		days_remove = 10
 		cost = 10
 		fire_only_once = yes
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
 
 		remove_effect = {
 			declare_war_on = { target = VIC type = annex_everything }
@@ -349,6 +374,13 @@ brk_raiding_vic = {
 		days_remove = 100
 		cost = 100
 		fire_only_once = yes
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_political_power < 151
+			}
+		}
 
 		modifier = {
 			monthly_population = -0.4
@@ -480,9 +512,10 @@ brk_raiding = {
 		}
 
 		ai_will_do = { # AI modifier shit
-			base = 1
+			base = 10
 			modifier = {
-				
+				factor = 0
+				has_war = yes
 			}
 		}
 
@@ -695,7 +728,7 @@ brk_raiding = {
 		}
 
 		ai_will_do = { # I'm giving up on commenting this now
-			base = 0
+			base = 1
 			modifier = {
 				
 			}

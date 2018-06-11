@@ -28,6 +28,13 @@ hea_conversion = { # Conversion decisions
 
 		days_remove = 100
 		cost = 40
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				add = 4
+				has_political_power > 151 # AI will always assign designers/advisors at 150pp, so once they pass this threshold they have filled their advisors
+			}
+		}
 
 		remove_effect = {
 			FROM = {
@@ -76,6 +83,14 @@ hea_conversion = { # Conversion decisions
 
 		days_remove = 20
 		cost = 20
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				add = 4
+				has_political_power > 151 # AI will always assign designers/advisors at 150pp, so once they pass this threshold they have filled their advisors
+			}
+		}
 
 		complete_effect = {
 			add_manpower = -50
@@ -129,6 +144,10 @@ hea_conversion = { # Conversion decisions
 
 		days_remove = 50
 		cost = 60
+
+		ai_will_do = {
+			factor = 5
+		}
 
 		remove_effect = {
 			puppet = FROM
