@@ -30,14 +30,14 @@ political_actions = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 			modifier = {
-				add = 4
-				has_stability < 0.4
+				add = 5
+				has_stability < 0.6
 			}
 		}
 	}
-	prioritise_living_standards = { # Basic decision otehr version
+	prioritise_living_standards = { # Basic decision other version
 		available = {
 			num_of_civilian_factories_available_for_projects > 3
 			has_stability < 0.85
@@ -61,10 +61,10 @@ political_actions = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 			modifier = {
-				add = 4
-				has_stability < 0.4
+				add = 5
+				has_stability < 0.6
 			}
 		}
 	}
@@ -93,9 +93,9 @@ political_actions = {
 			war_support_weekly = -0.005
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 			modifier = {
-				add = 4
+				add = 5
 				has_stability < 0.4
 				has_war_support > 0.4
 			}
@@ -125,9 +125,9 @@ political_actions = {
 			war_support_weekly = -0.005
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 			modifier = {
-				add = 4
+				add = 5
 				has_stability < 0.4
 				has_war_support > 0.4
 			}
@@ -149,10 +149,10 @@ political_actions = {
 			war_support_weekly = -0.01
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 			modifier = {
-				add = 4
-				has_stability < 0.4
+				add = 5
+				has_stability < 0.6
 				has_war_support > 0.4
 			}
 		}
@@ -179,10 +179,10 @@ political_actions = {
 			political_power_factor = -0.20
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 			modifier = {
-				add = 4
-				has_stability < 0.4
+				add = 5
+				has_stability < 0.6
 			}
 		}
 	}
@@ -222,10 +222,10 @@ propaganda_efforts = {
 			war_support_weekly = 0.01
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 			modifier = {
-				add = 4
-				has_war_support < 0.4
+				add = 5
+				has_war_support < 0.6
 			}
 		}
 	}
@@ -261,10 +261,10 @@ propaganda_efforts = {
 			war_support_weekly = 0.02
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 			modifier = {
-				add = 4
-				has_war_support < 0.4
+				add = 5
+				has_war_support < 0.6
 			}
 		}
 	}
@@ -302,9 +302,9 @@ propaganda_efforts = {
 			stability_weekly = -0.01
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 			modifier = {
-				add = 4
+				add = 5
 				has_war_support < 0.4
 				has_stability > 0.4
 			}
@@ -329,11 +329,7 @@ propaganda_efforts = {
 			war_support_weekly = -0.005
 		}
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				add = 4
-				has_war_support > 0.4
-			}
+			factor = 0
 		}
 	}
 }
@@ -362,11 +358,7 @@ war_measures = {
 			mobilization_speed = 0.2 # 20% increase
 		}
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				add = 4
-				has_war_support > 0.4
-			}
+			factor = 0
 		}
 	}
 	focus_mil_research = {
@@ -395,11 +387,7 @@ war_measures = {
 			stability_weekly = -0.005
 		}
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				add = 4
-				has_stability > 0.4
-			}
+			factor = 0
 		}
 	}
 	extend_mil_production = { # Mil production settler / bos version
@@ -430,11 +418,7 @@ war_measures = {
 			stability_weekly = -0.005
 		}
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				add = 4
-				has_stability > 0.4
-			}
+			factor = 0
 		}
 	}
 	encourage_weapon_production = { # Mil production other version
@@ -469,11 +453,7 @@ war_measures = {
 			industrial_capacity_factory = 0.1
 		}
 		ai_will_do = {
-			factor = 1
-			modifier = {
-				add = 4
-				has_stability > 0.4
-			}
+			factor = 0
 		}
 	}
 }
