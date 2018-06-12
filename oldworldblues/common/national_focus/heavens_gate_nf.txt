@@ -1134,7 +1134,7 @@ focus_tree = {
 		id = hea_nf_foreign_ministry
 		icon = GFX_focus_hun_assassinate_horthy
 		cost = 8.6
-		x = 26
+		x = 24
 		y = 4
 		
 		prerequisite = {
@@ -1291,48 +1291,6 @@ focus_tree = {
 			type = annex_everything
 			target = MUR
 		}
-		}
-	}
-	
-	focus = {
-		id = hea_nf_embassy_lonetree
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 27
-		y = 5
-		
-		prerequisite = {
-			focus = hea_nf_foreign_ministry
-		}
-		
-		available = {
-			country_exists = LON
-		}
-				
-		completion_reward = {
-			LON = {
-				add_opinion_modifier = { target = HEA modifier = hea_has_embassy }
-			}
-		}
-	}
-	
-	focus = {
-		id = hea_nf_demand_submission_lonetree
-		icon = GFX_focus_hun_assassinate_horthy
-		cost = 8.6
-		x = 27
-		y = 6
-		
-		prerequisite = {
-			focus = hea_nf_embassy_lonetree
-		}
-		
-		available = {
-			country_exists = LON
-		}
-				
-		completion_reward = {
-			country_event = { id = nf_event_hea.5 }
 		}
 	}
 }
