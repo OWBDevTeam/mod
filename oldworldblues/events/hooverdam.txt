@@ -1,13 +1,13 @@
 ﻿add_namespace = hooverdam
 
-country_event = {
-	id = hooverdam.1 #NCR claims the Dam
+country_event = {#NCR claims the Dam
+	id = hooverdam.1
 	title = hooverdam.1.t
 	desc = hooverdam.1.d
 	picture = GFX_event_NCR_hoover_dam
-    
-    is_triggered_only = yes
-    
+	
+	is_triggered_only = yes
+	
 	option = {
 		name = hooverdam.1.a
 		
@@ -16,8 +16,7 @@ country_event = {
 				is_owned_by = DAM
 			}
 		}
-		annex_country = { target = DAM transfer_troops = no }	
-        
+		annex_country = { target = DAM transfer_troops = no }
 	}
 	option = {
 		name = hooverdam.1.b
@@ -31,7 +30,6 @@ country_event = {
 			target = MOJ
 			type = annex_everything
 		}
-		
 	}
 	option = {
 		name = hooverdam.1.c
@@ -41,12 +39,9 @@ country_event = {
 				is_owned_by = VEG
 			}
 		}
-		
 		VEG = {
 			country_event = hooverdam.12
 		}
-		
-		
 	}
 	option = {
 		name = hooverdam.1.d
@@ -59,23 +54,21 @@ country_event = {
 					is_owned_by = DAM
 				}
 			}
-		}
-			
+		}	
 		add_state_claim = 252
 		add_state_claim = 613
 	}
-
 }
 
-country_event = {
-	id = hooverdam.2 #Legion Attacker Event
+country_event = {#Legion Attacker Event
+	id = hooverdam.2
 	title = hooverdam.2.t
 	desc = hooverdam.2.d
 	picture = GFX_event_CES_first_battle_for_hoover_dam
-    
-    is_triggered_only = yes
-    
-	option = {
+	
+	is_triggered_only = yes
+	
+	option = {#Light push
 		name = hooverdam.2.a
 		
 		add_manpower = -800
@@ -84,11 +77,10 @@ country_event = {
 			add_manpower = -400
 		}
 		
-		random_list = { 35 = { country_event = { id = hooverdam.3 }} 65 = { NCR = { country_event = { id = hooverdam.4 }}}}
-        
+		random_list = { 35 = { country_event = hooverdam.3 } 65 = { NCR = { country_event = hooverdam.4 } } }
 	}
 	
-	option = {
+	option = {#Normal Push
 		name = hooverdam.2.b
 		
 		ai_chance = {
@@ -105,11 +97,10 @@ country_event = {
 			add_manpower = -750
 		}
 		
-		random_list = { 55 = { country_event = { id = hooverdam.3 }} 45 = { NCR = { country_event = { id = hooverdam.4 }}}}
-        
+		random_list = { 55 = { country_event = hooverdam.3 } 45 = { NCR = { country_event = hooverdam.4 } } }
 	}
 	
-	option = {
+	option = {#Heavy Push
 		name = hooverdam.2.c
 		
 		add_manpower = -2000
@@ -118,13 +109,12 @@ country_event = {
 			add_manpower = -1000
 		}
 		
-		random_list = { 75 = { country_event = { id = hooverdam.3 }} 25 = { NCR = { country_event = { id = hooverdam.4 }}}}
-        
+		random_list = { 75 = { country_event = hooverdam.3 } 25 = { NCR = { country_event = hooverdam.4 } } }
 	}
 }
 
-country_event = {
-	id = hooverdam.3 #Legion Presses Further?
+country_event = {#Legion Presses Further?
+	id = hooverdam.3
 	title = hooverdam.3.t
 	desc = hooverdam.3.d
 	picture = GFX_event_CES_first_battle_for_hoover_dam
@@ -135,7 +125,7 @@ country_event = {
 		transfer_state = 252
 	}
 	
-	option = {
+	option = {#Yes
 		name = hooverdam.3.a
 		
 		ai_chance = {
@@ -145,29 +135,38 @@ country_event = {
 				factor = 100
 			}
 		}
-		
-		#Yes
-		
+
 		NCR = {
 			country_event = { id = hooverdam.5 days = 1 }
 		}
 	}
 	
-	option = {
+	option = {#No
 		name = hooverdam.3.b
 		
-		#No thanks
-		
 		set_country_flag = hoover_dam_won
-		
 		NCR = {
 			set_country_flag = hoover_dam_lost
+			country_event = hooverdam.14
 		}
 	}
 }
 
-country_event = {
-	id = hooverdam.4 #NCR Presses Further?
+country_event = {#Legion didn't push
+	id = hooverdam.14
+	title = hooverdam.14.t
+	desc = hooverdam.14.d
+	picture = GFX_event_NCR_battle_for_hoover_dam
+
+	is_triggered_only = yes
+	
+	option = {
+		name = hooverdam.14.a
+	}
+}
+
+country_event = {#NCR Presses Further?
+	id = hooverdam.4
 	title = hooverdam.4.t
 	desc = hooverdam.4.d
 	picture = GFX_event_NCR_hoover_dam
@@ -179,17 +178,15 @@ country_event = {
 		transfer_state = 613
 	}
 	
-	option = {
+	option = {#Yes
 		name = hooverdam.4.a
-		
-		#Yes
-		
+
 		CES = {
 			country_event = { id = hooverdam.6 days = 1 }
 		}
 	}
 	
-	option = {
+	option = {#No thanks
 		name = hooverdam.4.b
 		
 		ai_chance = {
@@ -199,25 +196,36 @@ country_event = {
 				factor = 100
 			}
 		}
-		
-		#No thanks
-		
 		set_country_flag = hoover_dam_won
 		
 		CES = {
 			set_country_flag = hoover_dam_lost
+			country_event = hooverdam.15
 		}
 	}
 }
 
-country_event = {
-	id = hooverdam.5 #NCR Defender Event
+country_event = {#NCR didn't push
+	id = hooverdam.15
+	title = hooverdam.15.t
+	desc = hooverdam.15.d
+	picture = GFX_event_NCR_battle_for_hoover_dam
+
+	is_triggered_only = yes
+	
+	option = {
+		name = hooverdam.15.a
+	}
+}
+
+country_event = {#NCR Defender Event
+	id = hooverdam.5
 	title = hooverdam.5.t
 	desc = hooverdam.5.d
 	picture = GFX_event_NCR_battle_for_hoover_dam
-    
-    is_triggered_only = yes
-    
+	
+	is_triggered_only = yes
+	
 	option = {
 		name = hooverdam.5.a
 		
@@ -227,8 +235,7 @@ country_event = {
 			add_manpower = -1200
 		}
 		
-		random_list = { 35 = { country_event = { id = hooverdam.8 days = 1 }} 65 = { CES = { country_event = { id = hooverdam.7 days = 1 }}}}
-        
+		random_list = { 35 = { country_event = { id = hooverdam.8 days = 1 } } 65 = { CES = { country_event = { id = hooverdam.7 days = 1 } } } }
 	}
 	
 	option = {
@@ -242,7 +249,6 @@ country_event = {
 		}
 		
 		random_list = { 55 = { country_event = { id = hooverdam.8 days = 1 }} 45 = { CES = { country_event = { id = hooverdam.7 days = 1 }}}}
-        
 	}
 	
 	option = {
@@ -263,18 +269,17 @@ country_event = {
 		}
 		
 		random_list = { 75 = { country_event = { id = hooverdam.8 days = 1 }} 25 = { CES = { country_event = { id = hooverdam.7 days = 1 }}}}
-        
 	}
 }	
 
-country_event = {
-	id = hooverdam.6 #Legion Defender Event
+country_event = {#Legion Defender Event
+	id = hooverdam.6
 	title = hooverdam.6.t
 	desc = hooverdam.6.d
 	picture = GFX_event_NCR_battle_for_hoover_dam
-    
-    is_triggered_only = yes
-    
+	
+	is_triggered_only = yes
+	
 	option = {
 		name = hooverdam.6.a
 		
@@ -285,7 +290,6 @@ country_event = {
 		}
 		
 		random_list = { 35 = { country_event = { id = hooverdam.9 days = 1 }} 65 = { NCR = { country_event = { id = hooverdam.10 days = 1 }}}}
-        
 	}
 	
 	option = {
@@ -306,7 +310,6 @@ country_event = {
 		}
 		
 		random_list = { 55 = { country_event = { id = hooverdam.9 days = 1 }} 45 = { NCR = { country_event = { id = hooverdam.10 days = 1 }}}}
-        
 	}
 	
 	option = {
@@ -318,49 +321,69 @@ country_event = {
 			add_manpower = -2000
 		}
 		
-		random_list = { 75 = { country_event = { id = hooverdam.9 days = 1 }} 25 = { CES = { country_event = { id = hooverdam.10 days = 1 }}}}
-        
+		random_list = { 75 = { country_event = { id = hooverdam.9 days = 1 }} 25 = { NCR = { country_event = { id = hooverdam.10 days = 1 }}}}
 	}
 }	
 
-country_event = {
-	id = hooverdam.9 #Legion Wins Defense
+country_event = {#Legion Wins Defense
+	id = hooverdam.9
 	title = hooverdam.9.t
 	desc = hooverdam.9.d
 	picture = GFX_event_NCR_battle
 	
 	is_triggered_only = yes
 	
-	option = {
+	option = {#Gratz U Win
 		name = hooverdam.9.a
 		
 		transfer_state = 252
-		
-		#Gratz U Win
 		
 		set_country_flag = hoover_dam_won
 		
 		NCR = {
 			set_country_flag = hoover_dam_lost
+			country_event = hooverdam.16
+		}
+	}
+}
+
+country_event = {#Legion won defense
+	id = hooverdam.16
+	title = hooverdam.16.t
+	desc = hooverdam.16.d
+	picture = GFX_event_NCR_battle_for_hoover_dam
+
+	is_triggered_only = yes
+	
+	option = {
+		name = hooverdam.16.a 
+		
+		trigger = {
+			tag = CES
 		}
 	}
 	
+	option = {
+		name = hooverdam.16.b 
+		
+		trigger = {
+			tag = NCR
+		}
+	}
 }
 
-country_event = {
-	id = hooverdam.10 #NCR Wins Second Attack
+country_event = {#NCR Wins Second Attack
+	id = hooverdam.10
 	title = hooverdam.10.t
 	desc = hooverdam.10.d
 	picture = GFX_event_NCR_victory
 	
 	is_triggered_only = yes
 	
-	option = {
+	option = {#Gratz U Win
 		name = hooverdam.10.a
 		
 		transfer_state = 359
-		
-		#Gratz U Win
 		
 		set_country_flag = hoover_dam_won
 		
@@ -372,20 +395,18 @@ country_event = {
 	
 }
 
-country_event = {
-	id = hooverdam.7 #Legion Wins Second Attack
+country_event = {#Legion Wins Second Attack
+	id = hooverdam.7
 	title = hooverdam.7.t
 	desc = hooverdam.7.d
 	picture = GFX_event_NCR_battle_for_hoover_dam
 	
 	is_triggered_only = yes
 	
-	option = {
+	option = {#Gratz U Win
 		name = hooverdam.7.a
 		
 		transfer_state = 613
-		
-		#Gratz U Win
 		
 		set_country_flag = hoover_dam_won
 		
@@ -394,41 +415,39 @@ country_event = {
 			country_event = { id = hooverdam.13 }
 		}
 	}
-	
 }
 
-country_event = {
-	id = hooverdam.8 #NCR Wins Defense
+country_event = {#NCR Wins Defense
+	id = hooverdam.8
 	title = hooverdam.8.t
 	desc = hooverdam.8.d
 	picture = GFX_event_NCR_victory
 	
 	is_triggered_only = yes
 	
-	option = {
+	option = {#Gratz U Win
 		name = hooverdam.8.a
 		
 		transfer_state = 252
-		
-		#Gratz U Win
 		
 		set_country_flag = hoover_dam_won
 		
 		CES = {
 			set_country_flag = hoover_dam_lost
+			country_event = hooverdam.16
 		}
 	}
 	
 }
 
-country_event = {
-	id = hooverdam.11 #NCR Attacker Event
+country_event = {#NCR Attacker Event
+	id = hooverdam.11
 	title = hooverdam.11.t
 	desc = hooverdam.11.d
 	picture = GFX_event_NCR_battle_for_hoover_dam
-    
-    is_triggered_only = yes
-    
+	
+	is_triggered_only = yes
+	
 	option = {
 		name = hooverdam.11.a
 		
@@ -447,7 +466,7 @@ country_event = {
 		}
 		
 		random_list = { 35 = { country_event = { id = hooverdam.4 days = 1 }} 65 = { CES = { country_event = { id = hooverdam.3 days = 1 }}}}
-        
+		
 	}
 	
 	option = {
@@ -460,7 +479,7 @@ country_event = {
 		}
 		
 		random_list = { 55 = { country_event = { id = hooverdam.4 days = 1 }} 45 = { CES = { country_event = { id = hooverdam.3 days = 1 }}}}
-        
+		
 	}
 	
 	option = {
@@ -473,7 +492,7 @@ country_event = {
 		}
 		
 		random_list = { 75 = { country_event = { id = hooverdam.4 days = 1 }} 25 = { CES = { country_event = { id = hooverdam.3 days = 1 }}}}
-        
+		
 	}
 }
 	
@@ -482,8 +501,8 @@ country_event = {
 	title = hooverdam.12.t
 	desc = hooverdam.12.d
 	picture = GFX_event_NCR_hoover_dam
-    
-    is_triggered_only = yes	
+	
+	is_triggered_only = yes	
 	
 	option = {
 		name = hooverdam.12.a 
@@ -525,8 +544,8 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = hooverdam.13 #Lost 2nd Attack
+country_event = {#Lost 2nd Attack
+	id = hooverdam.13
 	title = hooverdam.13.t
 	desc = hooverdam.13.d
 	picture = GFX_event_NCR_battle_for_hoover_dam
@@ -548,5 +567,4 @@ country_event = {
 			tag = NCR
 		}
 	}
-	
 }
