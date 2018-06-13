@@ -15,6 +15,10 @@ hea_conversion = {
 		}
 		available = {
 			NOT = {
+				FROM = { is_puppet_of = NCN }
+				has_war_with = FROM
+			}
+			NOT = {
 				custom_trigger_tooltip = {
 					tooltip = hea_not_converted_all_tt
 					FROM = {
@@ -70,6 +74,10 @@ hea_conversion = {
 			}
 		}
 		available = {
+			NOT = {
+				FROM = { is_puppet_of = NCN }
+				has_war_with = FROM
+			}
 			NOT = {
 				custom_trigger_tooltip = {
 					tooltip = hea_not_converted_all_tt
@@ -128,6 +136,7 @@ hea_conversion = {
 				has_completed_focus = hea_nf_forgive_sins
 				has_completed_focus = hea_nf_vengance
 			}
+			NOT = { FROM = { is_puppet_of = HEA } }
 		}
 		target_trigger = {
 			FROM = {
@@ -146,6 +155,10 @@ hea_conversion = {
 						has_state_flag = hea_converted
 					}
 				}
+			}
+			NOT = {
+				FROM = { is_puppet = yes }
+				has_war_with = FROM
 			}
 		}
 
