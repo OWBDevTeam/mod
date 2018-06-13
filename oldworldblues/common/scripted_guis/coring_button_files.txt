@@ -22,17 +22,36 @@ scripted_gui = {
 		triggers = {
 			add_core_click_enabled = {
 				check_variable = { ROOT.political_power > 99.99 }
-				NOT = { 
+				NOT = {
 					is_core_of = ROOT
 				}
-				ROOT = { 
+				ROOT = {
 					is_major = no
 					has_civil_war = no
 					NOT = {
 						has_country_flag = not_allowed_to_core_flag
 					}
 				}
-				
+			}
+			add_core_click_visible = {
+				NOT = {
+					is_core_of = ROOT
+				}
+				ROOT = {
+					is_major = no
+					has_civil_war = no
+					NOT = {
+						has_country_flag = not_allowed_to_core_flag
+					}
+				}
+			}
+			add_core_click_cancel_visible = {
+				is_core_of = ROOT
+				ROOT = {
+					is_major = yes
+					has_civil_war = yes
+					has_country_flag = not_allowed_to_core_flag
+				}
 			}
 		}
 		ai_test_interval = 336 #

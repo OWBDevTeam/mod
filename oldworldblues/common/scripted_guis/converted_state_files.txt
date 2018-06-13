@@ -1,0 +1,40 @@
+scripted_gui = {
+	converted_state = {
+	
+		context_type = selected_state_context
+		
+		window_name = "converted_state_container"
+		parent_window_token = selected_state_view
+		
+		visible = {
+			ROOT = { tag = NCN }
+			OR = {
+				has_state_flag = ncn_converted
+				is_owned_and_controlled_by = NCN
+			}
+		}
+		
+		effects = {}
+	}
+
+	state_conversion_button = {
+		context_type = selected_state_context
+		
+		window_name = "convertable_state_container"
+		parent_window_token = selected_state_view
+
+		visible = {
+			ROOT = { tag = NCN }
+			NOT = { is_owned_and_controlled_by = NCN }
+			NOT = { has_state_flag = ncn_converted }
+			AND = {
+				any_neighbor_state = {
+					is_owned_and_controlled_by = NCN
+				}
+				can_be_converted = yes
+			}
+		}
+
+		effects = {}
+	}
+}
