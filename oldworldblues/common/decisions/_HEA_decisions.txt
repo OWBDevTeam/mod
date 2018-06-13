@@ -1,6 +1,5 @@
-# HEA ---> Heaven's Gate
-# PHA ---> Pharohs
-hea_conversion = { # Conversion decisions
+# HEA Conversion Decisions - By HappyNTH #
+hea_conversion = {
 	hea_slow_conversion = { # Converts provinces one by one
 		visible = {
 			has_completed_focus = hea_nf_forgive_sins
@@ -9,6 +8,7 @@ hea_conversion = { # Conversion decisions
 			FROM = {
 				OR = {
 					tag = PHA
+					tag = LON
 					# To add extra targets just use tag = TAG here and in the binding decision
 				}
 			}
@@ -16,7 +16,7 @@ hea_conversion = { # Conversion decisions
 		available = {
 			NOT = {
 				custom_trigger_tooltip = {
-					tooltip = hea_converted_all_tt
+					tooltip = hea_not_converted_all_tt
 					FROM = {
 						all_owned_state = {
 							has_state_flag = hea_converted
@@ -31,7 +31,7 @@ hea_conversion = { # Conversion decisions
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				add = 4
+				add = 14
 				has_political_power > 151 # AI will always assign designers/advisors at 150pp, so once they pass this threshold they have filled their advisors
 			}
 		}
@@ -64,6 +64,7 @@ hea_conversion = { # Conversion decisions
 			FROM = {
 				OR = {
 					tag = PHA
+					tag = LON
 					# To add extra targets just use tag = TAG here and in the binding decision
 				}
 			}
@@ -71,7 +72,7 @@ hea_conversion = { # Conversion decisions
 		available = {
 			NOT = {
 				custom_trigger_tooltip = {
-					tooltip = hea_converted_all_tt
+					tooltip = hea_not_converted_all_tt
 					FROM = {
 						all_owned_state = {
 							has_state_flag = hea_converted
@@ -79,6 +80,7 @@ hea_conversion = { # Conversion decisions
 					}
 				}
 			}
+			has_manpower > 49
 		}
 
 		days_remove = 20
@@ -87,8 +89,12 @@ hea_conversion = { # Conversion decisions
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				add = 4
+				add = 14
 				has_political_power > 151 # AI will always assign designers/advisors at 150pp, so once they pass this threshold they have filled their advisors
+			}
+			modifier = {
+				factor = 0
+				has_manpower < 500
 			}
 		}
 
@@ -127,6 +133,7 @@ hea_conversion = { # Conversion decisions
 			FROM = {
 				OR = {
 					tag = PHA
+					tag = LON
 					# To add extra targets just use tag = TAG here and in the convertion decision
 				}
 			}

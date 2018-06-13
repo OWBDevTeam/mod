@@ -1,0 +1,184 @@
+# NCN Conversion Decisions - By HappyNTH #
+ncn_conversion = {
+	ncn_slow_conversion = { # Converts provinces one by one
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = LON
+					tag = IRE
+					tag = MUR
+					tag = CRZ
+					tag = TAR
+					tag = SOR
+					tag = HGH
+				}
+			}
+		}
+		visible = {
+			if = {
+				limit = { FROM = { tag = LON } }
+				has_completed_focus = lds_apostle
+			}
+			if = {
+				limit = { FROM = { tag = IRE } }
+				has_completed_focus = lds_onegod
+			}
+			if = {
+				limit = { FROM = { tag = MUR } }
+				has_completed_focus = lds_heretics
+			}
+			if = {
+				limit = { FROM = { tag = CRZ } }
+				has_completed_focus = lds_crazyhorn
+			}
+			if = {
+				limit = { FROM = { tag = TAR } }
+				has_completed_focus = lds_tarwalkers
+			}
+			if = {
+				limit = { FROM = { tag = SOR } }
+				has_completed_focus = lds_godfather
+			}
+			if = {
+				limit = { FROM = { tag = HGH } }
+				has_completed_focus = lds_factions
+			}
+		}
+		available = {
+			NOT = {
+				FROM = { is_puppet_of = NCN }
+				has_war_with = FROM
+			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = hea_not_converted_all_tt
+					FROM = {
+						all_owned_state = {
+							has_state_flag = ncn_converted
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ncn_eligable_tt
+				FROM = {
+					any_owned_state = {
+						any_neighbor_state = {
+							OR = {
+								has_state_flag = ncn_converted
+								is_owned_and_controlled_by = NCN
+							}
+						}
+					}
+				}
+			}
+		}
+
+		days_remove = 50
+		cost = 20
+		ai_will_do = {
+			factor = 100
+		}
+
+		remove_effect = {
+			FROM = {
+				random_owned_state = {
+					limit = {
+						any_neighbor_state = {
+							OR = {
+								has_state_flag = ncn_converted
+								is_owned_and_controlled_by = NCN
+							}
+						}
+						NOT = { has_state_flag = ncn_converted }
+					}
+					set_state_flag = ncn_converted
+					custom_effect_tooltip = ncn_converted_state_tt
+				}
+				#country_event = { id = }
+			}
+		}
+	}
+
+	ncn_bind_to_us = { # Puppets a country when all the provinces are conquered
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = LON
+					tag = IRE
+					tag = MUR
+					tag = CRZ
+					tag = TAR
+					tag = SOR
+					tag = HGH
+				}
+			}
+		}
+		visible = {
+			if = {
+				limit = { FROM = { tag = LON } }
+				has_completed_focus = lds_apostle
+			}
+			if = {
+				limit = { FROM = { tag = IRE } }
+				has_completed_focus = lds_onegod
+			}
+			if = {
+				limit = { FROM = { tag = MUR } }
+				has_completed_focus = lds_heretics
+			}
+			if = {
+				limit = { FROM = { tag = CRZ } }
+				has_completed_focus = lds_crazyhorn
+			}
+			if = {
+				limit = { FROM = { tag = TAR } }
+				has_completed_focus = lds_tarwalkers
+			}
+			if = {
+				limit = { FROM = { tag = SOR } }
+				has_completed_focus = lds_godfather
+			}
+			if = {
+				limit = { FROM = { tag = HGH } }
+				has_completed_focus = lds_factions
+			}
+		}
+		available = {
+			NOT = {
+				FROM = { is_puppet = yes }
+				has_war_with = FROM
+			}
+			custom_trigger_tooltip = {
+				tooltip = ncn_converted_all_tt
+				FROM = {
+					all_owned_state = {
+						has_state_flag = ncn_converted
+					}
+				}
+			}
+		}
+
+		days_remove = 40
+		cost = 40
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					FROM = { is_ai = no }
+				}
+				FROM = { country_event = { id = nf_mormon.4 } }
+			}
+			if = {
+				limit = {
+					FROM = { is_ai = yes }
+				}
+				puppet = FROM
+			}
+		}
+	}
+}
