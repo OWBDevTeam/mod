@@ -307,12 +307,12 @@ country_event = {
 	option = {
 		name = nf_mojave.16.option.a
 		
-		add_ideas = mojave_holorifles
+		add_ideas = mojave_holograms
 	}
 	option = {
 		name = nf_mojave.16.option.b
 		
-		add_ideas = mojave_replicators
+		add_ideas = mojave_vending
 	}
 }
 country_event = { 
@@ -407,43 +407,6 @@ country_event = {
 	option = {
 		name = nf_mojave.22.option.a
 		
-		hidden_effect = {
-			random_list = {
-				50 = { country_event = { id = nf_mojave.23 days = 115 } }
-				50 = { country_event = { id = nf_mojave.24 days = 115 } }
-			}
-		}	
-		set_country_flag = { flag = MOJ_Elijah_Expedition days = 120 value = 1 }
-	}
-}
-country_event = { 
-	id = nf_mojave.23
-	title = nf_mojave.23.t
-	desc = nf_mojave.23.d
-	picture = GFX_event_generic_settlement_2
-
-	is_triggered_only = yes
-	
-	option = {
-		name = nf_mojave.23.option.a
-		
-		add_ideas = mojave_vending 
-		clr_country_flag = MOJ_Elijah_Expedition
-	}
-}
-country_event = { 
-	id = nf_mojave.24
-	title = nf_mojave.24.t
-	desc = nf_mojave.24.d
-	picture = GFX_event_generic_settlement_2
-
-	is_triggered_only = yes
-	
-	option = {
-		name = nf_mojave.24.option.a
-		
-		add_ideas = mojave_holograms 
-		clr_country_flag = MOJ_Elijah_Expedition
 	}
 }
 country_event = { 
