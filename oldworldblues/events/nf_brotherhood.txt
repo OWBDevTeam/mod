@@ -3,73 +3,73 @@
 country_event = {
 	id = nf_brotherhood.1
 	title = nf_brotherhood.1.t
-	desc = nf_brotherhood.1.desc
+	desc = nf_brotherhood.1.d
 	picture = GFX_event_BOS_super_mutant
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.1.a
-		
+
 		add_ideas = scribecouncil
-		
+
 		set_country_flag = enclave_science_pil1
-        
+
 	}
-	
+
 	option = {
 		name = nf_brotherhood.1.b
-		
+
 		add_ideas = paladincouncil
-		
+
 	}
 }
 #Expedition into the Glowing Sea
 country_event = {
 	id = nf_brotherhood.2
 	title = nf_brotherhood.2.t
-	desc = nf_brotherhood.2.desc
+	desc = nf_brotherhood.2.d
 	picture = GFX_event_BOS_bunker_door
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.2.a
-		
+
 		add_ideas = discoveryknights
-		
+
 		set_country_flag = enclave_science_pil2
-        
+
 	}
-	
+
 	option = {
 		name = nf_brotherhood.2.b
-		
+
 		add_ideas = certaintyknights
-		
+
 	}
 }
 #Vipers
 country_event = {
 	id = nf_brotherhood.3
 	title = nf_brotherhood.3.t
-	desc = nf_brotherhood.3.desc
+	desc = nf_brotherhood.3.d
 	picture = GFX_event_BOS_settler_defense
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.3.a
-		
+
 		add_ideas = bosspineless
-        
+
 	}
-	
+
 	option = {
 		name = nf_brotherhood.3.b
-		
+
 		add_ideas = bosvengeful
-        
+
 	}
 
 }
@@ -77,21 +77,21 @@ country_event = {
 country_event = {
 	id = nf_brotherhood.4
 	title = nf_brotherhood.4.t
-	desc = nf_brotherhood.4.desc
+	desc = nf_brotherhood.4.d
 	picture = GFX_event_ENC_soldiers
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.4.a
-		
+
 		add_ideas = steelconquerors
-        
+
 	}
-	
+
 	option = {
 		name = nf_brotherhood.4.b
-		
+
 		add_ideas = maxsonsbulwark
         country_event = { id = nf_brotherhood.34 }
 	}
@@ -100,46 +100,46 @@ country_event = {
 country_event = {
 	id = nf_brotherhood.5 #Umbra Expansion
 	title = nf_brotherhood.5.t
-	desc = nf_brotherhood.5.desc
+	desc = nf_brotherhood.5.d
 	picture = GFX_event_CES_whitelegs
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.5.a
 		trigger = {
 			UMB = { is_ai = yes } #Ai will always say yes
 		}
-		
+
 		annex_country = { target = UMB transfer_troops = yes }
-        
+
 	}
-	
+
 	option = {
 		name = nf_brotherhood.5.b
 		trigger = {
 			UMB = { is_ai = no } #Player gets to say no
 		}
-	
+
 		UMB = {
 			country_event = { id = nf_brotherhood.28 }
 		}
-		
+
 	}
-	
+
 }
 
 country_event = {
 	id = nf_brotherhood.6 #Arroyo Invitation
 	title = nf_brotherhood.6.t
-	desc = nf_brotherhood.6.desc
+	desc = nf_brotherhood.6.d
 	picture = GFX_event_ARR_arroyo
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.6.a
-		
+
 		BOS = {
 			add_to_faction = ARR
 		}
@@ -147,31 +147,31 @@ country_event = {
 			set_political_party = { ideology = intellectuals popularity = 0.5 }
 			set_politics = { ruling_party = intellectuals elections_allowed = no }
 		}
-        
+
 	}
 	option = {
 		name = nf_brotherhood.6.b
-		
-	
+
+
 	}
-	
+
 }
 
 country_event = {
 	id = nf_brotherhood.7 #Shi Tensions
 	title = nf_brotherhood.7.t
-	desc = nf_brotherhood.7.desc
+	desc = nf_brotherhood.7.d
 	picture = GFX_event_SHI_shitown
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.7.a
 		BOS = {
 		country_event = { id = nf_brotherhood.35 }
 		}
-		
-        
+
+
 	}
 
     option = {
@@ -179,38 +179,38 @@ country_event = {
 		BOS = {
 		country_event = { id = nf_brotherhood.36 }
 		}
-		
-        
+
+
 	}
-	
+
 	option = {
 		name = nf_brotherhood.7.c
 		BOS = {
 		country_event = { id = nf_brotherhood.37 }
 		}
-		
-        
-	}	
+
+
+	}
 }
 #Sillicone Valley Expedition
 country_event = {
 	id = nf_brotherhood.8
 	title = nf_brotherhood.8.t
-	desc = nf_brotherhood.8.desc
+	desc = nf_brotherhood.8.d
 	picture = GFX_event_generic_ruins_1
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.8.a
-		
+
 		add_ideas = siliconvalley
-        
+
 	}
-	
+
 	option = {
 		name = nf_brotherhood.8.b
-		
+
 		104 = {
 			add_resource = {
 				type = metal
@@ -218,107 +218,107 @@ country_event = {
 			}
 		}
 	}
-	
+
 }
 #Curbing Raider Aggression
 country_event = {
 	id = nf_brotherhood.9 #Aftermath#
 	title = nf_brotherhood.9.t
-	desc = nf_brotherhood.9.desc
+	desc = nf_brotherhood.9.d
 	picture = GFX_event_generic_ruins_2
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.9.a
-		
+
 		load_oob = sanfranmobsters
 		add_war_support = -0.05
-        
+
 	}
-	
-	option = {	
+
+	option = {
 		name = nf_brotherhood.9.b
-		
+
 		104 = {
 			add_resource = {
 				type = metal
 				amount = 8
 			}
 		}
-		
+
 		add_war_support = 0.05
-        
+
 	}
-	
+
 }
 
 country_event = {
 	id = nf_brotherhood.10 #Shi Invitation
 	title = nf_brotherhood.10.t
-	desc = nf_brotherhood.10.desc
+	desc = nf_brotherhood.10.d
 	picture = GFX_event_SHI_shitown
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.10.a
-		
+
 		BOS = {
 			add_to_faction = SHI
 		}
-        
+
 	}
-	
+
 	option = {
 		name = nf_brotherhood.10.b
-		
-	
+
+
 	}
-	
+
 }
 #Offer from the Brotherhood
 country_event = {
-	
-	id = nf_brotherhood.13 
+
+	id = nf_brotherhood.13
 	title = nf_brotherhood.13.t
-	desc = nf_brotherhood.13.desc
+	desc = nf_brotherhood.13.d
 	picture = GFX_event_BOS_bunker_door
-	
+
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.13.a
-		
+
 		add_ideas = brotherhoodtacticslexicon
 		BOS = {
 		    country_event = { id = nf_brotherhood.14 }
 		}
 	}
-	
+
 	option = {
 		name = nf_brotherhood.13.b
-		
+
 		BOS = {
 			country_event = { id = nf_brotherhood.15 }
 		}
 	}
-	
+
 }
 #NCR Accepts Trade
 country_event = {
 
 	id = nf_brotherhood.14
 	title = nf_brotherhood.14.t
-	desc = nf_brotherhood.14.desc
+	desc = nf_brotherhood.14.d
 	picture = GFX_event_generic_ruins_3
 
-	
+
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.14.a
-			
+
 		add_ideas = bosprewarindustry
 	}
 
@@ -328,15 +328,15 @@ country_event = {
 
 	id = nf_brotherhood.15
 	title = nf_brotherhood.15.t
-	desc = nf_brotherhood.15.desc
+	desc = nf_brotherhood.15.d
 	picture = GFX_event_generic_ruins_4
 
-	
+
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.15.a
-			
+
 		add_ideas = bossalvagedindustry
 	}
 
@@ -346,14 +346,14 @@ country_event = {
 
 	id = nf_brotherhood.16
 	title = nf_brotherhood.16.t
-	desc = nf_brotherhood.16.desc
+	desc = nf_brotherhood.16.d
 	picture = GFX_event_generic_ruins_5
 
 	is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.16.a
-		
+
 		64 = {
 			add_resource =  {
 				type = advanced_technology
@@ -365,10 +365,10 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = nf_brotherhood.16.b
-		
+
 		64 = {
 			add_resource =  {
 				type = fuel
@@ -380,15 +380,15 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = nf_brotherhood.16.c
-		
-		add_timed_idea = { 
+
+		add_timed_idea = {
 			idea = vandenbergidea
 			days = 365
 		}
-		
+
 		64 = {
 			add_building_construction = {
 				type = anti_air_building
@@ -410,40 +410,40 @@ country_event = {
 			}
 		}
 	}
-	
+
 }
 #Surplus of Lasers
 country_event = {
 	id = nf_brotherhood.17
 	title = nf_brotherhood.17.t
-	desc = nf_brotherhood.17.desc
+	desc = nf_brotherhood.17.d
 	picture = GFX_event_BOS_bunker_door
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.17.a
-		
+
 		add_manpower = -1600
 		country_event = { id = nf_brotherhood.18 }
 	}
-	
+
 	option = {
 		name = nf_brotherhood.17.b
-		
+
 		BOS = {
 			country_event = { id = nf_brotherhood.19 }
 		}
 	}
 }
-#Lasers Arrive	
+#Lasers Arrive
 country_event = {
 
 	id = nf_brotherhood.18
 	title = nf_brotherhood.18.t
-	desc = nf_brotherhood.18.desc
+	desc = nf_brotherhood.18.d
 	picture = GFX_event_BOS_bunker_door
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -451,7 +451,7 @@ country_event = {
 		DES = {
 			add_equipment_to_stockpile = { type = energy_equipment_2 amount = 1000 producer = BOS }
 		}
-		
+
 		BOS = {
 			country_event = { id = nf_brotherhood.20 }
 		}
@@ -462,91 +462,91 @@ country_event = {
 
 	id = nf_brotherhood.19
 	title = nf_brotherhood.19.t
-	desc = nf_brotherhood.19.desc
+	desc = nf_brotherhood.19.d
 	picture = GFX_event_BOS_bunker_door
 
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_brotherhood.19.a
-		
+
 	}
-	
+
 }
 #Rangers Arrive
 country_event = {
 
-	id = nf_brotherhood.20 
+	id = nf_brotherhood.20
 	title = nf_brotherhood.20.t
-	desc = nf_brotherhood.20.desc
+	desc = nf_brotherhood.20.d
 	picture = GFX_event_BOS_desert_patrol
-	
+
 	is_triggered_only = yes
 
 	option = {
 		name = nf_brotherhood.20.a
-		
+
 		load_oob = sponsoredarms
 	}
-	
+
 }
 #Demand The Bay
 country_event = {
 
 	id = nf_brotherhood.22
 	title = nf_brotherhood.22.t
-	desc = nf_brotherhood.22.desc
+	desc = nf_brotherhood.22.d
 	picture = GFX_event_NCR_night
-	
+
 	is_triggered_only = yes
 
 	option = {
 		name = nf_brotherhood.22.a
-		
+
 		NCR = { country_event = { id = nf_brotherhood.23 }}
 	}
-	
+
 }
 #BOS Demands Point Green (given to NCR)
 country_event = {
 
 	id = nf_brotherhood.23
 	title = nf_brotherhood.23.t
-	desc = nf_brotherhood.23.desc
+	desc = nf_brotherhood.23.d
 	picture = GFX_event_BOS_settler_defense
-	
+
 	is_triggered_only = yes
 
 	option = {
 		name = nf_brotherhood.23.a #Give the BOS the bay
-		
+
 		BOS = { set_state_owner = 511 }
 		BOS = { set_state_controller = 511 }
 		BOS = {
 		add_state_core = 511
 		}
-		
+
 		BOS = {
 		country_event = { id = nf_brotherhood.38 }
 		}
-	
+
 	}
-	
+
 	option = {
 		name = nf_brotherhood.23.b #Refuse
-	
+
 		BOS = { country_event = { id = nf_brotherhood.24 }}
 	}
-	
+
 }
 #NCR Refuses
 country_event = {
 
 	id = nf_brotherhood.24
 	title = nf_brotherhood.24.t
-	desc = nf_brotherhood.24.desc
+	desc = nf_brotherhood.24.d
 	picture = GFX_event_NCR_camp
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -557,27 +557,27 @@ country_event = {
 	}
 }
 #Victory or Death
-country_event = { 
+country_event = {
 
 	id = nf_brotherhood.26
 	title = nf_brotherhood.26.t
-	desc = nf_brotherhood.26.desc
+	desc = nf_brotherhood.26.d
 	picture = GFX_event_BOS_settler_defense
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_brotherhood.26.a
-		
+
 		add_ideas = bosdigin
 		hidden_effect = {
 			set_technology = { bos_bosdigin = 1 }
 		}
 	}
-	
+
 	option = {
 		name  = nf_brotherhood.26.b
-		
+
 		set_country_flag = unearthingmonsters
 	}
 
@@ -586,64 +586,64 @@ country_event = {
 country_event = {
 	id = nf_brotherhood.27
 	title = nf_brotherhood.27.t
-	desc = nf_brotherhood.27.desc
+	desc = nf_brotherhood.27.d
 	picture = GFX_event_BOS_desert_patrol
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.27.a
 		trigger = {
 			TON = { is_ai = yes }
 		}
-		
+
 		annex_country = { target = TON transfer_troops = yes }
-		
+
 		if = {
 			limit = {
 				is_in_faction_with = DES #Rangers get some of their historic territory back (otherwise they'd war for it later)
 			}
-			DES = { 
+			DES = {
 				transfer_state = 517
 			}
 		}
-        
+
 	}
-	
+
 	option = {
 		name = nf_brotherhood.27.a
 		trigger = {
 			TON = { is_ai = no  }
 		}
-		
+
 		TON = { country_event = { id = nf_brotherhood.29 }}
-        
+
 	}
-	
-	
+
+
 }
 
 country_event = { #Player Umbra choice
 
 	id = nf_brotherhood.28
 	title = nf_brotherhood.28.t
-	desc = nf_brotherhood.28.desc
+	desc = nf_brotherhood.28.d
 	picture = GFX_event_BOS_desert_patrol
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_brotherhood.28.a
-		
+
 		BOS = {	#Players get to join the faction so they dont game over
-			add_to_faction = UMB 
+			add_to_faction = UMB
 		}
-		
+
 	}
-	
+
 	option = {
 		name  = nf_brotherhood.28.b
-		
+
 		#No thx
 	}
 
@@ -653,24 +653,24 @@ country_event = { #Player Tohono choice
 
 	id = nf_brotherhood.29
 	title = nf_brotherhood.29.t
-	desc = nf_brotherhood.29.desc
+	desc = nf_brotherhood.29.d
 	picture = GFX_event_BOS_desert_patrol
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_brotherhood.29.a
-		
-		BOS = {	
+
+		BOS = {
 			add_to_faction = TON
 		}
-		
+
 	}
-	
+
 	option = {
 		name  = nf_brotherhood.29.b
-		
-		#No 
+
+		#No
 	}
 
 }
@@ -679,46 +679,46 @@ country_event = {
 
 	id = nf_brotherhood.30
 	title = nf_brotherhood.30.t
-	desc = nf_brotherhood.30.desc
+	desc = nf_brotherhood.30.d
 	picture = GFX_event_BOS_desert_patrol
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_brotherhood.30.a
-		
-		BOS = {	
+
+		BOS = {
 			add_to_faction = MOJ
 		}
-		
+
 	}
-	
+
 	option = {
 		name  = nf_brotherhood.30.b
-		
-		#No 
+
+		#No
 	}
 
 }
 
 #Repconn HQ
-country_event = { 
+country_event = {
 
 	id = nf_brotherhood.31
 	title = nf_brotherhood.31.t
-	desc = nf_brotherhood.31.desc
+	desc = nf_brotherhood.31.d
 	picture = GFX_event_BOS_desert_patrol
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_brotherhood.31.a
-		
+
 		add_ideas = repconnencryption
-		
+
 		country_event = { days = 7 id = nf_brotherhood.32 }
 	}
-	
+
 	option = {
 		name = nf_brotherhood.31.b
 		random_owned_controlled_state = {
@@ -729,27 +729,27 @@ country_event = {
 		}
 		country_event = { days = 7 id = nf_brotherhood.32  }
 	}
-	
-	
+
+
 }
 #Further Repconn Exploration
-country_event = { 
+country_event = {
 
 	id = nf_brotherhood.32
 	title = nf_brotherhood.32.t
-	desc = nf_brotherhood.32.desc
+	desc = nf_brotherhood.32.d
 	picture = GFX_event_BOS_desert_patrol
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_brotherhood.32.a
-		
+
 		add_ideas = robcoprototypes
-		
+
 		country_event = { days = 7 id = nf_brotherhood.33 }
 	}
-	
+
 	option = {
 		name = nf_brotherhood.32.b
 		random_owned_controlled_state = {
@@ -760,49 +760,49 @@ country_event = {
 		}
 		country_event = { days = 7 id = nf_brotherhood.33 }
 	}
-	
-	
+
+
 }
 
 #Final Repconn Exploration
-country_event = { 
+country_event = {
 
 	id = nf_brotherhood.33
 	title = nf_brotherhood.33.t
-	desc = nf_brotherhood.33.desc
+	desc = nf_brotherhood.33.d
 	picture = GFX_event_BOS_desert_patrol
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_brotherhood.33.a
-		
+
 		add_ideas = robcorockets
-		
+
 		if = {
 			limit = {
-				has_idea = repconnencryption	
+				has_idea = repconnencryption
 				has_idea = robcoprototypes
 			}
-			
+
 			add_ideas = robcodesign
-			
+
 			add_ideas = plasmatrials
-			
+
 		}
 		if = {
 			limit = {
 				NOT = {
-					has_idea = repconnencryption	
+					has_idea = repconnencryption
 					has_idea = robcoprototypes
 				}
 			}
-			
+
 			add_ideas = robotsalvage
 		}
-		
+
 	}
-	
+
 	option = {
 		name = nf_brotherhood.33.b
 		random_owned_controlled_state = {
@@ -812,23 +812,23 @@ country_event = {
 			}
 		}
 		add_ideas = robotsalvage
-		
+
 	}
 }
 #Maxson Loyalty
 country_event = {
-	id = nf_brotherhood.34 
+	id = nf_brotherhood.34
 	title = nf_brotherhood.34.t
-	desc = nf_brotherhood.34.desc
+	desc = nf_brotherhood.34.d
 	picture = GFX_report_event_fascist_speech
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.34.a
-		
+
 		load_oob = maxsongarrison
-		
+
 		create_corps_commander = {
 				name = "Lieutenant Smith"
 				portrait_path = "gfx/leaders/BOS/Portrait_Smith.dds"
@@ -842,16 +842,16 @@ country_event = {
 }
 #The Vagrants pledge their support
 country_event = {
-	id = nf_brotherhood.35 
+	id = nf_brotherhood.35
 	title = nf_brotherhood.35.t
-	desc = nf_brotherhood.35.desc
+	desc = nf_brotherhood.35.d
 	picture = GFX_event_SHI_shitown
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.35.a
-		
+
 		create_corps_commander = {
 				name = "A. Ron Meyers"
 				portrait_path = "gfx/leaders/BOS/Portrait_Meyers.dds"
@@ -862,54 +862,54 @@ country_event = {
 				logistics_skill = 2
 		}
 		load_oob = thevagrants
-		
+
 		SHI = {add_opinion_modifier = { target = BOS modifier = shislightlydislikesbos }
      }
-	}	 
+	}
 }
 #Unfortunate Accident
 country_event = {
-	id = nf_brotherhood.36 
+	id = nf_brotherhood.36
 	title = nf_brotherhood.36.t
-	desc = nf_brotherhood.36.desc
+	desc = nf_brotherhood.36.d
 	picture = GFX_event_SHI_shitown
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.36.a
 
 		army_experience = 25
-		
+
 		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 100 producer = BOS }
-		
+
 		SHI = {add_opinion_modifier = { target = BOS modifier = shislightlydislikesbos }
 	 }
-	}	
+	}
 }
 #Shi Close the doors forever
 country_event = {
-	id = nf_brotherhood.37 
+	id = nf_brotherhood.37
 	title = nf_brotherhood.37.t
-	desc = nf_brotherhood.37.desc
+	desc = nf_brotherhood.37.d
 	picture = GFX_event_SHI_shitown
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_brotherhood.37.a
-		
+
 		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 100 producer = BOS }
-		
+
 		add_ideas = shiclosethedoors
-		
+
 		104 = {
 			add_resource = {
 			type = advanced_technology
 			amount = 8
-			}	
+			}
 		}
-		
+
 		SHI = {add_opinion_modifier = { target = BOS modifier = shihatesbos }
         }
       }
@@ -918,9 +918,9 @@ country_event = {
 
 	id = nf_brotherhood.38
 	title = nf_brotherhood.38.t
-	desc = nf_brotherhood.38.desc
+	desc = nf_brotherhood.38.d
 	picture = GFX_event_NCR_settlers
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -928,7 +928,7 @@ country_event = {
 
 		BOS = {add_opinion_modifier = { target = NCR modifier = ncrassault }
 	}
-  }	
+  }
 }
 
 

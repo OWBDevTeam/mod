@@ -1,4 +1,4 @@
-brk_decisions = {	
+brk_decisions = {
 	brk_decision_build_the_fleet = {
 		fire_only_once = yes
 		days_remove = 60
@@ -11,7 +11,7 @@ brk_decisions = {
 			load_oob = BRK_raiding_fleet
 		}
 	}
-		
+
 	brk_decision_build_graven_ship = {
 		fire_only_once = yes
 		days_remove = 60
@@ -449,7 +449,7 @@ brk_raiding = {
 						set_temp_variable = { var:defender_state_temp = id } # ID of the target state is set to a temp variable
 					}
 				}
-				# 
+				#
 				#custom_trigger_tooltip = {
 				#	tooltip = brk_can_raid_vic_or_hai
 				#	OR = {
@@ -529,7 +529,7 @@ brk_raiding = {
 
 		fire_only_once = no # Does it fire only once?
 
-		days_remove = @border_incident_escalation_countdown # How long it takes to initiate 
+		days_remove = @border_incident_escalation_countdown # How long it takes to initiate
 		days_re_enable = 180 # How long until it comes back
 
 		war_with_target_on_remove = yes
@@ -548,7 +548,7 @@ brk_raiding = {
 					}
 					save_event_target_as = defender_state # Is saved as the defender state
 					set_variable = { FROM.defender_state_vs_@ROOT = id } # The ID of the state is saved in a variable specific to the target
-					set_temp_variable = { defender_state_temp = id } # and a temp variable 
+					set_temp_variable = { defender_state_temp = id } # and a temp variable
 					set_state_flag = border_incident_active # and gets the state flag indicating it has a border incident
 				}
 				random_state = {
@@ -575,10 +575,10 @@ brk_raiding = {
 		remove_effect = { # Effect ON TIMEOUT
 			hidden_effect = { # i'm hidden again. and losing my mind. help.
 				var:FROM.defender_state_vs_@ROOT = { # The defending state and attacking state are saved again as event targets, for some reason
-					save_event_target_as = defender_state 
+					save_event_target_as = defender_state
 				}
 				var:FROM.attacker_state_vs_@ROOT = {
-					save_event_target_as = attacker_state 
+					save_event_target_as = attacker_state
 				}
 				random_state = {
 					limit = { # Temp variable setting again?
@@ -606,7 +606,7 @@ brk_raiding = {
 			}
 			if = {
 				limit = {
-					OR = { 
+					OR = {
 						NOT = { has_country_flag = raid_backed_down }
 						NOT = { has_country_flag = raid_stood_up }
 					}
@@ -641,17 +641,17 @@ brk_raiding = {
 
 		icon = border_war
 
-		allowed = { always = no } #Activated from effect of the inititation event
+		allowed = { always = no } #Activated from effect of the initiation event
 
 		available = {
 			hidden_trigger = { always = no }
 		}
 
-		war_with_target_on_timeout = yes # Lies to the AI by saying this will lead to war so they mobalise every last person to the border to defend it
-		ai_will_do = { # AI shit 2: Electric Boogaloo 
+		war_with_target_on_timeout = yes # Lies to the AI by saying this will lead to war so they mobilise every last person to the border to defend it
+		ai_will_do = { # AI shit 2: Electric Boogaloo
 			base = 0
 			modifier = {
-				
+
 			}
 		}
 
@@ -660,7 +660,7 @@ brk_raiding = {
 		fire_only_once = yes
 
 		is_good = no # Makes it red and atmospheric
-		
+
 		timeout_effect = { # What happens on timeout
 			custom_effect_tooltip = escalation_possible_tooltip_for_defender # It can escalate
 			custom_effect_tooltip = effects_if_border_conflict_is_lost # What happens if we lose?
@@ -691,7 +691,7 @@ brk_raiding = {
 		ai_will_do = {
 			base = 0
 			modifier = {
-				
+
 			}
 		}
 
@@ -701,14 +701,14 @@ brk_raiding = {
 
 		is_good = no
 
-		timeout_effect = { # Just tells the target that we (the attacker) can start the border war, and reminds them what will happen if they fail 
+		timeout_effect = { # Just tells the target that we (the attacker) can start the border war, and reminds them what will happen if they fail
 			custom_effect_tooltip = from_cannot_escalate
 			custom_effect_tooltip = effects_if_border_conflict_is_lost
 			effect_tooltip = {
 				add_political_power = -100
 				var:ROOT.defender_state_vs_@FROM = { FROM = { transfer_state = PREV } } # State gets transfered
 			}
-		}		
+		}
 	}
 
 	#Mission for attacker to escalate or incident is forgotten and the decision to escalate incident on border with the target to border conflict
@@ -730,13 +730,13 @@ brk_raiding = {
 		}
 
 		highlight_states = { # Highlights our state
-			state = var:FROM.attacker_state_vs_@ROOT			
+			state = var:FROM.attacker_state_vs_@ROOT
 		}
 
 		ai_will_do = { # I'm giving up on commenting this now
 			base = 1
 			modifier = {
-				
+
 			}
 		}
 
@@ -777,10 +777,10 @@ brk_raiding = {
 					on_lose = nf_event_brk.16 # If we lose, this event happens for us
 					on_cancel = nf_event_brk.18 # If the conflict is cancelled, this event happens for us
 				}
-				
+
 				defender = { # Stuff for the attacker
 					state = var:FROM.defender_state_vs_@ROOT
-					num_provinces = 4 
+					num_provinces = 4
 					on_win = nf_event_brk.14
 					on_lose = nf_event_brk.17
 					on_cancel = nf_event_brk.19
@@ -807,7 +807,7 @@ brk_raiding = {
 			var:FROM.defender_state_vs_@ROOT = { has_border_war = no }
 			var:FROM.attacker_state_vs_@ROOT = { has_border_war = no }
 		}
-		
+
 		highlight_states = {
 			OR = {
 				state = var:defender_state_temp
@@ -818,7 +818,7 @@ brk_raiding = {
 		ai_will_do = {
 			base = 0
 			modifier = {
-				
+
 			}
 		}
 
@@ -874,7 +874,7 @@ brk_raiding = {
 		ai_will_do = {
 			base = 0
 			modifier = {
-				
+
 			}
 		}
 
@@ -911,7 +911,7 @@ brk_raiding = {
 				days = @border_conflict_escalate_to_war_countdown
 				value = 1
 			}
-			custom_effect_tooltip = in_45_days # Tooltip 
+			custom_effect_tooltip = in_45_days # Tooltip
 			activate_targeted_decision = { target = FROM decision = brk_escalate_conflict_to_war } # Activates the escalate to war decision
 		}
 	}
@@ -940,7 +940,7 @@ brk_raiding = {
 		ai_will_do = {
 			base = 0
 			modifier = {
-				
+
 			}
 		}
 
@@ -1020,7 +1020,7 @@ brk_raiding = {
 		ai_will_do = {
 			base = 0
 			modifier = {
-				
+
 			}
 		}
 

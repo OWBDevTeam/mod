@@ -3,22 +3,22 @@
 # Debug - Restores Caesar
 country_event = {
 	id = nf_legion.100
-	title = nf_legion.100.title
-	desc = nf_legion.100.desc
+	title = nf_legion.100.t
+	desc = nf_legion.100.d
 	picture = GFX_report_event_fascist_speech
 
     is_triggered_only = yes
 
 	option = {
-		name = nf_legion.1.option.a
-        
+		name = nf_legion.1.a
+
 		create_country_leader  = {
 		    name = "Caesar"
 		    desc = "Caesar_DESC"
 		    picture = "Portrait_Caesar.dds"
 		    expire = "3000.1.1"
 		    ideology = benevolent_dictatorship
-		    
+
 		    traits = {
 		        cruel_tyrant
 		        warmonger
@@ -30,16 +30,16 @@ country_event = {
 # The White Legs Petition
 country_event = {
 	id = nf_legion.1
-	title = nf_legion.1.title
-	desc = nf_legion.1.desc
+	title = nf_legion.1.t
+	desc = nf_legion.1.d
 	picture = GFX_event_CES_whitelegs
 
     is_triggered_only = yes
-    
+
     # Ally
 	option = {
-		name = nf_legion.1.option.a
-        
+		name = nf_legion.1.a
+
 		ai_chance = {
 			base = 1
 			modifier = {
@@ -47,37 +47,37 @@ country_event = {
 				factor = 100
 			}
 		}
-		
+
         set_country_flag = accepted_petition
-		
+
 		WHT = {
 		    set_politics = {
-			    ruling_party = elites 
-				elections_allowed = no 
+			    ruling_party = elites
+				elections_allowed = no
 			}
 			add_popularity = { ideology = elites popularity = 0.5 }
 		}
-		
-		add_opinion_modifier = { 
-            target = CES 
-            modifier = loyal_tribe
-        }   
-        reverse_add_opinion_modifier = { 
+
+		add_opinion_modifier = {
             target = CES
             modifier = loyal_tribe
         }
-		
+        reverse_add_opinion_modifier = {
+            target = CES
+            modifier = loyal_tribe
+        }
+
 		declare_war_on = {
 			target = NCN
 			type = annex_everything
 		}
-		
+
 	}
-    
+
     # Refuse
     option = {
-		name = nf_legion.1.option.b
-        
+		name = nf_legion.1.b
+
 		ai_chance = {
 			base = 1
 			modifier = {
@@ -85,7 +85,7 @@ country_event = {
 				factor = 100
 			}
 		}
-		
+
 		set_country_flag = refused_petition
 	}
 }
@@ -93,59 +93,59 @@ country_event = {
 # The Eighties Petition
 country_event = {
 	id = nf_legion.2
-	title = nf_legion.2.title
-	desc = nf_legion.2.desc
+	title = nf_legion.2.t
+	desc = nf_legion.2.d
 	picture = GFX_event_CES_whitelegs
 
     is_triggered_only = yes
-    
+
 	# Ally
 	option = {
-		name = nf_legion.2.option.a
-        
+		name = nf_legion.2.a
+
 		ai_chance = {
 			base = 7
 		}
-		
+
 		EHT = {
 		    set_politics = {
 			    ruling_party = elites elections_allowed = no
 			}
 			add_popularity = { ideology = elites popularity = 0.5 }
 		}
-		
+
         set_country_flag = accepted_petition
-        
-        add_opinion_modifier = { 
-            target = CES 
-            modifier = loyal_tribe
-        }   
-        reverse_add_opinion_modifier = { 
+
+        add_opinion_modifier = {
             target = CES
             modifier = loyal_tribe
         }
-		
+        reverse_add_opinion_modifier = {
+            target = CES
+            modifier = loyal_tribe
+        }
+
 		declare_war_on = {
 			target = NCN
 			type = annex_everything
 		}
 	}
-    
+
     # Refuse
     option = {
-		name = nf_legion.2.option.b
-        
+		name = nf_legion.2.b
+
 		ai_chance = {
 			base = 3
 		}
-		
+
 		set_country_flag = refused_petition
-        
-        add_opinion_modifier = { 
-            target = CES 
+
+        add_opinion_modifier = {
+            target = CES
             modifier = disloyal_tribe
-        }   
-        reverse_add_opinion_modifier = { 
+        }
+        reverse_add_opinion_modifier = {
             target = CES
             modifier = disloyal_tribe
         }
@@ -155,15 +155,15 @@ country_event = {
 # Success at Hoover Dam
 country_event = {
 	id = nf_legion.3
-	title = nf_legion.3.title
-	desc = nf_legion.3.desc
+	title = nf_legion.3.t
+	desc = nf_legion.3.d
 	picture = GFX_event_CES_hoover_dam
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_legion.3.option.a
-        
+		name = nf_legion.3.a
+
         hidden_effect = {
             set_country_flag = hoover_dam_won
             clr_country_flag = battle_for_hoover_dam
@@ -174,15 +174,15 @@ country_event = {
 # Failure at Hoover Dam
 country_event = {
 	id = nf_legion.4
-	title = nf_legion.4.title
-	desc = nf_legion.4.desc
+	title = nf_legion.4.t
+	desc = nf_legion.4.d
 	picture = GFX_event_CES_hoover_dam
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_legion.4.option.a
-        
+		name = nf_legion.4.a
+
         hidden_effect = {
             set_country_flag = hoover_dam_lost
             clr_country_flag = battle_for_hoover_dam
@@ -202,8 +202,8 @@ country_event = {
 # Malpais (commander) id = 1003
 country_event = {
 	id = nf_legion.5
-	title = nf_legion.5.title
-	desc = nf_legion.5.desc
+	title = nf_legion.5.t
+	desc = nf_legion.5.d
 	picture = GFX_event_CES_vulpes
 
     is_triggered_only = no
@@ -227,7 +227,7 @@ country_event = {
 				}
 			}
 		}
-		NOT = { surrender_progress > 15 } 
+		NOT = { surrender_progress > 15 }
 	}
 	mean_time_to_happen = {
 		days = 600
@@ -254,14 +254,14 @@ country_event = {
 			has_war_with = NCR
 		}
 	}
-	
-	
+
+
 	# stay as Lanius
 	option = {
-		name = nf_legion.5.option.a
-        
+		name = nf_legion.5.a
+
         kill_country_leader = yes
-		
+
 		create_country_leader  = {
 			name = "Lanius"
 			desc = "Lanius_DESC"
@@ -269,7 +269,7 @@ country_event = {
 			expire = "3000.1.1"
 			ideology = feudalism
 			id = 1007
-			
+
 			traits = {
 				cruel_tyrant
 				warmonger
@@ -282,7 +282,7 @@ country_event = {
 			expire = "3000.1.1"
 			ideology = oligarchy
 			id = 1005
-				
+
 			traits = {
 				cruel_tyrant
 			}
@@ -297,7 +297,7 @@ country_event = {
 				capital = 522
 				states_filter = {
 					owner = { original_tag = CES }
-					is_CES_civil_war_non_eligable = no					
+					is_CES_civil_war_non_eligable = no
 				}
 				keep_unit_leaders = { 1001 }
 			}
@@ -312,7 +312,7 @@ country_event = {
 				capital = 522
 				states_filter = {
 					owner = { original_tag = CES }
-					is_CES_civil_war_non_eligable = no					
+					is_CES_civil_war_non_eligable = no
 				}
 				keep_unit_leaders = { 1003 1002 1004 }
 			}
@@ -333,14 +333,14 @@ country_event = {
 	}
 	# switch to vulpes_inculta
 	option = {
-		name = nf_legion.5.option.b
+		name = nf_legion.5.b
         hidden_effect = {
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
 		}
         kill_country_leader = yes
-        		
+
 		create_country_leader  = {
 			name = "Vulpes Inculta"
 			desc = "Inculta_DESC"
@@ -348,22 +348,22 @@ country_event = {
 			expire = "3000.1.1"
 			ideology = oligarchy
 			id = 1005
-			
+
 			traits = {
 				cruel_tyrant
 				vulpes_inculta
 			}
 		}
-		
+
 		set_politics = {
 			ruling_party = ruler
 			elections_allowed = no
 		}
-		
+
 		hidden_effect = {
 			359 = { set_state_name = "Fortification Hill" }
 		}
-				
+
 		create_country_leader  = {
 			name = "Lanius"
 			desc = "Lanius_DESC"
@@ -371,7 +371,7 @@ country_event = {
 			expire = "3000.1.1"
 			ideology = tribalism
 			id = 1007
-				
+
 			traits = {
 				cruel_tyrant
 				warmonger
@@ -387,7 +387,7 @@ country_event = {
 				capital = 522
 				states_filter = {
 					owner = { original_tag = CES }
-					is_CES_civil_war_non_eligable = no					
+					is_CES_civil_war_non_eligable = no
 				}
 				keep_unit_leaders = { 1002 1003 1004 }
 			}
@@ -402,7 +402,7 @@ country_event = {
 				capital = 522
 				states_filter = {
 					owner = { original_tag = CES }
-					is_CES_civil_war_non_eligable = no					
+					is_CES_civil_war_non_eligable = no
 				}
 				keep_unit_leaders = { 1002 1003 1004 }
 			}
@@ -424,48 +424,48 @@ country_event = {
 				clr_state_flag = do_not_decimate
 			}
 		}
-		
+
 		set_cosmetic_tag = VLP
-		
+
 		custom_effect_tooltip = vulpes_chosen
 	}
-    
+
     option = {
-		name = nf_legion.5.option.c
-        
+		name = nf_legion.5.c
+
         trigger = {
             has_completed_focus = ces_goddess_diana
 			has_completed_focus = ces_the_twin_temples
         }
-        
+
 		set_country_flag = caesar_survived
-		
+
         add_stability = -0.1
 		add_war_support = 0.05
 		country_event = { id = nf_legion.6 }
-        
+
 	}
 }
 
 country_event = {
 	id = nf_legion.6
-	title = nf_legion.6.title
-	desc = nf_legion.6.desc
+	title = nf_legion.6.t
+	desc = nf_legion.6.d
 	picture = GFX_event_CES_camp_1
 
     is_triggered_only = yes
     # Stay as Caesar
 	option = {
-		name = nf_legion.6.option.a
-			
+		name = nf_legion.6.a
+
 		remove_unit_leader = 1002
 		set_country_flag = legion_had_civil_war
-		
+
 		custom_effect_tooltip = caesar_chosen
 	}
-    
+
     option = {
-		name = nf_legion.6.option.b
+		name = nf_legion.6.b
 		hidden_effect = {
 			359 = { set_state_name = "Fortification Hill" }
 			every_owned_state = {
@@ -479,7 +479,7 @@ country_event = {
 			expire = "3000.1.1"
 			ideology = technocracy
 			id = 1006
-				
+
 			traits = {
 			}
 		}
@@ -498,7 +498,7 @@ country_event = {
 				keep_unit_leaders = { 1001 1003 1004 }
 				states_filter = {
 					owner = { original_tag = CES }
-					is_CES_civil_war_non_eligable = no					
+					is_CES_civil_war_non_eligable = no
 				}
 			}
 		}
@@ -512,7 +512,7 @@ country_event = {
 					capital = 359
 					states_filter = {
 						owner = { original_tag = CES }
-						is_CES_civil_war_non_eligable = no					
+						is_CES_civil_war_non_eligable = no
 					}
 					keep_unit_leaders = { 1001 1003 1004 }
 			}
@@ -521,7 +521,7 @@ country_event = {
 			limit = {
 				original_tag = CES
 				has_government = intellectuals
-			} 
+			}
 			set_research_slots = 4
 			set_politics = {
 				parties = {
@@ -533,9 +533,9 @@ country_event = {
 				ruling_party = intellectuals
 				elections_allowed = no
 			}
-			
-			set_cosmetic_tag = BOM	
-				
+
+			set_cosmetic_tag = BOM
+
 			hidden_effect = {
 				set_technology = {
 					powered_weaponry = 1
@@ -546,7 +546,7 @@ country_event = {
 				set_country_flag = legion_had_civil_war
 				load_oob = brotherhoodofmars
 			}
-			
+
 			change_tag_from = CES
 		}
 		hidden_effect = {
@@ -561,27 +561,27 @@ country_event = {
 # Expedition to Blackfoot
 country_event = {
 	id = nf_legion.7
-	title = nf_legion.7.title
-	desc = nf_legion.7.desc
+	title = nf_legion.7.t
+	desc = nf_legion.7.d
 	picture = GFX_event_CES_camp_2
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_legion.7.option.a
-        
+		name = nf_legion.7.a
+
         add_ideas = legion_nf_weapon_maintenance
 	}
-    
+
     option = {
-		name = nf_legion.7.option.b
-        
+		name = nf_legion.7.b
+
         add_ideas = legion_nf_unit_tactics
 	}
-    
+
     option = {
-		name = nf_legion.7.option.c
-        
+		name = nf_legion.7.c
+
         add_ideas = legion_nf_explosives_creation
 	}
 }
@@ -589,27 +589,27 @@ country_event = {
 # Death in the Canyons
 country_event = {
 	id = nf_legion.8
-	title = nf_legion.8.title
-	desc = nf_legion.8.desc
+	title = nf_legion.8.t
+	desc = nf_legion.8.d
 	picture = GFX_event_CES_camp_1
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_legion.8.option.a
-        
+		name = nf_legion.8.a
+
         add_ideas = legion_nf_ridgers_pyre
 	}
-    
+
     option = {
-		name = nf_legion.8.option.b
-        
+		name = nf_legion.8.b
+
         add_ideas = legion_nf_kaibab_crucifiction
 	}
-    
+
     option = {
-		name = nf_legion.8.option.c
-        
+		name = nf_legion.8.c
+
         add_ideas = legion_nf_fredonian_arena
 	}
 }
@@ -617,15 +617,15 @@ country_event = {
 # The Malpais Legate
 country_event = {
 	id = nf_legion.9
-	title = nf_legion.9.title
-	desc = nf_legion.9.desc
+	title = nf_legion.9.t
+	desc = nf_legion.9.d
 	picture = GFX_event_CES_malpais_legate
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_legion.9.option.a
-        
+		name = nf_legion.9.a
+
         create_field_marshal = {
             name = "Malpais Legate"
             portrait_path = "gfx/leaders/CES/Portrait_Malpais.dds"
@@ -639,14 +639,14 @@ country_event = {
 			planning_skill = 3
 			logistics_skill = 2
         }
-        
+
         custom_effect_tooltip = legion_siege_battalion_tt
         hidden_effect = { load_oob = "legion_siege_battalion" }
 	}
-    
+
     option = {
-		name = nf_legion.9.option.b
-        
+		name = nf_legion.9.b
+
         create_field_marshal = {
             name = "Malpais Legate"
             portrait_path = "gfx/leaders/CES/Portrait_Malpais.dds"
@@ -661,14 +661,14 @@ country_event = {
 			planning_skill = 2
 			logistics_skill = 4
         }
-        
+
         custom_effect_tooltip = legion_recon_battalion_tt
         hidden_effect = { load_oob = "legion_recon_battalion" }
 	}
-    
+
     option = {
-		name = nf_legion.9.option.c
-        
+		name = nf_legion.9.c
+
         create_field_marshal = {
             name = "Malpais Legate"
             portrait_path = "gfx/leaders/CES/Portrait_Malpais.dds"
@@ -682,7 +682,7 @@ country_event = {
 			planning_skill = 4
 			logistics_skill = 3
         }
-        
+
 		custom_effect_tooltip = legion_chariots_tt
         hidden_effect = { load_oob = "legion_chariots" }
 	}
@@ -691,27 +691,27 @@ country_event = {
 # Caesar, Son of Mars
 country_event = {
 	id = nf_legion.10
-	title = nf_legion.10.title
-	desc = nf_legion.10.desc
+	title = nf_legion.10.t
+	desc = nf_legion.10.d
 	picture = GFX_event_CES_caesar
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_legion.10.option.a
-        
+		name = nf_legion.10.a
+
         add_ideas = legion_nf_profligate_destruction
 	}
-    
+
     option = {
-		name = nf_legion.10.option.b
-        
+		name = nf_legion.10.b
+
         add_ideas = legion_nf_divide_et_impera
 	}
-    
+
     option = {
-		name = nf_legion.10.option.c
-        
+		name = nf_legion.10.c
+
         add_ideas = legion_nf_decimatio
 	}
 }
@@ -721,12 +721,12 @@ country_event = {	#Hoover Dam over
 	title = nf_legion.12.t
 	desc = nf_legion.12.d
 	picture = GFX_event_CES_hoover_dam
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_legion.12.a #Lost the war
-		
+
 		trigger = {
 			NOT = {
 				252 = {
@@ -736,20 +736,20 @@ country_event = {	#Hoover Dam over
 				}
 			}
 		}
-		
+
 		hidden_effect = {
 			white_peace = NCR
 			white_peace = CES
 		}
-		
+
 		set_country_flag = hoover_dam_lost
 		clr_country_flag = battle_for_hoover_dam
-		
+
 	}
-	
+
 	option = {
 		name = nf_legion.12.b #Congrats u win
-		
+
 		trigger = {
 			252 = {
 				controller = {
@@ -757,7 +757,7 @@ country_event = {	#Hoover Dam over
 				}
 			}
 		}
-		
+
 		set_country_flag = hoover_dam_won
 		transfer_state = 252
 		transfer_state = 613
@@ -766,9 +766,9 @@ country_event = {	#Hoover Dam over
 			white_peace = NCR
 			white_peace = CES
 		}
-	
+
 		clr_country_flag = battle_for_hoover_dam
-		
+
 	}
-	
+
 }

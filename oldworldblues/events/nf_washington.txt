@@ -4,26 +4,26 @@ add_namespace = nf_washington
 #Generic BOS#
 
 #Our Past
-country_event = { 
+country_event = {
 	id = nf_genericbos.1
 	title = nf_genericbos.1.t
 	desc = nf_genericbos.1.d
 	picture = GFX_event_generic_settlement_2
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_genericbos.1.option.a 
-		
+		name = nf_genericbos.1.a
+
 		add_ideas = genericbosdevotees
-		
+
 	}
-	
+
 	option = {
-		name = nf_genericbos.1.option.b 
-		
+		name = nf_genericbos.1.b
+
 		add_ideas = genericbosdespise
-		
+
 	}
 }
 #Our Interim
@@ -34,10 +34,10 @@ country_event = {
 	picture = GFX_event_generic_settlement_2
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_genericbos.2.option.a 
-		
+		name = nf_genericbos.2.a
+
 		capital_scope = {
 		    add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -47,10 +47,10 @@ country_event = {
 				}
 		}
 	}
-	
+
 	option = {
-		name = nf_genericbos.2.option.b 
-		
+		name = nf_genericbos.2.b
+
 		capital_scope = {
 		    add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -62,108 +62,108 @@ country_event = {
 	}
 }
 #Our Future
-country_event = { 
+country_event = {
 	id = nf_genericbos.3
 	title = nf_genericbos.3.t
 	desc = nf_genericbos.3.d
 	picture = GFX_event_generic_settlement_2
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_genericbos.3.option.a 
-		
+		name = nf_genericbos.3.a
+
 		add_ideas = genericbosfactoryoutput
-		
+
 	}
-	
+
 	option = {
-		name = nf_genericbos.3.option.b 
-		
+		name = nf_genericbos.3.b
+
 		add_ideas = genericbosresources
-		
+
 	}
 }
 
 #Washington State BOS#
 
 #Within The Blizzard#
-country_event = { 
+country_event = {
 	id = nf_washington.1
 	title = nf_washington.1.t
-	desc = nf_washington.1.desc
+	desc = nf_washington.1.d
 	picture = GFX_event_generic_settlement_2
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_washington.1.option.a 
-		
+		name = nf_washington.1.a
+
 		add_political_power = 100
-		
+
 	}
-	
+
 }
 #Invitation sent to Old Country#
 country_event = {
 	id = nf_washington.2
 	title = nf_washington.2.t
-	desc = nf_washington.2.desc
+	desc = nf_washington.2.d
 	picture = GFX_event_generic_settlement_2
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_washington.2.option.a 
-		
+		name = nf_washington.2.a
+
 		WBH = {
 		   country_event = nf_washington.4
 		}
 	}
 	option = {
-		name = nf_washington.2.option.b 
-		
+		name = nf_washington.2.b
+
 		WBH = {
 		   country_event = nf_washington.5
 		}
 	}
 }
 #Invitation sent to Port Maw#
-country_event = { 
+country_event = {
 	id = nf_washington.3
 	title = nf_washington.3.t
-	desc = nf_washington.3.desc
+	desc = nf_washington.3.d
 	picture = GFX_event_generic_settlement_2
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_washington.3.option.a 
-		
+		name = nf_washington.3.a
+
 		WBH = {
 		   country_event = nf_washington.6
 		}
 	}
 	option = {
-		name = nf_washington.3.option.b 
-		
+		name = nf_washington.3.b
+
 		WBH = {
 		   country_event = nf_washington.7
 		}
 	}
 }
 #Old Country accepts#
-country_event = { 
+country_event = {
 	id = nf_washington.4
 	title = nf_washington.4.t
-	desc = nf_washington.4.desc
+	desc = nf_washington.4.d
 	picture = GFX_event_generic_settlement_2
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_washington.4.option.a 
-		
+		name = nf_washington.4.a
+
 		WBH = {
 		   add_to_faction = TOC
 		   add_opinion_modifier = { target = TOC modifier = northern_league }
@@ -171,17 +171,17 @@ country_event = {
 	}
 }
 #Old Country Refuses#
-country_event = { 
+country_event = {
 	id = nf_washington.5
 	title = nf_washington.5.t
-	desc = nf_washington.5.desc
+	desc = nf_washington.5.d
 	picture = GFX_event_generic_settlement_2
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_washington.5.option.a 
-		
+		name = nf_washington.5.a
+
 		WBH = {
 		   add_opinion_modifier = { target = TOC modifier = northern_league_refused }
 		   create_wargoal = { type = annex_everything target = TOC }
@@ -189,72 +189,72 @@ country_event = {
 	}
 }
 #Port Maw Accepts#
-country_event = { 
+country_event = {
 	id = nf_washington.6
 	title = nf_washington.6.t
-	desc = nf_washington.6.desc
+	desc = nf_washington.6.d
 	picture = GFX_event_generic_settlement_2
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_washington.6.option.a 
-		
+		name = nf_washington.6.a
+
 		WBH = {
 		   add_to_faction = PMR
 		   add_opinion_modifier = { target = PMR modifier = northern_league }
 		}
 		PMR = {
 			set_politics = { ruling_party = elites elections_allowed = no }
-			set_political_party = { ideology = elites popularity = 1 }	
+			set_political_party = { ideology = elites popularity = 1 }
 		}
 	}
 }
 #Port Maw Refuses#
-country_event = { 
+country_event = {
 	id = nf_washington.7
 	title = nf_washington.7.t
-	desc = nf_washington.7.desc
+	desc = nf_washington.7.d
 	picture = GFX_event_generic_settlement_2
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_washington.7.option.a 
-		
+		name = nf_washington.7.a
+
 		WBH = {
 		   add_opinion_modifier = { target = PMR modifier = northern_league_refused }
 		   create_wargoal = { type = annex_everything target = PMR }
 		}
 	}
 }
-country_event = { 
+country_event = {
 	id = nf_washington.8
 	title = nf_washington.8.t
-	desc = nf_washington.8.desc
+	desc = nf_washington.8.d
 	picture = GFX_event_generic_settlement_2
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_washington.8.option.a
-		
+		name = nf_washington.8.a
+
 		hidden_effect = {
 		    country_event = { id = nf_washington.9 days = 50 }
 		}
 	}
 }
-country_event = { 
+country_event = {
 	id = nf_washington.9
 	title = nf_washington.9.t
-	desc = nf_washington.9.desc
+	desc = nf_washington.9.d
 	picture = GFX_event_generic_settlement_2
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_washington.9.option.a
-		
+		name = nf_washington.9.a
+
 		load_oob = washington_alaskan
 	}
 }

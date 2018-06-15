@@ -2,34 +2,34 @@
 
 country_event = {
 	id = startup.1
-	title = startup.1.title
-	desc = startup.1.desc
+	title = startup.1.t
+	desc = startup.1.d
 	#hidden = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		NOT = { has_country_flag = setup_country_ideas }
 	}
-	
+
 	immediate = {
 		set_country_flag = setup_country_ideas
 	}
-	
+
 	option = {
-		name = startup.1.option.a 
+		name = startup.1.a
 	}
 }
 
 # Legion startup
 country_event = {
 	id = startup.2
-	title = startup.2.title
-	desc = startup.2.desc
+	title = startup.2.t
+	desc = startup.2.d
 	picture = GFX_event_CES_startup
 	is_triggered_only = yes
-	
+
 	option = {
-		name = startup.2.option.a
+		name = startup.2.a
 		NCR = { add_ideas = enhanced_legion_campaign }
 		every_country = {
 			limit = {
@@ -46,7 +46,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = startup.2.option.b
+		name = startup.2.b
 		ai_chance = {
 			factor = 0
 		}
@@ -61,7 +61,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = startup.2.option.c
+		name = startup.2.c
 		ai_chance = {
 			factor = 100
 		}
@@ -71,13 +71,13 @@ country_event = {
 # NCR startup
 country_event = {
 	id = startup.3
-	title = startup.3.title
-	desc = startup.3.desc
+	title = startup.3.t
+	desc = startup.3.d
 	picture = GFX_event_NCR_startup
 	is_triggered_only = yes
-	
+
 	option = {
-		name = startup.3.option.a
+		name = startup.3.a
 		CES = { add_ideas = enhanced_ncr_campaign }
 		every_country = {
 			limit = {
@@ -93,7 +93,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = startup.3.option.b
+		name = startup.3.b
 		ai_chance = {
 			factor = 0
 		}
@@ -108,7 +108,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = startup.3.option.c
+		name = startup.3.c
 		ai_chance = {
 			factor = 100
 		}

@@ -3,11 +3,11 @@
 country_event = {
 	id = nf_ranger.1 #Ranger Election
 	title = nf_ranger.1.t
-	desc = nf_ranger.1.desc
+	desc = nf_ranger.1.d
 	picture = GFX_event_DES_rangers_symbol
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_ranger.1.a
 		ai_chance = {
@@ -15,10 +15,10 @@ country_event = {
 		}
 		set_country_flag = DES_leader_chosen
 	}
-	
+
 	option = {
 		name = nf_ranger.1.b
-		
+
 		ai_chance = {
 			base = 1
 			modifier = {
@@ -27,7 +27,7 @@ country_event = {
 			}
 		}
 		retire_country_leader = yes
-        
+
 		create_country_leader  = {
 			name = "Hell Razor"
 			desc = "HELL_RAZOR_DESC"
@@ -41,15 +41,15 @@ country_event = {
 		set_country_flag = DES_leader_chosen
 		set_politics = { ruling_party = people elections_allowed = no }
 	}
-	
+
 	option = {
 		name = nf_ranger.1.c
-		
+
 		retire_country_leader = yes
 		ai_chance = {
 			base = 1
 		}
-		
+
 		create_country_leader  = {
 			name = "Thrasher Sagarra"
 			desc = "THRASHER_SAGARRA_DESC"
@@ -65,13 +65,13 @@ country_event = {
 	}
 }
 country_event = {
-	id = nf_ranger.2 
+	id = nf_ranger.2
 	title = nf_ranger.2.t
 	desc = nf_ranger.2.d
 	picture = GFX_event_DES_rangers_symbol
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_ranger.2.a
 		set_technology = {
@@ -80,7 +80,7 @@ country_event = {
 		}
 		load_oob = ranger_engineers
 		custom_effect_tooltip = ranger_engineers
-		
+
 	}
 	option = {
 		name = nf_ranger.2.b
@@ -96,42 +96,42 @@ country_event = {
 	}
 }
 country_event = {
-	id = nf_ranger.3 
+	id = nf_ranger.3
 	title = nf_ranger.3.t
 	desc = nf_ranger.3.d
 	picture = GFX_event_generic_raider_1
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_ranger.3.a
 		210 = {
 			add_extra_state_shared_building_slots = 3
 			add_building_construction = {
-				type = arms_factory					
+				type = arms_factory
 				level = 2
 				instant_build = yes
 			}
 		}
 		add_ideas = acceptcrim
-		add_manpower = 1200		
+		add_manpower = 1200
 	}
 	option = {
 		name = nf_ranger.3.b
 		210 = {
 			add_extra_state_shared_building_slots = 4
 			add_building_construction = {
-				type = industrial_complex					
+				type = industrial_complex
 				level = 1
 				instant_build = yes
 			}
 			add_building_construction = {
-				type = arms_factory					
+				type = arms_factory
 				level = 1
 				instant_build = yes
 			}
 		}
-		add_ideas = acceptpetty	
+		add_ideas = acceptpetty
 		add_manpower = 900
 	}
 	option = {
@@ -140,7 +140,7 @@ country_event = {
 		210 = {
 			add_extra_state_shared_building_slots = 3
 			add_building_construction = {
-				type = industrial_complex					
+				type = industrial_complex
 				level = 2
 				instant_build = yes
 			}
@@ -148,13 +148,13 @@ country_event = {
 	}
 }
 country_event = {
-	id = nf_ranger.4 
+	id = nf_ranger.4
 	title = nf_ranger.4.t
 	desc = nf_ranger.4.d
 	picture = GFX_event_DES_rangers_symbol
 
     is_triggered_only = yes
-    
+
 	option = {
 		name = nf_ranger.4.a
 		add_manpower = 600
@@ -219,7 +219,7 @@ country_event = {
 				amount = 9
 			}
 		}
-		
+
 	}
 }
 
