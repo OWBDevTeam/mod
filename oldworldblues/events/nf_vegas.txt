@@ -771,9 +771,19 @@ country_event = {
 		VEG = {
 			add_to_faction = MOJ
 			add_opinion_modifier = { target = MOJ modifier = mojavepactjoined }
+			add_ai_strategy = {
+				type = alliance
+				id = "MOJ"
+				value = 200
+			}
 		}
 		MOJ = {
 			add_opinion_modifier = { target = VEG modifier = mojavepactjoined }
+			add_ai_strategy = {
+				type = alliance
+				id = "VEG"
+				value = 200
+			}
 		}
 	}
 }
@@ -853,9 +863,19 @@ country_event = {
 		VEG = {
 			add_to_faction = DES
 			add_opinion_modifier = { target = DES modifier = nevadapact }
+			add_ai_strategy = {
+				type = alliance
+				id = "DES"
+				value = 200
+			}
 		}
 		DES = {
 			add_opinion_modifier = { target = VEG modifier = nevadapact }
+			add_ai_strategy = {
+				type = alliance
+				id = "VEG"
+				value = 200
+			}
 		}
 	}
 }
@@ -912,10 +932,20 @@ country_event = {
 		VEG = {
 			add_to_faction = NEW
 			add_opinion_modifier = { target = NEW modifier = nevadapact }
+			add_ai_strategy = {
+				type = alliance
+				id = "NEW"
+				value = 200
+			}
 		}
 		
 		NEW = {
 			add_opinion_modifier = { target = VEG modifier = nevadapact }
+			add_ai_strategy = {
+				type = alliance
+				id = "VEG"
+				value = 200
+			}
 		}
 	}
 }
@@ -977,10 +1007,20 @@ country_event = {
 			}
 			VEG = {
 				add_opinion_modifier = { target = DES modifier = nevadapact }
+				add_ai_strategy = {
+					type = alliance
+					id = "DES"
+					value = 200
+				}
 			}
 			DES = {
 				add_to_faction = VEG
 				add_opinion_modifier = { target = VEG modifier = nevadapact }
+				add_ai_strategy = {
+					type = alliance
+					id = "VEG"
+					value = 200
+				}
 			}
 		}
 		if = {
@@ -991,10 +1031,20 @@ country_event = {
 			}
 			VEG = {
 				add_opinion_modifier = { target = NEW modifier = nevadapact }
+				add_ai_strategy = {
+					type = alliance
+					id = "NEW"
+					value = 200
+				}
 			}
 			NEW = {
 				add_to_faction = VEG
 				add_opinion_modifier = { target = VEG modifier = nevadapact }
+				add_ai_strategy = {
+					type = alliance
+					id = "VEG"
+					value = 200
+				}
 			}
 		}
 	}

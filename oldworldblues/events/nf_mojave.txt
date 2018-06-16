@@ -176,6 +176,18 @@ country_event = {
 		name = nf_mojave.10.a
 		BOS = {
 			add_to_faction = MOJ
+			add_ai_strategy = {
+				type = alliance
+				id = "MOJ"
+				value = 200
+			}
+		}
+		MOJ = {
+			add_ai_strategy = {
+				type = alliance
+				id = "BOS"
+				value = 200
+			}
 		}
 		reverse_add_opinion_modifier = { target = BOS modifier = mojave_bos_faction }
 	}

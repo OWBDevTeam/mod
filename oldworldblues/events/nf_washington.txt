@@ -167,6 +167,18 @@ country_event = {
 		WBH = {
 		   add_to_faction = TOC
 		   add_opinion_modifier = { target = TOC modifier = northern_league }
+		   add_ai_strategy = {
+				type = alliance
+				id = "TOC"
+				value = 200
+			}
+		}
+		TOC = {
+			add_ai_strategy = {
+				type = alliance
+				id = "WBH"
+				value = 200
+			}
 		}
 	}
 }
@@ -202,11 +214,21 @@ country_event = {
 
 		WBH = {
 		   add_to_faction = PMR
+		   add_ai_strategy = {
+				type = alliance
+				id = "PWR"
+				value = 200
+			}
 		   add_opinion_modifier = { target = PMR modifier = northern_league }
 		}
 		PMR = {
 			set_politics = { ruling_party = elites elections_allowed = no }
 			set_political_party = { ideology = elites popularity = 1 }
+			add_ai_strategy = {
+				type = alliance
+				id = "WBH"
+				value = 200
+			}
 		}
 	}
 }

@@ -58,16 +58,47 @@ country_event = {
 				factor = 100
 			}
 		}
-		
-		VLT = {
-			add_to_faction = NEW
+		if = {
+			limit = {
+				VLT = { is_faction_leader = yes }
+			}
+			VLT = {
+				add_to_faction = NEW
+				add_ai_strategy = {
+					type = alliance
+					id = "NEW"
+					value = 200
+				}
+			}
+			NEw = {
+				add_ai_strategy = {
+					type = alliance
+					id = "VLT"
+					value = 200
+				}
+			}
 		}
-		NEW = {
-			add_to_faction = VLT
+		if = {
+			limit = {
+				NEW = { is_faction_leader =  yes }
+			}
+			NEW = {
+				add_to_faction = VLT
+				add_ai_strategy = {
+					type = alliance
+					id = "VLT"
+					value = 200
+				}
+			}
+			VLT = {
+				add_ai_strategy = {
+					type = alliance
+					id = "NEW"
+					value = 200
+				}
+			}
 		}
-        
 	}
-
 }
 
 country_event = {
@@ -93,8 +124,19 @@ country_event = {
 			create_faction = nevada_pact
 			set_global_flag = nevadapact
 			add_to_faction = VLT
+			add_ai_strategy = {
+				type = alliance
+				id = "VLT"
+				value = 200
+			}
 		}
-		
+		VLT = {
+			add_ai_strategy = {
+				type = alliance
+				id = "NEW"
+				value = 200
+			}
+		}
 	}
 	
 	option = {
@@ -103,9 +145,6 @@ country_event = {
 		ai_chance = {
 			factor = 0
 		}
-		
-		
 		#Refuse
-	
 	}
 }

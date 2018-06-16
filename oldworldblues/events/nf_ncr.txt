@@ -1267,5 +1267,579 @@ country_event = {
 		name = ncr_helios_event.23.a #Fantastic!
 		transfer_state = 417
 	}
-	
+}
+
+#Tribes Legion has conquerored demand independence
+country_event = {
+	id = nf_ncr.30
+	title = nf_ncr.30.t
+	desc = nf_ncr.30.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {#Let them go free
+		name = nf_ncr.30.a
+
+		hidden_effect = {
+			every_owned_state = {
+				set_state_flag = do_not_decimate
+			}
+			release = TWI
+			TWI = {
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				TWI_states = yes
+			}
+			release = PHR
+			PHR = {
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				PHR_states = yes
+			}
+			release = HUA
+			HUA = {
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				HUA_states = yes
+			}
+			release = BLK
+			BLK = {
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				BLK_states = yes
+			}
+			release = TSI
+			TSI = {
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				TSI_states = yes
+			}
+			release = MES
+			MES = {
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				MES_states = yes
+			}
+			SUF = {
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				SUF_states = yes
+			}
+			release = RSR
+			RSR = {
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				RSR_states = yes
+			}
+			release = WAP
+			WAP = {
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				WAP_states = yes
+			}
+			release = BSU
+			BSU = {
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				BSU_states = yes
+			}
+			release = JIC
+			JIC = {
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				JIC_states = yes
+			}
+			if = {
+				limit = {
+					TTM = { exists = no }
+				}
+				release = TTM
+				TTM = {
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					TTM_states = yes
+				}
+			}
+			if = {
+				limit = {
+					PEC = { exists = no }
+				}
+				release = PEC
+				PEC = {
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					PEC_states = yes
+				}
+			}
+			if = {
+				limit = {
+					RBD = { exists = no }
+				}
+				release = RBD
+				RBD = {
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					RBD_states = yes
+				}
+			}
+			if = {
+				limit = {
+					TWO = { exists = no }
+				}
+				release = TWO
+				TWO = {
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					TWO_states = yes
+				}
+			}
+			if = {
+				limit = {
+					COW = { exists = no }
+				}
+				release = COW
+				COW = {
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					COW_states = yes
+				}
+			}
+			if = {
+				limit = {
+					HAN = { exists = no }
+				}
+				release = HAN
+				HAN = {
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					HAN_states = yes
+				}
+			}
+			every_owned_state = {
+				clr_state_flag = do_not_decimate
+			}
+		}
+	}
+
+	option = {#No freedom - They rise to fight you
+		name = nf_ncr.30.b
+		hidden_effect = {
+			country_event = { id = nf_ncr.31 days = 7 }
+		}
+	}
+}
+
+#War for Freedom! Lead by the Phoenix Republic
+country_event = {
+	id = nf_ncr.31
+	title = nf_ncr.31.t
+	desc = nf_ncr.31.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {#Open Rebellion!
+		name = nf_ncr.31.a
+
+		hidden_effect = {
+			every_owned_state = {
+				set_state_flag = do_not_decimate
+			}
+
+			release = PHR
+			PHR = {
+				PHR_states = yes
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				create_faction = pheonix_faction
+				add_to_faction = PHR
+				set_NCR_factions_technology_on_civil_war = yes
+			}
+			NCR = { declare_war_on = { target = PHR type = annex_everything } }
+			release = TWI
+			TWI = {
+				TWI_states = yes
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				set_NCR_factions_technology_on_civil_war = yes
+				country_event = nf_ncr.32
+			}
+			release = FLA
+			FLA = {
+				FLA_states = yes
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				set_NCR_factions_technology_on_civil_war = yes
+				country_event = nf_ncr.32
+			}
+			NCR = {
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				country_event = { id = nf_ncr.33 days = 1 }
+			}
+		}
+	}
+}
+
+#hidden event to get the tribes to join the PHR no loc needed.
+country_event = {
+	id = nf_ncr.32
+	title = nf_ncr.32.t
+	desc = nf_ncr.32.d
+
+	is_triggered_only = yes
+	hidden = yes
+
+	immediate = {
+		tribe_joining_together = yes
+	}
+
+	option = {
+		name = nf_ncr.32.a
+	}
+}
+
+#More join the Phoenic Federation in open rebellion.
+country_event = {
+	id = nf_ncr.33
+	title = nf_ncr.33.t
+	desc = nf_ncr.33.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				set_state_flag = do_not_decimate
+			}
+
+			release = HUA
+			HUA = {
+				HUA_states = yes
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				set_NCR_factions_technology_on_civil_war = yes
+				country_event = nf_ncr.32
+			}
+			release = BLK
+			BLK = {
+				BLK_states = yes
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				set_NCR_factions_technology_on_civil_war = yes
+				country_event = nf_ncr.32
+			}
+			if = {
+				limit = {
+					COW = { exists = no }
+				}
+				release = COW
+				COW = {
+					COW_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					set_NCR_factions_technology_on_civil_war = yes
+					country_event = nf_ncr.32
+				}
+			}
+			every_owned_state = {
+				clr_state_flag = do_not_decimate
+			}
+		}
+	}
+
+	option = {#More join this Rebellion!
+		name = nf_ncr.33.a
+		hidden_effect = {
+			NCR = {
+				country_event = { id = nf_ncr.34 days = 1 }
+			}
+		}
+	}
+}
+
+#Even More join! Oh God!
+country_event = {
+	id = nf_ncr.34
+	title = nf_ncr.34.t
+	desc = nf_ncr.34.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				set_state_flag = do_not_decimate
+			}
+
+			release = TSI
+			TSI = {
+				TSI_states = yes
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				set_NCR_factions_technology_on_civil_war = yes
+				country_event = nf_ncr.32
+			}
+			release = WAP
+			WAP = {
+				WAP_states = yes
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				set_NCR_factions_technology_on_civil_war = yes
+				country_event = nf_ncr.32
+			}
+			if = {
+				limit = {
+					TWO = { exists = no }
+				}
+				release = TWO
+				TWO = {
+					TWO_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					set_NCR_factions_technology_on_civil_war = yes
+					country_event = nf_ncr.32
+				}
+			}
+			every_owned_state = {
+				clr_state_flag = do_not_decimate
+			}
+		}
+	}
+
+	option = {#More join this Rebellion!
+		name = nf_ncr.34.a
+		hidden_effect = {
+			NCR = {
+				country_event = { id = nf_ncr.35 days = 1 }
+			}
+		}
+	}
+}
+
+#Even More join! Oh God!
+country_event = {
+	id = nf_ncr.35
+	title = nf_ncr.35.t
+	desc = nf_ncr.35.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				set_state_flag = do_not_decimate
+			}
+
+			release = MES
+			MES = {
+				MES_states = yes
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				set_NCR_factions_technology_on_civil_war = yes
+				country_event = nf_ncr.32
+			}
+			release = RSR
+			RSR = {
+				RSR_states = yes
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				set_NCR_factions_technology_on_civil_war = yes
+				country_event = nf_ncr.32
+			}
+			if = {
+				limit = {
+					RBD = { exists = no }
+				}
+				release = RBD
+				RBD = {
+					RBD_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					set_NCR_factions_technology_on_civil_war = yes
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					PEC = { exists = no }
+				}
+				release = PEC
+				PEC = {
+					PEC_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					set_NCR_factions_technology_on_civil_war = yes
+					country_event = nf_ncr.32
+				}
+			}
+			every_owned_state = {
+				clr_state_flag = do_not_decimate
+			}
+		}
+	}
+
+	option = {#More join this Rebellion!
+		name = nf_ncr.35.a
+		hidden_effect = {
+			NCR = {
+				country_event = { id = nf_ncr.36 days = 1 }
+			}
+		}
+	}
+}
+
+#Even More join! Oh God!
+country_event = {
+	id = nf_ncr.36
+	title = nf_ncr.36.t
+	desc = nf_ncr.36.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				set_state_flag = do_not_decimate
+			}
+
+			release = SUF
+			SUF = {
+				SUF_states = yes
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				set_NCR_factions_technology_on_civil_war = yes
+				country_event = nf_ncr.32
+			}
+			release = BSU
+			BSU = {
+				BSU_states = yes
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				set_NCR_factions_technology_on_civil_war = yes
+				country_event = nf_ncr.32
+			}
+			every_owned_state = {
+				clr_state_flag = do_not_decimate
+			}
+		}
+	}
+
+	option = {#More join this Rebellion!
+		name = nf_ncr.36.a
+		hidden_effect = {
+			NCR = {
+				country_event = { id = nf_ncr.37 days = 1 }
+			}
+		}
+	}
+}
+
+#Even More join! Oh God!
+country_event = {
+	id = nf_ncr.37
+	title = nf_ncr.37.t
+	desc = nf_ncr.37.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				set_state_flag = do_not_decimate
+			}
+
+			release = JIC
+			JIC = {
+				JIC_states = yes
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				set_NCR_factions_technology_on_civil_war = yes
+				country_event = nf_ncr.32
+			}
+			if = {
+				limit = {
+					HAN = { exists = no }
+				}
+				release = HAN
+				HAN = {
+					HAN_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					set_NCR_factions_technology_on_civil_war = yes
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					TTM = { exists = no }
+				}
+				release = TTM
+				TTM = {
+					TTM_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					set_NCR_factions_technology_on_civil_war = yes
+					country_event = nf_ncr.32
+				}
+			}
+			every_owned_state = {
+				clr_state_flag = do_not_decimate
+			}
+		}
+	}
+
+	option = {#More join this Rebellion!
+		name = nf_ncr.37.a
+	}
 }

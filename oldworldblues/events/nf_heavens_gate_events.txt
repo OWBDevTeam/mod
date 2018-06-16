@@ -177,7 +177,18 @@ country_event = {
 		} 
 		
 		add_to_faction = MUR
-        
+        add_ai_strategy = {
+			type = alliance
+			id = "MUR"
+			value = 200
+		}
+		MUR = {
+			add_ai_strategy = {
+				type = alliance
+				id = "HEA"
+				value = 200
+			}
+		}
 	}
 	
 	option = {
@@ -189,9 +200,7 @@ country_event = {
 		MUR = {
 			country_event = { id = nf_event_hea.60 }
 		}
-		
 	}
-	
 }
 
 country_event = { 
@@ -207,11 +216,11 @@ country_event = {
 		
 		HEA = {
 			add_to_faction = MUR 
-			}
 		}
+	}
 	option = {
 		name  = nf_event_hea.60.b
-			}
+	}
 }
 
 country_event = {
@@ -233,7 +242,18 @@ country_event = {
 		} 
 		
 		add_to_faction = IRE
-        
+        add_ai_strategy = {
+			type = alliance
+			id = "IRE"
+			value = 200
+		}
+		IRE = {
+			add_ai_strategy = {
+				type = alliance
+				id = "HEA"
+				value = 200
+			}
+		}
 	}
 	
 	option = {
@@ -245,9 +265,7 @@ country_event = {
 		IRE = {
 			country_event = { id = nf_event_hea.70 }
 		}
-		
 	}
-	
 }
 
 country_event = { 
@@ -263,10 +281,10 @@ country_event = {
 		
 		HEA = {
 			add_to_faction = IRE 
-			}
 		}
+	}
 	option = {
 		name  = nf_event_hea.70.b
-			}
+	}
 }
 

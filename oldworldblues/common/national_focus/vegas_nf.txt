@@ -1495,7 +1495,17 @@ focus_tree = {
 				add_to_faction = MOJ
 				add_opinion_modifier = { target = MOJ modifier = mojavepactjoined }
 				MOJ = {
-				add_opinion_modifier = { target = VEG modifier = mojavepactjoined }
+					add_opinion_modifier = { target = VEG modifier = mojavepactjoined }
+					add_ai_strategy = {
+						type = alliance
+						id = "VEG"
+						value = 200
+					}
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = "MOJ"
+					value = 200
 				}
 			}
 			

@@ -134,6 +134,18 @@ setup_NCR_enclave = {
 			}
 			remove_from_faction = NEW
 			add_to_faction = NEW
+			add_ai_strategy = {
+				type = alliance
+				id = "NEW"
+				value = 200
+			}
+			NEW = {
+				add_ai_strategy = {
+					type = alliance
+					id = "ENC"
+					value = 200
+				}
+			}
 		}
 		else_if = {
 			limit = {
@@ -146,6 +158,18 @@ setup_NCR_enclave = {
 			create_faction = western_enclave
 			remove_from_faction = NEW
 			add_to_faction = NEW
+			add_ai_strategy = {
+				type = alliance
+				id = "NEW"
+				value = 200
+			}
+			NEW = {
+				add_ai_strategy = {
+					type = alliance
+					id = "ENC"
+					value = 200
+				}
+			}
 			every_other_country = {
 				limit = {
 					is_puppet_of = NEW
@@ -153,6 +177,18 @@ setup_NCR_enclave = {
 				remove_from_faction = PREV
 				ENC = {
 					add_to_faction = PREV
+					add_ai_strategy = {
+						type = alliance
+						id = "PREV"
+						value = 200
+					}
+				}
+				PREV = {
+					add_ai_strategy = {
+						type = alliance
+						id = "ENC"
+						value = 200
+					}
 				}
 			}
 		}
@@ -3942,5 +3978,21 @@ set_NCR_factions_technology_on_civil_war = {
 			PREV = { has_tech = super_mutant_behemoth }
 		}
 		set_technology = { super_mutant_behemoth = 1 }
+	}
+}
+
+tribe_joining_together = {
+	PHR = {
+		add_to_faction = ROOT
+	}
+	add_ai_strategy = {
+		type = alliance
+		id = "PHR"
+		value = 200
+	}
+	add_to_war = {
+		targeted_alliance = PHR
+		enemy = NCR
+		hostility_reason = ally
 	}
 }
