@@ -23,7 +23,24 @@ hea_conversion = {
 					tooltip = hea_not_converted_all_tt
 					FROM = {
 						all_owned_state = {
-							has_state_flag = hea_converted
+							OR = {
+								has_state_flag = is_impassable
+								has_state_flag = hea_converted
+							}
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ncn_eligible_tt
+				FROM = {
+					any_owned_state = {
+						any_neighbor_state = {
+							OR = {
+								has_state_flag = ncn_converted
+								is_owned_and_controlled_by = NCN
+							}
+							NOT = { has_state_flag = is_impassable }
 						}
 					}
 				}
@@ -51,6 +68,7 @@ hea_conversion = {
 							}
 						}
 						NOT = { has_state_flag = hea_converted }
+						NOT = { has_state_flag = is_impassable }
 					}
 					set_state_flag = hea_converted
 					custom_effect_tooltip = hea_converted_state_tt
@@ -88,6 +106,20 @@ hea_conversion = {
 					}
 				}
 			}
+			custom_trigger_tooltip = {
+				tooltip = ncn_eligible_tt
+				FROM = {
+					any_owned_state = {
+						any_neighbor_state = {
+							OR = {
+								has_state_flag = ncn_converted
+								is_owned_and_controlled_by = NCN
+							}
+							NOT = { has_state_flag = is_impassable }
+						}
+					}
+				}
+			}
 			has_manpower > 49
 		}
 
@@ -121,6 +153,7 @@ hea_conversion = {
 							}
 						}
 						NOT = { has_state_flag = hea_converted }
+						NOT = { has_state_flag = is_impassable }
 					}
 					set_state_flag = hea_converted
 					custom_effect_tooltip = hea_converted_state_tt
@@ -152,7 +185,10 @@ hea_conversion = {
 				tooltip = hea_converted_all_tt
 				FROM = {
 					all_owned_state = {
-						has_state_flag = hea_converted
+						OR = {
+							has_state_flag = hea_converted
+							has_state_flag = is_impassable
+						}
 					}
 				}
 			}

@@ -43,6 +43,7 @@ ncn_conversion = {
 				limit = { FROM = { tag = HGH } }
 				has_completed_focus = lds_factions
 			}
+			NOT = { FROM = { is_puppet_of = NCN } }
 		}
 		available = {
 			NOT = {
@@ -54,7 +55,10 @@ ncn_conversion = {
 					tooltip = hea_not_converted_all_tt
 					FROM = {
 						all_owned_state = {
-							has_state_flag = ncn_converted
+							OR = {
+								has_state_flag = is_impassable
+								has_state_flag = ncn_converted
+							}
 						}
 					}
 				}
@@ -68,14 +72,15 @@ ncn_conversion = {
 								has_state_flag = ncn_converted
 								is_owned_and_controlled_by = NCN
 							}
+							NOT = { has_state_flag = is_impassable }
 						}
 					}
 				}
 			}
 		}
 
-		days_remove = 50
-		cost = 20
+		days_remove = 60
+		cost = 10
 		ai_will_do = {
 			factor = 100
 		}
@@ -89,8 +94,10 @@ ncn_conversion = {
 								has_state_flag = ncn_converted
 								is_owned_and_controlled_by = NCN
 							}
+							NOT = { has_state_flag = is_impassable }
 						}
 						NOT = { has_state_flag = ncn_converted }
+						NOT = { has_state_flag = is_impassable }
 					}
 					set_state_flag = ncn_converted
 					custom_effect_tooltip = ncn_converted_state_tt
@@ -154,14 +161,17 @@ ncn_conversion = {
 				tooltip = ncn_converted_all_tt
 				FROM = {
 					all_owned_state = {
-						has_state_flag = ncn_converted
+						OR = {
+							has_state_flag = ncn_converted
+							has_state_flag = is_impassable
+						}
 					}
 				}
 			}
 		}
 
-		days_remove = 40
-		cost = 40
+		days_remove = 20
+		cost = 20
 
 		ai_will_do = {
 			factor = 100
