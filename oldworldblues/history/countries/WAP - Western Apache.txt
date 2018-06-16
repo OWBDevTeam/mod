@@ -1,4 +1,4 @@
-﻿capital = 126
+﻿capital = 232
 oob = "WAP_2275"
 
 set_technology = {
@@ -17,23 +17,23 @@ set_technology = {
     truck_tech_1 = 1
 }
 
-set_stability = 0.4 
-set_war_support = 0.4
+set_stability = 0.43
+set_war_support = 0.26
 
 set_politics = {
     parties = {
-        people = { popularity = 0 }
+        people = { popularity = 90 }
         elites = { popularity = 0 }
         intellectuals = { popularity = 0 }
-        ruler = { popularity = 100 }
+        ruler = { popularity = 10 }
     }
-    ruling_party = ruler
+    ruling_party = people
     elections_allowed = yes
 }
 
 add_ideas = { 
-	tribal_nation
-		
+    tribal_nation
+        
 }
 
 create_corps_commander = {
@@ -41,17 +41,17 @@ create_corps_commander = {
     portrait_path = "gfx/leaders/Tribal/Portrait_Tribal_Generic_4.dds"
     skill = 6
     traits = { }
-	attack_skill = 1
-	defense_skill = 5
-	planning_skill = 2
-	logistics_skill = 1
+    attack_skill = 1
+    defense_skill = 5
+    planning_skill = 2
+    logistics_skill = 1
 }
 create_country_leader  = {
     name = "Sonsee-array"
     desc = "SONSEE_DESC"
     picture = "gfx/leaders/Tribal/Portrait_Tribal_Generic_9.dds"
-    expire = "2266.1.1"
-    ideology = militarist_oligarchy
+    expire = "3000.1.1"
+    ideology = tribal_council
     
     traits = {
     }

@@ -1,42 +1,52 @@
-﻿capital = 350
+﻿capital = 522
 oob = "RSR_2275"
 
 set_technology = {
-	standard_weaponry_tech = 1
+    standard_weaponry_tech = 1
 	blunt_weaponry = 1
 	support_weaponry = 1
 	anti_personnel_tech = 1
 	recon_tech = 1
 	bike_tech_1 = 1
-	tribal_civilization = 1
-	settled_civilization = 1
+    	tribal_civilization = 1
+    	settled_civilization = 1
 	destroyer_tech = 1
 	cruiser_tech = 1
 	battleship_tech = 1 
 	heavy_cruiser_tech = 1
 	truck_tech_1 = 1
+	
 }
-set_stability = 0.65
-set_war_support = 0.2
+set_stability = 0.34
+set_war_support = 0.49
 
-set_research_slots = 4
+set_research_slots = 3
 set_politics = {
-	parties = {
-		people = { popularity = 5 }
-		elites = { popularity = 5 }
-		intellectuals = { popularity = 5 }
-		ruler = { popularity = 85 }
-	}
-	ruling_party = ruler
-	elections_allowed = no
+    parties = {
+        people = { popularity = 46 }
+        elites = { popularity = 0 }
+        intellectuals = { popularity = 0 }
+        ruler = { popularity = 54 }
+    }
+    ruling_party = people
+    elections_allowed = no
 }
-# Allgood: Ruler
+create_corps_commander = {
+    name = "Sergeant Steeltongue"
+    portrait_path = "gfx/leaders/Tribal/Portrait_Tribal_Generic_21.dds"
+    skill = 5
+    traits = { }
+    attack_skill = 1
+    defense_skill = 3
+    planning_skill = 2
+    logistics_skill = 1
+}
 create_country_leader = {
-	name = "Allgood Murphy"
-	desc = "Allgood_DESC"
-	picture = "gfx/leaders/NCR/Portrait_Allgood.dds"
+	name = "Slim"
+	desc = "SLIM_DESC"
+	picture = "gfx/leaders/Settler/Portrait_Settler_Generic_11.dds"
 	expire = "3000.1.1"
-	ideology = benevolent_dictatorship
+	ideology = town_hall_democracy
 					
 	traits = {
 						
