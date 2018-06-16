@@ -1284,6 +1284,7 @@ country_event = {
 		name = nf_ncr.30.a
 
 		hidden_effect = {
+			news_event = ncr_legion_news.1
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
@@ -1444,23 +1445,90 @@ country_event = {
 	option = {#No freedom - They rise to fight you
 		name = nf_ncr.30.b
 		hidden_effect = {
-			country_event = { id = nf_ncr.31 days = 7 }
+			news_event = { id = ncr_legion_news.3 days = 7 }
+			news_event = ncr_legion_news.2
+			if = {
+				limit = {
+					DES = {	is_in_faction_with = NCR }
+				}
+				DES = { country_event = nf_ranger.5 }
+			}
 		}
 	}
 }
 
+add_namespace = ncr_legion_news
+
+#NCR Releases the Nations of the Legion
+news_event = {
+	id = ncr_legion_news.1
+	title = ncr_legion_news.1.t
+	desc = ncr_legion_news.1.d
+	picture = GFX_report_event_generic_ruins
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			tag = NCR
+		}
+		name = ncr_legion_news.1.a
+	}
+
+	option = {
+		trigger = {
+			NOT = { tag = NCR }
+		}
+		name = ncr_legion_news.1.b
+	}
+}
+
+#NCR Refuses to release the Nations of the Legion
+news_event = {
+	id = ncr_legion_news.2
+	title = ncr_legion_news.2.t
+	desc = ncr_legion_news.2.d
+	picture = GFX_report_event_generic_ruins
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			tag = NCR
+		}
+		name = ncr_legion_news.2.a
+	}
+
+	option = {
+		trigger = {
+			NOT = { tag = NCR }
+		}
+		name = ncr_legion_news.2.b
+	}
+}
+
 #War for Freedom! Lead by the Phoenix Republic
-country_event = {
-	id = nf_ncr.31
-	title = nf_ncr.31.t
-	desc = nf_ncr.31.d
+news_event = {
+	id = ncr_legion_news.3
+	title = ncr_legion_news.3.t
+	desc = ncr_legion_news.3.d
 	picture = GFX_event_NCR_battle
+
+	major = yes
 
 	is_triggered_only = yes
 	fire_only_once = yes
 
 	option = {#Open Rebellion!
-		name = nf_ncr.31.a
+		name = ncr_legion_news.3.a
+
+		trigger = {
+			tag = NCR
+		}
 
 		hidden_effect = {
 			every_owned_state = {
@@ -1485,7 +1553,7 @@ country_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.32
+				country_event = nf_ncr.31
 			}
 			release = FLA
 			FLA = {
@@ -1494,23 +1562,30 @@ country_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.32
+				country_event = nf_ncr.31
 			}
 			NCR = {
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
-				country_event = { id = nf_ncr.33 days = 1 }
+				news_event = { id = ncr_legion_news.4 days = 1 }
 			}
+		}
+	}
+
+	option = {
+		name = ncr_legion_news.3.b
+		trigger = {
+			NOT = { tag = NCR }
 		}
 	}
 }
 
 #hidden event to get the tribes to join the PHR no loc needed.
 country_event = {
-	id = nf_ncr.32
-	title = nf_ncr.32.t
-	desc = nf_ncr.32.d
+	id = nf_ncr.31
+	title = nf_ncr.31.t
+	desc = nf_ncr.31.d
 
 	is_triggered_only = yes
 	hidden = yes
@@ -1520,22 +1595,29 @@ country_event = {
 	}
 
 	option = {
-		name = nf_ncr.32.a
+		name = nf_ncr.31.a
 	}
 }
 
 #More join the Phoenic Federation in open rebellion.
-country_event = {
-	id = nf_ncr.33
-	title = nf_ncr.33.t
-	desc = nf_ncr.33.d
+news_event = {
+	id = ncr_legion_news.4
+	title = ncr_legion_news.4.t
+	desc = nfncr_legion_news_ncr.4.d
 	picture = GFX_event_NCR_battle
+
+	major = yes
 
 	is_triggered_only = yes
 	fire_only_once = yes
 
-	immediate = {
+	option = {#More join this Rebellion!
+		name = ncr_legion_news.4.a
+		trigger = {
+			tag = NCR
+		}
 		hidden_effect = {
+			news_event = { id = ncr_legion_news.5 days = 1 }
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
@@ -1547,7 +1629,7 @@ country_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.32
+				country_event = nf_ncr.31
 			}
 			release = BLK
 			BLK = {
@@ -1556,7 +1638,7 @@ country_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.32
+				country_event = nf_ncr.31
 			}
 			if = {
 				limit = {
@@ -1569,7 +1651,7 @@ country_event = {
 						clr_state_flag = do_not_decimate
 					}
 					set_NCR_factions_technology_on_civil_war = yes
-					country_event = nf_ncr.32
+					country_event = nf_ncr.31
 				}
 			}
 			every_owned_state = {
@@ -1578,28 +1660,35 @@ country_event = {
 		}
 	}
 
-	option = {#More join this Rebellion!
-		name = nf_ncr.33.a
-		hidden_effect = {
-			NCR = {
-				country_event = { id = nf_ncr.34 days = 1 }
-			}
+	option = {
+		name = ncr_legion_news.4.b
+		trigger = {
+			NOT = { tag = NCR }
 		}
 	}
 }
 
 #Even More join! Oh God!
-country_event = {
-	id = nf_ncr.34
-	title = nf_ncr.34.t
-	desc = nf_ncr.34.d
+news_event = {
+	id = ncr_legion_news.5
+	title = ncr_legion_news.5.t
+	desc = ncr_legion_news.5.d
 	picture = GFX_event_NCR_battle
+
+	major = yes
 
 	is_triggered_only = yes
 	fire_only_once = yes
 
-	immediate = {
+	option = {#More join this Rebellion!
+		name = ncr_legion_news.5.a
+		trigger = {
+			tag = NCR
+		}
 		hidden_effect = {
+			NCR = {
+				news_event = { id = ncr_legion_news.6 days = 1 }
+			}
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
@@ -1611,7 +1700,7 @@ country_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.32
+				country_event = nf_ncr.31
 			}
 			release = WAP
 			WAP = {
@@ -1620,7 +1709,7 @@ country_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.32
+				country_event = nf_ncr.31
 			}
 			if = {
 				limit = {
@@ -1633,7 +1722,7 @@ country_event = {
 						clr_state_flag = do_not_decimate
 					}
 					set_NCR_factions_technology_on_civil_war = yes
-					country_event = nf_ncr.32
+					country_event = nf_ncr.31
 				}
 			}
 			every_owned_state = {
@@ -1642,28 +1731,33 @@ country_event = {
 		}
 	}
 
-	option = {#More join this Rebellion!
-		name = nf_ncr.34.a
-		hidden_effect = {
-			NCR = {
-				country_event = { id = nf_ncr.35 days = 1 }
-			}
+	option = {
+		name = ncr_legion_news.5.b
+		trigger = {
+			NOT = { tag = NCR }
 		}
 	}
 }
 
 #Even More join! Oh God!
-country_event = {
-	id = nf_ncr.35
-	title = nf_ncr.35.t
-	desc = nf_ncr.35.d
+news_event = {
+	id = ncr_legion_news.6
+	title = ncr_legion_news.6.t
+	desc = ncr_legion_news.6.d
 	picture = GFX_event_NCR_battle
+
+	major = yes
 
 	is_triggered_only = yes
 	fire_only_once = yes
 
-	immediate = {
+	option = {#More join this Rebellion!
+		name = ncr_legion_news.6.a
+		trigger = {
+			tag = NCR
+		}
 		hidden_effect = {
+			news_event = { id = ncr_legion_news.7 days = 1 }
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
@@ -1675,7 +1769,7 @@ country_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.32
+				country_event = nf_ncr.31
 			}
 			release = RSR
 			RSR = {
@@ -1684,7 +1778,7 @@ country_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.32
+				country_event = nf_ncr.31
 			}
 			if = {
 				limit = {
@@ -1697,7 +1791,7 @@ country_event = {
 						clr_state_flag = do_not_decimate
 					}
 					set_NCR_factions_technology_on_civil_war = yes
-					country_event = nf_ncr.32
+					country_event = nf_ncr.31
 				}
 			}
 			if = {
@@ -1711,7 +1805,7 @@ country_event = {
 						clr_state_flag = do_not_decimate
 					}
 					set_NCR_factions_technology_on_civil_war = yes
-					country_event = nf_ncr.32
+					country_event = nf_ncr.31
 				}
 			}
 			every_owned_state = {
@@ -1720,28 +1814,33 @@ country_event = {
 		}
 	}
 
-	option = {#More join this Rebellion!
-		name = nf_ncr.35.a
-		hidden_effect = {
-			NCR = {
-				country_event = { id = nf_ncr.36 days = 1 }
-			}
+	option = {
+		name = ncr_legion_news.6.b
+		trigger = {
+			NOT = { tag = NCR }
 		}
 	}
 }
 
 #Even More join! Oh God!
-country_event = {
-	id = nf_ncr.36
-	title = nf_ncr.36.t
-	desc = nf_ncr.36.d
+news_event = {
+	id = ncr_legion_news.7
+	title = ncr_legion_news.7.t
+	desc = ncr_legion_news.7.d
 	picture = GFX_event_NCR_battle
+
+	major = yes
 
 	is_triggered_only = yes
 	fire_only_once = yes
 
-	immediate = {
+	option = {#More join this Rebellion!
+		name = ncr_legion_news.7.a
+		trigger = {
+			tag = NCR
+		}
 		hidden_effect = {
+			news_event = { id = ncr_legion_news.8 days = 1 }
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
@@ -1753,7 +1852,7 @@ country_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.32
+				country_event = nf_ncr.31
 			}
 			release = BSU
 			BSU = {
@@ -1762,7 +1861,7 @@ country_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.32
+				country_event = nf_ncr.31
 			}
 			every_owned_state = {
 				clr_state_flag = do_not_decimate
@@ -1770,27 +1869,31 @@ country_event = {
 		}
 	}
 
-	option = {#More join this Rebellion!
-		name = nf_ncr.36.a
-		hidden_effect = {
-			NCR = {
-				country_event = { id = nf_ncr.37 days = 1 }
-			}
+	option = {
+		name = ncr_legion_news.7.b
+		trigger = {
+			NOT = { tag = NCR }
 		}
 	}
 }
 
 #Even More join! Oh God!
-country_event = {
-	id = nf_ncr.37
-	title = nf_ncr.37.t
-	desc = nf_ncr.37.d
+news_event = {
+	id = ncr_legion_news.8
+	title = ncr_legion_news.8.t
+	desc = ncr_legion_news.8.d
 	picture = GFX_event_NCR_battle
+
+	major = yes
 
 	is_triggered_only = yes
 	fire_only_once = yes
 
-	immediate = {
+	option = {#More join this Rebellion!
+		name = ncr_legion_news.8.a
+		trigger = {
+			tag = NCR
+		}
 		hidden_effect = {
 			every_owned_state = {
 				set_state_flag = do_not_decimate
@@ -1803,7 +1906,7 @@ country_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.32
+				country_event = nf_ncr.31
 			}
 			if = {
 				limit = {
@@ -1816,7 +1919,7 @@ country_event = {
 						clr_state_flag = do_not_decimate
 					}
 					set_NCR_factions_technology_on_civil_war = yes
-					country_event = nf_ncr.32
+					country_event = nf_ncr.31
 				}
 			}
 			if = {
@@ -1830,7 +1933,7 @@ country_event = {
 						clr_state_flag = do_not_decimate
 					}
 					set_NCR_factions_technology_on_civil_war = yes
-					country_event = nf_ncr.32
+					country_event = nf_ncr.31
 				}
 			}
 			every_owned_state = {
@@ -1839,7 +1942,10 @@ country_event = {
 		}
 	}
 
-	option = {#More join this Rebellion!
-		name = nf_ncr.37.a
+	option = {
+		name = ncr_legion_news.8.b
+		trigger = {
+			NOT = { tag = NCR }
+		}
 	}
 }

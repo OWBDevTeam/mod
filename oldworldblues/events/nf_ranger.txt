@@ -223,3 +223,49 @@ country_event = {
 	}
 }
 
+#Rangers consider leaving NCR after they refuse to free tribes after legion defeat
+country_event = {
+	id = nf_ranger.5
+	title = nf_ranger.5.t
+	desc = nf_ranger.5.d
+	picture = GFX_event_DES_rangers_symbol
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {#Leave the Betrayer
+		name = nf_ranger.5.a
+		ai_chance = {
+			factor = 100
+		}
+		leave_faction = yes
+		if = {
+			limit = {
+				DES = { has_cosmetic_tag = DES_NCR }
+			}
+			drop_cosmetic_tag = yes
+		}
+		NCR = { country_event = nf_ranger.6}
+	}
+
+	option = {#Stay with them
+		name = nf_ranger.5.
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+#event to tell NCR that Rangers left faction
+country_event = {
+	id = nf_ranger.6
+	title = nf_ranger.6.t
+	desc = nf_ranger.6.d
+	picture = GFX_event_DES_rangers_symbol
+
+	is_triggered_only = yes
+
+	option = {#Rangers leave
+		name = nf_ranger.6.a
+	}
+}
