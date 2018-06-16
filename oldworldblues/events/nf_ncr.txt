@@ -1284,144 +1284,198 @@ country_event = {
 		name = nf_ncr.30.a
 
 		hidden_effect = {
-			news_event = ncr_legion_news.1
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
+			if = {
+				limit = {
+					OR = {
+						VEG = { exists = no }
+						VEG = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = VEG
+
+				VEG = {
+					VEG_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					diplomatic_relation = {
+						country = NCR
+						relation = non_aggression_pact
+						active = yes
+					}
+					give_guarantee = NCR
+				}
+				diplomatic_relation = {
+					country = VEG
+					relation = non_aggression_pact
+					active = yes
+				}
+				give_guarantee = VEG
+			}
 			release = TWI
 			TWI = {
+				TWI_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
-				TWI_states = yes
 			}
 			release = PHR
 			PHR = {
+				PHR_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
-				PHR_states = yes
 			}
 			release = HUA
 			HUA = {
+				HUA_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
-				HUA_states = yes
 			}
 			release = BLK
 			BLK = {
+				BLK_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
-				BLK_states = yes
 			}
 			release = TSI
 			TSI = {
+				TSI_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
-				TSI_states = yes
 			}
 			release = MES
 			MES = {
+				MES_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
-				MES_states = yes
 			}
 			SUF = {
+				SUF_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
-				SUF_states = yes
 			}
 			release = RSR
 			RSR = {
+				RSR_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
-				RSR_states = yes
 			}
 			release = WAP
 			WAP = {
+				WAP_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
-				WAP_states = yes
 			}
 			release = BSU
 			BSU = {
+				BSU_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
-				BSU_states = yes
 			}
 			release = JIC
 			JIC = {
+				JIC_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
-				JIC_states = yes
 			}
 			if = {
 				limit = {
-					TTM = { exists = no }
+					OR = {
+						TTM = { exists = no }
+						TTM = {
+							is_puppet_of = NCR
+						}
+					}
 				}
 				release = TTM
 				TTM = {
+					TTM_states = yes
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
-					TTM_states = yes
 				}
 			}
 			if = {
 				limit = {
-					PEC = { exists = no }
+					OR = {
+						PEC = { exists = no }
+						PEC = {
+							is_puppet_of = NCR
+						}
+					}
 				}
 				release = PEC
 				PEC = {
+					PEC_states = yes
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
-					PEC_states = yes
 				}
 			}
 			if = {
 				limit = {
-					RBD = { exists = no }
+					OR = {
+						RBD = { exists = no }
+						RBD = {
+							is_puppet_of = NCR
+						}
+					}
 				}
 				release = RBD
 				RBD = {
+					RBD_states = yes
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
-					RBD_states = yes
 				}
 			}
 			if = {
 				limit = {
-					TWO = { exists = no }
+					OR = {
+						TWO = { exists = no }
+						TWO = {
+							is_puppet_of = NCR
+						}
+					}
 				}
 				release = TWO
 				TWO = {
+					TWO_states = yes
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
-					TWO_states = yes
 				}
 			}
 			if = {
 				limit = {
-					COW = { exists = no }
+					OR = {
+						COW = { exists = no }
+						COW = {
+							is_puppet_of = NCR
+						}
+					}
 				}
 				release = COW
 				COW = {
+					COW_states = yes
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
-					COW_states = yes
 				}
 			}
 			if = {
@@ -1436,17 +1490,154 @@ country_event = {
 					HAN_states = yes
 				}
 			}
+			if = {
+				limit = {
+					OR = {
+						TON = { exists = no }
+						TON = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = TON
+				TON = {
+					TON_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						TLO = { exists = no }
+						TLO = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = TLO
+				TLO = {
+					TLO_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						GDH = { exists = no }
+						GDH = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = GDH
+				GDH = {
+					GDH_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						LGS = { exists = no }
+						LGS = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = LGS
+				LGS = {
+					LGS_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						NAV = { exists = no }
+						NAV = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = NAV
+				NAV = {
+					NAV_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						FOR = { exists = no }
+						FOR = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = FOR
+				FOR = {
+					FOR_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						SCO = { exists = no }
+						SCO = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = SCO
+				SCO = {
+					SCO_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						IRN = { exists = no }
+						IRN = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = IRN
+				IRN = {
+					IRN_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+				}
+			}
 			every_owned_state = {
 				clr_state_flag = do_not_decimate
 			}
+			news_event = ncr_tribe_rebellion_news.1
 		}
 	}
 
 	option = {#No freedom - They rise to fight you
 		name = nf_ncr.30.b
 		hidden_effect = {
-			news_event = { id = ncr_legion_news.3 days = 7 }
-			news_event = ncr_legion_news.2
+			country_event = { id = nf_ncr.31 days = 7 }
+			news_event = ncr_tribe_rebellion_news.2
 			if = {
 				limit = {
 					DES = {	is_in_faction_with = NCR }
@@ -1457,82 +1648,51 @@ country_event = {
 	}
 }
 
-add_namespace = ncr_legion_news
-
-#NCR Releases the Nations of the Legion
-news_event = {
-	id = ncr_legion_news.1
-	title = ncr_legion_news.1.t
-	desc = ncr_legion_news.1.d
-	picture = GFX_report_event_generic_ruins
-
-	major = yes
-
-	is_triggered_only = yes
-
-	option = {
-		trigger = {
-			tag = NCR
-		}
-		name = ncr_legion_news.1.a
-	}
-
-	option = {
-		trigger = {
-			NOT = { tag = NCR }
-		}
-		name = ncr_legion_news.1.b
-	}
-}
-
-#NCR Refuses to release the Nations of the Legion
-news_event = {
-	id = ncr_legion_news.2
-	title = ncr_legion_news.2.t
-	desc = ncr_legion_news.2.d
-	picture = GFX_report_event_generic_ruins
-
-	major = yes
-
-	is_triggered_only = yes
-
-	option = {
-		trigger = {
-			tag = NCR
-		}
-		name = ncr_legion_news.2.a
-	}
-
-	option = {
-		trigger = {
-			NOT = { tag = NCR }
-		}
-		name = ncr_legion_news.2.b
-	}
-}
-
 #War for Freedom! Lead by the Phoenix Republic
-news_event = {
-	id = ncr_legion_news.3
-	title = ncr_legion_news.3.t
-	desc = ncr_legion_news.3.d
+country_event = {
+	id = nf_ncr.31
+	title = nf_ncr.31.t
+	desc = nf_ncr.31.d
 	picture = GFX_event_NCR_battle
-
-	major = yes
 
 	is_triggered_only = yes
 	fire_only_once = yes
 
-	option = {#Open Rebellion!
-		name = ncr_legion_news.3.a
-
-		trigger = {
-			tag = NCR
-		}
-
+	immediate = {
 		hidden_effect = {
 			every_owned_state = {
 				set_state_flag = do_not_decimate
+			}
+
+			if = {
+				limit = {
+					OR = {
+						VEG = { exists = no }
+						VEG = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = VEG
+
+				VEG = {
+					VEG_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					diplomatic_relation = {
+						country = NCR
+						relation = non_aggression_pact
+						active = yes
+					}
+					give_guarantee = NCR
+				}
+				diplomatic_relation = {
+					country = VEG
+					relation = non_aggression_pact
+					active = yes
+				}
+				give_guarantee = VEG
 			}
 
 			release = PHR
@@ -1553,7 +1713,7 @@ news_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.31
+				country_event = nf_ncr.32
 			}
 			release = FLA
 			FLA = {
@@ -1562,62 +1722,55 @@ news_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.31
+				country_event = nf_ncr.32
 			}
-			NCR = {
-				every_owned_state = {
-					clr_state_flag = do_not_decimate
-				}
-				news_event = { id = ncr_legion_news.4 days = 1 }
+			every_owned_state = {
+				clr_state_flag = do_not_decimate
 			}
+			country_event = { id = nf_ncr.33 days = 1 }
+			news_event = { id = ncr_tribe_rebellion_news.3 hours = 6 }
 		}
 	}
 
-	option = {
-		name = ncr_legion_news.3.b
-		trigger = {
-			NOT = { tag = NCR }
+	option = {#Open Rebellion!
+		name = nf_ncr.31.a
+		hidden_effect = {
+			
 		}
 	}
 }
 
 #hidden event to get the tribes to join the PHR no loc needed.
 country_event = {
-	id = nf_ncr.31
-	title = nf_ncr.31.t
-	desc = nf_ncr.31.d
+	id = nf_ncr.32
+	title = nf_ncr.32.t
+	desc = nf_ncr.32.d
 
 	is_triggered_only = yes
 	hidden = yes
 
 	immediate = {
 		tribe_joining_together = yes
+		remove_generic_NCR_templates = yes
 	}
 
 	option = {
-		name = nf_ncr.31.a
+		name = nf_ncr.32.a
 	}
 }
 
 #More join the Phoenic Federation in open rebellion.
-news_event = {
-	id = ncr_legion_news.4
-	title = ncr_legion_news.4.t
-	desc = nfncr_legion_news_ncr.4.d
+country_event = {
+	id = nf_ncr.33
+	title = nf_ncr.33.t
+	desc = nf_ncr.33.d
 	picture = GFX_event_NCR_battle
-
-	major = yes
 
 	is_triggered_only = yes
 	fire_only_once = yes
 
-	option = {#More join this Rebellion!
-		name = ncr_legion_news.4.a
-		trigger = {
-			tag = NCR
-		}
+	immediate = {
 		hidden_effect = {
-			news_event = { id = ncr_legion_news.5 days = 1 }
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
@@ -1629,7 +1782,7 @@ news_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.31
+				country_event = nf_ncr.32
 			}
 			release = BLK
 			BLK = {
@@ -1638,11 +1791,16 @@ news_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.31
+				country_event = nf_ncr.32
 			}
 			if = {
 				limit = {
-					COW = { exists = no }
+					OR = {
+						COW = { exists = no }
+						COW = {
+							is_puppet_of = NCR
+						}
+					}
 				}
 				release = COW
 				COW = {
@@ -1651,44 +1809,55 @@ news_event = {
 						clr_state_flag = do_not_decimate
 					}
 					set_NCR_factions_technology_on_civil_war = yes
-					country_event = nf_ncr.31
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						TON = { exists = no }
+						TON = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = TON
+				TON = {
+					TON_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					set_NCR_factions_technology_on_civil_war = yes
+					country_event = nf_ncr.32
 				}
 			}
 			every_owned_state = {
 				clr_state_flag = do_not_decimate
 			}
+			NCR = {
+				country_event = { id = nf_ncr.34 days = 1 }
+			}
+			news_event = { id = ncr_tribe_rebellion_news.4 hours = 6 }
 		}
 	}
 
-	option = {
-		name = ncr_legion_news.4.b
-		trigger = {
-			NOT = { tag = NCR }
-		}
+	option = {#More join this Rebellion!
+		name = nf_ncr.33.a
 	}
 }
 
 #Even More join! Oh God!
-news_event = {
-	id = ncr_legion_news.5
-	title = ncr_legion_news.5.t
-	desc = ncr_legion_news.5.d
+country_event = {
+	id = nf_ncr.34
+	title = nf_ncr.34.t
+	desc = nf_ncr.34.d
 	picture = GFX_event_NCR_battle
-
-	major = yes
 
 	is_triggered_only = yes
 	fire_only_once = yes
 
-	option = {#More join this Rebellion!
-		name = ncr_legion_news.5.a
-		trigger = {
-			tag = NCR
-		}
+	immediate = {
 		hidden_effect = {
-			NCR = {
-				news_event = { id = ncr_legion_news.6 days = 1 }
-			}
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
@@ -1700,7 +1869,7 @@ news_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.31
+				country_event = nf_ncr.32
 			}
 			release = WAP
 			WAP = {
@@ -1709,11 +1878,16 @@ news_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.31
+				country_event = nf_ncr.32
 			}
 			if = {
 				limit = {
-					TWO = { exists = no }
+					OR = {
+						TWO = { exists = no }
+						TWO = {
+							is_puppet_of = NCR
+						}
+					}
 				}
 				release = TWO
 				TWO = {
@@ -1722,42 +1896,91 @@ news_event = {
 						clr_state_flag = do_not_decimate
 					}
 					set_NCR_factions_technology_on_civil_war = yes
-					country_event = nf_ncr.31
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						TLO = { exists = no }
+						TLO = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = TLO
+				TLO = {
+					TLO_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					#set_NCR_factions_technology_on_civil_war = yes
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						GDH = { exists = no }
+						GDH = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = GDH
+				GDH = {
+					GDH_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					#set_NCR_factions_technology_on_civil_war = yes
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						NAV = { exists = no }
+						NAV = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = NAV
+				NAV = {
+					NAV_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					#set_NCR_factions_technology_on_civil_war = yes
+					country_event = nf_ncr.32
 				}
 			}
 			every_owned_state = {
 				clr_state_flag = do_not_decimate
 			}
+			country_event = { id = nf_ncr.35 days = 1 }
+			news_event = { id = ncr_tribe_rebellion_news.5 hours = 6 }
 		}
 	}
 
-	option = {
-		name = ncr_legion_news.5.b
-		trigger = {
-			NOT = { tag = NCR }
-		}
+	option = {#More join this Rebellion!
+		name = nf_ncr.34.a
 	}
 }
 
 #Even More join! Oh God!
-news_event = {
-	id = ncr_legion_news.6
-	title = ncr_legion_news.6.t
-	desc = ncr_legion_news.6.d
+country_event = {
+	id = nf_ncr.35
+	title = nf_ncr.35.t
+	desc = nf_ncr.35.d
 	picture = GFX_event_NCR_battle
-
-	major = yes
 
 	is_triggered_only = yes
 	fire_only_once = yes
 
-	option = {#More join this Rebellion!
-		name = ncr_legion_news.6.a
-		trigger = {
-			tag = NCR
-		}
+	immediate = {
 		hidden_effect = {
-			news_event = { id = ncr_legion_news.7 days = 1 }
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
@@ -1769,7 +1992,7 @@ news_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.31
+				country_event = nf_ncr.32
 			}
 			release = RSR
 			RSR = {
@@ -1778,11 +2001,16 @@ news_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.31
+				country_event = nf_ncr.32
 			}
 			if = {
 				limit = {
-					RBD = { exists = no }
+					OR = {
+						RBD = { exists = no }
+						RBD = {
+							is_puppet_of = NCR
+						}
+					}
 				}
 				release = RBD
 				RBD = {
@@ -1791,12 +2019,17 @@ news_event = {
 						clr_state_flag = do_not_decimate
 					}
 					set_NCR_factions_technology_on_civil_war = yes
-					country_event = nf_ncr.31
+					country_event = nf_ncr.32
 				}
 			}
 			if = {
 				limit = {
-					PEC = { exists = no }
+					OR = {
+						PEC = { exists = no }
+						PEC = {
+							is_puppet_of = NCR
+						}
+					}
 				}
 				release = PEC
 				PEC = {
@@ -1805,42 +2038,53 @@ news_event = {
 						clr_state_flag = do_not_decimate
 					}
 					set_NCR_factions_technology_on_civil_war = yes
-					country_event = nf_ncr.31
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						LGS = { exists = no }
+						LGS = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = LGS
+				LGS = {
+					LGS_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					#set_NCR_factions_technology_on_civil_war = yes
+					country_event = nf_ncr.32
 				}
 			}
 			every_owned_state = {
 				clr_state_flag = do_not_decimate
 			}
+			country_event = { id = nf_ncr.36 days = 1 }
+			news_event = { id = ncr_tribe_rebellion_news.6 hours = 6 }
 		}
 	}
 
-	option = {
-		name = ncr_legion_news.6.b
-		trigger = {
-			NOT = { tag = NCR }
-		}
+	option = {#More join this Rebellion!
+		name = nf_ncr.35.a
 	}
 }
 
 #Even More join! Oh God!
-news_event = {
-	id = ncr_legion_news.7
-	title = ncr_legion_news.7.t
-	desc = ncr_legion_news.7.d
+country_event = {
+	id = nf_ncr.36
+	title = nf_ncr.36.t
+	desc = nf_ncr.36.d
 	picture = GFX_event_NCR_battle
-
-	major = yes
 
 	is_triggered_only = yes
 	fire_only_once = yes
 
-	option = {#More join this Rebellion!
-		name = ncr_legion_news.7.a
-		trigger = {
-			tag = NCR
-		}
+	immediate = {
 		hidden_effect = {
-			news_event = { id = ncr_legion_news.8 days = 1 }
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
@@ -1852,7 +2096,7 @@ news_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.31
+				country_event = nf_ncr.32
 			}
 			release = BSU
 			BSU = {
@@ -1861,39 +2105,32 @@ news_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.31
+				country_event = nf_ncr.32
 			}
 			every_owned_state = {
 				clr_state_flag = do_not_decimate
 			}
+			country_event = { id = nf_ncr.37 days = 1 }
+			news_event = { id = ncr_tribe_rebellion_news.7 hours = 6 }
 		}
 	}
 
-	option = {
-		name = ncr_legion_news.7.b
-		trigger = {
-			NOT = { tag = NCR }
-		}
+	option = {#More join this Rebellion!
+		name = nf_ncr.36.a
 	}
 }
 
 #Even More join! Oh God!
-news_event = {
-	id = ncr_legion_news.8
-	title = ncr_legion_news.8.t
-	desc = ncr_legion_news.8.d
+country_event = {
+	id = nf_ncr.37
+	title = nf_ncr.37.t
+	desc = nf_ncr.37.d
 	picture = GFX_event_NCR_battle
-
-	major = yes
 
 	is_triggered_only = yes
 	fire_only_once = yes
 
-	option = {#More join this Rebellion!
-		name = ncr_legion_news.8.a
-		trigger = {
-			tag = NCR
-		}
+	immediate = {
 		hidden_effect = {
 			every_owned_state = {
 				set_state_flag = do_not_decimate
@@ -1906,11 +2143,16 @@ news_event = {
 					clr_state_flag = do_not_decimate
 				}
 				set_NCR_factions_technology_on_civil_war = yes
-				country_event = nf_ncr.31
+				country_event = nf_ncr.32
 			}
 			if = {
 				limit = {
-					HAN = { exists = no }
+					OR = {
+						HAN = { exists = no }
+						HAN = {
+							is_puppet_of = NCR
+						}
+					}
 				}
 				release = HAN
 				HAN = {
@@ -1919,12 +2161,17 @@ news_event = {
 						clr_state_flag = do_not_decimate
 					}
 					set_NCR_factions_technology_on_civil_war = yes
-					country_event = nf_ncr.31
+					country_event = nf_ncr.32
 				}
 			}
 			if = {
 				limit = {
-					TTM = { exists = no }
+					OR = {
+						TTM = { exists = no }
+						TTM = {
+							is_puppet_of = NCR
+						}
+					}
 				}
 				release = TTM
 				TTM = {
@@ -1933,19 +2180,341 @@ news_event = {
 						clr_state_flag = do_not_decimate
 					}
 					set_NCR_factions_technology_on_civil_war = yes
-					country_event = nf_ncr.31
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						FOR = { exists = no }
+						FOR = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = FOR
+				FOR = {
+					FOR_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					#set_NCR_factions_technology_on_civil_war = yes
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						IRN = { exists = no }
+						IRN = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = IRN
+				IRN = {
+					IRN_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					#set_NCR_factions_technology_on_civil_war = yes
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						SCO = { exists = no }
+						SCO = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = SCO
+				SCO = {
+					SCO_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					#set_NCR_factions_technology_on_civil_war = yes
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						PNT = { exists = no }
+						PNT = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = PNT
+				PNT = {
+					PNT_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					#set_NCR_factions_technology_on_civil_war = yes
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						TOB = { exists = no }
+						TOB = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = TOB
+				TOB = {
+					TOB_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					#set_NCR_factions_technology_on_civil_war = yes
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						YMP = { exists = no }
+						YMP = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				release = YMP
+				YMP = {
+					YMP_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					#set_NCR_factions_technology_on_civil_war = yes
+					country_event = nf_ncr.32
 				}
 			}
 			every_owned_state = {
 				clr_state_flag = do_not_decimate
 			}
+			news_event = { id = ncr_tribe_rebellion_news.8 hours = 6 }
 		}
 	}
 
+	option = {#More join this Rebellion!
+		name = nf_ncr.37.a
+	}
+}
+
+add_namespace = ncr_tribe_rebellion_news
+
+#NCR Releases the Nations of the Legion
+news_event = {
+	id = ncr_tribe_rebellion_news.1
+	title = ncr_tribe_rebellion_news.1.t
+	desc = ncr_tribe_rebellion_news.1.d
+	picture = GFX_report_event_generic_ruins
+
+	major = yes
+
+	is_triggered_only = yes
+
 	option = {
-		name = ncr_legion_news.8.b
+		trigger = {
+			tag = NCR
+		}
+		name = ncr_tribe_rebellion_news.1.a
+	}
+
+	option = {
 		trigger = {
 			NOT = { tag = NCR }
 		}
+		name = ncr_tribe_rebellion_news.1.b
+	}
+}
+
+#NCR Refuses to release the Nations of the Legion
+news_event = {
+	id = ncr_tribe_rebellion_news.2
+	title = ncr_tribe_rebellion_news.2.t
+	desc = ncr_tribe_rebellion_news.2.d
+	picture = GFX_report_event_generic_ruins
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			tag = NCR
+		}
+		name = ncr_tribe_rebellion_news.2.a
+	}
+
+	option = {
+		trigger = {
+			NOT = { tag = NCR }
+		}
+		name = ncr_tribe_rebellion_news.2.b
+	}
+}
+
+#Story Event for .31
+news_event = {
+	id = ncr_tribe_rebellion_news.3
+	title = ncr_tribe_rebellion_news.3.t
+	desc = ncr_tribe_rebellion_news.3.d
+	picture = GFX_report_event_generic_ruins
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			tag = NCR
+		}
+		name = ncr_tribe_rebellion_news.3.a
+	}
+
+	option = {
+		trigger = {
+			NOT = { tag = NCR }
+		}
+		name = ncr_tribe_rebellion_news.3.b
+	}
+}
+
+#Story Event for .33
+news_event = {
+	id = ncr_tribe_rebellion_news.4
+	title = ncr_tribe_rebellion_news.4.t
+	desc = ncr_tribe_rebellion_news.4.d
+	picture = GFX_report_event_generic_ruins
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			tag = NCR
+		}
+		name = ncr_tribe_rebellion_news.4.a
+	}
+
+	option = {
+		trigger = {
+			NOT = { tag = NCR }
+		}
+		name = ncr_tribe_rebellion_news.4.b
+	}
+}
+
+#Story Event for .34
+news_event = {
+	id = ncr_tribe_rebellion_news.5
+	title = ncr_tribe_rebellion_news.5.t
+	desc = ncr_tribe_rebellion_news.5.d
+	picture = GFX_report_event_generic_ruins
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			tag = NCR
+		}
+		name = ncr_tribe_rebellion_news.5.a
+	}
+
+	option = {
+		trigger = {
+			NOT = { tag = NCR }
+		}
+		name = ncr_tribe_rebellion_news.5.b
+	}
+}
+
+#Story Event for .35
+news_event = {
+	id = ncr_tribe_rebellion_news.6
+	title = ncr_tribe_rebellion_news.6.t
+	desc = ncr_tribe_rebellion_news.6.d
+	picture = GFX_report_event_generic_ruins
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			tag = NCR
+		}
+		name = ncr_tribe_rebellion_news.6.a
+	}
+
+	option = {
+		trigger = {
+			NOT = { tag = NCR }
+		}
+		name = ncr_tribe_rebellion_news.6.b
+	}
+}
+
+#Story Event for .36
+news_event = {
+	id = ncr_tribe_rebellion_news.7
+	title = ncr_tribe_rebellion_news.7.t
+	desc = ncr_tribe_rebellion_news.7.d
+	picture = GFX_report_event_generic_ruins
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			tag = NCR
+		}
+		name = ncr_tribe_rebellion_news.7.a
+	}
+
+	option = {
+		trigger = {
+			NOT = { tag = NCR }
+		}
+		name = ncr_tribe_rebellion_news.7.b
+	}
+}
+
+#Story Event for .37
+news_event = {
+	id = ncr_tribe_rebellion_news.8
+	title = ncr_tribe_rebellion_news.8.t
+	desc = ncr_tribe_rebellion_news.8.d
+	picture = GFX_report_event_generic_ruins
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			tag = NCR
+		}
+		name = ncr_tribe_rebellion_news.8.a
+	}
+
+	option = {
+		trigger = {
+			NOT = { tag = NCR }
+		}
+		name = ncr_tribe_rebellion_news.8.b
 	}
 }
