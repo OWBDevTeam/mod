@@ -1,4 +1,4 @@
-﻿capital = 350
+﻿capital = 546
 oob = "SUF_2275"
 
 set_technology = {
@@ -16,27 +16,36 @@ set_technology = {
 	heavy_cruiser_tech = 1
 	truck_tech_1 = 1
 }
-set_stability = 0.65
-set_war_support = 0.2
+set_stability = 0.72
+set_war_support = 0.45
 
 set_research_slots = 4
 set_politics = {
 	parties = {
-		people = { popularity = 5 }
-		elites = { popularity = 5 }
-		intellectuals = { popularity = 5 }
-		ruler = { popularity = 85 }
+		people = { popularity = 25 }
+		elites = { popularity = 20 }
+		intellectuals = { popularity = 0 }
+		ruler = { popularity = 55 }
 	}
-	ruling_party = ruler
+	ruling_party = people
 	elections_allowed = no
 }
-# Allgood: Ruler
+create_corps_commander = {
+	name = "Old Man Summers"
+	portrait_path = "gfx/leaders/Settler/Portrait_Settler_Generic_17.dds"
+	skill = 7
+	traits = { }
+	attack_skill = 5
+	defense_skill = 4
+	planning_skill = 2
+	logistics_skill = 2
+}
 create_country_leader = {
-	name = "Allgood Murphy"
-	desc = "Allgood_DESC"
-	picture = "gfx/leaders/NCR/Portrait_Allgood.dds"
+	name = "Ryleigh Morrison"
+	desc = "RYLEIGH_DESC"
+	picture = "gfx/leaders/Settler/Portrait_Settler_Generic_5.dds"
 	expire = "3000.1.1"
-	ideology = benevolent_dictatorship
+	ideology = peoples_militia
 					
 	traits = {
 						
