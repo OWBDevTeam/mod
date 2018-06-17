@@ -1636,6 +1636,7 @@ country_event = {
 	option = {#No freedom - They rise to fight you
 		name = nf_ncr.30.b
 		hidden_effect = {
+			set_global_flag = NCR_CES_revolt
 			country_event = { id = nf_ncr.31 days = 7 }
 			news_event = ncr_tribe_rebellion_news.2
 			if = {
@@ -1697,6 +1698,7 @@ country_event = {
 
 			release = PHR
 			PHR = {
+				ncr_revolter_setup = yes
 				load_oob = NCRrevolt_PHR
 				PHR_states = yes
 				every_owned_state = {
@@ -1709,6 +1711,7 @@ country_event = {
 			NCR = { declare_war_on = { target = PHR type = annex_everything } }
 			release = TWI
 			TWI = {
+				ncr_revolter_setup = yes
 				load_oob = NCRrevolt_TWI
 				TWI_states = yes
 				every_owned_state = {
@@ -1719,6 +1722,7 @@ country_event = {
 			}
 			release = FLA
 			FLA = {
+				ncr_revolter_setup = yes
 				load_oob = NCRrevolt_FLA
 				FLA_states = yes
 				every_owned_state = {
@@ -1780,6 +1784,7 @@ country_event = {
 
 			release = HUA
 			HUA = {
+				ncr_revolter_setup = yes
 				load_oob = NCRrevolt_HUA
 				HUA_states = yes
 				every_owned_state = {
@@ -1790,6 +1795,7 @@ country_event = {
 			}
 			release = BLK
 			BLK = {
+				ncr_revolter_setup = yes
 				load_oob = NCRrevolt_BLK
 				BLK_states = yes
 				every_owned_state = {
@@ -1809,6 +1815,7 @@ country_event = {
 				}
 				release = COW
 				COW = {
+					ncr_revolter_setup = yes
 					load_oob = NCRrevolt_COW
 					COW_states = yes
 					every_owned_state = {
@@ -1829,6 +1836,7 @@ country_event = {
 				}
 				release = TON
 				TON = {
+					ncr_revolter_setup = yes
 					load_oob = NCRrevolt_TON
 					TON_states = yes
 					every_owned_state = {
@@ -2308,6 +2316,8 @@ country_event = {
 				clr_state_flag = do_not_decimate
 			}
 			news_event = { id = ncr_tribe_rebellion_news.8 hours = 6 }
+			# This flag needs to be the final part of the events
+			clr_global_flag = NCR_CES_revolt
 		}
 	}
 

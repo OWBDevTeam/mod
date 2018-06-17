@@ -1,0 +1,19 @@
+ncr_revolter_setup = {
+	if = { # Gives all revolter states support equipment tech if they don't already have it - all OOBs need it
+		limit = {
+			NOT = { has_tech = support_weaponry }
+		}
+		set_technology = { support_weaponry = 1}
+	}
+	if = { # Gives all revolters basic levels of anti tank tech - some OOBs need it
+		limit = {
+			NOT = { has_tech = anti_tank_tech }
+		}
+		set_technology = { anti_tank_tech = 1 }
+	}
+	add_ideas = { # Adds revolter ideas - these only last until the war is over
+		defence_of_the_homeland
+		frantic_production
+		patriotic_defence
+	}
+}
