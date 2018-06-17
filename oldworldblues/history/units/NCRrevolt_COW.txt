@@ -14,55 +14,48 @@ division_template = {
 
 division_template = {
 	name = "Rebellion Infantry"
-	regiments = { # 20-width Infantry
+	regiments = { # 10-width Infantry
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 0 y = 2 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
-		infantry = { x = 1 y = 2 }
-		infantry = { x = 2 y = 0 }
-		infantry = { x = 2 y = 1 }
-		infantry = { x = 2 y = 2 }
-		infantry = { x = 3 y = 0 }
 	}
 	support = {
 		logistics_company = { x = 0 y = 0 }
-		anti_tank_company = { x = 0 y = 1 }
-		recon_company = { x = 0 y = 2 }
-		medical_chem_company = { x = 0 y = 3 }
+		medical_chem_company = { x = 0 y = 1 }
 	}
 }
 
 units = {
 	# Infantry
 	division = {
-		name = "1st Flagstaff Division"
-		location = 8951
-		division_template = "Rebellion Infantry"
-		start_experience_factor = 0.6
-		start_equipment_factor = 1.0
-	}
-	division = {
-		name = "2nd Flagstaff Division"
-		location = 8960
+		name = "Puetro Peñasco Division"
+		location = 5328
 		division_template = "Rebellion Infantry"
 		start_experience_factor = 0.6
 		start_equipment_factor = 1.0
 	}
 	# Militias
 	division = {
-		name = "Flagstaff Militia"
-		location = 8951
+		name = "Puetro Peñasco Militia"
+		location = 5328
 		division_template = "Rebellion Militia"
-		start_experience_factor = 0.55
+		start_experience_factor = 0.5
 		start_equipment_factor = 1.0
 	}
 	division = {
-		name = "Downtowm Militia"
-		location = 8955
+		name = "Gulf Sailors' Militia"
+		location = 5310
 		division_template = "Rebellion Militia"
-		start_experience_factor = 0.6
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Ultimo Militia"
+		location = 5301
+		division_template = "Rebellion Militia"
+		start_experience_factor = 0.55
 		start_equipment_factor = 1.0
 	}	
 }
@@ -72,15 +65,7 @@ instant_effect = {
 	add_equipment_production = {
 		equipment = {
 			type = infantry_equipment_1
-			creator = "FLA"
-		}
-		requested_factories = 1
-		progress = 0.9
-		efficiency = 100
-	}
-	add_equipment_production = {
-		equipment = {
-			type = support_equipment
+			creator = "COW"
 		}
 		requested_factories = 1
 		progress = 0.9

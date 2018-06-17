@@ -13,7 +13,7 @@ division_template = {
 }
 
 division_template = {
-	name = "Rebellion Infantry"
+	name = "Legion Remnants"
 	regiments = { # 20-width Infantry
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -34,37 +34,75 @@ division_template = {
 	}
 }
 
+division_template = {
+	name = "Slavers"
+	regiments = { # 10-width Infantry
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		logistics_company = { x = 0 y = 0 }
+		recon_company = { x = 0 y = 1 }
+		medical_chem_company = { x = 0 y = 2 }
+	}
+}
+
 units = {
-	# Infantry
+	# Elite Inf
 	division = {
-		name = "1st Flagstaff Division"
-		location = 8951
-		division_template = "Rebellion Infantry"
-		start_experience_factor = 0.6
+		name = "Blackfoot Remnants"
+		location = 1562
+		division_template = "Legion Remnants"
+		start_experience_factor = 0.8
 		start_equipment_factor = 1.0
 	}
 	division = {
-		name = "2nd Flagstaff Division"
-		location = 8960
-		division_template = "Rebellion Infantry"
-		start_experience_factor = 0.6
+		name = "Page Remnants"
+		location = 8095
+		division_template = "Legion Remnants"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	# Normal Inf
+	division = {
+		name = "Chinle Slavers"
+		location = 8103
+		division_template = "Slavers"
+		start_experience_factor = 0.65
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Blackfoot Slavers"
+		location = 1562
+		division_template = "Slavers"
+		start_experience_factor = 0.65
 		start_equipment_factor = 1.0
 	}
 	# Militias
 	division = {
-		name = "Flagstaff Militia"
-		location = 8951
+		name = "Painted Peak Militia"
+		location = 6543
 		division_template = "Rebellion Militia"
 		start_experience_factor = 0.55
 		start_equipment_factor = 1.0
 	}
 	division = {
-		name = "Downtowm Militia"
-		location = 8955
+		name = "Marble Canyon Militia"
+		location = 3104
 		division_template = "Rebellion Militia"
 		start_experience_factor = 0.6
 		start_equipment_factor = 1.0
-	}	
+	}
+	division = {
+		name = "Painted Desert Militia"
+		location = 8022
+		division_template = "Rebellion Militia"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1.0
+	}
 }
 
 ##### Starting Production #####
