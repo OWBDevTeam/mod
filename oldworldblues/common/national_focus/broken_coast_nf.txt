@@ -84,8 +84,13 @@ focus_tree = {
 		}
 		
 		available = { 
-			BRK = { has_completed_focus = brk_nf_master_smith }
-			BRK = { has_completed_focus = brk_nf_manufacturing_drive_2 }
+			OR = {
+				BRK = { has_completed_focus = brk_nf_ruler_pol_side }
+				BRK = { has_completed_focus = brk_nf_elites_pol_side }
+			}	
+			BRK = { has_completed_focus = brk_nf_frozen_shores }
+			BRK = { has_completed_focus = brk_nf_blessed_steel }
+			BRK = { has_completed_focus = brk_nf_boon_of_njord }
 		}
 		completion_reward = {
 			add_ideas = brk_tech_adaptation
@@ -930,8 +935,8 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = brk_nf_boon_of_njord
-		icon = GFX_goal_generic_occupy_states_coastal
+		id = brk_nf_dockyards_3
+		icon = GFX_goal_generic_harbours_focus
 		cost = 8.6
 		x = 2
 		y = 10
@@ -941,7 +946,14 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_ideas = brk_naval_range
+			561 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	
@@ -994,7 +1006,7 @@ focus_tree = {
 		y = 12
 
 		prerequisite = {
-			focus = brk_nf_boon_of_njord
+			focus = brk_nf_dockyards_3
 		}
 		
 		completion_reward = {
@@ -1395,8 +1407,8 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = brk_nf_dockyards_3
-		icon = GFX_goal_generic_harbours_focus
+		id = brk_nf_boon_of_njord
+		icon = GFX_goal_generic_occupy_states_coastal
 		cost = 8.6
 		x = 21
 		y = 11
@@ -1406,14 +1418,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			561 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = dockyard
-					level = 1
-					instant_build = yes
-				}
-			}
+			add_ideas = brk_naval_range
 		}
 	}
 	
