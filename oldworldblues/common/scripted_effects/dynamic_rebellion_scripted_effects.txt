@@ -1,0 +1,271 @@
+# Scripted by Mechano
+# Description: Script when fired generates a designated size army as a factor of percentage of the countries' army which they are revolting from randomly in their states
+# How to use/implement:
+#
+#	1. all countries you want to fire in the event must have a special country flag set for them, from the scope of the state you want them to revolt from called "revolt_country_to_revolt".
+#		for example, if you have a list of countries you want to revolt (Note: They must already exist, ideally they have been spawned before calling this effect)
+# 		every_country = {
+#			limit = {
+#				tag = TAG1
+#				tag = TAG2
+#				tag = TAG...
+#			}
+#			set_country_flag = revolt_country_to_revolt@PREV
+#		}
+# 	Note that the country scope this is in must be that this country/countries will revolt against
+#
+#	2. once this is setup, optionally you can define what percentage of the target countries' force will be generated, as a percentage decimal (I.E 10% = 0.1) by adding
+#		set_variable = {
+#			var = revolt_percentage_target_divisions
+#			value = your_percentage_value
+#		}
+#		in the scope of the country that will be the revolt target
+#
+#		You can also just give a static number of divisions to generate using
+#
+#		set_variable = {
+#			var = total_divisions_to_spawn
+#			value = your_number_of_divisions
+#		}
+#
+#	3. Fire the revolt when all setup is complete by executing the effect:
+#	revolt_setup_fire = yes
+#
+# in the scope of the country which will be the revolt target
+#
+# Once fired the divisions will spawn in all countries with the revolt flag, note that once it fires 
+# the revolt flag will be cleared
+revolt_load_oobs = {
+	load_oob = "REVOLT_OOBS"
+}
+# testing
+revolt_release_all_countries_with_cores = {
+	release = BSU
+	release = JIC
+	BSU = {
+		set_country_flag = revolt_country_to_revolt@PREV
+	}
+	JIC = {
+		set_country_flag = revolt_country_to_revolt@PREV
+	}
+	revolt_setup_fire = yes
+}
+revolt_setup_fire = {
+	set_variable = { revolt_target_country = ROOT.id }
+	var:revolt_target_country = {
+		if = {
+			limit = {
+				NOT = {
+					has_variable = revolt_existing_divisions
+				}
+			}
+			set_variable = { 
+				var = revolt_existing_divisions
+				value = 0
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_variable = revolt_percentage_target_divisions
+				}
+			}
+			set_variable = {
+				revolt_percentage_target_divisions = 1
+			}
+		}
+		# calculate total number of divisions that should spawn against target country
+		if = {
+			limit = {
+				NOT = { has_variable = total_divisions_to_spawn }
+			}
+			set_variable = {
+				var = revolt_total_divisions_to_spawn
+				value = num_divisions
+			}
+			multiply_variable = {
+				revolt_total_divisions_to_spawn = revolt_percentage_target_divisions
+			}
+			round_variable = revolt_total_divisions_to_spawn
+		}
+		# calculate how many of the total divisions each revolting country receives
+		set_temp_variable = {
+			var = total_revolting_factories
+			value = 0
+		}
+		set_temp_variable = {
+			var = total_revolting_states
+			value = 0
+		}
+		
+		set_temp_variable = {
+			var = total_revolting_factories_and_states_temp
+			value = 0
+		}
+		
+		set_variable = {
+			var = total_revolting_factories_and_states
+			value = 0
+		}
+		# count the total number of factories + states, existing number of divisions, etc. in all revolting countries
+		every_country = {
+			limit = {
+				has_country_flag = revolt_country_to_revolt@PREV
+			}
+			PREV = {
+				add_to_temp_variable = { revolt_existing_divisions = PREV.num_divisions }
+				add_to_temp_variable = { total_revolting_factories = PREV.num_of_factories }
+				add_to_temp_variable = { total_revolting_states = PREV.num_owned_controlled_states }
+			}
+		}
+		
+		add_to_temp_variable = {
+			total_revolting_factories_and_states_temp = total_revolting_factories
+		}
+		add_to_temp_variable = {
+			total_revolting_factories_and_states_temp = total_revolting_states
+		}
+		
+		add_to_variable = {
+			var = total_revolting_factories_and_states
+			value = total_revolting_factories_and_states_temp
+		}
+		if = {
+			# dividing, could be zero so do nothing in that case to avoid crashing
+			limit = {
+				check_variable = {
+					var = total_revolting_factories_and_states
+					value = 0
+					compare = not_equals
+				}
+			}
+			# number of divisions to spawn = total divisions to spawn * ((this countries' factories + owned states) / (all revolting countries' factories + states))
+			every_country = {
+				limit = {
+					has_country_flag = revolt_country_to_revolt@PREV
+				}
+				set_temp_variable = {
+					var = revolt_this_country_total_factories_and_states
+					value = num_factories
+				}
+				add_to_temp_variable = {
+					var = revolt_this_country_total_factories_and_states 
+					value = num_owned_controlled_states
+				}
+				divide_temp_variable = {
+					var = revolt_this_country_total_factories_and_states
+					value = PREV.total_revolting_factories_and_states
+				}
+				set_temp_variable = {
+					revolt_this_country_divisions_percentage_to_spawn = revolt_this_country_total_factories_and_states
+				}
+				set_temp_variable = {
+					revolt_this_country_divisions_to_spawn_temp = PREV.revolt_total_divisions_to_spawn
+				}
+				multiply_temp_variable = {
+					revolt_this_country_divisions_to_spawn_temp = revolt_this_country_divisions_percentage_to_spawn
+				}
+				set_variable = {
+					var = revolt_this_country_divisions_to_spawn
+					value = revolt_this_country_divisions_to_spawn_temp
+				}
+				round_variable = revolt_this_country_divisions_to_spawn
+				revolt_setup_fire_one_country = yes # country is ready to have units spawned
+				clr_country_flag = revolt_country_to_revolt@PREV
+			}
+		}
+		if = { # something has gone horribly wrong, don't spawn any divisions
+			limit = {
+				check_variable = {
+					var = total_revolting_factories_and_states
+					value = 0
+					compare = equals
+				}
+			}
+			country_event = test_event.1
+			every_country = {
+				limit = {
+					has_country_flag = revolt_country_to_revolt@PREV
+				}
+				set_variable = {
+					revolt_this_country_divisions_to_spawn = 0 
+				}
+				revolt_setup_fire_one_country = yes # country is ready to have units spawned
+				clr_country_flag = revolt_country_to_revolt@PREV
+			}
+		}
+	}
+}
+revolt_setup_fire_one_country = {
+	revolt_load_oobs = yes
+	revolt_spawn_all_troops_recursive = yes
+}
+
+revolt_spawn_all_troops_recursive = {
+	# exit condition when divisions of spawning country are greater or equal to
+	if = {
+		limit = {
+			check_variable = {
+				var = revolt_this_country_divisions_to_spawn
+				value = 1
+				compare = greater_than_or_equals
+			}
+		}
+		subtract_from_variable = {
+			revolt_this_country_divisions_to_spawn = 1
+		}
+		revolt_spawn_all_troops_recursive = yes
+		revolt_spawn_random_troop = yes
+	}
+}
+revolt_spawn_random_troop = {
+	random_owned_controlled_state = {
+		# don't spawn in wasteland/impassable states
+		limit = {
+			AND = {
+				is_in_home_area = yes
+				NOT = {
+					has_state_category = wasteland
+				}
+				OR = {
+					free_building_slots = { building = industrial_complex size > 0 include_locked = no }
+					dockyard > 0
+					industrial_complex > 0
+					arms_factory > 0
+				}
+			}
+		}
+		random_list = {
+			60 = { # 60% chance to spawn infantry
+				revolt_spawn_infantry = yes
+			}
+			15 = { # 15% chance to spawn motorized
+				revolt_spawn_motorized = yes
+			}
+			25 = { # 25% chance to spawn militia
+				revolt_spawn_militia = yes
+			}
+		}
+	}
+}
+
+revolt_spawn_motorized = {
+	create_unit = {
+		division = "name = \"Motorized Rebels\" division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+		owner = PREV
+	}
+}
+
+revolt_spawn_infantry = {
+	create_unit = {
+		division = "name = \"Rebel Fighters\" division_template = \"Rebel Infantry\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+		owner = PREV
+	}
+}
+
+revolt_spawn_militia = {
+	create_unit = {
+		division = "name = \"Rebel Partisans\" division_template = \"Rebel Militia\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+		owner = PREV
+	}
+}

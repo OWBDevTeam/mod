@@ -179,3 +179,46 @@ country_event = {
 		add_ace = { name = "FEMALE" surname = "ACE" callsign = "**TESTING**" type = fighter_genius is_female = yes }
     	} 
 }
+# generate random troop
+country_event = {
+	id = test_event.10
+	title = test_event.10.t
+	desc = test_event.10.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	# male ACE
+	option = {
+		name = test_event.10.a
+		revolt_load_oobs = yes
+		revolt_spawn_random_troop = yes
+    	} 
+}
+# generate random troop
+country_event = {
+	id = test_event.11
+	title = test_event.11.t
+	desc = test_event.11.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	# male ACE
+	option = {
+		name = test_event.11.a
+		revolt_release_all_countries_with_cores = yes
+    	} 
+}
+# test recursive unit generation
+country_event = {
+	id = test_event.12
+	title = test_event.12.t
+	desc = test_event.12.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	# male ACE
+	option = {
+		name = test_event.12.a
+		set_variable = {
+			revolt_this_country_divisions_to_spawn = 10
+		}
+		revolt_setup_fire_one_country = yes
+    	} 
+}
