@@ -1,7 +1,7 @@
 ideas = {
 	country = {
 		defence_of_the_homeland = { # Army modifiers
-			picture = GFX_idea_generic_fortify_the_borders
+			picture = generic_fortify_the_borders
 			allowed = {
 				OR = {
 					has_war_with = NCR
@@ -12,7 +12,7 @@ ideas = {
 			targeted_modifier = {
 				tag = NCR
 				attack_bonus_against = 0.05
-				defense_bonus_against = 0.1
+				defense_bonus_against = 0.15
 			}
 			modifier = {
 				max_dig_in = 0.5
@@ -20,7 +20,7 @@ ideas = {
 			}
 		}
 		frantic_production = { # Industry modifiers
-			picture = GFX_idea_generic_production_bonus
+			picture = generic_production_bonus
 			allowed = {
 				OR = {
 					has_war_with = NCR
@@ -37,7 +37,7 @@ ideas = {
 			}
 		}
 		patriotic_defence = { # Country modifiers
-			picture = GFX_idea_generic_volunteer_expedition_bonus
+			picture = generic_volunteer_expedition_bonus
 			allowed = {
 				OR = {
 					has_war_with = NCR
@@ -50,8 +50,6 @@ ideas = {
 				war_support_factor = 0.8
 				conscription = 0.03 # counters out total mobalisation
 				political_power_gain = 0.2
-				army_chief_cost_factor = -0.25
-				high_command_cost_factor = -0.25
 			}
 		}
 	}
