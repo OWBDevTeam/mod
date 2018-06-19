@@ -96,7 +96,7 @@ revolt_setup_fire = {
 		# calculate total number of divisions that should spawn against target country
 		if = {
 			limit = {
-				NOT = { has_variable = total_divisions_to_spawn }
+				NOT = { has_variable = revolt_total_divisions_to_spawn }
 			}
 			set_variable = {
 				var = revolt_total_divisions_to_spawn
