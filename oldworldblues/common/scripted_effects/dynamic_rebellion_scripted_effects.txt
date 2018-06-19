@@ -35,8 +35,27 @@
 #
 # Once fired the divisions will spawn in all countries with the revolt flag, note that once it fires 
 # the revolt flag will be cleared
+
+# load the oobs if they don't already have them
+
 revolt_load_oobs = {
-	load_oob = "REVOLT_OOBS"
+	if = {
+		limit = {
+			NOT = {
+				AND = {
+					has_template = "Rebel Militia"
+					has_template = "Rebel Recon Group"
+					has_template = "Rebel Militia (AT)"
+					has_template = "Mot. Rebels"
+					has_template = "Rebel Militia Def."
+					has_template = "Rebel Partisans"
+					has_template = "Rebel Infantry (AT)"
+					has_template = "Elite Rebels"
+				}
+			}
+		}
+		load_oob = "REVOLT_OOBS"
+	}
 }
 # testing
 revolt_release_all_countries_with_cores = {
@@ -235,37 +254,179 @@ revolt_spawn_random_troop = {
 				}
 			}
 		}
-		random_list = {
-			60 = { # 60% chance to spawn infantry
-				revolt_spawn_infantry = yes
-			}
-			15 = { # 15% chance to spawn motorized
-				revolt_spawn_motorized = yes
-			}
-			25 = { # 25% chance to spawn militia
-				revolt_spawn_militia = yes
+		# spawn units from the rotation
+		revolt_rotate_troop_spawn = yes
+	}
+}
+
+revolt_rotate_troop_spawn = {
+	# cycles through these from first to last when spawning
+	# 1 = Rebel Militia
+	# 2 = Rebel Recon Infantry
+	# 3 = Rebel Miltia (AT)
+	# 4 = Mot. Rebels
+	# 5 = Rebel Militia Def.
+	# 6 = Rebel Partisans
+	# 7 = Rebel Infantry (AT)
+	# 8 = Elite Rebels
+	if = {
+		limit = {
+			check_variable = {
+				PREV.PREV.revolt_spawn_current_troop_type = 0
 			}
 		}
+		set_variable = {
+			PREV.PREV.revolt_spawn_current_troop_type = 1
+		}
+		clamp_variable = {
+			var = PREV.PREV.revolt_spawn_current_troop_type
+			min = 1
+			max = 8
+		}
+		revolt_spawn_militia = yes
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				PREV.PREV.revolt_spawn_current_troop_type = 1
+			}
+		}
+		revolt_spawn_militia = yes
+		add_to_variable = { 
+			PREV.PREV.revolt_spawn_current_troop_type = 1
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				PREV.PREV.revolt_spawn_current_troop_type = 2
+			}
+		}
+		revolt_spawn_recon_infantry = yes
+		add_to_variable = {
+			PREV.PREV.revolt_spawn_current_troop_type = 1
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				PREV.PREV.revolt_spawn_current_troop_type = 3
+			}
+		}
+		revolt_spawn_militia_at = yes
+		add_to_variable = {
+			PREV.PREV.revolt_spawn_current_troop_type = 1
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				PREV.PREV.revolt_spawn_current_troop_type = 4
+			}
+		}
+		revolt_spawn_motorized = yes
+		add_to_variable = {
+			PREV.PREV.revolt_spawn_current_troop_type = 1
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				PREV.PREV.revolt_spawn_current_troop_type = 5
+			}
+		}
+		revolt_spawn_militia_def = yes
+		add_to_variable = {
+			PREV.PREV.revolt_spawn_current_troop_type = 1
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				PREV.PREV.revolt_spawn_current_troop_type = 6
+			}
+		}
+		revolt_spawn_militia_partisans = yes
+		add_to_variable = {
+			PREV.PREV.revolt_spawn_current_troop_type = 1
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				PREV.PREV.revolt_spawn_current_troop_type = 7
+			}
+		}
+		revolt_spawn_infantry_at = yes
+		add_to_variable = {
+			PREV.PREV.revolt_spawn_current_troop_type = 1
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				PREV.PREV.revolt_spawn_current_troop_type = 8
+			}
+		}
+		revolt_spawn_elite_infantry = yes
+		set_variable = {
+			var = PREV.PREV.revolt_spawn_current_troop_type
+			value = 1
+		}
+	}
+}
+
+# unit spawn macros, in order of their spawning in the rotation
+revolt_spawn_militia = {
+	create_unit = {
+		division = "division_template = \"Rebel Militia\" start_experience_factor = 0.28 start_equipment_factor = 1.0"
+		owner = PREV
+	}
+}
+
+revolt_spawn_recon_infantry = {
+	create_unit = {
+		division = "division_template = \"Rebel Recon Group\" start_experience_factor = 0.45 start_equipment_factor = 1.1"
+		owner = PREV
+	}
+}
+
+revolt_spawn_militia_at = {
+	create_unit = {
+		division = "division_template = \"Rebel Militia (AT)\" start_experience_factor = 0.4 start_equipment_factor = 1.1"
+		owner = PREV
 	}
 }
 
 revolt_spawn_motorized = {
 	create_unit = {
-		division = "division_template = \"Mot. Rebels\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+		division = "division_template = \"Mot. Rebels\" start_experience_factor = 0.6 start_equipment_factor = 1.2"
+		owner = PREV
+	}
+}
+revolt_spawn_militia_def = {
+	create_unit = {
+		division = "division_template = \"Rebel Militia Def.\" start_experience_factor = 0.32 start_equipment_factor = 1.1"
+		owner = PREV
+	}
+}
+revolt_spawn_militia_partisans = {
+	create_unit = {
+		division = "division_template = \"Rebel Partisans\" start_experience_factor = 0.22 start_equipment_factor = 1.05"
 		owner = PREV
 	}
 }
 
-revolt_spawn_infantry = {
+revolt_spawn_infantry_at = {
 	create_unit = {
-		division = "division_template = \"Rebel Infantry\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+		division = "division_template = \"Rebel Infantry (AT)\" start_experience_factor = 0.45 start_equipment_factor = 1.1"
 		owner = PREV
 	}
 }
 
-revolt_spawn_militia = {*
+revolt_spawn_elite_infantry = {
 	create_unit = {
-		division = "division_template = \"Rebel Militia\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+		division = "division_template = \"Elite Rebels\" start_experience_factor = 0.78 start_equipment_factor = 1.25"
 		owner = PREV
 	}
 }
