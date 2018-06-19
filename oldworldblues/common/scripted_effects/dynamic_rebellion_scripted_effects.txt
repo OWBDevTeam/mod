@@ -41,6 +41,14 @@
 revolt_load_oobs = {
 	if = {
 		limit = {
+			PREV = {
+				has_country_flag = revolt_force_spawn_broken_coast
+			}
+		}
+		load_oob = "BRK_enemy"
+	}
+	else_if = {
+		limit = {
 			NOT = {
 				AND = {
 					has_template = "Rebel Militia"
@@ -259,8 +267,8 @@ revolt_spawn_random_troop = {
 	}
 }
 
-revolt_force_spawn_only_militia = {
-	set_country_flag = revolt_force_spawn_only_militia
+revolt_force_spawn_broken_coast = {
+	set_country_flag = revolt_force_spawn_broken_coast
 }
 
 revolt_rotate_troop_spawn = {
@@ -276,10 +284,10 @@ revolt_rotate_troop_spawn = {
 	if = {
 		limit = {
 			ROOT = {
-				has_country_flag = revolt_force_spawn_only_militia
+				has_country_flag = revolt_force_spawn_broken_coast
 			}
 		}
-		revolt_spawn_militia = yes
+		revolt_rotate_troop_spawn_broken_coast = yes
 	}
 	else_if = {
 		limit = {
@@ -387,8 +395,77 @@ revolt_rotate_troop_spawn = {
 		}
 	}
 }
-
-# unit spawn macros, in order of their spawning in the rotation
+# special unit rotation for the Broken Coast
+revolt_rotate_troop_spawn_broken_coast = {
+	# cycles through these from first to last when spawning
+	# 1 = Primary Reserve
+	# 2 = Supplementary Reserve
+	# 3 = Primary Reserve
+	# 4 = Supplementary Reserve
+	# 5 = Ranger Reserve
+	if = {
+		limit = {
+			check_variable = {
+				PREV.PREV.revolt_spawn_current_troop_type = 0
+			}
+		}
+		set_variable = {
+			PREV.PREV.revolt_spawn_current_troop_type = 1
+		}
+		clamp_variable = {
+			var = PREV.PREV.revolt_spawn_current_troop_type
+			min = 1
+			max = 5
+		}
+		revolt_spawn_primary_reserve = yes
+		}
+	else_if = {
+		limit = {
+			OR = {
+				check_variable = {
+					PREV.PREV.revolt_spawn_current_troop_type = 1
+				}
+				check_variable = {
+					PREV.PREV.revolt_spawn_current_troop_type = 3
+				}
+			}
+		}
+		revolt_spawn_primary_reserve = yes
+		add_to_variable = {
+			PREV.PREV.revolt_spawn_current_troop_type = 1
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				check_variable = {
+					PREV.PREV.revolt_spawn_current_troop_type = 2
+				}
+				check_variable = {
+					PREV.PREV.revolt_spawn_current_troop_type = 4
+				}
+			}
+		}
+		revolt_spawn_supplementary_reserve = yes
+		add_to_variable = {
+			PREV.PREV.revolt_spawn_current_troop_type = 1
+		}
+	}
+	else_if = {
+		limit = {
+			OR = {
+				check_variable = {
+					PREV.PREV.revolt_spawn_current_troop_type = 5
+				}
+			}
+		}
+		revolt_spawn_ranger_reserve = yes
+		set_variable = {
+			PREV.PREV.revolt_spawn_current_troop_type = 1
+		}
+	}
+}
+# unit spawn macros, in order of their spawning in the rotation DEFAULT
 revolt_spawn_militia = {
 	create_unit = {
 		division = "division_template = \"Rebel Militia\" start_experience_factor = 0.28 start_equipment_factor = 1.0"
@@ -439,6 +516,28 @@ revolt_spawn_infantry_at = {
 revolt_spawn_elite_infantry = {
 	create_unit = {
 		division = "division_template = \"Elite Rebels\" start_experience_factor = 0.78 start_equipment_factor = 1.25"
+		owner = PREV
+	}
+}
+
+# unit spawning macros, in order of spawning BROKEN COAST
+revolt_spawn_primary_reserve = {
+	create_unit = {
+		division = "division_template = \"Primary Reserve\" start_experience_factor = 0.32 start_equipment_factor = 1.25"
+		owner = PREV
+	}
+}
+
+revolt_spawn_supplementary_reserve = {
+	create_unit = {
+		division = "division_template = \"Supplementary Reserve\" start_experience_factor = 0.28 start_equipment_factor = 1.25"
+		owner = PREV
+	}
+}
+
+revolt_spawn_ranger_reserve = {
+	create_unit = {
+		division = "division_template = \"Ranger Reserve\" start_experience_factor = 0.71 start_equipment_factor = 1.25"
 		owner = PREV
 	}
 }
