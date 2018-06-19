@@ -757,17 +757,14 @@ focus_tree = {
 				type = annex_everything
 				target = KAM
 			}
-			BRK = {
-				every_country = {
-					limit = {
-						tag = KAM
-					}
-				set_country_flag = revolt_country_to_revolt@PREV
-				}
 			
+			KAM = {
+				set_country_flag = revolt_country_to_revolt@PREV
 			}
-			revolt_force_spawn_broken_coast = yes
-		IF = {
+				revolt_force_spawn_broken_coast = yes
+				revolt_setup_fire = yes
+			
+			IF = {
 				limit = {
 					KAM = { has_idea = volunteer_only }
 				}
@@ -1608,16 +1605,13 @@ focus_tree = {
 				type = annex_everything
 				target = DRE
 			}
-			BRK = {
-				every_country = {
-					limit = {
-						tag = DRE
-					}
-				set_country_flag = revolt_country_to_revolt@PREV
-				}
 			
+			DRE = {
+				set_country_flag = revolt_country_to_revolt@PREV
 			}
 			revolt_force_spawn_broken_coast = yes
+			revolt_setup_fire = yes
+
 			IF = {
 				limit = {
 					DRE = { has_idea = volunteer_only }
