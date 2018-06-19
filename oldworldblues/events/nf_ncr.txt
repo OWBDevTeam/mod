@@ -1269,7 +1269,12 @@ country_event = {
 	}
 }
 
-#Tribes Legion has conquerored demand independence
+##########################################
+#               NCR REVOLTS              #
+# Coded by Blaz, Happy + Zap (dreamteam) #
+#   w/ wonderful unit setups by Mechano  #
+##########################################
+
 country_event = {
 	id = nf_ncr.30
 	title = nf_ncr.30.t
@@ -1649,6 +1654,59 @@ country_event = {
 	}
 }
 
+country_event = { # HIDDEN EVENT - no loc needed! Used to prevent decimation shafting PHR
+	id = nf_ncr.300
+	title = nf_ncr.32.t
+	desc = nf_ncr.32.d
+
+	trigger = {
+		tag = CES
+		surrender_progress > 0.6
+	}
+	hidden = yes
+
+	immediate = {
+		every_state = {
+			limit = { is_core_of = PHR }
+			set_state_flag = do_not_decimate
+		}
+	}
+
+	option = {
+		name = nf_ncr.32.a
+	}
+}
+
+country_event = { # HIDDEN EVENT - no loc needed!
+	id = nf_ncr.301
+	title = nf_ncr.32.t
+	desc = nf_ncr.32.d
+
+	trigger = {
+		tag = CES
+		OR = {
+			surrender_progress < 0.4
+			has_war = no
+		}
+		any_state = {
+			is_core_of = PHR
+			has_state_flag = do_not_decimate
+		}
+	}
+	hidden = yes
+
+	immediate = {
+		every_state = {
+			limit = { is_core_of = PHR }
+			clr_state_flag = do_not_decimate
+		}
+	}
+
+	option = {
+		name = nf_ncr.32.a
+	}
+}
+
 #War for Freedom! Lead by the Phoenix Republic
 country_event = {
 	id = nf_ncr.31
@@ -1701,7 +1759,7 @@ country_event = {
 				PHR_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
 				ncr_revolter_setup = yes
-				load_oob = NCRrevolt_PHR
+				set_country_flag = revolt_country_to_revolt@PREV
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
@@ -1714,7 +1772,7 @@ country_event = {
 				TWI_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
 				ncr_revolter_setup = yes
-				load_oob = NCRrevolt_TWI
+				set_country_flag = revolt_country_to_revolt@PREV
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
@@ -1725,7 +1783,7 @@ country_event = {
 				FLA_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
 				ncr_revolter_setup = yes
-				load_oob = NCRrevolt_FLA
+				set_country_flag = revolt_country_to_revolt@PREV
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
@@ -1737,6 +1795,11 @@ country_event = {
 			country_event = { id = nf_ncr.33 days = 1 }
 			news_event = { id = ncr_tribe_rebellion_news.3 hours = 6 }
 		}
+		set_variable = {
+			var = revolt_percentage_target_divisions
+			value = 0.25
+		}
+		revolt_setup_fire = yes
 	}
 
 	option = {#Open Rebellion!
@@ -1787,7 +1850,8 @@ country_event = {
 				HUA_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
 				ncr_revolter_setup = yes
-				load_oob = NCRrevolt_HUA
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
@@ -1798,7 +1862,8 @@ country_event = {
 				BLK_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
 				ncr_revolter_setup = yes
-				load_oob = NCRrevolt_BLK
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
@@ -1818,7 +1883,8 @@ country_event = {
 					COW_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
 					ncr_revolter_setup = yes
-					load_oob = NCRrevolt_COW
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
@@ -1839,7 +1905,8 @@ country_event = {
 					TON_states = yes
 					set_NCR_factions_technology_on_civil_war = yes	
 					ncr_revolter_setup = yes
-					load_oob = NCRrevolt_TON
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
@@ -1854,7 +1921,13 @@ country_event = {
 			}
 			news_event = { id = ncr_tribe_rebellion_news.4 hours = 6 }
 		}
+		set_variable = {
+			var = revolt_percentage_target_divisions
+			value = 0.20
+		}
+		revolt_setup_fire = yes
 	}
+
 
 	option = {#More join this Rebellion!
 		name = nf_ncr.33.a
@@ -1881,6 +1954,8 @@ country_event = {
 			TSI = {
 				TSI_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
@@ -1890,6 +1965,8 @@ country_event = {
 			WAP = {
 				WAP_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
@@ -1908,6 +1985,8 @@ country_event = {
 				TWO = {
 					TWO_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
@@ -1926,7 +2005,9 @@ country_event = {
 				release = TLO
 				TLO = {
 					TLO_states = yes
-					#set_NCR_factions_technology_on_civil_war = yes
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
@@ -1945,7 +2026,9 @@ country_event = {
 				release = GDH
 				GDH = {
 					GDH_states = yes
-					#set_NCR_factions_technology_on_civil_war = yes
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
@@ -1964,7 +2047,9 @@ country_event = {
 				release = NAV
 				NAV = {
 					NAV_states = yes
-					#set_NCR_factions_technology_on_civil_war = yes
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
@@ -1977,6 +2062,11 @@ country_event = {
 			country_event = { id = nf_ncr.35 days = 1 }
 			news_event = { id = ncr_tribe_rebellion_news.5 hours = 6 }
 		}
+		set_variable = {
+			var = revolt_percentage_target_divisions
+			value = 0.15
+		}
+		revolt_setup_fire = yes
 	}
 
 	option = {#More join this Rebellion!
@@ -2004,6 +2094,8 @@ country_event = {
 			MES = {
 				MES_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
@@ -2013,6 +2105,8 @@ country_event = {
 			RSR = {
 				RSR_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
@@ -2031,6 +2125,8 @@ country_event = {
 				RBD = {
 					RBD_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
@@ -2050,6 +2146,8 @@ country_event = {
 				PEC = {
 					PEC_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
@@ -2068,7 +2166,9 @@ country_event = {
 				release = LGS
 				LGS = {
 					LGS_states = yes
-					#set_NCR_factions_technology_on_civil_war = yes
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
@@ -2081,6 +2181,11 @@ country_event = {
 			country_event = { id = nf_ncr.36 days = 1 }
 			news_event = { id = ncr_tribe_rebellion_news.6 hours = 6 }
 		}
+		set_variable = {
+			var = revolt_percentage_target_divisions
+			value = 0.25
+		}
+		revolt_setup_fire = yes
 	}
 
 	option = {#More join this Rebellion!
@@ -2108,6 +2213,8 @@ country_event = {
 			SUF = {
 				SUF_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
@@ -2117,6 +2224,8 @@ country_event = {
 			BSU = {
 				BSU_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
@@ -2128,6 +2237,11 @@ country_event = {
 			country_event = { id = nf_ncr.37 days = 1 }
 			news_event = { id = ncr_tribe_rebellion_news.7 hours = 6 }
 		}
+		set_variable = {
+			var = revolt_percentage_target_divisions
+			value = 0.20
+		}
+		revolt_setup_fire = yes
 	}
 
 	option = {#More join this Rebellion!
@@ -2155,6 +2269,8 @@ country_event = {
 			JIC = {
 				JIC_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
@@ -2173,6 +2289,8 @@ country_event = {
 				HAN = {
 					HAN_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
@@ -2192,6 +2310,8 @@ country_event = {
 				TTM = {
 					TTM_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
@@ -2210,7 +2330,9 @@ country_event = {
 				release = FOR
 				FOR = {
 					FOR_states = yes
-					#set_NCR_factions_technology_on_civil_war = yes
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
@@ -2229,7 +2351,9 @@ country_event = {
 				release = IRN
 				IRN = {
 					IRN_states = yes
-					#set_NCR_factions_technology_on_civil_war = yes
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
@@ -2248,7 +2372,9 @@ country_event = {
 				release = SCO
 				SCO = {
 					SCO_states = yes
-					#set_NCR_factions_technology_on_civil_war = yes
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
@@ -2267,7 +2393,9 @@ country_event = {
 				release = PNT
 				PNT = {
 					PNT_states = yes
-					#set_NCR_factions_technology_on_civil_war = yes
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
@@ -2286,7 +2414,9 @@ country_event = {
 				release = TOB
 				TOB = {
 					TOB_states = yes
-					#set_NCR_factions_technology_on_civil_war = yes
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
@@ -2305,7 +2435,9 @@ country_event = {
 				release = YMP
 				YMP = {
 					YMP_states = yes
-					#set_NCR_factions_technology_on_civil_war = yes
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
@@ -2316,9 +2448,14 @@ country_event = {
 				clr_state_flag = do_not_decimate
 			}
 			news_event = { id = ncr_tribe_rebellion_news.8 hours = 6 }
-			# This flag needs to be the final part of the events
+			# This flag needs to be the final part of the events to allow ideas to all be set up
 			clr_global_flag = NCR_CES_revolt
 		}
+		set_variable = {
+			var = revolt_percentage_target_divisions
+			value = 0.20
+		}
+		revolt_setup_fire = yes
 	}
 
 	option = {#More join this Rebellion!

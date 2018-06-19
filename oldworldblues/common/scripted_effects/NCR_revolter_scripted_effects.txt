@@ -5,11 +5,29 @@ ncr_revolter_setup = {
 		}
 		set_technology = { support_weaponry = 1}
 	}
+	if = { # Gives all revolter explosive tech if they don't already have it - some OOBs need it
+		limit = {
+			NOT = { has_tech = explosive_tech }
+		}
+		set_technology = { explosive_tech = 1}
+	}
 	if = { # Gives all revolters basic levels of anti tank tech - some OOBs need it
 		limit = {
 			NOT = { has_tech = anti_tank_tech }
 		}
 		set_technology = { anti_tank_tech = 1 }
+	}
+	if = { # Gives all revolters basic levels of dogs tech - some OOBs need it
+		limit = {
+			NOT = { has_tech = dog_tech }
+		}
+		set_technology = { dog_tech = 1 }
+	}
+	if = {
+		limit = { NOT = { tag = PHR } }
+		every_state = {
+			undecimate_half_all_industry = yes
+		}
 	}
 	add_ideas = { # Adds revolter ideas - these only last until the war is over
 		defence_of_the_homeland
