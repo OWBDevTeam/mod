@@ -222,3 +222,18 @@ country_event = {
 		revolt_setup_fire_one_country = yes
     	} 
 }
+
+# generate random troop while forcing just militia spawns
+country_event = {
+	id = test_event.13
+	title = test_event.13.t
+	desc = test_event.13.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	# male ACE
+	option = {
+		name = test_event.11.a
+		revolt_force_spawn_only_militia = yes
+		revolt_release_all_countries_with_cores = yes
+    	} 
+}

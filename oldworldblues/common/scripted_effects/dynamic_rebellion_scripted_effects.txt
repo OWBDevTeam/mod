@@ -259,6 +259,10 @@ revolt_spawn_random_troop = {
 	}
 }
 
+revolt_force_spawn_only_militia = {
+	set_country_flag = revolt_force_spawn_only_militia
+}
+
 revolt_rotate_troop_spawn = {
 	# cycles through these from first to last when spawning
 	# 1 = Rebel Militia
@@ -270,6 +274,14 @@ revolt_rotate_troop_spawn = {
 	# 7 = Rebel Infantry (AT)
 	# 8 = Elite Rebels
 	if = {
+		limit = {
+			ROOT = {
+				has_country_flag = revolt_force_spawn_only_militia
+			}
+		}
+		revolt_spawn_militia = yes
+	}
+	else_if = {
 		limit = {
 			check_variable = {
 				PREV.PREV.revolt_spawn_current_troop_type = 0
