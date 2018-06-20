@@ -1,24 +1,24 @@
 is_valid_state_for_arms_factory = {
-    free_building_slots = {
-        building = arms_factory
-        size > 0
-        include_locked = yes
-    }
-    OR = {
-        is_in_home_area = yes
-        NOT = {
-            owner = {
-                any_owned_state = {
-                    free_building_slots = {
-                        building = arms_factory
-                        size > 0
-                        include_locked = yes
-                    }
-                    is_in_home_area = yes
-                }
-            }
-        }
-    }
+	free_building_slots = {
+		building = arms_factory
+		size > 0
+		include_locked = yes
+	}
+	OR = {
+		is_in_home_area = yes
+		NOT = {
+			owner = {
+				any_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					is_in_home_area = yes
+				}
+			}
+		}
+	}
 }
 
 is_new_thesis_state = {
@@ -50,12 +50,12 @@ is_boneyard_road_state = {
 }
 
 is_pecos_state = {
-    OR = {
-        state = 31
-        state = 255
-        state = 200
-        state = 545
-    }
+	OR = {
+		state = 31
+		state = 255
+		state = 200
+		state = 545
+	}
 }
 
 is_enclave_civil_war_state = {
@@ -68,66 +68,66 @@ is_enclave_civil_war_state = {
 }
 
 is_baudelio_state = {
-    OR = {
-        state = 528
-        state = 377
-        state = 559
-        state = 579
-        state = 479
-        state = 229
-        state = 15
-    }
+	OR = {
+		state = 528
+		state = 377
+		state = 559
+		state = 579
+		state = 479
+		state = 229
+		state = 15
+	}
 }
 
 is_utah_state = {
-    OR = {
-        region = 38
-        region = 39
-        region = 40
-        region = 5
-        region = 41
-    }
+	OR = {
+		region = 38
+		region = 39
+		region = 40
+		region = 5
+		region = 41
+	}
 }
 
 is_colorado_state = {
-    OR = {
-        region = 6
-        region = 44
-        region = 42
-        region = 43
-    }
+	OR = {
+		region = 6
+		region = 44
+		region = 42
+		region = 43
+	}
 }
 
 is_new_mexico_state = {
-    OR = {
-        region = 45
-        region = 47
-        region = 15
-        region = 46
-    }
+	OR = {
+		region = 45
+		region = 47
+		region = 15
+		region = 46
+	}
 }
 
 is_arizona_state = {
-    OR = {
-        region = 31
-        region = 30
-        region = 2
-        region = 28
-        region = 29
-    }
+	OR = {
+		region = 31
+		region = 30
+		region = 2
+		region = 28
+		region = 29
+	}
 }
 
 is_mexico_state = {
-    OR = {
-        region = 49
-        region = 48
-        region = 50
-        region = 13
-    }
+	OR = {
+		region = 49
+		region = 48
+		region = 50
+		region = 13
+	}
 }
 
 is_baja_california_state = {
-    OR = {
+	OR = {
 		state = 651
 		state = 650
 		state = 41
@@ -142,17 +142,17 @@ is_baja_california_state = {
 }
 
 is_california_state = {
-    OR = {
-        region = 52
-        region = 7
-        region = 51
-        region = 54
-        region = 53
-    }
+	OR = {
+		region = 52
+		region = 7
+		region = 51
+		region = 54
+		region = 53
+	}
 }
 
 is_baron_state = {
-    OR = {
+	OR = {
 		state = 135
 		state = 60
 		state = 584
@@ -166,7 +166,7 @@ is_baron_state = {
 		state = 56
 		state = 441
 		state = 511
-    }
+	}
 }
 
 is_sac_to_hub_state = {
@@ -183,8 +183,8 @@ is_sac_to_hub_state = {
 
 
 is_new_vegas_state = {
-    OR = {
-        state = 272
+	OR = {
+		state = 272
 		state = 206
 		state = 181
 		state = 47
@@ -205,7 +205,7 @@ is_new_vegas_state = {
 		state = 313
 		state = 344
 		state = 154
-    }
+	}
 }
 
 is_new_vegas = {
@@ -224,7 +224,7 @@ is_colorado_river_state = {
 		state = 533
 		state = 613
 		state = 252
-    }
+	}
 }
 
 is_ncr_founder_state = {
@@ -238,44 +238,44 @@ is_ncr_founder_state = {
 					
 
 is_nevada_state = {
-    OR = {
-        region = 56
-        region = 57
-        region = 12
-        region = 55
-    }
+	OR = {
+		region = 56
+		region = 57
+		region = 12
+		region = 55
+	}
 }
 
 is_oregon_state = {
-    OR = {
-        region = 58
-        region = 59
-        region = 11
-    }
+	OR = {
+		region = 58
+		region = 59
+		region = 11
+	}
 }
 
 is_idaho_state = {
-    OR = {
-        region = 4
-        region = 35
-        region = 34
-        region = 33
-    }
+	OR = {
+		region = 4
+		region = 35
+		region = 34
+		region = 33
+	}
 }
 
 is_washington_state = {
-    OR = {
-        region = 10
-        region = 36
-        region = 37
-    }
+	OR = {
+		region = 10
+		region = 36
+		region = 37
+	}
 }
 
 is_columbia_state = {
-    OR = {
-        region = 60
-        region = 61
-        region = 14
-        region = 62
-    }
+	OR = {
+		region = 60
+		region = 61
+		region = 14
+		region = 62
+	}
 }
