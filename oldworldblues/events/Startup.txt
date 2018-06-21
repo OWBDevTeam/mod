@@ -126,9 +126,14 @@ country_event = {
 
 	immediate = {
 		every_other_country = {
-			add_relation_modifier = {
-				target = ROOT
-				modifier = no_more_licensing
+			if = {
+				limit = {
+					NOT = { has_relation_modifier = { target = ROOT modifier = no_more_licensing } }
+				}
+				add_relation_modifier = {
+					target = ROOT
+					modifier = no_more_licensing
+				}
 			}
 		}
 	}

@@ -334,18 +334,7 @@ on_actions = {
 	#ROOT = nation being puppeted, FROM = overlord
 	on_puppet = {
 		effect = {
-			ROOT = {
-				add_relation_modifier = {
-					target = FROM
-					modifier = no_more_licensing
-				}
-			}
-			FROM = {
-				add_relation_modifier = {
-					target = ROOT
-					modifier = no_more_licensing
-				}
-			}
+			every_country = { country_event = startup.4 }
 		}
 	}
 	
@@ -353,18 +342,7 @@ on_actions = {
 	#ROOT = nation being released, FROM = overlord
 	on_release_as_puppet = {
 		effect = {
-			ROOT = {
-				add_relation_modifier = {
-					target = FROM
-					modifier = no_more_licensing
-				}
-			}
-			FROM = {
-				add_relation_modifier = {
-					target = ROOT
-					modifier = no_more_licensing
-				}
-			}
+			every_country = { country_event = startup.4 }
 		}
 	}
 

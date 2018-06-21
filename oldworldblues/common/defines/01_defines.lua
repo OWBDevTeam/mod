@@ -102,7 +102,5 @@ NDefines.NNavy.NAVAL_INVASION_PREPARE_HOURS = 64								-- base hours needed to 
 
 NDefines.NMilitary.BORDER_WAR_VICTORY = 0.65					   -- At wich border war balance of power is victory declared
 
-NDefines.NProduction.BASE_LICENSE_IC_COST = 10000
-
 NDefines.NBuildings.BASE_FACTORY_REPAIR = 0.3			-- Default repair rate before factories are taken into account
 NDefines.NBuildings.BASE_FACTORY_REPAIR_FACTOR = 2.0	-- Factory speed modifier when repairing.
