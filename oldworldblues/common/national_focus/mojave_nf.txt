@@ -253,7 +253,7 @@ focus_tree = {
 		y = 4
 		
 		completion_reward = {
-			add_ideas = genericboswastelandconscripts
+			add_manpower = 500 
 		}
 	}
 	focus = {
@@ -267,10 +267,7 @@ focus_tree = {
 		y = 5
 		
 		completion_reward = {
-			swap_ideas = {
-				add_idea = genericbosfleshbeforesteel
-				remove_idea = genericboswastelandconscripts
-			}
+			add_ideas = { genericbosfleshbeforesteel }
 		}
 	}
 	focus = {
@@ -1085,6 +1082,12 @@ focus_tree = {
 		id = MOJ_a_forgotten_weapon # Not sure really
 		icon = GFX_goal_unknown
 		cost = 10.00
+		available = {
+		    MOJ = {
+				owns_state = 417
+				controls_state = 417
+			}
+		}
 		prerequisite = {
 			focus = MOJ_energy_boom
 		}
