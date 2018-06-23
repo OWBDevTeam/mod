@@ -1287,7 +1287,9 @@ country_event = {
 
 	option = {#Let them go free
 		name = nf_ncr.30.a
-
+		hidden_effect = {
+			sound_effect = good_karma
+		}
 		hidden_effect = {
 			every_owned_state = {
 				set_state_flag = do_not_decimate
@@ -1644,6 +1646,7 @@ country_event = {
 			set_global_flag = NCR_CES_revolt
 			country_event = { id = nf_ncr.31 days = 7 }
 			news_event = ncr_tribe_rebellion_news.2
+			sound_effect = bad_karma
 			if = {
 				limit = {
 					DES = {	is_in_faction_with = NCR }
