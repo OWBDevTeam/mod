@@ -411,13 +411,21 @@ country_event = {
 	picture = GFX_event_generic_settlement_2
 
 	is_triggered_only = yes
+	immediate = {
+		MOJ = {
+			set_state_owner = 417
+			set_state_controller = 417
+		}
+	}
 
 	option = {
 		name = nf_mojave.25.a
 
-		news_event = {
-			id = mojave_helios_one_news.0
-			hours = 10
+		hidden_effect = {
+		    news_event = {
+			    id = mojave_helios_one_news.0
+			    hours = 10
+			}
 		}
 	}
 }
@@ -509,13 +517,6 @@ news_event = {
 	is_triggered_only = yes
 
 	fire_only_once = yes
-
-	immediate = {
-		MOJ = {
-			set_state_owner = 417
-			set_state_controller = 417
-		}
-	}
 
 	option = {
 		name = mojave_helios_one_news.0.a
