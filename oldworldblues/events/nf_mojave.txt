@@ -33,7 +33,9 @@ country_event = {
 	}
 	option = {
 		name = nf_mojave.1.c
-
+		hidden_effect = {
+			sound_effect = hardin_choice
+		}
 		retire_country_leader = yes
 		create_country_leader  = {
 			name = "Edgar Hardin"
@@ -45,6 +47,12 @@ country_event = {
 				dislikes_legion
 			}
 			id = 9371
+		}
+		every_army_leader = {
+			limit = {
+				has_id = 1254 
+			}
+			promote_leader = yes
 		}
 		set_country_flag = mojave_chapter_chose_leader
 	}
