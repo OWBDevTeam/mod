@@ -5,7 +5,7 @@ soundeffect = {
 	sounds = {
 		sound = infantry_laser_rifle_attack_01
 		sound = infantry_laser_rifle_attack_02
-	} 
+	}
 	max_audible = 10
 	delay_random_offset = { 0.0 0.15 }
 	playbackrate_random_offset = { -0.15 0.15 }
@@ -18,20 +18,26 @@ soundeffect = {
 	name = infantry_minigun_attack
 	falloff = "falloff_100"
 	sounds = {
-		sound = infantry_minigun_attack_1
-	} 
+		sound = infantry_fire_minigun_01
+		sound = infantry_fire_minigun_02
+	}
 	max_audible = 10
 	delay_random_offset = { 0.0 0.15 }
 	playbackrate_random_offset = { -0.15 0.15 }
 	max_audible_behaviour = fail
 	is3d = yes
-	volume = 0.10
+	volume = 0.40
 }
 
-sound =
-{
-	name = "infantry_minigun_attack_1"
-	file = "animations/infantry_fire_minigun.wav"
+sound = {
+	name = "infantry_fire_minigun_01"
+	file = "animations/infantry_fire_minigun_01.wav"
+	always_load = no
+}
+
+sound = {
+	name = "infantry_fire_minigun_02"
+	file = "animations/infantry_fire_minigun_02.wav"
 	always_load = no
 }
 
@@ -41,7 +47,7 @@ sound =
 soundeffect = {
 	name = "FO1_intro"
 	sounds = {
-		sound = 
+		sound =
 			FO1_intro
 	}
 	volume = 1.9
@@ -50,7 +56,7 @@ soundeffect = {
 soundeffect = {
 	name = "FO2_intro"
 	sounds = {
-		sound = 
+		sound =
 			FO2_intro
 	}
 	volume = 2.0
@@ -59,7 +65,7 @@ soundeffect = {
 soundeffect = {
 	name = "FONV_intro"
 	sounds = {
-		sound = 
+		sound =
 			FONV_intro
 	}
 	volume = 1.8
