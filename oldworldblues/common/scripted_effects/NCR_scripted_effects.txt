@@ -3981,22 +3981,6 @@ set_NCR_factions_technology_on_civil_war = {
 	}
 }
 
-tribe_joining_together = {
-	PHR = {
-		add_to_faction = ROOT
-	}
-	add_ai_strategy = {
-		type = alliance
-		id = "PHR"
-		value = 200
-	}
-	add_to_war = {
-		targeted_alliance = PHR
-		enemy = NCR
-		hostility_reason = ally
-	}
-}
-
 remove_generic_NCR_templates = {
 	delete_unit_template_and_units = { division_template = "NCR Troopers" }
 	delete_unit_template_and_units = { division_template = "NCR Rangers" }

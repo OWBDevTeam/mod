@@ -1,0 +1,37 @@
+on_actions = {
+	on_peaceconference_ended = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = legionsplosion_happened }
+					has_global_flag = NCR_Legion_war
+					OR = {
+						CES = { is_puppet_of = NCR }
+						any_state = {
+							is_core_of = CES
+							is_owned_by = NCR
+						}
+						ncr_puppeted_legion_tribals = yes
+					}
+				}
+				every_country = {
+					limit = {
+						tag = NCR
+						OR = {
+							any_state = {
+								is_core_of = CES
+								is_owned_by = NCR
+							}
+							any_state = {
+								is_core_of = CES
+								owner = { is_puppet_of = NCR }
+							}
+						}
+					}
+					NCR = { country_event = { id = nf_ncr.30 days = 7 } }
+				}
+				set_global_flag = legionsplosion_happened
+			}
+		}
+	}
+}

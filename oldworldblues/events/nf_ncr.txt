@@ -6,15 +6,15 @@ country_event = {
 	desc = nf_ncr.1.d
 	picture = GFX_event_NCR_settlers
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+	
 	option = {
 		name = nf_ncr.1.a
 		
 		add_ideas = aradesh
 	}
-    
-    option = {
+	
+	option = {
 		name = nf_ncr.1.b
 
 		add_ideas = seth
@@ -38,7 +38,7 @@ country_event = {
 	picture = GFX_event_NCR_settlers
 	
 	is_triggered_only = yes
-    
+
 	option = {
 		name = nf_ncr.2.a
 		
@@ -63,7 +63,6 @@ country_event = {
 		set_country_flag = bajahayes
 	
 	}
-    
 }
 
 country_event = {
@@ -1223,10 +1222,10 @@ country_event = {
 		ai_chance = {
 			base = 1000
 		}
-		    create_wargoal = {
-                    type = annex_everything
-                    target = MOJ
-                }
+		create_wargoal = {
+			type = annex_everything
+			target = MOJ
+		}
 		NCR = {add_opinion_modifier = { target = MOJ modifier = stolehelios } }
 	}
 }
@@ -1301,8 +1300,13 @@ country_event = {
 						}
 					}
 				}
-				release = VEG
-
+				if = {
+					limit = {
+						VEG = { is_puppet = yes }
+					}
+					VEG = { OVERLORD = { end_puppet = VEG } }
+				}
+				else = { release = VEG }
 				VEG = {
 					VEG_states = yes
 					every_owned_state = {
@@ -1322,76 +1326,143 @@ country_event = {
 				}
 				give_guarantee = VEG
 			}
-			release = TWI
+			if = {
+				limit = {
+					TWI = { is_puppet = yes }
+				}
+				TWI = { OVERLORD = { end_puppet = TWI } }
+			}
+			else = { release = TWI }
 			TWI = {
 				TWI_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
 			}
-			release = PHR
+			if = {
+				limit = {
+					PHR = { is_puppet = yes }
+				}
+				PHR = { OVERLORD = { end_puppet = PHR } }
+			}
+			else = { release = PHR }
 			PHR = {
 				PHR_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
 			}
-			release = HUA
+			if = {
+				limit = {
+					HUA = { is_puppet = yes }
+				}
+				HUA = { OVERLORD = { end_puppet = HUA } }
+			}
+			else = { release = HUA }
 			HUA = {
 				HUA_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
 			}
-			release = BLK
+			if = {
+				limit = {
+					BLK = { is_puppet = yes }
+				}
+				BLK = { OVERLORD = { end_puppet = BLK } }
+			}
+			else = { release = BLK }
 			BLK = {
 				BLK_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
 			}
-			release = TSI
+			if = {
+				limit = {
+					TSI = { is_puppet = yes }
+				}
+				TSI = { OVERLORD = { end_puppet = TSI } }
+			}
+			else = { release = TSI }
 			TSI = {
 				TSI_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
 			}
-			release = MES
+			if = {
+				limit = {
+					MES = { is_puppet = yes }
+				}
+				MES = { OVERLORD = { end_puppet = MES } }
+			}
+			else = { release = MES }
 			MES = {
 				MES_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
 			}
+			if = {
+				limit = {
+					SUF = { is_puppet = yes }
+				}
+				SUF = { OVERLORD = { end_puppet = SUF } }
+			}
+			else = { release = SUF }
 			SUF = {
 				SUF_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
 			}
-			release = RSR
+			if = {
+				limit = {
+					RSR = { is_puppet = yes }
+				}
+				RSR = { OVERLORD = { end_puppet = RSR } }
+			}
+			else = { release = RSR }
 			RSR = {
 				RSR_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
 			}
-			release = WAP
+			if = {
+				limit = {
+					WAP = { is_puppet = yes }
+				}
+				WAP = { OVERLORD = { end_puppet = WAP } }
+			}
+			else = { release = WAP }
 			WAP = {
 				WAP_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
 			}
-			release = BSU
+			if = {
+				limit = {
+					BSU = { is_puppet = yes }
+				}
+				BSU = { OVERLORD = { end_puppet = BSU } }
+			}
+			else = { release = BSU }
 			BSU = {
 				BSU_states = yes
 				every_owned_state = {
 					clr_state_flag = do_not_decimate
 				}
 			}
-			release = JIC
+			if = {
+				limit = {
+					JIC = { is_puppet = yes }
+				}
+				JIC = { OVERLORD = { end_puppet = JIC } }
+			}
+			else = { release = JIC }
 			JIC = {
 				JIC_states = yes
 				every_owned_state = {
@@ -1407,7 +1478,13 @@ country_event = {
 						}
 					}
 				}
-				release = TTM
+				if = {
+					limit = {
+						TTM = { is_puppet = yes }
+					}
+					TTM = { OVERLORD = { end_puppet = TTM } }
+				}
+				else = { release = TTM }
 				TTM = {
 					TTM_states = yes
 					every_owned_state = {
@@ -1424,7 +1501,13 @@ country_event = {
 						}
 					}
 				}
-				release = PEC
+				if = {
+					limit = {
+						PEC = { is_puppet = yes }
+					}
+					PEC = { OVERLORD = { end_puppet = PEC } }
+				}
+				else = { release = PEC }
 				PEC = {
 					PEC_states = yes
 					every_owned_state = {
@@ -1441,7 +1524,13 @@ country_event = {
 						}
 					}
 				}
-				release = RBD
+				if = {
+					limit = {
+						RBD = { is_puppet = yes }
+					}
+					RBD = { OVERLORD = { end_puppet = RBD } }
+				}
+				else = { release = RBD }
 				RBD = {
 					RBD_states = yes
 					every_owned_state = {
@@ -1458,7 +1547,13 @@ country_event = {
 						}
 					}
 				}
-				release = TWO
+				if = {
+					limit = {
+						TWO = { is_puppet = yes }
+					}
+					TWO = { OVERLORD = { end_puppet = TWO } }
+				}
+				else = { release = TWO }
 				TWO = {
 					TWO_states = yes
 					every_owned_state = {
@@ -1475,7 +1570,13 @@ country_event = {
 						}
 					}
 				}
-				release = COW
+				if = {
+					limit = {
+						COW = { is_puppet = yes }
+					}
+					COW = { OVERLORD = { end_puppet = COW } }
+				}
+				else = { release = COW }
 				COW = {
 					COW_states = yes
 					every_owned_state = {
@@ -1487,7 +1588,13 @@ country_event = {
 				limit = {
 					HAN = { exists = no }
 				}
-				release = HAN
+				if = {
+					limit = {
+						HAN = { is_puppet = yes }
+					}
+					HAN = { OVERLORD = { end_puppet = HAN } }
+				}
+				else = { release = HAN }
 				HAN = {
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
@@ -1504,7 +1611,13 @@ country_event = {
 						}
 					}
 				}
-				release = TON
+				if = {
+					limit = {
+						TON = { is_puppet = yes }
+					}
+					TON = { OVERLORD = { end_puppet = TON } }
+				}
+				else = { release = TON }
 				TON = {
 					TON_states = yes
 					every_owned_state = {
@@ -1521,7 +1634,13 @@ country_event = {
 						}
 					}
 				}
-				release = TLO
+				if = {
+					limit = {
+						TLO = { is_puppet = yes }
+					}
+					TLO = { OVERLORD = { end_puppet = TLO } }
+				}
+				else = { release = TLO }
 				TLO = {
 					TLO_states = yes
 					every_owned_state = {
@@ -1538,7 +1657,13 @@ country_event = {
 						}
 					}
 				}
-				release = GDH
+				if = {
+					limit = {
+						GDH = { is_puppet = yes }
+					}
+					GDH = { OVERLORD = { end_puppet = GDH } }
+				}
+				else = { release = GDH }
 				GDH = {
 					GDH_states = yes
 					every_owned_state = {
@@ -1555,7 +1680,13 @@ country_event = {
 						}
 					}
 				}
-				release = LGS
+				if = {
+					limit = {
+						LGS = { is_puppet = yes }
+					}
+					LGS = { OVERLORD = { end_puppet = LGS } }
+				}
+				else = { release = LGS }
 				LGS = {
 					LGS_states = yes
 					every_owned_state = {
@@ -1572,7 +1703,13 @@ country_event = {
 						}
 					}
 				}
-				release = NAV
+				if = {
+					limit = {
+						NAV = { is_puppet = yes }
+					}
+					NAV = { OVERLORD = { end_puppet = NAV } }
+				}
+				else = { release = NAV }
 				NAV = {
 					NAV_states = yes
 					every_owned_state = {
@@ -1589,7 +1726,13 @@ country_event = {
 						}
 					}
 				}
-				release = FOR
+				if = {
+					limit = {
+						FOR = { is_puppet = yes }
+					}
+					FOR = { OVERLORD = { end_puppet = FOR } }
+				}
+				else = { release = FOR }
 				FOR = {
 					FOR_states = yes
 					every_owned_state = {
@@ -1606,7 +1749,13 @@ country_event = {
 						}
 					}
 				}
-				release = SCO
+				if = {
+					limit = {
+						SCO = { is_puppet = yes }
+					}
+					SCO = { OVERLORD = { end_puppet = SCO } }
+				}
+				else = { release = SCO }
 				SCO = {
 					SCO_states = yes
 					every_owned_state = {
@@ -1623,7 +1772,13 @@ country_event = {
 						}
 					}
 				}
-				release = IRN
+				if = {
+					limit = {
+						IRN = { is_puppet = yes }
+					}
+					IRN = { OVERLORD = { end_puppet = IRN } }
+				}
+				else = { release = IRN }
 				IRN = {
 					IRN_states = yes
 					every_owned_state = {
@@ -1733,8 +1888,13 @@ country_event = {
 						}
 					}
 				}
-				release = VEG
-
+				if = {
+					limit = {
+						VEG = { is_puppet = yes }
+					}
+					VEG = { OVERLORD = { end_puppet = VEG } }
+				}
+				else = { release = VEG }
 				VEG = {
 					VEG_states = yes
 					every_owned_state = {
@@ -1754,8 +1914,13 @@ country_event = {
 				}
 				give_guarantee = VEG
 			}
-
-			release = PHR
+			if = {
+				limit = {
+					PHR = { is_puppet = yes }
+				}
+				PHR = { OVERLORD = { end_puppet = PHR } }
+			}
+			else = { release = PHR }
 			PHR = {
 				PHR_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
@@ -1768,7 +1933,13 @@ country_event = {
 				add_to_faction = PHR
 			}
 			NCR = { declare_war_on = { target = PHR type = annex_everything } }
-			release = TWI
+			if = {
+				limit = {
+					TWI = { is_puppet = yes }
+				}
+				TWI = { OVERLORD = { end_puppet = TWI } }
+			}
+			else = { release = TWL }
 			TWI = {
 				TWI_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
@@ -1779,7 +1950,13 @@ country_event = {
 				}
 				country_event = nf_ncr.32
 			}
-			release = FLA
+			if = {
+				limit = {
+					FLA = { is_puppet = yes }
+				}
+				FLA = { OVERLORD = { end_puppet = FLA } }
+			}
+			else = { release = FLA }
 			FLA = {
 				FLA_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
@@ -1805,9 +1982,6 @@ country_event = {
 
 	option = {#Open Rebellion!
 		name = nf_ncr.31.a
-		hidden_effect = {
-			
-		}
 	}
 }
 
@@ -1845,8 +2019,13 @@ country_event = {
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
-
-			release = HUA
+			if = {
+				limit = {
+					HUA = { is_puppet = yes }
+				}
+				HUA = { OVERLORD = { end_puppet = HUA } }
+			}
+			else = { release = HUA }
 			HUA = {
 				HUA_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
@@ -1858,7 +2037,13 @@ country_event = {
 				}
 				country_event = nf_ncr.32
 			}
-			release = BLK
+			if = {
+				limit = {
+					BLK = { is_puppet = yes }
+				}
+				BLK = { OVERLORD = { end_puppet = BLK } }
+			}
+			else = { release = BLK }
 			BLK = {
 				BLK_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
@@ -1879,7 +2064,13 @@ country_event = {
 						}
 					}
 				}
-				release = COW
+				if = {
+					limit = {
+						COW = { is_puppet = yes }
+					}
+					COW = { OVERLORD = { end_puppet = COW } }
+				}
+				else = { release = COW }
 				COW = {
 					COW_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
@@ -1901,7 +2092,13 @@ country_event = {
 						}
 					}
 				}
-				release = TON
+				if = {
+					limit = {
+						TON = { is_puppet = yes }
+					}
+					TON = { OVERLORD = { end_puppet = TON } }
+				}
+				else = { release = TON }
 				TON = {
 					TON_states = yes
 					set_NCR_factions_technology_on_civil_war = yes	
@@ -1950,8 +2147,13 @@ country_event = {
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
-
-			release = TSI
+			if = {
+				limit = {
+					TSI = { is_puppet = yes }
+				}
+				TSI = { OVERLORD = { end_puppet = TSI } }
+			}
+			else = { release = TSI }
 			TSI = {
 				TSI_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
@@ -1962,7 +2164,13 @@ country_event = {
 				}
 				country_event = nf_ncr.32
 			}
-			release = WAP
+			if = {
+				limit = {
+					WAP = { is_puppet = yes }
+				}
+				WAP = { OVERLORD = { end_puppet = WAP } }
+			}
+			else = { release = WAP }
 			WAP = {
 				WAP_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
@@ -1982,7 +2190,13 @@ country_event = {
 						}
 					}
 				}
-				release = TWO
+				if = {
+					limit = {
+						TWO = { is_puppet = yes }
+					}
+					TWO = { OVERLORD = { end_puppet = TWO } }
+				}
+				else = { release = TWO }
 				TWO = {
 					TWO_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
@@ -2003,7 +2217,13 @@ country_event = {
 						}
 					}
 				}
-				release = TLO
+				if = {
+					limit = {
+						TLO = { is_puppet = yes }
+					}
+					TLO = { OVERLORD = { end_puppet = TLO } }
+				}
+				else = { release = TLO }
 				TLO = {
 					TLO_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
@@ -2024,7 +2244,13 @@ country_event = {
 						}
 					}
 				}
-				release = GDH
+				if = {
+					limit = {
+						GDH = { is_puppet = yes }
+					}
+					GDH = { OVERLORD = { end_puppet = GDH } }
+				}
+				else = { release = GDH }
 				GDH = {
 					GDH_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
@@ -2045,7 +2271,13 @@ country_event = {
 						}
 					}
 				}
-				release = NAV
+				if = {
+					limit = {
+						NAV = { is_puppet = yes }
+					}
+					NAV = { OVERLORD = { end_puppet = NAV } }
+				}
+				else = { release = NAV }
 				NAV = {
 					NAV_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
@@ -2090,8 +2322,13 @@ country_event = {
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
-
-			release = MES
+			if = {
+				limit = {
+					MES = { is_puppet = yes }
+				}
+				MES = { OVERLORD = { end_puppet = MES } }
+			}
+			else = { release = MES }
 			MES = {
 				MES_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
@@ -2102,7 +2339,13 @@ country_event = {
 				}
 				country_event = nf_ncr.32
 			}
-			release = RSR
+			if = {
+				limit = {
+					RSR = { is_puppet = yes }
+				}
+				RSR = { OVERLORD = { end_puppet = RSR } }
+			}
+			else = { release = RSR }
 			RSR = {
 				RSR_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
@@ -2122,7 +2365,13 @@ country_event = {
 						}
 					}
 				}
-				release = RBD
+				if = {
+					limit = {
+						RBD = { is_puppet = yes }
+					}
+					RBD = { OVERLORD = { end_puppet = RBD } }
+				}
+				else = { release = RBD }
 				RBD = {
 					RBD_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
@@ -2143,7 +2392,13 @@ country_event = {
 						}
 					}
 				}
-				release = PEC
+				if = {
+					limit = {
+						PEC = { is_puppet = yes }
+					}
+					PEC = { OVERLORD = { end_puppet = PEC } }
+				}
+				else = { release = PEC }
 				PEC = {
 					PEC_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
@@ -2164,7 +2419,13 @@ country_event = {
 						}
 					}
 				}
-				release = LGS
+				if = {
+					limit = {
+						LGS = { is_puppet = yes }
+					}
+					LGS = { OVERLORD = { end_puppet = LGS } }
+				}
+				else = { release = LGS }
 				LGS = {
 					LGS_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
@@ -2209,8 +2470,13 @@ country_event = {
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
-
-			release = SUF
+			if = {
+				limit = {
+					SUF = { is_puppet = yes }
+				}
+				SUF = { OVERLORD = { end_puppet = SUF } }
+			}
+			else = { release = SUF }
 			SUF = {
 				SUF_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
@@ -2221,7 +2487,13 @@ country_event = {
 				}
 				country_event = nf_ncr.32
 			}
-			release = BSU
+			if = {
+				limit = {
+					BSU = { is_puppet = yes }
+				}
+				BSU = { OVERLORD = { end_puppet = BSU } }
+			}
+			else = { release = BSU }
 			BSU = {
 				BSU_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
@@ -2265,8 +2537,13 @@ country_event = {
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
-
-			release = JIC
+			if = {
+				limit = {
+					JIC = { is_puppet = yes }
+				}
+				JIC = { OVERLORD = { end_puppet = JIC } }
+			}
+			else = { release = JIC }
 			JIC = {
 				JIC_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
@@ -2286,7 +2563,13 @@ country_event = {
 						}
 					}
 				}
-				release = HAN
+				if = {
+					limit = {
+						HAN = { is_puppet = yes }
+					}
+					HAN = { OVERLORD = { end_puppet = HAN } }
+				}
+				else = { release = HAN }
 				HAN = {
 					HAN_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
@@ -2307,7 +2590,13 @@ country_event = {
 						}
 					}
 				}
-				release = TTM
+				if = {
+					limit = {
+						TTM = { is_puppet = yes }
+					}
+					TTM = { OVERLORD = { end_puppet = TTM } }
+				}
+				else = { release = TTM }
 				TTM = {
 					TTM_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
@@ -2328,7 +2617,13 @@ country_event = {
 						}
 					}
 				}
-				release = FOR
+				if = {
+					limit = {
+						FOR = { is_puppet = yes }
+					}
+					FOR = { OVERLORD = { end_puppet = FOR } }
+				}
+				else = { release = FOR }
 				FOR = {
 					FOR_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
@@ -2349,7 +2644,13 @@ country_event = {
 						}
 					}
 				}
-				release = IRN
+				if = {
+					limit = {
+						IRN = { is_puppet = yes }
+					}
+					IRN = { OVERLORD = { end_puppet = IRN } }
+				}
+				else = { release = IRN }
 				IRN = {
 					IRN_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
@@ -2370,7 +2671,13 @@ country_event = {
 						}
 					}
 				}
-				release = SCO
+				if = {
+					limit = {
+						SCO = { is_puppet = yes }
+					}
+					SCO = { OVERLORD = { end_puppet = SCO } }
+				}
+				else = { release = SCO }
 				SCO = {
 					SCO_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
@@ -2391,7 +2698,13 @@ country_event = {
 						}
 					}
 				}
-				release = PNT
+				if = {
+					limit = {
+						PNT = { is_puppet = yes }
+					}
+					PNT = { OVERLORD = { end_puppet = PNT } }
+				}
+				else = { release = PNT }
 				PNT = {
 					PNT_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
@@ -2412,7 +2725,13 @@ country_event = {
 						}
 					}
 				}
-				release = TOB
+				if = {
+					limit = {
+						TOB = { is_puppet = yes }
+					}
+					TOB = { OVERLORD = { end_puppet = TOB } }
+				}
+				else = { release = TOB }
 				TOB = {
 					TOB_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
@@ -2433,7 +2752,13 @@ country_event = {
 						}
 					}
 				}
-				release = YMP
+				if = {
+					limit = {
+						YMP = { is_puppet = yes }
+					}
+					YMP = { OVERLORD = { end_puppet = YMP } }
+				}
+				else = { release = YMP }
 				YMP = {
 					YMP_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
@@ -2671,5 +2996,54 @@ news_event = {
 			NOT = { tag = NCR }
 		}
 		name = ncr_tribe_rebellion_news.8.b
+	}
+}
+
+
+#News Event to tell the world the NCR Legion war is happening
+news_event = {
+	id = ncr_tribe_rebellion_news.9
+	title = ncr_tribe_rebellion_news.9.t
+	desc = ncr_tribe_rebellion_news.9.d
+	picture = GFX_event_radio_new_vegas
+
+	major = yes
+
+	trigger = {
+		NCR = {
+			has_war_with = CES
+		}
+	}
+
+	mean_time_to_happen = { days = 2 }
+
+	immediate = {
+		set_global_flag = NCR_Legion_war
+	}
+
+	option = {
+		trigger = {
+			tag = NCR
+		}
+		name = ncr_tribe_rebellion_news.9.a
+	}
+
+	option = {
+		trigger = {
+			tag = CES
+		}
+		name = ncr_tribe_rebellion_news.9.b
+	}
+
+	option = {
+		trigger = {
+			NOT = {
+				OR = {
+					original_tag = NCR
+					original_tag = CES
+				}
+			}
+		}
+		name = ncr_tribe_rebellion_news.9.c
 	}
 }
