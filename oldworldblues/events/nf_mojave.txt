@@ -34,7 +34,12 @@ country_event = {
 	option = {
 		name = nf_mojave.1.c
 		hidden_effect = {
-			sound_effect = hardin_choice
+			if = {
+				limit = {
+					tag = MOJ
+				}
+				sound_effect = hardin_choice
+			}
 		}
 		retire_country_leader = yes
 		create_country_leader  = {
@@ -50,7 +55,7 @@ country_event = {
 		}
 		every_army_leader = {
 			limit = {
-				has_id = 1254 
+				has_id = 1254
 			}
 			promote_leader = yes
 		}
@@ -210,7 +215,7 @@ country_event = {
 
 	option = {
 		name = nf_mojave.11.a
-		
+
 		reverse_add_opinion_modifier = { target = BOS modifier = mojave_bos_faction_refused }
 	}
 }
