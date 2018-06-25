@@ -28,6 +28,10 @@
 # Currently the countries that the revolter breaks away from do not get claims - if this a problem I can write this up
 
 modular_revolt = {
+	if = {
+		limit = { has_global_flag = debug }
+		log = "Modular Revolt: Entered"
+	}
 	every_country = { # Ends puppet, if applicable
 		limit = {
 			var:revolter_state = {
@@ -36,6 +40,10 @@ modular_revolt = {
 		}
 		end_puppet = var:revolter_state
 		create_wargoal = { target = var:revolter_tag type = puppet_wargoal_focus }
+		if = {
+			limit = { has_global_flag = debug }
+			log = "Modular Revolt: Puppet Scope Ended"
+		}
 	}
 	random_country = {
 		limit = {
@@ -53,10 +61,12 @@ modular_revolt = {
 				}
 			}
 		}
-		log = "Random Country Chosen"
+		if = {
+			limit = { has_global_flag = debug }
+			log = "Modular Revolt: Random Scope Entered"
+		}
 		clr_country_flag = revolter_target
 		release = var:revolter_tag
-		log = "Revolter Released"
 		# Loading troops for the revolt is handled independently of the modular revolt and should be done after calling the revolt
 		if = {
 			limit = { NOT = { has_global_flag = revolt_no_war } }
@@ -67,6 +77,10 @@ modular_revolt = {
 			create_wargoal = { target = var:revolter_tag type = annex_everything }
 		}
 	}
+	if = {
+		limit = { has_global_flag = debug }
+		log = "Modular Revolt: End of Random Scope"
+	}
 	every_country = {
 		limit = {
 			has_variable = revolter_tag
@@ -76,7 +90,15 @@ modular_revolt = {
 			NOT = { has_war_with = var:revolter_tag }
 			NOT = { has_global_flag = revolt_no_wargoals }
 		}
+		if = {
+			limit = { has_global_flag = debug }
+			log = "Modular Revolt: Wargoal Scope Entered"
+		}
 		create_wargoal = { target = var:revolter_tag type = annex_everything }
+	}
+	if = {
+		limit = { has_global_flag = debug }
+		log = "Modular Revolt: End of Wargoal Scope"
 	}
 	var:revolter_tag = {
 		every_state = {
@@ -87,10 +109,18 @@ modular_revolt = {
 			PREV = { transfer_state = PREV }
 		}
 	}
+	if = {
+		limit = { has_global_flag = debug }
+		log = "Modular Revolt: End of State Transfer"
+	}
 	# Cleaning out flags and variables
 	every_country = {
 		clear_variable = revolter_tag
 	}
 	clr_global_flag = revolt_no_war
 	clr_global_flag = revolt_no_wargoals
+	if = {
+		limit = { has_global_flag = debug }
+		log = "Modular Revolt Complete"
+	}
 }
