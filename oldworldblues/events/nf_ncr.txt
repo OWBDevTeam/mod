@@ -1914,15 +1914,13 @@ country_event = {
 				}
 				give_guarantee = VEG
 			}
-			if = {
-				limit = {
-					PHR = { is_puppet = yes }
-				}
-				PHR = { OVERLORD = { end_puppet = PHR } }
+			# Modular revolts for PHR
+			NCR = { set_country_flag = revolter_target }
+			every_country = {
+				set_variable = { var = revolter_tag value = PHR.id }
 			}
-			else = { release = PHR }
+			modular_revolt = yes
 			PHR = {
-				PHR_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
 				ncr_revolter_setup = yes
 				set_country_flag = revolt_country_to_revolt@PREV
@@ -1932,16 +1930,13 @@ country_event = {
 				create_faction = pheonix_faction
 				add_to_faction = PHR
 			}
-			NCR = { declare_war_on = { target = PHR type = annex_everything } }
-			if = {
-				limit = {
-					TWI = { is_puppet = yes }
-				}
-				TWI = { OVERLORD = { end_puppet = TWI } }
+			every_country = {
+				set_variable = { var = revolter_tag value = TWI.id }
 			}
-			else = { release = TWL }
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_no_wargoals
+			modular_revolt = yes
 			TWI = {
-				TWI_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
 				ncr_revolter_setup = yes
 				set_country_flag = revolt_country_to_revolt@PREV
@@ -1950,15 +1945,13 @@ country_event = {
 				}
 				country_event = nf_ncr.32
 			}
-			if = {
-				limit = {
-					FLA = { is_puppet = yes }
-				}
-				FLA = { OVERLORD = { end_puppet = FLA } }
+			every_country = {
+				set_variable = { var = revolter_tag value = FLA.id }
 			}
-			else = { release = FLA }
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_no_wargoals
+			modular_revolt = yes
 			FLA = {
-				FLA_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
 				ncr_revolter_setup = yes
 				set_country_flag = revolt_country_to_revolt@PREV
@@ -2019,17 +2012,14 @@ country_event = {
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
-			if = {
-				limit = {
-					HUA = { is_puppet = yes }
-				}
-				HUA = { OVERLORD = { end_puppet = HUA } }
+			every_country = {
+				set_variable = { var = revolter_tag value = HUA.id }
 			}
-			else = { release = HUA }
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_no_wargoals
+			modular_revolt = yes
 			HUA = {
-				HUA_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
-				ncr_revolter_setup = yes
 				ncr_revolter_setup = yes
 				set_country_flag = revolt_country_to_revolt@PREV
 				every_owned_state = {
@@ -2037,17 +2027,14 @@ country_event = {
 				}
 				country_event = nf_ncr.32
 			}
-			if = {
-				limit = {
-					BLK = { is_puppet = yes }
-				}
-				BLK = { OVERLORD = { end_puppet = BLK } }
+			every_country = {
+				set_variable = { var = revolter_tag value = BLK.id }
 			}
-			else = { release = BLK }
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_no_wargoals
+			modular_revolt = yes
 			BLK = {
-				BLK_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
-				ncr_revolter_setup = yes
 				ncr_revolter_setup = yes
 				set_country_flag = revolt_country_to_revolt@PREV
 				every_owned_state = {
@@ -2064,17 +2051,14 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						COW = { is_puppet = yes }
-					}
-					COW = { OVERLORD = { end_puppet = COW } }
+				every_country = {
+					set_variable = { var = revolter_tag value = COW.id }
 				}
-				else = { release = COW }
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_no_wargoals
+				modular_revolt = yes
 				COW = {
-					COW_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
-					ncr_revolter_setup = yes
 					ncr_revolter_setup = yes
 					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
@@ -2092,17 +2076,14 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						TON = { is_puppet = yes }
-					}
-					TON = { OVERLORD = { end_puppet = TON } }
+				every_country = {
+					set_variable = { var = revolter_tag value = TON.id }
 				}
-				else = { release = TON }
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_no_wargoals
+				modular_revolt = yes
 				TON = {
-					TON_states = yes
 					set_NCR_factions_technology_on_civil_war = yes	
-					ncr_revolter_setup = yes
 					ncr_revolter_setup = yes
 					set_country_flag = revolt_country_to_revolt@PREV
 					every_owned_state = {
@@ -2147,15 +2128,13 @@ country_event = {
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
-			if = {
-				limit = {
-					TSI = { is_puppet = yes }
-				}
-				TSI = { OVERLORD = { end_puppet = TSI } }
+			every_country = {
+				set_variable = { var = revolter_tag value = TSI.id }
 			}
-			else = { release = TSI }
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_no_wargoals
+			modular_revolt = yes
 			TSI = {
-				TSI_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
 				ncr_revolter_setup = yes
 				set_country_flag = revolt_country_to_revolt@PREV
@@ -2164,15 +2143,13 @@ country_event = {
 				}
 				country_event = nf_ncr.32
 			}
-			if = {
-				limit = {
-					WAP = { is_puppet = yes }
-				}
-				WAP = { OVERLORD = { end_puppet = WAP } }
+			every_country = {
+				set_variable = { var = revolter_tag value = WAP.id }
 			}
-			else = { release = WAP }
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_no_wargoals
+			modular_revolt = yes
 			WAP = {
-				WAP_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
 				ncr_revolter_setup = yes
 				set_country_flag = revolt_country_to_revolt@PREV
@@ -2190,15 +2167,13 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						TWO = { is_puppet = yes }
-					}
-					TWO = { OVERLORD = { end_puppet = TWO } }
+				every_country = {
+					set_variable = { var = revolter_tag value = TWO.id }
 				}
-				else = { release = TWO }
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_no_wargoals
+				modular_revolt = yes
 				TWO = {
-					TWO_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
 					ncr_revolter_setup = yes
 					set_country_flag = revolt_country_to_revolt@PREV
@@ -2217,15 +2192,13 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						TLO = { is_puppet = yes }
-					}
-					TLO = { OVERLORD = { end_puppet = TLO } }
+				every_country = {
+					set_variable = { var = revolter_tag value = TLO.id }
 				}
-				else = { release = TLO }
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_no_wargoals
+				modular_revolt = yes
 				TLO = {
-					TLO_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
 					ncr_revolter_setup = yes
 					set_country_flag = revolt_country_to_revolt@PREV
@@ -2244,15 +2217,13 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						GDH = { is_puppet = yes }
-					}
-					GDH = { OVERLORD = { end_puppet = GDH } }
+				every_country = {
+					set_variable = { var = revolter_tag value = GDH.id }
 				}
-				else = { release = GDH }
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_no_wargoals
+				modular_revolt = yes
 				GDH = {
-					GDH_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
 					ncr_revolter_setup = yes
 					set_country_flag = revolt_country_to_revolt@PREV
@@ -2271,15 +2242,13 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						NAV = { is_puppet = yes }
-					}
-					NAV = { OVERLORD = { end_puppet = NAV } }
+				every_country = {
+					set_variable = { var = revolter_tag value = NAV.id }
 				}
-				else = { release = NAV }
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_no_wargoals
+				modular_revolt = yes
 				NAV = {
-					NAV_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
 					ncr_revolter_setup = yes
 					set_country_flag = revolt_country_to_revolt@PREV
@@ -2322,15 +2291,13 @@ country_event = {
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
-			if = {
-				limit = {
-					MES = { is_puppet = yes }
-				}
-				MES = { OVERLORD = { end_puppet = MES } }
+			every_country = {
+				set_variable = { var = revolter_tag value = MES.id }
 			}
-			else = { release = MES }
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_no_wargoals
+			modular_revolt = yes
 			MES = {
-				MES_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
 				ncr_revolter_setup = yes
 				set_country_flag = revolt_country_to_revolt@PREV
@@ -2339,15 +2306,13 @@ country_event = {
 				}
 				country_event = nf_ncr.32
 			}
-			if = {
-				limit = {
-					RSR = { is_puppet = yes }
-				}
-				RSR = { OVERLORD = { end_puppet = RSR } }
+			every_country = {
+				set_variable = { var = revolter_tag value = RSR.id }
 			}
-			else = { release = RSR }
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_no_wargoals
+			modular_revolt = yes
 			RSR = {
-				RSR_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
 				ncr_revolter_setup = yes
 				set_country_flag = revolt_country_to_revolt@PREV
@@ -2365,15 +2330,13 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						RBD = { is_puppet = yes }
-					}
-					RBD = { OVERLORD = { end_puppet = RBD } }
+				every_country = {
+					set_variable = { var = revolter_tag value = RBD.id }
 				}
-				else = { release = RBD }
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_no_wargoals
+				modular_revolt = yes
 				RBD = {
-					RBD_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
 					ncr_revolter_setup = yes
 					set_country_flag = revolt_country_to_revolt@PREV
@@ -2392,15 +2355,13 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						PEC = { is_puppet = yes }
-					}
-					PEC = { OVERLORD = { end_puppet = PEC } }
+				every_country = {
+					set_variable = { var = revolter_tag value = PEC.id }
 				}
-				else = { release = PEC }
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_no_wargoals
+				modular_revolt = yes
 				PEC = {
-					PEC_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
 					ncr_revolter_setup = yes
 					set_country_flag = revolt_country_to_revolt@PREV
@@ -2419,15 +2380,13 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						LGS = { is_puppet = yes }
-					}
-					LGS = { OVERLORD = { end_puppet = LGS } }
+				every_country = {
+					set_variable = { var = revolter_tag value = LGS.id }
 				}
-				else = { release = LGS }
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_no_wargoals
+				modular_revolt = yes
 				LGS = {
-					LGS_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
 					ncr_revolter_setup = yes
 					set_country_flag = revolt_country_to_revolt@PREV
@@ -2470,15 +2429,13 @@ country_event = {
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
-			if = {
-				limit = {
-					SUF = { is_puppet = yes }
-				}
-				SUF = { OVERLORD = { end_puppet = SUF } }
+			every_country = {
+				set_variable = { var = revolter_tag value = SUF.id }
 			}
-			else = { release = SUF }
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_no_wargoals
+			modular_revolt = yes
 			SUF = {
-				SUF_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
 				ncr_revolter_setup = yes
 				set_country_flag = revolt_country_to_revolt@PREV
@@ -2487,15 +2444,13 @@ country_event = {
 				}
 				country_event = nf_ncr.32
 			}
-			if = {
-				limit = {
-					BSU = { is_puppet = yes }
-				}
-				BSU = { OVERLORD = { end_puppet = BSU } }
+			every_country = {
+				set_variable = { var = revolter_tag value = BSU.id }
 			}
-			else = { release = BSU }
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_no_wargoals
+			modular_revolt = yes
 			BSU = {
-				BSU_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
 				ncr_revolter_setup = yes
 				set_country_flag = revolt_country_to_revolt@PREV
@@ -2537,15 +2492,13 @@ country_event = {
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
-			if = {
-				limit = {
-					JIC = { is_puppet = yes }
-				}
-				JIC = { OVERLORD = { end_puppet = JIC } }
+			every_country = {
+				set_variable = { var = revolter_tag value = JIC.id }
 			}
-			else = { release = JIC }
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_no_wargoals
+			modular_revolt = yes
 			JIC = {
-				JIC_states = yes
 				set_NCR_factions_technology_on_civil_war = yes
 				ncr_revolter_setup = yes
 				set_country_flag = revolt_country_to_revolt@PREV
@@ -2563,15 +2516,13 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						HAN = { is_puppet = yes }
-					}
-					HAN = { OVERLORD = { end_puppet = HAN } }
+				every_country = {
+					set_variable = { var = revolter_tag value = HAN.id }
 				}
-				else = { release = HAN }
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_no_wargoals
+				modular_revolt = yes
 				HAN = {
-					HAN_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
 					ncr_revolter_setup = yes
 					set_country_flag = revolt_country_to_revolt@PREV
@@ -2590,15 +2541,13 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						TTM = { is_puppet = yes }
-					}
-					TTM = { OVERLORD = { end_puppet = TTM } }
+				every_country = {
+					set_variable = { var = revolter_tag value = TTM.id }
 				}
-				else = { release = TTM }
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_no_wargoals
+				modular_revolt = yes
 				TTM = {
-					TTM_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
 					ncr_revolter_setup = yes
 					set_country_flag = revolt_country_to_revolt@PREV
@@ -2617,15 +2566,13 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						FOR = { is_puppet = yes }
-					}
-					FOR = { OVERLORD = { end_puppet = FOR } }
+				every_country = {
+					set_variable = { var = revolter_tag value = FOR.id }
 				}
-				else = { release = FOR }
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_no_wargoals
+				modular_revolt = yes
 				FOR = {
-					FOR_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
 					ncr_revolter_setup = yes
 					set_country_flag = revolt_country_to_revolt@PREV
@@ -2644,15 +2591,13 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						IRN = { is_puppet = yes }
-					}
-					IRN = { OVERLORD = { end_puppet = IRN } }
+				every_country = {
+					set_variable = { var = revolter_tag value = IRN.id }
 				}
-				else = { release = IRN }
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_no_wargoals
+				modular_revolt = yes
 				IRN = {
-					IRN_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
 					ncr_revolter_setup = yes
 					set_country_flag = revolt_country_to_revolt@PREV
@@ -2671,15 +2616,13 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						SCO = { is_puppet = yes }
-					}
-					SCO = { OVERLORD = { end_puppet = SCO } }
+				every_country = {
+					set_variable = { var = revolter_tag value = SCO.id }
 				}
-				else = { release = SCO }
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_no_wargoals
+				modular_revolt = yes
 				SCO = {
-					SCO_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
 					ncr_revolter_setup = yes
 					set_country_flag = revolt_country_to_revolt@PREV
@@ -2698,15 +2641,13 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						PNT = { is_puppet = yes }
-					}
-					PNT = { OVERLORD = { end_puppet = PNT } }
+				every_country = {
+					set_variable = { var = revolter_tag value = PNT.id }
 				}
-				else = { release = PNT }
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_no_wargoals
+				modular_revolt = yes
 				PNT = {
-					PNT_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
 					ncr_revolter_setup = yes
 					set_country_flag = revolt_country_to_revolt@PREV
@@ -2725,15 +2666,13 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						TOB = { is_puppet = yes }
-					}
-					TOB = { OVERLORD = { end_puppet = TOB } }
+				every_country = {
+					set_variable = { var = revolter_tag value = TOB.id }
 				}
-				else = { release = TOB }
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_no_wargoals
+				modular_revolt = yes
 				TOB = {
-					TOB_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
 					ncr_revolter_setup = yes
 					set_country_flag = revolt_country_to_revolt@PREV
@@ -2752,15 +2691,13 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						YMP = { is_puppet = yes }
-					}
-					YMP = { OVERLORD = { end_puppet = YMP } }
+				every_country = {
+					set_variable = { var = revolter_tag value = YMP.id }
 				}
-				else = { release = YMP }
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_no_wargoals
+				modular_revolt = yes
 				YMP = {
-					YMP_states = yes
 					set_NCR_factions_technology_on_civil_war = yes
 					ncr_revolter_setup = yes
 					set_country_flag = revolt_country_to_revolt@PREV
@@ -3016,6 +2953,8 @@ news_event = {
 	}
 
 	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
 
 	immediate = {
 		set_global_flag = NCR_Legion_war

@@ -1,0 +1,96 @@
+#################################
+#        MODULAR REVOLTS        #
+#       SCRIPTED BY HAPPY       #
+#################################
+
+# Instructions, now the fancy art is over:
+#
+# BASIC TRIGGER
+#
+# To trigger a revolt, you only need to set a country flag for every country, then call this scripted effect, as follows -
+#
+# every_country = {
+# 	set_variable = { var = revolter_tag value = TAG.id }
+# }
+# modular_revolt = yes
+#
+# TAG is replaced by the tag of the country you want to be revolting, not the revolt target.
+#
+# CUSTOMISATION
+# To set in concrete which tag should be declaring war against the revolter, set the country flag 'revolter_target' in in their scope, as follows -
+# 	NCR = { set_country_flag = revolter_target }
+# To prevent the main war target declaring war, set the global flag 'revolt_no_war', as follows -
+# 	set_global_flag = revolt_no_war
+# To prevent wargoals being generated, set the global flag 'revolt_no_wargoals', as follows -
+# 	set_global_flag = revolt_no_wargoals
+# The two above can be used in conjunction to prevent any wargoals or war - i.e. the nation is just released and gets all its cores.
+#
+# Currently the countries that the revolter breaks away from do not get claims - if this a problem I can write this up
+
+modular_revolt = {
+	every_country = { # Ends puppet, if applicable
+		limit = {
+			var:revolter_state = {
+				is_puppet_of = PREV
+			}
+		}
+		end_puppet = var:revolter_state
+		create_wargoal = { target = var:revolter_tag type = puppet_wargoal_focus }
+	}
+	random_country = {
+		limit = {
+			if = { # Gives exclusivity to a country with the revolter_target flag set, if any country has this
+				limit = {
+					any_country = { has_country_flag = revolter_target }
+				}
+				has_country_flag = revolter_target
+			}
+			has_variable = revolter_tag
+			var:revolter_tag = {
+				any_state = {
+					is_owned_by = PREV.PREV
+					is_core_of = PREV
+				}
+			}
+		}
+		log = "Random Country Chosen"
+		clr_country_flag = revolter_target
+		release = var:revolter_tag
+		log = "Revolter Released"
+		# Loading troops for the revolt is handled independently of the modular revolt and should be done after calling the revolt
+		if = {
+			limit = { NOT = { has_global_flag = revolt_no_war } }
+			declare_war_on = { target = var:revolter_tag type = annex_everything }
+		}
+		else_if = {
+			limit = { NOT = { has_global_flag = revolt_no_wargoals } }
+			create_wargoal = { target = var:revolter_tag type = annex_everything }
+		}
+	}
+	every_country = {
+		limit = {
+			has_variable = revolter_tag
+			any_owned_state = {
+				is_core_of = var:revolter_tag
+			}
+			NOT = { has_war_with = var:revolter_tag }
+			NOT = { has_global_flag = revolt_no_wargoals }
+		}
+		create_wargoal = { target = var:revolter_tag type = annex_everything }
+	}
+	var:revolter_tag = {
+		every_state = {
+			limit = {
+				is_core_of = PREV
+				NOT = { has_state_flag = revolt_no_flip }
+			}
+			PREV = { transfer_state = PREV }
+		}
+	}
+	# Cleaning out flags and variables
+	every_country = {
+		clear_variable = revolter_tag
+	}
+	clr_global_flag = revolt_no_war
+	clr_global_flag = revolt_no_wargoals
+}

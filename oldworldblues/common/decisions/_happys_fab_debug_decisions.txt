@@ -1,0 +1,15 @@
+debug_decisions = {
+	turn_off = {
+		complete_effect = { clr_country_flag = debug }
+	}
+
+	phr_revolt = {
+		complete_effect = {
+			#CES = { set_country_flag = revolter_target }
+			every_country = {
+				set_variable = { var = revolter_tag value = PHR.id }
+			}
+			modular_revolt = yes
+		}
+	}
+}
