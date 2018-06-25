@@ -21,9 +21,10 @@
 # 	NCR = { set_country_flag = revolter_target }
 # To prevent the main war target declaring war, set the global flag 'revolt_no_war', as follows -
 # 	set_global_flag = revolt_no_war
-# To prevent wargoals being generated, set the global flag 'revolt_no_wargoals', as follows -
+# If you don't want them getting a wargoal either, set the global flag 'revolt_no_wargoal_main'
+# To prevent wargoals being generated for nations except the main, set the global flag 'revolt_no_wargoals', as follows -
 # 	set_global_flag = revolt_no_wargoals
-# The two above can be used in conjunction to prevent any wargoals or war - i.e. the nation is just released and gets all its cores.
+# The global flag 'revolt_v_ncr' is a unique one for the NCR revolts
 #
 # Currently the countries that the revolter breaks away from do not get claims - if this a problem I can write this up
 
@@ -73,7 +74,14 @@ modular_revolt = {
 			declare_war_on = { target = var:revolter_tag type = annex_everything }
 		}
 		else_if = {
-			limit = { NOT = { has_global_flag = revolt_no_wargoals } }
+			limit = { has_global_flag = revolt_v_ncr }
+			if = {
+				limit = { PREV = { NOT = { tag = NCR } } }
+				create_wargoal = { target = var:revolter_tag type = annex_everything }
+			}
+		}
+		else_if = {
+			limit = { NOT = { has_global_flag = revolt_no_wargoals_main } }
 			create_wargoal = { target = var:revolter_tag type = annex_everything }
 		}
 	}
@@ -91,10 +99,19 @@ modular_revolt = {
 			NOT = { has_global_flag = revolt_no_wargoals }
 		}
 		if = {
+			limit = { has_global_flag = revolt_v_ncr }
+			if = {
+				limit = { PREV = { NOT = { tag = NCR } } }
+				create_wargoal = { target = var:revolter_tag type = annex_everything }
+			}
+		}
+		else = {
+			create_wargoal = { target = var:revolter_tag type = annex_everything }
+		}
+		if = {
 			limit = { has_global_flag = debug }
 			log = "Modular Revolt: Wargoal Scope Entered"
 		}
-		create_wargoal = { target = var:revolter_tag type = annex_everything }
 	}
 	if = {
 		limit = { has_global_flag = debug }
@@ -119,6 +136,7 @@ modular_revolt = {
 	}
 	clr_global_flag = revolt_no_war
 	clr_global_flag = revolt_no_wargoals
+	clr_global_flag = revolt_v_ncr
 	if = {
 		limit = { has_global_flag = debug }
 		log = "Modular Revolt Complete"
