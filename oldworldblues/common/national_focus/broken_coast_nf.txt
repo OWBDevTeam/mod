@@ -1643,4 +1643,23 @@ focus_tree = {
 			add_war_support = 0.05
 		}
 	}
+	
+	focus = {
+		id = brk_nf_washbos_kill
+		icon = GFX_goal_legion_bos_war
+		cost = 8.6
+		x = 12
+		y = 18
+
+		prerequisite = {
+			focus = brk_nf_pirate_coast
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = WBH
+			}
+		}
+	}
 }
