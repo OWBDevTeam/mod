@@ -17,12 +17,12 @@ default_peace = {
 	puppet_randomness = 0
 	take_states_randomness = 0
 	force_government_randomness = 0
-	
+
 	# ROOT = Taker, FROM = Giver
 	annex = {
-		add = 10000
+		factor = 1
 		modifier = {
-			add = 10000
+			add = 20000
 			always = yes
 		}
 	}
@@ -41,7 +41,7 @@ default_peace = {
 		factor = 0
 		modifier = {
 			factor = 0
-			has_annex_war_goal = ROOT 
+			has_annex_war_goal = ROOT
 		}
 	}
 
@@ -233,7 +233,7 @@ default_peace = {
 				}
 			}
 		}
-		
+
 		modifier = { #much better to take states that expands home area
 			add = 25000
 			FROM = {
