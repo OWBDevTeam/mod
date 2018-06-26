@@ -240,3 +240,18 @@ country_event = {
 		revolt_setup_fire = yes
     	} 
 }
+# test if you can add/subtract manpower from states (
+country_event = {
+	id = test_event.14
+	title = test_event.14.t
+	desc = test_event.14.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	# male ACE
+	option = {
+		name = test_event.14.a
+		345 = {
+			add_manpower = 500
+		}
+    	} 
+}
