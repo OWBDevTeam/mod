@@ -50,6 +50,10 @@ modular_revolt = {
 		}
 	}
 	var:revolter_tag = {
+		every_state = {
+			limit = { is_core_of = PREV }
+			set_state_flag = do_not_decimate
+		}
 		every_country = { # Ends puppet, if applicable
 			limit = {
 				PREV = {
@@ -81,12 +85,12 @@ modular_revolt = {
 				any_owned_state = {
 					is_core_of = PREV.PREV
 				}
+				PREV = { exists = no } # So that they aren't released if they already exist
 			}
 			if = {
 				limit = { has_global_flag = debug }
 				log = "Modular Revolt: Random Scope Entered"
 			}
-			clr_country_flag = revolter_target
 			release = PREV
 			# Loading troops for the revolt is handled independently of the modular revolt and should be done after calling the revolt
 			if = {
@@ -147,10 +151,15 @@ modular_revolt = {
 			limit = { has_global_flag = debug }
 			log = "Modular Revolt: States Transfered"
 		}
+		every_state = {
+			limit = { is_core_of = PREV }
+			clr_state_flag = do_not_decimate
+		}
 	}
 	# Cleaning out flags and variables
 	every_country = {
 		clear_variable = revolter_tag
+		clr_country_flag = revolter_target
 	}
 	clr_global_flag = revolt_no_war
 	clr_global_flag = revolt_no_wargoals

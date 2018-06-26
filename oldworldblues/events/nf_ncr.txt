@@ -1300,15 +1300,12 @@ country_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						VEG = { is_puppet = yes }
-					}
-					VEG = { OVERLORD = { end_puppet = VEG } }
+				every_country = {
+					set_variable = { var = revolter_tag value = VEG.id }
 				}
-				else = { release = VEG }
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 				VEG = {
-					VEG_states = yes
 					every_owned_state = {
 						clr_state_flag = do_not_decimate
 					}
@@ -1328,463 +1325,758 @@ country_event = {
 			}
 			if = {
 				limit = {
-					TWI = { is_puppet = yes }
+					OR = {
+						any_state = {
+							is_core_of = TWI
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
 				}
-				TWI = { OVERLORD = { end_puppet = TWI } }
-			}
-			else = { release = TWI }
-			TWI = {
-				TWI_states = yes
-				every_owned_state = {
-					clr_state_flag = do_not_decimate
+				every_country = {
+					set_variable = { var = revolter_tag value = TWI.id }
 				}
-			}
-			if = {
-				limit = {
-					PHR = { is_puppet = yes }
-				}
-				PHR = { OVERLORD = { end_puppet = PHR } }
-			}
-			else = { release = PHR }
-			PHR = {
-				PHR_states = yes
-				every_owned_state = {
-					clr_state_flag = do_not_decimate
-				}
-			}
-			if = {
-				limit = {
-					HUA = { is_puppet = yes }
-				}
-				HUA = { OVERLORD = { end_puppet = HUA } }
-			}
-			else = { release = HUA }
-			HUA = {
-				HUA_states = yes
-				every_owned_state = {
-					clr_state_flag = do_not_decimate
-				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			if = {
 				limit = {
-					BLK = { is_puppet = yes }
+					OR = {
+						any_state = {
+							is_core_of = PHR
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
 				}
-				BLK = { OVERLORD = { end_puppet = BLK } }
-			}
-			else = { release = BLK }
-			BLK = {
-				BLK_states = yes
-				every_owned_state = {
-					clr_state_flag = do_not_decimate
+				every_country = {
+					set_variable = { var = revolter_tag value = PHR.id }
 				}
-			}
-			if = {
-				limit = {
-					TSI = { is_puppet = yes }
-				}
-				TSI = { OVERLORD = { end_puppet = TSI } }
-			}
-			else = { release = TSI }
-			TSI = {
-				TSI_states = yes
-				every_owned_state = {
-					clr_state_flag = do_not_decimate
-				}
-			}
-			if = {
-				limit = {
-					MES = { is_puppet = yes }
-				}
-				MES = { OVERLORD = { end_puppet = MES } }
-			}
-			else = { release = MES }
-			MES = {
-				MES_states = yes
-				every_owned_state = {
-					clr_state_flag = do_not_decimate
-				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			if = {
 				limit = {
-					SUF = { is_puppet = yes }
+					OR = {
+						any_state = {
+							is_core_of = FLA
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
 				}
-				SUF = { OVERLORD = { end_puppet = SUF } }
-			}
-			else = { release = SUF }
-			SUF = {
-				SUF_states = yes
-				every_owned_state = {
-					clr_state_flag = do_not_decimate
+				every_country = {
+					set_variable = { var = revolter_tag value = FLA.id }
 				}
-			}
-			if = {
-				limit = {
-					RSR = { is_puppet = yes }
-				}
-				RSR = { OVERLORD = { end_puppet = RSR } }
-			}
-			else = { release = RSR }
-			RSR = {
-				RSR_states = yes
-				every_owned_state = {
-					clr_state_flag = do_not_decimate
-				}
-			}
-			if = {
-				limit = {
-					WAP = { is_puppet = yes }
-				}
-				WAP = { OVERLORD = { end_puppet = WAP } }
-			}
-			else = { release = WAP }
-			WAP = {
-				WAP_states = yes
-				every_owned_state = {
-					clr_state_flag = do_not_decimate
-				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			if = {
 				limit = {
-					BSU = { is_puppet = yes }
+					OR = {
+						any_state = {
+							is_core_of = HUA
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
 				}
-				BSU = { OVERLORD = { end_puppet = BSU } }
-			}
-			else = { release = BSU }
-			BSU = {
-				BSU_states = yes
-				every_owned_state = {
-					clr_state_flag = do_not_decimate
+				every_country = {
+					set_variable = { var = revolter_tag value = HUA.id }
 				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			if = {
 				limit = {
-					JIC = { is_puppet = yes }
+					OR = {
+						any_state = {
+							is_core_of = BLK
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
 				}
-				JIC = { OVERLORD = { end_puppet = JIC } }
+				every_country = {
+					set_variable = { var = revolter_tag value = BLK.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
-			else = { release = JIC }
-			JIC = {
-				JIC_states = yes
-				every_owned_state = {
-					clr_state_flag = do_not_decimate
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = TSI
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
 				}
+				every_country = {
+					set_variable = { var = revolter_tag value = TSI.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = WAP
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = WAP.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = MES
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = MES.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = SUF
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = SUF.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = RSR
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = RSR.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = TWI
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = WAP.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = BSU
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = BSU.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = JIC
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = JIC.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			if = {
 				limit = {
 					OR = {
 						TTM = { exists = no }
 						TTM = {
-							is_puppet_of = NCR
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					TTM = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
 						}
 					}
 				}
-				if = {
-					limit = {
-						TTM = { is_puppet = yes }
-					}
-					TTM = { OVERLORD = { end_puppet = TTM } }
+				every_country = {
+					set_variable = { var = revolter_tag value = TTM.id }
 				}
-				else = { release = TTM }
-				TTM = {
-					TTM_states = yes
-					every_owned_state = {
-						clr_state_flag = do_not_decimate
-					}
-				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			if = {
 				limit = {
 					OR = {
 						PEC = { exists = no }
 						PEC = {
-							is_puppet_of = NCR
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					PEC = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
 						}
 					}
 				}
-				if = {
-					limit = {
-						PEC = { is_puppet = yes }
-					}
-					PEC = { OVERLORD = { end_puppet = PEC } }
+				every_country = {
+					set_variable = { var = revolter_tag value = PEC.id }
 				}
-				else = { release = PEC }
-				PEC = {
-					PEC_states = yes
-					every_owned_state = {
-						clr_state_flag = do_not_decimate
-					}
-				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			if = {
 				limit = {
 					OR = {
 						RBD = { exists = no }
 						RBD = {
-							is_puppet_of = NCR
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					RBD = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
 						}
 					}
 				}
-				if = {
-					limit = {
-						RBD = { is_puppet = yes }
-					}
-					RBD = { OVERLORD = { end_puppet = RBD } }
+				every_country = {
+					set_variable = { var = revolter_tag value = RBD.id }
 				}
-				else = { release = RBD }
-				RBD = {
-					RBD_states = yes
-					every_owned_state = {
-						clr_state_flag = do_not_decimate
-					}
-				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			if = {
 				limit = {
 					OR = {
 						TWO = { exists = no }
 						TWO = {
-							is_puppet_of = NCR
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					TWO = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
 						}
 					}
 				}
-				if = {
-					limit = {
-						TWO = { is_puppet = yes }
-					}
-					TWO = { OVERLORD = { end_puppet = TWO } }
+				every_country = {
+					set_variable = { var = revolter_tag value = TWO.id }
 				}
-				else = { release = TWO }
-				TWO = {
-					TWO_states = yes
-					every_owned_state = {
-						clr_state_flag = do_not_decimate
-					}
-				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			if = {
 				limit = {
 					OR = {
 						COW = { exists = no }
 						COW = {
-							is_puppet_of = NCR
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					COW = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
 						}
 					}
 				}
-				if = {
-					limit = {
-						COW = { is_puppet = yes }
-					}
-					COW = { OVERLORD = { end_puppet = COW } }
+				every_country = {
+					set_variable = { var = revolter_tag value = COW.id }
 				}
-				else = { release = COW }
-				COW = {
-					COW_states = yes
-					every_owned_state = {
-						clr_state_flag = do_not_decimate
-					}
-				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			if = {
 				limit = {
-					HAN = { exists = no }
-				}
-				if = {
-					limit = {
-						HAN = { is_puppet = yes }
+					OR = {
+						HAN = { exists = no }
+						HAN = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
 					}
-					HAN = { OVERLORD = { end_puppet = HAN } }
-				}
-				else = { release = HAN }
-				HAN = {
-					every_owned_state = {
-						clr_state_flag = do_not_decimate
+					HAN = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
+						}
 					}
-					HAN_states = yes
 				}
+				every_country = {
+					set_variable = { var = revolter_tag value = HAN.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			if = {
 				limit = {
 					OR = {
 						TON = { exists = no }
 						TON = {
-							is_puppet_of = NCR
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					TON = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
 						}
 					}
 				}
-				if = {
-					limit = {
-						TON = { is_puppet = yes }
-					}
-					TON = { OVERLORD = { end_puppet = TON } }
+				every_country = {
+					set_variable = { var = revolter_tag value = TON.id }
 				}
-				else = { release = TON }
-				TON = {
-					TON_states = yes
-					every_owned_state = {
-						clr_state_flag = do_not_decimate
-					}
-				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			if = {
 				limit = {
 					OR = {
 						TLO = { exists = no }
 						TLO = {
-							is_puppet_of = NCR
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					TLO = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
 						}
 					}
 				}
-				if = {
-					limit = {
-						TLO = { is_puppet = yes }
-					}
-					TLO = { OVERLORD = { end_puppet = TLO } }
+				every_country = {
+					set_variable = { var = revolter_tag value = TLO.id }
 				}
-				else = { release = TLO }
-				TLO = {
-					TLO_states = yes
-					every_owned_state = {
-						clr_state_flag = do_not_decimate
-					}
-				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			if = {
 				limit = {
 					OR = {
 						GDH = { exists = no }
 						GDH = {
-							is_puppet_of = NCR
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					GDH = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
 						}
 					}
 				}
-				if = {
-					limit = {
-						GDH = { is_puppet = yes }
-					}
-					GDH = { OVERLORD = { end_puppet = GDH } }
+				every_country = {
+					set_variable = { var = revolter_tag value = GDH.id }
 				}
-				else = { release = GDH }
-				GDH = {
-					GDH_states = yes
-					every_owned_state = {
-						clr_state_flag = do_not_decimate
-					}
-				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			if = {
 				limit = {
 					OR = {
 						LGS = { exists = no }
 						LGS = {
-							is_puppet_of = NCR
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					LGS = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
 						}
 					}
 				}
-				if = {
-					limit = {
-						LGS = { is_puppet = yes }
-					}
-					LGS = { OVERLORD = { end_puppet = LGS } }
+				every_country = {
+					set_variable = { var = revolter_tag value = LGS.id }
 				}
-				else = { release = LGS }
-				LGS = {
-					LGS_states = yes
-					every_owned_state = {
-						clr_state_flag = do_not_decimate
-					}
-				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			if = {
 				limit = {
 					OR = {
 						NAV = { exists = no }
 						NAV = {
-							is_puppet_of = NCR
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					NAV = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
 						}
 					}
 				}
-				if = {
-					limit = {
-						NAV = { is_puppet = yes }
-					}
-					NAV = { OVERLORD = { end_puppet = NAV } }
+				every_country = {
+					set_variable = { var = revolter_tag value = NAV.id }
 				}
-				else = { release = NAV }
-				NAV = {
-					NAV_states = yes
-					every_owned_state = {
-						clr_state_flag = do_not_decimate
-					}
-				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			if = {
 				limit = {
 					OR = {
 						FOR = { exists = no }
 						FOR = {
-							is_puppet_of = NCR
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					FOR = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
 						}
 					}
 				}
-				if = {
-					limit = {
-						FOR = { is_puppet = yes }
-					}
-					FOR = { OVERLORD = { end_puppet = FOR } }
+				every_country = {
+					set_variable = { var = revolter_tag value = FOR.id }
 				}
-				else = { release = FOR }
-				FOR = {
-					FOR_states = yes
-					every_owned_state = {
-						clr_state_flag = do_not_decimate
-					}
-				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			if = {
 				limit = {
 					OR = {
 						SCO = { exists = no }
 						SCO = {
-							is_puppet_of = NCR
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					SCO = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
 						}
 					}
 				}
-				if = {
-					limit = {
-						SCO = { is_puppet = yes }
-					}
-					SCO = { OVERLORD = { end_puppet = SCO } }
+				every_country = {
+					set_variable = { var = revolter_tag value = SCO.id }
 				}
-				else = { release = SCO }
-				SCO = {
-					SCO_states = yes
-					every_owned_state = {
-						clr_state_flag = do_not_decimate
-					}
-				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			if = {
 				limit = {
 					OR = {
 						IRN = { exists = no }
 						IRN = {
-							is_puppet_of = NCR
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					IRN = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
 						}
 					}
 				}
-				if = {
-					limit = {
-						IRN = { is_puppet = yes }
-					}
-					IRN = { OVERLORD = { end_puppet = IRN } }
+				every_country = {
+					set_variable = { var = revolter_tag value = IRN.id }
 				}
-				else = { release = IRN }
-				IRN = {
-					IRN_states = yes
-					every_owned_state = {
-						clr_state_flag = do_not_decimate
-					}
-				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
 			}
 			every_owned_state = {
 				clr_state_flag = do_not_decimate
@@ -2959,6 +3251,10 @@ news_event = {
 
 	immediate = {
 		set_global_flag = NCR_Legion_war
+		every_state = {
+			limit = { is_owned_by = CES }
+			set_state_flag = legion_height
+		}
 	}
 
 	option = {
