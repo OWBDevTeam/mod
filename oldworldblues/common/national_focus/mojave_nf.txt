@@ -930,7 +930,7 @@ focus_tree = {
 	focus = {
 		id = MOJ_chapter_leadership # Event focus describing the choices for Chapter Leadership
 		icon = GFX_goal_bos_the_mojave_signal
-		cost = 10.00
+		cost = 5.00
 		prerequisite = {
 			focus = MOJ_our_future
 		}
@@ -946,7 +946,7 @@ focus_tree = {
 	focus = {
 		id = MOJ_elijah # Set Elijah as Chapter Leader
 		icon = GFX_goal_moj_elijah
-		cost = 10.00
+		cost = 5.00
 		prerequisite = {
 			focus = MOJ_chapter_leadership
 		}
@@ -1053,7 +1053,7 @@ focus_tree = {
 	focus = {
 		id = MOJ_a_forgotten_hellscape # 35 day focus, Events about conflict with Ghost People
 		icon = GFX_goal_moj_a_forgotten_hellscape
-		cost = 10.00
+		cost = 5.00
 		prerequisite = {
 			focus = MOJ_sierra_madre
 		}
@@ -1102,7 +1102,7 @@ focus_tree = {
 	focus = {
 		id = MOJ_hardin # Set Hardin as Country Leader
 		icon = GFX_goal_moj_hardin
-		cost = 10.00
+		cost = 5.00
 		prerequisite = {
 			focus = MOJ_chapter_leadership
 		}
@@ -1128,13 +1128,16 @@ focus_tree = {
 		y = 5
 
 		completion_reward = {
-			load_oob = mojave_paladin_thought
+			custom_effect_tooltip = MOJ_hardin_recruits
+			hidden_effect = {
+				load_oob = mojave_paladin_thought
+			}
 		}
 	}
 	focus = {
 		id = MOJ_know_our_name # Stability and War Support + 10%
 		icon = GFX_goal_moj_know_our_name
-		cost = 10.00
+		cost = 7.00
 		prerequisite = {
 			focus = MOJ_paladin_thought
 		}
@@ -1236,7 +1239,7 @@ focus_tree = {
 	focus = {
 		id = MOJ_mcnamara # Set McNamara as Country Leader
 		icon = GFX_goal_moj_mcnamara
-		cost = 10.00
+		cost = 5.00
 		prerequisite = {
 			focus = MOJ_chapter_leadership
 		}
@@ -1262,13 +1265,16 @@ focus_tree = {
 		y = 5
 
 		completion_reward = {
-			load_oob = mojave_progressive_thought
+			hidden_effect = {
+				load_oob = mojave_progressive_thought
+			}
+			custom_effect_tooltip = MOJ_mcnamara_militia
 		}
 	}
 	focus = {
 		id = MOJ_the_future # Event describing the chapter cannot continue as it has been and change is needed
 		icon = GFX_goal_moj_the_future
-		cost = 10.00
+		cost = 5.00
 		prerequisite = {
 			focus = MOJ_progressive_thought
 		}
