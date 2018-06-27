@@ -13,10 +13,10 @@
 #marines
 #mountaineer
 
-#Mobile Warfare branch
-mobile_warfare_ratios = {
+#Automated Warfare branch
+automated_warfare_ratios = {
 	enable = {
-		has_tech = mobile_warfare
+		has_tech = automated_warfare
 	}
 	abort = {
 		always = no
@@ -25,39 +25,13 @@ mobile_warfare_ratios = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 10
+		value = 20
 	}
 	
 	ai_strategy = {
 		type = role_ratio
 		id = mechanized
-		value = 2
-	}
-}
-
-superior_firepower_ratios = {
-	enable = {
-		has_tech = superior_firepower
-	}
-	abort = {
-		has_tech = concentrated_fire_plans
-	}
-	
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = 10
-	}
-	
-}
-
-## Later in superior_firepower tree
-concentrated_fire_plans_ratios = {
-	enable = {
-		has_tech = concentrated_fire_plans
-	}
-	abort = {
-		always = no
+		value = -10
 	}
 	
 	ai_strategy = {
@@ -65,85 +39,61 @@ concentrated_fire_plans_ratios = {
 		id = infantry
 		value = -5
 	}
-	
-	ai_strategy = {
-		type = role_ratio
-		id = armor
-		value = 10
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = cas
-		value = 5
-	}
-	
 }
 
-
-grand_battle_plan_ratios = {
+elite_army_ratios = {
 	enable = {
-		has_tech = trench_warfare
+		has_tech = elite_army
 	}
 	abort = {
 		always = no
 	}
-	
+		
 	ai_strategy = {
 		type = role_ratio
-		id = infantry
-		value = 10
-	}
-	
-	ai_strategy = {
-		type = role_ratio
-		id = anti_tank
-		value = 5
-	}	
-}
-
-
-mass_assault_ratios = {
-	enable = {
-		has_tech = mass_assault
-	}
-	abort = {
-		has_tech = large_front_operations
-	}
-	
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = 25
-	}	
-
-	ai_strategy = {
-		type = role_ratio
-		id = anti_tank
-		value = 5
-	}
-
-}
-
-#Later in  mass_assault tree
-large_front_operations_ratios = {
-	enable = {
-		has_tech = large_front_operations
-	}
-	abort = {
-		always = no
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
+		id = mechanized
 		value = -10
 	}
-
+	
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 10
+		value = -10
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = power_armour
+		value = 20
+	}
+}
+
+#Asymetric
+
+asymetric_operations_ratios = {
+	enable = {
+		has_tech = terror_tactics
+	}
+	abort = {
+		always = no
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 20
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = -5
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = mechanized
+		value = -5
 	}
 	
 }
