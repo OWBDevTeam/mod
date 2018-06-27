@@ -2265,7 +2265,6 @@ focus_tree = {
 				set_technology = { ncr_rangercanopeners = 1 }
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_mojave
@@ -2279,12 +2278,17 @@ focus_tree = {
 		x = 7
 		y = 10
 		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = MRA
+			if = {
+				limit = {
+					MRA = { exists = yes }
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = MRA
+				}
 			}
 			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
-			if = {
+			else_if = {
 				limit = {
 					any_state = {
 						AND = {
@@ -2308,12 +2312,11 @@ focus_tree = {
 			if = {
 				limit = {
 					is_ai = yes
-					
+					MRA = { exists = yes }
 				}
 				declare_war_on = { target = MRA type = annex_everything }
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_oldworldwall

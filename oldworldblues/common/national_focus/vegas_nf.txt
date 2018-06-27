@@ -950,9 +950,33 @@ focus_tree = {
 		y = 7
 		will_lead_to_war_with = KHA
 		completion_reward = {
-			create_wargoal = {
-				target = KHA 
-				type = annex_everything
+			if = {
+				limit = {
+					KHA = { exists = yes }
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = KHA
+				}
+			}
+			else_if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = KHA
+							NOT = { is_controlled_by = KHA }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = KHA
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+				}
 			}
 		}
 	}
@@ -972,9 +996,33 @@ focus_tree = {
 		y = 7
 		will_lead_to_war_with = FIE
 		completion_reward = {
-			create_wargoal = {
-				target = FIE 
-				type = annex_everything
+			if = {
+				limit = {
+					FIE = { exists = yes }
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = FIE
+				}
+			}
+			else_if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = FIE
+							NOT = { is_controlled_by = FIE }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = FIE
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+				}
 			}
 		}
 
@@ -1001,12 +1049,35 @@ focus_tree = {
 		y = 8
 		will_lead_to_war_with = DAM
 		completion_reward = {
-			create_wargoal = {
-				target = DAM 
-				type = annex_everything
+			if = {
+				limit = {
+					DAM = { exists = yes }
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = DAM
+				}
+			}
+			else_if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = DAM
+							NOT = { is_controlled_by = DAM }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = DAM
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+				}
 			}
 		}
-
 	}
 	focus = {
 		id = veg_clean
@@ -1030,12 +1101,35 @@ focus_tree = {
 		y = 8
 		will_lead_to_war_with = MRA
 		completion_reward = {
-			create_wargoal = {
-				target = MRA 
-				type = annex_everything
+			if = {
+				limit = {
+					MRA = { exists = yes }
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = MRA
+				}
+			}
+			else_if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = MRA
+							NOT = { is_controlled_by = MRA }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = MRA
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+				}
 			}
 		}
-
 	}
 	focus = {
 		id = veg_broken
@@ -1053,9 +1147,33 @@ focus_tree = {
 		y = 9
 		will_lead_to_war_with = MOJ
 		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = MOJ
+			if = {
+				limit = {
+					MOJ = { exists = yes }
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = MOJ
+				}
+			}
+			else_if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = MOJ
+							NOT = { is_controlled_by = MOJ }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = MOJ
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+				}
 			}
 		}
 
@@ -1103,12 +1221,35 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			create_wargoal = {
-				target = HOP
-				type = annex_everything
+			if = {
+				limit = {
+					HOP = { exists = yes }
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = HOP
+				}
+			}
+			else_if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = HOP
+							NOT = { is_controlled_by = HOP }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = HOP
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+				}
 			}
 		}
-
 	}
 	focus = {
 		id = veg_ashton
@@ -1126,12 +1267,35 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			create_wargoal = {
-				target = ASH
-				type = annex_everything
+			if = {
+				limit = {
+					ASH = { exists = yes }
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = ASH
+				}
+			}
+			else_if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = ASH
+							NOT = { is_controlled_by = ASH }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = ASH
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+				}
 			}
 		}
-
 	}
 	focus = {
 		id = veg_architect
@@ -1540,16 +1704,64 @@ focus_tree = {
 		will_lead_to_war_with = FIE
 		will_lead_to_war_with = KHA
 		completion_reward = {
-		add_state_core = 380
-		add_state_core = 12
-		add_state_core = 106
-			create_wargoal = {
-				type = annex_everything
-				target = FIE
+			add_state_core = 380
+			add_state_core = 12
+			add_state_core = 106
+			if = {
+				limit = {
+					FIE = { exists = yes }
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = FIE
+				}
 			}
-			create_wargoal = {
-				type = annex_everything
-				target = KHA
+			else_if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = FIE
+							NOT = { is_controlled_by = FIE }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = FIE
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+				}
+			}
+			if = {
+				limit = {
+					KHA = { exists = yes }
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = KHA
+				}
+			}
+			else_if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = KHA
+							NOT = { is_controlled_by = KHA }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = KHA
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+				}
 			}
 		}
 
@@ -1562,27 +1774,50 @@ focus_tree = {
 			focus = veg_raiderend
 		}
 		
-		bypass = {
-			NOT = {
-				country_exists = MRA
-			}
-		}
+		#bypass = {
+		#	NOT = {
+		#		country_exists = MRA
+		#	}
+		#}
 		x = 12
 		y = 11
 		will_lead_to_war_with = MRA
 		completion_reward = {
-		add_state_core = 533
-		add_state_core = 272
-		add_state_core = 181
-		add_state_core = 206
-		add_state_core = 419
-		add_state_core = 552
-			create_wargoal = {
-				type = annex_everything
-				target = MRA
+			add_state_core = 533
+			add_state_core = 272
+			add_state_core = 181
+			add_state_core = 206
+			add_state_core = 419
+			add_state_core = 552
+			if = {
+				limit = {
+					MRA = { exists = yes }
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = MRA
+				}
+			}
+			else_if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = MRA
+							NOT = { is_controlled_by = MRA }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = MRA
+						}
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+				}
 			}
 		}
-
 	}
 	focus = {
 		id = veg_dambusters
@@ -1606,6 +1841,20 @@ focus_tree = {
 					}
 				}
 				add_to_faction = DAM
+				hidden_effect = {
+					add_ai_strategy = {
+						type = alliance
+						id = "DAM"
+						value = 200
+					}
+					DAM = {
+						add_ai_strategy = {
+							type = alliance
+							id = "VEG"
+							value = 200
+						}
+					}
+				}
 			}
 			
 			if = {
