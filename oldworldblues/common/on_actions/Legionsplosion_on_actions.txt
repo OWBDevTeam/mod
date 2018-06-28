@@ -1,16 +1,17 @@
 on_actions = {
+	# ROOT is winner, FROM is loser
 	on_peaceconference_ended = {
 		effect = {
 			if = {
 				limit = {
-					ROOT = { tag = NCR }
-					FROM = { tag = CES }
+					ROOT = { original_tag = NCR }
+					FROM = { original_tag = CES }
 				}
 				NCR = { country_event = { id = nf_ncr.30 days = 14 } }
 			}
 			if = {
 				limit = {
-					ROOT = { tag = CES }
+					ROOT = { original_tag = CES }
 				}
 				every_state = {
 					limit = {
