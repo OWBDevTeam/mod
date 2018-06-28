@@ -756,7 +756,7 @@ scavenge_equipment_randomiser = {
 					random_list = { 60 = { set_country_flag = s_support_e } }
 					random_list = { 25 = { set_country_flag = s_pmgs } }
 					random_list = { 35 = { set_country_flag = s_dynamite } }
-					random_list = { 15 = { set_country_flag = s_energey_e_1 } }
+					random_list = { 15 = { set_country_flag = s_energy_e_1 } }
 					random_list = { 10 = { set_country_flag = s_melee_3 } }
 					random_list = { 5 = { set_country_flag = s_energy_e_2 } }
 					random_list = { 5 = { set_country_flag = s_ballistic_e_2 } }
@@ -1092,6 +1092,7 @@ resolve_equip_loot = {
 		if = {
 			limit = {
 				has_country_flag = s_support_e
+				has_tech = support_weaponry
 			}
 			add_equipment_to_stockpile = { type = support_equipment amount = 100 }
 			clr_country_flag = s_support_e

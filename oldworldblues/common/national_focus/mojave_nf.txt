@@ -10,32 +10,32 @@ focus_tree = {
 	default = no
 	focus = {
 		id = MOJ_our_founding
-		icon = GFX_goal_bos_elder_recalled
+		icon = GFX_goal_bos_generic
 		cost = 1.00
 		x = 18
 		y = 0
-		
+
 		completion_reward = {
-			country_event = { id = nf_genericbos.1 }	
+			country_event = { id = nf_genericbos.1 }
 		}
 	}
 	focus = {
 		id = MOJ_our_interim
-		icon = GFX_goal_bos_elder_recalled
+		icon = GFX_goal_bos_generic
 		cost = 1.00
 		prerequisite = {
 			focus = MOJ_our_founding
 		}
 		x = 18
 		y = 1
-		
+
 		completion_reward = {
-			country_event = { id = nf_genericbos.2 }	
+			country_event = { id = nf_genericbos.2 }
 		}
 	}
 	focus = {
 		id = MOJ_our_future
-		icon = GFX_goal_bos_elder_recalled
+		icon = GFX_goal_bos_generic
 		cost = 1.00
 		prerequisite = {
 			focus = MOJ_our_interim
@@ -44,7 +44,7 @@ focus_tree = {
 		y = 2
 
 		completion_reward = {
-			country_event = { id = nf_genericbos.3 }	
+			country_event = { id = nf_genericbos.3 }
 		}
 	}
 	focus = {
@@ -52,8 +52,8 @@ focus_tree = {
 		icon = GFX_goal_bos_steel_cage
 		cost = 10.00
 		available = {
-			any_owned_state = { 
-				is_coastal = yes 
+			any_owned_state = {
+				is_coastal = yes
 			}
 		}
 		prerequisite = {
@@ -61,10 +61,10 @@ focus_tree = {
 		}
 		x = 3
 		y = 3
-		
+
 		completion_reward = {
 			random_owned_state = {
-				limit = { 
+				limit = {
 					is_coastal = yes
 					free_building_slots = {
 						building = dockyard
@@ -106,10 +106,10 @@ focus_tree = {
 		}
 		x = 7
 		y = 3
-		
+
 		completion_reward = {
 			air_experience = 25
-		}	
+		}
 	}
 	focus = {
 		id = MOJ_from_the_skies
@@ -120,11 +120,11 @@ focus_tree = {
 		}
 		x = 6
 		y = 4
-		
+
 		completion_reward = {
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = air_doctrine }
 		}
-	}	
+	}
 	focus = {
 		id = MOJ_staging_bases
 		icon = GFX_goal_generic_military_industry_focus
@@ -134,7 +134,7 @@ focus_tree = {
 		}
 		x = 8
 		y = 4
-		
+
 		completion_reward = {
 			random_owned_controlled_state = {
 					limit = {
@@ -165,7 +165,7 @@ focus_tree = {
 						instant_build = yes
 					}
 			}
-		}	
+		}
 	}
 	focus = {
 		id = MOJ_our_right
@@ -176,7 +176,7 @@ focus_tree = {
 		}
 		x = 12
 		y = 3
-		
+
 		completion_reward = {
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = industry }
 		}
@@ -190,13 +190,13 @@ focus_tree = {
 		}
 		x = 10
 		y = 4
-		
+
 		completion_reward = {
 			capital_scope = {
-				add_resource = { type = metal amount = 16 }    
+				add_resource = { type = metal amount = 16 }
 			}
 		}
-	}	
+	}
 	focus = {
 		id = MOJ_salvaged_electronics
 		icon = GFX_goal_generic_electronics_focus
@@ -206,10 +206,10 @@ focus_tree = {
 		}
 		x = 14
 		y = 4
-		
+
 		completion_reward = {
 			capital_scope = {
-				add_resource = { type = electronics amount = 16 }    
+				add_resource = { type = electronics amount = 16 }
 			}
 		}
 	}
@@ -222,7 +222,7 @@ focus_tree = {
 		}
 		x = 18
 		y = 3
-		
+
 		completion_reward = {
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
 		}
@@ -236,7 +236,7 @@ focus_tree = {
 		}
 		x = 17
 		y = 4
-		
+
 		completion_reward = {
 			add_ideas = genericbossteellegions
 		}
@@ -251,9 +251,9 @@ focus_tree = {
 		}
 		x = 19
 		y = 4
-		
+
 		completion_reward = {
-			add_ideas = genericboswastelandconscripts
+			add_manpower = 500
 		}
 	}
 	focus = {
@@ -265,12 +265,9 @@ focus_tree = {
 		}
 		x = 19
 		y = 5
-		
+
 		completion_reward = {
-			swap_ideas = {
-				add_idea = genericbosfleshbeforesteel
-				remove_idea = genericboswastelandconscripts
-			}
+			add_ideas =  genericbosfleshbeforesteel
 		}
 	}
 	focus = {
@@ -282,12 +279,12 @@ focus_tree = {
 		}
 		x = 19
 		y = 6
-		
+
 		completion_reward = {
-			add_equipment_to_stockpile = { 
-				type = energy_equipment_2 
-				amount = 1000 
-				producer = WBH 
+			add_equipment_to_stockpile = {
+				type = energy_equipment_2
+				amount = 1000
+				producer = WBH
 			}
 			random_owned_controlled_state = {
 					limit = {
@@ -330,24 +327,24 @@ focus_tree = {
 		}
 		x = 19
 		y = 7
-		
+
 		completion_reward = {
 			add_tech_bonus = { bonus = 0.5 uses = 2 category = land_doctrine }
 		}
 	}
 	focus = {
 		id = MOJ_our_goal
-		icon = GFX_goal_BOS_generic
+		icon = GFX_goal_bos_generic
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_our_future
 		}
 		x = 23
 		y = 3
-		
+
 		completion_reward = {
 			add_political_power = 100
-		}	
+		}
 	}
 	focus = {
 		id = MOJ_seek_technology
@@ -358,24 +355,24 @@ focus_tree = {
 		}
 		x = 22
 		y = 4
-		
+
 		completion_reward = {
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = electronics }
 		}
 	}
 	focus = {
 		id = MOJ_scribe_research
-		icon = GFX_goal_bos_the_mojave_signal
+		icon = GFX_goal_bos_generic_research
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_seek_technology
 		}
 		x = 22
 		y = 5
-		
+
 		completion_reward = {
 			add_ideas = genericbosscriberesearch
-		}	
+		}
 	}
 	focus = {
 		id = MOJ_old_developments
@@ -386,10 +383,10 @@ focus_tree = {
 		}
 		x = 22
 		y = 6
-		
+
 		completion_reward = {
 			capital_scope = {
-				add_resource = { type = advanced_technology amount = 8 }    
+				add_resource = { type = advanced_technology amount = 8 }
 			}
 		}
 	}
@@ -402,7 +399,7 @@ focus_tree = {
 		}
 		x = 22
 		y = 7
-		
+
 		completion_reward = {
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = robotics_tech }
 		}
@@ -416,9 +413,9 @@ focus_tree = {
 		}
 		x = 24
 		y = 4
-		
+
 		completion_reward = {
-			add_ideas = genericbosbunkerthought 
+			add_ideas = genericbosbunkerthought
 		}
 	}
 	focus = {
@@ -430,7 +427,7 @@ focus_tree = {
 		}
 		x = 24
 		y = 5
-		
+
 		completion_reward = {
 			swap_ideas = {
 				add_idea = genericbossurfaceoutposts
@@ -447,37 +444,11 @@ focus_tree = {
 		}
 		x = 24
 		y = 6
-		
+
 		completion_reward = {
-			random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = industrial_complex
-							size > 0
-							include_locked = yes
-						}
-						OR = {
-							is_in_home_area = yes
-							NOT = {
-								owner = {
-										any_owned_state = {
-											free_building_slots = {
-												building = industrial_complex
-												size > 0
-												include_locked = yes
-											}
-											is_in_home_area = yes
-										}
-								}
-							}
-						}
-					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
+			add_offsite_building = { 
+				type = industrial_complex 
+				level = 2 
 			}
 		}
 	}
@@ -490,7 +461,7 @@ focus_tree = {
 		}
 		x = 24
 		y = 7
-		
+
 		completion_reward = {
 			add_ideas = genericbosnewtech
 		}
@@ -505,14 +476,14 @@ focus_tree = {
 		x = 3
 		y = 4
 		available = {
-			any_owned_state = { 
-				is_coastal = yes 
+			any_owned_state = {
+				is_coastal = yes
 			}
 		}
-		
+
 		completion_reward = {
 			random_owned_state = {
-				limit = { 
+				limit = {
 					is_coastal = yes
 				}
 				add_extra_state_shared_building_slots = 3
@@ -523,7 +494,7 @@ focus_tree = {
 				}
 			}
 		}
-	}	
+	}
 	focus = {
 		id = MOJ_supporting_vessels
 		icon = GFX_goal_generic_navy_cruiser
@@ -533,7 +504,7 @@ focus_tree = {
 		}
 		x = 2
 		y = 5
-		
+
 		completion_reward = {
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = ship_destroyer_tech }
 		}
@@ -547,7 +518,7 @@ focus_tree = {
 		}
 		x = 4
 		y = 5
-		
+
 		completion_reward = {
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = ship_heavy_cruiser_tech }
 		}
@@ -564,7 +535,7 @@ focus_tree = {
 		}
 		x = 3
 		y = 6
-		
+
 		completion_reward = {
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = ship_battleship_tech }
 		}
@@ -581,7 +552,7 @@ focus_tree = {
 		}
 		x = 7
 		y = 5
-		
+
 		completion_reward = {
 			add_ideas = genericbosaerialsupermacy
 		}
@@ -595,7 +566,7 @@ focus_tree = {
 		}
 		x = 7
 		y = 6
-		
+
 		completion_reward = {
 			add_ideas = genericboswastelanderauxs
 		}
@@ -609,10 +580,10 @@ focus_tree = {
 		}
 		x = 12
 		y = 4
-		
+
 		completion_reward = {
 			capital_scope = {
-				add_resource = { type = electricity amount = 16 }    
+				add_resource = { type = electricity amount = 16 }
 			}
 		}
 	}
@@ -631,10 +602,10 @@ focus_tree = {
 		}
 		x = 11
 		y = 5
-		
+
 		completion_reward = {
 			capital_scope = {
-				add_resource = { type = advanced_technology amount = 8 }    
+				add_resource = { type = advanced_technology amount = 8 }
 			}
 		}
 	}
@@ -656,7 +627,7 @@ focus_tree = {
 
 		completion_reward = {
 			capital_scope = {
-				add_resource = { type = fuel amount = 8 }    
+				add_resource = { type = fuel amount = 8 }
 			}
 		}
 	}
@@ -707,7 +678,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = MOJ_civillian_workshops
+		id = MOJ_civilian_workshops
 		icon = GFX_goal_generic_large_scale_normal_industry_focus
 		cost = 10.00
 		prerequisite = {
@@ -715,7 +686,7 @@ focus_tree = {
 		}
 		x = 13
 		y = 6
-		
+
 		completion_reward = {
 			random_owned_controlled_state = {
 					limit = {
@@ -757,11 +728,11 @@ focus_tree = {
 			focus = MOJ_arm_foundries
 		}
 		prerequisite = {
-			focus = MOJ_civillian_workshops
+			focus = MOJ_civilian_workshops
 		}
 		x = 12
 		y = 7
-		
+
 		completion_reward = {
 			random_owned_controlled_state = {
 					limit = {
@@ -841,9 +812,9 @@ focus_tree = {
 		}
 		x = 17
 		y = 5
-		
+
 		completion_reward = {
-			add_ideas = genericbosnewinitiates
+			add_manpower = 100
 		}
 	}
 	focus = {
@@ -855,7 +826,7 @@ focus_tree = {
 		}
 		x = 17
 		y = 6
-		
+
 		completion_reward = {
 			add_ideas = genericbost45d
 		}
@@ -901,9 +872,9 @@ focus_tree = {
 		}
 		x = 22
 		y = 8
-		
+
 		completion_reward = {
-			set_technology = { 
+			set_technology = {
 				vertiberd_gunship = 1
 				vertiberd_transport1 = 1
 			}
@@ -922,18 +893,18 @@ focus_tree = {
 		y = 8
 
 		completion_reward = {
-			set_technology = { 
+			set_technology = {
 				tesla_weaponry = 1
 			}
 		}
 	}
-	
+
 	# Mojave Brotherhood #
-	
+
 	focus = {
 		id = MOJ_chapter_leadership # Event focus describing the choices for Chapter Leadership
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_bos_the_mojave_signal
+		cost = 5.00
 		prerequisite = {
 			focus = MOJ_our_future
 		}
@@ -948,8 +919,8 @@ focus_tree = {
 	}
 	focus = {
 		id = MOJ_elijah # Set Elijah as Chapter Leader
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_moj_elijah
+		cost = 5.00
 		prerequisite = {
 			focus = MOJ_chapter_leadership
 		}
@@ -966,21 +937,21 @@ focus_tree = {
 	}
 	focus = {
 		id = MOJ_scribal_thought #  -5% Research Bonus
-		icon = GFX_goal_unknown
+		icon = GFX_goal_moj_scribal_thought
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_elijah
 		}
 		x = 28
 		y = 5
-	
+
 		completion_reward = {
 			add_ideas = mojave_scribal_thought
 		}
 	}
 	focus = {
 		id = MOJ_old_world_rumors # 35 day Focus, triggers event referencing Sierra Madre and Helios One
-		icon = GFX_goal_unknown
+		icon = GFX_goal_moj_old_world_rumors
 		cost = 5
 		prerequisite = {
 			focus = MOJ_scribal_thought
@@ -994,46 +965,54 @@ focus_tree = {
 	}
 	focus = {
 		id = MOJ_helios_one # Unlock decision to border war with owner of Helios One and bypassed if already owned
-		icon = GFX_goal_unknown
+		icon = GFX_goal_moj_helious_one
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_old_world_rumors
 		}
-		bypass = {
+		available = {
 		    MOJ = {
-				owns_state = 417
-				controls_state = 417
+			    NOT = {
+				    owns_state = 417
+				    controls_state = 417
+				}
 			}
 		}
-		x = 27
+		x = 26
 		y = 7
-		
+
 		completion_reward = {
 		    country_event = { id = nf_mojave.25 days = 1 }
 		}
 	}
 	focus = {
 		id = MOJ_energy_boom # Increase Energy production at Helios One
-		icon = GFX_goal_unknown
+		icon = GFX_goal_moj_energy_boom
 		cost = 10.00
 		prerequisite = {
-			focus = MOJ_helios_one
+			focus = MOJ_old_world_rumors
 		}
+
 		x = 27
 		y = 8
-
+		available = {
+		    MOJ = {
+				owns_state = 417
+				controls_state = 417
+			}
+		}
 		completion_reward = {
-			capital_scope = {
-				add_resource = { 
-					type = electricity 
-					amount = 10  
+			417 = {
+				add_resource = {
+					type = electricity
+					amount = 10
 				}
 			}
-		}	
+		}
 	}
 	focus = {
 		id = MOJ_sierra_madre # Unlocks Decision to send expeditions to Sierra Madre
-		icon = GFX_goal_unknown
+		icon = GFX_goal_moj_sierra_madre
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_old_world_rumors
@@ -1047,8 +1026,8 @@ focus_tree = {
 	}
 	focus = {
 		id = MOJ_a_forgotten_hellscape # 35 day focus, Events about conflict with Ghost People
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_moj_a_forgotten_hellscape
+		cost = 5.00
 		prerequisite = {
 			focus = MOJ_sierra_madre
 		}
@@ -1061,7 +1040,7 @@ focus_tree = {
 	}
 	focus = {
 		id = MOJ_what_remains #Event for either 10% Energy Weapon Buff (Holorifles) or 10% Factory Output (Matter Replicators)
-		icon = GFX_goal_unknown
+		icon = GFX_goal_moj_what_remains
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_a_forgotten_hellscape
@@ -1075,19 +1054,29 @@ focus_tree = {
 	}
 	focus = {
 		id = MOJ_a_forgotten_weapon # Not sure really
-		icon = GFX_goal_unknown
+		icon = GFX_goal_moj_a_forgotten_weapon
 		cost = 10.00
+		available = {
+		    MOJ = {
+				owns_state = 417
+				controls_state = 417
+			}
+		}
 		prerequisite = {
 			focus = MOJ_energy_boom
 		}
 		x = 27
 		y = 9
 
+		completion_reward = {
+		    add_ideas = mojave_forgotten_weapon
+		}
+
 	}
 	focus = {
 		id = MOJ_hardin # Set Hardin as Country Leader
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_moj_hardin
+		cost = 5.00
 		prerequisite = {
 			focus = MOJ_chapter_leadership
 		}
@@ -1104,7 +1093,7 @@ focus_tree = {
 	}
 	focus = {
 		id = MOJ_paladin_thought # Load two power armor divs
-		icon = GFX_goal_unknown
+		icon = GFX_goal_moj_paladin_thought
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_hardin
@@ -1113,13 +1102,16 @@ focus_tree = {
 		y = 5
 
 		completion_reward = {
-			load_oob = mojave_paladin_thought
+			custom_effect_tooltip = MOJ_hardin_recruits
+			hidden_effect = {
+				load_oob = mojave_paladin_thought
+			}
 		}
 	}
 	focus = {
 		id = MOJ_know_our_name # Stability and War Support + 10%
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_moj_know_our_name
+		cost = 7.00
 		prerequisite = {
 			focus = MOJ_paladin_thought
 		}
@@ -1133,7 +1125,7 @@ focus_tree = {
 	}
 	focus = {
 		id = MOJ_ncr_raids # Event to attack NCR convoys and steal weapons, can trigger a border war in response
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_focus_ncr_raids
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_know_our_name
@@ -1150,7 +1142,7 @@ focus_tree = {
 	}
 	focus = {
 		id = MOJ_closedown_van_graffs # Event to attack van graffs and steal energy weapon supplies
-		icon = GFX_goal_unknown
+		icon = GFX_goal_moj_closedown_van_graffs
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_know_our_name
@@ -1163,8 +1155,8 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = MOJ_gun_runner_caravan_raids 
-		icon = GFX_goal_unknown
+		id = MOJ_gun_runner_caravan_raids
+		icon = GFX_goal_moj_gun_runner_caravan_raids
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_closedown_van_graffs
@@ -1177,8 +1169,8 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = MOJ_terror_raids 
-		icon = GFX_goal_unknown
+		id = MOJ_technology_raids
+		icon = GFX_goal_moj_technology_raids
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_gun_runner_caravan_raids
@@ -1192,7 +1184,7 @@ focus_tree = {
 	}
 	focus = {
 		id = MOJ_contact_the_west # Event seeking support from the Western Brotherhood I.e faction Joining
-		icon = GFX_goal_unknown
+		icon = GFX_goal_moj_contact_the_west
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_ncr_raids
@@ -1206,7 +1198,7 @@ focus_tree = {
 	}
 	focus = {
 		id = MOJ_aggressive_policy # Div Attack bonus and weapons research bonus
-		icon = GFX_goal_unknown
+		icon = GFX_goal_moj_aggressive_policy
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_contact_the_west
@@ -1220,13 +1212,13 @@ focus_tree = {
 	}
 	focus = {
 		id = MOJ_mcnamara # Set McNamara as Country Leader
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_moj_mcnamara
+		cost = 5.00
 		prerequisite = {
 			focus = MOJ_chapter_leadership
 		}
 		available = {
-			has_country_leader = { id = 983 ruling_only = yes name = "Nolan McNamara" }
+			has_country_leader = { id = 2007 ruling_only = yes name = "Nolan McNamara" }
 			has_country_flag = mojave_chapter_chose_leader
 		}
 		x = 36
@@ -1238,7 +1230,7 @@ focus_tree = {
 	}
 	focus = {
 		id = MOJ_progressive_thought # Spawn a div of wastelander troops
-		icon = GFX_goal_unknown
+		icon = GFX_goal_moj_progressive_thought
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_mcnamara
@@ -1247,13 +1239,16 @@ focus_tree = {
 		y = 5
 
 		completion_reward = {
-			load_oob = mojave_progressive_thought
+			hidden_effect = {
+				load_oob = mojave_progressive_thought
+			}
+			custom_effect_tooltip = MOJ_mcnamara_militia
 		}
 	}
 	focus = {
-		id = MOJ_the_future # Event describing the chapter cannot continue as it has been and change is needed 
-		icon = GFX_goal_unknown
-		cost = 10.00
+		id = MOJ_the_future # Event describing the chapter cannot continue as it has been and change is needed
+		icon = GFX_goal_moj_the_future
+		cost = 5.00
 		prerequisite = {
 			focus = MOJ_progressive_thought
 		}
@@ -1262,11 +1257,11 @@ focus_tree = {
 
 		completion_reward = {
 			country_event = { id = nf_mojave.12 days = 1 }
-		}	
+		}
 	}
 	focus = {
 		id = MOJ_ncr_negotiations # Event with the NCR, granting either Non Aggression Pact, Mil Access or negotiations fails and nothing
-		icon = GFX_goal_unknown
+		icon = GFX_goal_moj_ncr_negotiations
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_the_future
@@ -1280,7 +1275,7 @@ focus_tree = {
 	}
 	focus = {
 		id = MOJ_ncr_trade # Trade Relations buff with NCR
-		icon = GFX_goal_unknown
+		icon = GFX_goal_moj_ncr_trade
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_ncr_negotiations
@@ -1294,7 +1289,7 @@ focus_tree = {
 	}
 	focus = {
 		id = MOJ_ncr_alliance # Join the NCR Faction
-		icon = GFX_goal_unknown
+		icon = GFX_goal_moj_ncr_pact
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_ncr_trade
@@ -1308,7 +1303,7 @@ focus_tree = {
 	}
 	focus = {
 		id = MOJ_help_the_needy #  Monthly Pop bonus of 10%
-		icon = GFX_goal_unknown
+		icon = GFX_goal_moj_help_the_needy
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_the_future
@@ -1322,7 +1317,7 @@ focus_tree = {
 	}
 	focus = {
 		id = MOJ_incorporate_the_followers # Research idea of -5%
-		icon = GFX_goal_unknown
+		icon = GFX_goal_moj_incorporate_the_followers
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_help_the_needy
@@ -1336,12 +1331,19 @@ focus_tree = {
 	}
 	focus = {
 		id = MOJ_wastelander_recruitment # Further Wastelander recruitment so either pop factor bonus
-		icon = GFX_goal_unknown
+		icon = GFX_goal_moj_wastelander_recruitment
 		cost = 10.00
 		prerequisite = {
 			focus = MOJ_incorporate_the_followers
 		}
 		x = 37
 		y = 9
+
+		completion_reward = {
+		    swap_ideas = {
+			    add_idea =  limited_conscription
+				remove_idea = oldguard
+			}
+		}
 	}
 }

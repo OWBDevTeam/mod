@@ -70,3 +70,18 @@ is_free_or_subject_of_root = {
 		is_subject_of = ROOT
 	}
 }
+
+#Is Multiplayer
+is_multiplayer = {
+	NOT = {
+		any_country = {
+			NOT = { is_ai = yes }
+			any_country = {
+				NOT = { 
+					tag = PREV
+					is_ai = yes
+				}
+			}
+		}
+	}	
+}

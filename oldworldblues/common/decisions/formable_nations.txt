@@ -1,0 +1,77 @@
+formable_nations = {
+	form_deseret = {
+		allowed = {
+			tag = NCN
+		}
+		visible = {
+			has_completed_focus = lds_godskingdom
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = form_deseret_req_tt
+				all_country = {
+					OR = {
+						NOT = {
+							any_owned_state = {
+								is_utah_state = yes
+							}
+						}
+						is_puppet_of = NCN
+						tag = NCN
+					}
+				}
+			}
+			
+		}
+
+		highlight_states = { # Due to the game being fucking stupid this doesn't do what it should do - it will only highlight 1 state but it should highlight them all :(
+			OR = {
+				AND = {
+					is_utah_state = yes
+					NOT = { is_owned_and_controlled_by = NCN }
+				}
+			}
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = ncn_deseret
+			custom_effect_tooltip = form_deseret_cores_tt
+			every_state = { # Adds a core on every state in the Utah region
+                limit = {
+                    is_utah_state = yes
+                }
+                add_core_of = NCN
+            }
+            custom_effect_tooltip = form_deseret_annex_puppet_tt
+            custom_effect_tooltip = form_deseret_take_puppet_tt
+            hidden_effect = {
+            	every_country = { # If every state a puppet owns is in the Utah region, we annex them and take the troops
+            		limit = {
+            			is_puppet_of = NCN
+            			all_owned_state = {
+            				is_utah_state = yes
+            			}
+            		}
+            		NCN = { annex_country = { target = PREV transfer_troops = yes } }
+          		}
+           		every_country = { # If a puppet has some but not all of their states in the Utah region, we snag the Utah states
+            		limit = {
+            			is_puppet_of = NCN
+           	 			any_owned_state = {
+            				is_utah_state = yes
+            			}
+            			NOT = {
+            				all_owned_state = {
+            					is_utah_state = yes
+            				}
+            			}
+            		}
+            		every_owned_state = {
+            			limit = { is_utah_state = yes }
+            			NCN = { transfer_state = PREV }
+            		}
+            	}
+            }
+		}
+	}
+}

@@ -1,0 +1,57 @@
+﻿capital = 608
+oob = "BLK_2275"
+
+set_technology = {
+    standard_weaponry_tech = 1
+    blunt_weaponry = 1
+    support_weaponry = 1
+    anti_personnel_tech = 1
+    recon_tech = 1
+    bike_tech_1 = 1
+    tribal_civilization = 1
+    settled_civilization = 1
+    destroyer_tech = 1
+    cruiser_tech = 1
+    battleship_tech = 1 
+    heavy_cruiser_tech = 1
+    truck_tech_1 = 1
+}
+
+set_stability = 0.33
+set_war_support = 0.66
+
+set_politics = {
+    parties = {
+        people = { popularity = 0 }
+        elites = { popularity = 30 }
+        intellectuals = { popularity = 0 }
+        ruler = { popularity = 70 }
+    }
+    ruling_party = ruler
+    elections_allowed = no
+}
+
+add_ideas = { 
+    tribal_nation
+}
+
+create_corps_commander = {
+    name = "Skullsplitter"
+    portrait_path = "gfx/leaders/Raider/Portrait_Raider_Generic_10.dds"
+    skill = 6
+    traits = { }
+	attack_skill = 4
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+}
+create_country_leader  = {
+    name = "Canyon Runner"
+    desc = "CANYON_RUNNER_DESC"
+    picture = "Portrait_Canyon_Runner.dds"
+    expire = "3000.1.1"
+    ideology = warlordship
+    
+    traits = {
+    }
+}

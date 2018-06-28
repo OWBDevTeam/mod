@@ -1,0 +1,58 @@
+﻿capital = 565
+oob = "BSU_2275"
+
+set_technology = {
+    standard_weaponry_tech = 1
+    blunt_weaponry = 1
+    support_weaponry = 1
+    anti_personnel_tech = 1
+    recon_tech = 1
+    bike_tech_1 = 1
+    tribal_civilization = 1
+    settled_civilization = 1
+    destroyer_tech = 1
+    cruiser_tech = 1
+    battleship_tech = 1 
+    heavy_cruiser_tech = 1
+    truck_tech_1 = 1
+}
+
+set_stability = 0.4 
+set_war_support = 0.4
+
+set_politics = {
+    parties = {
+        people = { popularity = 32 }
+        elites = { popularity = 0 }
+        intellectuals = { popularity = 0 }
+        ruler = { popularity = 68 }
+    }
+    ruling_party = ruler
+    elections_allowed = no
+}
+
+add_ideas = { 
+	tribal_nation
+		
+}
+
+create_corps_commander = {
+    name = "Stern"
+    portrait_path = "gfx/leaders/Tribal/Portrait_Tribal_Generic_6.dds"
+    skill = 5
+    traits = { }
+	attack_skill = 1
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_country_leader  = {
+    name = "Honest"
+    desc = "HONEST_DESC"
+    picture = "gfx/leaders/Tribal/Portrait_Tribal_Generic_13.dds"
+    expire = "3000.1.1"
+    ideology = chieftain
+    
+    traits = {
+    }
+}

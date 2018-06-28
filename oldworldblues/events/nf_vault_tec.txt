@@ -242,6 +242,11 @@ country_event = {
 	}
 	option = {
 		name = nf_vault_tec.7.b
+		trigger = {
+			NOT = {
+				has_tech = flamer_tech_3
+			}
+		}
 		hidden_effect = {
 			news_event = {
 				id = nf_vault_tec.10
@@ -347,6 +352,16 @@ news_event = {
 	desc = nf_vault_tec.10.d 
 	is_triggered_only = yes
 	fire_only_once = yes
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = VLT
+				}
+				sound_effect = bad_karma
+			}
+		}
+	}
 	option = {
 		name = nf_vault_tec.10.a 
 	}

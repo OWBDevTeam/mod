@@ -1,0 +1,29 @@
+debug_decisions = {
+	turn_off = {
+		complete_effect = { clr_country_flag = debug }
+	}
+
+	phr_revolt = {
+		complete_effect = {
+			CES = { set_country_flag = revolter_target }
+			every_country = {
+				set_variable = { var = revolter_tag value = PHR.id }
+			}
+			modular_revolt = yes
+		}
+	}
+
+	test_revolt = {
+		complete_effect = {
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = CES
+						is_core_of = NAV
+					}
+				}
+				set_state_flag = legion_height
+			}
+		}
+	}
+}

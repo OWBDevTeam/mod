@@ -3,14 +3,14 @@ focus_tree = {
 	country = {
 		factor = 0
 		modifier = {
-			add = 100
+			add = 10
 			tag = WBH
 		}
 	}
 	default = no
 	focus = {
 		id = WBH_our_founding
-		icon = GFX_goal_bos_elder_recalled
+		icon = GFX_goal_bos_generic
 		cost = 1.00
 		x = 18
 		y = 0
@@ -21,7 +21,7 @@ focus_tree = {
 	}
 	focus = {
 		id = WBH_our_interim
-		icon = GFX_goal_bos_elder_recalled
+		icon = GFX_goal_bos_generic
 		cost = 1.00
 		prerequisite = {
 			focus = WBH_our_founding
@@ -35,7 +35,7 @@ focus_tree = {
 	}
 	focus = {
 		id = WBH_our_future
-		icon = GFX_goal_bos_elder_recalled
+		icon = GFX_goal_bos_generic
 		cost = 1.00
 		prerequisite = {
 			focus = WBH_our_interim
@@ -253,7 +253,7 @@ focus_tree = {
 		y = 4
 		
 		completion_reward = {
-			add_ideas = genericboswastelandconscripts
+			add_manpower = 500
 		}
 	}
 	focus = {
@@ -267,10 +267,7 @@ focus_tree = {
 		y = 5
 		
 		completion_reward = {
-			swap_ideas = {
-				add_idea = genericbosfleshbeforesteel
-				remove_idea = genericboswastelandconscripts
-			}
+			add_ideas =  genericbosfleshbeforesteel 
 		}
 	}
 	focus = {
@@ -337,7 +334,7 @@ focus_tree = {
 	}
 	focus = {
 		id = WBH_our_goal
-		icon = GFX_goal_BOS_generic
+		icon = GFX_goal_bos_generic
 		cost = 10.00
 		prerequisite = {
 			focus = WBH_our_future
@@ -365,7 +362,7 @@ focus_tree = {
 	}
 	focus = {
 		id = WBH_scribe_research
-		icon = GFX_goal_bos_the_mojave_signal
+		icon = GFX_goal_bos_generic_research
 		cost = 10.00
 		prerequisite = {
 			focus = WBH_seek_technology
@@ -449,35 +446,9 @@ focus_tree = {
 		y = 6
 		
 		completion_reward = {
-			random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = industrial_complex
-							size > 0
-							include_locked = yes
-						}
-						OR = {
-							is_in_home_area = yes
-							NOT = {
-								owner = {
-										any_owned_state = {
-											free_building_slots = {
-												building = industrial_complex
-												size > 0
-												include_locked = yes
-											}
-											is_in_home_area = yes
-										}
-								}
-							}
-						}
-					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
+			add_offsite_building = { 
+				type = industrial_complex 
+				level = 2 
 			}
 		}
 	}
@@ -843,7 +814,7 @@ focus_tree = {
 		y = 5
 		
 		completion_reward = {
-			add_ideas = genericbosnewinitiates
+			add_manpower = 100
 		}
 	}
 	focus = {
@@ -954,13 +925,10 @@ focus_tree = {
 	}
 	focus = {
 		id = WBH_sinister_patriots
-		icon = GFX_goal_focus_power_armor
+		icon = GFX_goal_wbh_sinister_patriots
 		cost = 10.00	
 		prerequisite = {
 			focus = WBH_within_the_blizzard
-		}
-		mutually_exclusive = {
-			focus = WBH_fellow_savages
 		}
 		x = 27
 		y = 4
@@ -972,13 +940,10 @@ focus_tree = {
 	}
 	focus = {
 		id = WBH_fellow_savages
-		icon = GFX_goal_focus_power_armor
+		icon = GFX_goal_wbh_fellow_savages
 		cost = 10.00
 		prerequisite = {
 			focus = WBH_within_the_blizzard
-		}
-		mutually_exclusive = {
-			focus = WBH_sinister_patriots
 		}
 		x = 29
 		y = 4
@@ -1004,7 +969,7 @@ focus_tree = {
 	}
 	focus = {
 		id = WBH_enslave_the_weak
-		icon = GFX_goal_legion_slaves
+		icon = GFX_goal_wbh_enslave_the_weak
 		cost = 10.00
 		prerequisite = {
 			focus = WBH_dark_ambitions
@@ -1018,7 +983,7 @@ focus_tree = {
 	}
 	focus = {
 		id = WBH_expand_our_dominion
-		icon = GFX_goal_generic_ideological_fury_focus
+		icon = GFX_goal_wbh_expand_our_dominion
 		cost = 10.00
 		prerequisite = {
 			focus = WBH_enslave_the_weak
@@ -1032,7 +997,7 @@ focus_tree = {
 	}
 	focus = {
 		id = WBH_eradicate_the_mutants
-		icon = GFX_goal_wbh_mutant_purge
+		icon = GFX_goal_wbh_eradicate_the_mutants
 		cost = 10.00
 		prerequisite = {
 			focus = WBH_expand_our_dominion
@@ -1053,7 +1018,7 @@ focus_tree = {
 	}
 	focus = {
 		id = WBH_black_paladins
-		icon = GFX_goal_bos_victory_or_death
+		icon = GFX_goal_wbh_black_paladins
 		cost = 10.00
 		prerequisite = {
 			focus = WBH_fellow_savages
@@ -1068,7 +1033,7 @@ focus_tree = {
 	}
 	focus = {
 		id = WBH_decimate_and_despoil
-		icon = GFX_goal_generic_war_focus
+		icon = GFX_goal_wbh_decimate_and_despoil
 		cost = 10.00
 		prerequisite = {
 			focus = WBH_black_paladins
@@ -1082,7 +1047,7 @@ focus_tree = {
 	}
 	focus = {
 		id = WBH_dark_foundries
-		icon = GFX_goal_generic_military_industry_focus
+		icon = GFX_goal_wbh_dark_foundries
 		cost = 10.00
 		prerequisite = {
 			focus = WBH_decimate_and_despoil
@@ -1109,7 +1074,7 @@ focus_tree = {
 	}
 	focus = {
 		id = WBH_death_or_glory
-		icon = GFX_goal_bos_scourge_focus
+		icon = GFX_goal_wbh_death_or_glory
 		cost = 10.00
 		prerequisite = {
 			focus = WBH_dark_foundries
@@ -1124,7 +1089,7 @@ focus_tree = {
 	}
 	focus = {
 		id = WBH_alaskan_expedition
-		icon = GFX_goal_bos_scourge_focus
+		icon = GFX_goal_wbh_great_alaskan_expedition
 		cost = 10.00
 		prerequisite = {
 			focus = WBH_eradicate_the_mutants

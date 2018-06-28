@@ -200,7 +200,7 @@ NCR_mojave_campaign = {
 			custom_effect_tooltip = escalation_possible_tooltip_for_defender
 			custom_effect_tooltip = effects_if_border_conflict_is_lost
 			effect_tooltip = {
-				add_political_power = -100
+				add_political_power = -10
 				var:ROOT.defender_state_vs_@FROM = { FROM = { transfer_state = PREV } }
 			}
 			hidden_effect = {
@@ -246,7 +246,7 @@ NCR_mojave_campaign = {
 			custom_effect_tooltip = from_cannot_escalate
 			custom_effect_tooltip = effects_if_border_conflict_is_lost
 			effect_tooltip = {
-				add_political_power = -100
+				add_political_power = -10
 				var:ROOT.defender_state_vs_@FROM = { FROM = { transfer_state = PREV } }
 			}
 		}		
@@ -412,10 +412,10 @@ NCR_mojave_campaign = {
 			}
 		}
 
-		cost = 200
+		cost = 30
 
 		ai_will_do = {
-			base = 20
+			base = 30
 			modifier = {
 				factor = 0
 				has_war = yes
@@ -481,7 +481,7 @@ NCR_mojave_campaign = {
 			}
 		}
 
-		cost = 150
+		cost = 30
 
 		ai_will_do = {
 			base = 0

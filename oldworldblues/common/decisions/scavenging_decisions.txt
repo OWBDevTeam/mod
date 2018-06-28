@@ -1,78 +1,7 @@
-#### Planning Section ####
-# Three rarities - common, rare and legendary
-# Later are only found in 'large' or 'legendary' events
-# First have decreasing rarity as SE increases
-# Second have increasing rarity as SE increases
-# Final only have a slight impact from SE
-
-### SE ###
-## Possible values ##
-# 90%
-# 100%
-# 110%
-# 120%
-# 130%
-# 140%
-# 150%
-## Modifiers ##
-# Tribal > -10%
-# Binoculars > 10%
-# Portable Radios > 10%
-# Radio Detection > 10%
-# Settler > 10%
-# BOS > 20%
-
-### Equipment ###
-## Common ##
-# Pipe Guns - infantry_equipment_1
-# Basic Firearms - ballistic_equipment_1
-# Basic Melee Weapons - melee_equipment_1
-# Slashing Melee Weapons - melee_equipment_2
-# Support Equipment - support_equipment
-# PMGs - anti_personnel_equipment
-# Dynamite - explosive_equipment
-## Rare ##
-# Laser Muskets - energy_equipment_1
-# Powered Weapons - melee_equipment_3
-# Common Energy Weapons - energy_equipment_2
-# Common Firearms - ballistic_equipment_2
-# Flamers - flamer_equipment
-# Mortars - explosive_equipment_2
-# Scavenged PA (on the rare side) - power_armor_equipment_1
-## Legendary ##
-# Advanced Energy Weapons - energy_equipment_3
-# Advanced Firearms - ballistic_equipment_3
-# T-45d PA - power_armor_equipment_2
-# Miniguns - anti_personnel_equipment_3
-# Missile Launcher - anti_tank_equipment_3
-# Gatling Laser - laser_equipment_3
-# Incinerator - flamer_equipment_3
-
-### Robots ###
-## Common ##
-# Protectron MK1 & 2 - light_robot_equipment_2 & 3
-## Rare ##
-# Mister Handy - medium_robot_equipment_2
-# Mr. Gutsy - medium_robot_equipment_3
-# Robobrain - heavy_robot_equipment_2
-## Legendary ##
-# Sentry Bot - heavy_robot_equipment_3
-
-### Vehicles ###
-## Common ##
-# Scarp Motorbikes - motorbike_equipment_1
-# Salvaged Motorbikes - motorbike_equipment_2
-# Scrap Car - car_equipment_1
-## Rare ##
-# Salvaged Car - car_equipment_2
-# Scrap Truck - truck_equipment_1
-# Wasteland Car - car_equipment_3
-# Salvaged Truck - truck_equipment_2
-## Legendary ##
-# Salvaged APC - apc_equipment_1
-# Scarp Tank - tank_equipment_2
-# Great War APC - apc_equipment_3
-
+########################
+# Scavenging Decisions #
+#     By HappyNTH      #
+########################
 scavenge_resources = {
 	begin_scavenging_program = {
 		available = {
@@ -84,6 +13,9 @@ scavenge_resources = {
 		fire_only_once = yes
 		cost = 20
 		days_remove = 10
+		ai_will_do = {
+			factor = 5
+		}
 
 		complete_effect = {
 			scavenge_equip_start = yes
@@ -151,6 +83,13 @@ scavenge_resources = {
 		cost = 10
 		days_remove = 60
 		days_re_enable = 60
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_political_power < 151 # will prioritise advisors first
+			}
+		}
 
 		complete_effect = {
 			scavenge_equip_start = yes
@@ -190,6 +129,13 @@ scavenge_resources = {
 		cost = 10
 		days_remove = 60
 		days_re_enable = 60
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_political_power < 151 # will prioritise advisors first
+			}
+		}
 
 		complete_effect = {
 			scavenge_equip_start = yes
@@ -200,10 +146,10 @@ scavenge_resources = {
 
 		remove_effect = {
 			random_list = {
-				5 = { # Scavengers Killed
+				10 = { # Scavengers Killed
 					country_event = { id = scavenge.1 }
 				}
-				95 = { # A successful mission
+				90 = { # A successful mission
 					country_event = { id = scavenge.2 }
 				}
 			}
@@ -230,6 +176,13 @@ scavenge_resources = {
 		cost = 10
 		days_remove = 30
 		days_re_enable = 60
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_political_power < 151 # will prioritise advisors first
+			}
+		}
 
 		complete_effect = {
 			scavenge_equip_start = yes
@@ -269,6 +222,13 @@ scavenge_resources = {
 		cost = 10
 		days_remove = 10
 		days_re_enable = 60
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_political_power < 151 # will prioritise advisors first
+			}
+		}
 
 		complete_effect = {
 			scavenge_equip_start = yes
@@ -309,6 +269,13 @@ scavenge_resources = {
 		cost = 10
 		days_remove = 60
 		days_re_enable = 60
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_political_power < 151 # will prioritise advisors first
+			}
+		}
 
 		complete_effect = {
 			scavenge_equip_start = yes
@@ -348,6 +315,13 @@ scavenge_resources = {
 		cost = 10
 		days_remove = 60
 		days_re_enable = 60
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_political_power < 151 # will prioritise advisors first
+			}
+		}
 
 		complete_effect = {
 			scavenge_equip_start = yes
@@ -358,10 +332,10 @@ scavenge_resources = {
 
 		remove_effect = {
 			random_list = {
-				5 = { # Scavengers Killed
+				10 = { # Scavengers Killed
 					country_event = { id = scavenge.1 }
 				}
-				95 = { # A successful mission
+				90 = { # A successful mission
 					country_event = { id = scavenge.3 }
 				}
 			}
@@ -388,6 +362,13 @@ scavenge_resources = {
 		cost = 10
 		days_remove = 30
 		days_re_enable = 60
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_political_power < 151 # will prioritise advisors first
+			}
+		}
 
 		complete_effect = {
 			scavenge_equip_start = yes
@@ -428,6 +409,13 @@ scavenge_resources = {
 		cost = 10
 		days_remove = 10
 		days_re_enable = 60
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_political_power < 151 # will prioritise advisors first
+			}
+		}
 
 		complete_effect = {
 			scavenge_equip_start = yes
@@ -468,6 +456,13 @@ scavenge_resources = {
 		cost = 10
 		days_remove = 60
 		days_re_enable = 60
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_political_power < 151 # will prioritise advisors first
+			}
+		}
 
 		complete_effect = {
 			scavenge_equip_start = yes
@@ -507,6 +502,13 @@ scavenge_resources = {
 		cost = 10
 		days_remove = 60
 		days_re_enable = 60
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_political_power < 151 # will prioritise advisors first
+			}
+		}
 
 		complete_effect = {
 			scavenge_equip_start = yes
@@ -517,10 +519,10 @@ scavenge_resources = {
 
 		remove_effect = {
 			random_list = {
-				5 = { # Scavengers Killed
+				10 = { # Scavengers Killed
 					country_event = { id = scavenge.1 }
 				}
-				95 = { # A successful mission
+				90 = { # A successful mission
 					country_event = { id = scavenge.4 }
 				}
 			}
@@ -547,6 +549,13 @@ scavenge_resources = {
 		cost = 10
 		days_remove = 30
 		days_re_enable = 60
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_political_power < 151 # will prioritise advisors first
+			}
+		}
 
 		complete_effect = {
 			scavenge_equip_start = yes
@@ -587,6 +596,13 @@ scavenge_resources = {
 		cost = 10
 		days_remove = 10
 		days_re_enable = 60
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_political_power < 151 # will prioritise advisors first
+			}
+		}
 
 		complete_effect = {
 			scavenge_equip_start = yes
@@ -633,6 +649,9 @@ scavenge_resources = {
 		cost = 10
 		days_remove = 60
 		days_re_enable = 60
+		ai_will_do = {
+			factor = 2
+		}
 
 		complete_effect = {
 			scavenge_equip_start = yes
@@ -641,10 +660,10 @@ scavenge_resources = {
 
 		remove_effect = {
 			random_list = {
-				5 = { # Scavengers Killed
+				20 = { # Scavengers Killed
 					country_event = { id = scavenge.1 }
 				}
-				95 = { # A successful mission
+				80 = { # A successful mission
 					country_event = { id = scavenge.5 }
 				}
 			}
@@ -677,6 +696,9 @@ scavenge_resources = {
 		cost = 10
 		days_remove = 60
 		days_re_enable = 60
+		ai_will_do = {
+			factor = 3
+		}
 
 		complete_effect = {
 			scavenge_equip_start = yes
@@ -686,10 +708,10 @@ scavenge_resources = {
 
 		remove_effect = {
 			random_list = {
-				5 = { # Scavengers Killed
+				20 = { # Scavengers Killed
 					country_event = { id = scavenge.1 }
 				}
-				95 = { # A successful mission
+				80 = { # A successful mission
 					country_event = { id = scavenge.5 }
 				}
 			}
@@ -722,6 +744,9 @@ scavenge_resources = {
 		cost = 10
 		days_remove = 30
 		days_re_enable = 60
+		ai_will_do = {
+			factor = 2
+		}
 
 		complete_effect = {
 			scavenge_equip_start = yes
@@ -731,10 +756,10 @@ scavenge_resources = {
 
 		remove_effect = {
 			random_list = {
-				5 = { # Scavengers Killed
+				20 = { # Scavengers Killed
 					country_event = { id = scavenge.1 }
 				}
-				95 = { # A successful mission
+				80 = { # A successful mission
 					country_event = { id = scavenge.5 }
 				}
 			}
@@ -767,6 +792,9 @@ scavenge_resources = {
 		cost = 10
 		days_remove = 10
 		days_re_enable = 60
+		ai_will_do = {
+			factor = 3
+		}
 
 		complete_effect = {
 			scavenge_equip_start = yes
@@ -776,10 +804,10 @@ scavenge_resources = {
 
 		remove_effect = {
 			random_list = {
-				5 = { # Scavengers Killed
+				20 = { # Scavengers Killed
 					country_event = { id = scavenge.1 }
 				}
-				95 = { # A successful mission
+				80 = { # A successful mission
 					country_event = { id = scavenge.5 }
 				}
 			}
@@ -887,6 +915,9 @@ scavenge_resources = {
 		cost = 10
 		days_remove = 10
 		days_re_enable = 30
+		ai_will_do = {
+			factor = 10
+		}
 
 		remove_effect = {
 			if = {

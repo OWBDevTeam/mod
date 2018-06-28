@@ -12,7 +12,7 @@ technologies = {
 	@Col_10 = 44
 	@Col_11 = 48
 	@Col_12 = 52
-	
+
 	@Row_1 = 0
 	@Row_2 = 2
 	@Row_3 = 4
@@ -33,7 +33,7 @@ technologies = {
 	@Row_18 = 34
 	@Row_19 = 36
 	@Row_20 = 38
-	
+
 	#-------------------------
 	# Infantry Training
 	#-------------------------
@@ -42,23 +42,23 @@ technologies = {
 			defense = 0.03
 			breakthrough = 0.03
 		}
-		
+
 		path = {
 			leads_to_tech = warrior_training
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		research_cost = 1.5
 		start_year = 2276
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_1 y = @Col_1 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -67,29 +67,29 @@ technologies = {
 			}
 		}
 	}
-	
+
 	warrior_training = {
 		category_all_infantry = {
 			defense = 0.03
 			breakthrough = 0.03
 		}
-		
+
 		path = {
 			leads_to_tech = guerilla_tactics
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		research_cost = 1.5
 		start_year = 2277
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_1 y = @Col_2 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -98,30 +98,30 @@ technologies = {
 			}
 		}
 	}
-	
+
 	# Guerilla tactics
 	guerilla_tactics = {
 		category_all_infantry = {
 			defense = 0.03
 			breakthrough = 0.03
 		}
-		
+
 		path = {
 			leads_to_tech = platoon_training
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		research_cost = 1.5
 		start_year = 2278
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_1 y = @Col_3 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -130,34 +130,34 @@ technologies = {
 			}
 		}
 	}
-	
+
 	# Platoon Training
 	platoon_training = {
 		category_all_infantry = {
 			defense = 0.03
 			breakthrough = 0.03
 		}
-		
+
 		path = {
 			leads_to_tech = basic_drill
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 1.5
 		start_year = 2279
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_1 y = @Col_4 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -166,34 +166,34 @@ technologies = {
 			}
 		}
 	}
-	
+
 	# Basic Drill
 	basic_drill = {
 		category_all_infantry = {
 			defense = 0.03
 			breakthrough = 0.03
 		}
-		
+
 		path = {
 			leads_to_tech = mechanized_training
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 1.5
 		start_year = 2281
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_1 y = @Col_5 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -202,34 +202,34 @@ technologies = {
 			}
 		}
 	}
-	
+
 	# Mechanized Training
 	mechanized_training = {
 		category_all_infantry = {
 			defense = 0.03
 			breakthrough = 0.03
 		}
-		
+
 		path = {
 			leads_to_tech = shock_tactics
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		dependencies = {
 			scientific_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2283
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_1 y = @Col_7 }
+			position = { x = @Row_1 y = @Col_6 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -238,29 +238,29 @@ technologies = {
 			}
 		}
 	}
-	
+
 	# Shock Tactics
 	shock_tactics = {
 		category_all_infantry = {
 			defense = 0.03
 			breakthrough = 0.03
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2285
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_1 y = @Col_8 }
+			position = { x = @Row_1 y = @Col_7 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -269,16 +269,16 @@ technologies = {
 			}
 		}
 	}
-	
+
 	#-------------------------
 	# Ranged Weaponry
 	#-------------------------
 	# Pipe Guns
-	standard_weaponry_tech = {  
+	standard_weaponry_tech = {
 		enable_equipments = {
 			infantry_equipment_1
 		}
-		
+
 		enable_subunits = {
 			militia
 			infantry
@@ -288,19 +288,19 @@ technologies = {
 			leads_to_tech = basic_ballistic_weaponry
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2245
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_3 y = @Col_1 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			infantry_weapons
 		}
-		
+
 		ai_will_do = {
 			factor = 10
 			modifier = {
@@ -313,8 +313,8 @@ technologies = {
 			}
 		}
 	}
-	
-		
+
+
 	# Ballistic sub-route
 	# Basic Firearms
 	basic_ballistic_weaponry = {
@@ -327,25 +327,25 @@ technologies = {
 		path = {
 			leads_to_tech = warrior_equipment
 			research_cost_coeff = 1
-		}	
+		}
 		path = {
 			leads_to_tech = basic_laser_weaponry
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		research_cost = 2.0
 		start_year = 2277
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_3 y = @Col_2 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			ballistic_weaponry_tech
 			infantry_weapons
 		}
-		
+
 		ai_will_do = {
 			factor = 3
 			modifier = {
@@ -362,7 +362,7 @@ technologies = {
 			}
 		}
 	}
-	
+
 	# Common Firearms
 	warrior_equipment = {
 		category_all_infantry = {
@@ -374,21 +374,21 @@ technologies = {
 		path = {
 			leads_to_tech = improved_ballistic_weaponry
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		research_cost = 2.0
 		start_year = 2278
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_3 y = @Col_3 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			ballistic_weaponry_tech
 			infantry_weapons
 		}
-		
+
 		ai_will_do = {
 			factor = 3
 			modifier = {
@@ -401,7 +401,7 @@ technologies = {
 			}
 		}
 	}
-	
+
 	# Energy Weaponry
 	# Laser Muskets
 	basic_laser_weaponry = {
@@ -414,21 +414,21 @@ technologies = {
 		path = {
 			leads_to_tech = improved_laser_weaponry
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		research_cost = 2.0
 		start_year = 2278
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_2 y = @Col_3 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			energy_weaponry_tech
 			infantry_weapons
 		}
-		
+
 		ai_will_do = {
 			factor = 3
 			modifier = {
@@ -461,189 +461,189 @@ technologies = {
 			}
 		}
 	}
-	
+
 	# Common Energy Weapons
 	improved_laser_weaponry = {
 		enable_equipments = {
 			energy_equipment_2
 		}
-		
+
 		path = {
 			leads_to_tech = overcharged_ammunition
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2280
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_2 y = @Col_4 }
 		}
-		
+
 		categories = {
 			infantry_tech
 					energy_weaponry_tech
 			infantry_weapons
 		}
-		
+
 		ai_will_do = {
 			factor = 10
 		}
 	}
-	
+
 	overcharged_ammunition = {
 		category_all_infantry = {
 			ap_attack = 0.1
 		}
-		
+
 		path = {
 			leads_to_tech = advanced_laser_weaponry
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2281
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_2 y = @Col_5 }
 		}
-		
+
 		categories = {
 			infantry_tech
 					energy_weaponry_tech
 			infantry_weapons
 		}
-		
+
 		ai_will_do = {
 			factor = 10
 		}
 	}
-	
+
 	# Advanced Energy Weapons
 	advanced_laser_weaponry = {
 		enable_equipments = {
 			energy_equipment_3
 		}
-		
+
 		path = {
 			leads_to_tech = custom_built_capacitors
 			research_cost_coeff = 1
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2283
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_2 y = @Col_7  }
+			position = { x = @Row_2 y = @Col_6  }
 		}
-		
+
 		categories = {
 			infantry_tech
 					energy_weaponry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0.8
-			
+
 			modifier = {
 				factor = 2
 				date > "2282.1.9"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2283.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2284.1.6"
 			}
 		}
 	}
-	
+
 	custom_built_capacitors = {
 		category_all_infantry = {
 			ap_attack = 0.1
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2284
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_2 y = @Col_8  }
+			position = { x = @Row_2 y = @Col_7  }
 		}
-		
+
 		categories = {
 			infantry_tech
 					energy_weaponry_tech
 			infantry_weapons
 		}
-		
+
 		ai_will_do = {
 			factor = 0.8
-			
+
 			modifier = {
 				factor = 2
 				date > "2283.1.9"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2284.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2285.1.6"
 			}
 		}
 	}
-	
+
 	# Common Infantry Weapons
 	improved_ballistic_weaponry = {
 		enable_equipments = {
 			ballistic_equipment_2
 		}
-		
+
 		path = {
 			leads_to_tech = basic_infantry_equipment
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2279
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_3 y = @Col_4 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			ballistic_weaponry_tech
 			infantry_weapons
 		}
-		
+
 		ai_will_do = {
 			factor = 3
 			modifier = {
@@ -652,34 +652,34 @@ technologies = {
 			}
 		}
 	}
-	
+
 	basic_infantry_equipment = {
 		category_all_infantry = {
 			soft_attack = 0.05
 		}
-		
+
 		path = {
 			leads_to_tech = advanced_ballistic_weaponry
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2280
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_3 y = @Col_5 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			ballistic_weaponry_tech
 			infantry_weapons
 		}
-		
+
 		ai_will_do = {
 			factor = 3
 			modifier = {
@@ -688,122 +688,122 @@ technologies = {
 			}
 		}
 	}
-	
+
 	advanced_ballistic_weaponry = {
 		enable_equipments = {
 			ballistic_equipment_3
 		}
-		
+
 		path = {
 			leads_to_tech = prewar_infantry_kit
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		dependencies = {
 			scientific_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2283
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_3 y = @Col_7 }
+			position = { x = @Row_3 y = @Col_6 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			ballistic_weaponry_tech
 			infantry_weapons
 		}
-		
+
 		ai_will_do = {
 			factor = 0.8
-			
+
 			modifier = {
 				factor = 2
 				date > "2282.1.9"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2283.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2284.1.6"
 			}
 		}
 	}
-	
+
 	prewar_infantry_kit = {
 		category_all_infantry = {
 			soft_attack = 0.05
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2285
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_3 y = @Col_8 }
+			position = { x = @Row_3 y = @Col_7 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			ballistic_weaponry_tech
 			infantry_weapons
 		}
-		
+
 		ai_will_do = {
 			factor = 0.8
-			
+
 			modifier = {
 				factor = 2
 				date > "2284.1.9"
 			}
-			
+
 			modifier = {
 				factor = 2
 				date > "2285.1.1"
 			}
-			
+
 			modifier = {
 				factor = 5
 				date > "2286.1.6"
 			}
 		}
 	}
-	
+
 	#-------------------------
 	# Melee Weaponry
 	#-------------------------
-	blunt_weaponry = {  
+	blunt_weaponry = {
 		enable_equipments = {
 			melee_equipment_1
 		}
-		
+
 		path = {
 			leads_to_tech = slashing_weaponry
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_4 y = @Col_1 }
 		}
-		
+
 		categories = {
 			infantry_tech
 					melee_weaponry_tech
 			infantry_weapons
 		}
-		
+
 		ai_will_do = {
 			factor = 10
 					modifier = {
@@ -820,8 +820,8 @@ technologies = {
 			}
 		}
 	}
-	
-	slashing_weaponry = {  
+
+	slashing_weaponry = {
 		enable_equipments = {
 			melee_equipment_2
 		}
@@ -832,23 +832,23 @@ technologies = {
 			leads_to_tech = powered_weaponry
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2277
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_4 y = @Col_2 }
 		}
-		
+
 		categories = {
 			infantry_tech
 					melee_weaponry_tech
 			infantry_weapons
 		}
-		
+
 		ai_will_do = {
 			factor = 10
-			
+
 			modifier = {
 				factor = 10
 					tag = CES
@@ -863,12 +863,12 @@ technologies = {
 			}
 		}
 	}
-	
-	powered_weaponry = {  
+
+	powered_weaponry = {
 		enable_equipments = {
 			melee_equipment_3
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
 		}
@@ -882,23 +882,23 @@ technologies = {
 			name = fallout_infantry_folder
 			position = { x = @Row_4 y = @Col_3 }
 		}
-		
+
 		categories = {
 			infantry_tech
 					melee_weaponry_tech
 			infantry_weapons
 		}
-		
+
 		ai_will_do = {
 			factor = 10
-			
+
 					modifier = {
 						factor = 10
 						tag = CES
 					}
 		}
 	}
-	
+
 	#-------------------------
 	# Body Armour
 	#-------------------------
@@ -906,28 +906,28 @@ technologies = {
 		category_all_infantry = {
 			defense = 0.05
 		}
-		
+
 		path = {
 			leads_to_tech = metal_armour
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		path = {
 			leads_to_tech = binoculars
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.5
 		start_year = 2275
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_5 y = @Col_1 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -936,28 +936,28 @@ technologies = {
 			}
 		}
 	}
-	
+
 	metal_armour = {
 		category_all_infantry = {
 			defense = 0.05
 		}
-		
+
 		path = {
 			leads_to_tech = combat_armour
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		research_cost = 1.5
 		start_year = 2278
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_5 y = @Col_2 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -966,32 +966,32 @@ technologies = {
 			}
 		}
 	}
-	
+
 	combat_armour = {
 		category_all_infantry = {
 			defense = 0.05
 		}
-		
+
 		path = {
 			leads_to_tech = advanced_combat_armour
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 1.5
 		start_year = 2281
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_5 y = @Col_4 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1000,7 +1000,7 @@ technologies = {
 			}
 		}
 	}
-	
+
 	advanced_combat_armour = {
 		category_all_infantry = {
 			defense = 0.05
@@ -1009,18 +1009,18 @@ technologies = {
 		dependencies = {
 			scientific_civilization = 1
 		}
-		
+
 		research_cost = 1.5
 		start_year = 2277
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_5 y = @Col_7 }
+			position = { x = @Row_5 y = @Col_6 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1029,33 +1029,33 @@ technologies = {
 			}
 		}
 	}
-	
-	binoculars = {  
+
+	binoculars = {
 		category_all_infantry = {
 			max_organisation = 3
 		}
-		
+
 		path = {
 			leads_to_tech = flare_guns
 			research_cost_coeff = 1
 		}
-		
+
 		path = {
 			leads_to_tech = herbal_bandages
 			research_cost_coeff = 1
 		}
-		
+
 		research_cost = 1.5
 		start_year = 2278
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_6 y = @Col_2 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1064,10 +1064,10 @@ technologies = {
 			}
 		}
 	}
-	
+
 	flare_guns = {
 		land_reinforce_rate = 0.01
-		
+
 		path = {
 			leads_to_tech = portable_radio
 			research_cost_coeff = 1
@@ -1079,11 +1079,11 @@ technologies = {
 			name = fallout_infantry_folder
 			position = { x = @Row_6 y = @Col_3 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1092,12 +1092,12 @@ technologies = {
 			}
 		}
 	}
-	
+
 	portable_radio = {
 		category_all_infantry = {
 			max_organisation = 3
 		}
-		
+
 		path = {
 			leads_to_tech = smoke_grenades
 			research_cost_coeff = 1
@@ -1106,18 +1106,18 @@ technologies = {
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 1.5
 		start_year = 2282
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_6 y = @Col_4 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1126,10 +1126,10 @@ technologies = {
 			}
 		}
 	}
-	
-	smoke_grenades = { 
+
+	smoke_grenades = {
 		land_reinforce_rate = 0.01
-		
+
 		path = {
 			leads_to_tech = automatic_distress_beacon
 			research_cost_coeff = 1
@@ -1138,18 +1138,18 @@ technologies = {
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 1.5
 		start_year = 2284
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_6 y = @Col_5 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1158,25 +1158,25 @@ technologies = {
 			}
 		}
 	}
-	
+
 	automatic_distress_beacon = {
 		land_reinforce_rate = 0.01
-		
+
 		dependencies = {
 			scientific_civilization = 1
 		}
-		
+
 		research_cost = 1.5
 		start_year = 2284
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_6 y = @Col_7 }
+			position = { x = @Row_6 y = @Col_6 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1185,10 +1185,10 @@ technologies = {
 			}
 		}
 	}
-	
+
 	herbal_bandages = {
 		land_reinforce_rate = 0.01
-	
+
 		path = {
 			leads_to_tech = sterile_medical_equipment
 			research_cost_coeff = 1
@@ -1200,11 +1200,11 @@ technologies = {
 			name = fallout_infantry_folder
 			position = { x = @Row_7 y = @Col_3 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1213,12 +1213,12 @@ technologies = {
 			}
 		}
 	}
-	
-	sterile_medical_equipment = {   
+
+	sterile_medical_equipment = {
 		category_all_infantry = {
 			supply_consumption = -0.05
 		}
-		
+
 		path = {
 			leads_to_tech = medic_bags
 			research_cost_coeff = 1
@@ -1227,18 +1227,18 @@ technologies = {
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 1.5
 		start_year = 2282
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_7 y = @Col_4 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1247,10 +1247,10 @@ technologies = {
 			}
 		}
 	}
-	
+
 	medic_bags = {
 		land_reinforce_rate = 0.01
-		
+
 		path = {
 			leads_to_tech = med_x_auto_injectors
 			research_cost_coeff = 1
@@ -1259,18 +1259,18 @@ technologies = {
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 1.5
 		start_year = 2284
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_7 y = @Col_5 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1279,27 +1279,27 @@ technologies = {
 			}
 		}
 	}
-	
+
 	med_x_auto_injectors = {
 		category_all_infantry = {
 			supply_consumption = -0.05
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
 		}
-		
+
 		research_cost = 1.5
 		start_year = 2285
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_7 y = @Col_7 }
+			position = { x = @Row_7 y = @Col_6 }
 		}
-		
+
 		categories = {
 			infantry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1308,20 +1308,20 @@ technologies = {
 			}
 		}
 	}
-	
+
 	#-------------------------
 	# Power Armour
 	#-------------------------
-	power_armour = {  
+	power_armour = {
 		enable_subunits = {
 			power_armour
 			#power_armour_support
 		}
-		
+
 		enable_equipments = {
 			power_armor_equipment_1
 		}
-		
+
 		on_research_complete = {
 			limit = {
 				NOT = {
@@ -1330,36 +1330,36 @@ technologies = {
 			}
 			hidden_effect = {
 				load_oob = "unlock_power_armor"
-			}			
+			}
 			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
 		}
-		
+
 		path = {
 			leads_to_tech = power_armour_t45d
 			research_cost_coeff = 1
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2279
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_8 y = @Col_4 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			power_armor_tech
 		}
-		
+
 		sub_technologies = {
 			servo_motors
 			mounted_cooler
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1372,19 +1372,19 @@ technologies = {
 			}
 		}
 	}
-	
-	servo_motors = {  
+
+	servo_motors = {
 		power_armour = {
 			maximum_speed = 0.1
 		}
 		power_armour_support = {
 			maximum_speed = 0.1
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2280
 
@@ -1392,36 +1392,7 @@ technologies = {
 			infantry_tech
 			power_armor_tech
 		}
-		
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 10
-				date > "2280.1.1"
-			}
-		}
-	}
-	
-	mounted_cooler = {  
-		power_armour = {
-			reliability = 0.1
-		}
-		power_armour_support = {
-			reliability = 0.1
-		}
-		
-		dependencies = {
-			settled_civilization = 1
-		}
-		
-		research_cost = 2.0
-		start_year = 2280
 
-		categories = {
-			infantry_tech
-			power_armor_tech
-		}
-		
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1431,7 +1402,36 @@ technologies = {
 		}
 	}
 
-	power_armour_t45d = {  
+	mounted_cooler = {
+		power_armour = {
+			reliability = 0.1
+		}
+		power_armour_support = {
+			reliability = 0.1
+		}
+
+		dependencies = {
+			settled_civilization = 1
+		}
+
+		research_cost = 2.0
+		start_year = 2280
+
+		categories = {
+			infantry_tech
+			power_armor_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2280.1.1"
+			}
+		}
+	}
+
+	power_armour_t45d = {
 		enable_equipments = {
 			power_armor_equipment_2
 		}
@@ -1440,28 +1440,28 @@ technologies = {
 			leads_to_tech = power_armour_t51b
 			research_cost_coeff = 1
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2282
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_8 y = @Col_7 }
+			position = { x = @Row_8 y = @Col_6 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			power_armor_tech
 		}
-		
+
 		sub_technologies = {
 			reinforced_plating
 			sensor_array
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1471,19 +1471,19 @@ technologies = {
 			}
 		}
 	}
-	
-	reinforced_plating = {  
+
+	reinforced_plating = {
 		power_armour = {
 			defense = 0.1
 		}
 		power_armour_support = {
 			defense = 0.1
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2283
 
@@ -1491,7 +1491,7 @@ technologies = {
 			infantry_tech
 			power_armor_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1501,19 +1501,19 @@ technologies = {
 			}
 		}
 	}
-	
-	sensor_array = {  
+
+	sensor_array = {
 		power_armour = {
 			initiative = 0.01
 		}
 		power_armour_support = {
 			initiative = 0.01
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2283
 
@@ -1521,7 +1521,7 @@ technologies = {
 			infantry_tech
 			power_armor_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1531,8 +1531,8 @@ technologies = {
 			}
 		}
 	}
-	
-	power_armour_t51b = {  
+
+	power_armour_t51b = {
 		enable_equipments = {
 			power_armor_equipment_3
 		}
@@ -1540,24 +1540,24 @@ technologies = {
 		dependencies = {
 			scientific_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2284
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_8 y = @Col_8 }
+			position = { x = @Row_8 y = @Col_7 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			power_armor_tech
 		}
-		
+
 		sub_technologies = {
 			recon_sensors
 			tesla_coils
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1568,18 +1568,18 @@ technologies = {
 		}
 	}
 
-	recon_sensors = {  
+	recon_sensors = {
 		power_armour = {
 			recon = 1
 		}
 		power_armour_support = {
 			recon = 1
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2285
 
@@ -1587,7 +1587,7 @@ technologies = {
 			infantry_tech
 			power_armor_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1597,19 +1597,19 @@ technologies = {
 			}
 		}
 	}
-	
-	tesla_coils = {  
+
+	tesla_coils = {
 		power_armour = {
 			soft_attack = 0.1
 		}
 		power_armour_support = {
 			soft_attack = 0.1
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2285
 
@@ -1617,7 +1617,7 @@ technologies = {
 			infantry_tech
 			power_armor_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1627,7 +1627,7 @@ technologies = {
 			}
 		}
 	}
-	
+
 	#-------------------------
 	# Special Forces
 	#-------------------------
@@ -1638,11 +1638,11 @@ technologies = {
 		enable_subunits = {
 			spec_ops
 		}
-		
+
 		path = {
 			leads_to_tech = marsh_training
 			research_cost_coeff = 1
-		}	
+		}
 		path = {
 			leads_to_tech = hills_training
 			research_cost_coeff = 1
@@ -1658,17 +1658,17 @@ technologies = {
 			name = fallout_infantry_folder
 			position = { x = @Row_9 y = @Col_1 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			specops_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-	
+
 	# Hills sub-route
 	marsh_training = {
 		allow = {
@@ -1676,17 +1676,17 @@ technologies = {
 		}
 		spec_ops = {
 			max_organisation = 0.25
-			
+
 			marsh = {
 				attack = 0.5
 				defence = 0.5
 			}
 		}
-		
+
 		path = {
 			leads_to_tech = river_training
 			research_cost_coeff = 1
-		}	
+		}
 
 		research_cost = 2.0
 		start_year = 2275
@@ -1694,306 +1694,306 @@ technologies = {
 			name = fallout_infantry_folder
 			position = { x = @Row_9 y = @Col_2 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			specops_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-	
+
 	river_training = {
 		allow = {
 			always = no
 		}
 		spec_ops = {
 			max_organisation = 0.25
-			
+
 			river = {
 				attack = 0.5
 				defence = 0.5
 			}
 		}
-		
+
 		path = {
 			leads_to_tech = amphibious_training
 			research_cost_coeff = 1
-		}	
+		}
 
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_9 y = @Col_4 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			specops_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-	
+
 	amphibious_training = {
 		allow = {
 			always = no
 		}
 		spec_ops = {
 			max_organisation = 0.25
-			
+
 			amphibious = {
 				attack = 0.5
 				defence = 0.5
 			}
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_9 y = @Col_5 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			specops_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-	
+
 	hills_training = {
 		allow = {
 			always = no
 		}
 		spec_ops = {
 			max_organisation = 0.25
-			
+
 			hills = {
 				attack = 0.5
 				defence = 0.5
 			}
 		}
-		
+
 		path = {
 			leads_to_tech = urban_training
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_10 y = @Col_2 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			specops_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-	
+
 	urban_training = {
 		allow = {
 			always = no
 		}
 		spec_ops = {
 			max_organisation = 0.25
-			
+
 			urban = {
 				attack = 0.5
 				defence = 0.5
 			}
 		}
-		
+
 		path = {
 			leads_to_tech = desert_training
 			research_cost_coeff = 1
-		}	
+		}
 
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_10 y = @Col_4 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			specops_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-	
+
 	desert_training = {
 		allow = {
 			always = no
 		}
 		spec_ops = {
 			max_organisation = 0.25
-			
+
 			desert = {
 				attack = 0.5
 				defence = 0.5
 			}
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_10 y = @Col_5 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			specops_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-	
+
 	plains_training = {
 		allow = {
 			always = no
 		}
 		spec_ops = {
 			max_organisation = 0.25
-			
+
 			plains = {
 				attack = 0.5
 				defence = 0.5
 			}
 		}
-		
+
 		path = {
 			leads_to_tech = forest_training
 			research_cost_coeff = 1
-		}	
-		
+		}
+
 		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_11 y = @Col_2 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			specops_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-	
+
 	forest_training = {
 		allow = {
 			always = no
 		}
 		spec_ops = {
 			max_organisation = 0.25
-			
+
 			forest = {
 				attack = 0.5
 				defence = 0.5
 			}
 		}
-		
+
 		path = {
 			leads_to_tech = mountain_training
 			research_cost_coeff = 1
-		}	
+		}
 
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_11 y = @Col_4 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			specops_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-	
+
 	mountain_training = {
 		allow = {
 			always = no
 		}
 		spec_ops = {
 			max_organisation = 0.25
-			
+
 			mountain = {
 				attack = 0.5
 				defence = 0.5
 			}
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_infantry_folder
 			position = { x = @Row_11 y = @Col_5 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			specops_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
 	}
-	
+
 	#-------------------------
 	# Special
 	#-------------------------
@@ -2001,7 +2001,7 @@ technologies = {
 		enable_equipments = {
 			gauss_equipment_1
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
 			overcharged_ammunition = 1
@@ -2013,33 +2013,33 @@ technologies = {
 		start_year = 2277
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_1 y = @Col_10 }
+			position = { x = @Row_1 y = @Col_8 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			gauss_weaponry_tech
 		}
-		
+
 		sub_technologies = {
 			recoil_compensating_grip
 			gauss_agitator
 		}
-		
+
 		ai_will_do = {
 			factor = 10
 		}
 	}
-	
-	recoil_compensating_grip = {  
+
+	recoil_compensating_grip = {
 		category_all_infantry = {
 			ap_attack = 0.1
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2278
 
@@ -2047,22 +2047,22 @@ technologies = {
 			infantry_tech
 			gauss_weaponry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 10
 		}
 	}
-	
-	gauss_agitator = {  
+
+	gauss_agitator = {
 		category_all_infantry = {
 			soft_attack = 0.1
 		}
-		
+
 		dependencies = {
 			settled_civilization = 1
 			advanced_laser_weaponry = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2279
 
@@ -2070,12 +2070,12 @@ technologies = {
 			infantry_tech
 			gauss_weaponry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 10
 		}
 	}
-	
+
 	tesla_weaponry = {
 		enable_equipments = {
 			tesla_equipment_1
@@ -2087,39 +2087,39 @@ technologies = {
 			scientific_civilization = 1
 			advanced_laser_weaponry = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2277
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_1 y = @Col_11 }
+			position = { x = @Row_1 y = @Col_9 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			tesla_weaponry_tech
 		}
-		
+
 		sub_technologies = {
 			maximized_capacitor
 			tesla_exciter
 		}
-		
+
 		ai_will_do = {
 			factor = 10
 		}
 	}
-	
-	maximized_capacitor = {  
+
+	maximized_capacitor = {
 		category_all_infantry = {
 			ap_attack = 0.1
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
 			advanced_laser_weaponry = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2278
 
@@ -2127,22 +2127,22 @@ technologies = {
 			infantry_tech
 			tesla_weaponry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 10
 		}
 	}
-	
-	tesla_exciter = {  
+
+	tesla_exciter = {
 		category_all_infantry = {
 			hard_attack = 0.1
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
 			advanced_laser_weaponry = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2279
 
@@ -2150,12 +2150,12 @@ technologies = {
 			infantry_tech
 			tesla_weaponry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 10
 		}
 	}
-	
+
 	plasma_weaponry = {
 		enable_equipments = {
 			plasma_equipment_1
@@ -2167,39 +2167,39 @@ technologies = {
 			scientific_civilization = 1
 			advanced_laser_weaponry = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2292
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_1 y = @Col_12 }
+			position = { x = @Row_1 y = @Col_10 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			plasma_weaponry_tech
 		}
-		
+
 		sub_technologies = {
 			beta_wave_tuner
 			photon_agitator
 		}
-		
+
 		ai_will_do = {
 			factor = 10
 		}
 	}
-	
-	beta_wave_tuner = {  
+
+	beta_wave_tuner = {
 		category_all_infantry = {
 			soft_attack = 0.1
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
 			advanced_laser_weaponry = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2293
 
@@ -2207,22 +2207,22 @@ technologies = {
 			infantry_tech
 			tesla_weaponry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 10
 		}
 	}
-	
-	photon_agitator = {  
+
+	photon_agitator = {
 		category_all_infantry = {
 			soft_attack = 0.1
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
 			advanced_laser_weaponry = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2294
 
@@ -2230,12 +2230,12 @@ technologies = {
 			infantry_tech
 			tesla_weaponry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 10
 		}
 	}
-	
+
 	super_mutant_melee_weapons = {
 		enable_equipments = {
 			super_mutant_melee_equipment_1
@@ -2243,23 +2243,23 @@ technologies = {
 		allow = {
 			always = no
 		}
-		
+
 		#dependencies = {
 		#    super_mutant_civilization = 1
 		#}
-		
+
 		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_2 y = @Col_10 }
+			position = { x = @Row_2 y = @Col_8 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			melee_weaponry_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -2268,12 +2268,12 @@ technologies = {
 			}
 		}
 	}
-	
+
 	#-------------------------
 	# Special Power Armour
 	#-------------------------
 	# Enclave Mk1
-	power_armour_enclave1 = {  
+	power_armour_enclave1 = {
 		enable_equipments = {
 			enclave_power_armour_equipment_1
 		}
@@ -2284,30 +2284,30 @@ technologies = {
 			leads_to_tech = power_armour_enclave2
 			research_cost_coeff = 1
 		}
-		
+
 		dependencies = {
 			scientific_civilization = 1
 		}
-	
+
 		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_3 y = @Col_10 }
+			position = { x = @Row_3 y = @Col_8 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			power_armor_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 10
 		}
 	}
-	
+
 	# Enclave Mk2
-	power_armour_enclave2 = {  
+	power_armour_enclave2 = {
 		enable_equipments = {
 			enclave_power_armour_equipment_2
 		}
@@ -2316,26 +2316,26 @@ technologies = {
 			scientific_civilization = 1
 			power_armour_enclave1 = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_3 y = @Col_11 }
+			position = { x = @Row_3 y = @Col_9 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			power_armor_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 10
 		}
 	}
 
 	# Washington BOS
-	power_armour_bos = {  
+	power_armour_bos = {
 		enable_equipments = {
 			bos_power_armour_equipment
 		}
@@ -2350,14 +2350,14 @@ technologies = {
 		start_year = 2275
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_4 y = @Col_10 }
+			position = { x = @Row_4 y = @Col_8 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			power_armor_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -2365,11 +2365,11 @@ technologies = {
 				factor = 100
 			}
 		}
-		
+
 	}
-	
+
 	# Legion
-	power_armour_legion = {  
+	power_armour_legion = {
 		enable_equipments = {
 			legion_power_armour_equipment
 		}
@@ -2379,26 +2379,26 @@ technologies = {
 		dependencies = {
 			scientific_civilization = 1
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_4 y = @Col_11 }
+			position = { x = @Row_4 y = @Col_9 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			power_armor_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 100
 		}
 	}
-	
+
 	# Raider
-	power_armour_raider = {  
+	power_armour_raider = {
 		enable_equipments = {
 			raider_power_armour_equipment
 		}
@@ -2409,24 +2409,24 @@ technologies = {
 			scientific_civilization = 1
 			power_armour = 1
 		}
-		
+
 		sub_technologies = {
 			raider_welded_variant
 			raider_servo_motors
 		}
-		
+
 		research_cost = 2.0
 		start_year = 2275
 		folder = {
 			name = fallout_infantry_folder
-			position = { x = @Row_4 y = @Col_12 }
+			position = { x = @Row_4 y = @Col_10 }
 		}
-		
+
 		categories = {
 			infantry_tech
 			power_armor_tech
 		}
-		
+
 		ai_will_do = {
 			factor = 10
 		}

@@ -1,0 +1,277 @@
+﻿# Division template historical names system. Is a new method of naming the divisions based on the names-group assigned to it's template.
+# If we run out of all historical names, the names will be assigned in the old way.
+#
+# Each group has a made up tag. Use it if you want to append more, or replace existing names with the extra txt files (modding).
+#
+# for_countries - lists all countries that can use it. If empty, or entire tag is missing, all countries in the world can use it.
+#
+# can_use - is a trigger that locks/unlocks the group under specific circumstances. The trigger is in a country scope.
+#
+# division_types - is a list of tokens to corresponding unit types. A player can in fact use any group of names for a div.template
+#                  however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
+#                  for example the current one is no longer available due to the can_use trigger saying so).
+#                  In automated choice, the division template must have at least 1 of the following types for it to be chosen.
+#
+# fallback_name - Is going to be used if we run out of the scripted historical names. If you want to use the old division naming
+#                 mechanics to be used for fallbacks, then just skip this option.
+#
+# unordered - It's a list of historical division names that did not have a number. Regardless if such names happened in history or not
+#             this option is available here mainly for a mods.
+#
+# ordered - Is a list of all historical names. 
+#           Numbers must start from 1 and up. 
+#           Numbers can't repeat in one scope.
+#           If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
+#           All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
+#           1st argument = The name. It must contain either: 
+#                          %d (for decimal number placement)
+#                          %s (for string number placement - ROMAN numbers like XIV).
+#           2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
+#                                      where you choose the historical division name.
+#           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
+#                                      the current game version.
+
+REBEL_INF_01 = 
+{
+	name = "Rebel Fighters"
+
+	for_countries = { }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { EGY_GAR_01 }
+
+	fallback_name = "Rebel Fighters"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. The Old Guards" }
+		2 = { "%d. Mobilised Police" }
+		3 = { "%d. Armed Survivalists" }
+		4 = { "%d. Former Soldiers" }
+		5 = { "%d. Local Patriots" }
+		6 = { "%d. Homegrown Militia" }
+		7 = { "%d. Desperate Wastelanders" }
+		8 = { "%d. Displaced Civilians" }
+		9 = { "%d. Opportunistic Prospectors" }
+		10 = { "%d. Unlikely Heroes" }
+		11 = { "%d. Reformed Raiders" }
+		12 = { "%d. Roaming Slavers" }
+		13 = { "%d. Hired Guns" }
+		14 = { "%d. 'Blackhawk' Partisans" }
+		15 = { "%d. Wasteland Rabble" }
+		16 = { "%d. Bandit Guerrillas " }
+		17 = { "%d. Brahmin rustlers" }
+		18 = { "%d. Flustered Farmers" }
+		19 = { "%d. Rowdy Riflemen" }
+		20 = { "%d. Roaming Reds" }
+		21 = { "%d. Devout Defenders" }
+		22 = { "%d. Wasteland Wanderers" }
+		23 = { "%d. Organized Merchant Defenders" }
+		24 = { "%d. Pissed off Pilgrims" }
+		25 = { "%d. 'Honest Folk' Fighters" }
+		26 = { "%d. Insurgent Inbreds" }
+		27 = { "%d. Rowdy Rough Raiders" }
+		28 = { "%d. The Boss’s Former Boys" }
+		29 = { "%d. The Gun Smugglers" }
+		30 = { "%d. Raiders of the Lost" }
+		31 = { "%d. Soldiers of Fortune" }
+		32 = { "%d. Kids with Guns" }
+		33 = { "%d. The Baddest Company" }
+		34 = { "%d. The Revolver Racketeers" }
+		35 = { "%d. Lever-Action Desperados" }
+		36 = { "%d. Peyote Fiends" }
+		37 = { "%d. 'Class' Brigade" }
+		38 = { "%d. Brazen Brigade" }
+		39 = { "%d. Armed Association" }
+		40 = { "%d. Goon Squad" }
+		41 = { "%d. Latter day Saviours " }
+		42 = { "%d. Raynor’s Raiders" }
+		43 = { "%d. Council of Friends" }
+		44 = { "%d. Robin Hew and his Merry Raiders" }
+		45 = { "%d. Polly’s Plebeians" }
+		46 = { "%d. Bob’s Outlaws" }
+		47 = { "%d. Blood Boilers" }
+		48 = { "%d. Povertous Civilians" }
+		49 = { "%d. Bellingham Bombers" }
+		50 = { "%d. Rowdy Junkies" }
+		51 = { "%d. Cultish Congregators" }
+		52 = { "%d. Hell Dogs" }
+		53 = { "%d. The Ash Walkers" }
+		54 = { "%d. Murderous Miners" }
+		55 = { "%d. The Old One Onslayers" }
+		56 = { "%d. The Unsettlers" }
+		57 = { "%d. The Hopeless" }
+		58 = { "%d. Black Devil’s Gang" }
+		59 = { "%d. Vault Troublemakers" }
+		60 = { "%d. Atomic Atomizers" }
+		61 = { "%d. Big Jim’s Burly crew" }
+		62 = { "%d. Murphs Master Mashers" }
+		63 = { "%d. The Lost Boys" }
+		64 = { "%d. Atomic Wranglers" }
+		65 = { "%d. Chosen Chewers" }
+		66 = { "%d. Ghoulish Gangsters" }
+		67 = { "%d. Great Khan Outcasts" }
+		68 = { "%d. Tacky Trackers" }
+		69 = { "%d. Rageful Rioters" }
+		70 = { "%d. Natt’s Birds" }
+		71 = { "%d. Fiends Survivors" }
+		72 = { "%d. Wasteland Nobodies" }
+		73 = { "%d. Ex-Slaves" }
+		74 = { "%d. Garry" }
+		75 = { "%d. Hangdogs Harresors" }
+		76 = { "%d. Brotherhood Bandits" }
+		77 = { "%d. New Reno Mercs" }
+		78 = { "%d. Murderous Maniacs" }
+		79 = { "%d. Drug-fueled Destroyers" }
+		80 = { "%d. El Loco Banditos" }
+		81 = { "%d. Legion Outcasts" }
+		82 = { "%d. Freedom Fighters" }
+		83 = { "%d. Vault Dweller Mercs" }
+		84 = { "%d. Majima’s Mad Dogs" }
+		85 = { "%d. Mechano’s Marauders" }
+		86 = { "%d. The Happy Warband" }
+		87 = { "%d. Four-State Loonies" }
+		88 = { "%d. Garns’s Garrison" }
+	}
+}
+
+REBEL_INF_02 = 
+{
+	name = "Primary Reserve"
+
+	for_countries = { }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { EGY_GAR_01 }
+
+	fallback_name = "Rebel Fighters"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Homeguards" }
+		2 = { "%d. Guardsmen" }
+		3 = { "%d. Armed Civilians" }
+		4 = { "%d. 1st Minutemen" }
+		5 = { "%d. 12th Minutemen" }
+		6 = { "%d. Homegrown Militia" }
+		7 = { "%d. Desperate Wastelanders" }
+		8 = { "%d. Displaced Civilians" }
+		9 = { "%d. Opportunistic Prospectors" }
+		10 = { "%d. Unlikely Allies" }
+		11 = { "%d. Emergent Defenders"}
+	}
+}
+
+REBEL_INF_03 = 
+{
+	name = "Ranger Reserve"
+
+	for_countries = { }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { EGY_GAR_01 }
+
+	fallback_name = "Rebel Fighters"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Ranger Survivalists" }
+		2 = { "%d. Ranger Police" }
+		3 = { "%d. Mariners" }
+		4 = { "%d. Highborne" }
+		5 = { "%d. The Patriots" }
+		6 = { "%d. Homegrown Rangers" }
+		7 = { "%d. Majors Bodyguard" }
+		8 = { "%d. 1st CPRG" }
+		9 = { "%d. 2nd CPRG" }
+		10 = { "%d. 3rd CPRG" }
+		11 = { "%d. 4th CPRG" }
+		12 = { "%d. 5th CPRG" }
+	}
+}
+
+
+REBEL_MOT_01 = 
+{
+	name = "Motorised Divisions"
+
+	for_countries = { }
+
+	can_use = { always = yes }
+
+	division_types = { "motorized" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { REBEL_INF_01 }
+
+	fallback_name = "Rebel Motorized"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Mordred’s Mongols" }
+		2 = { "%d. Dune Runner Renegades" }
+		3 = { "%d. Oil Wasters" }
+		4 = { "%d. Raging Racers" }
+		5 = { "%d. War Boys" }
+		6 = { "%d. Car Killers" }
+		7 = { "%d. The Red Screechers" }
+		8 = { "%d. Diesel Destroyers" }
+		9 = { "%d. Roaring Dust" }
+		10 = { "%d. Speed Freakz" }
+		11 = { "%d. Motor Mongoloids" }
+		12 = { "%d. Tenders of the Tankers" }
+		13 = { "%d. The Automat Crew" }
+		14 = { "%d. Painkillers" }
+		15 = { "%d. Greasewheelers" }
+		16 = { "%d. Mad Maxine's Militia" }
+		17 = { "%d. Rust Riders" }
+		18 = { "%d. Rigid Rustbuckets" }
+		19 = { "%d. Olivers Oily Boys" }
+		20 = { "%d. Junkies Joyrides" }
+		21 = { "%d. The Reavers" }
+		22 = { "%d. Khan’s Kamikaze Kars" }
+		23 = { "%d. Swift Revenge" }
+		24 = { "%d. Furious Livestock on Wheels" }
+		25 = { "%d. The Warchief Returns" }
+		26 = { "%d. Motor Runner’s Remnants " }
+		27 = { "%d. Land Vikings" }
+		28 = { "%d. The Ravagers" }
+		29 = { "%d. Metal Never Rides" }
+		30 = { "%d. Chrome Cultists" }
+		31 = { "%d. Chrysler Archivists" }
+		32 = { "%d. Zoomers" }
+		33 = { "%d. Metal Mongols" }
+		34 = { "%d. Combustible Crashers" }
+		35 = { "%d. The Atomic Angels" }
+		36 = { "%d. Charging Cavaliers" }
+		37 = { "%d. Turbo Tankers" }
+		38 = { "%d. Raging Red Rioters" }
+		39 = { "%d. Vrooming Varmints" }
+		40 = { "%d. 80s Saboteurs" }
+		41 = { "%d. Mechano’s Motors" }
+		42 = { "%d. Big Wheel’s Big Wheels" }
+		43 = { "%d. Blessed Bikes" }
+		44 = { "%d. Storm Runners" }
+	}
+}
+

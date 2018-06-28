@@ -1,0 +1,355 @@
+tribe_joining_together = {
+	PHR = {
+		add_to_faction = ROOT
+	}
+	add_ai_strategy = {
+		type = alliance
+		id = "PHR"
+		value = 200
+	}
+	add_to_war = {
+		targeted_alliance = PHR
+		enemy = NCR
+		hostility_reason = ally
+	}
+}
+
+ncr_revolter_setup = {
+	if = { # Gives all revolter states support equipment tech if they don't already have it - all OOBs need it
+		limit = {
+			NOT = { has_tech = support_weaponry }
+		}
+		set_technology = { support_weaponry = 1}
+	}
+	if = { # Gives all revolter explosive tech if they don't already have it - some OOBs need it
+		limit = {
+			NOT = { has_tech = explosive_tech }
+		}
+		set_technology = { explosive_tech = 1}
+	}
+	if = { # Gives all revolters basic levels of anti tank tech - some OOBs need it
+		limit = {
+			NOT = { has_tech = anti_tank_tech }
+		}
+		set_technology = { anti_tank_tech = 1 }
+	}
+	if = { # Gives all revolters basic levels of dogs tech - some OOBs need it
+		limit = {
+			NOT = { has_tech = dog_tech }
+		}
+		set_technology = { dog_tech = 1 }
+	}
+	if = {
+		limit = { NOT = { tag = PHR } }
+		every_state = {
+			undecimate_half_all_industry = yes
+		}
+	}
+	add_ideas = { # Adds revolter ideas - these only last until the war is over
+		defence_of_the_homeland
+		frantic_production
+		patriotic_defence
+		tot_economic_mobilisation # -3% countered by idea
+		extensive_conscription
+		limited_exports
+	}
+}
+
+TWI_states = {
+	transfer_state = 359
+	transfer_state = 553
+	transfer_state = 49
+	transfer_state = 130
+	transfer_state = 317
+	transfer_state = 438
+}
+
+PHR_states = {
+	transfer_state = 381
+	transfer_state = 386
+	transfer_state = 596
+	transfer_state = 349
+	transfer_state = 518
+	transfer_state = 93
+	transfer_state = 483
+	transfer_state = 597
+	transfer_state = 296
+	transfer_state = 318
+	transfer_state = 502
+	transfer_state = 362
+	transfer_state = 631
+	transfer_state = 431
+	transfer_state = 411
+	transfer_state = 442
+	transfer_state = 289
+	transfer_state = 35
+	transfer_state = 94
+	transfer_state = 207
+	transfer_state = 335
+	transfer_state = 519
+	transfer_state = 395
+}
+
+COW_states = {
+	transfer_state = 444
+	transfer_state = 2
+}
+
+TWO_states = {
+	transfer_state = 330
+	transfer_state = 588
+	transfer_state = 516
+	transfer_state = 62
+	transfer_state = 247
+	transfer_state = 283
+	transfer_state = 297
+}
+
+RBD_states = {
+	transfer_state = 229
+	transfer_state = 15
+	transfer_state = 479
+	transfer_state = 579
+	transfer_state = 559
+	transfer_state = 377
+	transfer_state = 528
+}
+
+PEC_states = {
+	transfer_state = 545
+	transfer_state = 255
+	transfer_state = 31
+	transfer_state = 200
+}
+
+TSI_states = {
+	transfer_state = 114
+	transfer_state = 88
+	transfer_state = 275
+}
+
+WAP_states = {
+	transfer_state = 633
+	transfer_state = 563
+	transfer_state = 538
+	transfer_state = 282
+	transfer_state = 501
+	transfer_state = 232
+	transfer_state = 244
+	transfer_state = 482
+}
+
+FLA_states = {
+	transfer_state = 520
+}
+
+HUA_states = {
+	transfer_state = 604
+	transfer_state = 33
+	transfer_state = 242
+	transfer_state = 388
+	transfer_state = 582
+	transfer_state = 212
+	transfer_state = 439
+	transfer_state = 175
+}
+
+BLK_states = {
+	transfer_state = 608
+	transfer_state = 124
+	transfer_state = 164
+	transfer_state = 402
+	transfer_state = 427
+	transfer_state = 85
+}
+
+RSR_states = {
+	transfer_state = 522
+	transfer_state = 152
+	transfer_state = 410
+	transfer_state = 25
+	transfer_state = 189
+	transfer_state = 5
+}
+
+MES_states = {
+	transfer_state = 409
+	transfer_state = 81
+	transfer_state = 215
+	transfer_state = 534
+	transfer_state = 234
+	transfer_state = 429
+}
+
+SUF_states = {
+	transfer_state = 287
+	transfer_state = 331
+	transfer_state = 108
+	transfer_state = 423
+	transfer_state = 225
+	transfer_state = 546
+	transfer_state = 566
+	transfer_state = 541
+	transfer_state = 265
+}
+
+BSU_states = {
+	transfer_state = 103
+	transfer_state = 565
+	transfer_state = 233
+	transfer_state = 366
+	transfer_state = 44
+	transfer_state = 464
+	transfer_state = 571
+}
+
+TTM_states = {
+	transfer_state = 554
+	transfer_state = 570
+	transfer_state = 503
+	transfer_state = 639
+	transfer_state = 640
+}
+
+JIC_states = {
+	transfer_state = 641
+	transfer_state = 422
+	transfer_state = 523
+	transfer_state = 123
+	transfer_state = 412
+	transfer_state = 208
+}
+
+HAN_states = {
+	transfer_state = 550
+	transfer_state = 610
+	transfer_state = 82
+	transfer_state = 490
+	transfer_state = 414
+	transfer_state = 109
+	transfer_state = 568
+	transfer_state = 525
+	transfer_state = 460
+	transfer_state = 586
+	transfer_state = 645
+	transfer_state = 405
+	transfer_state = 544
+	transfer_state = 185
+}
+
+VEG_states = {
+	transfer_state = 344
+	transfer_state = 313
+	transfer_state = 211
+	transfer_state = 154
+}
+
+TON_states = {
+	transfer_state = 517
+	transfer_state = 146
+}
+
+TLO_states = {
+	transfer_state = 22
+	transfer_state = 111
+	transfer_state = 260
+	transfer_state = 254
+	transfer_state = 101
+}
+
+GDH_states = {
+	transfer_state = 36
+	transfer_state = 555
+	transfer_state = 477
+	transfer_state = 471
+}
+
+LGS_states = {
+	transfer_state = 110
+	transfer_state = 117
+	transfer_state = 119
+	transfer_state = 120
+	transfer_state = 122
+	transfer_state = 143
+	transfer_state = 95
+	transfer_state = 83
+}
+
+NAV_states = {
+	transfer_state = 638
+	transfer_state = 531
+	transfer_state = 392
+	transfer_state = 634
+	transfer_state = 89
+	transfer_state = 91
+	transfer_state = 269
+	transfer_state = 203
+	transfer_state = 408
+	transfer_state = 355
+	transfer_state = 636
+	transfer_state = 635
+	transfer_state = 144
+	transfer_state = 498
+}
+
+FOR_states = {
+	transfer_state = 637
+	transfer_state = 308
+	transfer_state = 394
+	transfer_state = 630
+	transfer_state = 601
+	transfer_state = 259
+	transfer_state = 415
+	transfer_state = 87
+	transfer_state = 644
+	transfer_state = 527
+	transfer_state = 228
+	transfer_state = 642
+	transfer_state = 193
+	transfer_state = 515
+	transfer_state = 643
+}
+
+SCO_states = {
+	transfer_state = 315
+	transfer_state = 593
+	transfer_state = 524
+	transfer_state = 112
+}
+
+IRN_states = {
+	transfer_state = 430
+	transfer_state = 374
+	transfer_state = 209
+}
+
+PNT_states = {
+	transfer_state = 118
+	transfer_state = 267
+	transfer_state = 302
+	transfer_state = 90
+}
+
+TOB_states = {
+	transfer_state = 452
+	transfer_state = 78
+}
+
+YMP_states = {
+	transfer_state = 649
+	transfer_state = 38
+	transfer_state = 376
+	transfer_state = 217
+	transfer_state = 222
+	transfer_state = 445
+	transfer_state = 115
+	transfer_state = 648
+	transfer_state = 572
+	transfer_state = 537
+	transfer_state = 532
+	transfer_state = 504
+	transfer_state = 647
+	transfer_state = 55
+	transfer_state = 145
+	transfer_state = 646
+}

@@ -2,8 +2,8 @@
 
 country_event = { #Enclave Resurgent
 	id = nf_qol.1
-	title = nf_qol.1.t 
-	desc = nf_qol.1.d 
+	title = nf_qol.1.t
+	desc = nf_qol.1.d
 	is_triggered_only = no
 	trigger = {
 		tag = BOS
@@ -34,8 +34,8 @@ country_event = { #Enclave Resurgent
 }
 country_event = { #BOS-NCR Civil War Interaction
 	id = nf_qol.2
-	title = nf_qol.2.t 
-	desc = nf_qol.2.d 
+	title = nf_qol.2.t
+	desc = nf_qol.2.d
 	is_triggered_only = no
 	trigger = {
 		tag = BOS
@@ -90,7 +90,7 @@ country_event = { #BOS-NCR Civil War Interaction
 			transfer_state = 51
 			transfer_state = 245
 		}
-		
+
 		ai_chance = {
 			factor = 4.0
 		}
@@ -105,25 +105,25 @@ country_event = { #BOS-NCR Civil War Interaction
 			factor = 3
 		}
 
-			
+
 	}
 	option = {
 		name = nf_qol.2.c
 		add_political_power = -200
-	
+
 		ai_chance = {
 			factor = 5
 		}
-		
+
 	}
 	option = {
-		name = nf_qol.2.dd
+		name = nf_qol.2.e
 		trigger = {
 			NCR = {
 				has_completed_focus = ncr_allisgood
 			}
 			BOS = {
-				has_completed_focus = bos_oldbonds 
+				has_completed_focus = bos_oldbonds
 			}
 		}
 		BOS = {
@@ -136,17 +136,17 @@ country_event = { #BOS-NCR Civil War Interaction
 				enemy = BON
 			}
 		}
-		
+
 		ai_chance = {
 			factor = 100
 		}
-		
+
 	}
 }
 country_event = { #Support the boneyard
 	id = nf_qol.3
-	title = nf_qol.3.t 
-	desc = nf_qol.3.d 
+	title = nf_qol.3.t
+	desc = nf_qol.3.d
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = {
@@ -176,28 +176,40 @@ country_event = { #Support the boneyard
 			transfer_state = 602
 			transfer_state = 64
 			transfer_state = 51
-			transfer_state = 245	
+			transfer_state = 245
+			add_ai_strategy = {
+				type = alliance
+				id = "BON"
+				value = 200
+			}
+		}
+		BON = {
+			add_ai_strategy = {
+				type = alliance
+				id = "BOS"
+				value = 200
+			}
 		}
 		add_political_power = -100
-		
+
 		ai_chance = {
 			factor = 10
 		}
-	
+
 	}
 	option = {
 		name = nf_qol.3.b
-		
+
 		ai_chance = {
 			factor = 4.0
 		}
-		
+
 	}
 }
 country_event = { #Boneyard Resurrects the BOS
 	id = nf_qol.4
-	title = nf_qol.4.t 
-	desc = nf_qol.4.d 
+	title = nf_qol.4.t
+	desc = nf_qol.4.d
 	is_triggered_only = no
 	fire_only_once = yes
 	trigger = {
@@ -231,27 +243,37 @@ country_event = { #Boneyard Resurrects the BOS
 			transfer_state = 51
 			transfer_state = 245
 			load_oob = boneyardbrotherhood
+			add_ai_strategy = {
+				type = alliance
+				id = "BON"
+				value = 200
+			}
 		}
 		add_political_power = -200
 		add_to_faction = BOS
+		add_ai_strategy = {
+			type = alliance
+			id = "BOS"
+			value = 200
+		}
 		every_country = {
 			news_event = nf_qol.6
 		}
-		
+
 		ai_chance = {
 			factor = 10.0
 		}
-		
+
 	}
 	option = {
-		name = nf_qol.4.b 
-		
+		name = nf_qol.4.b
+
 	}
 }
 country_event = { #BOS Unpuppets
 	id = nf_qol.5
-	title = nf_qol.5.t 
-	desc = nf_qol.5.d 
+	title = nf_qol.5.t
+	desc = nf_qol.5.d
 	is_triggered_only = no
 	fire_only_once = yes
 	trigger = {
@@ -297,8 +319,8 @@ country_event = { #BOS Unpuppets
 		}
 	}
 	option = {
-		name = nf_qol.5.b 
-		
+		name = nf_qol.5.b
+
 		ai_chance = {
 			factor = 3.0
 		}
@@ -307,17 +329,17 @@ country_event = { #BOS Unpuppets
 news_event = { #World Announce that the BOS returned
 	id = nf_qol.6
 	title = nf_qol.6.t
-	desc = nf_qol.6.d 
+	desc = nf_qol.6.d
 	is_triggered_only = yes
 	option = {
-		name = nf_qol.6.a 
+		name = nf_qol.6.a
 	}
 }
-	
+
 country_event = { #Enclave Resurgent 2
 	id = nf_qol.7
-	title = nf_qol.7.t 
-	desc = nf_qol.7.d 
+	title = nf_qol.7.t
+	desc = nf_qol.7.d
 	is_triggered_only = no
 	trigger = {
 		tag = BOS

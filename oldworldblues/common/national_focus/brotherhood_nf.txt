@@ -258,8 +258,8 @@ focus_tree = {
 				add_to_faction = ARR
 				# NOTE: from Mechano, do not fuck with this again and cause more crashes
 				ARR = { 
-					    set_politics = { ruling_party = intellectuals elections_allowed = no }
-						add_popularity = { ideology = intellectuals popularity = 0.5 }
+					set_politics = { ruling_party = intellectuals elections_allowed = no }
+					add_popularity = { ideology = intellectuals popularity = 0.5 }
 				}
 			}
 			
@@ -1324,6 +1324,9 @@ focus_tree = {
 			DES = {
 				set_technology = {
 					power_armour_t45d = 1 
+				}
+				hidden_effect = {
+					load_oob = "unlock_power_armor"
 				}
 			}
 		}

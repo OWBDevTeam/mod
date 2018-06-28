@@ -621,7 +621,19 @@ focus_tree = {
 						}
 					}
 					NEW = {
-						add_to_faction = VEG
+						add_to_faction = DES
+						add_ai_strategy = {
+							type = alliance
+							id = "DES"
+							value = 200
+						}
+					}
+					DES = {
+						add_ai_strategy = {
+							type = alliance
+							id = "NEW"
+							value = 200
+						}
 					}
 				}
 				
@@ -633,6 +645,18 @@ focus_tree = {
 					}
 					VEG = {
 						add_to_faction = DES
+						add_ai_strategy = {
+							type = alliance
+							id = "DES"
+							value = 200
+						}
+					}
+					DES = {
+						add_ai_strategy = {
+							type = alliance
+							id = "VEG"
+							value = 200
+						}
 					}
 				}
 				

@@ -5,7 +5,7 @@ soundeffect = {
 	sounds = {
 		sound = infantry_laser_rifle_attack_01
 		sound = infantry_laser_rifle_attack_02
-	} 
+	}
 	max_audible = 10
 	delay_random_offset = { 0.0 0.15 }
 	playbackrate_random_offset = { -0.15 0.15 }
@@ -18,21 +18,15 @@ soundeffect = {
 	name = infantry_minigun_attack
 	falloff = "falloff_100"
 	sounds = {
-		sound = infantry_minigun_attack_1
-	} 
+		sound = infantry_fire_minigun_01
+		sound = infantry_fire_minigun_02
+	}
 	max_audible = 10
 	delay_random_offset = { 0.0 0.15 }
 	playbackrate_random_offset = { -0.15 0.15 }
 	max_audible_behaviour = fail
 	is3d = yes
-	volume = 0.10
-}
-
-sound =
-{
-	name = "infantry_minigun_attack_1"
-	file = "animations/infantry_fire_minigun.wav"
-	always_load = no
+	volume = 0.40
 }
 
 ###################
@@ -41,28 +35,84 @@ sound =
 soundeffect = {
 	name = "FO1_intro"
 	sounds = {
-		sound = 
+		sound =
 			FO1_intro
 	}
-	volume = 1.9
+	volume = 1.0
 }
 
 soundeffect = {
 	name = "FO2_intro"
 	sounds = {
-		sound = 
+		sound =
 			FO2_intro
 	}
-	volume = 2.0
+	volume = 1.0
 }
 
 soundeffect = {
 	name = "FONV_intro"
 	sounds = {
-		sound = 
+		sound =
 			FONV_intro
 	}
-	volume = 1.8
+	volume = 1.0
 }
 
 
+###############
+## Event Audio
+###############
+soundeffect = {
+	name = "hardin_choice"
+	sounds = {
+		sound =
+			hardin_choice
+	}
+	volume = 1.0
+}
+
+soundeffect = {
+	name = "bad_karma"
+	sounds = {
+		sound =
+			bad_karma
+	}
+	volume = 1.0
+}
+
+soundeffect = {
+	name = "good_karma"
+	sounds = {
+		sound =
+			good_karma
+	}
+	volume = 1.0
+}
+
+soundeffect = {
+	name = "stranger_intro"
+	sounds = {
+		sound =
+			stranger_intro
+	}
+	volume = 1.0
+}
+
+soundeffect = {
+	name = "stranger_outro"
+	sounds = {
+		sound =
+			stranger_outro
+	}
+	volume = 1.0
+}
+
+soundeffect = {
+	name = "wild_wasteland"
+	sounds = {
+		sound =
+			wild_wasteland
+	}
+	volume = 1.0
+}

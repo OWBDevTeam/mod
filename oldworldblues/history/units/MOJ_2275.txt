@@ -1,5 +1,5 @@
 ﻿division_template = {
-	name = "Mojave Expeditionary"
+	name = "Knight Paladin Patrol"
 
 	regiments = {
 		power_armour = { x = 0 y = 0 }
@@ -25,19 +25,19 @@ division_template = {
 units = {
 
 	division {
-		name = "1. Mojave Expeditionary"
+		name = "Hidden Valley Garrison"
 		location = 6987
-		division_template = "Mojave Expeditionary"
-		start_experience_factor = 0.6
+		division_template = "Knight Paladin Patrol"
+		start_experience_factor = 1
 		start_equipment_factor = 0.9
 	}
 }
 units = {
 
 	division {
-		name = "2. Mojave Expeditionary"
+		name = "Black Mountain Garrison"
 		location = 3235
-		division_template = "Mojave Expeditionary"
+		division_template = "Knight Paladin Patrol"
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.86
 	}
@@ -45,9 +45,9 @@ units = {
 units = {
 
 	division {
-		name = "3. Mojave Expeditionary"
+		name = "Helios One Garrison"
 		location = 3199
-		division_template = "Mojave Expeditionary"
+		division_template = "Knight Paladin Patrol"
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.95
 	}
@@ -55,9 +55,9 @@ units = {
 units = {
 
 	division {
-		name = "4. Mojave Expeditionary"
+		name = "Mojave Expeditionary Force"
 		location = 6990
-		division_template = "Mojave Expeditionary"
+		division_template = "Knight Paladin Patrol"
 		start_experience_factor = 0.6
 		start_equipment_factor = 0.80
 	}
@@ -70,7 +70,18 @@ instant_effect = {
 			type = energy_equipment_2
 			creator = "MOJ"
 		}
-		requested_factories = 1
+		requested_factories = 5
+		progress = 0.75
+		efficiency = 100
+	}
+}
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = power_armor_equipment_2
+			creator = "MOJ"
+		}
+		requested_factories = 2
 		progress = 0.75
 		efficiency = 100
 	}
