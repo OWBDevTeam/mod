@@ -9,12 +9,7 @@ focus_tree = {
 				tag = ENC
 				tag = BAR
 				tag = BON
-				AND = {
-					is_brotherhood_nation = yes
-					NOT = { tag = BOS }
-				}
 			}
-			
 			add = 10
 		}
 	}
@@ -458,7 +453,10 @@ focus_tree = {
 		x = 11
 		y = 5
 		completion_reward = {
-		   add_ideas = caravanmilitia
+			add_ideas = caravanmilitia
+			hidden_effect = {
+				set_technology = { settler_caravanmilitia = 1 }
+			}
 		   add_manpower = 250
 		}
 
@@ -522,10 +520,10 @@ focus_tree = {
 		x = 11
 		y = 7
 		completion_reward = {
-		   swap_ideas = {
-			add_idea = settler_subsidized_weapon_manufacturers
-			remove_idea = caravanmilitia
-		   }
+			Swap_ideas = {
+				add_idea = settler_subsidized_weapon_manufacturers
+				remove_idea = caravanmilitia
+			}
 		}
 	}
 	focus = {
@@ -1004,7 +1002,11 @@ focus_tree = {
 		x = 22
 		y = 11
 		completion_reward = {
-			add_research_slot = 1
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = electronics
+			}
 		}
 	}
 	focus = {
@@ -1157,7 +1159,7 @@ focus_tree = {
 		x = 29
 		y = 6
 		completion_reward = {
-			add_research_slot = 1
+			add_ideas = settler_council_of_minds
 		}	
 	}
 	focus = {
@@ -1172,8 +1174,8 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = air_bonus
-				bonus = 0.5
-				uses = 1
+				bonus = 0.75
+				uses = 2
 				category = light_air
 			}
 			random_owned_controlled_state = {
@@ -1201,7 +1203,7 @@ focus_tree = {
 				}
 				add_building_construction = {
 					type = air_base
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}

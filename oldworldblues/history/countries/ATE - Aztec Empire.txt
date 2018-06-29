@@ -1,5 +1,5 @@
 ﻿#capital = 2
-oob = "ATE_2265"
+oob = "ATE_2275"
 
 set_technology = {
     standard_weaponry_tech = 1
@@ -9,26 +9,25 @@ set_technology = {
 
 set_politics = {
     parties = {
-        people = { popularity = 0 }
+        people = { popularity = 100 }
         elites = { popularity = 0 }
         intellectuals = { popularity = 0 }
-        ruler = { popularity = 100 }
+        ruler = { popularity = 0 }
     }
-    ruling_party = ruler
-    elections_allowed = yes
+    ruling_party = people
+    elections_allowed = no
 }
 
 add_ideas = { 
 }
 
 create_country_leader  = {
-    name = "Billy Clanton"
-    desc = "BillyClanton_DESC"
-    picture = "Portrait_COW_Leader.dds"
+    name = "Aztec Council"
+    desc = "AztecCouncil_DESC"
+    picture = "Portrait_Aztec_Council.dds"
     expire = "3000.1.1"
-    ideology = gang
+    ideology = tribal_council
     traits = {
-        dislikes_legion
+        ineffective
     }
 }
-

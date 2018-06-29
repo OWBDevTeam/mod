@@ -1,23 +1,23 @@
 ﻿add_namespace = nf_settler
 
 country_event = { #What our Forefathers Found#
-	id = nf_settler.1 
+	id = nf_settler.1
 	title = nf_settler.1.t
-	desc = nf_settler.1.desc
+	desc = nf_settler.1.d
 	picture = GFX_event_generic_settlement_2
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_settler.1.option.a #Clean Water#
-		
+		name = nf_settler.1.a #Clean Water#
+
 		add_ideas = settlercleanwater
-		
+
 	}
-	
+
 	option = {
-		name = nf_settler.1.option.b #Ruined Military Factories#
-		
+		name = nf_settler.1.b #Ruined Military Factories#
+
 		random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -50,8 +50,8 @@ country_event = { #What our Forefathers Found#
 			}
 	}
 	option = {
-		name = nf_settler.1.option.c #Ruined Civilian Factories#
-		
+		name = nf_settler.1.c #Ruined Civilian Factories#
+
 		random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -82,31 +82,31 @@ country_event = { #What our Forefathers Found#
 					instant_build = yes
 				}
 			}
-	}	
+	}
 }
-country_event = { 
+country_event = {
     id = nf_settler.2
     title = nf_settler.2.t
-    desc = nf_settler.2.desc
+    desc = nf_settler.2.d
     picture = GFX_event_generic_settlement_2
 
     is_triggered_only = yes
-    
+
     option = {
-        name = nf_settler.2.option.a
-        
+        name = nf_settler.2.a
+
         add_ideas = settlerdefendingwitha
     }
-    
+
     option = {
-        name = nf_settler.2.option.b #With Old World Science#
-        
+        name = nf_settler.2.b #With Old World Science#
+
         add_ideas = settlerdefendingwithb
         random_owned_controlled_state = {
             add_resource = {
                    type = metal
                    amount = 6
-                }                
+                }
                 add_resource = {
                    type = electronics
                    amount = 6
@@ -119,38 +119,38 @@ country_event = {
                    type = fuel
                    amount = 6
                 }
-            }    
-        
+            }
+
     }
-    
+
     option = {
-        name = nf_settler.2.option.c #With Mercenaries#
-        
+        name = nf_settler.2.c #With Mercenaries#
+
         add_ideas = settlerdefendingwithc
     }
 }
 country_event = { #What will we become#
 	id = nf_settler.3
 	title = nf_settler.3.t
-	desc = nf_settler.3.desc
+	desc = nf_settler.3.d
 	picture = GFX_event_generic_settlement_2
 
     is_triggered_only = yes
-    
+
 	option = {
-		name = nf_settler.3.option.a #Powerful#
-		
+		name = nf_settler.3.a #Powerful#
+
 		add_ideas = settlerpowerful
 	}
-	
+
 	option = {
-		name = nf_settler.3.option.b #Advanced#
-		
+		name = nf_settler.3.b #Advanced#
+
 		add_ideas = settleradvanced
 	}
-	
+
 	option = {
-		name = nf_settler.3.option.c #Wealthy#
-		
+		name = nf_settler.3.c #Wealthy#
+
 		add_ideas = settlerwealthy
-	}	
+	}

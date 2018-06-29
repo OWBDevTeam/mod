@@ -207,23 +207,11 @@ ideas = {
 			}
 			removal_cost = -1
 			equipment_bonus = {
-				motorbike_equipment_1 = {
+				motorized_equipment = {
 					build_cost_ic = -0.05
 					instant = yes
 				}
 			}
-			equipment_bonus = {
-				motorbike_equipment_2 = {
-					build_cost_ic = -0.05 
-					instant = yes
-				}
-			}
-			equipment_bonus = {
-				motorbike_equipment_3 = {
-					build_cost_ic = -0.05 
-					instant = yes
-				}
-			}	
 		}
 		def80s = {
 			picture = 80sgift
@@ -240,8 +228,16 @@ ideas = {
 			}
 			removal_cost = -1
 			equipment_bonus = {
-				robot_equipment = {
-					build_cost_ic = -0.2 
+				medium_robot_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+				light_robot_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+				heavy_robot_equipment = {
+					build_cost_ic = -0.2
 					instant = yes
 				}
 			}
@@ -334,15 +330,23 @@ ideas = {
 			}
 			removal_cost = -1
 			equipment_bonus = {
-				robot_equipment = {
-					build_cost_ic = -0.1 
+				medium_robot_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				light_robot_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				heavy_robot_equipment = {
+					build_cost_ic = -0.1
 					instant = yes
 				}
 				power_armor_equipment = {
 					build_cost_ic = -0.1 
 					instant = yes
-					}
-				energy_equipment = {
+				}
+				infantry_equipment = {
 					build_cost_ic = -0.1 
 					instant = yes
 				}
@@ -358,10 +362,10 @@ ideas = {
 					build_cost_ic = -0.1 
 					instant = yes
 				}
-				fighter_plane_equipment = {
+				fighter_equipment = {
 					build_cost_ic = -0.1 
 					instant = yes
-					}
+				}
 			}
 		}
 		firsteconomy = {
@@ -508,5 +512,80 @@ ideas = {
 				}
 			}
 		}
+		vault_geck_13 = {
+			picture = vault_open_bonus
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				research_time_factor = -0.1
+			}
+		}
+		vault_15_heritage = {
+			picture = vault_open_bonus
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.3
+			}
+		}
+		vault_rebuilding = {
+			picture = vault_open_bonus
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = -0.2
+				
+			}
+		}
+		vault_21_economy = {
+			picture = vault_open_bonus
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		vault_22_research = {
+			picture = vault_open_bonus
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				MONTHLY_POPULATION = 0.05
+			}
+		}
+		vault_sho_reserve = {
+			picture = vault_open_bonus
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = 0.05
+			}
+		}
+		vault_rip_militia = {
+			picture = vault_open_bonus
+			allowed = {
+			
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = 0.05
+			}
+		}
+		vault_70_data = {
+			picture = vault_open_bonus
+			allowed = {
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.15
+				war_support_factor = 0.15
+				
+			}
 	}
 }

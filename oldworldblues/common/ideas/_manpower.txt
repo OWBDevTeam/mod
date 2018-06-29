@@ -58,6 +58,9 @@ ideas = {
 						is_major = no
 						surrender_progress > 0.05
 				}
+				NOT = {
+				    original_tag = MOJ
+				}
 			}
 
 			modifier = {
@@ -77,6 +80,9 @@ ideas = {
 					}
 					is_major = no
 					surrender_progress > 0.1
+				}
+				NOT = {
+				    original_tag = MOJ
 				}
 			}
 			
@@ -103,18 +109,20 @@ ideas = {
 		
 		service_by_requirement = {
 			
-			
 			available = {
 				AND = {
-						has_war = yes
-						enemies_strength_ratio > 0.6
-						#any_enemy_country = {
-						#	strength_ratio = {
-						#		tag = ROOT 
-						#		ratio > 0.6
-						#	}
-						#}
-					}
+					has_war = yes
+					enemies_strength_ratio > 0.6
+					#any_enemy_country = {
+					#	strength_ratio = {
+					#		tag = ROOT 
+					#		ratio > 0.6
+					#	}
+					#}
+				}
+				NOT = {
+				    original_tag = MOJ
+				}
 			}
 			
 			cost = 150
@@ -147,10 +155,12 @@ ideas = {
 		
 		all_adults_serve = {
 			
-			
 			available = {
 				has_war = yes
 				enemies_strength_ratio > 0.75
+				NOT = {
+				    original_tag = MOJ
+				}
 			}
 		
 			cost = 150
@@ -188,10 +198,8 @@ ideas = {
 		
 		scraping_the_barrel = {
 			
-			
 			available = {
 				has_war = yes
-				
 				enemies_strength_ratio > 1
 				any_enemy_country = {
 					strength_ratio = {
@@ -199,7 +207,9 @@ ideas = {
 						ratio > 1.25
 					}
 				}
-
+				NOT = {
+				    original_tag = MOJ
+				}
 			}
 			ai_will_do = {
    				factor = 1

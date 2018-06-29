@@ -564,6 +564,9 @@ focus_tree = {
 		prerequisite = {
 			focus = des_planning
 		}
+		available = {
+			210 = { is_owned_and_controlled_by = DES }
+		}
 		x = 12
 		y = 10
 		completion_reward = {
@@ -618,7 +621,19 @@ focus_tree = {
 						}
 					}
 					NEW = {
-						add_to_faction = VEG
+						add_to_faction = DES
+						add_ai_strategy = {
+							type = alliance
+							id = "DES"
+							value = 200
+						}
+					}
+					DES = {
+						add_ai_strategy = {
+							type = alliance
+							id = "NEW"
+							value = 200
+						}
 					}
 				}
 				
@@ -630,6 +645,18 @@ focus_tree = {
 					}
 					VEG = {
 						add_to_faction = DES
+						add_ai_strategy = {
+							type = alliance
+							id = "DES"
+							value = 200
+						}
+					}
+					DES = {
+						add_ai_strategy = {
+							type = alliance
+							id = "VEG"
+							value = 200
+						}
 					}
 				}
 				
@@ -804,6 +831,9 @@ focus_tree = {
 		y = 9
 		completion_reward = {
 			add_ideas = knighttactics
+			hidden_effect = {
+				set_technology = { ranger_knighttactics = 1 }
+			}
 		}
 
 	}
@@ -1023,6 +1053,9 @@ focus_tree = {
 		y = 14
 		completion_reward = {
 			add_ideas = slayinggiants
+			hidden_effect = {
+				set_technology = { ranger_slayinggiants = 1 }
+			}
 		}
 
 	}
@@ -1633,6 +1666,9 @@ focus_tree = {
 		y = 14
 		completion_reward = {
 			add_ideas = rangerslegionwar
+			hidden_effect = {
+				set_technology = { ranger_rangerslegionwar = 1 }
+			}
 		}
 
 	}
@@ -1668,6 +1704,9 @@ focus_tree = {
 		y = 14
 		completion_reward = {
 			add_ideas = rangersnewthreat
+			hidden_effect = {
+				set_technology = { ranger_rangersnewthreat = 1 }
+			}
 		}
 
 	}

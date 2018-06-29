@@ -1,5 +1,5 @@
 ﻿capital = 116
-oob = "HEA_2265"
+oob = "HEA_2275"
 
 set_technology = {
     # baseline techs
@@ -28,30 +28,47 @@ set_technology = {
         naval_invasion_tech = 1
 }
 
-set_stability = 0.55
-set_war_support = 0.15
+set_stability = 0.5
+set_war_support = 0.2
+set_research_slots = 3
 
 set_politics = {
     parties = {
         people = { popularity = 0 }
-        elites = { popularity = 15 }
+        elites = { popularity = 35 }
         intellectuals = { popularity = 5 }
-        ruler = { popularity = 80 }
+        ruler = { popularity = 60 }
     }
     ruling_party = ruler
     elections_allowed = no
 }
 
-add_ideas = { }
+add_ideas = { 
+	hea_divided_leadership
+	hea_theocratic_elite
+	hea_steam_power
+}
 
 create_country_leader = {
-    name = "Saint Michael"
-    desc = "MICHAEL_DESC"
-    picture = "Portrait_HEA_Leader.dds"
-    expire = "3000.1.1"
-    ideology = benevolent_dictatorship
-    traits = {
-    }
+	name = "Saint Michael"
+	desc = "MICHAEL_DESC"
+	picture = "Portrait_HEA_Leader.dds"
+	expire = "3000.1.1"
+	ideology = benevolent_dictatorship
+	traits = {
+		isolationist_trait
+	}
+}
+
+create_country_leader = {
+	name = "Esteemed Council"
+	desc = "MICHAEL_DESC"
+	picture = ""
+	expire = "3000.1.1"
+	ideology = feudalism
+	traits = {
+		isolationist_trait
+	}
 }
 
 create_field_marshal = {
@@ -65,4 +82,3 @@ create_field_marshal = {
 	planning_skill = 3
 	logistics_skill = 1
 }
-

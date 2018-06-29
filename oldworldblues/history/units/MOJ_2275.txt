@@ -1,0 +1,88 @@
+﻿division_template = {
+	name = "Knight Paladin Patrol"
+
+	regiments = {
+		power_armour = { x = 0 y = 0 }
+		power_armour = { x = 0 y = 1 }
+		power_armour = { x = 0 y = 2 }
+		power_armour = { x = 1 y = 0 }
+		power_armour = { x = 1 y = 1 }
+		power_armour = { x = 1 y = 2 }
+		power_armour = { x = 2 y = 0 }
+		power_armour = { x = 2 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Militia Force"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+units = {
+
+	division {
+		name = "Hidden Valley Garrison"
+		location = 6987
+		division_template = "Knight Paladin Patrol"
+		start_experience_factor = 1
+		start_equipment_factor = 0.9
+	}
+}
+units = {
+
+	division {
+		name = "Black Mountain Garrison"
+		location = 3235
+		division_template = "Knight Paladin Patrol"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.86
+	}
+}
+units = {
+
+	division {
+		name = "Helios One Garrison"
+		location = 3199
+		division_template = "Knight Paladin Patrol"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.95
+	}
+}
+units = {
+
+	division {
+		name = "Mojave Expeditionary Force"
+		location = 6990
+		division_template = "Knight Paladin Patrol"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.80
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = energy_equipment_2
+			creator = "MOJ"
+		}
+		requested_factories = 5
+		progress = 0.75
+		efficiency = 100
+	}
+}
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = power_armor_equipment_2
+			creator = "MOJ"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+}

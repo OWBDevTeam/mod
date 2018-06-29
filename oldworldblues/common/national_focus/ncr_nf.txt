@@ -104,8 +104,7 @@ focus_tree = {
 		y = 4
 		available = {
 			has_completed_focus = ncr_councilhill
-			owns_state = 350
-			controls_state = 350
+			350 = { is_owned_and_controlled_by = NCR }
 		}
 		ai_will_do = {
 			factor = 1
@@ -215,7 +214,6 @@ focus_tree = {
 				country_event = { id = nf_ncr.7 }
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_retake
@@ -232,7 +230,7 @@ focus_tree = {
 				type = annex_everything
 				target = BVC
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -258,13 +256,12 @@ focus_tree = {
 				create_faction = fantasma_cartel
 				add_to_faction = BVC
 				add_to_war = {
-					targeted_alliance = BVP
+					targeted_alliance = BVC
 					enemy = NCR
+					hostility_reason = ally
 				}				
 			}
-			
 		}
-
 	}
 	focus = {
 		id = ncr_buyout
@@ -336,7 +333,7 @@ focus_tree = {
 		x = 0
 		y = 12
 		available = {
-			owns_state = 135
+			135 = { is_owned_and_controlled_by = NCR }
 		}
 		completion_reward = {
 			
@@ -511,7 +508,7 @@ focus_tree = {
 		x = 2
 		y = 11
 		completion_reward = {
-			BOS = { give_military_access = NCR }
+			NCR = { give_military_access = BOS }
 			remove_ideas = baronswar
 		}
 
@@ -658,6 +655,12 @@ focus_tree = {
 		cost = 4.3
 		prerequisite = {
 			focus = ncr_exodus
+		}
+		available = {
+			any_state = {
+				is_owned_by = NCR
+				is_baron_state = yes
+			}
 		}
 		x = 4
 		y = 10
@@ -922,7 +925,7 @@ focus_tree = {
 				type = annex_everything
 				target = SCR
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -996,13 +999,17 @@ focus_tree = {
 		x = 8
 		y = 9
 		available = {
-			any_country = {
-				AND = {
-					is_in_faction_with = NCR
-					owns_state = 47
-					controls_state = 47
+			OR = {
+				any_country = {
+					AND = {
+						is_in_faction_with = NCR
+						owns_state = 47
+						controls_state = 47
+					}
 				}
-				
+				NCR = {
+					has_full_control_of_state = 47
+				}
 			}
 		}
 		completion_reward = {
@@ -1047,7 +1054,7 @@ focus_tree = {
 				type = annex_everything
 				target = RAP
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -1314,11 +1321,8 @@ focus_tree = {
 		y = 7
 		completion_reward = {
 			set_technology = { power_armour = 1 }
-			custom_effect_tooltip = load_ncrheavytroops
-			hidden_effect = { load_oob = ncrheavytroops }
-			
+			unlock_decision_tooltip = NCR_armourexperiment_focus
 		}
-
 	}
 	focus = {
 		id = ncr_capitalfort
@@ -1330,8 +1334,7 @@ focus_tree = {
 		x = 16
 		y = 8
 		available = {
-			owns_state = 253
-			controls_state = 253
+			253 = { is_owned_and_controlled_by = NCR }
 		}
 		completion_reward = {
 			253 = {
@@ -1362,8 +1365,7 @@ focus_tree = {
 		x = 18
 		y = 5
 		available = {
-			owns_state = 253
-			controls_state = 253
+			253 = { is_owned_and_controlled_by = NCR }
 		}
 		completion_reward = {
 			253 = {
@@ -1404,6 +1406,9 @@ focus_tree = {
 		y = 7
 		completion_reward = {
 			add_ideas = reorgranger
+			hidden_effect = {
+				set_technology = { ncr_reorgranger = 1 }
+			}
 		}
 
 	}
@@ -1631,8 +1636,7 @@ focus_tree = {
 		icon = GFX_goal_generic_large_scale_normal_industry_focus
 		cost = 8.6
 		available = {
-			owns_state = 350
-			controls_state = 350
+			350 = { is_owned_and_controlled_by = NCR }
 		}
 		prerequisite = {
 			focus = ncr_boneyard
@@ -1654,8 +1658,7 @@ focus_tree = {
 		x = 23
 		y = 6
 		available = {
-			owns_state = 350
-			controls_state = 350
+			350 = { is_owned_and_controlled_by = NCR }
 		}
 		completion_reward = {
 			350 = {
@@ -2158,6 +2161,9 @@ focus_tree = {
 		y = 6
 		completion_reward = {
 			add_ideas = jimdrills
+			hidden_effect = {
+				set_technology = { ncr_jim_drills = 1 }
+			}
 		}
 
 	}
@@ -2221,6 +2227,9 @@ focus_tree = {
 		y = 6
 		completion_reward = {
 			add_ideas = rangercore
+			hidden_effect = {
+				set_technology = { ncr_rangercore = 1 }
+			}
 		}
 
 	}
@@ -2235,6 +2244,9 @@ focus_tree = {
 		y = 7
 		completion_reward = {
 			add_ideas = rangerlead
+			hidden_effect = {
+				set_technology = { ncr_rangerlead = 1 }
+			}
 		}
 
 	}
@@ -2249,8 +2261,10 @@ focus_tree = {
 		y = 8
 		completion_reward = {
 			add_ideas = rangercanopeners
+			hidden_effect = {
+				set_technology = { ncr_rangercanopeners = 1 }
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_mojave
@@ -2264,12 +2278,17 @@ focus_tree = {
 		x = 7
 		y = 10
 		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = MRA
-			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
+				limit = {
+					MRA = { exists = yes }
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = MRA
+				}
+			}
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			else_if = {
 				limit = {
 					any_state = {
 						AND = {
@@ -2293,12 +2312,11 @@ focus_tree = {
 			if = {
 				limit = {
 					is_ai = yes
-					
+					MRA = { exists = yes }
 				}
 				declare_war_on = { target = MRA type = annex_everything }
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_oldworldwall
@@ -2317,15 +2335,15 @@ focus_tree = {
 				
 					AND = {	
 						OR = {
-							owns_state = 533
-							owns_state = 137
-							owns_state = 573
-							owns_state = 380
+							533 = { is_owned_and_controlled_by = NCR }
+							137 = { is_owned_and_controlled_by = NCR }
+							573 = { is_owned_and_controlled_by = NCR }
+							380 = { is_owned_and_controlled_by = NCR }
 						}
 						OR = {
-							owns_state = 272
-							owns_state = 206
-							owns_state = 181
+							272 = { is_owned_and_controlled_by = NCR }
+							206 = { is_owned_and_controlled_by = NCR }
+							181 = { is_owned_and_controlled_by = NCR }
 						}
 					}
 				}
@@ -2386,8 +2404,7 @@ focus_tree = {
 				planning_skill = 4
 				logistics_skill = 2
 			}
-			custom_effect_tooltip = load_ncrheavytroops
-			hidden_effect = { load_oob = ncrheavytroops }
+			unlock_decision_tooltip = NCR_protege_focus
 		}
 
 	}
@@ -2407,9 +2424,7 @@ focus_tree = {
 			}
 		}
 		available = {
-			CES = {
-				owns_state = 252
-			}
+			252 = { is_owned_and_controlled_by = CES }
 		}
 		x = 9
 		y = 13
@@ -2427,6 +2442,8 @@ focus_tree = {
 		}
 		available = {
 			has_country_flag = hoover_dam_lost
+			533 = { is_owned_and_controlled_by = NCR }
+			272 = { is_owned_and_controlled_by = NCR }
 		}
 		ai_will_do = {
 			factor = 10
@@ -2563,24 +2580,24 @@ focus_tree = {
 		completion_reward = {
 			252 = {
 				add_resource = {
-                    type = electricity
-                    amount = -30
-                }
+					type = electricity
+					amount = -30
+				}
 				add_resource = {
-                    type = electronics
-                    amount = -5
-                }
+					type = electronics
+					amount = -5
+				}
 			}
 			capital_scope = {
-                add_resource = {
-                    type = electricity
-                    amount = 30
-                }
 				add_resource = {
-                    type = electronics
-                    amount = 5
-                }
-            }
+					type = electricity
+					amount = 30
+				}
+				add_resource = {
+					type = electronics
+					amount = 5
+				}
+			}
 		}
 
 	}
@@ -2591,6 +2608,12 @@ focus_tree = {
 		prerequisite = {
 			focus = ncr_powertopeople
 			focus = ncr_heavytroops
+		}
+		bypass = {
+			OR = {
+				has_war_with = CES
+				NOT = { country_exists = CES }
+			}
 		}
 		will_lead_to_war_with = CES
 		available = {
@@ -2636,8 +2659,7 @@ focus_tree = {
 		y = 16
 		completion_reward = {
 			add_ideas = heavytroops
-			custom_effect_tooltip = load_ncrheavytroops
-			hidden_effect = { load_oob = ncrheavytroops }
+			unlock_decision_tooltip = NCR_heavytroops_focus
 		}
 
 	}
@@ -2667,7 +2689,7 @@ focus_tree = {
 	focus = {
 		id = ncr_bazaar
 		icon = GFX_goal_generic_large_scale_normal_industry_focus
-		cost = 8
+		cost = 8.6
 		prerequisite = {
 			focus = ncr_armament
 		}
@@ -2716,7 +2738,7 @@ focus_tree = {
 	focus = {
 		id = ncr_beacon
 		icon = GFX_goal_support_democracy
-		cost = 8
+		cost = 5
 		prerequisite = {
 			focus = ncr_powerplant
 		}
@@ -2729,8 +2751,12 @@ focus_tree = {
 		x = 16
 		y = 9
 		completion_reward = {
-			add_war_support = 0.08
-			add_stability = 0.02
+			add_war_support = 0.03
+			add_stability = 0.03
+			swap_ideas = {
+				add_idea = civilian_economy
+				remove_idea = undisturbed_isolation
+			}
 		}
 
 	}

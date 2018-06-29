@@ -6,19 +6,21 @@ country_event = {
 	desc = nf_ncr.1.d
 	picture = GFX_event_NCR_settlers
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+	
 	option = {
 		name = nf_ncr.1.a
 		
 		add_ideas = aradesh
 	}
-    
-    option = {
+	
+	option = {
 		name = nf_ncr.1.b
 
 		add_ideas = seth
-		
+		hidden_effect = {
+			set_technology = { ncr_seth = 1 }
+		}
 	}
 	
 	option = {
@@ -36,7 +38,7 @@ country_event = {
 	picture = GFX_event_NCR_settlers
 	
 	is_triggered_only = yes
-    
+
 	option = {
 		name = nf_ncr.2.a
 		
@@ -61,7 +63,6 @@ country_event = {
 		set_country_flag = bajahayes
 	
 	}
-    
 }
 
 country_event = {
@@ -421,7 +422,9 @@ country_event = {
 		add_ideas = legacyofnavarro1
 		
 		add_opinion_modifier = { target = BOS modifier = brotherhoodassault  }
-		
+		#hidden_effect = {
+		#	set_technology = { ncr_legacy_of_navarro_1 = 1 }
+		#}
 	}
 	
 	option = {
@@ -709,7 +712,9 @@ country_event = { #Baron Investment
 		name = nf_ncr.17.c
 		
 		add_ideas = privatepolice
-	
+		hidden_effect = {
+			set_technology = { ncr_privatepolice = 1 }
+		}
 	}
 	
 }
@@ -1217,10 +1222,10 @@ country_event = {
 		ai_chance = {
 			base = 1000
 		}
-		    create_wargoal = {
-                    type = annex_everything
-                    target = MOJ
-                }
+		create_wargoal = {
+			type = annex_everything
+			target = MOJ
+		}
 		NCR = {add_opinion_modifier = { target = MOJ modifier = stolehelios } }
 	}
 }
@@ -1261,5 +1266,2021 @@ country_event = {
 		name = ncr_helios_event.23.a #Fantastic!
 		transfer_state = 417
 	}
-	
+}
+
+###########################################
+#               NCR REVOLTS               #
+#  Coded by Blaz, Happy + Zap (dreamteam) #
+#   w/ wonderful unit setups by Mechano   #
+###########################################
+
+country_event = {
+	id = nf_ncr.30
+	title = nf_ncr.30.t
+	desc = nf_ncr.30.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {#Let them go free
+		name = nf_ncr.30.a
+		hidden_effect = {
+			sound_effect = good_karma
+			every_owned_state = {
+				set_state_flag = do_not_decimate
+			}
+			if = {
+				limit = {
+					OR = {
+						VEG = { exists = no }
+						VEG = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = VEG.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				VEG = {
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					diplomatic_relation = {
+						country = NCR
+						relation = non_aggression_pact
+						active = yes
+					}
+					give_guarantee = NCR
+				}
+				diplomatic_relation = {
+					country = VEG
+					relation = non_aggression_pact
+					active = yes
+				}
+				give_guarantee = VEG
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = TWI
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = TWI.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = PHR
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = PHR.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = FLA
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = FLA.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = HUA
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = HUA.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = BLK
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = BLK.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = TSI
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = TSI.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = WAP
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = WAP.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = MES
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = MES.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = SUF
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = SUF.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = RSR
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = RSR.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = TWI
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = WAP.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = BSU
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = BSU.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							is_core_of = JIC
+							owner = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+						AND = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = JIC.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						TTM = { exists = no }
+						TTM = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					TTM = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = TTM.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						PEC = { exists = no }
+						PEC = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					PEC = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = PEC.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						RBD = { exists = no }
+						RBD = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					RBD = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = RBD.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						TWO = { exists = no }
+						TWO = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					TWO = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = TWO.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						COW = { exists = no }
+						COW = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					COW = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = COW.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						HAN = { exists = no }
+						HAN = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					HAN = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = HAN.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				load_oob = HAN_2275
+			}
+			if = {
+				limit = {
+					OR = {
+						TON = { exists = no }
+						TON = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					TON = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = TON.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						TLO = { exists = no }
+						TLO = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					TLO = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = TLO.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						GDH = { exists = no }
+						GDH = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					GDH = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = GDH.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						LGS = { exists = no }
+						LGS = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					LGS = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = LGS.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						NAV = { exists = no }
+						NAV = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					NAV = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = NAV.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						FOR = { exists = no }
+						FOR = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					FOR = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = FOR.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						SCO = { exists = no }
+						SCO = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					SCO = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = SCO.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						IRN = { exists = no }
+						IRN = {
+							is_puppet = yes
+							overlord = {
+								OR = {
+									tag = NCR
+									is_in_faction_with = NCR
+								}
+							}
+						}
+					}
+					IRN = {
+						any_state = {
+							is_core_of = PREV
+							has_state_flag = legion_height
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = IRN.id }
+				}
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+			}
+			every_owned_state = {
+				clr_state_flag = do_not_decimate
+			}
+			news_event = ncr_tribe_rebellion_news.1
+		}
+	}
+
+	option = {#No freedom - They rise to fight you
+		name = nf_ncr.30.b
+		hidden_effect = {
+			set_global_flag = NCR_CES_revolt
+			country_event = { id = nf_ncr.31 days = 7 }
+			news_event = ncr_tribe_rebellion_news.2
+			sound_effect = bad_karma
+			if = {
+				limit = {
+					DES = {	is_in_faction_with = NCR }
+				}
+				DES = { country_event = nf_ranger.5 }
+			}
+		}
+	}
+}
+
+country_event = { # HIDDEN EVENT - no loc needed! Used to prevent decimation shafting PHR
+	id = nf_ncr.300
+	title = nf_ncr.32.t
+	desc = nf_ncr.32.d
+
+	trigger = {
+		tag = CES
+		surrender_progress > 0.6
+	}
+	hidden = yes
+
+	immediate = {
+		every_state = {
+			limit = { is_core_of = PHR }
+			set_state_flag = do_not_decimate
+		}
+	}
+
+	option = {
+		name = nf_ncr.32.a
+	}
+}
+
+country_event = { # HIDDEN EVENT - no loc needed!
+	id = nf_ncr.301
+	title = nf_ncr.32.t
+	desc = nf_ncr.32.d
+
+	trigger = {
+		tag = CES
+		OR = {
+			surrender_progress < 0.4
+			has_war = no
+		}
+		any_state = {
+			is_core_of = PHR
+			has_state_flag = do_not_decimate
+		}
+	}
+	hidden = yes
+
+	immediate = {
+		every_state = {
+			limit = { is_core_of = PHR }
+			clr_state_flag = do_not_decimate
+		}
+	}
+
+	option = {
+		name = nf_ncr.32.a
+	}
+}
+
+#War for Freedom! Lead by the Phoenix Republic
+country_event = {
+	id = nf_ncr.31
+	title = nf_ncr.31.t
+	desc = nf_ncr.31.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				set_state_flag = do_not_decimate
+			}
+
+			if = {
+				limit = {
+					OR = {
+						VEG = { exists = no }
+						VEG = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				if = {
+					limit = {
+						VEG = { is_puppet = yes }
+					}
+					VEG = { OVERLORD = { end_puppet = VEG } }
+				}
+				else = { release = VEG }
+				VEG = {
+					VEG_states = yes
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					diplomatic_relation = {
+						country = NCR
+						relation = non_aggression_pact
+						active = yes
+					}
+					give_guarantee = NCR
+				}
+				diplomatic_relation = {
+					country = VEG
+					relation = non_aggression_pact
+					active = yes
+				}
+				give_guarantee = VEG
+			}
+			# Modular revolts for PHR
+			NCR = { set_country_flag = revolter_target }
+			every_country = {
+				set_variable = { var = revolter_tag value = PHR.id }
+			}
+			modular_revolt = yes
+			PHR = {
+				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				create_faction = pheonix_faction
+				add_to_faction = PHR
+			}
+			every_country = {
+				set_variable = { var = revolter_tag value = TWI.id }
+			}
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_v_ncr
+			modular_revolt = yes
+			TWI = {
+				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				country_event = nf_ncr.32
+			}
+			every_country = {
+				set_variable = { var = revolter_tag value = FLA.id }
+			}
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_v_ncr
+			modular_revolt = yes
+			FLA = {
+				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				country_event = nf_ncr.32
+			}
+			every_owned_state = {
+				clr_state_flag = do_not_decimate
+			}
+			country_event = { id = nf_ncr.33 days = 1 }
+			news_event = { id = ncr_tribe_rebellion_news.3 hours = 6 }
+		}
+		set_variable = {
+			var = revolt_percentage_target_divisions
+			value = 0.35
+		}
+		revolt_setup_fire = yes
+	}
+
+	option = {#Open Rebellion!
+		name = nf_ncr.31.a
+	}
+}
+
+#hidden event to get the tribes to join the PHR no loc needed.
+country_event = {
+	id = nf_ncr.32
+	title = nf_ncr.32.t
+	desc = nf_ncr.32.d
+
+	is_triggered_only = yes
+	hidden = yes
+
+	immediate = {
+		tribe_joining_together = yes
+		remove_generic_NCR_templates = yes
+	}
+
+	option = {
+		name = nf_ncr.32.a
+	}
+}
+
+#More join the Phoenic Federation in open rebellion.
+country_event = {
+	id = nf_ncr.33
+	title = nf_ncr.33.t
+	desc = nf_ncr.33.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				set_state_flag = do_not_decimate
+			}
+			every_country = {
+				set_variable = { var = revolter_tag value = HUA.id }
+			}
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_v_ncr
+			modular_revolt = yes
+			HUA = {
+				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				country_event = nf_ncr.32
+			}
+			every_country = {
+				set_variable = { var = revolter_tag value = BLK.id }
+			}
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_v_ncr
+			modular_revolt = yes
+			BLK = {
+				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				country_event = nf_ncr.32
+			}
+			if = {
+				limit = {
+					OR = {
+						COW = { exists = no }
+						COW = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = COW.id }
+				}
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				COW = {
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						TON = { exists = no }
+						TON = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = TON.id }
+				}
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				TON = {
+					set_NCR_factions_technology_on_civil_war = yes	
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					country_event = nf_ncr.32
+				}
+			}
+			every_owned_state = {
+				clr_state_flag = do_not_decimate
+			}
+			NCR = {
+				country_event = { id = nf_ncr.34 days = 1 }
+			}
+			news_event = { id = ncr_tribe_rebellion_news.4 hours = 6 }
+		}
+		set_variable = {
+			var = revolt_percentage_target_divisions
+			value = 0.25
+		}
+		revolt_setup_fire = yes
+	}
+
+
+	option = {#More join this Rebellion!
+		name = nf_ncr.33.a
+	}
+}
+
+#Even More join! Oh God!
+country_event = {
+	id = nf_ncr.34
+	title = nf_ncr.34.t
+	desc = nf_ncr.34.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				set_state_flag = do_not_decimate
+			}
+			every_country = {
+				set_variable = { var = revolter_tag value = TSI.id }
+			}
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_v_ncr
+			modular_revolt = yes
+			TSI = {
+				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				country_event = nf_ncr.32
+			}
+			every_country = {
+				set_variable = { var = revolter_tag value = WAP.id }
+			}
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_v_ncr
+			modular_revolt = yes
+			WAP = {
+				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				country_event = nf_ncr.32
+			}
+			if = {
+				limit = {
+					OR = {
+						TWO = { exists = no }
+						TWO = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = TWO.id }
+				}
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				TWO = {
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						TLO = { exists = no }
+						TLO = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = TLO.id }
+				}
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				TLO = {
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						GDH = { exists = no }
+						GDH = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = GDH.id }
+				}
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				GDH = {
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						NAV = { exists = no }
+						NAV = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = NAV.id }
+				}
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				NAV = {
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					country_event = nf_ncr.32
+				}
+			}
+			every_owned_state = {
+				clr_state_flag = do_not_decimate
+			}
+			country_event = { id = nf_ncr.35 days = 1 }
+			news_event = { id = ncr_tribe_rebellion_news.5 hours = 6 }
+		}
+		set_variable = {
+			var = revolt_percentage_target_divisions
+			value = 0.20
+		}
+		revolt_setup_fire = yes
+	}
+
+	option = {#More join this Rebellion!
+		name = nf_ncr.34.a
+	}
+}
+
+#Even More join! Oh God!
+country_event = {
+	id = nf_ncr.35
+	title = nf_ncr.35.t
+	desc = nf_ncr.35.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				set_state_flag = do_not_decimate
+			}
+			every_country = {
+				set_variable = { var = revolter_tag value = MES.id }
+			}
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_v_ncr
+			modular_revolt = yes
+			MES = {
+				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				country_event = nf_ncr.32
+			}
+			every_country = {
+				set_variable = { var = revolter_tag value = RSR.id }
+			}
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_v_ncr
+			modular_revolt = yes
+			RSR = {
+				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				country_event = nf_ncr.32
+			}
+			if = {
+				limit = {
+					OR = {
+						RBD = { exists = no }
+						RBD = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = RBD.id }
+				}
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				RBD = {
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						PEC = { exists = no }
+						PEC = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = PEC.id }
+				}
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				PEC = {
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						LGS = { exists = no }
+						LGS = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = LGS.id }
+				}
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				LGS = {
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					country_event = nf_ncr.32
+				}
+			}
+			every_owned_state = {
+				clr_state_flag = do_not_decimate
+			}
+			country_event = { id = nf_ncr.36 days = 1 }
+			news_event = { id = ncr_tribe_rebellion_news.6 hours = 6 }
+		}
+		set_variable = {
+			var = revolt_percentage_target_divisions
+			value = 0.30
+		}
+		revolt_setup_fire = yes
+	}
+
+	option = {#More join this Rebellion!
+		name = nf_ncr.35.a
+	}
+}
+
+#Even More join! Oh God!
+country_event = {
+	id = nf_ncr.36
+	title = nf_ncr.36.t
+	desc = nf_ncr.36.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				set_state_flag = do_not_decimate
+			}
+			every_country = {
+				set_variable = { var = revolter_tag value = SUF.id }
+			}
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_v_ncr
+			modular_revolt = yes
+			SUF = {
+				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				country_event = nf_ncr.32
+			}
+			every_country = {
+				set_variable = { var = revolter_tag value = BSU.id }
+			}
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_v_ncr
+			modular_revolt = yes
+			BSU = {
+				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				country_event = nf_ncr.32
+			}
+			every_owned_state = {
+				clr_state_flag = do_not_decimate
+			}
+			country_event = { id = nf_ncr.37 days = 1 }
+			news_event = { id = ncr_tribe_rebellion_news.7 hours = 6 }
+		}
+		set_variable = {
+			var = revolt_percentage_target_divisions
+			value = 0.25
+		}
+		revolt_setup_fire = yes
+	}
+
+	option = {#More join this Rebellion!
+		name = nf_ncr.36.a
+	}
+}
+
+#Even More join! Oh God!
+country_event = {
+	id = nf_ncr.37
+	title = nf_ncr.37.t
+	desc = nf_ncr.37.d
+	picture = GFX_event_NCR_battle
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				set_state_flag = do_not_decimate
+			}
+			every_country = {
+				set_variable = { var = revolter_tag value = JIC.id }
+			}
+			set_global_flag = revolt_no_war
+			set_global_flag = revolt_v_ncr
+			modular_revolt = yes
+			JIC = {
+				set_NCR_factions_technology_on_civil_war = yes
+				ncr_revolter_setup = yes
+				set_country_flag = revolt_country_to_revolt@PREV
+				every_owned_state = {
+					clr_state_flag = do_not_decimate
+				}
+				country_event = nf_ncr.32
+			}
+			if = {
+				limit = {
+					OR = {
+						HAN = { exists = no }
+						HAN = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = HAN.id }
+				}
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				HAN = {
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						TTM = { exists = no }
+						TTM = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = TTM.id }
+				}
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				TTM = {
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						FOR = { exists = no }
+						FOR = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = FOR.id }
+				}
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				FOR = {
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						IRN = { exists = no }
+						IRN = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = IRN.id }
+				}
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				IRN = {
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						SCO = { exists = no }
+						SCO = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = SCO.id }
+				}
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				SCO = {
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						PNT = { exists = no }
+						PNT = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = PNT.id }
+				}
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				PNT = {
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						TOB = { exists = no }
+						TOB = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = TOB.id }
+				}
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				TOB = {
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					country_event = nf_ncr.32
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						YMP = { exists = no }
+						YMP = {
+							is_puppet_of = NCR
+						}
+					}
+				}
+				every_country = {
+					set_variable = { var = revolter_tag value = YMP.id }
+				}
+				set_global_flag = revolt_no_war
+				set_global_flag = revolt_v_ncr
+				modular_revolt = yes
+				YMP = {
+					set_NCR_factions_technology_on_civil_war = yes
+					ncr_revolter_setup = yes
+					set_country_flag = revolt_country_to_revolt@PREV
+					every_owned_state = {
+						clr_state_flag = do_not_decimate
+					}
+					country_event = nf_ncr.32
+				}
+			}
+			every_owned_state = {
+				clr_state_flag = do_not_decimate
+			}
+			news_event = { id = ncr_tribe_rebellion_news.8 hours = 6 }
+			# This flag needs to be the final part of the events to allow ideas to all be set up
+			clr_global_flag = NCR_CES_revolt
+		}
+		set_variable = {
+			var = revolt_percentage_target_divisions
+			value = 0.25
+		}
+		revolt_setup_fire = yes
+	}
+
+	option = {#More join this Rebellion!
+		name = nf_ncr.37.a
+	}
+}
+
+add_namespace = ncr_tribe_rebellion_news
+
+#NCR Releases the Nations of the Legion
+news_event = {
+	id = ncr_tribe_rebellion_news.1
+	title = ncr_tribe_rebellion_news.1.t
+	desc = ncr_tribe_rebellion_news.1.d
+	picture = GFX_event_radio_new_vegas
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			original_tag = NCR
+		}
+		name = ncr_tribe_rebellion_news.1.a
+	}
+
+	option = {
+		trigger = {
+			NOT = { original_tag = NCR }
+		}
+		name = ncr_tribe_rebellion_news.1.b
+	}
+}
+
+#NCR Refuses to release the Nations of the Legion
+news_event = {
+	id = ncr_tribe_rebellion_news.2
+	title = ncr_tribe_rebellion_news.2.t
+	desc = ncr_tribe_rebellion_news.2.d
+	picture = GFX_event_radio_new_vegas
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			original_tag = NCR
+		}
+		name = ncr_tribe_rebellion_news.2.a
+	}
+
+	option = {
+		trigger = {
+			NOT = { original_tag = NCR }
+		}
+		name = ncr_tribe_rebellion_news.2.b
+	}
+}
+
+#Story Event for .31
+news_event = {
+	id = ncr_tribe_rebellion_news.3
+	title = ncr_tribe_rebellion_news.3.t
+	desc = ncr_tribe_rebellion_news.3.d
+	picture = GFX_event_radio_new_vegas
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			original_tag = NCR
+		}
+		name = ncr_tribe_rebellion_news.3.a
+	}
+
+	option = {
+		trigger = {
+			NOT = { original_tag = NCR }
+		}
+		name = ncr_tribe_rebellion_news.3.b
+	}
+}
+
+#Story Event for .33
+news_event = {
+	id = ncr_tribe_rebellion_news.4
+	title = ncr_tribe_rebellion_news.4.t
+	desc = ncr_tribe_rebellion_news.4.d
+	picture = GFX_event_radio_new_vegas
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			original_tag = NCR
+		}
+		name = ncr_tribe_rebellion_news.4.a
+	}
+
+	option = {
+		trigger = {
+			NOT = { original_tag = NCR }
+		}
+		name = ncr_tribe_rebellion_news.4.b
+	}
+}
+
+#Story Event for .34
+news_event = {
+	id = ncr_tribe_rebellion_news.5
+	title = ncr_tribe_rebellion_news.5.t
+	desc = ncr_tribe_rebellion_news.5.d
+	picture = GFX_event_radio_new_vegas
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			original_tag = NCR
+		}
+		name = ncr_tribe_rebellion_news.5.a
+	}
+
+	option = {
+		trigger = {
+			NOT = { original_tag = NCR }
+		}
+		name = ncr_tribe_rebellion_news.5.b
+	}
+}
+
+#Story Event for .35
+news_event = {
+	id = ncr_tribe_rebellion_news.6
+	title = ncr_tribe_rebellion_news.6.t
+	desc = ncr_tribe_rebellion_news.6.d
+	picture = GFX_event_radio_new_vegas
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			original_tag = NCR
+		}
+		name = ncr_tribe_rebellion_news.6.a
+	}
+
+	option = {
+		trigger = {
+			NOT = { original_tag = NCR }
+		}
+		name = ncr_tribe_rebellion_news.6.b
+	}
+}
+
+#Story Event for .36
+news_event = {
+	id = ncr_tribe_rebellion_news.7
+	title = ncr_tribe_rebellion_news.7.t
+	desc = ncr_tribe_rebellion_news.7.d
+	picture = GFX_event_radio_new_vegas
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			original_tag = NCR
+		}
+		name = ncr_tribe_rebellion_news.7.a
+	}
+
+	option = {
+		trigger = {
+			NOT = { original_tag = NCR }
+		}
+		name = ncr_tribe_rebellion_news.7.b
+	}
+}
+
+#Story Event for .37
+news_event = {
+	id = ncr_tribe_rebellion_news.8
+	title = ncr_tribe_rebellion_news.8.t
+	desc = ncr_tribe_rebellion_news.8.d
+	picture = GFX_event_radio_new_vegas
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			original_tag = NCR
+		}
+		name = ncr_tribe_rebellion_news.8.a
+	}
+
+	option = {
+		trigger = {
+			NOT = { original_tag = NCR }
+		}
+		name = ncr_tribe_rebellion_news.8.b
+	}
+}
+
+
+#News Event to tell the world the NCR Legion war is happening
+news_event = {
+	id = ncr_tribe_rebellion_news.9
+	title = ncr_tribe_rebellion_news.9.t
+	desc = ncr_tribe_rebellion_news.9.d
+	picture = GFX_event_radio_new_vegas
+
+	major = yes
+
+	trigger = {
+		NCR = {
+			has_war_with = CES
+		}
+		NOT = { has_global_flag = NCR_Legion_war }
+	}
+
+	mean_time_to_happen = { days = 2 }
+
+	fire_only_once = yes
+
+	immediate = {
+		set_global_flag = NCR_Legion_war
+		every_state = {
+			limit = { is_owned_by = CES }
+			set_state_flag = legion_height
+		}
+	}
+
+	option = {
+		trigger = {
+			original_tag = NCR
+		}
+		name = ncr_tribe_rebellion_news.9.a
+	}
+
+	option = {
+		trigger = {
+			original_tag = CES
+		}
+		name = ncr_tribe_rebellion_news.9.b
+	}
+
+	option = {
+		trigger = {
+			NOT = {
+				OR = {
+					original_tag = NCR
+					original_tag = CES
+				}
+			}
+		}
+		name = ncr_tribe_rebellion_news.9.c
+	}
 }

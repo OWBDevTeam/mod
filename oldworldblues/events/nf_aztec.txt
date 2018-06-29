@@ -1,0 +1,271 @@
+﻿add_namespace = nf_aztec
+
+#Our Founding
+country_event = {
+	id = nf_aztec.0
+	title = nf_aztec.0.t
+	desc = nf_aztec.0.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_aztec.0.a
+
+	}
+
+	option = {
+		name = nf_aztec.0.b
+
+	}
+
+	option = {
+		name = nf_aztec.0.c
+
+	}
+}
+#Our Pantheon. 1st event, Weather God
+country_event = {
+	id = nf_aztec.1
+	title = nf_aztec.1.t
+	desc = nf_aztec.1.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_aztec.1.a
+
+		add_ideas = aztec_pantheon_tlaloc
+		country_event = { id = nf_aztec.2 }
+	}
+
+	option = {
+		name = nf_aztec.1.b
+
+		add_ideas = aztec_pantheon_chantico
+		country_event = { id = nf_aztec.2 }
+	}
+
+	option = {
+		name = nf_aztec.1.c
+
+		add_ideas = aztec_pantheon_ehecatl
+		country_event = { id = nf_aztec.2 }
+	}
+}
+#Our Pantheon. 2nd event, Lord of the Underworld
+country_event = {
+	id = nf_aztec.2
+	title = nf_aztec.2.t
+	desc = nf_aztec.2.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_aztec.2.a
+
+		country_event = { id = nf_aztec.3 }
+		if = {
+			limit = {
+				if = {
+					has_idea = aztec_pantheon_tlaloc
+				}
+			}
+			swap_ideas = {
+				remove_idea = aztec_pantheon_tlaloc
+				add_idea = aztec_pantheon_mictlantecuhtl
+			}
+		}
+		if = {
+			limit = {
+				has_idea = aztec_pantheon_chantico
+			}
+			swap_ideas = {
+				remove_idea = aztec_pantheon_chantico
+				add_idea = aztec_pantheon_mictlantecuhtl
+			}
+		}
+		if = {
+			limit = {
+				has_idea = aztec_pantheon_ehecatl
+			}
+			swap_ideas = {
+				remove_idea = aztec_pantheon_ehecatl
+				add_idea = aztec_pantheon_mictlantecuhtl
+			}
+		}
+	}
+
+	option = {
+		name = nf_aztec.2.b
+
+		country_event = { id = nf_aztec.3 }
+		if = {
+			limit = {
+				has_idea = aztec_pantheon_tlaloc
+			}
+			swap_ideas = {
+				remove_idea = aztec_pantheon_tlaloc
+				add_idea = aztec_pantheon_centeotl
+			}
+		}
+		if = {
+			limit = {
+				has_idea = aztec_pantheon_chantico
+			}
+			swap_ideas = {
+				remove_idea = aztec_pantheon_chantico
+				add_idea = aztec_pantheon_centeotl
+			}
+		}
+		if = {
+			limit = {
+				has_idea = aztec_pantheon_ehecatl
+			}
+			swap_ideas = {
+				remove_idea = aztec_pantheon_ehecatl
+				add_idea = aztec_pantheon_centeotl
+			}
+		}
+	}
+
+	option = {
+		name = nf_aztec.2.c
+
+		country_event = { id = nf_aztec.3 }
+		if = {
+			limit = {
+				has_idea = aztec_pantheon_tlaloc
+			}
+			swap_ideas = {
+				remove_idea = aztec_pantheon_tlaloc
+				add_idea = aztec_pantheon_xolotl
+			}
+		}
+		if = {
+			limit = {
+				has_idea = aztec_pantheon_chantico
+			}
+			swap_ideas = {
+				remove_idea = aztec_pantheon_chantico
+				add_idea = aztec_pantheon_xolotl
+			}
+		}
+		if = {
+			limit = {
+				has_idea = aztec_pantheon_ehecatl
+			}
+			swap_ideas = {
+				remove_idea = aztec_pantheon_ehecatl
+				add_idea = aztec_pantheon_xolotl
+			}
+		}
+	}
+}
+#Our Pantheon 3rd event, Patron God
+country_event = {
+	id = nf_aztec.3
+	title = nf_aztec.3.t
+	desc = nf_aztec.3.d
+	#picture =
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_aztec.3.a
+
+		if = {
+			limit = {
+				has_idea = aztec_pantheon_mictlantecuhtl
+			}
+			swap_ideas = {
+				remove_idea = aztec_pantheon_mictlantecuhtl
+				add_idea = aztec_pantheon_xiuhtecuhtli
+			}
+		}
+		if = {
+			limit = {
+				has_idea = aztec_pantheon_centeotl
+			}
+			swap_ideas = {
+				remove_idea = aztec_pantheon_centeotl
+				add_idea = aztec_pantheon_xiuhtecuhtli
+			}
+		}
+		if = {
+			limit = {
+				has_idea = aztec_pantheon_xolotl
+			}
+			swap_ideas = {
+				remove_idea = aztec_pantheon_xolotl
+				add_idea = aztec_pantheon_xiuhtecuhtli
+			}
+		}
+	}
+
+	option = {
+		name = nf_aztec.3.b
+
+		if = {
+			limit = {
+				has_idea = aztec_pantheon_mictlantecuhtl
+			}
+			swap_ideas = {
+				remove_idea = aztec_pantheon_mictlantecuhtl
+				add_idea = aztec_pantheon_tonatiuh
+			}
+		}
+		if = {
+			limit = {
+				has_idea = aztec_pantheon_centeotl
+			}
+			swap_ideas = {
+				remove_idea = aztec_pantheon_centeotl
+				add_idea = aztec_pantheon_tonatiuh
+			}
+		}
+		if = {
+			limit = {
+				has_idea = aztec_pantheon_xolotl
+			}
+			swap_ideas = {
+				remove_idea = aztec_pantheon_xolotl
+				add_idea = aztec_pantheon_tonatiuh
+			}
+		}
+	}
+
+	option = {
+		name = nf_aztec.3.c
+
+		if = {
+			limit = {
+				has_idea = aztec_pantheon_mictlantecuhtl
+			}
+			swap_ideas = {
+				remove_idea = aztec_pantheon_mictlantecuhtl
+				add_idea = aztec_pantheon_tlaltecuhtli
+			}
+		}
+		if = {
+			limit = {
+				has_idea = aztec_pantheon_centeotl
+			}
+			swap_ideas = {
+				remove_idea = aztec_pantheon_centeotl
+				add_idea = aztec_pantheon_tlaltecuhtli
+			}
+		}
+		if = {
+			limit = {
+				has_idea = aztec_pantheon_xolotl
+			}
+			swap_ideas = {
+				remove_idea = aztec_pantheon_xolotl
+				add_idea = aztec_pantheon_tlaltecuhtli
+			}
+		}
+	}
+}

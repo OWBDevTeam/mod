@@ -1,16 +1,16 @@
 technologies = {
 	@Col_1 = 8
-	@Col_2 = 12
-	@Col_3 = 16
-	@Col_4 = 20
-	@Col_5 = 24
-	@Col_6 = 28
-    @Col_7 = 32
-    @Col_8 = 36
-    @Col_9 = 40
-    @Col_10 = 44
-    @Col_11 = 48
-    @Col_12 = 52
+	@Col_2 = 10
+	@Col_3 = 12
+	@Col_4 = 14
+	@Col_5 = 16
+	@Col_6 = 18
+    @Col_7 = 20
+    @Col_8 = 22
+    @Col_9 = 24
+    @Col_10 = 26
+    @Col_11 = 28
+    @Col_12 = 30
     
     @Row_1 = 0
     @Row_2 = 2
@@ -31,33 +31,34 @@ technologies = {
     @Row_17 = 32
     @Row_18 = 34
     @Row_19 = 36
-	electronic_mechanical_engineering = {
+	
+	# Ohms Law
+	electronic_engineering = {
 
 		# small boost to research speed
 		research_time_factor = -0.02
 		
 		path = {
-			leads_to_tech = radio 
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = mechanical_computing 
+			leads_to_tech = electronic_engineering_1 
 			research_cost_coeff = 1
 		}
 		
 		research_cost = 1
 		start_year = 2275
+		
 		folder = {
 			name = fallout_engineering_folder
-			position = { x = @Row_2 y = @Col_1 }
+			position = { x = @Row_4 y = @Col_1 }
 		}
 		
 		ai_will_do = {
-			factor = 30
-			
-			
+			factor = 1
 			modifier = {
-				factor = 3
+				factor = 10
+				date > "2275.1.1"
+			}
+			modifier = {
+				factor = 10
 				date > "2276.1.1"
 			}
 		}
@@ -69,29 +70,34 @@ technologies = {
 
 	}
 	
-	radio = {
+	# Resistors
+	electronic_engineering_1 = {
 
-		# units with radios can more efficiently join combats when there is room
-		land_reinforce_rate = 0.05
+		# small boost to research speed
+		research_time_factor = -0.02
 		
 		path = {
-			leads_to_tech = radio_detection 
+			leads_to_tech = electronic_engineering_2 
 			research_cost_coeff = 1
 		}
 		
 		research_cost = 1.5
+		start_year = 2276
 		
 		folder = {
 			name = fallout_engineering_folder
-			position = { x = @Row_2 y = @Col_3 }
+			position = { x = @Row_4 y = @Col_2 }
 		}
 		
 		ai_will_do = {
-			factor = 3
-			
+			factor = 1
 			modifier = {
-				factor = 5
-				has_war = yes
+				factor = 10
+				date > "2276.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2277.1.1"
 			}
 		}
 		
@@ -99,6 +105,532 @@ technologies = {
 			electronics
 		}
 	}
+	
+	# Vaccum Tubes
+	electronic_engineering_2 = {
+
+		# small boost to research speed
+		research_time_factor = -0.02
+		
+		path = {
+			leads_to_tech = electronic_engineering_3 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 2277
+		
+		folder = {
+			name = fallout_engineering_folder
+			position = { x = @Row_4 y = @Col_3 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2278.1.1"
+			}
+		}
+		
+		categories = {
+			electronics
+		}
+	}
+	
+	# Simple Circuitry
+	electronic_engineering_3 = {
+
+		# small boost to research speed
+		research_time_factor = -0.02
+		
+		path = {
+			leads_to_tech = electronic_engineering_4 
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = radio_detection 
+			research_cost_coeff = 1
+		}
+		
+        dependencies = {
+            settled_civilization = 1
+        }
+		
+		research_cost = 2
+		start_year = 2278
+		
+		folder = {
+			name = fallout_engineering_folder
+			position = { x = @Row_4 y = @Col_5 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2279.1.1"
+			}
+		}
+		
+		categories = {
+			electronics
+		}
+	}
+	
+	# complicated Circuitry
+	electronic_engineering_4 = {
+
+		# small boost to research speed
+		research_time_factor = -0.02
+		
+		path = {
+			leads_to_tech = electronic_engineering_5 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 2279
+		
+		folder = {
+			name = fallout_engineering_folder
+			position = { x = @Row_4 y = @Col_6 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2280.1.1"
+			}
+		}
+		
+		categories = {
+			electronics
+			computing_tech
+		}
+	}
+	
+	# Miniaturized Circuitry
+	electronic_engineering_5 = {
+
+		# small boost to research speed
+		research_time_factor = -0.02
+		
+		path = {
+			leads_to_tech = electronic_engineering_6 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 2280
+		
+		folder = {
+			name = fallout_engineering_folder
+			position = { x = @Row_4 y = @Col_7 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2282.1.1"
+			}
+		}
+		
+		categories = {
+			electronics
+			computing_tech
+		}
+	}
+	
+	# Advanced Circuitry
+	electronic_engineering_6 = {
+
+		# small boost to research speed
+		research_time_factor = -0.02
+		
+		path = {
+			leads_to_tech = electronic_engineering_7 
+			research_cost_coeff = 1
+		}
+		
+		dependencies = {
+            scientific_civilization = 1
+        }
+				
+		research_cost = 2
+		start_year = 2281
+		
+		folder = {
+			name = fallout_engineering_folder
+			position = { x = @Row_4 y = @Col_9 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2282.1.1"
+			}
+		}
+		
+		categories = {
+			electronics
+			computing_tech
+		}
+	}
+	
+	# ZAX Technology
+	electronic_engineering_7 = {
+
+		# small boost to research speed
+		research_time_factor = -0.02
+				
+		research_cost = 2
+		start_year = 2283
+		
+		folder = {
+			name = fallout_engineering_folder
+			position = { x = @Row_4 y = @Col_11 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2284.1.1"
+			}
+		}
+		
+		categories = {
+			electronics
+			computing_tech
+		}
+	}
+	
+	# Combat Language
+	communication_engineering = {
+
+		# units with radios can more efficiently join combats when there is room
+		land_reinforce_rate = 0.01
+		
+		path = {
+			leads_to_tech = communication_engineering_1 
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = encryption 
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = decryption 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 2275
+		
+		folder = {
+			name = fallout_engineering_folder
+			position = { x = @Row_2 y = @Col_1 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2275.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2276.1.1"
+			}
+			modifier = {
+				factor = 2
+				has_tech = elite_army
+			}
+		}
+		
+		categories = {
+			tribal_tech
+		}
+	}
+	
+	# Smoke Signals
+	communication_engineering_1 = {
+
+		# units with radios can more efficiently join combats when there is room
+		land_reinforce_rate = 0.01
+		
+		path = {
+			leads_to_tech = communication_engineering_2 
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = encryption_1 
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = decryption_1 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 2276
+		
+		folder = {
+			name = fallout_engineering_folder
+			position = { x = @Row_2 y = @Col_2 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2276.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 2
+				has_tech = elite_army
+			}
+		}
+		
+		categories = {
+			tribal_tech
+		}
+	}
+	
+	# Primitive Radio
+	communication_engineering_2 = {
+
+		# units with radios can more efficiently join combats when there is room
+		land_reinforce_rate = 0.02
+		
+		path = {
+			leads_to_tech = communication_engineering_3 
+			research_cost_coeff = 1
+		}
+		
+		dependencies = {
+			electronic_engineering_2 = 1
+		}
+		
+		research_cost = 2
+		start_year = 2277
+		
+		folder = {
+			name = fallout_engineering_folder
+			position = { x = @Row_2 y = @Col_3 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 2
+				has_tech = elite_army
+			}
+		}
+		
+		categories = {
+			electronics
+		}
+	}
+	
+	# Radio
+	communication_engineering_3 = {
+
+		# units with radios can more efficiently join combats when there is room
+		land_reinforce_rate = 0.02
+		
+		path = {
+			leads_to_tech = communication_engineering_4 
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = encryption_2 
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = decryption_2 
+			research_cost_coeff = 1
+		}
+		
+        dependencies = {
+            settled_civilization = 1
+        }
+		
+		research_cost = 2
+		start_year = 2278
+		
+		folder = {
+			name = fallout_engineering_folder
+			position = { x = @Row_2 y = @Col_5}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 2
+				has_tech = elite_army
+			}
+		}
+		
+		categories = {
+			electronics
+		}
+	}
+
+	# Long Range Radio
+	communication_engineering_4 = {
+
+		# units with radios can more efficiently join combats when there is room
+		land_reinforce_rate = 0.03
+		
+		path = {
+			leads_to_tech = communication_engineering_5 
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = encryption_3 
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = decryption_3 
+			research_cost_coeff = 1
+		}
+				
+		research_cost = 2
+		start_year = 2280
+		
+		folder = {
+			name = fallout_engineering_folder
+			position = { x = @Row_2 y = @Col_7 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2280.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 2
+				has_tech = elite_army
+			}
+		}
+		
+		categories = {
+			electronics
+		}
+	}
+	
+	# Digital data Links
+	communication_engineering_5 = {
+
+		# units with radios can more efficiently join combats when there is room
+		land_reinforce_rate = 0.04
+		research_time_factor = -0.01
+				
+		path = {
+			leads_to_tech = encryption_4
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = decryption_4 
+			research_cost_coeff = 1
+		}
+		
+		dependencies = {
+            scientific_civilization = 1
+        }
+		
+		research_cost = 2
+		start_year = 2281
+		
+		folder = {
+			name = fallout_engineering_folder
+			position = { x = @Row_2 y = @Col_9 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 2
+				has_tech = elite_army
+			}
+		}
+		
+		categories = {
+			electronics
+		}
+	}	
 	
 	radio_detection = {
 
@@ -108,20 +640,34 @@ technologies = {
 			level = 1
 		}
 		
+		dependencies = {
+			communication_engineering_2 = 1
+			settled_civilization = 1
+		}
+		
 		path = {
 			leads_to_tech = decimetric_radar 
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.5
+		research_cost = 2
+		start_year = 2277
 		
 		folder = {
 			name = fallout_engineering_folder
-			position = { x = @Row_1 y = @Col_4 }
+			position = { x = @Row_5 y = @Col_5 }
 		}
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 10
+				date > "2277.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2278.1.1"
+			}
 		}
 		
 		categories = {
@@ -139,16 +685,24 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.5
-		start_year = 2275
+		research_cost = 2
+		start_year = 2278
 		
 		folder = {
 			name = fallout_engineering_folder
-			position = { x = @Row_2 y = @Col_4 }
+			position = { x = @Row_5 y = @Col_6 }
 		}
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 10
+				date > "2278.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2279.1.1"
+			}
 		}
 		
 		categories = {
@@ -176,15 +730,23 @@ technologies = {
 		}
 		
 		research_cost = 2
-		start_year = 2276
+		start_year = 2279
 		
 		folder = {
 			name = fallout_engineering_folder
-			position = { x = @Row_2 y = @Col_5 }
+			position = { x = @Row_5 y = @Col_7 }
 		}
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 10
+				date > "2279.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2280.1.1"
+			}
 		}
 		
 		categories = {
@@ -206,16 +768,28 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
+		dependencies = {
+            scientific_civilization = 1
+        }
+		
 		research_cost = 2.5
-		start_year = 2277
+		start_year = 2281
 		
 		folder = {
 			name = fallout_engineering_folder
-			position = { x = @Row_2 y = @Col_6 }
+			position = { x = @Row_5 y = @Col_9 }
 		}
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 10
+				date > "2281.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2282.1.1"
+			}
 		}
 		
 		categories = {
@@ -238,15 +812,23 @@ technologies = {
 		}
 		
 		research_cost = 2.5
-		start_year = 2278
+		start_year = 2282
 		
 		folder = {
 			name = fallout_engineering_folder
-			position = { x = @Row_2 y = @Col_7 }
+			position = { x = @Row_5 y = @Col_10 }
 		}
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 10
+				date > "2282.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2283.1.1"
+			}
 		}
 		
 		categories = {
@@ -264,15 +846,23 @@ technologies = {
 		}		
 		
 		research_cost = 2.5
-		start_year = 2279
+		start_year = 2283
 		
 		folder = {
 			name = fallout_engineering_folder
-			position = { x = @Row_2 y = @Col_8 }
+			position = { x = @Row_5 y = @Col_11 }
 		}
 		
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 10
+				date > "2283.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "2284.1.1"
+			}
 		}
 		
 		categories = {
@@ -280,181 +870,155 @@ technologies = {
 			radar_tech
 		}
 	}
-	
-	mechanical_computing = {
 
-		# small boost to research speed
-		research_time_factor = -0.03
+
+
+
+
+	# Secret Language
+	encryption = {
+
+		# encryption 0.5
+		encryption = 0.5
 		
-		path = {
-			leads_to_tech = computing_machine 
-			research_cost_coeff = 1
-		}
-		
-		research_cost = 2.5
+		research_cost = 0.75
 		
 		folder = {
 			name = fallout_engineering_folder
-			position = { x = @Row_4 y = @Col_1 }
+			position = { x = @Row_1 y = @Col_1 }
 		}
 		
 		ai_will_do = {
-			factor = 7
-		}
-		
-		categories = {
-			electronics
-			computing_tech
-		}
-	}
-	
-	computing_machine = {
-
-		# small boost to research speed
-		research_time_factor = -0.03
-		
-		path = {
-			leads_to_tech = improved_computing_machine 
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = basic_encryption 
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = basic_decryption 
-			research_cost_coeff = 1
-		}
-		
-		research_cost = 2.5
-		start_year = 2277
-		
-		folder = {
-			name = fallout_engineering_folder
-			position = { x = @Row_4 y = @Col_2 }
-		}
-		
-		ai_will_do = {
-			factor = 6
-			
-			modifier = {
-				factor = 3
-				date > "2277.1.6"
-			}
-			
-			modifier = {
-				factor = 3
-				date > "2278.1.1"
-			}
+			factor = 5
 		}
 		
 		categories = {
 			electronics
 			encryption_tech
-			decryption_tech
-			computing_tech
 		}
 	}
 	
-	improved_computing_machine = {
-
-		# small boost to research speed
-		research_time_factor = -0.05
-		
-		path = {
-			leads_to_tech = advanced_computing_machine 
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = improved_encryption 
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = improved_decryption 
-			research_cost_coeff = 1
-		}
-		
-		research_cost = 2.5
-		start_year = 2279
-		
-		folder = {
-			name = fallout_engineering_folder
-			position = { x = @Row_4 y = @Col_3 }
-		}
-		
-		ai_will_do = {
-			factor = 3
-			
-			modifier = {
-				factor = 3
-				date > "2279.1.6"
-			}
-			
-			modifier = {
-				factor = 3
-				date > "2280.1.1"
-			}
-		}
-		
-		categories = {
-			electronics
-			encryption_tech
-			decryption_tech
-			computing_tech
-		}
-	}
-	
-	advanced_computing_machine = {
-
-		# small boost to research speed
-		research_time_factor = -0.05
-		
-		path = {
-			leads_to_tech = advanced_encryption 
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = advanced_decryption 
-			research_cost_coeff = 1
-		}
-		
-		research_cost = 2.5
-		start_year = 2281
-		
-		folder = {
-			name = fallout_engineering_folder
-			position = { x = @Row_4 y = @Col_4 }
-		}
-		
-		ai_will_do = {
-			factor = 3
-			
-			modifier = {
-				factor = 3
-				date > "2281.1.6"
-			}
-			
-			modifier = {
-				factor = 3
-				date > "2282.1.1"
-			}
-		}
-		
-		categories = {
-			electronics
-			encryption_tech
-			decryption_tech
-			computing_tech
-		}
-	}
-	
-	basic_encryption = {
+	# Encoded Signals
+	encryption_1 = {
 
 		# encryption 1
+		encryption = 0.5
+		
+		research_cost = 0.75
+		
+		folder = {
+			name = fallout_engineering_folder
+			position = { x = @Row_1 y = @Col_2 }
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+		
+		categories = {
+			encryption_tech
+		}
+	}	
+	
+	# Polyalphabetical Ciphers
+	encryption_2 = {
+
+		# encryption 1.5
+		encryption = 0.5
+		
+		research_cost = 0.75
+		
+		folder = {
+			name = fallout_engineering_folder
+			position = { x = @Row_1 y = @Col_5 }
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+		
+		categories = {
+			electronics
+			encryption_tech
+		}
+	}
+	
+	# Pulse-Code Modulation
+	encryption_3 = {
+
+		# encryption 2
+		encryption = 0.5
+		
+		research_cost = 0.75
+
+		folder = {
+			name = fallout_engineering_folder
+			position = { x = @Row_1 y = @Col_7 }
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+		
+		categories = {
+			electronics
+			encryption_tech
+		}
+	}
+	
+	# Digital Encryption
+	encryption_4 = {
+
+		# encryption 3
 		encryption = 1
 		
-		research_cost = 1
-		start_year = 2277
+		research_cost = 2
+		
+		folder = {
+			name = fallout_engineering_folder
+			position = { x = @Row_1 y = @Col_9 }
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+		
+		categories = {
+			electronics
+			encryption_tech
+		}
+	}
+	
+	# Reference Manual
+	decryption = {
+
+		# decryption 0.5
+		decryption = 0.5
+		
+		research_cost = 0.5
+
+		
+		folder = {
+			name = fallout_engineering_folder
+			position = { x = @Row_3 y = @Col_1 }
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+		
+		categories = {
+			decryption_tech
+		}
+	}
+	
+	# Decode Signals
+	decryption_1 = {
+
+		# decryption 1
+		decryption = 0.5
+		
+		research_cost = 0.5
 		
 		folder = {
 			name = fallout_engineering_folder
@@ -462,76 +1026,29 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 5
 		}
 		
 		categories = {
-			electronics
-			encryption_tech
+			decryption_tech
 		}
 	}
 	
-	improved_encryption = {
+	# Frequency Analysis
+	decryption_2 = {
 
-		# encryption 2
-		encryption = 1
+		# decryption 1.5
+		decryption = 0.5
 		
-		research_cost = 1
-		start_year = 2279
+		research_cost = 0.5
 		
 		folder = {
 			name = fallout_engineering_folder
-			position = { x = @Row_3 y = @Col_3 }
+			position = { x = @Row_3 y = @Col_5 }
 		}
 		
 		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			electronics
-			encryption_tech
-		}
-	}
-	
-	advanced_encryption = {
-
-		# encryption 3
-		encryption = 1
-		
-		research_cost = 1
-		start_year = 2281
-		
-		folder = {
-			name = fallout_engineering_folder
-			position = { x = @Row_3 y = @Col_4 }
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			electronics
-			encryption_tech
-		}
-	}
-	
-	basic_decryption = {
-
-		# decryption 1
-		decryption = 1
-		
-		research_cost = 1.5
-		start_year = 2277
-		
-		folder = {
-			name = fallout_engineering_folder
-			position = { x = @Row_5 y = @Col_2 }
-		}
-		
-		ai_will_do = {
-			factor = 1
+			factor = 5
 		}
 		
 		categories = {
@@ -540,21 +1057,21 @@ technologies = {
 		}
 	}
 	
-	improved_decryption = {
+	# Side-Channel Attack
+	decryption_3 = {
 
 		# decryption 2
-		decryption = 1
+		decryption = 0.5
 		
-		research_cost = 1.5
-		start_year = 2279
+		research_cost = 0.5
 		
 		folder = {
 			name = fallout_engineering_folder
-			position = { x = @Row_5 y = @Col_3 }
+			position = { x = @Row_3 y = @Col_7 }
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 5
 		}
 		
 		categories = {
@@ -563,26 +1080,26 @@ technologies = {
 		}
 	}
 	
-	advanced_decryption = {
+	# Digital Decryption
+	decryption_4 = {
 
 		# decryption 3
 		decryption = 1
 		
 		research_cost = 1.5
-		start_year = 2281
 		
 		folder = {
 			name = fallout_engineering_folder
-			position = { x = @Row_5 y = @Col_4 }
+			position = { x = @Row_3 y = @Col_9 }
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 5
 		}
 		
 		categories = {
 			electronics
 			decryption_tech
 		}
-	}
+	}	
 }

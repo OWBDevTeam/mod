@@ -1,0 +1,171 @@
+#################################
+#        MODULAR REVOLTS        #
+#       SCRIPTED BY HAPPY       #
+#################################
+
+# Instructions, now the fancy art is over:
+#
+# BASIC TRIGGER:
+#
+# To trigger a revolt, you only need to set a country flag for every country, then call this scripted effect, as follows -
+#
+# every_country = {
+# 	set_variable = { var = revolter_tag value = TAG.id }
+# }
+# modular_revolt = yes
+#
+# TAG is replaced by the tag of the country you want to be revolting, not the revolt target.
+#
+# CUSTOMISATION:
+#
+# To set in concrete which tag should be declaring war against the revolter, set the country flag 'revolter_target' in in their scope, as follows -
+# 	NCR = { set_country_flag = revolter_target }
+# To prevent the main war target declaring war, set the global flag 'revolt_no_war', as follows -
+# 	set_global_flag = revolt_no_war
+# If you don't want them getting a wargoal either, set the global flag 'revolt_no_wargoal_main'
+# To prevent wargoals being generated for nations except the main, set the global flag 'revolt_no_wargoals', as follows -
+# 	set_global_flag = revolt_no_wargoals
+# The global flag 'revolt_v_ncr' is a unique one for the NCR revolts
+# Rather than setting 3 country flags to prevent war and wargoals for all parties involved, the global flag 'revolt_just_release' can be set, as follows -
+# 	set_global_flag = revolt_just_release
+# To prevent a state from being 'flipped' to the revolter state, set the state flag 'revolt_no_flip' on the state
+#
+# Currently the countries that the revolter breaks away from do not get claims - if this a problem I can write this up
+# Equally, if you need better customisation I can write it up
+
+modular_revolt = {
+	if = {
+		limit = { has_global_flag = debug }
+		log = "Modular Revolt: Entered"
+	}
+	if = {
+		limit = { has_global_flag = revolt_just_release }
+		set_global_flag = revolt_no_war
+		set_global_flag = revolt_no_wargoal_main
+		set_global_flag = revolt_no_wargoals
+		clr_global_flag = revolt_just_release
+		if = {
+			limit = { has_global_flag = debug }
+			log = "Modular Revolt: Just Releasing"
+		}
+	}
+	var:revolter_tag = {
+		every_state = {
+			limit = { is_core_of = PREV }
+			set_state_flag = do_not_decimate
+		}
+		every_country = { # Ends puppet, if applicable
+			limit = {
+				PREV = {
+					is_puppet_of = PREV
+				}
+				NOT = { tag = PREV }
+			}
+			end_puppet = PREV
+			if = {
+				limit = { NOT = { has_global_flag = revolt_v_ncr } }
+				create_wargoal = { target = PREV type = puppet_wargoal_focus }
+			}
+			if = {
+				limit = { has_global_flag = debug }
+				log = "Modular Revolt: Puppet Ended"
+			}
+		}
+		leave_faction = yes
+		random_country = { # Revolter target 
+			limit = {
+				if = { # Gives exclusivity to a country with the revolter_target flag set, if any country has this
+					limit = {
+						any_country = { has_country_flag = revolter_target }
+					}
+					has_country_flag = revolter_target
+				}
+				NOT = { tag = PREV }
+				has_variable = revolter_tag
+				any_owned_state = {
+					is_core_of = PREV.PREV
+				}
+				PREV = { exists = no } # So that they aren't released if they already exist
+			}
+			if = {
+				limit = { has_global_flag = debug }
+				log = "Modular Revolt: Random Scope Entered"
+			}
+			release = PREV
+			# Loading troops for the revolt is handled independently of the modular revolt and should be done after calling the revolt
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = revolt_no_war
+						has_global_flag = revolt_v_ncr # NCR tags will automatically join the war elsewhere
+					}
+				}
+				declare_war_on = { target = PREV type = annex_everything }
+			}
+			else_if = { # Stops the NCR getting wargoals on countries it will be at war with in a few ticks
+				limit = { has_global_flag = revolt_v_ncr }
+				if = {
+					limit = { NOT = { tag = NCR } }
+					create_wargoal = { target = PREV type = annex_everything }
+				}
+			}
+			else_if = {
+				limit = { NOT = { has_global_flag = revolt_no_wargoals_main } }
+				create_wargoal = { target = PREV type = annex_everything }
+			}
+		}
+		if = {
+			limit = { has_global_flag = debug }
+			log = "Modular Revolt: End of Random Scope"
+		}
+		every_country = { # Wargoals for non-target
+			limit = {
+				any_owned_state = { is_core_of = PREV.PREV }
+				NOT = { has_war_with = PREV }
+				NOT = { has_global_flag = revolt_no_wargoals }
+				NOT = { tag = PREV }
+			}
+			if = {
+				limit = { has_global_flag = revolt_v_ncr }
+				if = {
+					limit = { NOT = { tag = NCR } }
+					create_wargoal = { target = PREV type = annex_everything }
+				}
+			}
+			else = {
+				create_wargoal = { target = PREV type = annex_everything }
+			}
+		}
+		if = {
+			limit = { has_global_flag = debug }
+			log = "Modular Revolt: Wargoals Genereated"
+		}
+		every_state = { # Transfers state
+			limit = {
+				is_core_of = PREV
+				NOT = { has_state_flag = revolt_no_flip }
+			}
+			PREV = { transfer_state = PREV }
+		}
+		if = {
+			limit = { has_global_flag = debug }
+			log = "Modular Revolt: States Transfered"
+		}
+		every_state = {
+			limit = { is_core_of = PREV }
+			clr_state_flag = do_not_decimate
+		}
+	}
+	# Cleaning out flags and variables
+	every_country = {
+		clear_variable = revolter_tag
+		clr_country_flag = revolter_target
+	}
+	clr_global_flag = revolt_no_war
+	clr_global_flag = revolt_no_wargoals
+	clr_global_flag = revolt_v_ncr
+	if = {
+		limit = { has_global_flag = debug }
+		log = "Modular Revolt: Complete"
+	}
+}

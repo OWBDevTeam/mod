@@ -1,27 +1,37 @@
 ﻿capital = 492
-oob = "BRK_2265"
+oob = "BRK_2275"
 
 set_technology = {
     standard_weaponry_tech = 1
 	blunt_weaponry = 1
     tribal_civilization = 1
+	destroyer_tech = 1
+	destroyer_tech_2 = 1
+	cruiser_tech = 1
+	naval_invasion_tech = 1
+	support_weaponry = 1
+	explosive_tech = 1
 }
 
 set_stability = 0.2 
 set_war_support = 0.55
+set_research_slots = 2
 
 set_politics = {
     parties = {
         people = { popularity = 0 }
-        elites = { popularity = 0 }
+        elites = { popularity = 30 }
         intellectuals = { popularity = 0 }
-        ruler = { popularity = 100 }
+        ruler = { popularity = 70 }
     }
     ruling_party = ruler
     elections_allowed = yes
 }
 
-add_ideas = { }
+add_ideas = { 
+	brk_raider_society
+	brk_coastal_terror
+}
 
 create_country_leader = {
     name = "Graven"
@@ -35,10 +45,23 @@ create_country_leader = {
     }
 }
 
+create_country_leader = {
+    name = "Ragnar"
+    desc = "Ragnar_DESC"
+    picture = "Portrait_Raider_Generic_1.dds"
+    expire = "3000.1.1"
+    ideology =militarist_oligarchy
+    traits = {
+		well_liked_leader
+		popular_figurehead
+    }
+}
+
 create_field_marshal = {
 	name = "Graven"
 	portrait_path = "gfx/leaders/BRK/Portrait_BRK_Leader.dds"
 	skill = 7
+	id = 100
 	traits = {
 		offensive_doctrine
 		fast_planner
@@ -49,3 +72,17 @@ create_field_marshal = {
 	logistics_skill = 2
 }
 
+create_corps_commander = {
+	name = "Ragnar"
+	portrait_path = "gfx/leaders/Raider/Portrait_Raider_Generic_1.dds"
+	skill = 5
+	id = 101
+	traits = {
+		offensive_doctrine
+		naval_invader
+	}
+	attack_skill = 4
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
+}

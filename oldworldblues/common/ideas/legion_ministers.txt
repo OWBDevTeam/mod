@@ -1,5 +1,5 @@
 ideas = {
-political_advisor = {
+	political_advisor = {
 		selene_advisor = {
 			
 			picture = selene_advisor_portrait
@@ -41,7 +41,7 @@ political_advisor = {
 				factor = 10
 			}
 		}
-        
+		
 		carmine_advisor = {
 			
 			picture = carmine_command_portait
@@ -63,7 +63,7 @@ political_advisor = {
 			}
 		}
 
-        earnhardt_advisor = {
+		earnhardt_advisor = {
 			
 			picture = earnhardt_advisor_portrait
 			
@@ -138,11 +138,10 @@ political_advisor = {
 			allowed = {
 				original_tag = CES 
 			}
-			available = 
-			{
-			OR = {
-				has_completed_focus = ces_goddess_diana
-				has_completed_focus = ces_caesar_the_godslayer
+			available = {
+				OR = {
+					has_completed_focus = ces_goddess_diana
+					has_completed_focus = ces_caesar_the_godslayer
 				}
 				NOT = { has_idea = selene_advisor }
 			}
@@ -174,18 +173,17 @@ political_advisor = {
 			}
 		}	
 
-        carmine_command = {
+		carmine_command = {
 			
 			picture = carmine_command_portrait
 			
 			allowed = {
 				original_tag = CES 
 			}
-			available = 
-			{
-			OR = {
-				has_completed_focus = ces_wyatt_the_demon
-				has_completed_focus = ces_legion_outlaws
+			available = {
+				OR = {
+					has_completed_focus = ces_wyatt_the_demon
+					has_completed_focus = ces_legion_outlaws
 				}
 				NOT = { has_idea = carmine_advisor }
 			}
@@ -196,18 +194,17 @@ political_advisor = {
 			}
 		}
 
-        earnhardt_command = {
+		earnhardt_command = {
 			
 			picture = earnhardt_command_portrait
 			
 			allowed = {
 				original_tag = CES 
 			}
-			available = 
-			{
-			OR = {
-				has_completed_focus = ces_the_cult_of_nas
-				has_completed_focus = ces_taming_the_city
+			available = {
+				OR = {
+					has_completed_focus = ces_the_cult_of_nas
+					has_completed_focus = ces_taming_the_city
 				}
 				NOT = { has_idea = earnhardt_advisor }
 			}
@@ -246,11 +243,11 @@ political_advisor = {
 			allowed = {
 				original_tag = CES 
 			}
-			available = 
-			{
+			available = {
 				OR = { 
 					has_country_leader = { id = 1000 }
-					has_country_leader = { id = 1005 } }
+					has_country_leader = { id = 1005 }
+				}
 				NOT = { has_idea = vulpes_inculta_advisor }
 			}
 			traits = { earth_scorcher }
@@ -261,32 +258,32 @@ political_advisor = {
 		}
 	}
 	
-army_chief = {
-                
-        malpais_legatus_chief = {
+	army_chief = {
+
+		malpais_legatus_chief = {
 			
 			picture = malpais_legate_chief
 			
 			allowed = {
 				original_tag = CES 
 			}
-			available = { NOT = 
-							{ OR = 
-								{ 
-								has_completed_focus = ces_the_burned_man
-								has_completed_focus = ces_triumph_at_the_dam 
-								} 
-							} 
-						}
+			available = {
+				NOT = {
+					OR = {
+						has_completed_focus = ces_the_burned_man
+						has_completed_focus = ces_triumph_at_the_dam 
+					} 
+				} 
+			}
 						
-			traits = { army_chief_offensive_3 }
+			traits = { owb_army_chief_offensive_3 }
 			
 			ai_will_do = {
 				factor = 10
 			}
 		}
 	
-	 lanius_legatus_chief = {
+		lanius_legatus_chief = {
 			
 			picture = lanius_legate_chief
 			
@@ -294,13 +291,15 @@ army_chief = {
 				original_tag = CES 
 			}
 			available = { 
-			OR = {
-				has_country_leader = { id = 1000 }
-				has_country_leader = { id = 1006 } }
-			OR = 
-				{ has_completed_focus = ces_the_burned_man
-				  has_completed_focus = ces_triumph_at_the_dam } 
-						}
+				OR = {
+					has_country_leader = { id = 1000 }
+					has_country_leader = { id = 1006 }
+				}
+				OR = {
+					has_completed_focus = ces_the_burned_man
+					has_completed_focus = ces_triumph_at_the_dam
+				} 
+			}
 						
 			traits = { monster_of_the_east_chief }
 			
@@ -308,6 +307,6 @@ army_chief = {
 				factor = 10
 			}
 		}
- 	}
+	}
  }
 

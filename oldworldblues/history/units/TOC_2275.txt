@@ -1,0 +1,72 @@
+﻿division_template = {
+	name = "Militia Force"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Old Company"
+	regiments = {
+		ghoul_infantry  = { x = 0 y = 0 }
+		ghoul_infantry  = { x = 0 y = 1 }
+		ghoul_infantry  = { x = 1 y = 0 }
+		ghoul_infantry  = { x = 1 y = 1 }
+		ghoul_infantry  = { x = 2 y = 0 }
+		ghoul_infantry  = { x = 2 y = 1 }
+	}
+}
+units = {
+	division {
+			name = "'Thunder' Company"
+			location = 3927
+			division_template = "Old Company"
+			start_experience_factor = 0.5
+			start_equipment_factor = 1.0
+		}
+	division {
+			name = "Coer Border Patrol"
+			location = 4505
+			division_template = "Old Company"
+			start_experience_factor = 0.15
+			start_equipment_factor = 1.0
+		}
+	division {
+			name = "Joso Settlement-Garrison"
+			location = 4049
+			division_template = "Old Company"
+			start_experience_factor = 0.16
+			start_equipment_factor = 1.0
+		}
+	division {
+			name = "Pasco Crossing-Patrol"
+			location = 1500
+			division_template = "Old Company"
+			start_experience_factor = 0.16
+			start_equipment_factor = 1.0
+		}
+	division {
+			name = "Northlands Watchmen"
+			location =  8527
+			division_template = "Old Company"
+			start_experience_factor = 0.16
+			start_equipment_factor = 1.0
+		}
+}
+
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "TOC"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

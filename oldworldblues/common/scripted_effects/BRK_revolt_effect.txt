@@ -1,0 +1,41 @@
+BRK_revolt_effect_on_action = {
+	if = {
+		limit = {
+			ROOT = {
+				original_tag = BRK
+			}
+			PREV = {
+				OR = {
+					original_tag = DRE
+					original_tag = KAM
+					original_tag = WHI
+					original_tag = BEL
+					original_tag = VIC
+					original_tag = HAI
+					original_tag = TOC
+					original_tag = PMR
+				}
+			}
+		}
+		if = {
+			limit = {
+				PREV = { has_idea = volunteer_only }
+			}
+			PREV = {
+				swap_ideas = {
+					add_idea = limited_conscription
+					remove_idea = volunteer_only
+				}
+			}
+		}
+		ROOT = {
+			PREV = {
+				set_country_flag = revolt_country_to_revolt@PREV
+			}
+		}
+		ROOT = {
+			revolt_force_spawn_broken_coast = yes
+			revolt_setup_fire = yes
+		}
+	}
+}

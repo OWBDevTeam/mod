@@ -166,6 +166,7 @@ on_actions = {
 	#
 	#}
 	
+	# ROOT is winner, FROM is loser
 	on_peaceconference_ended = {
 		effect = {
 			if = {
@@ -330,13 +331,29 @@ on_actions = {
 	#
 	#}
 
+	#used when puppeting in a peace conference
+	#ROOT = nation being puppeted, FROM = overlord
+	on_puppet = {
+		effect = {
+			every_country = { country_event = startup.4 }
+		}
+	}
+	
+	#used when puppeting through the occupied territories menu during peace time (or when releasing from non-core but owned territory, f.e. Britain releasing Egypt)
+	#ROOT = nation being released, FROM = overlord
+	on_release_as_puppet = {
+		effect = {
+			every_country = { country_event = startup.4 }
+		}
+	}
+
 	#ROOT is winner #FROM gets annexed - For civil wars on_civil_war_end is also fired
 
 	#Not run on a specific country.
 	on_startup = {
-		#setting initial technologies, these can be found in scripted effects/set_technology_effects: 
-		# Scripted by Mechano
 		effect = {
+			## setting initial technologies, these can be found in scripted effects/set_technology_effects: 
+			## Scripted by Mechano
 			#initial tribal technology
 			every_country = {
 				limit = {
@@ -368,6 +385,58 @@ on_actions = {
 				}
 				set_technology_brotherhood = yes
 			}
+			## Setting state flags to be impassable
+			## Delicately copy-pasted line to line by HappyNTH
+			10 = { set_state_flag = is_impassable }
+			58 = { set_state_flag = is_impassable }
+			67 = { set_state_flag = is_impassable }
+			76 = { set_state_flag = is_impassable }
+			80 = { set_state_flag = is_impassable }
+			98 = { set_state_flag = is_impassable }
+			167 = { set_state_flag = is_impassable }
+			259 = { set_state_flag = is_impassable }
+			271 = { set_state_flag = is_impassable }
+			348 = { set_state_flag = is_impassable }
+			355 = { set_state_flag = is_impassable }
+			394 = { set_state_flag = is_impassable }
+			415 = { set_state_flag = is_impassable }
+			459 = { set_state_flag = is_impassable }
+			495 = { set_state_flag = is_impassable }
+			513 = { set_state_flag = is_impassable }
+			526 = { set_state_flag = is_impassable }
+			531 = { set_state_flag = is_impassable }
+			549 = { set_state_flag = is_impassable }
+			615 = { set_state_flag = is_impassable }
+			616 = { set_state_flag = is_impassable }
+			618 = { set_state_flag = is_impassable }
+			619 = { set_state_flag = is_impassable }
+			620 = { set_state_flag = is_impassable }
+			621 = { set_state_flag = is_impassable }
+			622 = { set_state_flag = is_impassable }
+			623 = { set_state_flag = is_impassable }
+			624 = { set_state_flag = is_impassable }
+			625 = { set_state_flag = is_impassable }
+			626 = { set_state_flag = is_impassable }
+			627 = { set_state_flag = is_impassable }
+			628 = { set_state_flag = is_impassable }
+			629 = { set_state_flag = is_impassable }
+			631 = { set_state_flag = is_impassable }
+			632 = { set_state_flag = is_impassable }
+			633 = { set_state_flag = is_impassable }
+			634 = { set_state_flag = is_impassable }
+			635 = { set_state_flag = is_impassable }
+			637 = { set_state_flag = is_impassable }
+			639 = { set_state_flag = is_impassable }
+			640 = { set_state_flag = is_impassable }
+			642 = { set_state_flag = is_impassable }
+			643 = { set_state_flag = is_impassable }
+			644 = { set_state_flag = is_impassable }
+			645 = { set_state_flag = is_impassable }
+			646 = { set_state_flag = is_impassable }
+			647 = { set_state_flag = is_impassable }
+			648 = { set_state_flag = is_impassable }
+			649 = { set_state_flag = is_impassable }
+			650 = { set_state_flag = is_impassable }
 		}
 	}
 

@@ -71,6 +71,13 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_oldamerica
 		}
+		available = {
+			AND = {
+				157 = { is_owned_and_controlled_by = BOS }
+				548 = { is_owned_and_controlled_by = BOS }
+				473 = { is_owned_and_controlled_by = BOS }
+			}
+		}
 		x = 1
 		y = 4
 		completion_reward = {
@@ -105,6 +112,13 @@ focus_tree = {
 		mutually_exclusive = { focus = bos_hangars }
 		prerequisite = {
 			focus = bos_oldamerica
+		}
+		available = {
+			AND = {
+				104 = { is_owned_and_controlled_by = BOS }
+				474 = { is_owned_and_controlled_by = BOS }
+				473 = { is_owned_and_controlled_by = BOS }
+			}
 		}
 		x = 5
 		y = 4
@@ -244,8 +258,8 @@ focus_tree = {
 				add_to_faction = ARR
 				# NOTE: from Mechano, do not fuck with this again and cause more crashes
 				ARR = { 
-					    set_politics = { ruling_party = intellectuals elections_allowed = no }
-						add_popularity = { ideology = intellectuals popularity = 0.5 }
+					set_politics = { ruling_party = intellectuals elections_allowed = no }
+					add_popularity = { ideology = intellectuals popularity = 0.5 }
 				}
 			}
 			
@@ -775,9 +789,12 @@ focus_tree = {
 		x = 28
 		y = 6
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = laserfocusfoundry
-				add_idea = bosoldworldfocuses
+			custom_effect_tooltip = "We will increase the reliability of Infantry Equipment by 5% based on old world techniques"
+			hidden_effect = {
+				swap_ideas = {
+					remove_idea = laserfocusfoundry
+					add_idea = bosoldworldfocuses
+				}
 			}
 		}
 
@@ -884,6 +901,7 @@ focus_tree = {
 				remove_idea = maintenanceroutines
 				add_idea = superioralloys
 			}
+			custom_effect_tooltip = "This will also increase Power Armours Reliability."
 		}
 
 	}
@@ -1287,7 +1305,6 @@ focus_tree = {
 				load_oob = welcomingcommittee
 			}
 		}
-
 	}
 	focus = {
 		id = bos_rangerpaladins
@@ -1308,9 +1325,11 @@ focus_tree = {
 				set_technology = {
 					power_armour_t45d = 1 
 				}
+				hidden_effect = {
+					load_oob = "unlock_power_armor"
+				}
 			}
 		}
-
 	}
 	focus = {
 		id = bos_brotherhoodarms
@@ -1388,16 +1407,14 @@ focus_tree = {
 				is_in_faction_with = BOS
 			}
 		}
-		available = {
-			DES = {
-				is_in_faction_with = BOS
-			}
-		}
 		x = 44
 		y = 10
 		completion_reward = {
 			DES = {
 				add_ideas = navarroscoutcamp
+				hidden_effect = {
+					set_technology = { bos_navarroscoutcamp = 1 }
+				}
 			}
 		}
 	}
@@ -1407,6 +1424,11 @@ focus_tree = {
 		cost = 4.3
 		prerequisite = {
 			focus = bos_anvil
+		}
+		available = {
+			DES = {
+				is_in_faction_with = BOS
+			}
 		}
 		x = 44
 		y = 11
@@ -1423,12 +1445,17 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_secureequipment
 		}
+		available = {
+			104 = { is_owned_and_controlled_by = BOS }
+			132 = { is_owned_and_controlled_by = BOS }
+			473 = { is_owned_and_controlled_by = BOS }
+		}
 		x = 46
 		y = 5
 		completion_reward = {
 			if = {
 				limit = {
-					owns_state = 163
+					163 = { is_owned_and_controlled_by = BOS }
 				}
 				163 = {
 					add_building_construction = {
@@ -1470,12 +1497,17 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_bayarea
 		}
+		available = {
+			104 = { is_owned_and_controlled_by = BOS }
+			132 = { is_owned_and_controlled_by = BOS }
+			473 = { is_owned_and_controlled_by = BOS }
+		}
 		x = 46
 		y = 6
 		completion_reward = {
 			if = {
 				limit = {
-					owns_state = 163
+					163 = { is_owned_and_controlled_by = BOS }
 				}
 				163 = {
 				add_extra_state_shared_building_slots = 1
@@ -1522,12 +1554,17 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_recreatemilits
 		}
+		available = {
+			104 = { is_owned_and_controlled_by = BOS }
+			132 = { is_owned_and_controlled_by = BOS }
+			473 = { is_owned_and_controlled_by = BOS }
+		}
 		x = 46
 		y = 7
 		completion_reward = {
 			if = {
 				limit = {
-					owns_state = 163
+					163 = { is_owned_and_controlled_by = BOS }
 				}
 				163 = {
 					add_building_construction = {
@@ -1570,12 +1607,17 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_heartland
 		}
+		available = {
+			104 = { is_owned_and_controlled_by = BOS }
+			132 = { is_owned_and_controlled_by = BOS }
+			473 = { is_owned_and_controlled_by = BOS }
+		}
 		x = 46
 		y = 8
 		completion_reward = {
 			if = {
 				limit = {
-					owns_state = 163
+					163 = { is_owned_and_controlled_by = BOS }
 				}
 				163 = {
 				add_extra_state_shared_building_slots = 1
@@ -1622,12 +1664,17 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_renovatearms
 		}
+		available = {
+			104 = { is_owned_and_controlled_by = BOS }
+			132 = { is_owned_and_controlled_by = BOS }
+			473 = { is_owned_and_controlled_by = BOS }
+		}
 		x = 46
 		y = 9
 		completion_reward = {
 			if = {
 				limit = {
-					owns_state = 163
+					163 = { is_owned_and_controlled_by = BOS }
 				}
 				163 = {
 				add_extra_state_shared_building_slots = 1
@@ -2153,6 +2200,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = bos_shichapter
 		}
+		bypass = {
+		    SHI = { exists = no }
+		}
 		x = 16
 		y = 11
 		completion_reward = {
@@ -2207,6 +2257,9 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_shisecrets
 		}
+		available = {
+			SHI = { exists = no }
+		}
 		x = 16
 		y = 14
 		completion_reward = {
@@ -2244,8 +2297,7 @@ focus_tree = {
 				remove_idea = foodforservice
 				add_idea = securitronsoftware
 			}
-
-	}
+		}
 	}
 	focus = {
 		id = bos_hardware
@@ -2258,7 +2310,7 @@ focus_tree = {
 		y = 8
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = foodforservice
+				remove_idea = securitronsoftware
 				add_idea = securitronhardware
 			}
 		}

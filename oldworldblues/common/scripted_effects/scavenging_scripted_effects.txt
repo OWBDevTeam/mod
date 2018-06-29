@@ -756,7 +756,7 @@ scavenge_equipment_randomiser = {
 					random_list = { 60 = { set_country_flag = s_support_e } }
 					random_list = { 25 = { set_country_flag = s_pmgs } }
 					random_list = { 35 = { set_country_flag = s_dynamite } }
-					random_list = { 15 = { set_country_flag = s_energey_e_1 } }
+					random_list = { 15 = { set_country_flag = s_energy_e_1 } }
 					random_list = { 10 = { set_country_flag = s_melee_3 } }
 					random_list = { 5 = { set_country_flag = s_energy_e_2 } }
 					random_list = { 5 = { set_country_flag = s_ballistic_e_2 } }
@@ -1059,6 +1059,156 @@ resolve_expedition = {
 		scavenge_vehicle_end = yes
 		clr_country_flag = scavenge_vroom_vroom
 	}
+}
+resolve_equip_loot = {
+	if = {
+			limit = {
+				has_country_flag = s_pipe_guns
+			}
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 200 }
+			clr_country_flag = s_pipe_guns
+		}
+		if = {
+			limit = {
+				has_country_flag = s_melee_e_1
+			}
+			add_equipment_to_stockpile = { type = melee_equipment_1 amount = 200 }
+			clr_country_flag = s_melee_e_1
+		}
+		if = {
+			limit = {
+				has_country_flag = s_ballistic_e_1
+			}
+			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 200 }
+			clr_country_flag = s_ballistic_e_1
+		}
+		if = {
+			limit = {
+				has_country_flag = s_melee_2
+			}
+			add_equipment_to_stockpile = { type = melee_equipment_1 amount = 200 }
+			clr_country_flag = s_melee_2
+		}
+		if = {
+			limit = {
+				has_country_flag = s_support_e
+				has_tech = support_weaponry
+			}
+			add_equipment_to_stockpile = { type = support_equipment amount = 100 }
+			clr_country_flag = s_support_e
+		}
+		if = {
+			limit = {
+				has_country_flag = s_pmgs
+			}
+			add_equipment_to_stockpile = { type = anti_personnel_equipment_1 amount = 50 }
+			clr_country_flag = s_pmgs
+		}
+		if = {
+			limit = {
+				has_country_flag = s_dynamite
+			}
+			add_equipment_to_stockpile = { type = explosive_equipment_1 amount = 50 }
+			clr_country_flag = s_dynamite
+		}
+		if = {
+			limit = {
+				has_country_flag = s_energy_e_1
+			}
+			add_equipment_to_stockpile = { type = energy_equipment_1 amount = 100 }
+			clr_country_flag = s_energy_e_1
+		}
+		if = {
+			limit = {
+				has_country_flag = s_melee_3
+			}
+			add_equipment_to_stockpile = { type = melee_equipment_3 amount = 100 }
+			clr_country_flag = s_melee_3
+		}
+		if = {
+			limit = {
+				has_country_flag = s_ballistic_e_2
+			}
+			add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 50 }
+			clr_country_flag = s_ballistic_e_2
+		}
+		if = {
+			limit = {
+				has_country_flag = s_energy_e_2
+			}
+			add_equipment_to_stockpile = { type = energy_equipment_2 amount = 50 }
+			clr_country_flag = s_melee_e_2
+		}
+		if = {
+			limit = {
+				has_country_flag = s_flamer
+			}
+			add_equipment_to_stockpile = { type = flamer_equipment_2 amount = 50 }
+			clr_country_flag = s_flamer
+		}
+		if = {
+			limit = {
+				has_country_flag = s_mortar
+			}
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 200 }
+			clr_country_flag = s_mortar
+		}
+		if = {
+			limit = {
+				has_country_flag = s_scavenged_pa
+			}
+			add_equipment_to_stockpile = { type = power_armor_equipment_1 amount = 5 }
+			clr_country_flag = s_scavenged_pa
+		}
+		if = {
+			limit = {
+				has_country_flag = s_energey_e_3
+			}
+			add_equipment_to_stockpile = { type = energy_equipment_3 amount = 30 }
+			clr_country_flag = s_energy_e_3
+		}
+		if = {
+			limit = {
+				has_country_flag = s_ballistic_e_3
+			}
+			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 30 }
+			clr_country_flag = s_ballistic_e_3
+		}
+		if = {
+			limit = {
+				has_country_flag = s_t45d_pa
+			}
+			add_equipment_to_stockpile = { type = power_armor_equipment_1 amount = 5 }
+			clr_country_flag = s_t45d_pa
+		}
+		if = {
+			limit = {
+				has_country_flag = s_minigun
+			}
+			add_equipment_to_stockpile = { type = anti_personnel_equipment_3  amount = 10 }
+			clr_country_flag = s_minigun
+		}
+		if = {
+			limit = {
+				has_country_flag = s_missile_launcher
+			}
+			add_equipment_to_stockpile = { type = anti_tank_equipment_3 amount = 10 }
+			clr_country_flag = s_missile_launcher
+		}
+		if = {
+			limit = {
+				has_country_flag = s_gatling
+			}
+			add_equipment_to_stockpile = { type = laser_equipment_3 amount = 5 }
+			clr_country_flag = s_gatling
+		}
+		if = {
+			limit = {
+				has_country_flag = s_incinerator
+			}
+			add_equipment_to_stockpile = { type = flamer_equipment_3 amount = 5 }
+			clr_country_flag = s_incinerator
+		}
 }
 old_world_tech = {
 	random_list = {

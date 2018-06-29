@@ -142,10 +142,10 @@ focus_tree = {
 			focus = lds_lonetree
 		}
 		available = { 
-			owns_state = 611
-			owns_state = 324
-			owns_state = 472
-			owns_state = 403
+			611 = { is_owned_and_controlled_by = NCN }
+			324 = { is_owned_and_controlled_by = NCN }
+			472 = { is_owned_and_controlled_by = NCN }
+			403 = { is_owned_and_controlled_by = NCN }
 		}
 		x = 0
 		y = 7
@@ -205,10 +205,10 @@ focus_tree = {
 			focus = lds_ires
 		}
 		available = { 
-			owns_state = 384
-			owns_state = 484
-			owns_state = 576
-			owns_state = 354
+			384 = { is_owned_and_controlled_by = NCN }
+			484 = { is_owned_and_controlled_by = NCN }
+			576 = { is_owned_and_controlled_by = NCN }
+			354 = { is_owned_and_controlled_by = NCN }
 		}
 		x = 4
 		y = 7
@@ -247,29 +247,8 @@ focus_tree = {
 		}
 		x = 7
 		y = 6
-		available = {
-			has_political_power > 25
-		}
 		completion_reward = {
-			add_political_power = -25
-			if = {
-				limit = {
-					LON = {
-						is_ai = yes
-					}
-				}
-				puppet = LON
-			}
-			if = {
-				limit = {
-					LON = {
-						is_ai = no
-					}
-				}
-				LON = { 
-					country_event = { id = nf_mormon.4 }
-				}
-			}
+			custom_effect_tooltip = ncn_convert_lon
 		}
 	}
 	focus = {
@@ -296,29 +275,8 @@ focus_tree = {
 		}
 		x = 9
 		y = 6
-		available = {
-			has_political_power > 25
-		}
 		completion_reward = {
-			add_political_power = -25
-			if = {
-				limit = {
-					IRE = {
-						is_ai = yes
-					}
-				}
-				puppet = IRE
-			}
-			if = {
-				limit = {
-					IRE = {
-						is_ai = no
-					}
-				}
-				IRE = { 
-					country_event = { id = nf_mormon.4 }
-				}
-			}
+			custom_effect_tooltip = ncn_convert_ire
 		}
 
 	}
@@ -364,24 +322,7 @@ focus_tree = {
 		x = 12
 		y = 5
 		completion_reward = {
-			if = {
-				limit = {
-					CRZ = {
-						is_ai = yes
-					}
-				}
-				puppet = CRZ
-			}
-			if = {
-				limit = {
-					CRZ = {
-						is_ai = no
-					}
-				}
-				CRZ = { 
-					country_event = { id = nf_mormon.4 }
-				}
-			}
+			custom_effect_tooltip = ncn_convert_crz
 		}
 
 	}
@@ -395,24 +336,7 @@ focus_tree = {
 		x = 14
 		y = 5
 		completion_reward = {
-			if = {
-				limit = {
-					TAR = {
-						is_ai = yes
-					}
-				}
-				puppet = TAR
-			}
-			if = {
-				limit = {
-					TAR = {
-						is_ai = no
-					}
-				}
-				TAR = { 
-					country_event = { id = nf_mormon.4 }
-				}
-			}
+			custom_effect_tooltip = ncn_convert_tar
 		}
 
 	}
@@ -439,6 +363,9 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = lds_jericho
+		}
+		available = {
+			551 = { is_owned_and_controlled_by = NCN }
 		}
 		x = 26
 		y = 3
@@ -478,6 +405,12 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = lds_walls
+		}
+		available = {
+			551 = { is_owned_and_controlled_by = NCN }
+			549 = { is_owned_and_controlled_by = NCN }
+			319 = { is_owned_and_controlled_by = NCN }
+			266 = { is_owned_and_controlled_by = NCN }
 		}
 		x = 26
 		y = 4
@@ -705,27 +638,8 @@ focus_tree = {
 		}
 		x = 8
 		y = 7
-		available = {
-			has_political_power > 50
-		}
 		completion_reward = {
-			add_political_power = -50
-			if = {
-				limit = {
-					MUR = {
-						is_ai = yes
-					}
-				}
-				puppet = MUR
-			}
-			if = {
-				limit = {
-					MUR = {
-						is_ai = no
-					}
-				}
-				MUR = { country_event = nf_nf_mormon.4 }
-			}
+			custom_effect_tooltip = ncn_convert_mur
 		}
 	}
 	focus = {
@@ -846,24 +760,7 @@ focus_tree = {
 		x = 16
 		y = 5
 		completion_reward = {
-			if = {
-				limit = {
-					SOR = {
-						is_ai = yes
-					}
-				}
-				puppet = SOR
-			}
-			if = {
-				limit = {
-					SOR = {
-						is_ai = no
-					}
-				}
-				SOR = { 
-					country_event = { id = nf_mormon.4 }
-				}
-			}
+			custom_effect_tooltip = ncn_convert_sor
 		}
 
 	}
@@ -971,24 +868,7 @@ focus_tree = {
 		x = 20
 		y = 5
 		completion_reward = {
-			if = {
-				limit = {
-					DEA = {
-						is_ai = yes
-					}
-				}
-				puppet = DEA
-			}
-			if = {
-				limit = {
-					DEA = {
-						is_ai = no
-					}
-				}
-				DEA = { 
-					country_event = { id = nf_mormon.4 }
-				}
-			}
+			custom_effect_tooltip = ncn_convert_dea
 		}
 
 	}
@@ -1232,79 +1112,8 @@ focus_tree = {
 		x = 17
 		y = 11
 		completion_reward = {
-			
-			every_state = {
-                limit = {
-                    is_utah_state = yes
-                }
-                add_core_of = NCN
-            }
-			
-			if = {
-				limit = {
-					DEA = {
-						is_puppet_of = NCN
-					}
-				}
-				annex_country = { target = DEA transfer_troops = yes }
-			}
-			
-			if = {
-				limit = {
-					MUR = {
-						is_puppet_of = NCN
-					}
-				}
-				annex_country = { target = MUR transfer_troops = yes }
-			}
-			
-			if = {
-				limit = {
-					LON = {
-						is_puppet_of = NCN
-					}
-				}
-				annex_country = { target = LON transfer_troops = yes }
-			}
-			
-			if = {
-				limit = {
-					IRE = {
-						is_puppet_of = NCN
-					}
-				}
-				annex_country = { target = IRE transfer_troops = yes }
-			}
-			
-			if = {
-				limit = {
-					SOR = {
-						is_puppet_of = NCN
-					}
-				}
-				annex_country = { target = SOR transfer_troops = yes }
-			}
-			
-			if = {
-				limit = {
-					TAR = {
-						is_puppet_of = NCN
-					}
-				}
-				annex_country = { target = TAR transfer_troops = yes }
-			}
-			
-			if = {
-				limit = {
-					CRZ = {
-						is_puppet_of = NCN
-					}
-				}
-				annex_country = { target = CRZ transfer_troops = yes }
-			}
-			
+			unlock_decision_tooltip = form_deseret
 		}
-
 	}
 	focus = {
 		id = lds_vengeance
@@ -1450,21 +1259,7 @@ focus_tree = {
 		x = 20
 		y = 9
 		completion_reward = {
-			if = {
-				limit = {
-					is_faction_leader = yes
-					HGH = { is_ai = yes }
-				}
-				add_to_faction = HGH
-			}
-			if = {
-				limit = {
-					HGH = {
-						exists = yes
-						is_ai = no
-					}
-				}
-			}
+			custom_effect_tooltip = ncn_convert_hgh
 		}
 
 	}

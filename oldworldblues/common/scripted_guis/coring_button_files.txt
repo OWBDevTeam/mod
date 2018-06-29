@@ -7,43 +7,85 @@ scripted_gui = {
 		parent_window_token = selected_state_view
 		
 		visible = {
+			is_owned_by = ROOT
 			is_controlled_by = ROOT
-			ROOT = { 
-				is_major = no
-				is_ai = no
-				has_civil_war = no
-				NOT = { has_country_flag = not_allowed_to_core_flag }
-			}
-			NOT = { 
-				is_core_of = FROM
-			}
-			
 		}
 		
 		effects = {
 			add_core_click = {
 				ROOT = { 
 					add_political_power = -100 
-					
 				}
-				add_core_of = FROM
+				add_core_of = ROOT
 			}
 		}
 		triggers = {
 			add_core_click_enabled = {
 				check_variable = { ROOT.political_power > 99.99 }
+				NOT = {
+					is_core_of = ROOT
+				}
+				ROOT = {
+					is_major = no
+					has_civil_war = no
+					NOT = {
+						has_country_flag = not_allowed_to_core_flag
+					}
+				}
+			}
+			add_core_click_visible = {
+				NOT = {
+					is_core_of = ROOT
+				}
+				ROOT = {
+					is_major = no
+					has_civil_war = no
+					NOT = {
+						has_country_flag = not_allowed_to_core_flag
+					}
+				}
+			}
+			add_core_click_cancel_visible = {
+				is_core_of = ROOT
+				ROOT = {
+					is_major = yes
+					has_civil_war = yes
+					has_country_flag = not_allowed_to_core_flag
+				}
 			}
 		}
-		        
+		ai_test_interval = 336 #
+		ai_test_variance = 0.2
+		ai_max_weight_taken_per_test = 1
+		# intializes at beginning of game, optimization
+		ai_enabled = {
+			is_major = no
+			NOT = { has_country_flag = not_allowed_to_core_flag }
+		}
+		# only test for our owned states
+		ai_test_scopes = test_self_owned_states
+		
 		ai_check = {
-			check_variable = { ROOT.political_power > 99.99 }
+			has_war = no
+			check_variable = { ROOT.political_power > 100 }
 			check_variable = { ai_random > 0.55 }
 		}
+		
+		#check the state is coreable
+		ai_check_scope = {
+			NOT = { is_core_of = ROOT }
+			#is_controlled_by = ROOT
+		}
+		
 		
 		ai_weights = {
 			add_core_click = {
 				ai_will_do = {
-					factor = 40
+					factor = 20
+					#modifer = {
+					#	factor = 0.5
+					#	has_war = yes
+					#}
 				}
 			}
 		}

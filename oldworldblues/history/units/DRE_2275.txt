@@ -1,0 +1,84 @@
+﻿division_template = {
+	name = "Militia Force"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Miner Group"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Miner Bots"
+	regiments = {
+		light_robot = { x = 0 y = 0 }
+		light_robot = { x = 0 y = 1 }
+		light_robot = { x = 1 y = 0 }
+		light_robot = { x = 1 y = 1 }
+		light_robot = { x = 2 y = 0 }
+		light_robot = { x = 2 y = 1 }
+	}
+}
+
+units = {
+	division {
+		name = "Old Rusters"
+		location = 7323
+		division_template = "Miner Bots"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Forestry Bots"
+		location = 7278
+		division_template = "Miner Bots"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "1. Miner Bots"
+		location = 7300
+		division_template = "Miner Bots"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Shaftson Miners"
+		location = 7234
+		division_template = "Miner Group"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division {
+		name = "Crysdale Miners"
+		location = 7298
+		division_template = "Miner Group"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "DRE"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

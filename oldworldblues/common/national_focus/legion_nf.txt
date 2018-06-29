@@ -512,6 +512,9 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_shottol_god_of_dogs
 		}
+		available = {
+			525 = { is_owned_and_controlled_by = CES }
+		}
 		x = 2
 		y = 7
 		completion_reward = {
@@ -521,7 +524,6 @@ focus_tree = {
 				}
 				custom_effect_tooltip = legion_must_own_hangdog_territory
 			}
-		
 			525 = {
 				add_building_construction = {
 					type = arms_factory
@@ -868,11 +870,6 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_the_white_leg_petition
 		}
-		bypass = {
-			NOT = {
-				country_exists = WHT
-			}
-		}
 		available = {
 			country_exists = WHT
 			WHT = {
@@ -902,15 +899,15 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_the_white_leg_petition
 		}
-		bypass = {
-			NOT = {
-				country_exists = WHT
-			}
-		}
 		available = {
-			country_exists = WHT
-			WHT = {
-				has_country_flag = refused_petition
+			OR = {
+				NOT = { country_exists = WHT }
+				AND = {
+					country_exists = WHT
+					WHT = {
+						has_country_flag = refused_petition
+					}
+				}
 			}
 		}
 		mutually_exclusive = {
@@ -1196,10 +1193,10 @@ focus_tree = {
 			focus = ces_crossing_the_rubicon
 		}
 		available = {
-			NCR = { owns_state = 252 }
+			252 = { is_owned_and_controlled_by = NCR }
 		}
 		bypass = {
-			owns_state = 252
+			252 = { is_owned_and_controlled_by = CES }
 		}
 		will_lead_to_war_with = NCR
 		x = 9
@@ -1321,7 +1318,7 @@ focus_tree = {
 			factor = 10
 		}
 		available = {
-			owns_state = 252
+			252 = { is_owned_and_controlled_by = CES }
 		}
 		x = 10
 		y = 11
@@ -1360,10 +1357,7 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					CES = {
-						owns_state = 359
-						controls_state = 359
-					}
+					359 = { is_owned_and_controlled_by = CES }
 				}
 				
 				359 = { set_state_name = "Fort Hill" }
@@ -1389,10 +1383,7 @@ focus_tree = {
 			if = {
 				limit = {
 					NOT = {
-						CES = {
-							owns_state = 359
-							controls_state = 359
-						}
+						359 = { is_owned_and_controlled_by = CES }
 					}
 				}
 				
@@ -2187,7 +2178,7 @@ focus_tree = {
 			focus = ces_open_the_lucky_38
 		}
 		available = {
-			owns_state = 211
+			211 = { is_owned_and_controlled_by = CES }
 		}
 		x = 5
 		y = 19
@@ -2208,6 +2199,12 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = ces_poking_the_bear
+		}
+		bypass = {
+			OR = {
+				has_war_with = NCR
+				NOT = { country_exists = NCR }
+			}
 		}
 		x = 9
 		y = 15
@@ -2392,7 +2389,7 @@ focus_tree = {
 						enemy = NCR
 					}
 					hidden_effect = {
-						load_oob = BVC_2265
+						load_oob = BVC_2275
 					}					
 				}
 			}
@@ -2406,7 +2403,7 @@ focus_tree = {
 						enemy = NCR
 					}
 					hidden_effect = {
-						load_oob = BLP_2265
+						load_oob = BLP_2275
 					}
 				}
 			}
@@ -2448,7 +2445,7 @@ focus_tree = {
 			}
 		}
 		bypass = {
-			owns_state = 533
+			533 = { is_owned_and_controlled_by = CES }
 		}
 		x = 8
 		y = 18
@@ -2678,8 +2675,7 @@ focus_tree = {
 			focus = ces_denarius
 		}
 		available = {
-			owns_state = 525
-			controls_state = 525
+			525 = { is_owned_and_controlled_by = CES }
 		}
 		x = 20
 		y = 5
@@ -2702,8 +2698,7 @@ focus_tree = {
 			focus = ces_tame_dog_city
 		}
 		available = {
-			owns_state = 525
-			controls_state = 525
+			525 = { is_owned_and_controlled_by = CES }
 		}
 		x = 20
 		y = 6
@@ -2727,14 +2722,13 @@ focus_tree = {
 			focus = ces_legion_salvagers
 		}
 		available = {
-			owns_state = 525
+			525 = { is_owned_and_controlled_by = CES }
 		}
 		x = 20
 		y = 7
 		completion_reward = {
 			add_ideas = legion_nf_enslaved_dogs
 		}
-
 	}
 	focus = {
 		id = ces_the_capital
@@ -2744,8 +2738,7 @@ focus_tree = {
 			focus = ces_denarius
 		}
 		available = {
-			owns_state = 520
-			controls_state = 520
+			520 = { is_owned_and_controlled_by = CES }
 		}
 		x = 22
 		y = 5
@@ -2759,7 +2752,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ces_flagstaff_fort
@@ -2769,8 +2761,7 @@ focus_tree = {
 			focus = ces_the_capital
 		}
 		available = {
-			owns_state = 520
-			controls_state = 520
+			520 = { is_owned_and_controlled_by = CES }
 		}
 		x = 22
 		y = 6
@@ -2784,7 +2775,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ces_slaves_to_flagstaff
@@ -2794,14 +2784,13 @@ focus_tree = {
 			focus = ces_flagstaff_fort
 		}
 		available = {
-			owns_state = 520
+			520 = { is_owned_and_controlled_by = CES }
 		}
 		x = 22
 		y = 7
 		completion_reward = {
 			add_ideas = legion_nf_flagstaff_slaves
 		}
-
 	}
 	focus = {
 		id = ces_settlers_in_phoenix
@@ -2811,8 +2800,7 @@ focus_tree = {
 			focus = ces_denarius
 		}
 		available = {
-			owns_state = 518
-			controls_state = 518
+			518 = { is_owned_and_controlled_by = CES }
 		}
 		x = 24
 		y = 5
@@ -2826,7 +2814,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ces_phoenix_outpost
@@ -2836,8 +2823,7 @@ focus_tree = {
 			focus = ces_settlers_in_phoenix
 		}
 		available = {
-			owns_state = 518
-			controls_state = 518
+			518 = { is_owned_and_controlled_by = CES }
 		}
 		x = 24
 		y = 6
@@ -2851,7 +2837,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ces_slaves_in_phoenix
@@ -2861,14 +2846,13 @@ focus_tree = {
 			focus = ces_phoenix_outpost
 		}
 		available = {
-			owns_state = 518
+			518 = { is_owned_and_controlled_by = CES }
 		}
 		x = 24
 		y = 7
 		completion_reward = {
 			add_ideas = legion_nf_phoenix_slaves
 		}
-
 	}
 	focus = {
 		id = ces_two_sun_tribute
@@ -2878,8 +2862,7 @@ focus_tree = {
 			focus = ces_denarius
 		}
 		available = {
-			owns_state = 516
-			controls_state = 516
+			516 = { is_owned_and_controlled_by = CES }
 		}
 		x = 26
 		y = 5
@@ -2893,7 +2876,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ces_two_sun_warcamp
@@ -2903,8 +2885,7 @@ focus_tree = {
 			focus = ces_two_sun_tribute
 		}
 		available = {
-			owns_state = 516
-			controls_state = 516
+			516 = { is_owned_and_controlled_by = CES }
 		}
 		x = 26
 		y = 6
@@ -2918,7 +2899,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ces_enslave_tribals
@@ -2928,14 +2908,13 @@ focus_tree = {
 			focus = ces_two_sun_warcamp
 		}
 		available = {
-			owns_state = 516
+			516 = { is_owned_and_controlled_by = CES }
 		}
 		x = 26
 		y = 7
 		completion_reward = {
 			add_ideas = legion_nf_two_sun_slaves
 		}
-
 	}
 	focus = {
 		id = ces_honestas_industria_prudentia
@@ -2954,7 +2933,6 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 60
 		}
-
 	}
 	focus = {
 		id = ces_warcamp_slaves
@@ -2971,7 +2949,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = legion_nf_warcamp_slaves
 		}
-
 	}
 	focus = {
 		id = ces_homestead_slaves
@@ -2988,7 +2965,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = legion_nf_homestead_slaves
 		}
-
 	}
 	focus = {
 		id = ces_via_militaris
@@ -3050,7 +3026,6 @@ focus_tree = {
 				}
 			}			
 		}
-
 	}
 	focus = {
 		id = ces_new_mexico_highways
@@ -3094,7 +3069,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ces_the_road_eastwards
@@ -3138,9 +3112,7 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
-	
 	focus = {
 		id = ces_pax_romana
 		icon = GFX_goal_generic_propaganda
@@ -3160,7 +3132,6 @@ focus_tree = {
 			add_manpower = -1000
 			add_ideas = legion_nf_pax_romana
 		}
-
 	}
 	focus = {
 		id = ces_fort_construction
@@ -3174,7 +3145,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = legion_nf_fort_focus
 		}
-
 	}
 	focus = {
 		id = ces_blacksmith_recruitment
@@ -3188,7 +3158,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = legion_nf_factory_focus
 		}
-
 	}
 	focus = {
 		id = ces_boulder_city_salvage
@@ -3203,8 +3172,7 @@ focus_tree = {
 			focus = ces_pax_romana
 		}
 		available = {
-			owns_state = 613
-			controls_state = 613
+			613 = { is_owned_and_controlled_by = CES }
 		}
 		x = 23
 		y = 11
@@ -3229,7 +3197,6 @@ focus_tree = {
 		completion_reward = {
 			add_research_slot = 1
 		}
-
 	}
 	focus = {
 		id = ces_dog_city_salvage
@@ -3239,8 +3206,7 @@ focus_tree = {
 			focus = ces_boulder_city_salvage
 		}
 		available = {
-			owns_state = 525
-			controls_state = 525
+			525 = { is_owned_and_controlled_by = CES }
 		}
 		x = 21
 		y = 12
@@ -3252,7 +3218,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ces_phoenix_salvage
@@ -3262,8 +3227,7 @@ focus_tree = {
 			focus = ces_boulder_city_salvage
 		}
 		available = {
-			owns_state = 518
-			controls_state = 518
+			518 = { is_owned_and_controlled_by = CES }
 		}
 		x = 25
 		y = 12
@@ -3275,7 +3239,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ces_the_vault_beneath_fortification_hill
@@ -3285,8 +3248,7 @@ focus_tree = {
 			focus = ces_old_world_discoveries
 		}
 		available = {
-			owns_state = 359
-			controls_state = 359
+			359 = { is_owned_and_controlled_by = CES }
 		}
 		x = 23
 		y = 13
@@ -3302,7 +3264,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ces_brotherhood_slaves
@@ -3315,8 +3276,7 @@ focus_tree = {
 			focus = ces_follower_slaves
 		}
 		available = {
-			owns_state = 46
-			controls_state = 46
+			46 = { is_owned_and_controlled_by = CES }
 		}
 		x = 24
 		y = 14
@@ -3328,7 +3288,6 @@ focus_tree = {
 				category = power_armor_tech
 			}
 		}
-
 	}
 	focus = {
 		id = ces_follower_slaves
@@ -3345,7 +3304,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = legion_nf_follower_slaves
 		}
-
 	}
 	
 	#---------------------------
@@ -3369,7 +3327,6 @@ focus_tree = {
 				category = land_doctrine
 			}
 		}
-
 	}
 	focus = {
 		id = ces_numeri
@@ -3400,7 +3357,10 @@ focus_tree = {
 		x = 29
 		y = 6
 		completion_reward = {
-			add_ideas = legion_nf_centurions 
+			add_ideas = legion_nf_centurions
+			hidden_effect = {
+				set_technology = { legion_centurions_tech = 1 }
+			}
 		}
 	}
 	focus = {
@@ -3415,7 +3375,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = legion_nf_lay_of_the_land
 		}
-
 	}
 	focus = {
 		id = ces_legionary_grit
@@ -3470,7 +3429,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = legion_nf_praetorian
 		}
-
 	}
 	focus = {
 		id = ces_meritorcracy
@@ -3484,7 +3442,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = legion_nf_meritocracy
 		}
-
 	}
 	focus = {
 		id = ces_vexillarius
@@ -3497,8 +3454,10 @@ focus_tree = {
 		y = 7
 		completion_reward = {
 			add_ideas = legion_nf_vexillarius
+			hidden_effect = {
+				set_technology = { legion_vexillarius_tech = 1 }
+			}
 		}
-
 	}
 	focus = {
 		id = ces_legion_blacksmiths
@@ -3512,7 +3471,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = legion_nf_legionary_blacksmiths
 		}
-
 	}
 	focus = {
 		id = ces_general_silus
@@ -3537,7 +3495,6 @@ focus_tree = {
 				logistics_skill = 1
 			}
 		}
-
 	}
 	
 	focus = {
@@ -3569,7 +3526,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = legion_nf_child_soldiers
 		}
-
 	}
 	focus = {
 		id = ces_slave_collars
@@ -3583,7 +3539,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = legion_nf_slave_collars
 		}
-
 	}
 	focus = {
 		id = ces_promote_freedmen
@@ -3597,7 +3552,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = legion_nf_freemen
 		}
-
 	}
 	focus = {
 		id = ces_general_aurelius_of_phoenix
@@ -3622,7 +3576,6 @@ focus_tree = {
 				logistics_skill = 1
 			}
 		}
-
 	}
 	focus = {
 		id = ces_modern_military
@@ -3654,7 +3607,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = legion_nf_foundries_of_mars
 		}
-
 	}
 	focus = {
 		id = ces_hammer_of_mars
@@ -3668,7 +3620,6 @@ focus_tree = {
 		completion_reward = {
 			set_technology = { tank_tech_3 = 1 }
 		}
-
 	}
 	focus = {
 		id = ces_legion_reborn
@@ -3682,7 +3633,6 @@ focus_tree = {
 		completion_reward = {
 			set_technology = { power_armour_legion = 1 }
 		}
-
 	}
 	focus = {
 		id = ces_warriors_of_mars
@@ -3695,6 +3645,9 @@ focus_tree = {
 		y = 12
 		completion_reward = {
 			add_ideas = legion_nf_warriors_of_mars
+			hidden_effect = {
+				set_technology = { legion_warriors_of_mars_tech = 1 }
+			}
 		}
 	}
 }

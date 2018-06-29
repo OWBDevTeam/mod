@@ -25,11 +25,11 @@ fire_NCR_civil_war = {
 		picture = "Portrait_Kimball.dds"
 		expire = "3000.1.1"
 		ideology = constitutional_republic
-		
+
 		traits = {
-			
+
 		}
-	}	
+	}
 	create_country_leader = {
 		name = "Grant C. Hayes"
 		desc = "Hayes_DESC"
@@ -86,7 +86,7 @@ fire_NCR_civil_war = {
 		capital = 135 # sac town
 		states = { 141 369 135 60 584 168 421 543 162 369 141 182 56 441 511 }
 		states_filter = {
-			
+
 		}
 		keep_unit_leaders = { }
 	}
@@ -114,6 +114,7 @@ setup_NCR_enclave = {
 			limit = {
 				NEW = {
 					is_ai = yes
+					is_in_faction = no
 				}
 			}
 			NEW = {
@@ -122,9 +123,73 @@ setup_NCR_enclave = {
 				}
 			}
 			annex_country = { target = NEW transfer_troops = yes }
-			else = {
-				create_faction = western_enclave
-				add_to_faction = NEW
+		}
+		else_if = {
+			limit = {
+				NEW = {
+					is_ai = yes
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+			}
+			remove_from_faction = NEW
+			add_to_faction = NEW
+			add_ai_strategy = {
+				type = alliance
+				id = "NEW"
+				value = 200
+			}
+			NEW = {
+				add_ai_strategy = {
+					type = alliance
+					id = "ENC"
+					value = 200
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				NEW = {
+					is_ai = yes
+					is_in_faction = yes
+					is_faction_leader = yes
+				}
+			}
+			create_faction = western_enclave
+			remove_from_faction = NEW
+			add_to_faction = NEW
+			add_ai_strategy = {
+				type = alliance
+				id = "NEW"
+				value = 200
+			}
+			NEW = {
+				add_ai_strategy = {
+					type = alliance
+					id = "ENC"
+					value = 200
+				}
+			}
+			every_other_country = {
+				limit = {
+					is_puppet_of = NEW
+				}
+				remove_from_faction = PREV
+				ENC = {
+					add_to_faction = PREV
+					add_ai_strategy = {
+						type = alliance
+						id = "PREV"
+						value = 200
+					}
+				}
+				PREV = {
+					add_ai_strategy = {
+						type = alliance
+						id = "ENC"
+						value = 200
+					}
+				}
 			}
 		}
 	}
@@ -146,7 +211,7 @@ setup_NCR_enclave = {
 			vertiberd_transport1 = 1
 		}
 		load_oob = enclavecivilwar
-		retire_country_leader = yes 
+		retire_country_leader = yes
 		create_country_leader = {
 			name = "Grant C. Hayes"
 			desc = "Hayes_DESC"
@@ -717,7 +782,7 @@ transfer_ncr_ideas_civil_war = {
 }
 
 set_NCR_factions_technology_on_civil_war = {
-	
+
 	#OWB Techs
 	if = {
 		limit = {
@@ -1565,16 +1630,100 @@ set_NCR_factions_technology_on_civil_war = {
 
 	if = {
 		limit = {
-			PREV = { has_tech = electronic_mechanical_engineering }
+			PREV = { has_tech = electronic_engineering }
 		}
-		set_technology = { electronic_mechanical_engineering = 1 }
+		set_technology = { electronic_engineering = 1 }
 	}
 
 	if = {
 		limit = {
-			PREV = { has_tech = radio }
+			PREV = { has_tech = electronic_engineering_1 }
 		}
-		set_technology = { radio = 1 }
+		set_technology = { electronic_engineering_1 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = electronic_engineering_2 }
+		}
+		set_technology = { electronic_engineering_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = electronic_engineering_3 }
+		}
+		set_technology = { electronic_engineering_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = electronic_engineering_4 }
+		}
+		set_technology = { electronic_engineering_4 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = electronic_engineering_5 }
+		}
+		set_technology = { electronic_engineering_5 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = electronic_engineering_6 }
+		}
+		set_technology = { electronic_engineering_6 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = electronic_engineering_7 }
+		}
+		set_technology = { electronic_engineering_7 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = communication_engineering }
+		}
+		set_technology = { communication_engineering = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = communication_engineering_1 }
+		}
+		set_technology = { communication_engineering_1 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = communication_engineering_2 }
+		}
+		set_technology = { communication_engineering_2 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = communication_engineering_3 }
+		}
+		set_technology = { communication_engineering_3 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = communication_engineering_4 }
+		}
+		set_technology = { communication_engineering_4 = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = communication_engineering_5 }
+		}
+		set_technology = { communication_engineering_5 = 1 }
 	}
 
 	if = {
@@ -1621,72 +1770,72 @@ set_NCR_factions_technology_on_civil_war = {
 
 	if = {
 		limit = {
-			PREV = { has_tech = mechanical_computing }
+			PREV = { has_tech = encryption }
 		}
-		set_technology = { mechanical_computing = 1 }
+		set_technology = { encryption = 1 }
 	}
 
 	if = {
 		limit = {
-			PREV = { has_tech = computing_machine }
+			PREV = { has_tech = encryption_1 }
 		}
-		set_technology = { computing_machine = 1 }
+		set_technology = { encryption_1 = 1 }
 	}
 
 	if = {
 		limit = {
-			PREV = { has_tech = improved_computing_machine }
+			PREV = { has_tech = encryption_2 }
 		}
-		set_technology = { improved_computing_machine = 1 }
+		set_technology = { encryption_2 = 1 }
 	}
 
 	if = {
 		limit = {
-			PREV = { has_tech = advanced_computing_machine }
+			PREV = { has_tech = encryption_3 }
 		}
-		set_technology = { advanced_computing_machine = 1 }
+		set_technology = { encryption_3 = 1 }
 	}
 
 	if = {
 		limit = {
-			PREV = { has_tech = basic_encryption }
+			PREV = { has_tech = encryption_4 }
 		}
-		set_technology = { basic_encryption = 1 }
+		set_technology = { encryption_4 = 1 }
 	}
 
 	if = {
 		limit = {
-			PREV = { has_tech = improved_encryption }
+			PREV = { has_tech = decryption }
 		}
-		set_technology = { improved_encryption = 1 }
+		set_technology = { decryption = 1 }
 	}
 
 	if = {
 		limit = {
-			PREV = { has_tech = advanced_encryption }
+			PREV = { has_tech = decryption_1 }
 		}
-		set_technology = { advanced_encryption = 1 }
+		set_technology = { decryption_1 = 1 }
 	}
 
 	if = {
 		limit = {
-			PREV = { has_tech = basic_decryption }
+			PREV = { has_tech = decryption_2 }
 		}
-		set_technology = { basic_decryption = 1 }
+		set_technology = { decryption_2 = 1 }
 	}
 
 	if = {
 		limit = {
-			PREV = { has_tech = improved_decryption }
+			PREV = { has_tech = decryption_3 }
 		}
-		set_technology = { improved_decryption = 1 }
+		set_technology = { decryption_3 = 1 }
 	}
 
 	if = {
 		limit = {
-			PREV = { has_tech = advanced_decryption }
+			PREV = { has_tech = decryption_4 }
 		}
-		set_technology = { advanced_decryption = 1 }
+		set_technology = { decryption_4 = 1 }
 	}
 
 	if = {
@@ -2004,110 +2153,110 @@ set_NCR_factions_technology_on_civil_war = {
 		set_technology = { autonomous_foundry = 1 }
 	}
 
-	if = {
-		limit = {
-			PREV = { has_tech = basic_metal_well }
-		}
-		set_technology = { basic_metal_well = 1 }
-	}
+	# if = {
+	# 	limit = {
+	# 		PREV = { has_tech = basic_metal_well }
+	# 	}
+	# 	set_technology = { basic_metal_well = 1 }
+	# }
 
-	if = {
-		limit = {
-			PREV = { has_tech = advanced_fuel_well }
-		}
-		set_technology = { advanced_fuel_well = 1 }
-	}
+	# if = {
+	# 	limit = {
+	# 		PREV = { has_tech = advanced_fuel_well }
+	# 	}
+	# 	set_technology = { advanced_fuel_well = 1 }
+	# }
 
-	if = {
-		limit = {
-			PREV = { has_tech = basic_fuel_refinery }
-		}
-		set_technology = { basic_fuel_refinery = 1 }
-	}
+	# if = {
+	# 	limit = {
+	# 		PREV = { has_tech = basic_fuel_refinery }
+	# 	}
+	# 	set_technology = { basic_fuel_refinery = 1 }
+	# }
 
-	if = {
-		limit = {
-			PREV = { has_tech = advanced_fuel_refinery }
-		}
-		set_technology = { advanced_fuel_refinery = 1 }
-	}
+	# if = {
+	# 	limit = {
+	# 		PREV = { has_tech = advanced_fuel_refinery }
+	# 	}
+	# 	set_technology = { advanced_fuel_refinery = 1 }
+	# }
 
-	if = {
-		limit = {
-			PREV = { has_tech = autonomous_refinery }
-		}
-		set_technology = { autonomous_refinery = 1 }
-	}
+	# if = {
+	# 	limit = {
+	# 		PREV = { has_tech = autonomous_refinery }
+	# 	}
+	# 	set_technology = { autonomous_refinery = 1 }
+	# }
 
-	if = {
-		limit = {
-			PREV = { has_tech = basic_laboratory }
-		}
-		set_technology = { basic_laboratory = 1 }
-	}
+	# if = {
+	# 	limit = {
+	# 		PREV = { has_tech = basic_laboratory }
+	# 	}
+	# 	set_technology = { basic_laboratory = 1 }
+	# }
 
-	if = {
-		limit = {
-			PREV = { has_tech = advanced_laboratory }
-		}
-		set_technology = { advanced_laboratory = 1 }
-	}
+	# if = {
+	# 	limit = {
+	# 		PREV = { has_tech = advanced_laboratory }
+	# 	}
+	# 	set_technology = { advanced_laboratory = 1 }
+	# }
 
-	if = {
-		limit = {
-			PREV = { has_tech = basic_fabrication_centre }
-		}
-		set_technology = { basic_fabrication_centre = 1 }
-	}
+	# if = {
+	# 	limit = {
+	# 		PREV = { has_tech = basic_fabrication_centre }
+	# 	}
+	# 	set_technology = { basic_fabrication_centre = 1 }
+	# }
 
-	if = {
-		limit = {
-			PREV = { has_tech = advanced_fabrication_centre }
-		}
-		set_technology = { advanced_fabrication_centre = 1 }
-	}
+	# if = {
+	# 	limit = {
+	# 		PREV = { has_tech = advanced_fabrication_centre }
+	# 	}
+	# 	set_technology = { advanced_fabrication_centre = 1 }
+	# }
 
-	if = {
-		limit = {
-			PREV = { has_tech = autonomous_fabrication_centre }
-		}
-		set_technology = { autonomous_fabrication_centre = 1 }
-	}
+	# if = {
+	# 	limit = {
+	# 		PREV = { has_tech = autonomous_fabrication_centre }
+	# 	}
+	# 	set_technology = { autonomous_fabrication_centre = 1 }
+	# }
 
-	if = {
-		limit = {
-			PREV = { has_tech = basic_research_laboratory }
-		}
-		set_technology = { basic_research_laboratory = 1 }
-	}
+	# if = {
+	# 	limit = {
+	# 		PREV = { has_tech = basic_research_laboratory }
+	# 	}
+	# 	set_technology = { basic_research_laboratory = 1 }
+	# }
 
-	if = {
-		limit = {
-			PREV = { has_tech = advanced_research_laboratory }
-		}
-		set_technology = { advanced_research_laboratory = 1 }
-	}
+	# if = {
+	# 	limit = {
+	# 		PREV = { has_tech = advanced_research_laboratory }
+	# 	}
+	# 	set_technology = { advanced_research_laboratory = 1 }
+	# }
 
-	if = {
-		limit = {
-			PREV = { has_tech = basic_research_facility }
-		}
-		set_technology = { basic_research_facility = 1 }
-	}
+	# if = {
+	# 	limit = {
+	# 		PREV = { has_tech = basic_research_facility }
+	# 	}
+	# 	set_technology = { basic_research_facility = 1 }
+	# }
 
-	if = {
-		limit = {
-			PREV = { has_tech = advanced_research_facility }
-		}
-		set_technology = { advanced_research_facility = 1 }
-	}
+	# if = {
+	# 	limit = {
+	# 		PREV = { has_tech = advanced_research_facility }
+	# 	}
+	# 	set_technology = { advanced_research_facility = 1 }
+	# }
 
-	if = {
-		limit = {
-			PREV = { has_tech = autonomous_research_facility }
-		}
-		set_technology = { autonomous_research_facility = 1 }
-	}
+	# if = {
+	# 	limit = {
+	# 		PREV = { has_tech = autonomous_research_facility }
+	# 	}
+	# 	set_technology = { autonomous_research_facility = 1 }
+	# }
 
 	if = {
 		limit = {
@@ -2244,9 +2393,9 @@ set_NCR_factions_technology_on_civil_war = {
 
 	if = {
 		limit = {
-			PREV = { has_tech = intergrated_support_doctrine }
+			PREV = { has_tech = integrated_support_doctrine }
 		}
-		set_technology = { intergrated_support_doctrine = 1 }
+		set_technology = { integrated_support_doctrine = 1 }
 	}
 
 	if = {
@@ -3630,9 +3779,9 @@ set_NCR_factions_technology_on_civil_war = {
 
 	if = {
 		limit = {
-			PREV = { has_tech = stimpack }
+			PREV = { has_tech = stimpak }
 		}
-		set_technology = { stimpack = 1 }
+		set_technology = { stimpak = 1 }
 	}
 
 	if = {
@@ -3654,13 +3803,6 @@ set_NCR_factions_technology_on_civil_war = {
 			PREV = { has_tech = bike_tech_2 }
 		}
 		set_technology = { bike_tech_2 = 1 }
-	}
-
-	if = {
-		limit = {
-			PREV = { has_tech = bike_tech_3 }
-		}
-		set_technology = { bike_tech_3 = 1 }
 	}
 
 	if = {
@@ -3721,20 +3863,6 @@ set_NCR_factions_technology_on_civil_war = {
 
 	if = {
 		limit = {
-			PREV = { has_tech = truck_tech_3 }
-		}
-		set_technology = { truck_tech_3 = 1 }
-	}
-
-	if = {
-		limit = {
-			PREV = { has_tech = truck_tech_4 }
-		}
-		set_technology = { truck_tech_4 = 1 }
-	}
-
-	if = {
-		limit = {
 			PREV = { has_tech = apc_tech_1 }
 		}
 		set_technology = { apc_tech_1 = 1 }
@@ -3756,37 +3884,93 @@ set_NCR_factions_technology_on_civil_war = {
 
 	if = {
 		limit = {
-			PREV = { has_tech = eighties_warbikes }
+			PREV = { has_tech = tires_vehicle_tech }
 		}
-		set_technology = { eighties_warbikes = 1 }
+		set_technology = { tires_vehicle_tech = 1 }
 	}
 
 	if = {
 		limit = {
-			PREV = { has_tech = legion_motor_chariots }
+			PREV = { has_tech = tires_vehicle_tech_1 }
 		}
-		set_technology = { legion_motor_chariots = 1 }
+		set_technology = { tires_vehicle_tech_1 = 1 }
 	}
 
 	if = {
 		limit = {
-			PREV = { has_tech = ranger_motorbikes }
+			PREV = { has_tech = tracks_vehicle_tech }
 		}
-		set_technology = { ranger_motorbikes = 1 }
+		set_technology = { tracks_vehicle_tech = 1 }
 	}
 
 	if = {
 		limit = {
-			PREV = { has_tech = testudo_apc }
+			PREV = { has_tech = tracks_vehicle_tech_1 }
 		}
-		set_technology = { testudo_apc = 1 }
+		set_technology = { tracks_vehicle_tech_1 = 1 }
 	}
 
 	if = {
 		limit = {
-			PREV = { has_tech = super_mutant_battlewagons }
+			PREV = { has_tech = plating_vehicle_tech }
 		}
-		set_technology = { super_mutant_battlewagons = 1 }
+		set_technology = { plating_vehicle_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = bumper_vehicle_tech }
+		}
+		set_technology = { bumper_vehicle_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = gasoline_vehicle_tech }
+		}
+		set_technology = { gasoline_vehicle_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = sealed_vehicle_tech }
+		}
+		set_technology = { sealed_vehicle_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = armoured_vehicle_tech }
+		}
+		set_technology = { armoured_vehicle_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = storage_vehicle_tech }
+		}
+		set_technology = { storage_vehicle_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = overclock_vehicle_tech }
+		}
+		set_technology = { overclock_vehicle_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = gunport_vehicle_tech }
+		}
+		set_technology = { gunport_vehicle_tech = 1 }
+	}
+
+	if = {
+		limit = {
+			PREV = { has_tech = high_tech_fuel_vehicle_tech }
+		}
+		set_technology = { high_tech_fuel_vehicle_tech = 1 }
 	}
 
 	if = {
@@ -3795,4 +3979,10 @@ set_NCR_factions_technology_on_civil_war = {
 		}
 		set_technology = { super_mutant_behemoth = 1 }
 	}
+}
+
+remove_generic_NCR_templates = {
+	delete_unit_template_and_units = { division_template = "NCR Troopers" }
+	delete_unit_template_and_units = { division_template = "NCR Rangers" }
+	delete_unit_template_and_units = { division_template = "NCR Heavy Trooper" }
 }
