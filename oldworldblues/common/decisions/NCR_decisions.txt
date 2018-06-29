@@ -320,3 +320,102 @@ NCR_heavytroops_focus_category = {
 		}
 	}
 }
+
+ncr_revolts = {
+	seek_peace = {
+		visible = {
+			has_variable = revolt_progress
+			tag = NCR
+		}
+		cost = 0
+		ai_will_do = { # AI will do it after 3 events have fired
+			factor = 0
+			modifier = {
+				add = 1000
+				check_variable = { var = revolt_progress value = 2 compare = greater_than_or_equals }
+			}
+		}
+		complete_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						tag = PHR
+						is_in_faction_with = PHR
+					}
+				}
+				white_peace = NCR
+			}
+			hidden_effect = { PHR = { country_event = { id = nf_ncr.40 days = 10 } } } # Dissolution of the Federation
+			if = {
+				limit = { check_variable = { revolt_progress = 1 } }
+				add_political_power = -50 # wuss
+			}
+			else_if = {
+				limit = { check_variable = { revolt_progress = 2 } }
+				add_timed_idea = { idea = ncr_revolts_development days = 60 }
+				every_country = {
+					limit = {
+						OR = {
+							tag = PHR
+							is_in_faction_with = PHR
+						}
+					}
+					add_timed_idea = { idea = ncr_revolts_payments days = 60 }
+				}
+				add_political_power = -20 # Slightly less of a wuss
+			}
+			else_if = {
+				limit = { check_variable = { revolt_progress = 2 } }
+				add_timed_idea = { idea = ncr_revolts_development days = 90 }
+				every_country = {
+					limit = {
+						OR = {
+							tag = PHR
+							is_in_faction_with = PHR
+						}
+					}
+					add_timed_idea = { idea = ncr_revolts_payments days = 90 }
+				}
+			}
+			else_if = {
+				limit = { check_variable = { revolt_progress = 3 } }
+				add_timed_idea = { idea = ncr_revolts_development days = 180 }
+				every_country = {
+					limit = {
+						OR = {
+							tag = PHR
+							is_in_faction_with = PHR
+						}
+					}
+					add_timed_idea = { idea = ncr_revolts_payments days = 180 }
+				}
+			}
+			else_if = {
+				limit = { check_variable = { revolt_progress = 4 } }
+				add_timed_idea = { idea = ncr_revolts_development days = 360 }
+				every_country = {
+					limit = {
+						OR = {
+							tag = PHR
+							is_in_faction_with = PHR
+						}
+					}
+					add_timed_idea = { idea = ncr_revolts_payments days = 360 }
+				}
+			}
+			else_if = {
+				limit = { check_variable = { revolt_progress = 5 } }
+				add_timed_idea = { idea = ncr_revolts_development days = 720 }
+				every_country = {
+					limit = {
+						OR = {
+							tag = PHR
+							is_in_faction_with = PHR
+						}
+					}
+					add_timed_idea = { idea = ncr_revolts_payments days = 720 }
+				}
+			}
+		}
+	}
+}
