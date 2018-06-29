@@ -1624,7 +1624,7 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = brk_nf_washbos_kill
+		id = brk_nf_bellingham_kill
 		icon = GFX_goal_legion_bos_war
 		cost = 8.6
 		x = 12
@@ -1632,6 +1632,25 @@ focus_tree = {
 
 		prerequisite = {
 			focus = brk_nf_pirate_coast
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = BEL
+			}
+		}
+	}
+	
+	focus = {
+		id = brk_nf_washbos_kill
+		icon = GFX_goal_legion_bos_war
+		cost = 8.6
+		x = 12
+		y = 19
+
+		prerequisite = {
+			focus = brk_nf_bellingham_kill
 		}
 
 		completion_reward = {
