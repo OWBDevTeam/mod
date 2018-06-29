@@ -266,6 +266,18 @@ entity = {
 	pdxmesh = "NCR_infantry_rifle_mesh"	
 	scale = 0.8
 }
+entity = { 
+	clone = "owb_infantry_7_entity"
+	name = "NCR_infantry_8_entity"
+	pdxmesh = "NCR_infantry_rifle_mesh"	
+	scale = 0.8
+}
+entity = { 
+	clone = "owb_infantry_7_entity"
+	name = "NCR_infantry_9_entity"
+	pdxmesh = "NCR_infantry_rifle_mesh"	
+	scale = 0.8
+}
 ###	NCR Motorized INFANTRY	###
 ###############################
 entity = { 
@@ -2390,7 +2402,7 @@ entity = {
 	name = "laser_rifle_entity"
 	pdxmesh = "laser_rile_mesh"
 	locator = { name = muzzle position = { 0 0 -2.5 } }
-	scale = 0.75
+	scale = 0.9
 	###inheret state from attached objects
 	get_state_from_parent = yes
 	default_state = "idle"
@@ -2398,13 +2410,13 @@ entity = {
 	state = { name = "move"	}
 	
 	state = { name = "attack"
-		event = { time = 0.5 node = "muzzle"  entity = "laser_muzzle_effect_entity" trigger_once = yes sound = { soundeffect = infantry_laser_rifle_attack } life = 1 } 
+		event = { time = 0.65 node = "muzzle"  entity = "laser_muzzle_effect_entity" trigger_once = yes sound = { soundeffect = infantry_laser_rifle_attack } life = 1 } 
 	}
 	state = { name = "defend"
-		event = { time = 0.5 node = "muzzle"  entity = "laser_muzzle_effect_entity" trigger_once = yes sound = { soundeffect = infantry_laser_rifle_attack } life = 1 } 
+		event = { time = 0.65 node = "muzzle"  entity = "laser_muzzle_effect_entity" trigger_once = yes sound = { soundeffect = infantry_laser_rifle_attack } life = 1 } 
 	}
 	state = { name = "support_attack"
-		event = { time = 0.5 node = "muzzle"  entity = "laser_muzzle_effect_entity" trigger_once = yes sound = { soundeffect = infantry_laser_rifle_attack } life = 1 } 
+		event = { time = 0.65 node = "muzzle"  entity = "laser_muzzle_effect_entity" trigger_once = yes sound = { soundeffect = infantry_laser_rifle_attack } life = 1 } 
 	}
 }
 #########################################################################################################
