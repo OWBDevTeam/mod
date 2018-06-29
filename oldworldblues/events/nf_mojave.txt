@@ -108,16 +108,16 @@ country_event = {
 	desc = nf_mojave.5.d
 	picture = GFX_event_generic_settlement_2
 
-	immediate = {
-	    news_event = { id = nf_mojave_news.0 }
-	}
 	is_triggered_only = yes
 
 	option = {
 		name = nf_mojave.5.a
-		add_equipment_to_stockpile = { type = improved_laser_weaponry amount = 300 producer = BOS }
+		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 300 producer = BOS }
 		NCR = {
 			country_event = { id = nf_mojave.6 days = 1 }
+		}
+		hidden_effect = {
+		   news_event = { id = nf_mojave_news.0 }
 		}
 	}
 }
@@ -133,6 +133,10 @@ country_event = {
 		name = nf_mojave.6.a
 		add_political_power = -50
 		reverse_add_opinion_modifier = { target = MOJ modifier = mojave_ncr_raids }
+		add_timed_idea = {
+			idea = mojave_settlements_raided_ncr
+			days = 50
+		}
 	}
 }
 country_event = {
@@ -323,20 +327,6 @@ country_event = {
 	option = {
 		name = nf_mojave.17.a
 
-		country_event = { id = nf_mojave.18 days = 2 }
-	}
-}
-country_event = {
-	id = nf_mojave.18
-	title = nf_mojave.18.t
-	desc = nf_mojave.18.d
-	picture = GFX_event_generic_settlement_2
-
-	is_triggered_only = yes
-
-	option = {
-		name = nf_mojave.18.a
-
 		add_tech_bonus = { bonus = 0.75 uses = 1 category = energy_weaponry_tech }
 	}
 }
@@ -413,17 +403,15 @@ country_event = {
 	picture = GFX_event_generic_settlement_2
 
 	is_triggered_only = yes
-	immediate = {
-		MOJ = {
-			set_state_owner = 417
-			set_state_controller = 417
-		}
-	}
 
 	option = {
 		name = nf_mojave.25.a
 
 		hidden_effect = {
+			MOJ = {
+				set_state_owner = 417
+				set_state_controller = 417
+			}
 			news_event = {
 				id = mojave_helios_one_news.0
 				hours = 10

@@ -761,22 +761,7 @@ focus_tree = {
 			KAM = {
 				set_country_flag = revolt_country_to_revolt@PREV
 			}
-				revolt_force_spawn_broken_coast = yes
-				revolt_setup_fire = yes
-			
-			IF = {
-				limit = {
-					KAM = { has_idea = volunteer_only }
-				}
-				KAM = {
-					swap_ideas = {
-						add_idea = limited_conscription
-						remove_idea = volunteer_only
-					}
-				}
-			}
 		}
-		
 	}
 	
 	focus = {
@@ -1605,24 +1590,6 @@ focus_tree = {
 				type = annex_everything
 				target = DRE
 			}
-			
-			DRE = {
-				set_country_flag = revolt_country_to_revolt@PREV
-			}
-			revolt_force_spawn_broken_coast = yes
-			revolt_setup_fire = yes
-
-			IF = {
-				limit = {
-					DRE = { has_idea = volunteer_only }
-				}
-				DRE = {
-					swap_ideas = {
-						add_idea = extensive_conscription
-						remove_idea = volunteer_only
-					}
-				}
-			}
 		}
 	}
 	
@@ -1636,9 +1603,21 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_lessons_of_war
 		}
-
+		available = {
+			OR = {
+				has_completed_focus = brk_nf_elites_pol_2
+				has_completed_focus = brk_nf_ruler_pol_2
+			}
+		}
 		completion_reward = {
-			set_cosmetic_tag = BRK_REFORMED
+			if = {
+				limit = { has_government = ruler }
+				set_cosmetic_tag = BRK_REFORMED_GRAV
+			}
+			else_if = {
+				limit = { has_government = elites }
+				set_cosmetic_tag = BRK_REFORMED_RAG
+			}
 			add_stability = 0.05
 			add_war_support = 0.05
 		}
