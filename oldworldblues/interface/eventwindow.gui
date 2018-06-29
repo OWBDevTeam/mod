@@ -112,55 +112,62 @@ guiTypes = {
 	# News event popup window
 	containerWindowType = {
 		name = "EventWindow_News"
-		position = { x = -282 y = -310 }
-		size = { width = 528 height = 595 }
+		position = { x = -308 y = -375 }
+		size = { width = 617 height = 735 }
 		moveable = yes
 		Orientation = CENTER
+
 		show_sound = world_news_effect
 		hide_sound = menu_close_window
 
 		background = {
 			name = "Background"
-			spriteType ="GFX_event_news_bg"
+			spriteType ="GFX_tiled_window_transparent"
 		}
 
 		containerWindowType = {
 			name = "top_Window"
 			position = { x = 0 y = 0 }
-			size = { width = 581 height = 121 }
+			size = { width = 617 height = 333 }
+			moveable = yes
 			Orientation = UPPER_LEFT
 
-			iconType =
-			{
+			background = {
+				name = "Background"
+				spriteType ="GFX_event_news_top_bg"
+			}
+
+			iconType = {
 				name ="event_picture"
 				spriteType = "GFX_news_event_001"
-				position = { x = 59 y = 91 }
-				Orientation = "UPPER_LEFT"
+				position = { x = -249 y = 86 }
+				Orientation = "CENTER_UP"
 				allwaystransparent = yes
 			}
 
 			iconType = {
 				name ="event_picture_overlay"
 				spriteType = "GFX_event_news_pic_overlay"
-				position = { x = 59 y = 91 }
-				Orientation = "UPPER_LEFT"
+				position = { x = -249 y = 86 }
+				Orientation = "CENTER_UP"
 				allwaystransparent = yes
 			}
 
 			instantTextBoxType = {
 				name = "Title"
-				position = { x = 30 y = 260 }
+				position = { x = -251 y = 289 }
 				font = "hoi4_typewriter22"
-				borderSize = {x = 0 y = 0}
+				borderSize = { x = 0 y = 0 }
 				text = "Title text here!"
-				maxWidth = 460
+				maxWidth = 500
 				maxHeight = 32
 				format = centre
+				Orientation = "CENTER_UP"
 			}
 
 			buttonType = {
 				name = "btn_minimize"
-				position = {x = 20 y = 20}
+				position = { x = 20 y = 20 }
 				spriteType = "GFX_event_button_minimize"
 				clicksound = click_default
 			}
@@ -168,35 +175,46 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "midsection"
-			position = { x = 0 y = 121 }
-			size = { width = 580 height = 385 }
+			position = { x = 0 y = 333 }
+			size = { width = 617 height = 100 }
+			moveable = yes
 			Orientation = UPPER_LEFT
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_event_news_mid_bg"
+			}
 
 			instantTextBoxType = {
 				name = "Description"
-				position = { x = 39 y = 170 }
+				position = { x = 59 y = 7 }
 				font = "hoi4_typewriter16"
 				borderSize = {x = 0 y = 0}
 				text = "Long text here!"
-				maxWidth = 460
-				maxHeight = 230
+				maxWidth = 500
+				maxHeight = 100
 				format = left
 			}
 		}
 
-
 		containerWindowType = {
 			name = "bottom_Window"
-			position = { x = 0 y = 223 }
-			size = { width = 581 height = 405 }
+			position = { x = 0 y = 433 }
+			size = { width = 617 height = 385 }
+			moveable = yes
 			Orientation = UPPER_LEFT
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_event_news_bot_bg"
+			}
 
 			gridBoxType = {
 				name = "options_grid"
-				position = { x = 130 y = -1 }
-				size = { width = 300 height = 30 }
-				slotsize = { width = 300 height = 47 }
-				max_slots_horizontal = 1
+				position = { x = 184 y = 29 }
+				size = { width = 252 height = 30 }
+				slotsize = { width = 252 height = 47 }
+				max_slots_horizontal = 2
 				format = "UPPER_LEFT"
 			}
 		}
