@@ -1636,7 +1636,12 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_lessons_of_war
 		}
-
+		available = {
+			OR = {
+				has_completed_focus = brk_nf_elites_pol_2
+				has_completed_focus = brk_nf_ruler_pol_2
+			}
+		}
 		completion_reward = {
 			set_cosmetic_tag = BRK_REFORMED
 			add_stability = 0.05
