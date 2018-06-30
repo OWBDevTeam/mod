@@ -1,8 +1,8 @@
 guiTypes = {
 	containerWindowType = {
 		name = "EventWindow"
-		position = { x = -365 y = -380 }
-		size = { width = 730 height = 690 }
+		position = { x = -312 y = -410 }
+		size = { width = 625 height = 627 }
 		moveable = yes
 		Orientation = CENTER
 
@@ -18,30 +18,29 @@ guiTypes = {
 		containerWindowType = {
 			name = "top_Window"
 			position = { x = 0 y = 0 }
-			size = { width = 730 height = 161 }
+			size = { width = 625 height = 141 }
 			moveable = yes
 			Orientation = UPPER_LEFT
 
-
 			background = {
 				name = "Background"
-				spriteType ="GFX_event_report_top_win"
+				spriteType ="GFX_event_report_top_bg"
 			}
 
 			instantTextBoxType = {
 				name = "Title"
-				position = { x = 115 y = 121 }
+				position = { x = 64 y = 75 }
 				font = "hoi4_typewriter22"
 				borderSize = {x = 0 y = 0}
 				text = "Title text here!"
-				maxWidth = 500
+				maxWidth = 394
 				maxHeight = 64
-				format = centre
+				format = left
 			}
 
 			buttonType = {
 				name = "btn_minimize"
-				position = {x = 45 y = 45}
+				position = {x = 22 y = 29}
 				spriteType = "GFX_event_button_minimize"
 				clicksound = click_default
 			}
@@ -49,24 +48,24 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "midsection"
-			position = { x = 0 y = 161 }
-			size = { width = 730 height = 100 }
+			position = { x = 0 y = 141 }
+			size = { width = 625 height = 100 }
 			moveable = yes
 			Orientation = UPPER_LEFT
 
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_event_report_tileable_midsection"
+				quadTextureSprite ="GFX_event_report_mid_bg"
 			}
 
 			instantTextBoxType = {
 				name = "Description"
-				position = { x = 0 y = 0 }
+				position = { x = 64 y = 0 }
 				font = "hoi4_typewriter16"
-				borderSize = {x = 115 y = 0}
+				borderSize = {x = 0 y = 0}
 				text = "Long text here!"
-				maxWidth = 730
-				maxHeight = 230
+				maxWidth = 500
+				maxHeight = 100
 				format = left
 			}
 		}
@@ -74,20 +73,28 @@ guiTypes = {
 		containerWindowType = {
 			name = "bottom_Window"
 			position = { x = 0 y = 261 }
-			size = { width = 730 height = 470 }
+			size = { width = 625 height = 386 }
 			moveable = yes
 			Orientation = UPPER_LEFT
 
 			background = {
 				name = "Background"
-				spriteType ="GFX_event_report_bottom_win" #GFX_event_report_bottom_win
+				spriteType ="GFX_event_report_bottom_bg"
 			}
 
 			iconType = {
 				name ="event_picture"
 				spriteType = "GFX_report_event_001"
-				position = { x = -250 y = 10 }
+				position = { x = -249 y = 0 }
 				Orientation = CENTER_UP
+				allwaystransparent = yes
+			}
+
+			iconType = {
+				name ="event_picture_overlay"
+				spriteType = "GFX_event_report_pic_overlay"
+				position = { x = -249 y = 0 }
+				Orientation = "CENTER_UP"
 				allwaystransparent = yes
 			}
 
@@ -101,7 +108,7 @@ guiTypes = {
 
 			gridBoxType = {
 				name = "options_grid"
-				position = { x = 114 y = 300 }
+				position = { x = 63 y = 214 }
 				size = { width = 252 height = 30 }
 				slotsize = { width = 252 height = 47 }
 				max_slots_horizontal = 2
