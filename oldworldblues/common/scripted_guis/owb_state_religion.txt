@@ -1,0 +1,46 @@
+scripted_gui = {
+	open_close_owb_state_religion_window = {
+		context_type = selected_state_context
+		
+		window_name = "open_close_owb_state_religion_window"
+		parent_window_token = selected_state_view
+		
+		visible = {
+			ROOT = {
+				is_ai = no
+			}
+		}
+		
+		effects = {
+			open_owb_state_religion_window_click = {
+				set_variable = { show_obw_state_religion = 1 }
+			}
+			close_owb_state_religion_window_click = {
+				set_variable = { show_obw_state_religion = 0 }
+			}
+		}
+		
+		triggers = {
+			open_owb_state_religion_window_visible = {
+				check_variable = { show_obw_state_religion < 1 }
+			}
+			close_owb_state_religion_window_visible = {
+				check_variable = { show_obw_state_religion > 0 }
+			}
+		}
+	}
+	
+	owb_state_religion_window = {
+		context_type = selected_state_context
+		
+		window_name = "owb_state_religion_window"
+		parent_window_token = selected_state_view
+		
+		visible = {
+			ROOT = {
+				is_ai = no
+			}
+			check_variable = { show_obw_state_religion > 0 }
+		}
+	}
+}
