@@ -421,7 +421,7 @@ country_event = {
 
 		add_ideas = legacyofnavarro1
 
-		add_opinion_modifier = { target = BOS modifier = brotherhoodassault  }
+		add_opinion_modifier = { target = BOS modifier = brotherhoodassault }
 		#hidden_effect = {
 		#	set_technology = { ncr_legacy_of_navarro_1 = 1 }
 		#}
@@ -434,7 +434,7 @@ country_event = {
 
 		add_ideas = legacyofnavarro2
 
-		add_opinion_modifier = { target = BOS modifier = equalassault  }
+		add_opinion_modifier = { target = BOS modifier = equalassault }
 	}
 
 	option = {
@@ -444,7 +444,7 @@ country_event = {
 
 		add_ideas = legacyofnavarro3
 
-		add_opinion_modifier = { target = BOS modifier = ncrassault  }
+		add_opinion_modifier = { target = BOS modifier = ncrassault }
 
 	}
 
@@ -1289,7 +1289,8 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					tag = NCR
+					is_ai = no
+					is_multiplayer = yes
 				}
 				sound_effect = good_karma
 			}
@@ -2098,7 +2099,8 @@ country_event = {
 			news_event = ncr_tribe_rebellion_news.2
 			if = {
 				limit = {
-					tag = NCR
+					is_ai = no
+					is_multiplayer = yes
 				}
 				sound_effect = bad_karma
 			}
@@ -3052,12 +3054,12 @@ country_event = {
 			}
 		}
 		annex_country = {
-    		target = WHD
-   			transfer_troops = yes
+			target = WHD
+			transfer_troops = yes
 		}
 		annex_country = {
-    		target = SCO
-   			transfer_troops = yes
+			target = SCO
+			transfer_troops = yes
 		}
 		every_owned_state = {
 			limit = {
