@@ -312,10 +312,17 @@ country_event = { # No opposition from the locals
 
 	is_triggered_only = yes
 
+	immediate = {
+		hidden_effect = {
+			scavenge_equip_start = yes
+			manpower = 50
+		}
+	}
+
 	option = { # Take the spoils
+		name = nf_event_brk.10.a
 		custom_effect_tooltip = scav_following_are_sent_equip
 		scavenge_equip_end = yes
-		scavenge_man_end = yes
 		custom_effect_tooltip = scav_following_are_loot
 		resolve_equip_loot = yes
 	}
@@ -330,7 +337,7 @@ country_event = { # They resist!
 	is_triggered_only = yes
 
 	option = { # Throw our weight behind it
-		name = nf_event_brk.11
+		name = nf_event_brk.11.a
 		custom_effect_tooltip = brk_activate_escalation_decision
 	}
 }
