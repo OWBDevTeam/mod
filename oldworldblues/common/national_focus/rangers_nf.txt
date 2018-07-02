@@ -17,7 +17,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_ranger.2 }
 		}
-
 	}
 	focus = {
 		id = des_prisons
@@ -31,7 +30,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_ranger.3 }
 		}
-
 	}
 	focus = {
 		id = des_mojave
@@ -45,7 +43,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_ranger.4 }
 		}
-
 	}
 	focus = {
 		id = des_jackals
@@ -78,7 +75,7 @@ focus_tree = {
 				type = annex_everything
 				target = JAC		
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -93,6 +90,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = JAC
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -101,7 +99,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = des_canis
@@ -124,7 +121,6 @@ focus_tree = {
 			custom_effect_tooltip = ranger_team_canis
 			hidden_effect = { load_oob = rangers_elite }
 		}
-
 	}
 	focus = {
 		id = des_kennel
@@ -142,17 +138,16 @@ focus_tree = {
 		y = 4
 		completion_reward = {
 			every_owned_state = {
-                limit = {
-                    is_core_of = JAC
-                }
-                add_building_construction = {
+				limit = {
+					is_core_of = JAC
+				}
+				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
-            }
+			}
 		}
-
 	}
 	focus = {
 		id = des_vipers
@@ -185,7 +180,7 @@ focus_tree = {
 				type = annex_everything
 				target = VIP
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -200,6 +195,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = VIP
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -208,7 +204,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = des_venom
@@ -229,17 +224,16 @@ focus_tree = {
 		y = 4
 		completion_reward = {
 			every_owned_state = {
-                limit = {
-                    is_core_of = VIP
-                }
-                add_building_construction = {
+				limit = {
+					is_core_of = VIP
+				}
+				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
-            }
+			}
 		}
-
 	}
 	focus = {
 		id = des_vipera
@@ -259,7 +253,6 @@ focus_tree = {
 			custom_effect_tooltip = ranger_team_vipera
 			hidden_effect = { load_oob = rangers_elite }
 		}
-
 	}
 	focus = {
 		id = des_vipercore
@@ -275,13 +268,12 @@ focus_tree = {
 		y = 5
 		completion_reward = {
 			every_state = {
-                limit = {
-                    is_core_of = VIP
-                }
-                add_core_of = DES
-            }
+				limit = {
+					is_core_of = VIP
+				}
+				add_core_of = DES
+			}
 		}
-
 	}
 	focus = {
 		id = des_conscription
@@ -295,7 +287,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = raiderconscripts
 		}
-
 	}
 	focus = {
 		id = des_outpostviper
@@ -325,7 +316,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = des_heel
@@ -341,13 +331,12 @@ focus_tree = {
 		y = 5
 		completion_reward = {
 			every_state = {
-                limit = {
-                    is_core_of = JAC
-                }
-                add_core_of = DES
-            }
+				limit = {
+					is_core_of = JAC
+				}
+				add_core_of = DES
+			}
 		}
-
 	}
 	focus = {
 		id = des_outpostjackal
@@ -377,7 +366,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = des_yerington
@@ -395,18 +383,16 @@ focus_tree = {
 			161 = {
 				set_state_name = "Yerington" 
 				add_resource = {
-                    type = water
-                    amount = 5
-                }
+					type = water
+					amount = 5
+				}
 				add_resource = {
 					type = fuel
 					amount = 5
 				}
 			}
 			add_manpower = 1500
-		
 		}
-
 	}
 	focus = {
 		id = des_general
@@ -429,7 +415,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_ranger.1 }
 		}
-
 	}
 	focus = {
 		id = des_thrasher
@@ -447,7 +432,6 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 120
 		}
-
 	}
 	focus = {
 		id = des_vargas
@@ -465,7 +449,6 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 120
 		}
-
 	}
 	focus = {
 		id = des_razor
@@ -483,7 +466,6 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 120
 		}
-
 	}
 	focus = {
 		id = des_tread
@@ -497,7 +479,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = rangercores
 		}
-
 	}
 	focus = {
 		id = des_caravans
@@ -578,7 +559,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = des_veterans
@@ -592,7 +572,6 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 30
 		}
-
 	}
 	focus = {
 		id = des_pact
@@ -636,7 +615,6 @@ focus_tree = {
 						}
 					}
 				}
-				
 				if = {
 					limit = {
 						VEG = {
@@ -658,10 +636,8 @@ focus_tree = {
 							value = 200
 						}
 					}
-				}
-				
-			}	
-			
+				}	
+			}
 			if = {
 				limit = {
 					NOT = { 
@@ -685,7 +661,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = rangerintervention
 		}
-
 	}
 	focus = {
 		id = des_echobase
@@ -700,7 +675,6 @@ focus_tree = {
 			controls_state = 210
 		}
 		completion_reward = {
-			
 			210 = {
 				add_building_construction = {
 					type = air_base
@@ -708,12 +682,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			hidden_effect = {
 				load_oob = rangers_planes
 			}
 		}
-
 	}
 	focus = {
 		id = des_funding
@@ -756,7 +728,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -801,7 +772,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = nevadarecruitment
 		}
-		
 	}
 	focus = {
 		id = des_outriders
@@ -818,7 +788,6 @@ focus_tree = {
 		completion_reward = {
 			set_technology = { apc_tech_1 = 1 }
 		}
-
 	}
 	focus = {
 		id = des_knights
@@ -835,7 +804,6 @@ focus_tree = {
 				set_technology = { ranger_knighttactics = 1 }
 			}
 		}
-
 	}
 	focus = {
 		id = des_database
@@ -867,7 +835,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = rangersworkbench
 		}
-
 	}
 	focus = {
 		id = des_drills
@@ -881,7 +848,6 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 40
 		}
-
 	}
 	focus = {
 		id = des_steel
@@ -896,16 +862,16 @@ focus_tree = {
 		x = 2
 		y = 11
 		completion_reward = {
-		   DES = {
-			   set_cosmetic_tag = DES_BOS
-			   BOS = { add_to_faction = DES }
-			   add_opinion_modifier = { target = BOS modifier = steelrangers }
-		   }   
-		   BOS = {
-		       add_opinion_modifier = { target = DES modifier = steelrangers }
-		   }
-	   }
-	}   
+			DES = {
+				set_cosmetic_tag = DES_BOS
+				BOS = { add_to_faction = DES }
+				add_opinion_modifier = { target = BOS modifier = steelrangers }
+			}
+			BOS = {
+				add_opinion_modifier = { target = DES modifier = steelrangers }
+			}
+		}
+	}
 	focus = {
 		id = des_bosfunding
 		icon = GFX_goal_generic_national_unity
@@ -916,9 +882,7 @@ focus_tree = {
 		x = 2
 		y = 12
 		completion_reward = {
-		
 			add_ideas = bosfunding_tt 
-			
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -949,7 +913,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -980,13 +943,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			custom_effect_tooltip = bosfunding_tt
 			hidden_effect = {
 				set_technology = { bosfunding = 1 }
 			}
 		}
-
 	}
 	focus = {
 		id = des_wastelandprotect
@@ -1005,7 +966,6 @@ focus_tree = {
 			add_ideas = wastelandprotect
 			army_experience = 30
 		}
-
 	}
 	focus = {
 		id = des_citadel
@@ -1021,7 +981,6 @@ focus_tree = {
 			controls_state = 210
 		}
 		completion_reward = {
-			
 			210 = {
 				add_building_construction = {
 					type = air_base
@@ -1029,12 +988,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			hidden_effect = {
 				load_oob = rangers_planes
 			}
 		}
-
 	}
 	focus = {
 		id = des_giant
@@ -1057,7 +1014,6 @@ focus_tree = {
 				set_technology = { ranger_slayinggiants = 1 }
 			}
 		}
-
 	}
 	focus = {
 		id = des_bear
@@ -1075,7 +1031,6 @@ focus_tree = {
 			custom_effect_tooltip = rangerswidth_tt
 			hidden_effect = {set_technology = { rangerswidth = 1 }}
 		}
-
 	}
 	focus = {
 		id = des_reorganize
@@ -1091,7 +1046,6 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 100
 		}
-
 	}
 	focus = {
 		id = des_trader
@@ -1147,7 +1101,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = rangersquartermaster
 		}
-
 	}
 	focus = {
 		id = des_mechanic
@@ -1161,7 +1114,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = rangersmechanic
 		}
-
 	}
 	focus = {
 		id = des_recruiter
@@ -1175,7 +1127,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = rangersrecruiter
 		}
-
 	}
 	focus = {
 		id = des_physician
@@ -1194,7 +1145,6 @@ focus_tree = {
 				category = chem_tech
 			}
 		}
-
 	}
 	focus = {
 		id = des_medic
@@ -1211,7 +1161,6 @@ focus_tree = {
 				set_technology = { rangersmedic = 1 }
 			}
 		}
-
 	}
 	focus = {
 		id = des_propaganda
@@ -1225,7 +1174,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = rangerspropaganda
 		}
-
 	}
 	focus = {
 		id = des_outreach
@@ -1239,7 +1187,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = rangersoutreach
 		}
-
 	}
 	focus = {
 		id = des_armouries
@@ -1283,7 +1230,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = des_depot
@@ -1297,7 +1243,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = rangerdepot
 		}
-
 	}
 	focus = {
 		id = des_attrition
@@ -1314,7 +1259,6 @@ focus_tree = {
 				set_technology = { rangersattrition = 1 }
 			}
 		}
-
 	}
 	focus = {
 		id = des_aviation
@@ -1328,7 +1272,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = rangersaviation
 		}
-
 	}
 	focus = {
 		id = des_tall
@@ -1342,7 +1285,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = standingtall
 		}
-
 	}
 	focus = {
 		id = des_boshonours
@@ -1384,7 +1326,6 @@ focus_tree = {
 			add_ideas = reorganizedrangers
 			add_political_power = 100
 		}
-
 	}
 	focus = {
 		id = des_legionprep
@@ -1457,7 +1398,6 @@ focus_tree = {
 				set_technology = { legionprep = 1 }
 			}
 		}
-
 	}
 	focus = {
 		id = des_mechanized
@@ -1489,7 +1429,6 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 40
 		}
-
 	}
 	focus = {
 		id = des_californians
@@ -1503,7 +1442,6 @@ focus_tree = {
 		completion_reward = {
 			add_manpower = 2500
 		}
-
 	}
 	focus = {
 		id = des_treaty
@@ -1521,7 +1459,6 @@ focus_tree = {
 			set_cosmetic_tag = DES_NCR
 			NCR = { add_to_faction = DES }
 		}
-
 	}
 	focus = {
 		id = des_ncrfunding
@@ -1533,9 +1470,7 @@ focus_tree = {
 		x = 18
 		y = 12
 		completion_reward = {
-		
 			add_ideas = ncrfunding 
-			
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -1566,7 +1501,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -1597,8 +1531,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-		}	
-
+		}
 	}
 	focus = {
 		id = des_coop
@@ -1612,7 +1545,6 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 30
 		}
-
 	}
 	focus = {
 		id = des_bunkers
@@ -1634,7 +1566,6 @@ focus_tree = {
 				category = artillery
 			}
 		}
-
 	}
 	focus = {
 		id = des_jericho
@@ -1670,7 +1601,6 @@ focus_tree = {
 				set_technology = { ranger_rangerslegionwar = 1 }
 			}
 		}
-
 	}
 	focus = {
 		id = des_arizona
@@ -1685,7 +1615,6 @@ focus_tree = {
 			add_state_core = 517
 			add_state_core = 146
 		}
-
 	}
 	focus = {
 		id = des_threat
@@ -1708,7 +1637,6 @@ focus_tree = {
 				set_technology = { ranger_rangersnewthreat = 1 }
 			}
 		}
-
 	}
 	focus = {
 		id = des_march
@@ -1722,7 +1650,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = rangermarch
 		}
-
 	}
 	focus = {
 		id = des_honours
@@ -1739,6 +1666,5 @@ focus_tree = {
 			army_experience = 40
 			add_ideas = ncrhonours
 		}
-
 	}
 }

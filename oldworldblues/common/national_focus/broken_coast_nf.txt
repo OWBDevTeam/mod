@@ -109,7 +109,7 @@ focus_tree = {
 		}
 		
 		available = { 
-				BRK = { has_completed_focus = brk_nf_tech_upgrade}
+			BRK = { has_completed_focus = brk_nf_tech_upgrade}
 		}
 		
 		completion_reward = {
@@ -160,8 +160,8 @@ focus_tree = {
 			swap_ideas = {
 				add_idea = brk_ruler_1
 				remove_idea = brk_ruler
-		   }
-		   add_popularity = {
+			}
+			add_popularity = {
 				ideology = ruler
 				popularity = 0.2
 			}
@@ -225,8 +225,8 @@ focus_tree = {
 			swap_ideas = {
 				add_idea = brk_ruler_2
 				remove_idea = brk_ruler_1
-		   }
-		   add_popularity = {
+			}
+			add_popularity = {
 				ideology = ruler
 				popularity = 0.3
 			}
@@ -247,16 +247,14 @@ focus_tree = {
 			focus = brk_nf_wife_of_strength
 		}
 		available = { 
-				BRK = { controls_state = 420 }
+			BRK = { controls_state = 420 }
 		}
-		
-		 
 		
 		completion_reward = {
 			swap_ideas = {
 				add_idea = brk_ruler_3_conquest
 				remove_idea = brk_ruler_2
-		   }
+			}
 		}
 	}
 	
@@ -278,7 +276,7 @@ focus_tree = {
 			swap_ideas = {
 				add_idea = brk_ruler_3_strength
 				remove_idea = brk_ruler_2
-		   }
+			}
 		}
 	}
 	
@@ -325,8 +323,8 @@ focus_tree = {
 			swap_ideas = {
 				add_idea = brk_elites_1
 				remove_idea = brk_elites
-		   }
-		   add_popularity = {
+			}
+			add_popularity = {
 				ideology = elites
 				popularity = 0.2
 			}
@@ -390,8 +388,8 @@ focus_tree = {
 			swap_ideas = {
 				add_idea = brk_elites_2
 				remove_idea = brk_elites_1
-		   }
-		   add_popularity = {
+			}
+			add_popularity = {
 				ideology = elites
 				popularity = 0.3
 			}
@@ -416,7 +414,7 @@ focus_tree = {
 			swap_ideas = {
 				add_idea = brk_elites_2_offense
 				remove_idea = brk_elites_2
-		   }
+			}
 		}
 	}
 	
@@ -438,7 +436,7 @@ focus_tree = {
 			swap_ideas = {
 				add_idea = brk_elites_2_defense
 				remove_idea = brk_elites_2
-		   }
+			}
 		}
 	}
 	
@@ -494,15 +492,15 @@ focus_tree = {
 		
 		ai_will_do = {
 			factor = 5
-				modifier = {
-					factor = 0
-					has_war = yes
-				}
-				modifier = {
-					factor = 0
-					WHI = { alliance_strength_ratio < 0.5}
-				}
+			modifier = {
+				factor = 0
+				has_war = yes
 			}
+			modifier = {
+				factor = 0
+				WHI = { alliance_strength_ratio < 0.5}
+			}
+		}
 		
 		completion_reward = {
 			country_event = { id = nf_event_brk.4 }
@@ -525,10 +523,10 @@ focus_tree = {
 		
 		ai_will_do = {
 			factor = 5
-				modifier = {
-					factor = 0
-					has_war = yes
-				}
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 		
 		completion_reward = {
@@ -612,18 +610,17 @@ focus_tree = {
 		
 		ai_will_do = {
 			factor = 5
-				modifier = {
-					factor = 0
-					has_war = yes
-				}
-				modifier = {
-					factor = 0
-					WHI = { alliance_strength_ratio > 0.5}
-				}
+			modifier = {
+				factor = 0
+				has_war = yes
 			}
+			modifier = {
+				factor = 0
+				WHI = { alliance_strength_ratio > 0.5}
+			}
+		}
 		
 		completion_reward = {
-		
 			WHI = {
 				add_opinion_modifier = {
 					target = WHI
@@ -631,9 +628,9 @@ focus_tree = {
 				}
 			}
 			add_opinion_modifier = {
-					target = WHI
-					modifier = brk_woo_whi
-				}
+				target = WHI
+				modifier = brk_woo_whi
+			}
 		}
 	}
 	
@@ -652,8 +649,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-		BRK = { give_guarantee = WHI }
-
+			BRK = { give_guarantee = WHI }
 		}
 	}
 	
@@ -692,10 +688,10 @@ focus_tree = {
 		
 		ai_will_do = {
 			factor = 5
-				modifier = {
-					factor = 0
-					has_war = yes
-				}
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 		
 		completion_reward = {
@@ -719,10 +715,10 @@ focus_tree = {
 		
 		ai_will_do = {
 			factor = 5
-				modifier = {
-					factor = 0
-					has_war = yes
-				}
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 		
 		completion_reward = {
@@ -746,10 +742,10 @@ focus_tree = {
 		
 		ai_will_do = {
 			factor = 5
-				modifier = {
-					factor = 0
-					has_war = yes
-				}
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 		
 		completion_reward = {
@@ -757,7 +753,6 @@ focus_tree = {
 				type = annex_everything
 				target = KAM
 			}
-			
 			KAM = {
 				set_country_flag = revolt_country_to_revolt@PREV
 			}
@@ -895,7 +890,7 @@ focus_tree = {
 			swap_ideas = {
 				add_idea = brk_slave_1
 				remove_idea = brk_slave
-		   }
+			}
 		}
 	}
 	
@@ -976,7 +971,7 @@ focus_tree = {
 			swap_ideas = {
 				add_idea = brk_slave_2
 				remove_idea = brk_slave_1
-		   }
+			}
 		}
 	}
 	
@@ -1042,7 +1037,7 @@ focus_tree = {
 			swap_ideas = {
 				add_idea = brk_slave_3
 				remove_idea = brk_slave_2
-		   }
+			}
 		}
 	}
 	
@@ -1142,7 +1137,7 @@ focus_tree = {
 			swap_ideas = {
 				add_idea = brk_spikes_1
 				remove_idea = brk_spikes
-		   }
+			}
 		}
 	}
 	
@@ -1161,7 +1156,7 @@ focus_tree = {
 			swap_ideas = {
 				add_idea = brk_plates_1
 				remove_idea = brk_plates
-		   }
+			}
 		}
 	}
 	
@@ -1508,7 +1503,7 @@ focus_tree = {
 			swap_ideas = {
 				add_idea = brk_manu_drive_1
 				remove_idea = brk_manu_drive
-		   }
+			}
 		}
 	}
 	
@@ -1527,7 +1522,7 @@ focus_tree = {
 			swap_ideas = {
 				add_idea = brk_manu_drive_2
 				remove_idea = brk_manu_drive_1
-		   }
+			}
 		}
 	}
 	
@@ -1544,10 +1539,10 @@ focus_tree = {
 		
 		ai_will_do = {
 			factor = 5
-				modifier = {
-					factor = 0
-					has_war = yes
-				}
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 		
 		completion_reward = {
@@ -1579,10 +1574,10 @@ focus_tree = {
 		
 		ai_will_do = {
 			factor = 5
-				modifier = {
-					factor = 0
-					has_war = yes
-				}
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 		
 		completion_reward = {

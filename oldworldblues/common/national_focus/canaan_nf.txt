@@ -17,7 +17,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_mormon.1 }
 		}
-
 	}
 	focus = {
 		id = lds_army
@@ -31,7 +30,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_mormon.2 }
 		}
-
 	}
 	focus = {
 		id = lds_jericho
@@ -45,7 +43,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_mormon.3 }
 		}
-
 	}
 	focus = {
 		id = lds_defender
@@ -59,7 +56,6 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 120
 		}
-
 	}
 	focus = {
 		id = lds_north
@@ -73,7 +69,6 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 60
 		}
-
 	}
 	focus = {
 		id = lds_swordandcross
@@ -92,7 +87,6 @@ focus_tree = {
 			add_opinion_modifier = { target = MUR modifier = swordandcross }
 			add_opinion_modifier = { target = IRE modifier = swordandcross }
 		}
-
 	}
 	focus = {
 		id = lds_lonetree
@@ -106,10 +100,10 @@ focus_tree = {
 		y = 6
 		completion_reward = {
 			create_wargoal = {
-					type = annex_everything
-					target = LON
-				}
-				            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+				type = annex_everything
+				target = LON
+			}
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -124,6 +118,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = LON
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -132,7 +127,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = lds_knee
@@ -155,8 +149,6 @@ focus_tree = {
 			add_state_core = 472
 			add_state_core = 403
 		}
-		
-
 	}
 	focus = {
 		id = lds_ires
@@ -170,10 +162,10 @@ focus_tree = {
 		y = 6
 		completion_reward = {
 			create_wargoal = {
-					type = annex_everything
-					target = IRE
-				}
-				            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+				type = annex_everything
+				target = IRE
+			}
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -188,6 +180,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = IRE
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -236,7 +229,6 @@ focus_tree = {
 			add_opinion_modifier = { target = LON modifier = missionaries }
 			add_opinion_modifier = { target = MUR modifier = missionaries }
 		}
-
 	}
 	focus = {
 		id = lds_apostle
@@ -264,7 +256,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = lonetreebonus
 		}
-
 	}
 	focus = {
 		id = lds_onegod
@@ -278,7 +269,6 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = ncn_convert_ire
 		}
-
 	}
 	focus = {
 		id = lds_luck
@@ -293,7 +283,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = luckoftheirish
 		}
-
 	}
 	focus = {
 		id = lds_south
@@ -310,7 +299,6 @@ focus_tree = {
 		completion_reward = {
 			add_manpower = -100
 		}
-
 	}
 	focus = {
 		id = lds_crazyhorn
@@ -324,7 +312,6 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = ncn_convert_crz
 		}
-
 	}
 	focus = {
 		id = lds_tarwalkers
@@ -338,7 +325,6 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = ncn_convert_tar
 		}
-
 	}
 	focus = {
 		id = lds_deadhorse
@@ -355,7 +341,6 @@ focus_tree = {
 		completion_reward = {
 			add_manpower = -100
 		}
-
 	}
 	focus = {
 		id = lds_walls
@@ -397,7 +382,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = lds_roads
@@ -503,7 +487,6 @@ focus_tree = {
 			}
 			
 		}
-
 	}
 	focus = {
 		id = lds_temperance
@@ -517,7 +500,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = temperance
 		}
-
 	}
 	focus = {
 		id = lds_chaste
@@ -531,7 +513,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = chastity
 		}
-
 	}
 	focus = {
 		id = lds_charity
@@ -545,7 +526,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = charity
 		}
-
 	}
 	focus = {
 		id = lds_kindness
@@ -559,7 +539,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = kindness
 		}
-
 	}
 	focus = {
 		id = lds_hands
@@ -573,7 +552,6 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 20
 		}
-
 	}
 	focus = {
 		id = lds_plenty
@@ -590,7 +568,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = plenty
 		}
-
 	}
 	focus = {
 		id = lds_blades
@@ -609,7 +586,6 @@ focus_tree = {
 				category = infantry_tech
 			}
 		}
-
 	}
 	focus = {
 		id = lds_verdict
@@ -709,9 +685,7 @@ focus_tree = {
 		x = 14
 		y = 6
 		completion_reward = {
-			
 			add_ideas = tarwalkersreward
-			
 			TAR = {
 				random_owned_controlled_state = {
 					limit = {
@@ -745,7 +719,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = lds_godfather
@@ -762,7 +735,6 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = ncn_convert_sor
 		}
-
 	}
 	focus = {
 		id = lds_deadfather
@@ -779,7 +751,6 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 120
 		}
-
 	}
 	focus = {
 		id = lds_sorrows
@@ -798,7 +769,6 @@ focus_tree = {
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = daniel
 		}
-
 	}
 	focus = {
 		id = lds_pilgrims
@@ -856,7 +826,6 @@ focus_tree = {
 			add_ideas = faithful
 			SOR = { add_opinion_modifier = { target = NCN modifier = onlythefaithful }}
 		}
-
 	}
 	focus = {
 		id = lds_deadhorse2
@@ -870,7 +839,6 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = ncn_convert_dea
 		}
-
 	}
 	focus = {
 		id = lds_deadhorsereward
@@ -884,12 +852,12 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = deadhorsereward_tt
 			DEA = {
-				hidden_effect = { set_technology = { warriorsofgod = 1 }
-				load_oob = deadhorsereward
+				hidden_effect = {
+					set_technology = { warriorsofgod = 1 }
+					load_oob = deadhorsereward
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = lds_return
@@ -910,7 +878,6 @@ focus_tree = {
 		x = 17
 		y = 7
 		completion_reward = {
-			
 			custom_effect_tooltip = prodigalson_tt
 			hidden_effect = { 
 				create_corps_commander = {
@@ -925,7 +892,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = lds_josh
@@ -951,7 +917,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = lds_merciful
@@ -977,7 +942,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = lds_arming
@@ -991,7 +955,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = righteous_arms
 		}
-
 	}
 	focus = {
 		id = lds_weapons
@@ -1010,7 +973,6 @@ focus_tree = {
 				category = infantry_tech
 			}
 		}
-
 	}
 	focus = {
 		id = lds_medicine
@@ -1030,7 +992,6 @@ focus_tree = {
 				category = chem_tech
 			}
 		}
-
 	}
 	focus = {
 		id = lds_armouries
@@ -1044,7 +1005,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = godsarmory
 		}
-
 	}
 	focus = {
 		id = lds_agarianidyll
@@ -1058,7 +1018,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = agarianidyll
 		}
-
 	}
 	focus = {
 		id = lds_legion
@@ -1077,9 +1036,7 @@ focus_tree = {
 		y = 10
 		completion_reward = {
 			add_ideas = mormonsready
-			
 		}
-
 	}
 	focus = {
 		id = lds_missionary
@@ -1099,7 +1056,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = missionaries_of_god 
 		}
-
 	}
 	focus = {
 		id = lds_godskingdom
@@ -1134,7 +1090,6 @@ focus_tree = {
 				target = CES
 			}
 		}
-
 	}
 	focus = {
 		id = lds_humility
@@ -1148,7 +1103,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = humility
 		}
-
 	}
 	focus = {
 		id = lds_patience
@@ -1162,7 +1116,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = patience
 		}
-
 	}
 	focus = {
 		id = lds_diligence
@@ -1179,7 +1132,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = diligence
 		}
-
 	}
 	focus = {
 		id = lds_theology
@@ -1193,7 +1145,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = theology
 		}
-
 	}
 	focus = {
 		id = lds_scripture
@@ -1207,7 +1158,6 @@ focus_tree = {
 		completion_reward = {
 			add_research_slot = 1
 		}
-
 	}
 	focus = {
 		id = lds_pilgrimage
@@ -1221,7 +1171,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = pilgrimage
 		}
-
 	}
 	focus = {
 		id = lds_bounty
@@ -1242,7 +1191,6 @@ focus_tree = {
 				state = 551
 			}
 		}
-
 	}
 	focus = {
 		id = lds_factions
@@ -1261,7 +1209,6 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = ncn_convert_hgh
 		}
-
 	}
 	focus = {
 		id = lds_knights
@@ -1276,7 +1223,6 @@ focus_tree = {
 			custom_effect_tooltip = knightsofgod_tt
 			hidden_effect = { set_technology = { knightsofgod = 1 }}
 		}
-
 	}
 	focus = {
 		id = lds_bastion
@@ -1289,37 +1235,36 @@ focus_tree = {
 		y = 11
 		completion_reward = {
 			random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
-						}
-						OR = {
-							is_in_home_area = yes
-							NOT = {
-								owner = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-										is_in_home_area = yes
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
 									}
+									is_in_home_area = yes
 								}
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 4
-					add_building_construction = {
-						type = arms_factory
-						level = 2
-						instant_build = yes
-					}
 				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
-
 	}
 	focus = {
 		id = lds_powerful
@@ -1336,7 +1281,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = powerful
 		}
-
 	}
 	focus = {
 		id = lds_guns
@@ -1355,7 +1299,6 @@ focus_tree = {
 				category = infantry_tech
 			}
 		}
-
 	}
 	focus = {
 		id = lds_seventy
@@ -1370,7 +1313,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = seventy
 		}
-
 	}
 	focus = {
 		id = lds_fervour
@@ -1384,7 +1326,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = religiousfervour
 		}
-
 	}
 	focus = {
 		id = lds_passion
@@ -1398,7 +1339,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = passionofthechrist
 		}
-
 	}
 	focus = {
 		id = lds_paradise
@@ -1412,6 +1352,5 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = paradisepromised
 		}
-
 	}
 }

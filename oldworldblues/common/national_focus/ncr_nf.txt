@@ -17,7 +17,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_ncr.1 } 
 		}
-
 	}
 	focus = {
 		id = ncr_baja
@@ -34,7 +33,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_ncr.2 } 
 		}
-
 	}
 	focus = {
 		id = ncr_emergency
@@ -52,7 +50,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_ncr.4 } 
 		}
-
 	}
 	focus = {
 		id = ncr_petersonswar
@@ -70,8 +67,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_ncr.6 } 
 		}
-		
-
 	}
 	focus = {
 		id = ncr_mayorvictory
@@ -94,7 +89,6 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 50
 		}
-
 	}
 	focus = {
 		id = ncr_boneyard
@@ -123,7 +117,6 @@ focus_tree = {
 				category = industry
 			}			
 		}
-
 	}
 	focus = {
 		id = ncr_barons
@@ -149,7 +142,6 @@ focus_tree = {
 				days = 180
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_bearsroar
@@ -163,7 +155,6 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 10
 		}
-
 	}
 	focus = {
 		id = ncr_rangerdeploy
@@ -194,7 +185,6 @@ focus_tree = {
 				load_oob = bajarangers
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_ultimatum
@@ -226,9 +216,12 @@ focus_tree = {
 		x = 0
 		y = 7
 		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = BVC
+			if = {
+				limit = { BVC = { exists = yes } }
+				create_wargoal = {
+					type = annex_everything
+					target = BVC
+				}
 			}
 			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
@@ -245,6 +238,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = BVC
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -292,7 +286,6 @@ focus_tree = {
 				popularity = 0.05
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_baronofbarons
@@ -306,7 +299,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = baronofbarons
 		}
-
 	}
 	focus = {
 		id = ncr_pokersiege
@@ -321,7 +313,6 @@ focus_tree = {
 			add_manpower = -500
 			remove_ideas = baronswarbuyout
 		}
-
 	}
 	focus = {
 		id = ncr_newnorth
@@ -336,7 +327,6 @@ focus_tree = {
 			135 = { is_owned_and_controlled_by = NCR }
 		}
 		completion_reward = {
-			
 			135 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
@@ -344,16 +334,13 @@ focus_tree = {
 					level = 2
 				}
 			}
-			
 			every_state = {
 				limit = {
 					is_baron_state = yes
 				}
 				add_core_of = NCR
-			}	
-			
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_sympathies
@@ -410,13 +397,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			add_timed_idea = {
 				days = 180
 				idea = rattletailrepaid
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_bajastate
@@ -437,12 +422,10 @@ focus_tree = {
 				}
 				add_core_of = BJS
 			}
-			
 			NCR = {
 				puppet = BJS
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_diplomatic
@@ -467,7 +450,6 @@ focus_tree = {
 				popularity = 0.05
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_steeldeal
@@ -496,7 +478,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_patrol
@@ -511,7 +492,6 @@ focus_tree = {
 			NCR = { give_military_access = BOS }
 			remove_ideas = baronswar
 		}
-
 	}
 	focus = {
 		id = ncr_allisgood
@@ -529,15 +509,12 @@ focus_tree = {
 				reverse_add_opinion_modifier = { target = MOJ modifier = allisgood }
 			}
 			add_opinion_modifier = { target = MOJ modifier = allisgood }
-			
 			every_state = {
 				limit = {
 					is_baron_state = yes
 				}
 				add_core_of = NCR
 			}
-	
-			
 		}
 	}
 	focus = {
@@ -569,7 +546,6 @@ focus_tree = {
 				popularity = 0.05
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_payments
@@ -594,13 +570,11 @@ focus_tree = {
 					level = 1
 				}
 			}
-			
 			add_timed_idea = {
 				days = 180
 				idea = banditopayments
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_integration
@@ -612,11 +586,8 @@ focus_tree = {
 		x = 4
 		y = 7
 		completion_reward = {
-			
 			country_event = { id = nf_ncr.8 }
-
 		}
-
 	}
 	focus = {
 		id = ncr_exodus
@@ -647,7 +618,6 @@ focus_tree = {
 				popularity = 0.05
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_milcentres
@@ -679,7 +649,6 @@ focus_tree = {
 				}
 			}	
 		}
-
 	}
 	focus = {
 		id = ncr_brahminbill
@@ -692,10 +661,8 @@ focus_tree = {
 		y = 11
 		completion_reward = {
 			remove_ideas = baronswar
-			
 			add_ideas = brahminbill
 		}
-
 	}
 	focus = {
 		id = ncr_rationing
@@ -707,9 +674,7 @@ focus_tree = {
 		x = 4
 		y = 12
 		completion_reward = {
-			
 			add_ideas = rationing
-			
 			every_state = {
 				limit = {
 					is_baron_state = yes
@@ -717,7 +682,6 @@ focus_tree = {
 				add_core_of = NCR
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_drummund
@@ -743,7 +707,6 @@ focus_tree = {
 				popularity = 0.05
 			}	
 		}
-
 	}
 	focus = {
 		id = ncr_oldworldmilitary
@@ -757,7 +720,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = oldworldmilitary
 		}
-
 	}
 	focus = {
 		id = ncr_drummundreturn
@@ -779,7 +741,6 @@ focus_tree = {
 				logistics_skill = 3
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_baron
@@ -805,7 +766,6 @@ focus_tree = {
 				popularity = 0.05
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_industrialcomplex
@@ -819,7 +779,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = militindustrial
 		}
-
 	}
 	focus = {
 		id = ncr_bigjim
@@ -841,7 +800,6 @@ focus_tree = {
 				logistics_skill = 1
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_rangergeneral
@@ -867,7 +825,6 @@ focus_tree = {
 				popularity = 0.05
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_standards
@@ -903,7 +860,6 @@ focus_tree = {
 				logistics_skill = 3
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_openlong15
@@ -921,9 +877,12 @@ focus_tree = {
 		x = 7
 		y = 8
 		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = SCR
+			if = {
+				limit = { SCR = { exists = yes } }
+				create_wargoal = {
+					type = annex_everything
+					target = SCR
+				}
 			}
 			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
@@ -940,6 +899,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = SCR
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -948,7 +908,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_long15
@@ -965,7 +924,6 @@ focus_tree = {
 						has_full_control_of_state = 77
 					}
 				}
-			
 				NCR = {
 					has_full_control_of_state = 77
 				}
@@ -985,9 +943,7 @@ focus_tree = {
 				idea = long15
 				days = 60
 			}
-			
 		}
-
 	}
 	focus = {
 		id = ncr_mojaveoutpost
@@ -1025,7 +981,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_eviction
@@ -1050,9 +1005,12 @@ focus_tree = {
 			RAP = { exists = no }
 		}
 		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = RAP
+			if = {
+				limit = { RAP = { exists = yes } }
+				create_wargoal = {
+					type = annex_everything
+					target = RAP
+				}
 			}
 			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
@@ -1069,6 +1027,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = RAP
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -1080,7 +1039,6 @@ focus_tree = {
 				country_event = { id = nf_ncr.9 }
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_riverbank
@@ -1114,7 +1072,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_aradeshport
@@ -1180,7 +1137,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_riverpatrols
@@ -1197,7 +1153,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = riverpatrols
 		}
-
 	}
 	focus = {
 		id = ncr_tandi
@@ -1211,7 +1166,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_ncr.10 }
 		}
-
 	}
 	focus = {
 		id = ncr_development
@@ -1225,7 +1179,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_ncr.11 }
 		}
-
 	}
 	focus = {
 		id = ncr_navarro
@@ -1239,7 +1192,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_ncr.12 }
 		}
-
 	}
 	focus = {
 		id = ncr_councilhill
@@ -1253,7 +1205,6 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 50
 		}
-
 	}
 	focus = {
 		id = ncr_capitalfund
@@ -1267,7 +1218,6 @@ focus_tree = {
 		completion_reward = {
 			253 = {
 				add_extra_state_shared_building_slots = 2
-				
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
@@ -1275,7 +1225,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_militacademy
@@ -1289,7 +1238,6 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 25
 		}
-
 	}
 	focus = {
 		id = ncr_oldworld
@@ -1308,7 +1256,6 @@ focus_tree = {
 				category = land_doctrine
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_armourexperiment
@@ -1353,7 +1300,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_rangerhq
@@ -1370,7 +1316,6 @@ focus_tree = {
 		completion_reward = {
 			253 = {
 				add_extra_state_shared_building_slots = 2
-				
 				add_building_construction = {
 					type = arms_factory
 					level = 2
@@ -1378,7 +1323,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_gammacore
@@ -1393,7 +1337,6 @@ focus_tree = {
 			custom_effect_tooltip = load_gammacore
 			hidden_effect = { load_oob = gammacore }
 		}
-
 	}
 	focus = {
 		id = ncr_reorgranger
@@ -1410,7 +1353,6 @@ focus_tree = {
 				set_technology = { ncr_reorgranger = 1 }
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_rangerprop
@@ -1424,7 +1366,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = ncrrangerprop
 		}
-
 	}
 	focus = {
 		id = ncr_pitch
@@ -1453,7 +1394,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_newleague
@@ -1468,9 +1408,7 @@ focus_tree = {
 			controls_state = 63
 		}
 		completion_reward = {
-			
 			add_stability = 0.025
-		
 			63 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1480,7 +1418,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_leagueradio
@@ -1495,9 +1432,7 @@ focus_tree = {
 			controls_state = 63
 		}
 		completion_reward = {
-			
 			add_ideas = leagueradio
-		
 			63 = {
 				add_building_construction = {
 					type = radar_station
@@ -1506,7 +1441,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_firstseason
@@ -1523,7 +1457,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_ncr.16 }
 		}
-
 	}
 	focus = {
 		id = ncr_calileague
@@ -1538,7 +1471,6 @@ focus_tree = {
 			add_stability = 0.03
 			add_war_support = 0.02
 		}
-
 	}
 	focus = {
 		id = ncr_sac
@@ -1562,7 +1494,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_80sgarage
@@ -1581,7 +1512,6 @@ focus_tree = {
 				category = vehicle_tech
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_baroninvest
@@ -1598,7 +1528,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_ncr.17 }
 		}
-
 	}
 	focus = {
 		id = ncr_longroadhome
@@ -1627,9 +1556,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-		
 		}
-
 	}
 	focus = {
 		id = ncr_oldcity
@@ -1646,7 +1573,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_ncr.18 }
 		}
-
 	}
 	focus = {
 		id = ncr_bearport
@@ -1674,9 +1600,7 @@ focus_tree = {
 				}
 				add_extra_state_shared_building_slots = 2
 			}
-		
 		}
-
 	}
 	focus = {
 		id = ncr_bearforceexpansion
@@ -1695,7 +1619,6 @@ focus_tree = {
 				category = air_equipment	
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_followers
@@ -1709,7 +1632,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = followerfunding
 		}
-
 	}
 	focus = {
 		id = ncr_boneyardsprawl
@@ -1733,7 +1655,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_newcity
@@ -1757,7 +1678,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_dayglowroads
@@ -1785,7 +1705,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_mint
@@ -1808,10 +1727,8 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			add_ideas = ncrmint
 		}
-
 	}
 	focus = {
 		id = ncr_scavfund
@@ -1837,8 +1754,6 @@ focus_tree = {
 				}
 			}
 		}
-		
-
 	}
 	focus = {
 		id = ncr_allisgoodboneyard
@@ -1858,7 +1773,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = theboneyard
 		}
-
 	}
 	focus = {
 		id = ncr_junktown
@@ -1887,7 +1801,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_gizmo
@@ -1901,7 +1814,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = gizmoslegacy
 		}
-
 	}
 	focus = {
 		id = ncr_doctormorbid
@@ -1924,7 +1836,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			add_tech_bonus = {
 				name = medical_bonus
 				bonus = 0.5
@@ -1932,7 +1843,6 @@ focus_tree = {
 				category = chem_tech	
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_newwall
@@ -1958,7 +1868,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_grinvestments
@@ -1982,7 +1891,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_grexpansion
@@ -1996,7 +1904,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = gunrunnerexpanded
 		}
-
 	}
 	focus = {
 		id = ncr_standardarms
@@ -2018,7 +1925,6 @@ focus_tree = {
 			add_ideas = ncrguns2
 			remove_ideas = ncrguns
 		}
-
 	}
 	focus = {
 		id = ncr_grdeals
@@ -2051,7 +1957,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = gunrunnerliscense
 		}
-
 	}
 	focus = {
 		id = ncr_drummund1
@@ -2072,7 +1977,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = drummandsarmy
 		}
-
 	}
 	focus = {
 		id = ncr_blast
@@ -2090,10 +1994,8 @@ focus_tree = {
 				uses = 1
 				category = artillery
 			}
-			
 			add_ideas = blastfromthepast
 		}
-
 	}
 	focus = {
 		id = ncr_mobile
@@ -2111,7 +2013,6 @@ focus_tree = {
 				uses = 1
 				category = motorized_equipment
 			}
-			
 			add_ideas = mobilearmy
 		}
 	}
@@ -2127,7 +2028,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = speartip
 		}
-
 	}
 	focus = {
 		id = ncr_jim
@@ -2148,7 +2048,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = bigjim
 		}
-
 	}
 	focus = {
 		id = ncr_drills
@@ -2165,7 +2064,6 @@ focus_tree = {
 				set_technology = { ncr_jim_drills = 1 }
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_march
@@ -2179,7 +2077,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = ncrmarch
 		}
-
 	}
 	focus = {
 		id = ncr_draft
@@ -2193,7 +2090,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = jimdraft
 		}
-
 	}
 	focus = {
 		id = ncr_rangergenmossman
@@ -2214,7 +2110,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = rangergenmossman
 		}
-
 	}
 	focus = {
 		id = ncr_rangercore
@@ -2231,7 +2126,6 @@ focus_tree = {
 				set_technology = { ncr_rangercore = 1 }
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_rangerlead
@@ -2248,7 +2142,6 @@ focus_tree = {
 				set_technology = { ncr_rangerlead = 1 }
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_rangercanopeners
@@ -2302,6 +2195,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = MRA
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -2359,7 +2253,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = hooverdam.1 }
 		}
-
 	}
 	focus = {
 		id = ncr_mojavehero
@@ -2378,7 +2271,6 @@ focus_tree = {
 				popularity = 0.1
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_protege
@@ -2406,7 +2298,6 @@ focus_tree = {
 			}
 			unlock_decision_tooltip = NCR_protege_focus
 		}
-
 	}
 	focus = {
 		id = ncr_damassault
@@ -2431,7 +2322,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = hooverdam.11 }
 		}
-
 	}
 	focus = {
 		id = ncr_longmarch
@@ -2474,8 +2364,6 @@ focus_tree = {
 				}
 			}
 		}
-
-
 	}
 	focus = {
 		id = ncr_triumph
@@ -2501,7 +2389,6 @@ focus_tree = {
 				add_core_of = NCR
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_mojaveforts
@@ -2560,7 +2447,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_powertopeople
@@ -2599,7 +2485,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_hardline
@@ -2643,7 +2528,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = urbandraft
 		}
-
 	}
 	focus = {
 		id = ncr_heavytroops
@@ -2661,7 +2545,6 @@ focus_tree = {
 			add_ideas = heavytroops
 			unlock_decision_tooltip = NCR_heavytroops_focus
 		}
-
 	}
 	focus = {
 		id = ncr_armament
@@ -2684,7 +2567,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_bazaar
@@ -2711,7 +2593,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_powerplant
@@ -2733,7 +2614,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_beacon
@@ -2758,7 +2638,6 @@ focus_tree = {
 				remove_idea = undisturbed_isolation
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_thepeople
@@ -2776,7 +2655,6 @@ focus_tree = {
 			add_political_power = 50
 			country_event = { id = nf_ncr.21 }
 		}
-
 	}
 	focus = {
 		id = ncr_thirteen
@@ -2848,7 +2726,6 @@ focus_tree = {
 			custom_effect_tooltip = load_seabear
 			hidden_effect = { load_oob = seabear }
 		}
-
 	}
 	focus = {
 		id = ncr_dayglowprospers
@@ -2870,7 +2747,6 @@ focus_tree = {
 				category = industry
 			}	
 		}
-
 	}
 	focus = {
 		id = ncr_scavunion
@@ -2884,7 +2760,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = scavunion
 		}
-
 	}
 	focus = {
 		id = ncr_migration
@@ -2898,7 +2773,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_ncr.22 }
 		}
-
 	}
 	focus = {
 		id = ncr_supermutants
@@ -2912,7 +2786,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_ncr.23 }
 		}
-
 	}
 	focus = {
 		id = ncr_flyingbears
@@ -2926,7 +2799,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = flyingbears
 		}
-
 	}
 	focus = {
 		id = ncr_hub
@@ -2955,7 +2827,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_crimsoncaravan
@@ -2969,7 +2840,6 @@ focus_tree = {
 		completion_reward = {
 			#Briar literally never said what this does why would you do this to me dude
 		}
-
 	}
 	focus = {
 		id = ncr_hubcrime
@@ -2986,7 +2856,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_ncr.24 }
 		}
-
 	}
 	focus = {
 		id = ncr_richroad
@@ -3042,7 +2911,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	focus = {
 		id = ncr_mechcore
@@ -3055,10 +2923,8 @@ focus_tree = {
 		y = 5
 		completion_reward = {
 			add_equipment_to_stockpile = { type = truck_equipment_1 amount = 20 producer = NCR }
-			
 			add_ideas = mechcore
 		}
-
 	}
 	focus = {
 		id = ncr_shock
@@ -3071,11 +2937,8 @@ focus_tree = {
 		y = 6
 		completion_reward = {
 			add_equipment_to_stockpile = { type = apc_equipment_1 amount = 20 producer = NCR }
-			
 			add_ideas = shockcomp
 		}
-
-
 	}
 	focus = {
 		id = ncr_rapid
@@ -3089,6 +2952,5 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = rapidadvance
 		}
-
 	}
 }
