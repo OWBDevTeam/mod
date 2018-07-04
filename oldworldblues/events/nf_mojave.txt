@@ -471,7 +471,47 @@ country_event = {
 			country_event = { id = nf_mojave.30 days = 1 }
 		}
 	}
+	option = {
+		name = nf_mojave.28.c
+		trigger = {
+			OR = {
+				has_relation_modifier = {
+					target = MOJ
+					modifier = mojave_ncr_trade
+				}
+				AND = {
+					has_military_access_to = MOJ
+					give_military_access_to = MOJ
+				}
+			}
+		}
+		MOJ = {
+			country_event = {
+				id = nf_mojave.31
+				days = 2
+			}
+		}
+	}
+	option = {
+		name = nf_mojave.28.dd
+		trigger = {
+			has_relation_modifier = {
+				target = MOJ
+				modifier = mojave_ncr_trade
+			}
+				
+			has_military_access_to = MOJ
+			give_military_access_to = MOJ
+		}
+		MOJ = {
+			country_event = {
+				id = nf_mojave.32
+				days = 2
+			}
+		}
+	}
 }
+	
 country_event = {
 	id = nf_mojave.29
 	title = nf_mojave.29.t
@@ -499,6 +539,63 @@ country_event = {
 
 	}
 }
+country_event = {
+	id = nf_mojave.31
+	title = nf_mojave.31.t 
+	desc = nf_mojave.31.d 
+	picture = GFX_event_NCR_caravan
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nf_mojave.31.a
+		
+		NCR = {
+			give_guarantee = MOJ
+		}
+		diplomatic_relation = { country = NCR relation = non_aggression_pact }
+	}
+}
+country_event = {
+	id = nf_mojave.32
+	title = nf_mojave.32.t
+	desc = nf_mojave.32.d
+	picture = GFX_event_NCR_caravan
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_mojave.32.a
+		NCR = {
+			add_to_faction = MOJ
+		}
+		hidden_effect = {
+			news_event = mojave_news.1
+		}
+	}
+	option = {
+		NCR = {
+			give_guarantee = MOJ
+		}
+		diplomatic_relation = { country = NCR relation = non_aggression_pact }
+	}
+}
+############
+#News Events
+############
+
+news_event = {
+	id = mojave_news.1
+	title = mojave_news.1.t
+	desc = mojave_news.1.d 
+	is_triggered_only = yes
+	fire_only_once = yes 
+	major = yes
+	option = {
+		name = mojave_news.1.a
+	}
+}
+	
 news_event = {
 	id = mojave_helios_one_news.0
 	title = mojave_helios_one_news.0.t
