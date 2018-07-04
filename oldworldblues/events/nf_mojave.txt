@@ -475,13 +475,12 @@ country_event = {
 		name = nf_mojave.28.c
 		trigger = {
 			OR = {
-				has_relation_modifier = {
-					target = MOJ
+				has_opinion_modifier = {
 					modifier = mojave_ncr_trade
 				}
-				AND = {
+				NCR = {
 					has_military_access_to = MOJ
-					give_military_access_to = MOJ
+					gives_military_access_to = MOJ
 				}
 			}
 		}
@@ -495,13 +494,13 @@ country_event = {
 	option = {
 		name = nf_mojave.28.dd
 		trigger = {
-			has_relation_modifier = {
-				target = MOJ
+			has_opinion_modifier = {
 				modifier = mojave_ncr_trade
 			}
-				
-			has_military_access_to = MOJ
-			give_military_access_to = MOJ
+			NCR = {	
+				has_military_access_to = MOJ
+				gives_military_access_to = MOJ
+			}
 		}
 		MOJ = {
 			country_event = {
