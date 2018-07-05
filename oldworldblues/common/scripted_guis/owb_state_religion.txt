@@ -13,19 +13,19 @@ scripted_gui = {
 		
 		effects = {
 			open_owb_state_religion_window_click = {
-				set_variable = { show_obw_state_religion = 1 }
+				set_variable = { show_obw_state_religion_@ROOT = 1 }
 			}
 			close_owb_state_religion_window_click = {
-				set_variable = { show_obw_state_religion = 0 }
+				set_variable = { show_obw_state_religion_@ROOT = 0 }
 			}
 		}
 		
 		triggers = {
 			open_owb_state_religion_window_visible = {
-				check_variable = { show_obw_state_religion < 1 }
+				check_variable = { show_obw_state_religion_@ROOT < 1 }
 			}
 			close_owb_state_religion_window_visible = {
-				check_variable = { show_obw_state_religion > 0 }
+				check_variable = { show_obw_state_religion_@ROOT > 0 }
 			}
 		}
 	}
@@ -40,7 +40,7 @@ scripted_gui = {
 			ROOT = {
 				is_ai = no
 			}
-			check_variable = { show_obw_state_religion > 0 }
+			check_variable = { show_obw_state_religion_@ROOT > 0 }
 		}
 	}
 }
