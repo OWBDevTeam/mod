@@ -1,5 +1,6 @@
 ﻿add_namespace = nf_mojave
 add_namespace = mojave_helios_one_news
+add_namespace = mojave_news
 
 country_event = {
 	id = nf_mojave.1
@@ -475,9 +476,7 @@ country_event = {
 		name = nf_mojave.28.c
 		trigger = {
 			OR = {
-				has_opinion_modifier = {
-					modifier = mojave_ncr_trade
-				}
+				has_opinion_modifier = mojave_ncr_trade
 				NCR = {
 					has_military_access_to = MOJ
 					gives_military_access_to = MOJ
@@ -494,9 +493,7 @@ country_event = {
 	option = {
 		name = nf_mojave.28.dd
 		trigger = {
-			has_opinion_modifier = {
-				modifier = mojave_ncr_trade
-			}
+			has_opinion_modifier = mojave_ncr_trade
 			NCR = {	
 				has_military_access_to = MOJ
 				gives_military_access_to = MOJ

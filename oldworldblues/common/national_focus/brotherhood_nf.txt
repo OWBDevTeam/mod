@@ -476,9 +476,10 @@ focus_tree = {
 		icon = GFX_goal_establish_the_shi_chapter
 		cost = 8.6
 		available = {
-		NOT = { 
-		has_idea = shiclosethedoors
-		}
+			NOT = {
+				has_idea = shiclosethedoors
+			}
+			SHI = { exists = yes }
 		}
 		prerequisite = {
 			focus = bos_expand
@@ -2162,7 +2163,10 @@ focus_tree = {
 		x = 16
 		y = 14
 		completion_reward = {
-			load_oob = shimilitary
+			custom_effect_tooltip = bos_shiseize_tt
+			hidden_effect = {
+				load_oob = shimilitary
+			}
 		}
 	}
 	focus = {
