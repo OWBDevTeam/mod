@@ -442,10 +442,26 @@ war_measures = {
 		days_re_enable = 200
 
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] encourage_weapon_production (decision) complete entered"
+			}
 			add_offsite_building = { type = arms_factory level = 2 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] encourage_weapon_production (decision) complete exited"
+			}
 		}
 		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] encourage_weapon_production (decision) remove entered"
+			}
 			add_offsite_building = { type = arms_factory level = -2 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] encourage_weapon_production (decision) remove exited"
+			}
 		}
 
 		modifier = {

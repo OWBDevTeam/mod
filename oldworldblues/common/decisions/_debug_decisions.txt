@@ -1,6 +1,27 @@
 debug_decisions = {
-	turn_off = {
-		complete_effect = { clr_country_flag = debug }
+	turn_off_debug_mode = {
+		complete_effect = {
+			clr_global_flag = debug
+			clr_global_flag = debug_logs
+		}
+	}
+
+	enable_debug_logging = {
+		visible = {
+			NOT = { has_global_flag = debug }
+		}
+		complete_effect = {
+			set_global_flag = debug_logs
+		}
+	}
+
+	disable_debug_logging = {
+		visible = {
+			has_global_flag = debug
+		}
+		complete_effect = {
+			clr_global_flag = debug_logs
+		}
 	}
 
 	phr_revolt = {

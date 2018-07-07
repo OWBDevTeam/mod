@@ -29,6 +29,10 @@ NCR_helios_category = {
 		is_good = yes
 
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] NCR_repair_helios_fantastic (decision) complete entered"
+			}
 			set_country_flag = NCR_helios_fantastic
 			
 			417 = {
@@ -46,6 +50,10 @@ NCR_helios_category = {
 					type = electricity
 					amount = 15
 				}				  
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] NCR_repair_helios_fantastic (decision) complete exited"
 			}
 		}
 	}
@@ -79,6 +87,10 @@ NCR_helios_category = {
 		is_good = yes
 
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] NCR_repair_helios_followers (decision) complete entered"
+			}
 			set_country_flag = NCR_helios_followers
 			417 = {
 				add_extra_state_shared_building_slots = 5
@@ -146,6 +158,10 @@ NCR_helios_category = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] NCR_repair_helios_followers (decision) complete exited"
+			}
 		}
 	}
 	
@@ -180,6 +196,10 @@ NCR_helios_category = {
 		is_good = yes
 
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] NCR_repair_helios_brotherhood (decision) complete entered"
+			}
 			set_country_flag = NCR_helios_brotherhood
 			417 = {
 				add_extra_state_shared_building_slots = 5
@@ -208,6 +228,10 @@ NCR_helios_category = {
 						country_event = ncr_helios_event.22
 					}
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] NCR_repair_helios_brotherhood (decision) complete exited"
 			}
 		}
 	}
@@ -242,10 +266,18 @@ NCR_heavytroops_focus_category = {
 		is_good = yes
 
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] NCR_armourexperiment_focus (decision) complete entered"
+			}
 			custom_effect_tooltip = load_ncrheavytroops
 			hidden_effect = {
 				load_oob = ncrheavytroops
 				set_country_flag = ncr_spawned_armorexperiment
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] NCR_armourexperiment_focus (decision) complete exited"
 			}
 		}
 	}
@@ -277,10 +309,18 @@ NCR_heavytroops_focus_category = {
 		is_good = yes
 
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] NCR_protege_focus (decision) complete entered"
+			}
 			custom_effect_tooltip = load_ncrheavytroops
 			hidden_effect = {
 				load_oob = ncrheavytroops
 				set_country_flag = ncr_spawned_protege
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] NCR_protege_focus (decision) complete exited"
 			}
 		}
 	}
@@ -312,10 +352,18 @@ NCR_heavytroops_focus_category = {
 		is_good = yes
 
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] NCR_heavytroops_focus (decision) complete entered"
+			}
 			custom_effect_tooltip = load_ncrheavytroops
 			hidden_effect = {
 				load_oob = ncrheavytroops
 				set_country_flag = ncr_spawned_heavytroops
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] NCR_heavytroops_focus (decision) complete exited"
 			}
 		}
 	}
@@ -336,6 +384,10 @@ ncr_revolts = {
 			}
 		}
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] seek_peace (decision) complete entered"
+			}
 			every_country = {
 				limit = {
 					OR = {
@@ -415,6 +467,10 @@ ncr_revolts = {
 					}
 					add_timed_idea = { idea = ncr_revolts_payments days = 720 }
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] seek_peace (decision) complete exited"
 			}
 		}
 	}

@@ -22,9 +22,17 @@ vault_tec_calling_category = {
 			}
 		}
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_raise_flock (decision) complete entered"
+			}
 			custom_effect_tooltip = helpflock
 			hidden_effect = {
 				load_oob = vault_flock
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_raise_flock (decision) complete exited"
 			}
 		}
 	}
@@ -49,6 +57,10 @@ vault_tec_calling_category = {
 			}
 		}
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_polyphemus (decision) complete entered"
+			}
 			create_corps_commander = {
 				name = "Polyphemus"
 				id = 950
@@ -61,6 +73,10 @@ vault_tec_calling_category = {
 				defense_skill = 4
 				planning_skill = 2
 				logistics_skill = 2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_polyphemus (decision) complete exited"
 			}
 		}
 	}
@@ -85,7 +101,15 @@ vault_tec_calling_category = {
 			owns_state = 380
 		}
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_3 (decision) complete entered"
+			}
 			country_event = nf_vault_tec.1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_3 (decision) complete exited"
+			}
 		}
 		
 	}
@@ -106,8 +130,16 @@ vault_tec_calling_category = {
 			owns_state = 351
 		}
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_6 (decision) complete entered"
+			}
 			country_event = nf_vault_tec.2
 			add_manpower = -300
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_6 (decision) complete exited"
+			}
 		}
 		
 	}
@@ -128,7 +160,15 @@ vault_tec_calling_category = {
 			owns_state = 151
 		}
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_13 (decision) complete entered"
+			}
 			country_event = nf_vault_tec.3
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_13 (decision) complete exited"
+			}
 		}
 		
 	}
@@ -149,9 +189,17 @@ vault_tec_calling_category = {
 			owns_state = 253
 		}
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_15 (decision) complete entered"
+			}
 			country_event = nf_vault_tec.4
 			253 = {
 				set_state_name = "Vault 15"
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_15 (decision) complete exited"
 			}
 		}
 		
@@ -173,9 +221,17 @@ vault_tec_calling_category = {
 			owns_state = 313
 		}
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_19 (decision) complete entered"
+			}
 			country_event = nf_vault_tec.5
 			313 = {
 				set_state_name = "Vault 19"
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_19 (decision) complete exited"
 			}
 		}
 		
@@ -197,9 +253,17 @@ vault_tec_calling_category = {
 			owns_state = 211
 		}
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_21 (decision) complete entered"
+			}
 			country_event = nf_vault_tec.6
 			211 = {
 				set_state_name = "Vault 21"
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_21 (decision) complete exited"
 			}
 		}
 		
@@ -221,9 +285,17 @@ vault_tec_calling_category = {
 			owns_state = 344
 		}
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_22 (decision) complete entered"
+			}
 			country_event = nf_vault_tec.7
 			344 = {
 				set_state_name = "Vault 22"
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_22 (decision) complete exited"
 			}
 		}
 		
@@ -245,11 +317,19 @@ vault_tec_calling_category = {
 			owns_state = 154
 		}
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_34 (decision) complete entered"
+			}
 			country_event = nf_vault_tec.8
 			154 = {
 				set_state_name = "Vault 34"
 			}
 			set_country_flag = vault_34
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_34 (decision) complete exited"
+			}
 		}
 		
 	}
@@ -270,9 +350,17 @@ vault_tec_calling_category = {
 			owns_state = 551
 		}
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_70 (decision) complete entered"
+			}
 			country_event = nf_vault_tec.9
 			551 = {
 				set_state_name = "Vault 70"
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_70 (decision) complete exited"
 			}
 		}
 		
@@ -299,8 +387,16 @@ vault_brain_category = {
 			owns_state = 612
 		}
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_dip_cyclops (decision) complete entered"
+			}
 			hidden_effect = {
 				load_oob = vault_cyclops_brain
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_dip_cyclops (decision) complete exited"
 			}
 		}
 		
@@ -322,8 +418,16 @@ vault_brain_category = {
 			owns_state = 223
 		}
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_dip_pale (decision) complete entered"
+			}
 			hidden_effect = {
 				load_oob = vault_flock_brain
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_dip_pale (decision) complete exited"
 			}
 		}
 		
@@ -345,8 +449,16 @@ vault_brain_category = {
 			owns_state = 160
 		}
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_dip_yakuza (decision) complete entered"
+			}
 			hidden_effect = {
 				load_oob = vault_yakuza_brain
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vault_dip_yakuza (decision) complete exited"
 			}
 		}
 		
