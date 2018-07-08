@@ -7,26 +7,26 @@ focus_tree = {
 			tag = BRK
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_our_fathers
 		icon = GFX_goal_generic_building_focus
 		cost = 1.00
-		x = 12
-		y = 1
+		x = 10
+	 	y = 0
 
 		completion_reward = {
 			country_event = { id = nf_event_brk.1 }
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_our_goals
 		icon = GFX_goal_brk_great_blizzard
 		cost = 1.00
-		x = 12
-		y = 2
-		
+		x = 10
+	 	y = 1
+
 		prerequisite = {
 			focus = brk_nf_our_fathers
 		}
@@ -34,60 +34,60 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = nf_event_brk.2 }
 		}
-	}	
-	
+	}
+
 	focus = {
 		id = brk_nf_our_gods
 		icon = GFX_goal_generic_building_focus
 		cost = 1.00
-		x = 12
-		y = 3
+		x = 10
+	 	y = 2
 
 		prerequisite = {
 			focus = brk_nf_our_goals
 		}
-		
+
 		completion_reward = {
 			country_event = { id = nf_event_brk.3 }
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_grand_moot
 		icon = GFX_goal_generic_political_pressure
 		cost = 8.6
-		x = 12
-		y = 4
+		x = 10
+	 	y = 3
 
 		prerequisite = {
 			focus = brk_nf_our_gods
 		}
-		
+
 		completion_reward = {
 			country_event = { id = nf_event_brk.40 }
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_tech_upgrade
 		icon = GFX_goal_tfv_generic_tech_sharing
 		cost = 8.6
-		x = 9
-		y = 5
+		x = 7
+	 	y = 4
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
-		
+
 		ai_will_do = {
 			factor = 0
 		}
-		
-		available = { 
+
+		available = {
 			OR = {
 				BRK = { has_completed_focus = brk_nf_ruler_pol_side }
 				BRK = { has_completed_focus = brk_nf_elites_pol_side }
-			}	
+			}
 			BRK = { has_completed_focus = brk_nf_frozen_shores }
 			BRK = { has_completed_focus = brk_nf_blessed_steel }
 			BRK = { has_completed_focus = brk_nf_boon_of_njord }
@@ -96,35 +96,35 @@ focus_tree = {
 			add_ideas = brk_tech_adaptation
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_tech_upgrade_1
 		icon = GFX_goal_generic_scientific_exchange
 		cost = 17.2
-		x = 15
-		y = 5
+		x = 13
+	 	y = 4
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
-		
-		available = { 
+
+		available = {
 			BRK = { has_completed_focus = brk_nf_tech_upgrade}
 		}
-		
+
 		completion_reward = {
 			remove_ideas = brk_tech_adaptation
 			set_technology = { settled_civilization = 1 }
 			add_research_slot = 2
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_ruler_pol
 		icon = GFX_focus_rom_royal_dictatorship
 		cost = 8.6
-		x = 8
-		y = 8
+		x = 6
+	 	y = 7
 		available = {
 			BRK = { has_country_flag = the_moot_graven }
 		}
@@ -135,7 +135,7 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
-		
+
 		completion_reward = {
 			add_ideas = brk_ruler
 			add_popularity = {
@@ -149,13 +149,13 @@ focus_tree = {
 		id = brk_nf_ruler_pol_1
 		icon = GFX_focus_generic_home_defense
 		cost = 8.6
-		x = 8
-		y = 9
-		
+		x = 6
+	 	y = 8
+
 		prerequisite = {
 			focus = brk_nf_ruler_pol
 		}
-		
+
 		completion_reward = {
 			swap_ideas = {
 				add_idea = brk_ruler_1
@@ -167,18 +167,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_ruler_pol_side
 		icon = GFX_goal_brk_graven_palace
 		cost = 8.6
-		x = 6
-		y = 9
-		
+		x = 4
+	 	y = 8
+
 		prerequisite = {
 			focus = brk_nf_ruler_pol
 		}
-		
+
 		completion_reward = {
 			492 = {
 				add_building_construction = {
@@ -193,34 +193,34 @@ focus_tree = {
 			add_political_power = 100
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_ruler_pol_side_1
 		icon = GFX_goal_brk_gravens_ship
 		cost = 8.6
-		x = 6
-		y = 10
-		
+		x = 4
+	 	y = 9
+
 		prerequisite = {
 			focus = brk_nf_ruler_pol_side
 		}
-		
+
 		completion_reward = {
 			unlock_decision_tooltip = brk_decision_build_graven_ship
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_ruler_pol_2
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		cost = 8.6
-		x = 8
-		y = 10
-		
+		x = 6
+	 	y = 9
+
 		prerequisite = {
 			focus = brk_nf_ruler_pol_1
 		}
-		
+
 		completion_reward = {
 			swap_ideas = {
 				add_idea = brk_ruler_2
@@ -232,24 +232,24 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_wife_of_conquest
 		icon = GFX_goal_brk_trophy_wife
 		cost = 8.6
-		x = 7
-		y = 11
-		
+		x = 5
+	 	y = 10
+
 		prerequisite = {
 			focus = brk_nf_ruler_pol_2
 		}
-		mutually_exclusive = { 
+		mutually_exclusive = {
 			focus = brk_nf_wife_of_strength
 		}
-		available = { 
+		available = {
 			BRK = { controls_state = 420 }
 		}
-		
+
 		completion_reward = {
 			swap_ideas = {
 				add_idea = brk_ruler_3_conquest
@@ -257,21 +257,21 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_wife_of_strength
 		icon = GFX_goal_brk_wife_strength
 		cost = 8.6
-		x = 9
-		y = 11
-		
+		x = 7
+	 	y = 10
+
 		prerequisite = {
 			focus = brk_nf_ruler_pol_2
 		}
-		mutually_exclusive = { 
+		mutually_exclusive = {
 			focus = brk_nf_wife_of_conquest
 		}
-		
+
 		completion_reward = {
 			swap_ideas = {
 				add_idea = brk_ruler_3_strength
@@ -279,13 +279,13 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_elites_pol
 		icon = GFX_focus_rom_parties_end
 		cost = 8.6
-		x = 16
-		y = 8
+		x = 14
+	 	y = 7
 		available = {
 			BRK = { has_country_flag = the_moot_ragnar }
 		}
@@ -296,7 +296,7 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
-		
+
 		completion_reward = {
 			add_ideas = brk_elites
 			add_popularity = {
@@ -304,21 +304,21 @@ focus_tree = {
 				popularity = 0.1
 			}
 		}
-	}	
+	}
 
 	focus = {
 		id = brk_nf_elites_pol_1
 		icon = GFX_goal_brk_the_duel
 		cost = 8.6
-		x = 16
-		y = 9
+		x = 14
+	 	y = 8
 
 		prerequisite = {
 			focus = brk_nf_elites_pol
 		}
-		
+
 		completion_reward = {
-			kill_country_leader = yes 
+			kill_country_leader = yes
 			remove_unit_leader = 100
 			swap_ideas = {
 				add_idea = brk_elites_1
@@ -331,18 +331,18 @@ focus_tree = {
 			set_politics = { ruling_party = elites elections_allowed = no }
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_elites_pol_side
 		icon = GFX_goal_brk_port_royal
 		cost = 8.6
-		x = 18
-		y = 9
+		x = 16
+	 	y = 8
 
 		prerequisite = {
 			focus = brk_nf_elites_pol
 		}
-		
+
 		completion_reward = {
 			492 = {
 				add_building_construction = {
@@ -357,13 +357,13 @@ focus_tree = {
 			add_political_power = 100
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_elites_pol_side_1
 		icon = GFX_goal_brk_black_flag_fleets
 		cost = 8.6
-		x = 18
-		y = 10
+		x = 16
+	 	y = 9
 
 		prerequisite = {
 			focus = brk_nf_elites_pol_side
@@ -372,18 +372,18 @@ focus_tree = {
 			unlock_decision_tooltip = brk_decision_build_the_fleet
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_elites_pol_2
 		icon = GFX_goal_anschluss
 		cost = 8.6
-		x = 16
-		y = 10
+		x = 14
+	 	y = 9
 
 		prerequisite = {
 			focus = brk_nf_elites_pol_1
 		}
-		
+
 		completion_reward = {
 			swap_ideas = {
 				add_idea = brk_elites_2
@@ -395,13 +395,13 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_warrior_priests
 		icon = GFX_goal_brk_council_of_warriors
 		cost = 8.6
-		x = 15
-		y = 11
+		x = 13
+	 	y = 10
 
 		prerequisite = {
 			focus = brk_nf_elites_pol_2
@@ -409,7 +409,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = brk_nf_home_priests
 		}
-		
+
 		completion_reward = {
 			swap_ideas = {
 				add_idea = brk_elites_2_offense
@@ -417,13 +417,13 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_home_priests
 		icon = GFX_goal_brk_council_of_defense
 		cost = 8.6
-		x = 17
-		y = 11
+		x = 15
+	 	y = 10
 
 		prerequisite = {
 			focus = brk_nf_elites_pol_2
@@ -431,7 +431,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = brk_nf_warrior_priests
 		}
-		
+
 		completion_reward = {
 			swap_ideas = {
 				add_idea = brk_elites_2_defense
@@ -439,46 +439,46 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_til_strid
 		icon = GFX_goal_brk_war
 		cost = 8.6
-		x = 12
-		y = 10
+		x = 10
+	 	y = 9
 
 		prerequisite = {
 			focus = brk_nf_elites_pol_1
 			focus = brk_nf_ruler_pol_1
 		}
-		
+
 		completion_reward = {
 			add_war_support = 0.1
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_frozen_shores
 		icon = GFX_goal_brk_frozen_cabal
 		cost = 8.6
-		x = 12
-		y = 11
+		x = 10
+	 	y = 10
 
 		prerequisite = {
 			focus = brk_nf_til_strid
 		}
-		
+
 		completion_reward = {
 			add_stability = 0.1
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_raid_whistler
 		icon = GFX_goal_generic_attack_allies
 		cost = 8.6
-		x = 12
-		y = 12
+		x = 10
+	 	y = 11
 
 		prerequisite = {
 			focus = brk_nf_frozen_shores
@@ -489,7 +489,7 @@ focus_tree = {
 		bypass = {
 			WHI = {  exists = no }
 		}
-		
+
 		ai_will_do = {
 			factor = 5
 			modifier = {
@@ -501,18 +501,18 @@ focus_tree = {
 				WHI = { alliance_strength_ratio < 0.5}
 			}
 		}
-		
+
 		completion_reward = {
 			country_event = { id = nf_event_brk.4 }
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_demand_whistler
 		icon = GFX_goal_generic_forceful_treaty
 		cost = 8.6
-		x = 12
-		y = 14
+		x = 10
+	 	y = 13
 
 		prerequisite = {
 			focus = brk_nf_raid_whistler
@@ -520,7 +520,7 @@ focus_tree = {
 		bypass = {
 			WHI = {  exists = no }
 		}
-		
+
 		ai_will_do = {
 			factor = 5
 			modifier = {
@@ -528,18 +528,18 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-		
+
 		completion_reward = {
 			country_event = { id = nf_event_brk.5 }
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_integrate_enemies
 		icon = GFX_focus_CZE_german_puppet
 		cost = 8.6
-		x = 12
-		y = 15
+		x = 10
+	 	y = 14
 
 		prerequisite = {
 			focus = brk_nf_demand_whistler
@@ -552,7 +552,7 @@ focus_tree = {
 			WHI = {  exists = no }
 			KAM = {  exists = no }
 		}
-		
+
 		completion_reward = {
 			every_state = {
 				limit = {
@@ -568,19 +568,19 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_lessons_of_war
 		icon = GFX_goal_brk_drums_of_war
 		cost = 8.6
-		x = 12
-		y = 16
+		x = 10
+	 	y = 15
 
 		prerequisite = {
 			focus = brk_nf_integrate_enemies
 		}
 
-		
+
 		completion_reward = {
 			add_tech_bonus = {
 				name = land_doc_bonus
@@ -590,13 +590,13 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_woo_whistler
 		icon = GFX_goal_generic_communcation_focus
 		cost = 8.6
-		x = 14
-		y = 12
+		x = 12
+	 	y = 11
 
 		prerequisite = {
 			focus = brk_nf_frozen_shores
@@ -607,7 +607,7 @@ focus_tree = {
 		bypass = {
 			WHI = {  exists = no }
 		}
-		
+
 		ai_will_do = {
 			factor = 5
 			modifier = {
@@ -619,7 +619,7 @@ focus_tree = {
 				WHI = { alliance_strength_ratio > 0.5}
 			}
 		}
-		
+
 		completion_reward = {
 			WHI = {
 				add_opinion_modifier = {
@@ -633,13 +633,13 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_protect_whistler
 		icon = GFX_goal_generic_recruitment_focus
 		cost = 8.6
-		x = 14
-		y = 13
+		x = 12
+	 	y = 12
 
 		prerequisite = {
 			focus = brk_nf_woo_whistler
@@ -647,18 +647,18 @@ focus_tree = {
 		bypass = {
 			WHI = {  exists = no }
 		}
-		
+
 		completion_reward = {
 			BRK = { give_guarantee = WHI }
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_aid_whistler
 		icon = GFX_goal_generic_improve_relations
 		cost = 8.6
-		x = 14
-		y = 14
+		x = 12
+	 	y = 13
 
 		prerequisite = {
 			focus = brk_nf_protect_whistler
@@ -666,18 +666,18 @@ focus_tree = {
 		bypass = {
 			WHI = {  exists = no }
 		}
-		
+
 		completion_reward = {
 			country_event = { id = nf_event_brk.6 }
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_raid_kamlo
 		icon = GFX_goal_generic_attack_allies
 		cost = 8.6
-		x = 10
-		y = 12
+		x = 8
+	 	y = 11
 
 		prerequisite = {
 			focus = brk_nf_frozen_shores
@@ -685,7 +685,7 @@ focus_tree = {
 		bypass = {
 			KAM = {  exists = no }
 		}
-		
+
 		ai_will_do = {
 			factor = 5
 			modifier = {
@@ -693,18 +693,18 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-		
+
 		completion_reward = {
 			country_event = { id = nf_event_brk.7}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_break_kamlo
 		icon = GFX_goal_brk_night_of_horros
 		cost = 8.6
-		x = 10
-		y = 13
+		x = 8
+	 	y = 12
 
 		prerequisite = {
 			focus = brk_nf_raid_kamlo
@@ -712,7 +712,7 @@ focus_tree = {
 		bypass = {
 			KAM = {  exists = no }
 		}
-		
+
 		ai_will_do = {
 			factor = 5
 			modifier = {
@@ -720,18 +720,18 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-		
+
 		completion_reward = {
 			country_event = { id = nf_event_brk.8 }
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_enslave_kamlo
 		icon = GFX_goal_brk_break_kamlo
 		cost = 8.6
-		x = 10
-		y = 14
+		x = 8
+	 	y = 13
 
 		prerequisite = {
 			focus = brk_nf_break_kamlo
@@ -739,7 +739,7 @@ focus_tree = {
 		bypass = {
 			KAM = {  exists = no }
 		}
-		
+
 		ai_will_do = {
 			factor = 5
 			modifier = {
@@ -747,7 +747,7 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-		
+
 		completion_reward = {
 			create_wargoal = {
 				type = annex_everything
@@ -758,18 +758,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_ignite_the_forges
 		icon = GFX_goal_legion_workshop
 		cost = 8.6
-		x = 3
-		y = 5
+		x = 1
+	 	y = 4
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
-		
+
 		completion_reward = {
 			492 = {
 				add_extra_state_shared_building_slots = 1
@@ -780,50 +780,50 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_salvage_parties
 		icon = GFX_goal_generic_recruitment_focus
 		cost = 8.6
-		x = 2
-		y = 6
+		x = 0
+	 	y = 5
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
-		
+
 		completion_reward = {
 			add_ideas = brk_salvage_parties
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_drive_the_cattle_home
 		icon = GFX_goal_legion_slaves
 		cost = 8.6
-		x = 4
-		y = 6
+		x = 2
+	 	y = 5
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
-		
+
 		completion_reward = {
 			add_ideas = brk_slave
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_expand_the_forges
 		icon = GFX_goal_generic_military_industry_focus
 		cost = 8.6
-		x = 3
-		y = 7
+		x = 1
+	 	y = 6
 
 		prerequisite = {
 			focus = brk_nf_ignite_the_forges
 		}
-		
+
 		completion_reward = {
 			148 = {
 				add_extra_state_shared_building_slots = 1
@@ -834,19 +834,19 @@ focus_tree = {
 			}
 		}
 	}
-	
-	
+
+
 	focus = {
 		id = brk_nf_water_purification
 		icon = GFX_goal_generic_food_focus
 		cost = 8.6
-		x = 2
-		y = 8
+		x = 0
+	 	y = 7
 
 		prerequisite = {
 			focus = brk_nf_salvage_parties
 		}
-		
+
 		completion_reward = {
 			492 = {
 			add_extra_state_shared_building_slots = 1
@@ -874,18 +874,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_slave_habitation
 		icon = GFX_focus_generic_self_management
 		cost = 8.6
-		x = 4
-		y = 8
+		x = 2
+	 	y = 7
 
 		prerequisite = {
 			focus = brk_nf_drive_the_cattle_home
 		}
-		
+
 		completion_reward = {
 			swap_ideas = {
 				add_idea = brk_slave_1
@@ -893,18 +893,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_scour_the_coast
 		icon = GFX_goal_generic_metal_focus
 		cost = 8.6
-		x = 3
-		y = 9
+		x = 1
+	 	y = 8
 
 		prerequisite = {
 			focus = brk_nf_expand_the_forges
 		}
-		
+
 		completion_reward = {
 			356 = {
 				add_resource = {
@@ -928,22 +928,22 @@ focus_tree = {
 				add_resource = {
 					type = metal
 					amount = 2
-				} 
+				}
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_dockyards_3
 		icon = GFX_goal_generic_harbours_focus
 		cost = 8.6
-		x = 2
-		y = 10
+		x = 0
+	 	y = 9
 
 		prerequisite = {
 			focus = brk_nf_water_purification
 		}
-		
+
 		completion_reward = {
 			561 = {
 				add_extra_state_shared_building_slots = 1
@@ -955,18 +955,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_slave_selection
 		icon = GFX_goal_brk_elite_slaves
 		cost = 8.6
-		x = 4
-		y = 10
+		x = 2
+	 	y = 9
 
 		prerequisite = {
 			focus = brk_nf_slave_habitation
 		}
-		
+
 		completion_reward = {
 			swap_ideas = {
 				add_idea = brk_slave_2
@@ -974,18 +974,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_blessed_steel
 		icon = GFX_goal_generic_regular_firearms_focus
 		cost = 8.6
-		x = 3
-		y = 11
+		x = 1
+	 	y = 10
 
 		prerequisite = {
 			focus = brk_nf_scour_the_coast
 		}
-		
+
 		completion_reward = {
 			561 = {
 				add_extra_state_shared_building_slots = 2
@@ -996,18 +996,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_dig_deep
 		icon = GFX_goal_generic_construction2
 		cost = 8.6
-		x = 2
-		y = 12
+		x = 0
+	 	y = 11
 
 		prerequisite = {
 			focus = brk_nf_dockyards_3
 		}
-		
+
 		completion_reward = {
 			24 = {
 				add_resource = {
@@ -1021,18 +1021,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_slave_shedules
 		icon = GFX_goal_brk_slave_rights
 		cost = 8.6
-		x = 4
-		y = 12
+		x = 2
+	 	y = 11
 
 		prerequisite = {
 			focus = brk_nf_slave_selection
 		}
-		
+
 		completion_reward = {
 			swap_ideas = {
 				add_idea = brk_slave_3
@@ -1040,18 +1040,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_smith
 		icon = GFX_goal_legion_workshop
 		cost = 8.6
-		x = 12
-		y = 5
+		x = 10
+	 	y = 4
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
-		
+
 		completion_reward = {
 			add_tech_bonus = {
 				name = industrial_bonus
@@ -1061,13 +1061,13 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_add_spikes
 		icon = GFX_goal_generic_major_war
 		cost = 8.6
-		x = 13
-		y = 6
+		x = 11
+	 	y = 5
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
@@ -1075,18 +1075,18 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = brk_nf_add_plating
 		}
-		
+
 		completion_reward = {
 			add_ideas = brk_spikes
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_add_plating
 		icon = GFX_goal_rhineland
 		cost = 8.6
-		x = 11
-		y = 6
+		x = 9
+	 	y = 5
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
@@ -1094,24 +1094,24 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = brk_nf_add_spikes
 		}
-		
+
 		completion_reward = {
 			add_ideas = brk_plates
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_master_smith
 		icon = GFX_goal_generic_t45d_power_armour_focus
 		cost = 8.6
-		x = 12
-		y = 7
+		x = 10
+	 	y = 6
 
 		prerequisite = {
 			focus = brk_nf_add_plating
 			focus = brk_nf_add_spikes
 		}
-		
+
 		completion_reward = {
 			add_tech_bonus = {
 				name = power_armor_tech
@@ -1121,18 +1121,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_add_more_spikes
 		icon = GFX_goal_generic_military_deal
 		cost = 8.6
-		x = 14
-		y = 7
+		x = 12
+	 	y = 6
 
 		prerequisite = {
 			focus = brk_nf_add_spikes
 		}
-		
+
 		completion_reward = {
 			swap_ideas = {
 				add_idea = brk_spikes_1
@@ -1140,18 +1140,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_add_more_plating
 		icon = GFX_goal_generic_small_arms
 		cost = 8.6
-		x = 10
-		y = 7
+		x = 8
+	 	y = 6
 
 		prerequisite = {
 			focus = brk_nf_add_plating
 		}
-		
+
 		completion_reward = {
 			swap_ideas = {
 				add_idea = brk_plates_1
@@ -1159,18 +1159,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_dockyards
 		icon = GFX_goal_generic_harbours_focus
 		cost = 8.6
-		x = 21
-		y = 5
+		x = 19
+	 	y = 4
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
-		
+
 		completion_reward = {
 			262 = {
 				add_extra_state_shared_building_slots = 1
@@ -1182,18 +1182,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_longboats
 		icon = GFX_goal_brk_naval_raiders
 		cost = 8.6
-		x = 20
-		y = 6
+		x = 18
+	 	y = 5
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
-		
+
 		completion_reward = {
 			add_tech_bonus = {
 				name = naval_doc_bonus
@@ -1203,18 +1203,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_longboats_1
 		icon = GFX_goal_generic_build_navy
 		cost = 8.6
-		x = 20
-		y = 8
+		x = 18
+	 	y = 7
 
 		prerequisite = {
 			focus = brk_nf_longboats
 		}
-		
+
 		completion_reward = {
 			add_tech_bonus = {
 				name = naval_bonus
@@ -1224,18 +1224,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_longboats_2
 		icon = GFX_goal_brk_naval_raiders_2
 		cost = 8.6
-		x = 20
-		y = 10
+		x = 18
+	 	y = 9
 
 		prerequisite = {
 			focus = brk_nf_longboats_1
 		}
-		
+
 		completion_reward = {
 			add_tech_bonus = {
 				name = naval_doc_bonus
@@ -1245,18 +1245,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_longboats_3
 		icon = GFX_goal_brk_masters_of_the_waves
 		cost = 8.6
-		x = 20
-		y = 12
+		x = 18
+	 	y = 11
 
 		prerequisite = {
 			focus = brk_nf_longboats_2
 		}
-		
+
 		completion_reward = {
 			add_tech_bonus = {
 				name = naval_bonus
@@ -1266,20 +1266,20 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_workshops
 		icon = GFX_goal_generic_large_scale_normal_industry_focus
 		cost = 8.6
-		x = 22
-		y = 6
+		x = 20
+	 	y = 5
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
-		
+
 		completion_reward = {
-			492 = 	{			
+			492 = 	{
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1289,20 +1289,20 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_workshops_1
 		icon = GFX_goal_generic_slums_focus
 		cost = 8.6
-		x = 22
-		y = 8
+		x = 20
+	 	y = 7
 
 		prerequisite = {
 			focus = brk_nf_workshops
 		}
-		
+
 		completion_reward = {
-			148 = 	{			
+			148 = 	{
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1312,20 +1312,20 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_workshops_2
 		icon = GFX_goal_generic_supplies_focus
 		cost = 8.6
-		x = 22
-		y = 10
+		x = 20
+	 	y = 9
 
 		prerequisite = {
 			focus = brk_nf_workshops_1
 		}
-		
+
 		completion_reward = {
-			561 = 	{			
+			561 = 	{
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1335,20 +1335,20 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_workshops_3
 		icon = GFX_goal_generic_cities_focus
 		cost = 8.6
-		x = 22
-		y = 12
+		x = 20
+	 	y = 11
 
 		prerequisite = {
 			focus = brk_nf_workshops_2
 		}
-		
+
 		completion_reward = {
-			262 = 	{			
+			262 = 	{
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1358,18 +1358,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_dockyards_1
 		icon = GFX_goal_generic_harbours_focus
 		cost = 8.6
-		x = 21
-		y = 7
+		x = 19
+	 	y = 6
 
 		prerequisite = {
 			focus = brk_nf_dockyards
 		}
-		
+
 		completion_reward = {
 			492 = {
 				add_extra_state_shared_building_slots = 1
@@ -1381,18 +1381,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_dockyards_2
 		icon = GFX_goal_generic_harbours_focus
 		cost = 8.6
-		x = 21
-		y = 9
+		x = 19
+	 	y = 8
 
 		prerequisite = {
 			focus = brk_nf_dockyards_1
 		}
-		
+
 		completion_reward = {
 			148 = {
 				add_extra_state_shared_building_slots = 1
@@ -1404,101 +1404,101 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_boon_of_njord
 		icon = GFX_goal_generic_occupy_states_coastal
 		cost = 8.6
-		x = 21
-		y = 11
+		x = 19
+	 	y = 10
 
 		prerequisite = {
 			focus = brk_nf_dockyards_2
 		}
-		
+
 		completion_reward = {
 			add_ideas = brk_naval_range
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_recruitment_drive
 		icon = GFX_goal_generic_recruitment_focus
 		cost = 8.6
-		x = 6
-		y = 5
+		x = 4
+	 	y = 4
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
-		
+
 		completion_reward = {
 			add_political_power = 25
 			add_manpower = 300
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_recruitment_drive_1
 		icon = GFX_goal_brk_rite_of_passage
 		cost = 8.6
-		x = 7
-		y = 6
+		x = 5
+	 	y = 5
 
 		prerequisite = {
 			focus = brk_nf_recruitment_drive
 		}
-		
+
 		completion_reward = {
 			add_political_power = 25
 			add_manpower = 300
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_recruitment_drive_2
 		icon = GFX_goal_brk_great_beyond
 		cost = 8.6
-		x = 6
-		y = 7
+		x = 4
+	 	y = 6
 
 		prerequisite = {
 			focus = brk_nf_recruitment_drive_1
 		}
-		
+
 		completion_reward = {
 			add_political_power = 25
 			add_manpower = 300
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_manufacturing_drive
 		icon = GFX_goal_generic_occupy_states_coastal
 		cost = 8.6
-		x = 18
-		y = 5
+		x = 16
+	 	y = 4
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
-		
+
 		completion_reward = {
 			add_ideas = brk_manu_drive
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_manufacturing_drive_1
 		icon = GFX_goal_legion_workshop
 		cost = 8.6
-		x = 17
-		y = 6
+		x = 15
+	 	y = 5
 
 		prerequisite = {
 			focus = brk_nf_manufacturing_drive
 		}
-		
+
 		completion_reward = {
 			swap_ideas = {
 				add_idea = brk_manu_drive_1
@@ -1506,18 +1506,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_manufacturing_drive_2
 		icon = GFX_goal_generic_bunkers_focus
 		cost = 8.6
-		x = 18
-		y = 7
+		x = 16
+	 	y = 6
 
 		prerequisite = {
 			focus = brk_nf_manufacturing_drive_1
 		}
-		
+
 		completion_reward = {
 			swap_ideas = {
 				add_idea = brk_manu_drive_2
@@ -1525,18 +1525,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_new_victoria
 		icon = GFX_goal_brk_put_them_to_the_sword
 		cost = 8.6
-		x = 8
-		y = 16
+		x = 6
+	 	y = 15
 
 		prerequisite = {
 			focus = brk_nf_integrate_enemies
 		}
-		
+
 		ai_will_do = {
 			factor = 5
 			modifier = {
@@ -1544,7 +1544,7 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-		
+
 		completion_reward = {
 			custom_effect_tooltip = brk_vic_decision_chain_tt
 			IF = {
@@ -1560,18 +1560,18 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_dredgers
 		icon = GFX_goal_brk_enemy_in_the_north
 		cost = 8.6
-		x = 16
-		y = 16
+		x = 14
+	 	y = 15
 
 		prerequisite = {
 			focus = brk_nf_integrate_enemies
 		}
-		
+
 		ai_will_do = {
 			factor = 5
 			modifier = {
@@ -1579,7 +1579,7 @@ focus_tree = {
 				has_war = yes
 			}
 		}
-		
+
 		completion_reward = {
 			create_wargoal = {
 				type = annex_everything
@@ -1587,13 +1587,13 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_pirate_coast
 		icon = GFX_goal_brk_broken_no_longer
 		cost = 8.6
-		x = 12
-		y = 17
+		x = 10
+	 	y = 16
 
 		prerequisite = {
 			focus = brk_nf_lessons_of_war
@@ -1617,13 +1617,13 @@ focus_tree = {
 			add_war_support = 0.05
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_bellingham_kill
 		icon = GFX_goal_legion_bos_war
 		cost = 8.6
-		x = 12
-		y = 18
+		x = 10
+	 	y = 17
 
 		prerequisite = {
 			focus = brk_nf_pirate_coast
@@ -1636,13 +1636,13 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = brk_nf_washbos_kill
-		icon = GFX_goal_legion_bos_war
+		icon = GFX_goal_brk_seattles_exorcism
 		cost = 8.6
-		x = 12
-		y = 19
+		x = 10
+	 	y = 18
 
 		prerequisite = {
 			focus = brk_nf_bellingham_kill
