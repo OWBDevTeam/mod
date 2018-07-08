@@ -18,7 +18,15 @@ focus_tree = {
 		x = 8
 		y = 0
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_gods entered"
+			}
 			country_event = { id = nf_tribal.1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_gods exited"
+			}
 		}
 	}
 	focus = {
@@ -31,7 +39,15 @@ focus_tree = {
 		x = 8
 		y = 1
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_legend entered"
+			}
 			country_event = { id = nf_tribal.2 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_legend exited"
+			}
 		}
 	}
 	focus = {
@@ -44,7 +60,15 @@ focus_tree = {
 		x = 8
 		y = 2
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_era entered"
+			}
 			country_event = { id = nf_tribal.3 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_era exited"
+			}
 		}
 	}
 	focus = {
@@ -57,7 +81,15 @@ focus_tree = {
 		x = 1
 		y = 3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_defense entered"
+			}
 			add_ideas = tribal_defence
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_defense exited"
+			}
 		}
 	}
 	focus = {
@@ -70,8 +102,16 @@ focus_tree = {
 		x = 0
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_cult entered"
+			}
 			custom_effect_tooltip = gentribal_cult_tt
 			hidden_effect = { set_technology = { warriorcult = 1 } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_cult exited"
+			}
 		}
 	}
 	focus = {
@@ -84,7 +124,15 @@ focus_tree = {
 		x = 2
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_tradition entered"
+			}
 			add_ideas = tribal_tradition
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_tradition exited"
+			}
 		}
 	}
 	focus = {
@@ -97,8 +145,16 @@ focus_tree = {
 		x = 8
 		y = 3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_tribe entered"
+			}
 			add_political_power = 100
 			army_experience = 50
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_tribe exited"
+			}
 		}
 	}
 	focus = {
@@ -123,8 +179,16 @@ focus_tree = {
 		x = 5
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_war entered"
+			}
 			add_ideas = war_chief1
 			add_political_power = 60
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_war exited"
+			}
 		}
 	}
 	focus = {
@@ -149,8 +213,16 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_shaman entered"
+			}
 			add_ideas = high_shaman
 			add_political_power = 60
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_shaman exited"
+			}
 		}
 	}
 	focus = {
@@ -175,8 +247,16 @@ focus_tree = {
 		x = 9
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_elder entered"
+			}
 			add_ideas = elder1
 			add_political_power = 60
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_elder exited"
+			}
 		}
 	}
 	focus = {
@@ -189,7 +269,15 @@ focus_tree = {
 		x = 9
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_council entered"
+			}
 			add_ideas = elder2
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_council exited"
+			}
 		}
 	}
 	focus = {
@@ -202,8 +290,16 @@ focus_tree = {
 		x = 9
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_migrate entered"
+			}
 			add_ideas = elder3
-			set_politics = { ruling_party = people elections_allowed = no }	
+			set_politics = { ruling_party = people elections_allowed = no }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_migrate exited"
+			}
 		}
 	}
 	focus = {
@@ -228,8 +324,16 @@ focus_tree = {
 		x = 11
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_highchief entered"
+			}
 			add_ideas = highchief1
 			add_political_power = 60
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_highchief exited"
+			}
 		}
 	}
 	focus = {
@@ -242,8 +346,16 @@ focus_tree = {
 		x = 11
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_chief entered"
+			}
 			hidden_effect = { remove_ideas = highchief1 }
 			add_ideas = highchief2
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_chief exited"
+			}
 		}
 	}
 	focus = {
@@ -256,9 +368,17 @@ focus_tree = {
 		x = 11
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_duty entered"
+			}
 			hidden_effect = { remove_ideas = highchief2 }
 			add_ideas = highchief3
 			set_politics = { ruling_party = ruler elections_allowed = no }	
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_duty exited"
+			}
 		}
 	}
 	focus = {
@@ -271,6 +391,10 @@ focus_tree = {
 		x = 16
 		y = 3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_village entered"
+			}
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -331,6 +455,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_village exited"
+			}
 		}
 	}
 	focus = {
@@ -343,7 +471,15 @@ focus_tree = {
 		x = 15
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_elders entered"
+			}
 			add_ideas = elders
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_elders exited"
+			}
 		}
 	}
 	focus = {
@@ -356,7 +492,15 @@ focus_tree = {
 		x = 14
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_unity entered"
+			}
 			add_ideas = tribalunity
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_unity exited"
+			}
 		}
 	}
 	focus = {
@@ -369,6 +513,10 @@ focus_tree = {
 		x = 13
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_city entered"
+			}
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -399,6 +547,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_city exited"
+			}
 		}
 	}
 	focus = {
@@ -411,7 +563,15 @@ focus_tree = {
 		x = 12
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_factions entered"
+			}
 			set_rule = { can_create_factions = yes }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_factions exited"
+			}
 		}
 	}
 	focus = {
@@ -427,7 +587,15 @@ focus_tree = {
 		x = 11
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_deathpowder entered"
+			}
 			set_technology = { explosive_tech_3 = 1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_deathpowder exited"
+			}
 		}
 	}
 	focus = {
@@ -443,7 +611,15 @@ focus_tree = {
 		x = 13
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_trade entered"
+			}
 			set_technology = { improved_ballistic_weaponry = 1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_trade exited"
+			}
 		}
 	}
 	focus = {
@@ -456,7 +632,15 @@ focus_tree = {
 		x = 15
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_agreement entered"
+			}
 			add_ideas = outsideragreement
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_agreement exited"
+			}
 		}
 	}
 	focus = {
@@ -469,6 +653,10 @@ focus_tree = {
 		x = 15
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_tradepost entered"
+			}
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -529,6 +717,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_tradepost exited"
+			}
 		}
 	}
 	focus = {
@@ -540,9 +732,17 @@ focus_tree = {
 		}
 		x = 15
 		y = 9
-		completion_reward = {	
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_volunteers entered"
+			}
 			add_ideas = tribal_volunteers
 			set_rule = { can_send_volunteers = yes }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_volunteers exited"
+			}
 		}
 	}
 	focus = {
@@ -554,9 +754,17 @@ focus_tree = {
 		}
 		x = 15
 		y = 10
-		completion_reward = {	
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_mercs entered"
+			}
 			hidden_effect = { remove_ideas = tribal_volunteers }
 			add_ideas = tribal_mercenaries
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_mercs exited"
+			}
 		}
 	}
 	focus = {
@@ -569,8 +777,16 @@ focus_tree = {
 		x = 0
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_pathfinders entered"
+			}
 			custom_effect_tooltip = gentribal_pathfinders_tt
-			hidden_effect = { set_technology = { pathfinders = 1 }}
+			hidden_effect = { set_technology = { pathfinders = 1 } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_pathfinders exited"
+			}
 		}
 	}
 	focus = {
@@ -583,7 +799,15 @@ focus_tree = {
 		x = 0
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_youth entered"
+			}
 			add_ideas = tribalyouth
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_youth exited"
+			}
 		}
 	}
 	focus = {
@@ -596,8 +820,16 @@ focus_tree = {
 		x = 2
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_martialarts entered"
+			}
 			custom_effect_tooltip = gentribal_martialarts_tt
-			hidden_effect = { set_technology = { clanfightingstyles = 1 }}
+			hidden_effect = { set_technology = { clanfightingstyles = 1 } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_martialarts exited"
+			}
 		}
 	}
 	focus = {
@@ -610,7 +842,15 @@ focus_tree = {
 		x = 2
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_champions entered"
+			}
 			add_ideas = tribalchamps
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_champions exited"
+			}
 		}
 	}
 	focus = {
@@ -623,7 +863,15 @@ focus_tree = {
 		x = 1
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_healing entered"
+			}
 			add_ideas = healingpowder
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_healing exited"
+			}
 		}
 	}
 	focus = {
@@ -636,7 +884,15 @@ focus_tree = {
 		x = 1
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_secrets entered"
+			}
 			add_ideas = tribalsecrets
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_secrets exited"
+			}
 		}
 	}
 	focus = {
@@ -649,6 +905,10 @@ focus_tree = {
 		x = 3
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_muster entered"
+			}
 			add_ideas = tribalmuster
 			random_owned_controlled_state = {
 				limit = {
@@ -680,6 +940,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_muster exited"
+			}
 		}
 	}
 	focus = {
@@ -692,8 +956,16 @@ focus_tree = {
 		x = 3
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_nomads entered"
+			}
 			custom_effect_tooltip = gentribal_nomads_tt
-			hidden_effect = { set_technology = { nomadsoul = 1 }}
+			hidden_effect = { set_technology = { nomadsoul = 1 } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_nomads exited"
+			}
 		}
 	}
 	focus = {
@@ -706,7 +978,15 @@ focus_tree = {
 		x = 1
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_houndmasters entered"
+			}
 			add_ideas = tribalhoundmasters
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_houndmasters exited"
+			}
 		}
 	}
 	focus = {
@@ -719,8 +999,16 @@ focus_tree = {
 		x = 1
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_dogs entered"
+			}
 			custom_effect_tooltip = gentribal_dogs_tt
-			hidden_effect = { set_technology = { mansbestfriend = 1 }}
+			hidden_effect = { set_technology = { mansbestfriend = 1 } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_dogs exited"
+			}
 		}
 	}
 	focus = {
@@ -733,7 +1021,15 @@ focus_tree = {
 		x = 3
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_skirmish entered"
+			}
 			add_ideas = tribalskirmish
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_skirmish exited"
+			}
 		}
 	}
 	focus = {
@@ -746,8 +1042,16 @@ focus_tree = {
 		x = 5
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_noct entered"
+			}
 			custom_effect_tooltip = gentribal_noct_tt
-			hidden_effect = { set_technology = { noctwarriors = 1 }}
+			hidden_effect = { set_technology = { noctwarriors = 1 } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_noct exited"
+			}
 		}
 	}
 	focus = {
@@ -764,10 +1068,17 @@ focus_tree = {
 		x = 3
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_bodyguards entered"
+			}
 			set_technology = { platoon_training = 1 }
 			set_technology = { combat_armour = 1 }
-	    }
-
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_bodyguards exited"
+			}
+		}
 	}
 	focus = {
 		id = gentribal_rise
@@ -779,7 +1090,15 @@ focus_tree = {
 		x = 5
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_rise entered"
+			}
 			army_experience = 50
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_rise exited"
+			}
 		}
 	}
 	focus = {
@@ -799,7 +1118,15 @@ focus_tree = {
 		x = 7
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_holywar entered"
+			}
 			add_ideas = tribalfervor
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_holywar exited"
+			}
 		}
 	}
 	focus = {
@@ -812,9 +1139,17 @@ focus_tree = {
 		x = 7
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_holyorg entered"
+			}
 			custom_effect_tooltip = gentribal_holyorg_tt
-			hidden_effect = { set_technology = { tribalholyorg = 1 }}
+			hidden_effect = { set_technology = { tribalholyorg = 1 } }
 			set_politics = { ruling_party = intellectuals elections_allowed = no }	
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_holyorg exited"
+			}
 		}
 	}
 	focus = {
@@ -827,8 +1162,16 @@ focus_tree = {
 		x = 5
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_realm entered"
+			}
 			add_ideas = war_chief2
-			set_politics = { ruling_party = elites elections_allowed = no }	
+			set_politics = { ruling_party = elites elections_allowed = no }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_realm exited"
+			}
 		}
 	}
 	focus = {
@@ -841,8 +1184,16 @@ focus_tree = {
 		x = 13
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_outsiders entered"
+			}
 			custom_effect_tooltip = gentribal_outsiders_tt
-			hidden_effect = { set_technology = { outsiderways = 1 }}
+			hidden_effect = { set_technology = { outsiderways = 1 } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_outsiders exited"
+			}
 		}
 	}
 	focus = {
@@ -855,7 +1206,15 @@ focus_tree = {
 		x = 11
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_fragprod entered"
+			}
 			add_ideas = tribalfragprod
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_fragprod exited"
+			}
 		}
 	}
 	focus = {
@@ -868,7 +1227,15 @@ focus_tree = {
 		x = 17
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_spirits entered"
+			}
 			add_ideas = spirits
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_spirits exited"
+			}
 		}
 	}
 	focus = {
@@ -881,7 +1248,15 @@ focus_tree = {
 		x = 17
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_lands entered"
+			}
 			add_ideas = sacredlands
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_lands exited"
+			}
 		}
 	}
 	focus = {
@@ -894,8 +1269,16 @@ focus_tree = {
 		x = 17
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_gifts entered"
+			}
 			custom_effect_tooltip = gentribal_gifts_tt
-			hidden_effect = { set_technology = { sacredgifts = 1 }}
+			hidden_effect = { set_technology = { sacredgifts = 1 } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_gifts exited"
+			}
 		}
 	}
 	focus = {
@@ -908,8 +1291,16 @@ focus_tree = {
 		x = 17
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_warpaint entered"
+			}
 			custom_effect_tooltip = gentribal_warpaint_tt
-			hidden_effect = { set_technology = { tribalwarpaint = 1 }}
+			hidden_effect = { set_technology = { tribalwarpaint = 1 } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_warpaint exited"
+			}
 		}
 	}
 	focus = {
@@ -922,8 +1313,16 @@ focus_tree = {
 		x = 17
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_numbers entered"
+			}
 			custom_effect_tooltip = gentribal_numbers_tt
-			hidden_effect = {set_technology = { tribalnumbers = 1 }}
+			hidden_effect = {set_technology = { tribalnumbers = 1 } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_numbers exited"
+			}
 		}
 		
 	}
@@ -937,7 +1336,15 @@ focus_tree = {
 		x = 17
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_wasteland entered"
+			}
 			add_ideas = tribalwasteland
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_wasteland exited"
+			}
 		}
 	}
 	focus = {
@@ -950,8 +1357,16 @@ focus_tree = {
 		x = 16
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_immortals entered"
+			}
 			custom_effect_tooltip = gentribal_immortals_tt
-			hidden_effect = { set_technology = { tribalimmortals = yes }}
+			hidden_effect = { set_technology = { tribalimmortals = 1 } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_immortals exited"
+			}
 		}
 	}
 	focus = {
@@ -964,7 +1379,15 @@ focus_tree = {
 		x = 17
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_wardrums entered"
+			}
 			add_ideas = tribaldrums
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_wardrums exited"
+			}
 		}
 	}
 	focus = {
@@ -977,7 +1400,15 @@ focus_tree = {
 		x = 14
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_slipperyenemies entered"
+			}
 			add_ideas = slipperyenemies
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gentribal_slipperyenemies exited"
+			}
 		}
 	}
 }

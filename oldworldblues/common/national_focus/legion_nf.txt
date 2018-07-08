@@ -15,7 +15,15 @@ focus_tree = {
 		x = 18
 		y = 0
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_expedition_to_blackfoot entered"
+			}
 			country_event = { id = nf_legion.7 } # Expedition To Blackfoot
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_expedition_to_blackfoot exited"
+			}
 		}
 	}
 	focus = {
@@ -28,7 +36,15 @@ focus_tree = {
 		x = 18
 		y = 1
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_death_in_the_canyons entered"
+			}
 			country_event = { id = nf_legion.8 } # Death In The Canyons
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_death_in_the_canyons exited"
+			}
 		}
 	}
 	focus = {
@@ -41,7 +57,15 @@ focus_tree = {
 		x = 18
 		y = 2
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_malpais_legate entered"
+			}
 			country_event = { id = nf_legion.9 } # The Malpais Legate
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_malpais_legate exited"
+			}
 		}
 	}
 	focus = {
@@ -54,7 +78,15 @@ focus_tree = {
 		x = 18
 		y = 3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_caesar_son_of_mars entered"
+			}
 			country_event = { id = nf_legion.10 } # Caesar, Son Of Mars
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_caesar_son_of_mars exited"
+			}
 		}
 	}
 	focus = {
@@ -70,7 +102,15 @@ focus_tree = {
 		x = 9
 		y = 4
 		completion_reward = {
-			add_political_power = 120 
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_alea_iacta_est entered"
+			}
+			add_political_power = 120
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_alea_iacta_est exited"
+			}
 		}
 	}
 	#---------------------------
@@ -94,6 +134,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_hangdogs entered"
+			}
 			# Normal
 			if = {
 				limit = { country_exists = HAN }
@@ -107,7 +151,7 @@ focus_tree = {
 					}
 				}	
 			}
-						# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -136,6 +180,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_hangdogs exited"
+			}
 		}
 	}
 	focus = {
@@ -154,8 +202,16 @@ focus_tree = {
 		x = 2
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_shottol_god_of_dogs entered"
+			}
 			add_stability = -0.05
 			add_ideas = legion_nf_shottol_god_of_dogs
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_shottol_god_of_dogs exited"
+			}
 		}
 	}
 	focus = {
@@ -174,8 +230,16 @@ focus_tree = {
 		x = 4
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_legion_mongrels entered"
+			}
 			custom_effect_tooltip = legion_mongrels_tt
 			hidden_effect = { load_oob = legion_mongrels }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_legion_mongrels exited"
+			}
 		}
 	}
 	focus = {
@@ -196,6 +260,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_twin_mothers entered"
+			}
 			# Normal
 			if = {
 				limit = { country_exists = TTM }
@@ -209,7 +277,7 @@ focus_tree = {
 					}
 				}	
 			}
-						# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -238,6 +306,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_twin_mothers exited"
+			}
 		}
 	}
 	focus = {
@@ -256,10 +328,18 @@ focus_tree = {
 		x = 6
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_goddess_diana entered"
+			}
 			add_stability = -0.05
 			add_ideas = legion_nf_goddess_diana
 			hidden_effect = {
 				set_country_flag = caesarlives
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_goddess_diana exited"
 			}
 		}
 	}
@@ -279,9 +359,17 @@ focus_tree = {
 		x = 8
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_caesar_the_godslayer entered"
+			}
 			add_war_support = 0.025
 			add_stability = 0.025
 			add_ideas = legion_nf_caesar_the_godslayer
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_caesar_the_godslayer exited"
+			}
 		}
 	}
 	focus = {
@@ -302,6 +390,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_two_sun entered"
+			}
 			# Normal
 			if = {
 				limit = { country_exists = TWO }
@@ -345,6 +437,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_two_sun exited"
+			}
 		}
 	}
 	focus = {
@@ -363,12 +459,20 @@ focus_tree = {
 		x = 12
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_cult_of_nas entered"
+			}
 			add_stability = -0.05
 			add_war_support = -0.025
 			add_ideas = legion_nf_cult_of_nas
 			custom_effect_tooltip = cult_of_nas_tt
 			hidden_effect = {
 				load_oob = cult_of_nas
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_cult_of_nas exited"
 			}
 		}
 	}
@@ -388,10 +492,18 @@ focus_tree = {
 		x = 10
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_taming_the_city entered"
+			}
 			add_ideas = legion_nf_cult_of_nas_minor
 			custom_effect_tooltip = cult_of_nas_tt
 			hidden_effect = {
 				load_oob = cult_of_nas
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_taming_the_city exited"
 			}
 		}
 	}
@@ -413,6 +525,10 @@ focus_tree = {
 		x = 15
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_cochise_county_cowboys entered"
+			}
 			# Normal
 			if = {
 				limit = { country_exists = COW }
@@ -455,6 +571,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_cochise_county_cowboys exited"
+			}
 		}	
 	}
 	focus = {
@@ -473,9 +593,17 @@ focus_tree = {
 		x = 16
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_wyatt_the_demon entered"
+			}
 			add_stability = -0.05
 			add_war_support = -0.025
 			add_ideas = legion_nf_wyatt_the_demon
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_wyatt_the_demon exited"
+			}
 		}
 	}
 	focus = {
@@ -494,7 +622,15 @@ focus_tree = {
 		x = 14
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_legion_outlaws entered"
+			}
 			add_ideas = legion_nf_legion_outlaws
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_legion_outlaws exited"
+			}
 		}
 	}
 	focus = {
@@ -510,6 +646,10 @@ focus_tree = {
 		x = 2
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_temple_of_shottol entered"
+			}
 			if = {
 				limit = {
 					NOT = { any_owned_state = { is_core_of = HAN } }
@@ -536,6 +676,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_temple_of_shottol exited"
+			}
 		}
 	}
 	focus = {
@@ -548,6 +692,10 @@ focus_tree = {
 		x = 6
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_twin_temples entered"
+			}
 			if = {
 				limit = {
 					NOT = { any_owned_state = { is_core_of = TTM } }
@@ -565,6 +713,10 @@ focus_tree = {
 				}
 			}
 			add_ideas = legion_nf_the_twin_temples
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_twin_temples exited"
+			}
 		}
 	}
 	focus = {
@@ -577,6 +729,10 @@ focus_tree = {
 		x = 12
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_nas_scriptures entered"
+			}
 			if = {
 				limit = {
 					NOT = { any_owned_state = { is_core_of = TWO } }
@@ -594,6 +750,10 @@ focus_tree = {
 				}
 			}
 			add_ideas = legion_nf_nas_scriptures
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_nas_scriptures exited"
+			}
 		}
 	}
 	focus = {
@@ -606,9 +766,17 @@ focus_tree = {
 		x = 16
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_demon_servants entered"
+			}
 			custom_effect_tooltip = demon_servants_tt
 			hidden_effect = {
 				load_oob = demon_servants
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_demon_servants exited"
 			}
 		}
 	}
@@ -638,9 +806,17 @@ focus_tree = {
 		x = 9
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_conqueror_of_the_86 entered"
+			}
 			army_experience = 25
 			hidden_effect = {
 				set_country_flag = conquered_86
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_conqueror_of_the_86 exited"
 			}
 		}
 	}
@@ -669,7 +845,15 @@ focus_tree = {
 		x = 1
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_brotherhood_of_steel entered"
+			}
 			add_political_power = 60
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_brotherhood_of_steel exited"
+			}
 		}
 	}
 	focus = {
@@ -684,11 +868,19 @@ focus_tree = {
 		y = 9
 		completion_reward = {
 			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_smoke_out_the_rats entered"
+			}
+			if = {
 				limit = { country_exists = MOJ }
 				create_wargoal = {
 					type = annex_everything
 					target = MOJ
 				}	
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_smoke_out_the_rats exited"
 			}
 		}
 	}
@@ -703,12 +895,20 @@ focus_tree = {
 		y = 10
 		completion_reward = {
 			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_annex_hidden_valley entered"
+			}
+			if = {
 				limit = { country_exists = MOJ }
 				MOJ = {
 					every_owned_state = { 
 						add_core_of = ROOT
 					}
 				}	
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_annex_hidden_valley exited"
 			}
 		}
 	}
@@ -722,8 +922,16 @@ focus_tree = {
 		x = 0
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_broken_steel entered"
+			}
 			army_experience = 10
 			add_political_power = 40
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_broken_steel exited"
+			}
 		}
 	}
 	focus = {
@@ -736,12 +944,20 @@ focus_tree = {
 		x = 2
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_enslaving_the_scribes entered"
+			}
 			add_ideas = legion_nf_enslaved_scribes
 			add_tech_bonus = {
 				name = energy_weapon_bonus
 				bonus = 0.5
 				uses = 1
 				category = energy_weaponry_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_enslaving_the_scribes exited"
 			}
 		}
 	}
@@ -755,7 +971,15 @@ focus_tree = {
 		x = 0
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_last_knight entered"
+			}
 			add_ideas = legion_nf_gladiator
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_last_knight exited"
+			}
 		}
 	}
 	focus = {
@@ -768,7 +992,15 @@ focus_tree = {
 		x = 2
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_deconstructing_perfection entered"
+			}
 			add_ideas = legion_nf_deconstructing_perfection
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_deconstructing_perfection exited"
+			}
 		}
 	}
 	focus = {
@@ -782,9 +1014,17 @@ focus_tree = {
 		x = 1
 		y = 13
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_honour_the_steelbreakers entered"
+			}
 			custom_effect_tooltip = steelbreakers_tt
 			hidden_effect = {
 				load_oob = steelbreakers
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_honour_the_steelbreakers exited"
 			}
 		}
 	}
@@ -804,7 +1044,15 @@ focus_tree = {
 		x = 5
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_new_judea entered"
+			}
 			add_political_power = 60
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_new_judea exited"
+			}
 		}
 	}
 	
@@ -831,12 +1079,20 @@ focus_tree = {
 		y = 9
 		completion_reward = {
 			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_white_leg_petition entered"
+			}
+			if = {
 				limit = {
 					country_exists = WHT
 				}
 				WHT = { 
 					country_event = { id = nf_legion.1 } # Petition To White Legs
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_white_leg_petition exited"
 			}
 		}
 	}
@@ -859,6 +1115,10 @@ focus_tree = {
 		x = 4
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_white_legs_accept entered"
+			}
 			add_opinion_modifier = { 
 				target = WHT 
 				modifier = loyal_tribe
@@ -866,6 +1126,10 @@ focus_tree = {
 			reverse_add_opinion_modifier = { 
 				target = WHT
 				modifier = loyal_tribe
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_white_legs_accept exited"
 			}
 		}
 	}
@@ -893,6 +1157,10 @@ focus_tree = {
 		x = 6
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_white_legs_refuse entered"
+			}
 			add_opinion_modifier = { 
 				target = WHT 
 				modifier = disloyal_tribe
@@ -911,6 +1179,10 @@ focus_tree = {
 						country_event = { id = nf_legion.2 }
 					}
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_white_legs_refuse exited"
 			}
 		}
 	}
@@ -955,6 +1227,10 @@ focus_tree = {
 		x = 5
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_weapons_of_war entered"
+			}
 			if = {
 				limit = {
 					WHT = { has_opinion_modifier = loyal_tribe }
@@ -1002,6 +1278,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_weapons_of_war exited"
+			}
 		}
 	}
 	focus = {
@@ -1018,12 +1298,20 @@ focus_tree = {
 		y = 12
 		completion_reward = {
 			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_graham_execution entered"
+			}
+			if = {
 				limit = {
 					has_idea = legion_nf_burned_man_rumours
 				}
 				remove_ideas = legion_nf_burned_man_rumours
 			}
 			add_political_power = 50
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_graham_execution exited"
+			}
 		}
 	}
 	focus = {
@@ -1043,12 +1331,20 @@ focus_tree = {
 		x = 6
 		y = 13
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_new_auxilliary entered"
+			}
 			add_to_faction = EHT
 			every_state = {
 				limit = {
 					is_utah_state = yes
 				}
 				add_core_of = EHT
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_new_auxilliary exited"
 			}
 		}
 	}
@@ -1069,12 +1365,20 @@ focus_tree = {
 		x = 4
 		y = 13
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_new_cohort entered"
+			}
 			add_to_faction = WHT
 			every_state = {
 				limit = {
 					is_utah_state = yes
 				}
 				add_core_of = WHT
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_new_cohort exited"
 			}
 		}
 	}
@@ -1092,11 +1396,19 @@ focus_tree = {
 		x = 5
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_legionary_utah entered"
+			}
 			every_state = {
 				limit = {
 					is_utah_state = yes
 				}
 				add_core_of = CES
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_legionary_utah exited"
 			}
 		}
 	}
@@ -1121,6 +1433,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_crossing_the_rubicon entered"
+			}
 			add_political_power = 60
 			if = {
 				limit = {
@@ -1150,6 +1466,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_crossing_the_rubicon exited"
+			}
 		}
 	}
 	focus = {
@@ -1169,10 +1489,17 @@ focus_tree = {
 		x = 9
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_war_for_hoover_dam entered"
+			}
 			553 = { set_state_name = "Legate Camp" }
 			359 = { set_state_name = "Fortification Hill" }
-		
 			country_event = { id = hooverdam.2 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_war_for_hoover_dam exited"
+			}
 		}
 	}
 	focus = {
@@ -1194,6 +1521,10 @@ focus_tree = {
 		x = 8
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_burned_man entered"
+			}
 			remove_unit_leader = 1003
 			add_ideas = legion_nf_burned_man_rumours
 			create_field_marshal = {
@@ -1208,6 +1539,10 @@ focus_tree = {
 				defense_skill = 3
 				planning_skill = 2
 				logistics_skill = 2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_burned_man exited"
 			}
 		}
 	}
@@ -1230,6 +1565,10 @@ focus_tree = {
 		x = 10
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_triumph_at_the_dam entered"
+			}
 			remove_unit_leader = 1003
 			add_ideas = legion_nf_burned_man_rumours
 			create_field_marshal = {
@@ -1244,6 +1583,10 @@ focus_tree = {
 				defense_skill = 5
 				planning_skill = 2
 				logistics_skill = 2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_triumph_at_the_dam exited"
 			}
 		}
 	}
@@ -1279,6 +1622,10 @@ focus_tree = {
 		x = 10
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_lick_the_bulls_wounds entered"
+			}
 			252 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1295,6 +1642,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_lick_the_bulls_wounds exited"
+			}
 		}
 	}
 	focus = {
@@ -1310,6 +1661,10 @@ focus_tree = {
 		x = 8
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_fortification_hill entered"
+			}
 			if = {
 				limit = {
 					359 = { is_owned_and_controlled_by = CES }
@@ -1361,6 +1716,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_fortification_hill exited"
+			}
 		}
 	}
 	focus = {
@@ -1387,7 +1746,11 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-		completion_reward = {  
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_crossing_the_colorado entered"
+			}  
 			add_manpower = -200
 			transfer_state = 99
 			set_state_controller = 99
@@ -1412,6 +1775,10 @@ focus_tree = {
 			}
 			hidden_effect = { load_oob = CES_crossing_party }
 			custom_effect_tooltip = load_CES_crossing_party
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_crossing_the_colorado exited"
+			}
 		}
 	}
 	focus = {
@@ -1427,6 +1794,10 @@ focus_tree = {
 		x = 10
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_rubicon_is_crossed entered"
+			}
 			add_ideas = legion_nf_rubicon_crossed
 			add_manpower = -1000
 			transfer_state = 99
@@ -1443,6 +1814,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_rubicon_is_crossed exited"
+			}
 		}
 	}
 	focus = {
@@ -1458,6 +1833,10 @@ focus_tree = {
 		x = 10
 		y = 13
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_to_the_victor_go_the_spoils entered"
+			}
 			252 = {
 				add_resource = {
 					type = electricity
@@ -1477,6 +1856,10 @@ focus_tree = {
 					type = electronics
 					amount = 5
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_to_the_victor_go_the_spoils exited"
 			}
 		}
 	}
@@ -1505,11 +1888,19 @@ focus_tree = {
 		x = 9
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_poking_the_bear entered"
+			}
 			add_political_power = 60
 			NCR = {
 				add_political_power = -60
 			}
 			#country_event = { id = nf_legion.5 } # Caesar's Illness
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_poking_the_bear exited"
+			}
 		}
 	}
 	#---------------------------
@@ -1525,7 +1916,15 @@ focus_tree = {
 		x = 15
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_mexico_expansion entered"
+			}
 			add_political_power = 60
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_mexico_expansion exited"
+			}
 		}
 	}
 	focus = {
@@ -1546,6 +1945,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_baudelio_ranchers entered"
+			}
 			if = {
 				limit = { country_exists = RBD }
 				create_wargoal = {
@@ -1576,6 +1979,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_baudelio_ranchers exited"
+			}
 		}
 	}
 	
@@ -1594,6 +2001,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_enslave_the_ranchers entered"
+			}
 			add_political_power = -50
 			if = {
 				limit = {
@@ -1616,6 +2027,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_enslave_the_ranchers exited"
+			}
 		}
 	}
 	focus = {
@@ -1634,6 +2049,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_baudelio_wells entered"
+			}
+			if = {
 				limit = {
 					NOT = {
 						any_owned_state = {
@@ -1651,6 +2070,10 @@ focus_tree = {
 					type = water
 					amount = 6
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_baudelio_wells exited"
 			}
 		}
 	}
@@ -1673,10 +2096,18 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_reorganise_the_ranches entered"
+			}
 			every_state = { 
 				limit = { is_baudelio_state = yes }
 				add_core_of = ROOT
-			}	
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_reorganise_the_ranches exited"
+			}
 		}
 	}
 	
@@ -1698,6 +2129,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_pecos_colonists entered"
+			}
 			if = {
 				limit = { country_exists = PEC }
 				create_wargoal = {
@@ -1728,6 +2163,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_pecos_colonists exited"
+			}
 		}
 	}
 	focus = {
@@ -1740,6 +2179,10 @@ focus_tree = {
 		x = 16
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_enslaving_the_colonists entered"
+			}
 			add_political_power = -50
 			if = {
 				limit = {
@@ -1762,6 +2205,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_enslaving_the_colonists exited"
+			}
 		}
 	}
 	focus = {
@@ -1779,6 +2226,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_purpose_for_pecos entered"
+			}
 			if = {
 				limit = {
 					NOT = {
@@ -1798,6 +2249,10 @@ focus_tree = {
 					amount = 6
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_purpose_for_pecos exited"
+			}
 		}
 	}
 	focus = {
@@ -1813,10 +2268,18 @@ focus_tree = {
 		x = 17
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_assimilate_the_people entered"
+			}
 			every_state = { 
 				limit = { is_pecos_state = yes }
 				add_core_of = ROOT
-			}	
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_assimilate_the_people exited"
+			}
 		}
 	}
 	#---------------------------
@@ -1853,6 +2316,10 @@ focus_tree = {
 		x = 5
 		y = 15
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_lights_of_vegas entered"
+			}
 			if = {
 				limit = { country_exists = VEG }
 				create_wargoal = {
@@ -1895,6 +2362,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_lights_of_vegas exited"
+			}
 		}
 	}
 	focus = {
@@ -1910,6 +2381,10 @@ focus_tree = {
 		x = 4
 		y = 16
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_eternal_city entered"
+			}
 			if = {
 				limit = {
 					NOT = {
@@ -1931,6 +2406,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_eternal_city exited"
+			}
 		}
 	}
 	focus = {
@@ -1946,6 +2425,10 @@ focus_tree = {
 		x = 4
 		y = 17
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_caesers_palace entered"
+			}
 			if = {
 				limit = {
 					NOT = {
@@ -1974,6 +2457,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_caesers_palace exited"
+			}
 		}
 	}
 	focus = {
@@ -1989,6 +2476,10 @@ focus_tree = {
 		x = 4
 		y = 18
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_open_the_lucky_38 entered"
+			}
 			add_stability = 0.05
 			add_war_support = 0.025
 			if = {
@@ -2014,6 +2505,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_open_the_lucky_38 exited"
+			}
 		}
 	}
 	focus = {
@@ -2029,6 +2524,10 @@ focus_tree = {
 		x = 6
 		y = 16
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_expand_the_via_militaris entered"
+			}
 			if = {
 				limit = {
 					NOT = {
@@ -2049,6 +2548,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_expand_the_via_militaris exited"
+			}
 		}
 	}
 	focus = {
@@ -2064,6 +2567,10 @@ focus_tree = {
 		x = 6
 		y = 17
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_mccarran_airstrip entered"
+			}
 			if = {
 				limit = {
 					NOT = {
@@ -2084,6 +2591,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_mccarran_airstrip exited"
+			}
 		}
 	}
 	focus = {
@@ -2099,7 +2610,15 @@ focus_tree = {
 		x = 6
 		y = 18
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_scouring_the_strip entered"
+			}
 			add_ideas = legion_nf_vegas_strip
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_scouring_the_strip exited"
+			}
 		}
 	}
 	focus = {
@@ -2118,11 +2637,19 @@ focus_tree = {
 		x = 5
 		y = 19
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_nova_roma entered"
+			}
 			set_capital = 211
 			211 = {
 				set_state_name = "Nova Roma"
 			}
 			add_ideas = legion_nf_nova_roma
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_nova_roma exited"
+			}
 		}
 	}
 	# Worthy
@@ -2157,11 +2684,19 @@ focus_tree = {
 		}
 		will_lead_to_war_with = NCR
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_a_worthy_foe entered"
+			}
 			army_experience = 30
 			add_ideas = legion_nf_worthy_foe
 			create_wargoal = {
 				type = annex_everything
 				target = NCR
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_a_worthy_foe exited"
 			}
 		}
 	}
@@ -2179,6 +2714,10 @@ focus_tree = {
 		y = 16
 		completion_reward = {
 			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_divide_et_impera entered"
+			}
+			if = {
 				limit = { 
 					country_exists = NCR
 				}
@@ -2188,6 +2727,10 @@ focus_tree = {
 						days = 720
 					}
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_divide_et_impera exited"
 			}
 		}
 	}
@@ -2201,6 +2744,10 @@ focus_tree = {
 		x = 10
 		y = 16
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_render_unto_caesar entered"
+			}
 			every_country = {
 				limit = {
 					OR = {
@@ -2231,6 +2778,10 @@ focus_tree = {
 					modifier = renderuntocaesar 
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_render_unto_caesar exited"
+			}
 		}
 	}
 	focus = {
@@ -2248,7 +2799,15 @@ focus_tree = {
 		x = 10
 		y = 17
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_great_khans entered"
+			}
 			add_to_faction = KHA
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_great_khans exited"
+			}
 		}
 	}
 	focus = {
@@ -2272,6 +2831,10 @@ focus_tree = {
 		x = 10
 		y = 18
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_baja_raiders entered"
+			}
 			if = {
 				limit = {
 					AND = {
@@ -2336,6 +2899,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_baja_raiders exited"
+			}
 		}
 	}
 	focus = {
@@ -2348,9 +2915,17 @@ focus_tree = {
 		x = 8
 		y = 17
 		completion_reward = {
-			NCR = { 
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_camp_searchlight entered"
+			}
+			NCR = {
 				add_stability = -0.05
 				add_war_support = 0.025
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_camp_searchlight exited"
 			}
 		}
 	}
@@ -2376,6 +2951,10 @@ focus_tree = {
 		x = 8
 		y = 18
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_battle_of_nelson entered"
+			}
 			add_manpower = -200
 			transfer_state = 533
 			set_state_controller = 533
@@ -2400,6 +2979,10 @@ focus_tree = {
 			}
 			hidden_effect = { load_oob = CES_crossing_party_nelson }
 			custom_effect_tooltip = load_CES_crossing_party_nelson
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_battle_of_nelson exited"
+			}
 		}
 	}
 	#focus = {
@@ -2436,7 +3019,15 @@ focus_tree = {
 		x = 15
 		y = 15
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_augustus entered"
+			}
 			add_political_power = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_augustus exited"
+			}
 		}
 	}
 	focus = {
@@ -2457,6 +3048,10 @@ focus_tree = {
 		x = 16
 		y = 16
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_thesis entered"
+			}
 			every_state = {
 				limit = {
 					is_new_thesis_state = yes
@@ -2471,6 +3066,10 @@ focus_tree = {
 			add_popularity = {
 				ideology = people
 				popularity = 0.2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_thesis exited"
 			}
 		}
 	}
@@ -2492,10 +3091,18 @@ focus_tree = {
 		x = 18
 		y = 16
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_brotherhood entered"
+			}
 			remove_ideas = national_spirit_rejection_of_automation
 			add_popularity = {
 				ideology = intellectuals
 				popularity = 0.2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_brotherhood exited"
 			}
 		}
 	}
@@ -2517,10 +3124,18 @@ focus_tree = {
 		x = 14
 		y = 16
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_lanius entered"
+			}
 			add_ideas = legion_nf_immortal_empire
 			add_popularity = {
 				ideology = elites
 				popularity = 0.2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_lanius exited"
 			}
 		}
 	}
@@ -2542,10 +3157,18 @@ focus_tree = {
 		x = 12
 		y = 16
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_spqr entered"
+			}
 			add_ideas = legion_nf_spqr
 			add_popularity = {
 				ideology = ruler
 				popularity = 0.2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_spqr exited"
 			}
 		}
 	}
@@ -2562,7 +3185,15 @@ focus_tree = {
 		x = 15
 		y = 17
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_peace entered"
+			}
 			add_ideas = legion_nf_pax_per_bellum
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_peace exited"
+			}
 		}
 	}
 	#---------------------------
@@ -2578,7 +3209,15 @@ focus_tree = {
 		x = 23
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_denarius entered"
+			}
 			add_political_power = 60
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_denarius exited"
+			}
 		}
 	}
 	focus = {
@@ -2594,6 +3233,10 @@ focus_tree = {
 		x = 20
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_tame_dog_city entered"
+			}
 			525 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2601,6 +3244,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_tame_dog_city exited"
 			}
 		}
 	}
@@ -2617,6 +3264,10 @@ focus_tree = {
 		x = 20
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_legion_salvagers entered"
+			}
 			525 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2624,6 +3275,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_legion_salvagers exited"
 			}
 		}
 	}
@@ -2640,7 +3295,15 @@ focus_tree = {
 		x = 20
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_enslave_hangdogs entered"
+			}
 			add_ideas = legion_nf_enslaved_dogs
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_enslave_hangdogs exited"
+			}
 		}
 	}
 	focus = {
@@ -2656,6 +3319,10 @@ focus_tree = {
 		x = 22
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_capital entered"
+			}
 			520 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2663,6 +3330,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_capital exited"
 			}
 		}
 	}
@@ -2679,6 +3350,10 @@ focus_tree = {
 		x = 22
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_flagstaff_fort entered"
+			}
 			520 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2686,6 +3361,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_flagstaff_fort exited"
 			}
 		}
 	}
@@ -2702,7 +3381,15 @@ focus_tree = {
 		x = 22
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_slaves_to_flagstaff entered"
+			}
 			add_ideas = legion_nf_flagstaff_slaves
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_slaves_to_flagstaff exited"
+			}
 		}
 	}
 	focus = {
@@ -2718,6 +3405,10 @@ focus_tree = {
 		x = 24
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_settlers_in_phoenix entered"
+			}
 			518 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2725,6 +3416,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_settlers_in_phoenix exited"
 			}
 		}
 	}
@@ -2741,6 +3436,10 @@ focus_tree = {
 		x = 24
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_phoenix_outpost entered"
+			}
 			518 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2748,6 +3447,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_phoenix_outpost exited"
 			}
 		}
 	}
@@ -2764,7 +3467,15 @@ focus_tree = {
 		x = 24
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_slaves_in_phoenix entered"
+			}
 			add_ideas = legion_nf_phoenix_slaves
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_slaves_in_phoenix exited"
+			}
 		}
 	}
 	focus = {
@@ -2780,6 +3491,10 @@ focus_tree = {
 		x = 26
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_two_sun_tribute entered"
+			}
 			516 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2787,6 +3502,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_two_sun_tribute exited"
 			}
 		}
 	}
@@ -2803,6 +3522,10 @@ focus_tree = {
 		x = 26
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_two_sun_warcamp entered"
+			}
 			516 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2810,6 +3533,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_two_sun_warcamp exited"
 			}
 		}
 	}
@@ -2826,7 +3553,15 @@ focus_tree = {
 		x = 26
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_enslave_tribals entered"
+			}
 			add_ideas = legion_nf_two_sun_slaves
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_enslave_tribals exited"
+			}
 		}
 	}
 	focus = {
@@ -2844,7 +3579,15 @@ focus_tree = {
 		x = 21
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_honestas_industria_prudentia entered"
+			}
 			add_political_power = 60
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_honestas_industria_prudentia exited"
+			}
 		}
 	}
 	focus = {
@@ -2860,7 +3603,15 @@ focus_tree = {
 		x = 20
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_warcamp_slaves entered"
+			}
 			add_ideas = legion_nf_warcamp_slaves
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_warcamp_slaves exited"
+			}
 		}
 	}
 	focus = {
@@ -2876,7 +3627,15 @@ focus_tree = {
 		x = 22
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_homestead_slaves entered"
+			}
 			add_ideas = legion_nf_homestead_slaves
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_homestead_slaves exited"
+			}
 		}
 	}
 	focus = {
@@ -2918,7 +3677,11 @@ focus_tree = {
 			#    always = yes
 			#}
 		}
-		completion_reward = {	    
+		completion_reward = {	
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_via_militaris entered"
+			}    
 			if = {
 				limit = {
 					NOT = {
@@ -2937,7 +3700,11 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
-			}			
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_via_militaris exited"
+			}
 		}
 	}
 	focus = {
@@ -2963,6 +3730,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_new_mexico_highways entered"
+			}
+			if = {
 				limit = {
 					NOT = {
 						any_owned_state = {
@@ -2980,6 +3751,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_new_mexico_highways exited"
 			}
 		}
 	}
@@ -3006,6 +3781,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_road_eastwards entered"
+			}
+			if = {
 				limit = {
 					NOT = {
 						any_owned_state = {
@@ -3023,6 +3802,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_road_eastwards exited"
 			}
 		}
 	}
@@ -3042,8 +3825,16 @@ focus_tree = {
 		x = 25
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_pax_romana entered"
+			}
 			add_manpower = -1000
 			add_ideas = legion_nf_pax_romana
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_pax_romana exited"
+			}
 		}
 	}
 	focus = {
@@ -3056,7 +3847,15 @@ focus_tree = {
 		x = 20
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_fort_construction entered"
+			}
 			add_ideas = legion_nf_fort_focus
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_fort_construction exited"
+			}
 		}
 	}
 	focus = {
@@ -3069,7 +3868,15 @@ focus_tree = {
 		x = 22
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_blacksmith_recruitment entered"
+			}
 			add_ideas = legion_nf_factory_focus
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_blacksmith_recruitment exited"
+			}
 		}
 	}
 	focus = {
@@ -3090,11 +3897,19 @@ focus_tree = {
 		x = 23
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_boulder_city_salvage entered"
+			}
 			613 = {
 				add_resource = {
 					type = metal
 					amount = 32
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_boulder_city_salvage exited"
 			}
 		}
 	}
@@ -3108,7 +3923,15 @@ focus_tree = {
 		x = 23
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_old_world_discoveries entered"
+			}
 			add_research_slot = 1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_old_world_discoveries exited"
+			}
 		}
 	}
 	focus = {
@@ -3124,11 +3947,19 @@ focus_tree = {
 		x = 21
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_dog_city_salvage entered"
+			}
 			525 = {
 				add_resource = {
 					type = metal
 					amount = 16
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_dog_city_salvage exited"
 			}
 		}
 	}
@@ -3145,11 +3976,19 @@ focus_tree = {
 		x = 25
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_phoenix_salvage entered"
+			}
 			518 = {
 				add_resource = {
 					type = metal
 					amount = 16
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_phoenix_salvage exited"
 			}
 		}
 	}
@@ -3166,6 +4005,10 @@ focus_tree = {
 		x = 23
 		y = 13
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_vault_beneath_fortification_hill entered"
+			}
 			359 = {
 				add_building_construction = {
 					type = bunker2
@@ -3175,6 +4018,10 @@ focus_tree = {
 						all_provinces = yes
 					}
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_the_vault_beneath_fortification_hill exited"
 			}
 		}
 	}
@@ -3194,11 +4041,19 @@ focus_tree = {
 		x = 24
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_brotherhood_slaves entered"
+			}
 			add_tech_bonus = {
 				name = power_armour_bonus
 				bonus = 0.5
 				uses = 2
 				category = power_armor_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_brotherhood_slaves exited"
 			}
 		}
 	}
@@ -3215,7 +4070,15 @@ focus_tree = {
 		x = 22
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_follower_slaves entered"
+			}
 			add_ideas = legion_nf_follower_slaves
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_follower_slaves exited"
+			}
 		}
 	}
 	#---------------------------
@@ -3231,12 +4094,20 @@ focus_tree = {
 		x = 31
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_lessons_of_the_old_world entered"
+			}
 			army_experience = 50
 			add_tech_bonus = {
 				name = land_doc_bonus
 				bonus = 0.5
 				uses = 2
 				category = land_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_lessons_of_the_old_world exited"
 			}
 		}
 	}
@@ -3254,9 +4125,17 @@ focus_tree = {
 		x = 29
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_numeri entered"
+			}
 			add_stability = -0.05
 			add_war_support = -0.025
-			add_ideas = legion_nf_numeri 
+			add_ideas = legion_nf_numeri
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_numeri exited"
+			}
 		}
 	}
 	focus = {
@@ -3269,9 +4148,17 @@ focus_tree = {
 		x = 29
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_assimilated_centurions entered"
+			}
 			add_ideas = legion_nf_centurions
 			hidden_effect = {
 				set_technology = { legion_centurions_tech = 1 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_assimilated_centurions exited"
 			}
 		}
 	}
@@ -3285,7 +4172,15 @@ focus_tree = {
 		x = 29
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_lay_of_the_land entered"
+			}
 			add_ideas = legion_nf_lay_of_the_land
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_lay_of_the_land exited"
+			}
 		}
 	}
 	focus = {
@@ -3298,7 +4193,15 @@ focus_tree = {
 		x = 29
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_legionary_grit entered"
+			}
 			add_ideas = legion_nf_legionary_grit
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_legionary_grit exited"
+			}
 		}
 	}
 	focus = {
@@ -3311,6 +4214,10 @@ focus_tree = {
 		x = 29
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_general_gaius_magnus entered"
+			}
 			create_corps_commander = {
 				name = "Gaius Magnus"
 				portrait_path = "gfx/leaders/CES/Portrait_Magnus.dds"
@@ -3322,6 +4229,10 @@ focus_tree = {
 				defense_skill = 1
 				planning_skill = 3
 				logistics_skill = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_general_gaius_magnus exited"
 			}
 		}
 	}
@@ -3339,7 +4250,15 @@ focus_tree = {
 		x = 31
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_praetorian_guard entered"
+			}
 			add_ideas = legion_nf_praetorian
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_praetorian_guard exited"
+			}
 		}
 	}
 	focus = {
@@ -3352,7 +4271,15 @@ focus_tree = {
 		x = 31
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_meritorcracy entered"
+			}
 			add_ideas = legion_nf_meritocracy
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_meritorcracy exited"
+			}
 		}
 	}
 	focus = {
@@ -3365,9 +4292,17 @@ focus_tree = {
 		x = 31
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_vexillarius entered"
+			}
 			add_ideas = legion_nf_vexillarius
 			hidden_effect = {
 				set_technology = { legion_vexillarius_tech = 1 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_vexillarius exited"
 			}
 		}
 	}
@@ -3381,7 +4316,15 @@ focus_tree = {
 		x = 31
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_legion_blacksmiths entered"
+			}
 			add_ideas = legion_nf_legionary_blacksmiths
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_legion_blacksmiths exited"
+			}
 		}
 	}
 	focus = {
@@ -3394,6 +4337,10 @@ focus_tree = {
 		x = 31
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_general_silus entered"
+			}
 			create_corps_commander = {
 				name = "Silus"
 				portrait_path = "gfx/leaders/CES/Portrait_Silus.dds"
@@ -3405,6 +4352,10 @@ focus_tree = {
 				defense_skill = 3
 				planning_skill = 1
 				logistics_skill = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_general_silus exited"
 			}
 		}
 	}
@@ -3422,7 +4373,15 @@ focus_tree = {
 		x = 33
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_servus_publicus entered"
+			}
 			add_ideas = legion_nf_servus
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_servus_publicus exited"
+			}
 		}
 	}
 	focus = {
@@ -3435,7 +4394,15 @@ focus_tree = {
 		x = 33
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_child_soldiers entered"
+			}
 			add_ideas = legion_nf_child_soldiers
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_child_soldiers exited"
+			}
 		}
 	}
 	focus = {
@@ -3448,7 +4415,15 @@ focus_tree = {
 		x = 33
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_slave_collars entered"
+			}
 			add_ideas = legion_nf_slave_collars
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_slave_collars exited"
+			}
 		}
 	}
 	focus = {
@@ -3461,7 +4436,15 @@ focus_tree = {
 		x = 33
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_promote_freedmen entered"
+			}
 			add_ideas = legion_nf_freemen
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_promote_freedmen exited"
+			}
 		}
 	}
 	focus = {
@@ -3474,6 +4457,10 @@ focus_tree = {
 		x = 33
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_general_aurelius_of_phoenix entered"
+			}
 			create_corps_commander = {
 				name = "Aurelius of Phoenix"
 				portrait_path = "gfx/leaders/CES/Portrait_Phoenix.dds"
@@ -3485,6 +4472,10 @@ focus_tree = {
 				defense_skill = 4
 				planning_skill = 1
 				logistics_skill = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_general_aurelius_of_phoenix exited"
 			}
 		}
 	}
@@ -3503,7 +4494,15 @@ focus_tree = {
 		x = 31
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_modern_military entered"
+			}
 			army_experience = 25
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_modern_military exited"
+			}
 		}
 	}
 	focus = {
@@ -3516,7 +4515,15 @@ focus_tree = {
 		x = 32
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_foundries_of_mars entered"
+			}
 			add_ideas = legion_nf_foundries_of_mars
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_foundries_of_mars exited"
+			}
 		}
 	}
 	focus = {
@@ -3529,7 +4536,15 @@ focus_tree = {
 		x = 32
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_hammer_of_mars entered"
+			}
 			set_technology = { tank_tech_3 = 1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_hammer_of_mars exited"
+			}
 		}
 	}
 	focus = {
@@ -3542,7 +4557,15 @@ focus_tree = {
 		x = 30
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_legion_reborn entered"
+			}
 			set_technology = { power_armour_legion = 1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_legion_reborn exited"
+			}
 		}
 	}
 	focus = {
@@ -3555,9 +4578,17 @@ focus_tree = {
 		x = 30
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_warriors_of_mars entered"
+			}
 			add_ideas = legion_nf_warriors_of_mars
 			hidden_effect = {
 				set_technology = { legion_warriors_of_mars_tech = 1 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ces_warriors_of_mars exited"
 			}
 		}
 	}

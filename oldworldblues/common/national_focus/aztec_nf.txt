@@ -17,7 +17,15 @@ focus_tree = {
 		x = 10
 		y = 0
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ate_founding entered"
+			}
 			country_event = { id = nf_aztec.0 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ate_founding exited"
+			}
 		}
 	}
 	focus = {
@@ -30,7 +38,15 @@ focus_tree = {
 		x = 10
 		y = 1
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ate_pantheon entered"
+			}
 			country_event = { id = nf_aztec.1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ate_pantheon exited"
+			}
 		}
 	}
 	focus = {
@@ -43,7 +59,15 @@ focus_tree = {
 		x = 10
 		y = 2
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ate_future entered"
+			}
 			country_event = { id = nf_aztec.4 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ate_future exited"
+			}
 		}
 	}
 	focus = {
@@ -56,7 +80,15 @@ focus_tree = {
 		x = 10
 		y = 3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ate_succession entered"
+			}
 			country_event = { id = nf_aztec.5 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ate_succession exited"
+			}
 		}
 	}
 	focus = {
@@ -69,7 +101,15 @@ focus_tree = {
 		x = 8
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ate_itzcoatl entered"
+			}
 			add_political_power = 50
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ate_itzcoatl exited"
+			}
 		}
 	}
 	focus = {
@@ -82,7 +122,15 @@ focus_tree = {
 		x = 12
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ate_montezuma entered"
+			}
 			add_political_power = 50
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ate_montezuma exited"
+			}
 		}
 	}
 }

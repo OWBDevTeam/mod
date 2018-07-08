@@ -13,10 +13,18 @@ focus_tree = {
 		icon = GFX_goal_generic_building_focus
 		cost = 1.00
 		x = 10
-	 	y = 0
+		y = 0
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_our_fathers entered"
+			}
 			country_event = { id = nf_event_brk.1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_our_fathers exited"
+			}
 		}
 	}
 
@@ -25,14 +33,22 @@ focus_tree = {
 		icon = GFX_goal_brk_great_blizzard
 		cost = 1.00
 		x = 10
-	 	y = 1
+		y = 1
 
 		prerequisite = {
 			focus = brk_nf_our_fathers
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_our_goals entered"
+			}
 			country_event = { id = nf_event_brk.2 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_our_goals exited"
+			}
 		}
 	}
 
@@ -41,14 +57,22 @@ focus_tree = {
 		icon = GFX_goal_generic_building_focus
 		cost = 1.00
 		x = 10
-	 	y = 2
+		y = 2
 
 		prerequisite = {
 			focus = brk_nf_our_goals
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_our_gods entered"
+			}
 			country_event = { id = nf_event_brk.3 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_our_gods exited"
+			}
 		}
 	}
 
@@ -57,14 +81,22 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		cost = 8.6
 		x = 10
-	 	y = 3
+		y = 3
 
 		prerequisite = {
 			focus = brk_nf_our_gods
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_grand_moot entered"
+			}
 			country_event = { id = nf_event_brk.40 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_grand_moot exited"
+			}
 		}
 	}
 
@@ -73,7 +105,7 @@ focus_tree = {
 		icon = GFX_goal_tfv_generic_tech_sharing
 		cost = 8.6
 		x = 7
-	 	y = 4
+		y = 4
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
@@ -93,7 +125,15 @@ focus_tree = {
 			BRK = { has_completed_focus = brk_nf_boon_of_njord }
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_tech_upgrade entered"
+			}
 			add_ideas = brk_tech_adaptation
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_tech_upgrade exited"
+			}
 		}
 	}
 
@@ -102,7 +142,7 @@ focus_tree = {
 		icon = GFX_goal_generic_scientific_exchange
 		cost = 17.2
 		x = 13
-	 	y = 4
+		y = 4
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
@@ -113,9 +153,17 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_tech_upgrade_1 entered"
+			}
 			remove_ideas = brk_tech_adaptation
 			set_technology = { settled_civilization = 1 }
 			add_research_slot = 2
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_tech_upgrade_1 exited"
+			}
 		}
 	}
 
@@ -124,7 +172,7 @@ focus_tree = {
 		icon = GFX_focus_rom_royal_dictatorship
 		cost = 8.6
 		x = 6
-	 	y = 7
+		y = 7
 		available = {
 			BRK = { has_country_flag = the_moot_graven }
 		}
@@ -137,10 +185,18 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_ruler_pol entered"
+			}
 			add_ideas = brk_ruler
 			add_popularity = {
 				ideology = ruler
 				popularity = 0.1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_ruler_pol exited"
 			}
 		}
 	}
@@ -150,13 +206,17 @@ focus_tree = {
 		icon = GFX_focus_generic_home_defense
 		cost = 8.6
 		x = 6
-	 	y = 8
+		y = 8
 
 		prerequisite = {
 			focus = brk_nf_ruler_pol
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_ruler_pol_1 entered"
+			}
 			swap_ideas = {
 				add_idea = brk_ruler_1
 				remove_idea = brk_ruler
@@ -164,6 +224,10 @@ focus_tree = {
 			add_popularity = {
 				ideology = ruler
 				popularity = 0.2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_ruler_pol_1 exited"
 			}
 		}
 	}
@@ -173,13 +237,17 @@ focus_tree = {
 		icon = GFX_goal_brk_graven_palace
 		cost = 8.6
 		x = 4
-	 	y = 8
+		y = 8
 
 		prerequisite = {
 			focus = brk_nf_ruler_pol
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_ruler_pol_side entered"
+			}
 			492 = {
 				add_building_construction = {
 					type = bunker
@@ -191,6 +259,10 @@ focus_tree = {
 				}
 			}
 			add_political_power = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_ruler_pol_side exited"
+			}
 		}
 	}
 
@@ -199,14 +271,22 @@ focus_tree = {
 		icon = GFX_goal_brk_gravens_ship
 		cost = 8.6
 		x = 4
-	 	y = 9
+		y = 9
 
 		prerequisite = {
 			focus = brk_nf_ruler_pol_side
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_ruler_pol_side_1 entered"
+			}
 			unlock_decision_tooltip = brk_decision_build_graven_ship
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_ruler_pol_side_1 exited"
+			}
 		}
 	}
 
@@ -215,13 +295,17 @@ focus_tree = {
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		cost = 8.6
 		x = 6
-	 	y = 9
+		y = 9
 
 		prerequisite = {
 			focus = brk_nf_ruler_pol_1
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_ruler_pol_2 entered"
+			}
 			swap_ideas = {
 				add_idea = brk_ruler_2
 				remove_idea = brk_ruler_1
@@ -229,6 +313,10 @@ focus_tree = {
 			add_popularity = {
 				ideology = ruler
 				popularity = 0.3
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_ruler_pol_2 exited"
 			}
 		}
 	}
@@ -238,7 +326,7 @@ focus_tree = {
 		icon = GFX_goal_brk_trophy_wife
 		cost = 8.6
 		x = 5
-	 	y = 10
+		y = 10
 
 		prerequisite = {
 			focus = brk_nf_ruler_pol_2
@@ -251,9 +339,17 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_wife_of_conquest entered"
+			}
 			swap_ideas = {
 				add_idea = brk_ruler_3_conquest
 				remove_idea = brk_ruler_2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_wife_of_conquest exited"
 			}
 		}
 	}
@@ -263,7 +359,7 @@ focus_tree = {
 		icon = GFX_goal_brk_wife_strength
 		cost = 8.6
 		x = 7
-	 	y = 10
+		y = 10
 
 		prerequisite = {
 			focus = brk_nf_ruler_pol_2
@@ -273,9 +369,17 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_wife_of_strength entered"
+			}
 			swap_ideas = {
 				add_idea = brk_ruler_3_strength
 				remove_idea = brk_ruler_2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_wife_of_strength exited"
 			}
 		}
 	}
@@ -285,7 +389,7 @@ focus_tree = {
 		icon = GFX_focus_rom_parties_end
 		cost = 8.6
 		x = 14
-	 	y = 7
+		y = 7
 		available = {
 			BRK = { has_country_flag = the_moot_ragnar }
 		}
@@ -298,10 +402,18 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_elites_pol entered"
+			}
 			add_ideas = brk_elites
 			add_popularity = {
 				ideology = elites
 				popularity = 0.1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_elites_pol exited"
 			}
 		}
 	}
@@ -311,13 +423,17 @@ focus_tree = {
 		icon = GFX_goal_brk_the_duel
 		cost = 8.6
 		x = 14
-	 	y = 8
+		y = 8
 
 		prerequisite = {
 			focus = brk_nf_elites_pol
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_elites_pol_1 entered"
+			}
 			kill_country_leader = yes
 			remove_unit_leader = 100
 			swap_ideas = {
@@ -329,6 +445,10 @@ focus_tree = {
 				popularity = 0.2
 			}
 			set_politics = { ruling_party = elites elections_allowed = no }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_elites_pol_1 exited"
+			}
 		}
 	}
 
@@ -337,13 +457,17 @@ focus_tree = {
 		icon = GFX_goal_brk_port_royal
 		cost = 8.6
 		x = 16
-	 	y = 8
+		y = 8
 
 		prerequisite = {
 			focus = brk_nf_elites_pol
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_elites_pol_side entered"
+			}
 			492 = {
 				add_building_construction = {
 					type = bunker
@@ -355,6 +479,10 @@ focus_tree = {
 				}
 			}
 			add_political_power = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_elites_pol_side exited"
+			}
 		}
 	}
 
@@ -363,13 +491,21 @@ focus_tree = {
 		icon = GFX_goal_brk_black_flag_fleets
 		cost = 8.6
 		x = 16
-	 	y = 9
+		y = 9
 
 		prerequisite = {
 			focus = brk_nf_elites_pol_side
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_elites_pol_side_1 entered"
+			}
 			unlock_decision_tooltip = brk_decision_build_the_fleet
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_elites_pol_side_1 exited"
+			}
 		}
 	}
 
@@ -378,13 +514,17 @@ focus_tree = {
 		icon = GFX_goal_anschluss
 		cost = 8.6
 		x = 14
-	 	y = 9
+		y = 9
 
 		prerequisite = {
 			focus = brk_nf_elites_pol_1
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_elites_pol_2 entered"
+			}
 			swap_ideas = {
 				add_idea = brk_elites_2
 				remove_idea = brk_elites_1
@@ -392,6 +532,10 @@ focus_tree = {
 			add_popularity = {
 				ideology = elites
 				popularity = 0.3
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_elites_pol_2 exited"
 			}
 		}
 	}
@@ -401,7 +545,7 @@ focus_tree = {
 		icon = GFX_goal_brk_council_of_warriors
 		cost = 8.6
 		x = 13
-	 	y = 10
+		y = 10
 
 		prerequisite = {
 			focus = brk_nf_elites_pol_2
@@ -411,9 +555,17 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_warrior_priests entered"
+			}
 			swap_ideas = {
 				add_idea = brk_elites_2_offense
 				remove_idea = brk_elites_2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_warrior_priests exited"
 			}
 		}
 	}
@@ -423,7 +575,7 @@ focus_tree = {
 		icon = GFX_goal_brk_council_of_defense
 		cost = 8.6
 		x = 15
-	 	y = 10
+		y = 10
 
 		prerequisite = {
 			focus = brk_nf_elites_pol_2
@@ -433,9 +585,17 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_home_priests entered"
+			}
 			swap_ideas = {
 				add_idea = brk_elites_2_defense
 				remove_idea = brk_elites_2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_home_priests exited"
 			}
 		}
 	}
@@ -445,7 +605,7 @@ focus_tree = {
 		icon = GFX_goal_brk_war
 		cost = 8.6
 		x = 10
-	 	y = 9
+		y = 9
 
 		prerequisite = {
 			focus = brk_nf_elites_pol_1
@@ -453,7 +613,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_til_strid entered"
+			}
 			add_war_support = 0.1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_til_strid exited"
+			}
 		}
 	}
 
@@ -462,14 +630,22 @@ focus_tree = {
 		icon = GFX_goal_brk_frozen_cabal
 		cost = 8.6
 		x = 10
-	 	y = 10
+		y = 10
 
 		prerequisite = {
 			focus = brk_nf_til_strid
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_frozen_shores entered"
+			}
 			add_stability = 0.1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_frozen_shores exited"
+			}
 		}
 	}
 
@@ -478,7 +654,7 @@ focus_tree = {
 		icon = GFX_goal_generic_attack_allies
 		cost = 8.6
 		x = 10
-	 	y = 11
+		y = 11
 
 		prerequisite = {
 			focus = brk_nf_frozen_shores
@@ -503,7 +679,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_raid_whistler entered"
+			}
 			country_event = { id = nf_event_brk.4 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_raid_whistler exited"
+			}
 		}
 	}
 
@@ -512,7 +696,7 @@ focus_tree = {
 		icon = GFX_goal_generic_forceful_treaty
 		cost = 8.6
 		x = 10
-	 	y = 13
+		y = 13
 
 		prerequisite = {
 			focus = brk_nf_raid_whistler
@@ -530,7 +714,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_demand_whistler entered"
+			}
 			country_event = { id = nf_event_brk.5 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_demand_whistler exited"
+			}
 		}
 	}
 
@@ -539,7 +731,7 @@ focus_tree = {
 		icon = GFX_focus_CZE_german_puppet
 		cost = 8.6
 		x = 10
-	 	y = 14
+		y = 14
 
 		prerequisite = {
 			focus = brk_nf_demand_whistler
@@ -554,6 +746,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_integrate_enemies entered"
+			}
 			every_state = {
 				limit = {
 					is_core_of = WHI
@@ -566,6 +762,10 @@ focus_tree = {
 				}
 				add_core_of = BRK
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_integrate_enemies exited"
+			}
 		}
 	}
 
@@ -574,7 +774,7 @@ focus_tree = {
 		icon = GFX_goal_brk_drums_of_war
 		cost = 8.6
 		x = 10
-	 	y = 15
+		y = 15
 
 		prerequisite = {
 			focus = brk_nf_integrate_enemies
@@ -582,11 +782,19 @@ focus_tree = {
 
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_lessons_of_war entered"
+			}
 			add_tech_bonus = {
 				name = land_doc_bonus
 				bonus = 0.5
 				uses = 4
 				category = land_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_lessons_of_war exited"
 			}
 		}
 	}
@@ -596,7 +804,7 @@ focus_tree = {
 		icon = GFX_goal_generic_communcation_focus
 		cost = 8.6
 		x = 12
-	 	y = 11
+		y = 11
 
 		prerequisite = {
 			focus = brk_nf_frozen_shores
@@ -621,6 +829,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_woo_whistler entered"
+			}
 			WHI = {
 				add_opinion_modifier = {
 					target = WHI
@@ -631,6 +843,10 @@ focus_tree = {
 				target = WHI
 				modifier = brk_woo_whi
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_woo_whistler exited"
+			}
 		}
 	}
 
@@ -639,7 +855,7 @@ focus_tree = {
 		icon = GFX_goal_generic_recruitment_focus
 		cost = 8.6
 		x = 12
-	 	y = 12
+		y = 12
 
 		prerequisite = {
 			focus = brk_nf_woo_whistler
@@ -649,7 +865,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_protect_whistler entered"
+			}
 			BRK = { give_guarantee = WHI }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_protect_whistler exited"
+			}
 		}
 	}
 
@@ -658,7 +882,7 @@ focus_tree = {
 		icon = GFX_goal_generic_improve_relations
 		cost = 8.6
 		x = 12
-	 	y = 13
+		y = 13
 
 		prerequisite = {
 			focus = brk_nf_protect_whistler
@@ -668,7 +892,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_aid_whistler entered"
+			}
 			country_event = { id = nf_event_brk.6 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_aid_whistler exited"
+			}
 		}
 	}
 
@@ -677,7 +909,7 @@ focus_tree = {
 		icon = GFX_goal_generic_attack_allies
 		cost = 8.6
 		x = 8
-	 	y = 11
+		y = 11
 
 		prerequisite = {
 			focus = brk_nf_frozen_shores
@@ -695,7 +927,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_raid_kamlo entered"
+			}
 			country_event = { id = nf_event_brk.7}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_raid_kamlo exited"
+			}
 		}
 	}
 
@@ -704,7 +944,7 @@ focus_tree = {
 		icon = GFX_goal_brk_night_of_horros
 		cost = 8.6
 		x = 8
-	 	y = 12
+		y = 12
 
 		prerequisite = {
 			focus = brk_nf_raid_kamlo
@@ -722,7 +962,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_break_kamlo entered"
+			}
 			country_event = { id = nf_event_brk.8 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_break_kamlo exited"
+			}
 		}
 	}
 
@@ -731,7 +979,7 @@ focus_tree = {
 		icon = GFX_goal_brk_break_kamlo
 		cost = 8.6
 		x = 8
-	 	y = 13
+		y = 13
 
 		prerequisite = {
 			focus = brk_nf_break_kamlo
@@ -749,12 +997,20 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_enslave_kamlo entered"
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = KAM
 			}
 			KAM = {
 				set_country_flag = revolt_country_to_revolt@PREV
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_enslave_kamlo exited"
 			}
 		}
 	}
@@ -764,19 +1020,27 @@ focus_tree = {
 		icon = GFX_goal_legion_workshop
 		cost = 8.6
 		x = 1
-	 	y = 4
+		y = 4
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_ignite_the_forges entered"
+			}
 			492 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
 					level = 1
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_ignite_the_forges exited"
 			}
 		}
 	}
@@ -786,14 +1050,22 @@ focus_tree = {
 		icon = GFX_goal_generic_recruitment_focus
 		cost = 8.6
 		x = 0
-	 	y = 5
+		y = 5
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_salvage_parties entered"
+			}
 			add_ideas = brk_salvage_parties
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_salvage_parties exited"
+			}
 		}
 	}
 
@@ -802,14 +1074,22 @@ focus_tree = {
 		icon = GFX_goal_legion_slaves
 		cost = 8.6
 		x = 2
-	 	y = 5
+		y = 5
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_drive_the_cattle_home entered"
+			}
 			add_ideas = brk_slave
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_drive_the_cattle_home exited"
+			}
 		}
 	}
 
@@ -818,13 +1098,17 @@ focus_tree = {
 		icon = GFX_goal_generic_military_industry_focus
 		cost = 8.6
 		x = 1
-	 	y = 6
+		y = 6
 
 		prerequisite = {
 			focus = brk_nf_ignite_the_forges
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_expand_the_forges entered"
+			}
 			148 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -832,25 +1116,32 @@ focus_tree = {
 					level = 1
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_expand_the_forges exited"
+			}
 		}
 	}
-
 
 	focus = {
 		id = brk_nf_water_purification
 		icon = GFX_goal_generic_food_focus
 		cost = 8.6
 		x = 0
-	 	y = 7
+		y = 7
 
 		prerequisite = {
 			focus = brk_nf_salvage_parties
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_water_purification entered"
+			}
 			492 = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
 					type = water_generator
 					level = 1
 					instant_build = yes
@@ -872,6 +1163,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_water_purification exited"
+			}
 		}
 	}
 
@@ -880,16 +1175,24 @@ focus_tree = {
 		icon = GFX_focus_generic_self_management
 		cost = 8.6
 		x = 2
-	 	y = 7
+		y = 7
 
 		prerequisite = {
 			focus = brk_nf_drive_the_cattle_home
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_slave_habitation entered"
+			}
 			swap_ideas = {
 				add_idea = brk_slave_1
 				remove_idea = brk_slave
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_slave_habitation exited"
 			}
 		}
 	}
@@ -899,13 +1202,17 @@ focus_tree = {
 		icon = GFX_goal_generic_metal_focus
 		cost = 8.6
 		x = 1
-	 	y = 8
+		y = 8
 
 		prerequisite = {
 			focus = brk_nf_expand_the_forges
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_scour_the_coast entered"
+			}
 			356 = {
 				add_resource = {
 					type = metal
@@ -930,6 +1237,10 @@ focus_tree = {
 					amount = 2
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_scour_the_coast exited"
+			}
 		}
 	}
 
@@ -938,13 +1249,17 @@ focus_tree = {
 		icon = GFX_goal_generic_harbours_focus
 		cost = 8.6
 		x = 0
-	 	y = 9
+		y = 9
 
 		prerequisite = {
 			focus = brk_nf_water_purification
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_dockyards_3 entered"
+			}
 			561 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -952,6 +1267,10 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_dockyards_3 exited"
 			}
 		}
 	}
@@ -961,16 +1280,24 @@ focus_tree = {
 		icon = GFX_goal_brk_elite_slaves
 		cost = 8.6
 		x = 2
-	 	y = 9
+		y = 9
 
 		prerequisite = {
 			focus = brk_nf_slave_habitation
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_slave_selection entered"
+			}
 			swap_ideas = {
 				add_idea = brk_slave_2
 				remove_idea = brk_slave_1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_slave_selection exited"
 			}
 		}
 	}
@@ -980,19 +1307,27 @@ focus_tree = {
 		icon = GFX_goal_generic_regular_firearms_focus
 		cost = 8.6
 		x = 1
-	 	y = 10
+		y = 10
 
 		prerequisite = {
 			focus = brk_nf_scour_the_coast
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_blessed_steel entered"
+			}
 			561 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
 					level = 2
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_blessed_steel exited"
 			}
 		}
 	}
@@ -1002,13 +1337,17 @@ focus_tree = {
 		icon = GFX_goal_generic_construction2
 		cost = 8.6
 		x = 0
-	 	y = 11
+		y = 11
 
 		prerequisite = {
 			focus = brk_nf_dockyards_3
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_dig_deep entered"
+			}
 			24 = {
 				add_resource = {
 					type = metal
@@ -1019,6 +1358,10 @@ focus_tree = {
 					amount = 2
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_dig_deep exited"
+			}
 		}
 	}
 
@@ -1027,16 +1370,24 @@ focus_tree = {
 		icon = GFX_goal_brk_slave_rights
 		cost = 8.6
 		x = 2
-	 	y = 11
+		y = 11
 
 		prerequisite = {
 			focus = brk_nf_slave_selection
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_slave_shedules entered"
+			}
 			swap_ideas = {
 				add_idea = brk_slave_3
 				remove_idea = brk_slave_2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_slave_shedules exited"
 			}
 		}
 	}
@@ -1046,18 +1397,26 @@ focus_tree = {
 		icon = GFX_goal_legion_workshop
 		cost = 8.6
 		x = 10
-	 	y = 4
+		y = 4
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_smith entered"
+			}
 			add_tech_bonus = {
 				name = industrial_bonus
 				bonus = 0.5
 				uses = 2
 				category = industry
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_smith exited"
 			}
 		}
 	}
@@ -1067,7 +1426,7 @@ focus_tree = {
 		icon = GFX_goal_generic_major_war
 		cost = 8.6
 		x = 11
-	 	y = 5
+		y = 5
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
@@ -1077,7 +1436,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_add_spikes entered"
+			}
 			add_ideas = brk_spikes
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_add_spikes exited"
+			}
 		}
 	}
 
@@ -1086,7 +1453,7 @@ focus_tree = {
 		icon = GFX_goal_rhineland
 		cost = 8.6
 		x = 9
-	 	y = 5
+		y = 5
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
@@ -1096,7 +1463,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_add_plating entered"
+			}
 			add_ideas = brk_plates
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_add_plating exited"
+			}
 		}
 	}
 
@@ -1105,7 +1480,7 @@ focus_tree = {
 		icon = GFX_goal_generic_t45d_power_armour_focus
 		cost = 8.6
 		x = 10
-	 	y = 6
+		y = 6
 
 		prerequisite = {
 			focus = brk_nf_add_plating
@@ -1113,11 +1488,19 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_master_smith entered"
+			}
 			add_tech_bonus = {
 				name = power_armor_tech
 				bonus = 0.5
 				uses = 1
 				category = power_armor_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_master_smith exited"
 			}
 		}
 	}
@@ -1127,16 +1510,24 @@ focus_tree = {
 		icon = GFX_goal_generic_military_deal
 		cost = 8.6
 		x = 12
-	 	y = 6
+		y = 6
 
 		prerequisite = {
 			focus = brk_nf_add_spikes
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_add_more_spikes entered"
+			}
 			swap_ideas = {
 				add_idea = brk_spikes_1
 				remove_idea = brk_spikes
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_add_more_spikes exited"
 			}
 		}
 	}
@@ -1146,16 +1537,24 @@ focus_tree = {
 		icon = GFX_goal_generic_small_arms
 		cost = 8.6
 		x = 8
-	 	y = 6
+		y = 6
 
 		prerequisite = {
 			focus = brk_nf_add_plating
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_add_more_plating entered"
+			}
 			swap_ideas = {
 				add_idea = brk_plates_1
 				remove_idea = brk_plates
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_add_more_plating exited"
 			}
 		}
 	}
@@ -1165,13 +1564,17 @@ focus_tree = {
 		icon = GFX_goal_generic_harbours_focus
 		cost = 8.6
 		x = 19
-	 	y = 4
+		y = 4
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_dockyards entered"
+			}
 			262 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -1179,6 +1582,10 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_dockyards exited"
 			}
 		}
 	}
@@ -1188,18 +1595,26 @@ focus_tree = {
 		icon = GFX_goal_brk_naval_raiders
 		cost = 8.6
 		x = 18
-	 	y = 5
+		y = 5
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_longboats entered"
+			}
 			add_tech_bonus = {
 				name = naval_doc_bonus
 				bonus = 0.5
 				uses = 2
 				category = naval_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_longboats exited"
 			}
 		}
 	}
@@ -1209,18 +1624,26 @@ focus_tree = {
 		icon = GFX_goal_generic_build_navy
 		cost = 8.6
 		x = 18
-	 	y = 7
+		y = 7
 
 		prerequisite = {
 			focus = brk_nf_longboats
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_longboats_1 entered"
+			}
 			add_tech_bonus = {
 				name = naval_bonus
 				bonus = 0.5
 				uses = 2
 				category = naval_equipment
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_longboats_1 exited"
 			}
 		}
 	}
@@ -1230,18 +1653,26 @@ focus_tree = {
 		icon = GFX_goal_brk_naval_raiders_2
 		cost = 8.6
 		x = 18
-	 	y = 9
+		y = 9
 
 		prerequisite = {
 			focus = brk_nf_longboats_1
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_longboats_2 entered"
+			}
 			add_tech_bonus = {
 				name = naval_doc_bonus
 				bonus = 0.5
 				uses = 2
 				category = naval_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_longboats_2 exited"
 			}
 		}
 	}
@@ -1251,18 +1682,26 @@ focus_tree = {
 		icon = GFX_goal_brk_masters_of_the_waves
 		cost = 8.6
 		x = 18
-	 	y = 11
+		y = 11
 
 		prerequisite = {
 			focus = brk_nf_longboats_2
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_longboats_3 entered"
+			}
 			add_tech_bonus = {
 				name = naval_bonus
 				bonus = 0.5
 				uses = 2
 				category = naval_equipment
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_longboats_3 exited"
 			}
 		}
 	}
@@ -1272,20 +1711,28 @@ focus_tree = {
 		icon = GFX_goal_generic_large_scale_normal_industry_focus
 		cost = 8.6
 		x = 20
-	 	y = 5
+		y = 5
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
 
 		completion_reward = {
-			492 = 	{
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_workshops entered"
+			}
+			492 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_workshops exited"
 			}
 		}
 	}
@@ -1295,20 +1742,28 @@ focus_tree = {
 		icon = GFX_goal_generic_slums_focus
 		cost = 8.6
 		x = 20
-	 	y = 7
+		y = 7
 
 		prerequisite = {
 			focus = brk_nf_workshops
 		}
 
 		completion_reward = {
-			148 = 	{
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_workshops_1 entered"
+			}
+			148 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_workshops_1 exited"
 			}
 		}
 	}
@@ -1318,20 +1773,28 @@ focus_tree = {
 		icon = GFX_goal_generic_supplies_focus
 		cost = 8.6
 		x = 20
-	 	y = 9
+		y = 9
 
 		prerequisite = {
 			focus = brk_nf_workshops_1
 		}
 
 		completion_reward = {
-			561 = 	{
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_workshops_2 entered"
+			}
+			561 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_workshops_2 exited"
 			}
 		}
 	}
@@ -1341,20 +1804,28 @@ focus_tree = {
 		icon = GFX_goal_generic_cities_focus
 		cost = 8.6
 		x = 20
-	 	y = 11
+		y = 11
 
 		prerequisite = {
 			focus = brk_nf_workshops_2
 		}
 
 		completion_reward = {
-			262 = 	{
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_workshops_3 entered"
+			}
+			262 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_workshops_3 exited"
 			}
 		}
 	}
@@ -1364,13 +1835,17 @@ focus_tree = {
 		icon = GFX_goal_generic_harbours_focus
 		cost = 8.6
 		x = 19
-	 	y = 6
+		y = 6
 
 		prerequisite = {
 			focus = brk_nf_dockyards
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_dockyards_1 entered"
+			}
 			492 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -1378,6 +1853,10 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_dockyards_1 exited"
 			}
 		}
 	}
@@ -1387,13 +1866,17 @@ focus_tree = {
 		icon = GFX_goal_generic_harbours_focus
 		cost = 8.6
 		x = 19
-	 	y = 8
+		y = 8
 
 		prerequisite = {
 			focus = brk_nf_dockyards_1
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_dockyards_2 entered"
+			}
 			148 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -1401,6 +1884,10 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_dockyards_2 exited"
 			}
 		}
 	}
@@ -1410,14 +1897,22 @@ focus_tree = {
 		icon = GFX_goal_generic_occupy_states_coastal
 		cost = 8.6
 		x = 19
-	 	y = 10
+		y = 10
 
 		prerequisite = {
 			focus = brk_nf_dockyards_2
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_boon_of_njord entered"
+			}
 			add_ideas = brk_naval_range
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_boon_of_njord exited"
+			}
 		}
 	}
 
@@ -1426,15 +1921,23 @@ focus_tree = {
 		icon = GFX_goal_generic_recruitment_focus
 		cost = 8.6
 		x = 4
-	 	y = 4
+		y = 4
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_recruitment_drive entered"
+			}
 			add_political_power = 25
 			add_manpower = 300
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_recruitment_drive exited"
+			}
 		}
 	}
 
@@ -1443,15 +1946,23 @@ focus_tree = {
 		icon = GFX_goal_brk_rite_of_passage
 		cost = 8.6
 		x = 5
-	 	y = 5
+		y = 5
 
 		prerequisite = {
 			focus = brk_nf_recruitment_drive
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_recruitment_drive_1 entered"
+			}
 			add_political_power = 25
 			add_manpower = 300
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_recruitment_drive_1 exited"
+			}
 		}
 	}
 
@@ -1460,15 +1971,23 @@ focus_tree = {
 		icon = GFX_goal_brk_great_beyond
 		cost = 8.6
 		x = 4
-	 	y = 6
+		y = 6
 
 		prerequisite = {
 			focus = brk_nf_recruitment_drive_1
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_recruitment_drive_2 entered"
+			}
 			add_political_power = 25
 			add_manpower = 300
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_recruitment_drive_2 exited"
+			}
 		}
 	}
 
@@ -1477,14 +1996,22 @@ focus_tree = {
 		icon = GFX_goal_generic_occupy_states_coastal
 		cost = 8.6
 		x = 16
-	 	y = 4
+		y = 4
 
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_manufacturing_drive entered"
+			}
 			add_ideas = brk_manu_drive
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_manufacturing_drive exited"
+			}
 		}
 	}
 
@@ -1493,16 +2020,24 @@ focus_tree = {
 		icon = GFX_goal_legion_workshop
 		cost = 8.6
 		x = 15
-	 	y = 5
+		y = 5
 
 		prerequisite = {
 			focus = brk_nf_manufacturing_drive
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_manufacturing_drive_1 entered"
+			}
 			swap_ideas = {
 				add_idea = brk_manu_drive_1
 				remove_idea = brk_manu_drive
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_manufacturing_drive_1 exited"
 			}
 		}
 	}
@@ -1512,16 +2047,24 @@ focus_tree = {
 		icon = GFX_goal_generic_bunkers_focus
 		cost = 8.6
 		x = 16
-	 	y = 6
+		y = 6
 
 		prerequisite = {
 			focus = brk_nf_manufacturing_drive_1
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_manufacturing_drive_2 entered"
+			}
 			swap_ideas = {
 				add_idea = brk_manu_drive_2
 				remove_idea = brk_manu_drive_1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_manufacturing_drive_2 exited"
 			}
 		}
 	}
@@ -1531,7 +2074,7 @@ focus_tree = {
 		icon = GFX_goal_brk_put_them_to_the_sword
 		cost = 8.6
 		x = 6
-	 	y = 15
+		y = 15
 
 		prerequisite = {
 			focus = brk_nf_integrate_enemies
@@ -1546,8 +2089,12 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_new_victoria entered"
+			}
 			custom_effect_tooltip = brk_vic_decision_chain_tt
-			IF = {
+			if = {
 				limit = {
 					VIC = { has_idea = volunteer_only }
 				}
@@ -1558,6 +2105,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_new_victoria exited"
+			}
 		}
 	}
 
@@ -1566,7 +2117,7 @@ focus_tree = {
 		icon = GFX_goal_brk_enemy_in_the_north
 		cost = 8.6
 		x = 14
-	 	y = 15
+		y = 15
 
 		prerequisite = {
 			focus = brk_nf_integrate_enemies
@@ -1581,9 +2132,17 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_dredgers entered"
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = DRE
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_dredgers exited"
 			}
 		}
 	}
@@ -1593,7 +2152,7 @@ focus_tree = {
 		icon = GFX_goal_brk_broken_no_longer
 		cost = 8.6
 		x = 10
-	 	y = 16
+		y = 16
 
 		prerequisite = {
 			focus = brk_nf_lessons_of_war
@@ -1606,6 +2165,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_pirate_coast entered"
+			}
+			if = {
 				limit = { has_government = ruler }
 				set_cosmetic_tag = BRK_REFORMED_GRAV
 			}
@@ -1615,6 +2178,10 @@ focus_tree = {
 			}
 			add_stability = 0.05
 			add_war_support = 0.05
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_pirate_coast exited"
+			}
 		}
 	}
 
@@ -1623,16 +2190,24 @@ focus_tree = {
 		icon = GFX_goal_legion_bos_war
 		cost = 8.6
 		x = 10
-	 	y = 17
+		y = 17
 
 		prerequisite = {
 			focus = brk_nf_pirate_coast
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_bellingham_kill entered"
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = BEL
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_bellingham_kill exited"
 			}
 		}
 	}
@@ -1642,16 +2217,24 @@ focus_tree = {
 		icon = GFX_goal_brk_seattles_exorcism
 		cost = 8.6
 		x = 10
-	 	y = 18
+		y = 18
 
 		prerequisite = {
 			focus = brk_nf_bellingham_kill
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_washbos_kill entered"
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = WBH
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brk_nf_washbos_kill exited"
 			}
 		}
 	}

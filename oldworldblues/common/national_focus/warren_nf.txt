@@ -16,9 +16,16 @@ focus_tree = {
 		x = 11
 		y = 0
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] firstholotape entered"
+			}
 			country_event = nf_warren.1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] firstholotape exited"
+			}
 		}
-
 	}
 
 	focus = {
@@ -31,7 +38,15 @@ focus_tree = {
 		x = 11
 		y = 1
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] secholotape entered"
+			}
 			country_event = nf_warren.2
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] secholotape exited"
+			}
 		}
 	}
 
@@ -45,7 +60,15 @@ focus_tree = {
 		x = 11
 		y = 2
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] thirdholotape entered"
+			}
 			country_event = nf_warren.3
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] thirdholotape exited"
+			}
 		}
 	}
 
@@ -59,7 +82,15 @@ focus_tree = {
 		x = 11
 		y = 3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] fourthholotape entered"
+			}
 			country_event = nf_warren.4
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] fourthholotape exited"
+			}
 		}
 	}
 
@@ -76,7 +107,15 @@ focus_tree = {
 		x = 2
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] warrenstirs entered"
+			}
 			add_political_power = 120
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] warrenstirs exited"
+			}
 		}
 	}
 
@@ -90,8 +129,16 @@ focus_tree = {
 		x = 11
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] willwarchief entered"
+			}
 			country_event = nf_warren.5
 			add_political_power = 120
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] willwarchief exited"
+			}
 		}
 	}
 
@@ -112,8 +159,16 @@ focus_tree = {
 			has_country_flag = pittman
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] pittmancunning entered"
+			}
 			add_ideas = pittman1
 			load_oob = pittmannightkin
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] pittmancunning exited"
+			}
 		}
 	}
 
@@ -134,7 +189,15 @@ focus_tree = {
 			has_country_flag = bonesnarl
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] bonesnarlloyalty entered"
+			}
 			add_ideas = bonesnarl1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] bonesnarlloyalty exited"
+			}
 		}
 	}
 
@@ -148,9 +211,17 @@ focus_tree = {
 		x = 11
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] cannibalmutants entered"
+			}
 			swap_ideas = {
 				remove_idea = bonesnarl1
 				add_idea = bonesnarl2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] cannibalmutants exited"
 			}
 		}
 	}
@@ -168,6 +239,10 @@ focus_tree = {
 		x = 11
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] preparingthewarren entered"
+			}
 			235 = {
 				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
@@ -180,6 +255,10 @@ focus_tree = {
 					level = 3
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] preparingthewarren exited"
 			}
 		}
 	}
@@ -202,6 +281,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] developingslavesmines entered"
+			}
 			add_resource = {
 				type = metal
 				amount = 25
@@ -211,6 +294,10 @@ focus_tree = {
 				type = water
 				amount = 10
 				state = 235
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] developingslavesmines exited"
 			}
 		}
 	}
@@ -230,9 +317,17 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ritualscarring entered"
+			}
 			swap_ideas = {
 				remove_idea = bonesnarl2
 				add_idea = bonesnarl3
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] ritualscarring exited"
 			}
 		}
 	}
@@ -300,9 +395,17 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] eatersman entered"
+			}
 			swap_ideas = {
 				remove_idea = bonesnarl3
 				add_idea = bonesnarl4
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] eatersman exited"
 			}
 		}
 	}
@@ -324,6 +427,10 @@ focus_tree = {
 			has_country_flag = betty
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] bettysmight entered"
+			}
 			add_ideas = warren_betty_1
 			if = {
 				limit = {
@@ -436,6 +543,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] bettysmight exited"
+			}
 		}
 	}
 
@@ -449,6 +560,10 @@ focus_tree = {
 		x = 15
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] armorrepurposing entered"
+			}
 			if = {
 				limit = {
 					TRL = {
@@ -627,6 +742,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] armorrepurposing exited"
+			}
 		}
 	}
 
@@ -659,6 +778,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] causeoftrouble entered"
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = WBH
@@ -711,6 +834,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] causeoftrouble exited"
+			}
 		}
 	}
 
@@ -724,9 +851,17 @@ focus_tree = {
 		x = 14
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] mutantshocktactics entered"
+			}
 			swap_ideas = {
 				remove_idea = warren_betty_1
 				add_idea = warren_betty_2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] mutantshocktactics exited"
 			}
 		}
 	}
@@ -744,6 +879,10 @@ focus_tree = {
 		x = 16
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] mounthawk entered"
+			}
 			351 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -751,6 +890,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] mounthawk exited"
 			}
 		}
 	}
@@ -778,7 +921,15 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brotherhoodmutants entered"
+			}
 			load_oob = warren_brotherhood
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] brotherhoodmutants exited"
+			}
 		}
 	}
 
@@ -792,11 +943,19 @@ focus_tree = {
 		x = 23
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] slavesunworthy entered"
+			}
 			add_tech_bonus = {
 				name = unworthyslaves
 				bonus = 0.5
 				uses = 1
 				category = industry
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] slavesunworthy exited"
 			}
 		}
 	}
@@ -811,11 +970,19 @@ focus_tree = {
 		x = 22
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] forceddigging entered"
+			}
 			add_tech_bonus = {
 				name = forceddigging
 				bonus = 0.5
 				uses = 1
 				technology = quarry_picks
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] forceddigging exited"
 			}
 		}
 	}
@@ -835,6 +1002,10 @@ focus_tree = {
 		x = 20
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] expandingslavelabour entered"
+			}
 			235 = {
 				add_building_construction = {
 					type = infrastructure
@@ -856,6 +1027,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] expandingslavelabour exited"
+			}
 		}
 	}
 
@@ -869,7 +1044,15 @@ focus_tree = {
 		x = 18
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] slavemutanthouse entered"
+			}
 			add_ideas = warrenhouseslaves
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] slavemutanthouse exited"
+			}
 		}
 	}
 
@@ -883,7 +1066,15 @@ focus_tree = {
 		x = 22
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] unwillinggatherers entered"
+			}
 			add_ideas = warrengatherers
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] unwillinggatherers exited"
+			}
 		}
 	}
 
@@ -897,11 +1088,19 @@ focus_tree = {
 		x = 23
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] mutantlabor entered"
+			}
 			add_tech_bonus = {
 				name = mutantlabor
 				bonus = 0.5
 				uses = 1
 				category = industry
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] mutantlabor exited"
 			}
 		}
 	}
@@ -916,7 +1115,15 @@ focus_tree = {
 		x = 23
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] militarizedlabour entered"
+			}
 			add_ideas = warrenmilitarizedlabor
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] militarizedlabour exited"
+			}
 		}
 	}
 
@@ -930,7 +1137,15 @@ focus_tree = {
 		x = 24
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] readyforwar entered"
+			}
 			add_ideas = warrenreadyforwar
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] readyforwar exited"
+			}
 		}
 	}
 
@@ -947,6 +1162,10 @@ focus_tree = {
 		x = 24
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] stockpiledweapons entered"
+			}
 			add_equipment_to_stockpile = {
 				type = ballistic_equipment_2
 				amount = 1000
@@ -959,6 +1178,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] stockpiledweapons exited"
 			}
 		}
 	}
@@ -973,7 +1196,15 @@ focus_tree = {
 		x = 26
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] rewardsofvictory entered"
+			}
 			add_ideas = warrenrewardsofvictory
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] rewardsofvictory exited"
+			}
 		}
 	}
 
@@ -990,6 +1221,10 @@ focus_tree = {
 		x = 26
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gloriouscity entered"
+			}
 			235 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -997,6 +1232,10 @@ focus_tree = {
 					level = 3
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] gloriouscity exited"
 			}
 		}
 	}
@@ -1011,7 +1250,15 @@ focus_tree = {
 		x = 28
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] defendingthewarren entered"
+			}
 			add_ideas = warrendefendingthewarren
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] defendingthewarren exited"
+			}
 		}
 	}
 
@@ -1028,6 +1275,10 @@ focus_tree = {
 		x = 28
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] oregonline entered"
+			}
 			437 = {
 				add_building_construction = {
 					type = bunker
@@ -1044,6 +1295,10 @@ focus_tree = {
 					province = 4107
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] oregonline exited"
+			}
 		}
 	}
 
@@ -1057,12 +1312,20 @@ focus_tree = {
 		x = 35
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] memories_of_ages entered"
+			}
 			army_experience = 30
 			add_tech_bonus = {
 				name = memory_ages
 				bonus = 0.5
 				uses = 1
 				category = land_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] memories_of_ages exited"
 			}
 		}
 	}
@@ -1080,11 +1343,19 @@ focus_tree = {
 		x = 30
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] weaponspast entered"
+			}
 			add_tech_bonus = {
 				name = weapons_past
 				bonus = 0.5
 				uses = 1
 				category = ballistic_weaponry_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] weaponspast exited"
 			}
 		}
 	}
@@ -1099,7 +1370,15 @@ focus_tree = {
 		x = 30
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] tribaldakka entered"
+			}
 			add_ideas = warren_dakka
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] tribaldakka exited"
+			}
 		}
 	}
 
@@ -1113,7 +1392,15 @@ focus_tree = {
 		x = 30
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] moredakka entered"
+			}
 			add_ideas = warren_dakka2
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] moredakka exited"
+			}
 		}
 	}
 
@@ -1131,9 +1418,17 @@ focus_tree = {
 		x = 30
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] betterdakka entered"
+			}
 			set_technology = {
 				improved_ballistic_weaponry = 1
 				anti_personnel_tech_3 = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] betterdakka exited"
 			}
 		}
 	}
@@ -1151,11 +1446,19 @@ focus_tree = {
 		x = 32
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] weaponsfuture entered"
+			}
 			add_tech_bonus = {
 				name = weapons_future
 				bonus = 0.5
 				uses = 1
 				category = energy_weaponry_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] weaponsfuture exited"
 			}
 		}
 	}
@@ -1170,7 +1473,15 @@ focus_tree = {
 		x = 32
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] tribalzappa entered"
+			}
 			add_ideas = warren_zappa
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] tribalzappa exited"
+			}
 		}
 	}
 
@@ -1184,7 +1495,15 @@ focus_tree = {
 		x = 32
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] morezappa entered"
+			}
 			add_ideas = warren_zappa2
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] morezappa exited"
+			}
 		}
 	}
 
@@ -1202,9 +1521,17 @@ focus_tree = {
 		x = 32
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] morezappa2 entered"
+			}
 			set_technology = {
 				improved_laser_weaponry = 1
 				laser_tech_3 = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] morezappa2 exited"
 			}
 		}
 	}
@@ -1222,7 +1549,15 @@ focus_tree = {
 		x = 34
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] guardianwild entered"
+			}
 			add_ideas = warrenguardianswild
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] guardianwild exited"
+			}
 		}
 	}
 
@@ -1239,7 +1574,15 @@ focus_tree = {
 		x = 36
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] warriorswild entered"
+			}
 			add_ideas = warrenwarriorswild
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] warriorswild exited"
+			}
 		}
 	}
 
@@ -1254,12 +1597,20 @@ focus_tree = {
 		x = 35
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] baneofman entered"
+			}
 			army_experience = 30
 			add_tech_bonus = {
 				name = bane_of_man
 				bonus = 0.5
 				uses = 2
 				category = land_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] baneofman exited"
 			}
 		}
 	}
@@ -1274,7 +1625,15 @@ focus_tree = {
 		x = 35
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] realmsofgoliath entered"
+			}
 			add_ideas = warren_realm_goliath
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] realmsofgoliath exited"
+			}
 		}
 	}
 
@@ -1291,7 +1650,15 @@ focus_tree = {
 		x = 34
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] callofgiants entered"
+			}
 			add_ideas = warrencallofgiants
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] callofgiants exited"
+			}
 		}
 	}
 
@@ -1305,9 +1672,17 @@ focus_tree = {
 		x = 33
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] trollsofthewarren entered"
+			}
 			swap_ideas = {
 				add_idea = warrentrollsofthewarren
 				remove_idea = warrencallofgiants
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] trollsofthewarren exited"
 			}
 		}
 	}
@@ -1325,7 +1700,15 @@ focus_tree = {
 		x = 36
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] callofhorde entered"
+			}
 			add_ideas = warrencallofhorde
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] callofhorde exited"
+			}
 		}
 	}
 
@@ -1340,7 +1723,15 @@ focus_tree = {
 		x = 35
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] callofthefirst entered"
+			}
 			add_ideas = warrencallofthefirst
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] callofthefirst exited"
+			}
 		}
 	}
 
@@ -1354,11 +1745,19 @@ focus_tree = {
 		x = 37
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] sonsofman entered"
+			}
 			swap_ideas = {
 				add_idea = warrensonsofman
 				remove_idea = warrencallofhorde
 			}
 			army_experience = 30
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] sonsofman exited"
+			}
 		}
 	}
 
@@ -1375,6 +1774,10 @@ focus_tree = {
 		x = 39
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] riverexpedition entered"
+			}
 			235 = {
 				add_building_construction = {
 					type = naval_base
@@ -1394,6 +1797,10 @@ focus_tree = {
 				traits = {}
 				skill = 3
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] riverexpedition exited"
+			}
 		}
 	}
 
@@ -1407,11 +1814,19 @@ focus_tree = {
 		x = 38
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] mutantwarship entered"
+			}
 			add_tech_bonus = {
 				name = mutantwarship
 				bonus = 0.5
 				uses = 1
 				category = ship_cruiser_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] mutantwarship exited"
 			}
 		}
 	}
@@ -1426,7 +1841,15 @@ focus_tree = {
 		x = 38
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] amassingfleet entered"
+			}
 			add_ideas = warrenamassingfleet
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] amassingfleet exited"
+			}
 		}
 	}
 
@@ -1440,11 +1863,19 @@ focus_tree = {
 		x = 40
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] mutantcanoe entered"
+			}
 			add_tech_bonus = {
 				name = mutantwarship
 				bonus = 0.5
 				uses = 1
 				category = ship_destroyer_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] mutantcanoe exited"
 			}
 		}
 	}
@@ -1459,7 +1890,15 @@ focus_tree = {
 		x = 40
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] raidingculture entered"
+			}
 			add_ideas = warrenraidingculture
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] raidingculture exited"
+			}
 		}
 	}
 
@@ -1476,11 +1915,19 @@ focus_tree = {
 		x = 39
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] rivergiants entered"
+			}
 			add_tech_bonus = {
 				name = rivergiants
 				bonus = 0.5
 				uses = 1
 				category = ship_heavy_cruiser_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] rivergiants exited"
 			}
 		}
 	}
@@ -1495,7 +1942,15 @@ focus_tree = {
 		x = 7
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] nightkinmigration entered"
+			}
 			add_manpower = 3000
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] nightkinmigration exited"
+			}
 		}
 	}
 
@@ -1536,6 +1991,10 @@ focus_tree = {
 		will_lead_to_war_with = KLA
 		will_lead_to_war_with = ARR
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] southernpush entered"
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = ARR
@@ -1588,6 +2047,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] southernpush exited"
+			}
 		}
 	}
 
@@ -1618,7 +2081,15 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vengeancemaster entered"
+			}
 			add_ideas = pittman2
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] vengeancemaster exited"
+			}
 		}
 	}
 
@@ -1649,7 +2120,15 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] redriver entered"
+			}
 			add_ideas = pittman3
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] redriver exited"
+			}
 		}
 	}
 
@@ -1669,10 +2148,18 @@ focus_tree = {
 			351 = { is_owned_and_controlled_by = TRL }
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] mariposareborn entered"
+			}
 			remove_ideas = pittman1
 			remove_ideas = pittman2
 			remove_ideas = pittman3
 			add_ideas = pittman4
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] mariposareborn exited"
+			}
 		}
 	}
 
@@ -1702,6 +2189,10 @@ focus_tree = {
 		cancel_if_invalid = yes
 		will_lead_to_war_with = RBT
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] attackbreakers entered"
+			}
 			set_country_flag = TRL_restrict_wargoals
 			create_wargoal = {
 				type = annex_everything
@@ -1728,6 +2219,10 @@ focus_tree = {
 						}
 					}
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] attackbreakers exited"
 			}
 		}
 	}
@@ -1758,6 +2253,10 @@ focus_tree = {
 		cancel_if_invalid = yes
 		will_lead_to_war_with = MDT
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] attackmarrow entered"
+			}
 			set_country_flag = TRL_restrict_wargoals
 			create_wargoal = {
 				type = annex_everything
@@ -1784,6 +2283,10 @@ focus_tree = {
 						}
 					}
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] attackmarrow exited"
 			}
 		}
 	}
@@ -1817,12 +2320,20 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] breakingribs entered"
+			}
 			clr_country_flag = TRL_restrict_wargoals
 			add_state_core = 587
 			add_state_core = 506
 			add_state_core = 450
 			add_state_core = 449
 			add_state_core = 493
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] breakingribs exited"
+			}
 		}
 	}
 
@@ -1853,10 +2364,18 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] drinking_marrow entered"
+			}
 			clr_country_flag = TRL_restrict_wargoals
 			add_state_core = 268
 			add_state_core = 113
 			add_state_core = 231
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] drinking_marrow exited"
+			}
 		}
 	}
 
@@ -1876,7 +2395,15 @@ focus_tree = {
 		x = 2
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] forced_mutation entered"
+			}
 			load_oob = warren_forced1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] forced_mutation exited"
+			}
 		}
 	}
 
@@ -1896,6 +2423,10 @@ focus_tree = {
 		x = 0
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] williamette entered"
+			}
 			493 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1910,6 +2441,10 @@ focus_tree = {
 					province = 8574
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] williamette exited"
+			}
 		}
 	}
 	focus = {
@@ -1922,6 +2457,10 @@ focus_tree = {
 		x = 4
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] broken_tribes entered"
+			}
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -1952,6 +2491,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] broken_tribes exited"
+			}
 		}
 	}
 
@@ -1965,11 +2508,19 @@ focus_tree = {
 		x = 0
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] fromtheruins entered"
+			}
 			add_tech_bonus = {
 				name = Warren_ruins
 				bonus = 0.5
 				uses = 1
 				category = industry
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] fromtheruins exited"
 			}
 		}
 	}
@@ -1984,11 +2535,19 @@ focus_tree = {
 		x = 4
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] pinnaclepoint entered"
+			}
 			add_tech_bonus = {
 				name = Warren_ruins
 				bonus = 0.5
 				uses = 1
 				category = industry
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] pinnaclepoint exited"
 			}
 		}
 	}
@@ -2008,6 +2567,10 @@ focus_tree = {
 		will_lead_to_war_with = CHE
 		will_lead_to_war_with = BPT
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] warhornswest entered"
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = BPT
@@ -2060,6 +2623,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] warhornswest exited"
+			}
 		}
 	}
 
@@ -2091,10 +2658,18 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] pickingbones entered"
+			}
 			add_state_core = 251
 			add_state_core = 600
 			add_state_core = 150
 			add_state_core = 86
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] pickingbones exited"
+			}
 		}
 	}
 
@@ -2127,11 +2702,19 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] takinghomes entered"
+			}
 			add_state_core = 426
 			add_state_core = 580
 			add_state_core = 480
 			add_state_core = 121
 			add_state_core = 536
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] takinghomes exited"
+			}
 		}
 	}
 
@@ -2151,7 +2734,15 @@ focus_tree = {
 		x = 2
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] forcedmut2 entered"
+			}
 			load_oob = warren_forced2
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] forcedmut2 exited"
+			}
 		}
 	}
 
@@ -2180,6 +2771,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] oldroad entered"
+			}
 			251 = {
 				add_building_construction = {
 					type = infrastructure
@@ -2208,6 +2803,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] oldroad exited"
+			}
 		}
 	}
 
@@ -2234,7 +2833,15 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] armory entered"
+			}
 			add_ideas = warren_chemult_armory
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] armory exited"
+			}
 		}
 	}
 
@@ -2253,6 +2860,10 @@ focus_tree = {
 		will_lead_to_war_with = BDT
 		will_lead_to_war_with = MLT
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] greattribes entered"
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = BDT
@@ -2305,6 +2916,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] greattribes exited"
+			}
 		}
 	}
 
@@ -2318,6 +2933,10 @@ focus_tree = {
 		x = 4
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] oldguns entered"
+			}
 			if = {
 				limit = {
 					NOT = {
@@ -2377,6 +2996,10 @@ focus_tree = {
 				}
 				load_oob = warren_oldguns
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] oldguns exited"
+			}
 		}
 	}
 
@@ -2390,7 +3013,15 @@ focus_tree = {
 		x = 0
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] bone_picks entered"
+			}
 			add_ideas = bonepicks
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] bone_picks exited"
+			}
 		}
 	}
 
@@ -2420,8 +3051,16 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] overrun entered"
+			}
 			add_state_core = 358
 			add_state_core = 451
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] overrun exited"
+			}
 		}
 	}
 
@@ -2455,6 +3094,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] dancingbones entered"
+			}
 			TRL = {
 				add_state_core = 343
 				add_state_core = 298
@@ -2462,6 +3105,10 @@ focus_tree = {
 				add_state_core = 71
 				add_state_core = 323
 				add_state_core = 29
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] dancingbones exited"
 			}
 		}
 	}
@@ -2479,7 +3126,15 @@ focus_tree = {
 		x = 2
 		y = 13
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] forcedmute3 entered"
+			}
 			load_oob = warren_forced3
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] forcedmute3 exited"
+			}
 		}
 	}
 
@@ -2493,6 +3148,10 @@ focus_tree = {
 		x = 0
 		y = 13
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] bountifulcoast entered"
+			}
 			add_ideas = warren_bountiful_coast
 			358 = {
 				add_building_construction = {
@@ -2500,6 +3159,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] bountifulcoast exited"
 			}
 		}
 	}
@@ -2514,6 +3177,10 @@ focus_tree = {
 		x = 4
 		y = 13
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] worthyfoe entered"
+			}
 			create_corps_commander = {
 				name = "General Shatterhand"
 				portrait_path = ""
@@ -2523,6 +3190,10 @@ focus_tree = {
 				planning_skill = 1
 				logistics_skill = 2
 				traits = { ranger  urban_assault_specialist }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] worthyfoe exited"
 			}
 		}
 	}
@@ -2537,7 +3208,15 @@ focus_tree = {
 		x = 0
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] mirelurkconverts entered"
+			}
 			add_ideas = warren_mirelurk
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] mirelurkconverts exited"
+			}
 		}
 	}
 
@@ -2551,7 +3230,15 @@ focus_tree = {
 		x = 2
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] monsterwoods entered"
+			}
 			load_oob = warren_woods_monster
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] monsterwoods exited"
+			}
 		}
 	}
 
@@ -2565,7 +3252,15 @@ focus_tree = {
 		x = 4
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] greatherd entered"
+			}
 			add_manpower = 1500
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] greatherd exited"
+			}
 		}
 	}
 
@@ -2579,7 +3274,15 @@ focus_tree = {
 		x = 39
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] goliath entered"
+			}
 			load_oob = warren_goliath
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] goliath exited"
+			}
 		}
 	}
 
@@ -2593,7 +3296,15 @@ focus_tree = {
 		x = 20
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] forcedroads entered"
+			}
 			add_ideas = warren_forcedroads
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] forcedroads exited"
+			}
 		}
 	}
 
@@ -2610,6 +3321,10 @@ focus_tree = {
 		x = 18
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] slaveworkshop entered"
+			}
 			add_ideas = warren_slave_workshops
 			235 = {
 				add_building_construction = {
@@ -2617,6 +3332,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] slaveworkshop exited"
 			}
 		}
 	}

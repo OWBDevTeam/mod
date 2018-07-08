@@ -15,7 +15,15 @@ focus_tree = {
 		x = 21
 		y = 0
 		completion_reward = {
-			country_event = { id = nf_vegas.1 } 
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_judgement entered"
+			}
+			country_event = { id = nf_vegas.1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_judgement exited"
+			}
 		}
 	}
 	focus = {
@@ -28,7 +36,15 @@ focus_tree = {
 		x = 21
 		y = 1
 		completion_reward = {
-			country_event = { id = nf_vegas.2 } 
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_software entered"
+			}
+			country_event = { id = nf_vegas.2 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_software exited"
+			}
 		}
 	}
 	focus = {
@@ -41,7 +57,15 @@ focus_tree = {
 		x = 21
 		y = 2
 		completion_reward = {
-			country_event = { id = nf_vegas.3 } 
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_families entered"
+			}
+			country_event = { id = nf_vegas.3 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_families exited"
+			}
 		}
 	}
 	focus = {
@@ -54,7 +78,15 @@ focus_tree = {
 		x = 21
 		y = 3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_newvegas entered"
+			}
 			country_event = { id = nf_vegas.7 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_newvegas exited"
+			}
 		}
 	}
 	focus = {
@@ -70,7 +102,15 @@ focus_tree = {
 		x = 4
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_oldauthority entered"
+			}
 			add_ideas = loyalsubordinates
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_oldauthority exited"
+			}
 		}
 	}
 	focus = {
@@ -86,7 +126,15 @@ focus_tree = {
 		x = 14
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_newmanagement entered"
+			}
 			add_ideas = potentialcoup
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_newmanagement exited"
+			}
 		}
 	}
 	focus = {
@@ -94,7 +142,7 @@ focus_tree = {
 		icon = GFX_goal_VEG_The_King
 		cost = 8.6
 		available = {
-		    has_idea = kings
+			has_idea = kings
 		}
 		prerequisite = {
 			focus = veg_newmanagement
@@ -105,7 +153,15 @@ focus_tree = {
 		x = 11
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_king entered"
+			}
 			add_ideas = theking
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_king exited"
+			}
 		}
 	}
 	focus = {
@@ -118,7 +174,15 @@ focus_tree = {
 		x = 10
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_everyman entered"
+			}
 			add_ideas = freesidesupport
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_everyman exited"
+			}
 		}
 	}
 	focus = {
@@ -131,8 +195,16 @@ focus_tree = {
 		x = 13
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_muggers entered"
+			}
 			custom_effect_tooltip = load_maudsmuggers
 			hidden_effect = { load_oob = maudsmuggers }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_muggers exited"
+			}
 		}
 	}
 	focus = {
@@ -145,6 +217,10 @@ focus_tree = {
 		x = 12
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_followers entered"
+			}
 			add_ideas = followeradvisors
 			create_corps_commander = {
 				name = "Arcade Gannon"
@@ -156,6 +232,10 @@ focus_tree = {
 				planning_skill = 4
 				logistics_skill = 5
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_followers exited"
+			}
 		}
 	}
 	focus = {
@@ -163,7 +243,7 @@ focus_tree = {
 		icon = GFX_goal_VEG_The_Joker
 		cost = 8.6
 		available = {
-		    has_idea = chairmen
+			has_idea = chairmen
 		}
 		prerequisite = {
 			focus = veg_newmanagement
@@ -174,7 +254,15 @@ focus_tree = {
 		x = 18
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_joker entered"
+			}
 			add_ideas = thejoker
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_joker exited"
+			}
 		}
 	}
 	focus = {
@@ -187,8 +275,16 @@ focus_tree = {
 		x = 15
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_thugs entered"
+			}
 			custom_effect_tooltip = load_bennythugs
 			hidden_effect = { load_oob = bennythugs }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_thugs exited"
+			}
 		}
 	}
 	focus = {
@@ -201,7 +297,15 @@ focus_tree = {
 		x = 17
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_hiredhelp entered"
+			}
 			add_ideas = emilyortal
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_hiredhelp exited"
+			}
 		}
 	}
 	focus = {
@@ -214,7 +318,15 @@ focus_tree = {
 		x = 21
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_familyman entered"
+			}
 			add_ideas = threefamilies
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_familyman exited"
+			}
 		}
 	}
 	focus = {
@@ -231,8 +343,16 @@ focus_tree = {
 		x = 19
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_gomorrahthugs entered"
+			}
 			custom_effect_tooltip = load_gommorrahthugs
 			hidden_effect = { load_oob = gomorrahthugs }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_gomorrahthugs exited"
+			}
 		}
 	}
 	focus = {
@@ -249,8 +369,16 @@ focus_tree = {
 		x = 21
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_topsthugs entered"
+			}
 			custom_effect_tooltip = load_topsthugs
 			hidden_effect = { load_oob = topsthugs }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_topsthugs exited"
+			}
 		}
 	}
 	focus = {
@@ -267,8 +395,16 @@ focus_tree = {
 		x = 23
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_ultraluxethugs entered"
+			}
 			custom_effect_tooltip = load_ultraluxethugs
 			hidden_effect = { load_oob = ultraluxethugs }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_ultraluxethugs exited"
+			}
 		}
 	}
 	focus = {
@@ -283,7 +419,15 @@ focus_tree = {
 		x = 21
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_compensation entered"
+			}
 			add_ideas = repaiddebt
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_compensation exited"
+			}
 		}
 	}
 	focus = {
@@ -296,7 +440,15 @@ focus_tree = {
 		x = 20
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_familysupremacy entered"
+			}
 			add_ideas = narcissism
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_familysupremacy exited"
+			}
 		}
 	}
 	focus = {
@@ -312,6 +464,10 @@ focus_tree = {
 			controls_state = 211
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_privatearmies entered"
+			}
 			211 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -319,6 +475,10 @@ focus_tree = {
 					level = 3
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_privatearmies exited"
 			}
 		}
 	}
@@ -332,9 +492,17 @@ focus_tree = {
 		x = 22
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_aligned entered"
+			}
 			swap_ideas = {
 				add_idea = threefamilies2
 				remove_idea = threefamilies
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_aligned exited"
 			}
 		}
 	}
@@ -351,7 +519,15 @@ focus_tree = {
 		x = 21
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_checkereddevil entered"
+			}
 			add_ideas = cultofpersonality
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_checkereddevil exited"
+			}
 		}
 	}
 	focus = {
@@ -367,6 +543,10 @@ focus_tree = {
 		x = 28
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_ultraluxe entered"
+			}
 			211 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -374,6 +554,10 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_ultraluxe exited"
 			}
 		}
 	}
@@ -393,6 +577,10 @@ focus_tree = {
 		x = 26
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_whitegloves entered"
+			}
 			#show_ideas_tooltip = marjorie'
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = majorie 
@@ -403,6 +591,10 @@ focus_tree = {
 					}
 					add_ideas = majorie
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_whitegloves exited"
 			}
 		}
 	}
@@ -419,9 +611,17 @@ focus_tree = {
 			has_idea = majorie
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_wealthycontacts entered"
+			}
 			swap_ideas = {
 				add_idea = whitegloves2
 				remove_idea = whitegloves
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_wealthycontacts exited"
 			}
 		}
 	}
@@ -438,9 +638,17 @@ focus_tree = {
 		x = 25
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_meatonthemenu entered"
+			}
 			swap_ideas = {
 				add_idea = whitegloves3
 				remove_idea = whitegloves2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_meatonthemenu exited"
 			}
 		}
 	}
@@ -457,9 +665,17 @@ focus_tree = {
 		x = 27
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_abandon entered"
+			}
 			swap_ideas = {
 				add_idea = whitegloves4
 				remove_idea = whitegloves2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_abandon exited"
 			}
 		}
 	}
@@ -479,6 +695,10 @@ focus_tree = {
 		x = 29
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_khaganate entered"
+			}
 			custom_effect_tooltip = available_army_chief
 			show_ideas_tooltip = papa_khan
 			hidden_effect = {
@@ -488,6 +708,10 @@ focus_tree = {
 					}
 					add_ideas = papa_khan
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_khaganate exited"
 			}
 		}
 	}
@@ -504,9 +728,17 @@ focus_tree = {
 			has_idea = papa_khan
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_pickelhaube entered"
+			}
 			swap_ideas = {
 				add_idea = khaganate2
 				remove_idea = khaganate
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_pickelhaube exited"
 			}
 		}
 	}
@@ -520,9 +752,17 @@ focus_tree = {
 		x = 29
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_buryhatchet entered"
+			}
 			swap_ideas = {
 				add_idea = khaganate3
 				remove_idea = khaganate2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_buryhatchet exited"
 			}
 		}
 	}
@@ -539,8 +779,16 @@ focus_tree = {
 		x = 32
 		y = 4
 		completion_reward = {
-			211 = {	
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_tops entered"
+			}
+			211 = { 
 				add_extra_state_shared_building_slots = 2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_tops exited"
 			}
 		}
 	}
@@ -560,6 +808,10 @@ focus_tree = {
 		x = 31
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_chairmen entered"
+			}
 			#show_ideas_tooltip = benny
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = benny 
@@ -570,6 +822,10 @@ focus_tree = {
 					}
 					add_ideas = benny
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_chairmen exited"
 			}
 		}
 	}
@@ -586,6 +842,10 @@ focus_tree = {
 		x = 31
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_arms entered"
+			}
 			211 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -593,6 +853,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_arms exited"
 			}
 		}
 	}
@@ -606,7 +870,15 @@ focus_tree = {
 		x = 31
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_newdeal entered"
+			}
 			add_ideas = bennynewdeal
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_newdeal exited"
+			}
 		}
 	}
 	focus = {
@@ -625,6 +897,10 @@ focus_tree = {
 		x = 33
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_kings entered"
+			}
 			#show_ideas_tooltip = theking
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = the_king
@@ -635,6 +911,10 @@ focus_tree = {
 					}
 					add_ideas = the_king
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_kings exited"
 			}
 		}
 	}
@@ -652,6 +932,10 @@ focus_tree = {
 			controls_state = 313
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_westside entered"
+			}
 			313 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
@@ -668,6 +952,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_westside exited"
+			}
 		}
 	}
 	focus = {
@@ -683,6 +971,10 @@ focus_tree = {
 			controls_state = 344
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_north entered"
+			}
 			344 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
@@ -699,6 +991,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_north exited"
+			}
 		}
 	}
 	focus = {
@@ -714,6 +1010,10 @@ focus_tree = {
 			controls_state = 211
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_gomorrah entered"
+			}
 			211 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -721,6 +1021,10 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_gomorrah exited"
 			}
 		}
 	}
@@ -740,6 +1044,10 @@ focus_tree = {
 		x = 35
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_consig entered"
+			}
 			#show_ideas_tooltip = motorunner
 			custom_effect_tooltip = available_high_command
 			show_ideas_tooltip = motor_runner
@@ -750,6 +1058,10 @@ focus_tree = {
 					}
 					add_ideas = motor_runner
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_consig exited"
 			}
 		}
 	}
@@ -766,9 +1078,17 @@ focus_tree = {
 		x = 35
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_skullsandsuits entered"
+			}
 			swap_ideas = {
 				add_idea = consigs2
 				remove_idea = consigs
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_skullsandsuits exited"
 			}
 		}
 	}
@@ -782,9 +1102,17 @@ focus_tree = {
 		x = 35
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_cologne entered"
+			}
 			swap_ideas = {
 				add_idea = consigs3
 				remove_idea = consigs2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_cologne exited"
 			}
 		}
 	}
@@ -798,7 +1126,15 @@ focus_tree = {
 		x = 4
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_house entered"
+			}
 			add_political_power = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_house exited"
+			}
 		}
 	}
 	focus = {
@@ -814,7 +1150,15 @@ focus_tree = {
 		x = 2
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_nwo entered"
+			}
 			add_ideas = militarypriorities
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_nwo exited"
+			}
 		}
 	}
 	focus = {
@@ -830,7 +1174,15 @@ focus_tree = {
 		x = 6
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_economy entered"
+			}
 			add_ideas = goodbusiness
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_economy exited"
+			}
 		}
 	}
 	focus = {
@@ -854,7 +1206,15 @@ focus_tree = {
 		x = 4
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_platinumchip entered"
+			}
 			country_event = nf_vegas.16
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_platinumchip exited"
+			}
 		}
 	}
 	focus = {
@@ -871,21 +1231,29 @@ focus_tree = {
 		x = 4
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_vault entered"
+			}
 			country_event = nf_vegas.17
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_vault exited"
+			}
 		}
 	}
 	#focus = {
-	#	id = veg_prime
-	#	icon = GFX_goal_VEG_Vegas_Prime
-	#	cost = 8.6
-	#	prerequisite = {
-	#		focus = veg_vault
-	#	}
-	#	x = 4
-	#	y = 9
-	#	completion_reward = {
-	#		country_event = nf_vegas.18
-	#	}
+	#   id = veg_prime
+	#   icon = GFX_goal_VEG_Vegas_Prime
+	#   cost = 8.6
+	#   prerequisite = {
+	#       focus = veg_vault
+	#   }
+	#   x = 4
+	#   y = 9
+	#   completion_reward = {
+	#       country_event = nf_vegas.18
+	#   }
 	#
 	#}
 	focus = {
@@ -904,6 +1272,10 @@ focus_tree = {
 		y = 7
 		will_lead_to_war_with = KHA
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_securenorth entered"
+			}
 			if = {
 				limit = {
 					KHA = { exists = yes }
@@ -930,8 +1302,12 @@ focus_tree = {
 						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
-					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV }}
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_securenorth exited"
 			}
 		}
 	}
@@ -951,6 +1327,10 @@ focus_tree = {
 		y = 7
 		will_lead_to_war_with = FIE
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_rockthesuburbs entered"
+			}
 			if = {
 				limit = {
 					FIE = { exists = yes }
@@ -977,8 +1357,12 @@ focus_tree = {
 						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
-					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV }}
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_rockthesuburbs exited"
 			}
 		}
 	}
@@ -1005,6 +1389,10 @@ focus_tree = {
 		will_lead_to_war_with = DAM
 		completion_reward = {
 			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_secure entered"
+			}
+			if = {
 				limit = {
 					DAM = { exists = yes }
 				}
@@ -1030,8 +1418,12 @@ focus_tree = {
 						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
-					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV }}
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_secure exited"
 			}
 		}
 	}
@@ -1058,6 +1450,10 @@ focus_tree = {
 		will_lead_to_war_with = MRA
 		completion_reward = {
 			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_clean entered"
+			}
+			if = {
 				limit = {
 					MRA = { exists = yes }
 				}
@@ -1083,8 +1479,12 @@ focus_tree = {
 						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
-					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV }}
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_clean exited"
 			}
 		}
 	}
@@ -1104,6 +1504,10 @@ focus_tree = {
 		y = 9
 		will_lead_to_war_with = MOJ
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_broken entered"
+			}
 			if = {
 				limit = {
 					MOJ = { exists = yes }
@@ -1130,8 +1534,12 @@ focus_tree = {
 						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
-					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV }}
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_broken exited"
 			}
 		}
 	}
@@ -1148,6 +1556,10 @@ focus_tree = {
 			46 = { is_owned_and_controlled_by = VEG }
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_reborn entered"
+			}
 			46 = {
 				add_building_construction = {
 					type = arms_factory
@@ -1158,6 +1570,10 @@ focus_tree = {
 					type = advanced_technology
 					amount = 8
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_reborn exited"
 			}
 		}
 	}
@@ -1177,6 +1593,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_hopeville entered"
+			}
 			if = {
 				limit = {
 					HOP = { exists = yes }
@@ -1203,8 +1623,12 @@ focus_tree = {
 						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
-					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV }}
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_hopeville exited"
 			}
 		}
 	}
@@ -1224,6 +1648,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_ashton entered"
+			}
 			if = {
 				limit = {
 					ASH = { exists = yes }
@@ -1250,8 +1678,12 @@ focus_tree = {
 						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
-					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV }}
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_ashton exited"
 			}
 		}
 	}
@@ -1266,7 +1698,15 @@ focus_tree = {
 		x = 1
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_architect entered"
+			}
 			add_ideas = housealwayswins
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_architect exited"
+			}
 		}
 	}
 	focus = {
@@ -1282,6 +1722,10 @@ focus_tree = {
 		x = 6
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_newvegastreaty entered"
+			}
 			253 = {
 				add_resource = {
 					type = electricity
@@ -1300,7 +1744,10 @@ focus_tree = {
 			VEG = {
 				give_military_access = NCR
 			}
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_newvegastreaty exited"
+			}
 		}
 	}
 	focus = {
@@ -1318,9 +1765,17 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_ncrtradedeal entered"
+			}
 			swap_ideas = {
 				remove_idea = goodbusiness
 				add_idea = goodbusiness2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_ncrtradedeal exited"
 			}
 		}
 	}
@@ -1337,11 +1792,19 @@ focus_tree = {
 			controls_state = 211
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_ncrrail entered"
+			}
 			211 = {
 				add_resource = {
 					type = metal
 					amount = 16
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_ncrrail exited"
 			}
 		}
 	}
@@ -1359,6 +1822,10 @@ focus_tree = {
 		x = 6
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_ncrembassy entered"
+			}
 			211 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1366,6 +1833,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_ncrembassy exited"
 			}
 		}
 	}
@@ -1382,9 +1853,16 @@ focus_tree = {
 			NCR = { exists = no }
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_ncrstatehood entered"
+			}
 			NCR = {
 				country_event = nf_vegas.53
-
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_ncrstatehood exited"
 			}
 		}
 	}
@@ -1401,12 +1879,20 @@ focus_tree = {
 			controls_state = 211
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_prepcity entered"
+			}
 			211 = {
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_prepcity exited"
 			}
 		}
 	}
@@ -1423,7 +1909,15 @@ focus_tree = {
 		x = 8
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_segregate entered"
+			}
 			add_ideas = wealthyclientele
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_segregate exited"
+			}
 		}
 	}
 	focus = {
@@ -1440,7 +1934,15 @@ focus_tree = {
 		x = 10
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_revitalize entered"
+			}
 			add_ideas = middleclassclientele
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_revitalize exited"
+			}
 		}
 	}
 	focus = {
@@ -1454,7 +1956,15 @@ focus_tree = {
 		x = 9
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_vault21 entered"
+			}
 			country_event = nf_vegas.9
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_vault21 exited"
+			}
 		}
 	}
 	focus = {
@@ -1470,6 +1980,10 @@ focus_tree = {
 			controls_state = 211
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_cerulean entered"
+			}
 			211 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1477,6 +1991,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_cerulean exited"
 			}
 		}
 	}
@@ -1493,6 +2011,10 @@ focus_tree = {
 			controls_state = 211
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_industry entered"
+			}
 			211 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -1500,6 +2022,10 @@ focus_tree = {
 					level = 3
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_industry exited"
 			}
 		}
 	}
@@ -1513,7 +2039,15 @@ focus_tree = {
 		x = 8
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_followersupport entered"
+			}
 			add_ideas = followerknowledge
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_followersupport exited"
+			}
 		}
 	}
 	focus = {
@@ -1526,7 +2060,15 @@ focus_tree = {
 		x = 10
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_walls entered"
+			}
 			add_ideas = concretefortress
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_walls exited"
+			}
 		}
 	}
 	focus = {
@@ -1539,7 +2081,15 @@ focus_tree = {
 		x = 14
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_securitron entered"
+			}
 			add_political_power = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_securitron exited"
+			}
 		}
 	}
 	focus = {
@@ -1555,7 +2105,15 @@ focus_tree = {
 		x = 13
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_vic entered"
+			}
 			country_event = nf_vegas.10
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_vic exited"
+			}
 		}
 	}
 	focus = {
@@ -1571,7 +2129,15 @@ focus_tree = {
 		x = 12
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_first entered"
+			}
 			add_ideas = unifiedvegas
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_first exited"
+			}
 		}
 	}
 	focus = {
@@ -1592,7 +2158,11 @@ focus_tree = {
 		x = 14
 		y = 9
 		completion_reward = {
-		create_faction = mojave_alliance
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_mojave entered"
+			}
+			create_faction = mojave_alliance
 			if = {
 				limit = {
 					MOJ = {
@@ -1625,6 +2195,10 @@ focus_tree = {
 					country_event = { id = nf_vegas.8 }
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_mojave exited"
+			}
 		}
 	}
 	focus = {
@@ -1645,6 +2219,10 @@ focus_tree = {
 		will_lead_to_war_with = FIE
 		will_lead_to_war_with = KHA
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_raiderend entered"
+			}
 			add_state_core = 380
 			add_state_core = 12
 			add_state_core = 106
@@ -1674,7 +2252,7 @@ focus_tree = {
 						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
-					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV }}
 				}
 			}
 			if = {
@@ -1703,8 +2281,12 @@ focus_tree = {
 						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
-					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV }}
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_raiderend exited"
 			}
 		}
 	}
@@ -1725,6 +2307,10 @@ focus_tree = {
 		y = 11
 		will_lead_to_war_with = MRA
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_mojavesecond entered"
+			}
 			add_state_core = 533
 			add_state_core = 272
 			add_state_core = 181
@@ -1757,8 +2343,12 @@ focus_tree = {
 						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
-					ROOT = { create_wargoal = { type = annex_everything target = PREV } }
+					ROOT = { create_wargoal = { type = annex_everything target = PREV }}
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_mojavesecond exited"
 			}
 		}
 	}
@@ -1777,6 +2367,10 @@ focus_tree = {
 		x = 14
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_dambusters entered"
+			}
 			if = {
 				limit = {
 					DAM = {
@@ -1809,6 +2403,10 @@ focus_tree = {
 					country_event = { id = nf_vegas.8 }
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_dambusters exited"
+			}
 		}
 	}
 	focus = {
@@ -1826,9 +2424,17 @@ focus_tree = {
 		x = 14
 		y = 11
 		completion_reward = {
-		    MOJ = {
-		        country_event = nf_vegas.21
-		    }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_mojavesecure entered"
+			}
+			MOJ = {
+				country_event = nf_vegas.21
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_mojavesecure exited"
+			}
 		}
 	}
 	focus = {
@@ -1848,10 +2454,18 @@ focus_tree = {
 		x = 14
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_assassinate entered"
+			}
 			kill_country_leader = yes
 			set_country_flag = theking
 			set_politics = {
 				ruling_party = people 
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_assassinate exited"
 			}
 		}
 	}
@@ -1872,7 +2486,15 @@ focus_tree = {
 		x = 12
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_warforvegas entered"
+			}
 			country_event = nf_vegas.15
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_warforvegas exited"
+			}
 		}
 	}
 	focus = {
@@ -1886,8 +2508,16 @@ focus_tree = {
 		x = 13
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_peoplesvegas entered"
+			}
 			add_ideas = trueindependence
 			remove_ideas = potentialcoup
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_peoplesvegas exited"
+			}
 		}
 	}
 	focus = {
@@ -1900,10 +2530,18 @@ focus_tree = {
 		x = 17
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_yesman entered"
+			}
 			add_ideas = yesman
 			add_popularity = {
 				ideology = elites
 				popularity = 0.05
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_yesman exited"
 			}
 		}
 	}
@@ -1920,14 +2558,21 @@ focus_tree = {
 		x = 16
 		y = 8
 		available = {
-		    VEG = {
-			    has_idea = khaganate
-		    }
+			VEG = {
+				has_idea = khaganate
+			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_lowfriends entered"
+			}
 			country_event = nf_vegas.11
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_lowfriends exited"
+			}
 		}
-
    }
 	focus = {
 		id = veg_highfriends
@@ -1945,7 +2590,15 @@ focus_tree = {
 		x = 18
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_highfriends entered"
+			}
 			country_event = nf_vegas.12
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_highfriends exited"
+			}
 		}
 	}
 	focus = {
@@ -1959,7 +2612,15 @@ focus_tree = {
 		x = 17
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_wrongpackage entered"
+			}
 			country_event = nf_vegas.13
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_wrongpackage exited"
+			}
 		}
 	}
 	focus = {
@@ -1972,9 +2633,17 @@ focus_tree = {
 		x = 17
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_crackthevault entered"
+			}
 		   country_event = nf_vegas.47
-	    }
-	}	
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_crackthevault exited"
+			}
+		}
+	}   
 	focus = {
 		id = veg_allin
 		icon = GFX_goal_VEG_All-In
@@ -1988,9 +2657,17 @@ focus_tree = {
 		x = 17
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_allin entered"
+			}
 			kill_country_leader = yes
 			set_politics = {
 				ruling_party = elites 
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_allin exited"
 			}
 		}
 	}
@@ -2004,8 +2681,16 @@ focus_tree = {
 		x = 16
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_ringading entered"
+			}
 			add_ideas = brightlights
 			remove_ideas = potentialcoup
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_ringading exited"
+			}
 		}
 	}
 	focus = {
@@ -2025,6 +2710,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_nevadapact entered"
+			}
 			if = {
 				limit = {
 					has_global_flag = nevadapact
@@ -2057,8 +2746,12 @@ focus_tree = {
 					}
 				}
 				VEG = {
-				country_event = { days = 1 id = nf_vegas.30 }
+					country_event = { days = 1 id = nf_vegas.30 }
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_nevadapact exited"
 			}
 		}
 	}
@@ -2078,6 +2771,10 @@ focus_tree = {
 		x = 37
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_omertas entered"
+			}
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = nero
 			hidden_effect = {
@@ -2087,6 +2784,10 @@ focus_tree = {
 					}
 					add_ideas = nero
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_omertas exited"
 			}
 		}
 	}
@@ -2103,9 +2804,17 @@ focus_tree = {
 			has_idea = nero
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_addiction entered"
+			}
 			swap_ideas = {
 				add_idea = omertas2
 				remove_idea = omertas
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_addiction exited"
 			}
 		}
 	}
@@ -2122,6 +2831,10 @@ focus_tree = {
 			controls_state = 211
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_mobsters entered"
+			}
 			211 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -2133,6 +2846,10 @@ focus_tree = {
 				type = ballistic_equipment_2
 				amount = 500
 				producer = VEG
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_mobsters exited"
 			}
 		}
 	}
@@ -2156,7 +2873,15 @@ focus_tree = {
 		x = 32
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_lucky38 entered"
+			}
 			add_political_power = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_lucky38 exited"
+			}
 		}
 	}
 	focus = {
@@ -2172,6 +2897,10 @@ focus_tree = {
 			controls_state = 211
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_robco entered"
+			}
 			211 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2181,6 +2910,10 @@ focus_tree = {
 				}
 			}
 			add_ideas = robcoreborn
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_robco exited"
+			}
 		}
 	}
 	focus = {
@@ -2193,8 +2926,16 @@ focus_tree = {
 		x = 25
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_firstbatch entered"
+			}
 			custom_effect_tooltip = load_firstbatch
 			hidden_effect = { load_oob = firstbatch }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_firstbatch exited"
+			}
 		}
 	}
 	focus = {
@@ -2210,6 +2951,10 @@ focus_tree = {
 			controls_state = 211
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_expansion entered"
+			}
 			211 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2217,6 +2962,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_expansion exited"
 			}
 		}
 	}
@@ -2230,12 +2979,20 @@ focus_tree = {
 		x = 30
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_smallarms entered"
+			}
 			army_experience = 10
 			add_tech_bonus = {
 				name = ballistic_bonus
 				bonus = 0.5
 				uses = 2
 				category = ballistic_weaponry_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_smallarms exited"
 			}
 		}
 	}
@@ -2249,6 +3006,10 @@ focus_tree = {
 		x = 34
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_rapidresponse entered"
+			}
 			every_owned_state = {
 				limit = {
 					is_controlled_by = VEG
@@ -2258,6 +3019,10 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_rapidresponse exited"
 			}
 		}
 	}
@@ -2277,7 +3042,15 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_fourthfam entered"
+			}
 			add_research_slot = 1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_fourthfam exited"
+			}
 		}
 	}
 	focus = {
@@ -2290,7 +3063,15 @@ focus_tree = {
 		x = 37
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_elijah entered"
+			}
 			add_ideas = vegaselijahrestoration
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_elijah exited"
+			}
 		}
 	}
 	focus = {
@@ -2303,7 +3084,15 @@ focus_tree = {
 		x = 37
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_t45d entered"
+			}
 			set_technology = { power_armour_t45d = 1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_t45d exited"
+			}
 		}
 	}
 	focus = {
@@ -2316,8 +3105,16 @@ focus_tree = {
 		x = 37
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_bossecurity entered"
+			}
 			custom_effect_tooltip = load_vegassecurity
 			hidden_effect = { load_oob = vegassecurity }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_bossecurity exited"
+			}
 		}
 	}
 	focus = {
@@ -2333,7 +3130,15 @@ focus_tree = {
 		x = 32
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_warlabs entered"
+			}
 			add_research_slot = 1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_warlabs exited"
+			}
 		}
 	}
 	focus = {
@@ -2346,11 +3151,19 @@ focus_tree = {
 		x = 32
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_justlikethesim entered"
+			}
 			add_tech_bonus = {
 				name = land_doc_bonus
 				bonus = 0.75
 				uses = 2
 				category = land_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_justlikethesim exited"
 			}
 		}
 	}
@@ -2364,11 +3177,19 @@ focus_tree = {
 		x = 30
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_security entered"
+			}
 			add_tech_bonus = {
 				name = infantry_tech_bonus
 				bonus = 0.5
 				uses = 2
 				category = infantry_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_security exited"
 			}
 		}
 	}
@@ -2382,11 +3203,19 @@ focus_tree = {
 		x = 30
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_vehicles entered"
+			}
 			add_tech_bonus = {
 				name = vehicle_tech_bonus
 				bonus = 0.5
 				uses = 2
 				category = vehicle_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_vehicles exited"
 			}
 		}
 	}
@@ -2400,8 +3229,16 @@ focus_tree = {
 		x = 30
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_mobile entered"
+			}
 			custom_effect_tooltip = load_vegasmobilewarfare
 			hidden_effect = { load_oob = vegasmobilewarfare }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_mobile exited"
+			}
 		}
 	}
 	focus = {
@@ -2414,7 +3251,15 @@ focus_tree = {
 		x = 32
 		y = 13
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_boomers entered"
+			}
 			add_ideas = boomeragreement
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_boomers exited"
+			}
 		}
 	}
 	focus = {
@@ -2427,7 +3272,15 @@ focus_tree = {
 		x = 30
 		y = 13
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_militia entered"
+			}
 			add_ideas = militiaarms
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_militia exited"
+			}
 		}
 	}
 	focus = {
@@ -2440,8 +3293,16 @@ focus_tree = {
 		x = 32
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_lakemead entered"
+			}
 			custom_effect_tooltip = load_lakemead
 			hidden_effect = { load_oob = lakemead }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_lakemead exited"
+			}
 		}
 	}
 	focus = {
@@ -2457,6 +3318,10 @@ focus_tree = {
 			controls_state = 211
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_handh entered"
+			}
 			211 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2466,6 +3331,10 @@ focus_tree = {
 				}
 			}
 			add_ideas = handh
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_handh exited"
+			}
 		}
 	}
 	focus = {
@@ -2481,6 +3350,10 @@ focus_tree = {
 			controls_state = 211
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_zappsigns entered"
+			}
 			211 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2488,6 +3361,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_zappsigns exited"
 			}
 		}
 	}
@@ -2501,7 +3378,15 @@ focus_tree = {
 		x = 34
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_sewage entered"
+			}
 			add_ideas = sanitarycity
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_sewage exited"
+			}
 		}
 	}
 	focus = {
@@ -2514,7 +3399,15 @@ focus_tree = {
 		x = 27
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_securitrons1 entered"
+			}
 			add_ideas = securitron1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_securitrons1 exited"
+			}
 		}
 	}
 	focus = {
@@ -2527,7 +3420,15 @@ focus_tree = {
 		x = 25
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_handys entered"
+			}
 			add_ideas = mrhandys
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_handys exited"
+			}
 		}
 	}
 	focus = {
@@ -2540,7 +3441,15 @@ focus_tree = {
 		x = 25
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_gutsys entered"
+			}
 			add_ideas = mrgutsys
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_gutsys exited"
+			}
 		}
 	}
 	focus = {
@@ -2553,9 +3462,17 @@ focus_tree = {
 		x = 27
 		y = 12
 		completion_reward = {
-			swap_ideas ={
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_expandeddeployment entered"
+			}
+			swap_ideas = {
 				add_idea = securitron2
 				remove_idea = securitron1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_expandeddeployment exited"
 			}
 		}
 	}
@@ -2569,7 +3486,15 @@ focus_tree = {
 		x = 25
 		y = 13
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_robotstrats entered"
+			}
 			add_ideas = robobrains
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_robotstrats exited"
+			}
 		}
 	}
 	focus = {
@@ -2585,7 +3510,15 @@ focus_tree = {
 		x = 26
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_sentrybots entered"
+			}
 			add_ideas = sentrybots
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [ROOT.GetName] veg_sentrybots exited"
+			}
 		}
 	}
 }

@@ -1395,33 +1395,6 @@ country_event = {
 		name = nf_vegas.53.a 
 		VEG = {
 			country_event = nf_vegas.54
-			set_politics = {
-				ruling_party = people
-				parties = {
-					people = {
-						popularity = 60
-					}
-					intellectuals = {
-						popularity = 0
-					}
-					elites = {
-						popularity = 0
-					}
-					ruler = {
-						popularity = 40
-					}
-				}
-			}
-			create_country_leader  = {
-				name = "Mr House"
-				desc = "MR_HOUSE_DESC"
-				picture = "Portrait_House.dds"
-				expire = "3000.1.1"
-				ideology = constitutional_monarchy
-				traits = {
-					dislikes_legion
-				}
-			}
 		}
 		ai_chance = {
 			factor = 1
@@ -1473,6 +1446,18 @@ country_event = {
 		}
 		NCR = {
 			add_to_faction = VEG 
+			add_ai_strategy = {
+				type = alliance
+				id = "VEG"
+				value = 200
+			}
+		}
+		VEG = {
+			add_ai_strategy = {
+				type = alliance
+				id = "NCR"
+				value = 200
+			}
 		}
 	}
 	
