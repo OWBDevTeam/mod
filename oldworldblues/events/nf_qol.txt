@@ -32,6 +32,7 @@ country_event = { #Enclave Resurgent
 		add_political_power = -60
 	}
 }
+
 country_event = { #BOS-NCR Civil War Interaction
 	id = nf_qol.2
 	title = nf_qol.2.t
@@ -87,8 +88,9 @@ country_event = { #BOS-NCR Civil War Interaction
 			transfer_state = 70
 			transfer_state = 602
 			transfer_state = 64
-			transfer_state = 51
+			transfer_state = 258
 			transfer_state = 245
+			transfer_state = 548
 		}
 
 		ai_chance = {
@@ -104,8 +106,6 @@ country_event = { #BOS-NCR Civil War Interaction
 		ai_chance = {
 			factor = 3
 		}
-
-
 	}
 	option = {
 		name = nf_qol.2.c
@@ -114,7 +114,6 @@ country_event = { #BOS-NCR Civil War Interaction
 		ai_chance = {
 			factor = 5
 		}
-
 	}
 	option = {
 		name = nf_qol.2.e
@@ -140,9 +139,9 @@ country_event = { #BOS-NCR Civil War Interaction
 		ai_chance = {
 			factor = 100
 		}
-
 	}
 }
+
 country_event = { #Support the boneyard
 	id = nf_qol.3
 	title = nf_qol.3.t
@@ -175,8 +174,9 @@ country_event = { #Support the boneyard
 			transfer_state = 70
 			transfer_state = 602
 			transfer_state = 64
-			transfer_state = 51
+			transfer_state = 258
 			transfer_state = 245
+			transfer_state = 548
 			add_ai_strategy = {
 				type = alliance
 				id = "BON"
@@ -195,7 +195,6 @@ country_event = { #Support the boneyard
 		ai_chance = {
 			factor = 10
 		}
-
 	}
 	option = {
 		name = nf_qol.3.b
@@ -203,9 +202,9 @@ country_event = { #Support the boneyard
 		ai_chance = {
 			factor = 4.0
 		}
-
 	}
 }
+
 country_event = { #Boneyard Resurrects the BOS
 	id = nf_qol.4
 	title = nf_qol.4.t
@@ -240,8 +239,9 @@ country_event = { #Boneyard Resurrects the BOS
 			transfer_state = 70
 			transfer_state = 602
 			transfer_state = 64
-			transfer_state = 51
+			transfer_state = 258
 			transfer_state = 245
+			transfer_state = 548
 			load_oob = boneyardbrotherhood
 			add_ai_strategy = {
 				type = alliance
@@ -259,17 +259,15 @@ country_event = { #Boneyard Resurrects the BOS
 		every_country = {
 			news_event = nf_qol.6
 		}
-
 		ai_chance = {
 			factor = 10.0
 		}
-
 	}
 	option = {
 		name = nf_qol.4.b
-
 	}
 }
+
 country_event = { #BOS Unpuppets
 	id = nf_qol.5
 	title = nf_qol.5.t
@@ -310,8 +308,9 @@ country_event = { #BOS Unpuppets
 			transfer_state = 70
 			transfer_state = 602
 			transfer_state = 64
-			transfer_state = 51
+			transfer_state = 258
 			transfer_state = 245
+			transfer_state = 548
 			declare_war_on = {
 				target = NCR
 				type = annex_everything
@@ -326,6 +325,7 @@ country_event = { #BOS Unpuppets
 		}
 	}
 }
+
 news_event = { #World Announce that the BOS returned
 	id = nf_qol.6
 	title = nf_qol.6.t
@@ -345,9 +345,9 @@ country_event = { #Enclave Resurgent 2
 		tag = BOS
 		NEW = {
 			has_country_leader = {
-						id = 791
-						ruling_only = yes
-						name = "Sergeant Dornan"
+				id = 791
+				ruling_only = yes
+				name = "Sergeant Dornan"
 			}
 		}
 	}
