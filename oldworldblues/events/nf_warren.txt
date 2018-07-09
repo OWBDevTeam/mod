@@ -1,5 +1,6 @@
 ﻿add_namespace = nf_warren
 
+#First holotape
 country_event = {
 	id = nf_warren.1
 	title = nf_warren.1.t
@@ -23,6 +24,8 @@ country_event = {
 		add_ideas = warren_home
 	}
 }
+
+#Second Holotape
 country_event = {
 	id = nf_warren.2
 	title = nf_warren.2.t
@@ -84,13 +87,13 @@ country_event = {
 				level = 3
 				instant_build = yes
 			}
-			
 		}
 		add_manpower = 3000
 		add_ideas = warrenprimativearmy
 	}
-	
 }
+
+#Third Holotape
 country_event = {
 	id = nf_warren.3
 	title = nf_warren.3.t
@@ -122,6 +125,8 @@ country_event = {
 		load_oob = warren_forced
 	}
 }
+
+#Fourth holotape
 country_event = {
 	id = nf_warren.4
 	title = nf_warren.4.t
@@ -141,7 +146,7 @@ country_event = {
 			type = electricity
 			amount = 5
 			state = 235
-		}	
+		}
 	}
 	option = {
 		name = nf_warren.4.b
@@ -152,6 +157,8 @@ country_event = {
 		add_ideas = warren_warriors
 	}
 }
+
+#The Challengers
 country_event = {
 	id = nf_warren.5
 	title = nf_warren.5.t 
@@ -195,5 +202,22 @@ country_event = {
 		}
 		set_country_flag = betty
 	}
-	
+}
+
+#New Mariposa
+country_event = {
+	id = nf_warren.6
+	title = nf_warren.6.t
+	desc = nf_warren.6.d
+	picture = GFX_report_event_fascist_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_warren.6.a
+		set_province_name = { id = 7107 name = "New Mariposa"}
+		hidden_effect = {
+			351 = { set_state_name = "New Mariposa" }
+		}
+	}
 }
