@@ -36,13 +36,49 @@ guiTypes = {
 			maxWidth = 250
 		}
 		
+		iconType = {
+			name = "state_religion_bg"
+			spriteType = "GFX_loadingtip_bg"
+			scale = 0.27
+			position = { x = -31 y = 50 }
+		}
+		
 		instantTextBoxType = {
 			name = "state_religion_name"
-			position = { x = 18 y = 46 }
+			position = { x = 40 y = 64 }
 			font = "hoi_18mbs"
 			format = center
-			text = "REL_current_religion"
-			maxWidth = 280
+			text = "STATE_RELIGION_NAME"
+		#	text = "REL_current_religion"
+			maxWidth = 230
+		}
+		
+		containerWindowType = {
+			name = "owb_state_religion_icon_frame_window"
+			position = { x = 26 y = 93 }	
+			size = { width = 265 height = 265 }
+			
+			background = {
+				name = "Background"	
+				spriteType = "GFX_tiled_window"
+			}
+			
+			iconType = {
+				name = "state_religion_icon"
+				spriteType = "GFX_generic_religion_icon"
+				position = { x = 14 y = 15 }
+				scale = 0.84
+			}
+		}
+		
+		buttonType = {
+			name = "convert_state_religion_button"
+			spriteType = "GFX_sort_button_140x29"
+			frame = 1
+			position = { x = 88 y = 360 }
+			font = "hoi_18mbs"
+			format = center
+			text = "CONVERT_RELIGION"
 		}
 	}
 }

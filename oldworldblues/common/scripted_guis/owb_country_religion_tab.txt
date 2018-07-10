@@ -1,0 +1,504 @@
+scripted_gui = {
+	open_close_owb_country_religion_tab_window = {
+		context_type = player_context
+		
+		window_name = "open_close_owb_country_religion_tab_window"
+		
+		visible = {
+			is_ai = no
+		}
+		
+		effects = {
+			open_owb_country_religion_tab_window_click = {
+				set_temp_variable = { show = 1 }
+				subtract_from_temp_variable = { show = show_obw_country_religion_tab }
+				set_variable = { show_obw_country_religion_tab = show }
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_1_policy_1 < 1 }
+					}
+					set_variable = { frame_of_select_cat_1_policy_1 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_1_policy_2 < 1 }
+					}
+					set_variable = { frame_of_select_cat_1_policy_2 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_1_policy_3 < 1 }
+					}
+					set_variable = { frame_of_select_cat_1_policy_3 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_1_policy_4 < 1 }
+					}
+					set_variable = { frame_of_select_cat_1_policy_4 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_2_policy_1 < 1 }
+					}
+					set_variable = { frame_of_select_cat_2_policy_1 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_2_policy_2 < 1 }
+					}
+					set_variable = { frame_of_select_cat_2_policy_2 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_2_policy_3 < 1 }
+					}
+					set_variable = { frame_of_select_cat_2_policy_3 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_2_policy_4 < 1 }
+					}
+					set_variable = { frame_of_select_cat_2_policy_4 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_3_policy_1 < 1 }
+					}
+					set_variable = { frame_of_select_cat_3_policy_1 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_3_policy_2 < 1 }
+					}
+					set_variable = { frame_of_select_cat_3_policy_2 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_3_policy_3 < 1 }
+					}
+					set_variable = { frame_of_select_cat_3_policy_3 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_3_policy_4 < 1 }
+					}
+					set_variable = { frame_of_select_cat_3_policy_4 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_4_policy_1 < 1 }
+					}
+					set_variable = { frame_of_select_cat_4_policy_1 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_4_policy_2 < 1 }
+					}
+					set_variable = { frame_of_select_cat_4_policy_2 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_4_policy_3 < 1 }
+					}
+					set_variable = { frame_of_select_cat_4_policy_3 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_4_policy_4 < 1 }
+					}
+					set_variable = { frame_of_select_cat_4_policy_4 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_5_policy_1 < 1 }
+					}
+					set_variable = { frame_of_select_cat_5_policy_1 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_5_policy_2 < 1 }
+					}
+					set_variable = { frame_of_select_cat_5_policy_2 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_5_policy_3 < 1 }
+					}
+					set_variable = { frame_of_select_cat_5_policy_3 = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_5_policy_4 < 1 }
+					}
+					set_variable = { frame_of_select_cat_5_policy_4 = 1 }
+				}
+			}
+		}
+	}
+	
+	owb_country_religion_tab_window = {
+		context_type = player_context
+		
+		window_name = "owb_country_religion_tab_window"
+		
+		visible = {
+			check_variable = { show_obw_country_religion_tab > 0 }
+		}
+		
+		effects = {
+			close_owb_country_religion_tab_window_button_click = {
+				set_variable = { show_obw_country_religion_tab = 0 }
+			}
+			# Policies:
+			# Category 1:
+			select_cat_1_policy_1_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_1_policy_1 < 2 }
+					}
+					set_variable = { frame_of_select_cat_1_policy_1 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_1_policy_1 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			select_cat_1_policy_2_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_1_policy_2 < 2 }
+					}
+					set_variable = { frame_of_select_cat_1_policy_2 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_1_policy_2 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			select_cat_1_policy_3_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_1_policy_3 < 2 }
+					}
+					set_variable = { frame_of_select_cat_1_policy_3 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_1_policy_3 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			select_cat_1_policy_4_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_1_policy_4 < 2 }
+					}
+					set_variable = { frame_of_select_cat_1_policy_4 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_1_policy_4 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			# Category 2:
+			select_cat_2_policy_1_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_2_policy_1 < 2 }
+					}
+					set_variable = { frame_of_select_cat_2_policy_1 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_2_policy_1 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			select_cat_2_policy_2_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_2_policy_2 < 2 }
+					}
+					set_variable = { frame_of_select_cat_2_policy_2 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_2_policy_2 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			select_cat_2_policy_3_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_2_policy_3 < 2 }
+					}
+					set_variable = { frame_of_select_cat_2_policy_3 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_2_policy_3 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			select_cat_2_policy_4_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_2_policy_4 < 2 }
+					}
+					set_variable = { frame_of_select_cat_2_policy_4 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_2_policy_4 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			# Category 3:
+			select_cat_3_policy_1_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_3_policy_1 < 2 }
+					}
+					set_variable = { frame_of_select_cat_3_policy_1 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_3_policy_1 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			select_cat_3_policy_2_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_3_policy_2 < 2 }
+					}
+					set_variable = { frame_of_select_cat_3_policy_2 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_3_policy_2 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			select_cat_3_policy_3_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_3_policy_3 < 2 }
+					}
+					set_variable = { frame_of_select_cat_3_policy_3 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_3_policy_3 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			select_cat_3_policy_4_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_3_policy_4 < 2 }
+					}
+					set_variable = { frame_of_select_cat_3_policy_4 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_3_policy_4 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			# Category 4:
+			select_cat_4_policy_1_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_4_policy_1 < 2 }
+					}
+					set_variable = { frame_of_select_cat_4_policy_1 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_4_policy_1 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			select_cat_4_policy_2_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_4_policy_2 < 2 }
+					}
+					set_variable = { frame_of_select_cat_4_policy_2 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_4_policy_2 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			select_cat_4_policy_3_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_4_policy_3 < 2 }
+					}
+					set_variable = { frame_of_select_cat_4_policy_3 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_4_policy_3 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			select_cat_4_policy_4_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_4_policy_4 < 2 }
+					}
+					set_variable = { frame_of_select_cat_4_policy_4 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_4_policy_4 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			# Category 5:
+			select_cat_5_policy_1_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_5_policy_1 < 2 }
+					}
+					set_variable = { frame_of_select_cat_5_policy_1 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_5_policy_1 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			select_cat_5_policy_2_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_5_policy_2 < 2 }
+					}
+					set_variable = { frame_of_select_cat_5_policy_2 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_5_policy_2 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			select_cat_5_policy_3_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_5_policy_3 < 2 }
+					}
+					set_variable = { frame_of_select_cat_5_policy_3 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_5_policy_3 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+			select_cat_5_policy_4_click = {
+				if = {
+					limit = {
+						check_variable = { frame_of_select_cat_5_policy_4 < 2 }
+					}
+					set_variable = { frame_of_select_cat_5_policy_4 = 2 }
+					# effects for enabling policy
+					
+					else = {
+						set_variable = { frame_of_select_cat_5_policy_4 = 1 }
+						# effects for disabling policy
+					}
+				}
+			}
+		}
+		
+		properties = {
+			select_cat_1_policy_1 = {
+				frame = frame_of_select_cat_1_policy_1
+			}
+			select_cat_1_policy_2 = {
+				frame = frame_of_select_cat_1_policy_2
+			}
+			select_cat_1_policy_3 = {
+				frame = frame_of_select_cat_1_policy_3
+			}
+			select_cat_1_policy_4 = {
+				frame = frame_of_select_cat_1_policy_4
+			}
+			select_cat_2_policy_1 = {
+				frame = frame_of_select_cat_2_policy_1
+			}
+			select_cat_2_policy_2 = {
+				frame = frame_of_select_cat_2_policy_2
+			}
+			select_cat_2_policy_3 = {
+				frame = frame_of_select_cat_2_policy_3
+			}
+			select_cat_2_policy_4 = {
+				frame = frame_of_select_cat_2_policy_4
+			}
+			select_cat_3_policy_1 = {
+				frame = frame_of_select_cat_3_policy_1
+			}
+			select_cat_3_policy_2 = {
+				frame = frame_of_select_cat_3_policy_2
+			}
+			select_cat_3_policy_3 = {
+				frame = frame_of_select_cat_3_policy_3
+			}
+			select_cat_3_policy_4 = {
+				frame = frame_of_select_cat_3_policy_4
+			}
+			select_cat_4_policy_1 = {
+				frame = frame_of_select_cat_4_policy_1
+			}
+			select_cat_4_policy_2 = {
+				frame = frame_of_select_cat_4_policy_2
+			}
+			select_cat_4_policy_3 = {
+				frame = frame_of_select_cat_4_policy_3
+			}
+			select_cat_4_policy_4 = {
+				frame = frame_of_select_cat_4_policy_4
+			}
+			select_cat_5_policy_1 = {
+				frame = frame_of_select_cat_5_policy_1
+			}
+			select_cat_5_policy_2 = {
+				frame = frame_of_select_cat_5_policy_2
+			}
+			select_cat_5_policy_3 = {
+				frame = frame_of_select_cat_5_policy_3
+			}
+			select_cat_5_policy_4 = {
+				frame = frame_of_select_cat_5_policy_4
+			}
+		}
+	}
+}

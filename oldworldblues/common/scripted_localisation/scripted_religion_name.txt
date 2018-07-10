@@ -257,7 +257,8 @@ defined_text = { # Current religion
                 check_variable = { var = religion value = 43 compare = equals}
         }
         localization_key = RELIGION_43
-    }    text = {
+    }
+    text = {
         trigger = {
                 check_variable = { var = religion value = 44 compare = equals}
         }
@@ -268,7 +269,8 @@ defined_text = { # Current religion
                 check_variable = { var = religion value = 45 compare = equals}
         }
         localization_key = RELIGION_45
-    }    text = {
+    }
+    text = {
         trigger = {
                 check_variable = { var = religion value = 46 compare = equals}
         }
@@ -279,7 +281,8 @@ defined_text = { # Current religion
                 check_variable = { var = religion value = 47 compare = equals}
         }
         localization_key = RELIGION_47
-    }    text = {
+    }
+    text = {
         trigger = {
                 check_variable = { var = religion value = 48 compare = equals}
         }
@@ -410,7 +413,8 @@ defined_text = { # Current religion
                 check_variable = { var = religion value = 69 compare = equals}
         }
         localization_key = RELIGION_69
-    }    text = {
+    }
+    text = {
         trigger = {
                 check_variable = { var = religion value = 70 compare = equals}
         }
@@ -463,7 +467,8 @@ defined_text = { # Current religion
                 check_variable = { var = religion value = 78 compare = equals}
         }
         localization_key = RELIGION_78
-    }    text = {
+    }
+    text = {
         trigger = {
                 check_variable = { var = religion value = 79 compare = equals}
         }
@@ -492,22 +497,26 @@ defined_text = { # Current religion
                 check_variable = { var = religion value = 83 compare = equals}
         }
         localization_key = RELIGION_83
-    }    text = {
+    }
+    text = {
         trigger = {
                 check_variable = { var = religion value = 84 compare = equals}
         }
         localization_key = RELIGION_84
-    }    text = {
+    }
+    text = {
         trigger = {
                 check_variable = { var = religion value = 85 compare = equals}
         }
         localization_key = RELIGION_85
-    }    text = {
+    }
+    text = {
         trigger = {
                 check_variable = { var = religion value = 86 compare = equals}
         }
         localization_key = RELIGION_86
-    }    text = {
+    }
+    text = {
         trigger = {
                 check_variable = { var = religion value = 87 compare = equals}
         }
@@ -518,7 +527,8 @@ defined_text = { # Current religion
                 check_variable = { var = religion value = 88 compare = equals}
         }
         localization_key = RELIGION_88
-    }    text = {
+    }
+    text = {
         trigger = {
                 check_variable = { var = religion value = 89 compare = equals}
         }
@@ -590,5 +600,626 @@ defined_text = { # Current religion
         }
         localization_key = RELIGION_100
     }
+}
 
+defined_text = { # State religion green/red
+    name = GetStateReligionColour
+    text = {
+        trigger = {
+			controller = {
+				check_variable = { religion = PREV.religion }
+			}
+        }
+        localization_key = string_state_religion_green
+    }
+	text = {
+        trigger = {
+			always = yes
+        }
+        localization_key = string_state_religion_red
+    }
+}
+
+defined_text = {
+    name = GetReligionDesc
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 1 compare = equals}
+        }
+        localization_key = RELIGION_DESC_1 #Catholic
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 2 compare = equals}
+        }
+        localization_key = RELIGION_DESC_2 #Protestant
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 3 compare = equals}
+        }
+        localization_key = RELIGION_DESC_3 #Mormon
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 4 compare = equals}
+        }
+        localization_key = RELIGION_DESC_4 #Sons of Mars
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 5 compare = equals}
+        }
+        localization_key = RELIGION_DESC_5
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 6 compare = equals}
+        }
+        localization_key = RELIGION_DESC_6
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 7 compare = equals}
+        }
+        localization_key = RELIGION_DESC_7
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 8 compare = equals}
+        }
+        localization_key = RELIGION_DESC_8
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 9 compare = equals}
+        }
+        localization_key = RELIGION_DESC_9
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 10 compare = equals}
+        }
+        localization_key = RELIGION_DESC_10
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 11 compare = equals}
+        }
+        localization_key = RELIGION_DESC_11
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 12 compare = equals}
+        }
+        localization_key = RELIGION_DESC_12
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 13 compare = equals}
+        }
+        localization_key = RELIGION_DESC_13
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 14 compare = equals}
+        }
+        localization_key = RELIGION_DESC_14
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 15 compare = equals}
+        }
+        localization_key = RELIGION_DESC_15
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 16 compare = equals}
+        }
+        localization_key = RELIGION_DESC_16
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 17 compare = equals}
+        }
+        localization_key = RELIGION_DESC_17
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 18 compare = equals}
+        }
+        localization_key = RELIGION_DESC_18
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 19 compare = equals}
+        }
+        localization_key = RELIGION_DESC_19
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 20 compare = equals}
+        }
+        localization_key = RELIGION_DESC_20
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 21 compare = equals}
+        }
+        localization_key = RELIGION_DESC_21
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 22 compare = equals}
+        }
+        localization_key = RELIGION_DESC_22
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 23 compare = equals}
+        }
+        localization_key = RELIGION_DESC_23
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 24 compare = equals}
+        }
+        localization_key = RELIGION_DESC_24
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 25 compare = equals}
+        }
+        localization_key = RELIGION_DESC_25
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 26 compare = equals}
+        }
+        localization_key = RELIGION_DESC_26
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 27 compare = equals}
+        }
+        localization_key = RELIGION_DESC_27
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 28 compare = equals}
+        }
+        localization_key = RELIGION_DESC_28
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 29 compare = equals}
+        }
+        localization_key = RELIGION_DESC_29
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 30 compare = equals}
+        }
+        localization_key = RELIGION_DESC_30
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 31 compare = equals}
+        }
+        localization_key = RELIGION_DESC_31
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 32 compare = equals}
+        }
+        localization_key = RELIGION_DESC_32
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 33 compare = equals}
+        }
+        localization_key = RELIGION_DESC_33
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 34 compare = equals}
+        }
+        localization_key = RELIGION_DESC_34
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 35 compare = equals}
+        }
+        localization_key = RELIGION_DESC_35
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 36 compare = equals}
+        }
+        localization_key = RELIGION_DESC_36
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 37 compare = equals}
+        }
+        localization_key = RELIGION_DESC_37
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 38 compare = equals}
+        }
+        localization_key = RELIGION_DESC_38
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 39 compare = equals}
+        }
+        localization_key = RELIGION_DESC_39
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 40 compare = equals}
+        }
+        localization_key = RELIGION_DESC_40
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 41 compare = equals}
+        }
+        localization_key = RELIGION_DESC_41
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 42 compare = equals}
+        }
+        localization_key = RELIGION_DESC_42
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 43 compare = equals}
+        }
+        localization_key = RELIGION_DESC_43
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 44 compare = equals}
+        }
+        localization_key = RELIGION_DESC_44
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 45 compare = equals}
+        }
+        localization_key = RELIGION_DESC_45
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 46 compare = equals}
+        }
+        localization_key = RELIGION_DESC_46
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 47 compare = equals}
+        }
+        localization_key = RELIGION_DESC_47
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 48 compare = equals}
+        }
+        localization_key = RELIGION_DESC_48
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 49 compare = equals}
+        }
+        localization_key = RELIGION_DESC_49
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 50 compare = equals}
+        }
+        localization_key = RELIGION_DESC_50
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 51 compare = equals}
+        }
+        localization_key = RELIGION_DESC_51
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 52 compare = equals}
+        }
+        localization_key = RELIGION_DESC_52
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 53 compare = equals}
+        }
+        localization_key = RELIGION_DESC_53
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 54 compare = equals}
+        }
+        localization_key = RELIGION_DESC_54
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 55 compare = equals}
+        }
+        localization_key = RELIGION_DESC_55
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 56 compare = equals}
+        }
+        localization_key = RELIGION_DESC_56
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 57 compare = equals}
+        }
+        localization_key = RELIGION_DESC_57
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 58 compare = equals}
+        }
+        localization_key = RELIGION_DESC_58
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 59 compare = equals}
+        }
+        localization_key = RELIGION_DESC_59
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 60 compare = equals}
+        }
+        localization_key = RELIGION_DESC_60
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 61 compare = equals}
+        }
+        localization_key = RELIGION_DESC_61
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 62 compare = equals}
+        }
+        localization_key = RELIGION_DESC_62
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 63 compare = equals}
+        }
+        localization_key = RELIGION_DESC_63
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 64 compare = equals}
+        }
+        localization_key = RELIGION_DESC_64
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 65 compare = equals}
+        }
+        localization_key = RELIGION_DESC_65
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 66 compare = equals}
+        }
+        localization_key = RELIGION_DESC_66
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 67 compare = equals}
+        }
+        localization_key = RELIGION_DESC_67
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 68 compare = equals}
+        }
+        localization_key = RELIGION_DESC_68
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 69 compare = equals}
+        }
+        localization_key = RELIGION_DESC_69
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 70 compare = equals}
+        }
+        localization_key = RELIGION_DESC_70
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 71 compare = equals}
+        }
+        localization_key = RELIGION_DESC_71
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 72 compare = equals}
+        }
+        localization_key = RELIGION_DESC_72
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 73 compare = equals}
+        }
+        localization_key = RELIGION_DESC_73
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 74 compare = equals}
+        }
+        localization_key = RELIGION_DESC_74
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 75 compare = equals}
+        }
+        localization_key = RELIGION_DESC_75
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 76 compare = equals}
+        }
+        localization_key = RELIGION_DESC_76
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 77 compare = equals}
+        }
+        localization_key = RELIGION_DESC_77
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 78 compare = equals}
+        }
+        localization_key = RELIGION_DESC_78
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 79 compare = equals}
+        }
+        localization_key = RELIGION_DESC_79
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 80 compare = equals}
+        }
+        localization_key = RELIGION_DESC_80
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 81 compare = equals}
+        }
+        localization_key = RELIGION_DESC_81
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 82 compare = equals}
+        }
+        localization_key = RELIGION_DESC_82
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 83 compare = equals}
+        }
+        localization_key = RELIGION_DESC_83
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 84 compare = equals}
+        }
+        localization_key = RELIGION_DESC_84
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 85 compare = equals}
+        }
+        localization_key = RELIGION_DESC_85
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 86 compare = equals}
+        }
+        localization_key = RELIGION_DESC_86
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 87 compare = equals}
+        }
+        localization_key = RELIGION_DESC_87
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 88 compare = equals}
+        }
+        localization_key = RELIGION_DESC_88
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 89 compare = equals}
+        }
+        localization_key = RELIGION_DESC_89
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 90 compare = equals}
+        }
+        localization_key = RELIGION_DESC_90
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 91 compare = equals}
+        }
+        localization_key = RELIGION_DESC_91
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 92 compare = equals}
+        }
+        localization_key = RELIGION_DESC_92
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 93 compare = equals}
+        }
+        localization_key = RELIGION_DESC_93
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 94 compare = equals}
+        }
+        localization_key = RELIGION_DESC_94
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 95 compare = equals}
+        }
+        localization_key = RELIGION_DESC_95
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 96 compare = equals}
+        }
+        localization_key = RELIGION_DESC_96
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 97 compare = equals}
+        }
+        localization_key = RELIGION_DESC_97
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 98 compare = equals}
+        }
+        localization_key = RELIGION_DESC_98
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 99 compare = equals}
+        }
+        localization_key = RELIGION_DESC_99
+    }
+    text = {
+        trigger = {
+                check_variable = { var = religion value = 100 compare = equals}
+        }
+        localization_key = RELIGION_DESC_100
+    }
 }

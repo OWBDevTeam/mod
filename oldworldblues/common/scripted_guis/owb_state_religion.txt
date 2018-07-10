@@ -42,5 +42,20 @@ scripted_gui = {
 			}
 			check_variable = { show_obw_state_religion_@ROOT > 0 }
 		}
+		
+		effects = {
+			convert_state_religion_button_click = {
+				
+			}
+		}
+		
+		triggers = {
+			convert_state_religion_button_click_enabled = {
+				NOT = { check_variable = { religion = ROOT.religion } }
+			}
+			convert_state_religion_button_visible = {
+				is_controlled_by = ROOT
+			}
+		}
 	}
 }

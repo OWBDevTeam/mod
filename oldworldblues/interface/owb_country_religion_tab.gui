@@ -1,0 +1,946 @@
+guiTypes = {
+	containerWindowType = {
+		name = "open_close_owb_country_religion_tab_window"
+		position = { x = 540 y = 37 }	
+		size = { width = 50 height = 50 }
+		orientation = upper_left
+		
+		buttonType = {
+			name = "open_owb_country_religion_tab_window"
+			spriteType = "GFX_construction_button"
+			position = { x = 0 y = 0 }
+		}
+	}
+	
+	containerWindowType = {
+		name = "owb_country_religion_tab_window"
+		position = { x = 0 y = 120 }	
+		size = { width = 546 height = 850 }
+		orientation = upper_left
+		
+		clipping = no
+		
+		background = {
+			name = "header_background"	
+			spriteType = "GFX_tiled_plain_bg"
+			position = { x = 0 y = -40 }
+		}
+		
+		background = {
+			name = "background"	
+			spriteType = "GFX_tiled_window"
+		}
+		
+		iconType = {
+			name = "header_bg"
+			spriteType = "GFX_header_bg"
+			position = { x = 0 y = -36 }
+		}
+		
+		instantTextBoxType = {
+			name = "header_title"
+			position = { x = 27 y = -33 }
+			text = "COUNTRY_RELIGION_TAB_TITLE"
+			font = "hoi_30header"
+			format = center
+			maxWidth = 450
+		}
+		
+		buttonType = {
+			name = "close_owb_country_religion_tab_window_button"	
+			spriteType = "GFX_closebutton"
+			position = { x = 502 y = -33 }
+			shortcut = "ESCAPE"
+			pdx_tooltip = "DIPLOMACY_CLOSE"
+		}
+		
+		iconType = {
+			name = "faithful_percentage_bg"
+			spriteType = "GFX_naval_losses_battle_bg2"
+			position = { x = 250 y = 14 }
+		}
+		
+		instantTextBoxType = {
+			name = "faithful_percentage_title"
+			position = { x = 283 y = 18 }
+			text = "FAITHFUL_PERCENTAGE_TITLE"
+			font = "hoi_18mbs"
+			format = left
+			maxWidth = 190
+		}
+		
+		instantTextBoxType = {
+			name = "faithful_percentage_value"
+			position = { x = 482 y = 18 }
+			text = "FAITHFUL_PERCENTAGE_VALUE"
+			font = "hoi_18mbs"
+			format = center
+			maxWidth = 50
+		}
+		
+		iconType = {
+			name = "clergymen_bg"
+			spriteType = "GFX_naval_losses_battle_bg2"
+			position = { x = 250 y = 42 }
+		}
+		
+		instantTextBoxType = {
+			name = "clergymen_title"
+			position = { x = 283 y = 46 }
+			text = "CLERGYMEN_TITLE"
+			font = "hoi_18mbs"
+			format = left
+			maxWidth = 190
+		}
+		
+		instantTextBoxType = {
+			name = "clergymen_value"
+			position = { x = 482 y = 46 }
+			text = "CLERGYMEN_VALUE"
+			font = "hoi_18mbs"
+			format = center
+			maxWidth = 50
+		}
+		
+		containerWindowType = {
+			name = "owb_country_religion_icon_frame_window"
+			position = { x = 0 y = 0 }	
+			size = { width = 282 height = 281 }
+			
+			background = {
+				name = "Background"	
+				spriteType = "GFX_tiled_window"
+			}
+			
+			iconType = {
+				name = "state_religion_icon"
+				spriteType = "GFX_generic_religion_icon"
+				position = { x = 14 y = 15 }
+				scale = 0.9
+			}
+		}
+		
+		containerWindowType = {
+			name = "owb_country_religion_name_frame_window"
+			position = { x = 13 y = 276 }	
+			size = { width = 265 height = 50 }
+			
+			background = {
+				name = "Background"	
+				spriteType = "GFX_naval_combat_tiled_entry"
+			}
+			
+			instantTextBoxType = {
+				name = "religion_name"
+				position = { x = 10 y = 8 }
+				text = "REL_current_religion"
+				font = "hoi_30header"
+				format = center
+				maxWidth = 240
+			}
+		}
+		
+		containerWindowType = {
+			name = "owb_country_religion_desc_window"
+			position = { x = 272 y = 65 }	
+			size = { width = 265 height = 265 }
+			
+			background = {
+				name = "Background"	
+				spriteType = "GFX_tiled_window_1b_border"
+			}
+			
+			iconType = {
+				name = "header_background"
+				quadTextureSprite = "GFX_generic_header"
+				position = { x = 8 y = 11 }
+				scale = 0.73
+			}
+			
+			instantTextBoxType = {
+				name = "religion_name"
+				position = { x = 20 y = 17 }
+				text = "REL_current_religion"
+				font = "hoi_24header"
+				format = center
+				maxWidth = 210
+			}
+			
+			instantTextBoxType = {
+				name = "religion_desc"
+				position = { x = 20 y = 52 }
+				text = "COUNTRY_RELIGION_DESC"
+				font = "hoi_18mbs"
+				format = left
+				maxWidth = 221
+				maxHeight = 195
+				scrollbarType = standardtext_slider
+			}
+		}
+		
+		containerWindowType = {
+			name = "owb_country_religion_policies_window"
+			position = { x = 0 y = 323 }	
+			size = { width = 546 height = 526 }
+			margin = { top = 40 bottom = 13 }
+			verticalScrollbar = "right_vertical_slider"
+			
+			background = {
+				name = "Background"	
+				spriteType = "GFX_tiled_window_1b_border"
+			}
+			
+			containerWindowType = {
+				name = "policy_category_1"
+				position = { x = 12 y = 0 }	
+				size = { width = 510 height = 200 }
+				
+				background = {
+					name = "Background"	
+					spriteType = "GFX_tiled_window_thin_border2"
+				}
+				
+				instantTextBoxType = {
+					name = "policy_category_1_header"
+					position = { x = 9 y = 12 }
+					text = "COUNTRY_RELIGION_POLICY_CATEGORY_1"
+					font = "hoi_24header"
+					format = center
+					maxWidth = 490
+				}
+				
+				containerWindowType = {
+					name = "cat_1_policies_window"
+					position = { x = 10 y = 40 }	
+					size = { width = 490 height = 150 }
+					
+					background = {
+						name = "Background"	
+						spriteType = "GFX_tiled_paper_bg2"
+					}
+					
+					containerWindowType = {
+						name = "cat_1_policy_1_window"
+						position = { x = 5 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_1_policy_1_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_1_POLICY_1_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_1_policy_1"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+					
+					containerWindowType = {
+						name = "cat_1_policy_2_window"
+						position = { x = 125 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_1_policy_2_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_1_POLICY_2_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_1_policy_2"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+					
+					containerWindowType = {
+						name = "cat_1_policy_3_window"
+						position = { x = 245 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_1_policy_3_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_1_POLICY_3_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_1_policy_3"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+					
+					containerWindowType = {
+						name = "cat_1_policy_4_window"
+						position = { x = 365 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_1_policy_4_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_1_POLICY_4_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_1_policy_4"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+				}
+			}
+			
+			containerWindowType = {
+				name = "policy_category_2"
+				position = { x = 12 y = 200 }	
+				size = { width = 510 height = 200 }
+				
+				background = {
+					name = "Background"	
+					spriteType = "GFX_tiled_window_thin_border2"
+				}
+				
+				instantTextBoxType = {
+					name = "policy_category_2_header"
+					position = { x = 9 y = 12 }
+					text = "COUNTRY_RELIGION_POLICY_CATEGORY_2"
+					font = "hoi_24header"
+					format = center
+					maxWidth = 490
+				}
+				
+				containerWindowType = {
+					name = "cat_2_policies_window"
+					position = { x = 10 y = 40 }	
+					size = { width = 490 height = 150 }
+					
+					background = {
+						name = "Background"	
+						spriteType = "GFX_tiled_paper_bg2"
+					}
+					
+					containerWindowType = {
+						name = "cat_2_policy_1_window"
+						position = { x = 5 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_2_policy_1_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_2_POLICY_1_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_2_policy_1"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+					
+					containerWindowType = {
+						name = "cat_2_policy_2_window"
+						position = { x = 125 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_2_policy_2_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_2_POLICY_2_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_2_policy_2"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+					
+					containerWindowType = {
+						name = "cat_2_policy_3_window"
+						position = { x = 245 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_2_policy_3_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_2_POLICY_3_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_2_policy_3"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+					
+					containerWindowType = {
+						name = "cat_2_policy_4_window"
+						position = { x = 365 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_2_policy_4_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_2_POLICY_4_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_2_policy_4"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+				}
+			}
+			
+			containerWindowType = {
+				name = "policy_category_3"
+				position = { x = 12 y = 400 }	
+				size = { width = 510 height = 200 }
+				
+				background = {
+					name = "Background"	
+					spriteType = "GFX_tiled_window_thin_border2"
+				}
+				
+				instantTextBoxType = {
+					name = "policy_category_3_header"
+					position = { x = 9 y = 12 }
+					text = "COUNTRY_RELIGION_POLICY_CATEGORY_3"
+					font = "hoi_24header"
+					format = center
+					maxWidth = 490
+				}
+				
+				containerWindowType = {
+					name = "cat_3_policies_window"
+					position = { x = 10 y = 40 }	
+					size = { width = 490 height = 150 }
+					
+					background = {
+						name = "Background"	
+						spriteType = "GFX_tiled_paper_bg2"
+					}
+					
+					containerWindowType = {
+						name = "cat_3_policy_1_window"
+						position = { x = 5 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_3_policy_1_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_3_POLICY_1_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_3_policy_1"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+					
+					containerWindowType = {
+						name = "cat_3_policy_2_window"
+						position = { x = 125 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_3_policy_2_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_3_POLICY_2_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_3_policy_2"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+					
+					containerWindowType = {
+						name = "cat_3_policy_3_window"
+						position = { x = 245 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_3_policy_3_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_3_POLICY_3_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_3_policy_3"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+					
+					containerWindowType = {
+						name = "cat_3_policy_4_window"
+						position = { x = 365 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_3_policy_4_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_3_POLICY_4_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_3_policy_4"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+				}
+			}
+			
+			containerWindowType = {
+				name = "policy_category_4"
+				position = { x = 12 y = 600 }	
+				size = { width = 510 height = 200 }
+				
+				background = {
+					name = "Background"	
+					spriteType = "GFX_tiled_window_thin_border2"
+				}
+				
+				instantTextBoxType = {
+					name = "policy_category_4_header"
+					position = { x = 9 y = 12 }
+					text = "COUNTRY_RELIGION_POLICY_CATEGORY_4"
+					font = "hoi_24header"
+					format = center
+					maxWidth = 490
+				}
+				
+				containerWindowType = {
+					name = "cat_4_policies_window"
+					position = { x = 10 y = 40 }	
+					size = { width = 490 height = 150 }
+					
+					background = {
+						name = "Background"	
+						spriteType = "GFX_tiled_paper_bg2"
+					}
+					
+					containerWindowType = {
+						name = "cat_4_policy_1_window"
+						position = { x = 5 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_4_policy_1_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_4_POLICY_1_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_4_policy_1"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+					
+					containerWindowType = {
+						name = "cat_4_policy_2_window"
+						position = { x = 125 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_4_policy_2_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_4_POLICY_2_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_4_policy_2"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+					
+					containerWindowType = {
+						name = "cat_4_policy_3_window"
+						position = { x = 245 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_4_policy_3_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_4_POLICY_3_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_4_policy_3"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+					
+					containerWindowType = {
+						name = "cat_4_policy_4_window"
+						position = { x = 365 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_4_policy_4_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_4_POLICY_4_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_4_policy_4"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+				}
+			}
+			
+			containerWindowType = {
+				name = "policy_category_5"
+				position = { x = 12 y = 800 }	
+				size = { width = 510 height = 200 }
+				
+				background = {
+					name = "Background"	
+					spriteType = "GFX_tiled_window_thin_border2"
+				}
+				
+				instantTextBoxType = {
+					name = "policy_category_5_header"
+					position = { x = 9 y = 12 }
+					text = "COUNTRY_RELIGION_POLICY_CATEGORY_5"
+					font = "hoi_24header"
+					format = center
+					maxWidth = 490
+				}
+				
+				containerWindowType = {
+					name = "cat_5_policies_window"
+					position = { x = 10 y = 40 }	
+					size = { width = 490 height = 150 }
+					
+					background = {
+						name = "Background"	
+						spriteType = "GFX_tiled_paper_bg2"
+					}
+					
+					containerWindowType = {
+						name = "cat_5_policy_1_window"
+						position = { x = 5 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_5_policy_1_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_5_POLICY_1_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_5_policy_1"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+					
+					containerWindowType = {
+						name = "cat_5_policy_2_window"
+						position = { x = 125 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_5_policy_2_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_5_POLICY_2_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_5_policy_2"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+					
+					containerWindowType = {
+						name = "cat_5_policy_3_window"
+						position = { x = 245 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_5_policy_3_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_5_POLICY_3_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_5_policy_3"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+					
+					containerWindowType = {
+						name = "cat_5_policy_4_window"
+						position = { x = 365 y = 11 }	
+						size = { width = 120 height = 130 }
+						
+						background = {
+							name = "Background"	
+							spriteType = "GFX_mini_tooltip"
+							alwaystransparent = yes
+						}
+					
+						instantTextBoxType = {
+							name = "cat_5_policy_4_title"
+							position = { x = 5 y = 5 }
+							text = "RELIGION_CAT_5_POLICY_4_TITLE"
+							font = "hoi_18mbs"
+							format = center
+							maxWidth = 110
+						}
+						
+						buttonType = {
+							name = "select_cat_5_policy_4"
+							spriteType = "GFX_cont_focus_check_icon"
+							frame = 1
+							position = { x = 43 y = 90 }
+							pdx_tooltip = "SELECT_RELIGIOUS_POLICY_TT"
+						}
+					}
+				}
+			}
+		}
+		
+		iconType = {
+			name = "policies_header_bg"
+			spriteType = "GFX_trade_header"
+			position = { x = 11 y = 334 }
+			scale = 0.995
+		}
+		
+		instantTextBoxType = {
+			name = "policies_header_title"
+			position = { x = 21 y = 337 }
+			text = "COUNTRY_RELIGION_POLICIES_TITLE"
+			font = "hoi_24header"
+			format = center
+			maxWidth = 490
+			alwaystransparent = yes
+		}
+	}
+}
