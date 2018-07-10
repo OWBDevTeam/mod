@@ -956,3 +956,85 @@ country_event = { # The Moot
 		set_country_flag = the_moot_ragnar
 	}
 }
+
+country_event = { # The Unbroken Resistance Pact
+	id = nf_event_brk.41
+	title = nf_event_brk.41.t
+	desc = nf_event_brk.41.d
+	picture = GFX_event_BRK_snowmobile_troops
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = BRK_northern_pact_triggered
+		every_country = {
+			limit = {
+				is_BRK_revolt_effect_valid_country = yes
+			}
+			country_event = {
+				id = nf_event_brk.42
+				days = 1
+			}
+		}
+	}
+	option = { 
+		name = nf_event_brk.41.a
+		country_event = {
+			id = nf_event_brk.43
+			days = 10
+		}
+	}
+}
+country_event = { # The Unbroken Resistance Pact signing
+	id = nf_event_brk.42
+	title = nf_event_brk.42.t
+	desc = nf_event_brk.42.d
+	is_triggered_only = yes
+	picture = GFX_event_BRK_snowmobile_troops
+	option = { 
+		name = nf_event_brk.42.a
+		ai_chance = {
+			factor = 100
+		}
+		add_ideas = brk_resistance_pact_signatory
+		custom_effect_tooltip = BRK_spawn_troops_resistance_signatory_tooltip
+	}
+	option = { 
+		ai_chance = {
+			factor = 0
+		}
+		name = nf_event_brk.42.b
+		
+	}
+}
+country_event = { # The Unbroken Resistance Pact signed (sent back to BRK)
+	id = nf_event_brk.43
+	title = nf_event_brk.43.t
+	desc = nf_event_brk.43.d
+	picture = GFX_event_BRK_wasteland_boat_militia
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_BRK_revolt_effect_valid_country = yes
+					has_idea = brk_resistance_pact_signatory
+				}
+				every_country = {
+					limit = {
+						is_BRK_revolt_effect_valid_country = yes
+						has_idea = brk_resistance_pact_signatory
+						NOT = { has_non_aggression_pact_with = PREV }
+					}
+					diplomatic_relation = {
+						country = PREV
+						relation = non_aggression_pact
+						active = yes
+					}
+				}
+			}
+		}
+	}
+	option = { 
+		name = nf_event_brk.43.a
+	}
+}
+

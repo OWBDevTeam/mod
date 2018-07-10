@@ -544,7 +544,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				navy_max_range_factor = 0.15
+				navy_max_range_factor = 0.5
+				naval_retreat_speed = 0.5
 			}
 		
 		}
@@ -576,7 +577,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				navy_max_range_factor = 0.10
+				navy_max_range_factor = 0.5
+				convoy_raiding_efficiency_factor = 0.5
 			}
 		
 		}
@@ -593,6 +595,7 @@ ideas = {
 			
 			modifier = {
 				research_time_factor = 0.02
+				winter_attrition_factor = -0.5
 				conscription = 0.02
 			}
 		
@@ -609,6 +612,17 @@ ideas = {
 				war_support_factor = 0.3
 				army_core_attack_factor = 0.05
 				army_core_defence_factor = 0.1
+			}
+		}
+		brk_resistance_pact_signatory = {
+			picture = HUN_secret_rearmament
+			removal_cost = -1
+			modifier = {
+				join_faction_tension = 0.3
+				ai_join_ally_desire_factor = -30
+				mobilization_speed = 0.1
+				conscription_factor = -0.05
+				consumer_goods_factor = 0.05
 			}
 		}
 	
