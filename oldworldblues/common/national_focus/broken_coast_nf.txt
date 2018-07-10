@@ -99,7 +99,9 @@ focus_tree = {
 			}
 		}
 	}
-
+	################################
+	# WHAT IS THIS SUPPOSED TO DO??? -- Mechano
+	################################
 	focus = {
 		id = brk_nf_tech_upgrade
 		icon = GFX_goal_tfv_generic_tech_sharing
@@ -242,7 +244,11 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_ruler_pol
 		}
-
+		available = {
+			492 = {
+				is_owned_and_controlled_by = BRK
+			}
+		}
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -367,7 +373,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = brk_nf_wife_of_conquest
 		}
-
+		available = {
+			BRK = { controls_state = 420 }
+		}
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1025,17 +1033,26 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
-
+		available = {
+			492 = {
+				is_owned_and_controlled_by = BRK
+			}
+		}
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_ignite_the_forges entered"
 			}
 			492 = {
+				add_manpower = 200
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
 					level = 1
+				}
+				add_resource = {
+					type = metal
+					amount = 2
 				}
 			}
 			if = {
@@ -1103,14 +1120,17 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_ignite_the_forges
 		}
-
+		available = {
+			148 = { is_owned_and_controlled_by = BRK }
+		}
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_expand_the_forges entered"
 			}
 			148 = {
-				add_extra_state_shared_building_slots = 1
+				add_manpower = 250
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
 					level = 1
@@ -1133,13 +1153,18 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_salvage_parties
 		}
-
+		available = {
+			492 = { is_owned_and_controlled_by = BRK }
+			148 = { is_owned_and_controlled_by = BRK }
+			561 = { is_owned_and_controlled_by = BRK }
+		}
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_water_purification entered"
 			}
 			492 = {
+				add_manpower = 150
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = water_generator
@@ -1148,6 +1173,7 @@ focus_tree = {
 				}
 			}
 			148 = {
+				add_manpower = 150
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = water_generator
@@ -1156,6 +1182,7 @@ focus_tree = {
 				}
 			}
 			561 = {
+				add_manpower = 150
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = water_generator
@@ -1207,34 +1234,45 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_expand_the_forges
 		}
-
+		available = {
+			any_owned_state = {
+				AND = {
+					is_fully_controlled_by = BRK
+					OR = {
+						state = 356
+						state = 17
+						state = 505
+						state = 218
+					}
+				}
+			}
+		}
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_scour_the_coast entered"
 			}
-			356 = {
-				add_resource = {
-					type = metal
-					amount = 2
+			every_owned_state = {
+				limit = {
+					AND = {
+						is_fully_controlled_by = BRK
+						OR = {
+							state = 356
+							state = 17
+							state = 505
+							state = 218
+						}
+					}
 				}
-			}
-			17 = {
+				add_manpower = 200
 				add_resource = {
 					type = metal
-					amount = 2
+					amount = 4
 				}
-			}
-			505 = {
-				add_resource = {
-					type = metal
-					amount = 2
-				}
-			}
-			218 = {
-				add_resource = {
-					type = metal
-					amount = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
 				}
 			}
 			if = {
@@ -1254,16 +1292,26 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_water_purification
 		}
-
+		available = {
+			561 = {
+				is_owned_and_controlled_by = BRK
+			}
+		}
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_dockyards_3 entered"
 			}
-			561 = {
-				add_extra_state_shared_building_slots = 1
+			561 = {	
+				add_manpower = 1220
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
 					level = 1
 					instant_build = yes
 				}
@@ -1319,7 +1367,8 @@ focus_tree = {
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_blessed_steel entered"
 			}
 			561 = {
-				add_extra_state_shared_building_slots = 2
+				add_manpower = 350
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
 					level = 2
@@ -1342,7 +1391,11 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_dockyards_3
 		}
-
+		available = {
+			24 = {
+				is_owned_and_controlled_by = BRK
+			}
+		}
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1351,11 +1404,11 @@ focus_tree = {
 			24 = {
 				add_resource = {
 					type = metal
-					amount = 10
+					amount = 15
 				}
 				add_resource = {
 					type = fuel
-					amount = 2
+					amount = 3
 				}
 			}
 			if = {
@@ -1381,6 +1434,7 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_slave_shedules entered"
 			}
+			add_stability = 0.08
 			swap_ideas = {
 				add_idea = brk_slave_3
 				remove_idea = brk_slave_2
@@ -1569,13 +1623,18 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
-
+		available = {
+			262 = {
+				is_owned_and_controlled_by = BRK
+			}
+		}
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_dockyards entered"
 			}
 			262 = {
+				add_manpower = 750
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
@@ -1716,14 +1775,17 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_grand_moot
 		}
-
+		available = {
+			492 = { is_owned_and_controlled_by = BRK }
+		}
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_workshops entered"
 			}
 			492 = {
-				add_extra_state_shared_building_slots = 1
+				add_manpower = 500
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -1747,13 +1809,16 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_workshops
 		}
-
+		available = {
+			148 = { is_owned_and_controlled_by = BRK }
+		}
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_workshops_1 entered"
 			}
 			148 = {
+				add_manpower = 300
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1778,13 +1843,16 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_workshops_1
 		}
-
+		available = {
+			561 = { is_owned_and_controlled_by = BRK }
+		}
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_workshops_2 entered"
 			}
 			561 = {
+				add_manpower = 450
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1809,17 +1877,20 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_workshops_2
 		}
-
+		available = {
+			262 = { is_owned_and_controlled_by = BRK }
+		}
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_workshops_3 entered"
 			}
 			262 = {
-				add_extra_state_shared_building_slots = 1
+				add_manpower = 960
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1840,13 +1911,16 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_dockyards
 		}
-
+		available = {
+			492 = { is_owned_and_controlled_by = BRK }
+		}
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_dockyards_1 entered"
 			}
 			492 = {
+				add_manpower = 790
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
@@ -1871,14 +1945,17 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_dockyards_1
 		}
-
+		available = {
+			148 = { is_owned_and_controlled_by = BRK }
+		}
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_dockyards_2 entered"
 			}
 			148 = {
-				add_extra_state_shared_building_slots = 1
+				add_manpower = 1020
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
 					level = 1
@@ -1958,7 +2035,7 @@ focus_tree = {
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_recruitment_drive_1 entered"
 			}
 			add_political_power = 25
-			add_manpower = 300
+			add_manpower = 400
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_recruitment_drive_1 exited"
@@ -1983,7 +2060,7 @@ focus_tree = {
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_recruitment_drive_2 entered"
 			}
 			add_political_power = 25
-			add_manpower = 300
+			add_manpower = 500
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_recruitment_drive_2 exited"
@@ -2079,7 +2156,11 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_integrate_enemies
 		}
-
+		bypass = {
+			VIC = {
+				exists = no
+			}
+		}
 		ai_will_do = {
 			factor = 5
 			modifier = {
@@ -2094,17 +2175,6 @@ focus_tree = {
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_new_victoria entered"
 			}
 			custom_effect_tooltip = brk_vic_decision_chain_tt
-			if = {
-				limit = {
-					VIC = { has_idea = volunteer_only }
-				}
-				VIC = {
-					swap_ideas = {
-						add_idea = limited_conscription
-						remove_idea = volunteer_only
-					}
-				}
-			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_new_victoria exited"
@@ -2122,7 +2192,11 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_integrate_enemies
 		}
-
+		bypass = {
+			DRE = {
+				exists = no
+			}
+		}
 		ai_will_do = {
 			factor = 5
 			modifier = {
@@ -2222,16 +2296,56 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_bellingham_kill
 		}
-
+		bypass = {
+			BRK = {
+				owns_state = 84
+			}
+		}
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_washbos_kill entered"
 			}
-			create_wargoal = {
-				type = annex_everything
-				target = WBH
+			if = {
+				limit = {
+					WBH = {
+						controls_state = 84 
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = WBH
+				}
+			} 
+			else_if = {
+				limit = {
+					any_country = {
+						owns_state = 84
+						NOT = {
+							is_in_faction_with = BRK
+							is_puppet_of = BRK
+						}
+					}
+				}
+				# creates wargoal on owner of Seattle
+				random_country = {
+					limit = {
+						owns_state = 84
+						NOT = {
+							is_in_faction_with = BRK
+							is_puppet_of = BRK
+						}
+						NOT = { original_tag = BRK }
+					}
+					BRK = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+						}
+					}
+				}
 			}
+			
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [ROOT.GetName] brk_nf_washbos_kill exited"
