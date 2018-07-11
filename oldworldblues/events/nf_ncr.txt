@@ -2265,7 +2265,7 @@ country_event = {
 			every_owned_state = {
 				clr_state_flag = do_not_decimate
 			}
-			country_event = { id = nf_ncr.33 days = 1 }
+			NCR = { country_event = { id = nf_ncr.33 days = 1 } }
 			news_event = { id = ncr_tribe_rebellion_news.3 hours = 6 }
 		}
 		set_variable = {
@@ -2277,6 +2277,11 @@ country_event = {
 
 	option = {#Open Rebellion!
 		name = nf_ncr.31.a
+	}
+
+	option = {#Open Rebellion - Switch to Phoenix Republic
+		name = nf_ncr.31.b
+		PHR = { change_tag_from	= ROOT }
 	}
 }
 
@@ -2563,7 +2568,7 @@ country_event = {
 			every_owned_state = {
 				clr_state_flag = do_not_decimate
 			}
-			country_event = { id = nf_ncr.35 days = 1 }
+			NCR = { country_event = { id = nf_ncr.35 days = 1 } }
 			news_event = { id = ncr_tribe_rebellion_news.5 hours = 6 }
 		}
 		set_variable = {
@@ -2701,7 +2706,7 @@ country_event = {
 			every_owned_state = {
 				clr_state_flag = do_not_decimate
 			}
-			country_event = { id = nf_ncr.36 days = 1 }
+			NCR = { country_event = { id = nf_ncr.36 days = 1 } }
 			news_event = { id = ncr_tribe_rebellion_news.6 hours = 6 }
 		}
 		set_variable = {
@@ -2764,7 +2769,7 @@ country_event = {
 			every_owned_state = {
 				clr_state_flag = do_not_decimate
 			}
-			country_event = { id = nf_ncr.37 days = 1 }
+			NCR = { country_event = { id = nf_ncr.37 days = 1 } }
 			news_event = { id = ncr_tribe_rebellion_news.7 hours = 6 }
 		}
 		set_variable = {
@@ -3239,9 +3244,21 @@ news_event = {
 
 	option = {
 		trigger = {
-			NOT = { original_tag = NCR }
+			AND = {
+				NOT = { original_tag = NCR }
+				NOT = {
+					is_legion_tribe = yes
+				}
+			}
 		}
 		name = ncr_tribe_rebellion_news.3.b
+	}
+
+	option = {
+		trigger = {
+			is_legion_tribe = yes
+		}
+		name = ncr_tribe_rebellion_news.3.c
 	}
 }
 
@@ -3265,9 +3282,21 @@ news_event = {
 
 	option = {
 		trigger = {
-			NOT = { original_tag = NCR }
+			AND = {
+				NOT = { original_tag = NCR }
+				NOT = {
+					is_legion_tribe = yes
+				}
+			}
 		}
 		name = ncr_tribe_rebellion_news.4.b
+	}
+
+	option = {
+		trigger = {
+			is_legion_tribe = yes
+		}
+		name = ncr_tribe_rebellion_news.4.c
 	}
 }
 
@@ -3291,9 +3320,21 @@ news_event = {
 
 	option = {
 		trigger = {
-			NOT = { original_tag = NCR }
+			AND = {
+				NOT = { original_tag = NCR }
+				NOT = {
+					is_legion_tribe = yes
+				}
+			}
 		}
 		name = ncr_tribe_rebellion_news.5.b
+	}
+
+	option = {
+		trigger = {
+			is_legion_tribe = yes
+		}
+		name = ncr_tribe_rebellion_news.5.c
 	}
 }
 
@@ -3317,9 +3358,21 @@ news_event = {
 
 	option = {
 		trigger = {
-			NOT = { original_tag = NCR }
+			AND = {
+				NOT = { original_tag = NCR }
+				NOT = {
+					is_legion_tribe = yes
+				}
+			}
 		}
 		name = ncr_tribe_rebellion_news.6.b
+	}
+
+	option = {
+		trigger = {
+			is_legion_tribe = yes
+		}
+		name = ncr_tribe_rebellion_news.6.c
 	}
 }
 
@@ -3343,9 +3396,21 @@ news_event = {
 
 	option = {
 		trigger = {
-			NOT = { original_tag = NCR }
+			AND = {
+				NOT = { original_tag = NCR }
+				NOT = {
+					is_legion_tribe = yes
+				}
+			}
 		}
 		name = ncr_tribe_rebellion_news.7.b
+	}
+
+	option = {
+		trigger = {
+			is_legion_tribe = yes
+		}
+		name = ncr_tribe_rebellion_news.7.c
 	}
 }
 
@@ -3369,9 +3434,21 @@ news_event = {
 
 	option = {
 		trigger = {
-			NOT = { original_tag = NCR }
+			AND = {
+				NOT = { original_tag = NCR }
+				NOT = {
+					is_legion_tribe = yes
+				}
+			}
 		}
 		name = ncr_tribe_rebellion_news.8.b
+	}
+
+	option = {
+		trigger = {
+			is_legion_tribe = yes
+		}
+		name = ncr_tribe_rebellion_news.8.c
 	}
 }
 
