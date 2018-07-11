@@ -805,6 +805,7 @@ focus_tree = {
 		available = {
 			MOJ = {
 				has_country_leader = { id = 981 }
+				has_country_flag = mojave_chapter_chose_leader
 			}
 		}
 		completion_reward = {
@@ -834,6 +835,7 @@ focus_tree = {
 		available = {
 			MOJ = {
 				has_country_leader = { id = 982 }
+				has_country_flag = mojave_chapter_chose_leader
 			}
 		}
 		completion_reward = {
@@ -3119,6 +3121,11 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_plant
 			focus = bos_militia
+		}
+		bypass = {
+		    MOJ = {
+			    is_in_faction_with = BOS
+			}
 		}
 		x = 22
 		y = 11
