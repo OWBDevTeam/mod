@@ -9,14 +9,23 @@ guiTypes = {
 			name = "open_owb_country_religion_tab_window"
 			spriteType = "GFX_religion_button"
 			position = { x = 0 y = 0 }
+			clicksound = click_close
+			oversound = ui_menu_over
 		}
 	}
 	
 	containerWindowType = {
 		name = "owb_country_religion_tab_window"
-		position = { x = 0 y = 120 }	
+		position = { x = -600 y = 120 }
 		size = { width = 546 height = 850 }
 		orientation = upper_left
+		
+		show_sound = menu_open_window
+		
+		show_position = { x = 0 y = 120 }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300
 		
 		clipping = no
 		
@@ -52,6 +61,7 @@ guiTypes = {
 			position = { x = 502 y = -33 }
 			shortcut = "ESCAPE"
 			pdx_tooltip = "DIPLOMACY_CLOSE"
+			clicksound = click_close
 		}
 		
 		iconType = {
