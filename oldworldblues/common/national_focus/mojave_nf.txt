@@ -1189,57 +1189,57 @@ focus_tree = {
 			}
 		}
 	}
-	focus = {
-		id = MOJ_vertibird_schematics
-		icon = GFX_goal_bos_vertibird_schematics
-		cost = 8.6
-		prerequisite = {
-			focus = MOJ_robotic_advancements
-		}
-		x = 18
-		y = 8
-
-		completion_reward = {
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] MOJ_vertibird_schematics entered"
-			}
-			set_technology = {
-				vertiberd_gunship = 1
-				vertiberd_transport1 = 1
-			}
-			add_equipment_to_stockpile = { type = vb_gunship_equipment amount = 5 }
-			add_equipment_to_stockpile = { type = vb_transport_plane_equipment amount = 5 }
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] MOJ_vertibird_schematics exited"
-			}
-		}
-	}
-	focus = {
-		id = MOJ_tesla_theory
-		icon = GFX_goal_generic_electricity_focus
-		cost = 8.6
-		prerequisite = {
-			focus = MOJ_new_technology
-		}
-		x = 20
-		y = 8
-
-		completion_reward = {
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] MOJ_tesla_theory entered"
-			}
-			set_technology = {
-				tesla_weaponry = 1
-			}
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] MOJ_tesla_theory exited"
-			}
-		}
-	}
+	#focus = {
+	#	id = MOJ_vertibird_schematics
+	#	icon = GFX_goal_bos_vertibird_schematics
+	#	cost = 8.6
+	#	prerequisite = {
+	#		focus = MOJ_robotic_advancements
+	#	}
+	#	x = 18
+	#	y = 8
+    #
+	#	completion_reward = {
+	#		if = {
+	#			limit = { has_global_flag = debug_logs }
+	#			log = "[GetDateText]: [ROOT.GetName] MOJ_vertibird_schematics entered"
+	#		}
+	#		set_technology = {
+	#			vertiberd_gunship = 1
+	#			vertiberd_transport1 = 1
+	#		}
+	#		add_equipment_to_stockpile = { type = vb_gunship_equipment amount = 5 }
+	#		add_equipment_to_stockpile = { type = vb_transport_plane_equipment amount = 5 }
+	#		if = {
+	#			limit = { has_global_flag = debug_logs }
+	#			log = "[GetDateText]: [ROOT.GetName] MOJ_vertibird_schematics exited"
+	#		}
+	#	}
+	#}
+	#focus = {
+	#	id = MOJ_tesla_theory
+	#	icon = GFX_goal_generic_electricity_focus
+	#	cost = 8.6
+	#	prerequisite = {
+	#		focus = MOJ_new_technology
+	#	}
+	#	x = 20
+	#	y = 8
+    #
+	#	completion_reward = {
+	#		if = {
+	#			limit = { has_global_flag = debug_logs }
+	#			log = "[GetDateText]: [ROOT.GetName] MOJ_tesla_theory entered"
+	#		}
+	#		set_technology = {
+	#			tesla_weaponry = 1
+	#		}
+	#		if = {
+	#			limit = { has_global_flag = debug_logs }
+	#			log = "[GetDateText]: [ROOT.GetName] MOJ_tesla_theory exited"
+	#		}
+	#	}
+	#}
 
 	# Mojave Brotherhood #
 
