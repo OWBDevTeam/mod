@@ -24,7 +24,7 @@ scavenge_resources = {
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] begin_scavenging_program (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] begin_scavenging_program (decision) remove entered"
 			}
 			set_country_flag = enabled_scavenging
 			add_manpower = 50
@@ -39,14 +39,14 @@ scavenge_resources = {
 			clr_country_flag = is_scavenging
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] begin_scavenging_program (decision) exited entered"
+				log = "[GetDateText]: [Root.GetName] begin_scavenging_program (decision) exited entered"
 			}
 		}
 
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] begin_scavenging_program (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] begin_scavenging_program (decision) complete entered"
 			}
 			set_variable = { var = scavenge_efficiency value = 100 }
 			custom_effect_tooltip = scavenging_set_to_100
@@ -73,7 +73,7 @@ scavenge_resources = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] begin_scavenging_program (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] begin_scavenging_program (decision) complete exited"
 			}
 		}
 	}
@@ -110,21 +110,21 @@ scavenge_resources = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_equip (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_equip (decision) complete entered"
 			}
 			scavenge_equip_start = yes
 			scavenge_equipment_randomiser = yes
 			set_country_flag = scavenge_normal
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_equip (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_equip (decision) complete exited"
 			}
 		}
 
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_equip (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_equip (decision) remove entered"
 			}
 			random_list = {
 				10 = { # Scavengers Killed
@@ -136,7 +136,7 @@ scavenge_resources = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_equip (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_equip (decision) remove exited"
 			}
 		}
 	}
@@ -172,7 +172,7 @@ scavenge_resources = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_equip_pa (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_equip_pa (decision) complete entered"
 			}
 			scavenge_equip_start = yes
 			scavenge_pa_start = yes
@@ -180,14 +180,14 @@ scavenge_resources = {
 			set_country_flag = scavenge_pa
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_equip_pa (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_equip_pa (decision) complete exited"
 			}
 		}
 
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_equip_pa (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_equip_pa (decision) remove entered"
 			}
 			random_list = {
 				10 = { # Scavengers Killed
@@ -199,7 +199,7 @@ scavenge_resources = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_equip_pa (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_equip_pa (decision) remove exited"
 			}
 		}
 	}
@@ -235,21 +235,21 @@ scavenge_resources = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_equip_motor (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_equip_motor (decision) complete entered"
 			}
 			scavenge_equip_start = yes
 			scavenge_vehicle_start = yes
 			set_country_flag = scavenge_vroom_vroom
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_equip_motor (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_equip_motor (decision) complete entered"
 			}
 		}
 
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_equip_motor (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_equip_motor (decision) remove entered"
 			}
 			random_list = {
 				10 = { # Scavengers Killed
@@ -261,7 +261,7 @@ scavenge_resources = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_equip_motor (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_equip_motor (decision) remove exited"
 			}
 		}
 	}
@@ -297,7 +297,7 @@ scavenge_resources = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_equip_fly (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_equip_fly (decision) complete entered"
 			}
 			scavenge_equip_start = yes
 			scavenge_fly_start = yes
@@ -305,14 +305,14 @@ scavenge_resources = {
 			set_country_flag = scavenge_fly
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_equip_fly (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_equip_fly (decision) complete exited"
 			}
 		}
 
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_equip_fly (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_equip_fly (decision) remove entered"
 			}
 			random_list = {
 				10 = { # Scavengers Killed
@@ -324,7 +324,7 @@ scavenge_resources = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_equip_fly (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_equip_fly (decision) remove exited"
 			}
 
 		}
@@ -361,21 +361,21 @@ scavenge_resources = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_robots (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_robots (decision) complete entered"
 			}
 			scavenge_equip_start = yes
 			scavenge_robots_randomiser = yes
 			set_country_flag = scavenge_normal
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_robots (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_robots (decision) complete exited"
 			}
 		}
 
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_robots (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_robots (decision) remove entered"
 			}
 			random_list = {
 				10 = { # Scavengers Killed
@@ -387,7 +387,7 @@ scavenge_resources = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_robots (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_robots (decision) remove exited"
 			}
 		}
 	}
@@ -423,7 +423,7 @@ scavenge_resources = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_robots_pa (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_robots_pa (decision) complete entered"
 			}
 			scavenge_equip_start = yes
 			scavenge_pa_start = yes
@@ -431,14 +431,14 @@ scavenge_resources = {
 			set_country_flag = scavenge_pa
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_robots_pa (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_robots_pa (decision) complete exited"
 			}
 		}
 
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_robots_pa (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_robots_pa (decision) remove entered"
 			}
 			random_list = {
 				10 = { # Scavengers Killed
@@ -450,7 +450,7 @@ scavenge_resources = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_robots_pa (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_robots_pa (decision) remove exited"
 			}
 		}
 	}
@@ -486,7 +486,7 @@ scavenge_resources = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_robots_motor (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_robots_motor (decision) complete entered"
 			}
 			scavenge_equip_start = yes
 			scavenge_vehicle_start = yes
@@ -494,14 +494,14 @@ scavenge_resources = {
 			set_country_flag = scavenge_vroom_vroom
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_robots_motor (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_robots_motor (decision) complete exited"
 			}
 		}
 
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_robots_motor (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_robots_motor (decision) remove entered"
 			}
 			random_list = {
 				10 = { # Scavengers Killed
@@ -513,7 +513,7 @@ scavenge_resources = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_robots_motor (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_robots_motor (decision) remove exited"
 			}
 		}
 	}
@@ -549,7 +549,7 @@ scavenge_resources = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_robots_fly (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_robots_fly (decision) complete entered"
 			}
 			scavenge_equip_start = yes
 			scavenge_fly_start = yes
@@ -557,14 +557,14 @@ scavenge_resources = {
 			set_country_flag = scavenge_fly
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_robots_fly (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_robots_fly (decision) complete exited"
 			}
 		}
 
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_robots_fly (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_robots_fly (decision) remove entered"
 			}
 			random_list = {
 				10 = { # Scavengers Killed
@@ -576,7 +576,7 @@ scavenge_resources = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_robots_fly (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_robots_fly (decision) remove exited"
 			}
 		}
 	}
@@ -612,21 +612,21 @@ scavenge_resources = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_vehicles (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_vehicles (decision) complete entered"
 			}
 			scavenge_equip_start = yes
 			scavenge_vehicles_randomiser = yes
 			set_country_flag = scavenge_normal
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_vehicles (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_vehicles (decision) complete exited"
 			}
 		}
 
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_vehicles (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_vehicles (decision) remove entered"
 			}
 			random_list = {
 				10 = { # Scavengers Killed
@@ -638,7 +638,7 @@ scavenge_resources = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_vehicles (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_vehicles (decision) remove exited"
 			}
 		}
 	}
@@ -674,7 +674,7 @@ scavenge_resources = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_vehicles_pa (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_pa (decision) complete entered"
 			}
 			scavenge_equip_start = yes
 			scavenge_pa_start = yes
@@ -682,14 +682,14 @@ scavenge_resources = {
 			set_country_flag = scavenge_pa
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_vehicles_pa (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_pa (decision) complete exited"
 			}
 		}
 
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_vehicles_pa (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_pa (decision) remove entered"
 			}
 			random_list = {
 				10 = { # Scavengers Killed
@@ -701,7 +701,7 @@ scavenge_resources = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_vehicles_pa (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_pa (decision) remove exited"
 			}
 		}
 	}
@@ -737,7 +737,7 @@ scavenge_resources = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_vehicles_motor (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_motor (decision) complete entered"
 			}
 			scavenge_equip_start = yes
 			scavenge_vehicle_start = yes
@@ -745,14 +745,14 @@ scavenge_resources = {
 			set_country_flag = scavenge_vroom_vroom
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_vehicles_motor (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_motor (decision) complete exited"
 			}
 		}
 
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_vehicles_motor (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_motor (decision) remove entered"
 			}
 			random_list = {
 				10 = { # Scavengers Killed
@@ -764,7 +764,7 @@ scavenge_resources = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_vehicles_motor (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_motor (decision) remove exited"
 			}
 		}
 	}
@@ -800,7 +800,7 @@ scavenge_resources = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_vehicles_fly (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_fly (decision) complete entered"
 			}
 			scavenge_equip_start = yes
 			scavenge_fly_start = yes
@@ -808,14 +808,14 @@ scavenge_resources = {
 			set_country_flag = scavenge_fly
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_vehicles_fly (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_fly (decision) complete exited"
 			}
 		}
 
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_vehicles_fly (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_fly (decision) remove entered"
 			}
 			random_list = {
 				10 = { # Scavengers Killed
@@ -827,7 +827,7 @@ scavenge_resources = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_vehicles_fly (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_fly (decision) remove exited"
 			}
 		}
 	}
@@ -865,20 +865,20 @@ scavenge_resources = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_owt (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_owt (decision) complete entered"
 			}
 			scavenge_equip_start = yes
 			set_country_flag = scavenge_normal
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_owt (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_owt (decision) complete exited"
 			}
 		}
 
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_owt (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_owt (decision) remove entered"
 			}
 			random_list = {
 				20 = { # Scavengers Killed
@@ -890,7 +890,7 @@ scavenge_resources = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_owt (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_owt (decision) remove exited"
 			}
 		}
 	}
@@ -928,21 +928,21 @@ scavenge_resources = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_owt_pa (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_owt_pa (decision) complete entered"
 			}
 			scavenge_equip_start = yes
 			scavenge_pa_start = yes
 			set_country_flag = scavenge_pa
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_owt_pa (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_owt_pa (decision) complete exited"
 			}
 		}
 
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_owt_pa (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_owt_pa (decision) remove entered"
 			}
 			random_list = {
 				20 = { # Scavengers Killed
@@ -954,7 +954,7 @@ scavenge_resources = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_owt_pa (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_owt_pa (decision) remove exited"
 			}
 		}
 	}
@@ -992,21 +992,21 @@ scavenge_resources = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_owt_motor (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_owt_motor (decision) complete entered"
 			}
 			scavenge_equip_start = yes
 			scavenge_vehicle_start = yes
 			set_country_flag = scavenge_vroom_vroom
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_owt_motor (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_owt_motor (decision) complete exited"
 			}
 		}
 
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_owt_motor (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_owt_motor (decision) remove entered"
 			}
 			random_list = {
 				20 = { # Scavengers Killed
@@ -1018,7 +1018,7 @@ scavenge_resources = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_owt_motor (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_owt_motor (decision) remove exited"
 			}
 		}
 	}
@@ -1056,21 +1056,21 @@ scavenge_resources = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_owt_fly (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_owt_fly (decision) complete entered"
 			}
 			scavenge_equip_start = yes
 			scavenge_fly_start = yes
 			set_country_flag = scavenge_fly
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_owt_fly (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_owt_fly (decision) complete exited"
 			}
 		}
 
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_owt_fly (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_owt_fly (decision) remove entered"
 			}
 			random_list = {
 				20 = { # Scavengers Killed
@@ -1082,7 +1082,7 @@ scavenge_resources = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_owt_fly (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_owt_fly (decision) remove exited"
 			}
 		}
 	}
@@ -1199,7 +1199,7 @@ scavenge_resources = {
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] roll_out_tech (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] roll_out_tech (decision) remove entered"
 			}
 			if = {
 				limit = {
@@ -1286,7 +1286,7 @@ scavenge_resources = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] roll_out_tech (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] roll_out_tech (decision) remove exited"
 			}
 		}
 	}
@@ -1305,12 +1305,12 @@ scavenge_resources = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_options (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] scavenge_options (decision) complete entered"
 			}
 			country_event = { id = scavenge.6 }
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] scavenge_options (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] scavenge_options (decision) complete exited"
 			}
 		}
 	}

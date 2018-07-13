@@ -1013,16 +1013,22 @@ country_event = { # The Unbroken Resistance Pact signed (sent back to BRK)
 	is_triggered_only = yes
 	immediate = {
 		hidden_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] nf_event_brk.43 immediate entered"
+			}
 			every_country = {
 				limit = {
 					is_BRK_revolt_effect_valid_country = yes
 					has_idea = brk_resistance_pact_signatory
+					exists = yes
 				}
 				every_country = {
 					limit = {
 						is_BRK_revolt_effect_valid_country = yes
 						has_idea = brk_resistance_pact_signatory
 						NOT = { has_non_aggression_pact_with = PREV }
+						exists = yes
 					}
 					diplomatic_relation = {
 						country = PREV
@@ -1031,10 +1037,22 @@ country_event = { # The Unbroken Resistance Pact signed (sent back to BRK)
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] nf_event_brk.43 immediate exited"
+			}
 		}
 	}
-	option = { 
+	option = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_event_brk.43.a entered"
+		}
 		name = nf_event_brk.43.a
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_event_brk.43.a exited"
+		}
 	}
 }
 country_event = { # Haida Confederation (Graven)
@@ -1063,4 +1081,3 @@ country_event = { #Haida Confederation (Ragnar)
 		name = nf_event_brk.45.b
 	}
 }
-

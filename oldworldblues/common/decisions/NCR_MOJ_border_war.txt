@@ -96,7 +96,7 @@ NCR_mojave_campaign = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] border_conflict_initiate_incident (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] border_conflict_initiate_incident (decision) complete entered"
 			}
 			hidden_effect = {
 				random_state = {
@@ -137,13 +137,13 @@ NCR_mojave_campaign = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] border_conflict_initiate_incident (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] border_conflict_initiate_incident (decision) complete exited"
 			}
 		}
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] border_conflict_initiate_incident (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] border_conflict_initiate_incident (decision) remove entered"
 			}
 			hidden_effect = {
 				var:FROM.defender_state_vs_@ROOT = {
@@ -179,7 +179,7 @@ NCR_mojave_campaign = {
 			activate_targeted_decision = { target = FROM decision = escalate_incident_to_border_conflict }
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] border_conflict_initiate_incident (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] border_conflict_initiate_incident (decision) remove exited"
 			}
 		}
 	}
@@ -219,7 +219,7 @@ NCR_mojave_campaign = {
 		timeout_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] border_conflict_incident_warning_defender (decision) timeout entered"
+				log = "[GetDateText]: [Root.GetName] border_conflict_incident_warning_defender (decision) timeout entered"
 			}
 			custom_effect_tooltip = escalation_possible_tooltip_for_defender
 			custom_effect_tooltip = effects_if_border_conflict_is_lost
@@ -233,7 +233,7 @@ NCR_mojave_campaign = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] border_conflict_incident_warning_defender (decision) timeout exited"
+				log = "[GetDateText]: [Root.GetName] border_conflict_incident_warning_defender (decision) timeout exited"
 			}
 		}
 	}
@@ -325,7 +325,7 @@ NCR_mojave_campaign = {
 		timeout_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] escalate_incident_to_border_conflict (decision) timeout entered"
+				log = "[GetDateText]: [Root.GetName] escalate_incident_to_border_conflict (decision) timeout entered"
 			}
 			custom_effect_tooltip = border_incident_delay_until_new_incident_120
 			hidden_effect = {
@@ -343,14 +343,14 @@ NCR_mojave_campaign = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] escalate_incident_to_border_conflict (decision) timeout exited"
+				log = "[GetDateText]: [Root.GetName] escalate_incident_to_border_conflict (decision) timeout exited"
 			}
 		}
 
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] escalate_incident_to_border_conflict (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] escalate_incident_to_border_conflict (decision) complete entered"
 			}
 			start_border_war = {
 				change_state_after_war = no
@@ -379,7 +379,7 @@ NCR_mojave_campaign = {
 			activate_targeted_decision = { target = FROM decision = border_conflict_time_until_cancelled }
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] escalate_incident_to_border_conflict (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] escalate_incident_to_border_conflict (decision) complete exited"
 			}
 		}
 	}
@@ -422,7 +422,7 @@ NCR_mojave_campaign = {
 		timeout_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] border_conflict_time_until_cancelled (decision) timeout entered"
+				log = "[GetDateText]: [Root.GetName] border_conflict_time_until_cancelled (decision) timeout entered"
 			}
 			if = {
 				limit = { is_border_conflict_defender_vs_FROM = yes }
@@ -442,7 +442,7 @@ NCR_mojave_campaign = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] border_conflict_time_until_cancelled (decision) timeout exited"
+				log = "[GetDateText]: [Root.GetName] border_conflict_time_until_cancelled (decision) timeout exited"
 			}
 		}
 	}
@@ -480,7 +480,7 @@ NCR_mojave_campaign = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] border_conflict_escalate_conflict (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] border_conflict_escalate_conflict (decision) complete entered"
 			}
 			if = {
 				limit = { is_border_conflict_defender_vs_FROM = yes }
@@ -518,7 +518,7 @@ NCR_mojave_campaign = {
 			activate_targeted_decision = { target = FROM decision = border_conflict_escalate_to_war }
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] border_conflict_escalate_conflict (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] border_conflict_escalate_conflict (decision) complete exited"
 			}
 		}
 	}
@@ -560,7 +560,7 @@ NCR_mojave_campaign = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] border_conflict_escalate_to_war (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] border_conflict_escalate_to_war (decision) complete entered"
 			}
 			if = {
 				limit = { is_border_conflict_defender_vs_FROM = yes }
@@ -579,14 +579,14 @@ NCR_mojave_campaign = {
 		 	}
 		 	if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] border_conflict_escalate_to_war (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] border_conflict_escalate_to_war (decision) complete exited"
 			}
 		}
 
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] border_conflict_escalate_to_war (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] border_conflict_escalate_to_war (decision) remove entered"
 			}
 			cancel_border_war = {
 				dont_fire_events = yes
@@ -619,7 +619,7 @@ NCR_mojave_campaign = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] border_conflict_escalate_to_war (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] border_conflict_escalate_to_war (decision) remove exited"
 			}
 		}
 	}
@@ -652,7 +652,7 @@ NCR_mojave_campaign = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] border_conflict_back_out_of_conflict (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] border_conflict_back_out_of_conflict (decision) complete entered"
 			}
 			if = {
 				limit = { is_border_conflict_defender_vs_FROM = yes }
@@ -671,7 +671,7 @@ NCR_mojave_campaign = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] border_conflict_back_out_of_conflict (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] border_conflict_back_out_of_conflict (decision) complete exited"
 			}
 		}
 	}

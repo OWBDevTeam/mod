@@ -9,13 +9,13 @@ brk_decisions = {
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_decision_build_the_fleet (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] brk_decision_build_the_fleet (decision) remove entered"
 			}
 			set_technology = { cruiser_tech_2 = 1 }
 			load_oob = BRK_raiding_fleet
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_decision_build_the_fleet (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] brk_decision_build_the_fleet (decision) remove exited"
 			}
 		}
 	}
@@ -30,13 +30,13 @@ brk_decisions = {
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_decision_build_graven_ship (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] brk_decision_build_graven_ship (decision) remove entered"
 			}
 			set_technology = { battleship_tech_2 = 1 }
 			load_oob = BRK_graven_boat
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_decision_build_graven_ship (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] brk_decision_build_graven_ship (decision) remove exited"
 			}
 		}
 	}
@@ -96,7 +96,7 @@ brk_raiding_vic = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_practice_raid (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] brk_vic_practice_raid (decision) complete entered"
 			}
 			HAI = {
 				country_event = { id = nf_event_brk.21 hours = 1 } # The target gets an event warning them about their impending doom
@@ -104,14 +104,14 @@ brk_raiding_vic = {
 			set_country_flag = brk_vic_raid_underway
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_practice_raid (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] brk_vic_practice_raid (decision) complete exited"
 			}
 		}
 
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_practice_raid (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] brk_vic_practice_raid (decision) remove entered"
 			}
 			clr_country_flag = brk_vic_raid_underway
 			random_list = {
@@ -129,7 +129,7 @@ brk_raiding_vic = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_practice_raid (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] brk_vic_practice_raid (decision) remove exited"
 			}
 		}
 	}
@@ -159,19 +159,19 @@ brk_raiding_vic = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_raid_the_coasts (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] brk_vic_raid_the_coasts (decision) complete entered"
 			}
 			set_country_flag = brk_vic_raid_underway
 			VIC = { country_event = { id = nf_event_brk.26 } }
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_raid_the_coasts (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] brk_vic_raid_the_coasts (decision) complete exited"
 			}
 		}
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_raid_the_coasts (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] brk_vic_raid_the_coasts (decision) remove entered"
 			}
 			clr_country_flag = brk_vic_raid_underway
 			if = {
@@ -211,7 +211,7 @@ brk_raiding_vic = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_raid_the_coasts (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] brk_vic_raid_the_coasts (decision) remove exited"
 			}
 		}
 	}
@@ -245,19 +245,19 @@ brk_raiding_vic = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_raid_the_ports (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] brk_vic_raid_the_ports (decision) complete entered"
 			}
 			set_country_flag = brk_vic_raid_underway
 			VIC = { country_event = { id = nf_event_brk.29 } }
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_raid_the_ports (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] brk_vic_raid_the_ports (decision) complete exited"
 			}
 		}
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_raid_the_ports (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] brk_vic_raid_the_ports (decision) remove entered"
 			}
 			clr_country_flag = brk_vic_raid_underway
 			if = {
@@ -297,7 +297,7 @@ brk_raiding_vic = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_raid_the_ports (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] brk_vic_raid_the_ports (decision) remove exited"
 			}
 		}
 
@@ -337,13 +337,13 @@ brk_raiding_vic = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_seize_winter_harbour (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] brk_vic_seize_winter_harbour (decision) complete entered"
 			}
 			country_event = { id = nf_event_brk.34 }
 			add_state_claim = 461
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName]brk_vic_seize_winter_harbour (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName]brk_vic_seize_winter_harbour (decision) complete exited"
 			}
 		}
 
@@ -359,7 +359,7 @@ brk_raiding_vic = {
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_seize_winter_harbour (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] brk_vic_seize_winter_harbour (decision) remove entered"
 			}
 			set_country_flag = brk_vic_harbour_seized
 			if = { # Plan 1 - War Plan
@@ -398,7 +398,7 @@ brk_raiding_vic = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_seize_winter_harbour (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] brk_vic_seize_winter_harbour (decision) remove exited"
 			}
 		}
 	}
@@ -436,14 +436,14 @@ brk_raiding_vic = {
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_wartime (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] brk_vic_wartime (decision) remove entered"
 			}
 			declare_war_on = { target = VIC type = annex_everything }
 			add_war_support = 0.05
 			VIC = { country_event = { id = nf_event_brk.39 } }
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_wartime (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] brk_vic_wartime (decision) remove exited"
 			}
 		}
 	}
@@ -483,7 +483,7 @@ brk_raiding_vic = {
 		remove_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_terror (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] brk_vic_terror (decision) remove entered"
 			}
 			add_state_core = 461
 			461 = {
@@ -515,7 +515,7 @@ brk_raiding_vic = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_vic_terror (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] brk_vic_terror (decision) remove exited"
 			}
 		}
 	}
@@ -633,7 +633,7 @@ brk_raiding = {
 		complete_effect = { # Effect WHEN CLICKED
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_raid_borders_initial_raid (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] brk_raid_borders_initial_raid (decision) complete entered"
 			}
 			hidden_effect = { # is hidden. shh - I'm not here.
 				random_state = {
@@ -673,13 +673,13 @@ brk_raiding = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_raid_borders_initial_raid (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] brk_raid_borders_initial_raid (decision) complete exited"
 			}
 		}
 		remove_effect = { # Effect ON timeout
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_raid_borders_initial_raid (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] brk_raid_borders_initial_raid (decision) remove entered"
 			}
 			hidden_effect = { # i'm hidden again. and losing my mind. help.
 				var:FROM.defender_state_vs_@ROOT = { # The defending state and attacking state are saved again as event targets, for some reason
@@ -743,7 +743,7 @@ brk_raiding = {
 			clr_country_flag = BRK_prelim_raid
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_raid_borders_initial_raid (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] brk_raid_borders_initial_raid (decision) remove exited"
 			}
 		}
 	}
@@ -776,7 +776,7 @@ brk_raiding = {
 		timeout_effect = { # What happens on timeout
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_light_border_raid_defender_warning (decision) timeout entered"
+				log = "[GetDateText]: [Root.GetName] brk_light_border_raid_defender_warning (decision) timeout entered"
 			}
 			custom_effect_tooltip = escalation_possible_tooltip_for_defender # It can escalate
 			custom_effect_tooltip = effects_if_border_conflict_is_lost # What happens if we lose?
@@ -790,7 +790,7 @@ brk_raiding = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_light_border_raid_defender_warning (decision) timeout exited"
+				log = "[GetDateText]: [Root.GetName] brk_light_border_raid_defender_warning (decision) timeout exited"
 			}
 		}
 	}
@@ -874,7 +874,7 @@ brk_raiding = {
 		timeout_effect = { # IF WE LET THE MISSION GO (BACK DOWN)
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_light_border_escalate (decision) timeout entered"
+				log = "[GetDateText]: [Root.GetName] brk_light_border_escalate (decision) timeout entered"
 			}
 			custom_effect_tooltip = WTT_border_incident_delay_until_new_incident_120 # Some tooltip
 			hidden_effect = {
@@ -892,14 +892,14 @@ brk_raiding = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_light_border_escalate (decision) timeout exited"
+				log = "[GetDateText]: [Root.GetName] brk_light_border_escalate (decision) timeout exited"
 			}
 		}
 
 		complete_effect = { # IF WE CLICK IT
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_light_border_escalate (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] brk_light_border_escalate (decision) complete entered"
 			}
 			start_border_war = { # A border war is started
 				change_state_after_war = no # that won't lead to the state being exchanged
@@ -928,7 +928,7 @@ brk_raiding = {
 			activate_targeted_decision = { target = FROM decision = WTT_border_conflict_time_until_cancelled }
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_light_border_escalate (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] brk_light_border_escalate (decision) complete exited"
 			}
 		}
 	}
@@ -971,7 +971,7 @@ brk_raiding = {
 		timeout_effect = { # This bit makes us pack up and go home
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] WTT_border_conflict_time_until_cancelled (decision) timeout entered"
+				log = "[GetDateText]: [Root.GetName] WTT_border_conflict_time_until_cancelled (decision) timeout entered"
 			}
 			if = {
 				limit = { is_border_conflict_defender_vs_FROM = yes }
@@ -991,7 +991,7 @@ brk_raiding = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] WTT_border_conflict_time_until_cancelled (decision) timeout exited"
+				log = "[GetDateText]: [Root.GetName] WTT_border_conflict_time_until_cancelled (decision) timeout exited"
 			}
 		}
 	}
@@ -1028,7 +1028,7 @@ brk_raiding = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_escalate_conflict (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict (decision) complete entered"
 			}
 			if = {
 				limit = { is_border_conflict_defender_vs_FROM = yes }
@@ -1064,7 +1064,7 @@ brk_raiding = {
 			activate_targeted_decision = { target = FROM decision = brk_escalate_conflict_to_war } # Activates the escalate to war decision
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_escalate_conflict (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict (decision) complete exited"
 			}
 		}
 	}
@@ -1106,7 +1106,7 @@ brk_raiding = {
 		complete_effect = { # When we select the decision
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_escalate_conflict_to_war (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict_to_war (decision) complete entered"
 			}
 			if = {
 				limit = { is_border_conflict_defender_vs_FROM = yes }
@@ -1125,14 +1125,14 @@ brk_raiding = {
 		 	}
 		 	if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_escalate_conflict_to_war (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict_to_war (decision) complete exited"
 			}
 		}
 
 		remove_effect = { # When the decision ends
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_escalate_conflict_to_war (decision) remove entered"
+				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict_to_war (decision) remove entered"
 			}
 			cancel_border_war = { # The border war ends without firing cancel events
 				dont_fire_events = yes
@@ -1165,7 +1165,7 @@ brk_raiding = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_escalate_conflict_to_war (decision) remove exited"
+				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict_to_war (decision) remove exited"
 			}
 		}
 	}
@@ -1198,7 +1198,7 @@ brk_raiding = {
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_back_out_of_conflict (decision) complete entered"
+				log = "[GetDateText]: [Root.GetName] brk_back_out_of_conflict (decision) complete entered"
 			}
 			if = { # Finishes the border war, so the side who back down loses
 				limit = { is_border_conflict_defender_vs_FROM = yes }
@@ -1217,7 +1217,7 @@ brk_raiding = {
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [ROOT.GetName] brk_back_out_of_conflict (decision) complete exited"
+				log = "[GetDateText]: [Root.GetName] brk_back_out_of_conflict (decision) complete exited"
 			}
 		}
 	}
