@@ -2277,11 +2277,41 @@ country_event = {
 
 	option = {#Open Rebellion!
 		name = nf_ncr.31.a
+		ai_will_do = { factor = 1 }
+		if = {
+			limit = {
+				OR = {
+					any_state = {
+						is_core_of = HAN
+						OWNER = {
+							OR = {
+								tag = NCR
+								is_in_faction_with = NCR
+							}
+						}
+					}
+					HAN = {
+						is_puppet = yes
+						OVERLORD = {
+							OR = {
+								tag = NCR
+								is_in_faction_with = NCR
+							}
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = NCR_revolt_play_hangdogs_later
+		}
 	}
 
 	option = {#Open Rebellion - Switch to Phoenix Republic
 		name = nf_ncr.31.b
-		PHR = { change_tag_from	= ROOT }
+		ai_will_do = { factor = 0 }
+		custom_effect_tooltip = NCR_revolt_PHR_tagswitch
+		hidden_effect = {
+			PHR = { change_tag_from	= ROOT }
+		}
 	}
 }
 
@@ -3032,6 +3062,23 @@ country_event = {
 
 	option = {#More join this Rebellion!
 		name = nf_ncr.37.a
+		ai_will_do = { factor = 1 }
+	}
+
+	option = {
+		name = nf_ncr.37.b
+		ai_will_do = { factor = 0 }
+		trigger = {
+			HAN = {
+				exists = yes
+				has_war_with = NCR
+				is_in_faction_with = PHR
+			}
+		}
+		custom_effect_tooltip = NCR_revolt_HAN_tagswitch
+		hidden_effect = {
+			HAN = { change_tag_from = ROOT }
+		}
 	}
 }
 

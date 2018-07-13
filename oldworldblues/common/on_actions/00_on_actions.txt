@@ -372,6 +372,44 @@ on_actions = {
 						}
 					}
 			}
+			# everyone views HEA as religious nutjobs, HEA views everyone as impure
+			every_country = {
+				limit = {
+					tag = HEA
+				}
+				every_country = {
+					limit = {
+						NOT = { tag = HEA }
+					}
+					reverse_add_opinion_modifier = {
+						target = PREV
+						modifier = hea_view_world
+					}
+					add_opinion_modifier = {
+						target = PREV
+						modifier = world_view_hea
+					}
+				}
+			}
+			# everyone fears BRK, BRK sees everyone as future prey
+			every_country = {
+				limit = {
+					tag = BRK
+				}
+				every_country = {
+					limit = {
+						NOT = { tag = BRK }
+					}
+					reverse_add_opinion_modifier = {
+						target = PREV
+						modifier = brk_view_world
+					}
+					add_opinion_modifier = {
+						target = PREV
+						modifier = world_view_brk
+					}
+				}
+			}
 			# settlers/raiders dislike each other innately
 			every_country = {
 					limit = {
