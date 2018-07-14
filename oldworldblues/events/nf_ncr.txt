@@ -2277,7 +2277,7 @@ country_event = {
 
 	option = {#Open Rebellion!
 		name = nf_ncr.31.a
-		ai_will_do = { factor = 1 }
+		ai_chance = { factor = 1 }
 		if = {
 			limit = {
 				OR = {
@@ -2307,7 +2307,7 @@ country_event = {
 
 	option = {#Open Rebellion - Switch to Phoenix Republic
 		name = nf_ncr.31.b
-		ai_will_do = { factor = 0 }
+		ai_chance = { factor = 0 }
 		custom_effect_tooltip = NCR_revolt_PHR_tagswitch
 		hidden_effect = {
 			PHR = { change_tag_from	= ROOT }
@@ -3062,12 +3062,12 @@ country_event = {
 
 	option = {#More join this Rebellion!
 		name = nf_ncr.37.a
-		ai_will_do = { factor = 1 }
+		ai_chance = { factor = 1 }
 	}
 
 	option = {
 		name = nf_ncr.37.b
-		ai_will_do = { factor = 0 }
+		ai_chance = { factor = 0 }
 		trigger = {
 			HAN = {
 				exists = yes

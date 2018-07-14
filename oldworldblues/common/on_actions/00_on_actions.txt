@@ -355,22 +355,22 @@ on_actions = {
 			## Relation modifiers for countries based on types
 			# nobody likes supermutants, supermutants don't like anyone else
 			every_country = {
+				limit = {
+					is_super_mutant = yes
+				}
+				every_country = {
 					limit = {
-						is_super_mutant = yes
+						NOT = { is_super_mutant = yes }
 					}
-					every_country = {
-						limit = {
-							NOT = { is_super_mutant = yes }
-						}
-						reverse_add_opinion_modifier = {
-							target = PREV
-							modifier = non_supermutants
-						}
-						add_opinion_modifier = {
-							target = PREV
-							modifier = supermutants
-						}
+					reverse_add_opinion_modifier = {
+						target = PREV
+						modifier = non_supermutants
 					}
+					add_opinion_modifier = {
+						target = PREV
+						modifier = supermutants
+					}
+				}
 			}
 			# everyone views HEA as religious nutjobs, HEA views everyone as impure
 			every_country = {
