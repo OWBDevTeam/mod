@@ -412,24 +412,23 @@ on_actions = {
 			}
 			# settlers/raiders dislike each other innately
 			every_country = {
+				limit = {
+					is_raider_nation = yes
+				}
+				every_country = {
 					limit = {
-						is_raider_nation = yes
+						is_settler_nation = yes
 					}
-					every_country = {
-						limit = {
-							is_settler_nation = yes
-						}
-						add_opinion_modifier = {
-							target = PREV
-							modifier = settlers_vs_raiders
-						}
-						reverse_add_opinion_modifier = {
-							target = PREV
-							modifier = settlers_vs_raiders
-						}
+					add_opinion_modifier = {
+						target = PREV
+						modifier = settlers_vs_raiders
 					}
+					reverse_add_opinion_modifier = {
+						target = PREV
+						modifier = settlers_vs_raiders
+					}
+				}
 			}
-			
 			## setting initial technologies, these can be found in scripted effects/set_technology_effects: 
 			## Scripted by Mechano
 			#initial tribal technology

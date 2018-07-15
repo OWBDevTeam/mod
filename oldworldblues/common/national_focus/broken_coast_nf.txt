@@ -894,6 +894,10 @@ focus_tree = {
 				target = WHI
 				modifier = brk_woo_whi
 			}
+			hidden_effect = {
+				BRK = { remove_opinion_modifier = { target = WHI modifier = brk_view_world } }
+				WHI = { remove_opinion_modifier = { target = BRK modifier = world_view_brk } }
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] brk_nf_woo_whistler exited"
