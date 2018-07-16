@@ -4,22 +4,22 @@ country_event = {
 	id = nf_event_brk.1
 	title = nf_event_brk.1.t
 	desc = nf_event_brk.1.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_BRK_shipwreck
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_brk.1.a
 		add_ideas = brk_startup_natives
-		
+
 		ai_chance = {
 			base = 33
 		}
 	}
-    option = {
+	option = {
 		name = nf_event_brk.1.b
 		add_ideas = brk_startup_marines
-		
+
 		ai_chance = {
 			base = 33
 		}
@@ -27,7 +27,7 @@ country_event = {
 	option = {
 		name = nf_event_brk.1.c
 		add_ideas = brk_startup_sailors
-		
+
 		ai_chance = {
 			base = 33
 		}
@@ -40,29 +40,29 @@ country_event = {
 	desc = nf_event_brk.2.d
 	picture = GFX_event_NCR_settlers
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_brk.2.a
 		add_ideas = brk_startup_fled
-		
+
 		ai_chance = {
 			base = 33
 		}
 	}
-    option = {
+	option = {
 		name = nf_event_brk.2.b
 		add_ideas = brk_startup_sheltered
-		
+
 		ai_chance = {
 			base = 33
 		}
 	}
-	
+
 	option = {
 		name = nf_event_brk.2.c
 		add_ideas = brk_startup_weathered
-		
+
 		ai_chance = {
 			base = 33
 		}
@@ -75,20 +75,20 @@ country_event = {
 	desc = nf_event_brk.3.d
 	picture = GFX_event_NCR_settlers
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_brk.3.a
 		add_ideas = brk_startup_slaves
-		
+
 		ai_chance = {
 			base = 50
 		}
 	}
-    option = {
+	option = {
 		name = nf_event_brk.3.b
 		add_ideas = brk_startup_riches
-		
+
 		ai_chance = {
 			base = 50
 		}
@@ -101,9 +101,9 @@ country_event = {
 	desc = nf_event_brk.4.d
 	picture = GFX_event_NCR_settlers
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
-    option = {
+	option = {
 		name = nf_event_brk.4.a
 		WHI = {
 			add_opinion_modifier = {
@@ -111,7 +111,7 @@ country_event = {
 				modifier = brk_raid
 			}
 		}
-		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 200 producer = WHI } 
+		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 200 producer = WHI }
 		ai_chance = {
 			base = 100
 		}
@@ -126,8 +126,8 @@ country_event = {
 	desc = nf_event_brk.5.d
 	picture = GFX_event_NCR_settlers
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_brk.5.a
 		WHI = { country_event = { id = nf_event_brk.50 } }
@@ -144,13 +144,13 @@ country_event = {
 	desc = nf_event_brk.50.d
 	picture = GFX_event_NCR_settlers
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_brk.50.a
-		
-		BRK = { 
-			annex_country = { target = WHI } 
+
+		BRK = {
+			annex_country = { target = WHI }
 		}
 		ai_chance = {
 			base = 50
@@ -158,14 +158,14 @@ country_event = {
 	}
 	option = {
 		name = nf_event_brk.50.b
-		
+
 		BRK = {
 			create_wargoal = {
 				type = annex_everything
 				target = WHI
 			}
 		}
-		
+
 		ai_chance = {
 			base = 50
 		}
@@ -178,8 +178,8 @@ country_event = {
 	desc = nf_event_brk.6.d
 	picture = GFX_event_NCR_settlers
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_brk.6.a
 		WHI = { country_event = { id = nf_event_brk.60 }}
@@ -195,13 +195,13 @@ country_event = {
 	desc = nf_event_brk.60.d
 	picture = GFX_event_NCR_settlers
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_brk.60.a
-		
-		BRK = { 
-			annex_country = { target = WHI } 
+
+		BRK = {
+			annex_country = { target = WHI }
 		}
 		ai_chance = {
 			base = 80
@@ -209,14 +209,14 @@ country_event = {
 	}
 	option = {
 		name = nf_event_brk.60.b
-		
+
 		BRK = {
 			create_wargoal = {
 				type = annex_everything
 				target = WHI
 			}
 		}
-		
+
 		ai_chance = {
 			base = 20
 		}
@@ -230,8 +230,8 @@ country_event = {
 	desc = nf_event_brk.7.d
 	picture = GFX_event_NCR_settlers
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_brk.7.a
 		KAM = {
@@ -240,7 +240,7 @@ country_event = {
 				modifier = brk_raid
 			}
 		}
-		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 200 producer = KAM } 
+		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 200 producer = KAM }
 		ai_chance = {
 			base = 100
 		}
@@ -253,8 +253,8 @@ country_event = {
 	desc = nf_event_brk.8.d
 	picture = GFX_event_NCR_settlers
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_brk.8.a
 		KAM = { add_ideas = brk_terrorized }
@@ -392,11 +392,11 @@ country_event = { # BRK - we win border conflict
 		FROM.FROM.FROM = { save_event_target_as = their_state }
 		remove_targeted_decision = { target = event_target:their_country decision = border_conflict_time_until_cancelled }
 	}
-	
+
 	option = { # Nice
 		name = nf_event_brk.14.a
 		add_political_power = 100
-	}	
+	}
 }
 
 country_event = { # Raid Target - we win border conflict
@@ -425,7 +425,7 @@ country_event = { # Raid Target - we win border conflict
 			remove_targeted_decision = { target = event_target:their_country decision = border_conflict_time_until_cancelled }
 		}
 	}
-	
+
 	#Same effect as attacker. Tooltip for their effects
 	option = {
 		name = nf_event_brk.15.a
@@ -446,7 +446,7 @@ country_event = { # Raid Target - we win border conflict
 			}
 			clr_country_flag = show_effect_tooltips
 		}
-	}	
+	}
 }
 
 country_event = { # BRK - we lose border conflict
@@ -465,8 +465,8 @@ country_event = { # BRK - we lose border conflict
 		set_country_flag = show_effect_tooltips
 		remove_targeted_decision = { target = event_target:their_country decision = border_conflict_time_until_cancelled }
 	}
-	
-	#Same effect as defender. Tooltip for their effects	
+
+	#Same effect as defender. Tooltip for their effects
 	option = {
 		name = nf_event_brk.16.a
 		add_political_power = -150
@@ -486,7 +486,7 @@ country_event = { # BRK - we lose border conflict
 			}
 			clr_country_flag = show_effect_tooltips
 		}
-	}	
+	}
 }
 
 country_event = { # Raid target - we lose border conflict
@@ -515,13 +515,13 @@ country_event = { # Raid target - we lose border conflict
 			remove_targeted_decision = { target = event_target:their_country decision = border_conflict_time_until_cancelled }
 		}
 	}
-	
+
 	#Same effect as attacker. Tooltip for their effects
 	option = {
 		name = nf_event_brk.17.a
 		add_political_power = -50
 		army_experience = 10
-	}	
+	}
 }
 
 country_event = { # BRK - we cancel the conflict
@@ -539,7 +539,7 @@ country_event = { # BRK - we cancel the conflict
 		FROM.FROM.FROM = { save_event_target_as = their_state }
 		set_country_flag = show_effect_tooltips
 	}
-	
+
 	option = {
 		name = nf_event_brk.18.a
 		army_experience = 15
@@ -553,7 +553,7 @@ country_event = { # BRK - we cancel the conflict
 			}
 			clr_country_flag = show_effect_tooltips
 		}
-	}	
+	}
 }
 
 country_event = { # Raid Target - BRK cancels the conflict
@@ -581,7 +581,7 @@ country_event = { # Raid Target - BRK cancels the conflict
 			clear_variable = defender_state_vs_@FROM.FROM
 		}
 	}
-	
+
 	option = {
 		name = nf_event_brk.19.a
 		army_experience = 30
@@ -596,7 +596,7 @@ country_event = { # Raid Target - BRK cancels the conflict
 			clr_country_flag = show_effect_tooltips
 		}
 	}
-}	
+}
 
 
 country_event = { # Either - Border Conflict Escalation
@@ -614,10 +614,10 @@ country_event = { # Either - Border Conflict Escalation
 		save_event_target_as = our_country
 		FROM = { save_event_target_as = their_country }
 	}
-	
+
 	option = {
 		name = nf_event_brk.20.a
-	}	
+	}
 }
 
 # BRK / VIC raiding events #
@@ -937,7 +937,7 @@ country_event = { # The Moot
 
 	is_triggered_only = yes
 
-	option = { 
+	option = {
 		name = nf_event_brk.40.a
 
 		ai_chance = {
@@ -946,13 +946,13 @@ country_event = { # The Moot
 
 		set_country_flag = the_moot_graven
 	}
-	option = { 
+	option = {
 		name = nf_event_brk.40.b
 
 		ai_chance = {
 			factor = 0
 		}
-		
+
 		set_country_flag = the_moot_ragnar
 	}
 }
@@ -975,7 +975,7 @@ country_event = { # The Unbroken Resistance Pact
 			}
 		}
 	}
-	option = { 
+	option = {
 		name = nf_event_brk.41.a
 		country_event = {
 			id = nf_event_brk.43
@@ -989,7 +989,7 @@ country_event = { # The Unbroken Resistance Pact signing
 	desc = nf_event_brk.42.d
 	is_triggered_only = yes
 	picture = GFX_event_BRK_snowmobile_troops
-	option = { 
+	option = {
 		name = nf_event_brk.42.a
 		ai_chance = {
 			factor = 100
@@ -997,12 +997,12 @@ country_event = { # The Unbroken Resistance Pact signing
 		add_ideas = brk_resistance_pact_signatory
 		custom_effect_tooltip = BRK_spawn_troops_resistance_signatory_tooltip
 	}
-	option = { 
+	option = {
 		ai_chance = {
 			factor = 0
 		}
 		name = nf_event_brk.42.b
-		
+
 	}
 }
 country_event = { # The Unbroken Resistance Pact signed (sent back to BRK)
@@ -1062,10 +1062,10 @@ country_event = { # Haida Confederation (Graven)
 	desc = nf_event_brk.44.d
 	picture = GFX_event_BRK_wasteland_boat_militia
 	is_triggered_only = yes
-	option = { 
+	option = {
 		name = nf_event_brk.44.a
 	}
-	option = { 
+	option = {
 		name = nf_event_brk.44.b
 	}
 }
@@ -1075,7 +1075,7 @@ country_event = { #Haida Confederation (Ragnar)
 	desc = nf_event_brk.45.d
 	picture = GFX_event_BRK_wasteland_boat_militia
 	is_triggered_only = yes
-	option = { 
+	option = {
 		name = nf_event_brk.45.a
 	}
 	option = {
