@@ -1131,11 +1131,16 @@ focus_tree = {
 		y = 6
 
 		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment_2
+				amount = 250
+				producer = WBH
+			}
+			
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] MOJ_t45d_production entered"
 			}
-			add_ideas = genericbost45d
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] MOJ_t45d_production exited"
@@ -1153,11 +1158,37 @@ focus_tree = {
 		y = 7
 
 		completion_reward = {
+			 if = {
+				limit = {
+					MOJ = {
+						has_tech = power_armour_t51b
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment_3
+					amount = 250
+					producer = MOJ
+				}
+			}
+			if = {
+				limit = {
+					MOJ = {
+						NOT = {
+							has_tech = power_armour_t51b
+						}
+					}
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = power_armor_tech
+				}
+			}
+			
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] MOJ_t51b_production entered"
 			}
-			add_ideas = genericbost51b
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] MOJ_t51b_production exited"
