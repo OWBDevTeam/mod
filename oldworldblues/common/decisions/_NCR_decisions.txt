@@ -480,29 +480,7 @@ ncr_revolts = {
 @baja_pulse = 20
 
 ncr_raider_trouble = {
-	### Raid districts:
-	## Baja
-	# Owned at start: 63, 583, 4
-	# Raider states: 41, 651, 174, 158, 136, 481, 176, 325, 97
-	## The Rapids
-	# Owned at start: 205
-	# Rapids states: 107, 469, 147, 500, 99
-	## Boneyard
-	# Owned at start: 591, 350, 396, 180, 19, 1, 292, 736
-	## Scorpions
-	# Scorpion states: 301, 173, 77, 589, 243, 236, 241, 372
-	## The Heartlands
-	# Owned at start: 293, 489, 347, 334, 45, 253, 455, 214
-	## Nevada Range
-	# Any state bordering 167
-	## Southern Baron Country
-	# Owned at start: 529, 605, 603, 190, 60, 584
-	## Northern Baron Country
-	# Owned at start: 135, 543, 421, 168, 141, 162, 369
-	## Trinity
-	# Owned at start: 182, 56, 441, 511
-	## Santa Cruz
-	# Owned at start: 312, 433, 606, 558
+	# Planning at https://docs.google.com/document/d/1XNZdjfPeu2SCb2QZ5lXqY9FUXj9XMaXnS_5jOVhVzc0/edit?usp=sharing
 	raider_pulse_baja = {
 		activation = {
 			always = yes
@@ -516,25 +494,12 @@ ncr_raider_trouble = {
 		days_mission_timeout = @baja_pulse
 		is_good = no
 		timeout_effect = {
-			add_to_variable = {
-   				var = baja_pulse
-    			value = 10
-    		}
-			set_country_flag = go_4
-		}
-	}
-	raider_pulse_baja_two = {
-		activation = {
-			has_country_flag = go_4
-		}
-		dynamic = yes
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = district_pacified
-				has_country_flag = baja_pacified
+			hidden_effect = {
+
 			}
 		}
-		days_mission_timeout = @baja_pulse
-		is_good = no
+		complete_effect = {
+			# country_event = { id = } # Baja pacified!
+		}
 	}
 }

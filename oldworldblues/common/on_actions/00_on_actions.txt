@@ -352,6 +352,12 @@ on_actions = {
 	#Not run on a specific country.
 	on_startup = {
 		effect = {
+			every_country = {
+				limit = {
+					is_puppet_of = NCR
+				}
+				set_cosmetic_tag = NCR_puppet
+			}
 			## Relation modifiers for countries based on types
 			# nobody likes supermutants, supermutants don't like anyone else
 			every_country = {
