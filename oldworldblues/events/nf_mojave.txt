@@ -293,7 +293,7 @@ country_event = {
 		name = nf_mojave.14.a
 
 		ai_chance = {
-			factor = 25
+			factor = 50
 		}
 		MOJ = {
 			country_event = { id = nf_mojave.15 days = 1 }
@@ -387,6 +387,9 @@ country_event = {
 	option = {
 		name = nf_mojave.20.a
 
+		ai_chance = {
+			factor = 50
+		}
 		BOS = {
 			country_event = { id = nf_mojave.21 days = 1 }
 		}
@@ -413,7 +416,7 @@ country_event = { # NCR accepted the trade deal
 		reverse_add_opinion_modifier = { target = NCR modifier = mojave_ncr_trade }
 	}
 }
-country_event = { # NCR regected the trade deal
+country_event = { # NCR rejected the trade deal
 	id = nf_mojave.22
 	title = nf_mojave.22.t
 	desc = nf_mojave.22.d
@@ -501,6 +504,9 @@ country_event = {
 	option = {
 		name = nf_mojave.28.a
 
+		ai_chance = {
+			factor = 15
+		}
 		MOJ = {
 			country_event = { id = nf_mojave.29 days = 1 }
 		}
@@ -605,9 +611,9 @@ country_event = {
 		NCR = {
 			add_to_faction = MOJ
 		}
-		hidden_effect = {
-			news_event = mojave_news.1
-		}
+#		hidden_effect = {
+#			news_event = mojave_news.1
+#		}
 	}
 	option = {
 		NCR = {

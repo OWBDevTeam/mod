@@ -398,8 +398,8 @@ focus_tree = {
 			}
 			add_equipment_to_stockpile = {
 				type = energy_equipment_2
-				amount = 1000
-				producer = WBH
+				amount = 200
+				producer = MOJ
 			}
 			random_owned_controlled_state = {
 				limit = {
@@ -1135,7 +1135,13 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] MOJ_t45d_production entered"
 			}
-			add_ideas = genericbost45d
+			
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment_2
+				amount = 250
+				producer = WBH
+			}
+			
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] MOJ_t45d_production exited"
@@ -1157,7 +1163,34 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] MOJ_t51b_production entered"
 			}
-			add_ideas = genericbost51b
+			
+			if = {
+				limit = {
+					MOJ = {
+						has_tech = power_armour_t51b
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment_3
+					amount = 250
+					producer = MOJ
+				}
+			}
+			if = {
+				limit = {
+					MOJ = {
+						NOT = {
+							has_tech = power_armour_t51b
+						}
+					}
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = power_armor_tech
+				}
+			}
+			
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] MOJ_t51b_production exited"
@@ -1246,7 +1279,7 @@ focus_tree = {
 	focus = {
 		id = MOJ_chapter_leadership # Event focus describing the choices for Chapter Leadership
 		icon = GFX_goal_bos_the_mojave_signal
-		cost = 5.00
+		cost = 4.3
 		prerequisite = {
 			focus = MOJ_our_future
 		}
@@ -1270,7 +1303,7 @@ focus_tree = {
 	focus = {
 		id = MOJ_elijah # Set Elijah as Chapter Leader
 		icon = GFX_goal_moj_elijah
-		cost = 5.00
+		cost = 4.3
 		prerequisite = {
 			focus = MOJ_chapter_leadership
 		}
@@ -1490,7 +1523,7 @@ focus_tree = {
 	focus = {
 		id = MOJ_hardin # Set Hardin as Country Leader
 		icon = GFX_goal_moj_hardin
-		cost = 5.00
+		cost = 4.3
 		prerequisite = {
 			focus = MOJ_chapter_leadership
 		}
@@ -1531,6 +1564,7 @@ focus_tree = {
 			custom_effect_tooltip = MOJ_hardin_recruits
 			hidden_effect = {
 				load_oob = mojave_paladin_thought
+				add_manpower = 150
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1541,7 +1575,7 @@ focus_tree = {
 	focus = {
 		id = MOJ_know_our_name # Stability and War Support + 10%
 		icon = GFX_goal_moj_know_our_name
-		cost = 7.00
+		cost = 5
 		prerequisite = {
 			focus = MOJ_paladin_thought
 		}
@@ -1704,7 +1738,7 @@ focus_tree = {
 	focus = {
 		id = MOJ_mcnamara # Set McNamara as Country Leader
 		icon = GFX_goal_moj_mcnamara
-		cost = 5.00
+		cost = 4.3
 		prerequisite = {
 			focus = MOJ_chapter_leadership
 		}
