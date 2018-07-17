@@ -352,6 +352,31 @@ on_actions = {
 	#Not run on a specific country.
 	on_startup = {
 		effect = {
+			## Setting starting variables for the NCR and its puppets
+			SAR = {
+				set_variable = { var_name = sr_intensity value = 3 }
+			}
+			RDD = {
+				set_variable = { var_name = redding_intensity value = 4 }
+			}
+			DIA = {
+				set_variable = { var_name = diablo_intensity value = 3 }
+			}
+			DAY = {
+				set_variable = { var_name = rapids_intensity value = 5 }
+			}
+			BON = {
+				set_variable = { var_name = boneyard_intensity value = 4 }
+			}
+			MTR = {
+				set_variable = { var_name = mojave_intensity value = 7 }
+				set_variable = { var_name = scorpions_intensity value = 6 }
+			}
+			NCR = {
+				set_variable = { var_name = ranches_intensity value = 3 }
+				set_variable = { var_name = nevada_intensity value = 4 }
+				set_variable = { var_name = junkton_intensity value = 2 }
+			}
 			every_country = {
 				limit = {
 					is_puppet_of = NCR

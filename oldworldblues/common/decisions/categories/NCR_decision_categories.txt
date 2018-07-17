@@ -48,6 +48,10 @@ ncr_revolts = {
 ncr_raider_trouble = {
 	icon = GFX_decision_category_generic_crisis
 	priority = 100
-	available = { tag = NCR }
-	visible = { NOT = { has_country_flag = revolt_crisis_over } }
+	visible = {
+		OR = {
+			tag = NCR
+			is_puppet_of = NCR
+		}
+	}
 }

@@ -477,29 +477,228 @@ ncr_revolts = {
 	}
 }
 
-@baja_pulse = 20
+# Setting the pulse for each district
+@sr_pulse = 90
+@redding_pulse = 80
+@diablo_pulse = 90
+@rapids_pulse = 65
+@boneyard_pulse = 70
+@mojave_pulse = 60
+@scor_pulse = 70
+@baja_pulse = 65
+@ranchers_pulse = 110
+@nevada_pulse = 90
+@junktown_pulse = 120
 
 ncr_raider_trouble = {
-	# Planning at https://docs.google.com/document/d/1XNZdjfPeu2SCb2QZ5lXqY9FUXj9XMaXnS_5jOVhVzc0/edit?usp=sharing
+	# Planning at https://docs.google.com/document/d/1XNZdjfPeu2SCb2QZ5lXqY9FUXj9XMaXnS_5jOVhVzc0
+	## Santa Rose ##
+	raider_pulse_sr = {
+		activation = {
+			any_owned_state = {
+				sr_raid_district = yes
+			}
+		}
+		days_mission_timeout = @sr_pulse
+		is_good = no
+		available = {
+
+		}
+		timeout_effect = {
+
+		}
+		complete_effect = {
+
+		}
+	}
+	## Redding ##
+	raider_pulse_redding = {
+		activation = {
+			any_owned_state = {
+				redding_raid_district = yes
+			}
+		}
+		days_mission_timeout = @redding_pulse
+		is_good = no
+		available = {
+
+		}
+		timeout_effect = {
+
+		}
+		complete_effect = {
+
+		}
+	}
+	## Diablo ##
+	raider_pulse_diablo = {
+		activation = {
+			any_owned_state = {
+				diablo_raid_district = yes
+			}
+		}
+		days_mission_timeout = @diablo_pulse
+		is_good = no
+		available = {
+
+		}
+		timeout_effect = {
+
+		}
+		complete_effect = {
+
+		}
+	}
+	## Rapids ##
+	raider_pulse_rapids = {
+		activation = {
+			any_owned_state = {
+				rapids_raid_district = yes
+			}
+		}
+		days_mission_timeout = @rapids_pulse
+		is_good = no
+		available = {
+
+		}
+		timeout_effect = {
+
+		}
+		complete_effect = {
+
+		}
+	}
+	## Boneyard ##
+	raider_pulse_boneyard = {
+		activation = {
+			any_owned_state = {
+				boneyard_raid_district = yes
+			}
+		}
+		days_mission_timeout = @boneyard_pulse
+		is_good = no
+		available = {
+
+		}
+		timeout_effect = {
+
+		}
+		complete_effect = {
+
+		}
+	}
+	## Mojave ##
+	raider_pulse_mojave = {
+		activation = {
+			any_owned_state = {
+				mojave_raid_district = yes
+			}
+		}
+		days_mission_timeout = @mojave_pulse
+		is_good = no
+		available = {
+
+		}
+		timeout_effect = {
+
+		}
+		complete_effect = {
+
+		}
+	}
+	## Scorpions ##
+	raider_pulse_scor = {
+		activation = {
+			any_owned_state = {
+				scorpions_raid_district = yes
+			}
+		}
+		days_mission_timeout = @scor_pulse
+		is_good = no
+		available = {
+
+		}
+		timeout_effect = {
+
+		}
+		complete_effect = {
+
+		}
+	}
+	## Baja ##
 	raider_pulse_baja = {
 		activation = {
-			always = yes
-		}
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = district_pacified
-				has_country_flag = baja_pacified
+			any_owned_state = {
+				baja_raid_district = yes
 			}
 		}
 		days_mission_timeout = @baja_pulse
 		is_good = no
-		timeout_effect = {
-			hidden_effect = {
+		available = {
 
-			}
+		}
+		timeout_effect = {
+
 		}
 		complete_effect = {
-			# country_event = { id = } # Baja pacified!
+
+		}
+	}
+	## Ranchers ##
+	raider_pulse_ranchers = {
+		activation = {
+			any_owned_state = {
+				ranchers_raid_district = yes
+			}
+		}
+		days_mission_timeout = @ranchers_pulse
+		is_good = no
+		available = {
+
+		}
+		timeout_effect = {
+
+		}
+		complete_effect = {
+
+		}
+	}
+	## Nevada Range ##
+	raider_pulse_nevada = {
+		activation = {
+			any_owned_state = {
+				nevada_range_raid_district = yes
+			}
+		}
+		days_mission_timeout = @nevada_pulse
+		is_good = no
+		available = {
+
+		}
+		timeout_effect = {
+
+		}
+		complete_effect = {
+
+		}
+	}
+	## Junktown ##
+	raider_pulse_junktown = {
+		activation = {
+			any_owned_state = {
+				junktown_raid_district = yes
+			}
+		}
+		days_mission_timeout = @junktown_pulse
+		is_good = no
+		available = {
+
+		}
+		timeout_effect = {
+
+		}
+		complete_effect = {
+
 		}
 	}
 }
