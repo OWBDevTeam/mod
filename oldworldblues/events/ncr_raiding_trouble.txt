@@ -1,0 +1,74 @@
+﻿add_namespace = raid_trouble
+
+country_event = { # Small military raid
+	id = raid_trouble.1
+	title = raid_trouble.1.t
+	desc = raid_trouble.1.d
+	#picture = 
+
+	is_triggered_only = yes
+
+	option = {
+		name = raid_trouble.1.a
+		add_manpower = -60
+		random_list = {
+			40 = {
+				random_unit_leader = {
+					add_timed_unit_leader_trait = {
+    					trait = wounded
+   						days = 90
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { # Moderate military raid
+	id = raid_trouble.2
+	title = raid_trouble.2.t
+	desc = raid_trouble.2.d
+	#picture = 
+
+	is_triggered_only = yes
+
+	option = {
+		name = raid_trouble.2.a
+		add_manpower = -140
+		random_list = {
+			60 = {
+				random_unit_leader = {
+					add_timed_unit_leader_trait = {
+    					trait = wounded
+   						days = 90
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { # Large military raid
+	id = raid_trouble.3
+	title = raid_trouble.3.t
+	desc = raid_trouble.3.d
+	#picture = 
+
+	is_triggered_only = yes
+
+	option = {
+		name = raid_trouble.3.a
+		add_manpower = -220
+		add_stability = -0.05
+		random_list = {
+			80 = {
+				random_unit_leader = {
+					add_timed_unit_leader_trait = {
+    					trait = wounded
+   						days = 90
+					}
+				}
+			}
+		}
+	}
+}

@@ -353,29 +353,27 @@ on_actions = {
 	on_startup = {
 		effect = {
 			## Setting starting variables for the NCR and its puppets
-			SAR = {
-				set_variable = { var_name = sr_intensity value = 3 }
-			}
 			RDD = {
-				set_variable = { var_name = redding_intensity value = 4 }
+				set_variable = { sr_intensity = 3 }
+				set_variable = { redding_intensity = 4 }
 			}
 			DIA = {
-				set_variable = { var_name = diablo_intensity value = 3 }
-			}
-			DAY = {
-				set_variable = { var_name = rapids_intensity value = 5 }
+				set_variable = { diablo_intensity = 3 }
 			}
 			BON = {
-				set_variable = { var_name = boneyard_intensity value = 4 }
+				set_variable = { boneyard_intensity = 4 }
 			}
 			MTR = {
-				set_variable = { var_name = mojave_intensity value = 7 }
-				set_variable = { var_name = scorpions_intensity value = 6 }
+				set_variable = { mojave_intensity = 7 }
+				set_variable = { scorpions_intensity = 6 }
 			}
 			NCR = {
-				set_variable = { var_name = ranches_intensity value = 3 }
-				set_variable = { var_name = nevada_intensity value = 4 }
-				set_variable = { var_name = junkton_intensity value = 2 }
+				set_variable = { ranchers_intensity = 3 }
+				set_variable = { nevada_intensity = 4 }
+				set_variable = { junkton_intensity = 2 }
+			}
+			DYG = {
+				set_variable = { rapids_intensity = 5 }
 			}
 			every_country = {
 				limit = {
