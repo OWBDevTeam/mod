@@ -500,6 +500,7 @@ ncr_raider_trouble = {
 	## Santa Rose ##
 	raider_pulse_sr = {
 		activation = {
+			NOT = { check_variable = { sr_intensity = 0 } }
 			any_owned_state = {
 				sr_raid_district = yes
 			}
@@ -511,7 +512,7 @@ ncr_raider_trouble = {
 		days_mission_timeout = @sr_pulse
 		is_good = no
 		available = {
-
+			hidden_trigger = { always = no }
 		}
 		timeout_effect = {
 			if = {
@@ -1698,9 +1699,222 @@ ncr_raider_trouble = {
 
 		}
 	}
+	enlargen_garrison_sr = {
+		visible = {
+			any_owned_state = {
+				sr_raid_district = yes
+			}
+		}
+		custom_cost_trigger = { # Scales the cost
+			if = {
+				limit = { NOT = { has_variable = sr_garrison_use } }
+				has_manpower > 25
+			}
+			if = {
+				limit = { check_variable = { sr_garrison_use = 1 } }
+				has_manpower > 50
+			}
+			if = {
+				limit = { check_variable = { sr_garrison_use = 2 } }
+				has_manpower > 100
+			}
+			if = {
+				limit = { check_variable = { sr_garrison_use = 3 } }
+				has_manpower > 200
+			}
+			if = {
+				limit = { check_variable = { sr_garrison_use = 4 } }
+				has_manpower > 400
+			}
+		}
+		custom_cost_text = raid_crisis_scaling_manpower_sr
+		available = { 
+			custom_trigger_tooltip = { # Prevents it being clicked if the intensity is 0
+				tooltip = has_some_intensity
+				NOT = { check_variable = { sr_intensity = 0 } }
+			}
+			custom_trigger_tooltip = { # Prevents it being clicked if it has been used 5 times
+				tooltip = garrison_limit_sr
+				NOT = { check_variable = { sr_garrison_use = 5 } }
+			}
+		}
+		days_remove = 60
+		days_re_enable = 100
+		complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_variable = sr_garrison_use } }
+					add_manpower = -25
+					set_variable = { sr_garrison_use = 1 }
+				}
+				else_if = {
+					limit = { check_variable = { sr_garrison_use = 1 } }
+					add_manpower = -50
+					add_to_variable = { sr_garrison_use = 1 }
+				}
+				else_if = {
+					limit = { check_variable = { sr_garrison_use = 2 } }
+					add_manpower = -100
+					add_to_variable = { sr_garrison_use = 1 }
+				}
+				else_if = {
+					limit = { check_variable = { sr_garrison_use = 3 } }
+					add_manpower = -200
+					add_to_variable = { sr_garrison_use = 1 }
+				}
+				else_if = {
+					limit = { check_variable = { sr_garrison_use = 4 } }
+					add_manpower = -400
+					add_to_variable = { sr_garrison_use = 1 }
+				}
+				else = {} # Should never happen
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = { has_global_flag = ncr_chose_drummund }
+				random_list = {
+					80 = {
+						subtract_from_variable = { sr_intenisty = 2 }
+						custom_effect_tooltip = lose_2_intensity
+					}
+					20 = {
+						subtract_from_variable = { sr_intenisty = 3 }
+						custom_effect_tooltip = lose_3_intensity
+					}
+				}
+			}
+			else = {
+				random_list = {
+					70 = {
+						subtract_from_variable = { sr_intenisty = 1 }
+						custom_effect_tooltip = lose_1_intensity
+					}
+					30 = {
+						subtract_from_variable = { sr_intenisty = 2 }
+						custom_effect_tooltip = lose_2_intensity
+					}
+				}
+			}
+			custom_effect_tooltip = return_in_100_days
+		}
+	}
+	attempt_integration_sr = {
+		visible = {
+			any_owned_state = {
+				sr_raid_district = yes
+			}
+		}
+		available = { 
+			custom_trigger_tooltip = { # Prevents it being clicked if the intensity is 0
+				tooltip = has_some_intensity
+				NOT = { check_variable = { sr_intensity = 0 } }
+			}
+		}
+		cost = 50
+		days_remove = 100
+		days_re_enable = 60
+		remove_effect = {
+			random_list = {
+				60 = {} # No effect
+				35 = {
+					subtract_from_variable = { sr_intenisty = 2 }
+					custom_effect_tooltip = lose_2_intensity
+				}
+				5 = {
+					subtract_from_variable = { sr_intenisty = 3 }
+					custom_effect_tooltip = lose_3_intensity
+				}
+			}
+			custom_effect_tooltip = return_in_60_days
+		}
+	}
+	arm_civilians_sr = {
+		visible = {
+			any_owned_state = {
+				sr_raid_district = yes
+			}
+		}
+		custom_cost_trigger = { # Scales the cost
+			if = {
+				limit = { NOT = { has_variable = sr_arms_use } }
+				has_50_weapons = yes
+			}
+			if = {
+				limit = { check_variable = { sr_arms_use = 1 } }
+				has_100_weapons = yes
+			}
+			if = {
+				limit = { check_variable = { sr_arms_use = 2 } }
+				has_200_weapons = yes
+			}
+			if = {
+				limit = { check_variable = { sr_arms_use = 3 } }
+				has_400_weapons = yes
+			}
+			if = {
+				limit = { check_variable = { sr_arms_use = 4 } }
+				has_800_weapons = yes
+			}
+		}
+		custom_cost_text = raid_crisis_scaling_weapons_sr
+		available = { 
+			custom_trigger_tooltip = { # Prevents it being clicked if the intensity is 0
+				tooltip = has_some_intensity
+				NOT = { check_variable = { sr_intensity = 0 } }
+			}
+			custom_trigger_tooltip = { # Prevents it being clicked if it has been used 5 times
+				tooltip = arms_limit_sr
+				NOT = { check_variable = { sr_arms_use = 5 } }
+			}
+		}
+		days_remove = 30
+		days_re_enable = 60
+		complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_variable = sr_garrison_use } }
+					remove_50_weapons = yes
+					set_variable = { sr_arms_use = 1 }
+				}
+				else_if = {
+					limit = { check_variable = { sr_garrison_use = 1 } }
+					remove_100_weapons = yes
+					add_to_variable = { sr_arms_use = 1 }
+				}
+				else_if = {
+					limit = { check_variable = { sr_garrison_use = 2 } }
+					remove_200_weapons = yes
+					add_to_variable = { sr_arms_use = 1 }
+				}
+				else_if = {
+					limit = { check_variable = { sr_garrison_use = 3 } }
+					remove_400_weapons = yes
+					add_to_variable = { sr_arms_use = 1 }
+				}
+				else_if = {
+					limit = { check_variable = { sr_garrison_use = 4 } }
+					remove_800_weapons = yes
+					add_to_variable = { sr_arms_use = 1 }
+				}
+				else = {} # Should never happen
+			}
+		}
+		remove_effect = {
+			random_list = {
+				70 = {
+					subtract_from_variable = { sr_intenisty = 1 }
+					custom_effect_tooltip = lose_1_intensity
+				}
+				30 = {} # No effect
+			}
+			custom_effect_tooltip = return_in_60_days
+		}
+	}
 	## Redding ##
 	raider_pulse_redding = {
 		activation = {
+			NOT = { check_variable = { redding_intensity = 0 } }
 			any_owned_state = {
 				redding_raid_district = yes
 			}
@@ -1712,7 +1926,7 @@ ncr_raider_trouble = {
 		days_mission_timeout = @redding_pulse
 		is_good = no
 		available = {
-
+			hidden_trigger = { always = no }
 		}
 		timeout_effect = {
 			if = {
@@ -2902,6 +3116,7 @@ ncr_raider_trouble = {
 	## Diablo ##
 	raider_pulse_diablo = {
 		activation = {
+			NOT = { check_variable = { diablo_intensity = 0 } }
 			any_owned_state = {
 				diablo_raid_district = yes
 			}
@@ -2913,7 +3128,7 @@ ncr_raider_trouble = {
 		days_mission_timeout = @diablo_pulse
 		is_good = no
 		available = {
-
+			hidden_trigger = { always = no }
 		}
 		timeout_effect = {
 			if = {
@@ -4103,6 +4318,7 @@ ncr_raider_trouble = {
 	## Rapids ##
 	raider_pulse_rapids = {
 		activation = {
+			NOT = { check_variable = { rapids_intensity = 0 } }
 			any_owned_state = {
 				rapids_raid_district = yes
 			}
@@ -4114,7 +4330,7 @@ ncr_raider_trouble = {
 		days_mission_timeout = @rapids_pulse
 		is_good = no
 		available = {
-
+			hidden_trigger = { always = no }
 		}
 		timeout_effect = {
 			if = {
@@ -5304,6 +5520,7 @@ ncr_raider_trouble = {
 	## Boneyard ##
 	raider_pulse_boneyard = {
 		activation = {
+			NOT = { check_variable = { boneyard_intensity = 0 } }
 			any_owned_state = {
 				boneyard_raid_district = yes
 			}
@@ -5315,7 +5532,7 @@ ncr_raider_trouble = {
 		days_mission_timeout = @boneyard_pulse
 		is_good = no
 		available = {
-
+			hidden_trigger = { always = no }
 		}
 		timeout_effect = {
 			if = {
@@ -6505,6 +6722,7 @@ ncr_raider_trouble = {
 	## Mojave ##
 	raider_pulse_mojave = {
 		activation = {
+			NOT = { check_variable = { mojave_intensity = 0 } }
 			any_owned_state = {
 				mojave_raid_district = yes
 			}
@@ -6516,7 +6734,7 @@ ncr_raider_trouble = {
 		days_mission_timeout = @mojave_pulse
 		is_good = no
 		available = {
-
+			hidden_trigger = { always = no }
 		}
 		timeout_effect = {
 			if = {
@@ -7706,6 +7924,7 @@ ncr_raider_trouble = {
 	## Scorpions ##
 	raider_pulse_scor = {
 		activation = {
+			NOT = { check_variable = { scorpions_intensity = 0 } }
 			any_owned_state = {
 				scorpions_raid_district = yes
 			}
@@ -7717,7 +7936,7 @@ ncr_raider_trouble = {
 		days_mission_timeout = @scor_pulse
 		is_good = no
 		available = {
-
+			hidden_trigger = { always = no }
 		}
 		timeout_effect = {
 			if = {
@@ -8907,6 +9126,7 @@ ncr_raider_trouble = {
 	## Baja ##
 	raider_pulse_baja = {
 		activation = {
+			NOT = { check_variable = { baja_intensity = 0 } }
 			any_owned_state = {
 				baja_raid_district = yes
 			}
@@ -8918,7 +9138,7 @@ ncr_raider_trouble = {
 		days_mission_timeout = @baja_pulse
 		is_good = no
 		available = {
-
+			hidden_trigger = { always = no }
 		}
 		timeout_effect = {
 			if = {
@@ -10108,6 +10328,7 @@ ncr_raider_trouble = {
 	## Ranchers ##
 	raider_pulse_ranchers = {
 		activation = {
+			NOT = { check_variable = { ranchers_intensity = 0 } }
 			any_owned_state = {
 				ranchers_raid_district = yes
 			}
@@ -10119,7 +10340,7 @@ ncr_raider_trouble = {
 		days_mission_timeout = @ranchers_pulse
 		is_good = no
 		available = {
-
+			hidden_trigger = { always = no }
 		}
 		timeout_effect = {
 			if = {
@@ -11309,6 +11530,7 @@ ncr_raider_trouble = {
 	## Nevada Range ##
 	raider_pulse_nevada = {
 		activation = {
+			NOT = { check_variable = { nevada_intensity = 0 } }
 			any_owned_state = {
 				nevada_range_raid_district = yes
 			}
@@ -11320,7 +11542,7 @@ ncr_raider_trouble = {
 		days_mission_timeout = @nevada_pulse
 		is_good = no
 		available = {
-
+			hidden_trigger = { always = no }
 		}
 		timeout_effect = {
 			if = {
@@ -12510,6 +12732,7 @@ ncr_raider_trouble = {
 	## Junktown ##
 	raider_pulse_junktown = {
 		activation = {
+			NOT = { check_variable = { junktown_intensity = 0 } }
 			any_owned_state = {
 				junktown_raid_district = yes
 			}
@@ -12521,7 +12744,7 @@ ncr_raider_trouble = {
 		days_mission_timeout = @junktown_pulse
 		is_good = no
 		available = {
-
+			hidden_trigger = { always = no }
 		}
 		timeout_effect = {
 			if = {

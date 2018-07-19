@@ -1,0 +1,383 @@
+defined_text = {
+	name = GetScalingManpowerSR
+
+	text = {
+		trigger = {
+			NOT = { has_variable = sr_garrison_use }
+		}
+		localization_key = cost_25_manpower
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_garrison_use = 1 }
+		}
+		localization_key = cost_50_manpower
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_garrison_use = 2 }
+		}
+		localization_key = cost_100_manpower
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_garrison_use = 3 }
+		}
+		localization_key = cost_200_manpower
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_garrison_use = 4 }
+		}
+		localization_key = cost_400_manpower
+	}
+}
+defined_text = {
+	name = GetScalingManpowerBlockedSR
+
+	text = {
+		trigger = {
+			NOT = { has_variable = sr_garrison_use }
+		}
+		localization_key = cost_25_manpower_blocked
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_garrison_use = 1 }
+		}
+		localization_key = cost_50_manpower_blocked
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_garrison_use = 2 }
+		}
+		localization_key = cost_100_manpower_blocked
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_garrison_use = 3 }
+		}
+		localization_key = cost_200_manpower_blocked
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_garrison_use = 4 }
+		}
+		localization_key = cost_400_manpower_blocked
+	}
+}
+defined_text = {
+	name = GetScalingManpowerTooltipSR
+
+	text = {
+		trigger = {
+			NOT = { has_variable = sr_garrison_use }
+		}
+		localization_key = cost_25_manpower_tooltip
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_garrison_use = 1 }
+		}
+		localization_key = cost_50_manpower_tooltip
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_garrison_use = 2 }
+		}
+		localization_key = cost_100_manpower_tooltip
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_garrison_use = 3 }
+		}
+		localization_key = cost_200_manpower_tooltip
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_garrison_use = 4 }
+		}
+		localization_key = cost_400_manpower_tooltip
+	}
+}
+
+defined_text = {
+	name = GetScalingArmsSR
+
+	text = {
+		trigger = {
+			NOT = { has_variable = sr_arms_use }
+		}
+		localization_key = cost_50_arms
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_arms_use = 1 }
+		}
+		localization_key = cost_100_arms
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_arms_use = 2 }
+		}
+		localization_key = cost_200_arms
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_arms_use = 3 }
+		}
+		localization_key = cost_400_arms
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_arms_use = 4 }
+		}
+		localization_key = cost_800_arms
+	}
+}
+defined_text = {
+	name = GetScalingArmsBlockedSR
+
+	text = {
+		trigger = {
+			NOT = { has_variable = sr_arms_use }
+		}
+		localization_key = cost_50_arms_blocked
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_arms_use = 1 }
+		}
+		localization_key = cost_100_arms_blocked
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_arms_use = 2 }
+		}
+		localization_key = cost_200_arms_blocked
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_arms_use = 3 }
+		}
+		localization_key = cost_400_arms_blocked
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_arms_use = 4 }
+		}
+		localization_key = cost_800_arms_blocked
+	}
+}
+defined_text = {
+	name = GetScalingArmsTooltipSR
+
+	text = {
+		trigger = {
+			NOT = { has_variable = sr_arms_use }
+		}
+		localization_key = cost_50_arms_tooltip
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_arms_use = 1 }
+		}
+		localization_key = cost_100_arms_tooltip
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_arms_use = 2 }
+		}
+		localization_key = cost_200_arms_tooltip
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_arms_use = 3 }
+		}
+		localization_key = cost_400_arms_tooltip
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_arms_use = 4 }
+		}
+		localization_key = cost_800_arms_tooltip
+	}
+}
+
+# Description Intensities
+defined_text = {
+	name = GetSRIntensity
+
+	text = {
+		trigger = {
+			has_variable = sr_intensity
+		}
+		localization_key = sr_intensity
+	}
+	text = {
+		trigger = {
+			NOT = { has_variable = sr_intensity }
+		}
+		localization_key = blank
+	}
+}
+defined_text = {
+	name = GetReddingIntensity
+
+	text = {
+		trigger = {
+			has_variable = redding_intensity
+		}
+		localization_key = redding_intensity
+	}
+	text = {
+		trigger = {
+			NOT = { has_variable = redding_intensity }
+		}
+		localization_key = blank
+	}
+}
+defined_text = {
+	name = GetDiabloIntensity
+
+	text = {
+		trigger = {
+			has_variable = diablo_intensity
+		}
+		localization_key = diablo_intensity
+	}
+	text = {
+		trigger = {
+			NOT = { has_variable = diablo_intensity }
+		}
+		localization_key = blank
+	}
+}
+defined_text = {
+	name = GetRapidsIntensity
+
+	text = {
+		trigger = {
+			has_variable = rapids_intensity
+		}
+		localization_key = rapids_intensity
+	}
+	text = {
+		trigger = {
+			NOT = { has_variable = rapids_intensity }
+		}
+		localization_key = blank
+	}
+}
+defined_text = {
+	name = GetBoneyardIntensity
+
+	text = {
+		trigger = {
+			has_variable = boneyard_intensity
+		}
+		localization_key = boneyard_intensity
+	}
+	text = {
+		trigger = {
+			NOT = { has_variable = boneyard_intensity }
+		}
+		localization_key = blank
+	}
+}
+defined_text = {
+	name = GetMojaveIntensity
+
+	text = {
+		trigger = {
+			has_variable = mojave_intensity
+		}
+		localization_key = mojave_intensity
+	}
+	text = {
+		trigger = {
+			NOT = { has_variable = mojave_intensity }
+		}
+		localization_key = blank
+	}
+}
+defined_text = {
+	name = GetScorpionsIntensity
+
+	text = {
+		trigger = {
+			has_variable = scorpions_intensity
+		}
+		localization_key = scorpions_intensity
+	}
+	text = {
+		trigger = {
+			NOT = { has_variable = scorpions_intensity }
+		}
+		localization_key = blank
+	}
+}
+defined_text = {
+	name = GetBajaIntensity
+
+	text = {
+		trigger = {
+			has_variable = baja_intensity
+		}
+		localization_key = baja_intensity
+	}
+	text = {
+		trigger = {
+			NOT = { has_variable = baja_intensity }
+		}
+		localization_key = blank
+	}
+}
+defined_text = {
+	name = GetRanchersIntensity
+
+	text = {
+		trigger = {
+			has_variable = ranchers_intensity
+		}
+		localization_key = ranchers_intensity
+	}
+	text = {
+		trigger = {
+			NOT = { has_variable = ranchers_intensity }
+		}
+		localization_key = blank
+	}
+}
+defined_text = {
+	name = GetNevadaIntensity
+
+	text = {
+		trigger = {
+			has_variable = nevada_intensity
+		}
+		localization_key = nevada_intensity
+	}
+	text = {
+		trigger = {
+			NOT = { has_variable = nevada_intensity }
+		}
+		localization_key = blank
+	}
+}
+defined_text = {
+	name = GetJunktownIntensity
+
+	text = {
+		trigger = {
+			has_variable = junktown_intensity
+		}
+		localization_key = junktown_intensity
+	}
+	text = {
+		trigger = {
+			NOT = { has_variable = junktown_intensity }
+		}
+		localization_key = blank
+	}
+}

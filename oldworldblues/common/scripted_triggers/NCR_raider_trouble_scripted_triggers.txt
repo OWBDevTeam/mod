@@ -132,3 +132,495 @@ junktown_raid_district = {
 		state = 271
 	}
 }
+
+## Availability costs
+has_50_weapons = {
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = standard_weaponry_tech
+				NOT = { has_tech = basic_ballistic_weaponry }
+				NOT = { has_tech = basic_laser_weaponry }
+			} 
+		}
+		has_equipment = { infantry_equipment_1 > 50 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = blunt_weaponry
+				NOT = { has_tech = slashing_weaponry }
+				NOT = { has_tech = standard_weaponry_tech }
+			}
+		}
+		has_equipment = { melee_equipment_1 > 50 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = slashing_weaponry
+				NOT = { has_tech = powered_weaponry }
+			}
+		}
+		has_equipment = { melee_equipment_2 > 50 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = powered_weaponry
+				NOT = { has_tech = improved_ballistic_weaponry }
+				NOT = { has_tech = basic_laser_weaponry }
+			}
+		}
+		has_equipment = { melee_equipment_3 > 50}
+	}
+	if = {
+		limit = { 
+			ROOT = { 
+				has_tech = basic_ballistic_weaponry
+				NOT = { has_tech = improved_ballistic_weaponry }
+				NOT = { has_tech = basic_laser_weaponry }
+			} 
+		}
+		has_equipment = { ballistic_equipment_1 > 50 }
+	}
+	if = {
+		limit = { 
+			ROOT = { 
+				has_tech = improved_ballistic_weaponry
+				NOT = { has_tech = advanced_ballistic_weaponry }
+				NOT = { has_tech = improved_laser_weaponry }
+			} 
+		}
+		has_equipment = { ballistic_equipment_2 > 50 }	
+	}
+	if = {
+		limit = { 
+			ROOT = { 
+				has_tech = advanced_ballistic_weaponry
+				NOT = { has_tech = advanced_laser_weaponry }
+			} 
+		}
+		has_equipment = { ballistic_equipment_3 > 50 }	 
+	}
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = basic_laser_weaponry 
+				NOT = { has_tech = improved_ballistic_weaponry }
+				NOT = { has_tech = improved_laser_weaponry }
+			} 
+		}	
+		has_equipment = { energy_equipment_1 > 50 }
+	}
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = improved_laser_weaponry 
+				NOT = { has_tech = advanced_ballistic_weaponry }
+				NOT = { has_tech = advanced_laser_weaponry }
+			} 
+		}
+		has_equipment = { energy_equipment_2 > 50 } 
+	}	
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = advanced_laser_weaponry 
+			} 
+		}
+		has_equipment = { energy_equipment_3 > 50 }	
+	}
+}
+has_100_weapons = {
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = standard_weaponry_tech
+				NOT = { has_tech = basic_ballistic_weaponry }
+				NOT = { has_tech = basic_laser_weaponry }
+			} 
+		}
+		has_equipment = { infantry_equipment_1 > 100 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = blunt_weaponry
+				NOT = { has_tech = slashing_weaponry }
+				NOT = { has_tech = standard_weaponry_tech }
+			}
+		}
+		has_equipment = { melee_equipment_1 > 100 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = slashing_weaponry
+				NOT = { has_tech = powered_weaponry }
+			}
+		}
+		has_equipment = { melee_equipment_2 > 100 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = powered_weaponry
+				NOT = { has_tech = improved_ballistic_weaponry }
+				NOT = { has_tech = basic_laser_weaponry }
+			}
+		}
+		has_equipment = { melee_equipment_3 > 100}
+	}
+	if = {
+		limit = { 
+			ROOT = { 
+				has_tech = basic_ballistic_weaponry
+				NOT = { has_tech = improved_ballistic_weaponry }
+				NOT = { has_tech = basic_laser_weaponry }
+			} 
+		}
+		has_equipment = { ballistic_equipment_1 > 100 }
+	}
+	if = {
+		limit = { 
+			ROOT = { 
+				has_tech = improved_ballistic_weaponry
+				NOT = { has_tech = advanced_ballistic_weaponry }
+				NOT = { has_tech = improved_laser_weaponry }
+			} 
+		}
+		has_equipment = { ballistic_equipment_2 > 100 }	
+	}
+	if = {
+		limit = { 
+			ROOT = { 
+				has_tech = advanced_ballistic_weaponry
+				NOT = { has_tech = advanced_laser_weaponry }
+			} 
+		}
+		has_equipment = { ballistic_equipment_3 > 100 }	 
+	}
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = basic_laser_weaponry 
+				NOT = { has_tech = improved_ballistic_weaponry }
+				NOT = { has_tech = improved_laser_weaponry }
+			} 
+		}	
+		has_equipment = { energy_equipment_1 > 100 }
+	}
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = improved_laser_weaponry 
+				NOT = { has_tech = advanced_ballistic_weaponry }
+				NOT = { has_tech = advanced_laser_weaponry }
+			} 
+		}
+		has_equipment = { energy_equipment_2 > 100 } 
+	}	
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = advanced_laser_weaponry 
+			} 
+		}
+		has_equipment = { energy_equipment_3 > 100 }	
+	}
+}
+has_200_weapons = {
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = standard_weaponry_tech
+				NOT = { has_tech = basic_ballistic_weaponry }
+				NOT = { has_tech = basic_laser_weaponry }
+			} 
+		}
+		has_equipment = { infantry_equipment_1 > 200 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = blunt_weaponry
+				NOT = { has_tech = slashing_weaponry }
+				NOT = { has_tech = standard_weaponry_tech }
+			}
+		}
+		has_equipment = { melee_equipment_1 > 200 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = slashing_weaponry
+				NOT = { has_tech = powered_weaponry }
+			}
+		}
+		has_equipment = { melee_equipment_2 > 200 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = powered_weaponry
+				NOT = { has_tech = improved_ballistic_weaponry }
+				NOT = { has_tech = basic_laser_weaponry }
+			}
+		}
+		has_equipment = { melee_equipment_3 > 200}
+	}
+	if = {
+		limit = { 
+			ROOT = { 
+				has_tech = basic_ballistic_weaponry
+				NOT = { has_tech = improved_ballistic_weaponry }
+				NOT = { has_tech = basic_laser_weaponry }
+			} 
+		}
+		has_equipment = { ballistic_equipment_1 > 200 }
+	}
+	if = {
+		limit = { 
+			ROOT = { 
+				has_tech = improved_ballistic_weaponry
+				NOT = { has_tech = advanced_ballistic_weaponry }
+				NOT = { has_tech = improved_laser_weaponry }
+			} 
+		}
+		has_equipment = { ballistic_equipment_2 > 200 }	
+	}
+	if = {
+		limit = { 
+			ROOT = { 
+				has_tech = advanced_ballistic_weaponry
+				NOT = { has_tech = advanced_laser_weaponry }
+			} 
+		}
+		has_equipment = { ballistic_equipment_3 > 200 }	 
+	}
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = basic_laser_weaponry 
+				NOT = { has_tech = improved_ballistic_weaponry }
+				NOT = { has_tech = improved_laser_weaponry }
+			} 
+		}	
+		has_equipment = { energy_equipment_1 > 200 }
+	}
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = improved_laser_weaponry 
+				NOT = { has_tech = advanced_ballistic_weaponry }
+				NOT = { has_tech = advanced_laser_weaponry }
+			} 
+		}
+		has_equipment = { energy_equipment_2 > 200 } 
+	}	
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = advanced_laser_weaponry 
+			} 
+		}
+		has_equipment = { energy_equipment_3 > 200 }	
+	}
+}
+has_400_weapons = {
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = standard_weaponry_tech
+				NOT = { has_tech = basic_ballistic_weaponry }
+				NOT = { has_tech = basic_laser_weaponry }
+			} 
+		}
+		has_equipment = { infantry_equipment_1 > 400 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = blunt_weaponry
+				NOT = { has_tech = slashing_weaponry }
+				NOT = { has_tech = standard_weaponry_tech }
+			}
+		}
+		has_equipment = { melee_equipment_1 > 400 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = slashing_weaponry
+				NOT = { has_tech = powered_weaponry }
+			}
+		}
+		has_equipment = { melee_equipment_2 > 400 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = powered_weaponry
+				NOT = { has_tech = improved_ballistic_weaponry }
+				NOT = { has_tech = basic_laser_weaponry }
+			}
+		}
+		has_equipment = { melee_equipment_3 > 400}
+	}
+	if = {
+		limit = { 
+			ROOT = { 
+				has_tech = basic_ballistic_weaponry
+				NOT = { has_tech = improved_ballistic_weaponry }
+				NOT = { has_tech = basic_laser_weaponry }
+			} 
+		}
+		has_equipment = { ballistic_equipment_1 > 400 }
+	}
+	if = {
+		limit = { 
+			ROOT = { 
+				has_tech = improved_ballistic_weaponry
+				NOT = { has_tech = advanced_ballistic_weaponry }
+				NOT = { has_tech = improved_laser_weaponry }
+			} 
+		}
+		has_equipment = { ballistic_equipment_2 > 400 }	
+	}
+	if = {
+		limit = { 
+			ROOT = { 
+				has_tech = advanced_ballistic_weaponry
+				NOT = { has_tech = advanced_laser_weaponry }
+			} 
+		}
+		has_equipment = { ballistic_equipment_3 > 400 }	 
+	}
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = basic_laser_weaponry 
+				NOT = { has_tech = improved_ballistic_weaponry }
+				NOT = { has_tech = improved_laser_weaponry }
+			} 
+		}	
+		has_equipment = { energy_equipment_1 > 400 }
+	}
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = improved_laser_weaponry 
+				NOT = { has_tech = advanced_ballistic_weaponry }
+				NOT = { has_tech = advanced_laser_weaponry }
+			} 
+		}
+		has_equipment = { energy_equipment_2 > 400 } 
+	}	
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = advanced_laser_weaponry 
+			} 
+		}
+		has_equipment = { energy_equipment_3 > 400 }	
+	}
+}
+has_800_weapons = {
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = standard_weaponry_tech
+				NOT = { has_tech = basic_ballistic_weaponry }
+				NOT = { has_tech = basic_laser_weaponry }
+			} 
+		}
+		has_equipment = { infantry_equipment_1 > 800 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = blunt_weaponry
+				NOT = { has_tech = slashing_weaponry }
+				NOT = { has_tech = standard_weaponry_tech }
+			}
+		}
+		has_equipment = { melee_equipment_1 > 800 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = slashing_weaponry
+				NOT = { has_tech = powered_weaponry }
+			}
+		}
+		has_equipment = { melee_equipment_2 > 800 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = powered_weaponry
+				NOT = { has_tech = improved_ballistic_weaponry }
+				NOT = { has_tech = basic_laser_weaponry }
+			}
+		}
+		has_equipment = { melee_equipment_3 > 800}
+	}
+	if = {
+		limit = { 
+			ROOT = { 
+				has_tech = basic_ballistic_weaponry
+				NOT = { has_tech = improved_ballistic_weaponry }
+				NOT = { has_tech = basic_laser_weaponry }
+			} 
+		}
+		has_equipment = { ballistic_equipment_1 > 800 }
+	}
+	if = {
+		limit = { 
+			ROOT = { 
+				has_tech = improved_ballistic_weaponry
+				NOT = { has_tech = advanced_ballistic_weaponry }
+				NOT = { has_tech = improved_laser_weaponry }
+			} 
+		}
+		has_equipment = { ballistic_equipment_2 > 800 }	
+	}
+	if = {
+		limit = { 
+			ROOT = { 
+				has_tech = advanced_ballistic_weaponry
+				NOT = { has_tech = advanced_laser_weaponry }
+			} 
+		}
+		has_equipment = { ballistic_equipment_3 > 800 }	 
+	}
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = basic_laser_weaponry 
+				NOT = { has_tech = improved_ballistic_weaponry }
+				NOT = { has_tech = improved_laser_weaponry }
+			} 
+		}	
+		has_equipment = { energy_equipment_1 > 800 }
+	}
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = improved_laser_weaponry 
+				NOT = { has_tech = advanced_ballistic_weaponry }
+				NOT = { has_tech = advanced_laser_weaponry }
+			} 
+		}
+		has_equipment = { energy_equipment_2 > 800 } 
+	}	
+	if = { 
+		limit = { 
+			ROOT = { 
+				has_tech = advanced_laser_weaponry 
+			} 
+		}
+		has_equipment = { energy_equipment_3 > 800 }	
+	}
+}
