@@ -1,5 +1,6 @@
 ﻿add_namespace = nf_mojave
 add_namespace = mojave_helios_one_news
+add_namespace = mojave_news
 
 country_event = {
 	id = nf_mojave.1
@@ -36,7 +37,8 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					tag = MOJ
+					is_ai = no
+					is_multiplayer = no
 				}
 				sound_effect = hardin_choice
 			}
@@ -113,11 +115,15 @@ country_event = {
 	option = {
 		name = nf_mojave.5.a
 		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 300 producer = BOS }
+		add_timed_idea = {
+			idea = mojave_settlements_raided_mojave
+			days = 50
+		}
 		NCR = {
 			country_event = { id = nf_mojave.6 days = 1 }
 		}
 		hidden_effect = {
-		   news_event = { id = nf_mojave_news.0 }
+			news_event = { id = mojave_news.0 }
 		}
 	}
 }
@@ -136,6 +142,30 @@ country_event = {
 		add_timed_idea = {
 			idea = mojave_settlements_raided_ncr
 			days = 50
+		}
+		552 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		419 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		181 = {
+			damage_building = {
+ 				type = infrastructure
+				damage = 1
+			}
+		}
+		533 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
 		}
 	}
 }
@@ -177,7 +207,7 @@ country_event = {
 			factor = 0
 		}
 		MOJ = {
-		   country_event = { id = nf_mojave.11 days = 3 }
+			country_event = { id = nf_mojave.11 days = 3 }
 		}
 	}
 }
@@ -240,7 +270,7 @@ country_event = {
 	id = nf_mojave.13
 	title = nf_mojave.13.t
 	desc = nf_mojave.13.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_MOJ_message_ncr
 
 	is_triggered_only = yes
 
@@ -255,7 +285,7 @@ country_event = {
 	id = nf_mojave.14
 	title = nf_mojave.14.t
 	desc = nf_mojave.14.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_MOJ_message_ncr
 
 	is_triggered_only = yes
 
@@ -263,7 +293,7 @@ country_event = {
 		name = nf_mojave.14.a
 
 		ai_chance = {
-			factor = 25
+			factor = 50
 		}
 		MOJ = {
 			country_event = { id = nf_mojave.15 days = 1 }
@@ -280,7 +310,7 @@ country_event = {
 	id = nf_mojave.15
 	title = nf_mojave.15.t
 	desc = nf_mojave.15.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_MOJ_message_ncr
 
 	is_triggered_only = yes
 
@@ -334,7 +364,7 @@ country_event = {
 	id = nf_mojave.19
 	title = nf_mojave.19.t
 	desc = nf_mojave.19.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_NCR_caravan
 
 	is_triggered_only = yes
 
@@ -350,13 +380,16 @@ country_event = {
 	id = nf_mojave.20
 	title = nf_mojave.20.t
 	desc = nf_mojave.20.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_NCR_caravan
 
 	is_triggered_only = yes
 
 	option = {
 		name = nf_mojave.20.a
 
+		ai_chance = {
+			factor = 50
+		}
 		BOS = {
 			country_event = { id = nf_mojave.21 days = 1 }
 		}
@@ -369,11 +402,11 @@ country_event = {
 		}
 	}
 }
-country_event = {
+country_event = { # NCR accepted the trade deal
 	id = nf_mojave.21
 	title = nf_mojave.21.t
 	desc = nf_mojave.21.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_NCR_caravan
 
 	is_triggered_only = yes
 
@@ -383,16 +416,28 @@ country_event = {
 		reverse_add_opinion_modifier = { target = NCR modifier = mojave_ncr_trade }
 	}
 }
-country_event = {
+country_event = { # NCR rejected the trade deal
 	id = nf_mojave.22
 	title = nf_mojave.22.t
 	desc = nf_mojave.22.d
+	picture = GFX_event_NCR_caravan
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_mojave.22.a # Missing effect
+	}
+}
+country_event = {
+	id = nf_mojave.23
+	title = nf_mojave.23.t
+	desc = nf_mojave.23.d
 	picture = GFX_event_MOJ_sierra_madre
 
 	is_triggered_only = yes
 
 	option = {
-		name = nf_mojave.22.a
+		name = nf_mojave.23.a
 
 	}
 }
@@ -400,7 +445,7 @@ country_event = {
 	id = nf_mojave.25
 	title = nf_mojave.25.t
 	desc = nf_mojave.25.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_MOJ_helios_one
 
 	is_triggered_only = yes
 
@@ -423,7 +468,7 @@ country_event = {
 	id = nf_mojave.26
 	title = nf_mojave.26.t
 	desc = nf_mojave.26.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_MOJ_message_ncr
 
 	is_triggered_only = yes
 
@@ -436,7 +481,7 @@ country_event = {
 	id = nf_mojave.27
 	title = nf_mojave.27.t
 	desc = nf_mojave.27.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_MOJ_ncr_treaty
 
 	is_triggered_only = yes
 
@@ -452,13 +497,16 @@ country_event = {
 	id = nf_mojave.28
 	title = nf_mojave.28.t
 	desc = nf_mojave.28.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_MOJ_ncr_treaty
 
 	is_triggered_only = yes
 
 	option = {
 		name = nf_mojave.28.a
 
+		ai_chance = {
+			factor = 15
+		}
 		MOJ = {
 			country_event = { id = nf_mojave.29 days = 1 }
 		}
@@ -470,12 +518,47 @@ country_event = {
 			country_event = { id = nf_mojave.30 days = 1 }
 		}
 	}
+	option = {
+		name = nf_mojave.28.c
+		trigger = {
+			OR = {
+				has_opinion_modifier = mojave_ncr_trade
+				NCR = {
+					has_military_access_to = MOJ
+					gives_military_access_to = MOJ
+				}
+			}
+		}
+		MOJ = {
+			country_event = {
+				id = nf_mojave.31
+				days = 2
+			}
+		}
+	}
+	option = {
+		name = nf_mojave.28.dd
+		trigger = {
+			has_opinion_modifier = mojave_ncr_trade
+			NCR = {
+				has_military_access_to = MOJ
+				gives_military_access_to = MOJ
+			}
+		}
+		MOJ = {
+			country_event = {
+				id = nf_mojave.32
+				days = 2
+			}
+		}
+	}
 }
+
 country_event = {
 	id = nf_mojave.29
 	title = nf_mojave.29.t
 	desc = nf_mojave.29.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_MOJ_ncr_treaty
 
 	is_triggered_only = yes
 
@@ -489,7 +572,7 @@ country_event = {
 	id = nf_mojave.30
 	title = nf_mojave.30.t
 	desc = nf_mojave.30.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_MOJ_ncr_treaty
 
 	is_triggered_only = yes
 
@@ -498,6 +581,76 @@ country_event = {
 
 	}
 }
+country_event = {
+	id = nf_mojave.31
+	title = nf_mojave.31.t
+	desc = nf_mojave.31.d
+	picture = GFX_event_NCR_caravan
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_mojave.31.a
+
+		NCR = {
+			give_guarantee = MOJ
+		}
+		diplomatic_relation = { country = NCR relation = non_aggression_pact }
+	}
+}
+country_event = {
+	id = nf_mojave.32
+	title = nf_mojave.32.t
+	desc = nf_mojave.32.d
+	picture = GFX_event_NCR_caravan
+
+	is_triggered_only = yes
+
+	option = {
+		name = nf_mojave.32.a
+		NCR = {
+			add_to_faction = MOJ
+		}
+#		hidden_effect = {
+#			news_event = mojave_news.1
+#		}
+	}
+	option = {
+		NCR = {
+			give_guarantee = MOJ
+		}
+		diplomatic_relation = { country = NCR relation = non_aggression_pact }
+	}
+}
+############
+#News Events
+############
+
+news_event = {
+	id = mojave_news.0
+	title = mojave_news.0.t
+	desc = mojave_news.0.d
+	picture = GFX_event_MOJ_ncr_raids
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	option = {
+		name = mojave_news.0.a
+	}
+}
+
+news_event = {
+	id = mojave_news.1
+	title = mojave_news.1.t
+	desc = mojave_news.1.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	option = {
+		name = mojave_news.1.a
+	}
+}
+
 news_event = {
 	id = mojave_helios_one_news.0
 	title = mojave_helios_one_news.0.t
@@ -524,19 +677,5 @@ news_event = {
 
 	option = {
 		name = mojave_helios_one_news.1.a
-	}
-}
-news_event = {
-	id = mojave_helios_one_news.3
-	title = mojave_helios_one_news.3.t
-	desc = mojave_helios_one_news.3.d
-	picture = GFX_event_generic_ruins_3
-	major = yes
-	is_triggered_only = yes
-
-	fire_only_once = yes
-
-	option = {
-		name = mojave_helios_one_news.3.a
 	}
 }

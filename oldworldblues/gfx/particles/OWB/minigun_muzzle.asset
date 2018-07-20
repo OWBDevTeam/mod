@@ -77,7 +77,7 @@ particle={
 		velocity={ 5 0 }
 		life={ 0.300 0.100 }
 		emission=50
-		size={ 0.250 0.100 }
+		size={ 0.500 0.200 }
 		rotation={ 0 180 }
 	}
 	subsystem={
@@ -137,7 +137,7 @@ particle={
 			alpha=75,fade_alpha
 		}
 		position={
-			x=0
+			x=-1.1
 			y=0
 			z=0
 		}
@@ -150,7 +150,7 @@ particle={
 		velocity=10
 		life=0.150
 		emission=100
-		size=3,increase_size
+		size=7,increase_size
 		particle_yaw=-90
 		particle_pitch=90
 		rotation=0
@@ -180,7 +180,7 @@ particle={
 			alpha=150,fade_alpha
 		}
 		position={
-			x=0
+			x=-1.1
 			y=0
 			z=0
 		}
@@ -193,7 +193,7 @@ particle={
 		velocity=10
 		life={ 0.150 0.050 }
 		emission=100
-		size=3,increase_size
+		size=7,increase_size
 		particle_yaw=-90
 		particle_pitch=90
 		rotation=0
@@ -223,7 +223,7 @@ particle={
 			alpha=150,fade_alpha
 		}
 		position={
-			x=0
+			x=-1.1
 			y=0
 			z=0
 		}
@@ -236,7 +236,7 @@ particle={
 		velocity=10
 		life=0.150
 		emission=50
-		size=3,increase_size
+		size=7,increase_size
 		particle_yaw=-90
 		particle_pitch=90
 		rotation=0
@@ -266,7 +266,7 @@ particle={
 			alpha=150,fade_alpha
 		}
 		position={
-			x=0
+			x=-1.1
 			y=0
 			z=0
 		}
@@ -279,7 +279,7 @@ particle={
 		velocity=10
 		life=0.150
 		emission=50
-		size=3,increase_size
+		size=7,increase_size
 		particle_yaw=-90
 		particle_pitch=90
 		rotation=0
@@ -309,7 +309,7 @@ particle={
 			alpha=150,fade_alpha
 		}
 		position={
-			x=0
+			x=-1.1
 			y=0
 			z=0
 		}
@@ -322,7 +322,7 @@ particle={
 		velocity=10
 		life=0.150
 		emission=50
-		size=3,increase_size
+		size=7,increase_size
 		particle_yaw=-90
 		particle_pitch=90
 		rotation=0
@@ -352,7 +352,7 @@ particle={
 			alpha=150,fade_alpha
 		}
 		position={
-			x=0
+			x=-1.1
 			y=0
 			z=0
 		}
@@ -365,7 +365,7 @@ particle={
 		velocity=10
 		life=0.150
 		emission=50
-		size=3,increase_size
+		size=7,increase_size
 		particle_yaw=-90
 		particle_pitch=90
 		rotation=0
@@ -395,7 +395,7 @@ particle={
 			alpha=150,fade_alpha
 		}
 		position={
-			x=0
+			x=-1.1
 			y=0
 			z=0
 		}
@@ -408,7 +408,7 @@ particle={
 		velocity=10
 		life=0.150
 		emission=50
-		size=3,increase_size
+		size=7,increase_size
 		particle_yaw=-90
 		particle_pitch=90
 		rotation=0
@@ -438,7 +438,7 @@ particle={
 			alpha=150,fade_alpha
 		}
 		position={
-			x=0
+			x=-1.1
 			y=0
 			z=0
 		}
@@ -451,7 +451,7 @@ particle={
 		velocity=10
 		life=0.150
 		emission=50
-		size=3,increase_size
+		size=7,increase_size
 		particle_yaw=-90
 		particle_pitch=90
 		rotation=0
@@ -481,7 +481,7 @@ particle={
 			alpha=150,fade_alpha
 		}
 		position={
-			x=0
+			x=-1.1
 			y=0
 			z=0
 		}
@@ -494,7 +494,7 @@ particle={
 		velocity=10
 		life=0.150
 		emission=50
-		size=3,increase_size
+		size=7,increase_size
 		particle_yaw=-90
 		particle_pitch=90
 		rotation=0
@@ -573,7 +573,7 @@ particle={
 		minValue=0
 		maxValue=1
 		curve={
-			0 0.100 0.200 1 0.800 1 1 0 
+			0 0.100 0.200 1 0.800 1 1 0
 		}
 		op="MUL"
 		time="life"
@@ -586,7 +586,7 @@ particle={
 		minValue=0
 		maxValue=1
 		curve={
-			0 0.100 0.300 1 0.800 1 1 0 
+			0 0.100 0.300 1 0.800 1 1 0
 		}
 		op="MUL"
 		time="life"
@@ -599,7 +599,7 @@ particle={
 		minValue=0
 		maxValue=1
 		curve={
-			0 0.100 0.200 0.500 1 1 
+			0 0.100 0.200 0.500 1 1
 		}
 		op="MUL"
 		time="life"
@@ -612,7 +612,7 @@ particle={
 		minValue=0
 		maxValue=1
 		curve={
-			0 0.100 0.100 0.600 1 1 
+			0 0.100 0.100 0.600 1 1
 		}
 		op="MUL"
 		time="spawn"
@@ -625,7 +625,7 @@ particle={
 		minValue=0
 		maxValue=1
 		curve={
-			0 0.609 1 0.172 
+			0 0.609 1 0.172
 		}
 		op="MUL"
 		time="life"
@@ -634,10 +634,10 @@ particle={
 		type="friction"
 		name="drag"
 		position={
-			0 0 0 
+			0 0 0
 		}
 		direction={
-			0 1 0 
+			0 1 0
 		}
 		local_force=yes
 		yaw=0
@@ -648,10 +648,10 @@ particle={
 		type="friction"
 		name="firedrag"
 		position={
-			0 0 0 
+			0 0 0
 		}
 		direction={
-			0 1 0 
+			0 1 0
 		}
 		local_force=yes
 		yaw=0
@@ -662,10 +662,10 @@ particle={
 		type="planar"
 		name="upforce"
 		position={
-			0 0 0 
+			0 0 0
 		}
 		direction={
-			0 1 0 
+			0 1 0
 		}
 		local_force=yes
 		yaw=0

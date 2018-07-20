@@ -1,0 +1,51 @@
+# scripted by Mechano for spawning troops in 
+
+on_actions = {
+	# FROM is war target
+	on_declare_war = {
+		effect = {
+			BRK_revolt_effect_on_action = yes
+		}
+	}
+	# ROOT is winner, FROM is loser
+	on_peaceconference_ended = {
+		effect = {
+			if = {
+				limit = {
+					AND = {
+						ROOT = {
+							AND = {
+								original_tag = BRK
+								NOT = { has_country_flag = BRK_northern_pact_triggered }
+							}
+						}
+						FROM = {
+							is_BRK_revolt_effect_valid_country = yes
+						}
+					}
+				}
+				ROOT = {
+					country_event = { 
+						id = nf_event_brk.41
+						days = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					AND = {
+						ROOT = {
+							original_tag = BRK
+						}
+						FROM = {
+							has_idea = brk_resistance_pact_signatory
+						}
+					}
+				}
+				FROM = {
+					remove_ideas = brk_resistance_pact_signatory
+				}
+			}
+		}
+	}
+}

@@ -5,11 +5,16 @@ audio_holodisk = {
 			state = 253
 		}
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] FO1_intro (decision) complete entered"
+			}
 			hidden_effect = {
-				if = {
-					limit = { tag = ROOT }
-					sound_effect = FO1_intro
-				}
+				sound_effect = FO1_intro
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] FO1_intro (decision) complete exited"
 			}
 		}
 	}
@@ -20,11 +25,16 @@ audio_holodisk = {
 			state = 337
 		}
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] FO2_intro (decision) complete entered"
+			}
 			hidden_effect = {
-				if = {
-					limit = { tag = ROOT }
-					sound_effect = FO2_intro
-				}
+				sound_effect = FO2_intro
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] FO2_intro (decision) complete exited"
 			}
 		}
 	}
@@ -35,11 +45,16 @@ audio_holodisk = {
 			state = 252
 		}
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] FONV_intro (decision) complete entered"
+			}
 			hidden_effect = {
-				if = {
-					limit = { tag = ROOT }
-					sound_effect = FONV_intro
-				}
+				sound_effect = FONV_intro
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] FONV_intro (decision) complete exited"
 			}
 		}
 	}

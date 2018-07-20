@@ -8,32 +8,31 @@ country_event = {
 	id = nf_genericbos.1
 	title = nf_genericbos.1.t
 	desc = nf_genericbos.1.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_BOS_our_founding
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_genericbos.1.a
 
 		add_ideas = generic_bos_scribes
-
 	}
 
 	option = {
 		name = nf_genericbos.1.b
 
 		add_ideas = generic_bos_paladins
-
 	}
 }
+
 #Our Interim
 country_event = {
 	id = nf_genericbos.2
 	title = nf_genericbos.2.t
 	desc = nf_genericbos.2.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_BOS_our_interim
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_genericbos.2.a
@@ -52,36 +51,35 @@ country_event = {
 		name = nf_genericbos.2.b
 
 		capital_scope = {
-		    add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
 		}
 	}
 }
+
 #Our Future
 country_event = {
 	id = nf_genericbos.3
 	title = nf_genericbos.3.t
 	desc = nf_genericbos.3.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_BOS_settler_defense
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_genericbos.3.a
 
 		add_ideas = genericbosfactoryoutput
-
 	}
 
 	option = {
 		name = nf_genericbos.3.b
 
 		add_ideas = genericbosresources
-
 	}
 }
 
@@ -92,82 +90,83 @@ country_event = {
 	id = nf_washington.1
 	title = nf_washington.1.t
 	desc = nf_washington.1.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_WBH_immortal
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_washington.1.a
 
 		add_political_power = 100
-
 	}
-
 }
+
 #Invitation sent to Old Country#
 country_event = {
 	id = nf_washington.2
 	title = nf_washington.2.t
 	desc = nf_washington.2.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_WBH_invitation
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_washington.2.a
 
 		WBH = {
-		   country_event = nf_washington.4
+			country_event = nf_washington.4
 		}
 	}
 	option = {
 		name = nf_washington.2.b
 
 		WBH = {
-		   country_event = nf_washington.5
+			country_event = nf_washington.5
 		}
 	}
 }
+
 #Invitation sent to Port Maw#
 country_event = {
 	id = nf_washington.3
 	title = nf_washington.3.t
 	desc = nf_washington.3.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_WBH_invitation
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_washington.3.a
 
 		WBH = {
-		   country_event = nf_washington.6
+			country_event = nf_washington.6
 		}
 	}
 	option = {
 		name = nf_washington.3.b
 
 		WBH = {
-		   country_event = nf_washington.7
+			country_event = nf_washington.7
 		}
 	}
 }
+
 #Old Country accepts#
 country_event = {
 	id = nf_washington.4
 	title = nf_washington.4.t
 	desc = nf_washington.4.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_WBH_invitation
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_washington.4.a
 
 		WBH = {
-		   add_to_faction = TOC
-		   add_opinion_modifier = { target = TOC modifier = northern_league }
-		   add_ai_strategy = {
+			add_to_faction = TOC
+			add_opinion_modifier = { target = TOC modifier = northern_league }
+			add_ai_strategy = {
 				type = alliance
 				id = "TOC"
 				value = 200
@@ -182,44 +181,46 @@ country_event = {
 		}
 	}
 }
+
 #Old Country Refuses#
 country_event = {
 	id = nf_washington.5
 	title = nf_washington.5.t
 	desc = nf_washington.5.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_WBH_invitation
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_washington.5.a
 
 		WBH = {
-		   add_opinion_modifier = { target = TOC modifier = northern_league_refused }
-		   create_wargoal = { type = annex_everything target = TOC }
+			add_opinion_modifier = { target = TOC modifier = northern_league_refused }
+			create_wargoal = { type = annex_everything target = TOC }
 		}
 	}
 }
+
 #Port Maw Accepts#
 country_event = {
 	id = nf_washington.6
 	title = nf_washington.6.t
 	desc = nf_washington.6.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_WBH_invitation
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_washington.6.a
 
 		WBH = {
-		   add_to_faction = PMR
-		   add_ai_strategy = {
+			add_to_faction = PMR
+			add_ai_strategy = {
 				type = alliance
 				id = "PWR"
 				value = 200
 			}
-		   add_opinion_modifier = { target = PMR modifier = northern_league }
+			add_opinion_modifier = { target = PMR modifier = northern_league }
 		}
 		PMR = {
 			set_politics = { ruling_party = elites elections_allowed = no }
@@ -232,47 +233,50 @@ country_event = {
 		}
 	}
 }
+
 #Port Maw Refuses#
 country_event = {
 	id = nf_washington.7
 	title = nf_washington.7.t
 	desc = nf_washington.7.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_WBH_invitation
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_washington.7.a
 
 		WBH = {
-		   add_opinion_modifier = { target = PMR modifier = northern_league_refused }
-		   create_wargoal = { type = annex_everything target = PMR }
+			add_opinion_modifier = { target = PMR modifier = northern_league_refused }
+			create_wargoal = { type = annex_everything target = PMR }
 		}
 	}
 }
+
 country_event = {
 	id = nf_washington.8
 	title = nf_washington.8.t
 	desc = nf_washington.8.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_WBH_alaska_expedition
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_washington.8.a
 
 		hidden_effect = {
-		    country_event = { id = nf_washington.9 days = 50 }
+			country_event = { id = nf_washington.9 days = 50 }
 		}
 	}
 }
+
 country_event = {
 	id = nf_washington.9
 	title = nf_washington.9.t
 	desc = nf_washington.9.d
-	picture = GFX_event_generic_settlement_2
+	picture = GFX_event_WBH_alaska_expedition_pods
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_washington.9.a

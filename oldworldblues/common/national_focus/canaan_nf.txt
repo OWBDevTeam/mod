@@ -15,9 +15,16 @@ focus_tree = {
 		x = 23
 		y = 0
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_gates entered"
+			}
 			country_event = { id = nf_mormon.1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_gates exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_army
@@ -29,9 +36,16 @@ focus_tree = {
 		x = 23
 		y = 1
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_army entered"
+			}
 			country_event = { id = nf_mormon.2 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_army exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_jericho
@@ -43,9 +57,16 @@ focus_tree = {
 		x = 23
 		y = 2
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_jericho entered"
+			}
 			country_event = { id = nf_mormon.3 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_jericho exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_defender
@@ -57,9 +78,16 @@ focus_tree = {
 		x = 17
 		y = 3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_defender entered"
+			}
 			add_political_power = 120
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_defender exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_north
@@ -71,9 +99,16 @@ focus_tree = {
 		x = 5
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_north entered"
+			}
 			add_political_power = 60
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_north exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_swordandcross
@@ -88,11 +123,18 @@ focus_tree = {
 		x = 2
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_swordandcross entered"
+			}
 			add_opinion_modifier = { target = LON modifier = swordandcross }
 			add_opinion_modifier = { target = MUR modifier = swordandcross }
 			add_opinion_modifier = { target = IRE modifier = swordandcross }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_swordandcross exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_lonetree
@@ -105,11 +147,15 @@ focus_tree = {
 		x = 1
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_lonetree entered"
+			}
 			create_wargoal = {
-					type = annex_everything
-					target = LON
-				}
-				            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+				type = annex_everything
+				target = LON
+			}
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -124,6 +170,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = LON
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -131,8 +178,11 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_lonetree exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_knee
@@ -150,13 +200,19 @@ focus_tree = {
 		x = 0
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_knee entered"
+			}
 			add_state_core = 611
 			add_state_core = 324
 			add_state_core = 472
 			add_state_core = 403
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_knee exited"
+			}
 		}
-		
-
 	}
 	focus = {
 		id = lds_ires
@@ -169,11 +225,15 @@ focus_tree = {
 		x = 3
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_ires entered"
+			}
 			create_wargoal = {
-					type = annex_everything
-					target = IRE
-				}
-				            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+				type = annex_everything
+				target = IRE
+			}
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -188,12 +248,17 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = IRE
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
 						create_wargoal = { type = annex_everything target = PREV }
 					}
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_ires exited"
 			}
 		}
 	}
@@ -213,10 +278,18 @@ focus_tree = {
 		x = 4
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_convert entered"
+			}
 			add_state_core = 384
 			add_state_core = 484
 			add_state_core = 576
 			add_state_core = 354
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_convert exited"
+			}
 		}
 	}
 	focus = {
@@ -232,11 +305,18 @@ focus_tree = {
 		x = 8
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_missionaries entered"
+			}
 			add_opinion_modifier = { target = IRE modifier = missionaries }
 			add_opinion_modifier = { target = LON modifier = missionaries }
 			add_opinion_modifier = { target = MUR modifier = missionaries }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_missionaries exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_apostle
@@ -248,7 +328,15 @@ focus_tree = {
 		x = 7
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_apostle entered"
+			}
 			custom_effect_tooltip = ncn_convert_lon
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_apostle exited"
+			}
 		}
 	}
 	focus = {
@@ -262,9 +350,16 @@ focus_tree = {
 		x = 6
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_lonetreesupport entered"
+			}
 			add_ideas = lonetreebonus
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_lonetreesupport exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_onegod
@@ -276,9 +371,16 @@ focus_tree = {
 		x = 9
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_onegod entered"
+			}
 			custom_effect_tooltip = ncn_convert_ire
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_onegod exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_luck
@@ -291,9 +393,16 @@ focus_tree = {
 		x = 10
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_luck entered"
+			}
 			add_ideas = luckoftheirish
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_luck exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_south
@@ -308,9 +417,16 @@ focus_tree = {
 			has_manpower > 100
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_south entered"
+			}
 			add_manpower = -100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_south exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_crazyhorn
@@ -322,9 +438,16 @@ focus_tree = {
 		x = 12
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_crazyhorn entered"
+			}
 			custom_effect_tooltip = ncn_convert_crz
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_crazyhorn exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_tarwalkers
@@ -336,9 +459,16 @@ focus_tree = {
 		x = 14
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_tarwalkers entered"
+			}
 			custom_effect_tooltip = ncn_convert_tar
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_tarwalkers exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_deadhorse
@@ -353,9 +483,16 @@ focus_tree = {
 			has_manpower > 100
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_deadhorse entered"
+			}
 			add_manpower = -100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_deadhorse exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_walls
@@ -370,6 +507,10 @@ focus_tree = {
 		x = 26
 		y = 3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_walls entered"
+			}
 			551 = {
 				if = {
 					limit = { is_controlled_by = ROOT }
@@ -396,8 +537,11 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_walls exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_roads
@@ -415,6 +559,10 @@ focus_tree = {
 		x = 26
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_roads entered"
+			}
 			custom_effect_tooltip = lds_roads_tt
 			hidden_effect = {
 				551 = {
@@ -458,7 +606,11 @@ focus_tree = {
 						}
 					}
 				}
-			}		
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_roads exited"
+			}
 		}
 	}
 	focus = {
@@ -471,6 +623,10 @@ focus_tree = {
 		x = 26
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_enoch entered"
+			}
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -501,9 +657,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_enoch exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_temperance
@@ -515,9 +673,16 @@ focus_tree = {
 		x = 25
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_temperance entered"
+			}
 			add_ideas = temperance
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_temperance exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_chaste
@@ -529,9 +694,16 @@ focus_tree = {
 		x = 27
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_chaste entered"
+			}
 			add_ideas = chastity
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_chaste exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_charity
@@ -543,9 +715,16 @@ focus_tree = {
 		x = 27
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_charity entered"
+			}
 			add_ideas = charity
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_charity exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_kindness
@@ -557,9 +736,16 @@ focus_tree = {
 		x = 27
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_kindness entered"
+			}
 			add_ideas = kindness
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_kindness exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_hands
@@ -571,9 +757,16 @@ focus_tree = {
 		x = 30
 		y = 3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_hands entered"
+			}
 			army_experience = 20
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_hands exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_plenty
@@ -588,9 +781,16 @@ focus_tree = {
 		x = 29
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_plenty entered"
+			}
 			add_ideas = plenty
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_plenty exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_blades
@@ -602,14 +802,21 @@ focus_tree = {
 		x = 29
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_blades entered"
+			}
 			add_tech_bonus = {
 				name = melee_research_bonus
 				bonus = 0.5
 				uses = 1
 				category = infantry_tech
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_blades exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_verdict
@@ -622,9 +829,17 @@ focus_tree = {
 		x = 2
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_verdict entered"
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = MUR
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_verdict exited"
 			}
 		}
 	}
@@ -639,7 +854,15 @@ focus_tree = {
 		x = 8
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_heretics entered"
+			}
 			custom_effect_tooltip = ncn_convert_mur
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_heretics exited"
+			}
 		}
 	}
 	focus = {
@@ -657,9 +880,12 @@ focus_tree = {
 		x = 12
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_crazyhornreward entered"
+			}
 			custom_effect_tooltip = crazyhornreward_tt
 			hidden_effect = { load_oob = mormoncrazyhorns }
-			
 			CRZ = {
 				random_owned_controlled_state = {
 					limit = {
@@ -692,6 +918,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_crazyhornreward exited"
+			}
 		}
 	}
 	focus = {
@@ -709,9 +939,11 @@ focus_tree = {
 		x = 14
 		y = 6
 		completion_reward = {
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_tarwalkersreward entered"
+			}
 			add_ideas = tarwalkersreward
-			
 			TAR = {
 				random_owned_controlled_state = {
 					limit = {
@@ -744,8 +976,11 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_tarwalkersreward exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_godfather
@@ -760,9 +995,16 @@ focus_tree = {
 		x = 16
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_godfather entered"
+			}
 			custom_effect_tooltip = ncn_convert_sor
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_godfather exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_deadfather
@@ -777,9 +1019,16 @@ focus_tree = {
 		x = 18
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_deadfather entered"
+			}
 			add_political_power = 120
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_deadfather exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_sorrows
@@ -794,11 +1043,18 @@ focus_tree = {
 			has_manpower > 100
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_sorrows entered"
+			}
 			add_manpower = -100
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = daniel
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_sorrows exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_pilgrims
@@ -810,36 +1066,44 @@ focus_tree = {
 		x = 16
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_pilgrims entered"
+			}
 			add_manpower = 300
 			random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = industrial_complex
-							size > 0
-							include_locked = yes
-						}
-						OR = {
-							is_in_home_area = yes
-							NOT = {
-								owner = {
-									any_owned_state = {
-										free_building_slots = {
-											building = industrial_complex
-											size > 0
-											include_locked = yes
-										}
-										is_in_home_area = yes
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
 									}
+									is_in_home_area = yes
 								}
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_pilgrims exited"
 			}
 		}
 	}
@@ -853,10 +1117,17 @@ focus_tree = {
 		x = 18
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_faithful entered"
+			}
 			add_ideas = faithful
-			SOR = { add_opinion_modifier = { target = NCN modifier = onlythefaithful }}
+			SOR = { add_opinion_modifier = { target = NCN modifier = onlythefaithful } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_faithful exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_deadhorse2
@@ -868,9 +1139,16 @@ focus_tree = {
 		x = 20
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_deadhorse2 entered"
+			}
 			custom_effect_tooltip = ncn_convert_dea
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_deadhorse2 exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_deadhorsereward
@@ -882,14 +1160,22 @@ focus_tree = {
 		x = 20
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_deadhorsereward entered"
+			}
 			custom_effect_tooltip = deadhorsereward_tt
 			DEA = {
-				hidden_effect = { set_technology = { warriorsofgod = 1 }
-				load_oob = deadhorsereward
+				hidden_effect = {
+					set_technology = { warriorsofgod = 1 }
+					load_oob = deadhorsereward
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_deadhorsereward exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_return
@@ -910,7 +1196,10 @@ focus_tree = {
 		x = 17
 		y = 7
 		completion_reward = {
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_return entered"
+			}
 			custom_effect_tooltip = prodigalson_tt
 			hidden_effect = { 
 				create_corps_commander = {
@@ -924,8 +1213,11 @@ focus_tree = {
 					logistics_skill = 2
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_return exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_josh
@@ -940,7 +1232,11 @@ focus_tree = {
 		x = 14
 		y = 8
 		completion_reward = {
-			create_country_leader  = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_josh entered"
+			}
+			create_country_leader = {
 				name = "Joshua Graham"
 				desc = "Graham_DESC"
 				picture = "Portrait_Burned_Man.dds"
@@ -950,8 +1246,11 @@ focus_tree = {
 					burned_man
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_josh exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_merciful
@@ -966,7 +1265,11 @@ focus_tree = {
 		x = 20
 		y = 8
 		completion_reward = {
-			create_country_leader  = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_merciful entered"
+			}
+			create_country_leader = {
 				name = "Daniel"
 				desc = "Daniel_DESC"
 				picture = "Portrait_Daniel.dds"
@@ -976,8 +1279,11 @@ focus_tree = {
 					blessed_are_the_merciful
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_merciful exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_arming
@@ -989,9 +1295,16 @@ focus_tree = {
 		x = 14
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_arming entered"
+			}
 			add_ideas = righteous_arms
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_arming exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_weapons
@@ -1003,14 +1316,21 @@ focus_tree = {
 		x = 16
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_weapons entered"
+			}
 			add_tech_bonus = {
 				name = infantry_tech_bonus
 				bonus = 0.3
 				uses = 2
 				category = infantry_tech
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_weapons exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_medicine
@@ -1022,6 +1342,10 @@ focus_tree = {
 		x = 18
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_medicine entered"
+			}
 			custom_effect_tooltip = mormonmedicine_tt
 			add_tech_bonus = {
 				name = chem_tech_bonus
@@ -1029,8 +1353,11 @@ focus_tree = {
 				uses = 1
 				category = chem_tech
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_medicine exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_armouries
@@ -1042,9 +1369,16 @@ focus_tree = {
 		x = 12
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_armouries entered"
+			}
 			add_ideas = godsarmory
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_armouries exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_agarianidyll
@@ -1056,9 +1390,16 @@ focus_tree = {
 		x = 22
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_agarianidyll entered"
+			}
 			add_ideas = agarianidyll
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_agarianidyll exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_legion
@@ -1076,10 +1417,16 @@ focus_tree = {
 		x = 14
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_legion entered"
+			}
 			add_ideas = mormonsready
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_legion exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_missionary
@@ -1097,9 +1444,16 @@ focus_tree = {
 		x = 20
 		y = 10
 		completion_reward = {
-			add_ideas = missionaries_of_god 
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_missionary entered"
+			}
+			add_ideas = missionaries_of_god
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_missionary exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_godskingdom
@@ -1112,7 +1466,15 @@ focus_tree = {
 		x = 17
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_godskingdom entered"
+			}
 			unlock_decision_tooltip = form_deseret
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_godskingdom exited"
+			}
 		}
 	}
 	focus = {
@@ -1129,12 +1491,19 @@ focus_tree = {
 		x = 17
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_vengeance entered"
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = CES
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_vengeance exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_humility
@@ -1146,9 +1515,16 @@ focus_tree = {
 		x = 25
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_humility entered"
+			}
 			add_ideas = humility
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_humility exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_patience
@@ -1160,9 +1536,16 @@ focus_tree = {
 		x = 25
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_patience entered"
+			}
 			add_ideas = patience
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_patience exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_diligence
@@ -1177,9 +1560,16 @@ focus_tree = {
 		x = 26
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_diligence entered"
+			}
 			add_ideas = diligence
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_diligence exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_theology
@@ -1191,9 +1581,16 @@ focus_tree = {
 		x = 26
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_theology entered"
+			}
 			add_ideas = theology
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_theology exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_scripture
@@ -1205,9 +1602,16 @@ focus_tree = {
 		x = 26
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_scripture entered"
+			}
 			add_research_slot = 1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_scripture exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_pilgrimage
@@ -1219,9 +1623,16 @@ focus_tree = {
 		x = 24
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_pilgrimage entered"
+			}
 			add_ideas = pilgrimage
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_pilgrimage exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_bounty
@@ -1236,13 +1647,20 @@ focus_tree = {
 			controls_state = 551
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_bounty entered"
+			}
 			add_resource = {
 				type = electricity
 				amount = 16
 				state = 551
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_bounty exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_factions
@@ -1259,9 +1677,16 @@ focus_tree = {
 		x = 20
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_factions entered"
+			}
 			custom_effect_tooltip = ncn_convert_hgh
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_factions exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_knights
@@ -1273,10 +1698,17 @@ focus_tree = {
 		x = 24
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_knights entered"
+			}
 			custom_effect_tooltip = knightsofgod_tt
-			hidden_effect = { set_technology = { knightsofgod = 1 }}
+			hidden_effect = { set_technology = { knightsofgod = 1 } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_knights exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_bastion
@@ -1288,38 +1720,45 @@ focus_tree = {
 		x = 28
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_bastion entered"
+			}
 			random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
-						}
-						OR = {
-							is_in_home_area = yes
-							NOT = {
-								owner = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-										is_in_home_area = yes
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
 									}
+									is_in_home_area = yes
 								}
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 4
-					add_building_construction = {
-						type = arms_factory
-						level = 2
-						instant_build = yes
-					}
 				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_bastion exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_powerful
@@ -1334,9 +1773,16 @@ focus_tree = {
 		x = 31
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_powerful entered"
+			}
 			add_ideas = powerful
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_powerful exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_guns
@@ -1348,14 +1794,21 @@ focus_tree = {
 		x = 31
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_guns entered"
+			}
 			add_tech_bonus = {
 				name = gun_research_bonus
 				bonus = 0.5
 				uses = 1
 				category = infantry_tech
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_guns exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_seventy
@@ -1368,9 +1821,16 @@ focus_tree = {
 		x = 30
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_seventy entered"
+			}
 			add_ideas = seventy
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_seventy exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_fervour
@@ -1382,9 +1842,16 @@ focus_tree = {
 		x = 30
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_fervour entered"
+			}
 			add_ideas = religiousfervour
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_fervour exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_passion
@@ -1396,9 +1863,16 @@ focus_tree = {
 		x = 30
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_passion entered"
+			}
 			add_ideas = passionofthechrist
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_passion exited"
+			}
 		}
-
 	}
 	focus = {
 		id = lds_paradise
@@ -1410,8 +1884,15 @@ focus_tree = {
 		x = 30
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_paradise entered"
+			}
 			add_ideas = paradisepromised
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lds_paradise exited"
+			}
 		}
-
 	}
 }

@@ -19,8 +19,16 @@ focus_tree = {
 		y = 0
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] origin_of_the_gang entered"
+			}
 			country_event = {
 				id = nf_raider.0
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] origin_of_the_gang exited"
 			}
 		}
 	}
@@ -35,8 +43,16 @@ focus_tree = {
 		y = 1
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] gang_lifestyle entered"
+			}
 			country_event = {
 				id = nf_raider.1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] gang_lifestyle exited"
 			}
 		}
 	}
@@ -51,8 +67,16 @@ focus_tree = {
 		y = 2
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] gang_ambitions entered"
+			}
 			country_event = {
 				id = nf_raider.2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] gang_ambitions exited"
 			}
 		}
 	}
@@ -67,7 +91,15 @@ focus_tree = {
 		y = 3
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_leadership entered"
+			}
 			add_political_power = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_leadership exited"
+			}
 		}
 	}
 	focus = {
@@ -95,9 +127,16 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] the_sadists entered"
+			}
 			add_political_power = 60
 			add_ideas = raider_sadists
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] the_sadists exited"
+			}
 		}
 	}
 	focus = {
@@ -125,8 +164,16 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] the_eggheads entered"
+			}
 			add_political_power = 60
 			add_ideas = raider_eggheads
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] the_eggheads exited"
+			}
 		}
 	}
 	focus = {
@@ -154,8 +201,16 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] the_grunts entered"
+			}
 			add_political_power = 60
 			add_ideas = raider_grunts
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] the_grunts exited"
+			}
 		}
 	}
 	focus = {
@@ -183,8 +238,16 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] the_boss entered"
+			}
 			add_political_power = 60
 			add_ideas = raider_boss
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] the_boss exited"
+			}
 		}
 	}
 	focus = {
@@ -198,6 +261,10 @@ focus_tree = {
 		y = 3
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] improve_the_hideout entered"
+			}
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -229,15 +296,19 @@ focus_tree = {
 				}
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
-				    type = arms_factory
-				    level = 1
-				    instant_build = yes
+					type = arms_factory
+					level = 1
+					instant_build = yes
 				}
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] improve_the_hideout exited"
 			}
 		}
 	}
@@ -252,6 +323,10 @@ focus_tree = {
 		y = 4
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] cruel_heartland entered"
+			}
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -281,7 +356,11 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
-		    }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] cruel_heartland exited"
+			}
 		}
 	}
 	focus = {
@@ -295,7 +374,15 @@ focus_tree = {
 		y = 3
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] incorporate_slavers entered"
+			}
 			add_manpower = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] incorporate_slavers exited"
+			}
 		}
 	}
 	focus = {
@@ -309,7 +396,15 @@ focus_tree = {
 		y = 4
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] slave_labour entered"
+			}
 			add_ideas = slave_labour
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] slave_labour exited"
+			}
 		}
 	}
 	focus = {
@@ -323,10 +418,18 @@ focus_tree = {
 		y = 5
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] forced_labour entered"
+			}
 			swap_ideas = {
 				add_idea = forced_labour
 				remove_idea = slave_labour
-			}	
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] forced_labour exited"
+			}
 		}
 	}
 	focus = {
@@ -340,7 +443,15 @@ focus_tree = {
 		y = 6
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] slave_scientists entered"
+			}
 			add_research_slot = 1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] slave_scientists exited"
+			}
 		}
 	}
 	focus = {
@@ -354,9 +465,17 @@ focus_tree = {
 		y = 8
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] slave_researchers entered"
+			}
 			swap_ideas = {
 				add_idea = slave_researchers
 				remove_idea = forced_labour
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] slave_researchers exited"
 			}
 		}	
 	}
@@ -371,7 +490,15 @@ focus_tree = {
 		y = 9
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_age_weaponry entered"
+			}
 			add_ideas = raider_new_age_weaponry
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_age_weaponry exited"
+			}
 		}
 	}
 	focus = {
@@ -385,11 +512,19 @@ focus_tree = {
 		y = 9
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] turn_the_lights_on entered"
+			}
 			random_owned_controlled_state = {
 				add_resource = {
 					type = electricity
 					amount = 8
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] turn_the_lights_on exited"
 			}
 		}
 	}
@@ -404,11 +539,19 @@ focus_tree = {
 		y = 10
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] terminals_for_all entered"
+			}
 			swap_ideas = {
 				add_idea = raider_terminals_for_all
 				remove_idea = slave_researchers
 			}
-        }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] terminals_for_all exited"
+			}
+		}
 	}
 	focus = {
 		id = raider_computer_logs
@@ -421,11 +564,19 @@ focus_tree = {
 		y = 11
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] raider_computer_logs entered"
+			}
 			swap_ideas = {
 				add_idea = raider_raider_computer_logs
 				remove_idea = raider_terminals_for_all
 			}
-        }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] raider_computer_logs exited"
+			}
+		}
 	}
 	focus = {
 		id = encourage_slavers
@@ -438,8 +589,16 @@ focus_tree = {
 		y = 4
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] encourage_slavers entered"
+			}
 			add_manpower = 500
 			add_stability = -0.05
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] encourage_slavers exited"
+			}
 		}
 	}
 	focus = {
@@ -453,8 +612,16 @@ focus_tree = {
 		y = 5
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] establish_the_slave_trade entered"
+			}
 			add_manpower = 500
 			add_stability = -0.1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] establish_the_slave_trade exited"
+			}
 		}
 	}
 	focus = {
@@ -468,11 +635,19 @@ focus_tree = {
 		y = 6
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] drug_dealers entered"
+			}
 			add_tech_bonus = {
 				name = drugdealers_bonus
 				bonus = 0.5
 				uses = 1
 				category = chem_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] drug_dealers exited"
 			}
 		}
 	}
@@ -487,7 +662,15 @@ focus_tree = {
 		y = 7
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] raid_workshops entered"
+			}
 			add_ideas = raider_raid_workshops
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] raid_workshops exited"
+			}
 		}
 	}
 	focus = {
@@ -501,6 +684,10 @@ focus_tree = {
 		y = 8
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] supply_stashes entered"
+			}
 			random_owned_controlled_state = {
 				add_resource = {
 					type = water
@@ -510,6 +697,10 @@ focus_tree = {
 					type = metal
 					amount = 6
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] supply_stashes exited"
 			}
 		}
 	}
@@ -527,8 +718,16 @@ focus_tree = {
 		y = 10
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] a_weapon_to_surpass_the_other_gang entered"
+			}
 			set_technology = {
 				power_armour_raider = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] a_weapon_to_surpass_the_other_gang exited"
 			}
 		}
 	}
@@ -543,9 +742,17 @@ focus_tree = {
 		y = 11
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] convert_metal_armour entered"
+			}
 			add_equipment_to_stockpile = {
 				type = raider_power_armour_equipment
 				amount = 250
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] convert_metal_armour exited"
 			}
 		}
 	}
@@ -560,11 +767,19 @@ focus_tree = {
 		y = 5
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] industrial_interest entered"
+			}
 			add_tech_bonus = {
 				name = secret_bonus
 				bonus = 0.5
 				uses = 1
 				category = industry
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] industrial_interest exited"
 			}
 		}
 	}
@@ -579,11 +794,19 @@ focus_tree = {
 		y = 6
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hideout_expansion entered"
+			}
 			add_tech_bonus = {
 				name = secret_bonus
 				bonus = 0.5
 				uses = 2
 				category = industry
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hideout_expansion exited"
 			}
 		}
 	}
@@ -598,6 +821,10 @@ focus_tree = {
 		y = 7
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] slaver_settlement entered"
+			}
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -628,6 +855,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] slaver_settlement exited"
+			}
 		}
 	}
 	focus = {
@@ -641,7 +872,15 @@ focus_tree = {
 		y = 3
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] doped_soldiers entered"
+			}
 			add_ideas = raider_doped_soldiers
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] doped_soldiers exited"
+			}
 		}
 	}
 	focus = {
@@ -655,10 +894,18 @@ focus_tree = {
 		y = 4
 		available_if_capitulated = yes
 		completion_reward = {
-            swap_ideas = {			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lightning_raids entered"
+			}
+			swap_ideas = {			
 				add_idea = raider_lightning_raids
 				remove_idea = raider_doped_soldiers
-			}	
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] lightning_raids exited"
+			}
 		}
 	}
 	focus = {
@@ -672,10 +919,18 @@ focus_tree = {
 		y = 5
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] blood_soaked_gender_equality entered"
+			}
 			swap_ideas = {
 				add_idea = raider_gender_equality
 				remove_idea = raider_lightning_raids
-			}	
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] blood_soaked_gender_equality exited"
+			}
 		}
 	}
 	focus = {
@@ -689,9 +944,17 @@ focus_tree = {
 		y = 6
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] take_what_you_need entered"
+			}
 			swap_ideas = {
 				add_idea = raider_take_what_you_need
 				remove_idea = raider_gender_equality
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] take_what_you_need exited"
 			}
 		}
 	}
@@ -706,6 +969,10 @@ focus_tree = {
 		y = 7
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] expand_the_garage entered"
+			}
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -736,6 +1003,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] expand_the_garage exited"
+			}
 		}
 	}
 	focus = {
@@ -749,11 +1020,19 @@ focus_tree = {
 		y = 8
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] chop_shop_shimmy entered"
+			}
 			add_tech_bonus = {
 				name = raider_vehicle_bonus
-			    bonus = 0.5
+				bonus = 0.5
 				uses = 1
 				category = vehicle_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] chop_shop_shimmy exited"
 			}
 		}
 	}
@@ -771,11 +1050,19 @@ focus_tree = {
 		y = 8
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] kings_of_the_roads entered"
+			}
 			add_tech_bonus = {
-			    name = raider_bike_bonus
-			    bonus = 0.5
+				name = raider_bike_bonus
+				bonus = 0.5
 				uses = 1
 				category = bike_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] kings_of_the_roads exited"
 			}
 		}
 	}
@@ -790,7 +1077,15 @@ focus_tree = {
 		y = 9
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] custom_rides entered"
+			}
 			add_ideas = raider_custom_rides
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] custom_rides exited"
+			}
 		}
 	}
 	focus = {
@@ -807,11 +1102,19 @@ focus_tree = {
 		y = 8
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] call_in_the_warboys entered"
+			}
 			add_tech_bonus = {
 				name = raider_apc_bonus
 				bonus = 0.5
 				uses = 1
 				category = apc_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] call_in_the_warboys exited"
 			}
 		}
 	}
@@ -826,7 +1129,15 @@ focus_tree = {
 		y = 9
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] metal_boxes entered"
+			}
 			add_ideas = raider_metal_boxes
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] metal_boxes exited"
+			}
 		}
 	}
 	focus = {
@@ -841,7 +1152,15 @@ focus_tree = {
 		y = 10
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] roaring_machines entered"
+			}
 			add_ideas = raider_roaring_machines
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] roaring_machines exited"
+			}
 		}
 	}
 	focus = {
@@ -855,7 +1174,15 @@ focus_tree = {
 		y = 4
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] prove_yourself entered"
+			}
 			add_ideas = raider_prove_yourself
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] prove_yourself exited"
+			}
 		}
 	}
 	focus = {
@@ -869,7 +1196,15 @@ focus_tree = {
 		y = 5
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brutal_hazing entered"
+			}
 			add_ideas = raider_brutal_hazing
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brutal_hazing exited"
+			}
 		}
 	}
 	focus = {
@@ -883,7 +1218,15 @@ focus_tree = {
 		y = 6
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] recruit_them_young entered"
+			}
 			add_ideas = raider_recruit_them_young
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] recruit_them_young exited"
+			}
 		}
 	}
 	focus = {
@@ -897,7 +1240,15 @@ focus_tree = {
 		y = 5
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] preparing_for_total_war entered"
+			}
 			add_ideas = preparing_for_total_war
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] preparing_for_total_war exited"
+			}
 		}
 	}
 	focus = {
@@ -911,7 +1262,15 @@ focus_tree = {
 		y = 5
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] critical_thinking entered"
+			}
 			add_ideas = critical_thinking
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] critical_thinking exited"
+			}
 		}
 	}
 	focus = {
@@ -925,8 +1284,16 @@ focus_tree = {
 		y = 5
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] gangland_diplomacy entered"
+			}
 			add_stability = 0.075
 			add_war_support = 0.05
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] gangland_diplomacy exited"
+			}
 		}
 	}
 	focus = {
@@ -940,7 +1307,15 @@ focus_tree = {
 		y = 5
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] dont_question_the_boss entered"
+			}
 			add_ideas = raider_dont_question_the_boss
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] dont_question_the_boss exited"
+			}
 		}
 	}
 	focus = {
@@ -954,11 +1329,19 @@ focus_tree = {
 		y = 6
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] draconian_recovery_methods entered"
+			}
 			swap_ideas = {
 				add_idea = draconian_recovery_methods
 				remove_idea = preparing_for_total_war
 			}
-            set_politics = { ruling_party = elites elections_allowed = no }	
+			set_politics = { ruling_party = elites elections_allowed = no }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] draconian_recovery_methods exited"
+			}
 		}
 	}
 	focus = {
@@ -972,11 +1355,19 @@ focus_tree = {
 		y = 6
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] master_plan entered"
+			}
 			swap_ideas = {
 				add_idea = master_plan
 				remove_idea = critical_thinking
 			}
 			set_politics = { ruling_party = intellectuals elections_allowed = no }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] master_plan exited"
+			}
 		}	
 	}
 	focus = {
@@ -990,8 +1381,16 @@ focus_tree = {
 		y = 6
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] everyone_works entered"
+			}
 			add_ideas = raider_everyone_works
 			set_politics = { ruling_party = people elections_allowed = no }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] everyone_works exited"
+			}
 		}
 
 	}
@@ -1006,11 +1405,19 @@ focus_tree = {
 		y = 6
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] iron_grip entered"
+			}
 			swap_ideas = {
 				add_idea = iron_grip
 				remove_idea = raider_dont_question_the_boss
 			}
 			set_politics = { ruling_party = ruler elections_allowed = no }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] iron_grip exited"
+			}
 		}
 	}
 	focus = {
@@ -1024,7 +1431,15 @@ focus_tree = {
 		y = 4
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] skulls_on_sticks entered"
+			}
 			add_war_support = 0.05
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] skulls_on_sticks exited"
+			}
 		}
 	}
 	focus = {
@@ -1038,7 +1453,15 @@ focus_tree = {
 		y = 5
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] territorial_reinforcement entered"
+			}
 			add_ideas = territorial_reinforcement
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] territorial_reinforcement exited"
+			}
 		}
 	}
 	focus = {
@@ -1052,8 +1475,16 @@ focus_tree = {
 		y = 5
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] terrorise_the_locals entered"
+			}
 			add_war_support = 0.05
 			add_political_power = 40
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] terrorise_the_locals exited"
+			}
 		}
 	}
 	focus = {
@@ -1067,6 +1498,10 @@ focus_tree = {
 		y = 6
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] raider_headquarters entered"
+			}
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -1098,15 +1533,19 @@ focus_tree = {
 				}
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
-				    type = arms_factory
-				    level = 1
-				    instant_build = yes
+					type = arms_factory
+					level = 1
+					instant_build = yes
 				}
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] raider_headquarters exited"
 			}
 		}
 	}
@@ -1121,7 +1560,15 @@ focus_tree = {
 		y = 7
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] territoriality entered"
+			}
 			add_ideas = territoriality
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] territoriality exited"
+			}
 		}
 	}
 	focus = {
@@ -1135,9 +1582,17 @@ focus_tree = {
 		y = 8
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] manifest_destiny entered"
+			}
 			swap_ideas = {
 				add_idea = raider_manifest_destiny
 				remove_idea = territoriality
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] manifest_destiny exited"
 			}
 		}				
 	}
@@ -1152,7 +1607,15 @@ focus_tree = {
 		y = 8
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] we_never_die entered"
+			}
 			add_ideas = raider_we_never_die
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] we_never_die exited"
+			}
 		}
 	}
 	focus = {
@@ -1166,11 +1629,19 @@ focus_tree = {
 		y = 10
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] guns_with_legs entered"
+			}
 			add_tech_bonus = {
 				name = raider_robot_bonus
 				bonus = 0.5
 				uses = 1
 				category = robotics_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] guns_with_legs exited"
 			}
 		}
 	}
@@ -1185,11 +1656,19 @@ focus_tree = {
 		y = 11
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] find_the_good_stuff entered"
+			}
 			random_owned_controlled_state = {
 				add_resource = {
 					type = electronics
 					amount = 5
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] find_the_good_stuff exited"
 			}
 		}
 	}
@@ -1204,11 +1683,19 @@ focus_tree = {
 		y = 12
 		available_if_capitulated = yes
 		completion_reward = {
-            swap_ideas = {			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] shitty_robots entered"
+			}
+			swap_ideas = {			
 				add_idea = raider_shitty_robots
 				remove_idea = raider_new_age_weaponry
 			}
-        }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] shitty_robots exited"
+			}
+		}
 	}
 	focus = {
 		id = taking_the_best
@@ -1221,11 +1708,19 @@ focus_tree = {
 		y = 12
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] taking_the_best entered"
+			}
 			random_owned_controlled_state = {
 				add_resource = {
 					type = advanced_technology
 					amount = 5
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] taking_the_best exited"
 			}
 		}
 	}
@@ -1240,7 +1735,15 @@ focus_tree = {
 		y = 12
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] power_armor_familiarity entered"
+			}
 			add_ideas = raider_power_armour_familiarity
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] power_armor_familiarity exited"
+			}
 		}
 	}
 	focus = {
@@ -1252,13 +1755,21 @@ focus_tree = {
 		}
 		x = 23
 		y = 7
-	    available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] business_booms entered"
+			}
 			add_tech_bonus = {
 				name = raider_explosives_bonus
 				bonus = 0.75
 				uses = 1
 				category = artillery
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] business_booms exited"
 			}
 		}
 	}
@@ -1273,7 +1784,15 @@ focus_tree = {
 		y = 8
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] short_fused_engineers entered"
+			}
 			add_ideas = raider_engineers
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] short_fused_engineers exited"
+			}
 		}
 	}
 	focus = {
@@ -1287,7 +1806,15 @@ focus_tree = {
 		y = 9
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] gear_head_slaves entered"
+			}
 			add_ideas = raider_gearhead_slaves
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] gear_head_slaves exited"
+			}
 		}
 	}
 	focus = {
@@ -1304,8 +1831,16 @@ focus_tree = {
 		y = 9
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] an_explosion_in_understanding entered"
+			}
 			set_technology = {
 				explosive_tech_5 = 1 
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] an_explosion_in_understanding exited"
 			}
 		}
 	}
@@ -1320,11 +1855,19 @@ focus_tree = {
 		y = 10
 		available_if_capitulated = yes
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] the_magnum_opus entered"
+			}
 			add_tech_bonus = {
 				name = raider_tank_bonus
 				bonus = 0.5
 				uses = 1
 				category = tank_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] the_magnum_opus exited"
 			}
 		}
 	}

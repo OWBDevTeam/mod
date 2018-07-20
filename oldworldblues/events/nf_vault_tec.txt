@@ -3,7 +3,7 @@
 country_event = {
 	id = nf_vault_tec.1
 	title = nf_vault_tec.1.t
-	desc = nf_vault_tec.1.d 
+	desc = nf_vault_tec.1.d
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = {
@@ -27,7 +27,7 @@ country_event = {
 country_event = {
 	id = nf_vault_tec.2
 	title = nf_vault_tec.2.t
-	desc = nf_vault_tec.2.d 
+	desc = nf_vault_tec.2.d
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = {
@@ -59,7 +59,7 @@ country_event = {
 country_event = {
 	id = nf_vault_tec.3
 	title = nf_vault_tec.3.t
-	desc = nf_vault_tec.3.d 
+	desc = nf_vault_tec.3.d
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = {
@@ -91,7 +91,7 @@ country_event = {
 				owns_state = 2722
 			}
 		}
-		
+
 		add_state_core = 151
 		add_ideas = vault_geck_13
 		151 = {
@@ -106,7 +106,7 @@ country_event = {
 country_event = {
 	id = nf_vault_tec.4
 	title = nf_vault_tec.4.t
-	desc = nf_vault_tec.4.d 
+	desc = nf_vault_tec.4.d
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = {
@@ -130,7 +130,7 @@ country_event = {
 country_event = {
 	id = nf_vault_tec.5
 	title = nf_vault_tec.5.t
-	desc = nf_vault_tec.5.d 
+	desc = nf_vault_tec.5.d
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = {
@@ -213,7 +213,7 @@ country_event = {
 country_event = {
 	id = nf_vault_tec.6
 	title = nf_vault_tec.6.t
-	desc = nf_vault_tec.6.d 
+	desc = nf_vault_tec.6.d
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = {
@@ -233,7 +233,7 @@ country_event = {
 country_event = {
 	id = nf_vault_tec.7
 	title = nf_vault_tec.7.t
-	desc = nf_vault_tec.7.d 
+	desc = nf_vault_tec.7.d
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = {
@@ -257,7 +257,7 @@ country_event = {
 		custom_effect_tooltip = vault_security
 		add_manpower = -600
 		add_state_core = 344
-		
+
 	}
 	option = {
 		name = nf_vault_tec.7.c
@@ -276,7 +276,7 @@ country_event = {
 country_event = {
 	id = nf_vault_tec.8
 	title = nf_vault_tec.8.t
-	desc = nf_vault_tec.8.d 
+	desc = nf_vault_tec.8.d
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = {
@@ -298,7 +298,7 @@ country_event = {
 				}
 				add_core_of = BOO
 			}
-			
+
 			if = {
 				limit = {
 					VLT = {
@@ -310,7 +310,7 @@ country_event = {
 					transfer_state = 380
 				}
 			}
-				
+
 		}
 		VLT = {
 			puppet = BOO
@@ -325,7 +325,7 @@ country_event = {
 country_event = {
 	id = nf_vault_tec.9
 	title = nf_vault_tec.9.t
-	desc = nf_vault_tec.9.d 
+	desc = nf_vault_tec.9.d
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = {
@@ -349,21 +349,21 @@ country_event = {
 news_event = {
 	id = nf_vault_tec.10
 	title = nf_vault_tec.10.t
-	desc = nf_vault_tec.10.d 
+	desc = nf_vault_tec.10.d
 	is_triggered_only = yes
 	fire_only_once = yes
 	immediate = {
 		hidden_effect = {
 			if = {
 				limit = {
-					tag = VLT
+					is_ai = no
+					is_multiplayer = no
 				}
 				sound_effect = bad_karma
 			}
 		}
 	}
 	option = {
-		name = nf_vault_tec.10.a 
+		name = nf_vault_tec.10.a
 	}
 }
-	

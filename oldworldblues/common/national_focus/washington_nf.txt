@@ -12,11 +12,19 @@ focus_tree = {
 		id = WBH_our_founding
 		icon = GFX_goal_bos_generic
 		cost = 1.00
-		x = 18
+		x = 15
 		y = 0
-		
+
 		completion_reward = {
-			country_event = { id = nf_genericbos.1 }	
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_our_founding entered"
+			}
+			country_event = { id = nf_genericbos.1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_our_founding exited"
+			}
 		}
 	}
 	focus = {
@@ -26,11 +34,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_our_founding
 		}
-		x = 18
+		x = 15
 		y = 1
-		
+
 		completion_reward = {
-			country_event = { id = nf_genericbos.2 }	
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_our_interim entered"
+			}
+			country_event = { id = nf_genericbos.2 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_our_interim exited"
+			}
 		}
 	}
 	focus = {
@@ -40,11 +56,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_our_interim
 		}
-		x = 18
+		x = 15
 		y = 2
 
 		completion_reward = {
-			country_event = { id = nf_genericbos.3 }	
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_our_future entered"
+			}
+			country_event = { id = nf_genericbos.3 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_our_future exited"
+			}
 		}
 	}
 	focus = {
@@ -52,19 +76,23 @@ focus_tree = {
 		icon = GFX_goal_bos_steel_cage
 		cost = 8.6
 		available = {
-			any_owned_state = { 
-				is_coastal = yes 
+			any_owned_state = {
+				is_coastal = yes
 			}
 		}
 		prerequisite = {
 			focus = WBH_our_future
 		}
-		x = 3
+		x = 1
 		y = 3
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_water_operations entered"
+			}
 			random_owned_state = {
-				limit = { 
+				limit = {
 					is_coastal = yes
 					free_building_slots = {
 						building = dockyard
@@ -95,6 +123,10 @@ focus_tree = {
 				}
 			}
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = naval_doctrine }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_water_operations exited"
+			}
 		}
 	}
 	focus = {
@@ -104,12 +136,20 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_our_future
 		}
-		x = 7
+		x = 5
 		y = 3
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_aerial_operations entered"
+			}
 			air_experience = 25
-		}	
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_aerial_operations exited"
+			}
+		}
 	}
 	focus = {
 		id = WBH_from_the_skies
@@ -118,13 +158,21 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_aerial_operations
 		}
-		x = 6
+		x = 4
 		y = 4
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_from_the_skies entered"
+			}
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = air_doctrine }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_from_the_skies exited"
+			}
 		}
-	}	
+	}
 	focus = {
 		id = WBH_staging_bases
 		icon = GFX_goal_generic_military_industry_focus
@@ -132,40 +180,48 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_aerial_operations
 		}
-		x = 8
+		x = 6
 		y = 4
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_staging_bases entered"
+			}
 			random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = air_base
-							size > 0
-							include_locked = yes
-						}
-						OR = {
-							is_in_home_area = yes
-							NOT = {
-								owner = {
-										any_owned_state = {
-											free_building_slots = {
-												building = air_base
-												size > 0
-												include_locked = yes
-											}
-											is_in_home_area = yes
-										}
-								}
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = air_base
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+							}
 							}
 						}
 					}
-					add_building_construction = {
-						type = air_base
-						level = 2
-						instant_build = yes
-					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
 			}
-		}	
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_staging_bases exited"
+			}
+		}
 	}
 	focus = {
 		id = WBH_our_right
@@ -174,11 +230,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_our_future
 		}
-		x = 12
+		x = 10
 		y = 3
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_our_right entered"
+			}
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = industry }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_our_right exited"
+			}
 		}
 	}
 	focus = {
@@ -188,15 +252,23 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_our_right
 		}
-		x = 10
+		x = 8
 		y = 4
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_salvaged_metal entered"
+			}
 			capital_scope = {
-				add_resource = { type = metal amount = 16 }    
+				add_resource = { type = metal amount = 16 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_salvaged_metal exited"
 			}
 		}
-	}	
+	}
 	focus = {
 		id = WBH_salvaged_electronics
 		icon = GFX_goal_generic_electronics_focus
@@ -204,12 +276,20 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_our_right
 		}
-		x = 14
+		x = 12
 		y = 4
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_salvaged_electronics entered"
+			}
 			capital_scope = {
-				add_resource = { type = electronics amount = 16 }    
+				add_resource = { type = electronics amount = 16 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_salvaged_electronics exited"
 			}
 		}
 	}
@@ -220,11 +300,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_our_future
 		}
-		x = 18
+		x = 15
 		y = 3
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_our_might entered"
+			}
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_our_might exited"
+			}
 		}
 	}
 	focus = {
@@ -234,11 +322,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_our_might
 		}
-		x = 17
+		x = 14
 		y = 4
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_steel_legions entered"
+			}
 			add_ideas = genericbossteellegions
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_steel_legions exited"
+			}
 		}
 
 	}
@@ -249,11 +345,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_our_might
 		}
-		x = 19
+		x = 16
 		y = 4
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_wastelander_conscripts entered"
+			}
 			add_manpower = 500
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_wastelander_conscripts exited"
+			}
 		}
 	}
 	focus = {
@@ -263,11 +367,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_wastelander_conscripts
 		}
-		x = 19
+		x = 16
 		y = 5
-		
+
 		completion_reward = {
-			add_ideas =  genericbosfleshbeforesteel 
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_flesh_before_steel entered"
+			}
+			add_ideas = genericbosfleshbeforesteel
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_flesh_before_steel exited"
+			}
 		}
 	}
 	focus = {
@@ -277,44 +389,52 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_flesh_before_steel
 		}
-		x = 19
+		x = 16
 		y = 6
-		
+
 		completion_reward = {
-			add_equipment_to_stockpile = { 
-				type = energy_equipment_2 
-				amount = 1000 
-				producer = WBH 
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_basic_arms_for_basic_people entered"
+			}
+			add_equipment_to_stockpile = {
+				type = energy_equipment_2
+				amount = 250
+				producer = WBH
 			}
 			random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
-						}
-						OR = {
-							is_in_home_area = yes
-							NOT = {
-								owner = {
-										any_owned_state = {
-											free_building_slots = {
-												building = arms_factory
-												size > 0
-												include_locked = yes
-											}
-											is_in_home_area = yes
-										}
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
 								}
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_basic_arms_for_basic_people exited"
 			}
 		}
 	}
@@ -325,11 +445,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_basic_arms_for_basic_people
 		}
-		x = 19
+		x = 16
 		y = 7
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_doctrinal_thought entered"
+			}
 			add_tech_bonus = { bonus = 0.5 uses = 2 category = land_doctrine }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_doctrinal_thought exited"
+			}
 		}
 	}
 	focus = {
@@ -339,12 +467,20 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_our_future
 		}
-		x = 23
+		x = 19
 		y = 3
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_our_goal entered"
+			}
 			add_political_power = 100
-		}	
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_our_goal exited"
+			}
+		}
 	}
 	focus = {
 		id = WBH_seek_technology
@@ -353,11 +489,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_our_goal
 		}
-		x = 22
+		x = 18
 		y = 4
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_seek_technology entered"
+			}
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = electronics }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_seek_technology exited"
+			}
 		}
 	}
 	focus = {
@@ -367,12 +511,20 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_seek_technology
 		}
-		x = 22
+		x = 18
 		y = 5
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_scribe_research entered"
+			}
 			add_ideas = genericbosscriberesearch
-		}	
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_scribe_research exited"
+			}
+		}
 	}
 	focus = {
 		id = WBH_old_developments
@@ -381,12 +533,20 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_scribe_research
 		}
-		x = 22
+		x = 18
 		y = 6
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_old_developments entered"
+			}
 			capital_scope = {
-				add_resource = { type = advanced_technology amount = 8 }    
+				add_resource = { type = advanced_technology amount = 8 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_old_developments exited"
 			}
 		}
 	}
@@ -397,11 +557,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_old_developments
 		}
-		x = 22
+		x = 18
 		y = 7
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_robotic_advancements entered"
+			}
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = robotics_tech }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_robotic_advancements exited"
+			}
 		}
 	}
 	focus = {
@@ -411,27 +579,43 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_our_goal
 		}
-		x = 24
+		x = 20
 		y = 4
-		
+
 		completion_reward = {
-			add_ideas = genericbosbunkerthought 
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_bunker_thought entered"
+			}
+			add_ideas = genericbosbunkerthought
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_bunker_thought exited"
+			}
 		}
 	}
 	focus = {
 		id = WBH_surface_outposts
-		icon = GFX_goal_generic_building_focus
+		icon = GFX_goal_generic_BOS_focus_surface_outposts
 		cost = 8.6
 		prerequisite = {
 			focus = WBH_bunker_thought
 		}
-		x = 24
+		x = 20
 		y = 5
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_surface_outposts entered"
+			}
 			swap_ideas = {
 				add_idea = genericbossurfaceoutposts
 				remove_idea = genericbosbunkerthought
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_surface_outposts exited"
 			}
 		}
 	}
@@ -442,13 +626,21 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_surface_outposts
 		}
-		x = 24
+		x = 20
 		y = 6
-		
+
 		completion_reward = {
-			add_offsite_building = { 
-				type = industrial_complex 
-				level = 2 
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_underground_workshops entered"
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_underground_workshops exited"
 			}
 		}
 	}
@@ -459,11 +651,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_underground_workshops
 		}
-		x = 24
+		x = 20
 		y = 7
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_new_technology entered"
+			}
 			add_ideas = genericbosnewtech
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_new_technology exited"
+			}
 		}
 	}
 	focus = {
@@ -473,17 +673,21 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_water_operations
 		}
-		x = 3
+		x = 1
 		y = 4
 		available = {
-			any_owned_state = { 
-				is_coastal = yes 
+			any_owned_state = {
+				is_coastal = yes
 			}
 		}
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_port_expansion entered"
+			}
 			random_owned_state = {
-				limit = { 
+				limit = {
 					is_coastal = yes
 				}
 				add_extra_state_shared_building_slots = 3
@@ -493,8 +697,12 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_port_expansion exited"
+			}
 		}
-	}	
+	}
 	focus = {
 		id = WBH_supporting_vessels
 		icon = GFX_goal_generic_navy_cruiser
@@ -502,11 +710,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_port_expansion
 		}
-		x = 2
+		x = 0
 		y = 5
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_supporting_vessels entered"
+			}
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = ship_destroyer_tech }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_supporting_vessels exited"
+			}
 		}
 	}
 	focus = {
@@ -516,11 +732,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_port_expansion
 		}
-		x = 4
+		x = 2
 		y = 5
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_larger_vessels entered"
+			}
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = ship_heavy_cruiser_tech }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_larger_vessels exited"
+			}
 		}
 	}
 	focus = {
@@ -533,11 +757,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_larger_vessels
 		}
-		x = 3
+		x = 1
 		y = 6
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_reclaim_a_flagship entered"
+			}
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = ship_battleship_tech }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_reclaim_a_flagship exited"
+			}
 		}
 	}
 	focus = {
@@ -550,25 +782,41 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_staging_bases
 		}
-		x = 7
+		x = 5
 		y = 5
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_aerial_supremacy entered"
+			}
 			add_ideas = genericbosaerialsupermacy
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_aerial_supremacy exited"
+			}
 		}
 	}
 	focus = {
-		id = WBH_wastelander_auxs
-		icon = GFX_goal_generic_land_doctrines_focus
+		id = WBH_flight_academy
+		icon = GFX_goal_generic_BOS_focus_flight_academy
 		cost = 8.6
 		prerequisite = {
 			focus = WBH_aerial_supremacy
 		}
-		x = 7
+		x = 5
 		y = 6
-		
+
 		completion_reward = {
-			add_ideas = genericboswastelanderauxs
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_flight_academy entered"
+			}
+			add_ideas = genericbosflightacademy
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_flight_academy exited"
+			}
 		}
 	}
 	focus = {
@@ -578,12 +826,20 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_our_right
 		}
-		x = 12
+		x = 10
 		y = 4
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_increase_power_production entered"
+			}
 			capital_scope = {
-				add_resource = { type = electricity amount = 16 }    
+				add_resource = { type = electricity amount = 16 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_increase_power_production exited"
 			}
 		}
 	}
@@ -600,12 +856,20 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_salvaged_electronics
 		}
-		x = 11
+		x = 9
 		y = 5
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_advanced_tech entered"
+			}
 			capital_scope = {
-				add_resource = { type = advanced_technology amount = 8 }    
+				add_resource = { type = advanced_technology amount = 8 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_advanced_tech exited"
 			}
 		}
 	}
@@ -622,12 +886,20 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_salvaged_metal
 		}
-		x = 13
+		x = 11
 		y = 5
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_fueling_our_rise entered"
+			}
 			capital_scope = {
-				add_resource = { type = fuel amount = 8 }    
+				add_resource = { type = fuel amount = 8 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_fueling_our_rise exited"
 			}
 		}
 	}
@@ -641,39 +913,47 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_fueling_our_rise
 		}
-		x = 11
+		x = 9
 		y = 6
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_arm_foundries entered"
+			}
 			random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
-						}
-						OR = {
-							is_in_home_area = yes
-							NOT = {
-								owner = {
-										any_owned_state = {
-											free_building_slots = {
-												building = arms_factory
-												size > 0
-												include_locked = yes
-											}
-											is_in_home_area = yes
-										}
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
 								}
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = arms_factory
-						level = 2
-						instant_build = yes
-					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_arm_foundries exited"
 			}
 		}
 	}
@@ -684,39 +964,47 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_fueling_our_rise
 		}
-		x = 13
+		x = 11
 		y = 6
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_civilian_workshops entered"
+			}
 			random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = industrial_complex
-							size > 0
-							include_locked = yes
-						}
-						OR = {
-							is_in_home_area = yes
-							NOT = {
-								owner = {
-										any_owned_state = {
-											free_building_slots = {
-												building = industrial_complex
-												size > 0
-												include_locked = yes
-											}
-											is_in_home_area = yes
-										}
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
 								}
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_civilian_workshops exited"
 			}
 		}
 	}
@@ -730,69 +1018,73 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_civilian_workshops
 		}
-		x = 12
+		x = 10
 		y = 7
-		
+
 		completion_reward = {
-			random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
-						}
-						OR = {
-							is_in_home_area = yes
-							NOT = {
-								owner = {
-										any_owned_state = {
-											free_building_slots = {
-												building = arms_factory
-												size > 0
-												include_locked = yes
-											}
-											is_in_home_area = yes
-										}
-								}
-							}
-						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_heavy_production entered"
 			}
 			random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = industrial_complex
-							size > 0
-							include_locked = yes
-						}
-						OR = {
-							is_in_home_area = yes
-							NOT = {
-								owner = {
-										any_owned_state = {
-											free_building_slots = {
-												building = industrial_complex
-												size > 0
-												include_locked = yes
-											}
-											is_in_home_area = yes
-										}
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
 								}
 							}
 						}
 					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = industrial_complex
-						level = 1
-						instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
 					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
 			}
 			capital_scope = {
 				add_building_construction = {
@@ -800,6 +1092,10 @@ focus_tree = {
 						level = 2
 						instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_heavy_production exited"
 			}
 		}
 	}
@@ -810,45 +1106,101 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_steel_legions
 		}
-		x = 17
+		x = 14
 		y = 5
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_new_initiates entered"
+			}
 			add_manpower = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_new_initiates exited"
+			}
 		}
 	}
 	focus = {
 		id = WBH_t45d_production
-		icon = GFX_goal_generic_t45d_power_armour_focus
+		icon = GFX_goal_generic_BOS_focus_t45d_production
 		cost = 8.6
 		prerequisite = {
 			focus = WBH_new_initiates
 		}
-		x = 17
+		x = 14
 		y = 6
-		
-		completion_reward = {
-			add_ideas = genericbost45d
-		}
 
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_t45d_production entered"
+			}
+			
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment_2
+				amount = 250
+				producer = WBH
+			}
+			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_t45d_production exited"
+			}
+		}
 	}
 	focus = {
 		id = WBH_t51b_production
-		icon = GFX_goal_generic_t51b_power_armour_focus
+		icon = GFX_goal_generic_BOS_focus_t51b_production
 		cost = 8.6
 		prerequisite = {
 			focus = WBH_t45d_production
 		}
-		x = 17
+		x = 14
 		y = 7
 
 		completion_reward = {
-			add_ideas = genericbost51b
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_t51b_production entered"
+			}
+			
+			if = {
+				limit = {
+					WBH = {
+						has_tech = power_armour_t51b
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = power_armor_equipment_3
+					amount = 250
+					producer = WBH
+				}
+			}
+			if = {
+				limit = {
+					WBH = {
+						NOT = {
+							has_tech = power_armour_t51b
+						}
+					}
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = power_armor_tech
+				}
+			}
+			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_t51b_production exited"
+			}
 		}
 	}
 	focus = {
 		id = WBH_combined_operations
-		icon = GFX_goal_VEG_Mojave_Alliance
+		icon = GFX_goal_generic_BOS_focus_combined_operations
 		cost = 8.6
 		prerequisite = {
 			focus = WBH_t51b_production
@@ -856,51 +1208,67 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_doctrinal_thought
 		}
-		x = 18
+		x = 15
 		y = 8
 
 		completion_reward = {
 			add_ideas = genericboscombinedoperations
 		}
 	}
-	focus = {
-		id = WBH_vertibird_schematics
-		icon = GFX_goal_bos_vertibird_schematics
-		cost = 8.6
-		prerequisite = {
-			focus = WBH_robotic_advancements
-		}
-		x = 22
-		y = 8
-		
-		completion_reward = {
-			set_technology = { 
-				vertiberd_gunship = 1
-				vertiberd_transport1 = 1
-			}
-			add_equipment_to_stockpile = { type = vb_gunship_equipment amount = 5 }
-			add_equipment_to_stockpile = { type = vb_transport_plane_equipment amount = 5 }
-		}
-	}
-	focus = {
-		id = WBH_tesla_theory
-		icon = GFX_goal_generic_electricity_focus
-		cost = 8.6
-		prerequisite = {
-			focus = WBH_new_technology
-		}
-		x = 24
-		y = 8
+	#focus = {
+	#	id = WBH_vertibird_schematics
+	#	icon = GFX_goal_bos_vertibird_schematics
+	#	cost = 8.6
+	#	prerequisite = {
+	#		focus = WBH_robotic_advancements
+	#	}
+	#	x = 18
+	#	y = 8
+	#
+	#	completion_reward = {
+	#		if = {
+	#			limit = { has_global_flag = debug_logs }
+	#			log = "[GetDateText]: [Root.GetName] WBH_vertibird_schematics entered"
+	#		}
+	#		set_technology = {
+	#			vertiberd_gunship = 1
+	#			vertiberd_transport1 = 1
+	#		}
+	#		add_equipment_to_stockpile = { type = vb_gunship_equipment amount = 5 }
+	#		add_equipment_to_stockpile = { type = vb_transport_plane_equipment amount = 5 }
+	#		if = {
+	#			limit = { has_global_flag = debug_logs }
+	#			log = "[GetDateText]: [Root.GetName] WBH_vertibird_schematics exited"
+	#		}
+	#	}
+	#}
+	#focus = {
+	#	id = WBH_tesla_theory
+	#	icon = GFX_goal_generic_electricity_focus
+	#	cost = 8.6
+	#	prerequisite = {
+	#		focus = WBH_new_technology
+	#	}
+	#	x = 20
+	#	y = 8
+	#
+	#	completion_reward = {
+	#		if = {
+	#			limit = { has_global_flag = debug_logs }
+	#			log = "[GetDateText]: [Root.GetName] WBH_tesla_theory entered"
+	#		}
+	#		set_technology = {
+	#			tesla_weaponry = 1
+	#		}
+	#		if = {
+	#			limit = { has_global_flag = debug_logs }
+	#			log = "[GetDateText]: [Root.GetName] WBH_tesla_theory exited"
+	#		}
+	#	}
+	#}
 
-		completion_reward = {
-			set_technology = { 
-				tesla_weaponry = 1
-			}
-		}
-	}	
-	
 	# Washington Brotherhood Path #
-	
+
 	focus = {
 		id = WBH_within_the_blizzard
 		icon = GFX_goal_wbh_within_the_blizzard
@@ -909,32 +1277,48 @@ focus_tree = {
 			focus = WBH_our_future
 		}
 		ai_will_do = {
-		   factor = 10
+			factor = 10
 		}
-		x = 28
+		x = 23
 		y = 3
 		available = {
 			NOT = {
 				has_war = yes
 			}
-		}	
+		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_within_the_blizzard entered"
+			}
 			country_event = nf_washington.1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_within_the_blizzard exited"
+			}
 		}
 	}
 	focus = {
 		id = WBH_sinister_patriots
 		icon = GFX_goal_wbh_sinister_patriots
-		cost = 8.6	
+		cost = 8.6
 		prerequisite = {
 			focus = WBH_within_the_blizzard
 		}
-		x = 27
+		x = 22
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_sinister_patriots entered"
+			}
 			TOC = {
-			   country_event = { days = 1 id = nf_washington.2 }
+				country_event = { days = 1 id = nf_washington.2 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_sinister_patriots exited"
 			}
 		}
 	}
@@ -945,11 +1329,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_within_the_blizzard
 		}
-		x = 29
+		x = 24
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_fellow_savages entered"
+			}
 			PMR = {
-			   country_event = { days = 1 id = nf_washington.3 }
+				country_event = { days = 1 id = nf_washington.3 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_fellow_savages exited"
 			}
 		}
 	}
@@ -961,10 +1353,18 @@ focus_tree = {
 			focus = WBH_fellow_savages
 			focus = WBH_sinister_patriots
 		}
-		x = 27
+		x = 22
 		y = 5
 		completion_reward = {
-			 add_war_support = 0.15
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_dark_ambitions entered"
+			}
+			add_war_support = 0.15
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_dark_ambitions exited"
+			}
 		}
 	}
 	focus = {
@@ -974,11 +1374,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_dark_ambitions
 		}
-		x = 27
+		x = 22
 		y = 6
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_enslave_the_weak entered"
+			}
 			add_ideas = genericboswashingtonenslaveweak
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_enslave_the_weak exited"
+			}
 		}
 	}
 	focus = {
@@ -988,11 +1396,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_enslave_the_weak
 		}
-		x = 27
+		x = 22
 		y = 7
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_expand_our_dominion entered"
+			}
 			add_ideas = genericboswashingtonexpandourdominion
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_expand_our_dominion exited"
+			}
 		}
 	}
 	focus = {
@@ -1002,17 +1418,25 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_expand_our_dominion
 		}
-		x = 27
+		x = 22
 		y = 8
 		will_lead_to_war_with = TRL
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_eradicate_the_mutants entered"
+			}
 			add_ideas = genericboswashingtoneradicatemutants
 			if = {
 				limit = {
 					TRL = { exists = yes }
 				}
 				create_wargoal = { type = annex_everything target = TRL }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_eradicate_the_mutants exited"
 			}
 		}
 	}
@@ -1024,11 +1448,19 @@ focus_tree = {
 			focus = WBH_fellow_savages
 			focus = WBH_sinister_patriots
 		}
-		x = 29
+		x = 24
 		y = 5
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_black_paladins entered"
+			}
 			load_oob = washington_black_paladins
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_black_paladins exited"
+			}
 		}
 	}
 	focus = {
@@ -1038,11 +1470,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_black_paladins
 		}
-		x = 29
+		x = 24
 		y = 6
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_decimate_and_despoil entered"
+			}
 			add_ideas = genericbosdecimateanddespoil
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_decimate_and_despoil exited"
+			}
 		}
 	}
 	focus = {
@@ -1052,10 +1492,14 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_decimate_and_despoil
 		}
-		x = 29
+		x = 24
 		y = 7
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_dark_foundries entered"
+			}
 			capital_scope = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
@@ -1070,6 +1514,10 @@ focus_tree = {
 				}
 			}
 			add_ideas = genericbosdarkfoundries
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_dark_foundries exited"
+			}
 		}
 	}
 	focus = {
@@ -1079,12 +1527,20 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_dark_foundries
 		}
-		x = 29
+		x = 24
 		y = 8
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_death_or_glory entered"
+			}
 			add_stability = 0.1
 			add_war_support = 0.1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_death_or_glory exited"
+			}
 		}
 	}
 	focus = {
@@ -1097,11 +1553,19 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_death_or_glory
 		}
-		x = 28
+		x = 23
 		y = 9
-		
+
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_alaskan_expedition entered"
+			}
 			country_event = { id = nf_washington.8 days = 1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WBH_alaskan_expedition exited"
+			}
 		}
 	}
 }

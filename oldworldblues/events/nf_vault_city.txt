@@ -128,23 +128,27 @@ country_event = {
 	option = {
 		name = nf_vault_city.4.a
 		add_research_slot = 1
-		set_political_party = {
-			ideology = intellectuals
-			popularity = 0.7
+		set_politics = {
+			parties = {
+				ruler = { popularity = 0 }
+				elites = { popularity = 0 }
+				people = { popularity = 30 }
+				intellectuals = { popularity = 70 }
+			}
+			ruling_party = intellectuals
+			elections_allowed = yes
 		}
 		add_ideas = citizen1
 	}
 	option = {
 		name = nf_vault_city.4.b
-		set_political_party = {
-			ideology = elites
-			popularity = 0.6
-		}
-		set_political_party = {
-			ideology = intellectuals
-			popularity = 0.4
-		}
 		set_politics = {
+			parties = {
+				elites = { popularity = 60 }
+				intellectuals = { popularity = 40 }
+				people = { popularity = 0 }
+				ruler = { popularity = 0 }
+			}
 			ruling_party = elites
 			elections_allowed = no
 		}
@@ -158,19 +162,16 @@ country_event = {
 			}
 			promote_leader = yes
 		}
-
 	}
 	option = {
 		name = nf_vault_city.4.c
-		set_political_party = {
-			ideology = people
-			popularity = 0.6
-		}
-		set_political_party = {
-			ideology = intellectuals
-			popularity = 0.4
-		}
 		set_politics = {
+			parties = {
+				people = { popularity = 60 }
+				intellectuals = { popularity = 40 }
+				ruler = { popularity = 0 }
+				elites = { popularity = 0 }
+			}
 			ruling_party = people
 			elections_allowed = no
 		}
@@ -185,23 +186,21 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-				set_technology = {
-					ghoul_access = 1
-				}
-				load_oob = vault_festus
+			set_technology = {
+				ghoul_access = 1
+			}
+			load_oob = vault_festus
 		}
 	}
 	option = {
 		name = nf_vault_city.4.e
-		set_political_party = {
-			ideology =  ruler
-			popularity = 0.6
-		}
-		set_political_party = {
-			ideology = intellectuals
-			popularity = 0.4
-		}
 		set_politics = {
+			parties = {
+				ruler = { popularity = 60 }
+				intellectuals = { popularity = 40 }
+				elites = { popularity = 0 }
+				people = { popularity = 0 }
+			}
 			ruling_party = ruler
 			elections_allowed = no
 		}
@@ -212,6 +211,8 @@ country_event = {
 				super_mutant_civilization = 1
 				mutant_access = 1
 			}
+			VLT = { remove_opinion_modifier = { target = TRL modifier = supermutants } }
+			TRL = { remove_opinion_modifier = { target = VLT modifier = non_supermutants } }
 			load_oob = vault_molerat
 		}
 	}

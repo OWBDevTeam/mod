@@ -1059,6 +1059,7 @@ resolve_expedition = {
 		scavenge_vehicle_end = yes
 		clr_country_flag = scavenge_vroom_vroom
 	}
+	clr_country_flag = is_scavenging
 }
 resolve_equip_loot = {
 	if = {
@@ -1086,7 +1087,7 @@ resolve_equip_loot = {
 			limit = {
 				has_country_flag = s_melee_2
 			}
-			add_equipment_to_stockpile = { type = melee_equipment_1 amount = 200 }
+			add_equipment_to_stockpile = { type = melee_equipment_2 amount = 100 }
 			clr_country_flag = s_melee_2
 		}
 		if = {
@@ -1115,14 +1116,14 @@ resolve_equip_loot = {
 			limit = {
 				has_country_flag = s_energy_e_1
 			}
-			add_equipment_to_stockpile = { type = energy_equipment_1 amount = 100 }
+			add_equipment_to_stockpile = { type = energy_equipment_1 amount = 50 }
 			clr_country_flag = s_energy_e_1
 		}
 		if = {
 			limit = {
 				has_country_flag = s_melee_3
 			}
-			add_equipment_to_stockpile = { type = melee_equipment_3 amount = 100 }
+			add_equipment_to_stockpile = { type = melee_equipment_3 amount = 50 }
 			clr_country_flag = s_melee_3
 		}
 		if = {
@@ -1150,7 +1151,7 @@ resolve_equip_loot = {
 			limit = {
 				has_country_flag = s_mortar
 			}
-			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 200 }
+			add_equipment_to_stockpile = { type = explosive_equipment_2 amount = 50 }
 			clr_country_flag = s_mortar
 		}
 		if = {
@@ -1171,14 +1172,14 @@ resolve_equip_loot = {
 			limit = {
 				has_country_flag = s_ballistic_e_3
 			}
-			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 30 }
+			add_equipment_to_stockpile = { type = ballistic_equipment_3 amount = 30 }
 			clr_country_flag = s_ballistic_e_3
 		}
 		if = {
 			limit = {
 				has_country_flag = s_t45d_pa
 			}
-			add_equipment_to_stockpile = { type = power_armor_equipment_1 amount = 5 }
+			add_equipment_to_stockpile = { type = power_armor_equipment_2 amount = 5 }
 			clr_country_flag = s_t45d_pa
 		}
 		if = {

@@ -15,9 +15,16 @@ focus_tree = {
 		x = 16
 		y = 0
 		completion_reward = {
-			country_event = { id = nf_ncr.1 } 
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_founders entered"
+			}
+			country_event = { id = nf_ncr.1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_founders exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_baja
@@ -32,9 +39,16 @@ focus_tree = {
 		x = 2
 		y = 4
 		completion_reward = {
-			country_event = { id = nf_ncr.2 } 
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_baja entered"
+			}
+			country_event = { id = nf_ncr.2 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_baja exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_emergency
@@ -50,9 +64,16 @@ focus_tree = {
 		x = 2
 		y = 8
 		completion_reward = {
-			country_event = { id = nf_ncr.4 } 
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_emergency entered"
+			}
+			country_event = { id = nf_ncr.4 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_emergency exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_petersonswar
@@ -68,10 +89,16 @@ focus_tree = {
 		x = 9
 		y = 4
 		completion_reward = {
-			country_event = { id = nf_ncr.6 } 
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_petersonswar entered"
+			}
+			country_event = { id = nf_ncr.6 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_petersonswar exited"
+			}
 		}
-		
-
 	}
 	focus = {
 		id = ncr_mayorvictory
@@ -90,11 +117,18 @@ focus_tree = {
 		}
 		available = {
 			has_completed_focus = ncr_councilhill
-		}	
-		completion_reward = {
-			add_political_power = 50
 		}
-
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mayorvictory entered"
+			}
+			add_political_power = 50
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mayorvictory exited"
+			}
+		}
 	}
 	focus = {
 		id = ncr_boneyard
@@ -116,14 +150,21 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_boneyard entered"
+			}
 			add_tech_bonus = {
 				name = industrial_bonus
 				bonus = 0.5
 				uses = 1
 				category = industry
-			}			
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_boneyard exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_barons
@@ -133,7 +174,7 @@ focus_tree = {
 		y = 10
 		available = {
 			has_completed_focus = ncr_councilhill
-		}	
+		}
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -144,12 +185,19 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_barons entered"
+			}
 			add_timed_idea = {
 				idea = ncrbarons
 				days = 180
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_barons exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_bearsroar
@@ -161,9 +209,16 @@ focus_tree = {
 		x = 33
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bearsroar entered"
+			}
 			army_experience = 10
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bearsroar exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_rangerdeploy
@@ -182,6 +237,10 @@ focus_tree = {
 		x = 0
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangerdeploy entered"
+			}
 			add_political_power = 25
 			add_opinion_modifier = { target = BVC modifier = deployedrangers }
 			add_opinion_modifier = { target = BLP modifier = deployedrangers }
@@ -193,8 +252,11 @@ focus_tree = {
 			hidden_effect = {
 				load_oob = bajarangers
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangerdeploy exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_ultimatum
@@ -206,12 +268,20 @@ focus_tree = {
 		x = 0
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_ultimatum entered"
+			}
 			add_political_power = 25
 			BVC = {
 				country_event = { id = nf_ncr.7 }
 			}
 			BLP = {
 				country_event = { id = nf_ncr.7 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_ultimatum exited"
 			}
 		}
 	}
@@ -226,9 +296,16 @@ focus_tree = {
 		x = 0
 		y = 7
 		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = BVC
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_retake entered"
+			}
+			if = {
+				limit = { BVC = { exists = yes }}
+				create_wargoal = {
+					type = annex_everything
+					target = BVC
+				}
 			}
 			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
@@ -245,6 +322,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = BVC
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -259,7 +337,11 @@ focus_tree = {
 					targeted_alliance = BVC
 					enemy = NCR
 					hostility_reason = ally
-				}				
+				}	
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_retake exited"
 			}
 		}
 	}
@@ -280,6 +362,10 @@ focus_tree = {
 		x = 0
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_buyout entered"
+			}
 			add_political_power = -25
 			add_ideas = baronswarbuyout
 			custom_effect_tooltip = buyout_tt
@@ -291,8 +377,11 @@ focus_tree = {
 				ideology = elites
 				popularity = 0.05
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_buyout exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_baronofbarons
@@ -304,9 +393,16 @@ focus_tree = {
 		x = 0
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_baronofbarons entered"
+			}
 			add_ideas = baronofbarons
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_baronofbarons exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_pokersiege
@@ -318,10 +414,17 @@ focus_tree = {
 		x = 0
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_pokersiege entered"
+			}
 			add_manpower = -500
 			remove_ideas = baronswarbuyout
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_pokersiege exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_newnorth
@@ -336,7 +439,10 @@ focus_tree = {
 			135 = { is_owned_and_controlled_by = NCR }
 		}
 		completion_reward = {
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_newnorth entered"
+			}
 			135 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
@@ -344,16 +450,17 @@ focus_tree = {
 					level = 2
 				}
 			}
-			
 			every_state = {
 				limit = {
 					is_baron_state = yes
 				}
 				add_core_of = NCR
-			}	
-			
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_newnorth exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_sympathies
@@ -372,9 +479,13 @@ focus_tree = {
 		x = 2
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_sympathies entered"
+			}
 			add_political_power = -25
 			add_opinion_modifier = { target = BVC modifier = sympathies }
-			add_opinion_modifier = { target = BLP modifier = sympathies }	
+			add_opinion_modifier = { target = BLP modifier = sympathies }
 			hidden_effect = {
 				reverse_add_opinion_modifier = { target = BVC modifier = sympathies }
 				reverse_add_opinion_modifier = { target = BLP modifier = sympathies }
@@ -382,6 +493,10 @@ focus_tree = {
 			add_popularity = {
 				ideology = ruler
 				popularity = 0.05
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_sympathies exited"
 			}
 		}
 	}
@@ -395,6 +510,10 @@ focus_tree = {
 		x = 2
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_repaid entered"
+			}
 			every_state = {
 				limit = {
 					is_baja_california_state = yes
@@ -410,13 +529,15 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			add_timed_idea = {
 				days = 180
 				idea = rattletailrepaid
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_repaid exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_bajastate
@@ -428,6 +549,10 @@ focus_tree = {
 		x = 2
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bajastate entered"
+			}
 			every_state = {
 				limit = {
 					is_baja_california_state = yes
@@ -437,12 +562,14 @@ focus_tree = {
 				}
 				add_core_of = BJS
 			}
-			
 			NCR = {
 				puppet = BJS
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bajastate exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_diplomatic
@@ -461,13 +588,20 @@ focus_tree = {
 		x = 2
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_diplomatic entered"
+			}
 			add_political_power = 50
 			add_popularity = {
 				ideology = ruler
 				popularity = 0.05
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_diplomatic exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_steeldeal
@@ -479,6 +613,10 @@ focus_tree = {
 		x = 2
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_steeldeal entered"
+			}
 			BOS = {
 				random_owned_controlled_state = {
 					add_resource = {
@@ -495,8 +633,11 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_steeldeal exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_patrol
@@ -508,10 +649,17 @@ focus_tree = {
 		x = 2
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_patrol entered"
+			}
 			NCR = { give_military_access = BOS }
 			remove_ideas = baronswar
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_patrol exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_allisgood
@@ -523,21 +671,26 @@ focus_tree = {
 		x = 2
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_allisgood entered"
+			}
 			add_opinion_modifier = { target = BOS modifier = allisgood }
 			hidden_effect = {
 				reverse_add_opinion_modifier = { target = BOS modifier = allisgood }
 				reverse_add_opinion_modifier = { target = MOJ modifier = allisgood }
 			}
 			add_opinion_modifier = { target = MOJ modifier = allisgood }
-			
 			every_state = {
 				limit = {
 					is_baron_state = yes
 				}
 				add_core_of = NCR
 			}
-	
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_allisgood exited"
+			}
 		}
 	}
 	focus = {
@@ -557,6 +710,10 @@ focus_tree = {
 		x = 4
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_politicobandito entered"
+			}
 			add_political_power = -50
 			add_opinion_modifier = { target = BVC modifier = politicobanditos }
 			hidden_effect = {
@@ -568,8 +725,11 @@ focus_tree = {
 				ideology = intellectuals
 				popularity = 0.05
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_politicobandito exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_payments
@@ -581,6 +741,10 @@ focus_tree = {
 		x = 4
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_payments entered"
+			}
 			every_state = {
 				limit = {
 					is_baja_california_state = yes
@@ -594,13 +758,15 @@ focus_tree = {
 					level = 1
 				}
 			}
-			
 			add_timed_idea = {
 				days = 180
 				idea = banditopayments
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_payments exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_integration
@@ -612,11 +778,16 @@ focus_tree = {
 		x = 4
 		y = 7
 		completion_reward = {
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_integration entered"
+			}
 			country_event = { id = nf_ncr.8 }
-
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_integration exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_exodus
@@ -635,6 +806,10 @@ focus_tree = {
 		x = 4
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_exodus entered"
+			}
 			remove_ideas = brahminbarons
 			135 = {
 				add_building_construction = {
@@ -646,8 +821,11 @@ focus_tree = {
 				ideology = people
 				popularity = 0.05
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_exodus exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_milcentres
@@ -665,6 +843,10 @@ focus_tree = {
 		x = 4
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_milcentres entered"
+			}
 			every_state = {
 				limit = {
 					is_baron_state = yes
@@ -677,9 +859,12 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-			}	
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_milcentres exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_brahminbill
@@ -691,11 +876,17 @@ focus_tree = {
 		x = 4
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_brahminbill entered"
+			}
 			remove_ideas = baronswar
-			
 			add_ideas = brahminbill
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_brahminbill exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_rationing
@@ -707,17 +898,22 @@ focus_tree = {
 		x = 4
 		y = 12
 		completion_reward = {
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rationing entered"
+			}
 			add_ideas = rationing
-			
 			every_state = {
 				limit = {
 					is_baron_state = yes
 				}
 				add_core_of = NCR
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rationing exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_drummund
@@ -736,14 +932,21 @@ focus_tree = {
 		x = 7
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_drummund entered"
+			}
 			army_experience = 10
 			air_experience = 10		
 			add_popularity = {
 				ideology = people
 				popularity = 0.05
-			}	
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_drummund exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_oldworldmilitary
@@ -755,9 +958,16 @@ focus_tree = {
 		x = 7
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_oldworldmilitary entered"
+			}
 			add_ideas = oldworldmilitary
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_oldworldmilitary exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_drummundreturn
@@ -769,6 +979,10 @@ focus_tree = {
 		x = 7
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_drummundreturn entered"
+			}
 			create_field_marshal = {
 				name = "General Drummund"
 				portrait_path = "gfx/leaders/NCR/Portrait_Drummund.dds"
@@ -778,8 +992,11 @@ focus_tree = {
 				planning_skill = 2
 				logistics_skill = 3
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_drummundreturn exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_baron
@@ -798,14 +1015,21 @@ focus_tree = {
 		x = 9
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_baron entered"
+			}
 			add_political_power = 50
 			army_experience = 10
 			add_popularity = {
 				ideology = elites
 				popularity = 0.05
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_baron exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_industrialcomplex
@@ -817,9 +1041,16 @@ focus_tree = {
 		x = 9
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_industrialcomplex entered"
+			}
 			add_ideas = militindustrial
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_industrialcomplex exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_bigjim
@@ -831,6 +1062,10 @@ focus_tree = {
 		x = 9
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bigjim entered"
+			}
 			create_field_marshal = {
 				name = "Big Jim Marshal"
 				portrait_path = "gfx/leaders/NCR/Portrait_BigJim.dds"
@@ -840,8 +1075,11 @@ focus_tree = {
 				planning_skill = 1
 				logistics_skill = 1
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bigjim exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_rangergeneral
@@ -860,14 +1098,21 @@ focus_tree = {
 		x = 11
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangergeneral entered"
+			}
 			army_experience = 20
 			navy_experience = 10
 			add_popularity = {
 				ideology = intellectuals
 				popularity = 0.05
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangergeneral exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_standards
@@ -879,7 +1124,15 @@ focus_tree = {
 		x = 11
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_standards entered"
+			}
 			add_ideas = draftstandards
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_standards exited"
+			}
 		}
 	}
 	focus = {
@@ -892,6 +1145,10 @@ focus_tree = {
 		x = 11
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mossman entered"
+			}
 			create_field_marshal = {
 				name = "Ranger General Mossman"
 				portrait_path = "gfx/leaders/NCR/Portrait_Mossman.dds"
@@ -902,8 +1159,11 @@ focus_tree = {
 				planning_skill = 3
 				logistics_skill = 3
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mossman exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_openlong15
@@ -921,9 +1181,16 @@ focus_tree = {
 		x = 7
 		y = 8
 		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = SCR
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_openlong15 entered"
+			}
+			if = {
+				limit = { SCR = { exists = yes }}
+				create_wargoal = {
+					type = annex_everything
+					target = SCR
+				}
 			}
 			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
@@ -940,6 +1207,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = SCR
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -947,8 +1215,11 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_openlong15 exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_long15
@@ -965,7 +1236,6 @@ focus_tree = {
 						has_full_control_of_state = 77
 					}
 				}
-			
 				NCR = {
 					has_full_control_of_state = 77
 				}
@@ -974,6 +1244,10 @@ focus_tree = {
 		x = 6
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_long15 entered"
+			}
 			77 = {
 				add_building_construction = {
 					type = infrastructure
@@ -985,9 +1259,11 @@ focus_tree = {
 				idea = long15
 				days = 60
 			}
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_long15 exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_mojaveoutpost
@@ -1013,6 +1289,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mojaveoutpost entered"
+			}
 			47 = {
 				add_building_construction = {
 					type = bunker 
@@ -1024,8 +1304,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mojaveoutpost exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_eviction
@@ -1050,9 +1333,16 @@ focus_tree = {
 			RAP = { exists = no }
 		}
 		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = RAP
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_eviction entered"
+			}
+			if = {
+				limit = { RAP = { exists = yes }}
+				create_wargoal = {
+					type = annex_everything
+					target = RAP
+				}
 			}
 			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
@@ -1069,6 +1359,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = RAP
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -1079,8 +1370,11 @@ focus_tree = {
 			CES = {
 				country_event = { id = nf_ncr.9 }
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_eviction exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_riverbank
@@ -1098,6 +1392,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_riverbank entered"
+			}
 			every_state = {
 				limit = {
 					is_owned_by = NCR
@@ -1113,8 +1411,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_riverbank exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_aradeshport
@@ -1129,6 +1430,10 @@ focus_tree = {
 			controls_state = 147
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_aradeshport entered"
+			}
 			147 = {
 				set_state_name = "Port Aradesh"
 				add_building_construction = {
@@ -1136,6 +1441,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_aradeshport exited"
 			}
 		}
 	}
@@ -1153,6 +1462,10 @@ focus_tree = {
 			controls_state = 147
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_aradeshfort entered"
+			}
 			147 = {
 				add_building_construction = {
 					type = bunker
@@ -1179,8 +1492,11 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_aradeshfort exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_riverpatrols
@@ -1195,9 +1511,16 @@ focus_tree = {
 		x = 11
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_riverpatrols entered"
+			}
 			add_ideas = riverpatrols
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_riverpatrols exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_tandi
@@ -1209,9 +1532,16 @@ focus_tree = {
 		x = 16
 		y = 1
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_tandi entered"
+			}
 			country_event = { id = nf_ncr.10 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_tandi exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_development
@@ -1223,9 +1553,16 @@ focus_tree = {
 		x = 16
 		y = 2
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_development entered"
+			}
 			country_event = { id = nf_ncr.11 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_development exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_navarro
@@ -1237,9 +1574,16 @@ focus_tree = {
 		x = 16
 		y = 3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_navarro entered"
+			}
 			country_event = { id = nf_ncr.12 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_navarro exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_councilhill
@@ -1251,9 +1595,16 @@ focus_tree = {
 		x = 16
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_councilhill entered"
+			}
 			add_political_power = 50
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_councilhill exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_capitalfund
@@ -1265,17 +1616,23 @@ focus_tree = {
 		x = 14
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_capitalfund entered"
+			}
 			253 = {
 				add_extra_state_shared_building_slots = 2
-				
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_capitalfund exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_militacademy
@@ -1287,9 +1644,16 @@ focus_tree = {
 		x = 16
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_militacademy entered"
+			}
 			army_experience = 25
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_militacademy exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_oldworld
@@ -1301,14 +1665,21 @@ focus_tree = {
 		x = 16
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_oldworld entered"
+			}
 			add_tech_bonus = {
 				name = land_doc_bonus
 				bonus = 0.5
 				uses = 2
 				category = land_doctrine
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_oldworld exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_armourexperiment
@@ -1320,8 +1691,16 @@ focus_tree = {
 		x = 16
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_armourexperiment entered"
+			}
 			set_technology = { power_armour = 1 }
 			unlock_decision_tooltip = NCR_armourexperiment_focus
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_armourexperiment exited"
+			}
 		}
 	}
 	focus = {
@@ -1337,6 +1716,10 @@ focus_tree = {
 			253 = { is_owned_and_controlled_by = NCR }
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_capitalfort entered"
+			}
 			253 = {
 				add_building_construction = {
 					type = bunker
@@ -1352,8 +1735,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_capitalfort exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_rangerhq
@@ -1368,17 +1754,23 @@ focus_tree = {
 			253 = { is_owned_and_controlled_by = NCR }
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangerhq entered"
+			}
 			253 = {
 				add_extra_state_shared_building_slots = 2
-				
 				add_building_construction = {
 					type = arms_factory
 					level = 2
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangerhq exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_gammacore
@@ -1390,10 +1782,17 @@ focus_tree = {
 		x = 18
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_gammacore entered"
+			}
 			custom_effect_tooltip = load_gammacore
 			hidden_effect = { load_oob = gammacore }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_gammacore exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_reorgranger
@@ -1405,12 +1804,19 @@ focus_tree = {
 		x = 18
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_reorgranger entered"
+			}
 			add_ideas = reorgranger
 			hidden_effect = {
 				set_technology = { ncr_reorgranger = 1 }
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_reorgranger exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_rangerprop
@@ -1422,9 +1828,16 @@ focus_tree = {
 		x = 18
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangerprop entered"
+			}
 			add_ideas = ncrrangerprop
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangerprop exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_pitch
@@ -1439,6 +1852,10 @@ focus_tree = {
 			controls_state = 63
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_pitch entered"
+			}
 			63 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1452,8 +1869,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_pitch exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_newleague
@@ -1468,9 +1888,11 @@ focus_tree = {
 			controls_state = 63
 		}
 		completion_reward = {
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_newleague entered"
+			}
 			add_stability = 0.025
-		
 			63 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1479,8 +1901,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_newleague exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_leagueradio
@@ -1495,9 +1920,11 @@ focus_tree = {
 			controls_state = 63
 		}
 		completion_reward = {
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_leagueradio entered"
+			}
 			add_ideas = leagueradio
-		
 			63 = {
 				add_building_construction = {
 					type = radar_station
@@ -1505,8 +1932,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_leagueradio exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_firstseason
@@ -1521,9 +1951,16 @@ focus_tree = {
 			controls_state = 63
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_firstseason entered"
+			}
 			country_event = { id = nf_ncr.16 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_firstseason exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_calileague
@@ -1535,10 +1972,17 @@ focus_tree = {
 		x = 20
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_calileague entered"
+			}
 			add_stability = 0.03
 			add_war_support = 0.02
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_calileague exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_sac
@@ -1553,6 +1997,10 @@ focus_tree = {
 			controls_state = 135
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_sac entered"
+			}
 			135 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -1561,8 +2009,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_sac exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_80sgarage
@@ -1574,14 +2025,21 @@ focus_tree = {
 		x = 22
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_80sgarage entered"
+			}
 			add_tech_bonus = {
 				name = motorized_bonus
 				bonus = 0.5
 				uses = 1
 				category = vehicle_tech
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_80sgarage exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_baroninvest
@@ -1596,9 +2054,16 @@ focus_tree = {
 			controls_state = 135
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_baroninvest entered"
+			}
 			country_event = { id = nf_ncr.17 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_baroninvest exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_longroadhome
@@ -1616,6 +2081,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_longroadhome entered"
+			}
 			every_state = {
 				limit = {
 					is_sac_to_hub_state = yes
@@ -1627,9 +2096,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-		
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_longroadhome exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_oldcity
@@ -1644,9 +2115,16 @@ focus_tree = {
 		x = 23
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_oldcity entered"
+			}
 			country_event = { id = nf_ncr.18 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_oldcity exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_bearport
@@ -1661,6 +2139,10 @@ focus_tree = {
 			350 = { is_owned_and_controlled_by = NCR }
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bearport entered"
+			}
 			350 = {
 				add_building_construction = {
 					type = air_base
@@ -1674,9 +2156,11 @@ focus_tree = {
 				}
 				add_extra_state_shared_building_slots = 2
 			}
-		
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bearport exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_bearforceexpansion
@@ -1688,14 +2172,21 @@ focus_tree = {
 		x = 21
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bearforceexpansion entered"
+			}
 			add_tech_bonus = {
 				name = air_bonus
 				bonus = 0.5
 				uses = 1
 				category = air_equipment	
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bearforceexpansion exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_followers
@@ -1707,9 +2198,16 @@ focus_tree = {
 		x = 23
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_followers entered"
+			}
 			add_ideas = followerfunding
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_followers exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_boneyardsprawl
@@ -1724,6 +2222,10 @@ focus_tree = {
 			controls_state = 350
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_boneyardsprawl entered"
+			}
 			350 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
@@ -1732,8 +2234,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_boneyardsprawl exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_newcity
@@ -1748,6 +2253,10 @@ focus_tree = {
 			controls_state = 350
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_newcity entered"
+			}
 			350 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
@@ -1756,8 +2265,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_newcity exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_dayglowroads
@@ -1774,6 +2286,10 @@ focus_tree = {
 			controls_state = 63
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_dayglowroads entered"
+			}
 			every_state = {
 				limit = {
 					is_boneyard_road_state = yes
@@ -1784,8 +2300,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_dayglowroads exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_mint
@@ -1800,6 +2319,10 @@ focus_tree = {
 			controls_state = 350
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mint entered"
+			}
 			350 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1808,10 +2331,12 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			add_ideas = ncrmint
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mint exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_scavfund
@@ -1826,6 +2351,10 @@ focus_tree = {
 			controls_state = 350
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_scavfund entered"
+			}
 			350 = {
 				add_resource = {
 					type = metal
@@ -1836,9 +2365,11 @@ focus_tree = {
 					amount = 4
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_scavfund exited"
+			}
 		}
-		
-
 	}
 	focus = {
 		id = ncr_allisgoodboneyard
@@ -1856,9 +2387,16 @@ focus_tree = {
 			controls_state = 350
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_allisgoodboneyard entered"
+			}
 			add_ideas = theboneyard
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_allisgoodboneyard exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_junktown
@@ -1873,6 +2411,10 @@ focus_tree = {
 			controls_state = 489
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_junktown entered"
+			}
 			489 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1886,8 +2428,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_junktown exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_gizmo
@@ -1899,9 +2444,16 @@ focus_tree = {
 		x = 26
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_gizmo entered"
+			}
 			add_ideas = gizmoslegacy
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_gizmo exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_doctormorbid
@@ -1916,6 +2468,10 @@ focus_tree = {
 			controls_state = 489
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_doctormorbid entered"
+			}
 			489 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -1924,15 +2480,17 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			add_tech_bonus = {
 				name = medical_bonus
 				bonus = 0.5
 				uses = 1
 				category = chem_tech	
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_doctormorbid exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_newwall
@@ -1947,6 +2505,10 @@ focus_tree = {
 			controls_state = 489
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_newwall entered"
+			}
 			489 = {
 				add_building_construction = {
 					type = bunker
@@ -1957,8 +2519,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_newwall exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_grinvestments
@@ -1973,6 +2538,10 @@ focus_tree = {
 			controls_state = 350
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_grinvestments entered"
+			}
 			350 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -1981,8 +2550,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_grinvestments exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_grexpansion
@@ -1994,9 +2566,16 @@ focus_tree = {
 		x = 27
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_grexpansion entered"
+			}
 			add_ideas = gunrunnerexpanded
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_grexpansion exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_standardarms
@@ -2015,10 +2594,17 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_standardarms entered"
+			}
 			add_ideas = ncrguns2
 			remove_ideas = ncrguns
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_standardarms exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_grdeals
@@ -2033,7 +2619,15 @@ focus_tree = {
 		x = 29
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_grdeals entered"
+			}
 			remove_ideas = ncrguns2
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_grdeals exited"
+			}
 		}
 	}
 	focus = {
@@ -2049,9 +2643,16 @@ focus_tree = {
 		x = 29
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_grliscense entered"
+			}
 			add_ideas = gunrunnerliscense
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_grliscense exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_drummund1
@@ -2070,9 +2671,16 @@ focus_tree = {
 		x = 31
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_drummund1 entered"
+			}
 			add_ideas = drummandsarmy
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_drummund1 exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_blast
@@ -2084,16 +2692,22 @@ focus_tree = {
 		x = 31
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_blast entered"
+			}
 			add_tech_bonus = {
 				name = explosive_bonus
 				bonus = 0.5
 				uses = 1
 				category = artillery
 			}
-			
 			add_ideas = blastfromthepast
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_blast exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_mobile
@@ -2105,14 +2719,21 @@ focus_tree = {
 		x = 31
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mobile entered"
+			}
 			add_tech_bonus = {
 				name = motorized_bonus
 				bonus = 0.5
 				uses = 1
 				category = motorized_equipment
 			}
-			
 			add_ideas = mobilearmy
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mobile exited"
+			}
 		}
 	}
 	focus = {
@@ -2125,9 +2746,16 @@ focus_tree = {
 		x = 31
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_spear entered"
+			}
 			add_ideas = speartip
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_spear exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_jim
@@ -2146,9 +2774,16 @@ focus_tree = {
 		x = 33
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_jim entered"
+			}
 			add_ideas = bigjim
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_jim exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_drills
@@ -2160,12 +2795,19 @@ focus_tree = {
 		x = 33
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_drills entered"
+			}
 			add_ideas = jimdrills
 			hidden_effect = {
 				set_technology = { ncr_jim_drills = 1 }
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_drills exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_march
@@ -2177,9 +2819,16 @@ focus_tree = {
 		x = 33
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_march entered"
+			}
 			add_ideas = ncrmarch
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_march exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_draft
@@ -2191,9 +2840,16 @@ focus_tree = {
 		x = 33
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_draft entered"
+			}
 			add_ideas = jimdraft
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_draft exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_rangergenmossman
@@ -2212,9 +2868,16 @@ focus_tree = {
 		x = 35
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangergenmossman entered"
+			}
 			add_ideas = rangergenmossman
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangergenmossman exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_rangercore
@@ -2226,12 +2889,19 @@ focus_tree = {
 		x = 35
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangercore entered"
+			}
 			add_ideas = rangercore
 			hidden_effect = {
 				set_technology = { ncr_rangercore = 1 }
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangercore exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_rangerlead
@@ -2243,12 +2913,19 @@ focus_tree = {
 		x = 35
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangerlead entered"
+			}
 			add_ideas = rangerlead
 			hidden_effect = {
 				set_technology = { ncr_rangerlead = 1 }
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangerlead exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_rangercanopeners
@@ -2260,9 +2937,17 @@ focus_tree = {
 		x = 35
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangercanopeners entered"
+			}
 			add_ideas = rangercanopeners
 			hidden_effect = {
 				set_technology = { ncr_rangercanopeners = 1 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rangercanopeners exited"
 			}
 		}
 	}
@@ -2278,6 +2963,10 @@ focus_tree = {
 		x = 7
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mojave entered"
+			}
 			if = {
 				limit = {
 					MRA = { exists = yes }
@@ -2302,6 +2991,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = MRA
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -2315,6 +3005,10 @@ focus_tree = {
 					MRA = { exists = yes }
 				}
 				declare_war_on = { target = MRA type = annex_everything }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mojave exited"
 			}
 		}
 	}
@@ -2357,9 +3051,16 @@ focus_tree = {
 		x = 7
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_oldworldwall entered"
+			}
 			country_event = { id = hooverdam.1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_oldworldwall exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_mojavehero
@@ -2372,13 +3073,20 @@ focus_tree = {
 		x = 9
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mojavehero entered"
+			}
 			add_ideas = aaronkimball
 			add_popularity = {
 				ideology = people
 				popularity = 0.1
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mojavehero exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_protege
@@ -2393,6 +3101,10 @@ focus_tree = {
 			has_tech = power_armour
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_protege entered"
+			}
 			create_corps_commander = {
 				name = "General Lee Oliver"
 				portrait_path = "gfx/leaders/NCR/Portrait_Oliver.dds"
@@ -2405,8 +3117,11 @@ focus_tree = {
 				logistics_skill = 2
 			}
 			unlock_decision_tooltip = NCR_protege_focus
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_protege exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_damassault
@@ -2429,9 +3144,16 @@ focus_tree = {
 		x = 9
 		y = 13
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_damassault entered"
+			}
 			country_event = { id = hooverdam.11 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_damassault exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_longmarch
@@ -2451,6 +3173,10 @@ focus_tree = {
 		x = 10
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_longmarch entered"
+			}
 			add_stability = -0.1
 			533 = {
 				add_building_construction = {
@@ -2473,9 +3199,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_longmarch exited"
+			}
 		}
-
-
 	}
 	focus = {
 		id = ncr_triumph
@@ -2493,6 +3221,10 @@ focus_tree = {
 		x = 8
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_triumph entered"
+			}
 			add_political_power = 50
 			every_state = {
 				limit = {
@@ -2500,8 +3232,11 @@ focus_tree = {
 				}
 				add_core_of = NCR
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_triumph exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_mojaveforts
@@ -2522,6 +3257,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mojaveforts entered"
+			}
 			every_state = {
 				limit = {
 					is_new_vegas_state = yes
@@ -2559,8 +3298,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mojaveforts exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_powertopeople
@@ -2578,6 +3320,10 @@ focus_tree = {
 			controls_state = 252
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_powertopeople entered"
+			}
 			252 = {
 				add_resource = {
 					type = electricity
@@ -2598,8 +3344,11 @@ focus_tree = {
 					amount = 5
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_powertopeople exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_hardline
@@ -2622,9 +3371,17 @@ focus_tree = {
 		x = 9
 		y = 17
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_hardline entered"
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = CES
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_hardline exited"
 			}
 		}
 	}
@@ -2641,9 +3398,16 @@ focus_tree = {
 		x = 10
 		y = 15
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_urbandraft entered"
+			}
 			add_ideas = urbandraft
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_urbandraft exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_heavytroops
@@ -2658,10 +3422,17 @@ focus_tree = {
 		x = 10
 		y = 16
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_heavytroops entered"
+			}
 			add_ideas = heavytroops
 			unlock_decision_tooltip = NCR_heavytroops_focus
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_heavytroops exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_armament
@@ -2676,6 +3447,10 @@ focus_tree = {
 			controls_state = 253
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_armament entered"
+			}
 			253 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2683,8 +3458,11 @@ focus_tree = {
 					level = 2
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_armament exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_bazaar
@@ -2699,6 +3477,10 @@ focus_tree = {
 			controls_state = 253
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bazaar entered"
+			}
 			253 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2710,8 +3492,11 @@ focus_tree = {
 					level = 1
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_bazaar exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_powerplant
@@ -2726,14 +3511,21 @@ focus_tree = {
 			controls_state = 253
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_powerplant entered"
+			}
 			253 = {
 				add_resource = {
 					type = electricity
 					amount = 24
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_powerplant exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_beacon
@@ -2751,14 +3543,21 @@ focus_tree = {
 		x = 16
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_beacon entered"
+			}
 			add_war_support = 0.03
 			add_stability = 0.03
 			swap_ideas = {
 				add_idea = civilian_economy
 				remove_idea = undisturbed_isolation
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_beacon exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_thepeople
@@ -2773,10 +3572,17 @@ focus_tree = {
 			controls_state = 63
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_thepeople entered"
+			}
 			add_political_power = 50
 			country_event = { id = nf_ncr.21 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_thepeople exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_thirteen
@@ -2791,6 +3597,10 @@ focus_tree = {
 			controls_state = 63
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_thirteen entered"
+			}
 			63 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -2807,6 +3617,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_thirteen exited"
+			}
 		}
 	}
 	focus = {
@@ -2822,6 +3636,10 @@ focus_tree = {
 			controls_state = 63
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_militport entered"
+			}
 			63 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2829,6 +3647,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_militport exited"
 			}
 		}
 	}
@@ -2845,10 +3667,19 @@ focus_tree = {
 			controls_state = 63
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] {
+ entered"
+			}
 			custom_effect_tooltip = load_seabear
 			hidden_effect = { load_oob = seabear }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] {
+ exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_dayglowprospers
@@ -2863,14 +3694,21 @@ focus_tree = {
 			controls_state = 63
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_dayglowprospers entered"
+			}
 			add_tech_bonus = {
 				name = industrial_bonus
 				bonus = 0.5
 				uses = 2
 				category = industry
-			}	
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_dayglowprospers exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_scavunion
@@ -2882,9 +3720,16 @@ focus_tree = {
 		x = 14
 		y = 13
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_scavunion entered"
+			}
 			add_ideas = scavunion
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_scavunion exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_migration
@@ -2896,9 +3741,16 @@ focus_tree = {
 		x = 12
 		y = 13
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_migration entered"
+			}
 			country_event = { id = nf_ncr.22 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_migration exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_supermutants
@@ -2910,9 +3762,16 @@ focus_tree = {
 		x = 12
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_supermutants entered"
+			}
 			country_event = { id = nf_ncr.23 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_supermutants exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_flyingbears
@@ -2924,9 +3783,16 @@ focus_tree = {
 		x = 21
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_flyingbears entered"
+			}
 			add_ideas = flyingbears
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_flyingbears exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_hub
@@ -2941,6 +3807,10 @@ focus_tree = {
 			controls_state = 1
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_hub entered"
+			}
 			1 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2954,8 +3824,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_hub exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_crimsoncaravan
@@ -2967,9 +3840,16 @@ focus_tree = {
 		x = 24
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_crimsoncaravan entered"
+			}
 			#Briar literally never said what this does why would you do this to me dude
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_crimsoncaravan exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_hubcrime
@@ -2984,9 +3864,16 @@ focus_tree = {
 		x = 24
 		y = 13
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_hubcrime entered"
+			}
 			country_event = { id = nf_ncr.24 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_hubcrime exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_richroad
@@ -3005,6 +3892,10 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_richroad entered"
+			}
 			if = {
 				limit = {
 					controls_state = 1
@@ -3041,8 +3932,11 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_richroad exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_mechcore
@@ -3054,11 +3948,17 @@ focus_tree = {
 		x = 37
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mechcore entered"
+			}
 			add_equipment_to_stockpile = { type = truck_equipment_1 amount = 20 producer = NCR }
-			
 			add_ideas = mechcore
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_mechcore exited"
+			}
 		}
-
 	}
 	focus = {
 		id = ncr_shock
@@ -3070,12 +3970,17 @@ focus_tree = {
 		x = 37
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_shock entered"
+			}
 			add_equipment_to_stockpile = { type = apc_equipment_1 amount = 20 producer = NCR }
-			
 			add_ideas = shockcomp
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_shock exited"
+			}
 		}
-
-
 	}
 	focus = {
 		id = ncr_rapid
@@ -3087,8 +3992,15 @@ focus_tree = {
 		x = 37
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rapid entered"
+			}
 			add_ideas = rapidadvance
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncr_rapid exited"
+			}
 		}
-
 	}
 }

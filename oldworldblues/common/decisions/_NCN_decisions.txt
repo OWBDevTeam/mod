@@ -86,6 +86,10 @@ ncn_conversion = {
 		}
 
 		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncn_slow_conversion (decision) remove entered"
+			}
 			FROM = {
 				random_owned_state = {
 					limit = {
@@ -103,6 +107,10 @@ ncn_conversion = {
 					custom_effect_tooltip = ncn_converted_state_tt
 				}
 				#country_event = { id = }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncn_slow_conversion (decision) remove exited"
 			}
 		}
 	}
@@ -179,6 +187,10 @@ ncn_conversion = {
 
 		remove_effect = {
 			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncn_bind_to_us (decision) remove entered"
+			}
+			if = {
 				limit = {
 					FROM = { is_ai = no }
 				}
@@ -189,6 +201,10 @@ ncn_conversion = {
 					FROM = { is_ai = yes }
 				}
 				puppet = FROM
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncn_bind_to_us (decision) remove exited"
 			}
 		}
 	}

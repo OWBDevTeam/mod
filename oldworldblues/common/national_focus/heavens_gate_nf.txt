@@ -12,19 +12,27 @@ focus_tree = {
 
 	focus = {
 		id = hea_nf_precursers
-		icon = GFX_goal_hea_precursers
+		icon = GFX_goal_HEA_focus_precursers
 		cost = 1.00
 		x = 14
 		y = 0
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_precursers entered"
+			}
 			country_event = { id = nf_event_hea.1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_precursers exited"
+			}
 		}
 	}
 
 	focus = {
 		id = hea_nf_pilgrims
-		icon = GFX_goal_hea_pilgrims
+		icon = GFX_goal_HEA_focus_pilgrims
 		cost = 1.00
 		x = 14
 		y = 1
@@ -34,13 +42,21 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_pilgrims entered"
+			}
 			country_event = { id = nf_event_hea.2 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_pilgrims exited"
+			}
 		}
 	}
 
 	focus = {
 		id = hea_nf_tribals
-		icon = GFX_goal_hea_tribals
+		icon = GFX_goal_HEA_focus_tribals
 		cost = 1.00
 		x = 14
 		y = 2
@@ -50,13 +66,21 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_tribals entered"
+			}
 			country_event = { id = nf_event_hea.3 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_tribals exited"
+			}
 		}
 	}
 
 	focus = {
 		id = hea_nf_innocence_lost
-		icon = GFX_goal_generic_building_focus
+		icon = GFX_goal_HEA_focus_innocence_lost
 		cost = 1.00
 		x = 14
 		y = 3
@@ -66,13 +90,21 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_innocence_lost entered"
+			}
 			country_event = { id = nf_event_hea.4 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_innocence_lost exited"
+			}
 		}
 	}
 
 	focus = {
 		id = hea_nf_pol_action
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_goal_HEA_focus_political_action
 		cost = 8.6
 		x = 19
 		y = 4
@@ -82,7 +114,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_pol_action entered"
+			}
 			add_political_power = 75
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_pol_action exited"
+			}
 		}
 	}
 
@@ -110,10 +150,18 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embrace_elite entered"
+			}
 			swap_ideas = {
 				add_idea = hea_theocratic_elite_good
 				remove_idea = hea_theocratic_elite
-		   }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embrace_elite exited"
+			}
 		}
 	}
 
@@ -129,16 +177,24 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embrace_elite_1 entered"
+			}
 			swap_ideas = {
 				add_idea = hea_theocratic_elite_good_1
 				remove_idea = hea_theocratic_elite_good
-		   }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embrace_elite_1 exited"
+			}
 		}
 	}
 
 	focus = {
 		id = hea_nf_reject_elite
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_goal_HEA_focus_the_prophet_prevails
 		cost = 8.6
 		x = 20
 		y = 5
@@ -160,16 +216,24 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_reject_elite entered"
+			}
 			swap_ideas = {
 				add_idea = hea_theocratic_elite_contested
 				remove_idea = hea_theocratic_elite
-		   }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_reject_elite exited"
+			}
 		}
 	}
 
 	focus = {
 		id = hea_nf_reject_elite_1
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_goal_HEA_focus_archangel_rises
 		cost = 8.6
 		x = 20
 		y = 6
@@ -179,11 +243,19 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_reject_elite_1 entered"
+			}
 			add_ideas = hea_one_prophet
 			swap_ideas = {
 				add_idea = hea_theocratic_elite_marginalized
 				remove_idea = hea_theocratic_elite_contested
-		   }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_reject_elite_1 exited"
+			}
 		}
 	}
 
@@ -200,8 +272,16 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_consolidate_pol entered"
+			}
 			remove_ideas = hea_divided_leadership
 			add_political_power = 50
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_consolidate_pol exited"
+			}
 		}
 	}
 
@@ -217,7 +297,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_grand_cathedral entered"
+			}
 			add_ideas = hea_grand_cathedral
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_grand_cathedral exited"
+			}
 		}
 	}
 
@@ -233,7 +321,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_innocence_lost_deal entered"
+			}
 			add_political_power = 75
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_innocence_lost_deal exited"
+			}
 		}
 	}
 
@@ -253,7 +349,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_forgive_sins entered"
+			}
 			add_manpower = 500
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_forgive_sins exited"
+			}
 		}
 	}
 
@@ -269,16 +373,24 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_fog_of_mercy entered"
+			}
 			swap_ideas = {
 				add_idea = hea_innocence_lost_idea_lessend
 				remove_idea = hea_innocence_lost_idea
-		   }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_fog_of_mercy exited"
+			}
 		}
 	}
 
 	focus = {
 		id = hea_nf_vengance
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_goal_HEA_focus_an_eye_for_an_eye
 		cost = 8.6
 		x = 19
 		y = 11
@@ -292,16 +404,24 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_vengance entered"
+			}
 			swap_ideas = {
 				add_idea = hea_rampant_militarism
 				remove_idea = hea_innocence_lost_idea
-		   }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_vengance exited"
+			}
 		}
 	}
 
 	focus = {
 		id = hea_nf_boilers_of_justice
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_goal_HEA_focus_boilers_of_justice
 		cost = 8.6
 		x = 19
 		y = 12
@@ -311,15 +431,22 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_boilers_of_justice entered"
+			}
 			add_ideas = hea_boilers_of_justice
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_boilers_of_justice exited"
+			}
 		}
 	}
-
 
 	# militarism fix
 	focus = {
 		id = hea_nf_addres_militarism
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_goal_HEA_focus_addres_militarism
 		cost = 8.6
 		x = 24
 		y = 10
@@ -330,7 +457,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_addres_militarism entered"
+			}
 			add_political_power = 75
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_addres_militarism exited"
+			}
 		}
 	}
 
@@ -350,10 +485,18 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embrace_militarism entered"
+			}
 			swap_ideas = {
 				add_idea = hea_rampant_militarism_1
 				remove_idea = hea_rampant_militarism
-		   }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embrace_militarism exited"
+			}
 		}
 	}
 
@@ -369,10 +512,18 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embrace_militarism_1 entered"
+			}
 			swap_ideas = {
 				add_idea = hea_rampant_militarism_2
 				remove_idea = hea_rampant_militarism_1
-		   }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embrace_militarism_1 exited"
+			}
 		}
 	}
 
@@ -392,10 +543,18 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_fight_militarism entered"
+			}
 			swap_ideas = {
 				add_idea = hea_reconcilliation
 				remove_idea = hea_rampant_militarism
-		   }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_fight_militarism exited"
+			}
 		}
 	}
 
@@ -411,16 +570,24 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_fight_militarism_1 entered"
+			}
 			swap_ideas = {
 				add_idea = hea_reconcilliation_1
 				remove_idea = hea_reconcilliation
-		   }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_fight_militarism_1 exited"
+			}
 		}
 	}
 
 	focus = {
 		id = hea_nf_army
-		icon = GFX_focus_hun_assassinate_horthy
+		icon = GFX_goal_HEA_focus_evolution_of_the_guard
 		cost = 8.6
 		x = 3
 		y = 4
@@ -430,6 +597,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_army entered"
+			}
 			add_tech_bonus = {
 				name = land_doc_bonus
 				bonus = 0.5
@@ -440,7 +611,11 @@ focus_tree = {
 				name = air_bonus
 				bonus = 0.5
 				uses = 1
-				category =  air_doctrine
+				category = air_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_army exited"
 			}
 		}
 	}
@@ -457,6 +632,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_army_1 entered"
+			}
 			army_experience = 20
 			add_tech_bonus = {
 				name = land_doc_bonus
@@ -464,7 +643,10 @@ focus_tree = {
 				uses = 1
 				category = land_doctrine
 			}
-
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_army_1 exited"
+			}
 		}
 	}
 
@@ -483,7 +665,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_conscription entered"
+			}
 			add_ideas = hea_conscription
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_conscription exited"
+			}
 		}
 	}
 
@@ -502,7 +692,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_crusaders entered"
+			}
 			add_ideas = hea_crusaders
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_crusaders exited"
+			}
 		}
 	}
 
@@ -519,11 +717,19 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_army_2 entered"
+			}
 			add_tech_bonus = {
 				name = land_doc_bonus
 				bonus = 0.5
 				uses = 2
 				category = land_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_army_2 exited"
 			}
 		}
 	}
@@ -540,12 +746,20 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_air entered"
+			}
 			air_experience = 20
 			add_tech_bonus = {
 				name = air_bonus
 				bonus = 0.5
 				uses = 1
-				category =  air_equipment
+				category = air_equipment
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_air exited"
 			}
 		}
 	}
@@ -570,7 +784,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_air_knight entered"
+			}
 			add_ideas = hea_air_knight
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_air_knight exited"
+			}
 		}
 	}
 
@@ -594,7 +816,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_air_peasant entered"
+			}
 			add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 30 producer = HEA }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_air_peasant exited"
+			}
 		}
 	}
 
@@ -611,11 +841,19 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_air_1 entered"
+			}
 			add_tech_bonus = {
 				name = air_bonus
 				bonus = 0.5
 				uses = 1
-				category =  air_doctrine
+				category = air_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_air_1 exited"
 			}
 		}
 	}
@@ -635,7 +873,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_missionary_warriors entered"
+			}
 			add_ideas = hea_general_staff
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_missionary_warriors exited"
+			}
 		}
 	}
 
@@ -651,7 +897,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_officer_priests entered"
+			}
 			add_ideas = hea_mobility
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_officer_priests exited"
+			}
 		}
 	}
 
@@ -667,11 +921,19 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_community_service entered"
+			}
 			every_owned_state = {
-			       limit = {
-				is_core_of = HEA
+				limit = {
+					is_core_of = HEA
 				}
 				add_extra_state_shared_building_slots = 2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_community_service exited"
 			}
 		}
 	}
@@ -688,10 +950,13 @@ focus_tree = {
 		}
 
 		completion_reward = {
-
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_path_of_steam entered"
+			}
 			every_owned_state = {
-			       limit = {
-				is_core_of = HEA
+				limit = {
+					is_core_of = HEA
 				}
 				add_building_construction = {
 					type = infrastructure
@@ -699,7 +964,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_path_of_steam exited"
+			}
 		}
 	}
 
@@ -715,8 +983,16 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_school_of_steam entered"
+			}
 			add_research_slot = 1
 			add_ideas = hea_school_of_steam
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_school_of_steam exited"
+			}
 		}
 	}
 
@@ -732,11 +1008,19 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_school_of_steam_industry entered"
+			}
 			add_tech_bonus = {
 				name = industrial_bonus
 				bonus = 0.15
 				uses = 3
 				category = industry
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_school_of_steam_industry exited"
 			}
 		}
 	}
@@ -753,11 +1037,19 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_school_of_steam_motorisation entered"
+			}
 			add_tech_bonus = {
 				name = motorized_bonus
 				bonus = 0.15
 				uses = 3
 				category = motorized_equipment
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_school_of_steam_motorisation exited"
 			}
 		}
 	}
@@ -774,11 +1066,19 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_school_of_steam_aviation entered"
+			}
 			add_tech_bonus = {
 				name = air_bonus
 				bonus = 0.15
 				uses = 3
 				category = air_equipment
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_school_of_steam_aviation exited"
 			}
 		}
 	}
@@ -801,20 +1101,26 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_machines_of_steam entered"
+			}
 			add_tech_bonus = {
 				name = industrial_bonus
 				bonus = 0.5
 				uses = 1
 				category = tank_tech
 			}
-
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_machines_of_steam exited"
+			}
 		}
 	}
 
-
 	focus = {
 		id = hea_nf_men_of_steam
-		icon = GFX_focus_hun_assassinate_horthy
+		icon = GFX_goal_HEA_focus_steam_power_armor
 		cost = 8.6
 		x = 10
 		y = 11
@@ -830,13 +1136,20 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_men_of_steam entered"
+			}
 			add_tech_bonus = {
 				name = industrial_bonus
 				bonus = 0.5
 				uses = 1
 				category = power_armor_tech
 			}
-
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_men_of_steam exited"
+			}
 		}
 	}
 
@@ -853,16 +1166,24 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_age_of_steam entered"
+			}
 			swap_ideas = {
 				add_idea = hea_age_of_steam_idea
 				remove_idea = hea_steam_power
-		   }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_age_of_steam exited"
+			}
 		}
 	}
 
 	focus = {
 		id = hea_nf_industry
-		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		icon = GFX_goal_HEA_focus_developing_the_gate
 		cost = 8.6
 		x = 14
 		y = 4
@@ -870,15 +1191,26 @@ focus_tree = {
 		prerequisite = {
 			focus = hea_nf_innocence_lost
 		}
+		available = {
+			116 = { is_owned_and_controlled_by = HEA }
+		}
 
 		completion_reward = {
-			116 = 	{
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry entered"
+			}
+			116 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry exited"
 			}
 		}
 	}
@@ -896,15 +1228,26 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = hea_nf_industry_mil_1
 		}
+		available = {
+			52 = { is_owned_and_controlled_by = HEA }
+		}
 
 		completion_reward = {
-			52 = 	{
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_1 entered"
+			}
+			52 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_1 exited"
 			}
 		}
 	}
@@ -923,15 +1266,26 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = hea_nf_industry_mil_2
 		}
+		available = {
+			278 = { is_owned_and_controlled_by = HEA }
+		}
 
 		completion_reward = {
-			278 = 	{
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_2 entered"
+			}
+			278 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_2 exited"
 			}
 		}
 	}
@@ -950,15 +1304,26 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = hea_nf_industry_mil_3
 		}
+		available = {
+			18 = { is_owned_and_controlled_by =  HEA }
+		}
 
 		completion_reward = {
-			18 = 	{
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_3 entered"
+			}
+			18 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_3 exited"
 			}
 		}
 	}
@@ -977,15 +1342,26 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = hea_nf_industry_mil_4
 		}
+		available = {
+			379 = { is_owned_and_controlled_by = HEA }
+		}
 
 		completion_reward = {
-			379 = 	{
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_4 entered"
+			}
+			379 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_4 exited"
 			}
 		}
 	}
@@ -1003,15 +1379,26 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = hea_nf_industry_1
 		}
+		available = {
+			52 = { is_owned_and_controlled_by = HEA }
+		}
 
 		completion_reward = {
-			52 = 	{
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_mil_1 entered"
+			}
+			52 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_mil_1 exited"
 			}
 		}
 	}
@@ -1030,15 +1417,26 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = hea_nf_industry_2
 		}
+		available = {
+			278 = { is_owned_and_controlled_by = HEA }
+		}
 
 		completion_reward = {
-			278 = 	{
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_mil_2 entered"
+			}
+			278 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_mil_2 exited"
 			}
 		}
 	}
@@ -1057,15 +1455,26 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = hea_nf_industry_3
 		}
+		available = {
+			18 = { is_owned_and_controlled_by = HEA }
+		}
 
 		completion_reward = {
-			18 = 	{
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_mil_3 entered"
+			}
+			18 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_mil_3 exited"
 			}
 		}
 	}
@@ -1084,9 +1493,16 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = hea_nf_industry_4
 		}
+		available = {
+			379 = { is_owned_and_controlled_by = HEA }
+		}
 
 		completion_reward = {
-			379 = 	{
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_mil_4 entered"
+			}
+			379 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -1094,12 +1510,16 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_mil_4 exited"
+			}
 		}
 	}
 
 	focus = {
 		id = hea_nf_industry_5
-		icon = GFX_focus_hun_assassinate_horthy
+		icon = GFX_goal_HEA_focus_rebirth_of_the_gate
 		cost = 17.2
 		x = 14
 		y = 10
@@ -1108,9 +1528,16 @@ focus_tree = {
 			focus = hea_nf_industry_mil_4
 			focus = hea_nf_industry_4
 		}
+		available = {
+			116 = { is_owned_and_controlled_by = HEA }
+		}
 
 		completion_reward = {
-			116 = 	{
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_5 entered"
+			}
+			116 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
@@ -1123,10 +1550,12 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_industry_5 exited"
+			}
 		}
 	}
-
-
 
 	focus = {
 		id = hea_nf_foreign_ministry
@@ -1144,7 +1573,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_foreign_ministry entered"
+			}
 			add_political_power = 75
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_foreign_ministry exited"
+			}
 		}
 	}
 
@@ -1167,11 +1604,19 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embassy_murtaugh entered"
+			}
 			MUR = {
 				add_opinion_modifier = { target = HEA modifier = hea_has_embassy }
 			}
 			IRE = {
 				add_opinion_modifier = { target = HEA modifier = hea_enemy_embassy }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embassy_murtaugh exited"
 			}
 		}
 	}
@@ -1192,7 +1637,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_defensive_league entered"
+			}
 			country_event = { id = nf_event_hea.6 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_defensive_league exited"
+			}
 		}
 	}
 
@@ -1212,11 +1665,43 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			create_wargoal = {
-			type = annex_everything
-			target = IRE
-		}
-
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_strike_ires entered"
+			}
+			if = {
+				limit = { IRE = { exists = yes } }
+				create_wargoal = {
+					type = annex_everything
+					target = IRE
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						is_core_of = IRE
+						NOT = { is_controlled_by = IRE }
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = IRE
+						}
+						NOT = { tag = ROOT }
+					}
+					ROOT = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+						}
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_strike_ires exited"
+			}
 		}
 	}
 
@@ -1239,13 +1724,20 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embassy_ires entered"
+			}
 			IRE = {
 				add_opinion_modifier = { target = HEA modifier = hea_has_embassy }
 			}
 			MUR = {
 				add_opinion_modifier = { target = HEA modifier = hea_enemy_embassy }
 			}
-
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_embassy_ires exited"
+			}
 		}
 	}
 
@@ -1265,7 +1757,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_defensive_pact entered"
+			}
 			country_event = { id = nf_event_hea.7 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_defensive_pact exited"
+			}
 		}
 	}
 
@@ -1285,9 +1785,42 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = MUR
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_strike_murtaugh entered"
+			}
+			if = {
+				limit = { MUR = { exists = yes } }
+				create_wargoal = {
+					type = annex_everything
+					target = MUR
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						is_core_of = MUR
+						NOT = { is_controlled_by = MUR }
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = MUR
+						}
+						NOT = { tag = ROOT }
+					}
+					ROOT = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+						}
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_nf_strike_murtaugh exited"
 			}
 		}
 	}

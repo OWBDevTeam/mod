@@ -15,3 +15,21 @@ brk_vic_raid_available = {
 	}
 	NOT = { has_non_aggression_pact_with = VIC }
 }
+
+is_BRK_revolt_effect_valid_country = {
+	AND = {
+		NOT = { is_in_faction_with = BRK }
+		NOT = { is_puppet_of = BRK }
+		NOT = { is_subject_of = BRK }
+		OR = {
+			original_tag = DRE
+			original_tag = KAM
+			original_tag = WHI
+			original_tag = BEL
+			original_tag = VIC
+			original_tag = HAI
+			original_tag = TOC
+			original_tag = PMR
+		}
+	}
+}
