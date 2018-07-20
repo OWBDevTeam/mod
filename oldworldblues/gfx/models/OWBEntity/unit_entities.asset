@@ -2486,17 +2486,17 @@ entity = {
 
 	state = { name = "attack"			animation = "move" chance = 1 looping = no next_state = "shoot" animation_blend_time = 0.2 propagate_state = { machine_gun = "idle" } propagate_state = { grenade = "idle" }
 	}
-	state = { name = "attack"			animation = "move" chance = 2 looping = no next_state = "attack" animation_blend_time = 0.0 propagate_state = { machine_gun = "idle" } propagate_state = { grenade = "idle" }
+	state = { name = "attack"			animation = "move" chance = 3 looping = no next_state = "attack" animation_blend_time = 0.0 propagate_state = { machine_gun = "idle" } propagate_state = { grenade = "idle" }
 
 	}
-	state = { name = "shoot"			animation = "attack" chance = 2 looping = no next_state = "attack" animation_blend_time = 0.0
+	state = { name = "shoot"			animation = "attack" looping = no next_state = "attack" animation_blend_time = 0.0
 
 	}
 	state = { name = "defend"			animation = "defend" 			animation_blend_time = 0.0  animation_speed = 1.0
-
+			propagate_state = { grenade = "idle" }
 	}
 	state = { name = "support_attack"	animation = "support" 	animation_blend_time = 0.0 animation_speed = 1.0
-
+			propagate_state = { machine_gun = "idle" }
 	}
 
 	state = { name = "move"				animation = "move" 		 		animation_blend_time = 0.2 animation_speed = 1.0 propagate_state = { grenade = "idle" } propagate_state = { machine_gun = "idle" } }
@@ -2517,8 +2517,8 @@ entity = {
 	locator = { name = muzzle position = { 0 0 0 } }
 	get_state_from_parent = yes
 	scale = 0.4
-	default_state = idle
-	state = {name = "idle "}
+	default_state = "idle"
+	state = { name = "idle" }
 	state = { name = "shoot"
 		event = { time = 0.73 node = "muzzle"  particle = "rifle_muzzle_particle" light = "mg_muzzle_flash" keep_particle = yes sound = { soundeffect = 10mm_smg_burst } }
 		event = { time = 1.03 node = "muzzle"  particle = "rifle_muzzle_particle" light = "mg_muzzle_flash" keep_particle = yes sound = { soundeffect = 10mm_smg_burst } }
@@ -2538,8 +2538,8 @@ entity = {
 	scale = 0.4
 	locator = { name = muzzle position = { 0 0 0 } }
 	get_state_from_parent = yes
-	default_state = idle
-	state = {name = "idle "}
+	default_state = "idle"
+	state = { name = "idle" }
 	state = { name = "shoot"
 		event = { time = 0.33 node = "muzzle"  particle = "heavy_tank_attack_barrel_particle" light = "mg_muzzle_flash" keep_particle = yes sound = { soundeffect =  owb_heavy_armour_fire } }
 	}
