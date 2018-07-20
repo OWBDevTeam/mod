@@ -2484,16 +2484,13 @@ entity = {
 
 	default_state = "idle"
 
-	state = { name = "attack"			animation = "move" chance = 1 looping = no next_state = "shoot" animation_blend_time = 0.2
+	state = { name = "attack"			animation = "move" chance = 4 looping = no animation_blend_time = 0.0
+		propagate_state = { grenade = "idle" } propagate_state = { machine_gun = "idle" }
 	}
-	state = { name = "attack"			animation = "move" chance = 1 looping = no next_state = "shoot" animation_blend_time = 0.2 propagate_state = { machine_gun = "idle" }
+	state = { name = "attack"			animation = "attack" chance = 1 looping = no next_state = "attack" animation_blend_time = 0.0
+		propagate_state = { grenade = "shoot" } propagate_state = { machine_gun = "shoot" }
 	}
-	state = { name = "attack"			animation = "move" chance = 1 looping = no next_state = "shoot" animation_blend_time = 0.2 propagate_state = { grenade = "idle" }
-	}
-	state = { name = "attack"			animation = "move" chance = 2 looping = no next_state = "attack" animation_blend_time = 0.0 propagate_state = { machine_gun = "idle" } propagate_state = { grenade = "idle" }
-	}
-	state = { name = "shoot"			animation = "attack" looping = no next_state = "attack" animation_blend_time = 0.0
-	}
+	
 	state = { name = "defend"			animation = "defend" 			animation_blend_time = 0.0  animation_speed = 1.0
 			propagate_state = { grenade = "idle" }
 	}
@@ -2522,10 +2519,12 @@ entity = {
 	default_state = "idle"
 	state = { name = "idle" }
 	state = { name = "shoot"
+		looping = no
 		event = { time = 0.73 node = "muzzle"  particle = "rifle_muzzle_particle" light = "mg_muzzle_flash" keep_particle = yes sound = { soundeffect = infantry_mg_attack } }
 		event = { time = 1.03 node = "muzzle"  particle = "rifle_muzzle_particle" light = "mg_muzzle_flash" keep_particle = yes }
 	}
 	state = { name = "defend"
+		looping = no
 		event = { time = 0.33 node = "muzzle"  particle = "rifle_muzzle_particle" light = "mg_muzzle_flash" keep_particle = yes sound = { soundeffect = infantry_mg_attack } }
 		event = { time = 0.63 node = "muzzle"  particle = "rifle_muzzle_particle" light = "mg_muzzle_flash" keep_particle = yes }
 		event = { time = 1.03 node = "muzzle"  particle = "rifle_muzzle_particle" light = "mg_muzzle_flash" keep_particle = yes }
@@ -2543,11 +2542,13 @@ entity = {
 	default_state = "idle"
 	state = { name = "idle" }
 	state = { name = "shoot"
+		looping = no
 		event = { time = 0.33 node = "muzzle"  particle = "heavy_tank_attack_barrel_particle" light = "mg_muzzle_flash" keep_particle = yes sound = { soundeffect =  owb_heavy_armour_fire } }
-	}
+	}	
 	state = { name = "defend"
 	}
 	state = { name = "support_attack"
+		looping = no
 		event = { time = 1.06 node = "muzzle"  particle = "heavy_tank_attack_barrel_particle" light = "mg_muzzle_flash" keep_particle = yes sound = { soundeffect =  owb_heavy_armour_fire } }
 		event = { time = 1.6 node = "muzzle"  particle = "heavy_tank_attack_barrel_particle" light = "mg_muzzle_flash" keep_particle = yes sound = { soundeffect = owb_heavy_armour_fire } }
 	}
