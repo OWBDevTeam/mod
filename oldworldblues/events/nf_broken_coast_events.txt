@@ -315,8 +315,9 @@ country_event = { # BRK - no opposition from target
 	immediate = {
 		hidden_effect = {
 			scavenge_equip_start = yes
-			add_manpower = 50
+			add_manpower = -50
 		}
+		hidden_effect = { BRK = { clr_global_flag = BRK_current_generic_raid } }
 	}
 
 	option = { # Take the spoils
@@ -391,6 +392,7 @@ country_event = { # BRK - we win border conflict
 		FROM.FROM = { save_event_target_as = their_country }
 		FROM.FROM.FROM = { save_event_target_as = their_state }
 		remove_targeted_decision = { target = event_target:their_country decision = border_conflict_time_until_cancelled }
+		hidden_effect = { BRK = { clr_global_flag = BRK_current_generic_raid } }
 	}
 
 	option = { # Nice
@@ -464,6 +466,7 @@ country_event = { # BRK - we lose border conflict
 		FROM.FROM.FROM = { save_event_target_as = their_state }
 		set_country_flag = show_effect_tooltips
 		remove_targeted_decision = { target = event_target:their_country decision = border_conflict_time_until_cancelled }
+		hidden_effect = { BRK = { clr_global_flag = BRK_current_generic_raid } }
 	}
 
 	#Same effect as defender. Tooltip for their effects
@@ -538,6 +541,7 @@ country_event = { # BRK - we cancel the conflict
 		FROM.FROM = { save_event_target_as = their_country }
 		FROM.FROM.FROM = { save_event_target_as = their_state }
 		set_country_flag = show_effect_tooltips
+		hidden_effect = { BRK = { clr_global_flag = BRK_current_generic_raid } }
 	}
 
 	option = {
