@@ -5,13 +5,13 @@ technologies = {
 	@Col_4 = 14
 	@Col_5 = 16
 	@Col_6 = 18
-    @Col_7 = 20
-    @Col_8 = 22
-    @Col_9 = 24
-    @Col_10 = 26
-    @Col_11 = 28
-    @Col_12 = 30
-    @Col_13 = 32
+	@Col_7 = 20
+	@Col_8 = 22
+	@Col_9 = 24
+	@Col_10 = 26
+	@Col_11 = 28
+	@Col_12 = 30
+	@Col_13 = 32
 	@Col_14 = 34
 	@Col_15 = 36
 	@Col_16 = 38
@@ -32,37 +32,37 @@ technologies = {
 
 
 
-    @Row_1 = 0
-    @Row_2 = 2
-    @Row_3 = 4
-    @Row_4 = 6
-    @Row_5 = 8
-    @Row_6 = 10
-    @Row_7 = 12
-    @Row_8 = 14
-    @Row_9 = 16
-    @Row_10 = 18
-    @Row_11 = 20
-    @Row_12 = 22
-    @Row_13 = 24
-    @Row_14 = 26
-    @Row_15 = 28
-    @Row_16 = 30
-    @Row_17 = 32
-    @Row_18 = 34
-    @Row_19 = 36
+	@Row_1 = 0
+	@Row_2 = 2
+	@Row_3 = 4
+	@Row_4 = 6
+	@Row_5 = 8
+	@Row_6 = 10
+	@Row_7 = 12
+	@Row_8 = 14
+	@Row_9 = 16
+	@Row_10 = 18
+	@Row_11 = 20
+	@Row_12 = 22
+	@Row_13 = 24
+	@Row_14 = 26
+	@Row_15 = 28
+	@Row_16 = 30
+	@Row_17 = 32
+	@Row_18 = 34
+	@Row_19 = 36
 
 
 
-    # Scrap Motorcycles
-    bike_tech_1 = {
-        enable_equipments = {
-            motorbike_equipment_1
-        }
+	# Scrap Motorcycles
+	bike_tech_1 = {
+		enable_equipments = {
+			motorbike_equipment_1
+		}
 		enable_subunits = {
-            motorized
-            motorized_support
-        }
+			motorized
+			motorized_support
+		}
 
 		path = {
 			leads_to_tech = bike_tech_2
@@ -74,12 +74,12 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-        dependencies = {
-            settled_civilization = 1
+		dependencies = {
+			settled_civilization = 1
 
-        }
+		}
 
-        on_research_complete = {
+		on_research_complete = {
 			limit = {
 				NOT = {
 					has_template_containing_unit = motorized
@@ -99,7 +99,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 			motorized_equipment
 			bike_tech
 		}
@@ -135,9 +135,9 @@ technologies = {
 			maximum_speed = 0.05
 		}
 
-        dependencies = {
-            settled_civilization = 1
-        }
+		dependencies = {
+			settled_civilization = 1
+		}
 
 		path = {
 			leads_to_tech = tires_vehicle_tech_1
@@ -152,7 +152,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 		}
 
 		ai_will_do = {
@@ -186,9 +186,9 @@ technologies = {
 			maximum_speed = 0.05
 		}
 
-        dependencies = {
-            settled_civilization = 1
-        }
+		dependencies = {
+			settled_civilization = 1
+		}
 
 		path = {
 			leads_to_tech = tracks_vehicle_tech
@@ -208,7 +208,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 		}
 
 		ai_will_do = {
@@ -242,9 +242,9 @@ technologies = {
 			reliability = 0.02
 		}
 
-        dependencies = {
-            settled_civilization = 1
-        }
+		dependencies = {
+			settled_civilization = 1
+		}
 
 		path = {
 			leads_to_tech = tracks_vehicle_tech_1
@@ -259,7 +259,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 		}
 
 		ai_will_do = {
@@ -293,9 +293,9 @@ technologies = {
 			reliability = 0.03
 		}
 
-        dependencies = {
-            settled_civilization = 1
-        }
+		dependencies = {
+			settled_civilization = 1
+		}
 
 		path = {
 			leads_to_tech = tank_tech_1
@@ -310,7 +310,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 		}
 
 		ai_will_do = {
@@ -338,11 +338,11 @@ technologies = {
 		}
 	}
 
-    # Salvaged Motorcycles
-    bike_tech_2 = {
-        enable_equipments = {
-            motorbike_equipment_2
-        }
+	# Salvaged Motorcycles
+	bike_tech_2 = {
+		enable_equipments = {
+			motorbike_equipment_2
+		}
 
 		path = {
 			leads_to_tech = car_tech_1
@@ -354,9 +354,9 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-        dependencies = {
-            settled_civilization = 1
-        }
+		dependencies = {
+			settled_civilization = 1
+		}
 
 		research_cost = 2.0
 		start_year = 2276
@@ -366,7 +366,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 			motorized_equipment
 			bike_tech
 		}
@@ -407,9 +407,9 @@ technologies = {
 			armor_value = 0.05
 		}
 
-        dependencies = {
-            settled_civilization = 1
-        }
+		dependencies = {
+			settled_civilization = 1
+		}
 
 		path = {
 			leads_to_tech = truck_tech_1
@@ -424,7 +424,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 		}
 
 		ai_will_do = {
@@ -432,11 +432,11 @@ technologies = {
 		}
 	}
 
-    # salvaged Car
-    car_tech_1 = {
-        enable_equipments = {
-            car_equipment_1
-        }
+	# salvaged Car
+	car_tech_1 = {
+		enable_equipments = {
+			car_equipment_1
+		}
 
 		path = {
 			leads_to_tech = car_tech_2
@@ -448,10 +448,10 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-        dependencies = {
-            settled_civilization = 1
+		dependencies = {
+			settled_civilization = 1
 
-        }
+		}
 
 		research_cost = 2.0
 		start_year = 2278
@@ -461,7 +461,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 			motorized_equipment
 			car_tech
 		}
@@ -502,9 +502,9 @@ technologies = {
 			maximum_speed = -0.02
 		}
 
-        dependencies = {
-            settled_civilization = 1
-        }
+		dependencies = {
+			settled_civilization = 1
+		}
 
 		research_cost = 2.0
 		start_year = 2279
@@ -514,7 +514,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 		}
 
 		ai_will_do = {
@@ -522,12 +522,12 @@ technologies = {
 		}
 	}
 
-    # wasteland Car
-    car_tech_2 = {
+	# wasteland Car
+	car_tech_2 = {
 
-        enable_equipments = {
-            car_equipment_2
-        }
+		enable_equipments = {
+			car_equipment_2
+		}
 
 		path = {
 			leads_to_tech = car_tech_3
@@ -539,10 +539,10 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-        dependencies = {
-            settled_civilization = 1
+		dependencies = {
+			settled_civilization = 1
 
-        }
+		}
 
 		research_cost = 2.0
 		start_year = 2280
@@ -552,7 +552,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 			motorized_equipment
 			car_tech
 		}
@@ -593,9 +593,9 @@ technologies = {
 			reliability = -0.05
 		}
 
-        dependencies = {
-            settled_civilization = 1
-        }
+		dependencies = {
+			settled_civilization = 1
+		}
 
 		research_cost = 2.0
 		start_year = 2281
@@ -605,7 +605,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 		}
 
 		ai_will_do = {
@@ -613,16 +613,16 @@ technologies = {
 		}
 	}
 
-    # military Car
-    car_tech_3 = {
-        enable_equipments = {
-            car_equipment_3
-        }
+	# military Car
+	car_tech_3 = {
+		enable_equipments = {
+			car_equipment_3
+		}
 
-        dependencies = {
-            scientific_civilization = 1
+		dependencies = {
+			scientific_civilization = 1
 
-        }
+		}
 
 		path = {
 			leads_to_tech = armoured_vehicle_tech
@@ -642,7 +642,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 			motorized_equipment
 			car_tech
 		}
@@ -683,9 +683,9 @@ technologies = {
 			default_morale = 0.05
 		}
 
-        dependencies = {
-            scientific_civilization = 1
-        }
+		dependencies = {
+			scientific_civilization = 1
+		}
 
 		research_cost = 2.0
 		start_year = 2283
@@ -695,7 +695,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 		}
 
 		ai_will_do = {
@@ -711,9 +711,9 @@ technologies = {
 			armor_value = 0.05
 		}
 
-        dependencies = {
-            scientific_civilization = 1
-        }
+		dependencies = {
+			scientific_civilization = 1
+		}
 
 		research_cost = 2.0
 		start_year = 2284
@@ -723,7 +723,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 		}
 
 		ai_will_do = {
@@ -731,22 +731,22 @@ technologies = {
 		}
 	}
 
-    # Scrap Truck
-    truck_tech_1 = {
-        enable_equipments = {
-            truck_equipment_1
-        }
+	# Scrap Truck
+	truck_tech_1 = {
+		enable_equipments = {
+			truck_equipment_1
+		}
 
 		enable_subunits = {
-            apc
-        }
+			apc
+		}
 
-        dependencies = {
-            settled_civilization = 1
-            bike_tech_2 = 1
-        }
+		dependencies = {
+			settled_civilization = 1
+			bike_tech_2 = 1
+		}
 
-        path = {
+		path = {
 			leads_to_tech = truck_tech_2
 			research_cost_coeff = 1
 		}
@@ -756,7 +756,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-        on_research_complete = {
+		on_research_complete = {
 			limit = {
 				NOT = {
 					has_template_containing_unit = apc
@@ -776,7 +776,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 			motorized_equipment
 			truck_tech
 		}
@@ -812,9 +812,9 @@ technologies = {
 			supply_consumption = -0.02
 		}
 
-        dependencies = {
-            settled_civilization = 1
-        }
+		dependencies = {
+			settled_civilization = 1
+		}
 
 		research_cost = 2.0
 		start_year = 2278
@@ -824,7 +824,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 		}
 
 		ai_will_do = {
@@ -832,16 +832,16 @@ technologies = {
 		}
 	}
 
-    # Salvaged Truck
-    truck_tech_2 = {
-        enable_equipments = {
-            truck_equipment_2
-        }
+	# Salvaged Truck
+	truck_tech_2 = {
+		enable_equipments = {
+			truck_equipment_2
+		}
 
-        dependencies = {
-            settled_civilization = 1
+		dependencies = {
+			settled_civilization = 1
 
-        }
+		}
 
 		path = {
 			leads_to_tech = apc_tech_1
@@ -861,7 +861,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 			motorized_equipment
 			truck_tech
 		}
@@ -902,9 +902,9 @@ technologies = {
 			reliability = -0.1
 		}
 
-        dependencies = {
-            settled_civilization = 1
-        }
+		dependencies = {
+			settled_civilization = 1
+		}
 
 		research_cost = 2.0
 		start_year = 2280
@@ -914,7 +914,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 		}
 
 		ai_will_do = {
@@ -922,18 +922,18 @@ technologies = {
 		}
 	}
 
-    # Salvaged APC
-    apc_tech_1 = {
-        enable_equipments = {
-            apc_equipment_1
-        }
+	# Salvaged APC
+	apc_tech_1 = {
+		 enable_equipments = {
+			apc_equipment_1
+		}
 
-        dependencies = {
-            settled_civilization = 1
+		dependencies = {
+			settled_civilization = 1
 
-        }
+		}
 
-        path = {
+		path = {
 			leads_to_tech = apc_tech_2
 			research_cost_coeff = 1
 		}
@@ -951,7 +951,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 			motorized_equipment
 			apc_tech
 		}
@@ -981,18 +981,18 @@ technologies = {
 		}
 	}
 
-    # Wasteland APC
-    apc_tech_2 = {
-        enable_equipments = {
-            apc_equipment_2
-        }
+	# Wasteland APC
+	apc_tech_2 = {
+		 enable_equipments = {
+			apc_equipment_2
+		}
 
-        dependencies = {
-            scientific_civilization = 1
+		dependencies = {
+			scientific_civilization = 1
 
-        }
+		}
 
-        path = {
+		path = {
 			leads_to_tech = apc_tech_3
 			research_cost_coeff = 1
 		}
@@ -1010,7 +1010,7 @@ technologies = {
 		}
 
 		categories = {
-            		vehicle_tech
+					vehicle_tech
 			motorized_equipment
 			apc_tech
 		}
@@ -1048,9 +1048,9 @@ technologies = {
 			hard_attack = 0.05
 		}
 
-        dependencies = {
-            scientific_civilization = 1
-        }
+		dependencies = {
+			scientific_civilization = 1
+		}
 
 		research_cost = 2.0
 		start_year = 2284
@@ -1060,7 +1060,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 		}
 
 		ai_will_do = {
@@ -1068,18 +1068,18 @@ technologies = {
 		}
 	}
 
-    # Great War APC
-    apc_tech_3 = {
-        enable_equipments = {
-            apc_equipment_3
-        }
+	# Great War APC
+	apc_tech_3 = {
+		enable_equipments = {
+			apc_equipment_3
+		}
 
-        dependencies = {
-            scientific_civilization = 1
+		dependencies = {
+			scientific_civilization = 1
 
-        }
+		}
 
-        path = {
+		path = {
 			leads_to_tech = apc_tech_3
 			research_cost_coeff = 1
 		}
@@ -1097,7 +1097,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 			motorized_equipment
 			apc_tech
 		}
@@ -1136,9 +1136,9 @@ technologies = {
 			reliability = 0.1
 		}
 
-        dependencies = {
-            scientific_civilization = 1
-        }
+		dependencies = {
+			scientific_civilization = 1
+		}
 
 		research_cost = 2.0
 		start_year = 2286
@@ -1148,7 +1148,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 		}
 
 		ai_will_do = {
@@ -1157,25 +1157,25 @@ technologies = {
 	}
 
 	# Scrap Tank
-    tank_tech_1 = {
+	tank_tech_1 = {
 		enable_subunits = {
-            tank
-        }
-        enable_equipments = {
-            tank_equipment_1
-        }
+			tank
+		}
+		enable_equipments = {
+			tank_equipment_1
+		}
 
-        path = {
+		path = {
 			leads_to_tech = tank_tech_2
 			research_cost_coeff = 1
 		}
-        dependencies = {
-            settled_civilization = 1
-            tracks_vehicle_tech_1 = 1
+		dependencies = {
+			settled_civilization = 1
+			tracks_vehicle_tech_1 = 1
 			apc_tech_1 = 1
-        }
+		}
 
-        on_research_complete = {
+		on_research_complete = {
 			limit = {
 				NOT = {
 					has_template_containing_unit = tank
@@ -1195,7 +1195,7 @@ technologies = {
 		}
 
 		categories = {
-            vehicle_tech
+			vehicle_tech
 			motorized_equipment
 			tank_tech
 		}
@@ -1225,18 +1225,18 @@ technologies = {
 		}
 	}
 
-    # Wasteland Tank
-    tank_tech_2 = {
-        enable_equipments = {
-            tank_equipment_2
-        }
+	# Wasteland Tank
+	tank_tech_2 = {
+		enable_equipments = {
+			tank_equipment_2
+		}
 
-        dependencies = {
-            scientific_civilization = 1
+		dependencies = {
+			scientific_civilization = 1
 
-        }
+		}
 
-        path = {
+		path = {
 			leads_to_tech = tank_tech_3
 			research_cost_coeff = 1
 		}
@@ -1249,7 +1249,7 @@ technologies = {
 		}
 
 		categories = {
-            		vehicle_tech
+					vehicle_tech
 			motorized_equipment
 			tank_tech
 		}
@@ -1279,14 +1279,14 @@ technologies = {
 		}
 	}
 
-    # Great War Tank
-    tank_tech_3 = {
-        enable_equipments = {
-            tank_equipment_3
-        }
-        dependencies = {
-            scientific_civilization = 1
-        }
+	# Great War Tank
+	tank_tech_3 = {
+		enable_equipments = {
+			tank_equipment_3
+		}
+		dependencies = {
+			scientific_civilization = 1
+		}
 		research_cost = 2.0
 		start_year = 2286
 		folder = {
@@ -1295,7 +1295,7 @@ technologies = {
 		}
 
 		categories = {
-            		vehicle_tech
+					vehicle_tech
 			motorized_equipment
 			tank_tech
 		}

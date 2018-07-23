@@ -5,48 +5,48 @@ technologies = {
 	@Col_4 = 20
 	@Col_5 = 24
 	@Col_6 = 28
-    @Col_7 = 32
-    @Col_8 = 36
-    @Col_9 = 40
-    @Col_10 = 44
-    @Col_11 = 48
-    @Col_12 = 52
-    
-    @Row_1 = 0
-    @Row_2 = 2
-    @Row_3 = 4
-    @Row_4 = 6
-    @Row_5 = 8
-    @Row_6 = 10
-    @Row_7 = 12
-    @Row_8 = 14
-    @Row_9 = 16
-    @Row_10 = 18
-    @Row_11 = 20
-    @Row_12 = 22
-    @Row_13 = 24
-    @Row_14 = 26
-    @Row_15 = 28
-    @Row_16 = 30
-    @Row_17 = 32
-    @Row_18 = 34
-    @Row_19 = 36
-    
-    #-------------------------------
-    # Robotics
-    #-------------------------------
-    commercial_protectron = {
-        enable_equipments = {
-            light_robot_equipment_1
-        }
+	@Col_7 = 32
+	@Col_8 = 36
+	@Col_9 = 40
+	@Col_10 = 44
+	@Col_11 = 48
+	@Col_12 = 52
+	
+	@Row_1 = 0
+	@Row_2 = 2
+	@Row_3 = 4
+	@Row_4 = 6
+	@Row_5 = 8
+	@Row_6 = 10
+	@Row_7 = 12
+	@Row_8 = 14
+	@Row_9 = 16
+	@Row_10 = 18
+	@Row_11 = 20
+	@Row_12 = 22
+	@Row_13 = 24
+	@Row_14 = 26
+	@Row_15 = 28
+	@Row_16 = 30
+	@Row_17 = 32
+	@Row_18 = 34
+	@Row_19 = 36
+	
+	#-------------------------------
+	# Robotics
+	#-------------------------------
+	commercial_protectron = {
+		enable_equipments = {
+			light_robot_equipment_1
+		}
 		enable_subunits = {
-            light_robot
-        }
+			light_robot
+		}
 		path = {
 			leads_to_tech = security_protectron_tech
 			research_cost_coeff = 1
 		}
-        on_research_complete = {
+		on_research_complete = {
 			limit = {
 				NOT = {
 					has_template_containing_unit = light_robot
@@ -57,10 +57,10 @@ technologies = {
 			}			
 			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
 		}
-        dependencies = {
-            settled_civilization = 1
-        }
-        
+		dependencies = {
+			settled_civilization = 1
+		}
+		
 		research_cost = 2.2
 		start_year = 2275
 		folder = {
@@ -106,20 +106,20 @@ technologies = {
 			}
 		}
 	}
-    
-    security_protectron_tech = {
-        enable_equipments = {
-            light_robot_equipment_2
-        }
+	
+	security_protectron_tech = {
+		enable_equipments = {
+			light_robot_equipment_2
+		}
 		path = {
 			leads_to_tech = servo_maintenance_tech
 			research_cost_coeff = 1
 		}
 		
-        dependencies = {
-            settled_civilization = 1
-        }
-        
+		dependencies = {
+			settled_civilization = 1
+		}
+		
 		research_cost = 2.2
 		start_year = 2277
 		folder = {
@@ -159,32 +159,32 @@ technologies = {
 		}
 	}
 
-    servo_maintenance_tech = {
-        light_robot = {
-            maximum_speed = 0.1
-            
-            river = { movement = 0.15 }
-            hills = { movement = 0.15 }
-            plains = { movement = 0.15 }
-            fort = { movement = 0.15 }
-            urban = { movement = 0.15 }
-            forest = { movement = 0.15 }
-            mountain = { movement = 0.15 }
-            jungle = { movement = 0.15 }
-            marsh = { movement = 0.15 }
-            amphibious = { movement = 0.15 }
-            desert = { movement = 0.15 }  
-        }
-        
+	servo_maintenance_tech = {
+		light_robot = {
+			maximum_speed = 0.1
+			
+			river = { movement = 0.15 }
+			hills = { movement = 0.15 }
+			plains = { movement = 0.15 }
+			fort = { movement = 0.15 }
+			urban = { movement = 0.15 }
+			forest = { movement = 0.15 }
+			mountain = { movement = 0.15 }
+			jungle = { movement = 0.15 }
+			marsh = { movement = 0.15 }
+			amphibious = { movement = 0.15 }
+			desert = { movement = 0.15 }  
+		}
+		
 		path = {
 			leads_to_tech = mr_handy_tech
 			research_cost_coeff = 1
 		}
 		
-        dependencies = {
-            settled_civilization = 1
-        }
-        
+		dependencies = {
+			settled_civilization = 1
+		}
+		
 		research_cost = 2.2
 		start_year = 2278
 		folder = {
@@ -220,15 +220,15 @@ technologies = {
 			}
 		}
 	}
-    
-    mr_handy_tech = {
-        enable_equipments = {
-            medium_robot_equipment_1
-        }
-        enable_subunits = {
-            medium_robot
-        }
-        on_research_complete = {
+	
+	mr_handy_tech = {
+		enable_equipments = {
+			medium_robot_equipment_1
+		}
+		enable_subunits = {
+			medium_robot
+		}
+		on_research_complete = {
 			limit = {
 				NOT = {
 					has_template_containing_unit = medium_robot
@@ -239,21 +239,21 @@ technologies = {
 			}			
 			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
 		}
-        
+		
 		path = {
 			leads_to_tech = engine_adjustments_tech
 			research_cost_coeff = 1
 		}
 		
-        path = {
+		path = {
 			leads_to_tech = mr_gutsy_tech
 			research_cost_coeff = 1
 		}
-        
-        dependencies = {
-            settled_civilization = 1
-        }
-        
+		
+		dependencies = {
+			settled_civilization = 1
+		}
+		
 		research_cost = 2.2
 		start_year = 2279
 		folder = {
@@ -292,27 +292,27 @@ technologies = {
 			}
 		}
 	}
-    
-    engine_adjustments_tech = {
-        medium_robot = {
-            maximum_speed = 0.1
-            
-            river = { movement = 0.1 }
-            hills = { movement = 0.1 }
-            plains = { movement = 0.1 }
-            fort = { movement = 0.1 }
-            urban = { movement = 0.1 }
-            forest = { movement = 0.1 }
-            mountain = { movement = 0.1 }
-            jungle = { movement = 0.1 }
-            marsh = { movement = 0.1 }
-            amphibious = { movement = 0.1 }
-            desert = { movement = 0.1 }  
-        }
-        dependencies = {
-            settled_civilization = 1
-        }
-        
+	
+	engine_adjustments_tech = {
+		medium_robot = {
+			maximum_speed = 0.1
+			
+			river = { movement = 0.1 }
+			hills = { movement = 0.1 }
+			plains = { movement = 0.1 }
+			fort = { movement = 0.1 }
+			urban = { movement = 0.1 }
+			forest = { movement = 0.1 }
+			mountain = { movement = 0.1 }
+			jungle = { movement = 0.1 }
+			marsh = { movement = 0.1 }
+			amphibious = { movement = 0.1 }
+			desert = { movement = 0.1 }  
+		}
+		dependencies = {
+			settled_civilization = 1
+		}
+		
 		research_cost = 2.2
 		start_year = 2280
 		folder = {
@@ -349,26 +349,26 @@ technologies = {
 			}
 		}
 	}
-    
-    mr_gutsy_tech = {
-        enable_equipments = {
-            medium_robot_equipment_2
-        }
-        
+	
+	mr_gutsy_tech = {
+		enable_equipments = {
+			medium_robot_equipment_2
+		}
+		
 		path = {
 			leads_to_tech = combat_protocol_upgrade_tech
 			research_cost_coeff = 1
 		}
-        
-        path = {
+		
+		path = {
 			leads_to_tech = robo_brain_tech
 			research_cost_coeff = 1
 		}
-        
-        dependencies = {
-            settled_civilization = 1
-        }
-        
+		
+		dependencies = {
+			settled_civilization = 1
+		}
+		
 		research_cost = 2.2
 		start_year = 2281
 		folder = {
@@ -407,15 +407,15 @@ technologies = {
 			}
 		}
 	}
-    
-    combat_protocol_upgrade_tech = {
-        category_robots = {
-            soft_attack = 0.1
-        }
-        dependencies = {
-            scientific_civilization = 1
-        }
-        
+	
+	combat_protocol_upgrade_tech = {
+		category_robots = {
+			soft_attack = 0.1
+		}
+		dependencies = {
+			scientific_civilization = 1
+		}
+		
 		research_cost = 2.2
 		start_year = 2282
 		folder = {
@@ -453,15 +453,15 @@ technologies = {
 			}
 		}
 	}
-    
-    robo_brain_tech = {
-        enable_equipments = {
-            heavy_robot_equipment_1
-        }
-        enable_subunits = {
-            heavy_robot
-        }
-        on_research_complete = {
+	
+	robo_brain_tech = {
+		enable_equipments = {
+			heavy_robot_equipment_1
+		}
+		enable_subunits = {
+			heavy_robot
+		}
+		on_research_complete = {
 			limit = {
 				NOT = {
 					has_template_containing_unit = heavy_robot
@@ -472,16 +472,16 @@ technologies = {
 			}			
 			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
 		}
-        
+		
 		path = {
 			leads_to_tech = pre_war_targeting_systems_tech
 			research_cost_coeff = 1
-        }
-        
-        dependencies = {
-            scientific_civilization = 1
-        }
-        
+		}
+		
+		dependencies = {
+			scientific_civilization = 1
+		}
+		
 		research_cost = 2.2
 		start_year = 2283
 		folder = {
@@ -519,20 +519,20 @@ technologies = {
 			}
 		}
 	}
-    
-    pre_war_targeting_systems_tech = {
-        category_robots = {
-            ap_attack = 0.15
-        }
+	
+	pre_war_targeting_systems_tech = {
+		category_robots = {
+			ap_attack = 0.15
+		}
 		path = {
 			leads_to_tech = sentry_bot_tech
 			research_cost_coeff = 1
-        }
-        
-        dependencies = {
-            scientific_civilization = 1
-        }
-        
+		}
+		
+		dependencies = {
+			scientific_civilization = 1
+		}
+		
 		research_cost = 2.2
 		start_year = 2284
 		folder = {
@@ -569,16 +569,16 @@ technologies = {
 			}
 		}
 	}
-    
-    sentry_bot_tech = {
-        enable_equipments = {
-            heavy_robot_equipment_2
-        }
-        
-        dependencies = {
-            scientific_civilization = 1
-        }
-        
+	
+	sentry_bot_tech = {
+		enable_equipments = {
+			heavy_robot_equipment_2
+		}
+		
+		dependencies = {
+			scientific_civilization = 1
+		}
+		
 		research_cost = 2.2
 		start_year = 2285
 		folder = {
@@ -616,23 +616,23 @@ technologies = {
 			}
 		}
 	}
-    
-    #-----------------------
-    # Unique
-    #-----------------------
-    securitron_tech = {
-        enable_equipments = {
-            medium_robot_equipment_3
-        }
-        
-        dependencies = {
-            scientific_civilization = 1
-        }
-        
-        allow = {
+	
+	#-----------------------
+	# Unique
+	#-----------------------
+	securitron_tech = {
+		enable_equipments = {
+			medium_robot_equipment_3
+		}
+		
+		dependencies = {
+			scientific_civilization = 1
+		}
+		
+		allow = {
 			always = no
 		}
-        
+		
 		research_cost = 2.2
 		start_year = 2275
 		folder = {
@@ -670,21 +670,21 @@ technologies = {
 			}
 		}
 	}
-    
-    securitron_2_tech = {
-        enable_equipments = {
-            medium_robot_equipment_4
-        }
-        
-        allow = {
+	
+	securitron_2_tech = {
+		enable_equipments = {
+			medium_robot_equipment_4
+		}
+		
+		allow = {
 			always = no
 		}
-        
-        dependencies = {
-            securitron_tech = 1
-            scientific_civilization = 1
-        }
-        
+		
+		dependencies = {
+			securitron_tech = 1
+			scientific_civilization = 1
+		}
+		
 		research_cost = 2.2
 		start_year = 2275
 		folder = {
@@ -702,5 +702,5 @@ technologies = {
 			factor = 100
 		}
 	}
-    
+	
 }
