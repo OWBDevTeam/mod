@@ -305,7 +305,18 @@ hea_religious_nutjobs = {
 		NOT = { original_tag = HEA }
 		country_exists = HEA
 	}
-	abort = {}
+	abort = {
+		OR = {
+			AND = {
+				original_tag = MUR
+				HEA = { has_completed_focus = hea_nf_embassy_murtaugh }
+			}
+			AND = {
+				original_tag = IRE
+				HEA = { has_completed_focus = hea_nf_embassy_ires }
+			}
+		}
+	}
 	ai_strategy = {
 		type = befriend
 		id = "HEA"
