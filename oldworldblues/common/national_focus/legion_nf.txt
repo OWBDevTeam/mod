@@ -1064,9 +1064,7 @@ focus_tree = {
 			focus = ces_new_judea
 		}
 		bypass = {
-			NOT = { 
-				country_exists = WHT
-			}
+			NOT = { country_exists = WHT }
 		}
 		available = {
 			country_exists = WHT
@@ -1105,8 +1103,12 @@ focus_tree = {
 		}
 		available = {
 			country_exists = WHT
-			WHT = {
-				has_country_flag = accepted_petition
+			WHT = { has_country_flag = accepted_petition }
+		}
+		bypass = {
+			AND = {
+				NOT = { country_exists = WHT }
+				NOT = { country_exists = EHT }
 			}
 		}
 		mutually_exclusive = {
@@ -1145,10 +1147,14 @@ focus_tree = {
 				NOT = { country_exists = WHT }
 				AND = {
 					country_exists = WHT
-					WHT = {
-						has_country_flag = refused_petition
-					}
+					WHT = { has_country_flag = refused_petition }
 				}
+			}
+		}
+		bypass = {
+			AND = {
+				NOT = { country_exists = EHT }
+				NOT = { country_exists = WHT }
 			}
 		}
 		mutually_exclusive = {
@@ -1197,31 +1203,27 @@ focus_tree = {
 		bypass = {
 			OR = {
 				AND = {
-					EHT = { 
-						has_opinion_modifier = disloyal_tribe
-					}
-					WHT = { 
-						has_opinion_modifier = disloyal_tribe
-					}
+					EHT = { has_opinion_modifier = disloyal_tribe }
+					WHT = { has_opinion_modifier = disloyal_tribe }
 				}
 				AND = {
-					NOT = { 
-						country_exists = WHT	
-					}
-					NOT = {
-						country_exists = EHT
-					}
+					NOT = { country_exists = WHT }
+					NOT = { country_exists = EHT }
+				}
+				AND = {
+					NOT = { country_exists = WHT }
+					EHT = { has_opinion_modifier = disloyal_tribe }
+				}
+				AND = {
+					NOT = { country_exists = EHT }
+					WHT = { has_opinion_modifier = disloyal_tribe }
 				}
 			}
 		}
 		available = {
 			OR = {
-				EHT = { 
-					has_opinion_modifier = loyal_tribe
-				}
-				WHT = { 
-					has_opinion_modifier = loyal_tribe
-				}
+				EHT = { has_opinion_modifier = loyal_tribe }
+				WHT = { has_opinion_modifier = loyal_tribe }
 			}
 		}
 		x = 5
