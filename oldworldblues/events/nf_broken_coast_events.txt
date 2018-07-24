@@ -291,7 +291,6 @@ country_event = { # Raid Target - raid underway!
 			base = 4
 		}
 		FROM = { set_country_flag = raid_stood_up }
-		scavenge_equip_start = yes
 	}
 
 
@@ -313,19 +312,62 @@ country_event = { # BRK - no opposition from target
 	is_triggered_only = yes
 
 	immediate = {
-		hidden_effect = {
-			scavenge_equip_start = yes
-			add_manpower = -50
-		}
+		save_event_target_as = our_country
+		FROM = { save_event_target_as = their_country }
 		hidden_effect = { BRK = { clr_global_flag = BRK_current_generic_raid } }
 	}
 
 	option = { # Take the spoils
 		name = nf_event_brk.10.a
-		custom_effect_tooltip = scav_following_are_sent_equip
-		scavenge_equip_end = yes
-		custom_effect_tooltip = scav_following_are_loot
-		resolve_equip_loot = yes
+		if = {
+			limit = { FROM = { has_tech = standard_weaponry_tech } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 100 }
+		}
+		if = {
+			limit = { FROM = { has_tech = blunt_weaponry } }
+			add_equipment_to_stockpile = { type = melee_equipment_1 amount = 100 }
+		}
+		if = {
+			limit = { FROM = { has_tech = basic_ballistic_weaponry } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 50 }
+		}
+		if = {
+			limit = { FROM = { has_tech = slashing_weaponry } }
+			add_equipment_to_stockpile = { type = melee_equipment_2 amount = 50 }
+		}
+		if = {
+			limit = {
+				FROM = { has_tech = support_weaponry }
+				has_tech = support_weaponry
+			}
+			add_equipment_to_stockpile = { type = support_equipment amount = 100 }
+		}
+		random_owned_state = {
+			limit = {
+				any_neighbor_state = {
+					is_owned_by = event_target:their_country
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+			    type = industrial_complex
+			    level = 1
+			    instant_build = yes
+			}
+		}
+		random_owned_state = {
+			limit = {
+				any_neighbor_state = {
+					is_owned_by = event_target:their_country
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+			    type = arms_factory
+			    level = 1
+			    instant_build = yes
+			}
+		}
 	}
 }
 
@@ -397,7 +439,56 @@ country_event = { # BRK - we win border conflict
 
 	option = { # Nice
 		name = nf_event_brk.14.a
-		add_political_power = 100
+		add_political_power = 50
+		if = {
+			limit = { FROM.FROM = { has_tech = standard_weaponry_tech } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 100 }
+		}
+		if = {
+			limit = { FROM.FROM = { has_tech = blunt_weaponry } }
+			add_equipment_to_stockpile = { type = melee_equipment_1 amount = 100 }
+		}
+		if = {
+			limit = { FROM.FROM = { has_tech = basic_ballistic_weaponry } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 50 }
+		}
+		if = {
+			limit = { FROM.FROM = { has_tech = slashing_weaponry } }
+			add_equipment_to_stockpile = { type = melee_equipment_2 amount = 50 }
+		}
+		if = {
+			limit = {
+				FROM.FROM = { has_tech = support_weaponry }
+				has_tech = support_weaponry
+			}
+			add_equipment_to_stockpile = { type = support_equipment amount = 100 }
+		}
+		random_owned_state = {
+			limit = {
+				any_neighbor_state = {
+					is_owned_by = event_target:their_country
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+			    type = industrial_complex
+			    level = 1
+			    instant_build = yes
+			}
+		}
+		random_owned_state = {
+			limit = {
+				any_neighbor_state = {
+					is_owned_by = event_target:their_country
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+			    type = arms_factory
+			    level = 1
+			    instant_build = yes
+			}
+		}
 	}
 }
 
