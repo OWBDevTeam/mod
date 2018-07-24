@@ -255,3 +255,24 @@ country_event = {
 		}
     	} 
 }
+# test if you can add/subtract manpower from states (
+country_event = {
+	id = test_event.15
+	title = test_event.15.t
+	desc = test_event.15.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	# male ACE
+	option = {
+		name = test_event.15.a
+		every_state = {
+			limit = {
+				is_core_of = NAV
+			}
+			damage_building = {
+   				type = arms_factory
+    				damage = -1
+			}
+		}
+    	} 
+}
