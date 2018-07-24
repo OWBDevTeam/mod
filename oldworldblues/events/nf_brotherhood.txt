@@ -480,8 +480,8 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = {
-		name = nf_brotherhood.23.a #Give the BOS the bay
+	option = {#Give the BOS the bay
+		name = nf_brotherhood.23.a
 
 		BOS = { set_state_owner = 511 }
 		BOS = { set_state_controller = 511 }
@@ -492,8 +492,8 @@ country_event = {
 		}
 	}
 
-	option = {
-		name = nf_brotherhood.23.b #Refuse
+	option = {#Refuse
+		name = nf_brotherhood.23.b
 
 		BOS = { country_event = { id = nf_brotherhood.24 }}
 	}
@@ -508,8 +508,8 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = {
-		name = nf_brotherhood.24.a #NCR Refused giving the Bay
+	option = {#NCR Refused giving the Bay
+		name = nf_brotherhood.24.a
 
 		BOS = { add_opinion_modifier = { target = NCR modifier = brotherhoodassault } }
 	}
@@ -568,7 +568,7 @@ country_event = {
 	}
 
 	option = {
-		name = nf_brotherhood.27.a
+		name = nf_brotherhood.27.b
 		trigger = {
 			TON = { is_ai = no  }
 		}
@@ -586,10 +586,10 @@ country_event = { #Player Umbra choice
 
 	is_triggered_only = yes
 
-	option = {
+	option = {#Players get to join the faction so they dont game over
 		name = nf_brotherhood.28.a
 
-		BOS = {	#Players get to join the faction so they dont game over
+		BOS = {
 			add_to_faction = UMB
 		}
 	}
@@ -608,7 +608,7 @@ country_event = { #Player Tohono choice
 
 	is_triggered_only = yes
 
-	option = {
+	option = {#Players get to join the faction so they dont game over
 		name = nf_brotherhood.29.a
 
 		BOS = {
@@ -630,7 +630,7 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = {
+	option = {#Players get to join the faction so they dont game over
 		name = nf_brotherhood.30.a
 
 		BOS = {
@@ -720,7 +720,6 @@ country_event = {
 				has_idea = repconnencryption
 				has_idea = robcoprototypes
 			}
-
 			add_ideas = robcodesign
 			add_ideas = plasmatrials
 		}

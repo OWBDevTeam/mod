@@ -4,7 +4,7 @@ country_event = {
 	id = nf_event_brk.1
 	title = nf_event_brk.1.t
 	desc = nf_event_brk.1.d
-	picture = GFX_event_BRK_shipwreck
+	picture = GFX_event_generic_nuclear_explosion
 
 	is_triggered_only = yes
 
@@ -38,7 +38,7 @@ country_event = {
 	id = nf_event_brk.2
 	title = nf_event_brk.2.t
 	desc = nf_event_brk.2.d
-	picture = GFX_event_generic_nuclear_explosion
+	picture = GFX_event_BRK_shipwreck
 
 	is_triggered_only = yes
 
@@ -73,7 +73,7 @@ country_event = {
 	id = nf_event_brk.3
 	title = nf_event_brk.3.t
 	desc = nf_event_brk.3.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_BRK_graven
 
 	is_triggered_only = yes
 
@@ -99,7 +99,7 @@ country_event = {
 	id = nf_event_brk.4
 	title = nf_event_brk.4.t
 	desc = nf_event_brk.4.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_BRK_raider2
 
 	is_triggered_only = yes
 
@@ -124,7 +124,7 @@ country_event = {
 	id = nf_event_brk.5
 	title = nf_event_brk.5.t
 	desc = nf_event_brk.5.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_BRK_raider3
 
 	is_triggered_only = yes
 
@@ -142,7 +142,7 @@ country_event = {
 	id = nf_event_brk.50
 	title = nf_event_brk.50.t
 	desc = nf_event_brk.50.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_BRK_raider3
 
 	is_triggered_only = yes
 
@@ -176,7 +176,7 @@ country_event = {
 	id = nf_event_brk.6
 	title = nf_event_brk.6.t
 	desc = nf_event_brk.6.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_BRK_raider1
 
 	is_triggered_only = yes
 
@@ -193,7 +193,7 @@ country_event = {
 	id = nf_event_brk.60
 	title = nf_event_brk.60.t
 	desc = nf_event_brk.60.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_BRK_raider1
 
 	is_triggered_only = yes
 
@@ -228,7 +228,7 @@ country_event = {
 	id = nf_event_brk.7
 	title = nf_event_brk.7.t
 	desc = nf_event_brk.7.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_BRK_raider1
 
 	is_triggered_only = yes
 
@@ -251,7 +251,7 @@ country_event = {
 	id = nf_event_brk.8
 	title = nf_event_brk.8.t
 	desc = nf_event_brk.8.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_BRK_raider2
 
 	is_triggered_only = yes
 
@@ -270,7 +270,7 @@ country_event = { # Raid Target - raid underway!
 	id = nf_event_brk.9
 	title = nf_event_brk.9.t
 	desc = nf_event_brk.9.d
-	picture = GFX_event_generic_ruins_5
+	picture = GFX_event_BRK_village_raid
 
 	is_triggered_only = yes
 
@@ -308,15 +308,16 @@ country_event = { # BRK - no opposition from target
 	id = nf_event_brk.10
 	title = nf_event_brk.10.t
 	desc = nf_event_brk.10.d
-	picture = GFX_event_generic_raider_1
+	picture = GFX_event_BRK_ship_shacks1
 
 	is_triggered_only = yes
 
 	immediate = {
 		hidden_effect = {
 			scavenge_equip_start = yes
-			add_manpower = 50
+			add_manpower = -50
 		}
+		hidden_effect = { BRK = { clr_global_flag = BRK_current_generic_raid } }
 	}
 
 	option = { # Take the spoils
@@ -332,7 +333,7 @@ country_event = { # BRK - opposition from target
 	id = nf_event_brk.11
 	title = nf_event_brk.11.t
 	desc = nf_event_brk.11.d
-	picture = GFX_event_NCR_battle
+	picture = GFX_event_BRK_village_raid
 
 	is_triggered_only = yes
 
@@ -346,7 +347,7 @@ country_event = { # Raid Target - raid is over
 	id = nf_event_brk.12
 	title = nf_event_brk.12.t
 	desc = nf_event_brk.12.d
-	picture = GFX_event_NCR_battle
+	picture = GFX_event_BRK_village_raid
 
 	is_triggered_only = yes
 
@@ -368,7 +369,7 @@ country_event = { # Either - escalation to war from border conflict
 	id = nf_event_brk.13
 	title = nf_event_brk.13.t
 	desc = nf_event_brk.13.d
-	picture = GFX_event_NCR_battle
+	picture = GFX_event_BRK_village_raid
 
 	is_triggered_only = yes
 
@@ -381,7 +382,7 @@ country_event = { # BRK - we win border conflict
 	id = nf_event_brk.14
 	title = nf_event_brk.14.t
 	desc = nf_event_brk.14.d
-	picture = GFX_event_NCR_battle
+	picture = GFX_event_BRK_cargo_ship_port
 
 	is_triggered_only = yes
 
@@ -391,6 +392,7 @@ country_event = { # BRK - we win border conflict
 		FROM.FROM = { save_event_target_as = their_country }
 		FROM.FROM.FROM = { save_event_target_as = their_state }
 		remove_targeted_decision = { target = event_target:their_country decision = border_conflict_time_until_cancelled }
+		hidden_effect = { BRK = { clr_global_flag = BRK_current_generic_raid } }
 	}
 
 	option = { # Nice
@@ -403,7 +405,7 @@ country_event = { # Raid Target - we win border conflict
 	id = nf_event_brk.15
 	title = nf_event_brk.14.t
 	desc = nf_event_brk.15.d
-	picture = GFX_event_NCR_battle
+	picture = GFX_event_BRK_village_raid
 
 	is_triggered_only = yes
 
@@ -453,7 +455,7 @@ country_event = { # BRK - we lose border conflict
 	id = nf_event_brk.16
 	title = nf_event_brk.14.t
 	desc = nf_event_brk.16.d
-	picture = GFX_event_NCR_battle
+	picture = GFX_event_BRK_village_raid
 
 	is_triggered_only = yes
 
@@ -464,6 +466,7 @@ country_event = { # BRK - we lose border conflict
 		FROM.FROM.FROM = { save_event_target_as = their_state }
 		set_country_flag = show_effect_tooltips
 		remove_targeted_decision = { target = event_target:their_country decision = border_conflict_time_until_cancelled }
+		hidden_effect = { BRK = { clr_global_flag = BRK_current_generic_raid } }
 	}
 
 	#Same effect as defender. Tooltip for their effects
@@ -493,7 +496,7 @@ country_event = { # Raid target - we lose border conflict
 	id = nf_event_brk.17
 	title = nf_event_brk.14.t
 	desc = nf_event_brk.17.d
-	picture = GFX_event_NCR_battle
+	picture = GFX_event_BRK_raider3
 
 	is_triggered_only = yes
 
@@ -528,7 +531,7 @@ country_event = { # BRK - we cancel the conflict
 	id = nf_event_brk.18
 	title = nf_event_brk.18.t
 	desc = nf_event_brk.18.d
-	picture = GFX_event_NCR_battle
+	picture = GFX_event_BRK_raider_port
 
 	is_triggered_only = yes
 
@@ -538,6 +541,7 @@ country_event = { # BRK - we cancel the conflict
 		FROM.FROM = { save_event_target_as = their_country }
 		FROM.FROM.FROM = { save_event_target_as = their_state }
 		set_country_flag = show_effect_tooltips
+		hidden_effect = { BRK = { clr_global_flag = BRK_current_generic_raid } }
 	}
 
 	option = {
@@ -560,7 +564,7 @@ country_event = { # Raid Target - BRK cancels the conflict
 	id = nf_event_brk.19
 	title = nf_event_brk.19.t
 	desc = nf_event_brk.19.d
-	picture = GFX_event_NCR_battle
+	picture = GFX_event_BRK_raider_port
 
 	is_triggered_only = yes
 
@@ -603,7 +607,7 @@ country_event = { # Either - Border Conflict Escalation
 	id = nf_event_brk.20
 	title = nf_event_brk.20.t
 	desc = nf_event_brk.20.d
-	picture = GFX_event_NCR_battle
+	picture = GFX_event_BRK_raider_port
 
 	is_triggered_only = yes
 
@@ -626,7 +630,7 @@ country_event = { # Event for HAI / (Practice) Raid Underway
 	id = nf_event_brk.21
 	title = nf_event_brk.21.t
 	desc = nf_event_brk.21.d
-	picture = GFX_event_generic_raider_1
+	picture = GFX_event_BRK_raider4
 
 	is_triggered_only = yes
 
@@ -640,7 +644,7 @@ country_event = { # BRK / Raid Success
 	id = nf_event_brk.22
 	title = nf_event_brk.22.t
 	desc = nf_event_brk.22.d
-	picture = GFX_event_generic_raider_1
+	picture = GFX_event_BRK_village_raid
 
 	is_triggered_only = yes
 
@@ -655,7 +659,7 @@ country_event = { # HAI / Failed Defence
 	id = nf_event_brk.23
 	title = nf_event_brk.23.t
 	desc = nf_event_brk.23.d
-	picture = GFX_event_generic_ruins_2
+	picture = GFX_event_BRK_village_raid
 
 	is_triggered_only = yes
 
@@ -673,7 +677,7 @@ country_event = { # BRK / Raid Failure
 	id = nf_event_brk.24
 	title = nf_event_brk.24.t
 	desc = nf_event_brk.24.d
-	picture = GFX_event_generic_ruins_3
+	picture = GFX_event_BRK_raider2
 
 	is_triggered_only = yes
 
@@ -689,7 +693,7 @@ country_event = { # HAI / Defence Success
 	id = nf_event_brk.25
 	title = nf_event_brk.25.t
 	desc = nf_event_brk.25.d
-	picture = GFX_event_generic_raider_1
+	picture = GFX_event_BRK_raider2
 
 	is_triggered_only = yes
 
@@ -704,7 +708,7 @@ country_event = { # VIC / BRK raiding coasts
 	id = nf_event_brk.26
 	title = nf_event_brk.26.t
 	desc = nf_event_brk.21.d
-	picture = event_generic_ruins_3
+	picture = GFX_event_BRK_ship_shacks2
 
 	is_triggered_only = yes
 
@@ -717,7 +721,7 @@ country_event = { # BRK / Raiding Success v VIC coast
 	id = nf_event_brk.27
 	title = nf_event_brk.27.t
 	desc = nf_event_brk.27.d
-	picture = GFX_event_generic_ruins_1
+	picture = GFX_event_BRK_cargo_ship_port
 
 	is_triggered_only = yes
 
@@ -733,7 +737,7 @@ country_event = { # BRK / Raiding Failure v VIC coast
 	id = nf_event_brk.28
 	title = nf_event_brk.28.t
 	desc = nf_event_brk.28.d
-	picture = GFX_event_generic_ruins_5
+	picture = GFX_event_BRK_ship_shacks3
 
 	is_triggered_only = yes
 
@@ -748,7 +752,7 @@ country_event = { # VIC / BRK raiding ports
 	id = nf_event_brk.29
 	title = nf_event_brk.29.t
 	desc = nf_event_brk.29.d
-	picture = GFX_event_generic_ruins_4
+	picture = GFX_event_BRK_raider_port
 
 	is_triggered_only = yes
 
@@ -761,7 +765,7 @@ country_event = { # BRK / Raid Success
 	id = nf_event_brk.30
 	title = nf_event_brk.30.t
 	desc = nf_event_brk.30.d
-	picture = GFX_event_generic_ruins_4
+	picture = GFX_event_BRK_cargo_ship_port
 
 	is_triggered_only = yes
 
@@ -776,7 +780,7 @@ country_event = { # VIC / Failed Defence
 	id = nf_event_brk.31
 	title = nf_event_brk.31.t
 	desc = nf_event_brk.31.d
-	picture = GFX_event_generic_ruins_4
+	picture = GFX_event_BRK_ship_shacks3
 
 	is_triggered_only = yes
 
@@ -794,7 +798,7 @@ country_event = { # BRK / Raid Failure
 	id = nf_event_brk.32
 	title = nf_event_brk.32.t
 	desc = nf_event_brk.32.d
-	picture = GFX_event_generic_settlement_1
+	picture = GFX_event_BRK_ship_shacks3
 
 	is_triggered_only = yes
 
@@ -810,7 +814,7 @@ country_event = { # VIC / Defence Success
 	id = nf_event_brk.33
 	title = nf_event_brk.33.t
 	desc = nf_event_brk.33.d
-	picture = GFX_event_generic_settlement_1
+	picture = GFX_event_BRK_raider2
 
 	is_triggered_only = yes
 
@@ -825,7 +829,7 @@ country_event = { # BRK / Winter Harbour Plan selection
 	id = nf_event_brk.34
 	title = nf_event_brk.34.t
 	desc = nf_event_brk.34.d
-	picture = GFX_event_generic_ruins_1
+	picture = GFX_event_BRK_ship_shacks1
 
 	is_triggered_only = yes
 
@@ -855,7 +859,7 @@ country_event = { # VIC / Raiders seize Winter Harbour and war
 	id = nf_event_brk.35
 	title = nf_event_brk.35.t
 	desc = nf_event_brk.35.d
-	picture = GFX_event_NCR_battle
+	picture = GFX_event_BRK_ship_shacks3
 
 	is_triggered_only = yes
 
@@ -869,7 +873,7 @@ country_event = { # VIC / Raiders seize Winter Harbour (no war)
 	id = nf_event_brk.36
 	title = nf_event_brk.36.t
 	desc = nf_event_brk.36.d
-	picture = GFX_event_NCR_battle
+	picture = GFX_event_BRK_ship_shacks3
 
 	is_triggered_only = yes
 
@@ -891,7 +895,7 @@ country_event = { # VIC / Raiders raid Winter Harbour
 	id = nf_event_brk.37
 	title = nf_event_brk.37.t
 	desc = nf_event_brk.37.d
-	picture = GFX_event_generic_ruins_2
+	picture = GFX_event_BRK_ship_shacks2
 
 	is_triggered_only = yes
 
@@ -906,7 +910,7 @@ country_event = { # BRK / Show of Strength
 	id = nf_event_brk.38
 	title = nf_event_brk.38.t
 	desc = nf_event_brk.38.d
-	picture = event_generic_ruins_2
+	picture = GFX_event_BRK_ship_shacks1
 
 	is_triggered_only = yes
 
@@ -921,7 +925,7 @@ country_event = { # VIC / Raiders declare war
 	id = nf_event_brk.39
 	title = nf_event_brk.39.t
 	desc = nf_event_brk.39.d
-	picture = GFX_event_NCR_battle
+	picture = GFX_event_BRK_raider_port
 
 	is_triggered_only = yes
 
@@ -934,6 +938,7 @@ country_event = { # The Moot
 	id = nf_event_brk.40
 	title = nf_event_brk.40.t
 	desc = nf_event_brk.40.d
+	picture = GFX_event_BRK_ragnar
 
 	is_triggered_only = yes
 
@@ -1056,29 +1061,4 @@ country_event = { # The Unbroken Resistance Pact signed (sent back to BRK)
 		}
 	}
 }
-country_event = { # Haida Confederation (Graven)
-	id = nf_event_brk.44
-	title = nf_event_brk.44.t
-	desc = nf_event_brk.44.d
-	picture = GFX_event_BRK_wasteland_boat_militia
-	is_triggered_only = yes
-	option = {
-		name = nf_event_brk.44.a
-	}
-	option = {
-		name = nf_event_brk.44.b
-	}
-}
-country_event = { #Haida Confederation (Ragnar)
-	id = nf_event_brk.45
-	title = nf_event_brk.45.t
-	desc = nf_event_brk.45.d
-	picture = GFX_event_BRK_wasteland_boat_militia
-	is_triggered_only = yes
-	option = {
-		name = nf_event_brk.45.a
-	}
-	option = {
-		name = nf_event_brk.45.b
-	}
-}
+

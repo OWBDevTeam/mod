@@ -78,7 +78,7 @@ focus_tree = {
 
 	focus = {
 		id = brk_nf_grand_moot
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_goal_brk_the_moot
 		cost = 8.6
 		x = 10
 		y = 3
@@ -295,29 +295,7 @@ focus_tree = {
 			}
 		}
 	}
-	focus = {
-		id = brk_nf_ruler_haida_confederation
-		icon = GFX_goal_brk_gravens_ship
-		cost = 8.6
-		x = 3
-		y = 10
-
-		prerequisite = {
-			focus = brk_nf_ruler_pol_side_1
-		}
-
-		completion_reward = {
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] brk_nf_ruler_pol_side_1 entered"
-			}
-			country_event = nf_event_brk.44
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] brk_nf_ruler_pol_side_1 exited"
-			}
-		}
-	}
+	
 	focus = {
 		id = brk_nf_ruler_pol_2
 		icon = GFX_goal_enslave_the_opposition
@@ -538,28 +516,7 @@ focus_tree = {
 			}
 		}
 	}
-	focus = {
-		id = brk_nf_elites_haida_confederation
-		icon = GFX_goal_brk_black_flag_fleets
-		cost = 8.6
-		x = 17
-		y = 10
-
-		prerequisite = {
-			focus = brk_nf_elites_pol_side_1
-		}
-		completion_reward = {
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] brk_nf_elites_pol_side_1 entered"
-			}
-			country_event = nf_event_brk.45
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] brk_nf_elites_pol_side_1 exited"
-			}
-		}
-	}
+	
 	focus = {
 		id = brk_nf_elites_pol_2
 		icon = GFX_goal_establish_the_broken_coast_warrior_council
@@ -2304,7 +2261,7 @@ focus_tree = {
 
 	focus = {
 		id = brk_nf_bellingham_kill
-		icon = GFX_goal_legion_bos_war
+		icon = GFX_goal_brk_reuniting_koover
 		cost = 8.6
 		x = 10
 		y = 17

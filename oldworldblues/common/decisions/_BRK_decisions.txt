@@ -555,8 +555,8 @@ brk_raiding = {
 			}
 			NOT = { has_non_aggression_pact_with = FROM }
 			custom_trigger_tooltip = {
-				tooltip = BRK_prelim_raid
-				NOT = { has_country_flag = BRK_prelim_raid }
+				tooltip = BRK_setting_up_raid
+				NOT = { has_global_flag = BRK_current_generic_raid }
 			}
 		}
 
@@ -618,6 +618,10 @@ brk_raiding = {
 				factor = 0
 				has_war = yes
 			}
+			modifier = {
+				factor = 0
+				has_political_power < 151
+			}
 		}
 
 		cost = 50 # Cost
@@ -635,6 +639,7 @@ brk_raiding = {
 				log = "[GetDateText]: [Root.GetName] brk_raid_borders_initial_raid (decision) complete entered"
 			}
 			hidden_effect = { # is hidden. shh - I'm not here.
+				set_global_flag = BRK_current_generic_raid
 				random_state = {
 					limit = { # a random state that is owned by the target, doesn't have an active incident and is bordered by any state we have one division in and fully control:
 						is_owned_and_controlled_by = FROM
@@ -739,7 +744,6 @@ brk_raiding = {
 				country_event = { id = nf_event_brk.11 }
 				activate_targeted_decision = { target = FROM decision = brk_light_border_escalate } # Activates a decision for them to escalate the incident
 			}
-			clr_country_flag = BRK_prelim_raid
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] brk_raid_borders_initial_raid (decision) remove exited"
@@ -888,6 +892,7 @@ brk_raiding = {
 					clear_variable = attacker_state_vs_@ROOT
 					clear_variable = defender_state_vs_@ROOT
 				}
+				clr_global_flag = BRK_current_generic_raid
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1162,6 +1167,7 @@ brk_raiding = {
 					clear_variable = defender_state_vs_@ROOT
 				}
 			}
+			hidden_effect = { BRK = { clr_global_flag = BRK_current_generic_raid } }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict_to_war (decision) remove exited"
@@ -1214,6 +1220,7 @@ brk_raiding = {
 					defender_win = yes
 				}
 			}
+			hidden_effect = { BRK = { clr_global_flag = BRK_current_generic_raid } }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] brk_back_out_of_conflict (decision) complete exited"

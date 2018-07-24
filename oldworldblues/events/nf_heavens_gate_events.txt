@@ -4,22 +4,22 @@ country_event = {
 	id = nf_event_hea.1
 	title = nf_event_hea.1.t
 	desc = nf_event_hea.1.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_HEA_crucifixion
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_hea.1.a
 		add_ideas = hea_startup_militant
-		
+
 		ai_chance = {
 			base = 50
 		}
 	}
-    option = {
+	option = {
 		name = nf_event_hea.1.b
 		add_ideas = hea_startup_agriculture
-		
+
 		ai_chance = {
 			base = 50
 		}
@@ -30,22 +30,22 @@ country_event = {
 	id = nf_event_hea.2
 	title = nf_event_hea.2.t
 	desc = nf_event_hea.2.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_NCN_new_canaan
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_hea.2.a
 		add_ideas = hea_startup_stationary_pilgrims
-		
+
 		ai_chance = {
 			base = 50
 		}
 	}
-    option = {
+	option = {
 		name = nf_event_hea.2.b
 		add_ideas = hea_startup_traveling_pilgrims
-		
+
 		ai_chance = {
 			base = 50
 		}
@@ -56,22 +56,22 @@ country_event = {
 	id = nf_event_hea.3
 	title = nf_event_hea.3.t
 	desc = nf_event_hea.3.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_HEA_church
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_hea.3.a
 		add_ideas = hea_startup_let_them_in
-		
+
 		ai_chance = {
 			base = 100
 		}
 	}
-    option = {
+	option = {
 		name = nf_event_hea.3.b
 		add_ideas = hea_startup_better_be_careful
-		
+
 		ai_chance = {
 			base = 0
 		}
@@ -82,23 +82,23 @@ country_event = {
 	id = nf_event_hea.4
 	title = nf_event_hea.4.t
 	desc = nf_event_hea.4.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_HEA_shadowy_cabal
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_hea.4.a
-		
+
 		if = {
 			limit = { has_idea = hea_startup_let_them_in }
 			add_ideas = hea_innocence_lost_idea
 		}
-		
+
 		if = {
 			limit = { has_idea = hea_startup_better_be_careful }
 			add_ideas = hea_innocence_lost_idea_lessend
 		}
-		
+
 		ai_chance = {
 			base = 100
 		}
@@ -110,10 +110,10 @@ country_event = {
 	id = nf_event_hea.5
 	title = nf_event_hea.5.t
 	desc = nf_event_hea.5.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_HEA_crusade
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_hea.5.a
 		LON = { country_event = { id = nf_event_hea.50 }}
@@ -128,15 +128,15 @@ country_event = {
 	id = nf_event_hea.50
 	title = nf_event_hea.50.t
 	desc = nf_event_hea.50.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_HEA_crusade
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_hea.50.a
-		
-		HEA = { 
-			annex_country = { target = LON } 
+
+		HEA = {
+			annex_country = { target = LON }
 		}
 		ai_chance = {
 			base = 50
@@ -144,14 +144,14 @@ country_event = {
 	}
 	option = {
 		name = nf_event_hea.50.b
-		
+
 		HEA = {
 			create_wargoal = {
 				type = annex_everything
 				target = LON
 			}
 		}
-		
+
 		ai_chance = {
 			base = 50
 		}
@@ -159,25 +159,25 @@ country_event = {
 }
 
 country_event = {
-	id = nf_event_hea.6 
+	id = nf_event_hea.6
 	title = nf_event_hea.6.t
 	desc = nf_event_hea.6.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_HEA_bishop1
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_hea.6.a
 		trigger = {
 			MUR = { is_ai = yes } #Ai will always say yes
 		}
-		
+
 		IF = { limit = { is_in_faction = no }
 			create_faction = "defensive_league"
-		} 
-		
+		}
+
 		add_to_faction = MUR
-        add_ai_strategy = {
+		add_ai_strategy = {
 			type = alliance
 			id = "MUR"
 			value = 200
@@ -190,32 +190,32 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = nf_event_hea.6.b
 		trigger = {
 			MUR = { is_ai = no } #Player gets to say no
 		}
-	
+
 		MUR = {
 			country_event = { id = nf_event_hea.60 }
 		}
 	}
 }
 
-country_event = { 
+country_event = {
 	id = nf_event_hea.60
 	title = nf_event_hea.60.t
 	desc = nf_event_hea.60.d
-	picture = GFX_event_NCR_settlers
-	
+	picture = GFX_event_HEA_bishop1
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_event_hea.60.a
-		
+
 		HEA = {
-			add_to_faction = MUR 
+			add_to_faction = MUR
 		}
 	}
 	option = {
@@ -224,25 +224,25 @@ country_event = {
 }
 
 country_event = {
-	id = nf_event_hea.7 
+	id = nf_event_hea.7
 	title = nf_event_hea.7.t
 	desc = nf_event_hea.7.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_HEA_bishop2
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_hea.7.a
 		trigger = {
 			IRE = { is_ai = yes } #Ai will always say yes
 		}
-		
+
 		IF = { limit = { is_in_faction = no }
 			create_faction = "defensive_pact"
-		} 
-		
+		}
+
 		add_to_faction = IRE
-        add_ai_strategy = {
+		add_ai_strategy = {
 			type = alliance
 			id = "IRE"
 			value = 200
@@ -255,36 +255,35 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = nf_event_hea.7.b
 		trigger = {
 			IRE = { is_ai = no } #Player gets to say no
 		}
-	
+
 		IRE = {
 			country_event = { id = nf_event_hea.70 }
 		}
 	}
 }
 
-country_event = { 
+country_event = {
 	id = nf_event_hea.70
 	title = nf_event_hea.70.t
 	desc = nf_event_hea.70.d
-	picture = GFX_event_NCR_settlers
-	
+	picture = GFX_event_HEA_bishop2
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_event_hea.70.a
-		
+
 		HEA = {
-			add_to_faction = IRE 
+			add_to_faction = IRE
 		}
 	}
 	option = {
 		name  = nf_event_hea.70.b
 	}
 }
-
