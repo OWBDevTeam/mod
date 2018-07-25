@@ -100,6 +100,10 @@ country_event = { # A puppet requests NCR military deployment
 	}
 
 	option = { # We don't have the resources to spare
+		name = raid_trouble.4.b
+		ai_chance = {
+			base = 1
+		}
 		reverse_add_opinion_modifier = {
 			target = FROM
 			modifier = no_NCR_mil_help
@@ -131,10 +135,88 @@ country_event = { # NCR refuses to help
 
 	option = { # Oh dearie
 		name = raid_trouble.6.a
+		set_country_flag = ncr_refuses_mil
 		effect_tooltip = {
 			add_opinion_modifier = {
 			    target = NCR
 			    modifier = no_NCR_mil_help
+			}
+		}
+	}
+}
+
+country_event = { # A puppet requests NCR ranger deployment
+	id = raid_trouble.7
+	title = raid_trouble.7.t
+	desc = raid_trouble.7
+	#picture = 
+
+	is_triggered_only = yes
+
+	option = { # Deploy our military
+		trigger = { # Backup to ensure the NCR has 1 or more ranger deployment
+			check_variable = { ranger_deployments > 0 }
+		}
+		name = raid_trouble.7.a
+		#ai_chance = {
+		#	base = 9
+		#}
+		subtract_from_variable = { ranger_deployments = 1 }
+		custom_effect_tooltip = lose_1_deployment
+		add_manpower = -200
+		remove_200_weapons = yes
+		effect_tooltip = {
+			FROM = {
+				add_autonomy_score = {
+				    value = -400
+				    localization = called_in_ncr_rangers
+				}
+			}
+		}
+		FROM = { country_event = { id = raid_trouble.8 days = 2 } } # NCR helps!
+	}
+
+	option = { # We don't have the resources to spare
+		name = raid_trouble.7.a
+		#ai_chance = {
+		#	base = 1
+		#}
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = no_NCR_ranger_help
+		}
+		FROM = { country_event = { id = raid_trouble.9 days = 2 } } # NCR refuses to help!
+	}
+}
+
+country_event = { # NCR helps
+	id = raid_trouble.8
+	title = raid_trouble.8.t
+	desc = raid_trouble.8.d
+	#picture = 
+
+	is_triggered_only = yes
+
+	option = { # Just in time
+		name = raid_trouble.8.a
+	}
+}
+
+country_event = { # NCR refuses to help
+	id = raid_trouble.9
+	title = raid_trouble.9.t
+	desc = raid_trouble.9.d
+	#picture = 
+
+	is_triggered_only = yes
+
+	option = { # Oh dearie
+		name = raid_trouble.6.a
+		set_country_flag = ncr_refuses_rangers
+		effect_tooltip = {
+			add_opinion_modifier = {
+			    target = NCR
+			    modifier = no_NCR_ranger_help
 			}
 		}
 	}
