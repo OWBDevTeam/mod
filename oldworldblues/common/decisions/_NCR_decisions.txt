@@ -486,10 +486,13 @@ ncr_revolts = {
 @sr_pulse = 90
 @redding_pulse = 80
 @diablo_pulse = 90
+@dayglow_pulse = 70
 @rapids_pulse = 65
-@boneyard_pulse = 70
-@mojave_pulse = 60
-@scor_pulse = 70
+@boneyard_pulse = 80
+@divide_pulse = 100
+@sothern_mojave_pulse = 70
+@central_mojave_pulse = 60
+@northern_mojave_pulse = 65
 @baja_pulse = 65
 @ranchers_pulse = 110
 @nevada_pulse = 90
@@ -498,6 +501,7 @@ ncr_revolts = {
 ncr_raider_trouble = {
 	# Planning at https://docs.google.com/document/d/1XNZdjfPeu2SCb2QZ5lXqY9FUXj9XMaXnS_5jOVhVzc0
 	## Santa Rose ##
+	# Global Interactions
 	raider_pulse_sr = {
 		activation = {
 			NOT = { check_variable = { sr_intensity = 0 } }
@@ -517,7 +521,8 @@ ncr_raider_trouble = {
 		timeout_effect = {
 			if = {
 				limit = { check_variable = { sr_intensity = 0 } }
-				#no_more_raiders = yes # Calls the scripted effect to end the raids in the district
+				set_global_flag = sr_district_pacified
+				custom_effect_tooltip = sr_district_pacified
 			}
 			else_if = {
 				limit = { check_variable = { sr_intensity = 1 } }
@@ -1704,6 +1709,7 @@ ncr_raider_trouble = {
 			any_owned_state = {
 				sr_raid_district = yes
 			}
+			NOT = { has_global_flag = sr_district_pacified }
 		}
 		custom_cost_trigger = { # Scales the cost
 			if = {
@@ -1804,6 +1810,7 @@ ncr_raider_trouble = {
 			any_owned_state = {
 				sr_raid_district = yes
 			}
+			NOT = { has_global_flag = sr_district_pacified }
 		}
 		available = { 
 			custom_trigger_tooltip = { # Prevents it being clicked if the intensity is 0
@@ -1834,6 +1841,7 @@ ncr_raider_trouble = {
 			any_owned_state = {
 				sr_raid_district = yes
 			}
+			NOT = { has_global_flag = sr_district_pacified }
 		}
 		custom_cost_trigger = { # Scales the cost
 			if = {
@@ -1873,27 +1881,27 @@ ncr_raider_trouble = {
 		complete_effect = {
 			hidden_effect = {
 				if = {
-					limit = { NOT = { has_variable = sr_garrison_use } }
+					limit = { NOT = { has_variable = sr_arms_use } }
 					remove_50_weapons = yes
 					set_variable = { sr_arms_use = 1 }
 				}
 				else_if = {
-					limit = { check_variable = { sr_garrison_use = 1 } }
+					limit = { check_variable = { sr_arms_use = 1 } }
 					remove_100_weapons = yes
 					add_to_variable = { sr_arms_use = 1 }
 				}
 				else_if = {
-					limit = { check_variable = { sr_garrison_use = 2 } }
+					limit = { check_variable = { sr_arms_use = 2 } }
 					remove_200_weapons = yes
 					add_to_variable = { sr_arms_use = 1 }
 				}
 				else_if = {
-					limit = { check_variable = { sr_garrison_use = 3 } }
+					limit = { check_variable = { sr_arms_use = 3 } }
 					remove_400_weapons = yes
 					add_to_variable = { sr_arms_use = 1 }
 				}
 				else_if = {
-					limit = { check_variable = { sr_garrison_use = 4 } }
+					limit = { check_variable = { sr_arms_use = 4 } }
 					remove_800_weapons = yes
 					add_to_variable = { sr_arms_use = 1 }
 				}
@@ -1907,6 +1915,190 @@ ncr_raider_trouble = {
 					custom_effect_tooltip = lose_1_intensity
 				}
 				30 = {} # No effect
+			}
+			custom_effect_tooltip = return_in_60_days
+		}
+	}
+	employ_mercs_sr = {
+		visible = {
+			any_owned_state = {
+				sr_raid_district = yes
+			}
+			NOT = { has_global_flag = sr_district_pacified }
+			has_global_flag = ncr_chose_big_jim
+		}
+		custom_cost_trigger = { # Scales the cost - purposefully one under so can be selected at that threshold
+			if = {
+				limit = { NOT = { has_variable = sr_merc_use } }
+				has_political_power > 19
+			}
+			if = {
+				limit = { check_variable = { sr_merc_use = 1 } }
+				has_political_power > 39
+			}
+			if = {
+				limit = { check_variable = { sr_merc_use = 2 } }
+				has_political_power > 79
+			}
+			if = {
+				limit = { check_variable = { sr_merc_use = 3 } }
+				has_political_power > 159
+			}
+			if = {
+				limit = { check_variable = { sr_merc_use = 4 } }
+				has_political_power > 319
+			}
+		}
+		custom_cost_text = raid_crisis_scaling_pp_sr
+		available = { 
+			custom_trigger_tooltip = { # Prevents it being clicked if the intensity is 0
+				tooltip = has_some_intensity
+				NOT = { check_variable = { sr_intensity = 0 } }
+			}
+			custom_trigger_tooltip = { # Prevents it being clicked if it has been used 5 times
+				tooltip = merc_limit_sr
+				NOT = { check_variable = { sr_merc_use = 5 } }
+			}
+		}
+		days_remove = 40
+		days_re_enable = 60
+		complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_variable = sr_merc_use } }
+					add_political_power = -20
+					set_variable = { sr_merc_use = 1 }
+				}
+				else_if = {
+					limit = { check_variable = { sr_merc_use = 1 } }
+					add_political_power = -40
+					add_to_variable = { sr_merc_use = 1 }
+				}
+				else_if = {
+					limit = { check_variable = { sr_merc_use = 2 } }
+					add_political_power = -80
+					add_to_variable = { sr_merc_use = 1 }
+				}
+				else_if = {
+					limit = { check_variable = { sr_merc_use = 3 } }
+					add_political_power = -160
+					add_to_variable = { sr_merc_use = 1 }
+				}
+				else_if = {
+					limit = { check_variable = { sr_merc_use = 4 } }
+					add_political_power = -320
+					add_to_variable = { sr_merc_use = 1 }
+				}
+				else = {} # Should never happen
+			}
+		}
+		modifier = {
+			consumer_goods_factor = 0.1
+		}
+		remove_effect = {
+			random_list = {
+				75 = {
+					subtract_from_variable = { sr_intenisty = 2 }
+					custom_effect_tooltip = lose_2_intensity
+				}
+				25 = {
+					subtract_from_variable = { sr_intenisty = 3 }
+					custom_effect_tooltip = lose_3_intensity
+				} # No effect
+			}
+			custom_effect_tooltip = return_in_60_days
+		}
+	}
+	# Call-and-Respond for puppets
+	call_in_ncr_sr = {
+		visible = {
+			any_owned_state = {
+				sr_raid_district = yes
+			}
+			NOT = { has_global_flag = sr_district_pacified }
+			is_puppet_of = NCR
+		}
+		available = {
+			custom_trigger_tooltip = { # Prevents it being clicked if it has been used 5 times
+				tooltip = intensity_over_5
+				NOT = { check_variable = { sr_intensity > 5 } }
+			}
+		}
+		cost = 20
+		days_remove = 60
+		days_re_enable = 60
+		complete_effect = {
+			add_autonomy_score = {
+			    value = -200
+			    localization = called_in_ncr_military
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = if_ncr_agrees_mil
+			effect_tooltip = {
+				if = {
+					limit = { NOT = { has_global_flag = ncr_chose_drummund } }
+					random_list = {
+						65 = {
+							subtract_from_variable = { sr_intenisty = 2 }
+							custom_effect_tooltip = lose_2_intensity
+						}
+						35 = {
+							subtract_from_variable = { sr_intenisty = 3 }
+							custom_effect_tooltip = lose_3_intensity
+						}
+					}
+				}
+				else = {
+					random_list = {
+						20 = {
+							subtract_from_variable = { sr_intenisty = 2 }
+							custom_effect_tooltip = lose_2_intensity
+						}
+						65 = {
+							subtract_from_variable = { sr_intenisty = 3 }
+							custom_effect_tooltip = lose_3_intensity
+						}
+						15 = {
+							subtract_from_variable = { sr_intenisty = 4 }
+							custom_effect_tooltip = lose_4_intensity
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = ncr_agrees_mil }
+					if = {
+						limit = { NOT = { has_global_flag = ncr_chose_drummund } }
+						random_list = {
+							65 = {
+								subtract_from_variable = { sr_intenisty = 2 }
+								custom_effect_tooltip = lose_2_intensity
+							}
+							35 = {
+								subtract_from_variable = { sr_intenisty = 3 }
+								custom_effect_tooltip = lose_3_intensity
+							}
+						}
+					}
+					else = {
+						random_list = {
+							20 = {
+								subtract_from_variable = { sr_intenisty = 2 }
+								custom_effect_tooltip = lose_2_intensity
+							}
+							65 = {
+								subtract_from_variable = { sr_intenisty = 3 }
+								custom_effect_tooltip = lose_3_intensity
+							}
+							15 = {
+								subtract_from_variable = { sr_intenisty = 4 }
+								custom_effect_tooltip = lose_4_intensity
+							}
+						}
+					}
+				}
 			}
 			custom_effect_tooltip = return_in_60_days
 		}

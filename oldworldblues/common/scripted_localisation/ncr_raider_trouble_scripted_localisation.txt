@@ -1,5 +1,6 @@
 # Decsion effects
 ## SR ##
+# Scaling Manpower #
 defined_text = {
 	name = GetScalingManpowerSR
 
@@ -102,6 +103,7 @@ defined_text = {
 		localization_key = cost_400_manpower_tooltip
 	}
 }
+# Scaling Weapons #
 defined_text = {
 	name = GetScalingArmsSR
 
@@ -202,6 +204,109 @@ defined_text = {
 			check_variable = { sr_arms_use = 4 }
 		}
 		localization_key = cost_800_arms_tooltip
+	}
+}
+# Scaling PP #
+defined_text = {
+	name = GetScalingPPSR
+
+	text = {
+		trigger = {
+			NOT = { has_variable = sr_pp_use }
+		}
+		localization_key = cost_20_pp
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_pp_use = 1 }
+		}
+		localization_key = cost_40_pp
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_pp_use = 2 }
+		}
+		localization_key = cost_80_pp
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_pp_use = 3 }
+		}
+		localization_key = cost_160_pp
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_pp_use = 4 }
+		}
+		localization_key = cost_320_pp
+	}
+}
+defined_text = {
+	name = GetScalingPPBlockedSR
+
+	text = {
+		trigger = {
+			NOT = { has_variable = sr_pp_use }
+		}
+		localization_key = cost_20_pp_blocked
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_pp_use = 1 }
+		}
+		localization_key = cost_40_pp_blocked
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_pp_use = 2 }
+		}
+		localization_key = cost_80_pp_blocked
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_pp_use = 3 }
+		}
+		localization_key = cost_160_pp_blocked
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_pp_use = 4 }
+		}
+		localization_key = cost_320_pp_blocked
+	}
+}
+defined_text = {
+	name = GetScalingPPTooltipSR
+
+	text = {
+		trigger = {
+			NOT = { has_variable = sr_pp_use }
+		}
+		localization_key = cost_20_pp_tooltip
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_pp_use = 1 }
+		}
+		localization_key = cost_40_pp_tooltip
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_pp_use = 2 }
+		}
+		localization_key = cost_80_pp_tooltip
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_pp_use = 3 }
+		}
+		localization_key = cost_160_pp_tooltip
+	}
+	text = {
+		trigger = {
+			check_variable = { sr_pp_use = 4 }
+		}
+		localization_key = cost_320_pp_tooltip
 	}
 }
 

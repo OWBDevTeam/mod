@@ -72,3 +72,70 @@ country_event = { # Large military raid
 		}
 	}
 }
+
+country_event = { # A puppet requests NCR military deployment
+	id = raid_trouble.4
+	title = raid_trouble.4.t
+	desc = raid_trouble.4
+	#picture = 
+
+	is_triggered_only = yes
+
+	option = { # Deploy our military
+		name = raid_trouble.4.a
+		ai_chance = {
+			base = 9
+		}
+		add_manpower = -400
+		remove_400_weapons = yes
+		effect_tooltip = {
+			FROM = {
+				add_autonomy_score = {
+				    value = -200
+				    localization = called_in_ncr_military
+				}
+			}
+		}
+		FROM = { country_event = { id = raid_trouble.5 days = 5 } } # NCR helps!
+	}
+
+	option = { # We don't have the resources to spare
+		reverse_add_opinion_modifier = {
+			target = FROM
+			modifier = no_NCR_mil_help
+		}
+		FROM = { country_event = { id = raid_trouble.6 days = 5 } } # NCR refuses to help!
+	}
+}
+
+country_event = { # NCR helps
+	id = raid_trouble.5
+	title = raid_trouble.5.t
+	desc = raid_trouble.5.d
+	#picture = 
+
+	is_triggered_only = yes
+
+	option = { # Nice!
+		name = raid_trouble.5.a
+	}
+}
+
+country_event = { # NCR refuses to help
+	id = raid_trouble.6
+	title = raid_trouble.6.t
+	desc = raid_trouble.6.d
+	#picture = 
+
+	is_triggered_only = yes
+
+	option = { # Oh dearie
+		name = raid_trouble.6.a
+		effect_tooltip = {
+			add_opinion_modifier = {
+			    target = NCR
+			    modifier = no_NCR_mil_help
+			}
+		}
+	}
+}

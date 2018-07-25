@@ -1,23 +1,15 @@
 ﻿l_english:
-  # Decisions
+  ## Decisions
   ncr_raider_trouble:0 "Trouble with the Raiders"
   ncr_raider_trouble_desc:0 "Raiders plauge the lands we own, terrorising settlements that joined the NCR to be protected. The problem is only getting worse, as rebel groups get ever bolder in their attacks on NCR factories, infrastructure and even military installments - indeed, many areas are part of the NCR in name only, and §Rthreaten sucession§! in the §Rnear future§!. \n\nRaiders will strike at the end of every §HDistict Pulse§!, doing damage both based on luck and the raiding intensity in the district - the raiding intensity of the district may also increase at these pulses. At §R10§! intensity, the pulse will launch a secession crisis and we will completly lose control of the district. At §R0§! intensity, the district will be pacified, and raids will no longer occur in it. We have a variaty of decisions that will help us reduce the intensity. \n\n[Root.GetSRIntensity][Root.GetReddingIntensity][Root.GetDiabloIntensity][Root.GetRapidsIntensity][Root.GetBoneyardIntensity][Root.GetMojaveIntensity][Root.GetScorpionsIntensity][Root.GetBajaIntensity][Root.GetRanchersIntensity][Root.GetNevadaIntensity][Root.GetJunktownIntensity]"
   raider_pulse_sr:0 "Santa Rosa Distict Pulse"
   enlargen_garrison_sr:0 "Enlargen the Santa Rosa Garrisons"
   attempt_integration_sr:0 "Attempt Integration of the Santa Rosa Raiders"
   arm_civilians_sr:0 "Arm Civilians in the Santa Rosa Area"
-  raider_pulse_redding:0 "Redding District Pulse"
-  raider_pulse_diablo:0 "Diablo District Pulse"
-  raider_pulse_rapids:0 "The Rapids District Pulse"
-  raider_pulse_boneyard:0 "The Boneyard District Pulse"
-  raider_pulse_mojave:0 "Mojave District Pulse"
-  raider_pulse_scor:0 "The Scorpions District Pulse"
-  raider_pulse_baja:0 "Baja District Pulse"
-  raider_pulse_ranchers:0 "Ranches District Pulse"
-  raider_pulse_nevada:0 "The Nevada Range District Pulse"
-  raider_pulse_junktown:0 "Junktown District Pulse"
+  employ_mercs_sr:0 "Employ Mercinaries to protect Santa Rosa"
+  call_in_ncr_sr:0 "Call the NCR Military into Santa Rosa"
 
-  # Events
+  ## Events
   raid_trouble.1.t:0 "Small Raid"
   raid_trouble.1.d:0 ""
   raid_trouble.1.a:0 "We need to fight back"
@@ -28,7 +20,7 @@
   raid_trouble.3.d:0 ""
   raid_trouble.3.a:0 "We need to wrest back control - fast"
 
-  # Tooltips
+  ## Tooltips
   intensity_increases:0 "the §Rraiding intensity§! in the district §Rincreasing§! by §H1§!!\n"
   raid_crisis_scaling_manpower_sr:0 "[Root.GetScalingManpowerSR]\n"
   raid_crisis_scaling_manpower_sr_blocked:0 "[Root.GetScalingManpowerBlockedSR]\n"
@@ -36,14 +28,26 @@
   raid_crisis_scaling_weapons_sr:0 "[Root.GetScalingArmsSR]\n"
   raid_crisis_scaling_weapons_sr_blocked:0 "[Root.GetScalingArmsBlockedSR]\n"
   raid_crisis_scaling_weapons_sr_tooltip:0 "[Root.GetScalingArmsTooltipSP]\n"
+  raid_crisis_scaling_pp_sr:0 "[Root.GetScalingPPSR]\n"
+  raid_crisis_scaling_pp_sr_blocked:0 "[Root.GetScalingPPBlockedSR]\n"
+  raid_crisis_scaling_pp_sr_tooltip:0 "[Root.GetScalingPPTootlipSR]\n"
+
   lose_1_intensity:0 "losing §H1§! §Rintensity§! in this raiding district!\n"
   lose_2_intensity:0 "losing §H2§! §Rintensity§! in this raiding district!\n"
   lose_3_intensity:0 "losing §H3§! §Rintensity§! in this raiding district!\n"
+  lose_4_intensity:0 "losing §H4§! §Rintensity§! in this raiding district!\n"
+  has_some_intensity:0 "The §Hraiding intensity§! is at least §H1§! in this district\n"
+  intensity_over_5:0 "The §Hraiding intensity§! is at least §R5§! in this district\n"
+
+  if_ncr_agrees_mil:0 "If the NCR agrees to deploy their military, the follwoing will happen:\n"
 
   return_in_60_days:0 "The decision will reappear in §R60§! days.\n"
   return_in_100_days:0 "The decision will reappear in §R100§! days.\n"
 
-  # Scripted loc
+  sr_district_pacified:0 "The §HSanta Rosa§! Raid Distict is be §Hpermanately pacified§!!\n"
+
+  ## Scripted loc
+  # Scaling manpower
   cost_25_manpower:0 "§H25§! manpower"
   cost_25_manpower_blocked:0 "§R25§! manpower"
   cost_25_manpower_tooltip:0 "It costs §R25§! manpower to select this."
@@ -59,6 +63,7 @@
   cost_400_manpower:0 "§H400§! manpower"
   cost_400_manpower_blocked:0 "§R400§! manpower"
   cost_400_manpower_tooltip:0 "It costs §R400§! manpower to select this."
+  # Scaling arms
   cost_50_arms:0 "§H50§! weapons"
   cost_50_arms_blocked:0 "§R50§! weapons"
   cost_50_arms_tooltip:0 "It costs §R50§! of our most up-to-date weapons to select this."
@@ -74,6 +79,23 @@
   cost_800_arms:0 "§H800§! weapons"
   cost_800_arms_blocked:0 "§R800§! weapons"
   cost_800_arms_tooltip:0 "It costs §R800§! of our most up-to-date weapons to select this."
+  # Scaling PP
+  cost_20_pp:0 "§H20§! £pol_power"
+  cost_20_pp_blocked:0 "§R20§! £pol_power"
+  cost_20_pp_tooltip:0 "It costs §R20§! £pol_power to select this."
+  cost_40_pp:0 "§H40§! £pol_power"
+  cost_40_pp_blocked:0 "§R40§! £pol_power"
+  cost_40_pp_tooltip:0 "It costs §R40§! £pol_power to select this."
+  cost_80_pp:0 "§H80§! £pol_power"
+  cost_80_pp_blocked:0 "§R80§! £pol_power"
+  cost_80_pp_tooltip:0 "It costs §R80§! £pol_power to select this."
+  cost_160_pp:0 "§H160§! £pol_power"
+  cost_160_pp_blocked:0 "§R160§! £pol_power"
+  cost_160_pp_tooltip:0 "It costs §R160§! £pol_power to select this."
+  cost_320_pp:0 "§H320§! £pol_power"
+  cost_320_pp_blocked:0 "§R320§! £pol_power"
+  cost_320_pp_tooltip:0 "It costs §R320§! £pol_power to select this."
+  
   sr_intensity:0 "Santa Rosa Raid Intensity: §R[?Root.sr_intensity]§!\n"
   redding_intensity:0 "Redding Raid Intensity: §R[?Root.redding_intensity]§!\n"
   diablo_intensity:0 "Diablo Raid Intensity: §R[?Root.diablo_intensity]§!\n"
@@ -86,3 +108,9 @@
   nevada_intensity:0 "Nevada Range Raid Intensity: §R[?Root.nevada_intensity]§!\n"
   junktown_intensity:0 "Junktown Raid Intensity: §R[?Root.junktown_intensity]§!\n"
   blank:0 ""
+
+  ## Autonomy Ratios
+  called_in_ncr_military:0 "Called in the NCR Military"
+
+  ## Opinion Mods
+  no_NCR_mil_help:0 "The NCR refused to deploy their military"
