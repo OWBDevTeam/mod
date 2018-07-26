@@ -10,7 +10,7 @@ set_technology = {
 	leather_armour = 1
 }
 
-set_stability = 0.4 
+set_stability = 0.4
 set_war_support = 0.4
 set_convoys = 25
 set_politics = {
@@ -41,16 +41,22 @@ create_country_leader  = {
 	ideology =chieftain
 	traits = {
 		dislikes_legion
-	cornered_fox 
+		cornered_fox
 	}
 }
+
 create_corps_commander = {
 	name = "Bracos"
 	picture = "Portrait_TWI_Leader.dds"
-	traits = { trickster desert_fox commando loyalty }
 	skill = 5
-	attack_skill = 3
-	defense_skill = 4
-	planning_skill = 2
-	logistics_skill = 2
+	traits = {
+		trickster
+		desert_fox
+		commando
+		loyalty
+	}
+	attack_skill = 4
+	defense_skill = 6
+	planning_skill = 3
+	logistics_skill = 3
 }

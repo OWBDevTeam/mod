@@ -9,7 +9,7 @@ set_technology = {
 	scientific_civilization = 1
 	destroyer_tech = 1
 	cruiser_tech = 1
-	battleship_tech = 1 
+	battleship_tech = 1
 	heavy_cruiser_tech = 1
 	basic_laser_weaponry = 1
 	improved_laser_weaponry  = 1
@@ -24,14 +24,14 @@ set_war_support = 0.55
 add_opinion_modifier = { target = TRL modifier = boshatesmutants }
 
 set_politics = {
-    parties = {
-        people = { popularity = 0 }
-        elites = { popularity = 65 }
-        intellectuals = { popularity = 10 }
-        ruler = { popularity = 25 }
-    }
-    ruling_party = elites
-    elections_allowed = no
+	parties = {
+		people = { popularity = 0 }
+		elites = { popularity = 65 }
+		intellectuals = { popularity = 10 }
+		ruler = { popularity = 25 }
+	}
+	ruling_party = elites
+	elections_allowed = no
 }
 
 declare_war_on = {
@@ -43,7 +43,7 @@ declare_war_on = {
 	target = TCA
 	type = annex_everything
 }
-	
+
 add_ideas = {
 	limited_conscription
 	bunkerblues
@@ -51,15 +51,15 @@ add_ideas = {
 
 set_research_slots = 4
 create_country_leader  = {
-    name = "The Immortal"
-    desc = "IMMORTAL_DESC"
-    picture = "Portrait_Immortal.dds"
-    expire = "3000.1.1"
-    ideology = militarist_technocracy
-    
-    traits = {
+	name = "The Immortal"
+	desc = "IMMORTAL_DESC"
+	picture = "Portrait_Immortal.dds"
+	expire = "3000.1.1"
+	ideology = militarist_technocracy
+
+	traits = {
 		warmonger
-    }
+	}
 }
 
 create_field_marshal = {
@@ -67,9 +67,9 @@ create_field_marshal = {
 	picture = "Portrait_Immortal.dds"
 	traits = { offensive_doctrine armor_officer }
 	skill = 4
-	attack_skill = 4
+	attack_skill = 5
 	defense_skill = 2
-	planning_skill = 2
+	planning_skill = 3
 	logistics_skill = 3
 }
 
@@ -79,8 +79,8 @@ create_corps_commander = {
 	traits = { winter_specialist }
 	skill = 3
 	attack_skill = 3
-	defense_skill = 2
-	planning_skill = 1
+	defense_skill = 3
+	planning_skill = 2
 	logistics_skill = 2
 }
 

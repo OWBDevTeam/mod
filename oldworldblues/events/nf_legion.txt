@@ -7,22 +7,22 @@ country_event = {
 	desc = nf_legion.100.d
 	picture = GFX_report_event_fascist_speech
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_legion.1.a
 
 		create_country_leader  = {
-		    name = "Caesar"
-		    desc = "Caesar_DESC"
-		    picture = "Portrait_Caesar.dds"
-		    expire = "3000.1.1"
-		    ideology = benevolent_dictatorship
+			name = "Caesar"
+			desc = "Caesar_DESC"
+			picture = "Portrait_Caesar.dds"
+			expire = "3000.1.1"
+			ideology = benevolent_dictatorship
 
-		    traits = {
-		        cruel_tyrant
-		        warmonger
-		    }
+			traits = {
+				cruel_tyrant
+				warmonger
+			}
 		}
 	}
 }
@@ -34,9 +34,9 @@ country_event = {
 	desc = nf_legion.1.d
 	picture = GFX_event_CES_whitelegs
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
-    # Ally
+	# Ally
 	option = {
 		name = nf_legion.1.a
 
@@ -48,24 +48,24 @@ country_event = {
 			}
 		}
 
-        set_country_flag = accepted_petition
+		set_country_flag = accepted_petition
 
 		WHT = {
-		    set_politics = {
-			    ruling_party = elites
+			set_politics = {
+				ruling_party = elites
 				elections_allowed = no
 			}
 			add_popularity = { ideology = elites popularity = 0.5 }
 		}
 
 		add_opinion_modifier = {
-            target = CES
-            modifier = loyal_tribe
-        }
-        reverse_add_opinion_modifier = {
-            target = CES
-            modifier = loyal_tribe
-        }
+			target = CES
+			modifier = loyal_tribe
+		}
+		reverse_add_opinion_modifier = {
+			target = CES
+			modifier = loyal_tribe
+		}
 
 		declare_war_on = {
 			target = NCN
@@ -74,8 +74,8 @@ country_event = {
 
 	}
 
-    # Refuse
-    option = {
+	# Refuse
+	option = {
 		name = nf_legion.1.b
 
 		ai_chance = {
@@ -97,7 +97,7 @@ country_event = {
 	desc = nf_legion.2.d
 	picture = GFX_event_CES_whitelegs
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	# Ally
 	option = {
@@ -108,22 +108,22 @@ country_event = {
 		}
 
 		EHT = {
-		    set_politics = {
-			    ruling_party = elites elections_allowed = no
+			set_politics = {
+				ruling_party = elites elections_allowed = no
 			}
 			add_popularity = { ideology = elites popularity = 0.5 }
 		}
 
-        set_country_flag = accepted_petition
+		set_country_flag = accepted_petition
 
-        add_opinion_modifier = {
-            target = CES
-            modifier = loyal_tribe
-        }
-        reverse_add_opinion_modifier = {
-            target = CES
-            modifier = loyal_tribe
-        }
+		add_opinion_modifier = {
+			target = CES
+			modifier = loyal_tribe
+		}
+		reverse_add_opinion_modifier = {
+			target = CES
+			modifier = loyal_tribe
+		}
 
 		declare_war_on = {
 			target = NCN
@@ -131,8 +131,8 @@ country_event = {
 		}
 	}
 
-    # Refuse
-    option = {
+	# Refuse
+	option = {
 		name = nf_legion.2.b
 
 		ai_chance = {
@@ -141,14 +141,14 @@ country_event = {
 
 		set_country_flag = refused_petition
 
-        add_opinion_modifier = {
-            target = CES
-            modifier = disloyal_tribe
-        }
-        reverse_add_opinion_modifier = {
-            target = CES
-            modifier = disloyal_tribe
-        }
+		add_opinion_modifier = {
+			target = CES
+			modifier = disloyal_tribe
+		}
+		reverse_add_opinion_modifier = {
+			target = CES
+			modifier = disloyal_tribe
+		}
 	}
 }
 
@@ -159,15 +159,15 @@ country_event = {
 	desc = nf_legion.3.d
 	picture = GFX_event_CES_hoover_dam
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_legion.3.a
 
-        hidden_effect = {
-            set_country_flag = hoover_dam_won
-            clr_country_flag = battle_for_hoover_dam
-        }
+		hidden_effect = {
+			set_country_flag = hoover_dam_won
+			clr_country_flag = battle_for_hoover_dam
+		}
 	}
 }
 
@@ -178,15 +178,15 @@ country_event = {
 	desc = nf_legion.4.d
 	picture = GFX_event_CES_hoover_dam
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_legion.4.a
 
-        hidden_effect = {
-            set_country_flag = hoover_dam_lost
-            clr_country_flag = battle_for_hoover_dam
-        }
+		hidden_effect = {
+			set_country_flag = hoover_dam_lost
+			clr_country_flag = battle_for_hoover_dam
+		}
 	}
 }
 
@@ -206,8 +206,8 @@ country_event = {
 	desc = nf_legion.5.d
 	picture = GFX_event_CES_vulpes
 
-    is_triggered_only = no
-    fire_only_once = yes
+	is_triggered_only = no
+	fire_only_once = yes
 	trigger = {
 		tag = CES
 		has_country_flag = {
@@ -260,7 +260,7 @@ country_event = {
 	option = {
 		name = nf_legion.5.a
 
-        kill_country_leader = yes
+		kill_country_leader = yes
 
 		create_country_leader  = {
 			name = "Lanius"
@@ -334,12 +334,12 @@ country_event = {
 	# switch to vulpes_inculta
 	option = {
 		name = nf_legion.5.b
-        hidden_effect = {
+		hidden_effect = {
 			every_owned_state = {
 				set_state_flag = do_not_decimate
 			}
 		}
-        kill_country_leader = yes
+		kill_country_leader = yes
 
 		create_country_leader  = {
 			name = "Vulpes Inculta"
@@ -430,17 +430,17 @@ country_event = {
 		custom_effect_tooltip = vulpes_chosen
 	}
 
-    option = {
+	option = {
 		name = nf_legion.5.c
 
-        trigger = {
-            has_completed_focus = ces_goddess_diana
+		trigger = {
+			has_completed_focus = ces_goddess_diana
 			has_completed_focus = ces_the_twin_temples
-        }
+		}
 
 		set_country_flag = caesar_survived
 
-        add_stability = -0.1
+		add_stability = -0.1
 		add_war_support = 0.05
 		country_event = { id = nf_legion.6 }
 
@@ -453,8 +453,8 @@ country_event = {
 	desc = nf_legion.6.d
 	picture = GFX_event_CES_camp_1
 
-    is_triggered_only = yes
-    # Stay as Caesar
+	is_triggered_only = yes
+	# Stay as Caesar
 	option = {
 		name = nf_legion.6.a
 
@@ -464,7 +464,7 @@ country_event = {
 		custom_effect_tooltip = caesar_chosen
 	}
 
-    option = {
+	option = {
 		name = nf_legion.6.b
 		hidden_effect = {
 			359 = { set_state_name = "Fortification Hill" }
@@ -565,24 +565,24 @@ country_event = {
 	desc = nf_legion.7.d
 	picture = GFX_event_CES_camp_2
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_legion.7.a
 
-        add_ideas = legion_nf_weapon_maintenance
+		add_ideas = legion_nf_weapon_maintenance
 	}
 
-    option = {
+	option = {
 		name = nf_legion.7.b
 
-        add_ideas = legion_nf_unit_tactics
+		add_ideas = legion_nf_unit_tactics
 	}
 
-    option = {
+	option = {
 		name = nf_legion.7.c
 
-        add_ideas = legion_nf_explosives_creation
+		add_ideas = legion_nf_explosives_creation
 	}
 }
 
@@ -593,24 +593,24 @@ country_event = {
 	desc = nf_legion.8.d
 	picture = GFX_event_CES_camp_1
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_legion.8.a
 
-        add_ideas = legion_nf_ridgers_pyre
+		add_ideas = legion_nf_ridgers_pyre
 	}
 
-    option = {
+	option = {
 		name = nf_legion.8.b
 
-        add_ideas = legion_nf_kaibab_crucifiction
+		add_ideas = legion_nf_kaibab_crucifiction
 	}
 
-    option = {
+	option = {
 		name = nf_legion.8.c
 
-        add_ideas = legion_nf_fredonian_arena
+		add_ideas = legion_nf_fredonian_arena
 	}
 }
 
@@ -621,70 +621,70 @@ country_event = {
 	desc = nf_legion.9.d
 	picture = GFX_event_CES_malpais_legate
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_legion.9.a
 
-        create_field_marshal = {
-            name = "Malpais Legate"
-            portrait_path = "gfx/leaders/CES/Portrait_Malpais.dds"
-            skill = 5
+		create_field_marshal = {
+			name = "Malpais Legate"
+			portrait_path = "gfx/leaders/CES/Portrait_Malpais.dds"
+			skill = 5
 			id = 1003
-            traits = {
-                urban_assault_specialist
-            }
-			attack_skill = 4
-			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 2
-        }
+			traits = {
+				urban_assault_specialist
+			}
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 3
+		}
 
-        custom_effect_tooltip = legion_siege_battalion_tt
-        hidden_effect = { load_oob = "legion_siege_battalion" }
+		custom_effect_tooltip = legion_siege_battalion_tt
+		hidden_effect = { load_oob = "legion_siege_battalion" }
 	}
 
-    option = {
+	option = {
 		name = nf_legion.9.b
 
-        create_field_marshal = {
-            name = "Malpais Legate"
-            portrait_path = "gfx/leaders/CES/Portrait_Malpais.dds"
-            skill = 5
+		create_field_marshal = {
+			name = "Malpais Legate"
+			portrait_path = "gfx/leaders/CES/Portrait_Malpais.dds"
+			skill = 5
 			id = 1003
-            traits = {
-                desert_fox
-                trickster
-            }
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 2
-			logistics_skill = 4
-        }
+			traits = {
+				desert_fox
+				trickster
+			}
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 6
+		}
 
-        custom_effect_tooltip = legion_recon_battalion_tt
-        hidden_effect = { load_oob = "legion_recon_battalion" }
+		custom_effect_tooltip = legion_recon_battalion_tt
+		hidden_effect = { load_oob = "legion_recon_battalion" }
 	}
 
-    option = {
+	option = {
 		name = nf_legion.9.c
 
-        create_field_marshal = {
-            name = "Malpais Legate"
-            portrait_path = "gfx/leaders/CES/Portrait_Malpais.dds"
-            skill = 5
+		create_field_marshal = {
+			name = "Malpais Legate"
+			portrait_path = "gfx/leaders/CES/Portrait_Malpais.dds"
+			skill = 5
 			id = 1003
-            traits = {
-                desert_fox
-            }
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 4
-			logistics_skill = 3
-        }
+			traits = {
+				desert_fox
+			}
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 6
+			logistics_skill = 4
+		}
 
 		custom_effect_tooltip = legion_chariots_tt
-        hidden_effect = { load_oob = "legion_chariots" }
+		hidden_effect = { load_oob = "legion_chariots" }
 	}
 }
 
@@ -695,24 +695,24 @@ country_event = {
 	desc = nf_legion.10.d
 	picture = GFX_event_CES_caesar
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_legion.10.a
 
-        add_ideas = legion_nf_profligate_destruction
+		add_ideas = legion_nf_profligate_destruction
 	}
 
-    option = {
+	option = {
 		name = nf_legion.10.b
 
-        add_ideas = legion_nf_divide_et_impera
+		add_ideas = legion_nf_divide_et_impera
 	}
 
-    option = {
+	option = {
 		name = nf_legion.10.c
 
-        add_ideas = legion_nf_decimatio
+		add_ideas = legion_nf_decimatio
 	}
 }
 

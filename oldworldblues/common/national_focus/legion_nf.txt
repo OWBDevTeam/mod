@@ -146,10 +146,10 @@ focus_tree = {
 					target = HAN
 				}
 				HAN = {
-					every_owned_state = { 
+					every_owned_state = {
 						add_core_of = ROOT
 					}
-				}	
+				}
 			}
 			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
@@ -272,10 +272,10 @@ focus_tree = {
 					target = TTM
 				}
 				TTM = {
-					every_owned_state = { 
+					every_owned_state = {
 						add_core_of = ROOT
 					}
-				}	
+				}
 			}
 			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
@@ -402,10 +402,10 @@ focus_tree = {
 					target = TWO
 				}
 				TWO = {
-					every_owned_state = { 
+					every_owned_state = {
 						add_core_of = ROOT
 					}
-				}	
+				}
 			}
 			# Safety
 			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
@@ -537,10 +537,10 @@ focus_tree = {
 					target = COW
 				}
 				COW = {
-					every_owned_state = { 
+					every_owned_state = {
 						add_core_of = ROOT
 					}
-				}	
+				}
 			}
 			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
@@ -575,7 +575,7 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] ces_cochise_county_cowboys exited"
 			}
-		}	
+		}
 	}
 	focus = {
 		id = ces_wyatt_the_demon
@@ -876,7 +876,7 @@ focus_tree = {
 				create_wargoal = {
 					type = annex_everything
 					target = MOJ
-				}	
+				}
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -901,10 +901,10 @@ focus_tree = {
 			if = {
 				limit = { country_exists = MOJ }
 				MOJ = {
-					every_owned_state = { 
+					every_owned_state = {
 						add_core_of = ROOT
 					}
-				}	
+				}
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1055,7 +1055,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = ces_the_white_leg_petition
 		icon = GFX_goal_legion_diplomatic
@@ -1070,7 +1070,7 @@ focus_tree = {
 			country_exists = WHT
 			OR = {
 				has_completed_focus = ces_the_burned_man
-				has_completed_focus = ces_triumph_at_the_dam	
+				has_completed_focus = ces_triumph_at_the_dam
 			}
 		}
 		x = 5
@@ -1084,7 +1084,7 @@ focus_tree = {
 				limit = {
 					country_exists = WHT
 				}
-				WHT = { 
+				WHT = {
 					country_event = { id = nf_legion.1 } # Petition To White Legs
 				}
 			}
@@ -1121,11 +1121,11 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] ces_white_legs_accept entered"
 			}
-			add_opinion_modifier = { 
-				target = WHT 
+			add_opinion_modifier = {
+				target = WHT
 				modifier = loyal_tribe
 			}
-			reverse_add_opinion_modifier = { 
+			reverse_add_opinion_modifier = {
 				target = WHT
 				modifier = loyal_tribe
 			}
@@ -1167,11 +1167,11 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] ces_white_legs_refuse entered"
 			}
-			add_opinion_modifier = { 
-				target = WHT 
+			add_opinion_modifier = {
+				target = WHT
 				modifier = disloyal_tribe
-			}   
-			reverse_add_opinion_modifier = { 
+			}
+			reverse_add_opinion_modifier = {
 				target = WHT
 				modifier = disloyal_tribe
 			}
@@ -1181,7 +1181,7 @@ focus_tree = {
 					limit = {
 						country_exists = EHT
 					}
-					EHT = { 
+					EHT = {
 						country_event = { id = nf_legion.2 }
 					}
 				}
@@ -1328,7 +1328,7 @@ focus_tree = {
 			focus = ces_legionary_utah
 		}
 		available = {
-			EHT = { has_opinion_modifier = loyal_tribe } 
+			EHT = { has_opinion_modifier = loyal_tribe }
 		}
 		x = 6
 		y = 13
@@ -1362,7 +1362,7 @@ focus_tree = {
 			focus = ces_new_auxilliary
 		}
 		available = {
-			WHT = { has_opinion_modifier = loyal_tribe } 
+			WHT = { has_opinion_modifier = loyal_tribe }
 		}
 		x = 4
 		y = 13
@@ -1455,7 +1455,7 @@ focus_tree = {
 						type = annex_everything
 					}
 				}
-			
+
 				if = {
 					limit = {
 						252 = {
@@ -1537,10 +1537,10 @@ focus_tree = {
 				traits = {
 					conqueror
 				}
-				attack_skill = 5
-				defense_skill = 3
-				planning_skill = 2
-				logistics_skill = 2
+				attack_skill = 6
+				defense_skill = 4
+				planning_skill = 3
+				logistics_skill = 3
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1581,10 +1581,10 @@ focus_tree = {
 				traits = {
 					conqueror
 				}
-				attack_skill = 3
-				defense_skill = 5
-				planning_skill = 2
-				logistics_skill = 2
+				attack_skill = 4
+				defense_skill = 6
+				planning_skill = 3
+				logistics_skill = 3
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1752,11 +1752,11 @@ focus_tree = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] ces_crossing_the_colorado entered"
-			}  
+			}
 			add_manpower = -200
 			transfer_state = 99
 			set_state_controller = 99
-			99 = {    
+			99 = {
 				set_state_name = "Caesar's Landing"
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -1803,7 +1803,7 @@ focus_tree = {
 			add_ideas = legion_nf_rubicon_crossed
 			add_manpower = -1000
 			transfer_state = 99
-			99 = {    
+			99 = {
 				set_state_name = "Caesar's Landing"
 				add_building_construction = {
 					type = dockyard
@@ -1865,7 +1865,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = ces_poking_the_bear
 		icon = GFX_goal_attack_legion
@@ -1987,7 +1987,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = ces_enslave_the_ranchers
 		icon = GFX_goal_legion_slaves
@@ -2016,7 +2016,7 @@ focus_tree = {
 						}
 					}
 				}
-				custom_effect_tooltip = legion_must_own_baudelio_territory 
+				custom_effect_tooltip = legion_must_own_baudelio_territory
 			}
 			every_owned_state = {
 				limit = {
@@ -2062,7 +2062,7 @@ focus_tree = {
 						}
 					}
 				}
-				custom_effect_tooltip = legion_must_own_baudelio_territory 
+				custom_effect_tooltip = legion_must_own_baudelio_territory
 			}
 			random_owned_state = {
 				limit = {
@@ -2079,7 +2079,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = ces_reorganise_the_ranches
 		icon = GFX_goal_legion_generic_infantry
@@ -2102,7 +2102,7 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] ces_reorganise_the_ranches entered"
 			}
-			every_state = { 
+			every_state = {
 				limit = { is_baudelio_state = yes }
 				add_core_of = ROOT
 			}
@@ -2112,7 +2112,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = ces_pecos_colonists
 		icon = GFX_goal_generic_war_focus
@@ -2194,7 +2194,7 @@ focus_tree = {
 						}
 					}
 				}
-				custom_effect_tooltip = legion_must_own_pecos_territory 
+				custom_effect_tooltip = legion_must_own_pecos_territory
 			}
 			every_owned_state = {
 				limit = {
@@ -2240,7 +2240,7 @@ focus_tree = {
 						}
 					}
 				}
-				custom_effect_tooltip = legion_must_own_pecos_territory 
+				custom_effect_tooltip = legion_must_own_pecos_territory
 			}
 			random_owned_state = {
 				limit = {
@@ -2274,7 +2274,7 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] ces_assimilate_the_people entered"
 			}
-			every_state = { 
+			every_state = {
 				limit = { is_pecos_state = yes }
 				add_core_of = ROOT
 			}
@@ -2329,7 +2329,7 @@ focus_tree = {
 					target = VEG
 				}
 				VEG = {
-					every_owned_state = { 
+					every_owned_state = {
 						limit = { is_new_vegas = yes }
 						add_core_of = ROOT
 					}
@@ -2395,7 +2395,7 @@ focus_tree = {
 						}
 					}
 				}
-				custom_effect_tooltip = legion_must_own_vegas_territory 
+				custom_effect_tooltip = legion_must_own_vegas_territory
 			}
 			every_owned_state = {
 				limit = {
@@ -2439,7 +2439,7 @@ focus_tree = {
 						}
 					}
 				}
-				custom_effect_tooltip = legion_must_own_vegas_territory 
+				custom_effect_tooltip = legion_must_own_vegas_territory
 			}
 			every_owned_state = {
 				limit = {
@@ -2492,7 +2492,7 @@ focus_tree = {
 						}
 					}
 				}
-				custom_effect_tooltip = legion_must_own_vegas_territory 
+				custom_effect_tooltip = legion_must_own_vegas_territory
 			}
 			every_owned_state = {
 				limit = {
@@ -2538,7 +2538,7 @@ focus_tree = {
 						}
 					}
 				}
-				custom_effect_tooltip = legion_must_own_vegas_territory 
+				custom_effect_tooltip = legion_must_own_vegas_territory
 			}
 			every_owned_state = {
 				limit = {
@@ -2581,7 +2581,7 @@ focus_tree = {
 						}
 					}
 				}
-				custom_effect_tooltip = legion_must_own_vegas_territory 
+				custom_effect_tooltip = legion_must_own_vegas_territory
 			}
 			every_owned_state = {
 				limit = {
@@ -2720,7 +2720,7 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] ces_divide_et_impera entered"
 			}
 			if = {
-				limit = { 
+				limit = {
 					country_exists = NCR
 				}
 				NCR = {
@@ -2760,7 +2760,7 @@ focus_tree = {
 							NOT = { is_in_faction_with = NCR }
 							is_neighbor_of = CES
 							NOT = {
-								has_opinion = {                         
+								has_opinion = {
 									value = 0
 									target = NCR
 								}
@@ -2771,13 +2771,13 @@ focus_tree = {
 						tag = BLP
 					}
 				}
-				add_opinion_modifier = { 
-					target = CES 
-					modifier = renderuntocaesar 
+				add_opinion_modifier = {
+					target = CES
+					modifier = renderuntocaesar
 				}
-				reverse_add_opinion_modifier = { 
-					target = CES 
-					modifier = renderuntocaesar 
+				reverse_add_opinion_modifier = {
+					target = CES
+					modifier = renderuntocaesar
 				}
 			}
 			if = {
@@ -2841,7 +2841,7 @@ focus_tree = {
 				limit = {
 					AND = {
 						NOT = {
-							country_exists = BVC 
+							country_exists = BVC
 							country_exists = BLP
 						}
 						NOT = {
@@ -2849,7 +2849,7 @@ focus_tree = {
 						}
 					}
 				}
-				
+
 				BLP = {
 					transfer_state = 97
 					transfer_state = 325
@@ -2857,7 +2857,7 @@ focus_tree = {
 					add_to_war = {
 						targeted_alliance = CES
 						enemy = NCR
-					}				
+					}
 				}
 				BVC = {
 					transfer_state = 651
@@ -2870,7 +2870,7 @@ focus_tree = {
 					add_to_war = {
 						targeted_alliance = CES
 						enemy = NCR
-					}				
+					}
 				}
 			}
 			if = {
@@ -2884,7 +2884,7 @@ focus_tree = {
 					}
 					hidden_effect = {
 						load_oob = BVC_2275
-					}					
+					}
 				}
 			}
 			if = {
@@ -2960,7 +2960,7 @@ focus_tree = {
 			add_manpower = -200
 			transfer_state = 533
 			set_state_controller = 533
-			533 = {    
+			533 = {
 				set_state_name = "Caesar's Landing"
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -3669,21 +3669,21 @@ focus_tree = {
 				always = no
 			}
 			#if = {
-			#   limit = {
-			#        NOT = {
-			#            any_owned_state = {
-			#                is_arizona_state = yes
-			#            }
-			#        }
-			#    }
-			#    always = yes
+			#	limit = {
+			#		NOT = {
+			#			any_owned_state = {
+			#				is_arizona_state = yes
+			#			}
+			#		}
+			#	}
+			#	always = yes
 			#}
 		}
-		completion_reward = {	
+		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] ces_via_militaris entered"
-			}    
+			}
 			if = {
 				limit = {
 					NOT = {
@@ -3692,7 +3692,7 @@ focus_tree = {
 						}
 					}
 				}
-				custom_effect_tooltip = legion_must_own_arizona_territory 
+				custom_effect_tooltip = legion_must_own_arizona_territory
 			}
 			every_owned_state = {
 				limit = { is_arizona_state = yes }
@@ -3743,7 +3743,7 @@ focus_tree = {
 						}
 					}
 				}
-				custom_effect_tooltip = legion_must_own_new_mexico_territory 
+				custom_effect_tooltip = legion_must_own_new_mexico_territory
 			}
 			every_owned_state = {
 				limit = { is_new_mexico_state = yes }
@@ -3794,7 +3794,7 @@ focus_tree = {
 						}
 					}
 				}
-				custom_effect_tooltip = legion_must_own_colorado_territory 
+				custom_effect_tooltip = legion_must_own_colorado_territory
 			}
 			every_owned_state = {
 				limit = { is_colorado_state = yes }
@@ -4228,9 +4228,9 @@ focus_tree = {
 					conqueror
 				}
 				attack_skill = 3
-				defense_skill = 1
+				defense_skill = 2
 				planning_skill = 3
-				logistics_skill = 1
+				logistics_skill = 2
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -4350,10 +4350,10 @@ focus_tree = {
 				traits = {
 					loyalty
 				}
-				attack_skill = 2
-				defense_skill = 3
+				attack_skill = 3
+				defense_skill = 4
 				planning_skill = 1
-				logistics_skill = 1
+				logistics_skill = 2
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -4471,9 +4471,9 @@ focus_tree = {
 					slavemaster
 				}
 				attack_skill = 1
-				defense_skill = 4
-				planning_skill = 1
-				logistics_skill = 1
+				defense_skill = 5
+				planning_skill = 2
+				logistics_skill = 2
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
