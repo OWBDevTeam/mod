@@ -1695,7 +1695,77 @@ ncr_raider_trouble = {
 			}
 			else_if = {
 				limit = { check_variable = { sr_intensity = 10 } }
-				#secession_raid_crisis = yes # Calls the scripted effect to launch a secession crisis
+				custom_effect_tooltip = secession_raid_crisis
+				if = { # Case where the nation is entirely composed of the one raid district
+					limit = {
+						all_owned_state = {
+							sr_raid_district = yes
+						}
+					}
+					if = { # Case where this is the NCR
+						limit = {
+							tag = NCR
+						}
+						#country_event = { id = raider_trouble.10 } # Raiders attempt to seize power
+						start_civil_war = {
+						    ruling_party = elites
+						    size = 0.75
+						}
+					}
+					if = { # Case where this is one of the NCR's puppets
+						limit = {
+							is_puppet_of = NCR
+						}
+						country_event = { id = raider_trouble.11 } # Raiders seize power
+						custom_effect_tooltip = independence_from_ncr_declared
+						hidden_effect = {
+							NCR = { release = ROOT } # NCR releases the puppet to free them
+							leave_faction = yes
+						}
+						kill_country_leader = yes
+						set_politics = {
+							ruling_party = elites
+						}
+						set_party_name = { 
+						    ideology = elites
+						    long_name = sr_sepratists_long
+						    name = sepratists 
+						}
+						set_political_party = {
+						    ideology = elites
+						    popularity = 60
+						}
+						every_country = {
+							limit = {
+								OR = {
+									tag = NCR
+									is_puppet_of = NCR
+								}
+							}
+							country_event = { id = raider_trouble.12 } # FROM falls to the raiders
+						}
+					}
+				}
+				else = { # Case where the nation isn't entirely composed of the one raid district
+					#every_state = {
+					#	limit = {
+					#		sr_raid_district = yes
+					#	}
+					#	add_core_of = SRR # Adds cores for the sr raiders tag
+					#}
+					#release = SRR
+					# SRR = {
+					#	every_country = {
+					#		limit = {
+					#			OR = {
+					#				tag = NCR
+					#				is_puppet_of = NCR
+					#			}
+					#			country_event = { id = raider_trouble.13 } # FROM declares independence
+					#		}
+					#	}
+					#}
+				}
 			}
 			else = {
 				custom_effect_tooltip = "Something has gone really fucking wrong - tell @HappyNTH"
@@ -7010,7 +7080,7 @@ ncr_raider_trouble = {
 		}
 	}
 	enlargen_garrison_dayglow = {
-		priority = 20
+		priority = 18
 		visible = {
 			any_owned_state = {
 				dayglow_raid_district = yes
@@ -7118,7 +7188,7 @@ ncr_raider_trouble = {
 		}
 	}
 	attempt_integration_dayglow = {
-		priority = 20
+		priority = 18
 		visible = {
 			any_owned_state = {
 				dayglow_raid_district = yes
@@ -7158,7 +7228,7 @@ ncr_raider_trouble = {
 		}
 	}
 	arm_civilians_dayglow = {
-		priority = 20
+		priority = 18
 		visible = {
 			any_owned_state = {
 				dayglow_raid_district = yes
@@ -7248,7 +7318,7 @@ ncr_raider_trouble = {
 		}
 	}
 	employ_mercs_dayglow = {
-		priority = 20
+		priority = 18
 		visible = {
 			any_owned_state = {
 				dayglow_raid_district = yes
@@ -7346,7 +7416,7 @@ ncr_raider_trouble = {
 	}
 	# Call-and-Respond for puppets
 	call_in_ncr_dayglow = {
-		priority = 20
+		priority = 18
 		visible = {
 			any_owned_state = {
 				dayglow_raid_district = yes
@@ -7453,7 +7523,7 @@ ncr_raider_trouble = {
 		}
 	}
 	call_rangers_dayglow = {
-		priority = 20
+		priority = 18
 		visible = {
 			any_owned_state = {
 				dayglow_raid_district = yes
@@ -7525,7 +7595,7 @@ ncr_raider_trouble = {
 	}
 	# NCR only
 	deploy_rangers_dayglow = {
-		priority = 20
+		priority = 18
 		visible = {
 			any_owned_state = {
 				dayglow_raid_district = yes
@@ -8778,7 +8848,7 @@ ncr_raider_trouble = {
 		}
 	}
 	enlargen_garrison_rapids = {
-		priority = 20
+		priority = 16
 		visible = {
 			any_owned_state = {
 				rapids_raid_district = yes
@@ -8886,7 +8956,7 @@ ncr_raider_trouble = {
 		}
 	}
 	attempt_integration_rapids = {
-		priority = 20
+		priority = 16
 		visible = {
 			any_owned_state = {
 				rapids_raid_district = yes
@@ -8926,7 +8996,7 @@ ncr_raider_trouble = {
 		}
 	}
 	arm_civilians_rapids = {
-		priority = 20
+		priority = 16
 		visible = {
 			any_owned_state = {
 				rapids_raid_district = yes
@@ -9016,7 +9086,7 @@ ncr_raider_trouble = {
 		}
 	}
 	employ_mercs_rapids = {
-		priority = 20
+		priority = 16
 		visible = {
 			any_owned_state = {
 				rapids_raid_district = yes
@@ -9114,7 +9184,7 @@ ncr_raider_trouble = {
 	}
 	# Call-and-Respond for puppets
 	call_in_ncr_rapids = {
-		priority = 20
+		priority = 16
 		visible = {
 			any_owned_state = {
 				rapids_raid_district = yes
@@ -9221,7 +9291,7 @@ ncr_raider_trouble = {
 		}
 	}
 	call_rangers_rapids = {
-		priority = 20
+		priority = 16
 		visible = {
 			any_owned_state = {
 				rapids_raid_district = yes
@@ -9293,7 +9363,7 @@ ncr_raider_trouble = {
 	}
 	# NCR only
 	deploy_rangers_rapids = {
-		priority = 20
+		priority = 16
 		visible = {
 			any_owned_state = {
 				rapids_raid_district = yes
@@ -9343,7 +9413,7 @@ ncr_raider_trouble = {
 	## Boneyard ##
 	# Global Interactions
 	raider_pulse_boneyard = {
-		priority = 21
+		priority = 15
 		activation = {
 			NOT = { check_variable = { boneyard_intensity = 0 } }
 			any_owned_state = {
@@ -10546,7 +10616,7 @@ ncr_raider_trouble = {
 		}
 	}
 	enlargen_garrison_boneyard = {
-		priority = 20
+		priority = 14
 		visible = {
 			any_owned_state = {
 				boneyard_raid_district = yes
@@ -10654,7 +10724,7 @@ ncr_raider_trouble = {
 		}
 	}
 	attempt_integration_boneyard = {
-		priority = 20
+		priority = 14
 		visible = {
 			any_owned_state = {
 				boneyard_raid_district = yes
@@ -10694,7 +10764,7 @@ ncr_raider_trouble = {
 		}
 	}
 	arm_civilians_boneyard = {
-		priority = 20
+		priority = 14
 		visible = {
 			any_owned_state = {
 				boneyard_raid_district = yes
@@ -10784,7 +10854,7 @@ ncr_raider_trouble = {
 		}
 	}
 	employ_mercs_boneyard = {
-		priority = 20
+		priority = 14
 		visible = {
 			any_owned_state = {
 				boneyard_raid_district = yes
@@ -10882,7 +10952,7 @@ ncr_raider_trouble = {
 	}
 	# Call-and-Respond for puppets
 	call_in_ncr_boneyard = {
-		priority = 20
+		priority = 14
 		visible = {
 			any_owned_state = {
 				boneyard_raid_district = yes
@@ -10989,7 +11059,7 @@ ncr_raider_trouble = {
 		}
 	}
 	call_rangers_boneyard = {
-		priority = 20
+		priority = 14
 		visible = {
 			any_owned_state = {
 				boneyard_raid_district = yes
@@ -11061,7 +11131,7 @@ ncr_raider_trouble = {
 	}
 	# NCR only
 	deploy_rangers_boneyard = {
-		priority = 20
+		priority = 14
 		visible = {
 			any_owned_state = {
 				boneyard_raid_district = yes
@@ -11111,7 +11181,7 @@ ncr_raider_trouble = {
 	## The Divide ##
 	# Global Interactions
 	raider_pulse_divide = {
-		priority = 21
+		priority = 13
 		activation = {
 			NOT = { check_variable = { divide_intensity = 0 } }
 			any_owned_state = {
@@ -12314,7 +12384,7 @@ ncr_raider_trouble = {
 		}
 	}
 	enlargen_garrison_divide = {
-		priority = 20
+		priority = 12
 		visible = {
 			any_owned_state = {
 				divide_raid_district = yes
@@ -12422,7 +12492,7 @@ ncr_raider_trouble = {
 		}
 	}
 	attempt_integration_divide = {
-		priority = 20
+		priority = 12
 		visible = {
 			any_owned_state = {
 				divide_raid_district = yes
@@ -12462,7 +12532,7 @@ ncr_raider_trouble = {
 		}
 	}
 	arm_civilians_divide = {
-		priority = 20
+		priority = 12
 		visible = {
 			any_owned_state = {
 				divide_raid_district = yes
@@ -12552,7 +12622,7 @@ ncr_raider_trouble = {
 		}
 	}
 	employ_mercs_divide = {
-		priority = 20
+		priority = 12
 		visible = {
 			any_owned_state = {
 				divide_raid_district = yes
@@ -12650,7 +12720,7 @@ ncr_raider_trouble = {
 	}
 	# Call-and-Respond for puppets
 	call_in_ncr_divide = {
-		priority = 20
+		priority = 12
 		visible = {
 			any_owned_state = {
 				divide_raid_district = yes
@@ -12757,7 +12827,7 @@ ncr_raider_trouble = {
 		}
 	}
 	call_rangers_divide = {
-		priority = 20
+		priority = 12
 		visible = {
 			any_owned_state = {
 				divide_raid_district = yes
@@ -12829,7 +12899,7 @@ ncr_raider_trouble = {
 	}
 	# NCR only
 	deploy_rangers_divide = {
-		priority = 20
+		priority = 12
 		visible = {
 			any_owned_state = {
 				divide_raid_district = yes
@@ -12879,7 +12949,7 @@ ncr_raider_trouble = {
 	## Southern Mojave ##
 	# Global Interactions
 	raider_pulse_southern_mojave = {
-		priority = 21
+		priority = 11
 		activation = {
 			NOT = { check_variable = { southern_mojave_intensity = 0 } }
 			any_owned_state = {
@@ -14082,7 +14152,7 @@ ncr_raider_trouble = {
 		}
 	}
 	enlargen_garrison_southern_mojave = {
-		priority = 20
+		priority = 10
 		visible = {
 			any_owned_state = {
 				southern_mojave_raid_district = yes
@@ -14190,7 +14260,7 @@ ncr_raider_trouble = {
 		}
 	}
 	attempt_integration_southern_mojave = {
-		priority = 20
+		priority = 10
 		visible = {
 			any_owned_state = {
 				southern_mojave_raid_district = yes
@@ -14230,7 +14300,7 @@ ncr_raider_trouble = {
 		}
 	}
 	arm_civilians_southern_mojave = {
-		priority = 20
+		priority = 10
 		visible = {
 			any_owned_state = {
 				southern_mojave_raid_district = yes
@@ -14320,7 +14390,7 @@ ncr_raider_trouble = {
 		}
 	}
 	employ_mercs_southern_mojave = {
-		priority = 20
+		priority = 10
 		visible = {
 			any_owned_state = {
 				southern_mojave_raid_district = yes
@@ -14418,7 +14488,7 @@ ncr_raider_trouble = {
 	}
 	# Call-and-Respond for puppets
 	call_in_ncr_southern_mojave = {
-		priority = 20
+		priority = 10
 		visible = {
 			any_owned_state = {
 				southern_mojave_raid_district = yes
@@ -14525,7 +14595,7 @@ ncr_raider_trouble = {
 		}
 	}
 	call_rangers_southern_mojave = {
-		priority = 20
+		priority = 10
 		visible = {
 			any_owned_state = {
 				southern_mojave_raid_district = yes
@@ -14597,7 +14667,7 @@ ncr_raider_trouble = {
 	}
 	# NCR only
 	deploy_rangers_southern_mojave = {
-		priority = 20
+		priority = 10
 		visible = {
 			any_owned_state = {
 				southern_mojave_raid_district = yes
@@ -14647,7 +14717,7 @@ ncr_raider_trouble = {
 	## Central Mojave ##
 	# Global Interactions
 	raider_pulse_central_mojave = {
-		priority = 21
+		priority = 9
 		activation = {
 			NOT = { check_variable = { central_mojave_intensity = 0 } }
 			any_owned_state = {
@@ -15850,7 +15920,7 @@ ncr_raider_trouble = {
 		}
 	}
 	enlargen_garrison_central_mojave = {
-		priority = 20
+		priority = 8
 		visible = {
 			any_owned_state = {
 				central_mojave_raid_district = yes
@@ -15958,7 +16028,7 @@ ncr_raider_trouble = {
 		}
 	}
 	attempt_integration_central_mojave = {
-		priority = 20
+		priority = 8
 		visible = {
 			any_owned_state = {
 				central_mojave_raid_district = yes
@@ -15998,7 +16068,7 @@ ncr_raider_trouble = {
 		}
 	}
 	arm_civilians_central_mojave = {
-		priority = 20
+		priority = 8
 		visible = {
 			any_owned_state = {
 				central_mojave_raid_district = yes
@@ -16088,7 +16158,7 @@ ncr_raider_trouble = {
 		}
 	}
 	employ_mercs_central_mojave = {
-		priority = 20
+		priority = 8
 		visible = {
 			any_owned_state = {
 				central_mojave_raid_district = yes
@@ -16186,7 +16256,7 @@ ncr_raider_trouble = {
 	}
 	# Call-and-Respond for puppets
 	call_in_ncr_central_mojave = {
-		priority = 20
+		priority = 8
 		visible = {
 			any_owned_state = {
 				central_mojave_raid_district = yes
@@ -16293,7 +16363,7 @@ ncr_raider_trouble = {
 		}
 	}
 	call_rangers_central_mojave = {
-		priority = 20
+		priority = 8
 		visible = {
 			any_owned_state = {
 				central_mojave_raid_district = yes
@@ -16365,7 +16435,7 @@ ncr_raider_trouble = {
 	}
 	# NCR only
 	deploy_rangers_central_mojave = {
-		priority = 20
+		priority = 8
 		visible = {
 			any_owned_state = {
 				central_mojave_raid_district = yes
@@ -16415,7 +16485,7 @@ ncr_raider_trouble = {
 	## Northern Mojave ##
 	# Global Interactions
 	raider_pulse_northern_mojave = {
-		priority = 21
+		priority = 7
 		activation = {
 			NOT = { check_variable = { northern_mojave_intensity = 0 } }
 			any_owned_state = {
@@ -17618,7 +17688,7 @@ ncr_raider_trouble = {
 		}
 	}
 	enlargen_garrison_northern_mojave = {
-		priority = 20
+		priority = 6
 		visible = {
 			any_owned_state = {
 				northern_mojave_raid_district = yes
@@ -17726,7 +17796,7 @@ ncr_raider_trouble = {
 		}
 	}
 	attempt_integration_northern_mojave = {
-		priority = 20
+		priority = 6
 		visible = {
 			any_owned_state = {
 				northern_mojave_raid_district = yes
@@ -17766,7 +17836,7 @@ ncr_raider_trouble = {
 		}
 	}
 	arm_civilians_northern_mojave = {
-		priority = 20
+		priority = 6
 		visible = {
 			any_owned_state = {
 				northern_mojave_raid_district = yes
@@ -17856,7 +17926,7 @@ ncr_raider_trouble = {
 		}
 	}
 	employ_mercs_northern_mojave = {
-		priority = 20
+		priority = 6
 		visible = {
 			any_owned_state = {
 				northern_mojave_raid_district = yes
@@ -17954,7 +18024,7 @@ ncr_raider_trouble = {
 	}
 	# Call-and-Respond for puppets
 	call_in_ncr_northern_mojave = {
-		priority = 20
+		priority = 6
 		visible = {
 			any_owned_state = {
 				northern_mojave_raid_district = yes
@@ -18061,7 +18131,7 @@ ncr_raider_trouble = {
 		}
 	}
 	call_rangers_northern_mojave = {
-		priority = 20
+		priority = 6
 		visible = {
 			any_owned_state = {
 				northern_mojave_raid_district = yes
@@ -18133,7 +18203,7 @@ ncr_raider_trouble = {
 	}
 	# NCR only
 	deploy_rangers_northern_mojave = {
-		priority = 20
+		priority = 6
 		visible = {
 			any_owned_state = {
 				northern_mojave_raid_district = yes
@@ -18183,7 +18253,7 @@ ncr_raider_trouble = {
 	## Baja ##
 	# Global Interactions
 	raider_pulse_baja = {
-		priority = 21
+		priority = 5
 		activation = {
 			NOT = { check_variable = { baja_intensity = 0 } }
 			any_owned_state = {
@@ -19386,7 +19456,7 @@ ncr_raider_trouble = {
 		}
 	}
 	enlargen_garrison_baja = {
-		priority = 20
+		priority = 4
 		visible = {
 			any_owned_state = {
 				baja_raid_district = yes
@@ -19494,7 +19564,7 @@ ncr_raider_trouble = {
 		}
 	}
 	attempt_integration_baja = {
-		priority = 20
+		priority = 4
 		visible = {
 			any_owned_state = {
 				baja_raid_district = yes
@@ -19534,7 +19604,7 @@ ncr_raider_trouble = {
 		}
 	}
 	arm_civilians_baja = {
-		priority = 20
+		priority = 4
 		visible = {
 			any_owned_state = {
 				baja_raid_district = yes
@@ -19624,7 +19694,7 @@ ncr_raider_trouble = {
 		}
 	}
 	employ_mercs_baja = {
-		priority = 20
+		priority = 4
 		visible = {
 			any_owned_state = {
 				baja_raid_district = yes
@@ -19722,7 +19792,7 @@ ncr_raider_trouble = {
 	}
 	# Call-and-Respond for puppets
 	call_in_ncr_baja = {
-		priority = 20
+		priority = 4
 		visible = {
 			any_owned_state = {
 				baja_raid_district = yes
@@ -19829,7 +19899,7 @@ ncr_raider_trouble = {
 		}
 	}
 	call_rangers_baja = {
-		priority = 20
+		priority = 4
 		visible = {
 			any_owned_state = {
 				baja_raid_district = yes
@@ -19901,7 +19971,7 @@ ncr_raider_trouble = {
 	}
 	# NCR only
 	deploy_rangers_baja = {
-		priority = 20
+		priority = 4
 		visible = {
 			any_owned_state = {
 				baja_raid_district = yes
@@ -19951,7 +20021,7 @@ ncr_raider_trouble = {
 	## The Ranchers ##
 	# Global Interactions
 	raider_pulse_ranchers = {
-		priority = 21
+		priority = 3
 		activation = {
 			NOT = { check_variable = { ranchers_intensity = 0 } }
 			any_owned_state = {
@@ -21154,7 +21224,7 @@ ncr_raider_trouble = {
 		}
 	}
 	enlargen_garrison_ranchers = {
-		priority = 20
+		priority = 2
 		visible = {
 			any_owned_state = {
 				ranchers_raid_district = yes
@@ -21262,7 +21332,7 @@ ncr_raider_trouble = {
 		}
 	}
 	attempt_integration_ranchers = {
-		priority = 20
+		priority = 2
 		visible = {
 			any_owned_state = {
 				ranchers_raid_district = yes
@@ -21302,7 +21372,7 @@ ncr_raider_trouble = {
 		}
 	}
 	arm_civilians_ranchers = {
-		priority = 20
+		priority = 2
 		visible = {
 			any_owned_state = {
 				ranchers_raid_district = yes
@@ -21392,7 +21462,7 @@ ncr_raider_trouble = {
 		}
 	}
 	employ_mercs_ranchers = {
-		priority = 20
+		priority = 2
 		visible = {
 			any_owned_state = {
 				ranchers_raid_district = yes
@@ -21490,7 +21560,7 @@ ncr_raider_trouble = {
 	}
 	# Call-and-Respond for puppets
 	call_in_ncr_ranchers = {
-		priority = 20
+		priority = 2
 		visible = {
 			any_owned_state = {
 				ranchers_raid_district = yes
@@ -21597,7 +21667,7 @@ ncr_raider_trouble = {
 		}
 	}
 	call_rangers_ranchers = {
-		priority = 20
+		priority = 2
 		visible = {
 			any_owned_state = {
 				ranchers_raid_district = yes
@@ -21669,7 +21739,7 @@ ncr_raider_trouble = {
 	}
 	# NCR only
 	deploy_rangers_ranchers = {
-		priority = 20
+		priority = 2
 		visible = {
 			any_owned_state = {
 				ranchers_raid_district = yes
@@ -21719,7 +21789,7 @@ ncr_raider_trouble = {
 	## Nevada Range ##
 	# Global Interactions
 	raider_pulse_nevada = {
-		priority = 21
+		priority = 1
 		activation = {
 			NOT = { check_variable = { nevada_intensity = 0 } }
 			any_owned_state = {
@@ -22922,7 +22992,7 @@ ncr_raider_trouble = {
 		}
 	}
 	enlargen_garrison_nevada = {
-		priority = 20
+		priority = 0
 		visible = {
 			any_owned_state = {
 				nevada_raid_district = yes
@@ -23030,7 +23100,7 @@ ncr_raider_trouble = {
 		}
 	}
 	attempt_integration_nevada = {
-		priority = 20
+		priority = 0
 		visible = {
 			any_owned_state = {
 				nevada_raid_district = yes
@@ -23070,7 +23140,7 @@ ncr_raider_trouble = {
 		}
 	}
 	arm_civilians_nevada = {
-		priority = 20
+		priority = 0
 		visible = {
 			any_owned_state = {
 				nevada_raid_district = yes
@@ -23160,7 +23230,7 @@ ncr_raider_trouble = {
 		}
 	}
 	employ_mercs_nevada = {
-		priority = 20
+		priority = 0
 		visible = {
 			any_owned_state = {
 				nevada_raid_district = yes
@@ -23258,7 +23328,7 @@ ncr_raider_trouble = {
 	}
 	# Call-and-Respond for puppets
 	call_in_ncr_nevada = {
-		priority = 20
+		priority = 0
 		visible = {
 			any_owned_state = {
 				nevada_raid_district = yes
@@ -23365,7 +23435,7 @@ ncr_raider_trouble = {
 		}
 	}
 	call_rangers_nevada = {
-		priority = 20
+		priority = 0
 		visible = {
 			any_owned_state = {
 				nevada_raid_district = yes
@@ -23437,7 +23507,7 @@ ncr_raider_trouble = {
 	}
 	# NCR only
 	deploy_rangers_nevada = {
-		priority = 20
+		priority = 0
 		visible = {
 			any_owned_state = {
 				nevada_raid_district = yes
@@ -23487,7 +23557,7 @@ ncr_raider_trouble = {
 	## Junktown ##
 	# Global Interactions
 	raider_pulse_junktown = {
-		priority = 21
+		priority = -1
 		activation = {
 			NOT = { check_variable = { junktown_intensity = 0 } }
 			any_owned_state = {
@@ -24690,7 +24760,7 @@ ncr_raider_trouble = {
 		}
 	}
 	enlargen_garrison_junktown = {
-		priority = 20
+		priority = -2
 		visible = {
 			any_owned_state = {
 				junktown_raid_district = yes
@@ -24798,7 +24868,7 @@ ncr_raider_trouble = {
 		}
 	}
 	attempt_integration_junktown = {
-		priority = 20
+		priority = -2
 		visible = {
 			any_owned_state = {
 				junktown_raid_district = yes
@@ -24838,7 +24908,7 @@ ncr_raider_trouble = {
 		}
 	}
 	arm_civilians_junktown = {
-		priority = 20
+		priority = -2
 		visible = {
 			any_owned_state = {
 				junktown_raid_district = yes
@@ -24928,7 +24998,7 @@ ncr_raider_trouble = {
 		}
 	}
 	employ_mercs_junktown = {
-		priority = 20
+		priority = -2
 		visible = {
 			any_owned_state = {
 				junktown_raid_district = yes
@@ -25026,7 +25096,7 @@ ncr_raider_trouble = {
 	}
 	# Call-and-Respond for puppets
 	call_in_ncr_junktown = {
-		priority = 20
+		priority = -2
 		visible = {
 			any_owned_state = {
 				junktown_raid_district = yes
@@ -25133,7 +25203,7 @@ ncr_raider_trouble = {
 		}
 	}
 	call_rangers_junktown = {
-		priority = 20
+		priority = -2
 		visible = {
 			any_owned_state = {
 				junktown_raid_district = yes
@@ -25205,7 +25275,7 @@ ncr_raider_trouble = {
 	}
 	# NCR only
 	deploy_rangers_junktown = {
-		priority = 20
+		priority = -2
 		visible = {
 			any_owned_state = {
 				junktown_raid_district = yes
