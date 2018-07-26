@@ -1696,44 +1696,63 @@ ncr_raider_trouble = {
 			else_if = {
 				limit = { check_variable = { sr_intensity = 10 } }
 				custom_effect_tooltip = secession_raid_crisis
-				if = { # Case where the nation is entirely composed of the one raid district
+				every_state = {
+					limit = {
+						sr_raid_district = yes
+					}
+					add_core_of = SRR # Santa Rosa Raiders
+				}
+				if = { # Case where the raiding district is the whole country
 					limit = {
 						all_owned_state = {
 							sr_raid_district = yes
 						}
 					}
-					if = { # Case where this is the NCR
-						limit = {
-							tag = NCR
-						}
-						#country_event = { id = raider_trouble.10 } # Raiders attempt to seize power
-						start_civil_war = {
-						    ruling_party = elites
-						    size = 0.75
+					custom_effect_tooltip = sr_seceds
+					hidden_effect = {
+						random_owned_state = {
+							SRR = {
+								transfer_state = PREV
+							}
 						}
 					}
-					if = { # Case where this is one of the NCR's puppets
-						limit = {
-							is_puppet_of = NCR
+					SRR = {
+						NCR = { country_event = raid_trouble.10 } # FROM seceeds from FROM.PREV - NCR exclusive
+						every_country = {
+							limit = {
+								is_puppet_of = NCR
+								NOT = {
+									OR = {
+										tag = NCR
+										tag = ROOT
+									}
+								}
+							}
+							country_event = raid_trouble.11 # FROM seceeds from FROM.PREV - non-NCR
 						}
-						country_event = { id = raider_trouble.11 } # Raiders seize power
-						custom_effect_tooltip = independence_from_ncr_declared
-						hidden_effect = {
-							NCR = { release = ROOT } # NCR releases the puppet to free them
-							leave_faction = yes
+					}
+					hidden_effect = {
+						SRR = {
+							change_tag_from = ROOT
+							annex_country = {
+							    target = ROOT
+							    transfer_troops = yes
+							}
+						}	
+					}
+				}
+				else = { # Case where raiding district isn't the entire country
+					custom_effect_tooltip = sr_seceds
+					hidden_effect = {
+						release = SRR
+					}
+					SRR = {
+						if = {
+							limit = { ROOT = { tag = NCR } }
+							ROOT = { country_event = raid_trouble.12 } # FROM seceeds from us - NCR exclusive
 						}
-						kill_country_leader = yes
-						set_politics = {
-							ruling_party = elites
-						}
-						set_party_name = { 
-						    ideology = elites
-						    long_name = sr_sepratists_long
-						    name = sepratists 
-						}
-						set_political_party = {
-						    ideology = elites
-						    popularity = 60
+						else = {
+							ROOT = { country_event = raid_trouble.13 } # FROM seceeds from us - non-NCR
 						}
 						every_country = {
 							limit = {
@@ -1741,30 +1760,11 @@ ncr_raider_trouble = {
 									tag = NCR
 									is_puppet_of = NCR
 								}
+								NOT = { tag = ROOT }
 							}
-							country_event = { id = raider_trouble.12 } # FROM falls to the raiders
+							country_event = raid_trouble.14 # FROM seceeds from FROM.PREV
 						}
 					}
-				}
-				else = { # Case where the nation isn't entirely composed of the one raid district
-					#every_state = {
-					#	limit = {
-					#		sr_raid_district = yes
-					#	}
-					#	add_core_of = SRR # Adds cores for the sr raiders tag
-					#}
-					#release = SRR
-					# SRR = {
-					#	every_country = {
-					#		limit = {
-					#			OR = {
-					#				tag = NCR
-					#				is_puppet_of = NCR
-					#			}
-					#			country_event = { id = raider_trouble.13 } # FROM declares independence
-					#		}
-					#	}
-					#}
 				}
 			}
 			else = {
