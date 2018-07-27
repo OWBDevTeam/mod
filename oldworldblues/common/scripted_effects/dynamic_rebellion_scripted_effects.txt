@@ -33,7 +33,7 @@
 #
 # in the scope of the country which will be the revolt target
 #
-# Once fired the divisions will spawn in all countries with the revolt flag, note that once it fires 
+# Once fired the divisions will spawn in all countries with the revolt flag, note that once it fires
 # the revolt flag will be cleared
 
 # load the oobs if they don't already have them
@@ -86,7 +86,7 @@ revolt_setup_fire = {
 					has_variable = revolt_existing_divisions
 				}
 			}
-			set_variable = { 
+			set_variable = {
 				var = revolt_existing_divisions
 				value = 0
 			}
@@ -124,12 +124,12 @@ revolt_setup_fire = {
 			var = total_revolting_states
 			value = 0
 		}
-		
+
 		set_temp_variable = {
 			var = total_revolting_factories_and_states_temp
 			value = 0
 		}
-		
+
 		set_variable = {
 			var = total_revolting_factories_and_states
 			value = 0
@@ -145,14 +145,14 @@ revolt_setup_fire = {
 				add_to_temp_variable = { total_revolting_states = PREV.num_owned_controlled_states }
 			}
 		}
-		
+
 		add_to_temp_variable = {
 			total_revolting_factories_and_states_temp = total_revolting_factories
 		}
 		add_to_temp_variable = {
 			total_revolting_factories_and_states_temp = total_revolting_states
 		}
-		
+
 		add_to_variable = {
 			var = total_revolting_factories_and_states
 			value = total_revolting_factories_and_states_temp
@@ -176,7 +176,7 @@ revolt_setup_fire = {
 					value = num_factories
 				}
 				add_to_temp_variable = {
-					var = revolt_this_country_total_factories_and_states 
+					var = revolt_this_country_total_factories_and_states
 					value = num_owned_controlled_states
 				}
 				divide_temp_variable = {
@@ -215,7 +215,7 @@ revolt_setup_fire = {
 					has_country_flag = revolt_country_to_revolt@PREV
 				}
 				set_variable = {
-					revolt_this_country_divisions_to_spawn = 0 
+					revolt_this_country_divisions_to_spawn = 0
 				}
 				revolt_setup_fire_one_country = yes # country is ready to have units spawned
 				clr_country_flag = revolt_country_to_revolt@PREV
@@ -312,7 +312,7 @@ revolt_rotate_troop_spawn = {
 			}
 		}
 		revolt_spawn_militia = yes
-		add_to_variable = { 
+		add_to_variable = {
 			PREV.PREV.revolt_spawn_current_troop_type = 1
 		}
 	}

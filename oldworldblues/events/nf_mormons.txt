@@ -6,7 +6,7 @@ country_event = {
 	desc = nf_mormon.1.d
 	picture = GFX_event_NCN_new_canaan
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_mormon.1.a
@@ -74,7 +74,7 @@ country_event = {
 	desc = nf_mormon.2.d
 	picture = GFX_event_generic_settlement_1
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_mormon.2.a
@@ -90,7 +90,7 @@ country_event = {
 				amount = 10
 			}
 		}
-	    }
+		}
 	}
 	option = {
 		name = nf_mormon.2.b
@@ -118,7 +118,7 @@ country_event = {
 	desc = nf_mormon.3.d
 	picture = GFX_event_generic_caravan
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_mormon.3.a
@@ -171,7 +171,7 @@ country_event = {
 	desc = nf_mormon.4.d
 	picture = GFX_event_NCN_new_canaan
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_mormon.4.a
@@ -193,7 +193,7 @@ country_event = {
 	desc = nf_mormon.5.d
 	picture = GFX_report_event_fascist_speech
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_mormon.5.a
@@ -225,7 +225,7 @@ country_event = { # Religious fanatics attempt seizure power
 		name = nf_mormon.8.b
 		NCN = {
 			country_event = { id = nf_mormon.80 } # Seizure of power unsuccessful
-		} 
+		}
 	}
 }
 
@@ -276,16 +276,16 @@ country_event = { # Religious fanatics launch a coup in our puppet
 						has_government = people
 					}
 					start_civil_war = {
-					    ruling_party = ruler
-					    ideology = ruler
-					    size = 0.6
+						ruling_party = ruler
+						ideology = ruler
+						size = 0.6
 					}
 				}
 				else = {
 					start_civil_war = {
-					    ruling_party = elites
-					    ideology = elites
-					    size = 0.6
+						ruling_party = elites
+						ideology = elites
+						size = 0.6
 					}
 				}
 			}
@@ -300,19 +300,19 @@ country_event = { # Religious fanatics launch a coup in our puppet
 					FROM = { declare_war_on = { target = PREV type = civil_war } }
 				}
 				PREV = {
-					add_to_war = { 
-					    targeted_alliance = FROM
-					    enemy = PREV
+					add_to_war = {
+						targeted_alliance = FROM
+						enemy = PREV
 					}
 				}
 				NCN = {
-					add_to_war = { 
-					    targeted_alliance = PREV
-					    enemy = FROM
+					add_to_war = {
+						targeted_alliance = PREV
+						enemy = FROM
 					}
 				}
 			}
-			
+
 		}
 		NCN = { country_event = { id = nf_mormon.90 } }
 	}

@@ -31,7 +31,7 @@ country_event = {
 
 country_event = {
 	id = nf_tribal.2
-	title = nf_tribal.2.t 
+	title = nf_tribal.2.t
 	desc = nf_tribal.2.d
 	picture = GFX_event_generic_desert_2
 	is_triggered_only = yes
@@ -39,7 +39,7 @@ country_event = {
 		days = 1
 	}
 	option = {
-		name = nf_tribal.2.a 
+		name = nf_tribal.2.a
 		add_ideas = warlegend
 	}
 	option = {
@@ -47,43 +47,43 @@ country_event = {
 		add_ideas = shamanlegend
 	}
 	option = {
-		name = nf_tribal.2.c 
+		name = nf_tribal.2.c
 		add_ideas = builderlegend
 		random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
 								}
+								is_in_home_area = yes
 							}
 						}
 					}
 				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
 		}
 	}
 }
 country_event = {
 	id = nf_tribal.3
-	title = nf_tribal.3.t 
+	title = nf_tribal.3.t
 	desc = nf_tribal.3.d
 	picture = GFX_event_generic_settlement_1
 	is_triggered_only = yes
@@ -91,49 +91,48 @@ country_event = {
 		days = 1
 	}
 	option = {
-		name = nf_tribal.3.a 
+		name = nf_tribal.3.a
 		add_ideas = erawar
 	}
 	option = {
 		name = nf_tribal.3.b
 		add_ideas = eramigration
-		
+
 		random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
 								}
+								is_in_home_area = yes
 							}
 						}
 					}
 				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
 		}
 	}
 	option = {
-		name = nf_tribal.3.c 
+		name = nf_tribal.3.c
 		add_ideas = eraprosperity
-		
+
 		add_manpower = 1200
-		
 	}
 }

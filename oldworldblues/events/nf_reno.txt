@@ -7,12 +7,12 @@ country_event = {
 	picture = GFX_report_event_fascist_speech
 
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_reno.1.a
-		
+
 		add_manpower = 1000
-		
+
 		285 = {
 			add_building_construction = {
 				type = infrastructure
@@ -21,12 +21,12 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = nf_reno.1.b
-		
+
 		add_ideas = casinofunding
-		
+
 		285 = {
 			add_building_construction = {
 				type = industrial_complex
@@ -35,12 +35,12 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = nf_reno.1.c
-		
+
 		add_ideas = militaryoutposts
-		
+
 		285 = {
 			add_building_construction = {
 				type = arms_factory
@@ -55,25 +55,25 @@ country_event = {
 	id = nf_reno.2 #Pick a faction
 	title = nf_reno.2.t
 	desc = nf_reno.2.d
-	
+
 	is_triggered_only = yes
 
 	option = {
 		name = nf_reno.2.a
-		
+
 		ai_chance = {
 			factor = 10
 		}
 		country_event = { id = factionevent.1 }
 	}
-	
+
 	option = {
 		name = nf_reno.2.b
 	}
-	
+
 	option = {
-		name = nf_reno.2.c 
-		
+		name = nf_reno.2.c
+
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -88,7 +88,7 @@ country_event = {
 				factor = 100
 			}
 		}
-		
+
 		NCR = {
 			add_to_faction = NEW
 			add_ai_strategy = {
@@ -112,12 +112,12 @@ country_event = {
 	title = nf_reno.3.t
 	desc = nf_reno.3.d
 	picture = GFX_event_ENC_soldiers
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_reno.3.a
-		
+
 		set_cosmetic_tag = ENC
 		create_country_leader = {
 			name = "Governor Arch Dornan"
@@ -126,9 +126,9 @@ country_event = {
 			picture = "gfx/leaders/NEW/Portrait_New_Reno_Arch_Dornan.dds"
 			expire = "3000.1.1"
 			ideology = militarist_technocracy
-			
+
 			traits = {
-				
+
 			}
 		}
 		set_politics = {
@@ -142,9 +142,9 @@ country_event = {
 			elections_allowed = no
 		}
 		set_party_name = { ideology = elites long_name = NEW_enclave_party_long name = NEW_enclave_party }
-		
+
 		create_faction = "Nevada Enclave"
-		
+
 		hidden_effect = {
 			set_technology = {
 				power_armour_enclave1 = 1
@@ -174,11 +174,11 @@ country_event = {
 			add_opinion_modifier = { target = NEW modifier = boshatesmutants }
 		}
 	}
-	is_triggered_only = yes 
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_reno.4.a
-		
+
 		NEW = {
 			create_country_leader = {
 				name = "Thradd the Immortal"
@@ -189,20 +189,20 @@ country_event = {
 				id = 792
 
 				traits = {
-					
+
 				}
 			}
-			
-			set_party_name = { 
-				ideology = ruler 
+
+			set_party_name = {
+				ideology = ruler
 				long_name = "Warlord Thradd"
 				name = "Warlord Thradd"
 			}
-			
+
 			set_cosmetic_tag = THR
-			
+
 			create_faction = "Master's New Army"
-			
+
 			set_politics = {
 				parties = {
 					people = { popularity = 0 }
@@ -224,7 +224,7 @@ country_event = {
 				TRL = { remove_opinion_modifier = { target = BRK modifier = non_supermutants } }
 			}
 		}
-	}	
+	}
 }
 country_event = {
 	id = nf_reno.5
@@ -233,14 +233,14 @@ country_event = {
 	picture = GFX_report_event_fascist_speech
 
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_reno.5.a
-		
+
 		add_equipment_to_stockpile = { type = motorized_equipment amount = 300 producer = NEW }
-		
+
 		add_ideas = chopshop
-		
+
 		285 = {
 			add_extra_state_shared_building_slots = 3
 			add_building_construction = {
@@ -250,12 +250,12 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = nf_reno.5.b
-		
+
 		add_war_support = 0.05
-		
+
 		285 = {
 			add_extra_state_shared_building_slots = 5
 			add_building_construction = {
@@ -265,21 +265,21 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = nf_reno.5.c
-		
+
 		add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 300 producer = NEW }
-		
+
 		285 = {
 			add_extra_state_shared_building_slots = 5
 			add_building_construction = {
-				type = industrial_complex					
+				type = industrial_complex
 				level = 1
 				instant_build = yes
 			}
 			add_building_construction = {
-				type = arms_factory					
+				type = arms_factory
 				level = 2
 				instant_build = yes
 			}
@@ -294,26 +294,26 @@ country_event = {
 	picture = GFX_report_event_fascist_speech
 
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_reno.6.a
-		
+
 		add_ideas = deal1
 	}
-	
+
 	option = {
 		name = nf_reno.6.b
-		
+
 		add_ideas = deal2
 	}
-	
+
 	option = {
 		name = nf_reno.6.c
-		
+
 		add_ideas = deal3
 	}
-	
-	
+
+
 }
 
 country_event = {
@@ -323,7 +323,7 @@ country_event = {
 	picture = GFX_report_event_fascist_speech
 
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_reno.7.a
 		ai_chance = {
@@ -335,17 +335,17 @@ country_event = {
 				factor = 10
 			}
 		}
-		
-		
+
+
 		set_politics = {
 			ruling_party = elites
 			elections_allowed = no
 		}
 	}
-	
+
 	option = {
 		name = nf_reno.7.b
-		
+
 		ai_chance = {
 			factor = 2
 			modifier = {
@@ -360,16 +360,16 @@ country_event = {
 				factor = 10
 			}
 		}
-		
+
 		set_politics = {
 			ruling_party = intellectuals
 			elections_allowed = no
 		}
 	}
-	
+
 	option = {
 		name = nf_reno.7.c
-		
+
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -377,23 +377,23 @@ country_event = {
 				factor = 100
 			}
 		}
-		
+
 	}
-	
+
 	option = {
 		name = nf_reno.7.e
-		
+
 		ai_chance = {
 			factor = 1
 		}
-		
+
 		set_politics = {
 			ruling_party = ruler
 			elections_allowed = no
 		}
 	}
-	
-	
+
+
 }
 
 country_event = {
@@ -403,7 +403,7 @@ country_event = {
 	picture = GFX_report_event_fascist_speech
 
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_reno.8.a
 		NEW = {
@@ -422,12 +422,12 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = nf_reno.8.b
-		
+
 	}
-}	
+}
 country_event = {
 	id = nf_reno.9 #Troll Warren receives an invitation to join Master's Army#
 	title = nf_reno.9.t
@@ -435,20 +435,20 @@ country_event = {
 	picture = GFX_report_event_fascist_speech
 
 	is_triggered_only = yes
-	
+
 	option = {
-		 
+
 		name = nf_reno.9.a
-		
+
 		NEW = {
 		country_event = nf_reno.10
-		}		
+		}
 	}
-	
+
 	option = {
 
 		name = nf_reno.9.b
-		
+
 		NEW = {
 		country_event = nf_reno.11
 		}
@@ -462,9 +462,9 @@ country_event = {
 
 	is_triggered_only = yes
 	option = {
-		 
+
 		name = nf_reno.10.a
-		
+
 		add_to_faction = TRL
 		add_ai_strategy = {
 			type = alliance
@@ -487,9 +487,9 @@ country_event = {
 	picture = GFX_report_event_fascist_speech
 
 	is_triggered_only = yes
-	
+
 	option = {
-		 
+
 		name = nf_reno.11.a
 		NEW = {
 			create_wargoal = {
@@ -506,20 +506,20 @@ country_event = {
 	picture = GFX_report_event_fascist_speech
 
 	is_triggered_only = yes
-	
+
 	option = {
-		 
+
 		name = nf_reno.12.a
-		
+
 		NEW = {
 		country_event = nf_reno.13
-		}		
+		}
 	}
-	
+
 	option = {
 
 		name = nf_reno.12.b
-		
+
 		NEW = {
 		country_event = nf_reno.14
 		}
@@ -533,9 +533,9 @@ country_event = {
 
 	is_triggered_only = yes
 	option = {
-		 
+
 		name = nf_reno.13.a
-		
+
 		add_to_faction = VLT
 		add_ai_strategy = {
 			type = alliance
@@ -553,15 +553,15 @@ country_event = {
 }
 
 country_event = { #Vault City declines our invitation#
-	id = nf_reno.14 
+	id = nf_reno.14
 	title = nf_reno.14.t
 	desc = nf_reno.14.d
 	picture = GFX_report_event_fascist_speech
 
 	is_triggered_only = yes
-	
+
 	option = {
-		 
+
 		name = nf_reno.14.a
 		NEW = {
 			create_wargoal = {
@@ -579,20 +579,20 @@ country_event = {
 	picture = GFX_report_event_fascist_speech
 
 	is_triggered_only = yes
-	
+
 	option = {
-		 
+
 		name = nf_reno.15.a
-		
+
 		NEW = {
 			add_war_support = 0.10
-		}		
+		}
 	}
-	
+
 	option = {
 
 		name = nf_reno.15.b
-		
+
 		NEW = {
 		load_oob = thraddunity
 		}
@@ -607,27 +607,27 @@ country_event = {
 	title = nf_reno.16.t
 	desc = nf_reno.16.d
 	picture = GFX_report_event_fascist_speech
-	
+
 	is_triggered_only = yes
-	
+
 	option = { #Say Yes#
-		
+
 		name = nf_reno.16.a
-		
+
 		NEW = {
 		country_event = nf_reno.17
 		}
-		
+
 	}
-	
+
 	option = { #Say No#
-		
+
 		name = nf_reno.16.b
-		
-		NEW = { 
+
+		NEW = {
 		country_event = nf_reno.18
 		}
-		
+
 	}
 }
 
@@ -639,9 +639,9 @@ country_event = {
 
 	is_triggered_only = yes
 	option = {
-		 
+
 		name = nf_reno.17.a
-		
+
 		add_to_faction = VLT
 
 		add_ai_strategy = {
@@ -656,7 +656,7 @@ country_event = {
 				value = 200
 			}
 		}
-		
+
 		reverse_add_opinion_modifier = {
 			target = VLT
 			modifier = intellectualallies
@@ -672,9 +672,9 @@ country_event = {
 
 	is_triggered_only = yes
 	option = {
-		 
+
 		name = nf_reno.18.a
-		
+
 		NEW = {
 			create_wargoal = {
 				type = annex_everything

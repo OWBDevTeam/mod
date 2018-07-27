@@ -117,7 +117,7 @@ country_event = {
 					}
 					add_core_of = ROOT
 				}
-				ROOT = { 
+				ROOT = {
 					create_wargoal = { type = annex_everything target = PREV }
 				}
 			}
@@ -127,7 +127,7 @@ country_event = {
 		name = test_event.7.b
 	}
 }
-# 
+#
 country_event = {
 	id = test_event.8
 	title = test_event.8.t
@@ -141,13 +141,13 @@ country_event = {
 			capital_scope = {
 				create_unit = {
 					division = "name = \"Personal Bodyguard\" division_template = \"Personal Bodyguard\" start_experience_factor = 0.6"
-					owner = ROOT	
+					owner = ROOT
 				}
-			} 
+			}
 		}
 
 		add_manpower = 300
-	} 
+	}
 	option = {
 		name = test_event.8.b
 		save_event_target_as = unit_spawn_nation
@@ -172,12 +172,12 @@ country_event = {
 	option = {
 		name = test_event.9.a
 		add_ace = { name = "MALE" surname = "ACE" callsign = "**TESTING**" type = fighter_genius is_female = no }
-	} 
-	#  female ACE
+	}
+	# female ACE
 	option = {
 		name = test_event.9.a
 		add_ace = { name = "FEMALE" surname = "ACE" callsign = "**TESTING**" type = fighter_genius is_female = yes }
-	} 
+	}
 }
 # generate random troop
 country_event = {
@@ -191,7 +191,7 @@ country_event = {
 		name = test_event.10.a
 		revolt_load_oobs = yes
 		revolt_spawn_random_troop = yes
-	} 
+	}
 }
 # generate random troop
 country_event = {
@@ -204,7 +204,7 @@ country_event = {
 	option = {
 		name = test_event.11.a
 		revolt_release_all_countries_with_cores = yes
-	} 
+	}
 }
 # test recursive unit generation
 country_event = {
@@ -220,7 +220,7 @@ country_event = {
 			revolt_this_country_divisions_to_spawn = 10
 		}
 		revolt_setup_fire_one_country = yes
-	} 
+	}
 }
 
 # generate random troop while forcing just militia spawns
@@ -238,7 +238,7 @@ country_event = {
 			set_country_flag = revolt_country_to_revolt@PREV
 		}
 		revolt_setup_fire = yes
-	} 
+	}
 }
 # test if you can add/subtract manpower from states (
 country_event = {
@@ -274,5 +274,5 @@ country_event = {
 				damage = -1
 			}
 		}
-	} 
+	}
 }
