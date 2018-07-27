@@ -1107,15 +1107,15 @@ country_event = { #boneyard civil war annexed, civil war starts
 	hidden = no
 	is_triggered_only = yes
 	immediate = {
-		# Allgood
-		every_country = {
-			limit = {
-				original_tag = NCR
-				has_government = ruler
-			}
-			BON = { annex_country = { target = PREV transfer_troops = yes } }
-		}
 		hidden_effect = {
+			# Allgood
+			every_country = {
+				limit = {
+					original_tag = NCR
+					has_government = ruler
+				}
+				BON = { annex_country = { target = PREV transfer_troops = yes } }
+			}
 			BON = { set_NCR_factions_technology_on_civil_war = yes }
 			every_country = {
 				limit = {
