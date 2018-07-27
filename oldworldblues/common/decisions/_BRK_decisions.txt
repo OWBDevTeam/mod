@@ -82,12 +82,13 @@ brk_raiding_vic = {
 				is_subject_of = HAI # We aren't their subject
 			}
 			NOT = { has_non_aggression_pact_with = HAI }
-			brk_vic_raid_available = yes
+			has_completed_focus = brk_nf_grand_moot
 		}
 
 		days_remove = 40
 		days_re_enable = 60
 		cost = 50
+		war_with_on_remove = HAI
 		ai_will_do = {
 			factor = 10
 		}
