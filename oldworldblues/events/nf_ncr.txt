@@ -2126,6 +2126,10 @@ country_event = { # HIDDEN EVENT - no loc needed! Used to prevent decimation sha
 	trigger = {
 		tag = CES
 		surrender_progress > 0.8
+		any_state = {
+			is_core_of = PHR
+			NOT = { has_state_flag = do_not_decimate }
+		}
 	}
 	hidden = yes
 
@@ -3121,6 +3125,7 @@ country_event = {
 
 	option = {
 		name = nf_ncr.38.a
+		set_major = yes
 		WHD = {
 			every_owned_state = {
 				set_state_flag = do_not_decimate
@@ -3200,6 +3205,7 @@ country_event = {
 
 	option = {
 		name = nf_ncr.39.a
+		set_major = yes
 		# 30 factories in all
 		build_2_random_mil_factory = yes
 		build_2_random_mil_factory = yes

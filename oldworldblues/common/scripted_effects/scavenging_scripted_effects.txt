@@ -1065,153 +1065,201 @@ scavenge_vehicle_end = {
 }
 scavenge_equipment_randomiser = {
 	hidden_effect = {
-				if = {
-					limit = {
-						check_variable = { scavenge_efficiency = 90 }
-					}
-					random_list = { 90 = { set_country_flag = s_pipe_guns } }
-					random_list = { 90 = { set_country_flag = s_melee_e_1 } }
-					random_list = { 60 = { set_country_flag = s_ballistic_e_1 } }
-					random_list = { 60 = { set_country_flag = s_melee_2 } }
-					random_list = { 50 = { set_country_flag = s_support_e } }
-					random_list = { 20 = { set_country_flag = s_pmgs } }
-					random_list = { 30 = { set_country_flag = s_dynamite } }
-					random_list = { 10 = { set_country_flag = s_energy_e_1 } }
-					random_list = { 5 = { set_country_flag = s_melee_3 } }
-				}
-				if = {
-					limit = {
-						check_variable = { scavenge_efficiency = 100 }
-					}
-					random_list = { 80 = { set_country_flag = s_pipe_guns } }
-					random_list = { 80 = { set_country_flag = s_melee_e_1 } }
-					random_list = { 70 = { set_country_flag = s_ballistic_e_1 } }
-					random_list = { 70 = { set_country_flag = s_melee_2 } }
-					random_list = { 60 = { set_country_flag = s_support_e } }
-					random_list = { 25 = { set_country_flag = s_pmgs } }
-					random_list = { 35 = { set_country_flag = s_dynamite } }
-					random_list = { 15 = { set_country_flag = s_energy_e_1 } }
-					random_list = { 10 = { set_country_flag = s_melee_3 } }
-					random_list = { 5 = { set_country_flag = s_energy_e_2 } }
-					random_list = { 5 = { set_country_flag = s_ballistic_e_2 } }
-				}
-				if = {
-					limit = {
-						check_variable = { scavenge_efficiency = 110 }
-					}
-					random_list = { 50 = { set_country_flag = s_pipe_guns } }
-					random_list = { 50 = { set_country_flag = s_melee_e_1 } }
-					random_list = { 80 = { set_country_flag = s_ballistic_e_1 } }
-					random_list = { 80 = { set_country_flag = s_melee_2 } }
-					random_list = { 65 = { set_country_flag = s_support_e } }
-					random_list = { 30 = { set_country_flag = s_pmgs } }
-					random_list = { 40 = { set_country_flag = s_dynamite } }
-					random_list = { 20 = { set_country_flag = s_energy_e_1 } }
-					random_list = { 20 = { set_country_flag = s_melee_3 } }
-					random_list = { 20 = { set_country_flag = s_ballistic_e_2 } }
-					random_list = { 10 = { set_country_flag = s_energy_e_2 } }
-					random_list = { 5 = { set_country_flag = s_flamer } }
-					random_list = { 5 = { set_country_flag = s_mortar } }
-					random_list = { 2 = { set_country_flag = s_scavenged_pa } }
-				}
-				if = {
-					limit = {
-						check_variable { scavenge_efficiency = 120 }
-					}
-					random_list = { 40 = { set_country_flag = s_pipe_guns } }
-					random_list = { 40 = { set_country_flag = s_melee_e_1 } }
-					random_list = { 80 = { set_country_flag = s_ballistic_e_1 } }
-					random_list = { 80 = { set_country_flag = s_melee_2 } }
-					random_list = { 70 = { set_country_flag = s_support_e } }
-					random_list = { 35 = { set_country_flag = s_pmgs } }
-					random_list = { 40 = { set_country_flag = s_dynamite } }
-					random_list = { 40 = { set_country_flag = s_energy_e_1 } }
-					random_list = { 40 = { set_country_flag = s_melee_3 } }
-					random_list = { 30 = { set_country_flag = s_ballistic_e_2 } }
-					random_list = { 30 = { set_country_flag = s_energy_e_2 } }
-					random_list = { 15 = { set_country_flag = s_flamer } }
-					random_list = { 15 = { set_country_flag = s_mortar } }
-					random_list = { 5 = { set_country_flag = s_scavenged_pa } }
-					random_list = { 1 = { set_country_flag = s_energey_e_3 } }
-					random_list = { 1 = { set_country_flag = s_ballistic_e_3 } }
-				}
-				if = {
-					limit = {
-						check_variable { scavenge_efficiency = 130 }
-					}
-					random_list = { 20 = { set_country_flag = s_pipe_guns } }
-					random_list = { 20 = { set_country_flag = s_melee_e_1 } }
-					random_list = { 50 = { set_country_flag = s_ballistic_e_1 } }
-					random_list = { 50 = { set_country_flag = s_melee_2 } }
-					random_list = { 70 = { set_country_flag = s_support_e } }
-					random_list = { 40 = { set_country_flag = s_pmgs } }
-					random_list = { 45 = { set_country_flag = s_dynamite } }
-					random_list = { 60 = { set_country_flag = s_energy_e_1 } }
-					random_list = { 60 = { set_country_flag = s_melee_3 } }
-					random_list = { 40 = { set_country_flag = s_ballistic_e_2 } }
-					random_list = { 40 = { set_country_flag = s_energy_e_2 } }
-					random_list = { 20 = { set_country_flag = s_flamer } }
-					random_list = { 20 = { set_country_flag = s_mortar } }
-					random_list = { 10 = { set_country_flag = s_scavenged_pa } }
-					random_list = { 5 = { set_country_flag = s_energey_e_3 } }
-					random_list = { 5 = { set_country_flag = s_ballistic_e_3 } }
-					random_list = { 1 = { set_country_flag = s_t45d_pa } }
-				}
-				if = {
-					limit = {
-						check_variable { scavenge_efficiency = 140 }
-					}
-					random_list = { 10 = { set_country_flag = s_pipe_guns } }
-					random_list = { 10 = { set_country_flag = s_melee_e_1 } }
-					random_list = { 40 = { set_country_flag = s_ballistic_e_1 } }
-					random_list = { 40 = { set_country_flag = s_melee_2 } }
-					random_list = { 70 = { set_country_flag = s_support_e } }
-					random_list = { 45 = { set_country_flag = s_pmgs } }
-					random_list = { 45 = { set_country_flag = s_dynamite } }
-					random_list = { 70 = { set_country_flag = s_energy_e_1 } }
-					random_list = { 70 = { set_country_flag = s_melee_3 } }
-					random_list = { 50 = { set_country_flag = s_ballistic_e_2 } }
-					random_list = { 50 = { set_country_flag = s_energy_e_2 } }
-					random_list = { 25 = { set_country_flag = s_flamer } }
-					random_list = { 25 = { set_country_flag = s_mortar } }
-					random_list = { 10 = { set_country_flag = s_scavenged_pa } }
-					random_list = { 10 = { set_country_flag = s_energey_e_3 } }
-					random_list = { 10 = { set_country_flag = s_ballistic_e_3 } }
-					random_list = { 5 = { set_country_flag = s_t45d_pa } }
-					random_list = { 2 = { set_country_flag = s_minigun } }
-					random_list = { 2 = { set_country_flag = s_missile_launcher } }
-				}
-				if = {
-					limit = {
-						check_variable { scavenge_efficiency = 150 }
-					}
-					random_list = { 20 = { set_country_flag = s_ballistic_e_1 } }
-					random_list = { 20 = { set_country_flag = s_melee_2 } }
-					random_list = { 70 = { set_country_flag = s_support_e } }
-					random_list = { 45 = { set_country_flag = s_pmgs } }
-					random_list = { 45 = { set_country_flag = s_dynamite } }
-					random_list = { 60 = { set_country_flag = s_energy_e_1 } }
-					random_list = { 60 = { set_country_flag = s_melee_3 } }
-					random_list = { 60 = { set_country_flag = s_ballistic_e_2 } }
-					random_list = { 60 = { set_country_flag = s_energy_e_2 } }
-					random_list = { 30 = { set_country_flag = s_flamer } }
-					random_list = { 30 = { set_country_flag = s_mortar } }
-					random_list = { 15 = { set_country_flag = s_scavenged_pa } }
-					random_list = { 15 = { set_country_flag = s_energey_e_3 } }
-					random_list = { 15 = { set_country_flag = s_ballistic_e_3 } }
-					random_list = { 10 = { set_country_flag = s_t45d_pa } }
-					random_list = { 5 = { set_country_flag = s_minigun } }
-					random_list = { 5 = { set_country_flag = s_missile_launcher } }
-					random_list = { 2 = { set_country_flag = s_gatling } }
-					random_list = { 2 = { set_country_flag = s_incinerator } }
-				}
+		if = {
+			limit = {
+				check_variable = { scavenge_efficiency = 30 }
+			}
+			random_list = { 90 = { set_country_flag = s_pipe_guns } }
+			random_list = { 90 = { set_country_flag = s_melee_e_1 } }
+			random_list = { 60 = { set_country_flag = s_ballistic_e_1 } }
+			random_list = { 60 = { set_country_flag = s_melee_2 } }
+			random_list = { 50 = { set_country_flag = s_support_e } }
+			random_list = { 20 = { set_country_flag = s_pmgs } }
+			random_list = { 30 = { set_country_flag = s_dynamite } }
+			random_list = { 10 = { set_country_flag = s_energy_e_1 } }
+			random_list = { 5 = { set_country_flag = s_melee_3 } }
+		}
+		if = {
+			limit = {
+				check_variable = { scavenge_efficiency = 40 }
+			}
+			random_list = { 80 = { set_country_flag = s_pipe_guns } }
+			random_list = { 80 = { set_country_flag = s_melee_e_1 } }
+			random_list = { 70 = { set_country_flag = s_ballistic_e_1 } }
+			random_list = { 70 = { set_country_flag = s_melee_2 } }
+			random_list = { 60 = { set_country_flag = s_support_e } }
+			random_list = { 25 = { set_country_flag = s_pmgs } }
+			random_list = { 35 = { set_country_flag = s_dynamite } }
+			random_list = { 15 = { set_country_flag = s_energy_e_1 } }
+			random_list = { 10 = { set_country_flag = s_melee_3 } }
+			random_list = { 5 = { set_country_flag = s_energy_e_2 } }
+			random_list = { 5 = { set_country_flag = s_ballistic_e_2 } }
+		}
+		if = {
+			limit = {
+				check_variable = { scavenge_efficiency = 50 }
+			}
+			random_list = { 50 = { set_country_flag = s_pipe_guns } }
+			random_list = { 50 = { set_country_flag = s_melee_e_1 } }
+			random_list = { 80 = { set_country_flag = s_ballistic_e_1 } }
+			random_list = { 80 = { set_country_flag = s_melee_2 } }
+			random_list = { 65 = { set_country_flag = s_support_e } }
+			random_list = { 30 = { set_country_flag = s_pmgs } }
+			random_list = { 40 = { set_country_flag = s_dynamite } }
+			random_list = { 20 = { set_country_flag = s_energy_e_1 } }
+			random_list = { 20 = { set_country_flag = s_melee_3 } }
+			random_list = { 20 = { set_country_flag = s_ballistic_e_2 } }
+			random_list = { 10 = { set_country_flag = s_energy_e_2 } }
+			random_list = { 5 = { set_country_flag = s_flamer } }
+			random_list = { 5 = { set_country_flag = s_mortar } }
+			random_list = { 2 = { set_country_flag = s_scavenged_pa } }
+		}
+		if = {
+			limit = {
+				check_variable { scavenge_efficiency = 60 }
+			}
+			random_list = { 40 = { set_country_flag = s_pipe_guns } }
+			random_list = { 40 = { set_country_flag = s_melee_e_1 } }
+			random_list = { 80 = { set_country_flag = s_ballistic_e_1 } }
+			random_list = { 80 = { set_country_flag = s_melee_2 } }
+			random_list = { 70 = { set_country_flag = s_support_e } }
+			random_list = { 35 = { set_country_flag = s_pmgs } }
+			random_list = { 40 = { set_country_flag = s_dynamite } }
+			random_list = { 40 = { set_country_flag = s_energy_e_1 } }
+			random_list = { 40 = { set_country_flag = s_melee_3 } }
+			random_list = { 30 = { set_country_flag = s_ballistic_e_2 } }
+			random_list = { 30 = { set_country_flag = s_energy_e_2 } }
+			random_list = { 15 = { set_country_flag = s_flamer } }
+			random_list = { 15 = { set_country_flag = s_mortar } }
+			random_list = { 5 = { set_country_flag = s_scavenged_pa } }
+			random_list = { 1 = { set_country_flag = s_energey_e_3 } }
+			random_list = { 1 = { set_country_flag = s_ballistic_e_3 } }
+		}
+		if = {
+			limit = {
+				check_variable { scavenge_efficiency = 70 }
+			}
+			random_list = { 20 = { set_country_flag = s_pipe_guns } }
+			random_list = { 20 = { set_country_flag = s_melee_e_1 } }
+			random_list = { 50 = { set_country_flag = s_ballistic_e_1 } }
+			random_list = { 50 = { set_country_flag = s_melee_2 } }
+			random_list = { 70 = { set_country_flag = s_support_e } }
+			random_list = { 40 = { set_country_flag = s_pmgs } }
+			random_list = { 45 = { set_country_flag = s_dynamite } }
+			random_list = { 60 = { set_country_flag = s_energy_e_1 } }
+			random_list = { 60 = { set_country_flag = s_melee_3 } }
+			random_list = { 40 = { set_country_flag = s_ballistic_e_2 } }
+			random_list = { 40 = { set_country_flag = s_energy_e_2 } }
+			random_list = { 20 = { set_country_flag = s_flamer } }
+			random_list = { 20 = { set_country_flag = s_mortar } }
+			random_list = { 10 = { set_country_flag = s_scavenged_pa } }
+			random_list = { 5 = { set_country_flag = s_energey_e_3 } }
+			random_list = { 5 = { set_country_flag = s_ballistic_e_3 } }
+			random_list = { 1 = { set_country_flag = s_t45d_pa } }
+		}
+		if = {
+			limit = {
+				check_variable { scavenge_efficiency = 80 }
+			}
+			random_list = { 10 = { set_country_flag = s_pipe_guns } }
+			random_list = { 10 = { set_country_flag = s_melee_e_1 } }
+			random_list = { 40 = { set_country_flag = s_ballistic_e_1 } }
+			random_list = { 40 = { set_country_flag = s_melee_2 } }
+			random_list = { 70 = { set_country_flag = s_support_e } }
+			random_list = { 45 = { set_country_flag = s_pmgs } }
+			random_list = { 45 = { set_country_flag = s_dynamite } }
+			random_list = { 70 = { set_country_flag = s_energy_e_1 } }
+			random_list = { 70 = { set_country_flag = s_melee_3 } }
+			random_list = { 50 = { set_country_flag = s_ballistic_e_2 } }
+			random_list = { 50 = { set_country_flag = s_energy_e_2 } }
+			random_list = { 25 = { set_country_flag = s_flamer } }
+			random_list = { 25 = { set_country_flag = s_mortar } }
+			random_list = { 10 = { set_country_flag = s_scavenged_pa } }
+			random_list = { 10 = { set_country_flag = s_energey_e_3 } }
+			random_list = { 10 = { set_country_flag = s_ballistic_e_3 } }
+			random_list = { 5 = { set_country_flag = s_t45d_pa } }
+			random_list = { 2 = { set_country_flag = s_minigun } }
+			random_list = { 2 = { set_country_flag = s_missile_launcher } }
+		}
+		if = {
+			limit = {
+				check_variable { scavenge_efficiency = 90 }
+			}
+			random_list = { 20 = { set_country_flag = s_ballistic_e_1 } }
+			random_list = { 20 = { set_country_flag = s_melee_2 } }
+			random_list = { 70 = { set_country_flag = s_support_e } }
+			random_list = { 45 = { set_country_flag = s_pmgs } }
+			random_list = { 45 = { set_country_flag = s_dynamite } }
+			random_list = { 60 = { set_country_flag = s_energy_e_1 } }
+			random_list = { 60 = { set_country_flag = s_melee_3 } }
+			random_list = { 60 = { set_country_flag = s_ballistic_e_2 } }
+			random_list = { 60 = { set_country_flag = s_energy_e_2 } }
+			random_list = { 30 = { set_country_flag = s_flamer } }
+			random_list = { 30 = { set_country_flag = s_mortar } }
+			random_list = { 15 = { set_country_flag = s_scavenged_pa } }
+			random_list = { 15 = { set_country_flag = s_energey_e_3 } }
+			random_list = { 15 = { set_country_flag = s_ballistic_e_3 } }
+			random_list = { 10 = { set_country_flag = s_t45d_pa } }
+			random_list = { 5 = { set_country_flag = s_minigun } }
+			random_list = { 5 = { set_country_flag = s_missile_launcher } }
+			random_list = { 2 = { set_country_flag = s_gatling } }
+			random_list = { 2 = { set_country_flag = s_incinerator } }
+		}
+		if = {
+			limit = {
+				check_variable { scavenge_efficiency = 90 }
+			}
+			random_list = { 20 = { set_country_flag = s_ballistic_e_1 } }
+			random_list = { 20 = { set_country_flag = s_melee_2 } }
+			random_list = { 70 = { set_country_flag = s_support_e } }
+			random_list = { 45 = { set_country_flag = s_pmgs } }
+			random_list = { 45 = { set_country_flag = s_dynamite } }
+			random_list = { 60 = { set_country_flag = s_energy_e_1 } }
+			random_list = { 60 = { set_country_flag = s_melee_3 } }
+			random_list = { 60 = { set_country_flag = s_ballistic_e_2 } }
+			random_list = { 60 = { set_country_flag = s_energy_e_2 } }
+			random_list = { 30 = { set_country_flag = s_flamer } }
+			random_list = { 30 = { set_country_flag = s_mortar } }
+			random_list = { 15 = { set_country_flag = s_scavenged_pa } }
+			random_list = { 15 = { set_country_flag = s_energey_e_3 } }
+			random_list = { 15 = { set_country_flag = s_ballistic_e_3 } }
+			random_list = { 10 = { set_country_flag = s_t45d_pa } }
+			random_list = { 5 = { set_country_flag = s_minigun } }
+			random_list = { 5 = { set_country_flag = s_missile_launcher } }
+			random_list = { 2 = { set_country_flag = s_gatling } }
+			random_list = { 2 = { set_country_flag = s_incinerator } }
+		}
+		if = {
+			limit = {
+				check_variable { scavenge_efficiency = 100 }
+			}
+			random_list = { 5 = { set_country_flag = s_ballistic_e_1 } }
+			random_list = { 5 = { set_country_flag = s_melee_2 } }
+			random_list = { 70 = { set_country_flag = s_support_e } }
+			random_list = { 20 = { set_country_flag = s_pmgs } }
+			random_list = { 20 = { set_country_flag = s_dynamite } }
+			random_list = { 40 = { set_country_flag = s_energy_e_1 } }
+			random_list = { 40 = { set_country_flag = s_melee_3 } }
+			random_list = { 80 = { set_country_flag = s_ballistic_e_2 } }
+			random_list = { 80 = { set_country_flag = s_energy_e_2 } }
+			random_list = { 60 = { set_country_flag = s_flamer } }
+			random_list = { 60 = { set_country_flag = s_mortar } }
+			random_list = { 30 = { set_country_flag = s_scavenged_pa } }
+			random_list = { 30 = { set_country_flag = s_energey_e_3 } }
+			random_list = { 30 = { set_country_flag = s_ballistic_e_3 } }
+			random_list = { 30 = { set_country_flag = s_t45d_pa } }
+			random_list = { 20 = { set_country_flag = s_minigun } }
+			random_list = { 20 = { set_country_flag = s_missile_launcher } }
+			random_list = { 10 = { set_country_flag = s_gatling } }
+			random_list = { 10 = { set_country_flag = s_incinerator } }
+		}
 	}
 }
 scavenge_robots_randomiser = {
 	hidden_effect = {
 		if = {
 			limit = {
-				check_variable = { scavenge_efficiency = 90 }
+				check_variable = { scavenge_efficiency = 30 }
 			}
 			random_list = { 60 = { set_country_flag = s_lr_1 } }
 			random_list = { 20 = { set_country_flag = s_lr_2 } }
@@ -1219,7 +1267,7 @@ scavenge_robots_randomiser = {
 		}
 		if = {
 			limit = {
-				check_variable = { scavenge_efficiency = 100 }
+				check_variable = { scavenge_efficiency = 40 }
 			}
 			random_list = { 70 = { set_country_flag = s_lr_1 } }
 			random_list = { 30 = { set_country_flag = s_lr_2 } }
@@ -1227,7 +1275,7 @@ scavenge_robots_randomiser = {
 		}
 		if = {
 			limit = {
-				check_variable = { scavenge_efficiency = 110 }
+				check_variable = { scavenge_efficiency = 50 }
 			}
 			random_list = { 70 = { set_country_flag = s_lr_1 } }
 			random_list = { 40 = { set_country_flag = s_lr_2 } }
@@ -1236,7 +1284,7 @@ scavenge_robots_randomiser = {
 		}
 		if = {
 			limit = {
-				check_variable = { scavenge_efficiency = 120 }
+				check_variable = { scavenge_efficiency = 60 }
 			}
 			random_list = { 60 = { set_country_flag = s_lr_1 } }
 			random_list = { 50 = { set_country_flag = s_lr_2 } }
@@ -1246,7 +1294,7 @@ scavenge_robots_randomiser = {
 		}
 		if = {
 			limit = {
-				check_variable = { scavenge_efficiency = 130 }
+				check_variable = { scavenge_efficiency = 70 }
 			}
 			random_list = { 50 = { set_country_flag = s_lr_1 } }
 			random_list = { 65 = { set_country_flag = s_lr_2 } }
@@ -1257,7 +1305,7 @@ scavenge_robots_randomiser = {
 
 		if = {
 			limit = {
-				check_variable = { scavenge_efficiency = 140 }
+				check_variable = { scavenge_efficiency = 80 }
 			}
 			random_list = { 40 = { set_country_flag = s_lr_1 } }
 			random_list = { 70 = { set_country_flag = s_lr_2 } }
@@ -1268,7 +1316,7 @@ scavenge_robots_randomiser = {
 		}
 		if = {
 			limit = {
-				check_variable = { scavenge_efficiency = 150 }
+				check_variable = { scavenge_efficiency = 90 }
 			}
 			random_list = { 30 = { set_country_flag = s_lr_1 } }
 			random_list = { 70 = { set_country_flag = s_lr_2 } }
@@ -1277,13 +1325,24 @@ scavenge_robots_randomiser = {
 			random_list = { 30 = { set_country_flag = s_hr_2 } }
 			random_list = { 15 = { set_country_flag = s_hr_3 } }
 		}
+		if = {
+			limit = {
+				check_variable = { scavenge_efficiency = 100 }
+			}
+			random_list = { 15 = { set_country_flag = s_lr_1 } }
+			random_list = { 80 = { set_country_flag = s_lr_2 } }
+			random_list = { 10 = { set_country_flag = s_mr_2 } }
+			random_list = { 70 = { set_country_flag = s_mr_3 } }
+			random_list = { 30 = { set_country_flag = s_hr_2 } }
+			random_list = { 40 = { set_country_flag = s_hr_3 } }
+		}
 	}
 }
 scavenge_vehicles_randomiser = {
 	hidden_effect = {
 		if = {
 			limit = {
-				check_variable = { scavenge_efficiency = 90 }
+				check_variable = { scavenge_efficiency = 30 }
 			}
 			random_list = { 60 = { set_country_flag = s_motorbike_1 } }
 			random_list = { 20 = { set_country_flag = s_motorbike_2 } }
@@ -1291,7 +1350,7 @@ scavenge_vehicles_randomiser = {
 		}
 		if = {
 			limit = {
-				check_variable = { scavenge_efficiency = 100 }
+				check_variable = { scavenge_efficiency = 40 }
 			}
 			random_list = { 70 = { set_country_flag = s_motorbike_1 } }
 			random_list = { 30 = { set_country_flag = s_motorbike_2 } }
@@ -1299,7 +1358,7 @@ scavenge_vehicles_randomiser = {
 		}
 		if = {
 			limit = {
-				check_variable = { scavenge_efficiency = 110 }
+				check_variable = { scavenge_efficiency = 50 }
 			}
 			random_list = { 70 = { set_country_flag = s_motorbike_1 } }
 			random_list = { 35 = { set_country_flag = s_motorbike_2 } }
@@ -1308,7 +1367,7 @@ scavenge_vehicles_randomiser = {
 		}
 		if = {
 			limit = {
-				check_variable = { scavenge_efficiency = 120 }
+				check_variable = { scavenge_efficiency = 60 }
 			}
 			random_list = { 70 = { set_country_flag = s_motorbike_1 } }
 			random_list = { 40 = { set_country_flag = s_motorbike_2 } }
@@ -1319,7 +1378,7 @@ scavenge_vehicles_randomiser = {
 		}
 		if = {
 			limit = {
-				check_variable = { scavenge_efficiency = 130 }
+				check_variable = { scavenge_efficiency = 70 }
 			}
 			random_list = { 70 = { set_country_flag = s_motorbike_1 } }
 			random_list = { 40 = { set_country_flag = s_motorbike_2 } }
@@ -1332,7 +1391,7 @@ scavenge_vehicles_randomiser = {
 		}
 		if = {
 			limit = {
-				check_variable = { scavenge_efficiency = 140 }
+				check_variable = { scavenge_efficiency = 80 }
 			}
 			random_list = { 40 = { set_country_flag = s_motorbike_1 } }
 			random_list = { 50 = { set_country_flag = s_motorbike_2 } }
@@ -1346,7 +1405,7 @@ scavenge_vehicles_randomiser = {
 		}
 		if = {
 			limit = {
-				check_variable = { scavenge_efficiency = 150 }
+				check_variable = { scavenge_efficiency = 90 }
 			}
 			random_list = { 30 = { set_country_flag = s_motorbike_1 } }
 			random_list = { 60 = { set_country_flag = s_motorbike_2 } }
@@ -1358,6 +1417,21 @@ scavenge_vehicles_randomiser = {
 			random_list = { 20 = { set_country_flag = s_apc_1 } }
 			random_list = { 10 = { set_country_flag = s_tank_1 } }
 			random_list = { 5 = { set_country_flag = s_apc_2 } }
+		}
+		if = {
+			limit = {
+				check_variable = { scavenge_efficiency = 100 }
+			}
+			random_list = { 15 = { set_country_flag = s_motorbike_1 } }
+			random_list = { 70 = { set_country_flag = s_motorbike_2 } }
+			random_list = { 20 = { set_country_flag = s_car_1 } }
+			random_list = { 60 = { set_country_flag = s_car_2 } }
+			random_list = { 40 = { set_country_flag = s_truck_1 } }
+			random_list = { 40 = { set_country_flag = s_car_3 } }
+			random_list = { 60 = { set_country_flag = s_truck_2 } }
+			random_list = { 40 = { set_country_flag = s_apc_1 } }
+			random_list = { 10 = { set_country_flag = s_tank_1 } }
+			random_list = { 20 = { set_country_flag = s_apc_2 } }
 		}
 	}
 }
@@ -1394,153 +1468,572 @@ resolve_expedition = {
 }
 resolve_equip_loot = {
 	if = {
-			limit = {
-				has_country_flag = s_pipe_guns
-			}
+		limit = {
+			has_country_flag = s_pipe_guns
+		}
+		if = {
+			limit = { has_tech = standard_weaponry_tech }
 			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 200 }
-			clr_country_flag = s_pipe_guns
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = standard_weaponry_tech }
+					has_country_flag = standard_weaponry_tech
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = standard_weaponry_tech
+			}
+			set_country_flag = standard_weaponry_tech
+		}
+		clr_country_flag = s_pipe_guns
+	}
+	if = {
+		limit = {
+			has_country_flag = s_melee_e_1
 		}
 		if = {
-			limit = {
-				has_country_flag = s_melee_e_1
-			}
+			limit = { has_tech = blunt_weaponry }
 			add_equipment_to_stockpile = { type = melee_equipment_1 amount = 200 }
-			clr_country_flag = s_melee_e_1
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = blunt_weaponry }
+					has_country_flag = blunt_weaponry
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = blunt_weaponry
+			}
+			set_country_flag = blunt_weaponry
+		}
+		clr_country_flag = s_melee_e_1
+	}
+	if = {
+		limit = {
+			has_country_flag = s_ballistic_e_1
 		}
 		if = {
-			limit = {
-				has_country_flag = s_ballistic_e_1
-			}
+			limit = { has_tech = basic_ballistic_weaponry }
 			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 200 }
-			clr_country_flag = s_ballistic_e_1
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = basic_ballistic_weaponry }
+					has_country_flag = basic_ballistic_weaponry
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = basic_ballistic_weaponry
+			}
+			set_country_flag = basic_ballistic_weaponry
+		}
+		clr_country_flag = s_ballistic_e_1
+	}
+	if = {
+		limit = {
+			has_country_flag = s_melee_2
 		}
 		if = {
-			limit = {
-				has_country_flag = s_melee_2
-			}
+			limit = { has_tech = slashing_weaponry }
 			add_equipment_to_stockpile = { type = melee_equipment_2 amount = 100 }
-			clr_country_flag = s_melee_2
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = slashing_weaponry }
+					has_country_flag = slashing_weaponry
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = slashing_weaponry
+			}
+			set_country_flag = slashing_weaponry
+		}
+		clr_country_flag = s_melee_2
+	}
+	if = {
+		limit = {
+			has_country_flag = s_support_e
 		}
 		if = {
-			limit = {
-				has_country_flag = s_support_e
-				has_tech = support_weaponry
-			}
+			limit = { has_tech = support_weaponry }
 			add_equipment_to_stockpile = { type = support_equipment amount = 100 }
-			clr_country_flag = s_support_e
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = support_weaponry }
+					has_country_flag = support_weaponry
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = support_weaponry
+			}
+			set_country_flag = support_weaponry
+		}
+		clr_country_flag = s_support_e
+	}
+	if = {
+		limit = {
+			has_country_flag = s_pmgs
 		}
 		if = {
-			limit = {
-				has_country_flag = s_pmgs
-			}
+			limit = { has_tech = anti_personnel_tech }
 			add_equipment_to_stockpile = { type = anti_personnel_equipment_1 amount = 50 }
-			clr_country_flag = s_pmgs
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = anti_personnel_tech }
+					has_country_flag = anti_personnel_tech
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = anti_personnel_tech
+			}
+			set_country_flag = anti_personnel_tech
+		}
+		clr_country_flag = s_pmgs
+	}
+	if = {
+		limit = {
+			has_country_flag = s_dynamite
 		}
 		if = {
-			limit = {
-				has_country_flag = s_dynamite
-			}
+			limit = { has_tech = explosive_tech }
 			add_equipment_to_stockpile = { type = explosive_equipment_1 amount = 50 }
-			clr_country_flag = s_dynamite
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = explosive_tech }
+					has_country_flag = explosive_tech
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = explosive_tech
+			}
+			set_country_flag = explosive_tech
+		}
+		clr_country_flag = s_dynamite
+	}
+	if = {
+		limit = {
+			has_country_flag = s_energy_e_1
 		}
 		if = {
-			limit = {
-				has_country_flag = s_energy_e_1
-			}
+			limit = { has_tech = basic_laser_weaponry }
 			add_equipment_to_stockpile = { type = energy_equipment_1 amount = 50 }
-			clr_country_flag = s_energy_e_1
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = basic_laser_weaponry }
+					has_country_flag = basic_laser_weaponry
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = basic_laser_weaponry
+			}
+			set_country_flag = basic_laser_weaponry
+		}
+		clr_country_flag = s_energy_e_1
+	}
+	if = {
+		limit = {
+			has_country_flag = s_melee_3
 		}
 		if = {
-			limit = {
-				has_country_flag = s_melee_3
-			}
+			limit = { has_tech = powered_weaponry }
 			add_equipment_to_stockpile = { type = melee_equipment_3 amount = 50 }
-			clr_country_flag = s_melee_3
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = powered_weaponry }
+					has_country_flag = powered_weaponry
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = powered_weaponry
+			}
+			set_country_flag = powered_weaponry
+		}
+		clr_country_flag = s_melee_3
+	}
+	if = {
+		limit = {
+			has_country_flag = s_ballistic_e_2
 		}
 		if = {
-			limit = {
-				has_country_flag = s_ballistic_e_2
-			}
+			limit = { has_tech = improved_ballistic_weaponry }
 			add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 50 }
-			clr_country_flag = s_ballistic_e_2
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = improved_ballistic_weaponry }
+					has_country_flag = improved_ballistic_weaponry
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = improved_ballistic_weaponry
+			}
+			set_country_flag = improved_ballistic_weaponry
+		}
+		clr_country_flag = s_ballistic_e_2
+	}
+	if = {
+		limit = {
+			has_country_flag = s_energy_e_2
 		}
 		if = {
-			limit = {
-				has_country_flag = s_energy_e_2
-			}
+			limit = { has_tech = improved_laser_weaponry }
 			add_equipment_to_stockpile = { type = energy_equipment_2 amount = 50 }
-			clr_country_flag = s_melee_e_2
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = improved_laser_weaponry }
+					has_country_flag = improved_laser_weaponry
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = improved_laser_weaponry
+			}
+			set_country_flag = improved_laser_weaponry
+		}
+		clr_country_flag = s_energy_e_2
+	}
+	if = {
+		limit = {
+			has_country_flag = s_flamer
 		}
 		if = {
-			limit = {
-				has_country_flag = s_flamer
-			}
+			limit = { has_tech = flamer_tech_3 }
 			add_equipment_to_stockpile = { type = flamer_equipment_2 amount = 50 }
-			clr_country_flag = s_flamer
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = flamer_tech_3 }
+					has_country_flag = flamer_tech_3
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = flamer_tech_3
+			}
+			set_country_flag = flamer_tech_3
+		}
+		clr_country_flag = s_flamer
+	}
+	if = {
+		limit = {
+			has_country_flag = s_mortar
 		}
 		if = {
-			limit = {
-				has_country_flag = s_mortar
-			}
+			limit = { has_tech = explosive_tech_3 }
 			add_equipment_to_stockpile = { type = explosive_equipment_2 amount = 50 }
-			clr_country_flag = s_mortar
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = explosive_tech_3 }
+					has_country_flag = explosive_tech_3
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = explosive_tech_3
+			}
+			set_country_flag = explosive_tech_3
+		}
+		clr_country_flag = s_mortar
+	}
+	if = {
+		limit = {
+			has_country_flag = s_scavenged_pa
 		}
 		if = {
-			limit = {
-				has_country_flag = s_scavenged_pa
-			}
+			limit = { has_tech = power_armour }
 			add_equipment_to_stockpile = { type = power_armor_equipment_1 amount = 5 }
-			clr_country_flag = s_scavenged_pa
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = power_armour }
+					has_country_flag = power_armour
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = power_armour
+			}
+			set_country_flag = power_armour
+		}
+		clr_country_flag = s_scavenged_pa
+	}
+	if = {
+		limit = {
+			has_country_flag = s_energy_e_3
 		}
 		if = {
-			limit = {
-				has_country_flag = s_energey_e_3
-			}
+			limit = { has_tech = advanced_laser_weaponry }
 			add_equipment_to_stockpile = { type = energy_equipment_3 amount = 30 }
-			clr_country_flag = s_energy_e_3
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = advanced_laser_weaponry }
+					has_country_flag = advanced_laser_weaponry
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = advanced_laser_weaponry
+			}
+			set_country_flag = advanced_laser_weaponry
+		}
+		clr_country_flag = s_energy_e_3
+	}
+	if = {
+		limit = {
+			has_country_flag = s_ballistic_e_3
 		}
 		if = {
-			limit = {
-				has_country_flag = s_ballistic_e_3
-			}
+			limit = { has_tech = advanced_ballistic_weaponry }
 			add_equipment_to_stockpile = { type = ballistic_equipment_3 amount = 30 }
-			clr_country_flag = s_ballistic_e_3
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = advanced_ballistic_weaponry }
+					has_country_flag = advanced_ballistic_weaponry
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = advanced_ballistic_weaponry
+			}
+			set_country_flag = advanced_ballistic_weaponry
+		}
+		clr_country_flag = s_ballistic_e_3
+	}
+	if = {
+		limit = {
+			has_country_flag = s_t45d_pa
 		}
 		if = {
-			limit = {
-				has_country_flag = s_t45d_pa
-			}
+			limit = { has_tech = power_armour_t45d }
 			add_equipment_to_stockpile = { type = power_armor_equipment_2 amount = 5 }
-			clr_country_flag = s_t45d_pa
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = power_armour_t45d }
+					has_country_flag = power_armour_t45d
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = power_armour_t45d
+			}
+			set_country_flag = power_armour_t45d
+		}
+		clr_country_flag = s_t45d_pa
+	}
+	if = {
+		limit = {
+			has_country_flag = s_minigun
 		}
 		if = {
-			limit = {
-				has_country_flag = s_minigun
-			}
+			limit = { has_tech = anti_personnel_tech_5 }
 			add_equipment_to_stockpile = { type = anti_personnel_equipment_3 amount = 10 }
-			clr_country_flag = s_minigun
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = anti_personnel_tech_5 }
+					has_country_flag = anti_personnel_tech_5
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = anti_personnel_tech_5
+			}
+			set_country_flag = anti_personnel_tech_5
+		}
+		clr_country_flag = s_minigun
+	}
+	if = {
+		limit = {
+			has_country_flag = s_missile_launcher
 		}
 		if = {
-			limit = {
-				has_country_flag = s_missile_launcher
-			}
+			limit = { has_tech = anti_tank_tech_5 }
 			add_equipment_to_stockpile = { type = anti_tank_equipment_3 amount = 10 }
-			clr_country_flag = s_missile_launcher
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = anti_tank_tech_5 }
+					has_country_flag = anti_tank_tech_5
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = anti_tank_tech_5
+			}
+			set_country_flag = anti_tank_tech_5
+		}
+		clr_country_flag = s_missile_launcher
+	}
+	if = {
+		limit = {
+			has_country_flag = s_gatling
 		}
 		if = {
-			limit = {
-				has_country_flag = s_gatling
-			}
+			limit = { has_tech = laser_tech_5 }
 			add_equipment_to_stockpile = { type = laser_equipment_3 amount = 5 }
-			clr_country_flag = s_gatling
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = laser_tech_5 }
+					has_country_flag = laser_tech_5
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = laser_tech_5
+			}
+			set_country_flag = laser_tech_5
+		}
+		clr_country_flag = s_gatling
+	}
+	if = {
+		limit = {
+			has_country_flag = s_incinerator
 		}
 		if = {
-			limit = {
-				has_country_flag = s_incinerator
-			}
+			limit = { has_tech = flamer_tech_5 }
 			add_equipment_to_stockpile = { type = flamer_equipment_3 amount = 5 }
-			clr_country_flag = s_incinerator
 		}
+		else_if = {
+			limit = {
+				OR = {
+					has_tech_bonus = { technology = flamer_tech_5 }
+					has_country_flag = flamer_tech_5
+				}
+			}
+			army_experience = 5
+		}
+		else = {
+			add_tech_bonus = {
+				bonus = 0.1
+				uses = 1
+				technology = flamer_tech_5
+			}
+			set_country_flag = flamer_tech_5
+		}
+		clr_country_flag = s_incinerator
+	}
 }
 old_world_tech = {
 	random_list = {
