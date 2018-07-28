@@ -11,6 +11,7 @@ ncn_conversion = {
 					tag = TAR
 					tag = SOR
 					tag = HGH
+					tag = DEA
 				}
 			}
 		}
@@ -42,6 +43,10 @@ ncn_conversion = {
 			if = {
 				limit = { FROM = { tag = HGH } }
 				has_completed_focus = lds_factions
+			}
+			if = {
+				limit = { FROM = { tag = DEA } }
+				has_completed_focus = lds_deadhorse2
 			}
 			NOT = { FROM = { is_puppet_of = NCN } }
 		}
@@ -126,6 +131,7 @@ ncn_conversion = {
 					tag = TAR
 					tag = SOR
 					tag = HGH
+					tag = DEA
 				}
 			}
 		}
@@ -158,6 +164,10 @@ ncn_conversion = {
 				limit = { FROM = { tag = HGH } }
 				has_completed_focus = lds_factions
 			}
+			if = {
+				limit = { FROM = { tag = DEA } }
+				has_completed_focus = lds_deadhorse2
+			}
 			NOT = { FROM = { is_puppet_of = NCN } }
 		}
 		available = {
@@ -179,6 +189,7 @@ ncn_conversion = {
 
 		days_remove = 20
 		cost = 20
+		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 100

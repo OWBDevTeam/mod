@@ -527,7 +527,7 @@ country_event = { # Raid Target - we win border conflict
 		add_tech_bonus = {
 			name = defensive_border_conflict_won
 			category = land_doctrine
-			bonus = 0.5
+			bonus = 0.2
 		}
 		if = {
 			limit = { has_country_flag = show_effect_tooltips }
@@ -574,7 +574,7 @@ country_event = { # BRK - we lose border conflict
 					add_tech_bonus = {
 						name = defensive_border_conflict_won
 						category = land_doctrine
-						bonus = 0.5
+						bonus = 0.2
 					}
 				}
 			}
@@ -742,7 +742,7 @@ country_event = { # BRK / Raid Success
 	option = {
 		name = nf_event_brk.22.a
 		army_experience = 10
-		add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.2 uses = 1 category = land_doctrine }
 		create_wargoal = {
 			target = HAI
 			type = annex_everything
@@ -764,7 +764,7 @@ country_event = { # HAI / Failed Defence
 			decimate_half_all_industry = yes
 		}
 		army_experience = 5
-		add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.1 uses = 1 category = land_doctrine }
 		effect_tooltip = { # Shows a HAI player that BRK will gain a wargoal against them w/o generating one
 			BRK = {
 				create_wargoal = {
@@ -787,7 +787,7 @@ country_event = { # BRK / Raid Failure
 	option = {
 		name = nf_event_brk.24.a
 		army_experience = 5
-		add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.1 uses = 1 category = land_doctrine }
 		custom_effect_tooltip = brk_60_cooldown
 	}
 }
@@ -803,7 +803,7 @@ country_event = { # HAI / Defence Success
 	option = {
 		name = nf_event_brk.25.a
 		army_experience = 10
-		add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.2 uses = 1 category = land_doctrine }
 	}
 }
 
@@ -831,8 +831,8 @@ country_event = { # BRK / Raiding Success v VIC coast
 	option = {
 		name = nf_event_brk.27.a
 		army_experience = 10
-		add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
-		add_tech_bonus = { bonus = 0.25 uses = 1 category = naval_tech }
+		add_tech_bonus = { bonus = 0.2 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.2 uses = 1 category = naval_tech }
 	}
 }
 
@@ -875,7 +875,7 @@ country_event = { # BRK / Raid Success
 	option = {
 		name = nf_event_brk.30.a
 		army_experience = 10
-		add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.2 uses = 1 category = land_doctrine }
 	}
 }
 
@@ -893,7 +893,7 @@ country_event = { # VIC / Failed Defence
 			decimate_half_naval_industry = yes
 		}
 		army_experience = 5
-		add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.1 uses = 1 category = land_doctrine }
 	}
 }
 
@@ -908,7 +908,7 @@ country_event = { # BRK / Raid Failure
 	option = {
 		name = nf_event_brk.32.a
 		army_experience = 5
-		add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.1 uses = 1 category = land_doctrine }
 		custom_effect_tooltip = brk_100_cooldown
 	}
 }
@@ -924,7 +924,7 @@ country_event = { # VIC / Defence Success
 	option = {
 		name = nf_event_brk.33.a
 		army_experience = 10
-		add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.2 uses = 1 category = land_doctrine }
 	}
 }
 
