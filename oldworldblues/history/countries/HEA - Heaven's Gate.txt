@@ -5,22 +5,22 @@ set_technology = {
 	# baseline techs
 	tribal_civilization = 1
 	settled_civilization = 1
-	
+
 	#industry
 	oral_instruction = 1
-	
+
 	#infantry
 	standard_weaponry_tech = 1
 	blunt_weaponry = 1
-	
+
 	#support
 	explosive_tech = 1
 	anti_personnel_tech = 1
 	support_weaponry = 1
-	
+
 	#vehicle
 	bike_tech_1 = 1
-	
+
 	#naval
 	destroyer_tech = 1
 	destroyer_tech_2 = 1
@@ -75,10 +75,43 @@ create_field_marshal = {
 	name = "Saint Michael"
 	portrait_path = "gfx/leaders/HEA/Portrait_HEA_Leader.dds"
 	skill = 4
+	id = 3000
 	traits = {
 	}
-	attack_skill = 3
+	attack_skill = 4
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Steam-Maiden Mira"
+	portrait_path = "gfx/leaders/HEA/Portrait_HEA_Generic_4.dds"
+	skill = 2
+	id = 3001
+	traits = {
+		old_guard
+		trait_cautious
+	}
+	attack_skill = 1
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 2
+	female = yes
+}
+
+create_corps_commander = {
+	name = "Mother Magdalene"
+	portrait_path = "gfx/leaders/HEA/Portrait_HEA_Generic_5.dds"
+	skill = 3
+	id = 3002
+	traits = {
+		trait_reckless
+		harsh_leader
+	}
+	attack_skill = 5 # adds up to 11 because of harsh_leader's +1 to attack_skill
 	defense_skill = 1
 	planning_skill = 3
-	logistics_skill = 1
+	logistics_skill = 2
+	female = yes
 }

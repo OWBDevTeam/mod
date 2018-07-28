@@ -201,9 +201,9 @@ country_event = {
 	title = NCR_MOJ_border_war.3.t
 	desc = NCR_MOJ_border_war.3.d
 	picture = GFX_event_NCR_battle
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = NCR_MOJ_border_war.3.a
 		if = {
@@ -231,9 +231,9 @@ country_event = {
 	title = NCR_MOJ_border_war.4.t
 	desc = NCR_MOJ_border_war.4.d
 	picture = GFX_event_NCR_battle
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = NCR_MOJ_border_war.4.a
 		if = {
@@ -259,7 +259,7 @@ country_event = {
 			clr_country_flag = MOJ_minor_attack
 		}
 		hidden_effect = {
-		    news_event = { id = mojave_helios_one_news.1 }
+			news_event = { id = mojave_helios_one_news.1 }
 		}
 	}
 }
@@ -269,9 +269,9 @@ country_event = {
 	title = NCR_MOJ_border_war.5.t
 	desc = NCR_MOJ_border_war.5.d
 	picture = GFX_event_NCR_battle
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = NCR_MOJ_border_war.5.a
 		if = {
@@ -290,7 +290,7 @@ country_event = {
 			add_manpower = -50
 		}
 		MOJ = {
-			# won border war 
+			# won border war
 			country_event = { id = NCR_MOJ_border_war.7 }
 			clr_country_flag = MOJ_major_attack
 			clr_country_flag = MOJ_medium_attack
@@ -304,9 +304,9 @@ country_event = {
 	title = NCR_MOJ_border_war.6.t
 	desc = NCR_MOJ_border_war.6.d
 	picture = GFX_event_NCR_battle
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = NCR_MOJ_border_war.6.a
 		add_political_power = -75
@@ -319,9 +319,9 @@ country_event = {
 	title = NCR_MOJ_border_war.7.t
 	desc = NCR_MOJ_border_war.7.d
 	picture = GFX_event_NCR_battle
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = NCR_MOJ_border_war.7.a
 		add_political_power = 20
@@ -337,7 +337,7 @@ country_event = {
 	title = NCR_MOJ_border_war.8.t
 	desc = NCR_MOJ_border_war.8.d
 	picture = GFX_event_NCR_battle
-	
+
 	fire_only_once = no
 
 	trigger = {
@@ -440,21 +440,21 @@ country_event = {
 							}
 						}
 					}
-				}	
+				}
 			}
 		}
-	}	
-	
-	mean_time_to_happen = {	
-		days = 21	
-	}	
+	}
+
+	mean_time_to_happen = {
+		days = 21
+	}
 
 	immediate = {
 		hidden_effect = {
 			MOJ = { country_event = { id = NCR_MOJ_border_war.13 } }
 		}
 	}
-	
+
 	option = {
 		name = NCR_MOJ_border_war.8.a
 		MOJ = {
@@ -503,7 +503,7 @@ country_event = {
 				if = {
 					limit = {
 						181 = { is_border_conflict = no }
-						NCR = { 
+						NCR = {
 							divisions_in_state = {
 								state = 181
 								size > 0
@@ -558,7 +558,7 @@ country_event = {
 				if = {
 					limit = {
 						573 = { is_border_conflict = no }
-						NCR = { 
+						NCR = {
 							divisions_in_state = {
 								state = 573
 								size > 0
@@ -613,7 +613,7 @@ country_event = {
 				if = {
 					limit = {
 						562 = { is_border_conflict = no }
-						NCR = { 
+						NCR = {
 							divisions_in_state = {
 								state = 562
 								size > 0
@@ -668,7 +668,7 @@ country_event = {
 				if = {
 					limit = {
 						419 = { is_border_conflict = no }
-						NCR = { 
+						NCR = {
 							divisions_in_state = {
 								state = 419
 								size > 0
@@ -693,14 +693,14 @@ country_event = {
 	title = NCR_MOJ_border_war.9.t
 	desc = NCR_MOJ_border_war.9.d
 	picture = GFX_event_NCR_battle
-	
+
 	is_triggered_only = no
 	fire_only_once = no
 
 	trigger = {
 		tag = NCR
 		OR = {
-			#  Loss in Route 95
+			# Loss in Route 95
 			AND = {
 				# Route 95
 				MOJ = { has_full_control_of_state = 137 }
@@ -755,9 +755,9 @@ country_event = {
 			}
 		}
 	}
-	mean_time_to_happen = {	
+	mean_time_to_happen = {
 		days = 2
-	}	
+	}
 	option = {
 		name = NCR_MOJ_border_war.9.a
 		add_political_power = -10
@@ -774,7 +774,7 @@ country_event = {
 	title = NCR_MOJ_border_war.10.t
 	desc = NCR_MOJ_border_war.10.d
 	picture = GFX_event_NCR_battle
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -798,13 +798,13 @@ country_event = {
 	title = NCR_MOJ_border_war.11.t
 	desc = NCR_MOJ_border_war.11.d
 	picture = GFX_event_NCR_battle
-	
+
 	is_triggered_only = no
 
 	trigger = {
 		tag = MOJ
 		OR = {
-			#  Loss in Route 95
+			# Loss in Route 95
 			AND = {
 				# Route 95
 				MOJ = { has_full_control_of_state = 137 }
@@ -869,7 +869,7 @@ country_event = {
 							# Novac
 							181 = { is_border_conflict = yes }
 						}
-					}	
+					}
 				}
 				NCR = { transfer_state = 137 }
 			}
@@ -886,7 +886,7 @@ country_event = {
 							# Novac
 							573 = { is_border_conflict = yes }
 						}
-					}	
+					}
 				}
 				NCR = { transfer_state = 417 }
 			}
@@ -920,7 +920,7 @@ country_event = {
 							# Primm
 							419 = { is_border_conflict = yes }
 						}
-					}	
+					}
 				}
 				NCR = { transfer_state = 562 }
 			}
@@ -953,7 +953,7 @@ country_event = {
 	title = NCR_MOJ_border_war.12.t
 	desc = NCR_MOJ_border_war.12.d
 	picture = GFX_event_NCR_camp
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -961,19 +961,19 @@ country_event = {
 		add_political_power = 45
 		add_war_support = 0.05
 		hidden_effect = {
-		    news_event = { id = mojave_helios_one_news.1 }
+			news_event = { id = mojave_helios_one_news.1 }
 		}
 	}
 }
 
-# Border War Starts (MOJ), triggered from NCR in 
+# Border War Starts (MOJ), triggered from NCR in
 # NCR_MOJ_border_war.8
 country_event = {
 	id = NCR_MOJ_border_war.13
 	title = NCR_MOJ_border_war.13.t
 	desc = NCR_MOJ_border_war.13.d
 	picture = GFX_event_NCR_battle
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -1024,7 +1024,7 @@ country_event = {
 				if = {
 					limit = {
 						181 = { is_border_conflict = no }
-						NCR = { 
+						NCR = {
 							divisions_in_state = {
 								state = 181
 								size > 0
@@ -1079,7 +1079,7 @@ country_event = {
 				if = {
 					limit = {
 						573 = { is_border_conflict = no }
-						NCR = { 
+						NCR = {
 							divisions_in_state = {
 								state = 573
 								size > 0
@@ -1134,7 +1134,7 @@ country_event = {
 				if = {
 					limit = {
 						562 = { is_border_conflict = no }
-						NCR = { 
+						NCR = {
 							divisions_in_state = {
 								state = 562
 								size > 0
@@ -1189,7 +1189,7 @@ country_event = {
 				if = {
 					limit = {
 						419 = { is_border_conflict = no }
-						NCR = { 
+						NCR = {
 							divisions_in_state = {
 								state = 419
 								size > 0

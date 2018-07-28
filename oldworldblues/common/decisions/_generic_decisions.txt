@@ -5,7 +5,7 @@
 
 # Generic Stability Stuff #
 political_actions = {
-	produce_consumer_goods = { # Baisc decision settler / bos version
+	produce_consumer_goods_wtt = { # Baisc decision settler / bos version - have WtT
 		available = {
 			num_of_civilian_factories_available_for_projects > 4
 			has_stability < 0.85
@@ -18,15 +18,48 @@ political_actions = {
 				is_brotherhood_nation = yes
 			}
 			NOT = { has_country_flag = generic_decisions_disabled }
+			has_dlc = "Waking the Tiger"
 		}
 
 		cost = 50
-		days_remove = 50
-		days_re_enable = 100
+		days_remove = 100
+		days_re_enable = 150
 
 		modifier = {
 			civilian_factory_use = 5
-			stability_weekly = 0.01
+			stability_weekly = 0.005
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 5
+				has_stability < 0.6
+			}
+		}
+	}
+	produce_consumer_goods = { # Baisc decision settler / bos version - don't have WtT
+		available = {
+			has_stability < 0.85
+		}
+		visible = {
+			OR = {
+				is_settler_nation = yes
+				tag = NCR
+				tag = CES
+				is_brotherhood_nation = yes
+			}
+			NOT = { has_country_flag = generic_decisions_disabled }
+			NOT = { has_dlc = "Waking the Tiger" }
+		}
+
+		cost = 50
+		days_remove = 100
+		days_re_enable = 150
+
+		modifier = {
+			consumer_goods_factor = 0.20
+			stability_weekly = 0.005
 		}
 
 		ai_will_do = {
@@ -84,13 +117,12 @@ political_actions = {
 		}
 
 		cost = 50
-		days_remove = 50
+		days_remove = 100
 		days_re_enable = 150
 
 		modifier = {
-			research_time_factor = -0.10
-			stability_weekly = 0.02
-			war_support_weekly = -0.005
+			research_time_factor = 0.10
+			stability_weekly = 0.005
 		}
 		ai_will_do = {
 			factor = 0
@@ -116,13 +148,13 @@ political_actions = {
 		}
 
 		cost = 50
-		days_remove = 50
+		days_remove = 100
 		days_re_enable = 150
 
 		modifier = {
 			research_time_factor = -0.05
-			stability_weekly = 0.01
-			war_support_weekly = -0.005
+			stability_weekly = 0.005
+			war_support_weekly = -0.0025
 		}
 		ai_will_do = {
 			factor = 0
@@ -141,12 +173,12 @@ political_actions = {
 		visible = { NOT = { has_country_flag = generic_decisions_disabled } }
 
 		cost = 50
-		days_remove = 50
+		days_remove = 100
 		days_re_enable = 150
 
 		modifier = {
-			stability_weekly = 0.02
-			war_support_weekly = -0.01
+			stability_weekly = 0.01
+			war_support_weekly = -0.005
 		}
 		ai_will_do = {
 			factor = 0
@@ -171,12 +203,15 @@ political_actions = {
 		}
 
 		cost = 100
-		days_remove = 50
+		days_remove = 100
 		days_re_enable = 150
 
 		modifier = {
-			stability_weekly = 0.015
+			stability_weekly = 0.01
 			political_power_factor = -0.20
+		}
+		complete_effect = {
+			add_stability = -0.1
 		}
 		ai_will_do = {
 			factor = 0
@@ -216,7 +251,7 @@ propaganda_efforts = {
 			NOT = { has_country_flag = generic_decisions_disabled }
 		}
 		cost = 50
-		days_remove = 70
+		days_remove = 140
 		days_re_enable = 200
 		modifier = {
 			war_support_weekly = 0.01
@@ -255,10 +290,11 @@ propaganda_efforts = {
 			has_war_support < 0.8
 		}
 		cost = 50
-		days_remove = 40
-		days_re_enable = 110
+		days_remove = 80
+		days_re_enable = 200
 		modifier = {
-			war_support_weekly = 0.02
+			war_support_weekly = 0.01
+			army_org_factor = -0.1
 		}
 		ai_will_do = {
 			factor = 0
@@ -298,7 +334,7 @@ propaganda_efforts = {
 			}
 		}
 		modifier = {
-			war_support_weekly = 0.015
+			war_support_weekly = 0.01
 			stability_weekly = -0.01
 		}
 		ai_will_do = {

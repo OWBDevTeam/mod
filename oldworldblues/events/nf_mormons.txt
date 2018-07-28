@@ -6,7 +6,7 @@ country_event = {
 	desc = nf_mormon.1.d
 	picture = GFX_event_NCN_new_canaan
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_mormon.1.a
@@ -74,7 +74,7 @@ country_event = {
 	desc = nf_mormon.2.d
 	picture = GFX_event_generic_settlement_1
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_mormon.2.a
@@ -90,7 +90,7 @@ country_event = {
 				amount = 10
 			}
 		}
-	    }
+		}
 	}
 	option = {
 		name = nf_mormon.2.b
@@ -118,7 +118,7 @@ country_event = {
 	desc = nf_mormon.3.d
 	picture = GFX_event_generic_caravan
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_mormon.3.a
@@ -171,7 +171,7 @@ country_event = {
 	desc = nf_mormon.4.d
 	picture = GFX_event_NCN_new_canaan
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_mormon.4.a
@@ -193,9 +193,140 @@ country_event = {
 	desc = nf_mormon.5.d
 	picture = GFX_report_event_fascist_speech
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_mormon.5.a
+	}
+}
+
+country_event = { # Religious fanatics attempt seizure power
+	id = nf_mormon.8
+	title = nf_mormon.8.t
+	desc = nf_mormon.8.d
+	picture = GFX_event_HEA_bishop1
+
+	is_triggered_only = yes
+
+	option = { # We find ourselves under New Cannan's thumb
+		name = nf_mormon.8.a
+		if = {
+			limit = { is_puppet = no }
+			NCN = { puppet = ROOT }
+		}
+		else = {
+			overlord = {
+				country_event = { id = nf_mormon.9 } # Coup in our puppet!
+			}
+		}
+	}
+	option = { # The coup is put down
+		trigger = { is_ai = no }
+		name = nf_mormon.8.b
+		NCN = {
+			country_event = { id = nf_mormon.80 } # Seizure of power unsuccessful
+		}
+	}
+}
+
+country_event = { # Our coup is unsuccessful
+	id = nf_mormon.80
+	title = nf_mormon.80.t
+	desc = nf_mormon.80.d
+	picture = GFX_event_HEA_bishop1
+
+	is_triggered_only = yes
+
+	option = { # Force is just as effective as faith
+		name = nf_mormon.80.a
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = FROM
+		}
+	}
+}
+
+country_event = { # Religious fanatics launch a coup in our puppet
+	id = nf_mormon.9
+	title = nf_mormon.9.t
+	desc = nf_mormon.9.d
+	picture = GFX_event_HEA_bishop1
+
+	is_triggered_only = yes
+
+	option = { # Let them go
+		name = nf_mormon.9.a
+		ai_chance = {
+			base = 1
+		}
+		end_puppet = FROM
+		NCN = { puppet = FROM }
+	}
+	option = { # Launch a counter-coup
+		name = nf_mormon.9.b
+		ai_chance = {
+			base = 7
+		}
+		log = "Counter-coup launched"
+		custom_effect_tooltip = NCN_convertion_cw
+		hidden_effect = {
+			FROM = {
+				if = {
+					limit = {
+						has_government = people
+					}
+					start_civil_war = {
+						ruling_party = ruler
+						ideology = ruler
+						size = 0.6
+					}
+				}
+				else = {
+					start_civil_war = {
+						ruling_party = elites
+						ideology = elites
+						size = 0.6
+					}
+				}
+			}
+			every_country = { # We puppet the revolter
+				limit = {
+					original_tag = FROM
+					NOT = { is_puppet_of = ROOT }
+				}
+				NCN = { puppet = PREV }
+				if = {
+					limit = { NOT = { has_war_with = FROM } }
+					FROM = { declare_war_on = { target = PREV type = civil_war } }
+				}
+				PREV = {
+					add_to_war = {
+						targeted_alliance = FROM
+						enemy = PREV
+					}
+				}
+				NCN = {
+					add_to_war = {
+						targeted_alliance = PREV
+						enemy = FROM
+					}
+				}
+			}
+
+		}
+		NCN = { country_event = { id = nf_mormon.90 } }
+	}
+}
+
+country_event = { # Overlord launches a counter-coup
+	id = nf_mormon.90
+	title = nf_mormon.90.t
+	desc = nf_mormon.90.d
+	picture = GFX_event_HEA_bishop1
+
+	is_triggered_only = yes
+
+	option = { # We will help our followers out
+		name = nf_mormon.90.a
 	}
 }

@@ -6,9 +6,8 @@ set_technology = {
 	tribal_civilization = 1
 }
 
-set_stability = 0.2 
+set_stability = 0.3
 set_war_support = 0.55
-
 set_politics = {
 	parties = {
 		people = { popularity = 0 }
@@ -17,7 +16,7 @@ set_politics = {
 		ruler = { popularity = 100 }
 	}
 	ruling_party = ruler
-	elections_allowed = yes
+	elections_allowed = no
 }
 
 add_ideas = {
@@ -28,9 +27,11 @@ create_corps_commander = {
 	name = "Bushido Hido"
 	portrait_path = "gfx/leaders/Tribal/Portrait_Tribal_Generic_14.dds"
 	skill = 3
+	traits = {
+		urban_assault_specialist
+	}
 	attack_skill = 2
 	defense_skill = 3
-	planning_skill = 2
+	planning_skill = 3
 	logistics_skill = 2
-	traits = { urban_assault_specialist }
 }

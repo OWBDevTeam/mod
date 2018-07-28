@@ -3,6 +3,8 @@ hea_conversion = {
 	hea_slow_conversion = { # Converts provinces one by one
 		visible = {
 			has_completed_focus = hea_nf_forgive_sins
+			NOT = { FROM = { is_puppet_of = HEA } }
+			FROM = { exists = yes }
 		}
 		target_trigger = {
 			FROM = {
@@ -16,7 +18,7 @@ hea_conversion = {
 		}
 		available = {
 			NOT = {
-				FROM = { is_puppet_of = NCN }
+				FROM = { is_puppet_of = HEA }
 				has_war_with = FROM
 			}
 			NOT = {
@@ -90,6 +92,7 @@ hea_conversion = {
 	hea_inquisition =  {
 		visible = {
 			has_completed_focus = hea_nf_vengance
+			NOT = { FROM = { is_puppet_of = HEA } }
 		}
 		target_trigger = {
 			FROM = {
@@ -103,7 +106,7 @@ hea_conversion = {
 		}
 		available = {
 			NOT = {
-				FROM = { is_puppet_of = NCN }
+				FROM = { is_puppet_of = HEA }
 				has_war_with = FROM
 			}
 			NOT = {
@@ -193,6 +196,7 @@ hea_conversion = {
 			FROM = {
 				OR = {
 					tag = PHA
+					tag = TOC
 					tag = LON
 					# To add extra targets just use tag = TAG here and in the convertion decision
 				}
@@ -211,13 +215,13 @@ hea_conversion = {
 				}
 			}
 			NOT = {
-				FROM = { is_puppet = yes }
 				has_war_with = FROM
 			}
 		}
 
 		days_remove = 50
 		cost = 60
+		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 5
@@ -228,7 +232,7 @@ hea_conversion = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] hea_bind_to_us (decision) remove entered"
 			}
-			puppet = FROM
+			FROM = { country_event = { id = nf_event_hea.8 } }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] hea_bind_to_us (decision) remove exited"

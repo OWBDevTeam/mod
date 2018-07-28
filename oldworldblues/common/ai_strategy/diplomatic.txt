@@ -305,7 +305,18 @@ hea_religious_nutjobs = {
 		NOT = { original_tag = HEA }
 		country_exists = HEA
 	}
-	abort = {}
+	abort = {
+		OR = {
+			AND = {
+				original_tag = MUR
+				HEA = { has_completed_focus = hea_nf_embassy_murtaugh }
+			}
+			AND = {
+				original_tag = IRE
+				HEA = { has_completed_focus = hea_nf_embassy_ires }
+			}
+		}
+	}
 	ai_strategy = {
 		type = befriend
 		id = "HEA"
@@ -315,5 +326,66 @@ hea_religious_nutjobs = {
 		type = alliance
 		id = "HEA"
 		value = -600
+	}
+}
+
+ncn_religious_nutjobs = {
+	enable = {
+		NOT = { original_tag = NCN }
+		country_exists = NCN
+	}
+	abort = {
+		OR = {
+			AND = {
+				original_tag = CRZ
+				CRZ = { is_puppet_of = NCN }
+			}
+			AND = {
+				original_tag = TAR
+				TAR = { is_puppet_of = NCN }
+			}
+			AND = {
+				original_tag = SOR
+				SOR = { is_puppet_of = NCN }
+			}
+			AND = {
+				original_tag = DEA
+				DEA = { is_puppet_of = NCN }
+			}
+			AND = {
+				original_tag = LON
+				LON = { is_puppet_of = NCN }
+			}
+			AND = {
+				original_tag = IRE
+				IRE = { is_puppet_of = NCN }
+			}
+			AND = {
+				original_tag = MUR
+				MUR = { is_puppet_of = NCN }
+			}
+		}
+	}
+	ai_strategy = {
+		type = befriend
+		id = "NCN"
+		value = -600
+	}
+	ai_strategy = {
+		type = alliance
+		id = "NCN"
+		value = -600
+	}
+}
+
+no_guarantees_in_fallout = {
+	enable = {
+		always = yes
+	}
+	abort = {}
+	ai_strategy = {
+		type = pp_spend_priority
+		id = guarantee
+		value = -9999
 	}
 }

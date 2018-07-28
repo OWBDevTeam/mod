@@ -337,7 +337,7 @@ focus_tree = {
 					targeted_alliance = BVC
 					enemy = NCR
 					hostility_reason = ally
-				}	
+				}
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -937,7 +937,7 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] ncr_drummund entered"
 			}
 			army_experience = 10
-			air_experience = 10		
+			air_experience = 10
 			add_popularity = {
 				ideology = people
 				popularity = 0.05
@@ -987,10 +987,10 @@ focus_tree = {
 				name = "General Drummund"
 				portrait_path = "gfx/leaders/NCR/Portrait_Drummund.dds"
 				skill = 5
-				attack_skill = 4
-				defense_skill = 3
-				planning_skill = 2
-				logistics_skill = 3
+				attack_skill = 5
+				defense_skill = 4
+				planning_skill = 3
+				logistics_skill = 4
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1072,8 +1072,8 @@ focus_tree = {
 				skill = 3
 				attack_skill = 4
 				defense_skill = 2
-				planning_skill = 1
-				logistics_skill = 1
+				planning_skill = 2
+				logistics_skill = 2
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1155,9 +1155,9 @@ focus_tree = {
 				id = 1522
 				skill = 4
 				attack_skill = 2
-				defense_skill = 2
-				planning_skill = 3
-				logistics_skill = 3
+				defense_skill = 3
+				planning_skill = 4
+				logistics_skill = 4
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1295,7 +1295,7 @@ focus_tree = {
 			}
 			47 = {
 				add_building_construction = {
-					type = bunker 
+					type = bunker
 					level = 2
 					province = {
 						id = 3222
@@ -2180,7 +2180,7 @@ focus_tree = {
 				name = air_bonus
 				bonus = 0.5
 				uses = 1
-				category = air_equipment	
+				category = air_equipment
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -2229,7 +2229,7 @@ focus_tree = {
 			350 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
-					type = industrial_complex 
+					type = industrial_complex
 					level = 2
 					instant_build = yes
 				}
@@ -2260,7 +2260,7 @@ focus_tree = {
 			350 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
-					type = industrial_complex 
+					type = industrial_complex
 					level = 2
 					instant_build = yes
 				}
@@ -2418,12 +2418,12 @@ focus_tree = {
 			489 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = industrial_complex 
+					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
 				add_building_construction = {
-					type = infrastructure 
+					type = infrastructure
 					level = 1
 					instant_build = yes
 				}
@@ -2484,7 +2484,7 @@ focus_tree = {
 				name = medical_bonus
 				bonus = 0.5
 				uses = 1
-				category = chem_tech	
+				category = chem_tech
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -3026,8 +3026,8 @@ focus_tree = {
 			any_country = {
 				AND = {
 					is_in_faction_with = NCR
-				
-					AND = {	
+
+					AND = {
 						OR = {
 							533 = { is_owned_and_controlled_by = NCR }
 							137 = { is_owned_and_controlled_by = NCR }
@@ -3111,10 +3111,10 @@ focus_tree = {
 				skill = 6
 				traits = {
 				}
-				attack_skill = 2
-				defense_skill = 2
-				planning_skill = 4
-				logistics_skill = 2
+				attack_skill = 4
+				defense_skill = 4
+				planning_skill = 6
+				logistics_skill = 5
 			}
 			unlock_decision_tooltip = NCR_protege_focus
 			if = {
@@ -3188,7 +3188,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			272 = {	
+			272 = {
 				add_building_construction = {
 					type = coastal_bunker
 					level = 2
@@ -3287,7 +3287,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			272 = {	
+			272 = {
 				add_building_construction = {
 					type = coastal_bunker
 					level = 2
@@ -3539,6 +3539,9 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = ncr_rangerprop
+		}
+		ai_will_do = {
+			factor = 20
 		}
 		x = 16
 		y = 9
@@ -3814,12 +3817,12 @@ focus_tree = {
 			1 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = industrial_complex 
+					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
 				add_building_construction = {
-					type = infrastructure 
+					type = infrastructure
 					level = 1
 					instant_build = yes
 				}

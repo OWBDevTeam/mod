@@ -1306,6 +1306,16 @@ focus_tree = {
 		prerequisite = {
 			focus = WBH_within_the_blizzard
 		}
+		bypass = {
+			TOC = {
+				is_in_faction_with = WBH
+			}
+		}
+		bypass = {
+			TOC = {
+				exists = no
+			}
+		}
 		x = 22
 		y = 4
 		completion_reward = {
@@ -1328,6 +1338,16 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = WBH_within_the_blizzard
+		}
+		bypass = {
+			PMR = {
+				is_in_faction_with = WBH
+			}
+		}
+		bypass = {
+			PMR = {
+				exists = no
+			}
 		}
 		x = 24
 		y = 4
@@ -1456,7 +1476,10 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] WBH_black_paladins entered"
 			}
-			load_oob = washington_black_paladins
+			hidden_effect = {
+				load_oob = washington_black_paladins
+			}
+			custom_effect_tooltip = WBH_black_paladin_recruits
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] WBH_black_paladins exited"

@@ -10,7 +10,7 @@ country_event = {
 
 	option = {
 		name = faction.1.a
-		
+
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -18,13 +18,13 @@ country_event = {
 				factor = 100
 			}
 		}
-		
+
 		trigger = {
-			NOT = { 
+			NOT = {
 				has_global_flag = nevadapact
 			}
 		}
-			
+
 		if = {
 			limit = {
 				tag = NEW
@@ -41,16 +41,16 @@ country_event = {
 				country_event = faction.2
 			}
 		}
-		
+
 	}
-	
+
 	option = {
 		name = faction.1.b
-		
+
 		trigger = {
 			has_global_flag = nevadapact
 		}
-		
+
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -80,7 +80,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				NEW = { is_faction_leader =  yes }
+				NEW = { is_faction_leader = yes }
 			}
 			NEW = {
 				add_to_faction = VLT
@@ -111,7 +111,7 @@ country_event = {
 
 	option = {
 		name = faction.2.a
-		
+
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -119,7 +119,7 @@ country_event = {
 				factor = 100
 			}
 		}
-		
+
 		NEW = {
 			create_faction = nevada_pact
 			set_global_flag = nevadapact
@@ -138,10 +138,10 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = faction.2.b
-		
+
 		ai_chance = {
 			factor = 0
 		}
