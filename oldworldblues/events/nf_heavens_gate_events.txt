@@ -158,7 +158,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { # HEA offers a pact
 	id = nf_event_hea.6
 	title = nf_event_hea.6.t
 	desc = nf_event_hea.6.d
@@ -166,44 +166,53 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = {
+	option = { # Seems fair
 		name = nf_event_hea.6.a
 		trigger = {
-			MUR = { is_ai = yes } #Ai will always say yes
+			NOT = { is_puppet = yes }
 		}
-
-		IF = { limit = { is_in_faction = no }
-			create_faction = "defensive_league"
+		ai_chance = {
+			base = 9
 		}
-
-		add_to_faction = MUR
-		add_ai_strategy = {
-			type = alliance
-			id = "MUR"
-			value = 200
-		}
-		MUR = {
+		HEA = {
+			if = {
+				limit = { is_in_faction = no }
+				create_faction = "defensive_league"
+			}
+			add_to_faction = MUR
 			add_ai_strategy = {
 				type = alliance
-				id = "HEA"
+				id = "MUR"
 				value = 200
+			}
+			MUR = {
+				add_ai_strategy = {
+					type = alliance
+					id = "HEA"
+					value = 200
+				}
 			}
 		}
 	}
 
-	option = {
+	option = { # We're safer elsewhere
 		name = nf_event_hea.6.b
 		trigger = {
-			MUR = { is_ai = no } #Player gets to say no
+			OR = {
+				is_puppet = yes
+				is_ai = no
+			}
 		}
-
-		MUR = {
-			country_event = { id = nf_event_hea.60 }
+		ai_chance = {
+			base = 1
+		}
+		HEA = {
+			country_event = nf_event_hea.60 # MUR refuses
 		}
 	}
 }
 
-country_event = {
+country_event = { # Mur refuses
 	id = nf_event_hea.60
 	title = nf_event_hea.60.t
 	desc = nf_event_hea.60.d
@@ -211,59 +220,74 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = {
+	option = { # We can protect them by puppeting them
 		name = nf_event_hea.60.a
-
-		HEA = {
-			add_to_faction = MUR
+		ai_chance = {
+			base = 1
+		}
+		create_wargoal = {
+			target = MUR
+			type = puppet_wargoal_focus
 		}
 	}
-	option = {
+	option = { # OK then
+		ai_chance = {
+			base = 0
+		}
 		name = nf_event_hea.60.b
 	}
 }
 
 country_event = {
 	id = nf_event_hea.7
-	title = nf_event_hea.7.t
-	desc = nf_event_hea.7.d
+	title = nf_event_hea.6.t # Purposefully uses the same loc as event 6
+	desc = nf_event_hea.6.d
 	picture = GFX_event_HEA_bishop2
 
 	is_triggered_only = yes
 
-	option = {
-		name = nf_event_hea.7.a
+	option = { # Seems fair
+		name = nf_event_hea.6.a
 		trigger = {
-			IRE = { is_ai = yes } #Ai will always say yes
+			NOT = { is_puppet = yes }
 		}
-
-		IF = { limit = { is_in_faction = no }
-			create_faction = "defensive_pact"
+		ai_chance = {
+			base = 9
 		}
-
-		add_to_faction = IRE
-		add_ai_strategy = {
-			type = alliance
-			id = "IRE"
-			value = 200
-		}
-		IRE = {
+		HEA = {
+			if = { 
+				limit = { is_in_faction = no }
+				create_faction = "defensive_league"
+			}
+			add_to_faction = IRE
 			add_ai_strategy = {
 				type = alliance
-				id = "HEA"
+				id = "IRE"
 				value = 200
+			}
+			IRE = {
+				add_ai_strategy = {
+					type = alliance
+					id = "HEA"
+					value = 200
+				}
 			}
 		}
 	}
 
-	option = {
-		name = nf_event_hea.7.b
+	option = { # We're safer elsewhere
+		name = nf_event_hea.6.b
 		trigger = {
-			IRE = { is_ai = no } #Player gets to say no
+			OR = {
+				is_puppet = yes
+				is_ai = no
+			}
 		}
-
-		IRE = {
-			country_event = { id = nf_event_hea.70 }
+		ai_chance = {
+			base = 1
+		}
+		HEA = {
+			country_event = nf_event_hea.70 # IRE refuses
 		}
 	}
 }
@@ -276,15 +300,21 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = {
-		name = nf_event_hea.70.a
-
-		HEA = {
-			add_to_faction = IRE
+	option = { # We can protect them by puppeting them
+		name = nf_event_hea.60.a # Purposefully uses event 60 loc
+		ai_chance = {
+			base = 1
+		}
+		create_wargoal = {
+			target = IRE
+			type = puppet_wargoal_focus
 		}
 	}
-	option = {
-		name = nf_event_hea.70.b
+	option = { # OK then
+		ai_chance = {
+			base = 0
+		}
+		name = nf_event_hea.60.b
 	}
 }
 
@@ -355,7 +385,6 @@ country_event = { # Religious fanatics launch a coup in our puppet
 		ai_chance = {
 			base = 7
 		}
-		log = "Counter-coup launched"
 		custom_effect_tooltip = HEA_convertion_cw
 		hidden_effect = {
 			FROM = {

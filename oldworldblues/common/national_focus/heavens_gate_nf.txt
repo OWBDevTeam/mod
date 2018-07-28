@@ -1635,13 +1635,16 @@ focus_tree = {
 		available = {
 			country_exists = MUR
 		}
+		bypass = {
+			MUR = { exists = no }
+		}
 
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] hea_nf_defensive_league entered"
 			}
-			country_event = { id = nf_event_hea.6 }
+			MUR = { country_event = nf_event_hea.6 } # HEA offers a defensive pact
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] hea_nf_defensive_league exited"
@@ -1755,13 +1758,16 @@ focus_tree = {
 		available = {
 			country_exists = IRE
 		}
+		bypass = {
+			IRE = { exists = no }
+		}
 
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] hea_nf_defensive_pact entered"
 			}
-			country_event = { id = nf_event_hea.7 }
+			IRE = { country_event = nf_event_hea.7 }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] hea_nf_defensive_pact exited"
