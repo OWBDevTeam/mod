@@ -6,17 +6,22 @@ on_actions = {
 				limit = {
 					ROOT = { original_tag = NCR }
 					FROM = { original_tag = CES }
-					OR = {
-						any_country = {
-							original_tag = CES
-							exists = no
-						}
+					NOT = {
 						AND = {
-							CES = { is_puppet_of = ROOT }
+							all_state = {
+								OR = {
+									NOT = { is_core_of = CES }
+									AND = {
+										is_core_of = CES
+										owner = {
+											original_tag = CES
+										}
+									}
+								}
+							}
 							any_country = {
 								original_tag = CES
-								NOT = { tag = CES }
-								exists = no
+								is_puppet = no
 							}
 						}
 					}
