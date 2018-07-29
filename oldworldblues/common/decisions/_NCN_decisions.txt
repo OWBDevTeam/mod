@@ -173,9 +173,6 @@ ncn_conversion = {
 			FROM = { exists = yes }
 		}
 		available = {
-			NOT = {
-				has_war_with = FROM
-			}
 			custom_trigger_tooltip = {
 				tooltip = ncn_converted_all_tt
 				FROM = {
@@ -186,6 +183,9 @@ ncn_conversion = {
 						}
 					}
 				}
+			}
+			NOT = {
+				FROM = { has_war = yes } # To prevent game crashing issues
 			}
 		}
 
