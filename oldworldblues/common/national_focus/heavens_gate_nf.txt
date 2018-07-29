@@ -820,7 +820,8 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] hea_nf_air_peasant entered"
 			}
-			add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 30 producer = HEA }
+			custom_effect_tooltip = hea_add_30_fighters_tt
+			hidden_effect = { add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 30 producer = HEA } }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] hea_nf_air_peasant exited"
