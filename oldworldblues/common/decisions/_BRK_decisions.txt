@@ -114,8 +114,8 @@ brk_raiding_vic = {
 				log = "[GetDateText]: [Root.GetName] brk_vic_practice_raid (decision) remove entered"
 			}
 			clr_country_flag = brk_vic_raid_underway
-			if = { # Auto-success on the 4th attempt
-				limit = { check_variable = { hai_raid_tries = 4 } }
+			if = {
+				limit = { check_variable = { hai_raid_tries = 2 } } # Auto-success on the 3rd attempt
 				effect_tooltip = {
 					random_list = {
 						80 = {
@@ -136,6 +136,40 @@ brk_raiding_vic = {
 					HAI = { country_event = { id = nf_event_brk.23 } }
 				}
 			}
+			else_if = {
+				limit = { check_variable = { hai_raid_tries = 1 } }
+				effect_tooltip = {
+					random_list = {
+						80 = {
+							set_country_flag = brk_vic_practice_raid
+							custom_effect_tooltip = brk_vic_success_tt
+							country_event = { id = nf_event_brk.22 }
+							HAI = { country_event = { id = nf_event_brk.23 } }
+						}
+						20 = {
+							custom_effect_tooltip = brk_vic_failure_tt
+							country_event = { id = nf_event_brk.24 }
+							HAI = { country_event = { id = nf_event_brk.25 } }
+						}
+					}
+				}
+				hidden_effect = {
+					random_list = {
+						90 = {
+							set_country_flag = brk_vic_practice_raid
+							custom_effect_tooltip = brk_vic_success_tt
+							country_event = { id = nf_event_brk.22 }
+							HAI = { country_event = { id = nf_event_brk.23 } }
+						}
+						10 = {
+							custom_effect_tooltip = brk_vic_failure_tt
+							country_event = { id = nf_event_brk.24 }
+							HAI = { country_event = { id = nf_event_brk.25 } }
+						}
+					}
+					add_to_variable = { hai_raid_tries = 1 }
+				}
+			}
 			else = {
 				random_list = {
 					80 = {
@@ -151,13 +185,7 @@ brk_raiding_vic = {
 					}
 				}
 				hidden_effect = {
-					if = {
-						limit = { NOT = { has_variable = hai_raid_tries } }
-						set_variable = { hai_raid_tries = 1 }
-					}
-					else = {
-						add_to_variable = { hai_raid_tries = 1 }
-					}
+					set_variable = { hai_raid_tries = 1 }
 				}
 			}
 			if = {
@@ -188,7 +216,7 @@ brk_raiding_vic = {
 		ai_will_do = {
 			factor = 10
 		}
-
+		
 		complete_effect = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -210,7 +238,7 @@ brk_raiding_vic = {
 			if = {
 				limit = { has_country_flag = brk_vic_practice_raid }
 				if = {
-					limit = { check_variable = { coasts_raid_tries = 4 } }
+					limit = { check_variable = { coasts_raid_tries = 2 } } # Auto-succeeds on the 3rd attempt
 					effect_tooltip = {
 						random_list = {
 							80 = {
@@ -231,6 +259,40 @@ brk_raiding_vic = {
 						VIC = { country_event = { id = nf_event_brk.23 } } # Intentionally the same event as practice raid
 					}
 				}
+				else_if = {
+					limit = { check_variable = { coasts_raid_tries = 1 } }
+					effect_tooltip = {
+						random_list = {
+							80 = {
+								set_country_flag = brk_vic_first_raid
+								custom_effect_tooltip = brk_vic_success_tt
+								country_event = { id = nf_event_brk.27 } # Next Decsion activation handeled in this event
+								VIC = { country_event = { id = nf_event_brk.23 } } # Intentionally the same event as practice raid
+							}
+							20 = {
+								custom_effect_tooltip = brk_vic_failure_tt
+								country_event = { id = nf_event_brk.28 }
+								VIC = { country_event = { id = nf_event_brk.25 } } # Intentionally the same event as practice raid
+							}
+						}
+					}
+					hidden_effect = {
+						random_list = {
+							90 = {
+								set_country_flag = brk_vic_first_raid
+								custom_effect_tooltip = brk_vic_success_tt
+								country_event = { id = nf_event_brk.27 } # Next Decsion activation handeled in this event
+								VIC = { country_event = { id = nf_event_brk.23 } } # Intentionally the same event as practice raid
+							}
+							10 = {
+								custom_effect_tooltip = brk_vic_failure_tt
+								country_event = { id = nf_event_brk.28 }
+								VIC = { country_event = { id = nf_event_brk.25 } } # Intentionally the same event as practice raid
+							}
+						}
+						add_to_variable = { coasts_raid_tries = 1 }
+					}
+				}
 				else = {
 					random_list = {
 						80 = {
@@ -246,13 +308,7 @@ brk_raiding_vic = {
 						}
 					}
 					hidden_effect = {
-						if = { 
-							limit = { has_variable = coasts_raid_tries }
-							add_to_variable = { coasts_raid_tries = 1 }
-						}
-						else = {
-							set_variable = { coasts_raid_tries = 1 }
-						}
+						set_variable = { coasts_raid_tries = 1 }
 					}
 				}
 			}
@@ -329,7 +385,7 @@ brk_raiding_vic = {
 			if = {
 				limit = { has_country_flag = brk_vic_practice_raid }
 				if = {
-					limit = { check_variable = { ports_raid_tries = 4 } }
+					limit = { check_variable = { ports_raid_tries = 3 } } # Auto-succeeds on the 4th attempt
 					effect_tooltip = {
 						random_list = {
 							70 = {
@@ -350,6 +406,74 @@ brk_raiding_vic = {
 						VIC = { country_event = { id = nf_event_brk.31} } # Intentionally the same event as practice raid
 					}
 				}
+				else_if = {
+					limit = { check_variable = { ports_raid_tries = 2 } }
+					effect_tooltip = {
+						random_list = {
+							70 = {
+								set_country_flag = brk_vic_port_raid
+								custom_effect_tooltip = brk_vic_success_tt
+								country_event = { id = nf_event_brk.30 } # Next Decsion activation handeled in this event
+								VIC = { country_event = { id = nf_event_brk.31 } } # Intentionally the same event as practice raid
+							}
+							30 = {
+								custom_effect_tooltip = brk_vic_failure_tt
+								country_event = { id = nf_event_brk.32 }
+								VIC = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
+							}
+						}
+					}
+					hidden_effect = {
+						random_list = {
+							90 = {
+								set_country_flag = brk_vic_port_raid
+								custom_effect_tooltip = brk_vic_success_tt
+								country_event = { id = nf_event_brk.30 } # Next Decsion activation handeled in this event
+								VIC = { country_event = { id = nf_event_brk.31 } } # Intentionally the same event as practice raid
+							}
+							10 = {
+								custom_effect_tooltip = brk_vic_failure_tt
+								country_event = { id = nf_event_brk.32 }
+								VIC = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
+							}
+						}
+						add_to_variable = { ports_raid_tries = 1 }
+					}
+				}
+				else_if = {
+					limit = { check_variable = { ports_raid_tries = 1 } }
+					effect_tooltip = {
+						random_list = {
+							70 = {
+								set_country_flag = brk_vic_port_raid
+								custom_effect_tooltip = brk_vic_success_tt
+								country_event = { id = nf_event_brk.30 } # Next Decsion activation handeled in this event
+								VIC = { country_event = { id = nf_event_brk.31 } } # Intentionally the same event as practice raid
+							}
+							30 = {
+								custom_effect_tooltip = brk_vic_failure_tt
+								country_event = { id = nf_event_brk.32 }
+								VIC = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
+							}
+						}
+					}
+					hidden_effect = {
+						random_list = {
+							80 = {
+								set_country_flag = brk_vic_port_raid
+								custom_effect_tooltip = brk_vic_success_tt
+								country_event = { id = nf_event_brk.30 } # Next Decsion activation handeled in this event
+								VIC = { country_event = { id = nf_event_brk.31 } } # Intentionally the same event as practice raid
+							}
+							20 = {
+								custom_effect_tooltip = brk_vic_failure_tt
+								country_event = { id = nf_event_brk.32 }
+								VIC = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
+							}
+						}
+						add_to_variable = { ports_raid_tries = 1 }
+					}
+				}
 				else = {
 					random_list = {
 						70 = {
@@ -365,13 +489,7 @@ brk_raiding_vic = {
 						}
 					}
 					hidden_effect = {
-						if = { 
-							limit = { has_variable = ports_raid_tries }
-							add_to_variable = { ports_raid_tries = 1 }
-						}
-						else = {
-							set_variable = { ports_raid_tries = 1 }
-						}
+						set_variable = { ports_raid_tries = 1 }
 					}
 				}
 			}
