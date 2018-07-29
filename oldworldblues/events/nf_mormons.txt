@@ -209,9 +209,18 @@ country_event = { # Religious fanatics attempt seizure power
 	is_triggered_only = yes
 
 	option = { # We find ourselves under New Cannan's thumb
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] option nf_mormon.8.a entered"
+		}
 		name = nf_mormon.8.a
 		if = {
-			limit = { is_puppet = no }
+			limit = {
+				AND = {
+					NOT = { is_puppet = yes }
+					NOT = { is_in_faction_with = HEA }
+				}
+			}
 			NCN = { puppet = ROOT }
 		}
 		else = {
@@ -219,12 +228,24 @@ country_event = { # Religious fanatics attempt seizure power
 				country_event = { id = nf_mormon.9 } # Coup in our puppet!
 			}
 		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] option nf_mormon.8.a exited"
+		}
 	}
 	option = { # The coup is put down
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] option nf_mormon.8.b entered"
+		}
 		trigger = { is_ai = no }
 		name = nf_mormon.8.b
 		NCN = {
 			country_event = { id = nf_mormon.80 } # Seizure of power unsuccessful
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] option nf_mormon.8.b exited"
 		}
 	}
 }
@@ -238,10 +259,18 @@ country_event = { # Our coup is unsuccessful
 	is_triggered_only = yes
 
 	option = { # Force is just as effective as faith
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] option nf_mormon.88.a entered"
+		}
 		name = nf_mormon.80.a
 		create_wargoal = {
 			type = puppet_wargoal_focus
 			target = FROM
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] option nf_mormon.80.a exited"
 		}
 	}
 }
@@ -255,14 +284,26 @@ country_event = { # Religious fanatics launch a coup in our puppet
 	is_triggered_only = yes
 
 	option = { # Let them go
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] option nf_mormon.9.a entered"
+		}
 		name = nf_mormon.9.a
 		ai_chance = {
 			base = 1
 		}
 		end_puppet = FROM
 		NCN = { puppet = FROM }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] option nf_mormon.9.a exited"
+		}
 	}
 	option = { # Launch a counter-coup
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] option nf_mormon.9.b entered"
+		}
 		name = nf_mormon.9.b
 		ai_chance = {
 			base = 7
@@ -312,9 +353,12 @@ country_event = { # Religious fanatics launch a coup in our puppet
 					}
 				}
 			}
-
 		}
 		NCN = { country_event = { id = nf_mormon.90 } }
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] option nf_mormon.9.b exited"
+		}
 	}
 }
 
@@ -327,6 +371,14 @@ country_event = { # Overlord launches a counter-coup
 	is_triggered_only = yes
 
 	option = { # We will help our followers out
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] option nf_mormon.90.a entered"
+		}
 		name = nf_mormon.90.a
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] option nf_mormon.90.a exited"
+		}
 	}
 }
