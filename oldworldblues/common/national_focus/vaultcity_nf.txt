@@ -935,7 +935,10 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] vault_festus_2 entered"
 			}
 			add_manpower = 5000
-			load_oob = vault_ghoul_migration
+			custom_effect_tooltip = vault_festus_2_tt
+			hidden_effect = {
+				load_oob = vault_ghoul_migration
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] vault_festus_2 exited"
