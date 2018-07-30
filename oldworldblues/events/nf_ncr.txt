@@ -2329,6 +2329,7 @@ country_event = {
 	option = {#Open Rebellion - Switch to Phoenix Republic
 		name = nf_ncr.31.b
 		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
 		custom_effect_tooltip = NCR_revolt_PHR_tagswitch
 		hidden_effect = {
 			PHR = { change_tag_from	= ROOT }
@@ -3115,6 +3116,7 @@ country_event = {
 				has_war_with = NCR
 				is_in_faction_with = PHR
 			}
+			is_ai = no
 		}
 		custom_effect_tooltip = NCR_revolt_HAN_tagswitch
 		hidden_effect = {
@@ -3165,41 +3167,43 @@ country_event = {
 			clr_state_flag = do_not_decimate
 		}
 		# 70 factories in all
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
+		HAN = {
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+		}
 	}
 }
 
@@ -3216,21 +3220,23 @@ country_event = {
 		name = nf_ncr.39.a
 		set_major = yes
 		# 30 factories in all
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
+		PHR = {
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+		}
 	}
 }
 
