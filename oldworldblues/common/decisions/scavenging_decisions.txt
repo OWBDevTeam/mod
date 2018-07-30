@@ -128,14 +128,17 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_equip (decision) remove entered"
 			}
-			random_list = {
-				10 = { # Scavengers Killed
-					country_event = { id = scavenge.1 }
+			hidden_effect = { set_variable = { rng_value = random } }
+			if = {
+				limit = {
+					check_variable = { rng_value > 0.9 }
 				}
-				90 = { # A successful mission
-					country_event = { id = scavenge.2 }
-				}
+				country_event = { id = scavenge.1 }
 			}
+			else = {
+				country_event = { id = scavenge.2 }
+			}
+			hidden_effect = { clear_variable = rng_value }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_equip (decision) remove exited"
@@ -191,14 +194,17 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_equip_pa (decision) remove entered"
 			}
-			random_list = {
-				5 = { # Scavengers Killed
-					country_event = { id = scavenge.1 }
+			hidden_effect = { set_variable = { rng_value = random } }
+			if = {
+				limit = {
+					check_variable = { rng_value > 0.95 }
 				}
-				95 = { # A successful mission
-					country_event = { id = scavenge.2 }
-				}
+				country_event = { id = scavenge.1 }
 			}
+			else = {
+				country_event = { id = scavenge.2 }
+			}
+			hidden_effect = { clear_variable = rng_value }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_equip_pa (decision) remove exited"
@@ -253,14 +259,17 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_equip_motor (decision) remove entered"
 			}
-			random_list = {
-				10 = { # Scavengers Killed
-					country_event = { id = scavenge.1 }
+			hidden_effect = { set_variable = { rng_value = random } }
+			if = {
+				limit = {
+					check_variable = { rng_value > 0.9 }
 				}
-				90 = { # A successful mission
-					country_event = { id = scavenge.2 }
-				}
+				country_event = { id = scavenge.1 }
 			}
+			else = {
+				country_event = { id = scavenge.2 }
+			}
+			hidden_effect = { clear_variable = rng_value }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_equip_motor (decision) remove exited"
@@ -316,14 +325,17 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_equip_fly (decision) remove entered"
 			}
-			random_list = {
-				10 = { # Scavengers Killed
-					country_event = { id = scavenge.1 }
+			hidden_effect = { set_variable = { rng_value = random } }
+			if = {
+				limit = {
+					check_variable = { rng_value > 0.9 }
 				}
-				90 = { # A successful mission
-					country_event = { id = scavenge.2 }
-				}
+				country_event = { id = scavenge.1 }
 			}
+			else = {
+				country_event = { id = scavenge.2 }
+			}
+			hidden_effect = { clear_variable = rng_value }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_equip_fly (decision) remove exited"
@@ -383,14 +395,17 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_robots (decision) remove entered"
 			}
-			random_list = {
-				10 = { # Scavengers Killed
-					country_event = { id = scavenge.1 }
+			hidden_effect = { set_variable = { rng_value = random } }
+			if = {
+				limit = {
+					check_variable = { rng_value > 0.9 }
 				}
-				90 = { # A successful mission
-					country_event = { id = scavenge.3 }
-				}
+				country_event = { id = scavenge.1 }
 			}
+			else = {
+				country_event = { id = scavenge.3 }
+			}
+			hidden_effect = { clear_variable = rng_value }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_robots (decision) remove exited"
@@ -450,14 +465,17 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_robots_pa (decision) remove entered"
 			}
-			random_list = {
-				5 = { # Scavengers Killed
-					country_event = { id = scavenge.1 }
+			hidden_effect = { set_variable = { rng_value = random } }
+			if = {
+				limit = {
+					check_variable = { rng_value > 0.95 }
 				}
-				95 = { # A successful mission
-					country_event = { id = scavenge.3 }
-				}
+				country_event = { id = scavenge.1 }
 			}
+			else = {
+				country_event = { id = scavenge.3 }
+			}
+			hidden_effect = { clear_variable = rng_value }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_robots_pa (decision) remove exited"
@@ -517,14 +535,17 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_robots_motor (decision) remove entered"
 			}
-			random_list = {
-				10 = { # Scavengers Killed
-					country_event = { id = scavenge.1 }
+			hidden_effect = { set_variable = { rng_value = random } }
+			if = {
+				limit = {
+					check_variable = { rng_value > 0.9 }
 				}
-				90 = { # A successful mission
-					country_event = { id = scavenge.3 }
-				}
+				country_event = { id = scavenge.1 }
 			}
+			else = {
+				country_event = { id = scavenge.3 }
+			}
+			hidden_effect = { clear_variable = rng_value }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_robots_motor (decision) remove exited"
@@ -584,14 +605,17 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_robots_fly (decision) remove entered"
 			}
-			random_list = {
-				10 = { # Scavengers Killed
-					country_event = { id = scavenge.1 }
+			hidden_effect = { set_variable = { rng_value = random } }
+			if = {
+				limit = {
+					check_variable = { rng_value > 0.9 }
 				}
-				90 = { # A successful mission
-					country_event = { id = scavenge.3 }
-				}
+				country_event = { id = scavenge.1 }
 			}
+			else = {
+				country_event = { id = scavenge.3 }
+			}
+			hidden_effect = { clear_variable = rng_value }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_robots_fly (decision) remove exited"
@@ -650,14 +674,17 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_vehicles (decision) remove entered"
 			}
-			random_list = {
-				10 = { # Scavengers Killed
-					country_event = { id = scavenge.1 }
+			hidden_effect = { set_variable = { rng_value = random } }
+			if = {
+				limit = {
+					check_variable = { rng_value > 0.9 }
 				}
-				90 = { # A successful mission
-					country_event = { id = scavenge.4 }
-				}
+				country_event = { id = scavenge.1 }
 			}
+			else = {
+				country_event = { id = scavenge.4 }
+			}
+			hidden_effect = { clear_variable = rng_value }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_vehicles (decision) remove exited"
@@ -717,14 +744,17 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_pa (decision) remove entered"
 			}
-			random_list = {
-				5 = { # Scavengers Killed
-					country_event = { id = scavenge.1 }
+			hidden_effect = { set_variable = { rng_value = random } }
+			if = {
+				limit = {
+					check_variable = { rng_value > 0.95 }
 				}
-				95 = { # A successful mission
-					country_event = { id = scavenge.4 }
-				}
+				country_event = { id = scavenge.1 }
 			}
+			else = {
+				country_event = { id = scavenge.4 }
+			}
+			hidden_effect = { clear_variable = rng_value }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_pa (decision) remove exited"
@@ -784,14 +814,17 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_motor (decision) remove entered"
 			}
-			random_list = {
-				10 = { # Scavengers Killed
-					country_event = { id = scavenge.1 }
+			hidden_effect = { set_variable = { rng_value = random } }
+			if = {
+				limit = {
+					check_variable = { rng_value > 0.9 }
 				}
-				90 = { # A successful mission
-					country_event = { id = scavenge.4 }
-				}
+				country_event = { id = scavenge.1 }
 			}
+			else = {
+				country_event = { id = scavenge.4 }
+			}
+			hidden_effect = { clear_variable = rng_value }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_motor (decision) remove exited"
@@ -851,14 +884,17 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_fly (decision) remove entered"
 			}
-			random_list = {
-				10 = { # Scavengers Killed
-					country_event = { id = scavenge.1 }
+			hidden_effect = { set_variable = { rng_value = random } }
+			if = {
+				limit = {
+					check_variable = { rng_value > 0.9 }
 				}
-				90 = { # A successful mission
-					country_event = { id = scavenge.4 }
-				}
+				country_event = { id = scavenge.1 }
 			}
+			else = {
+				country_event = { id = scavenge.4 }
+			}
+			hidden_effect = { clear_variable = rng_value }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_fly (decision) remove exited"
@@ -912,14 +948,17 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_owt (decision) remove entered"
 			}
-			random_list = {
-				20 = { # Scavengers Killed
-					country_event = { id = scavenge.1 }
+			hidden_effect = { set_variable = { rng_value = random } }
+			if = {
+				limit = {
+					check_variable = { rng_value > 0.8 }
 				}
-				80 = { # A successful mission
-					country_event = { id = scavenge.5 }
-				}
+				country_event = { id = scavenge.1 }
 			}
+			else = {
+				country_event = { id = scavenge.5 }
+			}
+			hidden_effect = { clear_variable = rng_value }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_owt (decision) remove exited"
@@ -974,14 +1013,17 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_owt_pa (decision) remove entered"
 			}
-			random_list = {
-				15 = { # Scavengers Killed
-					country_event = { id = scavenge.1 }
+			hidden_effect = { set_variable = { rng_value = random } }
+			if = {
+				limit = {
+					check_variable = { rng_value > 0.85 }
 				}
-				85 = { # A successful mission
-					country_event = { id = scavenge.5 }
-				}
+				country_event = { id = scavenge.1 }
 			}
+			else = {
+				country_event = { id = scavenge.5 }
+			}
+			hidden_effect = { clear_variable = rng_value }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_owt_pa (decision) remove exited"
@@ -1036,14 +1078,17 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_owt_motor (decision) remove entered"
 			}
-			random_list = {
-				20 = { # Scavengers Killed
-					country_event = { id = scavenge.1 }
+			hidden_effect = { set_variable = { rng_value = random } }
+			if = {
+				limit = {
+					check_variable = { rng_value > 0.8 }
 				}
-				80 = { # A successful mission
-					country_event = { id = scavenge.5 }
-				}
+				country_event = { id = scavenge.1 }
 			}
+			else = {
+				country_event = { id = scavenge.5 }
+			}
+			hidden_effect = { clear_variable = rng_value }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_owt_motor (decision) remove exited"
@@ -1098,14 +1143,17 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_owt_fly (decision) remove entered"
 			}
-			random_list = {
-				20 = { # Scavengers Killed
-					country_event = { id = scavenge.1 }
+			hidden_effect = { set_variable = { rng_value = random } }
+			if = {
+				limit = {
+					check_variable = { rng_value > 0.8 }
 				}
-				80 = { # A successful mission
-					country_event = { id = scavenge.5 }
-				}
+				country_event = { id = scavenge.1 }
 			}
+			else = {
+				country_event = { id = scavenge.5 }
+			}
+			hidden_effect = { clear_variable = rng_value }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_owt_fly (decision) remove exited"
