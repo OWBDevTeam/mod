@@ -6,11 +6,24 @@ set_technology = {
 	blunt_weaponry = 1
 	tribal_civilization = 1
 	settled_civilization = 1
+	destroyer_tech = 1
+	cruiser_tech = 1
+	battleship_tech = 1 
+	heavy_cruiser_tech = 1
+	destroyer_tech_2 = 1
+	electronic_engineering = 1
+	electronic_engineering_1 = 1
+	electronic_engineering_2 = 1
+	electronic_engineering_3 = 1
+	radio_detection = 1
+	decimetric_radar = 1
+	improved_decimetric_radar = 1
+	centimetric_radar = 1
 }
 
-set_stability = 0.6
-set_war_support = 0.2
-
+set_stability = 0.8
+set_war_support = 0.6
+set_convoys = 150
 set_politics = {
 	parties = {
 		people = { popularity = 100 }
@@ -22,11 +35,13 @@ set_politics = {
 	elections_allowed = no
 }
 
-add_ideas = {}
+add_ideas = {
+	extensive_conscription
+}
 
 create_country_leader  = {
 	name = "Queen Victoria VI"
-	desc = "Queen Victoria VI_DESC"
+	desc = "QUEEN_VICTORIA_DESC"
 	picture = "Portrait_Queen_Victoria_VI.dds"
 	expire = "3000.1.1"
 	ideology = constitutional_monarchy

@@ -48,7 +48,7 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] begin_scavenging_program (decision) complete entered"
 			}
-			set_variable = { var = scavenge_efficiency value = 100 }
+			set_variable = { var = scavenge_efficiency value = 40 }
 			custom_effect_tooltip = scavenging_set_to_100
 			if = {
 				limit = {
@@ -58,9 +58,11 @@ scavenge_resources = {
 			}
 			if = {
 				limit = {
-					is_settler_nation = yes
-					tag = CES
-					tag = NCR
+					OR = {
+						is_settler_nation = yes
+						tag = CES
+						tag = NCR
+					}
 				}
 				add_to_variable = { var = scavenge_efficiency value = 10 tooltip = scavenging_settler_efficiency }
 			}
@@ -345,6 +347,10 @@ scavenge_resources = {
 		visible = {
 			has_country_flag = enabled_scavenging
 			NOT = { has_country_flag = scavenge_sm_hidden }
+			OR = {
+				has_tech = settled_civilization
+				has_tech = scientific_civilization
+			}
 		}
 
 		cost = 20
@@ -407,6 +413,10 @@ scavenge_resources = {
 			has_country_flag = enabled_scavenging
 			has_country_flag = SE_pa_upgrade
 			NOT = { has_country_flag = scavenge_pa_hidden }
+			OR = {
+				has_tech = settled_civilization
+				has_tech = scientific_civilization
+			}
 		}
 
 		cost = 20
@@ -470,6 +480,10 @@ scavenge_resources = {
 			has_country_flag = enabled_scavenging
 			has_country_flag = SE_mot_upgrade
 			NOT = { has_country_flag = scavenge_mot_hidden }
+			OR = {
+				has_tech = settled_civilization
+				has_tech = scientific_civilization
+			}
 		}
 
 		cost = 20
@@ -533,6 +547,10 @@ scavenge_resources = {
 			has_country_flag = enabled_scavenging
 			has_country_flag = SE_fly_upgrade
 			NOT = { has_country_flag = scavenge_fly_hidden }
+			OR = {
+				has_tech = settled_civilization
+				has_tech = scientific_civilization
+			}
 		}
 
 		cost = 20
@@ -596,6 +614,10 @@ scavenge_resources = {
 		visible = {
 			has_country_flag = enabled_scavenging
 			NOT = { has_country_flag = scavenge_sm_hidden }
+			OR = {
+				has_tech = settled_civilization
+				has_tech = scientific_civilization
+			}
 		}
 
 		cost = 20
@@ -658,6 +680,10 @@ scavenge_resources = {
 			has_country_flag = enabled_scavenging
 			has_country_flag = SE_pa_upgrade
 			NOT = { has_country_flag = scavenge_pa_hidden }
+			OR = {
+				has_tech = settled_civilization
+				has_tech = scientific_civilization
+			}
 		}
 
 		cost = 20
@@ -721,6 +747,10 @@ scavenge_resources = {
 			has_country_flag = enabled_scavenging
 			has_country_flag = SE_mot_upgrade
 			NOT = { has_country_flag = scavenge_mot_hidden }
+			OR = {
+				has_tech = settled_civilization
+				has_tech = scientific_civilization
+			}
 		}
 
 		cost = 20
@@ -784,6 +814,10 @@ scavenge_resources = {
 			has_country_flag = enabled_scavenging
 			has_country_flag = SE_fly_upgrade
 			NOT = { has_country_flag = scavenge_fly_hidden }
+			OR = {
+				has_tech = settled_civilization
+				has_tech = scientific_civilization
+			}
 		}
 
 		cost = 20
@@ -842,15 +876,13 @@ scavenge_resources = {
 				tooltip = not_scavenging
 				NOT = { has_country_flag = is_scavenging }
 			}
-			hidden_trigger = {
-				is_brotherhood_nation = yes
-			}
 			has_scavenge_equipment = yes
 		}
 		visible = {
 			has_country_flag = enabled_scavenging
 			NOT = { has_country_flag = scavenge_sm_hidden }
-			hidden_trigger = {
+			OR = {
+				has_tech = scientific_civilization
 				is_brotherhood_nation = yes
 			}
 		}
@@ -903,9 +935,6 @@ scavenge_resources = {
 				tooltip = not_scavenging
 				NOT = { has_country_flag = is_scavenging }
 			}
-			hidden_trigger = {
-				is_brotherhood_nation = yes
-			}
 			has_scavenge_equipment = yes
 			has_scavenge_pa = yes
 		}
@@ -913,7 +942,8 @@ scavenge_resources = {
 			has_country_flag = enabled_scavenging
 			has_country_flag = SE_pa_upgrade
 			NOT = { has_country_flag = scavenge_pa_hidden }
-			hidden_trigger = {
+			OR = {
+				has_tech = scientific_civilization
 				is_brotherhood_nation = yes
 			}
 		}
@@ -967,9 +997,6 @@ scavenge_resources = {
 				tooltip = not_scavenging
 				NOT = { has_country_flag = is_scavenging }
 			}
-			hidden_trigger = {
-				is_brotherhood_nation = yes
-			}
 			has_scavenge_equipment = yes
 			has_scavenge_vehicle = yes
 		}
@@ -977,7 +1004,8 @@ scavenge_resources = {
 			has_country_flag = enabled_scavenging
 			has_country_flag = SE_mot_upgrade
 			NOT = { has_country_flag = scavenge_mot_hidden }
-			hidden_trigger = {
+			OR = {
+				has_tech = scientific_civilization
 				is_brotherhood_nation = yes
 			}
 		}
@@ -1031,9 +1059,6 @@ scavenge_resources = {
 				tooltip = not_scavenging
 				NOT = { has_country_flag = is_scavenging }
 			}
-			hidden_trigger = {
-				is_brotherhood_nation = yes
-			}
 			has_scavenge_equipment = yes
 			has_scavenge_fly = yes
 		}
@@ -1041,7 +1066,8 @@ scavenge_resources = {
 			has_country_flag = enabled_scavenging
 			has_country_flag = SE_fly_upgrade
 			NOT = { has_country_flag = scavenge_fly_hidden }
-			hidden_trigger = {
+			OR = {
+				has_tech = scientific_civilization
 				is_brotherhood_nation = yes
 			}
 		}

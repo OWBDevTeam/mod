@@ -7,23 +7,23 @@ country_event = {
 	picture = event_VEG_wall
 
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_vegas.1.a
-		
+
 		313 = {
 			add_extra_state_shared_building_slots = 4
 			add_building_construction = {
 				type = industrial_complex
-				level = 4 
+				level = 4
 				instant_build = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = nf_vegas.1.b
-		
+
 		154 = {
 			add_extra_state_shared_building_slots = 3
 			add_building_construction = {
@@ -42,27 +42,27 @@ country_event = {
 	picture = event_VEG_lucky38
 
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_vegas.2.a
 		add_ideas = stableOS
 	}
-	
+
 	option = {
 		name = nf_vegas.2.b
 		add_ideas = unstableOS
 	}
-	
+
 }
-	
+
 country_event = {
 	id = nf_vegas.3
 	title = nf_vegas.3.t
 	desc = nf_vegas.3.d
 	picture = GFX_event_VEG_strip
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.3.a
 		country_event = { id = nf_vegas.4 days = 1 }
@@ -75,8 +75,8 @@ country_event = {
 	desc = nf_vegas.4.d
 	picture = GFX_event_VEG_gomorrah
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.4.a
 
@@ -90,10 +90,10 @@ country_event = {
 		add_ideas = omertas
 		country_event = { id = nf_vegas.5 days = 1 }
 	}
-	
+
 	option = {
 		name = nf_vegas.4.b
-		
+
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -102,7 +102,7 @@ country_event = {
 			}
 		}
 		FIE = {
-		   country_event = nf_vegas.41
+			country_event = nf_vegas.41
 		}
 	}
 }
@@ -113,11 +113,11 @@ country_event = {
 	desc = nf_vegas.5.d
 	picture = GFX_event_VEG_tops
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.5.a
-		
+
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -125,14 +125,14 @@ country_event = {
 				factor = 10
 			}
 		}
-		
+
 		add_ideas = chairmen
 		country_event = { id = nf_vegas.6 days = 1 }
 	}
-	
+
 	option = {
 		name = nf_vegas.5.b
-		
+
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -140,7 +140,7 @@ country_event = {
 				factor = 0
 			}
 		}
-		
+
 		add_ideas = kings
 		country_event = { id = nf_vegas.6 days = 1 }
 	}
@@ -152,11 +152,11 @@ country_event = {
 	desc = nf_vegas.6.d
 	picture = GFX_event_VEG_ultraluxe
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.6.a
-		
+
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -164,13 +164,13 @@ country_event = {
 				factor = 10
 			}
 		}
-		
+
 		add_ideas = whitegloves
 	}
-	
+
 	option = {
 		name = nf_vegas.6.b
-		
+
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -178,7 +178,7 @@ country_event = {
 				factor = 0
 			}
 		}
-		
+
 		KHA = {
 			country_event = nf_vegas.44
 		}
@@ -191,11 +191,11 @@ country_event = {
 	desc = nf_vegas.7.d
 	picture = GFX_event_VEG_strip
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.7.a
-		
+
 		211 = {
 			add_extra_state_shared_building_slots = 3
 			add_building_construction = {
@@ -210,10 +210,10 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = nf_vegas.7.b
-		
+
 		154 = {
 			add_building_construction = {
 				type = infrastructure
@@ -244,19 +244,19 @@ country_event = {
 	desc = nf_vegas.8.d
 	picture = GFX_event_VEG_strip
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.8.a
-		
+
 		VEG = {
 			country_event = nf_vegas.28
 		}
 	}
-	
+
 	option = {
 		name = nf_vegas.8.b
-		
+
 		VEG = {
 			country_event = nf_vegas.29
 		}
@@ -268,19 +268,19 @@ country_event = {
 	desc = nf_vegas.9.d
 	picture = GFX_event_VEG_vault21
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.9.a
 		if = {
 			limit = {
 				VEG = {
 					has_idea = wealthyclientele
-				} 	
+				}
 			}
 			swap_ideas = {
 				remove_idea = wealthyclientele
-				add_idea = wealthyclientele2 
+				add_idea = wealthyclientele2
 			}
 		}
 		if = {
@@ -291,26 +291,26 @@ country_event = {
 			}
 			swap_ideas = {
 				remove_idea = middleclassclientele
-				add_idea = middleclassclientele2 
+				add_idea = middleclassclientele2
 			}
 		}
 	}
-	
+
 	option = {
 		name = nf_vegas.9.b
-		
+
 		211 = {
 			add_resource = {
-			   type = fuel
-			   amount = 10
-			}				
-			add_resource = {
-			   type = electronics
-			   amount = 20
+				type = fuel
+				amount = 10
 			}
 			add_resource = {
-			   type = advanced_technology
-			   amount = 5
+				type = electronics
+				amount = 20
+			}
+			add_resource = {
+				type = advanced_technology
+				amount = 5
 			}
 		}
 	}
@@ -321,19 +321,19 @@ country_event = {
 	desc = nf_vegas.10.d
 	picture = GFX_event_VEG_thekings
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.10.a
-		
-		create_corps_commander = { 
-			name = "Victor" 
-			picture = "Portrait_Victor.dds" 
-			traits = { } 
-			skill = 6 
-			attack_skill = 5
-			defense_skill = 4
-			planning_skill = 2
+
+		create_corps_commander = {
+			name = "Victor"
+			picture = "Portrait_Victor.dds"
+			traits = { }
+			skill = 5
+			attack_skill = 6
+			defense_skill = 5
+			planning_skill = 3
 			logistics_skill = 2
 		}
 	}
@@ -344,38 +344,38 @@ country_event = {
 	desc = nf_vegas.11.d
 	picture = GFX_event_VEG_khans
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.11.a
-		
+
 		set_technology = { healing_powder = 1 }
 		load_oob = vegasjessup
-		create_corps_commander = { 
-			name = "Jessup" 
-			picture = "Portrait_Jessup.dds" 
-			traits = { desert_fox } 
-			skill = 3 
-			attack_skill = 2
+		create_corps_commander = {
+			name = "Jessup"
+			picture = "Portrait_Jessup.dds"
+			traits = { desert_fox }
+			skill = 3
+			attack_skill = 3
 			defense_skill = 1
-			planning_skill = 2
-			logistics_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
 		}
 	}
 	option = {
 		name = nf_vegas.11.b
-		
+
 		set_technology = { flamer_tech = 1 }
 		load_oob = vegaschance
-		create_corps_commander = { 
-			name = "Chance" 
-			picture = "Portrait_Chance.dds" 
-			traits = { urban_assault_specialist commando } 
-			skill = 4 
-			attack_skill = 3
-			defense_skill = 1
-			planning_skill = 2
-			logistics_skill = 1
+		create_corps_commander = {
+			name = "Chance"
+			picture = "Portrait_Chance.dds"
+			traits = { urban_assault_specialist commando }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 2
 		}
 	}
 }
@@ -385,22 +385,22 @@ country_event = {
 	desc = nf_vegas.12.d
 	picture = GFX_event_VEG_tops
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.12.a
-		
+
 		set_technology = { anti_personnel_tech = 1 }
-		load_oob = vegaschairmen 
-		create_corps_commander = { 
-			name = "Swank" 
-			picture = "Portrait_Swank.dds" 
-			traits = { urban_assault_specialist } 
+		load_oob = vegaschairmen
+		create_corps_commander = {
+			name = "Swank"
+			picture = "Portrait_Swank.dds"
+			traits = { urban_assault_specialist }
 			skill = 4
-			attack_skill = 3
-			defense_skill = 1
-			planning_skill = 3
-			logistics_skill = 1
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
 		}
 	}
 }
@@ -410,8 +410,8 @@ country_event = {
 	desc = nf_vegas.13.d
 	picture = GFX_event_VEG_platinumchip
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.13.a
 		hidden_effect = {
@@ -423,9 +423,9 @@ country_event = {
 					has_idea = unstableOS
 				}
 			}
-			swap_ideas = { 
-				remove_idea = unstableOS 
-				add_idea = platinumOS 
+			swap_ideas = {
+				remove_idea = unstableOS
+				add_idea = platinumOS
 			}
 		}
 		if = {
@@ -435,11 +435,11 @@ country_event = {
 				}
 			}
 			swap_ideas = {
-				remove_idea = stableOS 
-				add_idea = platinumOS 
+				remove_idea = stableOS
+				add_idea = platinumOS
 			}
 		}
-	}	
+	}
 }
 country_event = {
 	id = nf_vegas.15
@@ -447,14 +447,14 @@ country_event = {
 	desc = nf_vegas.15.d
 	picture = GFX_event_VEG_battle
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.15.a
-		
+
 		hidden_effect = {
 			set_politics = { ruling_party = people elections_allowed = no }
-			start_civil_war = { 
+			start_civil_war = {
 				ideology = ruler
 				size = 0.55
 				states_filter = {
@@ -466,7 +466,7 @@ country_event = {
 			country_event = { id = nf_vegas.40 days = 1 }
 		}
 	}
-	
+
 }
 country_event = {
 	id = nf_vegas.16
@@ -474,14 +474,14 @@ country_event = {
 	desc = nf_vegas.16.d
 	picture = GFX_event_VEG_platinumchip
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.16.a
-		
+
 		country_event = { days = 70 id = nf_vegas.19 }
 	}
-	
+
 	option = {
 		name = nf_vegas.16.b
 
@@ -497,11 +497,11 @@ country_event = {
 	desc = nf_vegas.17.d
 	picture = event_VEG_securitronvault
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.17.a
-		
+
 		if = {
 			limit = {
 				VEG = {
@@ -518,11 +518,11 @@ country_event = {
 			}
 			country_event = nf_vegas.24
 		}
-	}	
-	
+	}
+
 	option = {
 		name = nf_vegas.17.b
-		
+
 		country_event = nf_vegas.25
 	}
 }
@@ -532,18 +532,18 @@ country_event = {
 	desc = nf_vegas.18.d
 	picture = event_VEG_securitronvault
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.18.a
-		
+
 		add_ideas = vegasprime1
 		country_event = { id = nf_vegas.22 days = 370 }
 	}
-	
+
 	option = {
 		name = nf_vegas.18.b
-		
+
 		country_event = { id = nf_vegas.22 days = 740 }
 	}
 }
@@ -553,8 +553,8 @@ country_event = {
 	desc = nf_vegas.19.d
 	picture = GFX_event_VEG_platinumchip
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.19.a
 		hidden_effect = {
@@ -566,7 +566,7 @@ country_event = {
 					has_idea = unstableOS
 				}
 			}
-			swap_ideas = { remove_idea = unstableOS add_idea = platinumOS }	
+			swap_ideas = { remove_idea = unstableOS add_idea = platinumOS }
 		}
 		if = {
 			limit = {
@@ -576,7 +576,7 @@ country_event = {
 			}
 			swap_ideas = { remove_idea = stableOS add_idea = platinumOS }
 		}
-	}	
+	}
 }
 country_event = {
 	id = nf_vegas.20
@@ -584,8 +584,8 @@ country_event = {
 	desc = nf_vegas.20.d
 	picture = GFX_event_VEG_strip
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.20.a
 		104 = {
@@ -593,15 +593,15 @@ country_event = {
 				type = advanced_technology
 				amount = 1
 			}
-		}		
+		}
 		VEG = {
 			country_event = { days = 75 id = nf_vegas.19 }
 		}
 	}
-	
+
 	option = {
 		name = nf_vegas.20.b
-		
+
 		104 = {
 			add_resource = {
 				type = advanced_technology
@@ -610,7 +610,7 @@ country_event = {
 		}
 		VEG = {
 			country_event = { days = 5 id = nf_vegas.52 }
-		}	
+		}
 	}
 }
 country_event = {
@@ -619,11 +619,11 @@ country_event = {
 	desc = nf_vegas.21.d
 	picture = GFX_event_BOS_desert_patrol
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.21.a
-		
+
 		MOJ = {
 			declare_war_on = { target = MRA type = annex_everything }
 			add_state_core = 533
@@ -641,21 +641,21 @@ country_event = {
 	desc = nf_vegas.22.d
 	picture = event_VEG_securitronvault
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.22.a
 
 		add_ideas = vegasprime2
 		if = {
 			limit = {
-				VEG = { 
+				VEG = {
 					has_idea = vegasprime1
 				}
 			}
 			remove_ideas = vegasprime1
 		}
-	}	
+	}
 }
 country_event = {
 	id = nf_vegas.23
@@ -663,12 +663,12 @@ country_event = {
 	desc = nf_vegas.23.d
 	picture = GFX_event_VEG_thekings
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.23.a
-		
-		random_list = { 50 = { country_event = nf_vegas.50 } 50 = { country_event = nf_vegas.27 } }    
+
+		random_list = { 50 = { country_event = nf_vegas.50 } 50 = { country_event = nf_vegas.27 } }
 	}
 }
 country_event = {
@@ -677,12 +677,12 @@ country_event = {
 	desc = nf_vegas.24.d
 	picture = GFX_event_CES_caesar
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.24.a
 
-		random_list = { 70 = { country_event = nf_vegas.51 } 30 = { country_event = nf_vegas.27 } }    
+		random_list = { 70 = { country_event = nf_vegas.51 } 30 = { country_event = nf_vegas.27 } }
 	}
 }
 country_event = {
@@ -691,25 +691,25 @@ country_event = {
 	desc = nf_vegas.25.d
 	picture = GFX_event_CES_caesar
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.25.a
-		
+
 		add_manpower = -1500
 		country_event = nf_vegas.26
 	}
 	option = {
 		name = nf_vegas.25.b
-		
+
 		add_manpower = -1000
-		random_list = { 60 = { country_event = nf_vegas.26 } 40 = { country_event = nf_vegas.27 } }    
+		random_list = { 60 = { country_event = nf_vegas.26 } 40 = { country_event = nf_vegas.27 } }
 	}
 	option = {
 		name = nf_vegas.25.c
-		
+
 		add_manpower = -500
-		random_list = { 30 = { country_event = nf_vegas.26 } 70 = { country_event = nf_vegas.27 } }    
+		random_list = { 30 = { country_event = nf_vegas.26 } 70 = { country_event = nf_vegas.27 } }
 	}
 }
 country_event = {
@@ -718,11 +718,11 @@ country_event = {
 	desc = nf_vegas.26.d
 	picture = GFX_event_CES_first_battle_for_hoover_dam
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.26.a
-			
+
 		set_technology = { securitron_2_tech = 1 }
 		load_oob = vegassecuritronarmy1
 		add_ideas = securitron_vault
@@ -748,11 +748,11 @@ country_event = {
 	desc = nf_vegas.27.d
 	picture = event_VEG_securitronvault
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.27.a
-		
+
 		set_technology = { securitron_2_tech = 1 }
 		load_oob = vegassecuritronarmy2
 	}
@@ -763,11 +763,11 @@ country_event = {
 	desc = nf_vegas.28.d
 	picture = GFX_event_BOS_desert_patrol
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.28.a
-		
+
 		VEG = {
 			add_to_faction = MOJ
 			add_opinion_modifier = { target = MOJ modifier = mojavepactjoined }
@@ -793,11 +793,11 @@ country_event = {
 	desc = nf_vegas.29.d
 	picture = GFX_event_BOS_desert_patrol
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.29.a
-		
+
 		VEG = {
 			add_opinion_modifier = { target = MOJ modifier = mojavepactrefused }
 		}
@@ -812,11 +812,11 @@ country_event = {
 	desc = nf_vegas.30.d
 	picture = GFX_event_DES_rangers_symbol
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.30.a
-		
+
 		create_faction = nevada_pact
 		DES = {
 			country_event = nf_vegas.31
@@ -832,18 +832,18 @@ country_event = {
 	desc = nf_vegas.31.d
 	picture = GFX_event_DES_rangers_symbol
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.31.a
-		
+
 		VEG = {
 			country_event = nf_vegas.32
 		}
 	}
 	option = {
 		name = nf_vegas.31.b
-		
+
 		VEG = {
 			country_event = nf_vegas.33
 		}
@@ -855,11 +855,11 @@ country_event = {
 	desc = nf_vegas.32.d
 	picture = GFX_event_DES_rangers_symbol
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.32.a
-		
+
 		VEG = {
 			add_to_faction = DES
 			add_opinion_modifier = { target = DES modifier = nevadapact }
@@ -885,11 +885,11 @@ country_event = {
 	desc = nf_vegas.33.d
 	picture = GFX_event_DES_rangers_symbol
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.33.a
-		
+
 		VEG = {
 			add_opinion_modifier = { target = DES modifier = nevadapactrefused }
 		}
@@ -901,18 +901,18 @@ country_event = {
 	desc = nf_vegas.34.d
 	picture = GFX_event_DES_rangers_symbol
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.34.a
-		
+
 		VEG = {
 			country_event = nf_vegas.35
 		}
 	}
 	option = {
 		name = nf_vegas.34.b
-		
+
 		VEG = {
 			country_event = nf_vegas.36
 		}
@@ -924,11 +924,11 @@ country_event = {
 	desc = nf_vegas.35.d
 	picture = GFX_event_DES_rangers_symbol
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.35.a
-		
+
 		VEG = {
 			add_to_faction = NEW
 			add_opinion_modifier = { target = NEW modifier = nevadapact }
@@ -938,7 +938,7 @@ country_event = {
 				value = 200
 			}
 		}
-		
+
 		NEW = {
 			add_opinion_modifier = { target = VEG modifier = nevadapact }
 			add_ai_strategy = {
@@ -955,11 +955,11 @@ country_event = {
 	desc = nf_vegas.36.d
 	picture = GFX_event_DES_rangers_symbol
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.36.a
-		
+
 		VEG = {
 			add_opinion_modifier = { target = NEW modifier = nevadapactrefused }
 		}
@@ -971,18 +971,18 @@ country_event = {
 	desc = nf_vegas.37.d
 	picture = GFX_event_DES_rangers_symbol
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.37.a
-		
+
 		VEG = {
-			country_event = nf_vegas.38  
+			country_event = nf_vegas.38
 		}
 	}
 	option = {
 		name = nf_vegas.37.b
-		
+
 		VEG = {
 			country_event = nf_vegas.39
 		}
@@ -994,11 +994,11 @@ country_event = {
 	desc = nf_vegas.38.d
 	picture = GFX_event_DES_rangers_symbol
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.38.a
-		
+
 		if = {
 			limit = {
 				DES = {
@@ -1055,11 +1055,11 @@ country_event = {
 	desc = nf_vegas.39.d
 	picture = GFX_event_DES_rangers_symbol
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.39.a
-		
+
 		if = {
 			limit = {
 				DES = {
@@ -1077,7 +1077,7 @@ country_event = {
 				}
 			}
 			VEG = {
-				add_opinion_modifier = { target = NEW modifier = nevadapactrefused } 
+				add_opinion_modifier = { target = NEW modifier = nevadapactrefused }
 			}
 		}
 	}
@@ -1089,7 +1089,7 @@ country_event = {
 	picture = GFX_event_VEG_thekings
 
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_vegas.40.a
 		random_country = {
@@ -1115,23 +1115,23 @@ country_event = {
 	picture = event_VEG_lucky38
 
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_vegas.41.a
-		
+
 		ai_chance = {
 			factor = 1000
 		}
 		VEG = {
-			country_event = nf_vegas.42 
+			country_event = nf_vegas.42
 		}
 	}
-	
+
 	option = {
 		name = nf_vegas.41.b
-		
+
 		VEG = {
-		  country_event = nf_vegas.43
+			country_event = nf_vegas.43
 		}
 	}
 }
@@ -1142,10 +1142,10 @@ country_event = {
 	picture = event_VEG_lucky38
 
 	is_triggered_only = yes
-	
+
 	option = {
-		name = nf_vegas.42.a 
-		
+		name = nf_vegas.42.a
+
 		VEG = {
 			annex_country = { target = FIE }
 		 	add_state_core = 380
@@ -1161,10 +1161,10 @@ country_event = {
 	picture = GFX_event_VEG_gomorrah
 
 	is_triggered_only = yes
-	
+
 	option = {
-		name = nf_vegas.43.a 
-		
+		name = nf_vegas.43.a
+
 		VEG = {
 			country_event = { id = nf_vegas.5 days = 1 }
 			add_ideas = omertas
@@ -1178,24 +1178,24 @@ country_event = {
 	picture = event_VEG_lucky38
 
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_vegas.44.a
-		
+
 		ai_chance = {
 			factor = 1000
 		}
 		VEG = {
-			country_event = nf_vegas.45 
+			country_event = nf_vegas.45
 		}
 	}
 
 	option = {
 		name = nf_vegas.44.b
-		
+
 		VEG = {
 			country_event = nf_vegas.46
-		}	
+		}
 	}
 }
 country_event = {
@@ -1205,10 +1205,10 @@ country_event = {
 	picture = GFX_event_VEG_khans
 
 	is_triggered_only = yes
-	
+
 	option = {
-		name = nf_vegas.45.a 
-		
+		name = nf_vegas.45.a
+
 		VEG = {
 			annex_country = { target = KHA }
 			add_state_core = 12
@@ -1224,10 +1224,10 @@ country_event = {
 	picture = GFX_event_VEG_ultraluxe
 
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_vegas.46.a
-		
+
 		VEG = {
 			add_ideas = whitegloves
 		}
@@ -1240,10 +1240,10 @@ country_event = {
 	picture = event_VEG_lucky38
 
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_vegas.47.a
-		
+
 		country_event = { id = nf_vegas.48 hours = 4 }
 	}
 }
@@ -1252,12 +1252,12 @@ country_event = {
 	title = nf_vegas.48.t
 	desc = nf_vegas.48.d
 	picture = event_VEG_lucky38
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = nf_vegas.48.a
-		
+
 		country_event = { id = nf_vegas.49 hours = 2 }
 	}
 }
@@ -1267,11 +1267,11 @@ country_event = {
 	desc = nf_vegas.49.d
 	picture = event_VEG_lucky38
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.49.a
-			
+
 		set_technology = { securitron_2_tech = 1 }
 		load_oob = vegassecuritronarmy1
 		add_ideas = securitron_vault
@@ -1297,11 +1297,11 @@ country_event = {
 	desc = nf_vegas.50.d
 	picture = event_VEG_securitronvault
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.50.a
-			
+
 		set_technology = { securitron_2_tech = 1 }
 		load_oob = vegassecuritronarmy1
 		add_ideas = securitron_vault
@@ -1327,11 +1327,11 @@ country_event = {
 	desc = nf_vegas.51.d
 	picture = event_VEG_securitronvault
 
-	is_triggered_only = yes    
-	
+	is_triggered_only = yes
+
 	option = {
 		name = nf_vegas.51.a
-			
+
 		set_technology = { securitron_2_tech = 1 }
 		load_oob = vegassecuritronarmy1
 		add_ideas = securitron_vault
@@ -1350,7 +1350,7 @@ country_event = {
 			}
 		}
 	}
-}	
+}
 country_event = {
 	id = nf_vegas.52
 	title = nf_vegas.52.t
@@ -1361,7 +1361,7 @@ country_event = {
 
 	option = {
 		name = nf_vegas.52.a
-		
+
 		hidden_effect = {
 			set_country_flag = veg_chip_delivered
 		}
@@ -1371,7 +1371,7 @@ country_event = {
 					has_idea = unstableOS
 				}
 			}
-			swap_ideas = { remove_idea = unstableOS add_idea = platinumOS }	
+			swap_ideas = { remove_idea = unstableOS add_idea = platinumOS }
 		}
 		if = {
 			limit = {
@@ -1381,18 +1381,18 @@ country_event = {
 			}
 			swap_ideas = { remove_idea = stableOS add_idea = platinumOS }
 		}
-	}	
+	}
 }
 country_event = {
 	id = nf_vegas.53
-	title = nf_vegas.53.t 
-	desc = nf_vegas.53.d 
+	title = nf_vegas.53.t
+	desc = nf_vegas.53.d
 	picture = GFX_event_VEG_tops
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
-		name = nf_vegas.53.a 
+		name = nf_vegas.53.a
 		VEG = {
 			country_event = nf_vegas.54
 		}
@@ -1406,14 +1406,14 @@ country_event = {
 }
 country_event = {
 	id = nf_vegas.54
-	title = nf_vegas.54.t 
-	desc = nf_vegas.54.d 
+	title = nf_vegas.54.t
+	desc = nf_vegas.54.d
 	picture = GFX_event_VEG_tops
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
-		name = nf_vegas.54.a 
+		name = nf_vegas.54.a
 		NCR = {
 			every_owned_state = {
 				limit = {
@@ -1444,7 +1444,7 @@ country_event = {
 			factor = 1.0
 		}
 		NCR = {
-			add_to_faction = VEG 
+			add_to_faction = VEG
 			add_ai_strategy = {
 				type = alliance
 				id = "VEG"
@@ -1459,7 +1459,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = nf_vegas.54.b
 	}

@@ -13,7 +13,7 @@ focus_tree = {
 		text = vault_ac
 		icon = GFX_goal_VLT_all_clear
 		cost = 1.00
-		x = 20
+		x = 15
 		y = 0
 		completion_reward = {
 			if = {
@@ -37,8 +37,9 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_ac
 		}
-		x = 20
+		x = 0
 		y = 1
+		relative_position_id = vault_ac
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -61,8 +62,9 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_crim
 		}
-		x = 20
-		y = 2
+		x = 0
+		y = 1
+		relative_position_id = vault_crim
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -85,8 +87,9 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_spec
 		}
-		x = 20
-		y = 3
+		x = 0
+		y = 1
+		relative_position_id = vault_spec
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -108,7 +111,7 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_gecko
 		}
-		x = 8
+		x = 3
 		y = 4
 		completion_reward = {
 			if = {
@@ -123,7 +126,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	#Cyclops
 	focus = {
 		id = vault_cyclops
@@ -132,8 +135,9 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_tribals
 		}
-		x = 10
-		y = 5
+		x = 2
+		y = 1
+		relative_position_id = vault_tribals
 		will_lead_to_war_with = CYC
 		completion_reward = {
 			if = {
@@ -276,7 +280,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	#Flock
 	focus = {
 		id = vault_flock
@@ -285,7 +289,7 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_tribals
 		}
-		x = 6
+		x = 1
 		y = 5
 		will_lead_to_war_with = PAL
 		completion_reward = {
@@ -303,7 +307,7 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] vault_flock exited"
 			}
 		}
-		
+
 	}
 	focus = {
 		id = vault_flock_diagnose
@@ -367,7 +371,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = vault_flock_goggles
 		icon = GFX_goal_generic_air_doctrines_focus
@@ -402,8 +406,9 @@ focus_tree = {
 		available = {
 			223 = { is_owned_and_controlled_by = VLT }
 		}
-		x = 7
-		y = 7
+		x = 0
+		y = 1
+		relative_position_id = vault_flock_annex
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -428,7 +433,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = vault_politics
 		text = vault_politics
@@ -437,8 +442,9 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_gecko
 		}
-		x = 20
-		y = 4
+		x = 0
+		y = 1
+		relative_position_id = vault_gecko
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -451,9 +457,9 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	#brain
-	
+
 	focus = {
 		id = vault_brain_1
 		text = vault_brain_1
@@ -462,8 +468,9 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_politics
 		}
-		x = 14
-		y = 5
+		x = -6
+		y = 1
+		relative_position_id = vault_politics
 		available = {
 			has_country_leader = {
 				id = 913
@@ -585,9 +592,9 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	#first
-	
+
 	focus = {
 		id = vault_first_1
 		text = vault_first_1
@@ -596,8 +603,9 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_politics
 		}
-		x = 18
-		y = 5
+		x = -2
+		y = 1
+		relative_position_id = vault_politics
 		available = {
 			has_country_leader = {
 				id = 910
@@ -644,7 +652,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = vault_first_3
 		text = vault_first_3
@@ -743,7 +751,7 @@ focus_tree = {
 		}
 	}
 	#chief
-	
+
 	focus = {
 		id = vault_chief_1
 		text = vault_chief_1
@@ -752,8 +760,9 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_politics
 		}
-		x = 22
-		y = 5
+		x = 2
+		y = 1
+		relative_position_id = vault_politics
 		available = {
 			has_country_leader = {
 				id = 912
@@ -875,9 +884,9 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	#festus
-	
+
 	focus = {
 		id = vault_festus_1
 		text = vault_festus_1
@@ -886,8 +895,9 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_politics
 		}
-		x = 26
-		y = 5
+		x = 6
+		y = 1
+		relative_position_id = vault_politics
 		available = {
 			has_country_leader = {
 				id = 911
@@ -1034,8 +1044,9 @@ focus_tree = {
 		available = {
 			291 = { is_owned_and_controlled_by = VLT }
 		}
-		x = 33
-		y = 4
+		x = 13
+		y = 1
+		relative_position_id = vault_gecko
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1062,8 +1073,9 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_utopia
 		}
-		x = 31
-		y = 5
+		x = -2
+		y = 1
+		relative_position_id = vault_utopia
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1083,8 +1095,9 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_med_reg
 		}
-		x = 31
-		y = 6
+		x = 0
+		y = 1
+		relative_position_id = vault_med_reg
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1104,8 +1117,9 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_draft
 		}
-		x = 31
-		y = 7
+		x = 0
+		y = 1
+		relative_position_id = vault_draft
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1125,8 +1139,9 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_mil_sec
 		}
-		x = 29
-		y = 8
+		x = -2
+		y = 1
+		relative_position_id = vault_mil_sec
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1149,8 +1164,9 @@ focus_tree = {
 		available = {
 			291 = { is_owned_and_controlled_by = VLT }
 		}
-		x = 31
-		y = 8
+		x = 0
+		y = 1
+		relative_position_id = vault_mil_sec
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1178,8 +1194,9 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_utopia
 		}
-		x = 33
-		y = 5
+		x = 0
+		y = 1
+		relative_position_id = vault_utopia
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1201,8 +1218,9 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_serv_1
 		}
-		x = 33
-		y = 6
+		x = 0
+		y = 1
+		relative_position_id = vault_serv_1
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1224,8 +1242,9 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_serv_2
 		}
-		x = 33
-		y = 7
+		x = 0
+		y = 1
+		relative_position_id = vault_serv_2
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1250,8 +1269,9 @@ focus_tree = {
 		available = {
 			336 = { is_owned_and_controlled_by = VLT }
 		}
-		x = 35
-		y = 5
+		x = 2
+		y = 1
+		relative_position_id = vault_utopia
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1281,8 +1301,9 @@ focus_tree = {
 		available = {
 			336 = { is_owned_and_controlled_by = VLT }
 		}
-		x = 35
-		y = 6
+		x = 0
+		y = 1
+		relative_position_id = vault_downtown
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1317,8 +1338,9 @@ focus_tree = {
 		available = {
 			291 = { is_owned_and_controlled_by = VLT }
 		}
-		x = 35
-		y = 7
+		x = 0
+		y = 1
+		relative_position_id = vault_courtyard
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1362,8 +1384,9 @@ focus_tree = {
 			339 = { is_owned_and_controlled_by = VLT }
 			261 = { is_owned_and_controlled_by = VLT }
 		}
-		x = 35
-		y = 8
+		x = 0
+		y = 1
+		relative_position_id = vault_sec_station
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1424,8 +1447,9 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_sec_station
 		}
-		x = 37
-		y = 8
+		x = 2
+		y = 1
+		relative_position_id = vault_sec_station
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1446,8 +1470,9 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_gecko
 		}
-		x = 39
-		y = 4
+		x = 21
+		y = 1
+		relative_position_id = vault_gecko
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1651,9 +1676,9 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	#Riperult
-	
+
 	focus = {
 		id = vault_riperult
 		icon = GFX_goal_VLT_rip_war_dec
@@ -1806,11 +1831,11 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] vault_rip_water exited"
 			}
-		}		
+		}
 	}
-	
+
 	#Shoshone
-	
+
 	focus = {
 		id = vault_shoshone
 		icon = GFX_goal_VLT_shoshone_war_dec
@@ -1871,7 +1896,7 @@ focus_tree = {
 						id = 1363
 						id = 7149
 					}
-					level = 3 
+					level = 3
 					instant_build = yes
 				}
 				add_building_construction = {
@@ -1991,7 +2016,7 @@ focus_tree = {
 			}
 		}
 	}
-	
+
 	focus = {
 		id = vault_gem
 		icon = GFX_goal_generic_cities_focus
@@ -2005,8 +2030,9 @@ focus_tree = {
 		available = {
 			291 = { is_owned_and_controlled_by = VLT }
 		}
-		x = 33
-		y = 9
+		x = 2
+		y = 1
+		relative_position_id = vault_robo_sec
 		completion_reward = {
 			if = {
 				limit = { has_global_flag = debug_logs }

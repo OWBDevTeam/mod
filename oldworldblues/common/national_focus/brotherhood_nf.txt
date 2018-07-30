@@ -837,7 +837,7 @@ focus_tree = {
 		y = 5
 		available = {
 			MOJ = {
-				has_country_leader = { id = 982 }
+				has_country_leader = { id = 9371 }
 				has_country_flag = mojave_chapter_chose_leader
 			}
 		}
@@ -3171,27 +3171,27 @@ focus_tree = {
 			}
 		}
 	}
-	focus = {
-		id = bos_repconn
-		icon = GFX_goal_bos_repconn_hq
-		cost = 30
-		prerequisite = {
-			focus = bos_recallelder
-		}
-		x = 22
-		y = 12
-		completion_reward = {
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] bos_repconn entered"
-			}
-			country_event = { id = nf_brotherhood.31 }
-			if = {
-				limit = { has_global_flag = debug_logs }
-				log = "[GetDateText]: [Root.GetName] bos_repconn exited"
-			}
-		}
-	}
+	#focus = {
+	#	id = bos_repconn
+	#	icon = GFX_goal_bos_repconn_hq
+	#	cost = 30
+	#	prerequisite = {
+	#		focus = bos_recallelder
+	#	}
+	#	x = 22
+	#	y = 12
+	#	completion_reward = {
+	#		if = {
+	#			limit = { has_global_flag = debug_logs }
+	#			log = "[GetDateText]: [Root.GetName] bos_repconn entered"
+	#		}
+	#		country_event = { id = nf_brotherhood.31 }
+	#		if = {
+	#			limit = { has_global_flag = debug_logs }
+	#			log = "[GetDateText]: [Root.GetName] bos_repconn exited"
+	#		}
+	#	}
+	#}
 	focus = {
 		id = bos_scraprefinement
 		icon = GFX_goal_anti_comintern_pact

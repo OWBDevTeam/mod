@@ -17,8 +17,8 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				invasion_preparation  = -0.1
-				amphibious_invasion = 0.1
+				invasion_preparation  = -0.5
+				amphibious_invasion = 0.3
 			}
 		}
 
@@ -28,8 +28,9 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				ships_at_battle_start = 0.1
+				ships_at_battle_start = 0.4
 				navy_max_range_factor = 0.3
+				spotting_chance = 0.3
 			}
 		}
 
@@ -40,6 +41,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				army_speed_factor  = 0.05
+				planning_speed = 0.05
 			}
 		}
 
@@ -49,7 +51,7 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				production_speed_bunker_factor = 0.15
+				production_speed_bunker_factor = 0.25
 			}
 		}
 
@@ -376,6 +378,14 @@ ideas = {
 			modifier = {
 				navy_max_range_factor = 0.5
 				convoy_raiding_efficiency_factor = 0.5
+				convoy_escort_efficiency = 0.25
+				naval_retreat_chance = 0.75
+				naval_retreat_speed = 0.5
+				spotting_chance = 0.3
+				naval_coordination = 0.35
+				naval_hit_chance = 0.15
+				amphibious_invasion = 0.25
+				production_speed_naval_base_factor = 0.25
 			}
 		}
 
@@ -385,10 +395,10 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				research_time_factor = 0.02
-				winter_attrition_factor = -0.5
-				conscription = 0.02
-				winter_attrition_factor = -0.5
+				research_time_factor = 0.04
+				winter_attrition_factor = -0.75
+				attrition = -0.1
+				conscription = 0.03
 			}
 		}
 
@@ -415,6 +425,7 @@ ideas = {
 			modifier = {
 				join_faction_tension = 0.3
 				ai_join_ally_desire_factor = -30
+				ai_get_ally_desire_factor = -100
 				mobilization_speed = 0.1
 				conscription_factor = -0.05
 				consumer_goods_factor = 0.05

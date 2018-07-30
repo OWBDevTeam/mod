@@ -13,7 +13,7 @@ country_event = {
 		add_political_power = -10
 		add_command_power = -10
 		random_list = {
-			25 = {  } # No effect
+			25 = { } # No effect
 			25 = { add_manpower = 6 }
 			25 = { add_manpower = 11 }
 			25 = { add_manpower = 17 }
@@ -66,15 +66,21 @@ country_event = {
 				add_equipment_to_stockpile = { type = light_robot_equipment_1 amount = 20 }
 			}
 			else_if = {
-				limit = { has_tech_bonus = { technology = commercial_protectron } }
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = commercial_protectron }
+						has_country_flag = commercial_protectron
+					}
+				}
 				army_experience = 5
 			}
 			else = {
 				add_tech_bonus = {
-    				bonus = 0.1
-   					uses = 1
-    				technology = commercial_protectron
+					bonus = 0.1
+					uses = 1
+					technology = commercial_protectron
 				}
+				set_country_flag = commercial_protectron
 			}
 			clr_country_flag = s_lr_1
 		}
@@ -87,15 +93,21 @@ country_event = {
 				add_equipment_to_stockpile = { type = light_robot_equipment_2 amount = 20 }
 			}
 			else_if = {
-				limit = { has_tech_bonus = { technology = security_protectron_tech } }
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = security_protectron_tech }
+						has_country_flag = security_protectron_tech
+					}
+				}
 				army_experience = 5
 			}
 			else = {
 				add_tech_bonus = {
-    				bonus = 0.1
-   					uses = 1
-    				technology = security_protectron_tech
+					bonus = 0.1
+					uses = 1
+					technology = security_protectron_tech
 				}
+				set_country_flag = security_protectron_tech
 			}
 			clr_country_flag = s_lr_2
 		}
@@ -108,15 +120,21 @@ country_event = {
 				add_equipment_to_stockpile = { type = medium_robot_equipment_1 amount = 10 }
 			}
 			else_if = {
-				limit = { has_tech_bonus = { technology = mr_handy_tech } }
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = mr_handy_tech }
+						has_country_flag = mr_handy_tech
+					}
+				}
 				army_experience = 5
 			}
 			else = {
 				add_tech_bonus = {
-    				bonus = 0.1
-   					uses = 1
-    				technology = mr_handy_tech
+					bonus = 0.1
+					uses = 1
+					technology = mr_handy_tech
 				}
+				set_country_flag = mr_handy_tech
 			}
 			clr_country_flag = s_mr_2
 		}
@@ -129,15 +147,21 @@ country_event = {
 				add_equipment_to_stockpile = { type = medium_robot_equipment_2 amount = 10 }
 			}
 			else_if = {
-				limit = { has_tech_bonus = { technology = mr_gutsy_tech } }
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = mr_gutsy_tech }
+						has_country_flag = mr_gutsy_tech
+					}
+				}
 				army_experience = 5
 			}
 			else = {
 				add_tech_bonus = {
-    				bonus = 0.1
-   					uses = 1
-    				technology = mr_gutsy_tech
+					bonus = 0.1
+					uses = 1
+					technology = mr_gutsy_tech
 				}
+				set_country_flag = mr_gutsy_tech
 			}
 			clr_country_flag = s_mr_3
 		}
@@ -150,15 +174,21 @@ country_event = {
 				add_equipment_to_stockpile = { type = heavy_robot_equipment_1 amount = 5 }
 			}
 			else_if = {
-				limit = { has_tech_bonus = { technology = robo_brain_tech } }
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = robo_brain_tech }
+						has_country_flag = robo_brain_tech
+					}
+				}
 				army_experience = 5
 			}
 			else = {
 				add_tech_bonus = {
-    				bonus = 0.1
-   					uses = 1
-    				technology = robo_brain_tech
+					bonus = 0.1
+					uses = 1
+					technology = robo_brain_tech
 				}
+				set_country_flag = robo_brain_tech
 			}
 			clr_country_flag = s_hr_2
 		}
@@ -167,19 +197,25 @@ country_event = {
 				has_country_flag = s_hr_3
 			}
 			if = {
-				limit = { has_tech = robo_brain_tech }
+				limit = { has_tech = sentry_bot_tech }
 				add_equipment_to_stockpile = { type = heavy_robot_equipment_2 amount = 5 }
 			}
 			else_if = {
-				limit = { has_tech_bonus = { technology = sentry_bot_tech } }
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = sentry_bot_tech }
+						has_country_flag = sentry_bot_tech
+					}
+				}
 				army_experience = 5
 			}
 			else = {
 				add_tech_bonus = {
-    				bonus = 0.1
-   					uses = 1
-    				technology = sentry_bot_tech
+					bonus = 0.1
+					uses = 1
+					technology = sentry_bot_tech
 				}
+				set_country_flag = sentry_bot_tech
 			}
 			clr_country_flag = s_hr_3
 		}
@@ -208,15 +244,21 @@ country_event = {
 				add_equipment_to_stockpile = { type = motorbike_equipment_1 amount = 30 }
 			}
 			else_if = {
-				limit = { has_tech_bonus = { technology = bike_tech_1 } }
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = bike_tech_1 }
+						has_country_flag = bike_tech_1
+					}
+				}
 				army_experience = 5
 			}
 			else = {
 				add_tech_bonus = {
-    				bonus = 0.1
-   					uses = 1
-    				technology = bike_tech_1
+					bonus = 0.1
+					uses = 1
+					technology = bike_tech_1
 				}
+				set_country_flag = bike_tech_1
 			}
 			clr_country_flag = s_motorbike_1
 		}
@@ -230,15 +272,21 @@ country_event = {
 
 			}
 			else_if = {
-				limit = { has_tech_bonus = { technology = bike_tech_2 } }
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = bike_tech_2 }
+						has_country_flag = bike_tech_2
+					}
+				}
 				army_experience = 5
 			}
 			else = {
 				add_tech_bonus = {
-    				bonus = 0.1
-   					uses = 1
-    				technology = bike_tech_2
+					bonus = 0.1
+					uses = 1
+					technology = bike_tech_2
 				}
+				set_country_flag = bike_tech_2
 			}
 			clr_country_flag = s_motorbike_2
 		}
@@ -251,15 +299,21 @@ country_event = {
 				add_equipment_to_stockpile = { type = car_equipment_1 amount = 15 }
 			}
 			else_if = {
-				limit = { has_tech_bonus = { technology = car_tech_1 } }
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = car_tech_1 }
+						has_country_flag = car_tech_1
+					}
+				}
 				army_experience = 5
 			}
 			else = {
 				add_tech_bonus = {
-    				bonus = 0.1
-   					uses = 1
-    				technology = car_tech_1
+					bonus = 0.1
+					uses = 1
+					technology = car_tech_1
 				}
+				set_country_flag = car_tech_1
 			}
 			clr_country_flag = s_car_1
 		}
@@ -272,15 +326,21 @@ country_event = {
 				add_equipment_to_stockpile = { type = car_equipment_2 amount = 10 }
 			}
 			else_if = {
-				limit = { has_tech_bonus = { technology = car_tech_2 } }
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = car_tech_2 }
+						has_country_flag = car_tech_2
+					}
+				}
 				army_experience = 5
 			}
 			else = {
 				add_tech_bonus = {
-    				bonus = 0.1
-   					uses = 1
-    				technology = car_tech_2
+					bonus = 0.1
+					uses = 1
+					technology = car_tech_2
 				}
+				set_country_flag = car_tech_2
 			}
 			clr_country_flag = s_car_2
 		}
@@ -293,15 +353,21 @@ country_event = {
 				add_equipment_to_stockpile = { type = car_equipment_3 amount = 5 }
 			}
 			else_if = {
-				limit = { has_tech_bonus = { technology = car_tech_3 } }
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = car_tech_3 }
+						has_country_flag = car_tech_3
+					}
+				}
 				army_experience = 5
 			}
 			else = {
 				add_tech_bonus = {
-    				bonus = 0.1
-   					uses = 1
-    				technology = car_tech_3
+					bonus = 0.1
+					uses = 1
+					technology = car_tech_3
 				}
+				set_country_flag = car_tech_3
 			}
 			clr_country_flag = s_car_3
 		}
@@ -314,15 +380,21 @@ country_event = {
 				add_equipment_to_stockpile = { type = truck_equipment_1 amount = 10 }
 			}
 			else_if = {
-				limit = { has_tech_bonus = { technology = truck_tech_1 } }
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = truck_tech_1 }
+						has_country_flag = truck_tech_1
+					}
+				}
 				army_experience = 5
 			}
 			else = {
 				add_tech_bonus = {
-    				bonus = 0.1
-   					uses = 1
-    				technology = truck_tech_1
+					bonus = 0.1
+					uses = 1
+					technology = truck_tech_1
 				}
+				set_country_flag = truck_tech_1
 			}
 			clr_country_flag = s_truck_1
 		}
@@ -335,15 +407,21 @@ country_event = {
 				add_equipment_to_stockpile = { type = truck_equipment_2 amount = 5 }
 			}
 			else_if = {
-				limit = { has_tech_bonus = { technology = truck_tech_2 } }
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = truck_tech_2 }
+						has_country_flag = truck_tech_2
+					}
+				}
 				army_experience = 5
 			}
 			else = {
 				add_tech_bonus = {
-    				bonus = 0.1
-   					uses = 1
-    				technology = truck_tech_2
+					bonus = 0.1
+					uses = 1
+					technology = truck_tech_2
 				}
+				set_country_flag = truck_tech_2
 			}
 			clr_country_flag = s_truck_2
 		}
@@ -356,15 +434,21 @@ country_event = {
 				add_equipment_to_stockpile = { type = apc_equipment_1 amount = 5 }
 			}
 			else_if = {
-				limit = { has_tech_bonus = { technology = apc_tech_1 } }
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = apc_tech_1 }
+						has_country_flag = apc_tech_1
+					}
+				}
 				army_experience = 5
 			}
 			else = {
 				add_tech_bonus = {
-    				bonus = 0.1
-   					uses = 1
-    				technology = apc_tech_1
+					bonus = 0.1
+					uses = 1
+					technology = apc_tech_1
 				}
+				set_country_flag = apc_tech_1
 			}
 			clr_country_flag = s_apc_1
 		}
@@ -377,15 +461,21 @@ country_event = {
 				add_equipment_to_stockpile = { type = apc_equipment_2 amount = 5 }
 			}
 			else_if = {
-				limit = { has_tech_bonus = { technology = apc_tech_2 } }
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = apc_tech_2 }
+						has_country_flag = apc_tech_2
+					}
+				}
 				army_experience = 5
 			}
 			else = {
 				add_tech_bonus = {
-    				bonus = 0.1
-   					uses = 1
-    				technology = apc_tech_2
+					bonus = 0.1
+					uses = 1
+					technology = apc_tech_2
 				}
+				set_country_flag = apc_tech_2
 			}
 			clr_country_flag = s_apc_2
 		}
@@ -398,15 +488,21 @@ country_event = {
 				add_equipment_to_stockpile = { type = tank_equipment_1 amount = 3 }
 			}
 			else_if = {
-				limit = { has_tech_bonus = { technology = tank_tech_1 } }
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = tank_tech_1 }
+						has_country_flag = tank_tech_1
+					}
+				}
 				army_experience = 5
 			}
 			else = {
 				add_tech_bonus = {
-    				bonus = 0.1
-   					uses = 1
-    				technology = tank_tech_1
+					bonus = 0.1
+					uses = 1
+					technology = tank_tech_1
 				}
+				set_country_flag = tank_tech_1
 			}
 			clr_country_flag = s_tank_1
 		}

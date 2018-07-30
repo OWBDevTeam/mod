@@ -1,12 +1,12 @@
 has_scavenge_equipment = {
 	has_manpower > 50
-	if = { 
-		limit = { 
-			ROOT = { 
+	if = {
+		limit = {
+			ROOT = {
 				has_tech = standard_weaponry_tech
 				NOT = { has_tech = basic_ballistic_weaponry }
 				NOT = { has_tech = basic_laser_weaponry }
-			} 
+			}
 		}
 		has_equipment = { infantry_equipment_1 > 49 }
 	}
@@ -40,61 +40,61 @@ has_scavenge_equipment = {
 		has_equipment = { melee_equipment_3 > 49}
 	}
 	if = {
-		limit = { 
-			ROOT = { 
+		limit = {
+			ROOT = {
 				has_tech = basic_ballistic_weaponry
 				NOT = { has_tech = improved_ballistic_weaponry }
 				NOT = { has_tech = basic_laser_weaponry }
-			} 
+			}
 		}
 		has_equipment = { ballistic_equipment_1 > 49 }
 	}
 	if = {
-		limit = { 
-			ROOT = { 
+		limit = {
+			ROOT = {
 				has_tech = improved_ballistic_weaponry
 				NOT = { has_tech = advanced_ballistic_weaponry }
 				NOT = { has_tech = improved_laser_weaponry }
-			} 
+			}
 		}
-		has_equipment = { ballistic_equipment_2 > 49 }	
+		has_equipment = { ballistic_equipment_2 > 49 }
 	}
 	if = {
-		limit = { 
-			ROOT = { 
+		limit = {
+			ROOT = {
 				has_tech = advanced_ballistic_weaponry
 				NOT = { has_tech = advanced_laser_weaponry }
-			} 
+			}
 		}
-		has_equipment = { ballistic_equipment_3 > 49 }	 
+		has_equipment = { ballistic_equipment_3 > 49 }
 	}
-	if = { 
-		limit = { 
-			ROOT = { 
-				has_tech = basic_laser_weaponry 
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = basic_laser_weaponry
 				NOT = { has_tech = improved_ballistic_weaponry }
 				NOT = { has_tech = improved_laser_weaponry }
-			} 
-		}	
+			}
+		}
 		has_equipment = { energy_equipment_1 > 49 }
 	}
-	if = { 
-		limit = { 
-			ROOT = { 
-				has_tech = improved_laser_weaponry 
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = improved_laser_weaponry
 				NOT = { has_tech = advanced_ballistic_weaponry }
 				NOT = { has_tech = advanced_laser_weaponry }
-			} 
+			}
 		}
-		has_equipment = { energy_equipment_2 > 49 } 
-	}	
-	if = { 
-		limit = { 
-			ROOT = { 
-				has_tech = advanced_laser_weaponry 
-			} 
+		has_equipment = { energy_equipment_2 > 49 }
+	}
+	if = {
+		limit = {
+			ROOT = {
+				has_tech = advanced_laser_weaponry
+			}
 		}
-		has_equipment = { energy_equipment_3 > 49 }	
+		has_equipment = { energy_equipment_3 > 49 }
 	}
 }
 has_scavenge_pa = {
@@ -165,7 +165,7 @@ has_scavenge_pa = {
 		}
 		has_equipment = { raider_power_armour_equipment > 49 }
 	}
-} 
+}
 has_scavenge_fly = {
 	has_equipment = { vb_transport_plane_equipment > 2 }
 }

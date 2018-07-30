@@ -158,7 +158,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { # HEA offers a pact
 	id = nf_event_hea.6
 	title = nf_event_hea.6.t
 	desc = nf_event_hea.6.d
@@ -166,44 +166,53 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = {
+	option = { # Seems fair
 		name = nf_event_hea.6.a
 		trigger = {
-			MUR = { is_ai = yes } #Ai will always say yes
+			NOT = { is_puppet = yes }
 		}
-
-		IF = { limit = { is_in_faction = no }
-			create_faction = "defensive_league"
+		ai_chance = {
+			base = 9
 		}
-
-		add_to_faction = MUR
-		add_ai_strategy = {
-			type = alliance
-			id = "MUR"
-			value = 200
-		}
-		MUR = {
+		HEA = {
+			if = {
+				limit = { is_in_faction = no }
+				create_faction = "defensive_league"
+			}
+			add_to_faction = MUR
 			add_ai_strategy = {
 				type = alliance
-				id = "HEA"
+				id = "MUR"
 				value = 200
+			}
+			MUR = {
+				add_ai_strategy = {
+					type = alliance
+					id = "HEA"
+					value = 200
+				}
 			}
 		}
 	}
 
-	option = {
+	option = { # We're safer elsewhere
 		name = nf_event_hea.6.b
 		trigger = {
-			MUR = { is_ai = no } #Player gets to say no
+			OR = {
+				is_puppet = yes
+				is_ai = no
+			}
 		}
-
-		MUR = {
-			country_event = { id = nf_event_hea.60 }
+		ai_chance = {
+			base = 1
+		}
+		HEA = {
+			country_event = nf_event_hea.60 # MUR refuses
 		}
 	}
 }
 
-country_event = {
+country_event = { # Mur refuses
 	id = nf_event_hea.60
 	title = nf_event_hea.60.t
 	desc = nf_event_hea.60.d
@@ -211,59 +220,74 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = {
+	option = { # We can protect them by puppeting them
 		name = nf_event_hea.60.a
-
-		HEA = {
-			add_to_faction = MUR
+		ai_chance = {
+			base = 1
+		}
+		create_wargoal = {
+			target = MUR
+			type = puppet_wargoal_focus
 		}
 	}
-	option = {
-		name  = nf_event_hea.60.b
+	option = { # OK then
+		ai_chance = {
+			base = 0
+		}
+		name = nf_event_hea.60.b
 	}
 }
 
 country_event = {
 	id = nf_event_hea.7
-	title = nf_event_hea.7.t
-	desc = nf_event_hea.7.d
+	title = nf_event_hea.6.t # Purposefully uses the same loc as event 6
+	desc = nf_event_hea.6.d
 	picture = GFX_event_HEA_bishop2
 
 	is_triggered_only = yes
 
-	option = {
-		name = nf_event_hea.7.a
+	option = { # Seems fair
+		name = nf_event_hea.6.a
 		trigger = {
-			IRE = { is_ai = yes } #Ai will always say yes
+			NOT = { is_puppet = yes }
 		}
-
-		IF = { limit = { is_in_faction = no }
-			create_faction = "defensive_pact"
+		ai_chance = {
+			base = 9
 		}
-
-		add_to_faction = IRE
-		add_ai_strategy = {
-			type = alliance
-			id = "IRE"
-			value = 200
-		}
-		IRE = {
+		HEA = {
+			if = { 
+				limit = { is_in_faction = no }
+				create_faction = "defensive_league"
+			}
+			add_to_faction = IRE
 			add_ai_strategy = {
 				type = alliance
-				id = "HEA"
+				id = "IRE"
 				value = 200
+			}
+			IRE = {
+				add_ai_strategy = {
+					type = alliance
+					id = "HEA"
+					value = 200
+				}
 			}
 		}
 	}
 
-	option = {
-		name = nf_event_hea.7.b
+	option = { # We're safer elsewhere
+		name = nf_event_hea.6.b
 		trigger = {
-			IRE = { is_ai = no } #Player gets to say no
+			OR = {
+				is_puppet = yes
+				is_ai = no
+			}
 		}
-
-		IRE = {
-			country_event = { id = nf_event_hea.70 }
+		ai_chance = {
+			base = 1
+		}
+		HEA = {
+			country_event = nf_event_hea.70 # IRE refuses
 		}
 	}
 }
@@ -276,14 +300,149 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = {
-		name = nf_event_hea.70.a
-
-		HEA = {
-			add_to_faction = IRE
+	option = { # We can protect them by puppeting them
+		name = nf_event_hea.60.a # Purposefully uses event 60 loc
+		ai_chance = {
+			base = 1
+		}
+		create_wargoal = {
+			target = IRE
+			type = puppet_wargoal_focus
 		}
 	}
-	option = {
-		name  = nf_event_hea.70.b
+	option = { # OK then
+		ai_chance = {
+			base = 0
+		}
+		name = nf_event_hea.60.b
+	}
+}
+
+country_event = { # Religious fanatics attempt seizure power
+	id = nf_event_hea.8
+	title = nf_event_hea.8.t
+	desc = nf_event_hea.8.d
+	picture = GFX_event_HEA_bishop1
+
+	is_triggered_only = yes
+
+	option = { # We find ourselves under Heaven's Gate's thumb
+		name = nf_event_hea.8.a
+		if = {
+			limit = { is_puppet = no }
+			HEA = { puppet = ROOT }
+		}
+		else = {
+			overlord = {
+				country_event = { id = nf_event_hea.9 } # Coup in our puppet!
+			}
+		}
+	}
+	option = { # The coup is put down
+		trigger = { is_ai = no }
+		name = nf_event_hea.8.b
+		HEA = {
+			country_event = { id = nf_event_hea.80 } # Seizure of power unsuccessful
+		}
+	}
+}
+
+country_event = { # Our coup is unsuccessful
+	id = nf_event_hea.80
+	title = nf_event_hea.80.t
+	desc = nf_event_hea.80.d
+	picture = GFX_event_HEA_bishop1
+
+	is_triggered_only = yes
+
+	option = { # Force is just as effective as faith
+		name = nf_event_hea.80.a
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = FROM
+		}
+	}
+}
+
+country_event = { # Religious fanatics launch a coup in our puppet
+	id = nf_event_hea.9
+	title = nf_event_hea.9.t
+	desc = nf_event_hea.9.d
+	picture = GFX_event_HEA_bishop1
+
+	is_triggered_only = yes
+
+	option = { # Let them go
+		name = nf_event_hea.9.a
+		ai_chance = {
+			base = 1
+		}
+		end_puppet = FROM
+		HEA = { puppet = FROM }
+	}
+	option = { # Launch a counter-coup
+		name = nf_event_hea.9.b
+		ai_chance = {
+			base = 7
+		}
+		custom_effect_tooltip = HEA_convertion_cw
+		hidden_effect = {
+			FROM = {
+				if = {
+					limit = {
+						has_government = elites
+					}
+					start_civil_war = {
+						ruling_party = ruler
+						ideology = ruler
+						size = 0.6
+					}
+				}
+				else = {
+					start_civil_war = {
+						ruling_party = elites
+						ideology = elites
+						size = 0.6
+					}
+				}
+			}
+			every_country = { # We puppet the revolter
+				limit = {
+					original_tag = FROM
+					NOT = { is_puppet_of = ROOT }
+				}
+				HEA = { puppet = PREV }
+				if = {
+					limit = { NOT = { has_war_with = FROM } }
+					FROM = { declare_war_on = { target = PREV type = civil_war } }
+				}
+				PREV = {
+					add_to_war = {
+						targeted_alliance = FROM
+						enemy = PREV
+					}
+				}
+				HEA = {
+					add_to_war = {
+						targeted_alliance = PREV
+						enemy = FROM
+					}
+				}
+			}
+		}
+		HEA = { country_event = { id = nf_event_hea.90 } }
+	}
+}
+
+country_event = { # Overlord launches a counter-coup
+	id = nf_event_hea.90
+	title = nf_event_hea.90.t
+	desc = nf_event_hea.90.d
+	picture = GFX_event_HEA_bishop1
+
+	is_triggered_only = yes
+
+	option = { # We will help our followers out
+		name = nf_event_hea.90.a
 	}
 }

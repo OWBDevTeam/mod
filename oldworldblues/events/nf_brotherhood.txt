@@ -229,8 +229,9 @@ country_event = {
 	}
 }
 
+#Shi Invitation
 country_event = {
-	id = nf_brotherhood.10 #Shi Invitation
+	id = nf_brotherhood.10
 	title = nf_brotherhood.10.t
 	desc = nf_brotherhood.10.d
 	picture = GFX_event_SHI_shitown
@@ -323,11 +324,11 @@ country_event = {
 	option = {
 		name = nf_brotherhood.16.a
 		64 = {
-			add_resource =  {
+			add_resource = {
 				type = advanced_technology
 				amount = 16
 			}
-			add_resource =  {
+			add_resource = {
 				type = electronics
 				amount = 8
 			}
@@ -337,11 +338,11 @@ country_event = {
 	option = {
 		name = nf_brotherhood.16.b
 		64 = {
-			add_resource =  {
+			add_resource = {
 				type = fuel
 				amount = 16
 			}
-			add_resource =  {
+			add_resource = {
 				type = metal
 				amount = 24
 			}
@@ -534,46 +535,9 @@ country_event = {
 	}
 
 	option = {
-		name  = nf_brotherhood.26.b
+		name = nf_brotherhood.26.b
 
 		set_country_flag = unearthingmonsters
-	}
-}
-
-#Tohono Annexation
-country_event = {
-	id = nf_brotherhood.27
-	title = nf_brotherhood.27.t
-	desc = nf_brotherhood.27.d
-	picture = GFX_event_BOS_desert_patrol
-
-	is_triggered_only = yes
-
-	option = {
-		name = nf_brotherhood.27.a
-		trigger = {
-			TON = { is_ai = yes }
-		}
-
-		annex_country = { target = TON transfer_troops = yes }
-
-		if = {
-			limit = {
-				is_in_faction_with = DES #Rangers get some of their historic territory back (otherwise they'd war for it later)
-			}
-			DES = {
-				transfer_state = 517
-			}
-		}
-	}
-
-	option = {
-		name = nf_brotherhood.27.b
-		trigger = {
-			TON = { is_ai = no  }
-		}
-
-		TON = { country_event = { id = nf_brotherhood.29 }}
 	}
 }
 
@@ -595,29 +559,7 @@ country_event = { #Player Umbra choice
 	}
 
 	option = {#No thx
-		name  = nf_brotherhood.28.b
-	}
-}
-
-country_event = { #Player Tohono choice
-
-	id = nf_brotherhood.29
-	title = nf_brotherhood.29.t
-	desc = nf_brotherhood.29.d
-	picture = GFX_event_BOS_desert_patrol
-
-	is_triggered_only = yes
-
-	option = {#Players get to join the faction so they dont game over
-		name = nf_brotherhood.29.a
-
-		BOS = {
-			add_to_faction = TON
-		}
-	}
-
-	option = {#No
-		name  = nf_brotherhood.29.b
+		name = nf_brotherhood.28.b
 	}
 }
 
@@ -639,110 +581,7 @@ country_event = {
 	}
 
 	option = {#No
-		name  = nf_brotherhood.30.b
-	}
-}
-
-#Repconn HQ
-country_event = {
-	id = nf_brotherhood.31
-	title = nf_brotherhood.31.t
-	desc = nf_brotherhood.31.d
-	picture = GFX_event_BOS_desert_patrol
-
-	is_triggered_only = yes
-
-	option = {
-		name = nf_brotherhood.31.a
-
-		add_ideas = repconnencryption
-
-		country_event = { days = 7 id = nf_brotherhood.32 }
-	}
-
-	option = {
-		name = nf_brotherhood.31.b
-		random_owned_controlled_state = {
-			add_resource = {
-				type = metal
-				amount = 32
-			}
-		}
-		country_event = { days = 7 id = nf_brotherhood.32  }
-	}
-}
-
-#Further Repconn Exploration
-country_event = {
-	id = nf_brotherhood.32
-	title = nf_brotherhood.32.t
-	desc = nf_brotherhood.32.d
-	picture = GFX_event_BOS_desert_patrol
-
-	is_triggered_only = yes
-
-	option = {
-		name = nf_brotherhood.32.a
-
-		add_ideas = robcoprototypes
-
-		country_event = { days = 7 id = nf_brotherhood.33 }
-	}
-
-	option = {
-		name = nf_brotherhood.32.b
-		random_owned_controlled_state = {
-			add_resource = {
-				type = advanced_technology
-				amount = 8
-			}
-		}
-		country_event = { days = 7 id = nf_brotherhood.33 }
-	}
-}
-
-#Final Repconn Exploration
-country_event = {
-	id = nf_brotherhood.33
-	title = nf_brotherhood.33.t
-	desc = nf_brotherhood.33.d
-	picture = GFX_event_BOS_desert_patrol
-
-	is_triggered_only = yes
-
-	option = {
-		name = nf_brotherhood.33.a
-
-		add_ideas = robcorockets
-
-		if = {
-			limit = {
-				has_idea = repconnencryption
-				has_idea = robcoprototypes
-			}
-			add_ideas = robcodesign
-			add_ideas = plasmatrials
-		}
-		if = {
-			limit = {
-				NOT = {
-					has_idea = repconnencryption
-					has_idea = robcoprototypes
-				}
-			}
-			add_ideas = robotsalvage
-		}
-	}
-
-	option = {
-		name = nf_brotherhood.33.b
-		random_owned_controlled_state = {
-			add_resource = {
-				type = fuel
-				amount = 8
-			}
-		}
-		add_ideas = robotsalvage
+		name = nf_brotherhood.30.b
 	}
 }
 
@@ -764,9 +603,9 @@ country_event = {
 			name = "Lieutenant Smith"
 			portrait_path = "gfx/leaders/BOS/Portrait_Smith.dds"
 			skill = 3
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 4
 			logistics_skill = 2
 		}
 	}
@@ -788,10 +627,10 @@ country_event = {
 			name = "A. Ron Meyers"
 			portrait_path = "gfx/leaders/BOS/Portrait_Meyers.dds"
 			skill = 4
-			attack_skill = 2
-			defense_skill = 4
+			attack_skill = 3
+			defense_skill = 5
 			planning_skill = 2
-			logistics_skill = 2
+			logistics_skill = 3
 		}
 		load_oob = thevagrants
 
