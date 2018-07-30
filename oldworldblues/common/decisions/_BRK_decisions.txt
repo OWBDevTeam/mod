@@ -12,7 +12,10 @@ brk_decisions = {
 				log = "[GetDateText]: [Root.GetName] brk_decision_build_the_fleet (decision) remove entered"
 			}
 			set_technology = { cruiser_tech_2 = 1 }
-			load_oob = BRK_raiding_fleet
+			custom_effect_tooltip = BRK_raiding_fleet_tt
+			hidden_effect = {
+				load_oob = BRK_raiding_fleet
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] brk_decision_build_the_fleet (decision) remove exited"
@@ -33,7 +36,10 @@ brk_decisions = {
 				log = "[GetDateText]: [Root.GetName] brk_decision_build_graven_ship (decision) remove entered"
 			}
 			set_technology = { battleship_tech_2 = 1 }
-			load_oob = BRK_graven_boat
+			custom_effect_tooltip = BRK_graven_boat_tt
+			hidden_effect = {
+				load_oob = BRK_graven_boat
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] brk_decision_build_graven_ship (decision) remove exited"
