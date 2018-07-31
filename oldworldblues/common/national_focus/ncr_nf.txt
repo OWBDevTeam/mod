@@ -292,6 +292,16 @@ focus_tree = {
 		prerequisite = {
 			focus = ncr_ultimatum
 		}
+		available = {
+			hidden_trigger = {
+				OR = {
+					AND = {
+						is_ai = yes
+						NOT = { has_war = yes }
+					}
+				}
+			}
+		}
 		will_lead_to_war_with = BVC
 		x = 0
 		y = 7
@@ -1174,6 +1184,16 @@ focus_tree = {
 			focus = ncr_bigjim
 			focus = ncr_mossman
 		}
+		available = {
+			hidden_trigger = {
+				OR = {
+					AND = {
+						is_ai = yes
+						NOT = { has_war = yes }
+					}
+				}
+			}
+		}
 		will_lead_to_war_with = SCR
 		ai_will_do = {
 			factor = 1
@@ -1318,6 +1338,16 @@ focus_tree = {
 			focus = ncr_mossman
 			focus = ncr_bigjim
 			focus = ncr_drummundreturn
+		}
+		available = {
+			hidden_trigger = {
+				OR = {
+					AND = {
+						is_ai = yes
+						NOT = { has_war = yes }
+					}
+				}
+			}
 		}
 		will_lead_to_war_with = RAP
 		x = 11
@@ -2958,6 +2988,16 @@ focus_tree = {
 		prerequisite = {
 			focus = ncr_mojaveoutpost
 			focus = ncr_long15
+		}
+		available = {
+			hidden_trigger = {
+				OR = {
+					AND = {
+						is_ai = yes
+						NOT = { has_war = yes }
+					}
+				}
+			}
 		}
 		will_lead_to_war_with = MRA
 		x = 7
