@@ -238,10 +238,10 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] bos_restructure entered"
 			}
-			remove_ideas = oldguard
-			hidden_effect = {
-				set_country_flag = do_next_focus_now
-			}
+			add_political_power = 50
+			#hidden_effect = {
+			#	set_country_flag = do_next_focus_now
+			#}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] bos_restructure exited"
@@ -255,13 +255,13 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_restructure
 		}
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				has_country_flag = do_next_focus_now
-				factor = 1000
-			}
-		}
+		#ai_will_do = {
+		#	factor = 1
+		#	modifier = {
+		#		has_country_flag = do_next_focus_now
+		#		factor = 1000
+		#	}
+		#}
 		x = 12
 		y = 5
 		completion_reward = {
@@ -269,7 +269,10 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] bos_outsiders entered"
 			}
-			add_ideas = outsider_recruitment
+			swap_ideas = {
+				remove_idea = oldguard
+				add_idea = outsider_recruitment
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] bos_outsiders exited"
