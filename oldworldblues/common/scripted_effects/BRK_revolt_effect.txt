@@ -1,41 +1,40 @@
 BRK_revolt_effect_on_action = {
 	if = {
 		limit = {
-			ROOT = {
-				original_tag = BRK
-			}
-			PREV = {
-				OR = {
-					original_tag = DRE
-					original_tag = KAM
-					original_tag = WHI
-					original_tag = BEL
-					original_tag = VIC
-					original_tag = HAI
-					original_tag = TOC
-					original_tag = PMR
+			AND = {
+				ROOT = {
+					original_tag = BRK
+				}
+				FROM = {
+					is_BRK_revolt_effect_valid_country = yes # scripted triggers
 				}
 			}
 		}
 		if = {
 			limit = {
-				PREV = { has_idea = volunteer_only }
+				ROOT = { has_country_flag = BRK_northern_pact_triggered }
 			}
-			PREV = {
-				swap_ideas = {
-					add_idea = limited_conscription
-					remove_idea = volunteer_only
+			if = {
+				limit = {
+					FROM = { has_idea = volunteer_only }
+				}
+				FROM = {
+					hidden_effect = {
+						swap_ideas = {
+							add_idea = limited_conscription
+							remove_idea = volunteer_only
+						}
+					}
 				}
 			}
-		}
-		ROOT = {
-			PREV = {
+			FROM = {
 				set_country_flag = revolt_country_to_revolt@PREV
 			}
-		}
-		ROOT = {
-			revolt_force_spawn_broken_coast = yes
-			revolt_setup_fire = yes
+			ROOT = {
+				revolt_force_spawn_broken_coast = yes
+				revolt_setup_fire = yes
+			}
+			custom_effect_tooltip = BRK_spawn_troops_resistance_tooltip
 		}
 	}
 }

@@ -11,106 +11,152 @@ focus_tree = {
 	focus = {
 		id = vault_ac
 		text = vault_ac
-		icon = GFX_goal_generic_ideological_fury_focus
+		icon = GFX_goal_VLT_all_clear
 		cost = 1.00
-		x = 20
+		x = 15
 		y = 0
-			completion_reward = {
-					country_event = {
-							id = nf_vault_city.1
-						}
-				}
-
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_ac entered"
+			}
+			country_event = {
+				id = nf_vault_city.1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_ac exited"
+			}
+		}
 	}
 	focus = {
 		id = vault_crim
 		text = vault_crim
-		icon = GFX_goal_generic_ideological_fury_focus
+		icon = GFX_goal_VLT_crim
 		cost = 1.00
 		prerequisite = {
 			focus = vault_ac
 		}
-		x = 20
+		x = 0
 		y = 1
-			completion_reward = {
-					country_event = {
-							id = nf_vault_city.2
-						}
-				}
-
+		relative_position_id = vault_ac
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_crim entered"
+			}
+			country_event = {
+				id = nf_vault_city.2
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_crim exited"
+			}
+		}
 	}
 	focus = {
 		id = vault_spec
 		text = vault_spec
-		icon = GFX_goal_generic_ideological_fury_focus
+		icon = GFX_goal_VLT_armament
 		cost = 1.00
 		prerequisite = {
 			focus = vault_crim
 		}
-		x = 20
-		y = 2
-			completion_reward = {
-					country_event = {
-							id = nf_vault_city.3
-						}
-				}
-
+		x = 0
+		y = 1
+		relative_position_id = vault_crim
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_spec entered"
+			}
+			country_event = {
+				id = nf_vault_city.3
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_spec exited"
+			}
+		}
 	}
 	focus = {
 		id = vault_gecko
 		text = vault_gecko
-		icon = GFX_goal_generic_ideological_fury_focus
+		icon = GFX_goal_VLT_gecko
 		cost = 1.00
 		prerequisite = {
 			focus = vault_spec
 		}
-		x = 20
-		y = 3
-			completion_reward = {
-					country_event = {
-							id = nf_vault_city.4
-						}
-				}
-
+		x = 0
+		y = 1
+		relative_position_id = vault_spec
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_gecko entered"
+			}
+			country_event = {
+				id = nf_vault_city.4
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_gecko exited"
+			}
+		}
 	}
 	focus = {
 		id = vault_tribals
-		icon = GFX_goal_anschluss
+		icon = GFX_goal_VLT_generic
 		cost = 1.00
 		prerequisite = {
 			focus = vault_gecko
 		}
-		x = 8
+		x = 3
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_tribals entered"
+			}
 			add_political_power = 20
 			set_country_flag = vault_tec_calling
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_tribals exited"
+			}
 		}
-
 	}
-	
+
 	#Cyclops
 	focus = {
 		id = vault_cyclops
-		icon = GFX_goal_generic_war_focus
+		icon = GFX_goal_VLT_cyc_war_dec
 		cost = 8.6
 		prerequisite = {
 			focus = vault_tribals
 		}
-		x = 10
-		y = 5
+		x = 2
+		y = 1
+		relative_position_id = vault_tribals
 		will_lead_to_war_with = CYC
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_cyclops entered"
+			}
 			create_wargoal = {
 				type = puppet_wargoal_focus
 				target = CYC
 			}
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_cyclops exited"
+			}
 		}
 	}
 	focus = {
 		id = vault_cyclops_serve
-		icon = GFX_focus_generic_self_management
+		icon = GFX_goal_VLT_cyc_core
 		cost = 8.6
 		prerequisite = {
 			focus = vault_cyclops
@@ -127,12 +173,19 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_cyclops
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_cyclops_serve entered"
+			}
 			add_state_core = 612
 			add_state_core = 363
 			add_state_core = 100
 			add_state_core = 129
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_cyclops_serve exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_cyclops_fort
@@ -141,10 +194,17 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_cyclops_serve
 		}
+		available = {
+			612 = { is_owned_and_controlled_by = VLT }
+		}
 		x = 0
 		y = 1
 		relative_position_id = vault_cyclops_serve
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_cyclops_fort entered"
+			}
 			add_resource = {
 				type = metal
 				amount = 10
@@ -158,8 +218,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_cyclops_fort exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_cyclops_eager
@@ -180,11 +243,18 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_cyclops
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_cyclops_eager entered"
+			}
 			CYC = {
 				add_ideas = eagercyclops
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_cyclops_eager exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_cyclops_hounds
@@ -197,31 +267,46 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_cyclops_eager
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_cyclops_hounds entered"
+			}
 			CYC = {
 				add_ideas = houndsnorth
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_cyclops_hounds exited"
+			}
 		}
 	}
-	
+
 	#Flock
 	focus = {
 		id = vault_flock
-		icon = GFX_goal_generic_war_focus
+		icon = GFX_goal_VLT_flock_war_dec
 		cost = 8.6
 		prerequisite = {
 			focus = vault_tribals
 		}
-		x = 6
+		x = 1
 		y = 5
+		will_lead_to_war_with = PAL
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_flock entered"
+			}
 			add_political_power = 60
 			create_wargoal = {
 				type = puppet_wargoal_focus
 				target = PAL
 			}
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_flock exited"
+			}
 		}
-		will_lead_to_war_with = PAL
 
 	}
 	focus = {
@@ -243,13 +328,20 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_flock
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_flock_diagnose entered"
+			}
 			add_ideas = flockdoc
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_flock_diagnose exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_flock_annex
-		icon = GFX_focus_generic_self_management
+		icon = GFX_goal_VLT_flock_core
 		cost = 8.6
 		prerequisite = {
 			focus = vault_flock
@@ -266,13 +358,20 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_flock_annex entered"
+			}
 			add_state_core = 223
 			add_state_core = 458
 			add_state_core = 273
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_flock_annex exited"
+			}
 		}
-
 	}
-	
+
 	focus = {
 		id = vault_flock_goggles
 		icon = GFX_goal_generic_air_doctrines_focus
@@ -284,11 +383,18 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_flock_diagnose
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_flock_goggles entered"
+			}
 			PAL = {
 				add_ideas = flockgoggles
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_flock_goggles exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_flock_filters
@@ -297,9 +403,17 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_flock_annex
 		}
-		x = 7
-		y = 7
+		available = {
+			223 = { is_owned_and_controlled_by = VLT }
+		}
+		x = 0
+		y = 1
+		relative_position_id = vault_flock_annex
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_flock_filters entered"
+			}
 			add_resource = {
 				type = water
 				amount = 10
@@ -313,10 +427,13 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_flock_filters exited"
+			}
 		}
-
 	}
-	
+
 	focus = {
 		id = vault_politics
 		text = vault_politics
@@ -325,16 +442,24 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_gecko
 		}
-		x = 20
-		y = 4
-			completion_reward = {
-					add_political_power = 120
-				}
-
+		x = 0
+		y = 1
+		relative_position_id = vault_gecko
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_politics entered"
+			}
+			add_political_power = 120
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_politics exited"
+			}
+		}
 	}
-	
+
 	#brain
-	
+
 	focus = {
 		id = vault_brain_1
 		text = vault_brain_1
@@ -343,21 +468,29 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_politics
 		}
-		x = 14
-		y = 5
-			available = {
-					has_country_leader = {
-							id = 913
-							ruling_only = yes
-							name = "The Brain"
-						}
-				}
-			completion_reward = {
-					add_political_power = 60
-					add_ideas = molethumb
-					set_country_flag = vault_brain
-				}
-
+		x = -6
+		y = 1
+		relative_position_id = vault_politics
+		available = {
+			has_country_leader = {
+				id = 913
+				ruling_only = yes
+				name = "The Brain"
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_brain_1 entered"
+			}
+			add_political_power = 60
+			add_ideas = molethumb
+			set_country_flag = vault_brain
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_brain_1 exited"
+			}
+		}
 	}
 	focus = {
 		id = vault_brain_2
@@ -370,10 +503,17 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = vault_brain_1
-			completion_reward = {
-					add_ideas = controlapparati
-				}
-
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_brain_2 entered"
+			}
+			add_ideas = controlapparati
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_brain_2 exited"
+			}
+		}
 	}
 	focus = {
 		id = vault_brain_3
@@ -387,9 +527,16 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_brain_2
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_brain_3 entered"
+			}
 			add_ideas = loyalcitizens
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_brain_3 exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_brain_4a
@@ -406,9 +553,16 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_brain_3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_brain_4a entered"
+			}
 			add_ideas = humanbreed
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_brain_4a exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_brain_4b
@@ -425,15 +579,22 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_brain_3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_brain_4b entered"
+			}
 			set_technology = {
 				mutant_supremacy = 1
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_brain_4b exited"
+			}
 		}
-
 	}
-	
+
 	#first
-	
+
 	focus = {
 		id = vault_first_1
 		text = vault_first_1
@@ -442,20 +603,28 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_politics
 		}
-		x = 18
-		y = 5
-			available = {
-					has_country_leader = {
-							id = 910
-							ruling_only = yes
-							name = "First Citizen Lynette"
-						}
-				}
-			completion_reward = {
-					add_political_power = 60
-					add_ideas = oldways
-				}
-
+		x = -2
+		y = 1
+		relative_position_id = vault_politics
+		available = {
+			has_country_leader = {
+				id = 910
+				ruling_only = yes
+				name = "First Citizen Lynette"
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_first_1 entered"
+			}
+			add_political_power = 60
+			add_ideas = oldways
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_first_1 exited"
+			}
+		}
 	}
 	focus = {
 		id = vault_first_2
@@ -469,14 +638,21 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_first_1
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_first_2 entered"
+			}
 			swap_ideas = {
 				remove_idea = utopia
 				add_idea = firstutopia
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_first_2 exited"
+			}
 		}
-
 	}
-	
+
 	focus = {
 		id = vault_first_3
 		text = vault_first_3
@@ -489,9 +665,16 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_first_2
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_first_3 entered"
+			}
 			add_ideas = populationcontrol
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_first_3 exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_first_4a
@@ -511,6 +694,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_first_3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_first_4a entered"
+			}
 			291 = {
 				add_extra_state_shared_building_slots = 6
 				add_building_construction = {
@@ -520,8 +707,11 @@ focus_tree = {
 				}
 			}
 			add_ideas = firsteconomy
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_first_4a exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_first_4b
@@ -541,6 +731,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_first_3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_first_4b entered"
+			}
 			291 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
@@ -550,11 +744,14 @@ focus_tree = {
 				}
 			}
 			add_ideas = firstmilitary
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_first_4b exited"
+			}
 		}
-
 	}
 	#chief
-	
+
 	focus = {
 		id = vault_chief_1
 		text = vault_chief_1
@@ -563,20 +760,28 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_politics
 		}
-		x = 22
-		y = 5
-			available = {
-					has_country_leader = {
-							id = 912
-							ruling_only = yes
-							name = "Security Chief Wallace"
-						}
-				}
-			completion_reward = {
-					add_political_power = 60
-					add_ideas = courtyardcrackdown
-				}
-
+		x = 2
+		y = 1
+		relative_position_id = vault_politics
+		available = {
+			has_country_leader = {
+				id = 912
+				ruling_only = yes
+				name = "Security Chief Wallace"
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_chief_1 entered"
+			}
+			add_political_power = 60
+			add_ideas = courtyardcrackdown
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_chief_1 exited"
+			}
+		}
 	}
 	focus = {
 		id = vault_chief_2
@@ -590,9 +795,16 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_chief_1
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_chief_2 entered"
+			}
 			add_ideas = vcprot
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_chief_2 exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_chief_3
@@ -606,12 +818,19 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_chief_2
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_chief_3 entered"
+			}
 			swap_ideas = {
 				add_idea = avcprot
 				remove_idea = vcprot
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_chief_3 exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_cheif_4a
@@ -628,9 +847,16 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_chief_3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_cheif_4a entered"
+			}
 			add_ideas = advinfsup
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_cheif_4a exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_chief_4b
@@ -647,13 +873,20 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_chief_3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_chief_4b entered"
+			}
 			add_ideas = advmotsup
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_chief_4b exited"
+			}
 		}
-
 	}
-	
+
 	#festus
-	
+
 	focus = {
 		id = vault_festus_1
 		text = vault_festus_1
@@ -662,20 +895,28 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_politics
 		}
-		x = 26
-		y = 5
-			available = {
-					has_country_leader = {
-							id = 911
-							ruling_only = yes
-							name = "Festus"
-						}
-				}
-			completion_reward = {
-					add_political_power = 60
-					add_ideas = ghoulconferences
-				}
-
+		x = 6
+		y = 1
+		relative_position_id = vault_politics
+		available = {
+			has_country_leader = {
+				id = 911
+				ruling_only = yes
+				name = "Festus"
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_festus_1 entered"
+			}
+			add_political_power = 60
+			add_ideas = ghoulconferences
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_festus_1 exited"
+			}
+		}
 	}
 	focus = {
 		id = vault_festus_2
@@ -689,10 +930,20 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_festus_1
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_festus_2 entered"
+			}
 			add_manpower = 5000
-			load_oob = vault_ghoul_migration
+			custom_effect_tooltip = vault_festus_2_tt
+			hidden_effect = {
+				load_oob = vault_ghoul_migration
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_festus_2 exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_festus_3
@@ -709,6 +960,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_festus_2
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_festus_3 entered"
+			}
 			add_resource = {
 				type = electronics
 				amount = 20
@@ -724,8 +979,11 @@ focus_tree = {
 				amount = 10
 				state = 339
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_festus_3 exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_festus_4a
@@ -742,9 +1000,16 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_festus_3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_festus_4a entered"
+			}
 			add_ideas = oldworldideals
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_festus_4a exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_festus_4b
@@ -761,7 +1026,15 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_festus_3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_festus_4b entered"
+			}
 			add_ideas = modernprag
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_festus_4b exited"
+			}
 		}
 	}
 	focus = {
@@ -774,9 +1047,14 @@ focus_tree = {
 		available = {
 			291 = { is_owned_and_controlled_by = VLT }
 		}
-		x = 33
-		y = 4
+		x = 13
+		y = 1
+		relative_position_id = vault_gecko
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_utopia entered"
+			}
 			291 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -785,8 +1063,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_utopia exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_med_reg
@@ -795,12 +1076,20 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_utopia
 		}
-		x = 31
-		y = 5
+		x = -2
+		y = 1
+		relative_position_id = vault_utopia
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_med_reg entered"
+			}
 			add_ideas = vaultmedreg
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_med_reg exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_draft
@@ -809,12 +1098,20 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_med_reg
 		}
-		x = 31
-		y = 6
+		x = 0
+		y = 1
+		relative_position_id = vault_med_reg
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_draft entered"
+			}
 			add_ideas = courtyarddraft
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_draft exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_mil_sec
@@ -823,12 +1120,20 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_draft
 		}
-		x = 31
-		y = 7
+		x = 0
+		y = 1
+		relative_position_id = vault_draft
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_mil_sec entered"
+			}
 			add_ideas = milsecurity
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_mil_sec exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_citizen
@@ -837,12 +1142,20 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_mil_sec
 		}
-		x = 29
-		y = 8
+		x = -2
+		y = 1
+		relative_position_id = vault_mil_sec
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_citizen entered"
+			}
 			add_ideas = citizenservice
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_citizen exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_robo_sec
@@ -851,9 +1164,17 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_mil_sec
 		}
-		x = 31
-		y = 8
+		available = {
+			291 = { is_owned_and_controlled_by = VLT }
+		}
+		x = 0
+		y = 1
+		relative_position_id = vault_mil_sec
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_robo_sec entered"
+			}
 			291 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -863,8 +1184,11 @@ focus_tree = {
 				}
 			}
 			add_ideas = vault_robosec
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_robo_sec exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_serv_1
@@ -873,14 +1197,22 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_utopia
 		}
-		x = 33
-		y = 5
+		x = 0
+		y = 1
+		relative_position_id = vault_utopia
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_serv_1 entered"
+			}
 			country_event = {
 				id = nf_vault_city.5
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_serv_1 exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_serv_2
@@ -889,14 +1221,22 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_serv_1
 		}
-		x = 33
-		y = 6
+		x = 0
+		y = 1
+		relative_position_id = vault_serv_1
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_serv_2 entered"
+			}
 			country_event = {
 				id = nf_vault_city.6
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_serv_2 exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_serv_3
@@ -905,14 +1245,22 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_serv_2
 		}
-		x = 33
-		y = 7
+		x = 0
+		y = 1
+		relative_position_id = vault_serv_2
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_serv_3 entered"
+			}
 			country_event = {
 				id = nf_vault_city.7
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_serv_3 exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_downtown
@@ -924,9 +1272,14 @@ focus_tree = {
 		available = {
 			336 = { is_owned_and_controlled_by = VLT }
 		}
-		x = 35
-		y = 5
+		x = 2
+		y = 1
+		relative_position_id = vault_utopia
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_downtown entered"
+			}
 			336 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -935,8 +1288,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_downtown exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_courtyard
@@ -948,9 +1304,14 @@ focus_tree = {
 		available = {
 			336 = { is_owned_and_controlled_by = VLT }
 		}
-		x = 35
-		y = 6
+		x = 0
+		y = 1
+		relative_position_id = vault_downtown
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_courtyard entered"
+			}
 			336 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
@@ -964,8 +1325,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_courtyard exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_sec_station
@@ -977,9 +1341,14 @@ focus_tree = {
 		available = {
 			291 = { is_owned_and_controlled_by = VLT }
 		}
-		x = 35
-		y = 7
+		x = 0
+		y = 1
+		relative_position_id = vault_courtyard
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_sec_station entered"
+			}
 			291 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -1000,8 +1369,11 @@ focus_tree = {
 					province = 9197
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_sec_station exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_wall
@@ -1015,9 +1387,14 @@ focus_tree = {
 			339 = { is_owned_and_controlled_by = VLT }
 			261 = { is_owned_and_controlled_by = VLT }
 		}
-		x = 35
-		y = 8
+		x = 0
+		y = 1
+		relative_position_id = vault_sec_station
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_wall entered"
+			}
 			336 = {
 				add_building_construction = {
 					type = bunker
@@ -1060,8 +1437,11 @@ focus_tree = {
 					province = 1207
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_wall exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_second_city
@@ -1070,16 +1450,21 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_sec_station
 		}
-		x = 37
-		y = 8
+		x = 2
+		y = 1
+		relative_position_id = vault_sec_station
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_second_city entered"
+			}
 			remove_ideas = courtyard
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_second_city exited"
+			}
 		}
-
 	}
-	
-	
-	
 	focus = {
 		id = vault_sec
 		text = vault_sec
@@ -1088,12 +1473,20 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_gecko
 		}
-		x = 39
-		y = 4
+		x = 21
+		y = 1
+		relative_position_id = vault_gecko
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_sec entered"
+			}
 			army_experience = 20
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_sec exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_garage
@@ -1107,14 +1500,21 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_sec
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_garage entered"
+			}
 			add_tech_bonus = {
 				name = vault_garage
 				bonus = 0.4
 				uses = 2
 				category = vehicle_tech
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_garage exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_arm_guard
@@ -1128,14 +1528,21 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_sec
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_arm_guard entered"
+			}
 			add_tech_bonus = {
 				name = vault_weapons
 				bonus = 0.4
 				uses = 2
 				category = infantry_weapons
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_arm_guard exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_robot
@@ -1149,14 +1556,21 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_sec
 		completion_reward = {
-		add_tech_bonus = {
-			name = vault_robotics
-			bonus = 0.4
-			uses = 2
-			category = robotics_tech
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_robot entered"
+			}
+			add_tech_bonus = {
+				name = vault_robotics
+				bonus = 0.4
+				uses = 2
+				category = robotics_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_robot exited"
 			}
 		}
-
 	}
 	focus = {
 		id = vault_airstrip
@@ -1170,14 +1584,21 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_garage
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_airstrip entered"
+			}
 			add_tech_bonus = {
 				name = vault_air
 				bonus = 0.4
 				uses = 2
 				category = air_equipment
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_airstrip exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_pride_guard
@@ -1191,10 +1612,17 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_arm_guard
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_pride_guard entered"
+			}
 			add_ideas = vaultpride
 			army_experience = 30
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_pride_guard exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_tank
@@ -1207,14 +1635,21 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_robot
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_tank entered"
+			}
 			add_tech_bonus = {
 				name = vault_tanks
 				bonus = 0.4
 				uses = 2
 				category = vehicle_tech
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_tank exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_armor_sec
@@ -1228,21 +1663,28 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_pride_guard
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_armor_sec entered"
+			}
 			add_tech_bonus = {
 				name = vault_pa
 				bonus = 0.4
 				uses = 2
 				category = power_armor_tech
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_armor_sec exited"
+			}
 		}
-
 	}
-	
+
 	#Riperult
-	
+
 	focus = {
 		id = vault_riperult
-		icon = GFX_goal_generic_war_focus
+		icon = GFX_goal_VLT_rip_war_dec
 		cost = 8.6
 		prerequisite = {
 			focus = vault_flock_goggles
@@ -1253,13 +1695,19 @@ focus_tree = {
 		relative_position_id = vault_flock_goggles
 		will_lead_to_war_with = RIP
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_riperult entered"
+			}
 			create_wargoal = {
 				type = puppet_wargoal_focus
 				target = RIP
 			}
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_riperult exited"
+			}
 		}
-
 	}
 	focus = {
 		id = vault_rip_puppet
@@ -1273,10 +1721,17 @@ focus_tree = {
 				is_puppet_of = VLT
 			}
 		}
+		mutually_exclusive = {
+			focus = vault_rip_crescent
+		}
 		x = -1
 		y = 1
 		relative_position_id = vault_riperult
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_rip_puppet entered"
+			}
 			RIP = {
 				kill_country_leader = yes
 				create_country_leader = {
@@ -1288,9 +1743,11 @@ focus_tree = {
 				add_stability = 0.1
 				add_war_support = 0.05
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_rip_puppet exited"
+			}
 		}
-				
-		
 	}
 	focus = {
 		id = vault_rip_pop
@@ -1303,16 +1760,22 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_rip_puppet
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_rip_pop entered"
+			}
 			RIP = {
 				add_ideas = vault_rip_militia
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_rip_pop exited"
+			}
 		}
-				
-		
 	}
 	focus = {
 		id = vault_rip_crescent
-		icon = GFX_goal_anschluss
+		icon = GFX_goal_VLT_rip_core
 		cost = 8.6
 		prerequisite = {
 			focus = vault_riperult
@@ -1322,19 +1785,27 @@ focus_tree = {
 				exists = no
 			}
 		}
+		mutually_exclusive = {
+			focus = vault_rip_puppet
+		}
 		x = 1
 		y = 1
 		relative_position_id = vault_riperult
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_rip_crescent entered"
+			}
 			add_state_core = 426
 			add_state_core = 183
 			add_state_core = 485
 			add_state_core = 328
 			add_state_core = 219
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_rip_crescent exited"
+			}
 		}
-				
-		
 	}
 	focus = {
 		id = vault_rip_water
@@ -1343,23 +1814,34 @@ focus_tree = {
 		prerequisite = {
 			focus = vault_rip_crescent
 		}
+		available = {
+			426 = { is_owned_and_controlled_by = VLT }
+		}
 		x = 0
 		y = 1
 		relative_position_id = vault_rip_crescent
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_rip_water entered"
+			}
 			add_resource = {
 				type = water
 				amount = 8
 				state = 426
 			}
-		}		
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_rip_water exited"
+			}
+		}
 	}
-	
+
 	#Shoshone
-	
+
 	focus = {
 		id = vault_shoshone
-		icon = GFX_goal_generic_war_focus
+		icon = GFX_goal_VLT_shoshone_war_dec
 		cost = 8.6
 		prerequisite = {
 			focus = vault_cyclops_hounds
@@ -1367,15 +1849,22 @@ focus_tree = {
 		}
 		x = 1
 		y = 1
+		will_lead_to_war_with = SHO
 		relative_position_id = vault_cyclops_hounds
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_shoshone entered"
+			}
 			create_wargoal = {
 				type = puppet_wargoal_focus
 				target = SHO
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_shoshone exited"
+			}
 		}
-		will_lead_to_war_with = SHO
-
 	}
 	focus = {
 		id = vault_sho_puppet
@@ -1383,6 +1872,9 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = vault_shoshone
+		}
+		mutually_exclusive = {
+			focus = vault_sho_core
 		}
 		available = {
 			SHO = {
@@ -1393,6 +1885,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_shoshone
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_sho_puppet entered"
+			}
 			447 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -1403,7 +1899,7 @@ focus_tree = {
 						id = 1363
 						id = 7149
 					}
-					level = 3 
+					level = 3
 					instant_build = yes
 				}
 				add_building_construction = {
@@ -1421,11 +1917,12 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_sho_puppet exited"
 			}
 		}
-				
-		
 	}
 	focus = {
 		id = vault_sho_pop
@@ -1438,16 +1935,22 @@ focus_tree = {
 		y = 1
 		relative_position_id = vault_sho_puppet
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_sho_pop entered"
+			}
 			SHO = {
 				add_ideas = vault_sho_reserve
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_sho_pop exited"
+			}
 		}
-				
-		
 	}
 	focus = {
 		id = vault_sho_core
-		icon = GFX_goal_anschluss
+		icon = GFX_goal_VLT_shoshone_core
 		cost = 8.6
 		prerequisite = {
 			focus = vault_shoshone
@@ -1457,16 +1960,25 @@ focus_tree = {
 				exists = no
 			}
 		}
+		mutually_exclusive = {
+			focus = vault_sho_puppet
+		}
 		x = 1
 		y = 1
 		relative_position_id = vault_shoshone
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_sho_core entered"
+			}
 			add_state_core = 304
 			add_state_core = 447
 			add_state_core = 8
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_sho_core exited"
+			}
 		}
-				
-		
 	}
 	focus = {
 		id = vault_sho_bonus
@@ -1478,10 +1990,17 @@ focus_tree = {
 		available = {
 			has_tech = scrap_fighter
 		}
+		available = {
+			447 = { is_owned_and_controlled_by = VLT }
+		}
 		x = 0
 		y = 1
 		relative_position_id = vault_sho_core
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_sho_bonus entered"
+			}
 			447 = {
 				add_building_construction = {
 					type = air_base
@@ -1494,12 +2013,13 @@ focus_tree = {
 				amount = 100
 				producer = VLT
 			}
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_sho_bonus exited"
+			}
 		}
-				
-		
 	}
-	
+
 	focus = {
 		id = vault_gem
 		icon = GFX_goal_generic_cities_focus
@@ -1513,9 +2033,14 @@ focus_tree = {
 		available = {
 			291 = { is_owned_and_controlled_by = VLT }
 		}
-		x = 33
-		y = 9
+		x = 2
+		y = 1
+		relative_position_id = vault_robo_sec
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_gem entered"
+			}
 			291 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
@@ -1529,7 +2054,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] vault_gem exited"
+			}
 		}
-
 	}
 }

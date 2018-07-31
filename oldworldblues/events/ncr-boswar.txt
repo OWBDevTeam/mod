@@ -6,7 +6,7 @@ country_event = { #Brotherhood NCR War
 	title = ncr-boswar.1.t
 	desc = ncr-boswar.1.d
 	picture = GFX_report_event_fascist_speech
-	
+
 	trigger = {
 		tag = NCR
 		date > 2279.3.8
@@ -18,22 +18,22 @@ country_event = { #Brotherhood NCR War
 			exists = yes
 		}
 	}
-	
+
 	fire_only_once = yes
 
 	mean_time_to_happen = { days = 7 }
-	
+
 	option = {
 		name = ncr-boswar.1.a
-		
+
 		BOS = {
 			country_event = { days = 2 id = ncr-boswar.2 }
 		}
 	}
-	
+
 	option = {
 		name = ncr-boswar.1.b
-		
+
 		ai_chance = {
 			base = 1
 			modifier = {
@@ -41,12 +41,12 @@ country_event = { #Brotherhood NCR War
 				factor = 10
 			}
 		}
-		
+
 		BOS = {
 			country_event = { days = 7 id = ncr-boswar.3 }
 		}
 	}
-	
+
 }
 
 country_event = { #Messenger
@@ -55,20 +55,20 @@ country_event = { #Messenger
 	title = ncr-boswar.2.t
 	desc = ncr-boswar.2.d
 	picture = GFX_report_event_fascist_speech
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ncr-boswar.2.a
-		
+
 		NCR = {
 			country_event = { days = 2 id = ncr-boswar.4 }
 		}
 	}
-	
+
 	option = {
 		name = ncr-boswar.2.b
-		
+
 		NCR = {
 			if = {
 				limit = {
@@ -86,7 +86,7 @@ country_event = { #Messenger
 			}
 		}
 	}
-	
+
 }
 
 country_event = { #Storm
@@ -96,11 +96,11 @@ country_event = { #Storm
 	desc = ncr-boswar.3.d
 	picture = GFX_report_event_fascist_speech
 
-	is_triggered_only = yes 
-	
+	is_triggered_only = yes
+
 	option = {
 		name = ncr-boswar.3.a
-		
+
 		ai_chance = {
 			base = 1
 			modifier = {
@@ -108,29 +108,29 @@ country_event = { #Storm
 				factor = 10
 			}
 		}
-		
+
 		declare_war_on = {
 			target = NCR
 			type = annex_everything
 		}
-		
+
 		hidden_effect = {
 			set_country_flag = ncrbrotherhoodwar
 		}
-	
+
 	}
-	
+
 	option = {
 		name = ncr-boswar.3.b
-		
+
 		add_political_power = -500
-		
+
 		hidden_effect = {
 			set_country_flag = avoidedncrwar
 		}
-		
+
 	}
-	
+
 }
 
 country_event = { #Messenger Returns
@@ -140,24 +140,24 @@ country_event = { #Messenger Returns
 	desc = ncr-boswar.4.d
 	picture = GFX_report_event_fascist_speech
 
-	is_triggered_only = yes 
-	
+	is_triggered_only = yes
+
 	option = {
 		name = ncr-boswar.4.a
-		
+
 		BOS = {
 			country_event = { days = 2 id = ncr-boswar.7 }
 		}
 	}
-	
+
 	option = {
 		name = ncr-boswar.4.b
-		
+
 		BOS = {
 			country_event = { days = 2 id = ncr-boswar.8 }
 		}
 	}
-	
+
 }
 
 country_event = { #Allgood
@@ -167,11 +167,11 @@ country_event = { #Allgood
 	desc = ncr-boswar.5.d
 	picture = GFX_report_event_fascist_speech
 
-	is_triggered_only = yes 
-	
+	is_triggered_only = yes
+
 	option = {
-		name = ncr-boswar.5.a 
-		
+		name = ncr-boswar.5.a
+
 		BOS = {
 			country_event = { days = 7 id = ncr-boswar.9 }
 		}
@@ -185,16 +185,16 @@ country_event = { #Riperoni
 	desc = ncr-boswar.6.d
 	picture = GFX_report_event_fascist_speech
 
-	is_triggered_only = yes 
-	
+	is_triggered_only = yes
+
 	option = {
-		name = ncr-boswar.6.a 
-		
+		name = ncr-boswar.6.a
+
 		declare_war_on = {
-			target = BOS 
+			target = BOS
 			type = annex_everything
 		}
-		
+
 		BOS = {
 			hidden_effect = {
 				set_country_flag = ncrbrotherhoodwar
@@ -210,16 +210,16 @@ country_event = {
 	desc = ncr-boswar.7.d
 	picture = GFX_report_event_fascist_speech
 
-	is_triggered_only = yes 
-	
+	is_triggered_only = yes
+
 	option = {
-		name = ncr-boswar.7.a 
-		
+		name = ncr-boswar.7.a
+
 		hidden_effect = {
 			set_country_flag = avoidedncrwar
 		}
 	}
-	
+
 }
 
 country_event = {
@@ -228,26 +228,26 @@ country_event = {
 	title = ncr-boswar.8.t
 	desc = ncr-boswar.8.d
 	picture = GFX_report_event_fascist_speech
-	
-	is_triggered_only = yes 
-	
+
+	is_triggered_only = yes
+
 	option = {
-		name = ncr-boswar.8.a 
-		
+		name = ncr-boswar.8.a
+
 		random_owned_controlled_state = {
 			limit = {
 				industrial_complex > 2
 			}
 			remove_building = { type = industrial_complex level = 2 }
 		}
-		
+
 		random_owned_controlled_state = {
 			limit = {
 				industrial_complex > 2
 			}
 			remove_building = { type = industrial_complex level = 2 }
 		}
-		
+
 		NCR = {
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
@@ -256,15 +256,15 @@ country_event = {
 				add_extra_state_shared_building_slots = 2
 			}
 		}
-		
+
 		hidden_effect = {
 			set_country_flag = avoidedncrwar
 		}
 	}
-	
+
 	option = {
-		name = ncr-boswar.8.b 
-		
+		name = ncr-boswar.8.b
+
 		NCR = {
 			if = {
 				limit = {
@@ -281,7 +281,7 @@ country_event = {
 			country_event = { days = 2 id = ncr-boswar.11 }
 			}
 		}
-	
+
 	}
 }
 
@@ -291,32 +291,32 @@ country_event = {
 	title = ncr-boswar.9.t
 	desc = ncr-boswar.9.d
 	picture = GFX_report_event_fascist_speech
-	
-	is_triggered_only = yes 
-	
+
+	is_triggered_only = yes
+
 	option = {
-		name = ncr-boswar.9.a 
+		name = ncr-boswar.9.a
 
 		NCR = {
 			country_event = { days = 2 id = ncr-boswar.12 }
 		}
-		
+
 	}
-	
+
 	option = {
 		name = ncr-boswar.9.b
-		
+
 		declare_war_on = {
-			target = NCR 
+			target = NCR
 			type = annex_everything
 		}
-		
+
 		hidden_effect = {
 			set_country_flag = ncrbrotherhoodwar
 		}
-	
+
 	}
-	
+
 }
 
 
@@ -326,19 +326,19 @@ country_event = {
 	title = ncr-boswar.10.t
 	desc = ncr-boswar.10.d
 	picture = GFX_report_event_fascist_speech
-	
-	is_triggered_only = yes 
-	
+
+	is_triggered_only = yes
+
 	option = {
-		name = ncr-boswar.10.a 
-		
+		name = ncr-boswar.10.a
+
 		hidden_effect = {
 			BOS = {
 				set_country_flag = avoidedncrwar
 			}
 		}
 	}
-	
+
 }
 
 country_event = {
@@ -347,17 +347,17 @@ country_event = {
 	title = ncr-boswar.11.t
 	desc = ncr-boswar.11.d
 	picture = GFX_report_event_fascist_speech
-	
-	is_triggered_only = yes 
+
+	is_triggered_only = yes
 
 	option = {
-		name = ncr-boswar.11.a 
-		
+		name = ncr-boswar.11.a
+
 		declare_war_on = {
 			target = BOS
-			type = annex_everything 
+			type = annex_everything
 		}
-		
+
 		hidden_effect = {
 			BOS = {
 				set_country_flag = ncrbrotherhoodwar
@@ -371,32 +371,32 @@ country_event = {
 	id = ncr-boswar.12
 	title = ncr-boswar.12.t
 	desc = ncr-boswar.12.d
-	
+
 	picture = GFX_report_event_fascist_speech
-	
-	is_triggered_only = yes 
+
+	is_triggered_only = yes
 
 	option = {
 		name = ncr-boswar.12.a
-		
+
 		hidden_effect = {
 			BOS = {
 				set_country_flag = avoidedncrwar
 			}
 			country_event = { days = 7 id = ncr-boswar.13 }
 		}
-		
+
 	}
-	
+
 	option = {
-		name = ncr-boswar.12.b 
-		
+		name = ncr-boswar.12.b
+
 		BOS = {
 			country_event = { days = 2 id = ncr-boswar.14 }
 		}
 	}
-		
-		
+
+
 }
 
 
@@ -405,14 +405,14 @@ country_event = {
 	id = ncr-boswar.13
 	title = ncr-boswar.13.t
 	desc = ncr-boswar.13.d
-	
+
 	picture = GFX_report_event_fascist_speech
-	
-	is_triggered_only = yes 
-	
+
+	is_triggered_only = yes
+
 	option = {
 		name = ncr-boswar.13.a
-		
+
 	}
 }
 
@@ -421,19 +421,19 @@ country_event = {
 	id = ncr-boswar.14
 	title = ncr-boswar.14.t
 	desc = ncr-boswar.14.d
-	
+
 	picture = GFX_report_event_fascist_speech
-	
-	is_triggered_only = yes 
-	
+
+	is_triggered_only = yes
+
 	option = {
 		name = ncr-boswar.14.a
-		
+
 		declare_war_on = {
-			target = NCR 
+			target = NCR
 			type = annex_everything
 		}
-		
+
 		hidden_effect = {
 			set_country_flag = ncrbrotherhoodwar
 		}
@@ -441,11 +441,10 @@ country_event = {
 }
 
 country_event = { #Mojave Chapter war
-
 	id = ncr-boswar.15
 	title = ncr-boswar.15.t
 	desc = ncr-boswar.15.d
-	
+
 	picture = GFX_report_event_fascist_speech
 
 	trigger = {
@@ -462,13 +461,11 @@ country_event = { #Mojave Chapter war
 	}
 
 	fire_only_once = yes
-	
+
 	mean_time_to_happen = { days = 30 }
-	
-	option = {
+
+	option = {#Demand Helios One
 		name = ncr-boswar.15.a
-		#Demand Helios One
-	
 		MOJ = {
 			country_event = { days = 2 id = ncr-boswar.16 }
 		}
@@ -480,23 +477,23 @@ country_event = { #Mojave Chapter war 2
 	id = ncr-boswar.16
 	title = ncr-boswar.16.t
 	desc = ncr-boswar.16.d
-	
+
 	picture = GFX_report_event_fascist_speech
 
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ncr-boswar.16.a
-		
+
 		NCR = {
 			transfer_state = 417
 			transfer_state = 137
 		}
 	}
-	
+
 	option = {
-		name = ncr-boswar.16.b 
-		
+		name = ncr-boswar.16.b
+
 		NCR = {
 			declare_war_on = {
 				target = MOJ
@@ -505,3 +502,4 @@ country_event = { #Mojave Chapter war 2
 			}
 		}
 	}
+}

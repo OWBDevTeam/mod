@@ -4,6 +4,7 @@ country_event = {
 	id = scavenge.1
 	title = scavenge.1.t
 	desc = scavenge.1.d
+	picture = GFX_event_generic_raider_1
 
 	is_triggered_only = yes
 
@@ -12,7 +13,7 @@ country_event = {
 		add_political_power = -10
 		add_command_power = -10
 		random_list = {
-			25 = {  }
+			25 = { } # No effect
 			25 = { add_manpower = 6 }
 			25 = { add_manpower = 11 }
 			25 = { add_manpower = 17 }
@@ -30,6 +31,7 @@ country_event = {
 	id = scavenge.2
 	title = scavenge.2.t
 	desc = scavenge.2.d
+	picture = GFX_event_generic_caravan
 
 	is_triggered_only = yes
 
@@ -46,6 +48,7 @@ country_event = {
 	id = scavenge.3
 	title = scavenge.3.t
 	desc = scavenge.3.d
+	picture = GFX_event_generic_caravan
 
 	is_triggered_only = yes
 
@@ -58,42 +61,162 @@ country_event = {
 			limit = {
 				has_country_flag = s_lr_1
 			}
-			add_equipment_to_stockpile = { type = light_robot_equipment_1 amount = 20 }
+			if = {
+				limit = { has_tech = commercial_protectron }
+				add_equipment_to_stockpile = { type = light_robot_equipment_1 amount = 20 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = commercial_protectron }
+						has_country_flag = commercial_protectron
+					}
+				}
+				army_experience = 5
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.1
+					uses = 1
+					technology = commercial_protectron
+				}
+				set_country_flag = commercial_protectron
+			}
 			clr_country_flag = s_lr_1
 		}
 		if = {
 			limit = {
 				has_country_flag = s_lr_2
 			}
-			add_equipment_to_stockpile = { type = light_robot_equipment_2 amount = 20 }
+			if = {
+				limit = { has_tech = security_protectron_tech }
+				add_equipment_to_stockpile = { type = light_robot_equipment_2 amount = 20 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = security_protectron_tech }
+						has_country_flag = security_protectron_tech
+					}
+				}
+				army_experience = 5
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.1
+					uses = 1
+					technology = security_protectron_tech
+				}
+				set_country_flag = security_protectron_tech
+			}
 			clr_country_flag = s_lr_2
 		}
 		if = {
 			limit = {
 				has_country_flag = s_mr_2
 			}
-			add_equipment_to_stockpile = { type = medium_robot_equipment_1 amount = 10 }
+			if = {
+				limit = { has_tech = mr_handy_tech }
+				add_equipment_to_stockpile = { type = medium_robot_equipment_1 amount = 10 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = mr_handy_tech }
+						has_country_flag = mr_handy_tech
+					}
+				}
+				army_experience = 5
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.1
+					uses = 1
+					technology = mr_handy_tech
+				}
+				set_country_flag = mr_handy_tech
+			}
 			clr_country_flag = s_mr_2
 		}
 		if = {
 			limit = {
 				has_country_flag = s_mr_3
 			}
-			add_equipment_to_stockpile = { type = medium_robot_equipment_2 amount = 10 }
+			if = {
+				limit = { has_tech = mr_gutsy_tech }
+				add_equipment_to_stockpile = { type = medium_robot_equipment_2 amount = 10 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = mr_gutsy_tech }
+						has_country_flag = mr_gutsy_tech
+					}
+				}
+				army_experience = 5
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.1
+					uses = 1
+					technology = mr_gutsy_tech
+				}
+				set_country_flag = mr_gutsy_tech
+			}
 			clr_country_flag = s_mr_3
 		}
 		if = {
 			limit = {
 				has_country_flag = s_hr_2
 			}
-			add_equipment_to_stockpile = { type = heavy_robot_equipment_1 amount = 5 }
+			if = {
+				limit = { has_tech = robo_brain_tech }
+				add_equipment_to_stockpile = { type = heavy_robot_equipment_1 amount = 5 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = robo_brain_tech }
+						has_country_flag = robo_brain_tech
+					}
+				}
+				army_experience = 5
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.1
+					uses = 1
+					technology = robo_brain_tech
+				}
+				set_country_flag = robo_brain_tech
+			}
 			clr_country_flag = s_hr_2
 		}
 		if = {
 			limit = {
 				has_country_flag = s_hr_3
 			}
-			add_equipment_to_stockpile = { type = heavy_robot_equipment_2 amount = 5 }
+			if = {
+				limit = { has_tech = sentry_bot_tech }
+				add_equipment_to_stockpile = { type = heavy_robot_equipment_2 amount = 5 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = sentry_bot_tech }
+						has_country_flag = sentry_bot_tech
+					}
+				}
+				army_experience = 5
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.1
+					uses = 1
+					technology = sentry_bot_tech
+				}
+				set_country_flag = sentry_bot_tech
+			}
 			clr_country_flag = s_hr_3
 		}
 	}
@@ -103,6 +226,7 @@ country_event = {
 	id = scavenge.4
 	title = scavenge.4.t
 	desc = scavenge.4.d
+	picture = GFX_event_generic_caravan
 
 	is_triggered_only = yes
 
@@ -115,70 +239,271 @@ country_event = {
 			limit = {
 				has_country_flag = s_motorbike_1
 			}
-			add_equipment_to_stockpile = { type = motorbike_equipment_1 amount = 30 }
+			if = {
+				limit = { has_tech = bike_tech_1 }
+				add_equipment_to_stockpile = { type = motorbike_equipment_1 amount = 30 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = bike_tech_1 }
+						has_country_flag = bike_tech_1
+					}
+				}
+				army_experience = 5
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.1
+					uses = 1
+					technology = bike_tech_1
+				}
+				set_country_flag = bike_tech_1
+			}
 			clr_country_flag = s_motorbike_1
 		}
 		if = {
 			limit = {
 				has_country_flag = s_motorbike_2
 			}
-			add_equipment_to_stockpile = { type = motorbike_equipment_2 amount = 20 }
+			if = {
+				limit = { has_tech = bike_tech_2 }
+				add_equipment_to_stockpile = { type = motorbike_equipment_2 amount = 20 }
+
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = bike_tech_2 }
+						has_country_flag = bike_tech_2
+					}
+				}
+				army_experience = 5
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.1
+					uses = 1
+					technology = bike_tech_2
+				}
+				set_country_flag = bike_tech_2
+			}
 			clr_country_flag = s_motorbike_2
 		}
 		if = {
 			limit = {
 				has_country_flag = s_car_1
 			}
-			add_equipment_to_stockpile = { type = car_equipment_1 amount = 15 }
+			if = {
+				limit = { has_tech = car_tech_1 }
+				add_equipment_to_stockpile = { type = car_equipment_1 amount = 15 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = car_tech_1 }
+						has_country_flag = car_tech_1
+					}
+				}
+				army_experience = 5
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.1
+					uses = 1
+					technology = car_tech_1
+				}
+				set_country_flag = car_tech_1
+			}
 			clr_country_flag = s_car_1
 		}
 		if = {
 			limit = {
 				has_country_flag = s_car_2
 			}
-			add_equipment_to_stockpile = { type = car_equipment_2 amount = 10 }
+			if = {
+				limit = { has_tech = car_tech_2 }
+				add_equipment_to_stockpile = { type = car_equipment_2 amount = 10 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = car_tech_2 }
+						has_country_flag = car_tech_2
+					}
+				}
+				army_experience = 5
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.1
+					uses = 1
+					technology = car_tech_2
+				}
+				set_country_flag = car_tech_2
+			}
 			clr_country_flag = s_car_2
 		}
 		if = {
 			limit = {
 				has_country_flag = s_car_3
 			}
-			add_equipment_to_stockpile = { type = car_equipment_3 amount = 5 }
+			if = {
+				limit = { has_tech = car_tech_3 }
+				add_equipment_to_stockpile = { type = car_equipment_3 amount = 5 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = car_tech_3 }
+						has_country_flag = car_tech_3
+					}
+				}
+				army_experience = 5
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.1
+					uses = 1
+					technology = car_tech_3
+				}
+				set_country_flag = car_tech_3
+			}
 			clr_country_flag = s_car_3
 		}
 		if = {
 			limit = {
 				has_country_flag = s_truck_1
 			}
-			add_equipment_to_stockpile = { type = truck_equipment_1 amount = 10 }
+			if = {
+				limit = { has_tech = truck_tech_1 }
+				add_equipment_to_stockpile = { type = truck_equipment_1 amount = 10 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = truck_tech_1 }
+						has_country_flag = truck_tech_1
+					}
+				}
+				army_experience = 5
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.1
+					uses = 1
+					technology = truck_tech_1
+				}
+				set_country_flag = truck_tech_1
+			}
 			clr_country_flag = s_truck_1
 		}
 		if = {
 			limit = {
 				has_country_flag = s_truck_2
 			}
-			add_equipment_to_stockpile = { type = truck_equipment_2 amount = 5 }
+			if = {
+				limit = { has_tech = truck_tech_2 }
+				add_equipment_to_stockpile = { type = truck_equipment_2 amount = 5 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = truck_tech_2 }
+						has_country_flag = truck_tech_2
+					}
+				}
+				army_experience = 5
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.1
+					uses = 1
+					technology = truck_tech_2
+				}
+				set_country_flag = truck_tech_2
+			}
 			clr_country_flag = s_truck_2
 		}
 		if = {
 			limit = {
 				has_country_flag = s_apc_1
 			}
-			add_equipment_to_stockpile = { type = apc_equipment_1 amount = 5 }
+			if = {
+				limit = { has_tech = apc_tech_1 }
+				add_equipment_to_stockpile = { type = apc_equipment_1 amount = 5 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = apc_tech_1 }
+						has_country_flag = apc_tech_1
+					}
+				}
+				army_experience = 5
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.1
+					uses = 1
+					technology = apc_tech_1
+				}
+				set_country_flag = apc_tech_1
+			}
 			clr_country_flag = s_apc_1
 		}
 		if = {
 			limit = {
 				has_country_flag = s_apc_2
 			}
-			add_equipment_to_stockpile = { type = apc_equipment_2 amount = 5 }
+			if = {
+				limit = { has_tech = apc_tech_2 }
+				add_equipment_to_stockpile = { type = apc_equipment_2 amount = 5 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = apc_tech_2 }
+						has_country_flag = apc_tech_2
+					}
+				}
+				army_experience = 5
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.1
+					uses = 1
+					technology = apc_tech_2
+				}
+				set_country_flag = apc_tech_2
+			}
 			clr_country_flag = s_apc_2
 		}
 		if = {
 			limit = {
 				has_country_flag = s_tank_1
 			}
-			add_equipment_to_stockpile = { type = tank_equipment_1 amount = 3 }
+			if = {
+				limit = { has_tech = tank_tech_1 }
+				add_equipment_to_stockpile = { type = tank_equipment_1 amount = 3 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_tech_bonus = { technology = tank_tech_1 }
+						has_country_flag = tank_tech_1
+					}
+				}
+				army_experience = 5
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 0.1
+					uses = 1
+					technology = tank_tech_1
+				}
+				set_country_flag = tank_tech_1
+			}
 			clr_country_flag = s_tank_1
 		}
 	}
@@ -188,11 +513,15 @@ country_event = {
 	id = scavenge.5
 	title = scavenge.5.t
 	desc = scavenge.5.d
+	picture = GFX_event_generic_caravan
 
 	is_triggered_only = yes
 
 	option = {
 		name = scavenge.2.a
+		custom_effect_tooltip = scav_following_are_sent_equip
+		resolve_expedition = yes
+		custom_effect_tooltip = scav_following_are_loot
 		old_world_tech = yes
 	}
 }
@@ -201,6 +530,7 @@ country_event = {
 	id = scavenge.6
 	title = scavenge.6.t
 	desc = scavenge.6.d
+	picture = GFX_event_generic_settlement_1
 
 	is_triggered_only = yes
 

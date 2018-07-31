@@ -2,49 +2,48 @@
 oob = "MLT_2275"
 
 set_technology = {
-    standard_weaponry_tech = 1
+	standard_weaponry_tech = 1
 	blunt_weaponry = 1
-    tribal_civilization = 1
+	tribal_civilization = 1
 }
 
-set_stability = 0.4 
+set_stability = 0.4
 set_war_support = 0.4
-
+set_convoys = 50
 set_politics = {
-    parties = {
-        people = { popularity = 0 }
-        elites = { popularity = 0 }
-        intellectuals = { popularity = 0 }
-        ruler = { popularity = 100 }
-    }
-    ruling_party = ruler
-    elections_allowed = yes
+	parties = {
+		people = { popularity = 0 }
+		elites = { popularity = 0 }
+		intellectuals = { popularity = 0 }
+		ruler = { popularity = 100 }
+	}
+	ruling_party = ruler
+	elections_allowed = no
 }
 
-add_ideas = { 
+add_ideas = {
 	tribal_nation
-		
-	
 }
 
 create_country_leader  = {
-    name = "High Priest Gurgle"
-    desc = "Eddie_DESC"
-    picture = "Portrait_Eddie.dds"
-    expire = "3000.1.1"
-    ideology = militarist_oligarchy
-    
-    traits = {
-    }
+	name = "High Priest Gurgle"
+	desc = "Eddie_DESC"
+	picture = "Portrait_Eddie.dds"
+	expire = "3000.1.1"
+	ideology = militarist_oligarchy
+
+	traits = {
+	}
 }
+
 create_corps_commander = {
 	name = "High Priest Gurgle"
 	portrait_path = "gfx/leaders/Raider/Portrait_Raider_Generic_1.dds"
-	traits = {  
-	}
 	skill = 2
+	traits = {
+	}
 	attack_skill = 1
-	defense_skill = 2
+	defense_skill = 4
 	planning_skill = 1
 	logistics_skill = 1
 }

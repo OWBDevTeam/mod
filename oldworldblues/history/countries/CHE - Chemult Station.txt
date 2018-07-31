@@ -2,48 +2,49 @@
 oob = "CHE_2275"
 
 set_technology = {
-    standard_weaponry_tech = 1
+	standard_weaponry_tech = 1
 	blunt_weaponry = 1
-    tribal_civilization = 1
+	tribal_civilization = 1
 }
 
-set_stability = 0.2 
+set_stability = 0.2
 set_war_support = 0.55
 
 set_politics = {
-    parties = {
-        people = { popularity = 0 }
-        elites = { popularity = 0 }
-        intellectuals = { popularity = 0 }
-        ruler = { popularity = 100 }
-    }
-    ruling_party = ruler
-    elections_allowed = yes
+	parties = {
+		people = { popularity = 0 }
+		elites = { popularity = 0 }
+		intellectuals = { popularity = 0 }
+		ruler = { popularity = 100 }
+	}
+	ruling_party = ruler
+	elections_allowed = no
 }
 
 add_ideas = {
 	limited_conscription
-	 }
-
-create_country_leader  = {
-    name = "Acri"
-    desc = "CHE_Leader_DESC"
-    picture = "Portrait_CHE_Leader.dds"
-    expire = "3100.1.1"
-    ideology = gang
-    
-    traits = {
-	military_background 
-    }
 }
+
+create_country_leader = {
+	name = "Acri"
+	desc = "CHE_Leader_DESC"
+	picture = "Portrait_CHE_Leader.dds"
+	expire = "3100.1.1"
+	ideology = gang
+
+	traits = {
+	military_background
+	}
+}
+
 create_corps_commander = {
 	name = "Militia Commander Vas"
 	portrait_path = "gfx/leaders/Raider/Portrait_Raider_Generic_1.dds"
-	traits = {  
+	traits = {
 	}
 	skill = 4
-	attack_skill = 1
-	defense_skill = 2
-	planning_skill = 3
-	logistics_skill = 1
+	attack_skill = 2
+	defense_skill = 4
+	planning_skill = 4
+	logistics_skill = 3
 }

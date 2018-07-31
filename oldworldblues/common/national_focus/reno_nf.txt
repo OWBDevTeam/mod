@@ -15,7 +15,15 @@ focus_tree = {
 		y = 0
 		cost = 1
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_littlecity entered"
+			}
 			country_event = { id = nf_reno.1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_littlecity exited"
+			}
 		}
 	}
 	focus = {
@@ -36,10 +44,17 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_thefamily entered"
+			}
 			add_political_power = 60
 			add_ideas = thefamily
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_thefamily exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_church
@@ -51,9 +66,16 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_church entered"
+			}
 			add_ideas = renochurch
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_church exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_speakeasies
@@ -65,9 +87,16 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_speakeasies entered"
+			}
 			add_ideas = renospeakeasies
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_speakeasies exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_police
@@ -79,9 +108,15 @@ focus_tree = {
 		y = 7
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_police entered"
+			}
 			add_ideas = newrenopolice
-			load_oob = newrenopolice
-			
+			custom_effect_tooltip = new_police_tt
+			hidden_effect = {
+				load_oob = newrenopolice
+			}
 			hidden_effect = {
 				if = {
 					limit = {
@@ -90,12 +125,14 @@ focus_tree = {
 							has_completed_focus = new_mutanttech
 						}
 					}
-					
-					country_event = { id = nf_reno.4 } 
+					country_event = { id = nf_reno.4 }
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_police exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_criminalworld
@@ -107,9 +144,16 @@ focus_tree = {
 		y = 1
 		cost = 1
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_criminalworld entered"
+			}
 			country_event = { id = nf_reno.5 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_criminalworld exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_renodeal
@@ -121,9 +165,16 @@ focus_tree = {
 		y = 2
 		cost = 1
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_renodeal entered"
+			}
 			country_event = { id = nf_reno.6 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_renodeal exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_expansionism
@@ -135,9 +186,16 @@ focus_tree = {
 		y = 3
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_expansionism entered"
+			}
 			add_political_power = 80
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_expansionism exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_savages
@@ -146,10 +204,10 @@ focus_tree = {
 			focus = new_expansionism
 		}
 		available = {
-			ANT = { 
+			ANT = {
 				OR = {
 					exists = yes
-				}	
+				}
 			}
 		}
 		cancel_if_invalid = yes
@@ -172,6 +230,10 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_savages entered"
+			}
 			create_wargoal = {
 				target = ANT
 				type = annex_everything
@@ -191,6 +253,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = ANT
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -198,8 +261,11 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_savages exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_bet
@@ -216,11 +282,18 @@ focus_tree = {
 			585 = { is_owned_and_controlled_by = NEW }
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_bet entered"
+			}
 			add_state_core = 382
 			add_state_core = 126
 			add_state_core = 585
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_bet exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_slavery
@@ -237,9 +310,16 @@ focus_tree = {
 			585 = { is_owned_and_controlled_by = NEW }
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_slavery entered"
+			}
 			add_manpower = 500
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_slavery exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_loosends
@@ -248,10 +328,10 @@ focus_tree = {
 			focus = new_expansionism
 		}
 		available = {
-			YKZ = { 
+			YKZ = {
 				OR = {
 					exists = yes
-				}	
+				}
 			}
 		}
 		cancel_if_invalid = yes
@@ -274,6 +354,10 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_loosends entered"
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = YKZ
@@ -293,6 +377,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = YKZ
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -300,8 +385,11 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_loosends exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_spoils
@@ -318,6 +406,10 @@ focus_tree = {
 		}
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_spoils entered"
+			}
 			285 = {
 				add_resource = {
 					type = metal
@@ -328,8 +420,11 @@ focus_tree = {
 					amount = 5
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_spoils exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_shop
@@ -346,11 +441,18 @@ focus_tree = {
 			475 = { is_owned_and_controlled_by = NEW }
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_shop entered"
+			}
 			add_state_core = 160
 			add_state_core = 284
 			add_state_core = 475
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_shop exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_topdog
@@ -365,9 +467,16 @@ focus_tree = {
 		y = 3
 		cost = 1
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_topdog entered"
+			}
 			country_event = { id = nf_reno.7 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_topdog exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_salvatores
@@ -387,10 +496,17 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_salvatores entered"
+			}
 			add_ideas = salvatores
 			add_political_power = 60
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_salvatores exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_whitepawn
@@ -411,10 +527,17 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_whitepawn entered"
+			}
 			add_ideas = bishops
 			add_political_power = 60
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_whitepawn exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_bishop
@@ -426,22 +549,28 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_bishop entered"
+			}
 			create_corps_commander = {
 				name = "Mr Bishop"
 				portrait_path = "gfx/leaders/NEW/Portrait_Bishop.dds"
 				skill = 6
 				traits = {
-					
-				}
-				attack_skill = 4
-				defense_skill = 4
-				planning_skill = 3
-				logistics_skill = 4
-			}
-			
-			add_ideas = bishopbcfour
-		}
 
+				}
+				attack_skill = 5
+				defense_skill = 5
+				planning_skill = 4
+				logistics_skill = 5
+			}
+			add_ideas = bishopbcfour
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_bishop exited"
+			}
+		}
 	}
 	focus = {
 		id = new_f3
@@ -453,6 +582,10 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_f3 entered"
+			}
 			add_stability = 0.05
 			random_owned_controlled_state = {
 				limit = {
@@ -544,6 +677,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_f3 exited"
+			}
 		}
 	}
 	focus = {
@@ -556,19 +693,24 @@ focus_tree = {
 		y = 7
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_queen entered"
+			}
 			add_ideas = thequeen
-			
 			hidden_effect = {
 				if = {
 					limit = {
 						has_completed_focus = new_roaring
 					}
-					
-					country_event = { id = nf_reno.2 } 
+					country_event = { id = nf_reno.2 }
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_queen exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_mordinos
@@ -589,10 +731,17 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_mordinos entered"
+			}
 			add_ideas = mordinos
 			add_political_power = 60
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_mordinos exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_addictionempire
@@ -604,9 +753,16 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_addictionempire entered"
+			}
 			add_ideas = empireofaddiction
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_addictionempire exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_myron
@@ -618,9 +774,16 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_myron entered"
+			}
 			add_ideas = myronlegacy
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_myron exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_jetbeta
@@ -632,20 +795,26 @@ focus_tree = {
 		y = 7
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_jetbeta entered"
+			}
 			add_research_slot = 1
 			add_ideas = jetbeta
-			
 			hidden_effect = {
 				if = {
 					limit = {
 						has_completed_focus = new_artillery
 					}
-					
-					country_event = { id = nf_reno.2 } 
+
+					country_event = { id = nf_reno.2 }
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_jetbeta exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_allroads
@@ -661,6 +830,10 @@ focus_tree = {
 		y = 3
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_allroads entered"
+			}
 			285 = {
 				add_building_construction = {
 					type = infrastructure
@@ -675,8 +848,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_allroads exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_sharkclub
@@ -691,6 +867,10 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_sharkclub entered"
+			}
 			285 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -699,8 +879,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_sharkclub exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_boxing
@@ -712,10 +895,17 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_boxing entered"
+			}
 			add_war_support = 0.03
 			add_stability = 0.02
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_boxing exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_desperado
@@ -730,6 +920,10 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_desperado entered"
+			}
 			285 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -738,8 +932,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_desperado exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_distillery
@@ -754,6 +951,10 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_distillery entered"
+			}
 			285 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -762,8 +963,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_distillery exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_expansion
@@ -778,6 +982,10 @@ focus_tree = {
 		y = 7
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_expansion entered"
+			}
 			285 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -786,8 +994,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_expansion exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_precautions
@@ -802,6 +1013,10 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_precautions entered"
+			}
 			285 = {
 				add_building_construction = {
 					type = bunker
@@ -812,8 +1027,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_precautions exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_radio
@@ -828,6 +1046,10 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_radio entered"
+			}
 			285 = {
 				add_building_construction = {
 					type = radar_station
@@ -835,8 +1057,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_radio exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_sweatshop
@@ -848,9 +1073,16 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_sweatshop entered"
+			}
 			add_ideas = sweatshop
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_sweatshop exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_farmsteads
@@ -862,9 +1094,16 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_farmsteads entered"
+			}
 			add_ideas = modoc
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_farmsteads exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_airport
@@ -879,6 +1118,10 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_airport entered"
+			}
 			285 = {
 				add_building_construction = {
 					type = air_base
@@ -886,8 +1129,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_airport exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_contracts
@@ -899,9 +1145,16 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_contracts entered"
+			}
 			add_ideas = contracts
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_contracts exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_sierradepot
@@ -916,6 +1169,10 @@ focus_tree = {
 		y = 7
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_sierradepot entered"
+			}
 			285 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -924,9 +1181,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_sierradepot exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_sanctuary
@@ -942,9 +1201,16 @@ focus_tree = {
 		y = 8
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_sanctuary entered"
+			}
 			add_manpower = 1500
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_sanctuary exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_slavers
@@ -956,9 +1222,16 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_slavers entered"
+			}
 			add_ideas = modocslaves
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_slavers exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_oldbirds
@@ -970,9 +1243,19 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
-			load_oob = oldbirds
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_oldbirds entered"
+			}
+			custom_effect_tooltip = new_oldbirds_tt
+			hidden_effect = {
+				load_oob = oldbirds
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_oldbirds exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_golgotha
@@ -984,9 +1267,16 @@ focus_tree = {
 		y = 7
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_golgotha entered"
+			}
 			add_ideas = golgotharestored
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_golgotha exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_techslot
@@ -998,9 +1288,16 @@ focus_tree = {
 		y = 8
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_techslot entered"
+			}
 			add_research_slot = 1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_techslot exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_mercmilitary
@@ -1012,9 +1309,16 @@ focus_tree = {
 		y = 3
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_mercmilitary entered"
+			}
 			army_experience = 20
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_mercmilitary exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_uniques
@@ -1026,14 +1330,21 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_uniques entered"
+			}
 			add_tech_bonus = {
 				name = land_doc_bonus
 				bonus = 0.5
 				uses = 2
 				category = land_doctrine
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_uniques exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_roaring
@@ -1053,34 +1364,41 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_roaring entered"
+			}
 			create_corps_commander = {
 				name = "Colonel Jalabert"
 				portrait_path = "gfx/leaders/Settler/Portrait_Settler_Generic_13.dds"
 				skill = 3
 				traits = {
-					
+
 				}
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 2
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 3
 				logistics_skill = 3
 			}
-			
-			load_oob = roaringbears
-			
+			custom_effect_tooltip = new_roaring_tt
+			hidden_effect = {
+				load_oob = roaringbears
+			}
 			add_ideas = roaringbears
-			
 			hidden_effect = {
 				if = {
 					limit = {
 						has_completed_focus = new_queen
 					}
-					
-					country_event = { id = nf_reno.2 } 
+
+					country_event = { id = nf_reno.2 }
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_roaring exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_artillery
@@ -1100,34 +1418,41 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_artillery entered"
+			}
 			create_corps_commander = {
 				name = "Tobias Halvorsen"
 				portrait_path = "gfx/leaders/Settler/Portrait_Settler_Generic_4.dds"
 				skill = 2
 				traits = {
-					
+
 				}
 				attack_skill = 2
 				defense_skill = 1
-				planning_skill = 1
+				planning_skill = 2
 				logistics_skill = 2
 			}
-			
-			load_oob = hellhammers
-			
+			custom_effect_tooltip = new_artillery_tt
+			hidden_effect = {
+				load_oob = hellhammers
+			}
 			add_ideas = hellhammers
-			
 			hidden_effect = {
 				if = {
 					limit = {
 						has_completed_focus = new_jetbeta
 					}
-					
-					country_event = { id = nf_reno.2 } 
+
+					country_event = { id = nf_reno.2 }
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_artillery exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_thradd
@@ -1147,19 +1472,22 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_thradd entered"
+			}
 			create_corps_commander = {
 				name = "Thradd"
 				portrait_path = "gfx/leaders/NEW/Portrait_Thradd.dds"
 				skill = 4
 				traits = {
-					
+
 				}
-				attack_skill = 4
-				defense_skill = 2
-				planning_skill = 2
-				logistics_skill = 1
+				attack_skill = 5
+				defense_skill = 3
+				planning_skill = 3
+				logistics_skill = 2
 			}
-			
 			hidden_effect = {
 				if = {
 					limit = {
@@ -1168,16 +1496,20 @@ focus_tree = {
 							has_completed_focus = new_mutanttech
 						}
 					}
-					
-					country_event = { id = nf_reno.4 } 
+
+					country_event = { id = nf_reno.4 }
 				}
 			}
-			
-			load_oob = thraddimmortals
-			
+			custom_effect_tooltip = new_thradd_tt
+			hidden_effect = {
+				load_oob = thraddimmortals
+			}
 			add_ideas = thraddimmortals
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_thradd exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_capsforloyalty
@@ -1189,9 +1521,16 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_capsforloyalty entered"
+			}
 			add_ideas = capsforloyalty
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_capsforloyalty exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_councilfunding
@@ -1205,7 +1544,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = renomilitarycouncil
 		}
-
 	}
 	focus = {
 		id = new_enctech
@@ -1223,8 +1561,11 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_councilfunding entered"
+			}
 			add_ideas = enclavetechnician
-			
 			hidden_effect = {
 				if = {
 					limit = {
@@ -1233,10 +1574,12 @@ focus_tree = {
 							has_completed_focus = new_granite
 						}
 					}
-					
 					country_event = { id = nf_reno.3 }
-					
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_councilfunding exited"
 			}
 		}
 	}
@@ -1256,8 +1599,11 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_mutanttech entered"
+			}
 			add_ideas = mutanttact
-			
 			hidden_effect = {
 				if = {
 					limit = {
@@ -1266,9 +1612,12 @@ focus_tree = {
 							has_completed_focus = new_thradd
 						}
 					}
-					
-					country_event = { id = nf_reno.4 } 
+					country_event = { id = nf_reno.4 }
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_mutanttech exited"
 			}
 		}
 	}
@@ -1282,9 +1631,16 @@ focus_tree = {
 		y = 4
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_genericmercs entered"
+			}
 			add_ideas = genericmercs
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_genericmercs exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_vengefulsons
@@ -1299,24 +1655,32 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_vengefulsons entered"
+			}
 			create_corps_commander = {
 				name = "Runs-With-Hatred"
 				portrait_path = "gfx/leaders/Tribal/Portrait_Tribal_Generic_10.dds"
 				skill = 2
 				traits = {
-					
+
 				}
 				attack_skill = 3
 				defense_skill = 1
 				planning_skill = 2
 				logistics_skill = 1
 			}
-
-			load_oob = vengefulsons
-			
+			custom_effect_tooltip = new_vengefulsons_tt
+			hidden_effect = {
+				load_oob = vengefulsons
+			}
 			add_ideas = vengefulsons
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_vengefulsons exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_pablos
@@ -1331,31 +1695,38 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_pablos entered"
+			}
 			create_corps_commander = {
 				name = "Pablo"
 				portrait_path = "gfx/leaders/COW/Portrait_COW_Leader.dds"
 				skill = 2
 				traits = {
-					
+
 				}
-				attack_skill = 2
+				attack_skill = 3
 				defense_skill = 2
 				planning_skill = 1
 				logistics_skill = 1
 			}
-			
-			load_oob = pabloconquistadors
-			
+			custom_effect_tooltip = new_pablos_tt
+			hidden_effect = {
+				load_oob = pabloconquistadors
+			}
 			add_ideas = pabloconquistadors
-			
 			add_tech_bonus = {
 				name = ballistic_bonus
 				bonus = 0.5
 				uses = 1
 				category = ballistic_weaponry_tech
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_pablos exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_gladiators
@@ -1371,31 +1742,38 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_gladiators entered"
+			}
 			create_corps_commander = {
 				name = "Pit Master Frazz"
 				portrait_path = "gfx/leaders/Raider/Portrait_Raider_Generic_8.dds"
 				skill = 2
 				traits = {
-					
+
 				}
 				attack_skill = 2
 				defense_skill = 1
 				planning_skill = 1
-				logistics_skill = 2
+				logistics_skill = 3
 			}
-			
-			load_oob = junkcitygladiators
-			
+			custom_effect_tooltip = new_gladiators_tt
+			hidden_effect = {
+				load_oob = junkcitygladiators
+			}
 			add_ideas = junkcitygladiators
-			
 			add_tech_bonus = {
 				name = robotic_bonus
 				bonus = 0.5
 				uses = 1
 				category = robotics_tech
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_gladiators exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_roadpsychos
@@ -1411,31 +1789,38 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_roadpsychos entered"
+			}
 			create_corps_commander = {
 				name = "Warcrying Todd"
 				portrait_path = "gfx/leaders/Raider/Portrait_Raider_Generic_10.dds"
 				skill = 2
 				traits = {
-					
+
 				}
-				attack_skill = 2
+				attack_skill = 3
 				defense_skill = 2
 				planning_skill = 1
 				logistics_skill = 1
 			}
-			
-			load_oob = roadpsychos
-			
+			custom_effect_tooltip = new_roadpsychos_tt
+			hidden_effect = {
+				load_oob = roadpsychos
+			}
 			add_ideas = roadpsychos
-			
 			add_tech_bonus = {
 				name = motorized_bonus
 				bonus = 0.5
 				uses = 1
 				category = vehicle_tech
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_roadpsychos exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_oldallies
@@ -1447,6 +1832,10 @@ focus_tree = {
 		y = 7
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_oldallies entered"
+			}
 			hidden_effect = {
 				set_technology = { power_armour_enclave1 = 1 }
 				if = {
@@ -1456,9 +1845,7 @@ focus_tree = {
 							has_completed_focus = new_enctech
 						}
 					}
-					
 					country_event = { id = nf_reno.3 }
-					
 				}
 			}
 			295 = {
@@ -1468,9 +1855,15 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			load_oob = oldallies
+			custom_effect_tooltip = new_oldallies_tt
+			hidden_effect = {
+				load_oob = oldallies
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_oldallies exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_stash
@@ -1482,14 +1875,21 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_stash entered"
+			}
 			add_ideas = oldstash
 			add_equipment_to_stockpile = {
-				type = energy_equipment_2 
-				amount = 200 
+				type = energy_equipment_2
+				amount = 200
 				producer = NEW
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_stash exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_bloodynight
@@ -1501,13 +1901,20 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_bloodynight entered"
+			}
 			add_stability = 0.1
 			add_popularity = {
 				ideology = people
 				popularity = -0.2
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_bloodynight exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_hedge
@@ -1524,9 +1931,13 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_hedge entered"
+			}
 			159 = {
 				add_building_construction = {
-					type = bunker 
+					type = bunker
 					level = 2
 					province = {
 						all_provinces = yes
@@ -1537,7 +1948,7 @@ focus_tree = {
 			}
 			614 = {
 				add_building_construction = {
-					type = bunker 
+					type = bunker
 					level = 2
 					province = {
 						all_provinces = yes
@@ -1548,7 +1959,7 @@ focus_tree = {
 			}
 			160 = {
 				add_building_construction = {
-					type = bunker 
+					type = bunker
 					level = 2
 					province = {
 						all_provinces = yes
@@ -1557,8 +1968,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_hedge exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_hordes
@@ -1575,9 +1989,13 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_hordes entered"
+			}
 			126 = {
 				add_building_construction = {
-					type = bunker 
+					type = bunker
 					level = 1
 					province = {
 						all_provinces = yes
@@ -1588,7 +2006,7 @@ focus_tree = {
 			}
 			382 = {
 				add_building_construction = {
-					type = bunker 
+					type = bunker
 					level = 1
 					province = {
 						all_provinces = yes
@@ -1599,7 +2017,7 @@ focus_tree = {
 			}
 			585 = {
 				add_building_construction = {
-					type = bunker 
+					type = bunker
 					level = 1
 					province = {
 						all_provinces = yes
@@ -1610,7 +2028,7 @@ focus_tree = {
 			}
 			263 = {
 				add_building_construction = {
-					type = bunker 
+					type = bunker
 					level = 1
 					province = {
 						all_provinces = yes
@@ -1619,8 +2037,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_hordes exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_klamathdeal
@@ -1629,7 +2050,7 @@ focus_tree = {
 			focus = new_expansionism
 		}
 		available = {
-			KLA = { 
+			KLA = {
 				AND = {
 					exists = yes
 					is_puppet = no
@@ -1641,11 +2062,18 @@ focus_tree = {
 		y = 7
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_klamathdeal entered"
+			}
 			add_political_power = 80
 			add_opinion_modifier = { modifier = klamethdeal target = KLA }
 			reverse_add_opinion_modifier = { modifier = klamethdeal target = KLA }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_klamathdeal exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_klamathagreements
@@ -1671,6 +2099,10 @@ focus_tree = {
 		cost = 8.6
 		completion_reward = {
 			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_klamathagreements entered"
+			}
+			if = {
 				limit = {
 					KLA = {
 						is_ai = yes
@@ -1687,7 +2119,7 @@ focus_tree = {
 						}
 						add_building_construction = {
 							type = industrial_complex
-							level = 2 
+							level = 2
 							instant_build = yes
 						}
 					}
@@ -1699,9 +2131,13 @@ focus_tree = {
 						is_ai = no
 					}
 				}
-				KLA = { 
+				KLA = {
 					country_event = { id = nf_reno.8 }
 				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_klamathagreements exited"
 			}
 		}
 	}
@@ -1733,6 +2169,10 @@ focus_tree = {
 		y = 8
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_takedown entered"
+			}
 			create_wargoal = {
 				type = puppet_wargoal_focus
 				target = KLA
@@ -1752,6 +2192,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = KLA
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -1759,8 +2200,11 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_takedown exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_township
@@ -1778,12 +2222,19 @@ focus_tree = {
 		y = 9
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_township entered"
+			}
 			add_state_core = 57
 			add_state_core = 59
 			add_state_core = 454
 			add_state_core = 467
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_township exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_debtwarriors
@@ -1800,12 +2251,19 @@ focus_tree = {
 		y = 9
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_debtwarriors entered"
+			}
 			add_ideas = debtwarriorsreno
 			KLA = {
 				add_ideas = debtwarriorsklameth
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_debtwarriors exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_addictsworks
@@ -1817,9 +2275,16 @@ focus_tree = {
 		y = 6
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_addictsworks entered"
+			}
 			add_ideas = addictswork
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_addictsworks exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_rail
@@ -1831,6 +2296,10 @@ focus_tree = {
 		y = 7
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_rail entered"
+			}
 			every_state = {
 				limit = {
 					is_owned_by = NEW
@@ -1842,8 +2311,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_rail exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_silverrush
@@ -1855,14 +2327,21 @@ focus_tree = {
 		y = 8
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_silverrush entered"
+			}
 			285 = {
 				add_resource = {
 					type = advanced_technology
 					amount = 10
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_silverrush exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_granite
@@ -1882,19 +2361,22 @@ focus_tree = {
 		y = 5
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_granite entered"
+			}
 			create_corps_commander = {
 				name = "Sgt. Granite"
 				portrait_path = "gfx/leaders/ENC/Portrait_Enclave_Generic.dds"
 				skill = 5
 				traits = {
-					
+
 				}
-				attack_skill = 2
-				defense_skill = 4
-				planning_skill = 2
-				logistics_skill = 3
+				attack_skill = 3
+				defense_skill = 6
+				planning_skill = 3
+				logistics_skill = 4
 			}
-			
 			hidden_effect = {
 				set_technology = { power_armour_enclave1 = 1 }
 				if = {
@@ -1904,18 +2386,19 @@ focus_tree = {
 							has_completed_focus = new_enctech
 						}
 					}
-					
 					country_event = { id = nf_reno.3 }
-					
 				}
 			}
-			
-			load_oob = granitecompany
-			
+			custom_effect_tooltip = new_granite_tt
+			hidden_effect = {
+				load_oob = granitecompany
+			}
 			add_ideas = granitecompany
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_granite exited"
+			}
 		}
-
 	}
 	focus = {
 		id = new_american_pmc
@@ -1927,12 +2410,23 @@ focus_tree = {
 		y = 9
 		cost = 8.6
 		completion_reward = {
-			load_oob = enclavepmc
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_american_pmc entered"
+			}
+			custom_effect_tooltip = new_american_pmc_tt
+			hidden_effect = {
+				load_oob = enclavepmc
+			}
 			add_tech_bonus = {
 				name = land_doc_bonus
 				bonus = 0.5
 				uses = 1
 				category = land_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_american_pmc exited"
 			}
 		}
 	}
@@ -1946,7 +2440,15 @@ focus_tree = {
 		y = 10
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_oldworld entered"
+			}
 			add_ideas = guardiansnewworld
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_oldworld exited"
+			}
 		}
 	}
 	focus = {
@@ -1964,8 +2466,16 @@ focus_tree = {
 		y = 10
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_old_newworld entered"
+			}
 			VLT = {
 				country_event = { id = nf_reno.16 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_old_newworld exited"
 			}
 		}
 	}
@@ -1979,7 +2489,15 @@ focus_tree = {
 		y = 10
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_newworld entered"
+			}
 			add_ideas = tamenewworld
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_newworld exited"
+			}
 		}
 	}
 	focus = {
@@ -1992,17 +2510,28 @@ focus_tree = {
 		y = 11
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_bio_med entered"
+			}
 			create_field_marshal = {
 				name = "Arch Dornan"
 				desc = "Dornan_DESC"
 				picture = "Portrait_New_Reno_Arch_Dornan.dds"
 				skill = 6
-				attack_skill = 4
-				defense_skill = 3
-				planning_skill = 4
-				logistics_skill = 4
+				attack_skill = 5
+				defense_skill = 4
+				planning_skill = 5
+				logistics_skill = 5
 			}
-			load_oob = biomedenclave
+			custom_effect_tooltip = new_bio_med_tt
+			hidden_effect = {
+				load_oob = biomedenclave
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_bio_med exited"
+			}
 		}
 	}
 	focus = {
@@ -2015,68 +2544,12 @@ focus_tree = {
 		y = 11
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_sierra_depot entered"
+			}
 			614 = {
-			If = {
-			limit = {
-				free_building_slots = {
-					building = arms_factory
-					size > 0
-					include_locked = yes
-				}
-				OR = {
-					is_in_home_area = yes
-					NOT = {
-						owner = {
-							any_owned_state = {
-								free_building_slots = {
-									building = arms_factory
-									size > 0
-									include_locked = yes
-									}
-								is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}	
-			add_extra_state_shared_building_slots = 3
-			add_building_construction = {
-				type = arms_factory
-				level = 3
-				instant_build = yes
-				}	
-			}
-		}
-	 }
-	}
-	focus = {
-		id = new_vertibird
-		icon = GFX_goal_bos_vertibird_schematics
-		prerequisite = {
-			focus = new_newworld
-		}
-		x = 9
-		y = 11
-		cost = 8.6
-		completion_reward = {
-			set_technology = {
-				vertiberd_gunship = 1
-				vertiberd_transport1 = 1
-			}
-		}
-	}
-	focus = {
-		id = new_newcapitol
-		icon = GFX_goal_NEW_new_capital
-		prerequisite = {
-			focus = new_newworld
-		}
-		x = 11
-		y = 11
-		cost = 8.6
-		completion_reward = {
-			285 = {
-				If = {
+				if = {
 					limit = {
 						free_building_slots = {
 							building = arms_factory
@@ -2104,9 +2577,85 @@ focus_tree = {
 						type = arms_factory
 						level = 3
 						instant_build = yes
-					}	
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_sierra_depot exited"
+			}
+		}
+	}
+	focus = {
+		id = new_vertibird
+		icon = GFX_goal_bos_vertibird_schematics
+		prerequisite = {
+			focus = new_newworld
+		}
+		x = 9
+		y = 11
+		cost = 8.6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_vertibird entered"
+			}
+			set_technology = {
+				vertiberd_gunship = 1
+				vertiberd_transport1 = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_vertibird exited"
+			}
+		}
+	}
+	focus = {
+		id = new_newcapitol
+		icon = GFX_goal_NEW_new_capital
+		prerequisite = {
+			focus = new_newworld
+		}
+		x = 11
+		y = 11
+		cost = 8.6
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_newcapitol entered"
+			}
+			285 = {
+				if = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+										is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 3
 					add_building_construction = {
-						type = bunker 
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
 						level = 2
 						province = {
 							all_provinces = yes
@@ -2116,7 +2665,11 @@ focus_tree = {
 					}
 				}
 			}
-		}	
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_newcapitol exited"
+			}
+		}
 	}
 	focus = {
 		id = new_reclaimnevada
@@ -2137,6 +2690,10 @@ focus_tree = {
 		y = 12
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_reclaimnevada entered"
+			}
 			add_state_core = 426
 			add_state_core = 126
 			add_state_core = 580
@@ -2218,6 +2775,10 @@ focus_tree = {
 			add_state_core = 77
 			add_state_core = 620
 			add_state_core = 173
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_reclaimnevada exited"
+			}
 		}
 	}
 	focus = {
@@ -2230,9 +2791,17 @@ focus_tree = {
 		y = 9
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_thradd_army entered"
+			}
 			add_ideas = mastersnewarmy
 			hidden_effect = {
 				set_technology = { reno_mastersnewarmy = 1 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_thradd_army exited"
 			}
 		}
 	}
@@ -2264,8 +2833,16 @@ focus_tree = {
 		y = 10
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_ode_to_rats entered"
+			}
 			VLT = {
 				country_event = { id = nf_reno.12 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_ode_to_rats exited"
 			}
 		}
 	}
@@ -2273,7 +2850,7 @@ focus_tree = {
 		id = new_rebuild_cult
 		icon = GFX_goal_NEW_rebuild_cult
 		available = {
-			
+
 		}
 		prerequisite = {
 			focus = new_thradd_army
@@ -2282,7 +2859,15 @@ focus_tree = {
 		y = 10
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_rebuild_cult entered"
+			}
 			country_event = { id = nf_reno.15 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_rebuild_cult exited"
+			}
 		}
 	}
 	focus = {
@@ -2305,8 +2890,16 @@ focus_tree = {
 		y = 10
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_stir_the_giants entered"
+			}
 			TRL = {
 				country_event = { id = nf_reno.9 }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_stir_the_giants exited"
 			}
 		}
 	}
@@ -2318,7 +2911,7 @@ focus_tree = {
 				OR = {
 					has_country_leader = { id = 913 }
 					is_puppet_of = NEW
-					}
+				}
 			}
 		}
 		prerequisite = {
@@ -2329,10 +2922,17 @@ focus_tree = {
 		y = 11
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_scheming_rats entered"
+			}
 			add_research_slot = 1
-			
 			VLT = {
 				add_manpower = 1500
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_scheming_rats exited"
 			}
 		}
 	}
@@ -2352,10 +2952,18 @@ focus_tree = {
 		y = 11
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_conquer_vault entered"
+			}
 			add_state_core = 261
 			add_state_core = 339
 			add_state_core = 336
 			add_state_core = 291
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_conquer_vault exited"
+			}
 		}
 	}
 	focus = {
@@ -2363,7 +2971,7 @@ focus_tree = {
 		icon = GFX_goal_NEW_enslave_warren
 		available = {
 			TRL = {
-				exists = no 
+				exists = no
 			}
 		}
 		prerequisite = {
@@ -2374,9 +2982,17 @@ focus_tree = {
 		y = 11
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_enslaving_warren entered"
+			}
 			add_state_core = 166
 			add_state_core = 437
 			add_state_core = 235
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_enslaving_warren exited"
+			}
 		}
 	}
 	focus = {
@@ -2385,10 +3001,10 @@ focus_tree = {
 		available = {
 			TRL = {
 				exists = yes
-						OR = {
-									is_in_faction_with = NEW
-									is_puppet_of = NEW
-					}
+				OR = {
+					is_in_faction_with = NEW
+					is_puppet_of = NEW
+				}
 			}
 		}
 		prerequisite = {
@@ -2399,81 +3015,89 @@ focus_tree = {
 		y = 11
 		cost = 8.6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_honorable_allies entered"
+			}
 			NEW = {
 				285 = {
-			If = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
+					if = {
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 0
+								include_locked = yes
+							}
+							OR = {
+								is_in_home_area = yes
+								NOT = {
+									owner = {
+										any_owned_state = {
+											free_building_slots = {
+												building = arms_factory
+												size > 0
+												include_locked = yes
+											}
+											is_in_home_area = yes
 										}
-									is_in_home_area = yes
 									}
 								}
 							}
 						}
-					}	
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-					}	
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+				TRL = {
+					235 = {
+						if = {
+							limit = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+								OR = {
+									is_in_home_area = yes
+									NOT = {
+										owner = {
+											any_owned_state = {
+												free_building_slots = {
+													building = arms_factory
+													size > 0
+													include_locked = yes
+												}
+												is_in_home_area = yes
+											}
+										}
+									}
+								}
+							}
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+								type = arms_factory
+								level = 2
+								instant_build = yes
+							}
+						}
+					}
 				}
 			}
-			TRL = {
-				235 = {
-			If = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-										}
-									is_in_home_area = yes
-									}
-								}
-							}
-						}
-					}	
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-					}	
-				}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_honorable_allies exited"
 			}
 		}
-	  }
-	} 
-  }
+	}
 	focus = {
 		id = new_for_master
 		icon = GFX_goal_NEW_for_the_master
 		available = {
-			
+
 		}
 		prerequisite = {
 			focus = new_scheming_rats
@@ -2487,9 +3111,16 @@ focus_tree = {
 		y = 12
 		cost = 8.6
 		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = NCR
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_for_master entered"
+			}
+			if = {
+				limit = { NCR = { exists = yes } }
+				create_wargoal = {
+					type = annex_everything
+					target = NCR
+				}
 			}
 			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
@@ -2506,6 +3137,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = NCR
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -2532,6 +3164,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = BOS
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -2539,7 +3172,10 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] new_for_master exited"
+			}
 		}
 	}
 }
-

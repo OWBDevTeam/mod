@@ -1,0 +1,40 @@
+defined_text = { # Country
+	name = RevoltMessage
+
+	text = { # Order a countrer-attack
+		trigger = {
+			NOT = { has_variable = revolt_progress }
+		}
+		localization_key = ncr_revolts_severity_1
+	}
+	text = {
+		trigger = {
+			check_variable = { revolt_progress = 1 }
+		}
+		localization_key = ncr_revolts_severity_2
+	}
+	text = {
+		trigger = {
+			check_variable = { revolt_progress = 2 }
+		}
+		localization_key = ncr_revolts_severity_3
+	}
+	text = {
+		trigger = {
+			check_variable = { revolt_progress = 3 }
+		}
+		localization_key = ncr_revolts_severity_4
+	}
+	text = {
+		trigger = {
+			check_variable = { revolt_progress = 4 }
+		}
+		localization_key = ncr_revolts_severity_5
+	}
+	text = {
+		trigger = {
+			check_variable = { revolt_progress = 5 }
+		}
+		localization_key = ncr_revolts_severity_5
+	}
+}

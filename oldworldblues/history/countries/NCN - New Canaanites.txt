@@ -2,22 +2,33 @@
 oob = "NCN_2275"
 
 set_technology = {
-    standard_weaponry_tech = 1
-    tribal_civilization = 1
+	standard_weaponry_tech = 1
+	blunt_weaponry = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	oral_instruction = 1
+	explosive_tech = 1
+	anti_personnel_tech = 1
+	support_weaponry = 1
+	bike_tech_1 = 1
+	destroyer_tech = 1
+	destroyer_tech_2 = 1
+	cruiser_tech = 1
+	naval_invasion_tech = 1
 }
 
 set_stability = 0.6
 set_war_support = 0.2
-
+set_convoys = 125
 set_politics = {
-    parties = {
-        people = { popularity = 100 }
-        elites = { popularity = 0 }
-        intellectuals = { popularity = 0 }
-        ruler = { popularity = 0 }
-    }
-    ruling_party = people
-    elections_allowed = yes
+	parties = {
+		people = { popularity = 100 }
+		elites = { popularity = 0 }
+		intellectuals = { popularity = 0 }
+		ruler = { popularity = 0 }
+	}
+	ruling_party = people
+	elections_allowed = no
 }
 
 add_ideas = {
@@ -28,11 +39,11 @@ create_faction = mormon_alliance
 add_to_faction = NCN
 
 create_country_leader  = {
-    name = "Jeremiah Rigdon"
-    desc = "Jeremiah_DESC"
-    picture = "Portrait_NCN_Leader.dds"
-    expire = "3000.1.1"
-    ideology = commune
-    traits = {
-    }
+	name = "Jeremiah Rigdon"
+	desc = "Jeremiah_DESC"
+	picture = "Portrait_NCN_Leader.dds"
+	expire = "3000.1.1"
+	ideology = commune
+	traits = {
+	}
 }

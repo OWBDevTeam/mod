@@ -11,6 +11,7 @@ ncn_conversion = {
 					tag = TAR
 					tag = SOR
 					tag = HGH
+					tag = DEA
 				}
 			}
 		}
@@ -43,7 +44,12 @@ ncn_conversion = {
 				limit = { FROM = { tag = HGH } }
 				has_completed_focus = lds_factions
 			}
+			if = {
+				limit = { FROM = { tag = DEA } }
+				has_completed_focus = lds_deadhorse2
+			}
 			NOT = { FROM = { is_puppet_of = NCN } }
+			FROM = { exists = yes }
 		}
 		available = {
 			NOT = {
@@ -86,6 +92,10 @@ ncn_conversion = {
 		}
 
 		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncn_slow_conversion (decision) remove entered"
+			}
 			FROM = {
 				random_owned_state = {
 					limit = {
@@ -104,6 +114,10 @@ ncn_conversion = {
 				}
 				#country_event = { id = }
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncn_slow_conversion (decision) remove exited"
+			}
 		}
 	}
 
@@ -118,6 +132,7 @@ ncn_conversion = {
 					tag = TAR
 					tag = SOR
 					tag = HGH
+					tag = DEA
 				}
 			}
 		}
@@ -150,13 +165,14 @@ ncn_conversion = {
 				limit = { FROM = { tag = HGH } }
 				has_completed_focus = lds_factions
 			}
+			if = {
+				limit = { FROM = { tag = DEA } }
+				has_completed_focus = lds_deadhorse2
+			}
 			NOT = { FROM = { is_puppet_of = NCN } }
+			FROM = { exists = yes }
 		}
 		available = {
-			NOT = {
-				FROM = { is_puppet = yes }
-				has_war_with = FROM
-			}
 			custom_trigger_tooltip = {
 				tooltip = ncn_converted_all_tt
 				FROM = {
@@ -168,10 +184,14 @@ ncn_conversion = {
 					}
 				}
 			}
+			NOT = {
+				FROM = { has_war = yes } # To prevent game crashing issues
+			}
 		}
 
 		days_remove = 20
 		cost = 20
+		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 100
@@ -179,16 +199,13 @@ ncn_conversion = {
 
 		remove_effect = {
 			if = {
-				limit = {
-					FROM = { is_ai = no }
-				}
-				FROM = { country_event = { id = nf_mormon.4 } }
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncn_bind_to_us (decision) remove entered"
 			}
+			FROM = { country_event = { id = nf_mormon.8 } }
 			if = {
-				limit = {
-					FROM = { is_ai = yes }
-				}
-				puppet = FROM
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ncn_bind_to_us (decision) remove exited"
 			}
 		}
 	}

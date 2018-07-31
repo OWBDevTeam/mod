@@ -2,52 +2,48 @@
 oob = "BEL_2275"
 
 set_technology = {
-    standard_weaponry_tech = 1
+	standard_weaponry_tech = 1
 	blunt_weaponry = 1
-    tribal_civilization = 1
-    settled_civilization = 1
-    raider_reckless_aggression = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	destroyer_tech = 1
+	destroyer_tech_2 = 1
+	cruiser_tech = 1
+	heavy_cruiser_tech = 1
 }
 
-set_stability = 0.6
-set_war_support = 0.2
-
+set_stability = 0.8
+set_war_support = 0.8
+set_convoys = 125
 set_politics = {
-    parties = {
-        people = { popularity = 100 }
-        elites = { popularity = 0 }
-        intellectuals = { popularity = 0 }
-        ruler = { popularity = 0 }
-    }
-    ruling_party = people
-    elections_allowed = yes
-}
-
-add_ideas = { 
-    
-    raider_nation
-    reckless_aggression
-    roaring_machines
+	parties = {
+		people = { popularity = 100 }
+		elites = { popularity = 0 }
+		intellectuals = { popularity = 0 }
+		ruler = { popularity = 0 }
+	}
+	ruling_party = people
+	elections_allowed = no
 }
 
 create_country_leader  = {
-    name = "Eddie"
-    desc = "Eddie_DESC"
-    picture = "Portrait_Eddie.dds"
-    expire = "3000.1.1"
-    ideology = militarist_oligarchy
-    traits = {
-    }
+	name = "Eddie"
+	desc = "Eddie_DESC"
+	picture = "Portrait_Eddie.dds"
+	expire = "3000.1.1"
+	ideology = militarist_oligarchy
+	traits = {
+	}
 }
 
 create_corps_commander = {
-    name = "Steve Bernau"
-    portrait_path = "gfx/leaders/Raider/Portrait_Raider_Generic_1.dds"
-    skill = 3
-    traits = {
-    }
-	attack_skill = 2
-	defense_skill = 3
-	planning_skill = 2
-	logistics_skill = 2
+	name = "Bernau the Blot"
+	portrait_path = "gfx/leaders/Raider/Portrait_Raider_Generic_1.dds"
+	skill = 6
+	traits = {
+	}
+	attack_skill = 5
+	defense_skill = 5
+	planning_skill = 5
+	logistics_skill = 4
 }

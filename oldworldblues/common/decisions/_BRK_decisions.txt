@@ -7,8 +7,19 @@ brk_decisions = {
 		available = { has_completed_focus = brk_nf_elites_pol_side_1 }
 		modifier = { civilian_factory_use = 5 }
 		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_decision_build_the_fleet (decision) remove entered"
+			}
 			set_technology = { cruiser_tech_2 = 1 }
-			load_oob = BRK_raiding_fleet
+			custom_effect_tooltip = BRK_raiding_fleet_tt
+			hidden_effect = {
+				load_oob = BRK_raiding_fleet
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_decision_build_the_fleet (decision) remove exited"
+			}
 		}
 	}
 
@@ -20,8 +31,19 @@ brk_decisions = {
 		available = { has_completed_focus = brk_nf_ruler_pol_side_1 }
 		modifier = { civilian_factory_use = 5 }
 		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_decision_build_graven_ship (decision) remove entered"
+			}
 			set_technology = { battleship_tech_2 = 1 }
-			load_oob = BRK_graven_boat
+			custom_effect_tooltip = BRK_graven_boat_tt
+			hidden_effect = {
+				load_oob = BRK_graven_boat
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_decision_build_graven_ship (decision) remove exited"
+			}
 		}
 	}
 }
@@ -51,7 +73,6 @@ brk_raiding_vic = {
 			}
 		}
 		visible = {
-			NOT = { has_country_flag = brk_vic_first_raid }
 			NOT = { has_country_flag = brk_vic_practice_raid }
 			HAI = { exists = yes } # The target exists - handy
 			NOT = { has_war_with = HAI } # We aren't at war with the target
@@ -67,37 +88,115 @@ brk_raiding_vic = {
 				is_subject_of = HAI # We aren't their subject
 			}
 			NOT = { has_non_aggression_pact_with = HAI }
-			brk_vic_raid_available = yes
+			has_completed_focus = brk_nf_grand_moot
 		}
 
 		days_remove = 40
 		days_re_enable = 60
 		cost = 50
+		war_with_on_remove = HAI
 		ai_will_do = {
 			factor = 10
 		}
 
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_practice_raid (decision) complete entered"
+			}
 			HAI = {
 				country_event = { id = nf_event_brk.21 hours = 1 } # The target gets an event warning them about their impending doom
 			}
 			set_country_flag = brk_vic_raid_underway
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_practice_raid (decision) complete exited"
+			}
 		}
 
 		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_practice_raid (decision) remove entered"
+			}
 			clr_country_flag = brk_vic_raid_underway
-			random_list = {
-				80 = {
-					set_country_flag = brk_vic_practice_raid
-					custom_effect_tooltip = brk_vic_success_tt
+			if = {
+				limit = { check_variable = { hai_raid_tries = 2 } } # Auto-success on the 3rd attempt
+				effect_tooltip = {
+					random_list = {
+						80 = {
+							set_country_flag = brk_vic_practice_raid
+							custom_effect_tooltip = brk_vic_success_tt
+							country_event = { id = nf_event_brk.22 }
+							HAI = { country_event = { id = nf_event_brk.23 } }
+						}
+						20 = {
+							custom_effect_tooltip = brk_vic_failure_tt
+							country_event = { id = nf_event_brk.24 }
+							HAI = { country_event = { id = nf_event_brk.25 } }
+						}
+					}
+				}
+				hidden_effect = {
 					country_event = { id = nf_event_brk.22 }
 					HAI = { country_event = { id = nf_event_brk.23 } }
 				}
-				20 = {
-					custom_effect_tooltip = brk_vic_failure_tt
-					country_event = { id = nf_event_brk.24 }
-					HAI = { country_event = { id = nf_event_brk.25 } }
+			}
+			else_if = {
+				limit = { check_variable = { hai_raid_tries = 1 } }
+				effect_tooltip = {
+					random_list = {
+						80 = {
+							set_country_flag = brk_vic_practice_raid
+							custom_effect_tooltip = brk_vic_success_tt
+							country_event = { id = nf_event_brk.22 }
+							HAI = { country_event = { id = nf_event_brk.23 } }
+						}
+						20 = {
+							custom_effect_tooltip = brk_vic_failure_tt
+							country_event = { id = nf_event_brk.24 }
+							HAI = { country_event = { id = nf_event_brk.25 } }
+						}
+					}
 				}
+				hidden_effect = {
+					random_list = {
+						90 = {
+							set_country_flag = brk_vic_practice_raid
+							custom_effect_tooltip = brk_vic_success_tt
+							country_event = { id = nf_event_brk.22 }
+							HAI = { country_event = { id = nf_event_brk.23 } }
+						}
+						10 = {
+							custom_effect_tooltip = brk_vic_failure_tt
+							country_event = { id = nf_event_brk.24 }
+							HAI = { country_event = { id = nf_event_brk.25 } }
+						}
+					}
+					add_to_variable = { hai_raid_tries = 1 }
+				}
+			}
+			else = {
+				random_list = {
+					80 = {
+						set_country_flag = brk_vic_practice_raid
+						custom_effect_tooltip = brk_vic_success_tt
+						country_event = { id = nf_event_brk.22 }
+						HAI = { country_event = { id = nf_event_brk.23 } }
+					}
+					20 = {
+						custom_effect_tooltip = brk_vic_failure_tt
+						country_event = { id = nf_event_brk.24 }
+						HAI = { country_event = { id = nf_event_brk.25 } }
+					}
+				}
+				hidden_effect = {
+					set_variable = { hai_raid_tries = 1 }
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_practice_raid (decision) remove exited"
 			}
 		}
 	}
@@ -125,24 +224,97 @@ brk_raiding_vic = {
 		}
 
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_raid_the_coasts (decision) complete entered"
+			}
 			set_country_flag = brk_vic_raid_underway
 			VIC = { country_event = { id = nf_event_brk.26 } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_raid_the_coasts (decision) complete exited"
+			}
 		}
 		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_raid_the_coasts (decision) remove entered"
+			}
 			clr_country_flag = brk_vic_raid_underway
 			if = {
 				limit = { has_country_flag = brk_vic_practice_raid }
-				random_list = {
-					80 = {
-						set_country_flag = brk_vic_first_raid
-						custom_effect_tooltip = brk_vic_success_tt
+				if = {
+					limit = { check_variable = { coasts_raid_tries = 2 } } # Auto-succeeds on the 3rd attempt
+					effect_tooltip = {
+						random_list = {
+							80 = {
+								set_country_flag = brk_vic_first_raid
+								custom_effect_tooltip = brk_vic_success_tt
+								country_event = { id = nf_event_brk.27 } # Next Decsion activation handeled in this event
+								VIC = { country_event = { id = nf_event_brk.23 } } # Intentionally the same event as practice raid
+							}
+							20 = {
+								custom_effect_tooltip = brk_vic_failure_tt
+								country_event = { id = nf_event_brk.28 }
+								VIC = { country_event = { id = nf_event_brk.25 } } # Intentionally the same event as practice raid
+							}
+						}
+					}
+					hidden_effect = {
 						country_event = { id = nf_event_brk.27 } # Next Decsion activation handeled in this event
 						VIC = { country_event = { id = nf_event_brk.23 } } # Intentionally the same event as practice raid
 					}
-					20 = {
-						custom_effect_tooltip = brk_vic_failure_tt
-						country_event = { id = nf_event_brk.28 }
-						VIC = { country_event = { id = nf_event_brk.25 } } # Intentionally the same event as practice raid
+				}
+				else_if = {
+					limit = { check_variable = { coasts_raid_tries = 1 } }
+					effect_tooltip = {
+						random_list = {
+							80 = {
+								set_country_flag = brk_vic_first_raid
+								custom_effect_tooltip = brk_vic_success_tt
+								country_event = { id = nf_event_brk.27 } # Next Decsion activation handeled in this event
+								VIC = { country_event = { id = nf_event_brk.23 } } # Intentionally the same event as practice raid
+							}
+							20 = {
+								custom_effect_tooltip = brk_vic_failure_tt
+								country_event = { id = nf_event_brk.28 }
+								VIC = { country_event = { id = nf_event_brk.25 } } # Intentionally the same event as practice raid
+							}
+						}
+					}
+					hidden_effect = {
+						random_list = {
+							90 = {
+								set_country_flag = brk_vic_first_raid
+								custom_effect_tooltip = brk_vic_success_tt
+								country_event = { id = nf_event_brk.27 } # Next Decsion activation handeled in this event
+								VIC = { country_event = { id = nf_event_brk.23 } } # Intentionally the same event as practice raid
+							}
+							10 = {
+								custom_effect_tooltip = brk_vic_failure_tt
+								country_event = { id = nf_event_brk.28 }
+								VIC = { country_event = { id = nf_event_brk.25 } } # Intentionally the same event as practice raid
+							}
+						}
+						add_to_variable = { coasts_raid_tries = 1 }
+					}
+				}
+				else = {
+					random_list = {
+						80 = {
+							set_country_flag = brk_vic_first_raid
+							custom_effect_tooltip = brk_vic_success_tt
+							country_event = { id = nf_event_brk.27 } # Next Decsion activation handeled in this event
+							VIC = { country_event = { id = nf_event_brk.23 } } # Intentionally the same event as practice raid
+						}
+						20 = {
+							custom_effect_tooltip = brk_vic_failure_tt
+							country_event = { id = nf_event_brk.28 }
+							VIC = { country_event = { id = nf_event_brk.25 } } # Intentionally the same event as practice raid
+						}
+					}
+					hidden_effect = {
+						set_variable = { coasts_raid_tries = 1 }
 					}
 				}
 			}
@@ -164,6 +336,10 @@ brk_raiding_vic = {
 					}
 				}
 				custom_effect_tooltip = brk_vic_improve_odd_tt
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_raid_the_coasts (decision) remove exited"
 			}
 		}
 	}
@@ -195,24 +371,131 @@ brk_raiding_vic = {
 		}
 
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_raid_the_ports (decision) complete entered"
+			}
 			set_country_flag = brk_vic_raid_underway
 			VIC = { country_event = { id = nf_event_brk.29 } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_raid_the_ports (decision) complete exited"
+			}
 		}
 		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_raid_the_ports (decision) remove entered"
+			}
 			clr_country_flag = brk_vic_raid_underway
 			if = {
 				limit = { has_country_flag = brk_vic_practice_raid }
-				random_list = {
-					70 = {
-						set_country_flag = brk_vic_port_raid
-						custom_effect_tooltip = brk_vic_success_tt
-						country_event = { id = nf_event_brk.30 } # Next Decsion activation handeled in this event
-						VIC = { country_event = { id = nf_event_brk.31 } } # Intentionally the same event as practice raid
+				if = {
+					limit = { check_variable = { ports_raid_tries = 3 } } # Auto-succeeds on the 4th attempt
+					effect_tooltip = {
+						random_list = {
+							70 = {
+								set_country_flag = brk_vic_port_raid
+								custom_effect_tooltip = brk_vic_success_tt
+								country_event = { id = nf_event_brk.30 } # Next Decsion activation handeled in this event
+								VIC = { country_event = { id = nf_event_brk.31 } } # Intentionally the same event as practice raid
+							}
+							30 = {
+								custom_effect_tooltip = brk_vic_failure_tt
+								country_event = { id = nf_event_brk.32 }
+								VIC = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
+							}
+						}
 					}
-					30 = {
-						custom_effect_tooltip = brk_vic_failure_tt
-						country_event = { id = nf_event_brk.32 }
-						VIC = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
+					hidden_effect = {
+						country_event = { id = nf_event_brk.30 } # Next Decsion activation handeled in this event
+						VIC = { country_event = { id = nf_event_brk.31} } # Intentionally the same event as practice raid
+					}
+				}
+				else_if = {
+					limit = { check_variable = { ports_raid_tries = 2 } }
+					effect_tooltip = {
+						random_list = {
+							70 = {
+								set_country_flag = brk_vic_port_raid
+								custom_effect_tooltip = brk_vic_success_tt
+								country_event = { id = nf_event_brk.30 } # Next Decsion activation handeled in this event
+								VIC = { country_event = { id = nf_event_brk.31 } } # Intentionally the same event as practice raid
+							}
+							30 = {
+								custom_effect_tooltip = brk_vic_failure_tt
+								country_event = { id = nf_event_brk.32 }
+								VIC = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
+							}
+						}
+					}
+					hidden_effect = {
+						random_list = {
+							90 = {
+								set_country_flag = brk_vic_port_raid
+								custom_effect_tooltip = brk_vic_success_tt
+								country_event = { id = nf_event_brk.30 } # Next Decsion activation handeled in this event
+								VIC = { country_event = { id = nf_event_brk.31 } } # Intentionally the same event as practice raid
+							}
+							10 = {
+								custom_effect_tooltip = brk_vic_failure_tt
+								country_event = { id = nf_event_brk.32 }
+								VIC = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
+							}
+						}
+						add_to_variable = { ports_raid_tries = 1 }
+					}
+				}
+				else_if = {
+					limit = { check_variable = { ports_raid_tries = 1 } }
+					effect_tooltip = {
+						random_list = {
+							70 = {
+								set_country_flag = brk_vic_port_raid
+								custom_effect_tooltip = brk_vic_success_tt
+								country_event = { id = nf_event_brk.30 } # Next Decsion activation handeled in this event
+								VIC = { country_event = { id = nf_event_brk.31 } } # Intentionally the same event as practice raid
+							}
+							30 = {
+								custom_effect_tooltip = brk_vic_failure_tt
+								country_event = { id = nf_event_brk.32 }
+								VIC = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
+							}
+						}
+					}
+					hidden_effect = {
+						random_list = {
+							80 = {
+								set_country_flag = brk_vic_port_raid
+								custom_effect_tooltip = brk_vic_success_tt
+								country_event = { id = nf_event_brk.30 } # Next Decsion activation handeled in this event
+								VIC = { country_event = { id = nf_event_brk.31 } } # Intentionally the same event as practice raid
+							}
+							20 = {
+								custom_effect_tooltip = brk_vic_failure_tt
+								country_event = { id = nf_event_brk.32 }
+								VIC = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
+							}
+						}
+						add_to_variable = { ports_raid_tries = 1 }
+					}
+				}
+				else = {
+					random_list = {
+						70 = {
+							set_country_flag = brk_vic_port_raid
+							custom_effect_tooltip = brk_vic_success_tt
+							country_event = { id = nf_event_brk.30 } # Next Decsion activation handeled in this event
+							VIC = { country_event = { id = nf_event_brk.31 } } # Intentionally the same event as practice raid
+						}
+						30 = {
+							custom_effect_tooltip = brk_vic_failure_tt
+							country_event = { id = nf_event_brk.32 }
+							VIC = { country_event = { id = nf_event_brk.33 } } # Intentionally the same event as practice raid
+						}
+					}
+					hidden_effect = {
+						set_variable = { ports_raid_tries = 1 }
 					}
 				}
 			}
@@ -234,6 +517,10 @@ brk_raiding_vic = {
 					}
 				}
 				custom_effect_tooltip = brk_vic_improve_odd_tt
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_raid_the_ports (decision) remove exited"
 			}
 		}
 
@@ -271,8 +558,16 @@ brk_raiding_vic = {
 		}
 
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_seize_winter_harbour (decision) complete entered"
+			}
 			country_event = { id = nf_event_brk.34 }
 			add_state_claim = 461
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName]brk_vic_seize_winter_harbour (decision) complete exited"
+			}
 		}
 
 		modifier = {
@@ -285,6 +580,10 @@ brk_raiding_vic = {
 		}
 
 		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_seize_winter_harbour (decision) remove entered"
+			}
 			set_country_flag = brk_vic_harbour_seized
 			if = { # Plan 1 - War Plan
 				limit = {
@@ -320,6 +619,10 @@ brk_raiding_vic = {
 				}
 				custom_effect_tooltip = brk_vic_choose_plan_tt
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_seize_winter_harbour (decision) remove exited"
+			}
 		}
 	}
 
@@ -354,9 +657,17 @@ brk_raiding_vic = {
 		}
 
 		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_wartime (decision) remove entered"
+			}
 			declare_war_on = { target = VIC type = annex_everything }
 			add_war_support = 0.05
 			VIC = { country_event = { id = nf_event_brk.39 } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_wartime (decision) remove exited"
+			}
 		}
 	}
 
@@ -393,6 +704,10 @@ brk_raiding_vic = {
 		}
 
 		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_terror (decision) remove entered"
+			}
 			add_state_core = 461
 			461 = {
 				add_manpower = -574
@@ -420,6 +735,10 @@ brk_raiding_vic = {
 			add_state_core = 738
 			738 = {
 				add_manpower = -560
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_vic_terror (decision) remove exited"
 			}
 		}
 	}
@@ -460,8 +779,8 @@ brk_raiding = {
 			}
 			NOT = { has_non_aggression_pact_with = FROM }
 			custom_trigger_tooltip = {
-				tooltip = BRK_prelim_raid
-				NOT = { has_country_flag = BRK_prelim_raid }
+				tooltip = BRK_setting_up_raid
+				NOT = { has_global_flag = BRK_current_generic_raid }
 			}
 		}
 
@@ -523,6 +842,10 @@ brk_raiding = {
 				factor = 0
 				has_war = yes
 			}
+			modifier = {
+				factor = 0
+				has_political_power < 151
+			}
 		}
 
 		cost = 50 # Cost
@@ -535,7 +858,12 @@ brk_raiding = {
 		war_with_target_on_remove = yes
 
 		complete_effect = { # Effect WHEN CLICKED
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_raid_borders_initial_raid (decision) complete entered"
+			}
 			hidden_effect = { # is hidden. shh - I'm not here.
+				set_global_flag = BRK_current_generic_raid
 				random_state = {
 					limit = { # a random state that is owned by the target, doesn't have an active incident and is bordered by any state we have one division in and fully control:
 						is_owned_and_controlled_by = FROM
@@ -571,8 +899,16 @@ brk_raiding = {
 				country_event = { id = nf_event_brk.9 hours = 1 } # The target gets an event warning them about their impending doom
 				activate_targeted_decision = { target = ROOT decision = brk_light_border_raid_defender_warning }	# Activates a mission for them visualising how long the have to move their sorry troops to the border
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_raid_borders_initial_raid (decision) complete exited"
+			}
 		}
-		remove_effect = { # Effect ON TIMEOUT
+		remove_effect = { # Effect ON timeout
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_raid_borders_initial_raid (decision) remove entered"
+			}
 			hidden_effect = { # i'm hidden again. and losing my mind. help.
 				var:FROM.defender_state_vs_@ROOT = { # The defending state and attacking state are saved again as event targets, for some reason
 					save_event_target_as = defender_state
@@ -632,7 +968,10 @@ brk_raiding = {
 				country_event = { id = nf_event_brk.11 }
 				activate_targeted_decision = { target = FROM decision = brk_light_border_escalate } # Activates a decision for them to escalate the incident
 			}
-			clr_country_flag = BRK_prelim_raid
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_raid_borders_initial_raid (decision) remove exited"
+			}
 		}
 	}
 
@@ -662,6 +1001,10 @@ brk_raiding = {
 		is_good = no # Makes it red and atmospheric
 
 		timeout_effect = { # What happens on timeout
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_light_border_raid_defender_warning (decision) timeout entered"
+			}
 			custom_effect_tooltip = escalation_possible_tooltip_for_defender # It can escalate
 			custom_effect_tooltip = effects_if_border_conflict_is_lost # What happens if we lose?
 			effect_tooltip = { # This stuff would happen if we lost:
@@ -671,6 +1014,10 @@ brk_raiding = {
 			hidden_effect = {
 				remove_targeted_decision = { target = FROM decision = brk_light_border_raid_defender_warning } # Removes this mission
 				activate_targeted_decision = { target = FROM decision = brk_light_border_escalate_raid_defender_warning } # Adds a decision to warn the target we could start a border war at any time
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_light_border_raid_defender_warning (decision) timeout exited"
 			}
 		}
 	}
@@ -702,6 +1049,7 @@ brk_raiding = {
 		is_good = no
 
 		timeout_effect = { # Just tells the target that we (the attacker) can start the border war, and reminds them what will happen if they fail
+			# No logging here because this timeout does literally nothing
 			custom_effect_tooltip = from_cannot_escalate
 			custom_effect_tooltip = effects_if_border_conflict_is_lost
 			effect_tooltip = {
@@ -751,6 +1099,10 @@ brk_raiding = {
 		days_mission_timeout = @border_conflict_incident_forgotten_timer # Syncs up with how many days until the incident is forgotten
 
 		timeout_effect = { # IF WE LET THE MISSION GO (BACK DOWN)
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_light_border_escalate (decision) timeout entered"
+			}
 			custom_effect_tooltip = WTT_border_incident_delay_until_new_incident_120 # Some tooltip
 			hidden_effect = {
 				FROM = { remove_targeted_decision = { target = ROOT decision = brk_light_border_escalate_raid_defender_warning } } # Stops warning the target of an escalation
@@ -764,10 +1116,19 @@ brk_raiding = {
 					clear_variable = attacker_state_vs_@ROOT
 					clear_variable = defender_state_vs_@ROOT
 				}
+				clr_global_flag = BRK_current_generic_raid
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_light_border_escalate (decision) timeout exited"
 			}
 		}
 
 		complete_effect = { # IF WE CLICK IT
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_light_border_escalate (decision) complete entered"
+			}
 			start_border_war = { # A border war is started
 				change_state_after_war = no # that won't lead to the state being exchanged
 				attacker = { # Stuff for the attacker
@@ -781,7 +1142,7 @@ brk_raiding = {
 				defender = { # Stuff for the attacker
 					state = var:FROM.defender_state_vs_@ROOT
 					num_provinces = 4
-					on_win = nf_event_brk.14
+					on_win = nf_event_brk.15
 					on_lose = nf_event_brk.17
 					on_cancel = nf_event_brk.19
 				}
@@ -793,6 +1154,10 @@ brk_raiding = {
 			# The same then happens for us
 			activate_targeted_decision = { target = FROM decision = brk_escalate_conflict }
 			activate_targeted_decision = { target = FROM decision = WTT_border_conflict_time_until_cancelled }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_light_border_escalate (decision) complete exited"
+			}
 		}
 	}
 
@@ -833,6 +1198,10 @@ brk_raiding = {
 
 		timeout_effect = { # This bit makes us pack up and go home
 			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WTT_border_conflict_time_until_cancelled (decision) timeout entered"
+			}
+			if = {
 				limit = { is_border_conflict_defender_vs_FROM = yes }
 				cancel_border_war = {
 					defender = var:defender_state_vs_@FROM
@@ -847,6 +1216,10 @@ brk_raiding = {
 			}
 			hidden_effect = {
 				remove_targeted_decision = { target = FROM decision = brk_escalate_conflict } # Removes the decision for the target to escalate the conflict
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] WTT_border_conflict_time_until_cancelled (decision) timeout exited"
 			}
 		}
 	}
@@ -882,6 +1255,10 @@ brk_raiding = {
 
 		complete_effect = {
 			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict (decision) complete entered"
+			}
+			if = {
 				limit = { is_border_conflict_defender_vs_FROM = yes }
 				set_border_war_data = { # Updates the border war
 					attacker = var:ROOT.defender_state_vs_@FROM
@@ -913,6 +1290,10 @@ brk_raiding = {
 			}
 			custom_effect_tooltip = in_45_days # Tooltip
 			activate_targeted_decision = { target = FROM decision = brk_escalate_conflict_to_war } # Activates the escalate to war decision
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict (decision) complete exited"
+			}
 		}
 	}
 
@@ -952,6 +1333,10 @@ brk_raiding = {
 
 		complete_effect = { # When we select the decision
 			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict_to_war (decision) complete entered"
+			}
+			if = {
 				limit = { is_border_conflict_defender_vs_FROM = yes }
 				var:ROOT.defender_state_vs_@FROM = { save_event_target_as = their_state }
 				var:ROOT.attacker_state_vs_@FROM = { save_event_target_as = our_state }
@@ -966,9 +1351,17 @@ brk_raiding = {
 					remove_targeted_decision = { target = ROOT decision = brk_escalate_conflict_to_war } # Removes the option for them to escalate to war because we're doing it
 				}
 		 	}
+		 	if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict_to_war (decision) complete exited"
+			}
 		}
 
 		remove_effect = { # When the decision ends
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict_to_war (decision) remove entered"
+			}
 			cancel_border_war = { # The border war ends without firing cancel events
 				dont_fire_events = yes
 				defender = var:FROM.defender_state_vs_@ROOT
@@ -997,6 +1390,11 @@ brk_raiding = {
 					clear_variable = attacker_state_vs_@ROOT
 					clear_variable = defender_state_vs_@ROOT
 				}
+			}
+			hidden_effect = { BRK = { clr_global_flag = BRK_current_generic_raid } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_escalate_conflict_to_war (decision) remove exited"
 			}
 		}
 	}
@@ -1027,6 +1425,10 @@ brk_raiding = {
 		fire_only_once = yes #Reactivation handled in effect
 
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_back_out_of_conflict (decision) complete entered"
+			}
 			if = { # Finishes the border war, so the side who back down loses
 				limit = { is_border_conflict_defender_vs_FROM = yes }
 				finalize_border_war = {
@@ -1041,6 +1443,11 @@ brk_raiding = {
 					defender = FROM.attacker_state_vs_@ROOT
 					defender_win = yes
 				}
+			}
+			hidden_effect = { BRK = { clr_global_flag = BRK_current_generic_raid } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] brk_back_out_of_conflict (decision) complete exited"
 			}
 		}
 	}

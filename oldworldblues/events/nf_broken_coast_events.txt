@@ -4,22 +4,22 @@ country_event = {
 	id = nf_event_brk.1
 	title = nf_event_brk.1.t
 	desc = nf_event_brk.1.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_generic_nuclear_explosion
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_brk.1.a
 		add_ideas = brk_startup_natives
-		
+
 		ai_chance = {
 			base = 33
 		}
 	}
-    option = {
+	option = {
 		name = nf_event_brk.1.b
 		add_ideas = brk_startup_marines
-		
+
 		ai_chance = {
 			base = 33
 		}
@@ -27,7 +27,7 @@ country_event = {
 	option = {
 		name = nf_event_brk.1.c
 		add_ideas = brk_startup_sailors
-		
+
 		ai_chance = {
 			base = 33
 		}
@@ -38,31 +38,31 @@ country_event = {
 	id = nf_event_brk.2
 	title = nf_event_brk.2.t
 	desc = nf_event_brk.2.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_BRK_shipwreck
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_brk.2.a
 		add_ideas = brk_startup_fled
-		
+
 		ai_chance = {
 			base = 33
 		}
 	}
-    option = {
+	option = {
 		name = nf_event_brk.2.b
 		add_ideas = brk_startup_sheltered
-		
+
 		ai_chance = {
 			base = 33
 		}
 	}
-	
+
 	option = {
 		name = nf_event_brk.2.c
 		add_ideas = brk_startup_weathered
-		
+
 		ai_chance = {
 			base = 33
 		}
@@ -73,22 +73,22 @@ country_event = {
 	id = nf_event_brk.3
 	title = nf_event_brk.3.t
 	desc = nf_event_brk.3.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_BRK_graven
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_brk.3.a
 		add_ideas = brk_startup_slaves
-		
+
 		ai_chance = {
 			base = 50
 		}
 	}
-    option = {
+	option = {
 		name = nf_event_brk.3.b
 		add_ideas = brk_startup_riches
-		
+
 		ai_chance = {
 			base = 50
 		}
@@ -99,11 +99,11 @@ country_event = {
 	id = nf_event_brk.4
 	title = nf_event_brk.4.t
 	desc = nf_event_brk.4.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_BRK_raider2
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
-    option = {
+	option = {
 		name = nf_event_brk.4.a
 		WHI = {
 			add_opinion_modifier = {
@@ -111,7 +111,7 @@ country_event = {
 				modifier = brk_raid
 			}
 		}
-		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 200 producer = WHI } 
+		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 200 producer = WHI }
 		ai_chance = {
 			base = 100
 		}
@@ -124,10 +124,10 @@ country_event = {
 	id = nf_event_brk.5
 	title = nf_event_brk.5.t
 	desc = nf_event_brk.5.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_BRK_raider3
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_brk.5.a
 		WHI = { country_event = { id = nf_event_brk.50 } }
@@ -142,15 +142,15 @@ country_event = {
 	id = nf_event_brk.50
 	title = nf_event_brk.50.t
 	desc = nf_event_brk.50.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_BRK_raider3
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_brk.50.a
-		
-		BRK = { 
-			annex_country = { target = WHI } 
+
+		BRK = {
+			annex_country = { target = WHI }
 		}
 		ai_chance = {
 			base = 50
@@ -158,14 +158,14 @@ country_event = {
 	}
 	option = {
 		name = nf_event_brk.50.b
-		
+
 		BRK = {
 			create_wargoal = {
 				type = annex_everything
 				target = WHI
 			}
 		}
-		
+
 		ai_chance = {
 			base = 50
 		}
@@ -176,10 +176,10 @@ country_event = {
 	id = nf_event_brk.6
 	title = nf_event_brk.6.t
 	desc = nf_event_brk.6.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_BRK_raider1
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_brk.6.a
 		WHI = { country_event = { id = nf_event_brk.60 }}
@@ -193,15 +193,15 @@ country_event = {
 	id = nf_event_brk.60
 	title = nf_event_brk.60.t
 	desc = nf_event_brk.60.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_BRK_raider1
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_brk.60.a
-		
-		BRK = { 
-			annex_country = { target = WHI } 
+
+		BRK = {
+			annex_country = { target = WHI }
 		}
 		ai_chance = {
 			base = 80
@@ -209,14 +209,14 @@ country_event = {
 	}
 	option = {
 		name = nf_event_brk.60.b
-		
+
 		BRK = {
 			create_wargoal = {
 				type = annex_everything
 				target = WHI
 			}
 		}
-		
+
 		ai_chance = {
 			base = 20
 		}
@@ -228,10 +228,10 @@ country_event = {
 	id = nf_event_brk.7
 	title = nf_event_brk.7.t
 	desc = nf_event_brk.7.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_BRK_raider1
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_brk.7.a
 		KAM = {
@@ -240,7 +240,7 @@ country_event = {
 				modifier = brk_raid
 			}
 		}
-		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 200 producer = KAM } 
+		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 200 producer = KAM }
 		ai_chance = {
 			base = 100
 		}
@@ -251,10 +251,10 @@ country_event = {
 	id = nf_event_brk.8
 	title = nf_event_brk.8.t
 	desc = nf_event_brk.8.d
-	picture = GFX_event_NCR_settlers
+	picture = GFX_event_BRK_raider2
 
-    is_triggered_only = yes
-    
+	is_triggered_only = yes
+
 	option = {
 		name = nf_event_brk.8.a
 		KAM = { add_ideas = brk_terrorized }
@@ -266,11 +266,11 @@ country_event = {
 
 ## Raiding Events - By Happy ##
 
-country_event = { # Raid Underway!
+country_event = { # Raid Target - raid underway!
 	id = nf_event_brk.9
 	title = nf_event_brk.9.t
 	desc = nf_event_brk.9.d
-	#picture = 
+	picture = GFX_event_BRK_village_raid
 
 	is_triggered_only = yes
 
@@ -291,7 +291,6 @@ country_event = { # Raid Underway!
 			base = 4
 		}
 		FROM = { set_country_flag = raid_stood_up }
-		scavenge_equip_start = yes
 	}
 
 
@@ -304,42 +303,93 @@ country_event = { # Raid Underway!
 	}
 }
 
-country_event = { # No opposition from the locals
+country_event = { # BRK - no opposition from target
 	id = nf_event_brk.10
 	title = nf_event_brk.10.t
 	desc = nf_event_brk.10.d
-	#picture = 
+	picture = GFX_event_BRK_ship_shacks1
 
 	is_triggered_only = yes
 
+	immediate = {
+		save_event_target_as = our_country
+		FROM = { save_event_target_as = their_country }
+		hidden_effect = { BRK = { clr_global_flag = BRK_current_generic_raid } }
+	}
+
 	option = { # Take the spoils
-		custom_effect_tooltip = scav_following_are_sent_equip
-		scavenge_equip_end = yes
-		scavenge_man_end = yes
-		custom_effect_tooltip = scav_following_are_loot
-		resolve_equip_loot = yes
+		name = nf_event_brk.10.a
+		if = {
+			limit = { FROM = { has_tech = standard_weaponry_tech } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 100 }
+		}
+		if = {
+			limit = { FROM = { has_tech = blunt_weaponry } }
+			add_equipment_to_stockpile = { type = melee_equipment_1 amount = 100 }
+		}
+		if = {
+			limit = { FROM = { has_tech = basic_ballistic_weaponry } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 50 }
+		}
+		if = {
+			limit = { FROM = { has_tech = slashing_weaponry } }
+			add_equipment_to_stockpile = { type = melee_equipment_2 amount = 50 }
+		}
+		if = {
+			limit = {
+				FROM = { has_tech = support_weaponry }
+				has_tech = support_weaponry
+			}
+			add_equipment_to_stockpile = { type = support_equipment amount = 100 }
+		}
+		random_owned_state = {
+			limit = {
+				any_neighbor_state = {
+					is_owned_by = event_target:their_country
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			limit = {
+				any_neighbor_state = {
+					is_owned_by = event_target:their_country
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
 	}
 }
 
-country_event = { # They resist!
+country_event = { # BRK - opposition from target
 	id = nf_event_brk.11
 	title = nf_event_brk.11.t
 	desc = nf_event_brk.11.d
-	#picture =
+	picture = GFX_event_BRK_village_raid
 
 	is_triggered_only = yes
 
 	option = { # Throw our weight behind it
-		name = nf_event_brk.11
+		name = nf_event_brk.11.a
 		custom_effect_tooltip = brk_activate_escalation_decision
 	}
 }
 
-country_event = { # Raid finishes
+country_event = { # Raid Target - raid is over
 	id = nf_event_brk.12
 	title = nf_event_brk.12.t
 	desc = nf_event_brk.12.d
-	#picture = 
+	picture = GFX_event_BRK_village_raid
 
 	is_triggered_only = yes
 
@@ -357,10 +407,11 @@ country_event = { # Raid finishes
 	}
 }
 
-country_event = { # Escalation to war
+country_event = { # Either - escalation to war from border conflict
 	id = nf_event_brk.13
 	title = nf_event_brk.13.t
 	desc = nf_event_brk.13.d
+	picture = GFX_event_BRK_village_raid
 
 	is_triggered_only = yes
 
@@ -369,12 +420,11 @@ country_event = { # Escalation to war
 	}
 }
 
-country_event = { # ATTACKER wins
+country_event = { # BRK - we win border conflict
 	id = nf_event_brk.14
 	title = nf_event_brk.14.t
 	desc = nf_event_brk.14.d
-	
-	#picture = GFX_event_NCR_mojave_outpost
+	picture = GFX_event_BRK_cargo_ship_port
 
 	is_triggered_only = yes
 
@@ -384,20 +434,69 @@ country_event = { # ATTACKER wins
 		FROM.FROM = { save_event_target_as = their_country }
 		FROM.FROM.FROM = { save_event_target_as = their_state }
 		remove_targeted_decision = { target = event_target:their_country decision = border_conflict_time_until_cancelled }
+		hidden_effect = { BRK = { clr_global_flag = BRK_current_generic_raid } }
 	}
-	
+
 	option = { # Nice
 		name = nf_event_brk.14.a
-		add_political_power = 100
-	}	
+		add_political_power = 50
+		if = {
+			limit = { FROM.FROM = { has_tech = standard_weaponry_tech } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 100 }
+		}
+		if = {
+			limit = { FROM.FROM = { has_tech = blunt_weaponry } }
+			add_equipment_to_stockpile = { type = melee_equipment_1 amount = 100 }
+		}
+		if = {
+			limit = { FROM.FROM = { has_tech = basic_ballistic_weaponry } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 50 }
+		}
+		if = {
+			limit = { FROM.FROM = { has_tech = slashing_weaponry } }
+			add_equipment_to_stockpile = { type = melee_equipment_2 amount = 50 }
+		}
+		if = {
+			limit = {
+				FROM.FROM = { has_tech = support_weaponry }
+				has_tech = support_weaponry
+			}
+			add_equipment_to_stockpile = { type = support_equipment amount = 100 }
+		}
+		random_owned_state = {
+			limit = {
+				any_neighbor_state = {
+					is_owned_by = event_target:their_country
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			limit = {
+				any_neighbor_state = {
+					is_owned_by = event_target:their_country
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
 }
 
-country_event = { # DEFENDER wins
+country_event = { # Raid Target - we win border conflict
 	id = nf_event_brk.15
 	title = nf_event_brk.14.t
 	desc = nf_event_brk.15.d
-	
-	#picture = GFX_event_NCR_battle
+	picture = GFX_event_BRK_village_raid
 
 	is_triggered_only = yes
 
@@ -419,7 +518,7 @@ country_event = { # DEFENDER wins
 			remove_targeted_decision = { target = event_target:their_country decision = border_conflict_time_until_cancelled }
 		}
 	}
-	
+
 	#Same effect as attacker. Tooltip for their effects
 	option = {
 		name = nf_event_brk.15.a
@@ -428,7 +527,7 @@ country_event = { # DEFENDER wins
 		add_tech_bonus = {
 			name = defensive_border_conflict_won
 			category = land_doctrine
-			bonus = 0.5
+			bonus = 0.2
 		}
 		if = {
 			limit = { has_country_flag = show_effect_tooltips }
@@ -440,15 +539,14 @@ country_event = { # DEFENDER wins
 			}
 			clr_country_flag = show_effect_tooltips
 		}
-	}	
+	}
 }
 
-country_event = { # ATTACKER loses
+country_event = { # BRK - we lose border conflict
 	id = nf_event_brk.16
 	title = nf_event_brk.14.t
 	desc = nf_event_brk.16.d
-	
-	#picture = GFX_event_NCR_battle
+	picture = GFX_event_BRK_village_raid
 
 	is_triggered_only = yes
 
@@ -459,9 +557,10 @@ country_event = { # ATTACKER loses
 		FROM.FROM.FROM = { save_event_target_as = their_state }
 		set_country_flag = show_effect_tooltips
 		remove_targeted_decision = { target = event_target:their_country decision = border_conflict_time_until_cancelled }
+		hidden_effect = { BRK = { clr_global_flag = BRK_current_generic_raid } }
 	}
-	
-	#Same effect as defender. Tooltip for their effects	
+
+	#Same effect as defender. Tooltip for their effects
 	option = {
 		name = nf_event_brk.16.a
 		add_political_power = -150
@@ -475,21 +574,20 @@ country_event = { # ATTACKER loses
 					add_tech_bonus = {
 						name = defensive_border_conflict_won
 						category = land_doctrine
-						bonus = 0.5
+						bonus = 0.2
 					}
 				}
 			}
 			clr_country_flag = show_effect_tooltips
 		}
-	}	
+	}
 }
 
-country_event = { # DEFENDER loses
+country_event = { # Raid target - we lose border conflict
 	id = nf_event_brk.17
 	title = nf_event_brk.14.t
 	desc = nf_event_brk.17.d
-	
-	#picture = GFX_report_event_dead_soldiers
+	picture = GFX_event_BRK_raider3
 
 	is_triggered_only = yes
 
@@ -511,21 +609,20 @@ country_event = { # DEFENDER loses
 			remove_targeted_decision = { target = event_target:their_country decision = border_conflict_time_until_cancelled }
 		}
 	}
-	
+
 	#Same effect as attacker. Tooltip for their effects
 	option = {
 		name = nf_event_brk.17.a
 		add_political_power = -50
 		army_experience = 10
-	}	
+	}
 }
 
-country_event = { # ATTACKER cancels - event for ATTACKER
+country_event = { # BRK - we cancel the conflict
 	id = nf_event_brk.18
 	title = nf_event_brk.18.t
 	desc = nf_event_brk.18.d
-	
-	#picture = GFX_report_event_chinese_soldiers_mountain
+	picture = GFX_event_BRK_raider_port
 
 	is_triggered_only = yes
 
@@ -535,8 +632,9 @@ country_event = { # ATTACKER cancels - event for ATTACKER
 		FROM.FROM = { save_event_target_as = their_country }
 		FROM.FROM.FROM = { save_event_target_as = their_state }
 		set_country_flag = show_effect_tooltips
+		hidden_effect = { BRK = { clr_global_flag = BRK_current_generic_raid } }
 	}
-	
+
 	option = {
 		name = nf_event_brk.18.a
 		army_experience = 15
@@ -550,15 +648,14 @@ country_event = { # ATTACKER cancels - event for ATTACKER
 			}
 			clr_country_flag = show_effect_tooltips
 		}
-	}	
+	}
 }
 
-country_event = { # ATTACKER cancels - event for DEFENDER
+country_event = { # Raid Target - BRK cancels the conflict
 	id = nf_event_brk.19
 	title = nf_event_brk.19.t
 	desc = nf_event_brk.19.d
-	
-	#picture = GFX_report_event_chinese_soldiers_mountain
+	picture = GFX_event_BRK_raider_port
 
 	is_triggered_only = yes
 
@@ -579,7 +676,7 @@ country_event = { # ATTACKER cancels - event for DEFENDER
 			clear_variable = defender_state_vs_@FROM.FROM
 		}
 	}
-	
+
 	option = {
 		name = nf_event_brk.19.a
 		army_experience = 30
@@ -594,15 +691,14 @@ country_event = { # ATTACKER cancels - event for DEFENDER
 			clr_country_flag = show_effect_tooltips
 		}
 	}
-}	
+}
 
 
-country_event = { # Border Conflict Escalation
+country_event = { # Either - Border Conflict Escalation
 	id = nf_event_brk.20
 	title = nf_event_brk.20.t
 	desc = nf_event_brk.20.d
-	
-	#picture = GFX_report_event_chinese_soldiers_01
+	picture = GFX_event_BRK_raider_port
 
 	is_triggered_only = yes
 
@@ -613,10 +709,10 @@ country_event = { # Border Conflict Escalation
 		save_event_target_as = our_country
 		FROM = { save_event_target_as = their_country }
 	}
-	
+
 	option = {
 		name = nf_event_brk.20.a
-	}	
+	}
 }
 
 # BRK / VIC raiding events #
@@ -625,8 +721,7 @@ country_event = { # Event for HAI / (Practice) Raid Underway
 	id = nf_event_brk.21
 	title = nf_event_brk.21.t
 	desc = nf_event_brk.21.d
-
-	#picture = 
+	picture = GFX_event_BRK_raider4
 
 	is_triggered_only = yes
 
@@ -640,13 +735,18 @@ country_event = { # BRK / Raid Success
 	id = nf_event_brk.22
 	title = nf_event_brk.22.t
 	desc = nf_event_brk.22.d
+	picture = GFX_event_BRK_village_raid
 
 	is_triggered_only = yes
 
 	option = {
 		name = nf_event_brk.22.a
 		army_experience = 10
-		add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.2 uses = 1 category = land_doctrine }
+		create_wargoal = {
+			target = HAI
+			type = annex_everything
+		}
 	}
 }
 
@@ -654,6 +754,7 @@ country_event = { # HAI / Failed Defence
 	id = nf_event_brk.23
 	title = nf_event_brk.23.t
 	desc = nf_event_brk.23.d
+	picture = GFX_event_BRK_village_raid
 
 	is_triggered_only = yes
 
@@ -663,7 +764,15 @@ country_event = { # HAI / Failed Defence
 			decimate_half_all_industry = yes
 		}
 		army_experience = 5
-		add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.1 uses = 1 category = land_doctrine }
+		effect_tooltip = { # Shows a HAI player that BRK will gain a wargoal against them w/o generating one
+			BRK = {
+				create_wargoal = {
+					target = HAI
+					type = annex_everything
+				}
+			}
+		}
 	}
 }
 
@@ -671,13 +780,14 @@ country_event = { # BRK / Raid Failure
 	id = nf_event_brk.24
 	title = nf_event_brk.24.t
 	desc = nf_event_brk.24.d
+	picture = GFX_event_BRK_raider2
 
 	is_triggered_only = yes
 
 	option = {
 		name = nf_event_brk.24.a
 		army_experience = 5
-		add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.1 uses = 1 category = land_doctrine }
 		custom_effect_tooltip = brk_60_cooldown
 	}
 }
@@ -686,20 +796,22 @@ country_event = { # HAI / Defence Success
 	id = nf_event_brk.25
 	title = nf_event_brk.25.t
 	desc = nf_event_brk.25.d
+	picture = GFX_event_BRK_raider2
 
 	is_triggered_only = yes
 
 	option = {
 		name = nf_event_brk.25.a
 		army_experience = 10
-		add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.2 uses = 1 category = land_doctrine }
 	}
 }
 
 country_event = { # VIC / BRK raiding coasts
 	id = nf_event_brk.26
 	title = nf_event_brk.26.t
-	desc = nf_event_brk.26.d
+	desc = nf_event_brk.21.d
+	picture = GFX_event_BRK_ship_shacks2
 
 	is_triggered_only = yes
 
@@ -712,14 +824,15 @@ country_event = { # BRK / Raiding Success v VIC coast
 	id = nf_event_brk.27
 	title = nf_event_brk.27.t
 	desc = nf_event_brk.27.d
+	picture = GFX_event_BRK_cargo_ship_port
 
 	is_triggered_only = yes
 
 	option = {
 		name = nf_event_brk.27.a
 		army_experience = 10
-		add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
-		add_tech_bonus = { bonus = 0.25 uses = 1 category = naval_tech }
+		add_tech_bonus = { bonus = 0.2 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.2 uses = 1 category = naval_tech }
 	}
 }
 
@@ -727,6 +840,7 @@ country_event = { # BRK / Raiding Failure v VIC coast
 	id = nf_event_brk.28
 	title = nf_event_brk.28.t
 	desc = nf_event_brk.28.d
+	picture = GFX_event_BRK_ship_shacks3
 
 	is_triggered_only = yes
 
@@ -741,6 +855,7 @@ country_event = { # VIC / BRK raiding ports
 	id = nf_event_brk.29
 	title = nf_event_brk.29.t
 	desc = nf_event_brk.29.d
+	picture = GFX_event_BRK_raider_port
 
 	is_triggered_only = yes
 
@@ -753,13 +868,14 @@ country_event = { # BRK / Raid Success
 	id = nf_event_brk.30
 	title = nf_event_brk.30.t
 	desc = nf_event_brk.30.d
+	picture = GFX_event_BRK_cargo_ship_port
 
 	is_triggered_only = yes
 
 	option = {
 		name = nf_event_brk.30.a
 		army_experience = 10
-		add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.2 uses = 1 category = land_doctrine }
 	}
 }
 
@@ -767,6 +883,7 @@ country_event = { # VIC / Failed Defence
 	id = nf_event_brk.31
 	title = nf_event_brk.31.t
 	desc = nf_event_brk.31.d
+	picture = GFX_event_BRK_ship_shacks3
 
 	is_triggered_only = yes
 
@@ -776,7 +893,7 @@ country_event = { # VIC / Failed Defence
 			decimate_half_naval_industry = yes
 		}
 		army_experience = 5
-		add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.1 uses = 1 category = land_doctrine }
 	}
 }
 
@@ -784,13 +901,14 @@ country_event = { # BRK / Raid Failure
 	id = nf_event_brk.32
 	title = nf_event_brk.32.t
 	desc = nf_event_brk.32.d
+	picture = GFX_event_BRK_ship_shacks3
 
 	is_triggered_only = yes
 
 	option = {
 		name = nf_event_brk.32.a
 		army_experience = 5
-		add_tech_bonus = { bonus = 0.25 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.1 uses = 1 category = land_doctrine }
 		custom_effect_tooltip = brk_100_cooldown
 	}
 }
@@ -799,13 +917,14 @@ country_event = { # VIC / Defence Success
 	id = nf_event_brk.33
 	title = nf_event_brk.33.t
 	desc = nf_event_brk.33.d
+	picture = GFX_event_BRK_raider2
 
 	is_triggered_only = yes
 
 	option = {
 		name = nf_event_brk.33.a
 		army_experience = 10
-		add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+		add_tech_bonus = { bonus = 0.2 uses = 1 category = land_doctrine }
 	}
 }
 
@@ -813,6 +932,7 @@ country_event = { # BRK / Winter Harbour Plan selection
 	id = nf_event_brk.34
 	title = nf_event_brk.34.t
 	desc = nf_event_brk.34.d
+	picture = GFX_event_BRK_ship_shacks1
 
 	is_triggered_only = yes
 
@@ -842,6 +962,7 @@ country_event = { # VIC / Raiders seize Winter Harbour and war
 	id = nf_event_brk.35
 	title = nf_event_brk.35.t
 	desc = nf_event_brk.35.d
+	picture = GFX_event_BRK_ship_shacks3
 
 	is_triggered_only = yes
 
@@ -855,6 +976,7 @@ country_event = { # VIC / Raiders seize Winter Harbour (no war)
 	id = nf_event_brk.36
 	title = nf_event_brk.36.t
 	desc = nf_event_brk.36.d
+	picture = GFX_event_BRK_ship_shacks3
 
 	is_triggered_only = yes
 
@@ -876,6 +998,7 @@ country_event = { # VIC / Raiders raid Winter Harbour
 	id = nf_event_brk.37
 	title = nf_event_brk.37.t
 	desc = nf_event_brk.37.d
+	picture = GFX_event_BRK_ship_shacks2
 
 	is_triggered_only = yes
 
@@ -890,6 +1013,7 @@ country_event = { # BRK / Show of Strength
 	id = nf_event_brk.38
 	title = nf_event_brk.38.t
 	desc = nf_event_brk.38.d
+	picture = GFX_event_BRK_ship_shacks1
 
 	is_triggered_only = yes
 
@@ -904,6 +1028,7 @@ country_event = { # VIC / Raiders declare war
 	id = nf_event_brk.39
 	title = nf_event_brk.39.t
 	desc = nf_event_brk.39.d
+	picture = GFX_event_BRK_raider_port
 
 	is_triggered_only = yes
 
@@ -912,14 +1037,15 @@ country_event = { # VIC / Raiders declare war
 		add_ideas = brk_vic_patriotic_defence
 	}
 }
-country_event = {
+country_event = { # The Moot
 	id = nf_event_brk.40
 	title = nf_event_brk.40.t
 	desc = nf_event_brk.40.d
+	picture = GFX_event_BRK_ragnar
 
 	is_triggered_only = yes
 
-	option = { 
+	option = {
 		name = nf_event_brk.40.a
 
 		ai_chance = {
@@ -928,13 +1054,113 @@ country_event = {
 
 		set_country_flag = the_moot_graven
 	}
-	option = { 
+	option = {
 		name = nf_event_brk.40.b
 
 		ai_chance = {
 			factor = 0
 		}
-		
+
 		set_country_flag = the_moot_ragnar
+	}
+}
+
+country_event = { # The Unbroken Resistance Pact
+	id = nf_event_brk.41
+	title = nf_event_brk.41.t
+	desc = nf_event_brk.41.d
+	picture = GFX_event_BRK_snowmobile_troops
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = BRK_northern_pact_triggered
+		every_country = {
+			limit = {
+				is_BRK_revolt_effect_valid_country = yes
+			}
+			country_event = {
+				id = nf_event_brk.42
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = nf_event_brk.41.a
+		country_event = {
+			id = nf_event_brk.43
+			days = 10
+		}
+	}
+}
+country_event = { # The Unbroken Resistance Pact signing
+	id = nf_event_brk.42
+	title = nf_event_brk.42.t
+	desc = nf_event_brk.42.d
+	is_triggered_only = yes
+	picture = GFX_event_BRK_snowmobile_troops
+	option = {
+		name = nf_event_brk.42.a
+		ai_chance = {
+			factor = 100
+		}
+		add_ideas = brk_resistance_pact_signatory
+		custom_effect_tooltip = BRK_spawn_troops_resistance_signatory_tooltip
+	}
+	option = {
+		ai_chance = {
+			factor = 0
+		}
+		name = nf_event_brk.42.b
+
+	}
+}
+country_event = { # The Unbroken Resistance Pact signed (sent back to BRK)
+	id = nf_event_brk.43
+	title = nf_event_brk.43.t
+	desc = nf_event_brk.43.d
+	picture = GFX_event_BRK_wasteland_boat_militia
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] nf_event_brk.43 immediate entered"
+			}
+			every_country = {
+				limit = {
+					is_BRK_revolt_effect_valid_country = yes
+					has_idea = brk_resistance_pact_signatory
+					exists = yes
+				}
+				every_country = {
+					limit = {
+						is_BRK_revolt_effect_valid_country = yes
+						has_idea = brk_resistance_pact_signatory
+						NOT = { has_non_aggression_pact_with = PREV }
+						NOT = { tag = PREV }
+						exists = yes
+					}
+					diplomatic_relation = {
+						country = PREV
+						relation = non_aggression_pact
+						active = yes
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] nf_event_brk.43 immediate exited"
+			}
+		}
+	}
+	option = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_event_brk.43.a entered"
+		}
+		name = nf_event_brk.43.a
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_event_brk.43.a exited"
+		}
 	}
 }

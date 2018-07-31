@@ -14,7 +14,7 @@ resist_legion_imperialism = {
 						is_major = yes
 					}
 					NOT = {
-					country_exists = NCR # if the NCR doesn't exist majors will also intervene
+						country_exists = NCR # if the NCR doesn't exist majors will also intervene
 					}
 				}
 				has_war_with = CES
@@ -40,22 +40,22 @@ resist_legion_imperialism = {
 					}
 				}
 				any_neighbor_country = { # if they neighbour Caesar or his allies
-						OR = {
+					OR = {
+						tag = CES
+						any_allied_country = {
 							tag = CES
-							any_allied_country = {
-								tag = CES
-							}
 						}
 					}
 				}
 			}
 		}
+	}
 	abort = {
 		NOT = { country_exists = CES } # Caesar must exist
 		has_war = yes
 		is_subject = yes
 		NOT = { # if they no longer meet the conditions
-			AND = { 
+			AND = {
 				NOT = { # allies of Caesar will not antagonize them
 					any_allied_country = {
 						tag = CES
@@ -75,32 +75,32 @@ resist_legion_imperialism = {
 						}
 					}
 					any_neighbor_country = { # if they neighbour Caesar or his allies
-							OR = {
+						OR = {
+							tag = CES
+							any_allied_country = {
 								tag = CES
-								any_allied_country = {
-									tag = CES
-								}
 							}
 						}
 					}
 				}
 			}
 		}
-		ai_strategy = { # AI will hate Caesar's Legion
-			type = contain
-			id = "CES"
-			value = 100
-		}
-		ai_strategy = {
-			type = antagonize
-			id = "CES"
-			value = 100
-		}
-		ai_strategy = {
-			type = conquer
-			id = "CES"
-			value = 100
-		}
+	}
+	ai_strategy = { # AI will hate Caesar's Legion
+		type = contain
+		id = "CES"
+		value = 100
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "CES"
+		value = 100
+	}
+	ai_strategy = {
+		type = conquer
+		id = "CES"
+		value = 100
+	}
 }
 
 resist_NCR_imperialism = {
@@ -141,15 +141,15 @@ resist_NCR_imperialism = {
 					}
 				}
 				any_neighbor_country = { # if they neighbour the NCR or their allies
-						OR = {
+					OR = {
+						tag = NCR
+						any_allied_country = {
 							tag = NCR
-							any_allied_country = {
-								tag = NCR
-							}
 						}
 					}
 				}
 			}
+		}
 	}
 	abort = {
 		NOT = { country_exists = NCR } # NCR must exist
@@ -176,32 +176,32 @@ resist_NCR_imperialism = {
 						}
 					}
 					any_neighbor_country = { # if they neighbour the NCR or their allies
-							OR = {
+						OR = {
+							tag = NCR
+							any_allied_country = {
 								tag = NCR
-								any_allied_country = {
-									tag = NCR
-								}
 							}
 						}
 					}
 				}
 			}
 		}
-		ai_strategy = { # AI will hate the NCR
-			type = contain
-			id = "NCR"
-			value = 100
-		}
-		ai_strategy = { 
-			type = antagonize
-			id = "NCR"
-			value = 100
-		}
-		ai_strategy = {
-			type = conquer
-			id = "NCR"
-			value = 100
-		}
+	}
+	ai_strategy = { # AI will hate the NCR
+		type = contain
+		id = "NCR"
+		value = 100
+	}
+	ai_strategy = { 
+		type = antagonize
+		id = "NCR"
+		value = 100
+	}
+	ai_strategy = {
+		type = conquer
+		id = "NCR"
+		value = 100
+	}
 }
 
 washington_brotherhood_conquer_issaquah = {
@@ -210,9 +210,9 @@ washington_brotherhood_conquer_issaquah = {
 		country_exists = ISN
 		original_tag = WBH
 		WBH = {
-				has_war = no
-				is_subject = no
-			}
+			has_war = no
+			is_subject = no
+		}
 		ISN = {
 			is_subject = no
 		}
@@ -233,8 +233,159 @@ washington_brotherhood_conquer_issaquah = {
 		}
 	}
 	ai_strategy = {
-	type = conquer
-	id = "ISN"
-	value = 600
+		type = conquer
+		id = "ISN"
+		value = 600
+	}
+}
+
+mutants_are_icky = {
+	enable = {
+		NOT = { original_tag = TRL }
+		country_exists = TRL
+	}
+	abort = {
+		OR = {
+			AND = {
+				original_tag = NEW
+				NEW = {
+					has_country_leader = { id = 792 }
+				}
+			}
+			AND = {
+				original_tag = VLT
+				has_country_leader = {
+					id = 913
+					ruling_only = yes
+					name = "The Brain"
+				}
+			}
+			has_tech = super_mutant_civilization
+		}
+	}
+	ai_strategy = {
+		type = befriend
+		id = "TRL"
+		value = -600
+	}
+	ai_strategy = {
+		type = alliance
+		id = "TRL"
+		value = -600
+	}
+}
+
+brk_ruthless_raiders = {
+	enable = {
+		NOT = { original_tag = BRK }
+		country_exists = BRK
+	}
+	abort = {
+		OR = {
+			AND = {
+				original_tag = WHI
+				BRK = { has_completed_focus = brk_nf_woo_whistler }
+			}
+		}
+	}
+	ai_strategy = {
+		type = befriend
+		id = "BRK"
+		value = -600
+	}
+	ai_strategy = {
+		type = alliance
+		id = "BRK"
+		value = -600
+	}
+}
+
+hea_religious_nutjobs = {
+	enable = {
+		NOT = { original_tag = HEA }
+		country_exists = HEA
+	}
+	abort = {
+		OR = {
+			AND = {
+				original_tag = MUR
+				HEA = { has_completed_focus = hea_nf_embassy_murtaugh }
+			}
+			AND = {
+				original_tag = IRE
+				HEA = { has_completed_focus = hea_nf_embassy_ires }
+			}
+		}
+	}
+	ai_strategy = {
+		type = befriend
+		id = "HEA"
+		value = -600
+	}
+	ai_strategy = {
+		type = alliance
+		id = "HEA"
+		value = -600
+	}
+}
+
+ncn_religious_nutjobs = {
+	enable = {
+		NOT = { original_tag = NCN }
+		country_exists = NCN
+	}
+	abort = {
+		OR = {
+			AND = {
+				original_tag = CRZ
+				CRZ = { is_puppet_of = NCN }
+			}
+			AND = {
+				original_tag = TAR
+				TAR = { is_puppet_of = NCN }
+			}
+			AND = {
+				original_tag = SOR
+				SOR = { is_puppet_of = NCN }
+			}
+			AND = {
+				original_tag = DEA
+				DEA = { is_puppet_of = NCN }
+			}
+			AND = {
+				original_tag = LON
+				LON = { is_puppet_of = NCN }
+			}
+			AND = {
+				original_tag = IRE
+				IRE = { is_puppet_of = NCN }
+			}
+			AND = {
+				original_tag = MUR
+				MUR = { is_puppet_of = NCN }
+			}
+		}
+	}
+	ai_strategy = {
+		type = befriend
+		id = "NCN"
+		value = -600
+	}
+	ai_strategy = {
+		type = alliance
+		id = "NCN"
+		value = -600
+	}
+}
+
+no_guarantees_in_fallout = {
+	enable = {
+		always = yes
+	}
+	abort = {}
+	ai_strategy = {
+		type = pp_spend_priority
+		id = guarantee
+		value = -9999
 	}
 }

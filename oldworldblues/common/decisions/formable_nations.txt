@@ -34,6 +34,10 @@ formable_nations = {
 		}
 
 		complete_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_deseret (decision) complete entered"
+			}
 			set_cosmetic_tag = ncn_deseret
 			custom_effect_tooltip = form_deseret_cores_tt
 			every_state = { # Adds a core on every state in the Utah region
@@ -72,6 +76,10 @@ formable_nations = {
             		}
             	}
             }
+            if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] form_deseret (decision) complete exited"
+			}
 		}
 	}
 }

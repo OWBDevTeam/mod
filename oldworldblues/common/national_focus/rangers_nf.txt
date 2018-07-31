@@ -15,9 +15,16 @@ focus_tree = {
 		x = 10
 		y = 0
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_origins entered"
+			}
 			country_event = { id = nf_ranger.2 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_origins exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_prisons
@@ -29,9 +36,16 @@ focus_tree = {
 		x = 10
 		y = 1
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_prisons entered"
+			}
 			country_event = { id = nf_ranger.3 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_prisons exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_mojave
@@ -43,9 +57,16 @@ focus_tree = {
 		x = 10
 		y = 2
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_mojave entered"
+			}
 			country_event = { id = nf_ranger.4 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_mojave exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_jackals
@@ -74,11 +95,15 @@ focus_tree = {
 		x = 8
 		y = 3
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_jackals entered"
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = JAC		
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -93,6 +118,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = JAC
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -100,8 +126,11 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_jackals exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_canis
@@ -120,11 +149,18 @@ focus_tree = {
 		}
 		x = 7
 		y = 4
-		completion_reward = { 
-			custom_effect_tooltip = ranger_team_canis
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_canis entered"
+			}
+			custom_effect_tooltip = ranger_team_canis_tt
 			hidden_effect = { load_oob = rangers_elite }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_canis exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_kennel
@@ -141,18 +177,25 @@ focus_tree = {
 		x = 9
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_kennel entered"
+			}
 			every_owned_state = {
-                limit = {
-                    is_core_of = JAC
-                }
-                add_building_construction = {
+				limit = {
+					is_core_of = JAC
+				}
+				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
-            }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_kennel exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_vipers
@@ -181,11 +224,15 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_vipers entered"
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = VIP
 			}
-			            # create a wargoal and add cores on any nation who invades and annexes the original wargoal target
+			# create a wargoal and add cores on any nation who invades and annexes the original wargoal target
 			if = {
 				limit = {
 					any_state = {
@@ -200,6 +247,7 @@ focus_tree = {
 						any_owned_state = {
 							is_core_of = VIP
 						}
+						NOT = { tag = ROOT }
 					}
 					add_named_threat = { threat = 5 name = stole_cores }
 					ROOT = {
@@ -207,8 +255,11 @@ focus_tree = {
 					}
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_vipers exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_venom
@@ -228,18 +279,25 @@ focus_tree = {
 		x = 11
 		y = 4
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_venom entered"
+			}
 			every_owned_state = {
-                limit = {
-                    is_core_of = VIP
-                }
-                add_building_construction = {
+				limit = {
+					is_core_of = VIP
+				}
+				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
-            }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_venom exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_vipera
@@ -255,11 +313,18 @@ focus_tree = {
 		}
 		x = 13
 		y = 4
-		completion_reward = { 
-			custom_effect_tooltip = ranger_team_vipera
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_vipera entered"
+			}
+			custom_effect_tooltip = ranger_team_vipera_tt
 			hidden_effect = { load_oob = rangers_elite }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_vipera exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_vipercore
@@ -274,14 +339,21 @@ focus_tree = {
 		x = 12
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_vipercore entered"
+			}
 			every_state = {
-                limit = {
-                    is_core_of = VIP
-                }
-                add_core_of = DES
-            }
+				limit = {
+					is_core_of = VIP
+				}
+				add_core_of = DES
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_vipercore exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_conscription
@@ -293,9 +365,16 @@ focus_tree = {
 		x = 11
 		y = 6
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_conscription entered"
+			}
 			add_ideas = raiderconscripts
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_conscription exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_outpostviper
@@ -310,6 +389,10 @@ focus_tree = {
 			controls_state = 476
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_outpostviper entered"
+			}
 			476 = {
 				set_state_name = "Vipera Outpost" 
 				add_building_construction = {
@@ -324,8 +407,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_outpostviper exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_heel
@@ -340,14 +426,21 @@ focus_tree = {
 		x = 8
 		y = 5
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_heel entered"
+			}
 			every_state = {
-                limit = {
-                    is_core_of = JAC
-                }
-                add_core_of = DES
-            }
+				limit = {
+					is_core_of = JAC
+				}
+				add_core_of = DES
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_heel exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_outpostjackal
@@ -362,6 +455,10 @@ focus_tree = {
 			controls_state = 171
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_outpostjackal entered"
+			}
 			171 = {
 				set_state_name = "Canis Outpost" 
 				add_building_construction = {
@@ -376,8 +473,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_outpostjackal exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_yerington
@@ -392,21 +492,27 @@ focus_tree = {
 			controls_state = 161
 		}
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_yerington entered"
+			}
 			161 = {
 				set_state_name = "Yerington" 
 				add_resource = {
-                    type = water
-                    amount = 5
-                }
+					type = water
+					amount = 5
+				}
 				add_resource = {
 					type = fuel
 					amount = 5
 				}
 			}
 			add_manpower = 1500
-		
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_yerington exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_general
@@ -427,9 +533,16 @@ focus_tree = {
 		x = 10
 		y = 7
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_general entered"
+			}
 			country_event = { id = nf_ranger.1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_general exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_thrasher
@@ -445,9 +558,16 @@ focus_tree = {
 		x = 2
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_thrasher entered"
+			}
 			add_political_power = 120
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_thrasher exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_vargas
@@ -463,9 +583,16 @@ focus_tree = {
 		x = 10
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_vargas entered"
+			}
 			add_political_power = 120
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_vargas exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_razor
@@ -481,9 +608,16 @@ focus_tree = {
 		x = 18
 		y = 8
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_razor entered"
+			}
 			add_political_power = 120
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_razor exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_tread
@@ -495,9 +629,16 @@ focus_tree = {
 		x = 8
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_tread entered"
+			}
 			add_ideas = rangercores
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_tread exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_caravans
@@ -509,6 +650,10 @@ focus_tree = {
 		x = 10
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_caravans entered"
+			}
 			VEG = {
 				add_opinion_modifier = {
 					target = DES modifier = caravan_protection
@@ -524,6 +669,10 @@ focus_tree = {
 					target = DES modifier = caravan_protection
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_caravans exited"
+			}
 		}
 	}
 	focus = {
@@ -536,11 +685,19 @@ focus_tree = {
 		x = 12
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_planning entered"
+			}
 			add_tech_bonus = {
 				name = land_doc_bonus
 				bonus = 0.5
 				uses = 2
 				category = land_doctrine
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_planning exited"
 			}
 		}
 	}
@@ -554,7 +711,15 @@ focus_tree = {
 		x = 10
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_population entered"
+			}
 			add_manpower = 1500
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_population exited"
+			}
 		}
 	}
 	focus = {
@@ -570,6 +735,10 @@ focus_tree = {
 		x = 12
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_radio entered"
+			}
 			210 = {
 				add_building_construction = {
 					type = radar_station
@@ -577,8 +746,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_radio exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_veterans
@@ -590,9 +762,16 @@ focus_tree = {
 		x = 8
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_veterans entered"
+			}
 			army_experience = 30
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_veterans exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_pact
@@ -610,6 +789,10 @@ focus_tree = {
 		x = 10
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_pact entered"
+			}
 			if = {
 				limit = {
 					has_global_flag = nevadapact
@@ -636,7 +819,6 @@ focus_tree = {
 						}
 					}
 				}
-				
 				if = {
 					limit = {
 						VEG = {
@@ -658,10 +840,8 @@ focus_tree = {
 							value = 200
 						}
 					}
-				}
-				
-			}	
-			
+				}	
+			}
 			if = {
 				limit = {
 					NOT = { 
@@ -670,6 +850,10 @@ focus_tree = {
 				}
 				create_faction = nevada_pact
 				set_global_flag = nevadapact
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_pact exited"
 			}
 		}
 	}
@@ -683,9 +867,16 @@ focus_tree = {
 		x = 6
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_intervention entered"
+			}
 			add_ideas = rangerintervention
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_intervention exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_echobase
@@ -700,7 +891,10 @@ focus_tree = {
 			controls_state = 210
 		}
 		completion_reward = {
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_echobase entered"
+			}
 			210 = {
 				add_building_construction = {
 					type = air_base
@@ -708,12 +902,14 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			hidden_effect = {
 				load_oob = rangers_planes
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_echobase exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_funding
@@ -726,6 +922,10 @@ focus_tree = {
 		y = 12
 		
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_funding entered"
+			}
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -756,7 +956,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -787,6 +986,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_funding exited"
+			}
 		}
 	}
 	focus = {
@@ -799,9 +1002,16 @@ focus_tree = {
 		x = 14
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_recruitment entered"
+			}
 			add_ideas = nevadarecruitment
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_recruitment exited"
+			}
 		}
-		
 	}
 	focus = {
 		id = des_outriders
@@ -816,9 +1026,16 @@ focus_tree = {
 		x = 12
 		y = 12
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_outriders entered"
+			}
 			set_technology = { apc_tech_1 = 1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_outriders exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_knights
@@ -830,12 +1047,19 @@ focus_tree = {
 		x = 1
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_knights entered"
+			}
 			add_ideas = knighttactics
 			hidden_effect = {
 				set_technology = { ranger_knighttactics = 1 }
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_knights exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_database
@@ -847,11 +1071,19 @@ focus_tree = {
 		x = 3
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_database entered"
+			}
 			add_tech_bonus = {
 				name = infantry_weapons_bonus
 				bonus = 0.5
 				uses = 1
 				category = infantry_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_database exited"
 			}
 		}
 	}
@@ -865,9 +1097,16 @@ focus_tree = {
 		x = 1
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_workbench entered"
+			}
 			add_ideas = rangersworkbench
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_workbench exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_drills
@@ -879,9 +1118,16 @@ focus_tree = {
 		x = 3
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_drills entered"
+			}
 			army_experience = 40
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_drills exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_steel
@@ -896,16 +1142,24 @@ focus_tree = {
 		x = 2
 		y = 11
 		completion_reward = {
-		   DES = {
-			   set_cosmetic_tag = DES_BOS
-			   BOS = { add_to_faction = DES }
-			   add_opinion_modifier = { target = BOS modifier = steelrangers }
-		   }   
-		   BOS = {
-		       add_opinion_modifier = { target = DES modifier = steelrangers }
-		   }
-	   }
-	}   
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_steel entered"
+			}
+			DES = {
+				set_cosmetic_tag = DES_BOS
+				BOS = { add_to_faction = DES }
+				add_opinion_modifier = { target = BOS modifier = steelrangers }
+			}
+			BOS = {
+				add_opinion_modifier = { target = DES modifier = steelrangers }
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_steel exited"
+			}
+		}
+	}
 	focus = {
 		id = des_bosfunding
 		icon = GFX_goal_generic_national_unity
@@ -916,9 +1170,11 @@ focus_tree = {
 		x = 2
 		y = 12
 		completion_reward = {
-		
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_bosfunding entered"
+			}
 			add_ideas = bosfunding_tt 
-			
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -949,7 +1205,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -980,13 +1235,15 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			custom_effect_tooltip = bosfunding_tt
 			hidden_effect = {
 				set_technology = { bosfunding = 1 }
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_bosfunding exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_wastelandprotect
@@ -1001,11 +1258,18 @@ focus_tree = {
 		x = 2
 		y = 13
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_wastelandprotect entered"
+			}
 			set_technology = { advanced_laser_weaponry = 1 }
 			add_ideas = wastelandprotect
 			army_experience = 30
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_wastelandprotect exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_citadel
@@ -1021,7 +1285,10 @@ focus_tree = {
 			controls_state = 210
 		}
 		completion_reward = {
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_citadel entered"
+			}
 			210 = {
 				add_building_construction = {
 					type = air_base
@@ -1029,12 +1296,14 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			hidden_effect = {
 				load_oob = rangers_planes
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_citadel exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_giant
@@ -1052,12 +1321,19 @@ focus_tree = {
 		x = 4
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_giant entered"
+			}
 			add_ideas = slayinggiants
 			hidden_effect = {
 				set_technology = { ranger_slayinggiants = 1 }
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_giant exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_bear
@@ -1072,10 +1348,17 @@ focus_tree = {
 		x = 2
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_bear entered"
+			}
 			custom_effect_tooltip = rangerswidth_tt
-			hidden_effect = {set_technology = { rangerswidth = 1 }}
+			hidden_effect = { set_technology = { rangerswidth = 1 } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_bear exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_reorganize
@@ -1089,9 +1372,16 @@ focus_tree = {
 		x = 10
 		y = 13
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_reorganize entered"
+			}
 			add_political_power = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_reorganize exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_trader
@@ -1103,6 +1393,10 @@ focus_tree = {
 		x = 10
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_trader entered"
+			}
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -1133,6 +1427,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_trader exited"
+			}
 		}
 	}
 	focus = {
@@ -1145,9 +1443,16 @@ focus_tree = {
 		x = 12
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_quartermaster entered"
+			}
 			add_ideas = rangersquartermaster
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_quartermaster exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_mechanic
@@ -1159,9 +1464,16 @@ focus_tree = {
 		x = 14
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_mechanic entered"
+			}
 			add_ideas = rangersmechanic
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_mechanic exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_recruiter
@@ -1173,9 +1485,16 @@ focus_tree = {
 		x = 8
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_recruiter entered"
+			}
 			add_ideas = rangersrecruiter
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_recruiter exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_physician
@@ -1187,14 +1506,21 @@ focus_tree = {
 		x = 6
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_physician entered"
+			}
 			add_tech_bonus = {
 				name = chem_bonus
 				bonus = 0.5
 				uses = 2
 				category = chem_tech
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_physician exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_medic
@@ -1206,12 +1532,19 @@ focus_tree = {
 		x = 6
 		y = 15
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_medic entered"
+			}
 			custom_effect_tooltip = rangersmedic_tt
 			hidden_effect = {
 				set_technology = { rangersmedic = 1 }
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_medic exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_propaganda
@@ -1223,9 +1556,16 @@ focus_tree = {
 		x = 8
 		y = 15
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_propaganda entered"
+			}
 			add_ideas = rangerspropaganda
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_propaganda exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_outreach
@@ -1237,9 +1577,16 @@ focus_tree = {
 		x = 10
 		y = 15
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_outreach entered"
+			}
 			add_ideas = rangersoutreach
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_outreach exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_armouries
@@ -1251,6 +1598,10 @@ focus_tree = {
 		x = 12
 		y = 15
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_armouries entered"
+			}
 			add_ideas = rangersarmouries
 			random_owned_controlled_state = {
 				limit = {
@@ -1282,8 +1633,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_armouries exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_depot
@@ -1295,9 +1649,16 @@ focus_tree = {
 		x = 14
 		y = 15
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_depot entered"
+			}
 			add_ideas = rangerdepot
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_depot exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_attrition
@@ -1309,12 +1670,19 @@ focus_tree = {
 		x = 2
 		y = 15
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_attrition entered"
+			}
 			custom_effect_tooltip = rangersattrition_tt
 			hidden_effect = {
 				set_technology = { rangersattrition = 1 }
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_attrition exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_aviation
@@ -1326,9 +1694,16 @@ focus_tree = {
 		x = 0
 		y = 15
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_aviation entered"
+			}
 			add_ideas = rangersaviation
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_aviation exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_tall
@@ -1340,9 +1715,16 @@ focus_tree = {
 		x = 4
 		y = 15
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_tall entered"
+			}
 			add_ideas = standingtall
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_tall exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_boshonours
@@ -1356,7 +1738,15 @@ focus_tree = {
 		x = 2
 		y = 16
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_boshonours entered"
+			}
 			set_technology = { power_armour_t51b = 1 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_boshonours exited"
+			}
 		}
 	}
 	focus = {
@@ -1381,10 +1771,17 @@ focus_tree = {
 		x = 10
 		y = 16
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_reorganized entered"
+			}
 			add_ideas = reorganizedrangers
 			add_political_power = 100
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_reorganized exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_legionprep
@@ -1396,6 +1793,10 @@ focus_tree = {
 		x = 17
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_legionprep entered"
+			}
 			custom_effect_tooltip = legionprep_tt
 			hidden_effect = {
 				45 = {
@@ -1456,8 +1857,11 @@ focus_tree = {
 				}
 				set_technology = { legionprep = 1 }
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_legionprep exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_mechanized
@@ -1469,11 +1873,19 @@ focus_tree = {
 		x = 19
 		y = 9
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_mechanized entered"
+			}
 			add_tech_bonus = {
 				name = vehicle_bonus
 				bonus = 0.5
 				uses = 2
 				category = vehicle_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_mechanized exited"
 			}
 		}
 	}
@@ -1487,9 +1899,16 @@ focus_tree = {
 		x = 17
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_leadership entered"
+			}
 			army_experience = 40
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_leadership exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_californians
@@ -1501,9 +1920,16 @@ focus_tree = {
 		x = 19
 		y = 10
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_californians entered"
+			}
 			add_manpower = 2500
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_californians exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_treaty
@@ -1518,10 +1944,17 @@ focus_tree = {
 		x = 18
 		y = 11
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_treaty entered"
+			}
 			set_cosmetic_tag = DES_NCR
 			NCR = { add_to_faction = DES }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_treaty exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_ncrfunding
@@ -1533,9 +1966,11 @@ focus_tree = {
 		x = 18
 		y = 12
 		completion_reward = {
-		
-			add_ideas = ncrfunding 
-			
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_ncrfunding entered"
+			}
+			add_ideas = ncrfunding
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -1566,7 +2001,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -1597,8 +2031,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-		}	
-
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_ncrfunding exited"
+			}
+		}
 	}
 	focus = {
 		id = des_coop
@@ -1610,9 +2047,16 @@ focus_tree = {
 		x = 18
 		y = 13
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_coop entered"
+			}
 			army_experience = 30
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_coop exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_bunkers
@@ -1627,14 +2071,21 @@ focus_tree = {
 		x = 16
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_bunkers entered"
+			}
 			add_tech_bonus = {
 				name = explosives_bonus
 				bonus = 0.5
 				uses = 2
 				category = artillery
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_bunkers exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_jericho
@@ -1646,9 +2097,17 @@ focus_tree = {
 		x = 16
 		y = 15
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_jericho entered"
+			}
 			add_timed_idea = {
 				idea = opjericho
 				days = 100
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_jericho exited"
 			}
 		}
 	}
@@ -1665,12 +2124,19 @@ focus_tree = {
 		x = 18
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_greatwar entered"
+			}
 			add_ideas = rangerslegionwar
 			hidden_effect = {
 				set_technology = { ranger_rangerslegionwar = 1 }
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_greatwar exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_arizona
@@ -1682,10 +2148,17 @@ focus_tree = {
 		x = 18
 		y = 15
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_arizona entered"
+			}
 			add_state_core = 517
 			add_state_core = 146
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_arizona exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_threat
@@ -1703,12 +2176,19 @@ focus_tree = {
 		x = 20
 		y = 14
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_threat entered"
+			}
 			add_ideas = rangersnewthreat
 			hidden_effect = {
 				set_technology = { ranger_rangersnewthreat = 1 }
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_threat exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_march
@@ -1720,9 +2200,16 @@ focus_tree = {
 		x = 20
 		y = 15
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_march entered"
+			}
 			add_ideas = rangermarch
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_march exited"
+			}
 		}
-
 	}
 	focus = {
 		id = des_honours
@@ -1736,9 +2223,16 @@ focus_tree = {
 		x = 18
 		y = 16
 		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_honours entered"
+			}
 			army_experience = 40
 			add_ideas = ncrhonours
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] des_honours exited"
+			}
 		}
-
 	}
 }

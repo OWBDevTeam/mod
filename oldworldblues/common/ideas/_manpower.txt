@@ -11,6 +11,8 @@ ideas = {
 			
 			available = {
 				NOT = { has_manpower_for_recruit_change_to = { value = 0.005 group = mobilization_laws } }
+				NOT = { original_tag = MOJ }
+				NOT = { original_tag = BOS }
 			}
 
 			modifier = {
@@ -30,9 +32,11 @@ ideas = {
 				NOT = { has_manpower_for_recruit_change_to =  { value = 0.015 group = mobilization_laws } }
 				NOT = { has_idea = undisturbed_isolation }
 				NOT = { has_idea = isolation }
+				NOT = { original_tag = MOJ }
+				NOT = { original_tag = BOS }
 			}
 			ai_will_do = {
-   				factor = 1
+				factor = 1
 			}
 			modifier = {
 				conscription = 0.05
@@ -58,9 +62,8 @@ ideas = {
 						is_major = no
 						surrender_progress > 0.05
 				}
-				NOT = {
-				    original_tag = MOJ
-				}
+				NOT = { original_tag = MOJ}
+				NOT = { original_tag = BOS }
 			}
 
 			modifier = {
@@ -81,9 +84,8 @@ ideas = {
 					is_major = no
 					surrender_progress > 0.1
 				}
-				NOT = {
-				    original_tag = MOJ
-				}
+				NOT = { original_tag = MOJ }
+				NOT = { original_tag = BOS }
 			}
 			
 			cost = 150
@@ -97,7 +99,7 @@ ideas = {
 				training_time_factor = 0.1
 			}
 			ai_will_do = {
-   				factor = 1
+				factor = 1
 				modifier = {
 					#Prio if low on manpower
 					factor = 20
@@ -120,9 +122,8 @@ ideas = {
 					#	}
 					#}
 				}
-				NOT = {
-				    original_tag = MOJ
-				}
+				NOT = { original_tag = MOJ }
+				NOT = { original_tag = BOS }
 			}
 			
 			cost = 150
@@ -137,7 +138,7 @@ ideas = {
 				training_time_factor = 0.2
 			}
 			ai_will_do = {
-   				factor = 1
+				factor = 1
 				modifier = {
 					#Prio if low on manpower
 					factor = 20
@@ -158,9 +159,8 @@ ideas = {
 			available = {
 				has_war = yes
 				enemies_strength_ratio > 0.75
-				NOT = {
-				    original_tag = MOJ
-				}
+				NOT = { original_tag = MOJ }
+				NOT = { original_tag = BOS }
 			}
 		
 			cost = 150
@@ -176,7 +176,7 @@ ideas = {
 				training_time_factor = 0.3
 			}
 			ai_will_do = {
-   				factor = 1
+				factor = 1
 				modifier = {
 					#Prio if low on manpower
 					factor = 20
@@ -207,12 +207,11 @@ ideas = {
 						ratio > 1.25
 					}
 				}
-				NOT = {
-				    original_tag = MOJ
-				}
+				NOT = { original_tag = MOJ }
+				NOT = { original_tag = BOS }
 			}
 			ai_will_do = {
-   				factor = 1
+				factor = 1
 				modifier = {
 					#Prio if low on manpower
 					factor = 20

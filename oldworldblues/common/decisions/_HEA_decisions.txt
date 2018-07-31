@@ -3,6 +3,8 @@ hea_conversion = {
 	hea_slow_conversion = { # Converts provinces one by one
 		visible = {
 			has_completed_focus = hea_nf_forgive_sins
+			NOT = { FROM = { is_puppet_of = HEA } }
+			FROM = { exists = yes }
 		}
 		target_trigger = {
 			FROM = {
@@ -16,7 +18,7 @@ hea_conversion = {
 		}
 		available = {
 			NOT = {
-				FROM = { is_puppet_of = NCN }
+				FROM = { is_puppet_of = HEA }
 				has_war_with = FROM
 			}
 			NOT = {
@@ -59,6 +61,10 @@ hea_conversion = {
 		}
 
 		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_slow_conversion (decision) remove entered"
+			}
 			FROM = {
 				random_owned_state = {
 					limit = {
@@ -76,12 +82,17 @@ hea_conversion = {
 				}
 				#country_event = { id = }
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_slow_conversion (decision) remove exited"
+			}
 		}
 	}
 
 	hea_inquisition =  {
 		visible = {
 			has_completed_focus = hea_nf_vengance
+			NOT = { FROM = { is_puppet_of = HEA } }
 		}
 		target_trigger = {
 			FROM = {
@@ -95,7 +106,7 @@ hea_conversion = {
 		}
 		available = {
 			NOT = {
-				FROM = { is_puppet_of = NCN }
+				FROM = { is_puppet_of = HEA }
 				has_war_with = FROM
 			}
 			NOT = {
@@ -145,6 +156,10 @@ hea_conversion = {
 		}
 
 		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_inquisition (decision) remove entered"
+			}
 			FROM = {
 				random_owned_state = {
 					limit = {
@@ -162,6 +177,10 @@ hea_conversion = {
 				}
 				#country_event = { id = }
 			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_inquisition (decision) remove exited"
+			}
 		}
 	}
 
@@ -177,6 +196,7 @@ hea_conversion = {
 			FROM = {
 				OR = {
 					tag = PHA
+					tag = TOC
 					tag = LON
 					# To add extra targets just use tag = TAG here and in the convertion decision
 				}
@@ -195,20 +215,28 @@ hea_conversion = {
 				}
 			}
 			NOT = {
-				FROM = { is_puppet = yes }
-				has_war_with = FROM
+				FROM = { has_war = yes } # To prevent game crashing issues
 			}
 		}
 
 		days_remove = 50
 		cost = 60
+		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 5
 		}
 
 		remove_effect = {
-			puppet = FROM
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_bind_to_us (decision) remove entered"
+			}
+			FROM = { country_event = { id = nf_event_hea.8 } }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] hea_bind_to_us (decision) remove exited"
+			}
 		}
 	}
 }

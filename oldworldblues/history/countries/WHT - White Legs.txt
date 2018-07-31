@@ -4,35 +4,35 @@ capital = 326
 set_technology = {
 	# baseline techs
 	tribal_civilization = 1
-		
+
 	#industry
-		
+
 	#infantry
 	standard_weaponry_tech = 1
 	blunt_weaponry = 1
-		
+
 	#support
 	support_weaponry = 1
 	explosive_tech = 1
 	#vehicle
-		
+
 	#naval
 	destroyer_tech = 1
 	naval_invasion_tech = 1
 }
 
-set_stability = 0.4 
+set_stability = 0.4
 set_war_support = 0.4
-
+set_convoys = 50
 set_politics = {
-    parties = {
-        people = { popularity = 0 }
-        elites = { popularity = 100 }
-        intellectuals = { popularity = 0 }
-        ruler = { popularity = 0 }
-    }
-    ruling_party = elites
-    elections_allowed = yes
+	parties = {
+		people = { popularity = 0 }
+		elites = { popularity = 100 }
+		intellectuals = { popularity = 0 }
+		ruler = { popularity = 0 }
+	}
+	ruling_party = elites
+	elections_allowed = no
 }
 
 add_ideas = {
@@ -40,23 +40,26 @@ add_ideas = {
 }
 
 create_country_leader = {
-    name = "Salt-Upon-Wounds"
-    desc = "Salt-Upon-Wounds_DESC"
-    picture = "Portrait_Salt.dds"
-    expire = "3000.1.1"
-    ideology = tribalism
-    
-    traits = {
-    }
+	name = "Salt-Upon-Wounds"
+	desc = "Salt-Upon-Wounds_DESC"
+	picture = "Portrait_Salt.dds"
+	expire = "3000.1.1"
+	ideology = tribalism
+
+	traits = {
+	}
 }
 
 create_corps_commander = {
-    name = "Salt-Upon-Wounds"
-    portrait_path = "gfx/leaders/WHT/Portrait_Salt.dds"
-    skill = 4
-	attack_skill = 4
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 1
-    traits = { commando naval_invader }
+	name = "Salt-Upon-Wounds"
+	portrait_path = "gfx/leaders/WHT/Portrait_Salt.dds"
+	skill = 4
+	traits = {
+		commando
+		naval_invader
+	}
+	attack_skill = 5
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 2
 }

@@ -6,7 +6,7 @@ country_event = {
 	desc = nf_ranger.1.d
 	picture = GFX_event_DES_rangers_symbol
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_ranger.1.a
@@ -28,7 +28,7 @@ country_event = {
 		}
 		retire_country_leader = yes
 
-		create_country_leader  = {
+		create_country_leader = {
 			name = "Hell Razor"
 			desc = "HELL_RAZOR_DESC"
 			picture = "Portrait_Razer.dds"
@@ -50,7 +50,7 @@ country_event = {
 			base = 1
 		}
 
-		create_country_leader  = {
+		create_country_leader = {
 			name = "Thrasher Sagarra"
 			desc = "THRASHER_SAGARRA_DESC"
 			picture = "Portrait_Thrasher.dds"
@@ -70,7 +70,7 @@ country_event = {
 	desc = nf_ranger.2.d
 	picture = GFX_event_DES_rangers_symbol
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_ranger.2.a
@@ -78,21 +78,27 @@ country_event = {
 			engineercorps = 1
 			bike_tech_1 = 1
 		}
-		load_oob = ranger_engineers
-		custom_effect_tooltip = ranger_engineers
+		hidden_effect = {
+			load_oob = ranger_engineers
+		}
+		custom_effect_tooltip = ranger_engineers_tt
 
 	}
 	option = {
 		name = nf_ranger.2.b
-		load_oob = ranger_national
+		hidden_effect = {
+			load_oob = ranger_national
+		}
 		add_ideas = nationalguard
-		custom_effect_tooltip = ranger_nationalguard
+		custom_effect_tooltip = ranger_nationalguard_tt
 	}
 	option = {
 		name = nf_ranger.2.c
-		load_oob = ranger_armyrangers
+		hidden_effect = {
+			load_oob = ranger_armyrangers
+		}
 		add_ideas = armyrangers
-		custom_effect_tooltip = ranger_armyrangers
+		custom_effect_tooltip = ranger_armyrangers_tt
 	}
 }
 country_event = {
@@ -101,7 +107,7 @@ country_event = {
 	desc = nf_ranger.3.d
 	picture = GFX_event_generic_raider_1
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_ranger.3.a
@@ -153,7 +159,7 @@ country_event = {
 	desc = nf_ranger.4.d
 	picture = GFX_event_DES_rangers_symbol
 
-    is_triggered_only = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nf_ranger.4.a
@@ -249,7 +255,7 @@ country_event = {
 	}
 
 	option = {#Stay with them
-		name = nf_ranger.5.
+		name = nf_ranger.5.b
 		ai_chance = {
 			factor = 0
 		}

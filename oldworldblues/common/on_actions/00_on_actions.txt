@@ -135,7 +135,7 @@ on_actions = {
 	#
 	#}
 
-	#PREV is war target
+	# FROM is war target
 	on_declare_war = {
 		effect = {
 				if = {
@@ -352,6 +352,83 @@ on_actions = {
 	#Not run on a specific country.
 	on_startup = {
 		effect = {
+			## Relation modifiers for countries based on types
+			# nobody likes supermutants, supermutants don't like anyone else
+			every_country = {
+				limit = {
+					is_super_mutant = yes
+				}
+				every_country = {
+					limit = {
+						NOT = { is_super_mutant = yes }
+					}
+					reverse_add_opinion_modifier = {
+						target = PREV
+						modifier = non_supermutants
+					}
+					add_opinion_modifier = {
+						target = PREV
+						modifier = supermutants
+					}
+				}
+			}
+			# everyone views HEA as religious nutjobs, HEA views everyone as impure
+			every_country = {
+				limit = {
+					tag = HEA
+				}
+				every_country = {
+					limit = {
+						NOT = { tag = HEA }
+					}
+					reverse_add_opinion_modifier = {
+						target = PREV
+						modifier = hea_view_world
+					}
+					add_opinion_modifier = {
+						target = PREV
+						modifier = world_view_hea
+					}
+				}
+			}
+			# everyone fears BRK, BRK sees everyone as future prey
+			every_country = {
+				limit = {
+					tag = BRK
+				}
+				every_country = {
+					limit = {
+						NOT = { tag = BRK }
+					}
+					reverse_add_opinion_modifier = {
+						target = PREV
+						modifier = brk_view_world
+					}
+					add_opinion_modifier = {
+						target = PREV
+						modifier = world_view_brk
+					}
+				}
+			}
+			# settlers/raiders dislike each other innately
+			every_country = {
+				limit = {
+					is_raider_nation = yes
+				}
+				every_country = {
+					limit = {
+						is_settler_nation = yes
+					}
+					add_opinion_modifier = {
+						target = PREV
+						modifier = settlers_vs_raiders
+					}
+					reverse_add_opinion_modifier = {
+						target = PREV
+						modifier = settlers_vs_raiders
+					}
+				}
+			}
 			## setting initial technologies, these can be found in scripted effects/set_technology_effects: 
 			## Scripted by Mechano
 			#initial tribal technology

@@ -2,64 +2,65 @@
 oob = "BRK_2275"
 
 set_technology = {
-    standard_weaponry_tech = 1
+	standard_weaponry_tech = 1
 	blunt_weaponry = 1
-    tribal_civilization = 1
+	tribal_civilization = 1
 	destroyer_tech = 1
 	destroyer_tech_2 = 1
 	cruiser_tech = 1
 	naval_invasion_tech = 1
+	naval_invasion_tech_2 = 1
 	support_weaponry = 1
 	explosive_tech = 1
 }
 
-set_stability = 0.2 
+set_stability = 0.2
 set_war_support = 0.55
 set_research_slots = 2
-
+set_convoys = 150
 set_politics = {
-    parties = {
-        people = { popularity = 0 }
-        elites = { popularity = 30 }
-        intellectuals = { popularity = 0 }
-        ruler = { popularity = 70 }
-    }
-    ruling_party = ruler
-    elections_allowed = yes
+	parties = {
+		people = { popularity = 0 }
+		elites = { popularity = 30 }
+		intellectuals = { popularity = 0 }
+		ruler = { popularity = 70 }
+	}
+	ruling_party = ruler
+	elections_allowed = no
 }
 
-add_ideas = { 
+add_ideas = {
 	brk_raider_society
 	brk_coastal_terror
 }
 
 create_country_leader = {
-    name = "Graven"
-    desc = "Graven_DESC"
-    picture = "Portrait_BRK_Leader.dds"
-    expire = "3000.1.1"
-    ideology =warlordship
-    traits = {
-        warmonger
-        cruel_tyrant
-    }
+	name = "Graven"
+	desc = "GRAVEN_DESC"
+	picture = "Portrait_BRK_Graven.dds"
+	expire = "3000.1.1"
+	ideology = warlordship
+	traits = {
+		warmonger
+		cruel_tyrant
+	}
 }
 
 create_country_leader = {
-    name = "Ragnar"
-    desc = "Ragnar_DESC"
-    picture = "Portrait_Raider_Generic_1.dds"
-    expire = "3000.1.1"
-    ideology =militarist_oligarchy
-    traits = {
+	name = "Ragnar"
+	desc = "RAGNAR_DESC"
+	picture = "Portrait_BRK_Ragnar.dds"
+	expire = "3000.1.1"
+	ideology = militarist_oligarchy
+	traits = {
 		well_liked_leader
 		popular_figurehead
-    }
+	}
 }
 
 create_field_marshal = {
 	name = "Graven"
-	portrait_path = "gfx/leaders/BRK/Portrait_BRK_Leader.dds"
+	portrait_path = "gfx/leaders/BRK/Portrait_BRK_Graven.dds"
 	skill = 7
 	id = 100
 	traits = {
@@ -74,7 +75,7 @@ create_field_marshal = {
 
 create_corps_commander = {
 	name = "Ragnar"
-	portrait_path = "gfx/leaders/Raider/Portrait_Raider_Generic_1.dds"
+	portrait_path = "gfx/leaders/BRK/Portrait_BRK_Ragnar.dds"
 	skill = 5
 	id = 101
 	traits = {

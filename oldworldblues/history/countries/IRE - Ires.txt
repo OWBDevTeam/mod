@@ -2,47 +2,47 @@
 oob = "IRE_2275"
 
 set_technology = {
-    standard_weaponry_tech = 1
+	standard_weaponry_tech = 1
 	blunt_weaponry = 1
-    tribal_civilization = 1
+	tribal_civilization = 1
 }
 
 set_stability = 0.6
 set_war_support = 0.2
-
+set_convoys = 45
 set_politics = {
-    parties = {
-        people = { popularity = 100 }
-        elites = { popularity = 0 }
-        intellectuals = { popularity = 0 }
-        ruler = { popularity = 0 }
-    }
-    ruling_party = people
-    elections_allowed = yes
+	parties = {
+		people = { popularity = 100 }
+		elites = { popularity = 0 }
+		intellectuals = { popularity = 0 }
+		ruler = { popularity = 0 }
+	}
+	ruling_party = people
+	elections_allowed = no
 }
 
-add_ideas = { }
+add_ideas = {}
 
 create_country_leader  = {
-    name = "Father Patrick"
-    desc = "Father Patrick_DESC"
-    picture = "Portrait_IRE_Leader.dds"
-    expire = "3000.1.1"
-    ideology = commune
-    traits = {
-    }
+	name = "Father Patrick"
+	desc = "Father Patrick_DESC"
+	picture = "Portrait_IRE_Leader.dds"
+	expire = "3000.1.1"
+	ideology = commune
+	traits = {
+	}
 }
 
 create_corps_commander = {
-    name = "Pastor Glynn"
-    portrait_path = "gfx/leaders/IRE/Portrait_IRE_General_2.dds"
-    skill = 4
-    traits = {
-        commando
-        naval_invader
-    }
-	attack_skill = 3
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 2
+	name = "Pastor Glynn"
+	portrait_path = "gfx/leaders/IRE/Portrait_IRE_General_2.dds"
+	skill = 4
+	traits = {
+		commando
+		naval_invader
+	}
+	attack_skill = 4
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 4
 }

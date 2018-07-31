@@ -2,37 +2,41 @@
 oob = "DRE_2275"
 
 set_technology = {
-    standard_weaponry_tech = 1
+	standard_weaponry_tech = 1
 	blunt_weaponry = 1
-    tribal_civilization = 1
-    settled_civilization = 1
-    commercial_protectron = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	commercial_protectron = 1
+	destroyer_tech = 1
+	destroyer_tech_2 = 1
+	cruiser_tech = 1
+	naval_invasion_tech = 1
 }
 
-set_stability = 0.6
-set_war_support = 0.2
-
+set_stability = 0.7
+set_war_support = 0.7
+set_convoys = 100
 set_politics = {
-    parties = {
-        people = { popularity = 100 }
-        elites = { popularity = 0 }
-        intellectuals = { popularity = 0 }
-        ruler = { popularity = 0 }
-    }
-    ruling_party = people
-    elections_allowed = yes
+	parties = {
+		people = { popularity = 100 }
+		elites = { popularity = 0 }
+		intellectuals = { popularity = 0 }
+		ruler = { popularity = 0 }
+	}
+	ruling_party = people
+	elections_allowed = no
 }
 
-add_ideas = { }
+add_ideas = {}
 
 set_research_slots = 3
 create_country_leader  = {
-    name = "Old Pete"
-    desc = "Old Pete_DESC"
-    picture = "Portrait_DRE_Leader.dds"
-    expire = "3000.1.1"
-    ideology = town_hall_democracy
-    traits = {
-        well_liked_leader
-    }
+	name = "Old Pete"
+	desc = "Old_Pete_DESC"
+	picture = "Portrait_DRE_Leader.dds"
+	expire = "3000.1.1"
+	ideology = town_hall_democracy
+	traits = {
+		well_liked_leader
+	}
 }

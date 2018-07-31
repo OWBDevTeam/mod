@@ -1,7 +1,8 @@
 ﻿add_namespace = faction
 
+#Do The Nevada Pact
 country_event = {
-	id = faction.1 #Do The Nevada Pact
+	id = faction.1
 	title = faction.1.t
 	desc = faction.1.d
 	picture = GFX_report_event_fascist_speech
@@ -10,7 +11,7 @@ country_event = {
 
 	option = {
 		name = faction.1.a
-		
+
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -18,13 +19,13 @@ country_event = {
 				factor = 100
 			}
 		}
-		
+
 		trigger = {
-			NOT = { 
+			NOT = {
 				has_global_flag = nevadapact
 			}
 		}
-			
+
 		if = {
 			limit = {
 				tag = NEW
@@ -41,16 +42,16 @@ country_event = {
 				country_event = faction.2
 			}
 		}
-		
+
 	}
-	
+
 	option = {
 		name = faction.1.b
-		
+
 		trigger = {
 			has_global_flag = nevadapact
 		}
-		
+
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -80,7 +81,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				NEW = { is_faction_leader =  yes }
+				NEW = { is_faction_leader = yes }
 			}
 			NEW = {
 				add_to_faction = VLT
@@ -101,8 +102,9 @@ country_event = {
 	}
 }
 
+#Let's do Nevada Pact bro
 country_event = {
-	id = faction.2 #Let's do Nevada Pact bro
+	id = faction.2
 	title = faction.2.t
 	desc = faction.2.d
 	picture = GFX_report_event_fascist_speech
@@ -111,7 +113,7 @@ country_event = {
 
 	option = {
 		name = faction.2.a
-		
+
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -119,7 +121,7 @@ country_event = {
 				factor = 100
 			}
 		}
-		
+
 		NEW = {
 			create_faction = nevada_pact
 			set_global_flag = nevadapact
@@ -138,10 +140,10 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = faction.2.b
-		
+
 		ai_chance = {
 			factor = 0
 		}
