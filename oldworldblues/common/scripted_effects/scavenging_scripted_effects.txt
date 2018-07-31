@@ -2036,145 +2036,299 @@ resolve_equip_loot = {
 	}
 }
 old_world_tech = {
-	random_list = {
-		10 = {
+	effect_tooltip = {
+		random_list = {
+			10 = {
+				if = {
+					limit = {
+						NOT = { has_idea = scavenging_old_world_computer }
+					}
+					add_timed_idea = { idea = scavenging_old_world_computer days = 120 }
+				}
+				else = {
+					hidden_effect = {
+						set_country_flag = scav_loop
+					}
+					custom_effect_tooltip = scavenging_will_reroll
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						NOT = { has_idea = scavenging_old_world_tactics }
+					}
+					add_timed_idea = { idea = scavenging_old_world_tactics days = 120 }
+				}
+				else = {
+					hidden_effect = {
+						set_country_flag = scav_loop
+					}
+					custom_effect_tooltip = scavenging_will_reroll
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						NOT = { has_idea = scavenging_old_world_loudspeakers }
+					}
+					add_timed_idea = { idea = scavenging_old_world_loudspeakers days = 120 }
+				}
+				else = {
+					hidden_effect = {
+						set_country_flag = scav_loop
+					}
+					custom_effect_tooltip = scavenging_will_reroll
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						NOT = { has_idea = scavenging_old_world_spybook }
+					}
+					add_timed_idea = { idea = scavenging_old_world_spybook days = 120 }
+				}
+				else = {
+					hidden_effect = {
+						set_country_flag = scav_loop
+					}
+					custom_effect_tooltip = scavenging_will_reroll
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						NOT = { has_idea = scavenging_old_world_weapon_schematics }
+					}
+					add_timed_idea = { idea = scavenging_old_world_weapon_schematics days = 120 }
+				}
+				else = {
+					hidden_effect = {
+						set_country_flag = scav_loop
+					}
+					custom_effect_tooltip = scavenging_will_reroll
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						NOT = { has_idea = scavenging_old_world_factory_schematics }
+					}
+					add_timed_idea = { idea = scavenging_old_world_factory_schematics days = 120 }
+				}
+				else = {
+					hidden_effect = {
+						set_country_flag = scav_loop
+					}
+					custom_effect_tooltip = scavenging_will_reroll
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						NOT = { has_idea = scavenging_old_world_naval_targeting_system }
+					}
+					add_timed_idea = { idea = scavenging_old_world_naval_targeting_system days = 120 }
+				}
+				else = {
+					hidden_effect = {
+						set_country_flag = scav_loop
+					}
+					custom_effect_tooltip = scavenging_will_reroll
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						NOT = { has_idea = scavenging_old_world_radar_system }
+					}
+					add_timed_idea = { idea = scavenging_old_world_radar_system days = 120 }
+				}
+				else = {
+					hidden_effect = {
+						set_country_flag = scav_loop
+					}
+					custom_effect_tooltip = scavenging_will_reroll
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						NOT = { has_idea = scavenging_old_world_planning_system }
+					}
+					add_timed_idea = { idea = scavenging_old_world_planning_system days = 120 }
+				}
+				else = {
+					hidden_effect = {
+						set_country_flag = scav_loop
+					}
+					custom_effect_tooltip = scavenging_will_reroll
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						NOT = { has_idea = scavenging_old_world_political_guide }
+					}
+					add_timed_idea = { idea = scavenging_old_world_political_guide days = 120 }
+				}
+				else = {
+					hidden_effect = {
+						set_country_flag = scav_loop
+					}
+					custom_effect_tooltip = scavenging_will_reroll
+				}
+			}
+		}
+	}
+	hidden_effect = {
+		set_temp_variable = { rng_value = random }
+		if = {
+			limit = { check_variable = { rng_value < 0.1 } }
 			if = {
 				limit = {
 					NOT = { has_idea = scavenging_old_world_computer }
 				}
 				add_timed_idea = { idea = scavenging_old_world_computer days = 120 }
-				else = {
-					hidden_effect = {
-						set_country_flag = scav_loop
-					}
-					custom_effect_tooltip = scavenging_will_reroll
+			}
+			else = {
+				hidden_effect = {
+					set_country_flag = scav_loop
 				}
+				custom_effect_tooltip = scavenging_will_reroll
 			}
 		}
-		10 = {
+		else_if = {
+			limit = { check_variable = { rng_value < 0.2 } }
 			if = {
 				limit = {
 					NOT = { has_idea = scavenging_old_world_tactics }
 				}
 				add_timed_idea = { idea = scavenging_old_world_tactics days = 120 }
-				else = {
-					hidden_effect = {
-						set_country_flag = scav_loop
-					}
-					custom_effect_tooltip = scavenging_will_reroll
+			}
+			else = {
+				hidden_effect = {
+					set_country_flag = scav_loop
 				}
+				custom_effect_tooltip = scavenging_will_reroll
 			}
 		}
-		10 = {
+		else_if = {
+			limit = { check_variable = { rng_value < 0.3 } }
 			if = {
 				limit = {
 					NOT = { has_idea = scavenging_old_world_loudspeakers }
 				}
 				add_timed_idea = { idea = scavenging_old_world_loudspeakers days = 120 }
-				else = {
-					hidden_effect = {
-						set_country_flag = scav_loop
-					}
-					custom_effect_tooltip = scavenging_will_reroll
+			}
+			else = {
+				hidden_effect = {
+					set_country_flag = scav_loop
 				}
+				custom_effect_tooltip = scavenging_will_reroll
 			}
 		}
-		10 = {
+		else_if = {
+			limit = { check_variable = { rng_value < 0.4 } }
 			if = {
 				limit = {
 					NOT = { has_idea = scavenging_old_world_spybook }
 				}
 				add_timed_idea = { idea = scavenging_old_world_spybook days = 120 }
-				else = {
-					hidden_effect = {
-						set_country_flag = scav_loop
-					}
-					custom_effect_tooltip = scavenging_will_reroll
+			}
+			else = {
+				hidden_effect = {
+					set_country_flag = scav_loop
 				}
+				custom_effect_tooltip = scavenging_will_reroll
 			}
 		}
-		10 = {
+		else_if = {
+			limit = { check_variable = { rng_value < 0.5 } }
 			if = {
 				limit = {
 					NOT = { has_idea = scavenging_old_world_weapon_schematics }
 				}
 				add_timed_idea = { idea = scavenging_old_world_weapon_schematics days = 120 }
-				else = {
-					hidden_effect = {
-						set_country_flag = scav_loop
-					}
-					custom_effect_tooltip = scavenging_will_reroll
+			}
+			else = {
+				hidden_effect = {
+					set_country_flag = scav_loop
 				}
+				custom_effect_tooltip = scavenging_will_reroll
 			}
 		}
-		10 = {
+		else_if = {
+			limit = { check_variable = { rng_value < 0.6 } }
 			if = {
 				limit = {
 					NOT = { has_idea = scavenging_old_world_factory_schematics }
 				}
 				add_timed_idea = { idea = scavenging_old_world_factory_schematics days = 120 }
-				else = {
-					hidden_effect = {
-						set_country_flag = scav_loop
-					}
-					custom_effect_tooltip = scavenging_will_reroll
+			}
+			else = {
+				hidden_effect = {
+					set_country_flag = scav_loop
 				}
+				custom_effect_tooltip = scavenging_will_reroll
 			}
 		}
-		10 = {
+		else_if = {
+			limit = { check_variable = { rng_value < 0.7 } }
 			if = {
 				limit = {
 					NOT = { has_idea = scavenging_old_world_naval_targeting_system }
 				}
 				add_timed_idea = { idea = scavenging_old_world_naval_targeting_system days = 120 }
-				else = {
-					hidden_effect = {
-						set_country_flag = scav_loop
-					}
-					custom_effect_tooltip = scavenging_will_reroll
+			}
+			else = {
+				hidden_effect = {
+					set_country_flag = scav_loop
 				}
+				custom_effect_tooltip = scavenging_will_reroll
 			}
 		}
-		10 = {
+		else_if = {
+			limit = { check_variable = { rng_value < 0.8 } }
 			if = {
 				limit = {
 					NOT = { has_idea = scavenging_old_world_radar_system }
 				}
 				add_timed_idea = { idea = scavenging_old_world_radar_system days = 120 }
-				else = {
-					hidden_effect = {
-						set_country_flag = scav_loop
-					}
-					custom_effect_tooltip = scavenging_will_reroll
+			}
+			else = {
+				hidden_effect = {
+					set_country_flag = scav_loop
 				}
+				custom_effect_tooltip = scavenging_will_reroll
 			}
 		}
-		10 = {
+		else_if = {
+			limit = { check_variable = { rng_value < 0.9 } }
 			if = {
 				limit = {
 					NOT = { has_idea = scavenging_old_world_planning_system }
 				}
 				add_timed_idea = { idea = scavenging_old_world_planning_system days = 120 }
-				else = {
-					hidden_effect = {
-						set_country_flag = scav_loop
-					}
-					custom_effect_tooltip = scavenging_will_reroll
+			}
+			else = {
+				hidden_effect = {
+					set_country_flag = scav_loop
 				}
+				custom_effect_tooltip = scavenging_will_reroll
 			}
 		}
-		10 = {
+		else = {
 			if = {
 				limit = {
 					NOT = { has_idea = scavenging_old_world_political_guide }
 				}
 				add_timed_idea = { idea = scavenging_old_world_political_guide days = 120 }
-				else = {
-					hidden_effect = {
-						set_country_flag = scav_loop
-					}
-					custom_effect_tooltip = scavenging_will_reroll
+			}
+			else = {
+				hidden_effect = {
+					set_country_flag = scav_loop
 				}
+				custom_effect_tooltip = scavenging_will_reroll
 			}
 		}
 	}
