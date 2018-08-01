@@ -2268,6 +2268,15 @@ focus_tree = {
 		prerequisite = {
 			focus = brk_nf_pirate_coast
 		}
+		bypass = {
+			21 = { is_owned_and_controlled_by = BRK }
+			288 = { is_owned_and_controlled_by = BRK }
+			338 = { is_owned_and_controlled_by = BRK }
+			407 = { is_owned_and_controlled_by = BRK }
+			432 = { is_owned_and_controlled_by = BRK }
+			48 = { is_owned_and_controlled_by = BRK }
+			564 = { is_owned_and_controlled_by = BRK }
+		}
 
 		completion_reward = {
 			if = {
@@ -2277,6 +2286,28 @@ focus_tree = {
 			create_wargoal = {
 				type = annex_everything
 				target = BEL
+			}
+			if = {
+				limit = {
+					any_state = {
+						AND = {
+							is_core_of = BEL
+							NOT = { is_controlled_by = BEL }
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							is_core_of = BEL
+						}
+						NOT = { tag = ROOT }
+					}
+					add_named_threat = { threat = 5 name = stole_cores }
+					ROOT = {
+						create_wargoal = { type = annex_everything target = PREV }
+					}
+				}
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
