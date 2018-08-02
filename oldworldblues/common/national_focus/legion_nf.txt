@@ -891,6 +891,9 @@ focus_tree = {
 		prerequisite = {
 			focus = ces_smoke_out_the_rats
 		}
+		available = {
+			MOJ = { exists = no }
+		}
 		x = 1
 		y = 10
 		completion_reward = {
@@ -898,13 +901,11 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] ces_annex_hidden_valley entered"
 			}
-			if = {
-				limit = { country_exists = MOJ }
-				MOJ = {
-					every_owned_state = {
-						add_core_of = ROOT
-					}
+			every_state = {
+				limit = {
+					is_core_of = MOJ
 				}
+				add_core_of = ROOT
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
