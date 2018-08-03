@@ -211,14 +211,20 @@ country_event = {
 			limit = {
 				tag = BVC
 			}
-			load_oob = vallebandits
+			custom_effect_tooltip = vallebandits_tt
+			hidden_effect = {
+				load_oob = vallebandits
+			}
 		}
 
 		if = {
 			limit = {
 				tag = BLP
 			}
-			load_oob = pazbandits
+			custom_effect_tooltip = pazbandits_tt
+			hidden_effect = {
+				load_oob = pazbandits
+			}
 		}
 	}
 
@@ -887,7 +893,10 @@ country_event = { #Mutant Migrants
 
 	option = {
 		name = nf_ncr.23.a
-		load_oob = mutantsettlers
+		custom_effect_tooltip = mutantsettlers_tt
+		hidden_effect = {
+			load_oob = mutantsettlers
+		}
 	}
 
 	option = {
@@ -1286,6 +1295,10 @@ country_event = {
 
 	option = {#Let them go free
 		name = nf_ncr.30.a
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.30.a option entered"
+		}
 		hidden_effect = {
 			if = {
 				limit = {
@@ -2093,10 +2106,18 @@ country_event = {
 			}
 			news_event = ncr_tribe_rebellion_news.1
 		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.30.a option exited"
+		}
 	}
 
 	option = {#No freedom - They rise to fight you
 		name = nf_ncr.30.b
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.30.b option entered"
+		}
 		hidden_effect = {
 			set_global_flag = NCR_CES_revolt
 			country_event = { id = nf_ncr.31 days = 7 }
@@ -2114,6 +2135,10 @@ country_event = {
 				}
 				DES = { country_event = nf_ranger.5 }
 			}
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.30.b option exited"
 		}
 	}
 }
@@ -2134,9 +2159,17 @@ country_event = { # HIDDEN EVENT - no loc needed! Used to prevent decimation sha
 	hidden = yes
 
 	immediate = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.300 immediate entered"
+		}
 		every_state = {
 			limit = { is_core_of = PHR }
 			set_state_flag = do_not_decimate
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.300 immediate entered"
 		}
 	}
 
@@ -2164,9 +2197,17 @@ country_event = { # HIDDEN EVENT - no loc needed!
 	hidden = yes
 
 	immediate = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.301 immediate entered"
+		}
 		every_state = {
 			limit = { is_core_of = PHR }
 			clr_state_flag = do_not_decimate
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.301 immediate exited"
 		}
 	}
 
@@ -2186,6 +2227,10 @@ country_event = {
 	fire_only_once = yes
 
 	immediate = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.31 immediate entered"
+		}
 		hidden_effect = {
 			NCR = {
 				every_owned_state = {
@@ -2285,9 +2330,17 @@ country_event = {
 			value = 0.35
 		}
 		revolt_setup_fire = yes
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.31 immediate exited"
+		}
 	}
 
 	option = {#Open Rebellion!
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.31.a option entered"
+		}
 		name = nf_ncr.31.a
 		ai_chance = { factor = 1 }
 		if = {
@@ -2315,14 +2368,27 @@ country_event = {
 			}
 			custom_effect_tooltip = NCR_revolt_play_hangdogs_later
 		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.31.a option exited"
+		}
 	}
 
 	option = {#Open Rebellion - Switch to Phoenix Republic
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.31.b option entered"
+		}
 		name = nf_ncr.31.b
 		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
 		custom_effect_tooltip = NCR_revolt_PHR_tagswitch
 		hidden_effect = {
 			PHR = { change_tag_from	= ROOT }
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.31.b option exited"
 		}
 	}
 }
@@ -2337,8 +2403,16 @@ country_event = {
 	hidden = yes
 
 	immediate = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.32 immediate entered"
+		}
 		tribe_joining_together = yes
 		remove_generic_NCR_templates = yes
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.32 immediate exited"
+		}
 	}
 
 	option = {
@@ -2357,6 +2431,10 @@ country_event = {
 	fire_only_once = yes
 
 	immediate = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.33 immediate enter"
+		}
 		hidden_effect = {
 			NCR = {
 				every_owned_state = {
@@ -2458,6 +2536,10 @@ country_event = {
 			value = 0.25
 		}
 		revolt_setup_fire = yes
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.33 immediate exited"
+		}
 	}
 
 
@@ -2477,6 +2559,10 @@ country_event = {
 	fire_only_once = yes
 
 	immediate = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.34 immediate entered"
+		}
 		hidden_effect = {
 			NCR = {
 				every_owned_state = {
@@ -2626,6 +2712,10 @@ country_event = {
 			value = 0.20
 		}
 		revolt_setup_fire = yes
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.34 immediate exited"
+		}
 	}
 
 	option = {#More join this Rebellion!
@@ -2644,6 +2734,10 @@ country_event = {
 	fire_only_once = yes
 
 	immediate = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.35 immediate entered"
+		}
 		hidden_effect = {
 			NCR = {
 				every_owned_state = {
@@ -2768,6 +2862,10 @@ country_event = {
 			value = 0.30
 		}
 		revolt_setup_fire = yes
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.35 immediate exited"
+		}
 	}
 
 	option = {#More join this Rebellion!
@@ -2786,6 +2884,10 @@ country_event = {
 	fire_only_once = yes
 
 	immediate = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.36 immediate entered"
+		}
 		hidden_effect = {
 			NCR = {
 				every_owned_state = {
@@ -2835,6 +2937,10 @@ country_event = {
 			value = 0.25
 		}
 		revolt_setup_fire = yes
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.36 immediate exited"
+		}
 	}
 
 	option = {#More join this Rebellion!
@@ -2853,6 +2959,10 @@ country_event = {
 	fire_only_once = yes
 
 	immediate = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.37 immediate entered"
+		}
 		hidden_effect = {
 			NCR = {
 				every_owned_state = {
@@ -3090,6 +3200,10 @@ country_event = {
 			value = 0.25
 		}
 		revolt_setup_fire = yes
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.37 immediate exited"
+		}
 	}
 
 	option = {#More join this Rebellion!
@@ -3098,6 +3212,10 @@ country_event = {
 	}
 
 	option = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.37.b option entered"
+		}
 		name = nf_ncr.37.b
 		ai_chance = { factor = 0 }
 		trigger = {
@@ -3106,10 +3224,15 @@ country_event = {
 				has_war_with = NCR
 				is_in_faction_with = PHR
 			}
+			is_ai = no
 		}
 		custom_effect_tooltip = NCR_revolt_HAN_tagswitch
 		hidden_effect = {
 			HAN = { change_tag_from = ROOT }
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.37.b option exited"
 		}
 	}
 }
@@ -3124,6 +3247,10 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.38.a option entered"
+		}
 		name = nf_ncr.38.a
 		set_major = yes
 		WHD = {
@@ -3156,41 +3283,47 @@ country_event = {
 			clr_state_flag = do_not_decimate
 		}
 		# 70 factories in all
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
+		HAN = {
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.38.a option exited"
+		}
 	}
 }
 
@@ -3204,24 +3337,34 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.39.a option entered"
+		}
 		name = nf_ncr.39.a
 		set_major = yes
 		# 30 factories in all
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_mil_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
-		build_2_random_civ_factory = yes
+		PHR = {
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_mil_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+			build_2_random_civ_factory = yes
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.39.a option exited"
+		}
 	}
 }
 
@@ -3235,6 +3378,10 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.40.a option entered"
+		}
 		name = nf_ncr.40.a
 		every_country = {
 			limit = {
@@ -3247,6 +3394,10 @@ country_event = {
 				}
 			}
 			leave_faction = yes
+		}
+		if = {
+			limit = { has_global_flag = debug_logs }
+			log = "[GetDateText]: [Root.GetName] nf_ncr.40.a option exited"
 		}
 	}
 }

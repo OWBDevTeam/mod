@@ -820,7 +820,8 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] hea_nf_air_peasant entered"
 			}
-			add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 30 producer = HEA }
+			custom_effect_tooltip = hea_add_30_fighters_tt
+			hidden_effect = { add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 30 producer = HEA } }
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] hea_nf_air_peasant exited"
@@ -1615,8 +1616,8 @@ focus_tree = {
 				add_opinion_modifier = { target = HEA modifier = hea_enemy_embassy }
 			}
 			hidden_effect = {
-				MUR = { remove_opinion_modifier = { target = WHI modifier = world_view_hea } }
-				HEA = { remove_opinion_modifier = { target = BRK modifier = hea_view_world } }
+				MUR = { remove_opinion_modifier = { target = HEA modifier = world_view_hea } }
+				HEA = { remove_opinion_modifier = { target = MUR modifier = hea_view_world } }
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1742,8 +1743,8 @@ focus_tree = {
 				add_opinion_modifier = { target = HEA modifier = hea_enemy_embassy }
 			}
 			hidden_effect = {
-				IRE = { remove_opinion_modifier = { target = WHI modifier = world_view_hea } }
-				HEA = { remove_opinion_modifier = { target = BRK modifier = hea_view_world } }
+				IRE = { remove_opinion_modifier = { target = HEA modifier = world_view_hea } }
+				HEA = { remove_opinion_modifier = { target = IRE modifier = hea_view_world } }
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }

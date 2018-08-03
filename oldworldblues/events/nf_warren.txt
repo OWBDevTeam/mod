@@ -104,7 +104,6 @@ country_event = {
 
 	option = {
 		name = nf_warren.3.a
-		load_oob = warren_big_brother
 		add_ideas = warren_big_brother
 		235 = {
 			add_building_construction = {
@@ -113,16 +112,26 @@ country_event = {
 				instant_build = yes
 			}
 		}
+		custom_effect_tooltip = warren_big_brother_tt
+		hidden_effect = {
+			load_oob = warren_big_brother
+		}
 	}
 	option = {
 		name = nf_warren.3.b
-		load_oob = warren_thunder
 		add_ideas = warren_thunder_smoke
+		custom_effect_tooltip = warren_thunder_tt
+		hidden_effect = {
+			load_oob = warren_thunder
+		}
 	}
 	option = {
 		name = nf_warren.3.c
 		add_ideas = warren_tooth_claw
-		load_oob = warren_forced
+		custom_effect_tooltip = warren_forced_tt
+		hidden_effect = {
+			load_oob = warren_forced
+		}
 	}
 }
 

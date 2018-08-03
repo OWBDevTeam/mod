@@ -58,13 +58,13 @@ country_event = {
 
 	is_triggered_only = yes
 
-	#option = {
-	#	name = nf_reno.2.a
-	#	ai_chance = {
-	#		factor = 10
-	#	}
-	#	country_event = { id = factionevent.1 }
-	#}
+	option = {
+		name = nf_reno.2.a
+		ai_chance = {
+			factor = 10
+		}
+		country_event = { id = faction.1 }
+	}
 
 	option = {
 		name = nf_reno.2.b
@@ -151,6 +151,7 @@ country_event = {
 				settled_civilization = 1
 				scientific_civilization = 1
 			}
+			remove_ideas = salvatores
 			load_oob = renoenclave
 		}
 	}
@@ -219,6 +220,7 @@ country_event = {
 					super_mutant_behemoth = 1
 					super_mutant_melee_weapons = 1
 				}
+				remove_ideas = thefamily
 				NEW = { remove_opinion_modifier = { target = WHI modifier = supermutants } }
 				TRL = { remove_opinion_modifier = { target = BRK modifier = non_supermutants } }
 			}
@@ -593,9 +595,10 @@ country_event = {
 		name = nf_reno.15.b
 
 		NEW = {
-		load_oob = thraddunity
-		}
-		NEW = {
+			custom_effect_tooltip = thraddunity_tt
+			hidden_effect = {
+				load_oob = thraddunity
+			}
 			add_ideas = cultmutants
 		}
 	}

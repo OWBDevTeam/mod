@@ -114,7 +114,7 @@ country_event = {
 
 	option = {
 		name = nf_mojave.5.a
-		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 300 producer = BOS }
+		add_equipment_to_stockpile = { type = energy_equipment_2 amount = 300 producer = MOJ }
 		add_timed_idea = {
 			idea = mojave_settlements_raided_mojave
 			days = 50
@@ -390,14 +390,14 @@ country_event = {
 		ai_chance = {
 			factor = 50
 		}
-		BOS = {
+		MOJ = {
 			country_event = { id = nf_mojave.21 days = 1 }
 		}
 	}
 	option = {
 		name = nf_mojave.20.b
 
-		BOS = {
+		MOJ = {
 			country_event = { id = nf_mojave.22 days = 1 }
 		}
 	}
@@ -611,6 +611,18 @@ country_event = {
 		NCR = {
 			add_to_faction = MOJ
 		}
+		add_ai_strategy = {
+				type = alliance
+				id = "NCR"
+				value = 200
+			}
+			NCR = {
+				add_ai_strategy = {
+					type = alliance
+					id = "MOJ"
+					value = 200
+				}
+			}
 		#hidden_effect = {
 		#	news_event = mojave_news.1
 		#}

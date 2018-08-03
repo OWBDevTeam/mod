@@ -6,6 +6,25 @@ on_actions = {
 				limit = {
 					ROOT = { original_tag = NCR }
 					FROM = { original_tag = CES }
+					NOT = {
+						AND = {
+							all_state = {
+								OR = {
+									NOT = { is_core_of = CES }
+									AND = {
+										is_core_of = CES
+										owner = {
+											original_tag = CES
+										}
+									}
+								}
+							}
+							any_country = {
+								original_tag = CES
+								is_puppet = no
+							}
+						}
+					}
 				}
 				NCR = { country_event = { id = nf_ncr.30 days = 14 } }
 			}

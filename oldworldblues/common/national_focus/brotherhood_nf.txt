@@ -238,7 +238,10 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] bos_restructure entered"
 			}
-			remove_ideas = oldguard
+			add_political_power = 50
+			#hidden_effect = {
+			#	set_country_flag = do_next_focus_now
+			#}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] bos_restructure exited"
@@ -252,6 +255,13 @@ focus_tree = {
 		prerequisite = {
 			focus = bos_restructure
 		}
+		#ai_will_do = {
+		#	factor = 1
+		#	modifier = {
+		#		has_country_flag = do_next_focus_now
+		#		factor = 1000
+		#	}
+		#}
 		x = 12
 		y = 5
 		completion_reward = {
@@ -259,7 +269,10 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] bos_outsiders entered"
 			}
-			add_ideas = outsider_recruitment
+			swap_ideas = {
+				remove_idea = oldguard
+				add_idea = outsider_recruitment
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] bos_outsiders exited"
@@ -680,6 +693,20 @@ focus_tree = {
 					set_politics = {
 						ruling_party = intellectuals
 						elections_allowed = no
+					}
+				}
+				SHI = {
+					add_ai_strategy = {
+						type = alliance
+						id = "BOS"
+						value = 200
+					}
+				}
+				BOS = {
+					add_ai_strategy = {
+						type = alliance
+						id = "SHI"
+						value = 200
 					}
 				}
 			}
@@ -1746,7 +1773,10 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] bos_welcomingcommittee entered"
 			}
 			DES = {
-				load_oob = welcomingcommittee
+				custom_effect_tooltip = bos_welcomingcommittee_tt
+				hidden_effect = {
+					load_oob = welcomingcommittee
+				}
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -2555,7 +2585,10 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] bos_steelcage entered"
 			}
 		    set_technology = { battleship_tech_2 = 1 }
-			load_oob = steelcage
+		    custom_effect_tooltip = bos_steelcage_tt
+			hidden_effect = {
+				load_oob = steelcage
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] bos_steelcage exited"

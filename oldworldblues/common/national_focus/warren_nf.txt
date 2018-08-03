@@ -164,7 +164,10 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] pittmancunning entered"
 			}
 			add_ideas = pittman1
-			load_oob = pittmannightkin
+			custom_effect_tooltip = pittmancunning_tt
+			hidden_effect = {
+				load_oob = pittmannightkin
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] pittmancunning exited"
@@ -925,7 +928,10 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] brotherhoodmutants entered"
 			}
-			load_oob = warren_brotherhood
+			custom_effect_tooltip = brotherhoodmutants_tt
+			hidden_effect = {
+				load_oob = warren_brotherhood
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] brotherhoodmutants exited"
@@ -1270,7 +1276,7 @@ focus_tree = {
 			focus = defendingthewarren
 		}
 		available = {
-			437= { is_owned_and_controlled_by = TRL }
+			437 = { is_owned_and_controlled_by = TRL }
 		}
 		x = 28
 		y = 8
@@ -1964,27 +1970,19 @@ focus_tree = {
 		x = 7
 		y = 7
 		available = {
-			or = {
-				if = {
-					MDT = {
-						exists = no
-					}
-					BPT = {
-						exists = no
-					}
+			OR = {
+				AND = {
+					MDT = { exists = no }
+					BPT = { exists = no }
 					TRL = {
-						controls_state = 113
-						controls_state = 268
-						controls_state = 231
+						113 = { is_owned_and_controlled_by = TRL }
+						268 = { is_owned_and_controlled_by = TRL }
+						231 = { is_owned_and_controlled_by = TRL }
 					}
 				}
-				if = {
-					MDT = {
-						is_puppet_of = TRL
-					}
-					BPT = {
-						is_puppet_of = TRL
-					}
+				AND = {
+					MDT = { is_puppet_of = TRL }
+					BPT = { is_puppet_of = TRL }
 				}
 			}
 		}
@@ -2007,7 +2005,7 @@ focus_tree = {
 				limit = {
 					any_state = {
 						is_core_of = ARR
-						NOT = {is_controlled_by = ARR}
+						NOT = { is_controlled_by = ARR }
 					}
 				}
 				every_country = {
@@ -2029,7 +2027,7 @@ focus_tree = {
 				limit = {
 					any_state = {
 						is_core_of = KLA
-						NOT = {is_controlled_by = KLA}
+						NOT = { is_controlled_by = KLA }
 					}
 				}
 				every_country = {
@@ -2065,17 +2063,10 @@ focus_tree = {
 		y = 8
 		available = {
 			OR = {
-				if = {
-					ARR = {
-						is_puppet_of = TRL
-					}
-				}
-				if = {
-					ARR = {
-						exists = no
-					}
+				ARR = { is_puppet_of = TRL }
+				AND = {
 					337 = { is_owned_and_controlled_by = TRL }
-					92 = { is_owned_and_controlled_by = TRL }
+					96 = { is_owned_and_controlled_by = TRL }
 					32 = { is_owned_and_controlled_by = TRL }
 				}
 			}
@@ -2103,16 +2094,9 @@ focus_tree = {
 		x = 8
 		y = 8
 		available = {
-			or = {
-				if = {
-					KLA = {
-						is_puppet_of = TRL
-					}
-				}
-				if = {
-					KLA = {
-						exists = no
-					}
+			OR = {
+				KLA = { is_puppet_of = TRL }
+				AND = {
 					57 = { is_owned_and_controlled_by = TRL }
 					59 = { is_owned_and_controlled_by = TRL }
 					454 = { is_owned_and_controlled_by = TRL }
@@ -2305,13 +2289,9 @@ focus_tree = {
 			factor = 12
 		}
 		available = {
-			or = {
-				if = {
-					RBT = {
-						is_puppet_of = TRL
-					}
-				}
-				if = {
+			OR = {
+				RBT = { is_puppet_of = TRL }
+				AND = {
 					587 = { is_owned_and_controlled_by = TRL }
 					506 = { is_owned_and_controlled_by = TRL }
 					449 = { is_owned_and_controlled_by = TRL }
@@ -2351,13 +2331,9 @@ focus_tree = {
 		x = 3
 		y = 6
 		available = {
-			or = {
-				if = {
-					MDT = {
-						is_puppet_of = TRL
-					}
-				}
-				if = {
+			OR = {
+				MDT = { is_puppet_of = TRL }
+				AND = {
 					268 = { is_owned_and_controlled_by = TRL }
 					113 = { is_owned_and_controlled_by = TRL }
 					231 = { is_owned_and_controlled_by = TRL }
@@ -2400,7 +2376,10 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] forced_mutation entered"
 			}
-			load_oob = warren_forced1
+			custom_effect_tooltip = forced_mutation_tt
+			hidden_effect = {
+				load_oob = warren_forced1
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] forced_mutation exited"
@@ -2644,13 +2623,9 @@ focus_tree = {
 			factor = 10
 		}
 		available = {
-			or = {
-				if = {
-					BPT = {
-						is_puppet_of = TRL
-					}
-				}
-				if = {
+			OR = {
+				BPT = { is_puppet_of = TRL }
+				AND = {
 					251 = { is_owned_and_controlled_by = TRL }
 					600 = { is_owned_and_controlled_by = TRL }
 					150 = { is_owned_and_controlled_by = TRL }
@@ -2687,13 +2662,9 @@ focus_tree = {
 			factor = 10
 		}
 		available = {
-			or = {
-				if = {
-					CHE = {
-						is_puppet_of = TRL
-					}
-				}
-				if = {
+			OR = {
+				CHE = { is_puppet_of = TRL }
+				AND = {
 					426 = { is_owned_and_controlled_by = TRL }
 					580 = { is_owned_and_controlled_by = TRL }
 					480 = { is_owned_and_controlled_by = TRL }
@@ -2739,7 +2710,10 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] forcedmut2 entered"
 			}
-			load_oob = warren_forced2
+			custom_effect_tooltip = forcedmut2_tt
+			hidden_effect = {
+				load_oob = warren_forced2
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] forcedmut2 exited"
@@ -2757,13 +2731,9 @@ focus_tree = {
 		x = 0
 		y = 10
 		available = {
-			or = {
-				if = {
-					BPT = {
-						is_puppet_of = TRL
-					}
-				}
-				if = {
+			OR = {
+				BPT = { is_puppet_of = TRL }
+				AND = {
 					251 = { is_owned_and_controlled_by = TRL }
 					600 = { is_owned_and_controlled_by = TRL }
 					150 = { is_owned_and_controlled_by = TRL }
@@ -2821,14 +2791,14 @@ focus_tree = {
 		x = 4
 		y = 10
 		available = {
-			or = {
-				if = {
+			OR = {
+				AND = {
 					CHE = {
 						is_puppet_of = TRL
 					}
 					580 = { is_owned_and_controlled_by = CHE }
 				}
-				if = {
+				AND = {
 					580 = { is_owned_and_controlled_by = TRL }
 				}
 			}
@@ -3039,13 +3009,9 @@ focus_tree = {
 			factor = 10
 		}
 		available = {
-			or = {
-				if = {
-					MLT = {
-						is_puppet_of = TRL
-					}
-				}
-				if = {
+			OR = {
+				MLT = { is_puppet_of = TRL }
+				AND = {
 					451 = { is_owned_and_controlled_by = TRL }
 					358 = { is_owned_and_controlled_by = TRL }
 				}
@@ -3078,13 +3044,9 @@ focus_tree = {
 			factor = 10
 		}
 		available = {
-			or = {
-				if = {
-					BDT = {
-						is_puppet_of = TRL
-					}
-				}
-				if = {
+			OR = {
+				BDT = { is_puppet_of = TRL }
+				AND = {
 					343 = { is_owned_and_controlled_by = TRL }
 					298 = { is_owned_and_controlled_by = TRL }
 					155 = { is_owned_and_controlled_by = TRL }
@@ -3131,7 +3093,10 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] forcedmute3 entered"
 			}
-			load_oob = warren_forced3
+			custom_effect_tooltip = forcedmute3_tt
+			hidden_effect = {
+				load_oob = warren_forced3
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] forcedmute3 exited"
@@ -3145,6 +3110,9 @@ focus_tree = {
 		cost = 8.6
 		prerequisite = {
 			focus = overrun
+		}
+		available = {
+			358 = { is_owned_and_controlled_by = TRL }
 		}
 		x = 0
 		y = 13
@@ -3235,7 +3203,10 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] monsterwoods entered"
 			}
-			load_oob = warren_woods_monster
+			custom_effect_tooltip = monsterwoods_tt
+			hidden_effect = {
+				load_oob = warren_woods_monster
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] monsterwoods exited"
@@ -3279,7 +3250,10 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] goliath entered"
 			}
-			load_oob = warren_goliath
+			custom_effect_tooltip = goliath_tt
+			hidden_effect = {
+				load_oob = warren_goliath
+			}
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] goliath exited"

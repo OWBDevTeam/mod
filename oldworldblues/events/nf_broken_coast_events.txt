@@ -342,30 +342,47 @@ country_event = { # BRK - no opposition from target
 			}
 			add_equipment_to_stockpile = { type = support_equipment amount = 100 }
 		}
-		random_owned_state = {
+		if = {
 			limit = {
-				any_neighbor_state = {
-					is_owned_by = event_target:their_country
+				FROM.FROM = {
+					BRK = {
+						NOT = { has_country_flag = raided_@PREV }
+					}
 				}
 			}
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}
-		}
-		random_owned_state = {
-			limit = {
-				any_neighbor_state = {
-					is_owned_by = event_target:their_country
+			random_owned_state = {
+				limit = {
+					any_neighbor_state = {
+						is_owned_by = event_target:their_country
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				PREV = {
+					random_owned_state = {
+						limit = {
+							any_neighbor_state = {
+								is_owned_by = event_target:their_country
+							}
+							NOT = { state = PREV.PREV }
+						}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
+					}
 				}
 			}
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = arms_factory
-				level = 1
-				instant_build = yes
+			FROM.FROM = {
+				BRK = {
+					set_country_flag = raided_@PREV
+				}
 			}
 		}
 	}
@@ -463,30 +480,47 @@ country_event = { # BRK - we win border conflict
 			}
 			add_equipment_to_stockpile = { type = support_equipment amount = 100 }
 		}
-		random_owned_state = {
+		if = {
 			limit = {
-				any_neighbor_state = {
-					is_owned_by = event_target:their_country
+				FROM.FROM = {
+					BRK = {
+						NOT = { has_country_flag = raided_@PREV }
+					}
 				}
 			}
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}
-		}
-		random_owned_state = {
-			limit = {
-				any_neighbor_state = {
-					is_owned_by = event_target:their_country
+			random_owned_state = {
+				limit = {
+					any_neighbor_state = {
+						is_owned_by = event_target:their_country
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				PREV = {
+					random_owned_state = {
+						limit = {
+							any_neighbor_state = {
+								is_owned_by = event_target:their_country
+							}
+							NOT = { state = PREV.PREV }
+						}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
+					}
 				}
 			}
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = arms_factory
-				level = 1
-				instant_build = yes
+			FROM.FROM = {
+				BRK = {
+					set_country_flag = raided_@PREV
+				}
 			}
 		}
 	}
