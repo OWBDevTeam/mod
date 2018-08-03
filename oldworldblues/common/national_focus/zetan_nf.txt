@@ -19,7 +19,10 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] zetan_landing entered"
 			}
-		    load_oob = zetanlanding
+			custom_effect_tooltip = zetan_landing_tt
+			hidden_effect = {
+				load_oob = zetanlanding
+			}
 			add_equipment_to_stockpile = { type = heavy_robot_equipment_2 amount = 50000 producer = UFO }
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -34,11 +37,11 @@ focus_tree = {
 		x = 10
 		y = 1
 		prerequisite = {
-		    focus = zetan_landing
+			focus = zetan_landing
 		}
 		available = {
-		    VEG = {
-			    exists = yes
+			VEG = {
+				exists = yes
 			}	
 		}
 		will_lead_to_war_with = VEG
@@ -49,10 +52,10 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] zetan_vegas entered"
 			}
-		    create_wargoal = { type = annex_everything target = VEG }
-		    create_wargoal = { type = annex_everything target = WHT }
-		    create_wargoal = { type = annex_everything target = KHA }
-		    if = {
+			create_wargoal = { type = annex_everything target = VEG }
+			create_wargoal = { type = annex_everything target = WHT }
+			create_wargoal = { type = annex_everything target = KHA }
+			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] zetan_vegas exited"
 			}
@@ -65,11 +68,11 @@ focus_tree = {
 		x = 10
 		y = 2
 		prerequisite = {
-		    focus = zetan_vegas
+			focus = zetan_vegas
 		}
 		available = {
-		    NCR = {
-			    exists = yes
+			NCR = {
+				exists = yes
 			}	
 		}
 		will_lead_to_war_with = NCR
@@ -78,8 +81,8 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] zetan_republic entered"
 			}
-		    create_wargoal = { type = annex_everything target = NCR }
-		    if = {
+			create_wargoal = { type = annex_everything target = NCR }
+			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] zetan_republic exited"
 			}
@@ -92,11 +95,11 @@ focus_tree = {
 		x = 8
 		y = 2
 		prerequisite = {
-		    focus = zetan_vegas
+			focus = zetan_vegas
 		}
 		available = {
-		    CES = {
-			    exists = yes
+			CES = {
+				exists = yes
 			}	
 		}
 		will_lead_to_war_with = CES
@@ -105,8 +108,8 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] zetan_legion entered"
 			}
-		    create_wargoal = { type = annex_everything target = CES }
-		    if = {
+			create_wargoal = { type = annex_everything target = CES }
+			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] zetan_legion exited"
 			}
@@ -119,11 +122,11 @@ focus_tree = {
 		x = 12
 		y = 2
 		prerequisite = {
-		    focus = zetan_vegas
+			focus = zetan_vegas
 		}
 		available = {
-		    BOS = {
-			    exists = yes
+			BOS = {
+				exists = yes
 			}	
 		}
 		will_lead_to_war_with = BOS
@@ -133,7 +136,7 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] zetan_brotherhood entered"
 			}
-		    create_wargoal = { type = annex_everything target = BOS }
+			create_wargoal = { type = annex_everything target = BOS }
 			create_wargoal = { type = annex_everything target = MOJ }
 			if = {
 				limit = { has_global_flag = debug_logs }
