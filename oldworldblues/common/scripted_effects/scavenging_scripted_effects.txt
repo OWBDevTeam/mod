@@ -1099,7 +1099,7 @@ scavenge_vehicle_end = {
 }
 scavenge_randomiser = {
 	## Determine number of rolls
-	# Randomising base rolls between 15 and 25
+	# Randomising base rolls between 5 and 10
 	set_variable = { rolls = 10 }
 	set_variable = { rand_int = random }
 	multiply_variable = { rand_int = 10 }
@@ -1789,7 +1789,7 @@ robot_loot_table = {
 	}
 }
 vehicle_loot_table = {
-	## Randomly selecting an entry from 0 to 10
+	## Randomly selecting an entry from 0 to 20
 	set_variable = { rand_int = random }
 	multiply_variable = { rand_int = 20 }
 	round_variable = rand_int
