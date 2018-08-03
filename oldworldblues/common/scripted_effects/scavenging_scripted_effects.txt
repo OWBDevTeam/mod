@@ -114,48 +114,51 @@ scavenge_equip_end = { # Triggered with scavenge_equip_end = yes
 		limit = {
 			has_country_flag = infantry_equipment_1
 		}
-		random_list = {
-			10 = {
-				add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 50 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 50
-				}
+		if = {
+			limit = { check_variable = { resolve_rng < 0.1 } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 50 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 50
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 47 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 47
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.3 } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 47 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 47
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 42 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 42
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.5 } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 42 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 42
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 36 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 36
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.7 } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 36 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 36
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 30 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 30
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.9 } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 30 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 30
 			}
-			10 = {
-				add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 22 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 22
-				}
+		}
+		else_if = {
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 22 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 22
 			}
 		}
 		clr_country_flag = infantry_equipment_1
@@ -164,48 +167,51 @@ scavenge_equip_end = { # Triggered with scavenge_equip_end = yes
 		limit = {
 			has_country_flag = melee_equipment_1
 		}
-		random_list = {
-			10 = {
-				add_equipment_to_stockpile = { type = melee_equipment_1 amount = 50 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 50
-				}
+		if = {
+			limit = { check_variable = { resolve_rng < 0.1 } }
+			add_equipment_to_stockpile = { type = melee_equipment_1 amount = 50 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 50
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = melee_equipment_1 amount = 47 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 47
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.3 } }
+			add_equipment_to_stockpile = { type = melee_equipment_1 amount = 47 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 47
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = melee_equipment_1 amount = 42 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 42
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.5 } }
+			add_equipment_to_stockpile = { type = melee_equipment_1 amount = 42 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 42
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = melee_equipment_1 amount = 36 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 36
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.7 } }
+			add_equipment_to_stockpile = { type = melee_equipment_1 amount = 36 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 36
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = melee_equipment_1 amount = 30 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 30
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.9 } }
+			add_equipment_to_stockpile = { type = melee_equipment_1 amount = 30 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 30
 			}
-			10 = {
-				add_equipment_to_stockpile = { type = melee_equipment_1 amount = 22 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 22
-				}
+		}
+		else_if = {
+			add_equipment_to_stockpile = { type = melee_equipment_1 amount = 22 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 22
 			}
 		}
 		clr_country_flag = melee_equipment_1
@@ -214,48 +220,51 @@ scavenge_equip_end = { # Triggered with scavenge_equip_end = yes
 		limit = {
 			has_country_flag = melee_equipment_2
 		}
-		random_list = {
-			10 = {
-				add_equipment_to_stockpile = { type = melee_equipment_2 amount = 50 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 50
-				}
+		if = {
+			limit = { check_variable = { resolve_rng < 0.1 } }
+			add_equipment_to_stockpile = { type = melee_equipment_2 amount = 50 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 50
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = melee_equipment_2 amount = 47 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 47
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.3 } }
+			add_equipment_to_stockpile = { type = melee_equipment_2 amount = 47 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 47
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = melee_equipment_2 amount = 42 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 42
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.5 } }
+			add_equipment_to_stockpile = { type = melee_equipment_2 amount = 42 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 42
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = melee_equipment_2 amount = 36 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 36
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.7 } }
+			add_equipment_to_stockpile = { type = melee_equipment_2 amount = 36 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 36
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = melee_equipment_2 amount = 30 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 30
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.9 } }
+			add_equipment_to_stockpile = { type = melee_equipment_2 amount = 30 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 30
 			}
-			10 = {
-				add_equipment_to_stockpile = { type = melee_equipment_2 amount = 22 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 22
-				}
+		}
+		else_if = {
+			add_equipment_to_stockpile = { type = melee_equipment_2 amount = 22 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 22
 			}
 		}
 		clr_country_flag = melee_equipment_2
@@ -264,48 +273,51 @@ scavenge_equip_end = { # Triggered with scavenge_equip_end = yes
 		limit = {
 			has_country_flag = melee_equipment_3
 		}
-		random_list = {
-			10 = {
-				add_equipment_to_stockpile = { type = melee_equipment_3 amount = 50 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 50
-				}
+		if = {
+			limit = { check_variable = { resolve_rng < 0.1 } }
+			add_equipment_to_stockpile = { type = melee_equipment_3 amount = 50 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 50
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = melee_equipment_3 amount = 47 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 47
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.3 } }
+			add_equipment_to_stockpile = { type = melee_equipment_3 amount = 47 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 47
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = melee_equipment_3 amount = 42 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 42
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.5 } }
+			add_equipment_to_stockpile = { type = melee_equipment_3 amount = 42 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 42
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = melee_equipment_3 amount = 36 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 36
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.7 } }
+			add_equipment_to_stockpile = { type = melee_equipment_3 amount = 36 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 36
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = melee_equipment_3 amount = 30 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 30
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.9 } }
+			add_equipment_to_stockpile = { type = melee_equipment_3 amount = 30 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 30
 			}
-			10 = {
-				add_equipment_to_stockpile = { type = melee_equipment_3 amount = 22 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 22
-				}
+		}
+		else_if = {
+			add_equipment_to_stockpile = { type = melee_equipment_3 amount = 22 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 22
 			}
 		}
 		clr_country_flag = melee_equipment_3
@@ -314,48 +326,51 @@ scavenge_equip_end = { # Triggered with scavenge_equip_end = yes
 		limit = {
 			has_country_flag = ballistic_equipment_1
 		}
-		random_list = {
-			10 = {
-				add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 50 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 50
-				}
+		if = {
+			limit = { check_variable = { resolve_rng < 0.1 } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 50 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 50
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 47 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 47
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.3 } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 47 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 47
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 42 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 42
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.5 } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 42 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 42
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 36 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 36
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.7 } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 36 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 36
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 30 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 30
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.9 } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 30 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 30
 			}
-			10 = {
-				add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 22 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 22
-				}
+		}
+		else_if = {
+			add_equipment_to_stockpile = { type = ballistic_equipment_1 amount = 22 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 22
 			}
 		}
 		clr_country_flag = ballistic_equipment_1
@@ -364,48 +379,51 @@ scavenge_equip_end = { # Triggered with scavenge_equip_end = yes
 		limit = {
 			has_country_flag = ballistic_equipment_2
 		}
-		random_list = {
-			10 = {
-				add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 50 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 50
-				}
+		if = {
+			limit = { check_variable = { resolve_rng < 0.1 } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 50 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 50
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 47 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 47
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.3 } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 47 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 47
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 42 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 42
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.5 } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 42 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 42
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 36 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 36
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.7 } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 36 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 36
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 30 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 30
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.9 } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 30 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 30
 			}
-			10 = {
-				add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 22 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 22
-				}
+		}
+		else_if = {
+			add_equipment_to_stockpile = { type = ballistic_equipment_2 amount = 22 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 22
 			}
 		}
 		clr_country_flag = ballistic_equipment_2
@@ -414,48 +432,51 @@ scavenge_equip_end = { # Triggered with scavenge_equip_end = yes
 		limit = {
 			has_country_flag = ballistic_equipment_3
 		}
-		random_list = {
-			10 = {
-				add_equipment_to_stockpile = { type = ballistic_equipment_3 amount = 50 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 50
-				}
+		if = {
+			limit = { check_variable = { resolve_rng < 0.1 } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_3 amount = 50 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 50
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = ballistic_equipment_3 amount = 47 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 47
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.3 } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_3 amount = 47 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 47
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = ballistic_equipment_3 amount = 42 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 42
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.5 } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_3 amount = 42 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 42
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = ballistic_equipment_3 amount = 36 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 36
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.7 } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_3 amount = 36 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 36
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = ballistic_equipment_3 amount = 30 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 30
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.9 } }
+			add_equipment_to_stockpile = { type = ballistic_equipment_3 amount = 30 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 30
 			}
-			10 = {
-				add_equipment_to_stockpile = { type = ballistic_equipment_3 amount = 22 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 22
-				}
+		}
+		else_if = {
+			add_equipment_to_stockpile = { type = ballistic_equipment_3 amount = 22 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 22
 			}
 		}
 		clr_country_flag = ballistic_equipment_3
@@ -464,48 +485,51 @@ scavenge_equip_end = { # Triggered with scavenge_equip_end = yes
 		limit = {
 			has_country_flag = energy_equipment_1
 		}
-		random_list = {
-			10 = {
-				add_equipment_to_stockpile = { type = energy_equipment_1 amount = 50 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 50
-				}
+		if = {
+			limit = { check_variable = { resolve_rng < 0.1 } }
+			add_equipment_to_stockpile = { type = energy_equipment_1 amount = 50 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 50
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = energy_equipment_1 amount = 47 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 47
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.3 } }
+			add_equipment_to_stockpile = { type = energy_equipment_1 amount = 47 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 47
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = energy_equipment_1 amount = 42 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 42
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.5 } }
+			add_equipment_to_stockpile = { type = energy_equipment_1 amount = 42 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 42
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = energy_equipment_1 amount = 36 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 36
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.7 } }
+			add_equipment_to_stockpile = { type = energy_equipment_1 amount = 36 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 36
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = energy_equipment_1 amount = 30 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 30
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.9 } }
+			add_equipment_to_stockpile = { type = energy_equipment_1 amount = 30 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 30
 			}
-			10 = {
-				add_equipment_to_stockpile = { type = energy_equipment_1 amount = 22 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 22
-				}
+		}
+		else_if = {
+			add_equipment_to_stockpile = { type = energy_equipment_1 amount = 22 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 22
 			}
 		}
 		clr_country_flag = energy_equipment_1
@@ -514,48 +538,51 @@ scavenge_equip_end = { # Triggered with scavenge_equip_end = yes
 		limit = {
 			has_country_flag = energy_equipment_2
 		}
-		random_list = {
-			10 = {
-				add_equipment_to_stockpile = { type = energy_equipment_2 amount = 50 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 50
-				}
+		if = {
+			limit = { check_variable = { resolve_rng < 0.1 } }
+			add_equipment_to_stockpile = { type = energy_equipment_2 amount = 50 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 50
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = energy_equipment_2 amount = 47 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 47
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.3 } }
+			add_equipment_to_stockpile = { type = energy_equipment_2 amount = 47 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 47
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = energy_equipment_2 amount = 42 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 42
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.5 } }
+			add_equipment_to_stockpile = { type = energy_equipment_2 amount = 42 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 42
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = energy_equipment_2 amount = 36 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 36
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.7 } }
+			add_equipment_to_stockpile = { type = energy_equipment_2 amount = 36 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 36
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = energy_equipment_2 amount = 30 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 30
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.9 } }
+			add_equipment_to_stockpile = { type = energy_equipment_2 amount = 30 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 30
 			}
-			10 = {
-				add_equipment_to_stockpile = { type = energy_equipment_2 amount = 22 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 22
-				}
+		}
+		else_if = {
+			add_equipment_to_stockpile = { type = energy_equipment_2 amount = 22 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 22
 			}
 		}
 		clr_country_flag = energy_equipment_2
@@ -564,48 +591,51 @@ scavenge_equip_end = { # Triggered with scavenge_equip_end = yes
 		limit = {
 			has_country_flag = energy_equipment_3
 		}
-		random_list = {
-			10 = {
-				add_equipment_to_stockpile = { type = energy_equipment_3 amount = 50 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 50
-				}
+		if = {
+			limit = { check_variable = { resolve_rng < 0.1 } }
+			add_equipment_to_stockpile = { type = energy_equipment_3 amount = 50 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 50
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = energy_equipment_3 amount = 47 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 47
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.3 } }
+			add_equipment_to_stockpile = { type = energy_equipment_3 amount = 47 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 47
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = energy_equipment_3 amount = 42 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 42
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.5 } }
+			add_equipment_to_stockpile = { type = energy_equipment_3 amount = 42 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 42
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = energy_equipment_3 amount = 36 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 36
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.7 } }
+			add_equipment_to_stockpile = { type = energy_equipment_3 amount = 36 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 36
 			}
-			20 = {
-				add_equipment_to_stockpile = { type = energy_equipment_3 amount = 30 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 30
-				}
+		}
+		else_if = {
+			limit = { check_variable = { resolve_rng < 0.9 } }
+			add_equipment_to_stockpile = { type = energy_equipment_3 amount = 30 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 30
 			}
-			10 = {
-				add_equipment_to_stockpile = { type = energy_equipment_3 amount = 22 }
-				if = {
-					limit = { NOT = { has_country_flag = scavenge_pa } }
-					add_manpower = 22
-				}
+		}
+		else_if = {
+			add_equipment_to_stockpile = { type = energy_equipment_3 amount = 22 }
+			if = {
+				limit = { NOT = { has_country_flag = scavenge_pa } }
+				add_manpower = 22
 			}
 		}
 		clr_country_flag = energy_equipment_3
@@ -689,242 +719,243 @@ scavenge_pa_start = {
 	}
 }
 scavenge_pa_end = {
-	random_list = {
-		50 = {
-			add_manpower = 50
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_1
-				}
-				add_equipment_to_stockpile = { type = power_armor_equipment_1 amount = 50 }
-				clr_country_flag = scavenged_pa_1
+	if = {
+		limit = { check_variable = { resolve_rng < 0.5 } }
+		add_manpower = 50
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_1
 			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_2
-				}
-				add_equipment_to_stockpile = { type = power_armor_equipment_2 amount = 50 }
-				clr_country_flag = scavenged_pa_2
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_3
-				}
-				add_equipment_to_stockpile = { type = power_armor_equipment_3 amount = 50 }
-				clr_country_flag = scavenged_pa_3
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_4
-				}
-				add_equipment_to_stockpile = { type = enclave_power_armour_equipment_1 amount = 50 }
-				clr_country_flag = scavenged_pa_4
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_5
-				}
-				add_equipment_to_stockpile = { type = enclave_power_armour_equipment_2 amount = 50 }
-				clr_country_flag = scavenged_pa_5
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_6
-				}
-				add_equipment_to_stockpile = { type = bos_power_armour_equipment amount = 50 }
-				clr_country_flag = scavenged_pa_6
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_7
-				}
-				add_equipment_to_stockpile = { type = legion_power_armour_equipment amount = 50 }
-				clr_country_flag = scavenged_pa_7
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_8
-				}
-				add_equipment_to_stockpile = { type = raider_power_armour_equipment amount = 50 }
-				clr_country_flag = scavenged_pa_8
-			}
+			add_equipment_to_stockpile = { type = power_armor_equipment_1 amount = 50 }
+			clr_country_flag = scavenged_pa_1
 		}
-		20 = {
-			add_manpower = 47
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_1
-				}
-				add_equipment_to_stockpile = { type = power_armor_equipment_1 amount = 47 }
-				clr_country_flag = scavenged_pa_1
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_2
 			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_2
-				}
-				add_equipment_to_stockpile = { type = power_armor_equipment_2 amount = 47 }
-				clr_country_flag = scavenged_pa_2
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_3
-				}
-				add_equipment_to_stockpile = { type = power_armor_equipment_3 amount = 47 }
-				clr_country_flag = scavenged_pa_3
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_4
-				}
-				add_equipment_to_stockpile = { type = enclave_power_armour_equipment_1 amount = 47 }
-				clr_country_flag = scavenged_pa_4
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_5
-				}
-				add_equipment_to_stockpile = { type = enclave_power_armour_equipment_2 amount = 47 }
-				clr_country_flag = scavenged_pa_5
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_6
-				}
-				add_equipment_to_stockpile = { type = bos_power_armour_equipment amount = 47 }
-				clr_country_flag = scavenged_pa_6
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_7
-				}
-				add_equipment_to_stockpile = { type = legion_power_armour_equipment amount = 47 }
-				clr_country_flag = scavenged_pa_7
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_8
-				}
-				add_equipment_to_stockpile = { type = raider_power_armour_equipment amount = 47 }
-				clr_country_flag = scavenged_pa_8
-			}
+			add_equipment_to_stockpile = { type = power_armor_equipment_2 amount = 50 }
+			clr_country_flag = scavenged_pa_2
 		}
-		20 = {
-			add_manpower = 45
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_1
-				}
-				add_equipment_to_stockpile = { type = power_armor_equipment_1 amount = 45 }
-				clr_country_flag = scavenged_pa_1
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_3
 			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_2
-				}
-				add_equipment_to_stockpile = { type = power_armor_equipment_2 amount = 45 }
-				clr_country_flag = scavenged_pa_2
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_3
-				}
-				add_equipment_to_stockpile = { type = power_armor_equipment_3 amount = 45 }
-				clr_country_flag = scavenged_pa_3
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_4
-				}
-				add_equipment_to_stockpile = { type = enclave_power_armour_equipment_1 amount = 45 }
-				clr_country_flag = scavenged_pa_4
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_5
-				}
-				add_equipment_to_stockpile = { type = enclave_power_armour_equipment_2 amount = 45 }
-				clr_country_flag = scavenged_pa_5
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_6
-				}
-				add_equipment_to_stockpile = { type = bos_power_armour_equipment amount = 45 }
-				clr_country_flag = scavenged_pa_6
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_7
-				}
-				add_equipment_to_stockpile = { type = legion_power_armour_equipment amount = 45 }
-				clr_country_flag = scavenged_pa_7
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_8
-				}
-				add_equipment_to_stockpile = { type = raider_power_armour_equipment amount = 45 }
-				clr_country_flag = scavenged_pa_8
-			}
+			add_equipment_to_stockpile = { type = power_armor_equipment_3 amount = 50 }
+			clr_country_flag = scavenged_pa_3
 		}
-		10 = {
-			add_manpower = 42
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_1
-				}
-				add_equipment_to_stockpile = { type = power_armor_equipment_1 amount = 42 }
-				clr_country_flag = scavenged_pa_1
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_4
 			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_2
-				}
-				add_equipment_to_stockpile = { type = power_armor_equipment_2 amount = 42 }
-				clr_country_flag = scavenged_pa_2
+			add_equipment_to_stockpile = { type = enclave_power_armour_equipment_1 amount = 50 }
+			clr_country_flag = scavenged_pa_4
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_5
 			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_3
-				}
-				add_equipment_to_stockpile = { type = power_armor_equipment_3 amount = 42 }
-				clr_country_flag = scavenged_pa_3
+			add_equipment_to_stockpile = { type = enclave_power_armour_equipment_2 amount = 50 }
+			clr_country_flag = scavenged_pa_5
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_6
 			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_4
-				}
-				add_equipment_to_stockpile = { type = enclave_power_armour_equipment_1 amount = 42 }
-				clr_country_flag = scavenged_pa_4
+			add_equipment_to_stockpile = { type = bos_power_armour_equipment amount = 50 }
+			clr_country_flag = scavenged_pa_6
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_7
 			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_5
-				}
-				add_equipment_to_stockpile = { type = enclave_power_armour_equipment_2 amount = 42 }
-				clr_country_flag = scavenged_pa_5
+			add_equipment_to_stockpile = { type = legion_power_armour_equipment amount = 50 }
+			clr_country_flag = scavenged_pa_7
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_8
 			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_6
-				}
-				add_equipment_to_stockpile = { type = bos_power_armour_equipment amount = 42 }
-				clr_country_flag = scavenged_pa_6
+			add_equipment_to_stockpile = { type = raider_power_armour_equipment amount = 50 }
+			clr_country_flag = scavenged_pa_8
+		}
+	}
+	else_if = {
+		limit = { check_variable = { resolve_rng < 0.7 } }
+		add_manpower = 47
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_1
 			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_7
-				}
-				add_equipment_to_stockpile = { type = legion_power_armour_equipment amount = 42 }
-				clr_country_flag = scavenged_pa_7
+			add_equipment_to_stockpile = { type = power_armor_equipment_1 amount = 47 }
+			clr_country_flag = scavenged_pa_1
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_2
 			}
-			if = {
-				limit = {
-					has_country_flag = scavenged_pa_8
-				}
-				add_equipment_to_stockpile = { type = raider_power_armour_equipment amount = 42 }
-				clr_country_flag = scavenged_pa_8
+			add_equipment_to_stockpile = { type = power_armor_equipment_2 amount = 47 }
+			clr_country_flag = scavenged_pa_2
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_3
 			}
+			add_equipment_to_stockpile = { type = power_armor_equipment_3 amount = 47 }
+			clr_country_flag = scavenged_pa_3
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_4
+			}
+			add_equipment_to_stockpile = { type = enclave_power_armour_equipment_1 amount = 47 }
+			clr_country_flag = scavenged_pa_4
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_5
+			}
+			add_equipment_to_stockpile = { type = enclave_power_armour_equipment_2 amount = 47 }
+			clr_country_flag = scavenged_pa_5
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_6
+			}
+			add_equipment_to_stockpile = { type = bos_power_armour_equipment amount = 47 }
+			clr_country_flag = scavenged_pa_6
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_7
+			}
+			add_equipment_to_stockpile = { type = legion_power_armour_equipment amount = 47 }
+			clr_country_flag = scavenged_pa_7
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_8
+			}
+			add_equipment_to_stockpile = { type = raider_power_armour_equipment amount = 47 }
+			clr_country_flag = scavenged_pa_8
+		}
+	}
+	else_if = {
+		limit = { check_variable = { resolve_rng < 0.9 } }
+		add_manpower = 45
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_1
+			}
+			add_equipment_to_stockpile = { type = power_armor_equipment_1 amount = 45 }
+			clr_country_flag = scavenged_pa_1
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_2
+			}
+			add_equipment_to_stockpile = { type = power_armor_equipment_2 amount = 45 }
+			clr_country_flag = scavenged_pa_2
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_3
+			}
+			add_equipment_to_stockpile = { type = power_armor_equipment_3 amount = 45 }
+			clr_country_flag = scavenged_pa_3
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_4
+			}
+			add_equipment_to_stockpile = { type = enclave_power_armour_equipment_1 amount = 45 }
+			clr_country_flag = scavenged_pa_4
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_5
+			}
+			add_equipment_to_stockpile = { type = enclave_power_armour_equipment_2 amount = 45 }
+			clr_country_flag = scavenged_pa_5
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_6
+			}
+			add_equipment_to_stockpile = { type = bos_power_armour_equipment amount = 45 }
+			clr_country_flag = scavenged_pa_6
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_7
+			}
+			add_equipment_to_stockpile = { type = legion_power_armour_equipment amount = 45 }
+			clr_country_flag = scavenged_pa_7
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_8
+			}
+			add_equipment_to_stockpile = { type = raider_power_armour_equipment amount = 45 }
+			clr_country_flag = scavenged_pa_8
+		}
+	}
+	else_if = {
+		add_manpower = 42
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_1
+			}
+			add_equipment_to_stockpile = { type = power_armor_equipment_1 amount = 42 }
+			clr_country_flag = scavenged_pa_1
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_2
+			}
+			add_equipment_to_stockpile = { type = power_armor_equipment_2 amount = 42 }
+			clr_country_flag = scavenged_pa_2
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_3
+			}
+			add_equipment_to_stockpile = { type = power_armor_equipment_3 amount = 42 }
+			clr_country_flag = scavenged_pa_3
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_4
+			}
+			add_equipment_to_stockpile = { type = enclave_power_armour_equipment_1 amount = 42 }
+			clr_country_flag = scavenged_pa_4
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_5
+			}
+			add_equipment_to_stockpile = { type = enclave_power_armour_equipment_2 amount = 42 }
+			clr_country_flag = scavenged_pa_5
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_6
+			}
+			add_equipment_to_stockpile = { type = bos_power_armour_equipment amount = 42 }
+			clr_country_flag = scavenged_pa_6
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_7
+			}
+			add_equipment_to_stockpile = { type = legion_power_armour_equipment amount = 42 }
+			clr_country_flag = scavenged_pa_7
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenged_pa_8
+			}
+			add_equipment_to_stockpile = { type = raider_power_armour_equipment amount = 42 }
+			clr_country_flag = scavenged_pa_8
 		}
 	}
 }
@@ -932,13 +963,12 @@ scavenge_fly_start = {
 	add_equipment_to_stockpile = { type = vb_transport_plane_equipment amount = -3 }
 }
 scavenge_fly_end = {
-	random_list = {
-		95 = {
-			add_equipment_to_stockpile = { type = vb_transport_plane_equipment amount = 3 }
-		}
-		5 = {
-			add_equipment_to_stockpile = { type = vb_transport_plane_equipment amount = 2 }
-		}
+	if = {
+		limit = { check_variable = { resolve_rng < 0.95 } }
+		add_equipment_to_stockpile = { type = vb_transport_plane_equipment amount = 3 }
+	}
+	else_if = {
+		add_equipment_to_stockpile = { type = vb_transport_plane_equipment amount = 2 }
 	}
 }
 scavenge_vehicle_start = {
@@ -969,97 +999,101 @@ scavenge_vehicle_start = {
 }
 scavenge_vehicle_end = {
 	random_list = {
-		40 = {
-			if = {
-				limit = {
-					has_country_flag = scavenge_vehicle_1
-				}
-				add_equipment_to_stockpile = { type = motorbike_equipment_1 amount = 50 }
-				clr_country_flag = scavenge_vehicle_1
+		
+	}
+	if = {
+		limit = { check_variable = { resolve_rng < 0.4 } }
+		if = {
+			limit = {
+				has_country_flag = scavenge_vehicle_1
 			}
-			if = {
-				limit = {
-					has_country_flag = scavenge_vehicle_2
-				}
-				add_equipment_to_stockpile = { type = truck_equipment_1 amount = 10 }
-				clr_country_flag = scavenge_vehicle_2
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenge_vehicle_3
-				}
-				add_equipment_to_stockpile = { type = truck_equipment_2 amount = 10 }
-				clr_country_flag = scavenge_vehicle_3
-			}
+			add_equipment_to_stockpile = { type = motorbike_equipment_1 amount = 50 }
+			clr_country_flag = scavenge_vehicle_1
 		}
-		20 = {
-			if = {
-				limit = {
-					has_country_flag = scavenge_vehicle_1
-				}
-				add_equipment_to_stockpile = { type = motorbike_equipment_1 amount = 42 }
-				clr_country_flag = scavenge_vehicle_1
+		if = {
+			limit = {
+				has_country_flag = scavenge_vehicle_2
 			}
-			if = {
-				limit = {
-					has_country_flag = scavenge_vehicle_2
-				}
-				add_equipment_to_stockpile = { type = truck_equipment_1 amount = 9 }
-				clr_country_flag = scavenge_vehicle_2
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenge_vehicle_3
-				}
-				add_equipment_to_stockpile = { type = truck_equipment_2 amount = 9 }
-				clr_country_flag = scavenge_vehicle_3
-			}
+			add_equipment_to_stockpile = { type = truck_equipment_1 amount = 10 }
+			clr_country_flag = scavenge_vehicle_2
 		}
-		20 = {
-			if = {
-				limit = {
-					has_country_flag = scavenge_vehicle_1
-				}
-				add_equipment_to_stockpile = { type = motorbike_equipment_1 amount = 39 }
-				clr_country_flag = scavenge_vehicle_1
+		if = {
+			limit = {
+				has_country_flag = scavenge_vehicle_3
 			}
-			if = {
-				limit = {
-					has_country_flag = scavenge_vehicle_2
-				}
-				add_equipment_to_stockpile = { type = truck_equipment_1 amount = 8 }
-				clr_country_flag = scavenge_vehicle_2
-			}
-			if = {
-				limit = {
-					has_country_flag = scavenge_vehicle_3
-				}
-				add_equipment_to_stockpile = { type = truck_equipment_2 amount = 8 }
-				clr_country_flag = scavenge_vehicle_3
-			}
+			add_equipment_to_stockpile = { type = truck_equipment_2 amount = 10 }
+			clr_country_flag = scavenge_vehicle_3
 		}
-		20 = {
-			if = {
-				limit = {
-					has_country_flag = scavenge_vehicle_1
-				}
-				add_equipment_to_stockpile = { type = motorbike_equipment_1 amount = 35 }
-				clr_country_flag = scavenge_vehicle_1
+	}
+	else_if = {
+		limit = { check_variable = { resolve_rng < 0.6 } }
+		if = {
+			limit = {
+				has_country_flag = scavenge_vehicle_1
 			}
-			if = {
-				limit = {
-					has_country_flag = scavenge_vehicle_2
-				}
-				add_equipment_to_stockpile = { type = truck_equipment_1 amount = 7 }
-				clr_country_flag = scavenge_vehicle_2
+			add_equipment_to_stockpile = { type = motorbike_equipment_1 amount = 42 }
+			clr_country_flag = scavenge_vehicle_1
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenge_vehicle_2
 			}
-			if = {
-				limit = {
-					has_country_flag = scavenge_vehicle_3
-				}
-				add_equipment_to_stockpile = { type = truck_equipment_2 amount = 7 }
-				clr_country_flag = scavenge_vehicle_3
+			add_equipment_to_stockpile = { type = truck_equipment_1 amount = 9 }
+			clr_country_flag = scavenge_vehicle_2
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenge_vehicle_3
 			}
+			add_equipment_to_stockpile = { type = truck_equipment_2 amount = 9 }
+			clr_country_flag = scavenge_vehicle_3
+		}
+	}
+	else_if = {
+		limit = { check_variable = { resolve_rng < 0.8 } }
+		if = {
+			limit = {
+				has_country_flag = scavenge_vehicle_1
+			}
+			add_equipment_to_stockpile = { type = motorbike_equipment_1 amount = 39 }
+			clr_country_flag = scavenge_vehicle_1
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenge_vehicle_2
+			}
+			add_equipment_to_stockpile = { type = truck_equipment_1 amount = 8 }
+			clr_country_flag = scavenge_vehicle_2
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenge_vehicle_3
+			}
+			add_equipment_to_stockpile = { type = truck_equipment_2 amount = 8 }
+			clr_country_flag = scavenge_vehicle_3
+		}
+	}
+	else_if = {
+		if = {
+			limit = {
+				has_country_flag = scavenge_vehicle_1
+			}
+			add_equipment_to_stockpile = { type = motorbike_equipment_1 amount = 35 }
+			clr_country_flag = scavenge_vehicle_1
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenge_vehicle_2
+			}
+			add_equipment_to_stockpile = { type = truck_equipment_1 amount = 7 }
+			clr_country_flag = scavenge_vehicle_2
+		}
+		if = {
+			limit = {
+				has_country_flag = scavenge_vehicle_3
+			}
+			add_equipment_to_stockpile = { type = truck_equipment_2 amount = 7 }
+			clr_country_flag = scavenge_vehicle_3
 		}
 	}
 }
@@ -1141,6 +1175,7 @@ scavenge_randomiser = {
 		# No effect
 		log = "No loot table flag has been set - this should never happen. Tell Happy."
 	}
+	clear_variable = rolls
 }
 equipment_loot_table = {
 	## Randomly selecting an entry from 1 to 80
@@ -1995,6 +2030,7 @@ resolve_expedition = {
 		clr_country_flag = scavenge_vroom_vroom
 	}
 	clr_country_flag = is_scavenging
+	clear_variable = resolve_rng
 }
 resolve_equip_loot = {
 	if = {
@@ -3549,4 +3585,5 @@ old_world_tech = {
 		clr_country_flag = scav_loop
 		old_world_tech = yes
 	}
+	clear_variable = rng_owt_value
 }

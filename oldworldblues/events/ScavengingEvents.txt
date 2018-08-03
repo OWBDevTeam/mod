@@ -8,8 +8,15 @@ country_event = {
 
 	is_triggered_only = yes
 
+	immediate = {
+		set_variable = { resolve_rng = random }
+	}
+
 	option = { # Send out a search party
 		name = scavenge.1.a
+		trigger = {
+			command_power > 9
+		}
 		add_political_power = -10
 		add_command_power = -10
 		random_list = {
@@ -35,6 +42,10 @@ country_event = {
 
 	is_triggered_only = yes
 
+	immediate = {
+		set_variable = { resolve_rng = random }
+	}
+
 	option = { # We are glad they return
 		name = scavenge.2.a
 		custom_effect_tooltip = scav_following_are_sent_equip
@@ -51,6 +62,10 @@ country_event = {
 	picture = GFX_event_generic_caravan
 
 	is_triggered_only = yes
+
+	immediate = {
+		set_variable = { resolve_rng = random }
+	}
 
 	option = {
 		name = scavenge.2.a
@@ -69,6 +84,10 @@ country_event = {
 
 	is_triggered_only = yes
 
+	immediate = {
+		set_variable = { resolve_rng = random }
+	}
+
 	option = {
 		name = scavenge.2.a
 		custom_effect_tooltip = scav_following_are_sent_equip
@@ -85,6 +104,11 @@ country_event = {
 	picture = GFX_event_generic_caravan
 
 	is_triggered_only = yes
+
+	immediate = {
+		set_variable = { resolve_rng = random }
+		set_variable = { rng_owt_value = random }
+	}
 
 	option = {
 		name = scavenge.2.a

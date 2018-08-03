@@ -49,7 +49,7 @@ scavenge_resources = {
 				log = "[GetDateText]: [Root.GetName] begin_scavenging_program (decision) complete entered"
 			}
 			set_variable = { var = scavenge_efficiency value = 40 }
-			custom_effect_tooltip = scavenging_set_to_100
+			custom_effect_tooltip = scavenging_set_to_40
 			if = {
 				limit = {
 					is_brotherhood_nation = yes
@@ -1198,7 +1198,6 @@ scavenge_resources = {
 				log = "[GetDateText]: [Root.GetName] scavenge_owt (decision) complete entered"
 			}
 			scavenge_equip_start = yes
-			set_variable = { rng_owt_value = random }
 			set_country_flag = scavenge_normal
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1288,7 +1287,6 @@ scavenge_resources = {
 			}
 			scavenge_equip_start = yes
 			scavenge_pa_start = yes
-			set_variable = { rng_owt_value = random }
 			set_country_flag = scavenge_pa
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1384,7 +1382,6 @@ scavenge_resources = {
 			}
 			scavenge_equip_start = yes
 			scavenge_vehicle_start = yes
-			set_variable = { rng_owt_value = random }
 			set_country_flag = scavenge_vroom_vroom
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1468,7 +1465,6 @@ scavenge_resources = {
 			}
 			scavenge_equip_start = yes
 			scavenge_fly_start = yes
-			set_variable = { rng_owt_value = random }
 			set_country_flag = scavenge_fly
 			if = {
 				limit = { has_global_flag = debug_logs }
