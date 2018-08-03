@@ -206,6 +206,12 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] ces_shottol_god_of_dogs entered"
 			}
+			if = {
+				limit = {
+					NOT = { has_tech = dog_tech }
+				}
+				set_technology = { dog_tech = 1 }
+			}
 			add_stability = -0.05
 			add_ideas = legion_nf_shottol_god_of_dogs
 			if = {
@@ -233,6 +239,12 @@ focus_tree = {
 			if = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] ces_legion_mongrels entered"
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = dog_tech }
+				}
+				set_technology = { dog_tech = 1 }
 			}
 			custom_effect_tooltip = legion_mongrels_tt
 			hidden_effect = { load_oob = legion_mongrels }
