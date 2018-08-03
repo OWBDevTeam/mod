@@ -115,7 +115,8 @@ scavenge_resources = {
 				log = "[GetDateText]: [Root.GetName] scavenge_equip (decision) complete entered"
 			}
 			scavenge_equip_start = yes
-			scavenge_equipment_randomiser = yes
+			set_country_flag = equip_scav
+			scavenge_randomiser = yes
 			set_country_flag = scavenge_normal
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -190,7 +191,8 @@ scavenge_resources = {
 			}
 			scavenge_equip_start = yes
 			scavenge_pa_start = yes
-			scavenge_equipment_randomiser = yes
+			set_country_flag = equip_scav
+			scavenge_randomiser = yes
 			set_country_flag = scavenge_pa
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -265,6 +267,8 @@ scavenge_resources = {
 			}
 			scavenge_equip_start = yes
 			scavenge_vehicle_start = yes
+			set_country_flag = equip_scav
+			scavenge_randomiser = yes
 			set_country_flag = scavenge_vroom_vroom
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -339,7 +343,8 @@ scavenge_resources = {
 			}
 			scavenge_equip_start = yes
 			scavenge_fly_start = yes
-			scavenge_equipment_randomiser = yes
+			set_country_flag = equip_scav
+			scavenge_randomiser = yes
 			set_country_flag = scavenge_fly
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -418,7 +423,8 @@ scavenge_resources = {
 				log = "[GetDateText]: [Root.GetName] scavenge_robots (decision) complete entered"
 			}
 			scavenge_equip_start = yes
-			scavenge_robots_randomiser = yes
+			set_country_flag = robot_scav
+			scavenge_randomiser = yes
 			set_country_flag = scavenge_normal
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -497,7 +503,8 @@ scavenge_resources = {
 			}
 			scavenge_equip_start = yes
 			scavenge_pa_start = yes
-			scavenge_robots_randomiser = yes
+			set_country_flag = robot_scav
+			scavenge_randomiser = yes
 			set_country_flag = scavenge_pa
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -576,7 +583,8 @@ scavenge_resources = {
 			}
 			scavenge_equip_start = yes
 			scavenge_vehicle_start = yes
-			scavenge_robots_randomiser = yes
+			set_country_flag = robot_scav
+			scavenge_randomiser = yes
 			set_country_flag = scavenge_vroom_vroom
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -655,7 +663,8 @@ scavenge_resources = {
 			}
 			scavenge_equip_start = yes
 			scavenge_fly_start = yes
-			scavenge_robots_randomiser = yes
+			set_country_flag = robot_scav
+			scavenge_randomiser = yes
 			set_country_flag = scavenge_fly
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -733,7 +742,8 @@ scavenge_resources = {
 				log = "[GetDateText]: [Root.GetName] scavenge_vehicles (decision) complete entered"
 			}
 			scavenge_equip_start = yes
-			scavenge_vehicles_randomiser = yes
+			set_country_flag = vehicle_scav
+			scavenge_randomiser = yes
 			set_country_flag = scavenge_normal
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -812,7 +822,8 @@ scavenge_resources = {
 			}
 			scavenge_equip_start = yes
 			scavenge_pa_start = yes
-			scavenge_vehicles_randomiser = yes
+			set_country_flag = vehicle_scav
+			scavenge_randomiser = yes
 			set_country_flag = scavenge_pa
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -891,7 +902,8 @@ scavenge_resources = {
 			}
 			scavenge_equip_start = yes
 			scavenge_vehicle_start = yes
-			scavenge_vehicles_randomiser = yes
+			set_country_flag = vehicle_scav
+			scavenge_randomiser = yes
 			set_country_flag = scavenge_vroom_vroom
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -970,7 +982,8 @@ scavenge_resources = {
 			}
 			scavenge_equip_start = yes
 			scavenge_fly_start = yes
-			scavenge_vehicles_randomiser = yes
+			set_country_flag = vehicle_scav
+			scavenge_randomiser = yes
 			set_country_flag = scavenge_fly
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1044,6 +1057,7 @@ scavenge_resources = {
 				log = "[GetDateText]: [Root.GetName] scavenge_owt (decision) complete entered"
 			}
 			scavenge_equip_start = yes
+			set_variable = { rng_owt_value = random }
 			set_country_flag = scavenge_normal
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1118,6 +1132,7 @@ scavenge_resources = {
 			}
 			scavenge_equip_start = yes
 			scavenge_pa_start = yes
+			set_variable = { rng_owt_value = random }
 			set_country_flag = scavenge_pa
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1192,6 +1207,7 @@ scavenge_resources = {
 			}
 			scavenge_equip_start = yes
 			scavenge_vehicle_start = yes
+			set_variable = { rng_owt_value = random }
 			set_country_flag = scavenge_vroom_vroom
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1266,6 +1282,7 @@ scavenge_resources = {
 			}
 			scavenge_equip_start = yes
 			scavenge_fly_start = yes
+			set_variable = { rng_owt_value = random }
 			set_country_flag = scavenge_fly
 			if = {
 				limit = { has_global_flag = debug_logs }
