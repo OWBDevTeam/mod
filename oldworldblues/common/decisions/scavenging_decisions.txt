@@ -103,9 +103,14 @@ scavenge_resources = {
 		days_re_enable = 120
 		ai_will_do = {
 			factor = 1
-			modifier = {
+			modifier = { # will prioritise advisors first
 				factor = 0
-				has_political_power < 151 # will prioritise advisors first
+				has_political_power < 151 
+			}
+			modifier = { # won't be used if losing a war and needs to avoid the defence penalty
+				factor = 0
+				has_war = yes
+				surrender_progress > 0.1
 			}
 		}
 
@@ -122,6 +127,12 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_equip (decision) complete exited"
 			}
+		}
+
+		modifier = {
+			planning_speed = -0.1
+			max_planning = -0.1
+			defence = -0.05
 		}
 
 		remove_effect = {
@@ -182,6 +193,11 @@ scavenge_resources = {
 				factor = 0
 				has_political_power < 151 # will prioritise advisors first
 			}
+			modifier = {
+				factor = 0
+				has_war = yes
+				surrender_progress > 0.1
+			}
 		}
 
 		complete_effect = {
@@ -198,6 +214,12 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_equip_pa (decision) complete exited"
 			}
+		}
+
+		modifier = {
+			planning_speed = -0.1
+			max_planning = -0.1
+			defence = -0.05
 		}
 
 		remove_effect = {
@@ -258,6 +280,11 @@ scavenge_resources = {
 				factor = 0
 				has_political_power < 151 # will prioritise advisors first
 			}
+			modifier = {
+				factor = 0
+				has_war = yes
+				surrender_progress > 0.1
+			}
 		}
 
 		complete_effect = {
@@ -274,6 +301,12 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_equip_motor (decision) complete entered"
 			}
+		}
+
+		modifier = {
+			planning_speed = -0.1
+			max_planning = -0.1
+			defence = -0.05
 		}
 
 		remove_effect = {
@@ -334,6 +367,11 @@ scavenge_resources = {
 				factor = 0
 				has_political_power < 151 # will prioritise advisors first
 			}
+			modifier = {
+				factor = 0
+				has_war = yes
+				surrender_progress > 0.1
+			}
 		}
 
 		complete_effect = {
@@ -350,6 +388,12 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_equip_fly (decision) complete exited"
 			}
+		}
+
+		modifier = {
+			planning_speed = -0.1
+			max_planning = -0.1
+			defence = -0.05
 		}
 
 		remove_effect = {
@@ -415,6 +459,11 @@ scavenge_resources = {
 				factor = 0
 				has_political_power < 151 # will prioritise advisors first
 			}
+			modifier = {
+				factor = 0
+				has_war = yes
+				surrender_progress > 0.1
+			}
 		}
 
 		complete_effect = {
@@ -430,6 +479,12 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_robots (decision) complete exited"
 			}
+		}
+
+		modifier = {
+			planning_speed = -0.1
+			max_planning = -0.1
+			defence = -0.05
 		}
 
 		remove_effect = {
@@ -494,6 +549,11 @@ scavenge_resources = {
 				factor = 0
 				has_political_power < 151 # will prioritise advisors first
 			}
+			modifier = {
+				factor = 0
+				has_war = yes
+				surrender_progress > 0.1
+			}
 		}
 
 		complete_effect = {
@@ -510,6 +570,12 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_robots_pa (decision) complete exited"
 			}
+		}
+
+		modifier = {
+			planning_speed = -0.1
+			max_planning = -0.1
+			defence = -0.05
 		}
 
 		remove_effect = {
@@ -574,6 +640,11 @@ scavenge_resources = {
 				factor = 0
 				has_political_power < 151 # will prioritise advisors first
 			}
+			modifier = {
+				factor = 0
+				has_war = yes
+				surrender_progress > 0.1
+			}
 		}
 
 		complete_effect = {
@@ -590,6 +661,12 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_robots_motor (decision) complete exited"
 			}
+		}
+
+		modifier = {
+			planning_speed = -0.1
+			max_planning = -0.1
+			defence = -0.05
 		}
 
 		remove_effect = {
@@ -654,6 +731,11 @@ scavenge_resources = {
 				factor = 0
 				has_political_power < 151 # will prioritise advisors first
 			}
+			modifier = {
+				factor = 0
+				has_war = yes
+				surrender_progress > 0.1
+			}
 		}
 
 		complete_effect = {
@@ -670,6 +752,12 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_robots_fly (decision) complete exited"
 			}
+		}
+
+		modifier = {
+			planning_speed = -0.1
+			max_planning = -0.1
+			defence = -0.05
 		}
 
 		remove_effect = {
@@ -734,6 +822,11 @@ scavenge_resources = {
 				factor = 0
 				has_political_power < 151 # will prioritise advisors first
 			}
+			modifier = {
+				factor = 0
+				has_war = yes
+				surrender_progress > 0.1
+			}
 		}
 
 		complete_effect = {
@@ -749,6 +842,12 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_vehicles (decision) complete exited"
 			}
+		}
+
+		modifier = {
+			planning_speed = -0.1
+			max_planning = -0.1
+			defence = -0.05
 		}
 
 		remove_effect = {
@@ -813,6 +912,11 @@ scavenge_resources = {
 				factor = 0
 				has_political_power < 151 # will prioritise advisors first
 			}
+			modifier = {
+				factor = 0
+				has_war = yes
+				surrender_progress > 0.1
+			}
 		}
 
 		complete_effect = {
@@ -829,6 +933,12 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_pa (decision) complete exited"
 			}
+		}
+
+		modifier = {
+			planning_speed = -0.1
+			max_planning = -0.1
+			defence = -0.05
 		}
 
 		remove_effect = {
@@ -893,6 +1003,11 @@ scavenge_resources = {
 				factor = 0
 				has_political_power < 151 # will prioritise advisors first
 			}
+			modifier = {
+				factor = 0
+				has_war = yes
+				surrender_progress > 0.1
+			}
 		}
 
 		complete_effect = {
@@ -909,6 +1024,12 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_motor (decision) complete exited"
 			}
+		}
+
+		modifier = {
+			planning_speed = -0.1
+			max_planning = -0.1
+			defence = -0.05
 		}
 
 		remove_effect = {
@@ -973,6 +1094,11 @@ scavenge_resources = {
 				factor = 0
 				has_political_power < 151 # will prioritise advisors first
 			}
+			modifier = {
+				factor = 0
+				has_war = yes
+				surrender_progress > 0.1
+			}
 		}
 
 		complete_effect = {
@@ -989,6 +1115,12 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_vehicles_fly (decision) complete exited"
 			}
+		}
+
+		modifier = {
+			planning_speed = -0.1
+			max_planning = -0.1
+			defence = -0.05
 		}
 
 		remove_effect = {
@@ -1049,6 +1181,15 @@ scavenge_resources = {
 		days_re_enable = 120
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				has_political_power < 151
+			}
+			modifier = {
+				factor = 0
+				has_war = yes
+				surrender_progress > 0.1
+			}
 		}
 
 		complete_effect = {
@@ -1063,6 +1204,12 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_owt (decision) complete exited"
 			}
+		}
+
+		modifier = {
+			planning_speed = -0.1
+			max_planning = -0.1
+			defence = -0.05
 		}
 
 		remove_effect = {
@@ -1123,6 +1270,15 @@ scavenge_resources = {
 		days_re_enable = 120
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				has_political_power < 151
+			}
+			modifier = {
+				factor = 0
+				has_war = yes
+				surrender_progress > 0.1
+			}
 		}
 
 		complete_effect = {
@@ -1138,6 +1294,12 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_owt_pa (decision) complete exited"
 			}
+		}
+
+		modifier = {
+			planning_speed = -0.1
+			max_planning = -0.1
+			defence = -0.05
 		}
 
 		remove_effect = {
@@ -1198,6 +1360,21 @@ scavenge_resources = {
 		days_re_enable = 120
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				has_political_power < 151
+			}
+			modifier = {
+				factor = 0
+				has_war = yes
+				surrender_progress > 0.1
+			}
+		}
+
+		modifier = {
+			planning_speed = -0.1
+			max_planning = -0.1
+			defence = -0.05
 		}
 
 		complete_effect = {
@@ -1273,6 +1450,15 @@ scavenge_resources = {
 		days_re_enable = 120
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				has_political_power < 151
+			}
+			modifier = {
+				factor = 0
+				has_war = yes
+				surrender_progress > 0.1
+			}
 		}
 
 		complete_effect = {
@@ -1288,6 +1474,12 @@ scavenge_resources = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] scavenge_owt_fly (decision) complete exited"
 			}
+		}
+
+		modifier = {
+			planning_speed = -0.1
+			max_planning = -0.1
+			defence = -0.05
 		}
 
 		remove_effect = {
