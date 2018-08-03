@@ -192,6 +192,8 @@ country_event = { # HEA offers a pact
 					value = 200
 				}
 			}
+			MUR = { remove_opinion_modifier = { target = HEA modifier = world_view_hea } }
+			remove_opinion_modifier = { target = MUR modifier = hea_view_world }
 		}
 	}
 
@@ -272,6 +274,8 @@ country_event = {
 					value = 200
 				}
 			}
+			IRE = { remove_opinion_modifier = { target = HEA modifier = world_view_hea } }
+			remove_opinion_modifier = { target = IRE modifier = hea_view_world }
 		}
 	}
 
@@ -331,6 +335,8 @@ country_event = { # Religious fanatics attempt seizure power
 		if = {
 			limit = { is_puppet = no }
 			HEA = { puppet = ROOT }
+			ROOT = { remove_opinion_modifier = { target = HEA modifier = world_view_hea } }
+			HEA = { remove_opinion_modifier = { target = ROOT modifier = hea_view_world } }
 		}
 		else = {
 			overlord = {
@@ -421,12 +427,14 @@ country_event = { # Religious fanatics launch a coup in our puppet
 						targeted_alliance = FROM
 						enemy = PREV
 					}
+					remove_opinion_modifier = { target = HEA modifier = world_view_hea }
 				}
 				HEA = {
 					add_to_war = {
 						targeted_alliance = PREV
 						enemy = FROM
 					}
+					remove_opinion_modifier = { target = PREV modifier = hea_view_world }
 				}
 			}
 		}

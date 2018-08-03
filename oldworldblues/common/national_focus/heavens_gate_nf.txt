@@ -1616,8 +1616,8 @@ focus_tree = {
 				add_opinion_modifier = { target = HEA modifier = hea_enemy_embassy }
 			}
 			hidden_effect = {
-				MUR = { remove_opinion_modifier = { target = WHI modifier = world_view_hea } }
-				HEA = { remove_opinion_modifier = { target = BRK modifier = hea_view_world } }
+				MUR = { remove_opinion_modifier = { target = HEA modifier = world_view_hea } }
+				HEA = { remove_opinion_modifier = { target = MUR modifier = hea_view_world } }
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1743,8 +1743,8 @@ focus_tree = {
 				add_opinion_modifier = { target = HEA modifier = hea_enemy_embassy }
 			}
 			hidden_effect = {
-				IRE = { remove_opinion_modifier = { target = WHI modifier = world_view_hea } }
-				HEA = { remove_opinion_modifier = { target = BRK modifier = hea_view_world } }
+				IRE = { remove_opinion_modifier = { target = HEA modifier = world_view_hea } }
+				HEA = { remove_opinion_modifier = { target = IRE modifier = hea_view_world } }
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
