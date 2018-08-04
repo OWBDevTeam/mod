@@ -1434,15 +1434,15 @@ focus_tree = {
 	focus = {
 		id = WBH_eradicate_the_mutants
 		icon = GFX_goal_wbh_eradicate_the_mutants
-		cost = 8.6
+		cost = 12.9
 		prerequisite = {
 			focus = WBH_expand_our_dominion
 		}
 		available = {
-			date > 2278.1.1
-		}
-		bypass = {
-			TRL = { exists = no }
+			if = {
+				limit = { TRL = { exists = yes } }
+				date > 2278.1.1
+			}
 		}
 		x = 22
 		y = 8
@@ -1454,6 +1454,7 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] WBH_eradicate_the_mutants entered"
 			}
 			add_ideas = genericboswashingtoneradicatemutants
+			effect_tooltip = { TRL = { country_event = nf_washington.10 } }
 			if = {
 				limit = {
 					TRL = { exists = yes }

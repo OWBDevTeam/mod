@@ -287,3 +287,36 @@ country_event = {
 		custom_effect_tooltip = WBH_alaskan_expedition_usa_remenants
 	}
 }
+
+country_event = { # Resist the BoS
+	id = nf_washington.10
+	title = nf_washington.10.t
+	desc = nf_washington.10.d
+	picture = GFX_event_WBH_invitation
+
+	trigger = {
+		tag = TRL
+		has_war_with = WBH
+		has_defensive_war = yes # Event won't fire if TRL goes offensive
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = nf_washington.10.a
+
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_tech = anti_tank_tech } }
+				set_technology = { anti_tank_tech = 1 }
+			}
+			if = {
+				limit = { NOT = { has_tech = explosive_tech } }
+				set_technology = { explosive_tech = 1 }
+			}
+			load_oob = warren_resist_brotherhood
+		}
+		custom_effect_tooltip = WBH_warren_resist_brotherhood
+		add_ideas = warren_resist_wbh
+	}
+}
