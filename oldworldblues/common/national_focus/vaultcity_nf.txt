@@ -248,7 +248,51 @@ focus_tree = {
 				log = "[GetDateText]: [Root.GetName] vault_cyclops_eager entered"
 			}
 			CYC = {
-				add_ideas = eagercyclops
+				if = { 
+					limit = {
+						VLT = {
+							has_country_flag = VLT_Firearms
+						}
+					}
+					add_ideas = eagercyclops
+					set_technology = {
+						improved_ballistic_weaponry = 1
+					}
+					
+				}
+				if = { 
+					limit = {
+						VLT = {
+							has_country_flag = VLT_Lasers
+						}
+					}
+					add_ideas = eagercyclops
+					set_technology = {
+						basic_laser_weaponry = 1
+					}
+					
+				}
+				if = { 
+					limit = {
+						VLT = {
+							has_country_flag = VLT_Robots
+						}
+					}
+					add_ideas = eagercyclops2
+					set_technology = {
+						commercial_protectron = 1
+					}
+					
+				}
+				
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = vault_spec
+					}
+				}
+				custom_effect_tooltip = vault_cyc_tech
 			}
 			if = {
 				limit = { has_global_flag = debug_logs }
@@ -1760,6 +1804,24 @@ focus_tree = {
 					desc = "POLITICS_D_MASHER"
 					ideology = gang
 				}
+				create_country_leader = {
+					name = "Dweller Masher"
+					picture = "Portrait_Vault_Generic_1.dds"
+					desc = "POLITICS_D_MASHER"
+					ideology = feudalism
+				}
+				create_country_leader = {
+					name = "Dweller Masher"
+					picture = "Portrait_Vault_Generic_1.dds"
+					desc = "POLITICS_D_MASHER"
+					ideology = peoples_militia
+				}
+				create_country_leader = {
+					name = "Dweller Masher"
+					picture = "Portrait_Vault_Generic_1.dds"
+					desc = "POLITICS_D_MASHER"
+					ideology = technocracy
+				}
 				add_stability = 0.1
 				add_war_support = 0.05
 			}
@@ -1816,7 +1878,7 @@ focus_tree = {
 				limit = { has_global_flag = debug_logs }
 				log = "[GetDateText]: [Root.GetName] vault_rip_crescent entered"
 			}
-			add_state_core = 426
+			add_state_core = 462
 			add_state_core = 183
 			add_state_core = 485
 			add_state_core = 328
@@ -1835,7 +1897,7 @@ focus_tree = {
 			focus = vault_rip_crescent
 		}
 		available = {
-			426 = { is_owned_and_controlled_by = VLT }
+			462 = { is_owned_and_controlled_by = VLT }
 		}
 		x = 0
 		y = 1
